@@ -1,0 +1,22 @@
+advisory_id: xain/2018-09-03
+datasource_id: elixir_security_importer_v2/xain/2018-09-03
+datasource_url: https://github.com/dependabot/elixir-security-advisories/blob/master/packages/xain/2018-09-03.yml
+aliases:
+  - CVE-2018-20302
+summary: |
+  XSS is possible via the use of the order query parameter. An example request
+  would look like:
+
+  ```
+  http://host/ressources?order=%27><script>alert(1);</script>
+  ```
+impacted_packages:
+  - purl: pkg:hex/xain
+    affected_versions: vers:hex/<0.6.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/smpallen99/xain/issues/18
+    reference_type:
+    reference_id:

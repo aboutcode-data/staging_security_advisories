@@ -1,0 +1,22 @@
+advisory_id: plug/2017-02-28_2
+datasource_id: elixir_security_importer_v2/plug/2017-02-28_2
+datasource_url: https://github.com/dependabot/elixir-security-advisories/blob/master/packages/plug/2017-02-28_2.yml
+aliases:
+  - CVE-2017-1000053
+summary: |
+  The default serialization used by Plug session may result in code execution
+  in certain situations. Keep in mind, however, the session cookie is signed
+  and this attack can only be exploited if the attacker has access to your
+  secret key as well as your signing/encryption salts. We recommend users to
+  change their secret key base and salts if they suspect they have been leaked,
+  regardless of this vulnerability.
+impacted_packages:
+  - purl: pkg:hex/plug
+    affected_versions: vers:hex/!=1.0.4|!=1.1.7|!=1.2.3|<1.3.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://elixirforum.com/t/static-and-session-security-fixes-for-plug/3913
+    reference_type:
+    reference_id:
