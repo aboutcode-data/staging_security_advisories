@@ -1,0 +1,26 @@
+advisory_id: AVG-269
+datasource_id: archlinux_importer_v2/AVG-269
+datasource_url: https://security.archlinux.org/AVG-269.json
+aliases:
+  - ASA-201705-12
+  - CVE-2017-8422
+summary: privilege escalation
+impacted_packages:
+  - purl: pkg:alpm/archlinux/kauth
+    affected_versions: vers:alpm/5.33.0-1
+    fixed_versions: vers:alpm/5.33.0-2
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/ASA-201705-12
+    reference_type:
+    reference_id: ASA-201705-12
+  - url: https://security.archlinux.org/AVG-269
+    reference_type:
+    reference_id: AVG-269
+  - url: https://github.com/stealth/plasmapulsar/blob/921a61b16938b7d69c2abbe3848dffc8f9238168/smb0k.c
+    reference_type: exploit
+    reference_id: CVE-2017-8849;CVE-2017-8422
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/42053.c
+    reference_type: exploit
+    reference_id: CVE-2017-8849;CVE-2017-8422

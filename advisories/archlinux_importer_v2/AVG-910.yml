@@ -1,0 +1,28 @@
+advisory_id: AVG-910
+datasource_id: archlinux_importer_v2/AVG-910
+datasource_url: https://security.archlinux.org/AVG-910.json
+aliases:
+  - CVE-2019-8942
+summary: arbitrary code execution
+impacted_packages:
+  - purl: pkg:alpm/archlinux/wordpress
+    affected_versions: vers:alpm/5.0.0-1
+    fixed_versions: vers:alpm/5.0.1-1
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/AVG-910
+    reference_type:
+    reference_id: AVG-910
+  - url: https://gist.github.com/allyshka/f159c0b43f1374f87f2c3817d6401fd6
+    reference_type: exploit
+    reference_id: CVE-2019-8943;CVE-2019-8942
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/remote/46662.rb
+    reference_type: exploit
+    reference_id: CVE-2019-8943;CVE-2019-8942
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/46511.js
+    reference_type: exploit
+    reference_id: CVE-2019-8943;CVE-2019-8942
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/http/wp_crop_rce.rb
+    reference_type: exploit
+    reference_id: CVE-2019-8943;CVE-2019-8942

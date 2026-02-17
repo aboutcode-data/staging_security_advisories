@@ -1,0 +1,33 @@
+advisory_id: AVG-702
+datasource_id: archlinux_importer_v2/AVG-702
+datasource_url: https://security.archlinux.org/AVG-702.json
+aliases:
+  - CVE-2018-1120
+  - CVE-2018-1121
+  - CVE-2018-8897
+summary: multiple issues
+impacted_packages:
+  - purl: pkg:alpm/archlinux/linux-lts
+    affected_versions: vers:alpm/4.14.41-1
+    fixed_versions: vers:alpm/4.14.44-1
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/AVG-702
+    reference_type:
+    reference_id: AVG-702
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/44806.txt
+    reference_type: exploit
+    reference_id: CVE-2018-1124;CVE-2018-1123;CVE-2018-1122;CVE-2018-1121;CVE-2018-1120
+  - url: https://github.com/can1357/CVE-2018-8897
+    reference_type: exploit
+    reference_id: CVE-2018-8897
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/local/44697.txt
+    reference_type: exploit
+    reference_id: CVE-2018-8897
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/local/45024.rb
+    reference_type: exploit
+    reference_id: CVE-2018-8897
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/b40a1467232a84c19b0c8f16a36e2b9973cab951/modules/exploits/windows/local/mov_ss.rb
+    reference_type: exploit
+    reference_id: CVE-2018-8897

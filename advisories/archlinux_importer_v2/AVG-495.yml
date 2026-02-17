@@ -1,0 +1,33 @@
+advisory_id: AVG-495
+datasource_id: archlinux_importer_v2/AVG-495
+datasource_url: https://security.archlinux.org/AVG-495.json
+aliases:
+  - ASA-201711-24
+  - CVE-2017-12635
+  - CVE-2017-12636
+summary: multiple issues
+impacted_packages:
+  - purl: pkg:alpm/archlinux/couchdb
+    affected_versions: vers:alpm/2.1.0-1
+    fixed_versions: vers:alpm/2.1.1-1
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/ASA-201711-24
+    reference_type:
+    reference_id: ASA-201711-24
+  - url: https://security.archlinux.org/AVG-495
+    reference_type:
+    reference_id: AVG-495
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/webapps/44498.py
+    reference_type: exploit
+    reference_id: CVE-2017-12635
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/webapps/44913.py
+    reference_type: exploit
+    reference_id: CVE-2017-12636
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/45019.rb
+    reference_type: exploit
+    reference_id: CVE-2017-12636;CVE-2017-12635
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/c9001699cd3a32e907262ce2816aaf91ae5ffd17/modules/exploits/linux/http/apache_couchdb_cmd_exec.rb
+    reference_type: exploit
+    reference_id: CVE-2017-12636;CVE-2017-12635

@@ -1,0 +1,38 @@
+advisory_id: AVG-96
+datasource_id: archlinux_importer_v2/AVG-96
+datasource_url: https://security.archlinux.org/AVG-96.json
+aliases:
+  - ASA-201612-7
+  - CVE-2016-8655
+summary: privilege escalation
+impacted_packages:
+  - purl: pkg:alpm/archlinux/linux-lts
+    affected_versions: vers:alpm/4.4.35-1
+    fixed_versions: vers:alpm/4.4.36-1
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/ASA-201612-7
+    reference_type:
+    reference_id: ASA-201612-7
+  - url: https://security.archlinux.org/AVG-96
+    reference_type:
+    reference_id: AVG-96
+  - url: http://seclists.org/oss-sec/2016/q4/607
+    reference_type: exploit
+    reference_id: CVE-2016-8655
+  - url: https://github.com/bcoles/kernel-exploits/blob/4a20cca563620340e7abc2bd1e7dca15d5d82e67/CVE-2016-8655/chocobo_root.c
+    reference_type: exploit
+    reference_id: CVE-2016-8655
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/44696.rb
+    reference_type: exploit
+    reference_id: CVE-2016-8655
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux_x86-64/local/40871.c
+    reference_type: exploit
+    reference_id: CVE-2016-8655
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows_x86-64/local/47170.c
+    reference_type: exploit
+    reference_id: CVE-2016-8655
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/88ab836e15dc5da85050b99910861cd10778c882/modules/exploits/linux/local/af_packet_chocobo_root_priv_esc.rb
+    reference_type: exploit
+    reference_id: CVE-2016-8655

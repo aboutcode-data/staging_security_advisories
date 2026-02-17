@@ -1,0 +1,22 @@
+advisory_id: AVG-883
+datasource_id: archlinux_importer_v2/AVG-883
+datasource_url: https://security.archlinux.org/AVG-883.json
+aliases:
+  - CVE-2018-16858
+summary: arbitrary code execution
+impacted_packages:
+  - purl: pkg:alpm/archlinux/libreoffice-fresh
+    affected_versions: vers:alpm/6.1.2-1
+    fixed_versions: vers:alpm/6.1.3-1
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/AVG-883
+    reference_type:
+    reference_id: AVG-883
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/local/46727.rb
+    reference_type: exploit
+    reference_id: CVE-2018-16858
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/multi/fileformat/libreoffice_macro_exec.rb
+    reference_type: exploit
+    reference_id: CVE-2018-16858

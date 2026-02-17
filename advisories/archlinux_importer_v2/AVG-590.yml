@@ -1,0 +1,39 @@
+advisory_id: AVG-590
+datasource_id: archlinux_importer_v2/AVG-590
+datasource_url: https://security.archlinux.org/AVG-590.json
+aliases:
+  - ASA-201801-18
+  - ASA-201801-19
+  - CVE-2018-1000001
+summary: privilege escalation
+impacted_packages:
+  - purl: pkg:alpm/archlinux/glibc
+    affected_versions: vers:alpm/2.26-10
+    fixed_versions: vers:alpm/2.26-11
+  - purl: pkg:alpm/archlinux/lib32-glibc
+    affected_versions: vers:alpm/2.26-10
+    fixed_versions: vers:alpm/2.26-11
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/ASA-201801-18
+    reference_type:
+    reference_id: ASA-201801-18
+  - url: https://security.archlinux.org/ASA-201801-19
+    reference_type:
+    reference_id: ASA-201801-19
+  - url: https://security.archlinux.org/AVG-590
+    reference_type:
+    reference_id: AVG-590
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/43775.c
+    reference_type: exploit
+    reference_id: CVE-2018-1000001
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/44889.rb
+    reference_type: exploit
+    reference_id: CVE-2018-1000001
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/29f4870fa0f916e31300d1bc78aeabeb297c667f/modules/exploits/linux/local/glibc_realpath_priv_esc.rb
+    reference_type: exploit
+    reference_id: CVE-2018-1000001
+  - url: https://www.halfdog.net/Security/2017/LibcRealpathBufferUnderflow/RationalLove.c
+    reference_type: exploit
+    reference_id: CVE-2018-1000001

@@ -1,0 +1,23 @@
+advisory_id: AVG-312
+datasource_id: archlinux_importer_v2/AVG-312
+datasource_url: https://security.archlinux.org/AVG-312.json
+aliases:
+  - CVE-2017-1000370
+  - CVE-2017-1000371
+summary: access restriction bypass
+impacted_packages:
+  - purl: pkg:alpm/archlinux/linux-lts
+    affected_versions: vers:alpm/4.9.38-1
+    fixed_versions: vers:alpm/4.9.39-1
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/AVG-312
+    reference_type:
+    reference_id: AVG-312
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux_x86/local/42273.c
+    reference_type: exploit
+    reference_id: CVE-2017-1000371;CVE-2017-1000370
+  - url: https://www.qualys.com/2017/06/19/stack-clash/linux_offset2lib.c
+    reference_type: exploit
+    reference_id: CVE-2017-1000371;CVE-2017-1000370

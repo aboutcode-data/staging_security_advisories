@@ -1,0 +1,26 @@
+advisory_id: AVG-91
+datasource_id: archlinux_importer_v2/AVG-91
+datasource_url: https://security.archlinux.org/AVG-91.json
+aliases:
+  - ASA-201612-2
+  - CVE-2016-9079
+summary: arbitrary code execution
+impacted_packages:
+  - purl: pkg:alpm/archlinux/thunderbird
+    affected_versions: vers:alpm/45.5.0-1
+    fixed_versions: vers:alpm/45.5.1-1
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/ASA-201612-2
+    reference_type:
+    reference_id: ASA-201612-2
+  - url: https://security.archlinux.org/AVG-91
+    reference_type:
+    reference_id: AVG-91
+  - url: https://github.com/rapid7/metasploit-framework/blob/f4db90edeb7f03ce1e95f5898954cbea7e13ff6c/modules/exploits/windows/browser/firefox_smil_uaf.rb
+    reference_type: exploit
+    reference_id: CVE-2016-9079
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/remote/41151.rb
+    reference_type: exploit
+    reference_id: CVE-2016-9079

@@ -1,0 +1,35 @@
+advisory_id: AVG-186
+datasource_id: archlinux_importer_v2/AVG-186
+datasource_url: https://security.archlinux.org/AVG-186.json
+aliases:
+  - ASA-201702-18
+  - CVE-2016-10088
+  - CVE-2016-9588
+  - CVE-2017-5986
+  - CVE-2017-6074
+summary: multiple issues
+impacted_packages:
+  - purl: pkg:alpm/archlinux/linux-zen
+    affected_versions: vers:alpm/4.9.8-1
+    fixed_versions: vers:alpm/4.9.11-2
+severities: []
+weaknesses: []
+references:
+  - url: https://security.archlinux.org/ASA-201702-18
+    reference_type:
+    reference_id: ASA-201702-18
+  - url: https://security.archlinux.org/AVG-186
+    reference_type:
+    reference_id: AVG-186
+  - url: https://github.com/xairy/kernel-exploits/blob/0c3cef1d8aea824d07978fc71bfaa4b1d3bea267/CVE-2017-6074/poc.c
+    reference_type: exploit
+    reference_id: CVE-2017-6074
+  - url: https://github.com/xairy/kernel-exploits/blob/0c3cef1d8aea824d07978fc71bfaa4b1d3bea267/CVE-2017-6074/trigger.c
+    reference_type: exploit
+    reference_id: CVE-2017-6074
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/dos/41457.c
+    reference_type: exploit
+    reference_id: CVE-2017-6074
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/41458.c
+    reference_type: exploit
+    reference_id: CVE-2017-6074
