@@ -1,0 +1,32 @@
+advisory_id: npm-95
+datasource_id: nodejs_security_wg/npm-95
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/95.json
+aliases: []
+summary: |
+  Arbitrary File Write
+  ```
+  lock_file = '/tmp/' + cli.app + '.pid',
+  log_file = '/tmp/' + cli.app + '.log';
+  ```
+  The package `node-cli` insecurely uses the lock_file and log_file. Both of these are temporary, but it allows the starting user to overwrite any file they have access to.
+impacted_packages:
+  - purl: pkg:npm/cli
+    affected_versions: vers:npm/<1.0.0
+    fixed_versions: vers:npm/>=1.0.0
+severities:
+  - score: '1.9'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/95.json
+weaknesses: []
+references:
+  - url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=809252
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-js-libs/cli/issues/81
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/95.json
+    reference_type:
+    reference_id: 95

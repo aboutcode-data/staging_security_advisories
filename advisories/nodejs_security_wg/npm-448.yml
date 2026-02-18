@@ -1,0 +1,26 @@
+advisory_id: npm-448
+datasource_id: nodejs_security_wg/npm-448
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/448.json
+aliases:
+  - CVE-2018-3767
+summary: |
+  Denial of Service
+  `memjs` allocates and stores buffers on typed input, resulting in DoS and uninitialized memory usage
+impacted_packages:
+  - purl: pkg:npm/memjs
+    affected_versions: vers:npm/<=1.1.0
+    fixed_versions:
+severities:
+  - score: 10
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/448.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/319809
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/448.json
+    reference_type:
+    reference_id: 448

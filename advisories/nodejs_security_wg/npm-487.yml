@@ -1,0 +1,20 @@
+advisory_id: npm-487
+datasource_id: nodejs_security_wg/npm-487
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/487.json
+aliases: []
+summary: |
+  Arbitrary File Write Through Archive Extraction
+  attackers can write arbitrary files when a malicious archive is extracted.
+impacted_packages:
+  - purl: pkg:npm/bower
+    affected_versions: vers:npm/<1.8.7
+    fixed_versions: vers:npm/>=1.8.7
+severities: []
+weaknesses: []
+references:
+  - url: https://snyk.io/research/zip-slip-vulnerability
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/487.json
+    reference_type:
+    reference_id: 487

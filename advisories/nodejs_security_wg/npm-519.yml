@@ -1,0 +1,25 @@
+advisory_id: npm-519
+datasource_id: nodejs_security_wg/npm-519
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/519.json
+aliases: []
+summary: |
+  Denial of Service
+  Crash Node.js process from handlebars using a small and simple source
+impacted_packages:
+  - purl: pkg:npm/handlebars
+    affected_versions: vers:npm/<4.6.0
+    fixed_versions: vers:npm/>=4.6.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/519.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/726364
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/519.json
+    reference_type:
+    reference_id: 519

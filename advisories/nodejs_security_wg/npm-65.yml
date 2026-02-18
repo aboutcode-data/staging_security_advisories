@@ -1,0 +1,25 @@
+advisory_id: npm-65
+datasource_id: nodejs_security_wg/npm-65
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/65.json
+aliases: []
+summary: |
+  Route level CORS config overrides connection level defaults
+  When server level, connection level or route level CORS configurations are combined and when a higher level config included security restrictions (like origin), a higher level config that included security restrictions (like origin) would have those restrictions overridden by less restrictive defaults (e.g. origin defaults to all origins `*`).
+impacted_packages:
+  - purl: pkg:npm/hapi
+    affected_versions: vers:npm/<11.1.4
+    fixed_versions: vers:npm/>=11.1.4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/65.json
+weaknesses: []
+references:
+  - url: https://github.com/hapijs/hapi/issues/2980
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/65.json
+    reference_type:
+    reference_id: 65

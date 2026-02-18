@@ -1,0 +1,26 @@
+advisory_id: npm-490
+datasource_id: nodejs_security_wg/npm-490
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/490.json
+aliases:
+  - CVE-2018-16491
+summary: |
+  Denial of Service
+  Prototype pollution attack in node.extend
+impacted_packages:
+  - purl: pkg:npm/node.extend
+    affected_versions: vers:npm/<1.1.7|<2.0.1
+    fixed_versions: vers:npm/>=1.1.7|<2.0.0|>=2.0.1
+severities:
+  - score: '5.7'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/490.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/430831
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/490.json
+    reference_type:
+    reference_id: 490

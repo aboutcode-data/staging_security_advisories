@@ -1,0 +1,23 @@
+advisory_id: npm-8
+datasource_id: nodejs_security_wg/npm-8
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/8.json
+aliases:
+  - CVE-2014-6393
+summary: |
+  No Charset in Content-Type Header
+  Vulnerable versions of express do not specify a charset field in the content-type header while displaying 400 level response messages. The lack of enforcing user's browser to set correct charset, could be leveraged by an attacker to perform a cross-site scripting attack, using non-standard encodings, like UTF-7.
+impacted_packages:
+  - purl: pkg:npm/express
+    affected_versions: vers:npm/<3.11.0|>=4.0.0|<4.5.0
+    fixed_versions: vers:npm/>=3.11.0|<4.0.0|>=4.5.0
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/8.json
+weaknesses: []
+references:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/8.json
+    reference_type:
+    reference_id: 8

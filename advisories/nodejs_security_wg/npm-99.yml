@@ -1,0 +1,34 @@
+advisory_id: npm-99
+datasource_id: nodejs_security_wg/npm-99
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/99.json
+aliases: []
+summary: "Insecure Defaults Allow MITM Over TLS\nengine.io-client is the client for [engine.io](https://github.com/socketio/engine.io),\
+  \ the implementation of a transport-based cross-browser/cross-device bi-directional communication\
+  \ layer for Socket.IO.\n\nThe vulnerability is related to the way that node.js handles the\
+  \ `rejectUnauthorized` setting. If the value is something that evaluates to false, certificate\
+  \ verification will be disabled.\n\nThis is problematic as engine.io-client passes in an object\
+  \ for settings that includes the rejectUnauthorized property, whether it has been set or not.\
+  \ If the value has not been explicitly changed, it will be passed in as `null`, resulting\
+  \ in certificate verification being turned off:\n\n``` \n // line that causes bug\nthis.rejectUnauthorized\
+  \ = opts.rejectUnauthorized === undefined ? null : opts.rejectUnauthorized;\n ```"
+impacted_packages:
+  - purl: pkg:npm/engine.io-client
+    affected_versions: vers:npm/<=1.6.8
+    fixed_versions: vers:npm/>=1.6.9
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/99.json
+weaknesses: []
+references:
+  - url: https://github.com/socketio/engine.io-client/commit/2c55b278a491bf45313ecc0825cf800e2f7ff5c1
+    reference_type:
+    reference_id:
+  - url: https://www.cigital.com/blog/node-js-socket-io/
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/99.json
+    reference_type:
+    reference_id: 99

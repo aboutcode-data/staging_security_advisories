@@ -1,0 +1,36 @@
+advisory_id: npm-62
+datasource_id: nodejs_security_wg/npm-62
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/62.json
+aliases:
+  - CVE-2015-8862
+summary: |
+  Quoteless Attributes in Templates can lead to Content Injection
+  Not using quotes around your attributes in mustache templates, could lead to content injection.
+
+  ### Example
+  Template:
+  ```<a href={{foo}}/>```
+
+  Input:
+  ```{ 'foo' : 'test.com onload=alert(1)'}```
+
+  Rendered result:
+  ```<a href=test.com onload=alert(1)/>```
+impacted_packages:
+  - purl: pkg:npm/mustache
+    affected_versions: vers:npm/<2.2.1
+    fixed_versions: vers:npm/>=2.2.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/62.json
+weaknesses: []
+references:
+  - url: https://github.com/janl/mustache.js/commit/378bcca8a5cfe4058f294a3dbb78e8755e8e0da5
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/62.json
+    reference_type:
+    reference_id: 62

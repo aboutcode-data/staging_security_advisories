@@ -1,0 +1,25 @@
+advisory_id: npm-432
+datasource_id: nodejs_security_wg/npm-432
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/432.json
+aliases: []
+summary: |
+  SQL Injection
+  `sql` does not properly escape parameters when building SQL queries, resulting in potential SQLi
+impacted_packages:
+  - purl: pkg:npm/sql
+    affected_versions: vers:npm/<=0.78.0
+    fixed_versions:
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/432.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/319465
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/432.json
+    reference_type:
+    reference_id: 432

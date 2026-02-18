@@ -1,0 +1,26 @@
+advisory_id: npm-493
+datasource_id: nodejs_security_wg/npm-493
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/493.json
+aliases:
+  - CVE-2018-16487
+summary: |
+  Denial of Service
+  Prototype pollution attack (lodash / constructor.prototype)
+impacted_packages:
+  - purl: pkg:npm/lodash
+    affected_versions: vers:npm/<4.17.11
+    fixed_versions: vers:npm/>=4.17.11
+severities:
+  - score: '7.0'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/493.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/380873
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/493.json
+    reference_type:
+    reference_id: 493

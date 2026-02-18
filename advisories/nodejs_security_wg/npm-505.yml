@@ -1,0 +1,25 @@
+advisory_id: npm-505
+datasource_id: nodejs_security_wg/npm-505
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/505.json
+aliases: []
+summary: |
+  Man-in-the-Middle
+  [https-proxy-agent] Socket returned without TLS upgrade on non-200 CONNECT response, allowing request data to be sent over unencrypted connection
+impacted_packages:
+  - purl: pkg:npm/https-proxy-agent
+    affected_versions: vers:npm/<2.2.3
+    fixed_versions: vers:npm/>=2.2.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/505.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/541502
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/505.json
+    reference_type:
+    reference_id: 505

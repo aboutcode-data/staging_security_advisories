@@ -1,0 +1,29 @@
+advisory_id: npm-466
+datasource_id: nodejs_security_wg/npm-466
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/466.json
+aliases:
+  - CVE-2018-15685
+summary: |
+  Command Injection
+  [electron] A remote code execution vulnerability has been discovered affecting apps with the ability to open nested child windows on Electron versions (3.0.0-beta.6, 2.0.7, 1.8.7, and 1.7.15).
+impacted_packages:
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=1.7.0|<1.7.16|>=1.8.0|<1.8.8|>=2.0.0|<2.0.8|>=3.0.0-beta.1|<3.0.0-beta.7
+    fixed_versions: vers:npm/>=1.7.16|<1.8.0|>=1.8.8|<2.0.0|>=2.0.8|<3.0.0-beta.1|>=3.0.0-beta.7
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/466.json
+weaknesses: []
+references:
+  - url: https://electronjs.org/blog/web-preferences-fix
+    reference_type:
+    reference_id:
+  - url: https://www.contrastsecurity.com/security-influencers/cve-2018-15685
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/466.json
+    reference_type:
+    reference_id: 466
