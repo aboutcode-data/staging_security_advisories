@@ -1,0 +1,33 @@
+advisory_id: nuget/Swashbuckle.AspNetCore.SwaggerUI/GMS-2021-470
+datasource_id: gitlab_importer_v2/nuget/Swashbuckle.AspNetCore.SwaggerUI/GMS-2021-470
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/Swashbuckle.AspNetCore.SwaggerUI/GMS-2021-470.yml
+aliases:
+  - GHSA-qrmm-w75w-3wpx
+  - GMS-2021-470
+summary: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+  in Swashbuckle.AspNetCore.SwaggerUI.
+impacted_packages:
+  - purl: pkg:nuget/Swashbuckle.AspNetCore.SwaggerUI
+    affected_versions: vers:nuget/<6.3.0
+    fixed_versions: vers:nuget/6.3.0
+severities: []
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/commit/401c7cb81e5efe835ceb8aae23e82057d57c7d29
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/commit/01a3e55960f864a0acf6a8d06e5ddaf6776a7f76
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/issues/4872
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/security/advisories/GHSA-qrmm-w75w-3wpx
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-qrmm-w75w-3wpx
+    reference_type:
+    reference_id: GHSA-qrmm-w75w-3wpx

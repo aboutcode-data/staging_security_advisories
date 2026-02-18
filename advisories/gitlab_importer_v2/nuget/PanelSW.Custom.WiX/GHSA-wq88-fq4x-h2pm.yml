@@ -1,0 +1,34 @@
+advisory_id: nuget/PanelSW.Custom.WiX/GHSA-wq88-fq4x-h2pm
+datasource_id: gitlab_importer_v2/nuget/PanelSW.Custom.WiX/GHSA-wq88-fq4x-h2pm
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/PanelSW.Custom.WiX/GHSA-wq88-fq4x-h2pm.yml
+aliases:
+  - GHSA-wq88-fq4x-h2pm
+summary: |
+  WiX Burn-based bundles are vulnerable to binary hijack when run as SYSTEM
+  Burn uses an unprotected C:\Windows\Temp directory to copy binaries and run them from there. This directory is not entirely protected against low privilege users.
+impacted_packages:
+  - purl: pkg:nuget/PanelSW.Custom.WiX
+    affected_versions: vers:nuget/<3.15.0-a46
+    fixed_versions: vers:nuget/3.15.0-a46
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/PanelSW.Custom.WiX/GHSA-wq88-fq4x-h2pm.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/nirbar/wix3
+    reference_type:
+    reference_id:
+  - url: https://github.com/nirbar/wix3/commit/99e754bbc717c61f18862aefd98c035f5e2f848d
+    reference_type:
+    reference_id:
+  - url: https://github.com/nirbar/wix3/security/advisories/GHSA-wq88-fq4x-h2pm
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wq88-fq4x-h2pm
+    reference_type:
+    reference_id: GHSA-wq88-fq4x-h2pm

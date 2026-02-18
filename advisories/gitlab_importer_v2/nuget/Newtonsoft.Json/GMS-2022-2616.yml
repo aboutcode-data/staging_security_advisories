@@ -1,0 +1,40 @@
+advisory_id: nuget/Newtonsoft.Json/GMS-2022-2616
+datasource_id: gitlab_importer_v2/nuget/Newtonsoft.Json/GMS-2022-2616
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/Newtonsoft.Json/GMS-2022-2616.yml
+aliases:
+  - GHSA-5crp-9r3c-p9vr
+  - GMS-2022-2616
+summary: |
+  Improper Handling of Exceptional Conditions in Newtonsoft.Json
+  Newtonsoft.Json prior to version 13.0.1 is vulnerable to Insecure Defaults due to improper handling of StackOverFlow exception (SOE) whenever nested expressions are being processed. Exploiting this vulnerability results in Denial Of Service (DoS), and it is exploitable when an attacker sends 5 requests that cause SOE in time frame of 5 minutes. This vulnerability affects Internet Information Services (IIS) Applications.
+impacted_packages:
+  - purl: pkg:nuget/Newtonsoft.Json
+    affected_versions: vers:nuget/<13.0.1
+    fixed_versions: vers:nuget/13.0.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-78
+  - CWE-937
+references:
+  - url: https://alephsecurity.com/2018/10/22/StackOverflowException/
+    reference_type:
+    reference_id:
+  - url: https://alephsecurity.com/vulns/aleph-2018004
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5crp-9r3c-p9vr
+    reference_type:
+    reference_id:
+  - url: https://github.com/JamesNK/Newtonsoft.Json/commit/7e77bbe1beccceac4fc7b174b53abfefac278b66
+    reference_type:
+    reference_id:
+  - url: https://github.com/JamesNK/Newtonsoft.Json/issues/2457
+    reference_type:
+    reference_id:
+  - url: https://github.com/JamesNK/Newtonsoft.Json/pull/2462
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-DOTNET-NEWTONSOFTJSON-2774678
+    reference_type:
+    reference_id:

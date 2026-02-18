@@ -1,0 +1,30 @@
+advisory_id: nuget/System.Data.SqlClient/GMS-2022-6505
+datasource_id: gitlab_importer_v2/nuget/System.Data.SqlClient/GMS-2022-6505
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/System.Data.SqlClient/GMS-2022-6505.yml
+aliases:
+  - GHSA-8g2p-5pqh-5jmc
+  - GMS-2022-6505
+summary: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+  in System.Data.SqlClient.
+impacted_packages:
+  - purl: pkg:nuget/System.Data.SqlClient
+    affected_versions: vers:nuget/<=4.8.4
+    fixed_versions: vers:nuget/4.8.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-78
+  - CWE-937
+references:
+  - url: https://github.com/dotnet/corefx/security/advisories/GHSA-8g2p-5pqh-5jmc
+    reference_type:
+    reference_id:
+  - url: https://github.com/dotnet/runtime/issues/78042
+    reference_type:
+    reference_id:
+  - url: https://www.nuget.org/packages/Microsoft.Data.SqlClient/
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-8g2p-5pqh-5jmc
+    reference_type:
+    reference_id: GHSA-8g2p-5pqh-5jmc

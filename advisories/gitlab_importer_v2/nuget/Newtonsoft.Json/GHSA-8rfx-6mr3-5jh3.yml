@@ -1,0 +1,57 @@
+advisory_id: nuget/Newtonsoft.Json/GHSA-8rfx-6mr3-5jh3
+datasource_id: gitlab_importer_v2/nuget/Newtonsoft.Json/GHSA-8rfx-6mr3-5jh3
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/Newtonsoft.Json/GHSA-8rfx-6mr3-5jh3.yml
+aliases:
+  - GHSA-8rfx-6mr3-5jh3
+summary: |
+  Duplicate Advisory: Improper Handling of Exceptional Conditions in Newtonsoft.Json
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-5crp-9r3c-p9vr. This link is maintained to preserve external references.
+
+  ### Original Description
+  Newtonsoft.Json before version 13.0.1 is affected by a mishandling of exceptional conditions vulnerability. Crafted data that is passed to the JsonConvert.DeserializeObject method may trigger a StackOverflow exception resulting in denial of service. Depending on the usage of the library, an unauthenticated and remote attacker may be able to cause the denial of service condition.
+impacted_packages:
+  - purl: pkg:nuget/Newtonsoft.Json
+    affected_versions: vers:nuget/<13.0.1
+    fixed_versions: vers:nuget/13.0.1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/Newtonsoft.Json/GHSA-8rfx-6mr3-5jh3.yml
+weaknesses:
+  - CWE-755
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://alephsecurity.com/2018/10/22/StackOverflowException
+    reference_type:
+    reference_id:
+  - url: https://alephsecurity.com/vulns/aleph-2018004
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5crp-9r3c-p9vr
+    reference_type:
+    reference_id:
+  - url: https://github.com/JamesNK/Newtonsoft.Json/commit/7e77bbe1beccceac4fc7b174b53abfefac278b66
+    reference_type:
+    reference_id:
+  - url: https://github.com/JamesNK/Newtonsoft.Json/issues/2457
+    reference_type:
+    reference_id:
+  - url: https://github.com/JamesNK/Newtonsoft.Json/pull/2462
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21907
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-DOTNET-NEWTONSOFTJSON-2774678
+    reference_type:
+    reference_id:
+  - url: https://vulncheck.com/advisories/vc-advisory-GHSA-5crp-9r3c-p9vr
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-8rfx-6mr3-5jh3
+    reference_type:
+    reference_id: GHSA-8rfx-6mr3-5jh3
