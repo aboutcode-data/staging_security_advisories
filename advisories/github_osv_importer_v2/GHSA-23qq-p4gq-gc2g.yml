@@ -1,0 +1,50 @@
+advisory_id: GHSA-23qq-p4gq-gc2g
+datasource_id: github_osv_importer_v2/GHSA-23qq-p4gq-gc2g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-23qq-p4gq-gc2g/GHSA-23qq-p4gq-gc2g.json
+aliases:
+  - CVE-2024-34528
+summary: |
+  WordOps has TOCTOU race condition
+  WordOps through 3.20.0 has a `wo/cli/plugins/stack_pref.py` TOCTOU race condition because the `conf_path` `os.open` does not use a mode parameter during file creation.
+impacted_packages:
+  - purl: pkg:pypi/wordops
+    affected_versions: vers:pypi/<3.21.0
+    fixed_versions: vers:pypi/3.21.0
+severities:
+  - score: '7.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-23qq-p4gq-gc2g/GHSA-23qq-p4gq-gc2g.json
+  - score: '4.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-23qq-p4gq-gc2g/GHSA-23qq-p4gq-gc2g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-362
+  - CWE-367
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/wordops/PYSEC-2024-175.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/WordOps/WordOps
+    reference_type:
+    reference_id:
+  - url: https://github.com/WordOps/WordOps/blob/ecf20192c7853925e2cb3f8c8378cd0d86ca0d62/wo/cli/plugins/stack_pref.py#L77
+    reference_type:
+    reference_id:
+  - url: https://github.com/WordOps/WordOps/commit/31353f0fef14ad8bc1f61c028971bd30b9e1909b
+    reference_type:
+    reference_id:
+  - url: https://github.com/WordOps/WordOps/issues/611
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34528
+    reference_type:
+    reference_id:

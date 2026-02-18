@@ -1,0 +1,49 @@
+advisory_id: GHSA-23hh-2f47-3p4h
+datasource_id: github_osv_importer_v2/GHSA-23hh-2f47-3p4h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-23hh-2f47-3p4h/GHSA-23hh-2f47-3p4h.json
+aliases:
+  - CVE-2026-1193
+summary: |
+  MineAdmin has Incorrect Privilege Assignment
+  A vulnerability was identified in MineAdmin 1.x/2.x. The impacted element is an unknown function of the file /system/cache/view of the component View Interface. The manipulation leads to improper authorization. The attack is possible to be carried out remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way.
+impacted_packages:
+  - purl: pkg:composer/mineadmin/mineadmin
+    affected_versions: vers:composer/>=1.0.0|<=2.0.3
+    fixed_versions:
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-23hh-2f47-3p4h/GHSA-23hh-2f47-3p4h.json
+  - score: '2.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-23hh-2f47-3p4h/GHSA-23hh-2f47-3p4h.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-266
+references:
+  - url: https://github.com/mineadmin/MineAdmin
+    reference_type:
+    reference_id:
+  - url: https://github.com/SourByte05/MineAdmin-Vulnerability/issues/6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-1193
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.341778
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.341778
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?submit.734270
+    reference_type:
+    reference_id:

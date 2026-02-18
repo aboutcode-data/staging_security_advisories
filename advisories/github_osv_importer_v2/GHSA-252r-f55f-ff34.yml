@@ -1,0 +1,62 @@
+advisory_id: GHSA-252r-f55f-ff34
+datasource_id: github_osv_importer_v2/GHSA-252r-f55f-ff34
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-252r-f55f-ff34/GHSA-252r-f55f-ff34.json
+aliases:
+  - CVE-2017-7615
+summary: |
+  MantisBT allows arbitrary password reset
+  MantisBT through 2.3.0 allows arbitrary password reset and unauthenticated admin access via an empty confirm_hash value to verify.php.
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/>=1.3.0-rc.2|<1.3.10
+    fixed_versions: vers:composer/1.3.10
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/>=2.0.0|<2.2.4
+    fixed_versions: vers:composer/2.2.4
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/>=2.3.0|<2.3.1
+    fixed_versions: vers:composer/2.3.1
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-252r-f55f-ff34/GHSA-252r-f55f-ff34.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-640
+references:
+  - url: http://hyp3rlinx.altervista.org/advisories/MANTIS-BUG-TRACKER-PRE-AUTH-REMOTE-PASSWORD-RESET.txt
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/159219/Mantis-Bug-Tracker-2.3.0-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=22690
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-7615
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/41890
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2017/04/16/2
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/97707
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/41890.txt
+    reference_type: exploit
+    reference_id: CVE-2017-7615
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/48818.py
+    reference_type: exploit
+    reference_id: CVE-2019-15715;CVE-2017-7615

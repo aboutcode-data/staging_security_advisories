@@ -1,0 +1,40 @@
+advisory_id: GHSA-227r-w5j2-6243
+datasource_id: github_osv_importer_v2/GHSA-227r-w5j2-6243
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-227r-w5j2-6243/GHSA-227r-w5j2-6243.json
+aliases:
+  - CVE-2024-11042
+summary: |
+  InvokeAI Arbitrary File Deletion vulnerability
+  In invoke-ai/invokeai version v5.0.2, the web API `POST /api/v1/images/delete` is vulnerable to Arbitrary File Deletion. This vulnerability allows unauthorized attackers to delete arbitrary files on the server, potentially including critical or sensitive system files such as SSH keys, SQLite databases, and configuration files. This can impact the integrity and availability of applications relying on these files.
+impacted_packages:
+  - purl: pkg:pypi/invokeai
+    affected_versions: vers:pypi/<5.3.0rc1
+    fixed_versions: vers:pypi/5.3.0rc1
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-227r-w5j2-6243/GHSA-227r-w5j2-6243.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+  - CWE-20
+  - CWE-73
+references:
+  - url: https://github.com/invoke-ai/InvokeAI
+    reference_type:
+    reference_id:
+  - url: https://github.com/invoke-ai/invokeai/commit/5440c037674882b2ab7acd59087e9bb04b49657a
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/635535a7-c804-4789-ac3a-48d951263987
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-11042
+    reference_type:
+    reference_id:

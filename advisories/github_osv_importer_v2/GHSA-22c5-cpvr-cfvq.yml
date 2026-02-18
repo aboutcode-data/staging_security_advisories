@@ -1,0 +1,66 @@
+advisory_id: GHSA-22c5-cpvr-cfvq
+datasource_id: github_osv_importer_v2/GHSA-22c5-cpvr-cfvq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-22c5-cpvr-cfvq/GHSA-22c5-cpvr-cfvq.json
+aliases:
+  - CVE-2024-4109
+summary: |
+  Withdrawn Advisory: undertow: information leakage via HTTP/2 request header reuse
+  # Withdrawn Advisory
+  This advisory has been withdrawn because it was determined to not be a valid vulnerability. This link is maintained to preserve external references. For more information, see https://nvd.nist.gov/vuln/detail/CVE-2024-4109.
+
+  # Original Description
+  A flaw was found in Undertow. An HTTP request header value from a previous stream may be incorrectly reused for a request associated with a subsequent stream on the same HTTP/2 connection. This issue can potentially lead to information leakage between requests.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<=2.3.18.Final
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-22c5-cpvr-cfvq/GHSA-22c5-cpvr-cfvq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:10927
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:10928
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:10929
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:10933
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:11559
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:11560
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:11570
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-4109
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2272325
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/blob/6ae61c6af88d2a8341922ccd0de98926e8349543/core/src/main/java/io/undertow/protocols/http2/HpackDecoder.java#L250-L259
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-4109
+    reference_type:
+    reference_id:

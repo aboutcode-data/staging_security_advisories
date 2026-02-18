@@ -1,0 +1,64 @@
+advisory_id: GHSA-22jm-p2vv-j2hc
+datasource_id: github_osv_importer_v2/GHSA-22jm-p2vv-j2hc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-22jm-p2vv-j2hc/GHSA-22jm-p2vv-j2hc.json
+aliases:
+  - CVE-2016-7136
+summary: |
+  Plone XSS
+  z3c.form in Plone CMS 5.x through 5.0.6 and 4.x through 4.3.11 allows remote attackers to conduct cross-site scripting (XSS) attacks via a crafted GET request.
+impacted_packages:
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/>=5.0.0|<=5.0.6
+    fixed_versions:
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/>=4.0.0|<=4.3.11
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-22jm-p2vv-j2hc/GHSA-22jm-p2vv-j2hc.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-22jm-p2vv-j2hc/GHSA-22jm-p2vv-j2hc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/139110/Plone-CMS-4.3.11-5.0.6-XSS-Traversal-Open-Redirection.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2016/Oct/80
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/Plone
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/plone/PYSEC-2017-59.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-7136
+    reference_type:
+    reference_id:
+  - url: https://plone.org/security/hotfix/20160830/non-persistent-xss-in-plone-forms
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210625091607/http://www.securityfocus.com/bid/92752
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210625092107/http://www.securityfocus.com/archive/1/539572/100/0/threaded
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2016/09/05/4
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2016/09/05/5
+    reference_type:
+    reference_id:

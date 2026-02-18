@@ -1,0 +1,35 @@
+advisory_id: GHSA-236j-rfx5-wq38
+datasource_id: github_osv_importer_v2/GHSA-236j-rfx5-wq38
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-236j-rfx5-wq38/GHSA-236j-rfx5-wq38.json
+aliases:
+  - CVE-2021-37823
+summary: |
+  OpenCart SQL injection vulnerability
+  OpenCart 3.0.3.7 allows users to obtain database information or read server files through SQL injection in the background.
+impacted_packages:
+  - purl: pkg:composer/opencart/opencart
+    affected_versions: vers:composer/<=3.0.3+7
+    fixed_versions:
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-236j-rfx5-wq38/GHSA-236j-rfx5-wq38.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/opencart/opencart
+    reference_type:
+    reference_id:
+  - url: https://medium.com/@nowczj/sql-injection-exists-in-the-background-of-opencart-d41b5c58e99e
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-37823
+    reference_type:
+    reference_id:

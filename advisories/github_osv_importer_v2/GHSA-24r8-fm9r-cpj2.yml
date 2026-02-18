@@ -1,0 +1,76 @@
+advisory_id: GHSA-24r8-fm9r-cpj2
+datasource_id: github_osv_importer_v2/GHSA-24r8-fm9r-cpj2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-24r8-fm9r-cpj2/GHSA-24r8-fm9r-cpj2.json
+aliases:
+  - CVE-2019-16771
+summary: |
+  Low severity vulnerability that affects com.linecorp.armeria:armeria
+  ## Multiple timing attack vulnerabilities leading to the recovery of secrets based on the use of non-constant time compare function
+
+  ### Impact
+
+  String comparison method in multiple authentication validation in Armeria were known to be vulnerable to timing attacks. This vulnerability is caused by the insecure implementation of `equals` method from `java.lang.String`. While this attack is not practically possible, an attacker still has a potential to attack if the victim's server validates user by using `equals` method.
+
+  We would like to thank @chrsow for pointing out the issue.
+
+  ## Potentially vulnerable codes
+
+  https://github.com/line/armeria/blob/f0d870fde1088114070be31b67f7df0a21e835c6/core/src/main/java/com/linecorp/armeria/server/auth/OAuth2Token.java#L54
+  https://github.com/line/armeria/blob/f0d870fde1088114070be31b67f7df0a21e835c6/core/src/main/java/com/linecorp/armeria/server/auth/BasicToken.java#L64
+
+  ### Patches
+
+  There are two options to patch this issue.
+
+  1. Remove `equals` method; it has been exclusively used for test cases and was never used in any OSS projects that are using Armeria. (But it is worth noting that there are possibilities of closed projects authenticating users by utilizing `equals` method)
+
+  2. Use `MessageDigest.isEqual` to compare the credential instead.
+
+  ### Workarounds
+
+  1. Update to the latest version (TBD)
+
+  2-1. Users can prevent these vulnerabilities by modifying and implementing timing attack preventions by themselves.
+
+  2-2. Precisely speaking, it is possible to compare credentials by securely comparing them after calling methods to directly return the input (namely `Object. accessToken()`, `Object.username()` and `Object.password()`).
+
+  ### References
+  - https://cwe.mitre.org/data/definitions/208.html
+  - https://security.stackexchange.com/questions/111040/should-i-worry-about-remote-timing-attacks-on-string-comparison
+
+  ### Side Note
+
+  Since it is a theoretical attack, there is no PoC available from neither the vendor nor the security team.
+impacted_packages:
+  - purl: pkg:maven/com.linecorp.armeria/armeria
+    affected_versions: vers:maven/>=0.50.0|<0.97.0
+    fixed_versions: vers:maven/0.97.0
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-24r8-fm9r-cpj2/GHSA-24r8-fm9r-cpj2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-113
+references:
+  - url: https://github.com/advisories/GHSA-24r8-fm9r-cpj2
+    reference_type:
+    reference_id:
+  - url: https://github.com/line/armeria/commit/b597f7a865a527a84ee3d6937075cfbb4470ed20
+    reference_type:
+    reference_id:
+  - url: https://github.com/line/armeria/security/advisories/GHSA-24r8-fm9r-cpj2
+    reference_type:
+    reference_id:
+  - url: https://github.com/line/armeria/security/advisories/GHSA-35fr-h7jr-hh86
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16771
+    reference_type:
+    reference_id:

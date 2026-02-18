@@ -1,0 +1,85 @@
+advisory_id: GHSA-247x-2f9f-5wp7
+datasource_id: github_osv_importer_v2/GHSA-247x-2f9f-5wp7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-247x-2f9f-5wp7/GHSA-247x-2f9f-5wp7.json
+aliases:
+  - CVE-2022-23591
+summary: "Stack overflow in TensorFlow\n### Impact\nThe `GraphDef` format in TensorFlow does\
+  \ not allow self recursive functions. The runtime assumes that this invariant is satisfied.\
+  \ However, a `GraphDef` containing a fragment such as the following can be consumed when loading\
+  \ a `SavedModel`:\n\n```\n  library {\n    function {\n      signature {\n        name: \"\
+  SomeOp\"\n        description: \"Self recursive op\"\n      }\n      node_def {\n        name:\
+  \ \"1\"\n        op: \"SomeOp\"\n      }\n      node_def {\n        name: \"2\"\n        op:\
+  \ \"SomeOp\"\n      }\n    }\n  } \n```\n\nThis would result in a stack overflow during execution\
+  \ as resolving each `NodeDef` means resolving the function itself and its nodes.\n\n### Patches\n\
+  We have patched the issue in GitHub commit [448a16182065bd08a202d9057dd8ca541e67996c](https://github.com/tensorflow/tensorflow/commit/448a16182065bd08a202d9057dd8ca541e67996c).\n\
+  \nThe fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported\
+  \ range.\n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-247x-2f9f-5wp7/GHSA-247x-2f9f-5wp7.json
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-247x-2f9f-5wp7/GHSA-247x-2f9f-5wp7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-674
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-cpu/PYSEC-2022-100.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-gpu/PYSEC-2022-155.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/448a16182065bd08a202d9057dd8ca541e67996c
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-247x-2f9f-5wp7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23591
+    reference_type:
+    reference_id:
