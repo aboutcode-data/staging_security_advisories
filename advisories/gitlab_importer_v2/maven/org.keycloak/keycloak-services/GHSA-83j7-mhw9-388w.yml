@@ -1,0 +1,54 @@
+advisory_id: maven/org.keycloak/keycloak-services/GHSA-83j7-mhw9-388w
+datasource_id: gitlab_importer_v2/maven/org.keycloak/keycloak-services/GHSA-83j7-mhw9-388w
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.keycloak/keycloak-services/GHSA-83j7-mhw9-388w.yml
+aliases:
+  - GHSA-83j7-mhw9-388w
+summary: |
+  Duplicate Advisory: Keycloak Privilege Escalation Vulnerability in Admin Console (FGAPv2 Enabled)
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-27gp-8389-hm4w. This link is maintained to preserve external references.
+
+  ### Original Description
+  A flaw was found in the Keycloak identity and access management system when Fine-Grained Admin Permissions (FGAPv2) are enabled. An administrative user with the manage-users role can escalate their privileges to realm-admin due to improper privilege enforcement. This vulnerability allows unauthorized elevation of access rights, compromising the intended separation of administrative duties and posing a security risk to the realm.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<=26.3.1
+    fixed_versions: vers:maven/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.keycloak/keycloak-services/GHSA-83j7-mhw9-388w.yml
+weaknesses:
+  - CWE-269
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:12015
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:12016
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-7784
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2381861
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/issues/41137
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/41168
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-7784
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-83j7-mhw9-388w
+    reference_type:
+    reference_id: GHSA-83j7-mhw9-388w

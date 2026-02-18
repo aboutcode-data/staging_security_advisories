@@ -1,0 +1,54 @@
+advisory_id: maven/org.keycloak/keycloak-account-ui/GHSA-xmcw-mv9p-7pq2
+datasource_id: gitlab_importer_v2/maven/org.keycloak/keycloak-account-ui/GHSA-xmcw-mv9p-7pq2
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.keycloak/keycloak-account-ui/GHSA-xmcw-mv9p-7pq2.yml
+aliases:
+  - GHSA-xmcw-mv9p-7pq2
+summary: |
+  Duplicate Advisory: Keycloak error_description injection on error pages that can trigger phishing attacks
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-27gc-wj6x-9w55. This link is maintained to preserve external references.
+
+  ### Original Description
+  A flaw was found in Keycloak. Keycloak’s account console and other pages accept arbitrary text in the error_description query parameter. This text is directly rendered in error pages without validation or sanitization. While HTML encoding prevents XSS, an attacker can craft URLs with misleading messages (e.g., fake support phone numbers or URLs), which are displayed within the trusted Keycloak UI. This creates a phishing vector, potentially tricking users into contacting malicious actors.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-account-ui
+    affected_versions: vers:maven/<26.2.9|>=26.3.0|<26.3.4
+    fixed_versions: vers:maven/26.2.9|26.3.4
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.keycloak/keycloak-account-ui/GHSA-xmcw-mv9p-7pq2.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:16399
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:16400
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:19923
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:19925
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-10044
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2393551
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/42443
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-10044
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-xmcw-mv9p-7pq2
+    reference_type:
+    reference_id: GHSA-xmcw-mv9p-7pq2

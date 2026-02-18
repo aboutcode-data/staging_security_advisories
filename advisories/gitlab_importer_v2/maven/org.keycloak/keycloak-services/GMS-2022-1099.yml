@@ -1,0 +1,24 @@
+advisory_id: maven/org.keycloak/keycloak-services/GMS-2022-1099
+datasource_id: gitlab_importer_v2/maven/org.keycloak/keycloak-services/GMS-2022-1099
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.keycloak/keycloak-services/GMS-2022-1099.yml
+aliases:
+  - GHSA-mwm4-5qwr-g9pf
+  - GMS-2022-1099
+summary: |
+  Keycloak is vulnerable to IDN homograph attack
+  A flaw was found in keycloak, where IDN homograph attacks are possible. This flaw allows a malicious user to register a name that already exists and then tricking an admin to grant extra privileges. The highest threat from this vulnerability is to integrity.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<18.0.0
+    fixed_versions: vers:maven/18.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-mwm4-5qwr-g9pf
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mwm4-5qwr-g9pf
+    reference_type:
+    reference_id: GHSA-mwm4-5qwr-g9pf

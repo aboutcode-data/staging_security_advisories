@@ -1,0 +1,31 @@
+advisory_id: maven/org.openrefine/openrefine/GHSA-3pg4-qwc8-426r
+datasource_id: gitlab_importer_v2/maven/org.openrefine/openrefine/GHSA-3pg4-qwc8-426r
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.openrefine/openrefine/GHSA-3pg4-qwc8-426r.yml
+aliases:
+  - GHSA-3pg4-qwc8-426r
+summary: |
+  OpenRefine leaks Google API credentials in releases
+  OpenRefine releases contain Google API authentication keys ("client id" and "client secret") which can be extracted from released artifacts. For instance, download the package for OpenRefine 3.8.2 on linux. It contains the file `openrefine-3.8.2/webapp/extensions/gdata/module/MOD-INF/lib/openrefine-gdata.jar`, which can be extracted.
+  This archive then contains the file `com/google/refine/extension/gdata/GoogleAPIExtension.java`, which contains the following lines:
+impacted_packages:
+  - purl: pkg:maven/org.openrefine/openrefine
+    affected_versions: vers:maven/<3.8.3
+    fixed_versions: vers:maven/3.8.3
+severities: []
+weaknesses:
+  - CWE-522
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/OpenRefine/OpenRefine
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenRefine/OpenRefine/commit/07dd61e00bb7f472ddcb243631299fba95ad90dd
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenRefine/OpenRefine/security/advisories/GHSA-3pg4-qwc8-426r
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3pg4-qwc8-426r
+    reference_type:
+    reference_id: GHSA-3pg4-qwc8-426r

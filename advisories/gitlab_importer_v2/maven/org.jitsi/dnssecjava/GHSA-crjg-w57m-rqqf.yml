@@ -1,0 +1,44 @@
+advisory_id: maven/org.jitsi/dnssecjava/GHSA-crjg-w57m-rqqf
+datasource_id: gitlab_importer_v2/maven/org.jitsi/dnssecjava/GHSA-crjg-w57m-rqqf
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.jitsi/dnssecjava/GHSA-crjg-w57m-rqqf.yml
+aliases:
+  - GHSA-crjg-w57m-rqqf
+summary: |
+  DNSJava vulnerable to KeyTrap - Denial-of-Service Algorithmic Complexity Attacks
+  Users using the `ValidatingResolver` for DNSSEC validation can run into CPU exhaustion with specially crafted DNSSEC-signed zones.
+impacted_packages:
+  - purl: pkg:maven/org.jitsi/dnssecjava
+    affected_versions: vers:maven/<=2.0.0
+    fixed_versions: vers:maven/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.jitsi/dnssecjava/GHSA-crjg-w57m-rqqf.yml
+weaknesses:
+  - CWE-1035
+  - CWE-770
+  - CWE-937
+references:
+  - url: https://github.com/advisories/GHSA-8459-gg55-8qjj
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnsjava/dnsjava
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnsjava/dnsjava/commit/07ac36a11578cc1bce0cd8ddf2fe568f062aee78
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnsjava/dnsjava/commit/3ddc45ce8cdb5c2274e10b7401416f497694e1cf
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnsjava/dnsjava/security/advisories/GHSA-crjg-w57m-rqqf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-50387
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-crjg-w57m-rqqf
+    reference_type:
+    reference_id: GHSA-crjg-w57m-rqqf

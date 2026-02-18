@@ -1,0 +1,36 @@
+advisory_id: maven/org.opencastproject/opencast-common/GMS-2021-146
+datasource_id: gitlab_importer_v2/maven/org.opencastproject/opencast-common/GMS-2021-146
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.opencastproject/opencast-common/GMS-2021-146.yml
+aliases:
+  - GHSA-mf4f-j588-5xm8
+  - GMS-2021-146
+summary: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+  in org.opencastproject:opencast-common.
+impacted_packages:
+  - purl: pkg:maven/org.opencastproject/opencast-common
+    affected_versions: vers:maven/<9.10|>=10.0|<10.6
+    fixed_versions: vers:maven/9.10|10.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-78
+  - CWE-937
+references:
+  - url: https://docs.opencast.org/r/10.x/admin/#changelog/#opencast-106
+    reference_type:
+    reference_id:
+  - url: https://docs.opencast.org/r/9.x/admin/#changelog/#opencast-910
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast/pull/3253
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast/security/advisories/GHSA-mf4f-j588-5xm8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-44228
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mf4f-j588-5xm8
+    reference_type:
+    reference_id: GHSA-mf4f-j588-5xm8

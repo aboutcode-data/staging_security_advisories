@@ -1,0 +1,28 @@
+advisory_id: maven/org.keycloak/keycloak-parent/GMS-2022-8407
+datasource_id: gitlab_importer_v2/maven/org.keycloak/keycloak-parent/GMS-2022-8407
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.keycloak/keycloak-parent/GMS-2022-8407.yml
+aliases:
+  - CVE-2022-3782
+  - GHSA-g8q8-fggx-9r3q
+  - GMS-2022-8407
+summary: |
+  Keycloak vulnerable to path traversal via double URL encoding
+  Keycloak does not properly validate URLs included in a redirect. An attacker could construct a malicious request to bypass validation and access other URLs and potentially sensitive information within the domain, or possibly conduct further attacks.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-parent
+    affected_versions: vers:maven/<=20.0.0
+    fixed_versions: vers:maven/20.0.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/keycloak/keycloak/pull/15982/commits/1987c942f527b9f3bbf2a86ba71ba8ae0154ac37
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-g8q8-fggx-9r3q
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-g8q8-fggx-9r3q
+    reference_type:
+    reference_id: GHSA-g8q8-fggx-9r3q
