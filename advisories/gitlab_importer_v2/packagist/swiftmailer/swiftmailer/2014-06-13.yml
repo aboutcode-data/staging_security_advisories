@@ -1,0 +1,20 @@
+advisory_id: packagist/swiftmailer/swiftmailer/2014-06-13
+datasource_id: gitlab_importer_v2/packagist/swiftmailer/swiftmailer/2014-06-13
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/swiftmailer/swiftmailer/2014-06-13.yml
+aliases:
+  - '2014-06-13'
+summary: |
+  Code Injection
+  Sendmail transport arbitrary shell execution.
+impacted_packages:
+  - purl: pkg:composer/swiftmailer/swiftmailer
+    affected_versions: vers:composer/>=4.0.0|<4.99.99|>=5.0.0|<5.2.1
+    fixed_versions: vers:composer/5.2.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: http://blog.swiftmailer.org/post/88660759928/security-fix-swiftmailer-5-2-1-released
+    reference_type:
+    reference_id:

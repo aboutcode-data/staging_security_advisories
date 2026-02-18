@@ -1,0 +1,38 @@
+advisory_id: packagist/sensiolabs/connect/GHSA-6wqp-7g94-f69j
+datasource_id: gitlab_importer_v2/packagist/sensiolabs/connect/GHSA-6wqp-7g94-f69j
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/sensiolabs/connect/GHSA-6wqp-7g94-f69j.yml
+aliases:
+  - GHSA-6wqp-7g94-f69j
+summary: |
+  sensiolabs/connect has a Cross-Site Request Forgery Vulnerability
+  Versions of sensiolabs/connect prior to 4.2.3 are affected by a Cross-Site Request Forgery (CSRF) vulnerability due to the absence of the state parameter in OAuth requests. The lack of proper state parameter handling exposes applications to CSRF attacks during the OAuth authentication flow.
+impacted_packages:
+  - purl: pkg:composer/sensiolabs/connect
+    affected_versions: vers:composer/<4.2.3
+    fixed_versions: vers:composer/4.2.3
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/sensiolabs/connect/GHSA-6wqp-7g94-f69j.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-352
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/sensiolabs/connect/2018-06-08-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/sensiolabs/connect/pull/63
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfonycorp/connect
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfonycorp/connect/commit/9522aa774e8a0f8a61e709d828e6cc34c4c1e703
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-6wqp-7g94-f69j
+    reference_type:
+    reference_id: GHSA-6wqp-7g94-f69j

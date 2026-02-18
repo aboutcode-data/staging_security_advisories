@@ -1,0 +1,45 @@
+advisory_id: packagist/silverstripe/framework/GHSA-g4hp-pfvf-vm5w
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/GHSA-g4hp-pfvf-vm5w
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/GHSA-g4hp-pfvf-vm5w.yml
+aliases:
+  - GHSA-g4hp-pfvf-vm5w
+summary: |
+  SilverStripe Vulnerability on 'isDev', 'isTest' and 'flush' $_GET validation
+  When a secure token parameter is provided to a SilverStripe site (such as isDev or flush) an empty token parameter can be provided in order to bypass normal authentication parameters.
+
+  For instance, http://www.mysite.com/?isDev=1&isDevtoken will force a site to dev mode. Alternatively, "flush" could also be used in succession to cause excessive load on a victim site and risk denial of service.
+
+  The fix in this case is to ensure that empty tokens fail the validation check.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.0.0|<3.0.14|>=3.1.0|<3.1.13
+    fixed_versions: vers:composer/3.0.14|3.1.13
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/GHSA-g4hp-pfvf-vm5w.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-639
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/SS-2015-014-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/a978b891e13d22dddee7e0735a7032f13964447d
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/cb6717c3f85753bdc30087f280720c6d3f639ff3
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/software/download/security-releases/ss-2015-014
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-g4hp-pfvf-vm5w
+    reference_type:
+    reference_id: GHSA-g4hp-pfvf-vm5w

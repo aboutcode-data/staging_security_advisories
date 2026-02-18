@@ -1,0 +1,30 @@
+advisory_id: packagist/silverstripe/framework/GMS-2022-6859
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/GMS-2022-6859
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/GMS-2022-6859.yml
+aliases:
+  - CVE-2022-37429
+  - GHSA-wc6r-4ggc-79w5
+  - GMS-2022-6859
+summary: |
+  Stored XSS using HTMLEditor
+  A malicious content author could add a JavaScript payload to the href attribute of a link by splitting a javascript URL with white space characters.
+
+  An attacker must have access to the CMS to exploit this issue.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=4.0.0|<4.11.13
+    fixed_versions: vers:composer/4.11.13
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/CVE-2022-37429.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2022-37429
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wc6r-4ggc-79w5
+    reference_type:
+    reference_id: GHSA-wc6r-4ggc-79w5

@@ -1,0 +1,41 @@
+advisory_id: packagist/shopware/shopware/GHSA-q3g4-2vw9-xv27
+datasource_id: gitlab_importer_v2/packagist/shopware/shopware/GHSA-q3g4-2vw9-xv27
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/shopware/GHSA-q3g4-2vw9-xv27.yml
+aliases:
+  - GHSA-q3g4-2vw9-xv27
+summary: |
+  Shopware Remote Code Execution Vulnerability
+  Under certain circumstances, it’s possible to execute an unauthorized foreign code in Shopware. This is a critical security vulnerability that could affect the entire system. All Shopware versions including Shopware 5.2.14 are affected.
+impacted_packages:
+  - purl: pkg:composer/shopware/shopware
+    affected_versions: vers:composer/<1.0.8|>=4.0.0|<5.2.15
+    fixed_versions: vers:composer/1.0.8|5.2.15
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/shopware/GHSA-q3g4-2vw9-xv27.yml
+weaknesses:
+  - CWE-74
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://community.shopware.com/_detail_1989.html
+    reference_type:
+    reference_id:
+  - url: https://docs.shopware.com/en/shopware-5-en/security-updates/security-update-01-2017?category=shopware-5-en/security-updates
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/shopware/shopware/2017-01-24.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware5/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware5/shopware/commit/14299e9ee9f7d93f687b4ec838e0873afbc84fec
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-q3g4-2vw9-xv27
+    reference_type:
+    reference_id: GHSA-q3g4-2vw9-xv27

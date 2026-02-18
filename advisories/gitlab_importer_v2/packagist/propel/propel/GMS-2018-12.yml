@@ -1,0 +1,23 @@
+advisory_id: packagist/propel/propel/GMS-2018-12
+datasource_id: gitlab_importer_v2/packagist/propel/propel/GMS-2018-12
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/propel/propel/GMS-2018-12.yml
+aliases:
+  - GMS-2018-12
+summary: |
+  SQL injection with limit() on MySQL
+  The `limit()` query method is vulnerable to SQL injection with MySQL.
+impacted_packages:
+  - purl: pkg:composer/propel/propel
+    affected_versions: vers:composer/<2.0.0-alpha8
+    fixed_versions: vers:composer/2.0.0-alpha8
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/propelorm/Propel2/commit/4c309e3e5adaba077f54c0fab93c34995d7c9b3d
+    reference_type:
+    reference_id:
+  - url: https://github.com/propelorm/Propel2/issues/1463
+    reference_type:
+    reference_id:

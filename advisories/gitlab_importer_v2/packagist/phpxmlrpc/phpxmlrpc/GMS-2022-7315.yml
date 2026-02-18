@@ -1,0 +1,30 @@
+advisory_id: packagist/phpxmlrpc/phpxmlrpc/GMS-2022-7315
+datasource_id: gitlab_importer_v2/packagist/phpxmlrpc/phpxmlrpc/GMS-2022-7315
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/phpxmlrpc/phpxmlrpc/GMS-2022-7315.yml
+aliases:
+  - GHSA-3fgr-xjr6-xqm8
+  - GMS-2022-7315
+summary: |
+  code injection in phpxmlrpc/phpxmlrpc
+  code injection in `Wrapper::buildClientWrapperCode` via manipulation of the `$client` argument. It was possible to force the client to access local files or connect to undesired urls instead of the intended target server's url.
+impacted_packages:
+  - purl: pkg:composer/phpxmlrpc/phpxmlrpc
+    affected_versions: vers:composer/<4.9.0
+    fixed_versions: vers:composer/4.9.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/phpxmlrpc/phpxmlrpc/2022-11-28-2.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/gggeek/phpxmlrpc/issues/80
+    reference_type:
+    reference_id:
+  - url: https://github.com/gggeek/phpxmlrpc/releases/tag/4.9.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3fgr-xjr6-xqm8
+    reference_type:
+    reference_id: GHSA-3fgr-xjr6-xqm8

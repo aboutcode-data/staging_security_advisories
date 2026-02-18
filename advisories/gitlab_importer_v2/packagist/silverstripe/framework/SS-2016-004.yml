@@ -1,0 +1,23 @@
+advisory_id: packagist/silverstripe/framework/SS-2016-004
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/SS-2016-004
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/SS-2016-004.yml
+aliases:
+  - SS-2016-004
+summary: |
+  XSS in CMS Edit Page
+  Due to a lack of parameter sanitisation a carefully crafted URL could be used to inject arbitrary HTML into the CMS Edit page. An attacker could create a URL and share it with a site administrator to perform an attack.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<3.1.19-rc1|>=3.2.0-alpha|<3.2.4-rc1|>=3.3.0-alpha|<3.3.2-rc1
+    fixed_versions: vers:composer/3.1.19-rc1|3.1.19|3.2.4-rc1|3.2.4|3.3.2-rc1|3.3.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/a24c8260b1d048dc6a0836eb1be9a1ca2056e770
+    reference_type:
+    reference_id:
+  - url: http://www.silverstripe.org/download/security-releases/ss-2016-004
+    reference_type:
+    reference_id:

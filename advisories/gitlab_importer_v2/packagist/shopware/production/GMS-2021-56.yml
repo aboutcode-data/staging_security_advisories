@@ -1,0 +1,24 @@
+advisory_id: packagist/shopware/production/GMS-2021-56
+datasource_id: gitlab_importer_v2/packagist/shopware/production/GMS-2021-56
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/production/GMS-2021-56.yml
+aliases:
+  - GHSA-3pcr-4982-548m
+  - GMS-2021-56
+summary: |
+  Exposure of .env if project root is configured as web root in shopware/production
+  The .env and other sensitive files can be leaked if the project root and not `/public` is configured as the web root.
+impacted_packages:
+  - purl: pkg:composer/shopware/production
+    affected_versions: vers:composer/<=6.3.5+2
+    fixed_versions: vers:composer/6.3.5+3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/shopware/platform/security/advisories/GHSA-3pcr-4982-548m
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3pcr-4982-548m
+    reference_type:
+    reference_id: GHSA-3pcr-4982-548m

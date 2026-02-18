@@ -1,0 +1,36 @@
+advisory_id: packagist/shopware/core/GHSA-3cpp-fv95-mpr5
+datasource_id: gitlab_importer_v2/packagist/shopware/core/GHSA-3cpp-fv95-mpr5
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/core/GHSA-3cpp-fv95-mpr5.yml
+aliases:
+  - GHSA-3cpp-fv95-mpr5
+summary: |
+  Shopware vulnerable to Server-Side Request Forgery (SSRF) – order invoice
+  Server-Side Request Forgery (SSRF) is a vulnerability that enables a malicious actor to manipulate an application server into performing HTTP requests to arbitrary domains. SSRF is commonly exploited to make the server initiate requests to its internal systems or other services within the same network, which are typically not exposed to external users. In some cases, SSRF can also be used to target external systems. A successful SSRF attack can result in unauthorized actions or access to data within the
+  organization, the web application itself, or other backend systems the application communicates with. In worst-case scenario, a SSRF vulnerability can be exploited to execute malicious code on the server.
+impacted_packages:
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<6.6.10+7|>=6.7.0+0|<6.7.3+1
+    fixed_versions: vers:composer/6.6.10+7|6.7.3+1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/core/GHSA-3cpp-fv95-mpr5.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-918
+references:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/f32737b34798d4800b81c67efee17905380d2be4
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-3cpp-fv95-mpr5
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3cpp-fv95-mpr5
+    reference_type:
+    reference_id: GHSA-3cpp-fv95-mpr5

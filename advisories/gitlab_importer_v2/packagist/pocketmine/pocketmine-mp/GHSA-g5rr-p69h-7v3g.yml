@@ -1,0 +1,44 @@
+advisory_id: packagist/pocketmine/pocketmine-mp/GHSA-g5rr-p69h-7v3g
+datasource_id: gitlab_importer_v2/packagist/pocketmine/pocketmine-mp/GHSA-g5rr-p69h-7v3g
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/pocketmine/pocketmine-mp/GHSA-g5rr-p69h-7v3g.yml
+aliases:
+  - GHSA-g5rr-p69h-7v3g
+summary: |
+  Insufficient type validation in pocketmine/pocketmine-mp
+  When an inventory interaction is performed (e.g. moving an item around an inventory), the client sends a serialized version of the itemstack to the server, which the server then deserializes and compares against its own copy. If the copies don't match, the transaction is invalid.
+
+  This involves deserializing item NBT from the client, which allows for bogus data to be provided. Usually, this is harmless, but in this particular case, it could result in crashes on certain types of bad data (e.g. incorrect ListTag type provided for the `CanDestroy` tag).
+impacted_packages:
+  - purl: pkg:composer/pocketmine/pocketmine-mp
+    affected_versions: vers:composer/<4.2.9
+    fixed_versions: vers:composer/4.2.9
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/pocketmine/pocketmine-mp/GHSA-g5rr-p69h-7v3g.yml
+weaknesses:
+  - CWE-1287
+  - CWE-1035
+  - CWE-937
+  - CWE-20
+references:
+  - url: https://github.com/pmmp/PocketMine-MP
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/blob/4.2.9/changelogs/4.2.md#429
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/commit/5a98b08ee8dc8ff14862cd83d2e4af9d212fefc2
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/releases/tag/4.2.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/security/advisories/GHSA-g5rr-p69h-7v3g
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-g5rr-p69h-7v3g
+    reference_type:
+    reference_id: GHSA-g5rr-p69h-7v3g

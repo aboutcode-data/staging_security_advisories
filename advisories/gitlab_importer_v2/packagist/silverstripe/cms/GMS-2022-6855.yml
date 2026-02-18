@@ -1,0 +1,29 @@
+advisory_id: packagist/silverstripe/cms/GMS-2022-6855
+datasource_id: gitlab_importer_v2/packagist/silverstripe/cms/GMS-2022-6855
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/cms/GMS-2022-6855.yml
+aliases:
+  - CVE-2022-37421
+  - GHSA-pp74-g2q5-j4jf
+  - GMS-2022-6855
+summary: |
+  Stored XSS in custom meta tags
+  A malicious content author could create a custom meta tag and execute an arbitrary JavaScript payload. This would require convincing a legitimate user to access a page and enter a custom keyboard shortcut.
+  This requires CMS access to exploit.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/cms
+    affected_versions: vers:composer/>=4.0.0|<4.11.3
+    fixed_versions: vers:composer/4.11.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/cms/CVE-2022-37421.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2022-37421
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-pp74-g2q5-j4jf
+    reference_type:
+    reference_id: GHSA-pp74-g2q5-j4jf

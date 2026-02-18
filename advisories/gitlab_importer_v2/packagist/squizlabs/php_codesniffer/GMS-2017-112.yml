@@ -1,0 +1,20 @@
+advisory_id: packagist/squizlabs/php_codesniffer/GMS-2017-112
+datasource_id: gitlab_importer_v2/packagist/squizlabs/php_codesniffer/GMS-2017-112
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/squizlabs/php_codesniffer/GMS-2017-112.yml
+aliases:
+  - GMS-2017-112
+summary: |
+  Arbitrary shell execution
+  This release contains a fix for a security advisory related to the improper handling of shell commands. Uses of `shell_exec()` and `exec()` were not escaping filenames and configuration settings in most cases A properly crafted filename or configuration option would allow for arbitrary code execution when using some features.
+impacted_packages:
+  - purl: pkg:composer/squizlabs/php_codesniffer
+    affected_versions: vers:composer/<2.8.1|<3.0.0-RC4|>=3.0.0-a1
+    fixed_versions: vers:composer/2.8.1|3.0.0-RC4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/squizlabs/PHP_CodeSniffer/releases/tag/2.8.1
+    reference_type:
+    reference_id:

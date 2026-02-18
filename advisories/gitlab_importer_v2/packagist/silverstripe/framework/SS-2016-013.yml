@@ -1,0 +1,20 @@
+advisory_id: packagist/silverstripe/framework/SS-2016-013
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/SS-2016-013
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/SS-2016-013.yml
+aliases:
+  - SS-2016-013
+summary: |
+  Member.Name isn't escaped
+  The core template `framework/templates/Includes/GridField_print.ss` uses "Printed by $Member.Name". If the currently logged in members first name or surname contain XSS, this prints the raw HTML out, because `Member->getName()` just returns the raw `FirstName + Surname` as a string, which is injected directly.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<3.1.20-stable|>=3.2.0-alpha0|<3.2.5-stable|>=3.3.0-alpha0|<3.3.3-stable|>=3.4.0-alpha0|<3.4.1-stable
+    fixed_versions: vers:composer/3.1.20|3.2.5|3.3.3|3.4.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2016-013/
+    reference_type:
+    reference_id:

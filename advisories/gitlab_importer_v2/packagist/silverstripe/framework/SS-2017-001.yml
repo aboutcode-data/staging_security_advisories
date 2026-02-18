@@ -1,0 +1,23 @@
+advisory_id: packagist/silverstripe/framework/SS-2017-001
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/SS-2017-001
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/SS-2017-001.yml
+aliases:
+  - SS-2017-001
+summary: |
+  XSS In page name
+  SilverStripe is vulnerable to XSS via the page name. For instance, page name `"><svg/onload=alert(/xss/)>` will trigger an XSS alert.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<3.4.4-rc1|>=3.5.0-alpha0|<3.5.2-rc1
+    fixed_versions: vers:composer/3.4.4-rc1|3.5.2-rc1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/c6c6c13fc265aeedf5de7226b3cde39d185ba49d
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2017-001/
+    reference_type:
+    reference_id:

@@ -1,0 +1,20 @@
+advisory_id: packagist/silverstripe/cms/SS-2015-024
+datasource_id: gitlab_importer_v2/packagist/silverstripe/cms/SS-2015-024
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/cms/SS-2015-024.yml
+aliases:
+  - SS-2015-024
+summary: |
+  Queued jobs serialised data exposure
+  SavedJobData and SavedJobMessages contain php serialized data. There's no point showing these to a CMS Admin as they're not human readable. Worse, it might be insecure, as a malicious CMS Admin might be able to craft a payload thats dangerous to unserialize. This issue has been resolved by hiding this content, even from administrators.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/cms
+    affected_versions: vers:composer/<2.8.3
+    fixed_versions: vers:composer/3.0.10
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: http://www.silverstripe.org/download/security-releases/SS-2015-024
+    reference_type:
+    reference_id:

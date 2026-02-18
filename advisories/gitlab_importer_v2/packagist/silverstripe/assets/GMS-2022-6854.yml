@@ -1,0 +1,30 @@
+advisory_id: packagist/silverstripe/assets/GMS-2022-6854
+datasource_id: gitlab_importer_v2/packagist/silverstripe/assets/GMS-2022-6854
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/assets/GMS-2022-6854.yml
+aliases:
+  - CVE-2022-38147
+  - GHSA-vv3r-fxqp-vr3f
+  - GMS-2022-6854
+summary: |
+  XSS via uploaded gpx file
+  A malicious content author could upload a GPX file with a Javascript payload. The payload could then be executed by luring a legitimate user to view the file in a browser with support for GPX files. GPX is an XML-based format used to store GPS data.
+
+  By default, Silverstripe CMS will no longer allow GPX files to be uploaded to the assets area.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/assets
+    affected_versions: vers:composer/>=1.0.0|<1.11.1
+    fixed_versions: vers:composer/1.11.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/assets/CVE-2022-38147.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2022-38147
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-vv3r-fxqp-vr3f
+    reference_type:
+    reference_id: GHSA-vv3r-fxqp-vr3f

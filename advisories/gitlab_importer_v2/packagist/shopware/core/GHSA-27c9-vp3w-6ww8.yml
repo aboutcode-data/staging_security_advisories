@@ -1,0 +1,39 @@
+advisory_id: packagist/shopware/core/GHSA-27c9-vp3w-6ww8
+datasource_id: gitlab_importer_v2/packagist/shopware/core/GHSA-27c9-vp3w-6ww8
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/core/GHSA-27c9-vp3w-6ww8.yml
+aliases:
+  - GHSA-27c9-vp3w-6ww8
+summary: |
+  Shopware exposes sensitive user information via CSV export mapping
+  Sensitive information disclosure occurs when an application inadvertently displays sensitive information to its users. Depending on the context, websites can leak all kinds of information including:
+  • Data regarding other users, such as usernames and/or e-mail addresses
+  • Sensitive commercial data such as customer names
+  • Technical details about the website and/or the underlying infrastructure
+  Disclosing technical details, such as detailed version information, allows malicious actors to look for targeted vulnerabilities and/or misconfigurations in the application or in the underlying infrastructure. In addition, an application is more likely to be targeted by attacks that specifically target a particular version of the software used.
+impacted_packages:
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<6.6.10+7|>=6.7.0+0|<6.7.3+1
+    fixed_versions: vers:composer/6.6.10+7|6.7.3+1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/core/GHSA-27c9-vp3w-6ww8.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-212
+references:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/c2c98050aff7b90fe7232f6dac9b6b7143183083
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-27c9-vp3w-6ww8
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-27c9-vp3w-6ww8
+    reference_type:
+    reference_id: GHSA-27c9-vp3w-6ww8

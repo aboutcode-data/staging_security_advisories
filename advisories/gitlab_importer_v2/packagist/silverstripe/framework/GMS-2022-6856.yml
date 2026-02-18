@@ -1,0 +1,31 @@
+advisory_id: packagist/silverstripe/framework/GMS-2022-6856
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/GMS-2022-6856
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/GMS-2022-6856.yml
+aliases:
+  - CVE-2022-38724
+  - GHSA-9cx2-hj6m-fv58
+  - GMS-2022-6856
+summary: |
+  XSS in shortcodes
+  A malicious content author could add arbitrary attributes to HTML editor shortcodes which could be used to inject a JavaScript payload on the front end of the site. The shortcode providers that ship with Silverstripe CMS have been reviewed and attribute allow lists have been implemented where appropriate to negate this risk.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=4.0.0|<4.11.13
+    fixed_versions: vers:composer/4.11.13
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/assets/CVE-2022-38724.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/CVE-2022-38724.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2022-38724
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-9cx2-hj6m-fv58
+    reference_type:
+    reference_id: GHSA-9cx2-hj6m-fv58

@@ -1,0 +1,23 @@
+advisory_id: packagist/phpxmlrpc/extras/GMS-2017-330
+datasource_id: gitlab_importer_v2/packagist/phpxmlrpc/extras/GMS-2017-330
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/phpxmlrpc/extras/GMS-2017-330.yml
+aliases:
+  - GMS-2017-330
+summary: |
+  XSS in class documenting_xmlrpc_server
+  The `generateDocs` functions does not properly escape the GET parameter `methodName`.
+impacted_packages:
+  - purl: pkg:composer/phpxmlrpc/extras
+    affected_versions: vers:composer/<0.6.1
+    fixed_versions: vers:composer/0.6.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/gggeek/phpxmlrpc-extras/commit/65c336e3def9ce71b3e799104d3a6ad15668ddb0
+    reference_type:
+    reference_id:
+  - url: https://github.com/gggeek/phpxmlrpc-extras/releases/tag/0.6.1
+    reference_type:
+    reference_id:

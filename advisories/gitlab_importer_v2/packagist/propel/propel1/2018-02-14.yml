@@ -1,0 +1,20 @@
+advisory_id: packagist/propel/propel1/2018-02-14
+datasource_id: gitlab_importer_v2/packagist/propel/propel1/2018-02-14
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/propel/propel1/2018-02-14.yml
+aliases:
+  - '2018-02-14'
+summary: |
+  SQL Injection
+  SQL injection possible with `limit()` on MySQL.
+impacted_packages:
+  - purl: pkg:composer/propel/propel1
+    affected_versions: vers:composer/>=1.0.0|<=1.7.1
+    fixed_versions: vers:composer/1.7.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/propelorm/Propel/issues/1052
+    reference_type:
+    reference_id:

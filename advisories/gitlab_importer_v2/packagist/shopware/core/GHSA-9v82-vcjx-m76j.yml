@@ -1,0 +1,38 @@
+advisory_id: packagist/shopware/core/GHSA-9v82-vcjx-m76j
+datasource_id: gitlab_importer_v2/packagist/shopware/core/GHSA-9v82-vcjx-m76j
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/core/GHSA-9v82-vcjx-m76j.yml
+aliases:
+  - GHSA-9v82-vcjx-m76j
+summary: |
+  Shopware: Reflective Cross Site-Scripting (XSS) in CMS components
+  When an application uses input fields, it is important that user input is adequately filtered for malicious HTML and JavaScript characters. When adequate input validation is not applied, Cross-Site Scripting (XSS) vulnerabilities may arise. These allow malicious actors to inject malicious code into application pages. When a user visits the page, the code is executed in the user's web browser. This allows malicious actors to perform malicious actions in the name of that user. XSS can be divided into three variants: Persistent XSS, Reflective XSS and DOM-based XSS. In Reflective XSS, a malicious actor injects malicious JavaScript code into a URL. Every time the user visits this URL, the JavaScript code is executed in the user’s browser.
+impacted_packages:
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/>=6.7.0+0|<6.7.2+1
+    fixed_versions: vers:composer/6.7.2+1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/core/GHSA-9v82-vcjx-m76j.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/12fb537c5ebe009f2a0f58b9c24dbd2d6b4c508f
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v6.7.2.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-9v82-vcjx-m76j
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-9v82-vcjx-m76j
+    reference_type:
+    reference_id: GHSA-9v82-vcjx-m76j

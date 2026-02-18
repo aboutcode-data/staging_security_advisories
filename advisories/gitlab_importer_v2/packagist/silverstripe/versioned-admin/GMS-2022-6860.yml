@@ -1,0 +1,30 @@
+advisory_id: packagist/silverstripe/versioned-admin/GMS-2022-6860
+datasource_id: gitlab_importer_v2/packagist/silverstripe/versioned-admin/GMS-2022-6860
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/versioned-admin/GMS-2022-6860.yml
+aliases:
+  - CVE-2022-38145
+  - GHSA-66jf-xm2m-7m8r
+  - GMS-2022-6860
+summary: |
+  Stored XSS in Compare Mode
+  A malicious content author could add a Javascript payload to a page's meta description and get it executed in the versioned history compare view.
+
+  This vulnerability requires access to the CMS to be deployed. The attacker must then convince a privileged user to access the version history for that page.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/versioned-admin
+    affected_versions: vers:composer/>=1.0.0|<1.11.1
+    fixed_versions: vers:composer/1.11.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/versioned-admin/CVE-2022-38145.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2022-38145
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-66jf-xm2m-7m8r
+    reference_type:
+    reference_id: GHSA-66jf-xm2m-7m8r

@@ -1,0 +1,24 @@
+advisory_id: packagist/pocketmine/pocketmine-mp/GMS-2022-454
+datasource_id: gitlab_importer_v2/packagist/pocketmine/pocketmine-mp/GMS-2022-454
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/pocketmine/pocketmine-mp/GMS-2022-454.yml
+aliases:
+  - GHSA-fm35-jgg3-3grx
+  - GMS-2022-454
+summary: |
+  NaN/INF in serverbound movement packets can crash clients and servers
+  A malicious client may send a `MovePlayerPacket` to the server whose position or rotation contains NaN or INF. Since neither the server nor vanilla client handles this properly, a number of interesting side effects come into play.
+impacted_packages:
+  - purl: pkg:composer/pocketmine/pocketmine-mp
+    affected_versions: vers:composer/<=3.18.0
+    fixed_versions: vers:composer/3.18.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/pmmp/PocketMine-MP/security/advisories/GHSA-fm35-jgg3-3grx
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-fm35-jgg3-3grx
+    reference_type:
+    reference_id: GHSA-fm35-jgg3-3grx

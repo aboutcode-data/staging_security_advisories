@@ -1,0 +1,20 @@
+advisory_id: packagist/stormpath/sdk/2017-11-20
+datasource_id: gitlab_importer_v2/packagist/stormpath/sdk/2017-11-20
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/stormpath/sdk/2017-11-20.yml
+aliases:
+  - '2017-11-20'
+summary: |
+  Use of Insufficiently Random Values
+  Insecure Random Number Generator in stormpath.
+impacted_packages:
+  - purl: pkg:composer/stormpath/sdk
+    affected_versions: vers:composer/>=0.0.0|<9.9.99
+    fixed_versions: vers:composer/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/stormpath/stormpath-sdk-php/issues/132
+    reference_type:
+    reference_id:

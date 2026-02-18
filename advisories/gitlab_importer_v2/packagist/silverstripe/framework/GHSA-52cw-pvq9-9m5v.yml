@@ -1,0 +1,42 @@
+advisory_id: packagist/silverstripe/framework/GHSA-52cw-pvq9-9m5v
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/GHSA-52cw-pvq9-9m5v
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/GHSA-52cw-pvq9-9m5v.yml
+aliases:
+  - GHSA-52cw-pvq9-9m5v
+summary: |
+  Silverstripe uses TinyMCE which allows svg files linked in object tags
+  TinyMCE v6 has a configuration value `convert_unsafe_embeds` set to `false` which allows svg files containing javascript to be used in `<object>` or `<embed>` tags, which can be used as a vector for XSS attacks.
+
+  Note that `<embed>` tags are not allowed by default.
+
+  After patching the default value of `convert_unsafe_embeds` will be set to `true`. This means that `<object>` tags will be converted to iframes instead the next time the page is saved, which may break any pages that rely upon previously saved `<object>` tags. Developers can override this configuration if desired to revert to the original behaviour.
+
+  We reviewed the potential impact of this vulnerability within the context of Silverstripe CMS. We concluded this is a medium impact vulnerability given how TinyMCE is used by Silverstripe CMS.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<5.2.16
+    fixed_versions: vers:composer/5.2.16
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/GHSA-52cw-pvq9-9m5v.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+  - CWE-1395
+references:
+  - url: https://github.com/advisories/GHSA-5359-pvf2-pw78
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/security/advisories/GHSA-52cw-pvq9-9m5v
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-52cw-pvq9-9m5v
+    reference_type:
+    reference_id: GHSA-52cw-pvq9-9m5v

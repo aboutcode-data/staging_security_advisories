@@ -1,0 +1,20 @@
+advisory_id: packagist/silverstripe/framework/SS-2015-020
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/SS-2015-020
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/SS-2015-020.yml
+aliases:
+  - SS-2015-020
+summary: |
+  Privilege Escalation
+  A member with the permission EDIT_PERMISSIONS is able to re-assign themselves (or another member) to ADMIN level.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<3.1.14-stable
+    fixed_versions: vers:composer/3.1.14
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: http://www.silverstripe.org/software/download/security-releases/ss-2015-020/
+    reference_type:
+    reference_id:

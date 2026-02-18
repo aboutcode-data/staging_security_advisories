@@ -1,0 +1,23 @@
+advisory_id: packagist/silverstripe/framework/SS-2016-016
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/SS-2016-016
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/SS-2016-016.yml
+aliases:
+  - SS-2016-016
+summary: |
+  XSS In CMSSecurity BackURL
+  In follow up to SS-2016-001 there is yet a minor unresolved fix to incorrectly encoded URL.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<3.1.21|>=3.2.0-alpha0|<3.2.6|>=3.3.0-alpha0|<3.3.4|>=3.4.0-alpha0|<3.4.2
+    fixed_versions: vers:composer/3.1.21|3.2.6|3.3.4|3.4.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2016-001/
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2016-016/
+    reference_type:
+    reference_id:

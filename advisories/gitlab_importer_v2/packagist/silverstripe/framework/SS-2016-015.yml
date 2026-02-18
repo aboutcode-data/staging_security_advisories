@@ -1,0 +1,20 @@
+advisory_id: packagist/silverstripe/framework/SS-2016-015
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/SS-2016-015
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/SS-2016-015.yml
+aliases:
+  - SS-2016-015
+summary: |
+  XSS In OptionsetField and CheckboxSetField
+  List of key / value pairs assigned to `OptionsetField` or `CheckboxSetField` do not have a default casting assigned to them. The effect of this is a potential XSS vulnerability in lists where either key or value contain unescaped HTML.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<3.1.20-stable|>=3.2.0-alpha0|<3.2.5-stable|>=3.3.0-alpha0|<3.3.3-stable|>=3.4.0-alpha0|<3.4.1-stable
+    fixed_versions: vers:composer/3.1.20|3.2.5|3.3.3|3.4.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2016-015/
+    reference_type:
+    reference_id:

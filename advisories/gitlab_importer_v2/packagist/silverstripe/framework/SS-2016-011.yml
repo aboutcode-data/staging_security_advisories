@@ -1,0 +1,20 @@
+advisory_id: packagist/silverstripe/framework/SS-2016-011
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/SS-2016-011
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/SS-2016-011.yml
+aliases:
+  - SS-2016-011
+summary: |
+  ChangePasswordForm doesn't check Member::canLogIn()
+  After performing a password reset, `ChangePasswordForm::doChangePassword()` logs in the user without checking `Member::canLogIn()`. This presents an issue for sites that are using the extension point in that method to deny access to users (for example members that have not been “approved”, or members that have had their access revoked temporarily). It looks like `Member::canLogIn()` was originally designed to only be used for checking whether the user is locked out (due to too many incorrect login attempts) but has been opened up to other uses.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<3.1.20-stable|>=3.2.0-alpha0|<3.2.5-stable|>=3.3.0-alpha0|<3.3.3-stable|>=3.4.0-alpha0|<3.4.10-stable
+    fixed_versions: vers:composer/3.2.5|3.3.3|3.4.10-stable
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2016-011/
+    reference_type:
+    reference_id:

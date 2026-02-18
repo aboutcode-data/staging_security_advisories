@@ -1,0 +1,40 @@
+advisory_id: packagist/shopware/platform/GMS-2021-129
+datasource_id: gitlab_importer_v2/packagist/shopware/platform/GMS-2021-129
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/shopware/platform/GMS-2021-129.yml
+aliases:
+  - GHSA-wq3r-jwrq-xg6w
+  - GMS-2021-129
+summary: |
+  ### Impact
+  Canceling of orders not related to the logged-in user
+
+  ### Patches
+  We recommend updating to the current version 6.4.1.1. You can get the update to 6.4.1.1 regularly via the Auto-Updater or directly via the download overview.
+
+  https://www.shopware.com/en/download/#shopware-6
+
+  ### Workarounds
+  For older versions of 6.1, 6.2, and 6.3, corresponding security measures are also available via a plugin. For the full range of functions, we recommend updating to the latest Shopware version.
+
+  https://store.shopware.com/en/detail/index/sArticle/518463/number/Swag136939272659
+impacted_packages:
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.4.1+0
+    fixed_versions: vers:composer/6.4.1+1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/shopware/platform/security/advisories/GHSA-wq3r-jwrq-xg6w
+    reference_type:
+    reference_id:
+  - url: https://store.shopware.com/en/detail/index/sArticle/518463/number/Swag136939272659
+    reference_type:
+    reference_id:
+  - url: https://www.shopware.com/en/download/#shopware-6
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wq3r-jwrq-xg6w
+    reference_type:
+    reference_id: GHSA-wq3r-jwrq-xg6w

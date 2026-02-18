@@ -1,0 +1,32 @@
+advisory_id: packagist/silverstripe/framework/GHSA-c4c3-j73v-634r
+datasource_id: gitlab_importer_v2/packagist/silverstripe/framework/GHSA-c4c3-j73v-634r
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/silverstripe/framework/GHSA-c4c3-j73v-634r.yml
+aliases:
+  - GHSA-c4c3-j73v-634r
+summary: |
+  silverstripe/framework has Cross-site Scripting vulnerability in page history comparison
+  Authenticated user with page edit permission can craft HTML, which when rendered in a page history comparison can execute client scripts.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.4.0-rc1|<3.4.6|>=3.5.0-rc1|<3.5.4
+    fixed_versions: vers:composer/3.4.6|3.5.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/SS-2017-004-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/2b72c0f73b668ddf7c059319da915a6c08652278
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2017-004
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c4c3-j73v-634r
+    reference_type:
+    reference_id: GHSA-c4c3-j73v-634r

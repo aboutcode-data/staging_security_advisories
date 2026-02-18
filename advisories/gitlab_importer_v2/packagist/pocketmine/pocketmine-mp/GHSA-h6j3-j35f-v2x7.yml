@@ -1,0 +1,52 @@
+advisory_id: packagist/pocketmine/pocketmine-mp/GHSA-h6j3-j35f-v2x7
+datasource_id: gitlab_importer_v2/packagist/pocketmine/pocketmine-mp/GHSA-h6j3-j35f-v2x7
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/pocketmine/pocketmine-mp/GHSA-h6j3-j35f-v2x7.yml
+aliases:
+  - GHSA-h6j3-j35f-v2x7
+summary: |
+  PocketMine-MP server crash with certain invalid JSON payloads in `LoginPacket` due to dependency vulnerability (3rd time)
+  ### Impact
+  An attacker could crash the server by sending malformed JWT JSON in LoginPacket due to a security vulnerability in [netresearch/jsonmapper](https://github.com/cweiske/JsonMapper), due to attempting to construct objects from scalar types by default without any validation, with unexpected results that caused PocketMine-MP to crash.
+
+  Due to the relatively high number of security issues arising from this specific dependency, the team is exploring options to replace it.
+
+  ### Patches
+  In the meantime, the issue was fixed by pmmp/netresearch-jsonmapper@b96a209f9e8b76b899a0d0918493cd87eb3c02a7 and 6872661fd03649cc7a8762c41c16e9ee5a4de1c9.
+
+  ### Workarounds
+  Detecting the malicious data that triggers this issue is of rather high difficulty, so it's not likely that a plugin would be able to easily remediate this.
+
+  ### References
+  https://github.com/cweiske/jsonmapper/issues/226
+impacted_packages:
+  - purl: pkg:composer/pocketmine/pocketmine-mp
+    affected_versions: vers:composer/<5.11.1
+    fixed_versions: vers:composer/5.11.1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/pocketmine/pocketmine-mp/GHSA-h6j3-j35f-v2x7.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/cweiske/jsonmapper/issues/226
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/netresearch-jsonmapper/commit/b96a209f9e8b76b899a0d0918493cd87eb3c02a7
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/commit/6872661fd03649cc7a8762c41c16e9ee5a4de1c9
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/security/advisories/GHSA-h6j3-j35f-v2x7
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-h6j3-j35f-v2x7
+    reference_type:
+    reference_id: GHSA-h6j3-j35f-v2x7
