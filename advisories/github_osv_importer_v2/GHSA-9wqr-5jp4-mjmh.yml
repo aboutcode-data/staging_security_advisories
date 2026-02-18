@@ -1,0 +1,38 @@
+advisory_id: GHSA-9wqr-5jp4-mjmh
+datasource_id: github_osv_importer_v2/GHSA-9wqr-5jp4-mjmh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-9wqr-5jp4-mjmh/GHSA-9wqr-5jp4-mjmh.json
+aliases:
+  - CVE-2023-30253
+summary: |
+  Dolibarr vulnerable to remote code execution via uppercase manipulation
+  Dolibarr before 17.0.1 allows remote code execution by an authenticated user via an uppercase manipulation: <?PHP instead of <?php in injected data.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<17.0.1
+    fixed_versions: vers:composer/17.0.1
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-9wqr-5jp4-mjmh/GHSA-9wqr-5jp4-mjmh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-30253
+    reference_type:
+    reference_id:
+  - url: https://www.swascan.com/blog
+    reference_type:
+    reference_id:
+  - url: https://www.swascan.com/security-advisory-dolibarr-17-0-0
+    reference_type:
+    reference_id:

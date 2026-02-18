@@ -1,0 +1,55 @@
+advisory_id: GHSA-c87f-fq5g-63r2
+datasource_id: github_osv_importer_v2/GHSA-c87f-fq5g-63r2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-c87f-fq5g-63r2/GHSA-c87f-fq5g-63r2.json
+aliases:
+  - CVE-2021-42053
+summary: |
+  Cross-site scripting in Unicorn framework
+  The Unicorn framework through 0.35.3 for Django allows XSS via component.name.
+impacted_packages:
+  - purl: pkg:pypi/django-unicorn
+    affected_versions: vers:pypi/<0.36.0
+    fixed_versions: vers:pypi/0.36.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-c87f-fq5g-63r2/GHSA-c87f-fq5g-63r2.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-c87f-fq5g-63r2/GHSA-c87f-fq5g-63r2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/164442/django-unicorn-0.35.3-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/adamghill/django-unicorn
+    reference_type:
+    reference_id:
+  - url: https://github.com/adamghill/django-unicorn/commit/aa5b9835d946bd9893ef02e556859e3ea62cc5e2
+    reference_type:
+    reference_id:
+  - url: https://github.com/adamghill/django-unicorn/compare/0.35.3...0.36.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/adamghill/django-unicorn/pull/288
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c87f-fq5g-63r2
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/django-unicorn/PYSEC-2021-357.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-42053
+    reference_type:
+    reference_id:

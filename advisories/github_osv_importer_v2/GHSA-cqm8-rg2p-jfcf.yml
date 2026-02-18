@@ -1,0 +1,41 @@
+advisory_id: GHSA-cqm8-rg2p-jfcf
+datasource_id: github_osv_importer_v2/GHSA-cqm8-rg2p-jfcf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-cqm8-rg2p-jfcf/GHSA-cqm8-rg2p-jfcf.json
+aliases:
+  - CVE-2025-5731
+summary: |
+  Infinispan CLI vulnerable to Generation of Error Message Containing Sensitive Information
+  A flaw was found in Infinispan CLI. A sensitive password, decoded from a Base64-encoded Kubernetes secret, is processed in plaintext and included in a command string that may expose the data in an error message when a command is not found.
+impacted_packages:
+  - purl: pkg:maven/org.infinispan/infinispan-cli-client
+    affected_versions: vers:maven/<=16.0.0.Dev01
+    fixed_versions:
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-cqm8-rg2p-jfcf/GHSA-cqm8-rg2p-jfcf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-209
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:10130
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-5731
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2370429
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-5731
+    reference_type:
+    reference_id:

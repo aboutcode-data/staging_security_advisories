@@ -1,0 +1,44 @@
+advisory_id: GHSA-c5r5-7pfh-6qg6
+datasource_id: github_osv_importer_v2/GHSA-c5r5-7pfh-6qg6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/02/GHSA-c5r5-7pfh-6qg6/GHSA-c5r5-7pfh-6qg6.json
+aliases:
+  - CVE-2019-10780
+summary: |
+  BibTeX-Ruby vulnerable to OS command injection
+  BibTeX-ruby before 5.1.0 allows shell command injection due to unsanitized user input being passed directly to the built-in Ruby `Kernel.open` method through BibTeX.open.
+impacted_packages:
+  - purl: pkg:gem/bibtex-ruby
+    affected_versions: vers:gem/<=5.0.1
+    fixed_versions: vers:gem/5.1.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/02/GHSA-c5r5-7pfh-6qg6/GHSA-c5r5-7pfh-6qg6.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/advisories/GHSA-c5r5-7pfh-6qg6
+    reference_type:
+    reference_id:
+  - url: https://github.com/inukshuk/bibtex-ruby
+    reference_type:
+    reference_id:
+  - url: https://github.com/inukshuk/bibtex-ruby/commit/14406f4460f4e1ecabd25ca94f809b3ea7c5fb11
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/bibtex-ruby/CVE-2019-10780.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10780
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-RUBY-BIBTEXRUBY-542602
+    reference_type:
+    reference_id:

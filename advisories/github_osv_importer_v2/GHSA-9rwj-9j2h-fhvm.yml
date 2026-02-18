@@ -1,0 +1,38 @@
+advisory_id: GHSA-9rwj-9j2h-fhvm
+datasource_id: github_osv_importer_v2/GHSA-9rwj-9j2h-fhvm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-9rwj-9j2h-fhvm/GHSA-9rwj-9j2h-fhvm.json
+aliases:
+  - CVE-2022-23458
+summary: |
+  Toast UI Grid vulnerable to Cross-site Scripting
+  Toast UI Grid is a component to display and edit data. Versions prior to 4.21.3 are vulnerable to cross-site scripting attacks when pasting specially crafted content into editable cells. This issue was fixed in version 4.21.3. There are no known workarounds.
+impacted_packages:
+  - purl: pkg:npm/tui-grid
+    affected_versions: vers:npm/<4.21.3
+    fixed_versions: vers:npm/4.21.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-9rwj-9j2h-fhvm/GHSA-9rwj-9j2h-fhvm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/nhn/tui.grid
+    reference_type:
+    reference_id:
+  - url: https://github.com/nhn/tui.grid/commit/e9db5968675ae113c07efc091cce210f2b26854f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23458
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2022-029_nhn_tui_grid
+    reference_type:
+    reference_id:

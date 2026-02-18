@@ -1,0 +1,46 @@
+advisory_id: GHSA-c7hr-j4mj-j2w6
+datasource_id: github_osv_importer_v2/GHSA-c7hr-j4mj-j2w6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-c7hr-j4mj-j2w6/GHSA-c7hr-j4mj-j2w6.json
+aliases:
+  - CVE-2015-9235
+summary: |
+  Verification Bypass in jsonwebtoken
+  Versions 4.2.1 and earlier of `jsonwebtoken` are affected by a verification bypass vulnerability. This is a result of weak validation of the JWT algorithm type, occuring when an attacker is allowed to arbitrarily specify the JWT algorithm.
+
+
+
+
+  ## Recommendation
+
+  Update to version 4.2.2 or later.
+impacted_packages:
+  - purl: pkg:npm/jsonwebtoken
+    affected_versions: vers:npm/<4.2.2
+    fixed_versions: vers:npm/4.2.2
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c7hr-j4mj-j2w6
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/node-jsonwebtoken/commit/1bb584bc382295eeb7ee8c4452a673a77a68b687
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-9235
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/17
+    reference_type:
+    reference_id:
+  - url: https://www.timmclean.net/2015/02/25/jwt-alg-none.html
+    reference_type:
+    reference_id:

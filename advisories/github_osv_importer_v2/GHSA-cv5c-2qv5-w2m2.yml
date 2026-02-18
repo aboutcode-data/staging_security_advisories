@@ -1,0 +1,39 @@
+advisory_id: GHSA-cv5c-2qv5-w2m2
+datasource_id: github_osv_importer_v2/GHSA-cv5c-2qv5-w2m2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-cv5c-2qv5-w2m2/GHSA-cv5c-2qv5-w2m2.json
+aliases: []
+summary: |
+  Passbolt Api Remote code execution
+  Passbolt provides a way for system administrators to generate a PGP key for the server during installation. The wizard requests a username, an e-mail address and an optional comment. No escaping or verification is done by Passbolt, effectively allowing a user to inject bash code.
+
+  The impact is very high, but the probability is very low given that this vulnerability can only be exploited during Passbolt’s installation stage.
+impacted_packages:
+  - purl: pkg:composer/passbolt/passbolt_api
+    affected_versions: vers:composer/<2.7.0
+    fixed_versions: vers:composer/2.7.0
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-cv5c-2qv5-w2m2/GHSA-cv5c-2qv5-w2m2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/passbolt/passbolt_api/2019-02-11-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/passbolt/passbolt_api
+    reference_type:
+    reference_id:
+  - url: https://github.com/passbolt/passbolt_api/commit/be84671676ebac43d49e326a14f1afe259777611
+    reference_type:
+    reference_id:
+  - url: https://www.passbolt.com/incidents/20190211_multiple_vulnerabilities
+    reference_type:
+    reference_id:

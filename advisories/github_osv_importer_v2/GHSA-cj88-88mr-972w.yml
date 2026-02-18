@@ -1,0 +1,59 @@
+advisory_id: GHSA-cj88-88mr-972w
+datasource_id: github_osv_importer_v2/GHSA-cj88-88mr-972w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-cj88-88mr-972w/GHSA-cj88-88mr-972w.json
+aliases:
+  - CVE-2021-35065
+summary: |
+  glob-parent 6.0.0 vulnerable to Regular Expression Denial of Service
+  glob-parent 6.0.0 is vulnerable to Regular Expression Denial of Service (ReDoS). This issue is fixed in version 6.0.1.
+
+  This vulnerability is separate from [GHSA-ww39-953v-wcq6](https://github.com/advisories/GHSA-ww39-953v-wcq6).
+impacted_packages:
+  - purl: pkg:npm/glob-parent
+    affected_versions: vers:npm/6.0.0
+    fixed_versions: vers:npm/6.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-cj88-88mr-972w/GHSA-cj88-88mr-972w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-1333
+references:
+  - url: https://github.com/gulpjs/glob-parent
+    reference_type:
+    reference_id:
+  - url: https://github.com/gulpjs/glob-parent/commit/32f6d52663b7addac38d0dff570d8127edf03f47
+    reference_type:
+    reference_id:
+  - url: https://github.com/gulpjs/glob-parent/commit/3e9f04a3b4349db7e1962d87c9a7398cda51f339
+    reference_type:
+    reference_id:
+  - url: https://github.com/gulpjs/glob-parent/pull/49
+    reference_type:
+    reference_id:
+  - url: https://github.com/gulpjs/glob-parent/releases/tag/v6.0.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/opensearch-project/OpenSearch-Dashboards/issues/1103
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-35065
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20230214-0010
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-GLOBPARENT-1314294
+    reference_type:
+    reference_id:
+  - url: https://www.mend.io/vulnerability-database/CVE-2021-35065
+    reference_type:
+    reference_id:

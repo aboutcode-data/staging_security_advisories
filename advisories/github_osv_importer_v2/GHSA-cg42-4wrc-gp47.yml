@@ -1,0 +1,32 @@
+advisory_id: GHSA-cg42-4wrc-gp47
+datasource_id: github_osv_importer_v2/GHSA-cg42-4wrc-gp47
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-cg42-4wrc-gp47/GHSA-cg42-4wrc-gp47.json
+aliases:
+  - CVE-2020-7673
+summary: |
+  Code Injection in node-extend
+  node-extend through 0.2.0 is vulnerable to Arbitrary Code Execution. User input provided to the argument `A` of `extend` function`(A,B,as,isAargs)` located within `lib/extend.js` is executed by the `eval` function, resulting in code execution.
+impacted_packages:
+  - purl: pkg:npm/node-extend
+    affected_versions: vers:npm/<=0.2.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-cg42-4wrc-gp47/GHSA-cg42-4wrc-gp47.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7673
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-NODEEXTEND-571491
+    reference_type:
+    reference_id:

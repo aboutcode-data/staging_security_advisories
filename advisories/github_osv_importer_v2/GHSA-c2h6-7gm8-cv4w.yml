@@ -1,0 +1,47 @@
+advisory_id: GHSA-c2h6-7gm8-cv4w
+datasource_id: github_osv_importer_v2/GHSA-c2h6-7gm8-cv4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/04/GHSA-c2h6-7gm8-cv4w/GHSA-c2h6-7gm8-cv4w.json
+aliases:
+  - CVE-2020-5497
+summary: |
+  XSS in MITREid Connect
+  The OpenID Connect reference implementation for MITREid Connect through 1.3.3 allows XSS due to userInfoJson being included in the page unsanitized. This is related to header.tag. The issue can be exploited to execute arbitrary JavaScript.
+impacted_packages:
+  - purl: pkg:maven/org.mitre/openid-connect-server
+    affected_versions: vers:maven/<=1.3.3
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/04/GHSA-c2h6-7gm8-cv4w/GHSA-c2h6-7gm8-cv4w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/156574/MITREid-1.3.3-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2020/Feb/25
+    reference_type:
+    reference_id:
+  - url: https://github.com/mitreid-connect/OpenID-Connect-Java-Spring-Server/issues/1521
+    reference_type:
+    reference_id:
+  - url: https://github.com/mitreid-connect/OpenID-Connect-Java-Spring-Server/pull/1526
+    reference_type:
+    reference_id:
+  - url: https://github.com/mitreid-connect/OpenID-Connect-Java-Spring-Server/pull/1527
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-5497
+    reference_type:
+    reference_id:
+  - url: https://www.securitymetrics.com/blog/MITREid-Connect-cross-site-scripting-CVE-2020-5497
+    reference_type:
+    reference_id:

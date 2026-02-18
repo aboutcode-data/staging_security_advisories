@@ -1,0 +1,64 @@
+advisory_id: GHSA-cmwx-9m2h-x7v4
+datasource_id: github_osv_importer_v2/GHSA-cmwx-9m2h-x7v4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-cmwx-9m2h-x7v4/GHSA-cmwx-9m2h-x7v4.json
+aliases:
+  - CVE-2016-8614
+summary: |
+  Ansible apt_key module does not properly verify key fingerprint
+  A flaw was found in Ansible before version 2.2.0.0. The `apt_key` module does not properly verify key fingerprints, allowing remote adversary to create an OpenPGP key which matches the short key ID and inject this key instead of the correct key.
+impacted_packages:
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/<2.2.0.0
+    fixed_versions: vers:pypi/2.2.0.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-cmwx-9m2h-x7v4/GHSA-cmwx-9m2h-x7v4.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-cmwx-9m2h-x7v4/GHSA-cmwx-9m2h-x7v4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-358
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-8614
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cmwx-9m2h-x7v4
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible-modules-core/commit/1182d1f0b76d56f3667e27987a10b9ec8f03357d
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible-modules-core/commit/66d47c8149d84e52f64b7c4d1f340d45dca94d9c
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible-modules-core/issues/5237
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible-modules-core/pull/5353
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible-modules-core/pull/5357
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/ansible/PYSEC-2018-37.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-8614
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200227214450/https://www.securityfocus.com/bid/94108
+    reference_type:
+    reference_id:

@@ -1,0 +1,67 @@
+advisory_id: GHSA-ch3r-j5x3-6q2m
+datasource_id: github_osv_importer_v2/GHSA-ch3r-j5x3-6q2m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-ch3r-j5x3-6q2m/GHSA-ch3r-j5x3-6q2m.json
+aliases:
+  - CVE-2023-30547
+summary: |
+  vm2 Sandbox Escape vulnerability
+  There exists a vulnerability in exception sanitization of vm2 for versions up to 3.9.16, allowing attackers to raise an unsanitized host exception inside `handleException()` which can be used to escape the sandbox and run arbitrary code in host context.
+
+  ### Impact
+  A threat actor can bypass the sandbox protections to gain remote code execution rights on the host running the sandbox.
+
+  ### Patches
+  This vulnerability was patched in the release of version `3.9.17` of `vm2`.
+
+  ### Workarounds
+  None.
+
+  ### References
+  PoC - https://gist.github.com/leesh3288/381b230b04936dd4d74aaf90cc8bb244
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+
+  - Open an issue in [VM2](https://github.com/patriksimek/vm2)
+
+  Thanks to [Xion](https://twitter.com/0x10n) (SeungHyun Lee) of [KAIST Hacking Lab](https://kaist-hacking.github.io/) for disclosing this vulnerability.
+impacted_packages:
+  - purl: pkg:npm/vm2
+    affected_versions: vers:npm/<3.9.17
+    fixed_versions: vers:npm/3.9.17
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-ch3r-j5x3-6q2m/GHSA-ch3r-j5x3-6q2m.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://gist.github.com/leesh3288/381b230b04936dd4d74aaf90cc8bb244
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/commit/4b22e87b102d97d45d112a0931dba1aef7eea049
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/commit/f3db4dee4d76b19869df05ba7880d638a880edd5
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/releases/tag/3.9.17
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/security/advisories/GHSA-ch3r-j5x3-6q2m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-30547
+    reference_type:
+    reference_id:

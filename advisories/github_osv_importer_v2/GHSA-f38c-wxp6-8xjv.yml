@@ -1,0 +1,41 @@
+advisory_id: GHSA-f38c-wxp6-8xjv
+datasource_id: github_osv_importer_v2/GHSA-f38c-wxp6-8xjv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f38c-wxp6-8xjv/GHSA-f38c-wxp6-8xjv.json
+aliases:
+  - CVE-2020-29604
+summary: |
+  MantisBT Missing Authorization access check in bug_actiongroup.php
+  An issue was discovered in MantisBT before 2.24.4. A missing access check in bug_actiongroup.php allows an attacker (with rights to create new issues) to use the COPY group action to create a clone, including all bugnotes and attachments, of any private issue (i.e., one having Private view status, or belonging to a private Project) via the bug_arr[] parameter. This provides full access to potentially confidential information.
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/<2.24.4
+    fixed_versions: vers:composer/2.24.4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f38c-wxp6-8xjv/GHSA-f38c-wxp6-8xjv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+references:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/commit/b2da7352b0ad31fa5f925eaacb4b2b96a6cec8e8
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=27357
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=27728
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-29604
+    reference_type:
+    reference_id:

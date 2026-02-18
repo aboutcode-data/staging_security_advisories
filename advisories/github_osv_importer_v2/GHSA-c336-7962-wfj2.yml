@@ -1,0 +1,54 @@
+advisory_id: GHSA-c336-7962-wfj2
+datasource_id: github_osv_importer_v2/GHSA-c336-7962-wfj2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-c336-7962-wfj2/GHSA-c336-7962-wfj2.json
+aliases:
+  - CVE-2026-23528
+summary: |
+  Dask Distributed is Vulnerable to Remote Code Execution via Jupyter Proxy and Dashboard
+  ### Impact
+  When [Jupyter Lab](https://jupyterlab.readthedocs.io/en/latest/), [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) and [Dask distributed](https://github.com/dask/distributed) are all run together it is possible to craft a URL which will result in code being executed by Jupyter due to a cross-side-scripting (XSS) bug in the Dask dashboard.
+
+  It is possible for attackers to craft a phishing URL that assumes Jupyter Lab and Dask may be running on localhost and using default ports. If a user clicks on the malicious link it will open an error page in the Dask Dashboard via the Jupyter Lab proxy which will cause code to be executed by the default Jupyter Python kernel.
+
+  In order for a user to be impacted they must be running Jupyter Lab locally on the default port (with the [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy)) and a Dask distributed cluster on the default port. Then they would need to click the link which would execute the malicious code.
+
+  ### Patches
+  This has been fixed in the `2026.1.0` release. All users should upgrade to this version.
+
+  ### Mitigations
+  There are no known workarounds for this bug. The only complete solution is to upgrade to a newer release of Dask. However, there are a few things you could do to reduce your risk.
+
+  It is possible to avoid code execution via Jupyter by uninstalling the [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) and accessing the Dask dashboard directly at it's URL. However, it is still possible for an attacker to craft a URL that executes JavaScript in the user's browser in the Dask dashboard. Which is still a moderate vulnerability. Therefore we recommend all users upgrade to the latest Dask release.
+
+  Another potential mitigation is to ensure both Jupyter and the Dask dashboard are running on non-standard ports. While this doesn't resolve the problem it reduces the chance of this being exploited. If an attacker knew which ports you were using they could still craft a malicious URL, but it would require a more targeted attack.
+impacted_packages:
+  - purl: pkg:pypi/distributed
+    affected_versions: vers:pypi/<2026.1.0
+    fixed_versions: vers:pypi/2026.1.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-c336-7962-wfj2/GHSA-c336-7962-wfj2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-250
+  - CWE-79
+references:
+  - url: https://github.com/dask/distributed
+    reference_type:
+    reference_id:
+  - url: https://github.com/dask/distributed/commit/ab72092a8a938923c2bb51a2cd14ca26614827fa
+    reference_type:
+    reference_id:
+  - url: https://github.com/dask/distributed/security/advisories/GHSA-c336-7962-wfj2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-23528
+    reference_type:
+    reference_id:

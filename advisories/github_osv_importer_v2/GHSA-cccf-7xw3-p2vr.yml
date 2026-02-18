@@ -1,0 +1,35 @@
+advisory_id: GHSA-cccf-7xw3-p2vr
+datasource_id: github_osv_importer_v2/GHSA-cccf-7xw3-p2vr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-cccf-7xw3-p2vr/GHSA-cccf-7xw3-p2vr.json
+aliases:
+  - CVE-2020-10719
+summary: |
+  HTTP Request Smuggling in Undertow
+  A flaw was found in Undertow in versions before 2.1.1.Final, regarding the processing of invalid HTTP requests with large chunk sizes. This flaw allows an attacker to take advantage of HTTP request smuggling.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<=2.1.0.Final
+    fixed_versions: vers:maven/2.1.1.Final
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-cccf-7xw3-p2vr/GHSA-cccf-7xw3-p2vr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10719
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-10719
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220210-0014
+    reference_type:
+    reference_id:

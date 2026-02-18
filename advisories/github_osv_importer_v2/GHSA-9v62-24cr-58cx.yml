@@ -1,0 +1,39 @@
+advisory_id: GHSA-9v62-24cr-58cx
+datasource_id: github_osv_importer_v2/GHSA-9v62-24cr-58cx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-9v62-24cr-58cx/GHSA-9v62-24cr-58cx.json
+aliases: []
+summary: |
+  Denial of Service in node-sass
+  Affected versions of `node-sass` are vulnerable to Denial of Service (DoS). Crafted objects passed to the `renderSync` function may trigger C++ assertions in `CustomImporterBridge::get_importer_entry` and `CustomImporterBridge::post_process_return_value` that crash the Node process. This may allow attackers to crash the system's running Node process and lead to Denial of Service.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.13.1 or later
+impacted_packages:
+  - purl: pkg:npm/node-sass
+    affected_versions: vers:npm/>=3.3.0|<4.13.1
+    fixed_versions: vers:npm/4.13.1
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-9v62-24cr-58cx/GHSA-9v62-24cr-58cx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/sass/node-sass
+    reference_type:
+    reference_id:
+  - url: https://github.com/sass/node-sass/commit/338fd7a14d3b8bd374a382336df16f9c6792b884
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/961
+    reference_type:
+    reference_id:

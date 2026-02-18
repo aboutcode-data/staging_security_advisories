@@ -1,0 +1,34 @@
+advisory_id: GHSA-crfx-5phg-hmw9
+datasource_id: github_osv_importer_v2/GHSA-crfx-5phg-hmw9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-crfx-5phg-hmw9/GHSA-crfx-5phg-hmw9.json
+aliases: []
+summary: |
+  Cross-Site Scripting in ids-enterprise
+  Versions of `ids-enterprise` prior to 4.18.2 are vulnerable to Cross-Site Scripting (XSS). Script tags in the `soho-autocomplete` component are not properly encoded and may allow attackers to execute arbitrary JavaScript.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.18.2 or later
+impacted_packages:
+  - purl: pkg:npm/ids-enterprise
+    affected_versions: vers:npm/<4.18.2
+    fixed_versions: vers:npm/4.18.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/infor-design/enterprise/commit/ce7b335bb614a6720867abf5b8eb351deb13aed1
+    reference_type:
+    reference_id:
+  - url: https://github.com/infor-design/enterprise-ng/issues/502
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/955
+    reference_type:
+    reference_id:

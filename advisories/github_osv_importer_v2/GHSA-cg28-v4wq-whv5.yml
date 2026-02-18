@@ -1,0 +1,62 @@
+advisory_id: GHSA-cg28-v4wq-whv5
+datasource_id: github_osv_importer_v2/GHSA-cg28-v4wq-whv5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cg28-v4wq-whv5/GHSA-cg28-v4wq-whv5.json
+aliases:
+  - CVE-2024-36610
+summary: |
+  Withdrawn Advisory: Symfony's VarDumper vulnerable to unsafe deserialization
+  ## Withdrawn Advisory
+  This advisory has been withdrawn because the report is not part of a valid vulnerability. This link is maintained to preserve external references. For more information, see advisory-database/pull/5048.
+
+  ## Original Description
+  A deserialization vulnerability exists in the Stub class of the VarDumper module in Symfony. The vulnerability stems from deficiencies in the original implementation when handling properties with null or uninitialized values. An attacker could construct specific serialized data and use this vulnerability to execute unauthorized code.
+impacted_packages:
+  - purl: pkg:composer/symfony/var-dumper
+    affected_versions: vers:composer/<6.4.4
+    fixed_versions: vers:composer/6.4.4
+  - purl: pkg:composer/symfony/var-dumper
+    affected_versions: vers:composer/>=7.0.0|<7.0.4
+    fixed_versions: vers:composer/7.0.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cg28-v4wq-whv5/GHSA-cg28-v4wq-whv5.json
+  - score: '8.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cg28-v4wq-whv5/GHSA-cg28-v4wq-whv5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://gist.github.com/1047524396/24e93f2905850235e42ad7db6e878bd5
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/pull/5046
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/pull/5048
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/blob/v7.0.3/src/Symfony/Component/VarDumper/Cloner/Stub.php#L53
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/3ffd495bb3cc4d2e24e35b2d83c5b909cab7e259
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/issues/59077#issuecomment-2513935018
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-36610
+    reference_type:
+    reference_id:

@@ -1,0 +1,56 @@
+advisory_id: GHSA-cxrx-q234-m22m
+datasource_id: github_osv_importer_v2/GHSA-cxrx-q234-m22m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-cxrx-q234-m22m/GHSA-cxrx-q234-m22m.json
+aliases:
+  - CVE-2024-12397
+summary: |
+  io.quarkus.http/quarkus-http-core: Quarkus HTTP Cookie Smuggling
+  A flaw was found in Quarkus-HTTP, which incorrectly parses cookies with certain value-delimiting characters in incoming requests. This issue could allow an attacker to construct a cookie value to exfiltrate HttpOnly cookie values or spoof arbitrary additional cookie values, leading to unauthorized data access or modification. The main threat from this flaw impacts data confidentiality and integrity.
+impacted_packages:
+  - purl: pkg:maven/io.quarkus.http/quarkus-http-core
+    affected_versions: vers:maven/<5.3.4
+    fixed_versions: vers:maven/5.3.4
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-cxrx-q234-m22m/GHSA-cxrx-q234-m22m.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:0900
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:1082
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:3018
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:8761
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-12397
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2331298
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus-http
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus-http/commit/cfc99d80fce2e3a3dbf06972e648e79e925a7ae7
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus-http/pull/170
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-12397
+    reference_type:
+    reference_id:

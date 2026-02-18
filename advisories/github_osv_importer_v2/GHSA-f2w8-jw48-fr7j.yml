@@ -1,0 +1,74 @@
+advisory_id: GHSA-f2w8-jw48-fr7j
+datasource_id: github_osv_importer_v2/GHSA-f2w8-jw48-fr7j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-f2w8-jw48-fr7j/GHSA-f2w8-jw48-fr7j.json
+aliases:
+  - CVE-2022-41897
+summary: "`FractionalMaxPoolGrad` Heap out of bounds read\n### Impact\nIf [`FractionMaxPoolGrad`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/fractional_max_pool_op.cc)\
+  \ is given outsize inputs `row_pooling_sequence` and `col_pooling_sequence`, TensorFlow will\
+  \ crash.\n\n```python\nimport tensorflow as tf\ntf.raw_ops.FractionMaxPoolGrad(\n\torig_input\
+  \ = [[[[1, 1, 1, 1, 1]]]],\n    orig_output = [[[[1, 1, 1]]]],\n    out_backprop = [[[[3],\
+  \ [3], [6]]]],\n    row_pooling_sequence = [-0x4000000, 1, 1], \n    col_pooling_sequence\
+  \ = [-0x4000000, 1, 1], \n    overlapping = False\n )\n```\n\n### Patches\nWe have patched\
+  \ the issue in GitHub commit [d71090c3e5ca325bdf4b02eb236cfb3ee823e927](https://github.com/tensorflow/tensorflow/commit/d71090c3e5ca325bdf4b02eb236cfb3ee823e927).\n\
+  \nThe fix will be included in TensorFlow 2.11. We will also cherrypick this commit on TensorFlow\
+  \ 2.10.1, 2.9.3, and TensorFlow 2.8.4, as these are also affected and still in supported range.\n\
+  \n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions.\n\n\n### Attribution\nThis vulnerability has been reported by Vul AI."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-f2w8-jw48-fr7j/GHSA-f2w8-jw48-fr7j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-125
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/fractional_max_pool_op.cc
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/d71090c3e5ca325bdf4b02eb236cfb3ee823e927
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-f2w8-jw48-fr7j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-41897
+    reference_type:
+    reference_id:

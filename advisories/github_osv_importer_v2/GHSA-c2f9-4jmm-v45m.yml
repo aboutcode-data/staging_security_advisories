@@ -1,0 +1,58 @@
+advisory_id: GHSA-c2f9-4jmm-v45m
+datasource_id: github_osv_importer_v2/GHSA-c2f9-4jmm-v45m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-c2f9-4jmm-v45m/GHSA-c2f9-4jmm-v45m.json
+aliases:
+  - CVE-2024-27917
+summary: |
+  Shopware's session is persistent in Cache for 404 pages
+  ### Impact
+
+  The Symfony Session Handler, pop's the Session Cookie and assign it to the Response. Since Shopware 6.5.8.0 the 404 pages, are cached, to improve the performance of 404 pages. So the cached Response, contains a Session Cookie when the Browser accessing the 404 page, has no cookies yet. The Symfony Session Handler is in use, when no explicit Session configuration has been done.
+  When Redis is in use for Sessions using the PHP Redis extension, this exploiting code is not used.
+
+  ### Patches
+  Update to Shopware version 6.5.8.7
+
+  ### Workarounds
+  Using Redis for Sessions, as this does not trigger the exploit code. Example configuration for Redis
+
+  ```ini
+  # php.ini
+  session.save_handler = redis
+  session.save_path = "tcp://127.0.0.1:6379"
+  ```
+
+  ## Consequences
+
+  As an guest browser session has been cached on a 404 page, every missing image or directly reaching a 404 page will logout the customer or clear his cart.
+impacted_packages:
+  - purl: pkg:composer/shopware/storefront
+    affected_versions: vers:composer/>=6.5.8+0|<6.5.8+7
+    fixed_versions: vers:composer/6.5.8+7
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/>=6.5.8+0|<6.5.8+7
+    fixed_versions: vers:composer/6.5.8+7
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-524
+references:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/7d9cb03225efca5f97e69b800d8747598dd15ce3
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v6.5.8.7
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-c2f9-4jmm-v45m
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/storefront/commit/3477e4a425d3c54b4bfae82d703fe3838dc21d3e
+    reference_type:
+    reference_id:

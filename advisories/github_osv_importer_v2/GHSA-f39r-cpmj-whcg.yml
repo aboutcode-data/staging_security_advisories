@@ -1,0 +1,38 @@
+advisory_id: GHSA-f39r-cpmj-whcg
+datasource_id: github_osv_importer_v2/GHSA-f39r-cpmj-whcg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-f39r-cpmj-whcg/GHSA-f39r-cpmj-whcg.json
+aliases:
+  - CVE-2021-23376
+summary: |
+  Command Injection in ffmpegdotjs
+  This affects all versions of package ffmpegdotjs. If attacker-controlled user input is given to the trimvideo function, it is possible for an attacker to execute arbitrary commands. This is due to use of the child_process exec function without input sanitization.
+impacted_packages:
+  - purl: pkg:npm/ffmpegdotjs
+    affected_versions: vers:npm/<=0.0.4
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-f39r-cpmj-whcg/GHSA-f39r-cpmj-whcg.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/TRomesh/ffmpegdotjs
+    reference_type:
+    reference_id:
+  - url: https://github.com/TRomesh/ffmpegdotjs/blob/b7395daf0bdcb81218340427eb7073cdd28462af/index.js#23L219
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23376
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-FFMPEGDOTJS-1078542
+    reference_type:
+    reference_id:

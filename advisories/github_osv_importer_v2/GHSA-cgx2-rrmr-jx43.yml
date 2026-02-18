@@ -1,0 +1,44 @@
+advisory_id: GHSA-cgx2-rrmr-jx43
+datasource_id: github_osv_importer_v2/GHSA-cgx2-rrmr-jx43
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-cgx2-rrmr-jx43/GHSA-cgx2-rrmr-jx43.json
+aliases:
+  - CVE-2023-42780
+summary: |
+  Apache Airflow vulnerable to sensitive information exposure when users list warnings for all DAGs
+  Apache Airflow, versions prior to 2.7.2, contains a security vulnerability that allows authenticated users of Airflow to list warnings for all DAGs, even if the user had no permission to see those DAGs. It would reveal the dag_ids and the stack-traces of import errors for those DAGs with import errors. Users of Apache Airflow are advised to upgrade to version 2.7.2 or newer to mitigate the risk associated with this vulnerability.
+impacted_packages:
+  - purl: pkg:pypi/apache-airflow
+    affected_versions: vers:pypi/<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-cgx2-rrmr-jx43/GHSA-cgx2-rrmr-jx43.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/apache/airflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/airflow/commit/cf4eb3fb9b5cf4a8369b890e39523d4c05eed161
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/airflow/pull/34355
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/apache-airflow/PYSEC-2023-202.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/h5tvsvov8j55wojt5sojdprs05oby34d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-42780
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-9v3w-m552-m6ff
+datasource_id: github_osv_importer_v2/GHSA-9v3w-m552-m6ff
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9v3w-m552-m6ff/GHSA-9v3w-m552-m6ff.json
+aliases:
+  - CVE-2017-7251
+summary: |
+  Pi Cross-site Scripting vulnerability
+  A Cross-Site Scripting (XSS) was discovered in pi-engine/pi 2.5.0. The vulnerability exists due to insufficient filtration of user-supplied data (preview) passed to the `pi-develop/www/script/editor/markitup/preview/markdown.php` URL. An attacker could execute arbitrary HTML and script code in a browser in the context of the vulnerable website.
+impacted_packages:
+  - purl: pkg:composer/pi/pi
+    affected_versions: vers:composer/<=2.5.0
+    fixed_versions: vers:composer/2.6.0-alpha1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9v3w-m552-m6ff/GHSA-9v3w-m552-m6ff.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pi-engine/pi
+    reference_type:
+    reference_id:
+  - url: https://github.com/pi-engine/pi/commit/557cd05b21b4d7fe422f90adcfa0c6e3bea06153
+    reference_type:
+    reference_id:
+  - url: https://github.com/pi-engine/pi/issues/1523
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-7251
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124010656/https://www.securityfocus.com/bid/97061
+    reference_type:
+    reference_id:

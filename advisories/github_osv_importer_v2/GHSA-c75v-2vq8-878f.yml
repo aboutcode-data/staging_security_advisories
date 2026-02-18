@@ -1,0 +1,56 @@
+advisory_id: GHSA-c75v-2vq8-878f
+datasource_id: github_osv_importer_v2/GHSA-c75v-2vq8-878f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-c75v-2vq8-878f/GHSA-c75v-2vq8-878f.json
+aliases:
+  - CVE-2021-4231
+summary: |
+  Angular vulnerable to Cross-site Scripting
+  A vulnerability was found in Angular up to 11.0.4/11.1.0-next.2. It has been classified as problematic. Affected is the handling of comments. The manipulation leads to cross site scripting. It is possible to launch the attack remotely but it might require an authentication first. Upgrading to version 10.2.5, 11.0.5 or 11.1.0-next.3 is advised to to address this issue.
+impacted_packages:
+  - purl: pkg:npm/%40angular/core
+    affected_versions: vers:npm/>=11.0.0|<11.0.5
+    fixed_versions: vers:npm/11.0.5
+  - purl: pkg:npm/%40angular/core
+    affected_versions: vers:npm/<=11.1.0-next.2
+    fixed_versions: vers:npm/11.1.0-next.3
+  - purl: pkg:npm/%40angular/core
+    affected_versions: vers:npm/<10.2.5
+    fixed_versions: vers:npm/10.2.5
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-c75v-2vq8-878f/GHSA-c75v-2vq8-878f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/angular/angular
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular/commit/0aa220bc0000fc4d1651ec388975bbf5baa1da36
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular/commit/47d9b6d72dab9d60c96bc1c3604219f6385649ea
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular/commit/ba8da742e3b243e8f43d4c63aa842b44e14f2b09
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular/issues/40136
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-4231
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-ANGULARCORE-1070902
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.181356
+    reference_type:
+    reference_id:

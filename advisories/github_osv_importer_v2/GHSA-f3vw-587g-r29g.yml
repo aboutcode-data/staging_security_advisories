@@ -1,0 +1,25 @@
+advisory_id: GHSA-f3vw-587g-r29g
+datasource_id: github_osv_importer_v2/GHSA-f3vw-587g-r29g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-f3vw-587g-r29g/GHSA-f3vw-587g-r29g.json
+aliases: []
+summary: "Path Traversal in sapper\nVersions of `sapper` prior to 0.27.11 are vulnerable to\
+  \ Path Traversal. It is possible to access sensitive files on the server through HTTP requests\
+  \ containing URL-encoded `../`.  \n\nYou may test a `sapper` application running in prod mode\
+  \ with `curl -vvv http://localhost:3000/client/750af05c3a69ddc6073a/%252e%252e/%252e%252e/%252e%252e/%252e%252e/%252e%252e/%252e%252e/%252e%252e/%252e%252e/etc/passwd`.\n\
+  \n\n## Recommendation\n\nUpgrade to version 0.27.11 or later."
+impacted_packages:
+  - purl: pkg:npm/sapper
+    affected_versions: vers:npm/<0.27.11
+    fixed_versions: vers:npm/0.27.11
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://www.npmjs.com/advisories/1494
+    reference_type:
+    reference_id:

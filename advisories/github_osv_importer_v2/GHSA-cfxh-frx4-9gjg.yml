@@ -1,0 +1,30 @@
+advisory_id: GHSA-cfxh-frx4-9gjg
+datasource_id: github_osv_importer_v2/GHSA-cfxh-frx4-9gjg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-cfxh-frx4-9gjg/GHSA-cfxh-frx4-9gjg.json
+aliases: []
+summary: "Cross-site Scripting in @spscommerce/ds-react\n### Impact\nXSS, anyone using the SPS\
+  \ Select with options prop populated from user input is impacted. If these options are stored,\
+  \ then it could have been a stored XSS. \n\n### Patches\nThe code has been patched for version\
+  \ 7 of woodland. Users should upgrade to 7.17.4 or higher\n\n### Workarounds\nThis is not\
+  \ recommended. If you are not upgrading then you would need to sanitize your options yourself\
+  \ (including those currently stored in databases). This is not recommended.\n\n### References\n\
+  https://github.com/SPSCommerce/woodland/blob/c49e999f97f3c0b56502859f4de1e8c6666dd74d/packages/ds-react/src/option-list/SpsOptionList.tsx#L559"
+impacted_packages:
+  - purl: pkg:npm/%40spscommerce/ds-react
+    affected_versions: vers:npm/>=4.12.2|<7.17.4
+    fixed_versions: vers:npm/7.17.4
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/SPSCommerce/woodland
+    reference_type:
+    reference_id:
+  - url: https://github.com/SPSCommerce/woodland/security/advisories/GHSA-cfxh-frx4-9gjg
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: GHSA-c8m9-mh38-97p9
+datasource_id: github_osv_importer_v2/GHSA-c8m9-mh38-97p9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-c8m9-mh38-97p9/GHSA-c8m9-mh38-97p9.json
+aliases: []
+summary: |
+  XML external entity (XXE) vulnerability
+  An XML eXternal Entity (XXE) Injection was discovered in pmml-model before version 1.4.3. A remote attacker can exploit this vulnerability by sending a request to submit malicious External Entity references within the embedded XML metadata to the target system.
+impacted_packages:
+  - purl: pkg:maven/org.jpmml/pmml-model
+    affected_versions: vers:maven/<1.4.3
+    fixed_versions: vers:maven/1.4.3
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/jpmml/jpmml-model/commit/494f821ee55e6b1f2949c78781c1d0fa8517867e#diff-322a783849e2119b37122dd21b0f48f2
+    reference_type:
+    reference_id:
+  - url: https://www.whitesourcesoftware.com/vulnerability-database/WS-2019-0065
+    reference_type:
+    reference_id:

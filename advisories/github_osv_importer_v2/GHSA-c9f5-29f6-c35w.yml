@@ -1,0 +1,52 @@
+advisory_id: GHSA-c9f5-29f6-c35w
+datasource_id: github_osv_importer_v2/GHSA-c9f5-29f6-c35w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-c9f5-29f6-c35w/GHSA-c9f5-29f6-c35w.json
+aliases:
+  - CVE-2024-21549
+summary: |
+  Browsershot Improper Input Validation vulnerability
+  Versions of the package spatie/browsershot before 5.0.3 are vulnerable to Improper Input Validation due to improper URL validation through the setUrl method. An attacker can exploit this vulnerability by utilizing view-source:file://, which allows for arbitrary file reading on a local file.
+
+  **Note:**
+
+  This is a bypass of the fix for [CVE-2024-21544](https://security.snyk.io/vuln/SNYK-PHP-SPATIEBROWSERSHOT-8496745).
+impacted_packages:
+  - purl: pkg:composer/spatie/browsershot
+    affected_versions: vers:composer/<5.0.3
+    fixed_versions: vers:composer/5.0.3
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-c9f5-29f6-c35w/GHSA-c9f5-29f6-c35w.json
+  - score: '6.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-c9f5-29f6-c35w/GHSA-c9f5-29f6-c35w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-20
+  - CWE-125
+references:
+  - url: https://github.com/spatie/browsershot
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/browsershot/commit/f791ce0ae8dd99367dbfa30588ee31e1196e1728
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/browsershot/discussions/906
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21549
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-PHP-SPATIEBROWSERSHOT-8533023
+    reference_type:
+    reference_id:

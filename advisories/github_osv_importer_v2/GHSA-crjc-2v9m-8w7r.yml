@@ -1,0 +1,47 @@
+advisory_id: GHSA-crjc-2v9m-8w7r
+datasource_id: github_osv_importer_v2/GHSA-crjc-2v9m-8w7r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-crjc-2v9m-8w7r/GHSA-crjc-2v9m-8w7r.json
+aliases:
+  - CVE-2021-21026
+summary: |
+  Magento improper authorization vulnerability in the integrations module
+  Magento versions 2.4.1 (and earlier), 2.4.0-p1 (and earlier) and 2.3.6 (and earlier) are affected by an improper authorization vulnerability in the integrations module. Successful exploitation could lead to unauthorized access to restricted resources by an unauthenticated attacker. Access to the admin console is required for successful exploitation.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<2.3.6-p1
+    fixed_versions: vers:composer/2.3.6-p1
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.0|<2.4.2
+    fixed_versions: vers:composer/2.4.2
+  - purl: pkg:composer/magento/project-community-edition
+    affected_versions: vers:composer/<=2.0.2
+    fixed_versions:
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-crjc-2v9m-8w7r/GHSA-crjc-2v9m-8w7r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://github.com/magento/magento2/commit/a2eb7e29ea92a8bbc86c3b6b81b59d8533088497
+    reference_type:
+    reference_id:
+  - url: https://github.com/magento/magento2/commit/a349e022c9ae070e7da262021f9ef182105aa00b
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb21-08.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-21026
+    reference_type:
+    reference_id:

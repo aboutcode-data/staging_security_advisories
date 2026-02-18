@@ -1,0 +1,24 @@
+advisory_id: GHSA-crf7-fvjx-863q
+datasource_id: github_osv_importer_v2/GHSA-crf7-fvjx-863q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-crf7-fvjx-863q/GHSA-crf7-fvjx-863q.json
+aliases: []
+summary: "Path Traversal in zero\nVersions of `zero` prior to 1.0.6 are vulnerable to Path Traversal.\
+  \  Due to insufficient input sanitization in URLs, attackers can access server files by using\
+  \ relative paths when fetching files. \n\n\n## Recommendation\n\nUpgrade to version 1.0.6\
+  \ or later."
+impacted_packages:
+  - purl: pkg:npm/zero
+    affected_versions: vers:npm/<1.0.6
+    fixed_versions: vers:npm/1.0.6
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://www.npmjs.com/advisories/1025
+    reference_type:
+    reference_id:

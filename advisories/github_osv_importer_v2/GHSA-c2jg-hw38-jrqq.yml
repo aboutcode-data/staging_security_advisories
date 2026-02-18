@@ -1,0 +1,100 @@
+advisory_id: GHSA-c2jg-hw38-jrqq
+datasource_id: github_osv_importer_v2/GHSA-c2jg-hw38-jrqq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-c2jg-hw38-jrqq/GHSA-c2jg-hw38-jrqq.json
+aliases:
+  - CVE-2022-24801
+summary: |
+  Inconsistent Interpretation of HTTP Requests in twisted.web
+  The Twisted Web HTTP 1.1 server, located in the `twisted.web.http` module, parsed several HTTP request constructs more leniently than permitted by RFC 7230:
+
+  1. The Content-Length header value could have a `+` or `-` prefix.
+  2. Illegal characters were permitted in chunked extensions, such as the LF (`\n`) character.
+  3. Chunk lengths, which are expressed in hexadecimal format, could have a prefix of `0x`.
+  4. HTTP headers were stripped of all leading and trailing ASCII whitespace, rather than only space and HTAB (`\t`).
+
+  This non-conformant parsing can lead to desync if requests pass through multiple HTTP parsers, potentially resulting in HTTP request smuggling.
+
+  ### Impact
+
+  You may be affected if:
+
+  1. You use Twisted Web's HTTP 1.1 server and/or proxy
+  2. You also pass requests through a different HTTP server and/or proxy
+
+  The specifics of the other HTTP parser matter. The original report notes that some versions of Apache Traffic Server and HAProxy have been vulnerable in the past. HTTP request smuggling may be a serious concern if you use a proxy to perform request validation or access control.
+
+  The Twisted Web client is not affected. The HTTP 2.0 server uses a different parser, so it is not affected.
+
+  ### Patches
+
+  The issue has been addressed in Twisted 22.4.0rc1 and later.
+
+  ### Workarounds
+
+  Other than upgrading Twisted, you could:
+
+  * Ensure any vulnerabilities in upstream proxies have been addressed, such as by upgrading them
+  * Filter malformed requests by other means, such as configuration of an upstream proxy
+
+  ### Credits
+
+  This issue was initially reported by [Zhang Zeyu](https://github.com/zeyu2001).
+impacted_packages:
+  - purl: pkg:pypi/twisted
+    affected_versions: vers:pypi/<22.4.0
+    fixed_versions: vers:pypi/22.4.0
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-c2jg-hw38-jrqq/GHSA-c2jg-hw38-jrqq.json
+  - score: '9.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-c2jg-hw38-jrqq/GHSA-c2jg-hw38-jrqq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/twisted/PYSEC-2022-195.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/commit/592217e951363d60e9cd99c5bbfd23d4615043ac
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/releases/tag/twisted-22.4.0rc1
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/security/advisories/GHSA-c2jg-hw38-jrqq
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/05/msg00003.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/7U6KYDTOLPICAVSR34G2WRYLFBD2YW5K
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/GLKHA6WREIVAMBQD7KKWYHPHGGNKMAG6
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7U6KYDTOLPICAVSR34G2WRYLFBD2YW5K
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GLKHA6WREIVAMBQD7KKWYHPHGGNKMAG6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24801
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

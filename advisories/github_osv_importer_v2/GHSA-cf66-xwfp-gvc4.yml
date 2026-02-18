@@ -1,0 +1,51 @@
+advisory_id: GHSA-cf66-xwfp-gvc4
+datasource_id: github_osv_importer_v2/GHSA-cf66-xwfp-gvc4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/01/GHSA-cf66-xwfp-gvc4/GHSA-cf66-xwfp-gvc4.json
+aliases:
+  - CVE-2018-14732
+summary: |
+  Missing Origin Validation in webpack-dev-server
+  Versions of `webpack-dev-server` before 3.1.10 are missing origin validation on the websocket server. This vulnerability allows a remote attacker to steal a developer's source code because the origin of requests to the websocket server that is used for Hot Module Replacement (HMR) are not validated.
+
+
+  ## Recommendation
+  For `webpack-dev-server` update to version 3.1.11 or later.
+impacted_packages:
+  - purl: pkg:npm/webpack-dev-server
+    affected_versions: vers:npm/<3.1.11
+    fixed_versions: vers:npm/3.1.11
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/01/GHSA-cf66-xwfp-gvc4/GHSA-cf66-xwfp-gvc4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/webpack/webpack-dev-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/webpack/webpack-dev-server/blob/master/CHANGELOG.md#3111-2018-12-21
+    reference_type:
+    reference_id:
+  - url: https://github.com/webpack/webpack-dev-server/commit/f18e5adf123221a1015be63e1ca2491ca45b8d10
+    reference_type:
+    reference_id:
+  - url: https://github.com/webpack/webpack-dev-server/issues/1445
+    reference_type:
+    reference_id:
+  - url: https://github.com/webpack/webpack-dev-server/issues/1620
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-14732
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/725
+    reference_type:
+    reference_id:

@@ -1,0 +1,22 @@
+advisory_id: GHSA-9xgp-hfw7-73rq
+datasource_id: github_osv_importer_v2/GHSA-9xgp-hfw7-73rq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-9xgp-hfw7-73rq/GHSA-9xgp-hfw7-73rq.json
+aliases: []
+summary: |
+  Authentication Weakness in keystone
+  There is an authentication weakness vulnerability in keystone before version 0.3.16.  Due to a bug in the the default sign in functionality, incomplete email addresses could be matched. A correct password is still required to complete sign in.
+impacted_packages:
+  - purl: pkg:npm/keystone
+    affected_versions: vers:npm/<0.3.16
+    fixed_versions: vers:npm/0.3.16
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/keystonejs/keystone/issues/1085
+    reference_type:
+    reference_id:

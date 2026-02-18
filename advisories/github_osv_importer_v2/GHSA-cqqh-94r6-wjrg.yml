@@ -1,0 +1,72 @@
+advisory_id: GHSA-cqqh-94r6-wjrg
+datasource_id: github_osv_importer_v2/GHSA-cqqh-94r6-wjrg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cqqh-94r6-wjrg/GHSA-cqqh-94r6-wjrg.json
+aliases:
+  - CVE-2017-16790
+summary: |
+  Symfony SSRF Vulnerability via Form Component
+  An issue was discovered in Symfony before 2.7.38, 2.8.31, 3.2.14, 3.3.13, 3.4-BETA5, and 4.0-BETA5. When a form is submitted by the user, the request handler classes of the Form component merge POST data and uploaded files data into one array. This big array forms the data that are then bound to the form. At this stage there is no difference anymore between submitted POST data and uploaded files. A user can send a crafted HTTP request where the value of a "FileType" is sent as normal POST data that could be interpreted as a local file path on the server-side (for example, "file:///etc/passwd"). If the application did not perform any additional checks about the value submitted to the "FileType", the contents of the given file on the server could have been exposed to the attacker.
+impacted_packages:
+  - purl: pkg:composer/symfony/form
+    affected_versions: vers:composer/>=2.7.0|<2.7.38
+    fixed_versions: vers:composer/2.7.38
+  - purl: pkg:composer/symfony/form
+    affected_versions: vers:composer/>=2.8.0|<2.8.31
+    fixed_versions: vers:composer/2.8.31
+  - purl: pkg:composer/symfony/form
+    affected_versions: vers:composer/>=3.0.0|<3.2.14
+    fixed_versions: vers:composer/3.2.14
+  - purl: pkg:composer/symfony/form
+    affected_versions: vers:composer/>=3.3.0|<3.3.13
+    fixed_versions: vers:composer/3.3.13
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.7.0|<2.7.38
+    fixed_versions: vers:composer/2.7.38
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.8.0|<2.8.31
+    fixed_versions: vers:composer/2.8.31
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.0.0|<3.2.14
+    fixed_versions: vers:composer/3.2.14
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.3.0|<3.3.13
+    fixed_versions: vers:composer/3.3.13
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cqqh-94r6-wjrg/GHSA-cqqh-94r6-wjrg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+  - CWE-918
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/form/CVE-2017-16790.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2017-16790.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/form
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/pull/24993
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16790
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/cve-2017-16790-ensure-that-submitted-data-are-uploaded-files
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2017-16790
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2018/dsa-4262
+    reference_type:
+    reference_id:

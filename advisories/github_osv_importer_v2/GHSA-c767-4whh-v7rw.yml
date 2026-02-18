@@ -1,0 +1,56 @@
+advisory_id: GHSA-c767-4whh-v7rw
+datasource_id: github_osv_importer_v2/GHSA-c767-4whh-v7rw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-c767-4whh-v7rw/GHSA-c767-4whh-v7rw.json
+aliases:
+  - CVE-2024-43429
+summary: |
+  Moodle has user information visibility control issues in gradebook reports
+  A flaw was found in moodle. Some hidden user profile fields are visible in gradebook reports, which could result in users without the "view hidden user fields" capability having access to the information.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0|<4.4.2
+    fixed_versions: vers:composer/4.4.2
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0|<4.3.6
+    fixed_versions: vers:composer/4.3.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0|<4.2.9
+    fixed_versions: vers:composer/4.2.9
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.12
+    fixed_versions: vers:composer/4.1.12
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-c767-4whh-v7rw/GHSA-c767-4whh-v7rw.json
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-c767-4whh-v7rw/GHSA-c767-4whh-v7rw.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-312
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-79541
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2304257
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=461197
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-43429
+    reference_type:
+    reference_id:

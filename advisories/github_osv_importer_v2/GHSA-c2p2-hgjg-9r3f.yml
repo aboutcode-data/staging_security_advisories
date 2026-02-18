@@ -1,0 +1,43 @@
+advisory_id: GHSA-c2p2-hgjg-9r3f
+datasource_id: github_osv_importer_v2/GHSA-c2p2-hgjg-9r3f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-c2p2-hgjg-9r3f/GHSA-c2p2-hgjg-9r3f.json
+aliases: []
+summary: "Crayfish Allows Remote Code Execution via hypercube X-Islandora-Args Header\n### Impact\n\
+  _What kind of vulnerability is it? Who is impacted?_\n\nRemote code execution is possible\
+  \ in web-accessible installations of hypercube. \n\n### Patches\n_Has the problem been patched?\
+  \ What versions should users upgrade to?_\n\nNot yet, though no patch is neccessary if your\
+  \ installation of the microservices is behind a firewall.  See below.\n\n### Workarounds\n\
+  _Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\nThe\
+  \ exploit requires making a request against Hypercube's endpoints; therefore, the ability\
+  \ to make use of the exploit is much reduced if the microservice is not directly accessible\
+  \ from the Internet, so: Prevent general access from the Internet from hitting Hypercube.\
+  \  Furthermore, if you've used any of the official installation methods, your Crayfish will\
+  \ be behind a firewall and there is no work neccessary.\n\nThe webserver might be made to\
+  \ validate the structure of headers passed, but that would only be neccessary if you publicly\
+  \ exposed the endpoint. Standard security practices should be applied.\n\n### References\n\
+  _Are there any links users can visit to find out more?_\n\n- XBOW-024-074"
+impacted_packages:
+  - purl: pkg:composer/islandora/crayfish
+    affected_versions: vers:composer/<=4.0.0
+    fixed_versions:
+severities:
+  - score: '9.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-c2p2-hgjg-9r3f/GHSA-c2p2-hgjg-9r3f.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-150
+  - CWE-74
+references:
+  - url: https://github.com/Islandora/Crayfish
+    reference_type:
+    reference_id:
+  - url: https://github.com/Islandora/Crayfish/security/advisories/GHSA-c2p2-hgjg-9r3f
+    reference_type:
+    reference_id:

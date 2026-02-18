@@ -1,0 +1,44 @@
+advisory_id: GHSA-f737-3fh6-jf6w
+datasource_id: github_osv_importer_v2/GHSA-f737-3fh6-jf6w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-f737-3fh6-jf6w/GHSA-f737-3fh6-jf6w.json
+aliases:
+  - CVE-2023-30363
+summary: |
+  Prototype Pollution in vConsole
+  vConsole was discovered to contain a prototype pollution due to incorrect key and value resolution in setOptions in core.ts.
+impacted_packages:
+  - purl: pkg:npm/vconsole
+    affected_versions: vers:npm/<3.15.1
+    fixed_versions: vers:npm/3.15.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-f737-3fh6-jf6w/GHSA-f737-3fh6-jf6w.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://cwe.mitre.org/data/definitions/1321.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/Tencent/vConsole
+    reference_type:
+    reference_id:
+  - url: https://github.com/Tencent/vConsole/commit/b91591703490e032451f7734212f6458bde9be6a
+    reference_type:
+    reference_id:
+  - url: https://github.com/Tencent/vConsole/issues/616
+    reference_type:
+    reference_id:
+  - url: https://github.com/Tencent/vConsole/releases/tag/v3.15.1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-30363
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-c942-mfmp-p4fh
+datasource_id: github_osv_importer_v2/GHSA-c942-mfmp-p4fh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-c942-mfmp-p4fh/GHSA-c942-mfmp-p4fh.json
+aliases:
+  - CVE-2022-41709
+summary: |
+  Markdownify subject to Remote Code Execution via malicious markdown file
+  Markdownify version 1.4.1 allows an external attacker to execute arbitrary code remotely on any client attempting to view a malicious markdown file through Markdownify. This is possible because the application has the "nodeIntegration" option enabled. There are currently no patched versions and no known workarounds.
+impacted_packages:
+  - purl: pkg:npm/electron-markdownify
+    affected_versions: vers:npm/<=1.4.1
+    fixed_versions:
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-c942-mfmp-p4fh/GHSA-c942-mfmp-p4fh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-829
+references:
+  - url: https://fluidattacks.com/advisories/adams
+    reference_type:
+    reference_id:
+  - url: https://github.com/amitmerchant1990/electron-markdownify
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-41709
+    reference_type:
+    reference_id:

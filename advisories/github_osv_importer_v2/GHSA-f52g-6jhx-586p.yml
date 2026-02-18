@@ -1,0 +1,28 @@
+advisory_id: GHSA-f52g-6jhx-586p
+datasource_id: github_osv_importer_v2/GHSA-f52g-6jhx-586p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-f52g-6jhx-586p/GHSA-f52g-6jhx-586p.json
+aliases: []
+summary: |
+  Denial of Service in handlebars
+  Affected versions of `handlebars` are vulnerable to Denial of Service. The package's parser may be forced into an endless loop while processing specially-crafted templates. This may allow attackers to exhaust system resources leading to Denial of Service.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.4.5 or later.
+impacted_packages:
+  - purl: pkg:npm/handlebars
+    affected_versions: vers:npm/>=4.0.0|<4.4.5
+    fixed_versions: vers:npm/4.4.5
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://www.npmjs.com/advisories/1300
+    reference_type:
+    reference_id:

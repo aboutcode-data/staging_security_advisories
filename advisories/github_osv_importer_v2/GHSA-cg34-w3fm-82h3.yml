@@ -1,0 +1,38 @@
+advisory_id: GHSA-cg34-w3fm-82h3
+datasource_id: github_osv_importer_v2/GHSA-cg34-w3fm-82h3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-cg34-w3fm-82h3/GHSA-cg34-w3fm-82h3.json
+aliases: []
+summary: |
+  Duplicate Advisory: Scrapy leaks the authorization header on same-domain but cross-origin redirects
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-4qqq-9vqf-3h3f. This link is maintained to preserve external references.
+
+  ## Original Description
+  In scrapy/scrapy, an issue was identified where the Authorization header is not removed during redirects that only change the scheme (e.g., HTTPS to HTTP) but remain within the same domain. This behavior contravenes the Fetch standard, which mandates the removal of Authorization headers in cross-origin requests when the scheme, host, or port changes. Consequently, when a redirect downgrades from HTTPS to HTTP, the Authorization header may be inadvertently exposed in plaintext, leading to potential sensitive information disclosure to unauthorized actors. The flaw is located in the _build_redirect_request function of the redirect middleware.
+impacted_packages:
+  - purl: pkg:pypi/scrapy
+    affected_versions: vers:pypi/<2.11.2
+    fixed_versions: vers:pypi/2.11.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-cg34-w3fm-82h3/GHSA-cg34-w3fm-82h3.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/scrapy/scrapy/commit/1d0502f25bbe55a22899af915623fda1aaeb9dd8
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/27f6a021-a891-446a-ada5-0226d619dd1a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-1968
+    reference_type:
+    reference_id:

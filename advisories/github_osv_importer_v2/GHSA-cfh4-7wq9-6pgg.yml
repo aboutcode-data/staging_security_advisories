@@ -1,0 +1,67 @@
+advisory_id: GHSA-cfh4-7wq9-6pgg
+datasource_id: github_osv_importer_v2/GHSA-cfh4-7wq9-6pgg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-cfh4-7wq9-6pgg/GHSA-cfh4-7wq9-6pgg.json
+aliases:
+  - CVE-2023-23684
+summary: "WPGraphQL Plugin vulnerable to Server Side Request Forgery (SSRF)\n### Impact\nUsers\
+  \ with capabilities to upload media (editors and above) are succeptible to SSRF (Server-Side\
+  \ Request Forgery) when executing the `createMediaItem` Mutation. \n\nAuthenticated users\
+  \ making GraphQL requests that execute the `createMediaItem` could pass executable paths in\
+  \ the mutations `filePath` argument that could give them unwarranted access to the server.\
+  \ \n\nIt's recommended to update to WPGraphQL v1.14.6 or newer. If you're unable to do so,\
+  \ below is a snippet you can add to your functions.php (or similar) that filters the `createMediaItem`\
+  \ mutation's resolver. \n\n### Patches\n\n- [v1.14.6](https://github.com/wp-graphql/wp-graphql/releases/tag/v1.14.6)\n\
+  - https://github.com/wp-graphql/wp-graphql/pull/2840\n\n### Workarounds\nIf you're unable\
+  \ to upgrade to v1.14.6 or higher, you should be able to use the following snippet in your\
+  \ functions.php to override the vulnerable resolver. \n\nThis snippet has been tested as far\
+  \ back as WPGraphQL v0.15\n\n```php\nadd_filter( 'graphql_pre_resolve_field', function( $nil,\
+  \ $source, $args, $context, \\GraphQL\\Type\\Definition\\ResolveInfo $info, $type_name, $field_key,\
+  \ $field, $field_resolver ) {\n\n\tif ( $info->fieldName !== 'createMediaItem' ) {\n\t\treturn\
+  \ $nil;\n\t}\n\n\t$input = $args['input'] ?? null;\n\n        if ( ! isset( $input['filePath']\
+  \ ) ) {\n\t\treturn $nil;\n\t}\n\n\t$uploaded_file_url   = $input['filePath'];\n\n\t// Check\
+  \ that the filetype is allowed\n\t$check_file = wp_check_filetype( $uploaded_file_url );\n\
+  \n\t// if the file doesn't pass the check, throw an error\n\tif ( ! $check_file['ext'] ||\
+  \ ! $check_file['type'] || ! wp_http_validate_url( $uploaded_file_url ) ) {\n\t\tthrow new\
+  \ \\GraphQL\\Error\\UserError( sprintf( __( 'Invalid filePath \"%s\"', 'wp-graphql' ), $input['filePath']\
+  \ ) );\n\t}\n\n\t$protocol = wp_parse_url( $input['filePath'], PHP_URL_SCHEME );\n\n\t// prevent\
+  \ the filePath from being submitted with a non-allowed protocols\n\t$allowed_protocols = [\
+  \ 'https', 'http', 'file' ];\n\n\tif ( ! in_array( $protocol, $allowed_protocols, true ) )\
+  \ {\n\t\tthrow new \\GraphQL\\Error\\UserError( sprintf( __( 'Invalid protocol. \"%1$s\".\
+  \ Only \"%2$s\" allowed.', 'wp-graphql' ), $protocol, implode( '\", \"', $allowed_protocols\
+  \ ) ) );\n\t}\n\n\treturn $nil;\n\n}, 10, 9 );\n```\n\n### References\n\n- https://patchstack.com/database/vulnerability/wp-graphql/wordpress-wp-graphql-plugin-1-14-5-server-side-request-forgery-ssrf-vulnerability"
+impacted_packages:
+  - purl: pkg:composer/wp-graphql/wp-graphql
+    affected_versions: vers:composer/<=1.14.5
+    fixed_versions: vers:composer/1.14.6
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-cfh4-7wq9-6pgg/GHSA-cfh4-7wq9-6pgg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/wp-graphql/wp-graphql
+    reference_type:
+    reference_id:
+  - url: https://github.com/wp-graphql/wp-graphql/pull/2840
+    reference_type:
+    reference_id:
+  - url: https://github.com/wp-graphql/wp-graphql/releases/tag/v1.14.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/wp-graphql/wp-graphql/security/advisories/GHSA-cfh4-7wq9-6pgg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-23684
+    reference_type:
+    reference_id:
+  - url: https://patchstack.com/database/vulnerability/wp-graphql/wordpress-wp-graphql-plugin-1-14-5-server-side-request-forgery-ssrf-vulnerability?_s_id=cve
+    reference_type:
+    reference_id:

@@ -1,0 +1,66 @@
+advisory_id: GHSA-9q39-rmj3-p4r2
+datasource_id: github_osv_importer_v2/GHSA-9q39-rmj3-p4r2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-9q39-rmj3-p4r2/GHSA-9q39-rmj3-p4r2.json
+aliases:
+  - CVE-2024-43805
+summary: "HTML injection in Jupyter Notebook and JupyterLab leading to DOM Clobbering\n### Impact\n\
+  \nThe vulnerability depends on user interaction by opening a malicious notebook with Markdown\
+  \ cells, or Markdown file using JupyterLab preview feature.\n\nA malicious user can access\
+  \ any data that the attacked user has access to as well as perform arbitrary requests acting\
+  \ as the attacked user.\n\n### Patches\n\nJupyterLab v3.6.8, v4.2.5 and Jupyter Notebook v7.2.2\
+  \ were patched.\n\n### Workarounds\n\nThere is no workaround for the underlying DOM Clobbering\
+  \ susceptibility. However, select plugins can be disabled on deployments which cannot update\
+  \ in a timely fashion to minimise the risk. These are:\n- `@jupyterlab/mathjax-extension:plugin`\
+  \ - users will loose ability to preview mathematical equations \n- `@jupyterlab/markdownviewer-extension:plugin`\
+  \ - users will loose ability to open Markdown previews\n- `@jupyterlab/mathjax2-extension:plugin`\
+  \ (if installed with optional `jupyterlab-mathjax2` package) - an older version of the mathjax\
+  \ plugin for JupyterLab 4.x\n\nTo disable these extensions run:\n\n```bash\njupyter labextension\
+  \ disable @jupyterlab/markdownviewer-extension:plugin\njupyter labextension disable @jupyterlab/mathjax-extension:plugin\n\
+  jupyter labextension disable @jupyterlab/mathjax2-extension:plugin\n```\n\nTo confirm that\
+  \ the plugins were disabled run:\n\n```bash\njupyter labextension list\n```\n\n### References\n\
+  \nNone\n\n### Notes\n\nThis change has a potential to break rendering of some markdown. There\
+  \ is a setting in Sanitizer which allows to revert to the previous sanitizer settings (`allowNamedProperties`)."
+impacted_packages:
+  - purl: pkg:pypi/jupyterlab
+    affected_versions: vers:pypi/<=3.6.7
+    fixed_versions: vers:pypi/3.6.8
+  - purl: pkg:pypi/notebook
+    affected_versions: vers:pypi/<=7.2.1
+    fixed_versions: vers:pypi/7.2.2
+  - purl: pkg:pypi/jupyterlab
+    affected_versions: vers:pypi/<=4.2.4
+    fixed_versions: vers:pypi/4.2.5
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-9q39-rmj3-p4r2/GHSA-9q39-rmj3-p4r2.json
+  - score: '8.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-9q39-rmj3-p4r2/GHSA-9q39-rmj3-p4r2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/jupyterlab/jupyterlab
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterlab/jupyterlab/commit/06ad9de836f155add7d3d651ef936cc4c5ea8093
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterlab/jupyterlab/commit/88e24baac551196f9cb3de16bd060a7ab1597674
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterlab/jupyterlab/security/advisories/GHSA-9q39-rmj3-p4r2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-43805
+    reference_type:
+    reference_id:

@@ -1,0 +1,32 @@
+advisory_id: GHSA-9r7f-rqhw-j8h8
+datasource_id: github_osv_importer_v2/GHSA-9r7f-rqhw-j8h8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9r7f-rqhw-j8h8/GHSA-9r7f-rqhw-j8h8.json
+aliases:
+  - CVE-2018-1000015
+summary: |
+  Incorrect permission checks in Pipeline: Nodes and Processes plugin
+  On Jenkins instances with Authorize Project plugin, the authentication associated with a build may lack the Computer/Build permission on some agents. This did not prevent the execution of Pipeline `node` blocks on those agents due to incorrect permissions checks in Pipeline: Nodes and Processes plugin 2.17 and earlier.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.plugins.workflow/workflow-durable-task-step
+    affected_versions: vers:maven/<=2.17
+    fixed_versions: vers:maven/2.18
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9r7f-rqhw-j8h8/GHSA-9r7f-rqhw-j8h8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+references:
+  - url: https://jenkins.io/security/advisory/2018-01-22
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000015
+    reference_type:
+    reference_id:

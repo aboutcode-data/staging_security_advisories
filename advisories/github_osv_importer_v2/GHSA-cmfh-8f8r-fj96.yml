@@ -1,0 +1,49 @@
+advisory_id: GHSA-cmfh-8f8r-fj96
+datasource_id: github_osv_importer_v2/GHSA-cmfh-8f8r-fj96
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-cmfh-8f8r-fj96/GHSA-cmfh-8f8r-fj96.json
+aliases:
+  - CVE-2017-1000163
+summary: "Phoenix Arbitrary URL Redirect\nThe Phoenix team designed `Phoenix.Controller.redirect/2`\
+  \ to protect against redirects allowing user input to redirect to an external URL where your\
+  \ application code otherwise assumes a local path redirect. This is why the `:to` option is\
+  \ used for “local” URL redirects and why you must pass the `:external` option to intentionally\
+  \ allow external URLs to be redirected to. It has been disclosed that carefully crafted user\
+  \ input may be treated by some browsers as an external URL. An attacker can use this vulnerability\
+  \ to aid in social engineering attacks. The most common use would be to create highly believable\
+  \ phishing attacks. For example, the following user input would pass local URL validation,\
+  \ but be treated by Chrome and Firefox as external URLs: \n`http://localhost:4000/?redirect=/\\\
+  nexample.com`\nNot all browsers are affected, but latest Chrome and Firefox will issue a get\
+  \ request for `example.com` and successfully redirect externally"
+impacted_packages:
+  - purl: pkg:hex/phoenix
+    affected_versions: vers:hex/<1.0.6
+    fixed_versions: vers:hex/1.0.6
+  - purl: pkg:hex/phoenix
+    affected_versions: vers:hex/>=1.1.0|<1.1.8
+    fixed_versions: vers:hex/1.1.8
+  - purl: pkg:hex/phoenix
+    affected_versions: vers:hex/>=1.2.0|<1.2.3
+    fixed_versions: vers:hex/1.2.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-cmfh-8f8r-fj96/GHSA-cmfh-8f8r-fj96.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://elixirforum.com/t/security-releases-for-phoenix/4143
+    reference_type:
+    reference_id:
+  - url: https://github.com/phoenixframework/phoenix
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000163
+    reference_type:
+    reference_id:

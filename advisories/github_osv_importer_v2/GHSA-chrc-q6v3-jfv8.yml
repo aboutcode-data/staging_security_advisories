@@ -1,0 +1,35 @@
+advisory_id: GHSA-chrc-q6v3-jfv8
+datasource_id: github_osv_importer_v2/GHSA-chrc-q6v3-jfv8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-chrc-q6v3-jfv8/GHSA-chrc-q6v3-jfv8.json
+aliases:
+  - CVE-2023-33950
+summary: |
+  Liferay Portal has Inefficient Regular Expression
+  Pattern Redirects in Liferay Portal 7.4.3.48 through 7.4.3.76, and Liferay DXP 7.4 update 48 through 76 allows regular expressions that are vulnerable to ReDoS attacks to be used as patterns, which allows remote attackers to consume an excessive amount of server resources via crafted request URLs.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.4.3.48|<7.4.3.77
+    fixed_versions: vers:maven/7.4.3.77
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-chrc-q6v3-jfv8/GHSA-chrc-q6v3-jfv8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2023-33950
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-33950
+    reference_type:
+    reference_id:

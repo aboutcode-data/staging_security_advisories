@@ -1,0 +1,38 @@
+advisory_id: GHSA-f5vh-4rj2-w8r8
+datasource_id: github_osv_importer_v2/GHSA-f5vh-4rj2-w8r8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-f5vh-4rj2-w8r8/GHSA-f5vh-4rj2-w8r8.json
+aliases:
+  - CVE-2025-62266
+summary: |
+  Liferay Portal is vulnerable to DNS rebinding attacks
+  By default, Liferay Portal 7.4.0 through 7.4.3.119, and older unsupported versions, and Liferay DXP 2024.Q1.1 through 2024.Q1.5, 2023.Q4.0 through 2023.Q4.10, 2023.Q3.1 through 2023.Q3.10, 7.4 GA through update 92, and older unsupported versions is vulnerable to DNS rebinding attacks, which allows remote attackers to redirect users to arbitrary external URLs. This vulnerability can be mitigated by changing the redirect URL security from IP to domain.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.4.0-ga1|<7.4.3.110
+    fixed_versions: vers:maven/7.4.3.110
+severities:
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-f5vh-4rj2-w8r8/GHSA-f5vh-4rj2-w8r8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-62256
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-62257
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62266
+    reference_type:
+    reference_id:

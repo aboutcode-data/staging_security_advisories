@@ -1,0 +1,53 @@
+advisory_id: GHSA-9r26-5w88-qhp9
+datasource_id: github_osv_importer_v2/GHSA-9r26-5w88-qhp9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-9r26-5w88-qhp9/GHSA-9r26-5w88-qhp9.json
+aliases:
+  - CVE-2024-25983
+summary: |
+  Authorization Bypass in moodle
+  Insufficient checks in a web service made it possible to add comments to the comments block on another user's dashboard when it was not otherwise available (e.g., on their profile page).
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0|<4.3.3
+    fixed_versions: vers:composer/4.3.3
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0|<4.2.6
+    fixed_versions: vers:composer/4.2.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.9
+    fixed_versions: vers:composer/4.1.9
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-9r26-5w88-qhp9/GHSA-9r26-5w88-qhp9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-78300
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2264099
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/4cae44dd0e9a7da47d08d9b75e0ebba0e4b422f4
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KXGBYJ43BUEBUAQZU3DT5I5A3YLF47CB
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=455641
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-25983
+    reference_type:
+    reference_id:

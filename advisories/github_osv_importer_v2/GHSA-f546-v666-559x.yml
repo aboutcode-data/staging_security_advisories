@@ -1,0 +1,44 @@
+advisory_id: GHSA-f546-v666-559x
+datasource_id: github_osv_importer_v2/GHSA-f546-v666-559x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-f546-v666-559x/GHSA-f546-v666-559x.json
+aliases:
+  - CVE-2022-37246
+summary: |
+  Craft CMS Cross-site Scripting vulnerability
+  Craft CMS 4.2.0.1 is affected by Cross Site Scripting (XSS) in the file src/web/assets/cp/src/js/BaseElementSelectInput.js and in specific on the line `label: elementInfo.label`.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/>=4.0.0-RC1|<4.2.1
+    fixed_versions: vers:composer/4.2.1
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/>=3.7.39|<3.7.51
+    fixed_versions: vers:composer/3.7.51
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-f546-v666-559x/GHSA-f546-v666-559x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/1d5fdba23c84d6d09a8a980c7b6fc52fb93b679b
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/ecefe7f0afe0a6c4d1097a570cba82753d33f681
+    reference_type:
+    reference_id:
+  - url: https://labs.integrity.pt/advisories/cve-2022-37246
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37246
+    reference_type:
+    reference_id:

@@ -1,0 +1,53 @@
+advisory_id: GHSA-f626-677r-j5vq
+datasource_id: github_osv_importer_v2/GHSA-f626-677r-j5vq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-f626-677r-j5vq/GHSA-f626-677r-j5vq.json
+aliases:
+  - CVE-2024-55586
+summary: |
+  Withdrawn Advisory: Nette Database SQL injection
+  ## Withdrawn Advisory
+  This advisory has been withdrawn as it was reported in error. This link is maintained to preserve external references.
+
+  ## Original Description
+  Nette Database through 3.2.4 allows SQL injection in certain situations involving an untrusted filter that is directly passed to the where method.
+impacted_packages:
+  - purl: pkg:composer/nette/database
+    affected_versions: vers:composer/<=3.2.4
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-f626-677r-j5vq/GHSA-f626-677r-j5vq.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-f626-677r-j5vq/GHSA-f626-677r-j5vq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/CSIRTTrizna/CVE-2024-55586
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/pull/5079#issuecomment-2552932977
+    reference_type:
+    reference_id:
+  - url: https://github.com/nette/database
+    reference_type:
+    reference_id:
+  - url: https://github.com/nette/database/releases
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-55586
+    reference_type:
+    reference_id:
+  - url: https://www.csirt.sk/nette-framework-vulnerability-permits-sql-injection.html
+    reference_type:
+    reference_id:

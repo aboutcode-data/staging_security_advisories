@@ -1,0 +1,58 @@
+advisory_id: GHSA-c9h9-h5gf-885r
+datasource_id: github_osv_importer_v2/GHSA-c9h9-h5gf-885r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-c9h9-h5gf-885r/GHSA-c9h9-h5gf-885r.json
+aliases:
+  - CVE-2024-20716
+summary: |
+  Magento Open Source allows Uncontrolled Resource Consumption
+  Adobe Commerce versions 2.4.6-p3, 2.4.5-p5, 2.4.4-p6 and earlier are affected by an Uncontrolled Resource Consumption vulnerability that could lead to an application denial-of-service. A high-privileged attacker could leverage this vulnerability to exhaust system resources, causing the application to slow down or crash. Exploitation of this issue does not require user interaction.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.6
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.5
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.4
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.6-p1|<2.4.6-p4
+    fixed_versions: vers:composer/2.4.6-p4
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.5-p1|<2.4.5-p6
+    fixed_versions: vers:composer/2.4.5-p6
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.4-p1|<2.4.4-p7
+    fixed_versions: vers:composer/2.4.4-p7
+  - purl: pkg:composer/magento/project-community-edition
+    affected_versions: vers:composer/<=2.0.2
+    fixed_versions:
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-c9h9-h5gf-885r/GHSA-c9h9-h5gf-885r.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-c9h9-h5gf-885r/GHSA-c9h9-h5gf-885r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb24-03.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-20716
+    reference_type:
+    reference_id:

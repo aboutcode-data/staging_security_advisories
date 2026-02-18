@@ -1,0 +1,47 @@
+advisory_id: GHSA-9x97-x2p9-hvpf
+datasource_id: github_osv_importer_v2/GHSA-9x97-x2p9-hvpf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9x97-x2p9-hvpf/GHSA-9x97-x2p9-hvpf.json
+aliases:
+  - CVE-2013-2516
+summary: |
+  Fileutils Command Injection vulnerability
+  Ruby Gem Fileutils prior to v0.7.1 contains a Command Injection vulnerability in user supplied url variable that is passed to the shell.
+impacted_packages:
+  - purl: pkg:gem/fileutils
+    affected_versions: vers:gem/<0.7.1
+    fixed_versions: vers:gem/0.7.1
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9x97-x2p9-hvpf/GHSA-9x97-x2p9-hvpf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: http://rubygems.org/gems/fileutils
+    reference_type:
+    reference_id:
+  - url: https://bugs.ruby-lang.org/issues/7958
+    reference_type:
+    reference_id:
+  - url: https://github.com/ruby/fileutils
+    reference_type:
+    reference_id:
+  - url: https://github.com/ruby/fileutils/commit/994c7aa1ba391689f844a069b9aee9e49813686c
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/fileutils/CVE-2013-2516.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-2516
+    reference_type:
+    reference_id:
+  - url: http://www.vapidlabs.com/advisory.php?v=36
+    reference_type:
+    reference_id:

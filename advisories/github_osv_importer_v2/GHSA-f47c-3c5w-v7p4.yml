@@ -1,0 +1,56 @@
+advisory_id: GHSA-f47c-3c5w-v7p4
+datasource_id: github_osv_importer_v2/GHSA-f47c-3c5w-v7p4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-f47c-3c5w-v7p4/GHSA-f47c-3c5w-v7p4.json
+aliases:
+  - CVE-2026-25738
+summary: |
+  Indico has Server-Side Request Forgery (SSRF) in multiple places
+  ### Impact
+  Indico makes outgoing requests to user-provides URLs in various places. This is mostly intentional and part of Indico's functionality, but of course it is never intended to let you access "special" targets such as localhost or cloud metadata endpoints.
+
+  ### Patches
+  You should to update to [Indico 3.3.10](https://github.com/indico/indico/releases/tag/v3.3.10) as soon as possible.
+  See [the docs](https://docs.getindico.io/en/stable/installation/upgrade/) for instructions on how to update.
+
+  ### Workarounds
+  If you do not have IPs that expose sensitive data without authentication (typically because you do not host Indico on AWS), this vulnerability doesn't impact you and you can ignore it (but please upgrade anyway).
+  Also, only event organizers can access endpoints where SSRF could be used to actually see the data returned by such a request. So if you trust your event organizers, the risk is also very limited.
+
+  For additional security, both before and after patching, you could also use the common proxy-related environment variables (in particular `http_proxy` and `https_proxy`) to force outgoing requests to go through a proxy that limits requests in whatever way you deem useful/necessary. These environment variables would need to be set both on the indico-uwsgi and indico-celery services. Please note that setting up such a proxy is not something we can help you with.
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+
+  - Open a thread in [our forum](https://talk.getindico.io/)
+  - Email us privately at [indico-team@cern.ch](mailto:indico-team@cern.ch)
+impacted_packages:
+  - purl: pkg:pypi/indico
+    affected_versions: vers:pypi/<3.3.10
+    fixed_versions: vers:pypi/3.3.10
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-f47c-3c5w-v7p4/GHSA-f47c-3c5w-v7p4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-367
+  - CWE-918
+references:
+  - url: https://github.com/indico/indico
+    reference_type:
+    reference_id:
+  - url: https://github.com/indico/indico/commit/70d341826116fac5868719a6133f2c26d9345137
+    reference_type:
+    reference_id:
+  - url: https://github.com/indico/indico/releases/tag/v3.3.10
+    reference_type:
+    reference_id:
+  - url: https://github.com/indico/indico/security/advisories/GHSA-f47c-3c5w-v7p4
+    reference_type:
+    reference_id:

@@ -1,0 +1,51 @@
+advisory_id: GHSA-cmrw-cgfc-v6x2
+datasource_id: github_osv_importer_v2/GHSA-cmrw-cgfc-v6x2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-cmrw-cgfc-v6x2/GHSA-cmrw-cgfc-v6x2.json
+aliases:
+  - CVE-2022-42114
+summary: |
+  Liferay Portal and Liferay DXP Vulnerable to XSS via the Role Module
+  A Cross-site scripting (XSS) vulnerability in the Role module's edit role assignees page in Liferay Roles Admin Web
+  before 5.0.48 from Liferay Portal (7.4.0 through 7.4.3.36), and Liferay DXP 7.4 before update 37 allows remote attackers to inject arbitrary web script or HTML.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.roles.admin.web
+    affected_versions: vers:maven/<5.0.48
+    fixed_versions: vers:maven/5.0.48
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.4.0|<7.4.13.u37
+    fixed_versions: vers:maven/7.4.13.u37
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-cmrw-cgfc-v6x2/GHSA-cmrw-cgfc-v6x2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://liferay.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/ba9a07ee8d1aa04a9da352e9b6a776313b8ce5e9
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-17609
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2022-42114?p_r_p_assetEntryId=121613086&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt_redirect=https%3A%2F%2Fliferay.dev%3A443%2Fportal%2Fsecurity%2Fknown-vulnerabilities%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_r_p_assetEntryId%3D121613086%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt_cur%3D0%26p_r_p_resetCur%3Dfalse
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-42114
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20221019022055/https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/cve-2022-42114
+    reference_type:
+    reference_id:

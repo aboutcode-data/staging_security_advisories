@@ -1,0 +1,44 @@
+advisory_id: GHSA-cpv6-pfq6-j2v7
+datasource_id: github_osv_importer_v2/GHSA-cpv6-pfq6-j2v7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cpv6-pfq6-j2v7/GHSA-cpv6-pfq6-j2v7.json
+aliases:
+  - CVE-2017-2662
+summary: |
+  katello Improper Privilege Management vulnerability
+  A flaw was found in Foreman's katello plugin version 3.4.5. After setting a new role to allow restricted access on a repository with a filter (filter set on the Product Name), the filter is not respected when the actions are done via hammer using the repository id.
+impacted_packages:
+  - purl: pkg:gem/katello
+    affected_versions: vers:gem/<3.17.0.rc1
+    fixed_versions: vers:gem/3.17.0.rc1
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cpv6-pfq6-j2v7/GHSA-cpv6-pfq6-j2v7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2662
+    reference_type:
+    reference_id:
+  - url: https://github.com/Katello/katello
+    reference_type:
+    reference_id:
+  - url: https://github.com/Katello/katello/commit/853260e3e9f94179d5881199e7885d1c08e600f6
+    reference_type:
+    reference_id:
+  - url: https://github.com/Katello/katello/pull/8772
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-2662
+    reference_type:
+    reference_id:
+  - url: https://projects.theforeman.org/issues/18838
+    reference_type:
+    reference_id:

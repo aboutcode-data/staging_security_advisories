@@ -1,0 +1,65 @@
+advisory_id: GHSA-cr8h-fr86-8vfv
+datasource_id: github_osv_importer_v2/GHSA-cr8h-fr86-8vfv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-cr8h-fr86-8vfv/GHSA-cr8h-fr86-8vfv.json
+aliases:
+  - CVE-2023-6836
+summary: |
+  WSO2 products vulnerable to XML External Entity attack
+  Multiple WSO2 products have been identified as vulnerable due to an XML External Entity (XXE) attack abuses a widely available but rarely used feature of XML parsers to access sensitive information.
+impacted_packages:
+  - purl: pkg:maven/org.wso2.carbon.commons/org.wso2.carbon.ntask.core
+    affected_versions: vers:maven/<4.7.24
+    fixed_versions: vers:maven/4.7.24
+  - purl: pkg:maven/org.wso2.am/wso2am
+    affected_versions: vers:maven/<4.0.0-beta
+    fixed_versions: vers:maven/4.0.0-beta
+  - purl: pkg:maven/org.wso2.carbon.registry/org.wso2.carbon.registry.extensions
+    affected_versions: vers:maven/<4.7.31
+    fixed_versions: vers:maven/4.7.31
+  - purl: pkg:maven/org.wso2.carbon.event-processing/org.wso2.carbon.event.processor.core
+    affected_versions: vers:maven/<2.2.12
+    fixed_versions: vers:maven/2.2.12
+  - purl: pkg:maven/org.wso2.carbon.analytics-common/org.wso2.carbon.event.input.adapter.core
+    affected_versions: vers:maven/<5.2.23
+    fixed_versions: vers:maven/5.2.23
+  - purl: pkg:maven/org.wso2.carbon.governance/org.wso2.carbon.governance.common
+    affected_versions: vers:maven/<4.8.13
+    fixed_versions: vers:maven/4.8.13
+severities:
+  - score: '4.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-cr8h-fr86-8vfv/GHSA-cr8h-fr86-8vfv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/wso2/carbon-analytics-common/commit/9478336859306d3ea13b25cb386f29c183707fde
+    reference_type:
+    reference_id:
+  - url: https://github.com/wso2/carbon-commons/commit/a08a587e3dd5146121a7b47a0fdd06ddbcd903f4
+    reference_type:
+    reference_id:
+  - url: https://github.com/wso2/carbon-event-processing/commit/e9953afd46a45f704de341a081f710cbdfa3f975
+    reference_type:
+    reference_id:
+  - url: https://github.com/wso2/carbon-governance/commit/ad36968d5a11d4fc35fa5cc4e8b5ae9a04e5bb4c
+    reference_type:
+    reference_id:
+  - url: https://github.com/wso2/carbon-registry/commit/738b2a0b3e5f118527da236467ed72d9fd9ce40e
+    reference_type:
+    reference_id:
+  - url: https://github.com/wso2/product-apim/commit/96e8f5d6566d57bbbb8d4257f6f55057a79d00b5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6836
+    reference_type:
+    reference_id:
+  - url: https://security.docs.wso2.com/en/latest/security-announcements/security-advisories/2021/WSO2-2020-0716
+    reference_type:
+    reference_id:

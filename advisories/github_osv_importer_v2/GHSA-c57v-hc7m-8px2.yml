@@ -1,0 +1,38 @@
+advisory_id: GHSA-c57v-hc7m-8px2
+datasource_id: github_osv_importer_v2/GHSA-c57v-hc7m-8px2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-c57v-hc7m-8px2/GHSA-c57v-hc7m-8px2.json
+aliases:
+  - CVE-2023-0044
+summary: |
+  Cross-site Scripting in Quarkus
+  If the Quarkus Form Authentication session cookie Path attribute is set to `/` then a cross-site attack may be initiated which might lead to the Information Disclosure. This attack can be prevented with the Quarkus CSRF Prevention feature.
+impacted_packages:
+  - purl: pkg:maven/io.quarkus/quarkus-vertx-http
+    affected_versions: vers:maven/<2.13.7.Final
+    fixed_versions: vers:maven/2.13.7.Final
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-c57v-hc7m-8px2/GHSA-c57v-hc7m-8px2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2023-0044
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2158081
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0044
+    reference_type:
+    reference_id:

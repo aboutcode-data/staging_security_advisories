@@ -1,0 +1,38 @@
+advisory_id: GHSA-9r2j-rg24-fvpj
+datasource_id: github_osv_importer_v2/GHSA-9r2j-rg24-fvpj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9r2j-rg24-fvpj/GHSA-9r2j-rg24-fvpj.json
+aliases:
+  - CVE-2020-10963
+summary: |
+  FrozenNode Laravel-Administrator unrestricted file upload
+  FrozenNode Laravel-Administrator through 5.0.12 allows unrestricted file upload (and consequently Remote Code Execution) via `admin/tips_image/image/file_upload` image upload with PHP content within a GIF image that has the `.php` extension. NOTE: this product is discontinued.
+impacted_packages:
+  - purl: pkg:composer/frozennode/administrator
+    affected_versions: vers:composer/<=5.0.12
+    fixed_versions:
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9r2j-rg24-fvpj/GHSA-9r2j-rg24-fvpj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: http://packetstormsecurity.com/files/160243/Laravel-Administrator-4-File-Upload.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-10963
+    reference_type:
+    reference_id:
+  - url: https://xavibel.com/2020/03/23/unrestricted-file-upload-in-frozennode-laravel-administrator
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/49112.py
+    reference_type: exploit
+    reference_id: CVE-2020-10963

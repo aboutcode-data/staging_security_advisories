@@ -1,0 +1,38 @@
+advisory_id: GHSA-f5w3-73h4-jpcm
+datasource_id: github_osv_importer_v2/GHSA-f5w3-73h4-jpcm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-f5w3-73h4-jpcm/GHSA-f5w3-73h4-jpcm.json
+aliases:
+  - CVE-2025-1756
+summary: |
+  mongosh vulnerable to local privilege escalation
+  mongosh may be susceptible to local privilege escalation under certain conditions potentially enabling unauthorized actions on a user's system with elevated privilege, when a crafted file is stored in C:\node_modules\. This issue affects mongosh prior to 2.3.0.
+impacted_packages:
+  - purl: pkg:npm/mongosh
+    affected_versions: vers:npm/<2.3.0
+    fixed_versions: vers:npm/2.3.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-f5w3-73h4-jpcm/GHSA-f5w3-73h4-jpcm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-426
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:1756
+    reference_type:
+    reference_id:
+  - url: https://github.com/mongodb-js/mongosh
+    reference_type:
+    reference_id:
+  - url: https://jira.mongodb.org/browse/MONGOSH-2028
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-1756
+    reference_type:
+    reference_id:

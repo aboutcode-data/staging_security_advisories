@@ -1,0 +1,54 @@
+advisory_id: GHSA-cr7j-rwmv-vgch
+datasource_id: github_osv_importer_v2/GHSA-cr7j-rwmv-vgch
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-cr7j-rwmv-vgch/GHSA-cr7j-rwmv-vgch.json
+aliases:
+  - CVE-2024-36811
+summary: |
+  Duplicate Advisory: aimeos-core arbitrary file upload vulnerability
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-rhc2-23c2-ww7c. This link is maintained to preserve external references.
+
+  ## Original Description
+  An arbitrary file upload vulnerability in the image upload function of aimeos-core v2024.04 allows attackers to execute arbitrary code via uploading a crafted PHP file.
+impacted_packages:
+  - purl: pkg:composer/aimeos/aimeos-core
+    affected_versions: vers:composer/<2024.4.5
+    fixed_versions: vers:composer/2024.4.5
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-cr7j-rwmv-vgch/GHSA-cr7j-rwmv-vgch.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://drive.google.com/file/d/1n5_t-zmKHbx3H47xdhR5kuHTDc0Gxur3/view?usp=sharing
+    reference_type:
+    reference_id:
+  - url: https://drive.google.com/file/d/1QJWwaDB6smLCuNp10yZKWgpELTQJax31/view?usp=sharing
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/aimeos-core
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/aimeos-core/commit/13e163126adff48f987b3b6faca28551effe0205
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/aimeos-core/commit/5eea7aa933ac7402044bc6d282f96fba44475ee2
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/pull/4544
+    reference_type:
+    reference_id:
+  - url: https://github.com/ssshah2131/CVE/blob/main/Aimeos_RCE
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-36811
+    reference_type:
+    reference_id:

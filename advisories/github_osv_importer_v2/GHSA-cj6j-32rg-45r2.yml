@@ -1,0 +1,35 @@
+advisory_id: GHSA-cj6j-32rg-45r2
+datasource_id: github_osv_importer_v2/GHSA-cj6j-32rg-45r2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-cj6j-32rg-45r2/GHSA-cj6j-32rg-45r2.json
+aliases:
+  - CVE-2019-10077
+summary: |
+  Cross-site Scripting in JSPWiki
+  A carefully crafted InterWiki link could trigger an XSS vulnerability on Apache JSPWiki 2.9.0 to 2.11.0.M3, which could lead to session hijacking.
+impacted_packages:
+  - purl: pkg:maven/org.apache.jspwiki/jspwiki-war
+    affected_versions: vers:maven/<=2.11.0.M3
+    fixed_versions: vers:maven/2.11.0.M4
+  - purl: pkg:maven/org.apache.jspwiki/jspwiki-main
+    affected_versions: vers:maven/<=2.11.0.M3
+    fixed_versions: vers:maven/2.11.0.M4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-cj6j-32rg-45r2/GHSA-cj6j-32rg-45r2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2019-10077
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10077
+    reference_type:
+    reference_id:

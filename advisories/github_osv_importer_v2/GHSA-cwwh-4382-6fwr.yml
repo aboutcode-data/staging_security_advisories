@@ -1,0 +1,57 @@
+advisory_id: GHSA-cwwh-4382-6fwr
+datasource_id: github_osv_importer_v2/GHSA-cwwh-4382-6fwr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cwwh-4382-6fwr/GHSA-cwwh-4382-6fwr.json
+aliases:
+  - CVE-2017-16228
+summary: |
+  Dulwich RCE Vulnerability
+  Dulwich before 0.18.5, when an SSH subprocess is used, allows remote attackers to execute arbitrary commands via an ssh URL with an initial dash character in the hostname, a related issue to CVE-2017-9800, CVE-2017-12836, CVE-2017-12976, CVE-2017-1000116, and CVE-2017-1000117.
+impacted_packages:
+  - purl: pkg:pypi/dulwich
+    affected_versions: vers:pypi/<0.18.5
+    fixed_versions: vers:pypi/0.18.5
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cwwh-4382-6fwr/GHSA-cwwh-4382-6fwr.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cwwh-4382-6fwr/GHSA-cwwh-4382-6fwr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/jelmer/dulwich
+    reference_type:
+    reference_id:
+  - url: https://github.com/jelmer/dulwich/commit/7116a0cbbda571f7dac863f4b1c00b6e16d6d8d6
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/dulwich/PYSEC-2017-12.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16228
+    reference_type:
+    reference_id:
+  - url: https://tracker.debian.org/news/882440
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20201220231743/https://www.dulwich.io/code/dulwich/commit/7116a0cbbda571f7dac863f4b1c00b6e16d6d8d6
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210128154006/https://www.dulwich.io/code/dulwich
+    reference_type:
+    reference_id:
+  - url: https://www.dulwich.io/code/dulwich
+    reference_type:
+    reference_id:
+  - url: https://www.dulwich.io/code/dulwich/commit/7116a0cbbda571f7dac863f4b1c00b6e16d6d8d6
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-cgfm-xwp7-2cvr
+datasource_id: github_osv_importer_v2/GHSA-cgfm-xwp7-2cvr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-cgfm-xwp7-2cvr/GHSA-cgfm-xwp7-2cvr.json
+aliases:
+  - CVE-2022-25887
+summary: |
+  Sanitize-html Vulnerable To REDoS Attacks
+  The package sanitize-html before 2.7.1 are vulnerable to Regular Expression Denial of Service (ReDoS) due to insecure global regular expression replacement logic of HTML comment removal.
+impacted_packages:
+  - purl: pkg:npm/sanitize-html
+    affected_versions: vers:npm/<2.7.1
+    fixed_versions: vers:npm/2.7.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-cgfm-xwp7-2cvr/GHSA-cgfm-xwp7-2cvr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/apostrophecms/sanitize-html/commit/b4682c12fd30e12e82fa2d9b766de91d7d2cd23c
+    reference_type:
+    reference_id:
+  - url: https://github.com/apostrophecms/sanitize-html/pull/557
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25887
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-3008102
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-SANITIZEHTML-2957526
+    reference_type:
+    reference_id:

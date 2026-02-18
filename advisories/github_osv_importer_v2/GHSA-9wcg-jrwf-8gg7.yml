@@ -1,0 +1,48 @@
+advisory_id: GHSA-9wcg-jrwf-8gg7
+datasource_id: github_osv_importer_v2/GHSA-9wcg-jrwf-8gg7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-9wcg-jrwf-8gg7/GHSA-9wcg-jrwf-8gg7.json
+aliases:
+  - CVE-2020-7699
+summary: |
+  Prototype Pollution in express-fileupload
+  This affects the package express-fileupload before 1.1.8. If the parseNested option is enabled, sending a corrupt HTTP request can lead to denial of service or arbitrary code execution.
+impacted_packages:
+  - purl: pkg:npm/express-fileupload
+    affected_versions: vers:npm/<1.1.9
+    fixed_versions: vers:npm/1.1.9
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-9wcg-jrwf-8gg7/GHSA-9wcg-jrwf-8gg7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+  - CWE-1321
+references:
+  - url: https://github.com/richardgirges/express-fileupload
+    reference_type:
+    reference_id:
+  - url: https://github.com/richardgirges/express-fileupload/commit/db495357d7557ceb5c034de91a7a574bd12f9b9f
+    reference_type:
+    reference_id:
+  - url: https://github.com/richardgirges/express-fileupload/issues/236
+    reference_type:
+    reference_id:
+  - url: https://github.com/richardgirges/express-fileupload/pull/237
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7699
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20200821-0003
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-EXPRESSFILEUPLOAD-595969
+    reference_type:
+    reference_id:

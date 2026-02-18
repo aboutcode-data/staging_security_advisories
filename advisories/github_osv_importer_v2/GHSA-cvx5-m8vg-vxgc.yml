@@ -1,0 +1,54 @@
+advisory_id: GHSA-cvx5-m8vg-vxgc
+datasource_id: github_osv_importer_v2/GHSA-cvx5-m8vg-vxgc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-cvx5-m8vg-vxgc/GHSA-cvx5-m8vg-vxgc.json
+aliases:
+  - CVE-2022-24897
+summary: "Arbitrary filesystem write access from velocity.\n### Impact\n\nThe velocity scripts\
+  \ is not properly sandboxed against using the Java File API to perform read or write operations\
+  \ on the filesystem. Now writing an attacking script in velocity requires the Script rights\
+  \ in XWiki so not all users can use it, and it also requires finding an XWiki API which returns\
+  \ a File. \n\n### Patches\nThe problem has been patched on versions 12.6.7, 12.10.3 and 13.0RC1.\n\
+  \n### Workarounds\nThere's no easy workaround for fixing this vulnerability other than upgrading\
+  \ and being careful when giving Script rights.\n\n### References\nhttps://jira.xwiki.org/browse/XWIKI-5168\n\
+  \n### For more information\nIf you have any questions or comments about this advisory:\n*\
+  \ Open an issue in [Jira XWiki](https://jira.xwiki.org)\n* Email us at [XWiki Security mailing-list](mailto:security@xwiki.org)"
+impacted_packages:
+  - purl: pkg:maven/org.xwiki.commons/xwiki-commons-velocity
+    affected_versions: vers:maven/>=2.3.0|<12.6.7
+    fixed_versions: vers:maven/12.6.7
+  - purl: pkg:maven/org.xwiki.commons/xwiki-commons-velocity
+    affected_versions: vers:maven/>=12.7.0|<12.10.3
+    fixed_versions: vers:maven/12.10.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-cvx5-m8vg-vxgc/GHSA-cvx5-m8vg-vxgc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+  - CWE-22
+references:
+  - url: https://github.com/xwiki/xwiki-commons
+    reference_type:
+    reference_id:
+  - url: https://github.com/xwiki/xwiki-commons/commit/215951cfb0f808d0bf5b1097c9e7d1e503449ab8
+    reference_type:
+    reference_id:
+  - url: https://github.com/xwiki/xwiki-commons/pull/127
+    reference_type:
+    reference_id:
+  - url: https://github.com/xwiki/xwiki-commons/security/advisories/GHSA-cvx5-m8vg-vxgc
+    reference_type:
+    reference_id:
+  - url: https://jira.xwiki.org/browse/XWIKI-5168
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24897
+    reference_type:
+    reference_id:

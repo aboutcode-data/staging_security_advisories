@@ -1,0 +1,58 @@
+advisory_id: GHSA-9prm-jqwx-45x9
+datasource_id: github_osv_importer_v2/GHSA-9prm-jqwx-45x9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-9prm-jqwx-45x9/GHSA-9prm-jqwx-45x9.json
+aliases:
+  - CVE-2023-32689
+summary: |
+  Phishing attack vulnerability by uploading malicious HTML file
+  ### Impact
+
+  Phishing attack vulnerability by uploading malicious files. A malicious user could upload a HTML file to Parse Server via its public API. That HTML file would then be accessible at the internet domain at which Parse Server is hosted. The URL of the the uploaded HTML could be shared for phishing attacks. The HTML page may seem legitimate because it is served under the internet domain where Parse Server is hosted, which may be the same as a company's official website domain.
+
+  An additional security issue arises when the Parse JavaScript SDK is used. The SDK stores sessions in the internet browser's local storage, which usually restricts data access depending on the internet domain. A malicious HTML file could contain a script that retrieves the user's session token from local storage and then share it with the attacker.
+
+  ### Patches
+
+  The fix adds a new Parse Server option `fileUpload.fileExtensions` to restrict file upload on Parse Server by file extension. It is recommended to restrict file upload for HTML file extensions, which this fix disables by default. If an app requires upload of files with HTML file extensions, the option can be set to `['.*']` or another custom value to override the default.
+
+  ### References
+
+  - https://github.com/parse-community/parse-server/security/advisories/GHSA-9prm-jqwx-45x9
+  - https://github.com/parse-community/parse-server/pull/8538 (Parse Server 6)
+  - https://github.com/parse-community/parse-server/pull/8537 (Parse Server 5)
+impacted_packages:
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/<5.4.4
+    fixed_versions: vers:npm/5.4.4
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/>=6.0.0|<6.1.1
+    fixed_versions: vers:npm/6.1.1
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-9prm-jqwx-45x9/GHSA-9prm-jqwx-45x9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/parse-community/parse-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/8537
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/8538
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/security/advisories/GHSA-9prm-jqwx-45x9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-32689
+    reference_type:
+    reference_id:

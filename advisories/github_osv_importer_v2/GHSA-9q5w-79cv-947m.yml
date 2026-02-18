@@ -1,0 +1,72 @@
+advisory_id: GHSA-9q5w-79cv-947m
+datasource_id: github_osv_importer_v2/GHSA-9q5w-79cv-947m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-9q5w-79cv-947m/GHSA-9q5w-79cv-947m.json
+aliases:
+  - CVE-2021-39199
+summary: |
+  Unsafe defaults in `remark-html`
+  ### Impact
+
+  The documentation of `remark-html` has mentioned that it was safe by default. In practise the default was never safe and had to be opted into. This means arbitrary HTML can be passed through leading to potential XSS attacks.
+
+  ### Patches
+
+  The problem has been patched in 13.0.2 and 14.0.1: `remark-html` is now safe by default, and the implementation matches the documentation.
+
+  ### Workarounds
+
+  On older affected versions, pass `sanitize: true`, like so:
+
+  ```diff
+  -  .use(remarkHtml)
+  +  .use(remarkHtml, {sanitize: true})
+  ```
+
+  ### References
+
+  n/a
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+  * Open an issue in [`remark-html`](https://github.com/remarkjs/remark-html)
+  * Email us at [security@unifiedjs.com](mailto:security@unifiedjs.com)
+impacted_packages:
+  - purl: pkg:npm/remark-html
+    affected_versions: vers:npm/<13.0.2
+    fixed_versions: vers:npm/13.0.2
+  - purl: pkg:npm/remark-html
+    affected_versions: vers:npm/14.0.0
+    fixed_versions: vers:npm/14.0.1
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-9q5w-79cv-947m/GHSA-9q5w-79cv-947m.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/remarkjs/remark-html
+    reference_type:
+    reference_id:
+  - url: https://github.com/remarkjs/remark-html/commit/b75c9dde582ad87ba498e369c033dc8a350478c1
+    reference_type:
+    reference_id:
+  - url: https://github.com/remarkjs/remark-html/releases/tag/14.0.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/remarkjs/remark-html/security/advisories/GHSA-9q5w-79cv-947m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-39199
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/remark-html
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-cjp8-vv38-p3g2
+datasource_id: github_osv_importer_v2/GHSA-cjp8-vv38-p3g2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-cjp8-vv38-p3g2/GHSA-cjp8-vv38-p3g2.json
+aliases:
+  - CVE-2022-4014
+summary: |
+  Cross-Site Request Forgery in feehi/feehicms
+  FeehiCMS vulnerable to Cross-Site Request Forgery. Affected by this issue is some unknown functionality of the component Post My Comment Tab. The manipulation leads to cross-site request forgery. The attack may be launched remotely.
+impacted_packages:
+  - purl: pkg:composer/feehi/feehicms
+    affected_versions: vers:composer/<=2.0.1+1
+    fixed_versions:
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-cjp8-vv38-p3g2/GHSA-cjp8-vv38-p3g2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/liufee/feehicms
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-4014
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.213788
+    reference_type:
+    reference_id:

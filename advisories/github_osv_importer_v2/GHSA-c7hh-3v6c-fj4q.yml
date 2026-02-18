@@ -1,0 +1,59 @@
+advisory_id: GHSA-c7hh-3v6c-fj4q
+datasource_id: github_osv_importer_v2/GHSA-c7hh-3v6c-fj4q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-c7hh-3v6c-fj4q/GHSA-c7hh-3v6c-fj4q.json
+aliases:
+  - CVE-2023-38700
+summary: |
+  matrix-appservice-irc events can be crafted to leak parts of targeted messages from other bridged rooms
+  ### Impact
+
+  It was possible to craft an event such that it would leak part of a targeted message event from another bridged room. This required knowing an event ID to target.
+
+  ### Patches
+
+  Please upgrade to 1.0.1.
+
+  ### Workarounds
+
+  You can set the `matrixHandler.eventCacheSize` config value to `0` to workaround this bug. However, this may impact performance.
+
+  ### Credits
+
+  Discovered and reported by [Val Lorentz](https://valentin-lorentz.fr/).
+
+  ### For more information
+
+  If you have any questions or comments about this advisory email us at [security@matrix.org](mailto:security@matrix.org).
+impacted_packages:
+  - purl: pkg:npm/matrix-appservice-irc
+    affected_versions: vers:npm/<=1.0.0
+    fixed_versions: vers:npm/1.0.1
+severities:
+  - score: '3.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-c7hh-3v6c-fj4q/GHSA-c7hh-3v6c-fj4q.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/matrix-org/matrix-appservice-irc
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-appservice-irc/commit/8bbd2b69a16cbcbeffdd9b5c973fd89d61498d75
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-appservice-irc/releases/tag/1.0.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-c7hh-3v6c-fj4q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-38700
+    reference_type:
+    reference_id:

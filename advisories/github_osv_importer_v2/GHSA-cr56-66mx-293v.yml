@@ -1,0 +1,39 @@
+advisory_id: GHSA-cr56-66mx-293v
+datasource_id: github_osv_importer_v2/GHSA-cr56-66mx-293v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-cr56-66mx-293v/GHSA-cr56-66mx-293v.json
+aliases: []
+summary: |
+  Cross-Site Scripting in @toast-ui/editor
+  Versions of `@toast-ui/editor` prior to 2.2.0 are vulnerable to Cross-Site Scripting (XSS).  There are multiple bypasses to the package's built-in XSS sanitization. This may allow attackers to execute arbitrary JavaScript on a victim's browser.
+
+  ## Recommendation
+
+  Upgrade to version 2.2.0 or later.
+impacted_packages:
+  - purl: pkg:npm/%40toast-ui/editor
+    affected_versions: vers:npm/<2.2.0
+    fixed_versions: vers:npm/2.2.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/nhn/tui.editor
+    reference_type:
+    reference_id:
+  - url: https://github.com/nhn/tui.editor/commit/5f62f5eeda9e8f8bcf2075e8e0e10d22bf56d1a7
+    reference_type:
+    reference_id:
+  - url: https://github.com/nhn/tui.editor/issues/733
+    reference_type:
+    reference_id:
+  - url: https://github.com/nhn/tui.editor/pull/1010
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1521
+    reference_type:
+    reference_id:

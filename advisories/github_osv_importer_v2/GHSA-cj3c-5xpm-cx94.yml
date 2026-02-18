@@ -1,0 +1,55 @@
+advisory_id: GHSA-cj3c-5xpm-cx94
+datasource_id: github_osv_importer_v2/GHSA-cj3c-5xpm-cx94
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-cj3c-5xpm-cx94/GHSA-cj3c-5xpm-cx94.json
+aliases:
+  - CVE-2024-29200
+summary: "Kimai API returns timesheet entries a user should not be authorized to view\n### Summary\n\
+  The permission `view_other_timesheet` performs differently for the Kimai UI and the API, thus\
+  \ returning unexpected data through the API.\n\n### Details\nWhen setting the `view_other_timesheet`\
+  \ permission to true, on the frontend, users can only see timesheet entries for teams they\
+  \ are a part of. When requesting all timesheets from the API, however, all timesheet entries\
+  \ are returned, regardless of whether the user shares team permissions or not.\n\nExample:\n\
+  There are projects P1 and P2, Teams T1 and T2, users U1 and U2 and Timesheet entries E1 and\
+  \ E2. U1 is team leader of team T1 and has access to P1. U2 is in Team T2 and has access to\
+  \ both P1 and P2. U2 creates E1 for P1 and E2 for P2.\nIn the UI, U1 with `view _other_timesheet`\
+  \ perms sees E1 as he is a part of T1 that has access to P1.\nIn the API, however, he has\
+  \ access to E1 **and E2**.\n\nAdditionally, if U1 is not a team leader T1, he does not see\
+  \ any timesheet from a user other than himself in the UI, but still all timesheets in the\
+  \ API.\n\n### PoC\n- Give a user `view_other_timesheet` permission\n- The result of the UI\
+  \ and the API call to `/api/timesheets?user=all` differs in the data that is being returned\n\
+  \nCurl command:\n```bash\ncurl -X 'GET' \\\n  'https://kimai.instance.com/api/timesheets?user=all'\
+  \ \\\n  -H 'accept: application/json' \\\n  -H 'X-AUTH-USER: username' \\\n  -H 'X-AUTH-TOKEN:\
+  \ api_token'\n ```\n\n### Impact\nThis is at least an insufficient granularity of access control\
+  \ weakness. People can see timesheet entries they are not supposed to.\nThis greatly affects\
+  \ the confidentiality of timesheet entries. \n\nRestricting API access to administrators is\
+  \ also not a valid solution, as API access is needed, for example, to use the mobile app."
+impacted_packages:
+  - purl: pkg:composer/kimai/kimai
+    affected_versions: vers:composer/<2.13.0
+    fixed_versions: vers:composer/2.13.0
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-cj3c-5xpm-cx94/GHSA-cj3c-5xpm-cx94.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1220
+references:
+  - url: https://github.com/kimai/kimai
+    reference_type:
+    reference_id:
+  - url: https://github.com/kimai/kimai/releases/tag/2.13.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/kimai/kimai/security/advisories/GHSA-cj3c-5xpm-cx94
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29200
+    reference_type:
+    reference_id:

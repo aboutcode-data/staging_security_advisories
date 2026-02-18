@@ -1,0 +1,98 @@
+advisory_id: GHSA-9pgh-qqpf-7wqj
+datasource_id: github_osv_importer_v2/GHSA-9pgh-qqpf-7wqj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-9pgh-qqpf-7wqj/GHSA-9pgh-qqpf-7wqj.json
+aliases:
+  - CVE-2022-37616
+summary: |
+  Withdrawn: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') in @xmldom/xmldom and xmldom
+  ## Withdrawn
+
+  This advisory has been withdrawn because the maintainers of `@xmldom/xmldom` and multiple third parties disputed the validity of the issue. Attempts to create or replicate a proof of concept have been unsuccessful.
+
+  ## Original Description
+
+  ### Impact
+  A prototype pollution vulnerability exists in the function copy in dom.js in the xmldom (published as @xmldom/xmldom) package.
+
+  ### Patches
+  Update to `@xmldom/xmldom@~0.7.6`, `@xmldom/xmldom@~0.8.3` (dist-tag `latest`) or `@xmldom/xmldom@>=0.9.0-beta.2` (dist-tag `next`).
+
+  ### Workarounds
+  None
+
+  ### References
+  https://github.com/xmldom/xmldom/pull/437
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at security@xmldom.org
+  * Add information to https://github.com/xmldom/xmldom/issues/436
+impacted_packages:
+  - purl: pkg:npm/%40xmldom/xmldom
+    affected_versions: vers:npm/>=0.8.0|<0.8.3
+    fixed_versions: vers:npm/0.8.3
+  - purl: pkg:npm/xmldom
+    affected_versions: vers:npm/<=0.6.0
+    fixed_versions:
+  - purl: pkg:npm/%40xmldom/xmldom
+    affected_versions: vers:npm/0.9.0-beta.1
+    fixed_versions: vers:npm/0.9.0-beta.2
+  - purl: pkg:npm/%40xmldom/xmldom
+    affected_versions: vers:npm/<0.7.6
+    fixed_versions: vers:npm/0.7.6
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-9pgh-qqpf-7wqj/GHSA-9pgh-qqpf-7wqj.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://dl.acm.org/doi/abs/10.1145/3488932.3497769
+    reference_type:
+    reference_id:
+  - url: https://dl.acm.org/doi/pdf/10.1145/3488932.3497769
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom/blob/bc36efddf9948aba15618f85dc1addfc2ac9d7b2/lib/dom.js#L1
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom/blob/bc36efddf9948aba15618f85dc1addfc2ac9d7b2/lib/dom.js#L3
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom/blob/master/CHANGELOG.md#076
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom/issues/436
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom/issues/436#issuecomment-1319412826
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom/issues/436#issuecomment-1327776560
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom/pull/437
+    reference_type:
+    reference_id:
+  - url: https://github.com/xmldom/xmldom/security/advisories/GHSA-9pgh-qqpf-7wqj
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/10/msg00023.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37616
+    reference_type:
+    reference_id:
+  - url: http://users.encs.concordia.ca/~mmannan/publications/JS-vulnerability-aisaccs2022.pdf
+    reference_type:
+    reference_id:

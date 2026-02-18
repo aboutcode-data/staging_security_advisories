@@ -1,0 +1,41 @@
+advisory_id: GHSA-f5c5-hmw9-v8hx
+datasource_id: github_osv_importer_v2/GHSA-f5c5-hmw9-v8hx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-f5c5-hmw9-v8hx/GHSA-f5c5-hmw9-v8hx.json
+aliases:
+  - CVE-2020-36561
+summary: |
+  Unzip vulnerable to path traversal
+  Due to improper path sanitization, archives containing relative file paths can cause files to be written (or overwritten) outside of the target directory.
+impacted_packages: []
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-f5c5-hmw9-v8hx/GHSA-f5c5-hmw9-v8hx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/yi-ge/unzip
+    reference_type:
+    reference_id:
+  - url: https://github.com/yi-ge/unzip/commit/2adbaa4891b9690853ef10216189189f5ad7dc73
+    reference_type:
+    reference_id:
+  - url: https://github.com/yi-ge/unzip/pull/1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-36561
+    reference_type:
+    reference_id:
+  - url: https://pkg.go.dev/vuln/GO-2020-0035
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/research/zip-slip-vulnerability
+    reference_type:
+    reference_id:

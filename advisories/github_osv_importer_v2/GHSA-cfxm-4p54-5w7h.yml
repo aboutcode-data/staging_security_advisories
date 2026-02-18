@@ -1,0 +1,49 @@
+advisory_id: GHSA-cfxm-4p54-5w7h
+datasource_id: github_osv_importer_v2/GHSA-cfxm-4p54-5w7h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-cfxm-4p54-5w7h/GHSA-cfxm-4p54-5w7h.json
+aliases:
+  - CVE-2017-16107
+summary: |
+  Directory traversal in pooledwebsocket
+  Affected versions of `pooledwebsocket` resolve relative file paths, resulting in a directory traversal vulnerability. A malicious actor can use this vulnerability to access files outside of the intended directory root, which may result in the disclosure of private files on the vulnerable system.
+
+  **Example request:**
+  ```http
+  GET /../../../../../../../../../../etc/passwd HTTP/1.1
+  host:foo
+  ```
+
+
+  ## Recommendation
+
+  Update to version 0.0.19 or later.
+impacted_packages:
+  - purl: pkg:npm/pooledwebsocket
+    affected_versions: vers:npm/<0.0.19
+    fixed_versions: vers:npm/0.0.19
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-cfxm-4p54-5w7h/GHSA-cfxm-4p54-5w7h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/advisories/GHSA-cfxm-4p54-5w7h
+    reference_type:
+    reference_id:
+  - url: https://github.com/JacksonGL/NPM-Vuln-PoC/blob/master/directory-traversal/pooledwebsocket
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16107
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/341
+    reference_type:
+    reference_id:

@@ -1,0 +1,51 @@
+advisory_id: GHSA-cc2p-4jhr-xhhx
+datasource_id: github_osv_importer_v2/GHSA-cc2p-4jhr-xhhx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-cc2p-4jhr-xhhx/GHSA-cc2p-4jhr-xhhx.json
+aliases:
+  - CVE-2020-15130
+summary: |
+  False-positive validity for NFT1 genesis transactions in SLPJS
+  ### Impact
+  In the npm package named "slpjs", versions prior to 0.27.4 are vulnerable to false-positive validation outcomes for the NFT1 Child Genesis transaction type. A poorly implemented SLP wallet or opportunistic attacker could create a seemingly valid NFT1 child token without burning any of the NFT1 Group token type as is required by the NFT1 specification.
+
+  ### Patches
+  npm package "slpjs" has been patched and is published and tagged as version 0.27.4.
+
+  ### Workarounds
+  Upgrade to slpjs 0.27.4.
+
+  ### References
+  * Package location: https://www.npmjs.com/package/slpjs
+  * SLP NFT1 spec: https://slp.dev/specs/slp-nft-1/#nft1-protocol-requirements
+  * Git commit hash fixing this issue: https://github.com/simpleledger/slpjs/commit/290c20e8bff13ac81459d43e54cac232b5e3456c
+  * Unit tests have been added to assist validator implementations in avoiding this bug: https://github.com/simpleledger/slp-unit-test-data/commit/8c942eacfae12686dcf1f3366321445a4fba73e7
+
+  ### For more information
+  If you have any questions or comments about this advisory please open an issue in the [slp-validate](https://github.com/simpleledger/slpjs/issues) repository.
+impacted_packages:
+  - purl: pkg:npm/slpjs
+    affected_versions: vers:npm/<0.27.4
+    fixed_versions: vers:npm/0.27.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-cc2p-4jhr-xhhx/GHSA-cc2p-4jhr-xhhx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-697
+references:
+  - url: https://github.com/simpleledger/slpjs/commit/290c20e8bff13ac81459d43e54cac232b5e3456c
+    reference_type:
+    reference_id:
+  - url: https://github.com/simpleledger/slpjs/security/advisories/GHSA-cc2p-4jhr-xhhx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15130
+    reference_type:
+    reference_id:

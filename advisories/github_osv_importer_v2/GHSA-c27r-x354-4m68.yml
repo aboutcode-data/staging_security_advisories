@@ -1,0 +1,39 @@
+advisory_id: GHSA-c27r-x354-4m68
+datasource_id: github_osv_importer_v2/GHSA-c27r-x354-4m68
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-c27r-x354-4m68/GHSA-c27r-x354-4m68.json
+aliases: []
+summary: |
+  xml-crypto's HMAC-SHA1 signatures can bypass validation via key confusion
+  ### Impact
+  An attacker can inject an HMAC-SHA1 signature that is valid using only knowledge of the RSA public key. This allows bypassing signature validation.
+
+  ### Patches
+  Version 2.0.0 has the fix.
+
+  ### Workarounds
+  The recommendation is to upgrade. In case that is not possible remove the 'http://www.w3.org/2000/09/xmldsig#hmac-sha1' entry from SignedXml.SignatureAlgorithms.
+impacted_packages:
+  - purl: pkg:npm/xml-crypto
+    affected_versions: vers:npm/<=1.5.3
+    fixed_versions: vers:npm/2.0.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/yaronn/xml-crypto
+    reference_type:
+    reference_id:
+  - url: https://github.com/yaronn/xml-crypto/commit/3d9db712e6232c765cd2ad6bd2902b88a0d22100
+    reference_type:
+    reference_id:
+  - url: https://github.com/yaronn/xml-crypto/security/advisories/GHSA-c27r-x354-4m68
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/xml-crypto
+    reference_type:
+    reference_id:

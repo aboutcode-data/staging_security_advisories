@@ -1,0 +1,40 @@
+advisory_id: GHSA-cc2j-92jq-wgjg
+datasource_id: github_osv_importer_v2/GHSA-cc2j-92jq-wgjg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-cc2j-92jq-wgjg/GHSA-cc2j-92jq-wgjg.json
+aliases: []
+summary: |
+  eZ Publish Information disclosure in backend content tree menu
+  This security advisory fixes an information disclosure vulnerability in the legacy admin content tree menu. If a view has been disabled in site.ini [SiteAccessRules] Rules, and an attacker accesses the backend with the URL to this module, then the tree menu may be displayed. Since the tree menu may contain hidden items, this may lead to information disclosure. We recommend that you install this Security Update as soon as possible.
+
+  To install, use Composer to update to one of the "Resolving versions" mentioned above, or apply this patch manually: https://github.com/ezsystems/ezpublish-legacy/commit/a4a0470f8d80f012fe14e4f8ab11c7d14375986c
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/>=2011.0.0|<2017.8.1+1
+    fixed_versions: vers:composer/2017.8.1+1
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/>=5.4.0|<5.4.10+1
+    fixed_versions: vers:composer/5.4.10+1
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/>=5.3.0|<5.3.12+2
+    fixed_versions: vers:composer/5.3.12+2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/ezsystems/ezpublish-legacy
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-legacy/commit/a4a0470f8d80f012fe14e4f8ab11c7d14375986c
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/ezsystems/ezpublish-legacy/2017-09-11-1.yaml
+    reference_type:
+    reference_id:
+  - url: http://share.ez.no/community-project/security-advisories/ezsa-2017-006-information-disclosure-in-backend-content-tree-menu
+    reference_type:
+    reference_id:

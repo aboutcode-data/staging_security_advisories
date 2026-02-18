@@ -1,0 +1,74 @@
+advisory_id: GHSA-crrq-vr9j-fxxh
+datasource_id: github_osv_importer_v2/GHSA-crrq-vr9j-fxxh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-crrq-vr9j-fxxh/GHSA-crrq-vr9j-fxxh.json
+aliases:
+  - CVE-2022-31112
+summary: |
+  Protected fields exposed via LiveQuery
+  ### Impact
+
+  Parse Server LiveQuery does not remove protected fields in classes, passing them to the client.
+
+  ### Patches
+  The LiveQueryController now removes protected fields from the client response.
+
+  ### Workarounds
+  Use `Parse.Cloud.afterLiveQueryEvent` to manually remove protected fields.
+
+  ### References
+  - https://github.com/parse-community/parse-server/security/advisories/GHSA-crrq-vr9j-fxxh
+  - https://github.com/parse-community/parse-server
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  - For questions or comments about this vulnerability visit our [community forum](http://community.parseplatform.org/) or [community chat](http://chat.parseplatform.org/)
+  - Report other vulnerabilities at [report.parseplatform.org](https://report.parseplatform.org/)
+impacted_packages:
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/<4.10.13
+    fixed_versions: vers:npm/4.10.13
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/>=5.0.0|<5.2.4
+    fixed_versions: vers:npm/5.2.4
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-crrq-vr9j-fxxh/GHSA-crrq-vr9j-fxxh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-212
+references:
+  - url: https://github.com/parse-community/parse-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/commit/054f3e6ab01d66a0dcfb77725af28eac1485b375
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/commit/309f64ced8700321df056fb3cc97f15007a00df1
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/commit/9fd4516cde5c742f9f29dd05468b4a43a85639a6
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/issues/8073
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/8074
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/releases/tag/5.2.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/security/advisories/GHSA-crrq-vr9j-fxxh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31112
+    reference_type:
+    reference_id:

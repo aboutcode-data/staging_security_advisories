@@ -1,0 +1,41 @@
+advisory_id: GHSA-cw79-fq4f-9r96
+datasource_id: github_osv_importer_v2/GHSA-cw79-fq4f-9r96
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-cw79-fq4f-9r96/GHSA-cw79-fq4f-9r96.json
+aliases:
+  - CVE-2025-62262
+summary: |
+  Liferay Portal Vulnerable to Information Exposure Through a Log File Vulnerability in LDAP Import Feature
+  Information exposure through log file vulnerability in LDAP import feature in Liferay Portal 7.4.0 through 7.4.3.97, and older unsupported versions, and Liferay DXP 2023.Q3.1 through 2023.Q3.4, 7.4 GA through update 92, 7.3 GA through update 35, and older unsupported versions allows local users to view user email address in the log files.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.portal.security.ldap.impl
+    affected_versions: vers:maven/>=4.0.2|<4.0.54
+    fixed_versions: vers:maven/4.0.54
+severities:
+  - score: '4.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-cw79-fq4f-9r96/GHSA-cw79-fq4f-9r96.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/fc14297acd87703ba1027d691fa27a6b96bbb57c
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-17826
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-62263
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62262
+    reference_type:
+    reference_id:

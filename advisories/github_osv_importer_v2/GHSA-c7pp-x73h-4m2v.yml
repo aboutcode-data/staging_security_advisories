@@ -1,0 +1,40 @@
+advisory_id: GHSA-c7pp-x73h-4m2v
+datasource_id: github_osv_importer_v2/GHSA-c7pp-x73h-4m2v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-c7pp-x73h-4m2v/GHSA-c7pp-x73h-4m2v.json
+aliases: []
+summary: |
+  Cross-Site Scripting in bootstrap-vue
+  Versions of `bootstrap-vue` prior to 2.0.0-rc.12 are vulnerable to Cross-Site Scripting. Due to insufficient input sanitization, components may be vulnerable to Cross-Site Scripting through the `options` variable. This may lead to the execution of malicious JavaScript on the user's browser.
+
+
+  ## Recommendation
+
+  Upgrade to version 2.0.0-rc.12 or later.
+impacted_packages:
+  - purl: pkg:npm/bootstrap-vue
+    affected_versions: vers:npm/<=2.0.0-rc.11
+    fixed_versions: vers:npm/2.0.0-rc.12
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/bootstrap-vue/bootstrap-vue
+    reference_type:
+    reference_id:
+  - url: https://github.com/bootstrap-vue/bootstrap-vue/commit/ba6f3f8359e257589d744f180312c09bf9f12289
+    reference_type:
+    reference_id:
+  - url: https://github.com/bootstrap-vue/bootstrap-vue/issues/1974
+    reference_type:
+    reference_id:
+  - url: https://github.com/bootstrap-vue/bootstrap-vue/pull/2134
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/770
+    reference_type:
+    reference_id:

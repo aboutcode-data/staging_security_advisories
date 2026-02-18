@@ -1,0 +1,60 @@
+advisory_id: GHSA-f34m-x9pj-62vq
+datasource_id: github_osv_importer_v2/GHSA-f34m-x9pj-62vq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-f34m-x9pj-62vq/GHSA-f34m-x9pj-62vq.json
+aliases:
+  - CVE-2021-43785
+summary: |
+  Cross-Site Scripting Vulnerability in @joeattardi/emoji-button
+  ### Impact
+
+  There are two vectors for XSS attacks with versions of @joeattardi/emoji-button before 4.6.2:
+
+  - A URL for a custom emoji
+  - An i18n string
+
+  In both of these cases, a value can be crafted such that it can insert a `script` tag into the page and execute malicious code.
+
+  ### Patches
+
+  This vulnerability is fixed starting in version 4.6.2. This is resolved by properly escaping strings that are inserted into the HTML document.
+
+  ### Workarounds
+
+  There is no workaround other than upgrading to a non-vulnerable version.
+
+  ### Credit
+
+  This issue was discovered by GitHub team member [@erik-krogh (Erik Krogh Kristensen)](https://github.com/erik-krogh) and was reported by the GitHub Security Lab team.
+impacted_packages:
+  - purl: pkg:npm/%40joeattardi/emoji-button
+    affected_versions: vers:npm/<4.6.2
+    fixed_versions: vers:npm/4.6.2
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-f34m-x9pj-62vq/GHSA-f34m-x9pj-62vq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/joeattardi/emoji-button
+    reference_type:
+    reference_id:
+  - url: https://github.com/joeattardi/emoji-button/commit/05970c09180cd27fff493e998ac5bf0468b1bb16
+    reference_type:
+    reference_id:
+  - url: https://github.com/joeattardi/emoji-button/commit/fe54bef107eb3f74873a4018f2ff49fa124c6a2e
+    reference_type:
+    reference_id:
+  - url: https://github.com/joeattardi/emoji-button/security/advisories/GHSA-f34m-x9pj-62vq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-43785
+    reference_type:
+    reference_id:

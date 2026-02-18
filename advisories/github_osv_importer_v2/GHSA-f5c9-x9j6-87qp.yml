@@ -1,0 +1,38 @@
+advisory_id: GHSA-f5c9-x9j6-87qp
+datasource_id: github_osv_importer_v2/GHSA-f5c9-x9j6-87qp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-f5c9-x9j6-87qp/GHSA-f5c9-x9j6-87qp.json
+aliases:
+  - CVE-2021-25912
+summary: |
+  Prototype pollution in dotty
+  Prototype pollution vulnerability in 'dotty' before version 0.1.1 allows attackers to cause a denial of service and may lead to remote code execution.
+impacted_packages:
+  - purl: pkg:npm/dotty
+    affected_versions: vers:npm/<0.1.1
+    fixed_versions: vers:npm/0.1.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-f5c9-x9j6-87qp/GHSA-f5c9-x9j6-87qp.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/deoxxa/dotty/commit/cd997d37917186c131be71501a698803f2b7ebdb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-25912
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/dotty
+    reference_type:
+    reference_id:
+  - url: https://www.whitesourcesoftware.com/vulnerability-database/CVE-2021-25912
+    reference_type:
+    reference_id:

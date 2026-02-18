@@ -1,0 +1,61 @@
+advisory_id: GHSA-cwgg-57xj-g77r
+datasource_id: github_osv_importer_v2/GHSA-cwgg-57xj-g77r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cwgg-57xj-g77r/GHSA-cwgg-57xj-g77r.json
+aliases:
+  - CVE-2024-51483
+summary: |
+  changedetection.io Path Traversal
+  ### Summary
+  When a WebDriver is used to fetch files source:file:///etc/passwd can be used to retrieve local system files, where the more traditional file:///etc/passwd gets blocked
+
+  ### Details
+  The root cause is the payload source:file:///etc/passwdpasses the regex [here](https://github.com/dgtlmoon/changedetection.io/blob/master/changedetectionio/model/Watch.py#L19) and also passes the check [here](https://github.com/dgtlmoon/changedetection.io/blob/master/changedetectionio/processors/__init__.py#L35) where a traditional file:///etc/passwd would get blocked
+
+  ### PoC
+  [CL-ChangeDetection.io Path Travsersal-311024-181039.pdf](https://github.com/user-attachments/files/17591630/CL-ChangeDetection.io.Path.Travsersal-311024-181039.pdf)
+
+
+
+  ### Impact
+  It depends on where the webdriver is deployed but generally this is a high impact vulnerability
+impacted_packages:
+  - purl: pkg:pypi/changedetection.io
+    affected_versions: vers:pypi/<=0.47.4
+    fixed_versions: vers:pypi/0.47.5
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cwgg-57xj-g77r/GHSA-cwgg-57xj-g77r.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cwgg-57xj-g77r/GHSA-cwgg-57xj-g77r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/dgtlmoon/changedetection.io
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/blob/master/changedetectionio/model/Watch.py#L19
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/blob/master/changedetectionio/processors/__init__.py#L35
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/security/advisories/GHSA-cwgg-57xj-g77r
+    reference_type:
+    reference_id:
+  - url: https://github.com/user-attachments/files/17591630/CL-ChangeDetection.io.Path.Travsersal-311024-181039.pdf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-51483
+    reference_type:
+    reference_id:

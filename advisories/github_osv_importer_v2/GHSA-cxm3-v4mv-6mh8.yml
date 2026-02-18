@@ -1,0 +1,41 @@
+advisory_id: GHSA-cxm3-v4mv-6mh8
+datasource_id: github_osv_importer_v2/GHSA-cxm3-v4mv-6mh8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-cxm3-v4mv-6mh8/GHSA-cxm3-v4mv-6mh8.json
+aliases:
+  - CVE-2021-4103
+summary: "vditor Vulnerable to Cross-site Scripting in SVG events\nvditor does not filter user\
+  \ input in SVG events, leading to XSS \n\n### PoC\n\n```html\n</a>\n<svg><animate onbegin=alert(11)\
+  \ attributeName=x dur=1s>\n```"
+impacted_packages:
+  - purl: pkg:npm/vditor
+    affected_versions: vers:npm/<3.8.11
+    fixed_versions: vers:npm/3.8.11
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-cxm3-v4mv-6mh8/GHSA-cxm3-v4mv-6mh8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/vanessa219/vditor
+    reference_type:
+    reference_id:
+  - url: https://github.com/vanessa219/vditor/commit/8d4d0889dd72b2f839e93a49db3da3a370416c7d
+    reference_type:
+    reference_id:
+  - url: https://github.com/Vanessa219/vditor/issues/1133
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/67b980af-7357-4879-9448-a926c6474225
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-4103
+    reference_type:
+    reference_id:

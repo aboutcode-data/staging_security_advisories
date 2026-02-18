@@ -1,0 +1,44 @@
+advisory_id: GHSA-ccp5-gg58-pxfm
+datasource_id: github_osv_importer_v2/GHSA-ccp5-gg58-pxfm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-ccp5-gg58-pxfm/GHSA-ccp5-gg58-pxfm.json
+aliases:
+  - CVE-2019-0233
+summary: |
+  Improper Preservation of Permissions in Apache Struts
+  An access permission override in Apache Struts 2.0.0 to 2.5.20 may cause a Denial of Service when performing a file upload.
+impacted_packages:
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/>=2.0.0|<2.5.22
+    fixed_versions: vers:maven/2.5.22
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-ccp5-gg58-pxfm/GHSA-ccp5-gg58-pxfm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-281
+references:
+  - url: https://cwiki.apache.org/confluence/display/ww/s2-060
+    reference_type:
+    reference_id:
+  - url: https://launchpad.support.sap.com/#/notes/2982840
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-0233
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_type:
+    reference_id:

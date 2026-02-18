@@ -1,0 +1,41 @@
+advisory_id: GHSA-c9h6-xhg9-xxrv
+datasource_id: github_osv_importer_v2/GHSA-c9h6-xhg9-xxrv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/03/GHSA-c9h6-xhg9-xxrv/GHSA-c9h6-xhg9-xxrv.json
+aliases:
+  - CVE-2019-0200
+summary: |
+  Improper Input Validation in Apache Qpid Broker-J
+  A Denial of Service vulnerability was found in Apache Qpid Broker-J versions 6.0.0-7.0.6 (inclusive) and 7.1.0 which allows an unauthenticated attacker to crash the broker instance by sending specially crafted commands using AMQP protocol versions below 1.0 (AMQP 0-8, 0-9, 0-91 and 0-10). Users of Apache Qpid Broker-J versions 6.0.0-7.0.6 (inclusive) and 7.1.0 utilizing AMQP protocols 0-8, 0-9, 0-91, 0-10 must upgrade to Qpid Broker-J versions 7.0.7 or 7.1.1 or later.
+impacted_packages:
+  - purl: pkg:maven/org.apache.qpid/apache-qpid-broker-j
+    affected_versions: vers:maven/<7.0.7
+    fixed_versions: vers:maven/7.0.7
+  - purl: pkg:maven/org.apache.qpid/apache-qpid-broker-j
+    affected_versions: vers:maven/7.1.0
+    fixed_versions: vers:maven/7.1.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/03/GHSA-c9h6-xhg9-xxrv/GHSA-c9h6-xhg9-xxrv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/advisories/GHSA-c9h6-xhg9-xxrv
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/ac79d48de37d42b64da50384dbe9c8a329c5f553dd12ef7c28a832de@%3Cusers.qpid.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-0200
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/107215
+    reference_type:
+    reference_id:

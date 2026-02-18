@@ -1,0 +1,61 @@
+advisory_id: GHSA-chqf-hx79-gxc6
+datasource_id: github_osv_importer_v2/GHSA-chqf-hx79-gxc6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-chqf-hx79-gxc6/GHSA-chqf-hx79-gxc6.json
+aliases:
+  - CVE-2017-5992
+summary: |
+  Improper Restriction of XML External Entity Reference in Openpyxl
+  Openpyxl 2.4.1 resolves external entities by default, which allows remote attackers to conduct XXE attacks via a crafted .xlsx document.
+impacted_packages:
+  - purl: pkg:pypi/openpyxl
+    affected_versions: vers:pypi/<=2.4.1
+    fixed_versions: vers:pypi/2.4.2
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-chqf-hx79-gxc6/GHSA-chqf-hx79-gxc6.json
+  - score: '6.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:H/SI:N/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-chqf-hx79-gxc6/GHSA-chqf-hx79-gxc6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://bitbucket.org/openpyxl/openpyxl/commits/3b4905f428e1
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/openpyxl/openpyxl/issues/749
+    reference_type:
+    reference_id:
+  - url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=854442
+    reference_type:
+    reference_id:
+  - url: https://foss.heptapod.net/openpyxl/openpyxl
+    reference_type:
+    reference_id:
+  - url: https://foss.heptapod.net/openpyxl/openpyxl/-/commit/7fe678fd89fd
+    reference_type:
+    reference_id:
+  - url: https://foss.heptapod.net/openpyxl/openpyxl/-/issues/749
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-chqf-hx79-gxc6
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/openpyxl/PYSEC-2017-48.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-5992
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2017/02/07/5
+    reference_type:
+    reference_id:

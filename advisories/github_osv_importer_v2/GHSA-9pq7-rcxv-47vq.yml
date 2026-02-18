@@ -1,0 +1,39 @@
+advisory_id: GHSA-9pq7-rcxv-47vq
+datasource_id: github_osv_importer_v2/GHSA-9pq7-rcxv-47vq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-9pq7-rcxv-47vq/GHSA-9pq7-rcxv-47vq.json
+aliases:
+  - CVE-2021-27293
+summary: |
+  Incorrect Regular Expression in RestSharp
+  RestSharp < 106.11.8-alpha.0.13 uses a regular expression which is vulnerable to Regular Expression Denial of Service (ReDoS) when converting strings into DateTimes. If a server responds with a malicious string, the client using RestSharp will be stuck processing it for an exceedingly long time. Thus the remote server can trigger Denial of Service.
+impacted_packages:
+  - purl: pkg:nuget/RestSharp
+    affected_versions: vers:nuget/<=106.11.7
+    fixed_versions: vers:nuget/106.11.8-alpha.0.13
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-9pq7-rcxv-47vq/GHSA-9pq7-rcxv-47vq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-697
+  - CWE-185
+references:
+  - url: https://github.com/restsharp/RestSharp/commit/be39346784b68048b230790d15333574341143bc
+    reference_type:
+    reference_id:
+  - url: https://github.com/restsharp/RestSharp/issues/1556
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-27293
+    reference_type:
+    reference_id:
+  - url: https://restsharp.dev
+    reference_type:
+    reference_id:

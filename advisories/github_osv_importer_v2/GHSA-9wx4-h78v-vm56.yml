@@ -1,0 +1,51 @@
+advisory_id: GHSA-9wx4-h78v-vm56
+datasource_id: github_osv_importer_v2/GHSA-9wx4-h78v-vm56
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-9wx4-h78v-vm56/GHSA-9wx4-h78v-vm56.json
+aliases:
+  - CVE-2024-35195
+summary: |
+  Requests `Session` object does not verify requests after making first request with verify=False
+  When using a `requests.Session`, if the first request to a given origin is made with `verify=False`, TLS certificate verification may remain disabled for all subsequent requests to that origin, even if `verify=True` is explicitly specified later.
+
+  This occurs because the underlying connection is reused from the session's connection pool, causing the initial TLS verification setting to persist for the lifetime of the pooled connection. As a result, applications may unintentionally send requests without certificate verification, leading to potential man-in-the-middle attacks and compromised confidentiality or integrity.
+
+  This behavior affects versions of `requests` prior to 2.32.0.
+impacted_packages:
+  - purl: pkg:pypi/requests
+    affected_versions: vers:pypi/<2.32.0
+    fixed_versions: vers:pypi/2.32.0
+severities:
+  - score: '5.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-9wx4-h78v-vm56/GHSA-9wx4-h78v-vm56.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-670
+references:
+  - url: https://github.com/psf/requests
+    reference_type:
+    reference_id:
+  - url: https://github.com/psf/requests/commit/a58d7f2ffb4d00b46dca2d70a3932a0b37e22fac
+    reference_type:
+    reference_id:
+  - url: https://github.com/psf/requests/pull/6655
+    reference_type:
+    reference_id:
+  - url: https://github.com/psf/requests/security/advisories/GHSA-9wx4-h78v-vm56
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IYLSNK5TL46Q6XPRVMHVWS63MVJQOK4Q
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/N7WP6EYDSUOCOJYHDK5NX43PYZ4SNHGZ
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-35195
+    reference_type:
+    reference_id:

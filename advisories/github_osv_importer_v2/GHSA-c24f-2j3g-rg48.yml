@@ -1,0 +1,54 @@
+advisory_id: GHSA-c24f-2j3g-rg48
+datasource_id: github_osv_importer_v2/GHSA-c24f-2j3g-rg48
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-c24f-2j3g-rg48/GHSA-c24f-2j3g-rg48.json
+aliases:
+  - CVE-2023-28118
+summary: |
+  kaml has potential denial of service while parsing input with anchors and aliases
+  ### Impact
+  Applications that use kaml to parse untrusted input containing anchors and aliases may consume excessive memory and crash.
+
+  ### Patches
+  Version 0.53.0 and later default to refusing to parse YAML documents containing anchors and aliases.
+
+  ### Workarounds
+  None.
+
+  ### References
+  Wikipedia has an explanation of this class of vulnerability: [billion laughs attack](https://en.wikipedia.org/wiki/Billion_laughs_attack)
+
+  ### Acknowledgements
+  Thank you to @gdude2002 for reporting this issue.
+impacted_packages:
+  - purl: pkg:maven/com.charleskorn.kaml/kaml
+    affected_versions: vers:maven/<0.53.0
+    fixed_versions: vers:maven/0.53.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-c24f-2j3g-rg48/GHSA-c24f-2j3g-rg48.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-776
+references:
+  - url: https://github.com/charleskorn/kaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/charleskorn/kaml/commit/5f82a2d7e00bfc307afca05d1dc4d7c50593531a
+    reference_type:
+    reference_id:
+  - url: https://github.com/charleskorn/kaml/releases/tag/0.53.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/charleskorn/kaml/security/advisories/GHSA-c24f-2j3g-rg48
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-28118
+    reference_type:
+    reference_id:

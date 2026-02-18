@@ -1,0 +1,47 @@
+advisory_id: GHSA-f489-655r-x6gr
+datasource_id: github_osv_importer_v2/GHSA-f489-655r-x6gr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f489-655r-x6gr/GHSA-f489-655r-x6gr.json
+aliases:
+  - CVE-2017-2096
+summary: |
+  smalruby and smalruby-editor vulnerable to OS Command Injection
+  smalruby-editor prior to 0.4.1 and smalruby prior to 0.1.11 allows remote attackers to execute arbitrary OS commands via unspecified vectors.
+impacted_packages:
+  - purl: pkg:gem/smalruby-editor
+    affected_versions: vers:gem/<0.4.1
+    fixed_versions: vers:gem/0.4.1
+  - purl: pkg:gem/smalruby
+    affected_versions: vers:gem/<0.1.11
+    fixed_versions: vers:gem/0.1.11
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f489-655r-x6gr/GHSA-f489-655r-x6gr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: http://jvn.jp/en/jp/JVN50197114/index.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/smalruby/CVE-2017-2096.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/smalruby/smalruby-editor
+    reference_type:
+    reference_id:
+  - url: http://smalruby.jp/blog/2017/01/14/smalruby-editor-0-4-1-has-been-released-english.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-2096
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200227194312/http://www.securityfocus.com/bid/95775
+    reference_type:
+    reference_id:

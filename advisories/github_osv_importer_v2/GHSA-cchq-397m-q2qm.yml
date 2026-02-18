@@ -1,0 +1,35 @@
+advisory_id: GHSA-cchq-397m-q2qm
+datasource_id: github_osv_importer_v2/GHSA-cchq-397m-q2qm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-cchq-397m-q2qm/GHSA-cchq-397m-q2qm.json
+aliases:
+  - CVE-2025-65186
+summary: |
+  Grav CMS is vulnerable to Cross Site Scripting (XSS) in the page editor
+  Grav CMS 1.7.49 is vulnerable to Cross Site Scripting (XSS). The page editor allows authenticated users to edit page content via a Markdown editor. The editor fails to properly sanitize <script> tags, allowing stored XSS payloads to execute when pages are viewed in the admin interface.
+impacted_packages:
+  - purl: pkg:composer/getgrav/grav
+    affected_versions: vers:composer/<=1.7.49
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-cchq-397m-q2qm/GHSA-cchq-397m-q2qm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/getgrav/grav
+    reference_type:
+    reference_id:
+  - url: https://github.com/lukehebe/Vulnerability-Disclosures/blob/main/CVE-2025-65186.pdf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-65186
+    reference_type:
+    reference_id:

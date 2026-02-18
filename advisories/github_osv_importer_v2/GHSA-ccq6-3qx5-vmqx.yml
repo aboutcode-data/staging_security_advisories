@@ -1,0 +1,27 @@
+advisory_id: GHSA-ccq6-3qx5-vmqx
+datasource_id: github_osv_importer_v2/GHSA-ccq6-3qx5-vmqx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-ccq6-3qx5-vmqx/GHSA-ccq6-3qx5-vmqx.json
+aliases: []
+summary: |
+  Moderate severity vulnerability that affects is-my-json-valid
+  Withdrawn, accidental duplicate publish.
+
+  The is-my-json-valid package before 2.12.4 for Node.js has an incorrect exports['utc-millisec'] regular expression, which allows remote attackers to cause a denial of service (blocked event loop) via a crafted string.
+impacted_packages:
+  - purl: pkg:npm/is-my-json-valid
+    affected_versions: vers:npm/<=2.12.3
+    fixed_versions: vers:npm/2.12.4
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-ccq6-3qx5-vmqx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-2537
+    reference_type:
+    reference_id:

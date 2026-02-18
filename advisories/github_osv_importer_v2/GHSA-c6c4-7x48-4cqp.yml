@@ -1,0 +1,42 @@
+advisory_id: GHSA-c6c4-7x48-4cqp
+datasource_id: github_osv_importer_v2/GHSA-c6c4-7x48-4cqp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-c6c4-7x48-4cqp/GHSA-c6c4-7x48-4cqp.json
+aliases: []
+summary: |
+  Timing side channel vulnerability in UIDL request handler in Vaadin 10, 11-14, and 15-18
+  Non-constant-time comparison of CSRF tokens in UIDL request handler in `com.vaadin:flow-server` versions 1.0.0 through 1.0.13 (Vaadin 10.0.0 through 10.0.16), 1.1.0 prior to 2.0.0 (Vaadin 11 prior to 14), 2.0.0 through 2.4.6 (Vaadin 14.0.0 through 14.4.6), 3.0.0 prior to 5.0.0 (Vaadin 15 prior to 18), and 5.0.0 through 5.0.2 (Vaadin 18.0.0 through 18.0.5) allows attacker to guess a security token via timing attack.
+
+  - https://vaadin.com/security/cve-2021-31404
+impacted_packages:
+  - purl: pkg:maven/com.vaadin/vaadin-bom
+    affected_versions: vers:maven/>=10.0.0|<10.0.17
+    fixed_versions: vers:maven/10.0.17
+  - purl: pkg:maven/com.vaadin/vaadin-bom
+    affected_versions: vers:maven/>=11.0.0|<14.4.7
+    fixed_versions: vers:maven/14.4.7
+  - purl: pkg:maven/com.vaadin/vaadin-bom
+    affected_versions: vers:maven/>=15.0.0|<18.0.6
+    fixed_versions: vers:maven/18.0.6
+severities:
+  - score: '4.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-c6c4-7x48-4cqp/GHSA-c6c4-7x48-4cqp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-208
+references:
+  - url: https://github.com/vaadin/platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/vaadin/platform/security/advisories/GHSA-c6c4-7x48-4cqp
+    reference_type:
+    reference_id:
+  - url: https://vaadin.com/security/cve-2021-31404
+    reference_type:
+    reference_id:

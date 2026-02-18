@@ -1,0 +1,80 @@
+advisory_id: GHSA-9p3p-w5jf-8xxg
+datasource_id: github_osv_importer_v2/GHSA-9p3p-w5jf-8xxg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-9p3p-w5jf-8xxg/GHSA-9p3p-w5jf-8xxg.json
+aliases:
+  - CVE-2025-30207
+summary: |
+  Kirby vulnerable to path traversal in the router for PHP's built-in server
+  ### TL;DR
+
+  This vulnerability affects all Kirby setups that use PHP's built-in server. Such setups are commonly only used during local development.
+
+  Sites that use other server software (such as Apache, nginx or Caddy) are *not* affected.
+
+  ----
+
+  ### Introduction
+
+  For use with PHP's built-in web server, Kirby provides a `router.php` file. The router delegates requests to static files to PHP so that assets and other static files in the document root can be accessed by the browser.
+
+  This logic was vulnerable against path traversal attacks. By using special elements such as `..` and `/` separators, attackers can escape outside of the restricted location to access files or directories that are elsewhere on the system. One of the most common special elements is the `../` sequence, which in most modern operating systems is interpreted as the parent directory of the current location.
+
+  ### Impact
+
+  The missing path traversal check allowed attackers to navigate all files on the server that were accessible to the PHP process, including files outside of the Kirby installation.
+
+  The vulnerable implementation delegated all existing files to PHP, including existing files outside of the document root. This leads to a different response that allows attackers to determine whether the requested file exists.
+
+  Because Kirby's router only delegates such requests to PHP and does not load or execute them, contents of the files were not exposed as PHP treats requests to files outside of the document root as invalid.
+
+  ### Patches
+
+  The problem has been patched in [Kirby 3.9.8.3](https://github.com/getkirby/kirby/releases/tag/3.9.8.3), [Kirby 3.10.1.2](https://github.com/getkirby/kirby/releases/tag/3.10.1.2) and [Kirby 4.7.1](https://github.com/getkirby/kirby/releases/tag/4.7.1). Please update to one of these or a [later version](https://github.com/getkirby/kirby/releases) to fix the vulnerability.
+
+  In all of the mentioned releases, we have updated the router to check if existing static files are within the document root. Requests to files outside the document root are treated as page requests of the error page and will no longer allow to determine whether the file exists or not.
+impacted_packages:
+  - purl: pkg:composer/getkirby/cms
+    affected_versions: vers:composer/<3.9.8+3
+    fixed_versions: vers:composer/3.9.8+3
+  - purl: pkg:composer/getkirby/cms
+    affected_versions: vers:composer/>=3.10.0|<3.10.1+2
+    fixed_versions: vers:composer/3.10.1+2
+  - purl: pkg:composer/getkirby/cms
+    affected_versions: vers:composer/>=4.0.0|<4.7.1
+    fixed_versions: vers:composer/4.7.1
+severities:
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:A/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-9p3p-w5jf-8xxg/GHSA-9p3p-w5jf-8xxg.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-23
+  - CWE-22
+references:
+  - url: https://github.com/getkirby/kirby
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/commit/3ebc9ad3f5adcbd4838ce60219f1c9a561231235
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/releases/tag/3.10.1.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/releases/tag/3.9.8.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/releases/tag/4.7.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/security/advisories/GHSA-9p3p-w5jf-8xxg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-30207
+    reference_type:
+    reference_id:

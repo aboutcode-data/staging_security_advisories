@@ -1,0 +1,81 @@
+advisory_id: GHSA-chm2-m3w2-wcxm
+datasource_id: github_osv_importer_v2/GHSA-chm2-m3w2-wcxm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-chm2-m3w2-wcxm/GHSA-chm2-m3w2-wcxm.json
+aliases: []
+summary: |
+  OpenClaw Google Chat spoofing access with allowlist authorized mutable email principal despite sender-ID mismatch
+  ### Summary
+  Google Chat allowlisting supports matching by sender email in addition to immutable sender resource name (`users/<id>`). This weakens identity binding if a deployment assumes allowlists are strictly keyed by immutable principals.
+
+  ### Affected Packages / Versions
+  (As of 2026-02-14; based on latest published npm versions)
+  - `openclaw` (npm): `<= 2026.2.13`
+  - `clawdbot` (npm): `<= 2026.1.24-3`
+
+  ### Details
+  Affected component:
+  - `extensions/googlechat/src/monitor.ts`
+
+  The `allowFrom` checks accept:
+  - Immutable sender id (`users/<id>`)
+  - Raw email (`alice@example.com`) for usability
+
+  Historically, `users/<email>` was also treated as an email allowlist entry. This is now deprecated because it looks like an immutable ID but is actually a mutable principal.
+
+  ### Security Triage (2026-02-14)
+  Severity: **Low**
+
+  Rationale:
+  - Requests are authenticated as coming from Google Chat (token verification), so this is not a generic unauthenticated spoofing vector.
+  - A realistic exploit generally requires **Google Workspace / IdP administrative control** over identity lifecycle (e.g. reassigning an email address to a different underlying account) to obtain the same email with a different `users/<id>`.
+  - With that level of access, the attacker typically has broader compromise paths.
+
+  We still treat it as a valid defense-in-depth report because accepting mutable principals in authorization decisions can increase risk in chained-failure scenarios.
+
+  ### Remediation / Behavior Changes
+  Goal: preserve usability while reducing footguns.
+  - Raw email allowlists remain supported.
+  - `users/<email>` is deprecated and treated as a **user id**, not as an email allowlist.
+  - Documentation recommends `users/<id>` when strict immutable binding is required.
+
+  ### Fix Commit(s)
+  - `c8424bf29a921e25663b29f308640b3d91a49432` (PR #16243)
+
+  Thanks @vincentkoc for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.14
+    fixed_versions: vers:npm/2026.2.14
+  - purl: pkg:npm/clawdbot
+    affected_versions: vers:npm/<=2026.1.24-3
+    fixed_versions:
+severities:
+  - score: '2.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:P/PR:H/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-chm2-m3w2-wcxm/GHSA-chm2-m3w2-wcxm.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-290
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/c8424bf29a921e25663b29f308640b3d91a49432
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/pull/16243
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.14
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-chm2-m3w2-wcxm
+    reference_type:
+    reference_id:

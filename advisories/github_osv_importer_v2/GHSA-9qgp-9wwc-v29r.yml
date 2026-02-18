@@ -1,0 +1,51 @@
+advisory_id: GHSA-9qgp-9wwc-v29r
+datasource_id: github_osv_importer_v2/GHSA-9qgp-9wwc-v29r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-9qgp-9wwc-v29r/GHSA-9qgp-9wwc-v29r.json
+aliases:
+  - CVE-2022-46158
+summary: |
+  PrestaShop has potential Information exposure in the upload directory
+  ### Impact
+  Potential Information exposure in the upload directory.
+
+  ### Patches
+  Patch in PrestaShop 1.7.8.8
+
+  ### References
+  https://capec.mitre.org/data/definitions/87.html
+
+  Thanks to DZPATROL
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<1.7.8+8
+    fixed_versions: vers:composer/1.7.8+8
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-9qgp-9wwc-v29r/GHSA-9qgp-9wwc-v29r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-862
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/8684d429fb7c3bb51efb098e8b92a1fd2958f8cf
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/releases/tag/1.7.8.8
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-9qgp-9wwc-v29r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-46158
+    reference_type:
+    reference_id:

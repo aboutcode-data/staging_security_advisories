@@ -1,0 +1,56 @@
+advisory_id: GHSA-9vvw-cc9w-f27h
+datasource_id: github_osv_importer_v2/GHSA-9vvw-cc9w-f27h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-9vvw-cc9w-f27h/GHSA-9vvw-cc9w-f27h.json
+aliases:
+  - CVE-2017-20165
+summary: |
+  debug Inefficient Regular Expression Complexity vulnerability
+  A vulnerability classified as problematic has been found in debug-js debug up to 3.0.x. This affects the function useColors of the file src/node.js. The manipulation of the argument str leads to inefficient regular expression complexity. Upgrading to version 3.1.0 is able to address this issue. The name of the patch is c38a0166c266a679c8de012d4eaccec3f944e685. It is recommended to upgrade the affected component. The identifier VDB-217665 was assigned to this vulnerability. The patch has been backported to the 2.6.x branch in version 2.6.9.
+impacted_packages:
+  - purl: pkg:npm/debug
+    affected_versions: vers:npm/>=3.0.0|<3.1.0
+    fixed_versions: vers:npm/3.1.0
+  - purl: pkg:npm/debug
+    affected_versions: vers:npm/<2.6.9
+    fixed_versions: vers:npm/2.6.9
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-9vvw-cc9w-f27h/GHSA-9vvw-cc9w-f27h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/debug-js/debug
+    reference_type:
+    reference_id:
+  - url: https://github.com/debug-js/debug/commit/c38a0166c266a679c8de012d4eaccec3f944e685
+    reference_type:
+    reference_id:
+  - url: https://github.com/debug-js/debug/commit/f53962e944a87e6ca9bb622a2a12dffc22a9bb5a
+    reference_type:
+    reference_id:
+  - url: https://github.com/debug-js/debug/pull/504
+    reference_type:
+    reference_id:
+  - url: https://github.com/debug-js/debug/releases/tag/2.6.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/debug-js/debug/releases/tag/3.1.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-20165
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.217665
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.217665
+    reference_type:
+    reference_id:

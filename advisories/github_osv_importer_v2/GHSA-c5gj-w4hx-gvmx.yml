@@ -1,0 +1,37 @@
+advisory_id: GHSA-c5gj-w4hx-gvmx
+datasource_id: github_osv_importer_v2/GHSA-c5gj-w4hx-gvmx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-c5gj-w4hx-gvmx/GHSA-c5gj-w4hx-gvmx.json
+aliases:
+  - CVE-2022-0688
+summary: |
+  Business Logic Errors in microweber
+  Microweber prior to 1.2.11 can suffer from insecure direct object reference(s). A malicious actor can remove items from a victim's cart.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.2.11
+    fixed_versions: vers:composer/1.2.11
+severities:
+  - score: '2.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-c5gj-w4hx-gvmx/GHSA-c5gj-w4hx-gvmx.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/a41f0fddaf08ff12b2b82506b1ca9490c93ab605
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/051ec6d4-0b0a-41bf-9ded-27813037c9c9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0688
+    reference_type:
+    reference_id:

@@ -1,0 +1,71 @@
+advisory_id: GHSA-cg23-qf8f-62rr
+datasource_id: github_osv_importer_v2/GHSA-cg23-qf8f-62rr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cg23-qf8f-62rr/GHSA-cg23-qf8f-62rr.json
+aliases:
+  - CVE-2024-51996
+summary: |
+  Symfony has an Authentication Bypass via RememberMe
+  ### Description
+
+  When consuming a persisted remember-me cookie, Symfony does not check if the username persisted in the database matches the username attached with the cookie, leading to authentication bypass.
+
+  ### Resolution
+
+  The `PersistentRememberMeHandler` class now ensures the submitted username is the cookie owner.
+
+  The patch for this issue is available [here](https://github.com/symfony/symfony/commit/81354d392c5f0b7a52bcbd729d6f82501e94135a) for branch 5.4.
+
+  ### Credits
+
+  We would like to thank Moritz Rauch - Pentryx AG for reporting the issue and Jérémy Derussé for providing the fix.
+impacted_packages:
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=5.3.0|<5.4.47
+    fixed_versions: vers:composer/5.4.47
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=6.0.0-BETA1|<6.4.15
+    fixed_versions: vers:composer/6.4.15
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=7.0.0-BETA1|<7.1.8
+    fixed_versions: vers:composer/7.1.8
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cg23-qf8f-62rr/GHSA-cg23-qf8f-62rr.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-cg23-qf8f-62rr/GHSA-cg23-qf8f-62rr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-289
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security-http/CVE-2024-51996.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2024-51996.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/81354d392c5f0b7a52bcbd729d6f82501e94135a
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/security/advisories/GHSA-cg23-qf8f-62rr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-51996
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2024-51996
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-chr3-w547-85hw
+datasource_id: github_osv_importer_v2/GHSA-chr3-w547-85hw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-chr3-w547-85hw/GHSA-chr3-w547-85hw.json
+aliases:
+  - CVE-2025-43808
+summary: |
+  Liferay Portal Commerce component has Incorrect Permission Assignment for Critical Resource
+  The Commerce component in Liferay Portal 7.3.0 through 7.4.3.112, and Liferay DXP 2023.Q4.0 through 2023.Q4.8, 2023.Q3.1 through 2023.Q3.10, 7.4 GA through update 92, and 7.3 Service Pack 3 through update 35 saves virtual products uploaded to Documents and Media with guest view permission, which allows remote attackers to access and download virtual products for free via a crafted URL.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.commerce/com.liferay.commerce.product.type.virtual.service
+    affected_versions: vers:maven/<4.0.47
+    fixed_versions: vers:maven/4.0.47
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-chr3-w547-85hw/GHSA-chr3-w547-85hw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-732
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43808
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43808
+    reference_type:
+    reference_id:

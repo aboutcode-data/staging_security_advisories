@@ -1,0 +1,41 @@
+advisory_id: GHSA-ccrc-5vp5-vp5j
+datasource_id: github_osv_importer_v2/GHSA-ccrc-5vp5-vp5j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-ccrc-5vp5-vp5j/GHSA-ccrc-5vp5-vp5j.json
+aliases:
+  - CVE-2025-43804
+summary: |
+  Liferay search widget vulnerable to Cross-site Scripting
+  There is a Cross-site scripting (XSS) vulnerability in Liferay Portal's Search widget . Versions 7.4.3.93 through 7.4.3.111, and Liferay DXP 2023.Q4.0, 2023.Q3.1 through 2023.Q3.4 allow remote attackers to inject arbitrary web scripts or HTML via the `_com_liferay_portal_search_web_portlet_SearchPortlet_userId` parameter.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.portal.search
+    affected_versions: vers:maven/<8.0.93
+    fixed_versions: vers:maven/8.0.93
+severities:
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-ccrc-5vp5-vp5j/GHSA-ccrc-5vp5-vp5j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/141f3fc8379e56831fae45a5b2647e86dab9d265
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-17892
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43804
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43804
+    reference_type:
+    reference_id:

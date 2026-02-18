@@ -1,0 +1,50 @@
+advisory_id: GHSA-f6pc-crhh-cp96
+datasource_id: github_osv_importer_v2/GHSA-f6pc-crhh-cp96
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-f6pc-crhh-cp96/GHSA-f6pc-crhh-cp96.json
+aliases:
+  - CVE-2020-15087
+summary: "Privilege escalation in Presto\n### Affected\nThis affects Presto server installations.\
+  \ This does NOT affect clients such as the CLI or JDBC driver.\n\n### Impact\nAuthenticated\
+  \ users can bypass authorization checks by directly accessing internal APIs. This impacts\
+  \ Presto server installations with secure internal communication configured.\n\nThis does\
+  \ not affect installations that have not configured secure internal communication, as these\
+  \ installations are inherently insecure.\n\n### Patches\nThis issue has been fixed starting\
+  \ with PrestoSQL version 337.\n\n### Workarounds\nThis issue can be mitigated by blocking\
+  \ network access to internal APIs on the coordinator and workers. \n\n### References\nSee\
+  \ the Presto documentation for [Secure Internal Communication](https://trino.io/docs/current/security/internal-communication.html).\n\
+  \n### For more information\nIf you have any questions or comments about this advisory:\n*\
+  \ Join the **#security** channel on [Slack](https://trino.io/slack.html).\n* Contact the security\
+  \ team at [security@trino.io](mailto:security@trino.io)"
+impacted_packages:
+  - purl: pkg:maven/io.prestosql/presto-server
+    affected_versions: vers:maven/<337
+    fixed_versions: vers:maven/337
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-f6pc-crhh-cp96/GHSA-f6pc-crhh-cp96.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://github.com/prestosql/presto/security/advisories/GHSA-f6pc-crhh-cp96
+    reference_type:
+    reference_id:
+  - url: https://github.com/trinodb/trino/security/advisories/GHSA-f6pc-crhh-cp96
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15087
+    reference_type:
+    reference_id:
+  - url: https://prestosql.io/docs/current/release/release-337.html#security-changes
+    reference_type:
+    reference_id:
+  - url: https://trino.io/docs/current/release/release-337.html#security-changes
+    reference_type:
+    reference_id:

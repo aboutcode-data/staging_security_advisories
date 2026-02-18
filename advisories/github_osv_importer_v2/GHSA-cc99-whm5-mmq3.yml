@@ -1,0 +1,59 @@
+advisory_id: GHSA-cc99-whm5-mmq3
+datasource_id: github_osv_importer_v2/GHSA-cc99-whm5-mmq3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-cc99-whm5-mmq3/GHSA-cc99-whm5-mmq3.json
+aliases:
+  - CVE-2021-3563
+summary: |
+  Openstack Keystone Incorrect Authorization vulnerability
+  A flaw was found in openstack-keystone, only the first 72 characters of an application secret are verified allowing attackers bypass some password complexity which administrators may be counting on. The highest threat from this vulnerability is to data confidentiality and integrity. A [patch](https://opendev.org/openstack/keystone/commit/7859ed26003858ebfd9a5e866b43f1a6a9e83dca) is available.
+impacted_packages:
+  - purl: pkg:pypi/keystone
+    affected_versions: vers:pypi/<=21.0.0
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-cc99-whm5-mmq3/GHSA-cc99-whm5-mmq3.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2021-3563
+    reference_type:
+    reference_id:
+  - url: https://bugs.launchpad.net/ossa/+bug/1901891
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1962908
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/01/msg00007.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3563
+    reference_type:
+    reference_id:
+  - url: https://opendev.org/openstack/keystone
+    reference_type:
+    reference_id:
+  - url: https://opendev.org/openstack/keystone/commit/7859ed26003858ebfd9a5e866b43f1a6a9e83dca
+    reference_type:
+    reference_id:
+  - url: https://review.opendev.org/c/openstack/keystone/+/803641
+    reference_type:
+    reference_id:
+  - url: https://review.opendev.org/c/openstack/keystone/+/828595
+    reference_type:
+    reference_id:
+  - url: https://review.opendev.org/c/openstack/keystone/+/856489
+    reference_type:
+    reference_id:
+  - url: https://security-tracker.debian.org/tracker/CVE-2021-3563
+    reference_type:
+    reference_id:

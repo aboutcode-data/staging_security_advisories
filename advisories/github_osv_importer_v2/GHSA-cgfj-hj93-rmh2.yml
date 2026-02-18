@@ -1,0 +1,67 @@
+advisory_id: GHSA-cgfj-hj93-rmh2
+datasource_id: github_osv_importer_v2/GHSA-cgfj-hj93-rmh2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-cgfj-hj93-rmh2/GHSA-cgfj-hj93-rmh2.json
+aliases:
+  - CVE-2025-30151
+summary: |
+  Shopware allows Denial Of Service via password length
+  ### Impact
+
+  It's possible to pass long passwords that leads to Denial Of Service via forms in Storefront forms or Store-API.
+
+  ### Patches
+  Update to Shopware 6.6.10.3 or 6.5.8.17
+
+  ### Workarounds
+  For older versions of 6.4, corresponding security measures are also available via a plugin. For the full range of functions, we recommend updating to the latest Shopware version.
+impacted_packages:
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/>=6.6.0+0|<6.6.10+3
+    fixed_versions: vers:composer/6.6.10+3
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/>=6.6.0+0|<6.6.10+3
+    fixed_versions: vers:composer/6.6.10+3
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/>=6.7.0+0-rc1|<6.7.0+0-rc2
+    fixed_versions: vers:composer/6.7.0+0-rc2
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/>=6.7.0+0-rc1|<6.7.0+0-rc2
+    fixed_versions: vers:composer/6.7.0+0-rc2
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<6.5.8+17
+    fixed_versions: vers:composer/6.5.8+17
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<6.5.8+17
+    fixed_versions: vers:composer/6.5.8+17
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-cgfj-hj93-rmh2/GHSA-cgfj-hj93-rmh2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v6.5.8.17
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v6.6.10.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v6.7.0.0-rc2
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-cgfj-hj93-rmh2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-30151
+    reference_type:
+    reference_id:

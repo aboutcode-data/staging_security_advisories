@@ -1,0 +1,35 @@
+advisory_id: GHSA-cm7f-hf2g-ghrp
+datasource_id: github_osv_importer_v2/GHSA-cm7f-hf2g-ghrp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-cm7f-hf2g-ghrp/GHSA-cm7f-hf2g-ghrp.json
+aliases:
+  - CVE-2022-37721
+summary: |
+  PyroCMS vulnerable to stored Cross Site Scripting
+  PyroCMS 3.9 is vulnerable to a stored Cross Site Scripting (XSS) when a low privileged user, such as an author, injects a crafted html and javascript payload in a blog post, leading to full admin account takeover or privilege escalation.
+impacted_packages:
+  - purl: pkg:composer/pyrocms/pyrocms
+    affected_versions: vers:composer/<=3.9.1
+    fixed_versions:
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-cm7f-hf2g-ghrp/GHSA-cm7f-hf2g-ghrp.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pyrocms/pyrocms
+    reference_type:
+    reference_id:
+  - url: https://labs.integrity.pt/advisories/cve-2022-37721
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37721
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-cchp-3rq6-69wj
+datasource_id: github_osv_importer_v2/GHSA-cchp-3rq6-69wj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-cchp-3rq6-69wj/GHSA-cchp-3rq6-69wj.json
+aliases:
+  - CVE-2024-38874
+summary: |
+  events2 TYPO3 extension insecure direct object reference (IDOR) vulnerability
+  An issue was discovered in the events2 (aka Events 2) extension before 8.3.8 and 9.x before 9.0.6 for TYPO3. Missing access checks in the management plugin lead to an insecure direct object reference (IDOR) vulnerability with the potential to activate or delete various events for unauthenticated users.
+impacted_packages:
+  - purl: pkg:composer/jweiland/events2
+    affected_versions: vers:composer/<8.3.8
+    fixed_versions: vers:composer/8.3.8
+  - purl: pkg:composer/jweiland/events2
+    affected_versions: vers:composer/>=9.0.0|<9.0.6
+    fixed_versions: vers:composer/9.0.6
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-cchp-3rq6-69wj/GHSA-cchp-3rq6-69wj.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-cchp-3rq6-69wj/GHSA-cchp-3rq6-69wj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-693
+  - CWE-639
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/jweiland/events2/CVE-2024-38874.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/jweiland-net/events2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-38874
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2024-003
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-f6h3-66xr-hqr2
+datasource_id: github_osv_importer_v2/GHSA-f6h3-66xr-hqr2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f6h3-66xr-hqr2/GHSA-f6h3-66xr-hqr2.json
+aliases:
+  - CVE-2019-19206
+summary: |
+  Dolibarr ERP and CRM contain XSS Vulnerability
+  Dolibarr CRM/ERP 10.0.3 allows `viewimage.php?file=` Stored XSS due to JavaScript execution in an SVG image for a profile picture.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<=10.0.3
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f6h3-66xr-hqr2/GHSA-f6h3-66xr-hqr2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://medium.com/@k43p/cve-2019-19206-stored-xss-due-to-javascript-execution-in-an-svg-file-ee1d038fba76
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19206
+    reference_type:
+    reference_id:
+  - url: https://www.dolibarr.org/forum/dolibarr-changelogs
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-f55g-x8qq-2569
+datasource_id: github_osv_importer_v2/GHSA-f55g-x8qq-2569
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f55g-x8qq-2569/GHSA-f55g-x8qq-2569.json
+aliases:
+  - CVE-2022-28481
+summary: |
+  CSV-Safe improperly filters special characters potentially leading to CSV injection
+  CSV-Safe gem < 3.0.0 doesn't filter out special characters which could trigger CSV Injection.
+impacted_packages:
+  - purl: pkg:gem/csv-safe
+    affected_versions: vers:gem/<3.0.0
+    fixed_versions: vers:gem/3.0.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f55g-x8qq-2569/GHSA-f55g-x8qq-2569.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1236
+references:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/csv-safe/CVE-2022-28481.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/WeblateOrg/weblate/commit/d9e136ff228e3760fd6dd7572869ac38e9a81809
+    reference_type:
+    reference_id:
+  - url: https://github.com/zvory/csv-safe
+    reference_type:
+    reference_id:
+  - url: https://github.com/zvory/csv-safe/issues/7
+    reference_type:
+    reference_id:
+  - url: https://github.com/zvory/csv-safe/pull/8
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/223999
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-28481
+    reference_type:
+    reference_id:

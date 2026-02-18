@@ -1,0 +1,42 @@
+advisory_id: GHSA-cqh9-jfqr-h9jj
+datasource_id: github_osv_importer_v2/GHSA-cqh9-jfqr-h9jj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-cqh9-jfqr-h9jj/GHSA-cqh9-jfqr-h9jj.json
+aliases:
+  - CVE-2024-4642
+summary: |
+  Withdrawn Advisory: Weights and Biases (wandb) has a Server-Side Request Forgery (SSRF) vulnerability
+  ## Withdrawn Advisory
+  This advisory has been withdrawn because the underlying issue existed in Weights and Biases's backend server code, not the software development kit included in the `wandb` PyPI package, as originally reported. This link is maintained to preserve external references.
+
+  ## Original Description
+  A Server-Side Request Forgery (SSRF) vulnerability exists in the wandb/wandb repository due to improper handling of HTTP 302 redirects. This issue allows team members with access to the 'User settings -> Webhooks' function to exploit this vulnerability to access internal HTTP(s) servers. In severe cases, such as on AWS instances, this could potentially be abused to achieve remote code execution on the victim's machine. The vulnerability is present in the latest version of the repository.
+impacted_packages:
+  - purl: pkg:pypi/wandb
+    affected_versions: vers:pypi/<=0.17.0
+    fixed_versions:
+severities:
+  - score: '7.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-cqh9-jfqr-h9jj/GHSA-cqh9-jfqr-h9jj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/wandb/wandb
+    reference_type:
+    reference_id:
+  - url: https://github.com/wandb/wandb/blob/main/wandb/sdk/lib/import_hooks.py#L1
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/055eb540-57f8-46d6-b858-3a9e22d347d9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-4642
+    reference_type:
+    reference_id:

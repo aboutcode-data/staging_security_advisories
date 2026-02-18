@@ -1,0 +1,101 @@
+advisory_id: GHSA-9vjp-v76f-g363
+datasource_id: github_osv_importer_v2/GHSA-9vjp-v76f-g363
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-9vjp-v76f-g363/GHSA-9vjp-v76f-g363.json
+aliases:
+  - CVE-2021-37137
+summary: |
+  SnappyFrameDecoder doesn't restrict chunk length any may buffer skippable chunks in an unnecessary way
+  ### Impact
+  The Snappy frame decoder function doesn't restrict the chunk length which may lead to excessive memory usage. Beside this it also may buffer reserved skippable chunks until the whole chunk was received which may lead to excessive memory usage as well.
+
+  This vulnerability can be triggered by supplying malicious input that decompresses to a very big size (via a network stream or a file) or by sending a huge skippable chunk.
+
+  ### Impact
+
+  All users of SnappyFrameDecoder are affected and so the application may be in risk for a DoS attach due excessive memory usage.
+
+  ### References
+  https://github.com/netty/netty/blob/netty-4.1.67.Final/codec/src/main/java/io/netty/handler/codec/compression/SnappyFrameDecoder.java#L79
+  https://github.com/netty/netty/blob/netty-4.1.67.Final/codec/src/main/java/io/netty/handler/codec/compression/SnappyFrameDecoder.java#L171
+  https://github.com/netty/netty/blob/netty-4.1.67.Final/codec/src/main/java/io/netty/handler/codec/compression/SnappyFrameDecoder.java#L185
+impacted_packages:
+  - purl: pkg:maven/io.netty/netty-codec
+    affected_versions: vers:maven/>=4.0.0|<4.1.68.Final
+    fixed_versions: vers:maven/4.1.68.Final
+  - purl: pkg:maven/org.jboss.netty/netty
+    affected_versions: vers:maven/<4.0.0
+    fixed_versions:
+  - purl: pkg:maven/io.netty/netty
+    affected_versions: vers:maven/<4.0.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-9vjp-v76f-g363/GHSA-9vjp-v76f-g363.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/netty/netty
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/blob/4.1/codec/src/main/java/io/netty/handler/codec/compression/SnappyFrameDecoder.java#L171
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/blob/4.1/codec/src/main/java/io/netty/handler/codec/compression/SnappyFrameDecoder.java#L185
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/blob/4.1/codec/src/main/java/io/netty/handler/codec/compression/SnappyFrameDecoder.java#L79
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/commit/6da4956b31023ae967451e1d94ff51a746a9194f
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/security/advisories/GHSA-9vjp-v76f-g363
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r06a145c9bd41a7344da242cef07977b24abe3349161ede948e30913d@%3Ccommits.druid.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r5406eaf3b07577d233b9f07cfc8f26e28369e6bab5edfcab41f28abb@%3Ccommits.druid.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r5e05eba32476c580412f9fbdfc9b8782d5b40558018ac4ac07192a04@%3Ccommits.druid.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r75490c61c2cb7b6ae2c81238fd52ae13636c60435abcd732d41531a0@%3Ccommits.druid.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/rd262f59b1586a108e320e5c966feeafbb1b8cdc96965debc7cc10b16@%3Ccommits.druid.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/rfb2bf8597e53364ccab212fbcbb2a4e9f0a9e1429b1dc08023c6868e@%3Cdev.tinkerpop.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/01/msg00008.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-37137
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220210-0012
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2023/dsa-5316
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

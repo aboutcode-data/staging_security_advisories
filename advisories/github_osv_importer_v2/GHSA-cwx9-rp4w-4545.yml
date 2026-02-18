@@ -1,0 +1,38 @@
+advisory_id: GHSA-cwx9-rp4w-4545
+datasource_id: github_osv_importer_v2/GHSA-cwx9-rp4w-4545
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-cwx9-rp4w-4545/GHSA-cwx9-rp4w-4545.json
+aliases:
+  - CVE-2021-46386
+summary: |
+  Mingsoft MCMS vulnerable to Remote Code Execution via file upload.
+  Mingsoft MCMS is a Java CMS. Versions prior to and including 5.2.5 contain a file upload vulnerability allowing for a jspx webshell to be uploaded via net.mingsoft.basic.action.web.FileAction#upload, resulting in remote code execution. It is unclear if this issue has been patched.
+impacted_packages:
+  - purl: pkg:maven/net.mingsoft/ms-mcms
+    affected_versions: vers:maven/<=5.2.5
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-cwx9-rp4w-4545/GHSA-cwx9-rp4w-4545.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://gitee.com/mingSoft/MCMS
+    reference_type:
+    reference_id:
+  - url: https://gitee.com/mingSoft/MCMS/issues/I4R0GW
+    reference_type:
+    reference_id:
+  - url: https://github.com/ming-soft/MCMS
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-46386
+    reference_type:
+    reference_id:

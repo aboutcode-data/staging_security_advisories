@@ -1,0 +1,35 @@
+advisory_id: GHSA-cwhp-rqfr-8462
+datasource_id: github_osv_importer_v2/GHSA-cwhp-rqfr-8462
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-cwhp-rqfr-8462/GHSA-cwhp-rqfr-8462.json
+aliases:
+  - CVE-2020-1691
+summary: |
+  Moodle XSS Vulnerability
+  In Moodle 3.8, messages required extra sanitizing before updating the conversation overview, to prevent the risk of stored cross-site scripting.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/3.8.0
+    fixed_versions: vers:composer/3.8.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-cwhp-rqfr-8462/GHSA-cwhp-rqfr-8462.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/moodle/moodle/commit/4e809346537e230cbff8235bfee0e7e151e4e9f9
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=395953
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-1691
+    reference_type:
+    reference_id:

@@ -1,0 +1,85 @@
+advisory_id: GHSA-cpf4-wx82-gxp6
+datasource_id: github_osv_importer_v2/GHSA-cpf4-wx82-gxp6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-cpf4-wx82-gxp6/GHSA-cpf4-wx82-gxp6.json
+aliases:
+  - CVE-2021-41222
+summary: "Segfault due to negative splits in `SplitV`\n### Impact\nThe [implementation](https://github.com/tensorflow/tensorflow/blob/e71b86d47f8bc1816bf54d7bddc4170e47670b97/tensorflow/core/kernels/split_v_op.cc#L49-L205)\
+  \ of `SplitV` can trigger a segfault is an attacker supplies negative arguments:\n\n```python\n\
+  import tensorflow as tf\n\ntf.raw_ops.SplitV(\n  value=tf.constant([]),\n  size_splits=[-1,\
+  \ -2]\n  ,axis=0,\n  num_split=2)\n``` \n  \nThis occurs whenever `size_splits` contains more\
+  \ than one value and at least one value is negative.\n  \n### Patches \nWe have patched the\
+  \ issue in GitHub commit [25d622ffc432acc736b14ca3904177579e733cc6](https://github.com/tensorflow/tensorflow/commit/25d622ffc432acc736b14ca3904177579e733cc6).\n\
+  \nThe fix will be included in TensorFlow 2.7.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.6.1, TensorFlow 2.5.2, and TensorFlow 2.4.4, as these are also affected and still in supported\
+  \ range.\n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions.\n\n### Attribution\nThis vulnerability has been reported by members of the Aivul\
+  \ Team from Qihoo 360."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.6.0|<2.6.1
+    fixed_versions: vers:pypi/2.6.1
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.5.0|<2.5.2
+    fixed_versions: vers:pypi/2.5.2
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.4.4
+    fixed_versions: vers:pypi/2.4.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.1
+    fixed_versions: vers:pypi/2.6.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.5.0|<2.5.2
+    fixed_versions: vers:pypi/2.5.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.4.4
+    fixed_versions: vers:pypi/2.4.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.1
+    fixed_versions: vers:pypi/2.6.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.5.0|<2.5.2
+    fixed_versions: vers:pypi/2.5.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.4.4
+    fixed_versions: vers:pypi/2.4.4
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-cpf4-wx82-gxp6/GHSA-cpf4-wx82-gxp6.json
+  - score: '6.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-cpf4-wx82-gxp6/GHSA-cpf4-wx82-gxp6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-682
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-cpu/PYSEC-2021-631.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-gpu/PYSEC-2021-829.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow/PYSEC-2021-414.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/25d622ffc432acc736b14ca3904177579e733cc6
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-cpf4-wx82-gxp6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41222
+    reference_type:
+    reference_id:

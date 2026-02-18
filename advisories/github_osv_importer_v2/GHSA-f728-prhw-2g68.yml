@@ -1,0 +1,38 @@
+advisory_id: GHSA-f728-prhw-2g68
+datasource_id: github_osv_importer_v2/GHSA-f728-prhw-2g68
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-f728-prhw-2g68/GHSA-f728-prhw-2g68.json
+aliases:
+  - CVE-2023-5865
+summary: |
+  Insufficient Session Expiration in thorsten/phpmyfaq
+  Insufficient Session Expiration in GitHub repository thorsten/phpmyfaq prior to 3.2.2.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.2.2
+    fixed_versions: vers:composer/3.2.2
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-f728-prhw-2g68/GHSA-f728-prhw-2g68.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-613
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/5f43786f52c3d517e7665abd25d534e180e08dc5
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/4c4b7395-d9fd-4ca0-98d7-2e20c1249aff
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5865
+    reference_type:
+    reference_id:

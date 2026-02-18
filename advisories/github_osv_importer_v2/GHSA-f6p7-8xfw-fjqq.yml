@@ -1,0 +1,36 @@
+advisory_id: GHSA-f6p7-8xfw-fjqq
+datasource_id: github_osv_importer_v2/GHSA-f6p7-8xfw-fjqq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-f6p7-8xfw-fjqq/GHSA-f6p7-8xfw-fjqq.json
+aliases: []
+summary: |
+  ### Impact
+  Authenticated Stored XSS in Administration
+
+  ### Patches
+  We recommend updating to the current version 5.6.10. You can get the update to 5.6.10 regularly via the Auto-Updater or directly via the download overview.
+
+  For older versions you can use the Security Plugin:
+  https://store.shopware.com/en/swag575294366635f/shopware-security-plugin.html
+
+
+  ### References
+  https://docs.shopware.com/en/shopware-5-en/security-updates/security-update-05-2021
+impacted_packages:
+  - purl: pkg:composer/shopware/shopware
+    affected_versions: vers:composer/<=5.6.9
+    fixed_versions: vers:composer/5.6.10
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://docs.shopware.com/en/shopware-5-en/security-updates/security-update-05-2021
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-f6p7-8xfw-fjqq
+    reference_type:
+    reference_id:

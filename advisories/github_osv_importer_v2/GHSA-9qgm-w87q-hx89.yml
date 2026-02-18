@@ -1,0 +1,35 @@
+advisory_id: GHSA-9qgm-w87q-hx89
+datasource_id: github_osv_importer_v2/GHSA-9qgm-w87q-hx89
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-9qgm-w87q-hx89/GHSA-9qgm-w87q-hx89.json
+aliases:
+  - CVE-2022-27263
+summary: |
+  Unrestricted Upload of File with Dangerous Type in Strapi
+  An arbitrary file upload vulnerability in the file upload module of Strapi v4.1.5 allows attackers to execute arbitrary code via a crafted file.
+impacted_packages:
+  - purl: pkg:npm/strapi
+    affected_versions: vers:npm/<=4.1.5
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-9qgm-w87q-hx89/GHSA-9qgm-w87q-hx89.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/strapi/strapi
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-27263
+    reference_type:
+    reference_id:
+  - url: https://www.youtube.com/watch?v=LEeabouqRrg
+    reference_type:
+    reference_id:

@@ -1,0 +1,36 @@
+advisory_id: GHSA-cr79-9pwf-r6f5
+datasource_id: github_osv_importer_v2/GHSA-cr79-9pwf-r6f5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-cr79-9pwf-r6f5/GHSA-cr79-9pwf-r6f5.json
+aliases:
+  - CVE-2016-10591
+summary: "Downloads Resources over HTTP in prince\nAffected versions of `prince` insecurely\
+  \ download an executable over an unencrypted HTTP connection. \n\nIn scenarios where an attacker\
+  \ has a privileged network position, it is possible to intercept the response and replace\
+  \ the executable with a malicious one, resulting in code execution on the system running `prince`.\n\
+  \n\n## Recommendation\n\nUpdate to version 1.4.6 or later."
+impacted_packages:
+  - purl: pkg:npm/prince
+    affected_versions: vers:npm/<=1.4.6
+    fixed_versions: vers:npm/1.4.7
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+  - CWE-269
+references:
+  - url: https://github.com/advisories/GHSA-cr79-9pwf-r6f5
+    reference_type:
+    reference_id:
+  - url: https://github.com/rse/node-prince
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10591
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/185
+    reference_type:
+    reference_id:

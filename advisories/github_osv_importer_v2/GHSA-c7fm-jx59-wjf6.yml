@@ -1,0 +1,38 @@
+advisory_id: GHSA-c7fm-jx59-wjf6
+datasource_id: github_osv_importer_v2/GHSA-c7fm-jx59-wjf6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-c7fm-jx59-wjf6/GHSA-c7fm-jx59-wjf6.json
+aliases:
+  - CVE-2022-0266
+summary: |
+  Authorization Bypass Through User-Controlled Key in LiveHelperChat
+  Authorization Bypass Through User-Controlled Key in Packagist remdex/livehelperchat prior to 3.92v.
+impacted_packages:
+  - purl: pkg:composer/remdex/livehelperchat
+    affected_versions: vers:composer/<3.92.0
+    fixed_versions: vers:composer/3.92.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-c7fm-jx59-wjf6/GHSA-c7fm-jx59-wjf6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: https://github.com/livehelperchat/livehelperchat
+    reference_type:
+    reference_id:
+  - url: https://github.com/livehelperchat/livehelperchat/commit/cc1122aed0d1ad9f05757eaea2ab9e6a924776bd
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/1ac267be-3af8-4774-89f2-77234d144d6b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0266
+    reference_type:
+    reference_id:

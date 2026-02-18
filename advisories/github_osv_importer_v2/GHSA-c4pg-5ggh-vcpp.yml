@@ -1,0 +1,45 @@
+advisory_id: GHSA-c4pg-5ggh-vcpp
+datasource_id: github_osv_importer_v2/GHSA-c4pg-5ggh-vcpp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-c4pg-5ggh-vcpp/GHSA-c4pg-5ggh-vcpp.json
+aliases: []
+summary: |
+  Duplicate Advisory: Sandbox escape in Artemis Java Test Sandbox
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-98hq-4wmw-98w9. This link is maintained to preserve external references.
+
+  ## Original Description
+  Artemis Java Test Sandbox versions before 1.11.2 are vulnerable to a sandbox escape when an attacker loads untrusted libraries using System.load or System.loadLibrary. An attacker can abuse this issue to execute arbitrary Java when a victim executes the supposedly sandboxed code.
+impacted_packages:
+  - purl: pkg:maven/de.tum.in.ase/artemis-java-test-sandbox
+    affected_versions: vers:maven/<1.11.2
+    fixed_versions: vers:maven/1.11.2
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-c4pg-5ggh-vcpp/GHSA-c4pg-5ggh-vcpp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-284
+references:
+  - url: https://github.com/advisories/GHSA-98hq-4wmw-98w9
+    reference_type:
+    reference_id:
+  - url: https://github.com/ls1intum/Ares
+    reference_type:
+    reference_id:
+  - url: https://github.com/ls1intum/Ares/security/advisories/GHSA-98hq-4wmw-98w9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23681
+    reference_type:
+    reference_id:
+  - url: https://vulncheck.com/advisories/vc-advisory-GHSA-98hq-4wmw-98w9
+    reference_type:
+    reference_id:

@@ -1,0 +1,54 @@
+advisory_id: GHSA-c22j-84c7-cm77
+datasource_id: github_osv_importer_v2/GHSA-c22j-84c7-cm77
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-c22j-84c7-cm77/GHSA-c22j-84c7-cm77.json
+aliases:
+  - CVE-2009-0815
+summary: |
+  TYPO3 leaks a hash secret in an error message
+  The jumpUrl mechanism in class.tslib_fe.php in TYPO3 3.3.x through 3.8.x, 4.0 before 4.0.12, 4.1 before 4.1.10, 4.2 before 4.2.6, and 4.3alpha1 leaks a hash secret (juHash) in an error message, which allows remote attackers to read arbitrary files by including the hash in a request.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=3.3.0|<4.0.12
+    fixed_versions: vers:composer/4.0.12
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=4.1.0|<4.1.10
+    fixed_versions: vers:composer/4.1.10
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=4.2.0|<4.2.6
+    fixed_versions: vers:composer/4.2.6
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-c22j-84c7-cm77/GHSA-c22j-84c7-cm77.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-209
+references:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2009-0815
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20091206080208/http://typo3.org/teams/security/security-bulletins/typo3-sa-2009-002
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200915000000*/http://www.securitytracker.com/id?1021710
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2009/dsa-1720
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2009/02/10/6
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/8038.py
+    reference_type: exploit
+    reference_id: OSVDB-52048;CVE-2009-0815

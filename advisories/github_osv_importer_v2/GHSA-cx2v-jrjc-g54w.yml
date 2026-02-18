@@ -1,0 +1,35 @@
+advisory_id: GHSA-cx2v-jrjc-g54w
+datasource_id: github_osv_importer_v2/GHSA-cx2v-jrjc-g54w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cx2v-jrjc-g54w/GHSA-cx2v-jrjc-g54w.json
+aliases:
+  - CVE-2018-12972
+summary: |
+  OpenTSDB vulnerable to OS Command Injection
+  An issue was discovered in OpenTSDB 2.3.0. Many parameters to the /q URI can execute commands, including o, key, style, and yrange and y2range and their JSON input.
+impacted_packages:
+  - purl: pkg:maven/net.opentsdb/opentsdb
+    affected_versions: vers:maven/<=2.3.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-cx2v-jrjc-g54w/GHSA-cx2v-jrjc-g54w.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/OpenTSDB/opentsdb
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenTSDB/opentsdb/issues/1239
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-12972
+    reference_type:
+    reference_id:

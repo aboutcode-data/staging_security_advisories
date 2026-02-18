@@ -1,0 +1,46 @@
+advisory_id: GHSA-c7xm-rwqj-pgcj
+datasource_id: github_osv_importer_v2/GHSA-c7xm-rwqj-pgcj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-c7xm-rwqj-pgcj/GHSA-c7xm-rwqj-pgcj.json
+aliases:
+  - CVE-2024-28709
+summary: |
+  LimeSurvey Cross Site Scripting vulnerability
+  Cross Site Scripting vulnerability in LimeSurvey before 6.5.12+240611 allows a remote attacker to execute arbitrary code via a crafted script to the title and comment fields.
+impacted_packages:
+  - purl: pkg:composer/limesurvey/limesurvey
+    affected_versions: vers:composer/<6.5.12
+    fixed_versions: vers:composer/6.5.12
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-c7xm-rwqj-pgcj/GHSA-c7xm-rwqj-pgcj.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-c7xm-rwqj-pgcj/GHSA-c7xm-rwqj-pgcj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://limesurvey.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/LimeSurvey/LimeSurvey
+    reference_type:
+    reference_id:
+  - url: https://github.com/LimeSurvey/LimeSurvey/commit/c844c4fba81cc26ffe6544bf095bad6252910bc0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-28709
+    reference_type:
+    reference_id:
+  - url: https://www.limesurvey.org
+    reference_type:
+    reference_id:

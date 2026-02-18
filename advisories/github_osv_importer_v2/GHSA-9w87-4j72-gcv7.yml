@@ -1,0 +1,30 @@
+advisory_id: GHSA-9w87-4j72-gcv7
+datasource_id: github_osv_importer_v2/GHSA-9w87-4j72-gcv7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-9w87-4j72-gcv7/GHSA-9w87-4j72-gcv7.json
+aliases: []
+summary: |
+  Insecure Default Configuration in graphql-code-generator
+  Versions of `graphql-code-generator` prior to 0.18.2 have an Insecure Default Configuration. The packages sets `NODE_TLS_REJECT_UNAUTHORIZED` to 0, disabling certificate verification for the entire project. This results in Insecure Communication for the process.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.18.2 or later.
+impacted_packages:
+  - purl: pkg:npm/graphql-code-generator
+    affected_versions: vers:npm/<0.18.2
+    fixed_versions: vers:npm/0.18.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/dotansimha/graphql-code-generator/issues/1806
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/834
+    reference_type:
+    reference_id:

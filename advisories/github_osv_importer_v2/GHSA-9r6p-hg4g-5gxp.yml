@@ -1,0 +1,39 @@
+advisory_id: GHSA-9r6p-hg4g-5gxp
+datasource_id: github_osv_importer_v2/GHSA-9r6p-hg4g-5gxp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-9r6p-hg4g-5gxp/GHSA-9r6p-hg4g-5gxp.json
+aliases:
+  - CVE-2023-6599
+summary: |
+  Microweber missing standardized error handling mechanism
+  Missing Standardized Error Handling Mechanism in GitHub repository microweber/microweber prior to 2.0.0.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<2.0.0
+    fixed_versions: vers:composer/2.0.0
+severities:
+  - score: '3.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-9r6p-hg4g-5gxp/GHSA-9r6p-hg4g-5gxp.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-544
+  - CWE-755
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/f7eb9e1c6e801346f07f3b0164a01ac5f2ca5cfd
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/6198785c-bf60-422e-9b80-68a6e658a10e
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6599
+    reference_type:
+    reference_id:

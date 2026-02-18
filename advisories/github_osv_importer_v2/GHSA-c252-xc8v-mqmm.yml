@@ -1,0 +1,36 @@
+advisory_id: GHSA-c252-xc8v-mqmm
+datasource_id: github_osv_importer_v2/GHSA-c252-xc8v-mqmm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-c252-xc8v-mqmm/GHSA-c252-xc8v-mqmm.json
+aliases:
+  - CVE-2015-2067
+summary: |
+  MAGMI plugin for Magento Server Directory Traversal
+  Directory traversal vulnerability in web/ajax_pluginconf.php in the MAGMI (aka Magento Mass Importer) plugin for Magento Server allows remote attackers to read arbitrary files via a .. (dot dot) in the file parameter.
+impacted_packages:
+  - purl: pkg:composer/dweeves/magmi
+    affected_versions: vers:composer/<=0.7.21
+    fixed_versions:
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://packetstormsecurity.com/files/130250/Magento-Server-MAGMI-Cross-Site-Scripting-Local-File-Inclusion.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/dweeves/magmi-git
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-2067
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210122162452/http://www.securityfocus.com/bid/74881
+    reference_type:
+    reference_id:
+  - url: http://www.exploit-db.com/exploits/35996
+    reference_type:
+    reference_id:

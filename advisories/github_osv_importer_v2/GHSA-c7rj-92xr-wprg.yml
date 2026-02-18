@@ -1,0 +1,33 @@
+advisory_id: GHSA-c7rj-92xr-wprg
+datasource_id: github_osv_importer_v2/GHSA-c7rj-92xr-wprg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-c7rj-92xr-wprg/GHSA-c7rj-92xr-wprg.json
+aliases: []
+summary: |
+  Insecure Unserialize in TYPO3 Backend
+  Failing to properly validate incoming data, the suggest wizard is susceptible to insecure unserialize. To exploit this vulnerability a valid backend user account is needed.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.29
+    fixed_versions: vers:composer/6.2.29
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.6.0|<7.6.13
+    fixed_versions: vers:composer/7.6.13
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.4.1
+    fixed_versions: vers:composer/8.4.1
+severities:
+  - score: '5.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-c7rj-92xr-wprg/GHSA-c7rj-92xr-wprg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2016-11-22-1.yaml
+    reference_type:
+    reference_id:

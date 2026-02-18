@@ -1,0 +1,50 @@
+advisory_id: GHSA-9w53-xr52-mwgj
+datasource_id: github_osv_importer_v2/GHSA-9w53-xr52-mwgj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-9w53-xr52-mwgj/GHSA-9w53-xr52-mwgj.json
+aliases:
+  - CVE-2025-10164
+summary: |
+  SGLang Remote Code Execution Vulnerability via Unsafe Deserialization in update_weights_from_tensor
+  A security flaw has been discovered in lmsys sglang 0.4.6. Affected by this vulnerability is the function main of the file /update_weights_from_tensor. The manipulation of the argument serialized_named_tensors results in deserialization. The attack can be launched remotely. The exploit has been released to the public and may be exploited. The vendor was contacted early about this disclosure but did not respond in any way.
+impacted_packages:
+  - purl: pkg:pypi/sglang
+    affected_versions: vers:pypi/<=0.5.3
+    fixed_versions: vers:pypi/0.5.4
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-9w53-xr52-mwgj/GHSA-9w53-xr52-mwgj.json
+  - score: '5.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-9w53-xr52-mwgj/GHSA-9w53-xr52-mwgj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+  - CWE-20
+references:
+  - url: https://github.com/sgl-project/sglang
+    reference_type:
+    reference_id:
+  - url: https://github.com/sgl-project/sglang/commit/49afb3d9d9deedf6dea3a6dd5c50e85e7d8bcb07
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-10164
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.323203
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.323203
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?submit.635919
+    reference_type:
+    reference_id:

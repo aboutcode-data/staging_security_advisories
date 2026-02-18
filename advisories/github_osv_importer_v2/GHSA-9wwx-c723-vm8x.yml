@@ -1,0 +1,53 @@
+advisory_id: GHSA-9wwx-c723-vm8x
+datasource_id: github_osv_importer_v2/GHSA-9wwx-c723-vm8x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-9wwx-c723-vm8x/GHSA-9wwx-c723-vm8x.json
+aliases: []
+summary: |
+  eZ Platform REST API returns list of all SiteAccesses
+  This security advisory fixes a vulnerability in eZ Platform, and we recommend that you install it as soon as possible. The issue is that the REST API may be made to disclose the names of all available site accesses. The severity of this depends on your installation, please consider your response accordingly.
+
+  To install, use Composer to update "ezsystems/ezpublish-kernel" to one of the "Resolving versions" mentioned above, or apply this patch manually:
+  https://github.com/ezsystems/ezpublish-kernel/commit/1551723ec134878a4cb598bfc5d900ba6164117a
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=7.3.0|<7.3.2+1
+    fixed_versions: vers:composer/7.3.2+1
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=7.0.0|<7.2.4+1
+    fixed_versions: vers:composer/7.2.4+1
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=6.8.0|<6.13.5+1
+    fixed_versions: vers:composer/6.13.5+1
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=6.0.0|<6.7.9+1
+    fixed_versions: vers:composer/6.7.9+1
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=5.4.0|<5.4.13+1
+    fixed_versions: vers:composer/5.4.13+1
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=5.3.0|<5.3.12+1
+    fixed_versions: vers:composer/5.3.12+1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/ezsystems/ezpublish-kernel
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel/commit/1551723ec134878a4cb598bfc5d900ba6164117a
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/ezsystems/ezpublish-kernel/2018-11-21-1.yaml
+    reference_type:
+    reference_id:
+  - url: http://share.ez.no/community-project/security-advisories/ezsa-2018-008-rest-api-returns-list-of-all-siteaccesses
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210614181629/https://share.ez.no/community-project/security-advisories/ezsa-2018-008-rest-api-returns-list-of-all-siteaccesses
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-cgmm-c2m9-ff7r
+datasource_id: github_osv_importer_v2/GHSA-cgmm-c2m9-ff7r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-cgmm-c2m9-ff7r/GHSA-cgmm-c2m9-ff7r.json
+aliases:
+  - CVE-2021-31635
+summary: |
+  jFinal Server-Side Template Injection vulnerability
+  Server-Side Template Injection (SSTI) vulnerability in jFinal v.4.9.08 allows a remote attacker to execute arbitrary code via the template function.
+impacted_packages:
+  - purl: pkg:maven/com.jfinal/jfinal
+    affected_versions: vers:maven/<=4.9.08
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-cgmm-c2m9-ff7r/GHSA-cgmm-c2m9-ff7r.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://gitee.com/jfinal/jfinal/issues/I3IXLE
+    reference_type:
+    reference_id:
+  - url: https://github.com/jfinal/jfinal/issues/187
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-31635
+    reference_type:
+    reference_id:

@@ -1,0 +1,49 @@
+advisory_id: GHSA-f3r3-h2mq-hx2h
+datasource_id: github_osv_importer_v2/GHSA-f3r3-h2mq-hx2h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-f3r3-h2mq-hx2h/GHSA-f3r3-h2mq-hx2h.json
+aliases:
+  - CVE-2024-52815
+summary: |
+  Synapse allows a a malformed invite to break the invitee's `/sync`
+  ### Impact
+
+  Synapse versions before 1.120.1 fail to properly validate invites received over federation. This vulnerability allows a malicious server to send a specially crafted invite that disrupts the invited user's `/sync` functionality.
+
+  ### Patches
+
+  Synapse 1.120.1 rejects such invalid invites received over federation and restores the ability to sync for affected users.
+
+  ### Workarounds
+
+  Server administrators can disable federation from untrusted servers.
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, please email us at [security at element.io](mailto:security@element.io).
+impacted_packages:
+  - purl: pkg:pypi/matrix-synapse
+    affected_versions: vers:pypi/<1.120.1
+    fixed_versions: vers:pypi/1.120.1
+severities:
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-f3r3-h2mq-hx2h/GHSA-f3r3-h2mq-hx2h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/element-hq/synapse
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-hq/synapse/security/advisories/GHSA-f3r3-h2mq-hx2h
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-52815
+    reference_type:
+    reference_id:

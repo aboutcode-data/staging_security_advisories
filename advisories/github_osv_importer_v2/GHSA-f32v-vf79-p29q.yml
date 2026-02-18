@@ -1,0 +1,41 @@
+advisory_id: GHSA-f32v-vf79-p29q
+datasource_id: github_osv_importer_v2/GHSA-f32v-vf79-p29q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-f32v-vf79-p29q/GHSA-f32v-vf79-p29q.json
+aliases:
+  - CVE-2022-1466
+summary: |
+  Improper authorization in Keycloak
+  Due to improper authorization, Red Hat Single Sign-On is vulnerable to users performing actions that they should not be allowed to perform. It was possible to add users to the master realm even though no respective permission was granted.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<17.0.1
+    fixed_versions: vers:maven/17.0.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-f32v-vf79-p29q/GHSA-f32v-vf79-p29q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2050228
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1466
+    reference_type:
+    reference_id:
+  - url: https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2021-076.txt
+    reference_type:
+    reference_id:
+  - url: https://www.syss.de/pentest-blog/fehlerhafte-autorisierung-bei-red-hat-single-sign-on-750ga-syss-2021-076
+    reference_type:
+    reference_id:

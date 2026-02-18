@@ -1,0 +1,47 @@
+advisory_id: GHSA-9qgq-93c7-9hm4
+datasource_id: github_osv_importer_v2/GHSA-9qgq-93c7-9hm4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-9qgq-93c7-9hm4/GHSA-9qgq-93c7-9hm4.json
+aliases:
+  - CVE-2024-33997
+summary: |
+  Moodle stored Cross-site Scripting (XSS)
+  Additional sanitizing was required when opening the equation editor to prevent a stored Cross-site Scripting (XSS) risk when editing another user's equation.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0|<4.3.4
+    fixed_versions: vers:composer/4.3.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0|<4.2.7
+    fixed_versions: vers:composer/4.2.7
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.10
+    fixed_versions: vers:composer/4.1.10
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-9qgq-93c7-9hm4/GHSA-9qgq-93c7-9hm4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-81352
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/25b1b643c873f6d83ae61903012896b2811fa3bb
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=458385
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-33997
+    reference_type:
+    reference_id:

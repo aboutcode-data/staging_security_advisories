@@ -1,0 +1,48 @@
+advisory_id: GHSA-cqx4-9vqf-q3m8
+datasource_id: github_osv_importer_v2/GHSA-cqx4-9vqf-q3m8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-cqx4-9vqf-q3m8/GHSA-cqx4-9vqf-q3m8.json
+aliases:
+  - CVE-2025-5257
+summary: |
+  Mautic's Predictable Page Indexing Might Lead to Sensitive Data Exposure
+  ### Summary
+  This advisory addresses a security vulnerability in Mautic where unpublished page previews could be accessed by unauthenticated users and potentially indexed by search engines. This could lead to the unintended disclosure of draft content or sensitive information.
+
+  Unauthorized Access to Unpublished Page Previews: The page preview functionality for unpublished content, accessible via predictable URLs (e.g., `/page/preview/1`, `/page/preview/2`), lacked proper authorization checks. This allowed any unauthenticated user to view content that was not yet intended for public release, and allowed search engines to index these private preview URLs, making the content publicly discoverable.
+
+  ### Mitigation
+  Mautic has patched this vulnerability by enforcing proper permission checks on preview pages. Users should upgrade to the patched version of Mautic or later.
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=4.0.0|<4.4.16
+    fixed_versions: vers:composer/4.4.16
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=5.0.0-alpha|<5.2.6
+    fixed_versions: vers:composer/5.2.6
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=6.0.0-alpha|<6.0.2
+    fixed_versions: vers:composer/6.0.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-cqx4-9vqf-q3m8/GHSA-cqx4-9vqf-q3m8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1284
+  - CWE-284
+references:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-cqx4-9vqf-q3m8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-5257
+    reference_type:
+    reference_id:

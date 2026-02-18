@@ -1,0 +1,83 @@
+advisory_id: GHSA-f4w6-h4f5-wx45
+datasource_id: github_osv_importer_v2/GHSA-f4w6-h4f5-wx45
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-f4w6-h4f5-wx45/GHSA-f4w6-h4f5-wx45.json
+aliases:
+  - CVE-2022-35934
+summary: |
+  TensorFlow vulnerable to `CHECK` failure in tf.reshape via overflows
+  ### Impact
+  The implementation of tf.reshape op in TensorFlow is vulnerable to a denial of service via CHECK-failure (assertion failure) caused by overflowing the number of elements in a tensor:
+  ```python
+  import tensorflow as tf
+
+  tf.reshape(tensor=[[1]],shape=tf.constant([0 for i in range(255)], dtype=tf.int64))
+  ```
+  This is another instance of [TFSA-2021-198](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/security/advisory/tfsa-2021-198.md) (https://github.com/advisories/GHSA-prcg-wp5q-rv7p).
+
+  ### Patches
+  We have patched the issue in GitHub commit [61f0f9b94df8c0411f0ad0ecc2fec2d3f3c33555](https://github.com/tensorflow/tensorflow/commit/61f0f9b94df8c0411f0ad0ecc2fec2d3f3c33555).
+
+  The fix will be included in TensorFlow 2.10.0. We will also cherrypick this commit on TensorFlow 2.9.1, TensorFlow 2.8.1, and TensorFlow 2.7.2, as these are also affected and still in supported range.
+
+  ### For more information
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.
+
+  ### Attribution
+  This vulnerability has been reported by Kang Hong Jin from Singapore Management University.
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.9.0|<2.9.1
+    fixed_versions: vers:pypi/2.9.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.1
+    fixed_versions: vers:pypi/2.9.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.1
+    fixed_versions: vers:pypi/2.9.1
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-f4w6-h4f5-wx45/GHSA-f4w6-h4f5-wx45.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-617
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/61f0f9b94df8c0411f0ad0ecc2fec2d3f3c33555
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.10.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-f4w6-h4f5-wx45
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-35934
+    reference_type:
+    reference_id:

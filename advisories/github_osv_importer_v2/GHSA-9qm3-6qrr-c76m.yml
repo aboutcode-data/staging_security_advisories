@@ -1,0 +1,44 @@
+advisory_id: GHSA-9qm3-6qrr-c76m
+datasource_id: github_osv_importer_v2/GHSA-9qm3-6qrr-c76m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-9qm3-6qrr-c76m/GHSA-9qm3-6qrr-c76m.json
+aliases:
+  - CVE-2025-34146
+summary: |
+  @nyariv/sandboxjs has Prototype Pollution vulnerability that may lead to RCE
+  A prototype pollution vulnerability exists in @nyariv/sandboxjs versions <= 0.8.23, allowing attackers to inject arbitrary properties into Object.prototype via crafted JavaScript code. This can result in a denial-of-service (DoS) condition or, under certain conditions, escape the sandboxed environment intended to restrict code execution. The vulnerability stems from insufficient prototype access checks in the sandbox’s executor logic, particularly in the handling of JavaScript function objects returned.
+impacted_packages:
+  - purl: pkg:npm/%40nyariv/sandboxjs
+    affected_versions: vers:npm/<0.8.24
+    fixed_versions: vers:npm/0.8.24
+severities:
+  - score: '7.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-9qm3-6qrr-c76m/GHSA-9qm3-6qrr-c76m.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://gist.github.com/Hagrid29/9df27829a491080f923c4f6b8518d7e3
+    reference_type:
+    reference_id:
+  - url: https://github.com/nyariv/SandboxJS
+    reference_type:
+    reference_id:
+  - url: https://github.com/nyariv/SandboxJS/issues/31
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-34146
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/@nyariv/sandboxjs
+    reference_type:
+    reference_id:
+  - url: https://www.vulncheck.com/advisories/nyariv-sandboxjs-prototype-pollution-sandbox-escape-dos
+    reference_type:
+    reference_id:
