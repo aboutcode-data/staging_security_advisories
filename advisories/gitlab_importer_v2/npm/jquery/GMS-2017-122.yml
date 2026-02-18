@@ -1,0 +1,17 @@
+advisory_id: npm/jquery/GMS-2017-122
+datasource_id: gitlab_importer_v2/npm/jquery/GMS-2017-122
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/jquery/GMS-2017-122.yml
+aliases:
+  - GMS-2017-122
+summary: |
+  XSS
+  When text/javascript responses are received from cross-origin ajax requests not containing the option `dataType`, the result is executed in `jQuery.globalEval` potentially allowing an attacker to execute arbitrary code on the origin.
+impacted_packages:
+  - purl: pkg:npm/jquery
+    affected_versions: vers:npm/<1.12.0|>1.12.2|<3.0.0-beta1
+    fixed_versions: vers:npm/1.12.0|3.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

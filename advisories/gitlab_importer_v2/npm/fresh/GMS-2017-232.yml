@@ -1,0 +1,17 @@
+advisory_id: npm/fresh/GMS-2017-232
+datasource_id: gitlab_importer_v2/npm/fresh/GMS-2017-232
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/fresh/GMS-2017-232.yml
+aliases:
+  - GMS-2017-232
+summary: |
+  Regular Expression Denial of Service
+  Fresh is vulnerable to a regular expression denial of service when it is passed specially crafted input to parse. This causes the event loop to be blocked causing a denial of service condition.
+impacted_packages:
+  - purl: pkg:npm/fresh
+    affected_versions: vers:npm/<0.5.2
+    fixed_versions: vers:npm/0.5.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

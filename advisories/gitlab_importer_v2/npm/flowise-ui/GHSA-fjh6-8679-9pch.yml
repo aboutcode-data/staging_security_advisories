@@ -1,0 +1,41 @@
+advisory_id: npm/flowise-ui/GHSA-fjh6-8679-9pch
+datasource_id: gitlab_importer_v2/npm/flowise-ui/GHSA-fjh6-8679-9pch
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/flowise-ui/GHSA-fjh6-8679-9pch.yml
+aliases:
+  - GHSA-fjh6-8679-9pch
+summary: |
+  Flowise does not Prevent Bypass of Password Confirmation - Unverified Password Change
+  Bypass of Password Confirmation - Unverified Password Change (authenticated change without current password)
+
+  An authenticated user is allowed to change their account password without supplying the current password or any additional verification. The application does not verify the actor’s authority to perform that credential change (no current-password check, no authorization enforcement). An attacker who is merely authenticated (or who can trick or coerce an authenticated session) can set a new password and gain control of the account. (ATO - Account Takeover)
+impacted_packages:
+  - purl: pkg:npm/flowise-ui
+    affected_versions: vers:npm/<3.0.10
+    fixed_versions: vers:npm/3.0.10
+severities:
+  - score:
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/flowise-ui/GHSA-fjh6-8679-9pch.yml
+weaknesses:
+  - CWE-306
+  - CWE-620
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FlowiseAI/Flowise
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise/pull/5294
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise/releases/tag/flowise%403.0.10
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-fjh6-8679-9pch
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-fjh6-8679-9pch
+    reference_type:
+    reference_id: GHSA-fjh6-8679-9pch

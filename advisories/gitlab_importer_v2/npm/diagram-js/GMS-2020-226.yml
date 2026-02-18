@@ -1,0 +1,28 @@
+advisory_id: npm/diagram-js/GMS-2020-226
+datasource_id: gitlab_importer_v2/npm/diagram-js/GMS-2020-226
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/diagram-js/GMS-2020-226.yml
+aliases:
+  - GHSA-8fw4-xh83-3j6q
+  - GMS-2020-226
+summary: "Cross-Site Scripting in diagram-js\nVersions of `diagram-js` (f ) (f ) are vulnerable\
+  \ to Cross-Site Scripting. The package fails to escape output of user-controlled input in\
+  \ `search-pad`, allowing attackers to execute arbitrary JavaScript. If you are using diagram-js,\
+  \ upgrade to \nIf you are using diagram-js, upgrade to"
+impacted_packages:
+  - purl: pkg:npm/diagram-js
+    affected_versions: vers:npm/<2.6.2|>=3.0.0|<3.3.1
+    fixed_versions: vers:npm/2.6.2|3.3.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/bpmn-io/diagram-js
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/982
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-8fw4-xh83-3j6q
+    reference_type:
+    reference_id: GHSA-8fw4-xh83-3j6q

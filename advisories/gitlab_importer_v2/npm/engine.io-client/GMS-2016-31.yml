@@ -1,0 +1,23 @@
+advisory_id: npm/engine.io-client/GMS-2016-31
+datasource_id: gitlab_importer_v2/npm/engine.io-client/GMS-2016-31
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/engine.io-client/GMS-2016-31.yml
+aliases:
+  - GMS-2016-31
+summary: |
+  Insecure Defaults Allow MITM Over TLS
+  There's a flaw in the way that node.js handles the `rejectUnauthorized` setting. If the value is something that evaluates to false, certificate verification will be disabled. This is problematic as engine.io-client passes in an object for settings that includes the `rejectUnauthorized` property, whether it has been set or not. If the value has not been explicitly changed, it will be passed in as `null`, resulting in certificate verification being turned off.
+impacted_packages:
+  - purl: pkg:npm/engine.io-client
+    affected_versions: vers:npm/<=1.6.8
+    fixed_versions: vers:npm/1.6.9
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/socketio/engine.io-client/commit/2c55b278a491bf45313ecc0825cf800e2f7ff5c1
+    reference_type:
+    reference_id:
+  - url: https://www.cigital.com/blog/node-js-socket-io/
+    reference_type:
+    reference_id:

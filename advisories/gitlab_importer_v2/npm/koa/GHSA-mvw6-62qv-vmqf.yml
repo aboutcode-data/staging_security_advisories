@@ -1,0 +1,54 @@
+advisory_id: npm/koa/GHSA-mvw6-62qv-vmqf
+datasource_id: gitlab_importer_v2/npm/koa/GHSA-mvw6-62qv-vmqf
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/koa/GHSA-mvw6-62qv-vmqf.yml
+aliases:
+  - GHSA-mvw6-62qv-vmqf
+summary: |
+  Duplicate Advisory: Koa Open Redirect via Referrer Header (User-Controlled)
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-jgmv-j7ww-jx2x. This link is maintained to preserve external references.
+
+  ### Original Description
+  A vulnerability, which was classified as problematic, was found in KoaJS Koa up to 3.0.0. Affected is the function back in the library lib/response.js of the component HTTP Header Handler. The manipulation of the argument Referrer leads to open redirect. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used.
+impacted_packages:
+  - purl: pkg:npm/koa
+    affected_versions: vers:npm/<3.0.1
+    fixed_versions: vers:npm/3.0.1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/koa/GHSA-mvw6-62qv-vmqf.yml
+weaknesses:
+  - CWE-1035
+  - CWE-601
+  - CWE-937
+references:
+  - url: https://github.com/koajs/koa
+    reference_type:
+    reference_id:
+  - url: https://github.com/koajs/koa/commit/422c551c63d00f24e2bbbdf492f262a5935bb1f0
+    reference_type:
+    reference_id:
+  - url: https://github.com/koajs/koa/issues/1892
+    reference_type:
+    reference_id:
+  - url: https://github.com/koajs/koa/issues/1892#issue-3213028583
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-8129
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.317514
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.317514
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?submit.619741
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mvw6-62qv-vmqf
+    reference_type:
+    reference_id: GHSA-mvw6-62qv-vmqf

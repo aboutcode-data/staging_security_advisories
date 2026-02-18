@@ -1,0 +1,36 @@
+advisory_id: npm/jsrsasign/GMS-2022-64
+datasource_id: gitlab_importer_v2/npm/jsrsasign/GMS-2022-64
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/jsrsasign/GMS-2022-64.yml
+aliases:
+  - GHSA-h87q-g2wp-47pj
+  - GMS-2022-64
+summary: |
+  Signatures are mistakenly recognized to be valid in jsrsasign
+  In the jsrsasign package through 10.1.13 for Node.js, some invalid RSA PKCS#1 v1.5 signatures are mistakenly recognized to be valid. NOTE: there is no known practical attack.
+impacted_packages:
+  - purl: pkg:npm/jsrsasign
+    affected_versions: vers:npm/<10.2.0
+    fixed_versions: vers:npm/10.2.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/kjur/jsrsasign/issues/478
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/releases/tag/10.1.13
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/releases/tag/10.2.0
+    reference_type:
+    reference_id:
+  - url: https://kjur.github.io/jsrsasign/
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-30246
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-h87q-g2wp-47pj
+    reference_type:
+    reference_id: GHSA-h87q-g2wp-47pj

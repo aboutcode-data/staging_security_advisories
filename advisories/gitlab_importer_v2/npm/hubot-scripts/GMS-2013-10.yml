@@ -1,0 +1,17 @@
+advisory_id: npm/hubot-scripts/GMS-2013-10
+datasource_id: gitlab_importer_v2/npm/hubot-scripts/GMS-2013-10
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/hubot-scripts/GMS-2013-10.yml
+aliases:
+  - GMS-2013-10
+summary: |
+  Potential Command Injection
+  Untrusted input passed in to the hubot-scripts/package/src/scripts/email.coffee module can allow for command injection. This may be unexpected behavior for the caller.
+impacted_packages:
+  - purl: pkg:npm/hubot-scripts
+    affected_versions: vers:npm/<=2.4.3
+    fixed_versions: vers:npm/2.4.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

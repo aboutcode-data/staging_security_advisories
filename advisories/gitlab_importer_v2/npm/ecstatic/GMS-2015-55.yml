@@ -1,0 +1,17 @@
+advisory_id: npm/ecstatic/GMS-2015-55
+datasource_id: gitlab_importer_v2/npm/ecstatic/GMS-2015-55
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/ecstatic/GMS-2015-55.yml
+aliases:
+  - GMS-2015-55
+summary: |
+  Denial of Service
+  Certain input strings when passed to new Date() or Date.parse() will cause v8 to raise an exception. This leads to a crash and denial of service in ecstatic when this input is passed into the server via the If-Modified-Since header.
+impacted_packages:
+  - purl: pkg:npm/ecstatic
+    affected_versions: vers:npm/<1.4.0
+    fixed_versions: vers:npm/1.4.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

@@ -1,0 +1,23 @@
+advisory_id: npm/hapi/GMS-2015-36
+datasource_id: gitlab_importer_v2/npm/hapi/GMS-2015-36
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/hapi/GMS-2015-36.yml
+aliases:
+  - GMS-2015-36
+summary: |
+  Incorrect handling of CORS preflight request headers
+  Hapi implement CORS incorrectly and allowes for configurations that at best return inconsistent headers and at worst allow cross-origin activities that are expected to be forbidden.
+impacted_packages:
+  - purl: pkg:npm/hapi
+    affected_versions: vers:npm/<11.0.0
+    fixed_versions: vers:npm/11.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/hapijs/hapi/issues/2840
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/hapi/issues/2850
+    reference_type:
+    reference_id:

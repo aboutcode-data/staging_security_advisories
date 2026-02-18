@@ -1,0 +1,20 @@
+advisory_id: npm/fs-git/GMS-2017-185
+datasource_id: gitlab_importer_v2/npm/fs-git/GMS-2017-185
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/fs-git/GMS-2017-185.yml
+aliases:
+  - GMS-2017-185
+summary: |
+  Command Injection
+  The fs-git module relies on `child_process.exec`, however, the buildCommand method used to construct exec strings does not properly sanitize data and is vulnerable to command injection across all methods that use it and call exec.
+impacted_packages:
+  - purl: pkg:npm/fs-git
+    affected_versions: vers:npm/<=1.0.1
+    fixed_versions: vers:npm/1.0.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/vvakame/fs-git/commit/eb5f70efa5cfbff1ab299fa7daaa5de549243998
+    reference_type:
+    reference_id:

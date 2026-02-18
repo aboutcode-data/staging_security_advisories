@@ -1,0 +1,30 @@
+advisory_id: npm/helmet-csp/GMS-2020-287
+datasource_id: gitlab_importer_v2/npm/helmet-csp/GMS-2020-287
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/helmet-csp/GMS-2020-287.yml
+aliases:
+  - GHSA-c3m8-x3cg-qm2c
+  - GMS-2020-287
+summary: |
+  Configuration Override in helmet-csp
+  Versions of `helmet-csp` before to are vulnerable to a Configuration Override affecting the application's Content Security Policy (CSP). The package's browser sniffing for Firefox deletes the `default-src` CSP policy, which is the fallback policy. This allows an attacker to remove an application's default CSP, possibly rendering the application vulnerable to Cross-Site Scripting. Upgrade to or later. Setting the `browserSniff` configuration to `false` in vulnerable versions also mitigates the issue.
+impacted_packages:
+  - purl: pkg:npm/helmet-csp
+    affected_versions: vers:npm/>=1.2.2|<2.9.1
+    fixed_versions: vers:npm/2.9.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/helmetjs/csp/commit/67a69baafa8198a154f0505a0cf0875f76f6186a
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-HELMETCSP-469436
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1176
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c3m8-x3cg-qm2c
+    reference_type:
+    reference_id: GHSA-c3m8-x3cg-qm2c

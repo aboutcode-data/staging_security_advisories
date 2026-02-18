@@ -1,0 +1,20 @@
+advisory_id: npm/jser-stat/GMS-2016-125
+datasource_id: gitlab_importer_v2/npm/jser-stat/GMS-2016-125
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/jser-stat/GMS-2016-125.yml
+aliases:
+  - GMS-2016-125
+summary: |
+  Downloads Resources over HTTP
+  jser-stat downloads data resources over HTTP, which leaves it vulnerable to MITM attacks.
+impacted_packages:
+  - purl: pkg:npm/jser-stat
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/jser/stat-js/blob/master/data/url-mapping.js
+    reference_type:
+    reference_id:

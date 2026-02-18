@@ -1,0 +1,17 @@
+advisory_id: npm/grunt-gh-pages/GMS-2016-15
+datasource_id: gitlab_importer_v2/npm/grunt-gh-pages/GMS-2016-15
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/grunt-gh-pages/GMS-2016-15.yml
+aliases:
+  - GMS-2016-15
+summary: |
+  Authentication credentails logged in clear text
+  A common setup to deploy to gh-pages on every commit via a CI system is to expose a github token to ENV and to use it directly in the auth part of the url. In module the auth portion of the url is outputted as part of the grunt tasks logging function. If this output is publicly available then the credentials should be considered compromised.
+impacted_packages:
+  - purl: pkg:npm/grunt-gh-pages
+    affected_versions: vers:npm/<1.0.0
+    fixed_versions: vers:npm/1.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

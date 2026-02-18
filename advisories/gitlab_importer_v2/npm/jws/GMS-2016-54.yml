@@ -1,0 +1,23 @@
+advisory_id: npm/jws/GMS-2016-54
+datasource_id: gitlab_importer_v2/npm/jws/GMS-2016-54
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/jws/GMS-2016-54.yml
+aliases:
+  - GMS-2016-54
+summary: |
+  Forgeable Public/Private Tokens
+  Since "algorithm" isn't enforced in `jws.verify()`, a malicious user could choose what algorithm is sent to the server. If the server is expecting RSA but is sent HMAC-SHA with RSA's public key, the server will think the public key is actually an HMAC private key. This could be used to forge any data an attacker wants.
+impacted_packages:
+  - purl: pkg:npm/jws
+    affected_versions: vers:npm/<3.0.0
+    fixed_versions: vers:npm/3.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
+    reference_type:
+    reference_id:
+  - url: https://github.com/brianloveswords/node-jws/commit/585d0e1e97b6747c10cf5b7689ccc5618a89b299#diff-4ac32a78649ca5bdd8e0ba38b7006a1e
+    reference_type:
+    reference_id:

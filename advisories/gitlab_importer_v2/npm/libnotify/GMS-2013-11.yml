@@ -1,0 +1,17 @@
+advisory_id: npm/libnotify/GMS-2013-11
+datasource_id: gitlab_importer_v2/npm/libnotify/GMS-2013-11
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/libnotify/GMS-2013-11.yml
+aliases:
+  - GMS-2013-11
+summary: |
+  Potential Command Injection
+  Untrusted input passed in the call to libnotify.notify could result in execution of shell commands. Callers may be unaware of this.
+impacted_packages:
+  - purl: pkg:npm/libnotify
+    affected_versions: vers:npm/<=1.0.3
+    fixed_versions: vers:npm/1.0.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

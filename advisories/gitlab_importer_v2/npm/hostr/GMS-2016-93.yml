@@ -1,0 +1,23 @@
+advisory_id: npm/hostr/GMS-2016-93
+datasource_id: gitlab_importer_v2/npm/hostr/GMS-2016-93
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/hostr/GMS-2016-93.yml
+aliases:
+  - GMS-2016-93
+summary: |
+  Directory Traversal
+  There is a directory traversal vulnerability that allows an attacker to read files outside the current directory by sending `../` in the url path for GET requests.
+impacted_packages:
+  - purl: pkg:npm/hostr
+    affected_versions: vers:npm/<=2.3.5
+    fixed_versions: vers:npm/2.3.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/henrytseng/hostr/commit/789a00047459fd80b6f0a9701a1378a47fb73ba8
+    reference_type:
+    reference_id:
+  - url: https://github.com/henrytseng/hostr/issues/8
+    reference_type:
+    reference_id:

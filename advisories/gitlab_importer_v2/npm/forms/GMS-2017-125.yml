@@ -1,0 +1,20 @@
+advisory_id: npm/forms/GMS-2017-125
+datasource_id: gitlab_importer_v2/npm/forms/GMS-2017-125
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/forms/GMS-2017-125.yml
+aliases:
+  - GMS-2017-125
+summary: |
+  XSS Vulnerability
+  Forms did not have proper html escaping. This means that if the application did not sanitize html on behalf of forms, use of forms may be vulnerable to cross site scripting
+impacted_packages:
+  - purl: pkg:npm/forms
+    affected_versions: vers:npm/<1.3.0
+    fixed_versions: vers:npm/1.3.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/caolan/forms/commit/bc01e534a0ff863dedb2026a50bd03153bbc6a5d
+    reference_type:
+    reference_id:

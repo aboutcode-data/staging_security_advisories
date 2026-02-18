@@ -1,0 +1,20 @@
+advisory_id: npm/haxe/GMS-2017-97
+datasource_id: gitlab_importer_v2/npm/haxe/GMS-2017-97
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/haxe/GMS-2017-97.yml
+aliases:
+  - GMS-2017-97
+summary: |
+  Downloads Resources over HTTP
+  haxe downloads zipped resources over HTTP, which leaves it vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested zip file with an attacker controlled zip file if the attacker is on the network or positioned in between the user and the remote server.
+impacted_packages:
+  - purl: pkg:npm/haxe
+    affected_versions: vers:npm/<5.0.2
+    fixed_versions: vers:npm/5.0.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/HaxeFoundation/npm-haxe/commit/a43b9c8d3e1532a40ad6064d1c723eda98e6df2e
+    reference_type:
+    reference_id:

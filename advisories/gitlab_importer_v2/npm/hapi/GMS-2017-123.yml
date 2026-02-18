@@ -1,0 +1,20 @@
+advisory_id: npm/hapi/GMS-2017-123
+datasource_id: gitlab_importer_v2/npm/hapi/GMS-2017-123
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/hapi/GMS-2017-123.yml
+aliases:
+  - GMS-2017-123
+summary: |
+  Denial of Service via malformed accept-encoding header
+  When hapi encounters a malformed `accept-encoding` header an uncaught exception is thrown. This may cause hapi to crash or to hang the client connection until the timeout period is reached.
+impacted_packages:
+  - purl: pkg:npm/hapi
+    affected_versions: vers:npm/>=15.0.0|<16.1.1
+    fixed_versions: vers:npm/16.1.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/hapijs/hapi/issues/3466
+    reference_type:
+    reference_id:

@@ -1,0 +1,20 @@
+advisory_id: npm/gomeplus-h5-proxy/GMS-2017-130
+datasource_id: gitlab_importer_v2/npm/gomeplus-h5-proxy/GMS-2017-130
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/gomeplus-h5-proxy/GMS-2017-130.yml
+aliases:
+  - GMS-2017-130
+summary: |
+  Directory Traversal
+  gomeplus-h5-proxy is vulnerable to a directory traversal issue, allowing attackers to access any file in the system by placing '../' in the URL.
+impacted_packages:
+  - purl: pkg:npm/gomeplus-h5-proxy
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/JacksonGL/NPM-Vuln-PoC/tree/master/directory-traversal/gomeplus-h5-proxy
+    reference_type:
+    reference_id:

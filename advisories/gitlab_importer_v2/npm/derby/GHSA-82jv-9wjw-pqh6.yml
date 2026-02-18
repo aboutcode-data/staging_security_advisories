@@ -1,0 +1,35 @@
+advisory_id: npm/derby/GHSA-82jv-9wjw-pqh6
+datasource_id: gitlab_importer_v2/npm/derby/GHSA-82jv-9wjw-pqh6
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/derby/GHSA-82jv-9wjw-pqh6.yml
+aliases:
+  - GHSA-82jv-9wjw-pqh6
+summary: |
+  Prototype pollution in emit function
+  A prototype pollution in derby can crash the application, if the application author has atypical HTML templates that feed user input into an object key.
+
+  Attribute keys are almost always developer-controlled, not end-user-controlled, so this shouldn't be an issue in practice for most applications.
+impacted_packages:
+  - purl: pkg:npm/derby
+    affected_versions: vers:npm/<2.3.2|>=3.0.0|<3.0.2|<4.0.0-beta.11|>=4.0.0-beta1
+    fixed_versions: vers:npm/2.3.2|3.0.2|4.0.0-beta.11
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-1321
+references:
+  - url: https://github.com/derbyjs/derby
+    reference_type:
+    reference_id:
+  - url: https://github.com/derbyjs/derby/commit/24524e96f36976883c7c619811320428536bd4d0
+    reference_type:
+    reference_id:
+  - url: https://github.com/derbyjs/derby/commit/465a0c2f6a77361eda4a09b77a8c94ba6a9da440
+    reference_type:
+    reference_id:
+  - url: https://github.com/derbyjs/derby/security/advisories/GHSA-82jv-9wjw-pqh6
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-82jv-9wjw-pqh6
+    reference_type:
+    reference_id: GHSA-82jv-9wjw-pqh6

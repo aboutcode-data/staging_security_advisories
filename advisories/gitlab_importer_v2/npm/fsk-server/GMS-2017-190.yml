@@ -1,0 +1,20 @@
+advisory_id: npm/fsk-server/GMS-2017-190
+datasource_id: gitlab_importer_v2/npm/fsk-server/GMS-2017-190
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/fsk-server/GMS-2017-190.yml
+aliases:
+  - GMS-2017-190
+summary: |
+  Directory Traversal
+  `fsk-server` is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing "../" in the url.
+impacted_packages:
+  - purl: pkg:npm/fsk-server
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/JacksonGL/NPM-Vuln-PoC/tree/master/directory-traversal/fsk-server
+    reference_type:
+    reference_id:

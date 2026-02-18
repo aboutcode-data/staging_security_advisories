@@ -1,0 +1,41 @@
+advisory_id: npm/jsrsasign/GMS-2024-46
+datasource_id: gitlab_importer_v2/npm/jsrsasign/GMS-2024-46
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/jsrsasign/GMS-2024-46.yml
+aliases:
+  - GHSA-rh63-9qcf-83gf
+  - GMS-2024-46
+summary: |
+  Marvin Attack of RSA and RSAOAEP decryption in jsrsasign
+  ### Impact
+  RSA PKCS#1.5 or RSAOAEP ciphertexts may be decrypted by this Marvin attack vulnerability.
+
+  ### Patches
+  update to jsrsasign 11.0.0.
+
+  ### Workarounds
+  Find and replace RSA and RSAOAEP decryption with other crypto library.
+
+  ### References
+  https://people.redhat.com/~hkario/marvin/
+  https://github.com/kjur/jsrsasign/issues/598
+impacted_packages:
+  - purl: pkg:npm/jsrsasign
+    affected_versions: vers:npm/<11.0.0
+    fixed_versions: vers:npm/11.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/kjur/jsrsasign/issues/598
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/releases/tag/11.0.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/security/advisories/GHSA-rh63-9qcf-83gf
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-rh63-9qcf-83gf
+    reference_type:
+    reference_id: GHSA-rh63-9qcf-83gf

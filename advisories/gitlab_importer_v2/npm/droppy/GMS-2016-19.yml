@@ -1,0 +1,17 @@
+advisory_id: npm/droppy/GMS-2016-19
+datasource_id: gitlab_importer_v2/npm/droppy/GMS-2016-19
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/droppy/GMS-2016-19.yml
+aliases:
+  - GMS-2016-19
+summary: |
+  No CSRF Validation
+  Droppy does not perform any verification for cross-domain websocket requests. An attacker is able to make a specially crafted page that can send requests as the context of the currently logged in user. For example this means the malicious user could add a new admin account under his control and delete others.
+impacted_packages:
+  - purl: pkg:npm/droppy
+    affected_versions: vers:npm/<3.5.0
+    fixed_versions: vers:npm/3.5.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

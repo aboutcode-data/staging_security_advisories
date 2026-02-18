@@ -1,0 +1,25 @@
+advisory_id: npm/lodash.merge/GMS-2020-353
+datasource_id: gitlab_importer_v2/npm/lodash.merge/GMS-2020-353
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/lodash.merge/GMS-2020-353.yml
+aliases:
+  - GHSA-h726-x36v-rx45
+  - GMS-2020-353
+summary: "Prototype Pollution in lodash.merge\nVersions of `lodash.merge` are vulnerable to\
+  \ prototype pollution. The function `merge` may allow a malicious user to modify the prototype\
+  \ of `Object` via `{constructor: {prototype: {...}}}` causing the addition or modification\
+  \ of an existing property that will exist on all objects. \n\nUpdate to or later."
+impacted_packages:
+  - purl: pkg:npm/lodash.merge
+    affected_versions: vers:npm/<4.6.2
+    fixed_versions: vers:npm/4.6.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1066
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-h726-x36v-rx45
+    reference_type:
+    reference_id: GHSA-h726-x36v-rx45

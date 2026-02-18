@@ -1,0 +1,27 @@
+advisory_id: npm/googleapis/GMS-2020-277
+datasource_id: gitlab_importer_v2/npm/googleapis/GMS-2020-277
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/googleapis/GMS-2020-277.yml
+aliases:
+  - GHSA-7543-mr7h-6v86
+  - GMS-2020-277
+summary: |
+  Improper Authorization in googleapis
+  Versions of `googleapis` are vulnerable to Improper Authorization. Setting credentials to one client may apply to all clients which may cause requests to be sent with the incorrect credentials.
+impacted_packages:
+  - purl: pkg:npm/googleapis
+    affected_versions: vers:npm/<39.1.0
+    fixed_versions: vers:npm/39.1.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/googleapis/google-api-nodejs-client/issues/1594
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/791
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-7543-mr7h-6v86
+    reference_type:
+    reference_id: GHSA-7543-mr7h-6v86

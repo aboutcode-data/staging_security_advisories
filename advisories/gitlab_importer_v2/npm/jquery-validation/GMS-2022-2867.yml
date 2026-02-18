@@ -1,0 +1,24 @@
+advisory_id: npm/jquery-validation/GMS-2022-2867
+datasource_id: gitlab_importer_v2/npm/jquery-validation/GMS-2022-2867
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/jquery-validation/GMS-2022-2867.yml
+aliases:
+  - GHSA-ffmh-x56j-9rc3
+  - GMS-2022-2867
+summary: |
+  Regular Expression Denial of Service in jquery-validation
+  An exponential ReDoS (Regular Expression Denial of Service) can be triggered in the jquery-validation npm package, when an attacker is able to supply arbitrary input to the `url2` method
+impacted_packages:
+  - purl: pkg:npm/jquery-validation
+    affected_versions: vers:npm/<1.19.5
+    fixed_versions: vers:npm/1.19.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/jquery-validation/jquery-validation/security/advisories/GHSA-ffmh-x56j-9rc3
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-ffmh-x56j-9rc3
+    reference_type:
+    reference_id: GHSA-ffmh-x56j-9rc3

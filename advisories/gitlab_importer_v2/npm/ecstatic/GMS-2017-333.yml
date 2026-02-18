@@ -1,0 +1,23 @@
+advisory_id: npm/ecstatic/GMS-2017-333
+datasource_id: gitlab_importer_v2/npm/ecstatic/GMS-2017-333
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/ecstatic/GMS-2017-333.yml
+aliases:
+  - GMS-2017-333
+summary: |
+  Denial of Service
+  A payload of kB causes a lag of 1 second, a payload of kB causes a lag of 3 seconds, a payload of kB caused the server to crash.
+impacted_packages:
+  - purl: pkg:npm/ecstatic
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/jfhbrook/node-ecstatic/commit/71ce93988ead4b561a8592168c72143907189f01#diff-b2b5a88fb51675f1aa1065c093dce1ee
+    reference_type:
+    reference_id:
+  - url: https://www.checkmarx.com/advisories/denial-of-service-dos-vulnerability-in-ecstatic-npm-package/
+    reference_type:
+    reference_id:

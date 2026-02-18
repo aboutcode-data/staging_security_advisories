@@ -1,0 +1,26 @@
+advisory_id: npm/lodash.defaultsdeep/GMS-2020-351
+datasource_id: gitlab_importer_v2/npm/lodash.defaultsdeep/GMS-2020-351
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/lodash.defaultsdeep/GMS-2020-351.yml
+aliases:
+  - GHSA-h5mp-5q4p-ggf5
+  - GMS-2020-351
+summary: "Prototype Pollution in lodash.defaultsdeep\nVersions of `lodash.defaultsdeep` are\
+  \ vulnerable to prototype pollution. The function `mergeWith` may allow a malicious user to\
+  \ modify the prototype of `Object` via `{constructor: {prototype: {...}}}` causing the addition\
+  \ or modification of an existing property that will exist on all objects. \n\nUpdate to or\
+  \ later."
+impacted_packages:
+  - purl: pkg:npm/lodash.defaultsdeep
+    affected_versions: vers:npm/<4.6.1
+    fixed_versions: vers:npm/4.6.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1068
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-h5mp-5q4p-ggf5
+    reference_type:
+    reference_id: GHSA-h5mp-5q4p-ggf5

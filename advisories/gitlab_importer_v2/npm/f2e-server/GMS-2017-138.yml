@@ -1,0 +1,23 @@
+advisory_id: npm/f2e-server/GMS-2017-138
+datasource_id: gitlab_importer_v2/npm/f2e-server/GMS-2017-138
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/f2e-server/GMS-2017-138.yml
+aliases:
+  - GMS-2017-138
+summary: |
+  Directory Traversal
+  f2e-server is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing "../" in the url. This is compounded by f2e-server requiring elevated privileges to run.
+impacted_packages:
+  - purl: pkg:npm/f2e-server
+    affected_versions: vers:npm/<=1.12.11
+    fixed_versions: vers:npm/1.12.12
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/shy2850/node-server/issues/10
+    reference_type:
+    reference_id:
+  - url: https://github.com/shy2850/node-server/pull/12
+    reference_type:
+    reference_id:

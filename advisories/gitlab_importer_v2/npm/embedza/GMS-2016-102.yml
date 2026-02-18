@@ -1,0 +1,17 @@
+advisory_id: npm/embedza/GMS-2016-102
+datasource_id: gitlab_importer_v2/npm/embedza/GMS-2016-102
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/embedza/GMS-2016-102.yml
+aliases:
+  - GMS-2016-102
+summary: |
+  Downloads Resources over HTTP
+  embedza downloads JavaScript resources over HTTP, which leaves it vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested JavaScript file with an attacker controlled JavaScript file if the attacker is on the network or positioned in between the user and the remote server.
+impacted_packages:
+  - purl: pkg:npm/embedza
+    affected_versions: vers:npm/<1.2.4
+    fixed_versions: vers:npm/1.2.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

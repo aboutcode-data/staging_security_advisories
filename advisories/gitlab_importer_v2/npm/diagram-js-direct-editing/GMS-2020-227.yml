@@ -1,0 +1,27 @@
+advisory_id: npm/diagram-js-direct-editing/GMS-2020-227
+datasource_id: gitlab_importer_v2/npm/diagram-js-direct-editing/GMS-2020-227
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/diagram-js-direct-editing/GMS-2020-227.yml
+aliases:
+  - GHSA-j8r2-2x94-2q67
+  - GMS-2020-227
+summary: |
+  Cross-Site Scripting in diagram-js-direct-editing
+  Versions of `diagram-js-direct-editing` are vulnerable to Cross-Site Scripting. The package fails to sanitize input from the clipboard, allowing attackers to execute arbitrary JavaScript in the victim's browser. Upgrade to or later.
+impacted_packages:
+  - purl: pkg:npm/diagram-js-direct-editing
+    affected_versions: vers:npm/<1.4.3
+    fixed_versions: vers:npm/1.4.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/bpmn-io/diagram-js-direct-editing
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/983
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-j8r2-2x94-2q67
+    reference_type:
+    reference_id: GHSA-j8r2-2x94-2q67

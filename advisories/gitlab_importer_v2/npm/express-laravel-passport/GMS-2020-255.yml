@@ -1,0 +1,27 @@
+advisory_id: npm/express-laravel-passport/GMS-2020-255
+datasource_id: gitlab_importer_v2/npm/express-laravel-passport/GMS-2020-255
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/express-laravel-passport/GMS-2020-255.yml
+aliases:
+  - GHSA-v66p-w7qx-wv98
+  - GMS-2020-255
+summary: |
+  Authentication Bypass in express-laravel-passport
+  All versions of `express-laravel-passport` are vulnerable to an Authentication Bypass. The package fails to properly validate JWTs, allowing attackers to send HTTP requests impersonating other users. Upgrade to or later.
+impacted_packages:
+  - purl: pkg:npm/express-laravel-passport
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://hackerone.com/reports/748214
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1450
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-v66p-w7qx-wv98
+    reference_type:
+    reference_id: GHSA-v66p-w7qx-wv98

@@ -1,0 +1,23 @@
+advisory_id: npm/localhost-now/GMS-2018-20
+datasource_id: gitlab_importer_v2/npm/localhost-now/GMS-2018-20
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/localhost-now/GMS-2018-20.yml
+aliases:
+  - GMS-2018-20
+summary: |
+  Path Traversal
+  localhost-now suffers from a path traversal vulnerability. It allows reading the content of arbitrary files on the remote server.
+impacted_packages:
+  - purl: pkg:npm/localhost-now
+    affected_versions: vers:npm/<1.0.2
+    fixed_versions: vers:npm/1.0.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/DCKT/localhost-now/commit/30b004c7f145d677df8800a106c2edc982313995
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/312889
+    reference_type:
+    reference_id:

@@ -1,0 +1,48 @@
+advisory_id: npm/flowise/GHSA-5cph-wvm9-45gj
+datasource_id: gitlab_importer_v2/npm/flowise/GHSA-5cph-wvm9-45gj
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/flowise/GHSA-5cph-wvm9-45gj.yml
+aliases:
+  - GHSA-5cph-wvm9-45gj
+summary: |
+  Flowise OverrideConfig security vulnerability
+  Flowise allows developers to inject configuration into the Chainflow during execution through the `overrideConfig` option. This is supported in both the frontend web integration and the backend Prediction API.
+
+  This has a range of fundamental issues that are a **major** security vulnerability.
+  While this feature is intentional, it should have strong protections added and be disabled by default.
+
+  These issues include:
+  1. Remote code execution. While inside a sandbox this allows for
+  1. Sandbox escape
+  2. DoS by crashing the server
+  3. SSRF
+  2. Prompt Injection, both System and User
+  1. Full control over LLM prompts
+  2. Server variable and data exfiltration
+  And many many more such as altering the flow of a conversation, prompt exfiltration via LLM proxying etc.
+
+  These issues are self-targeted and do not persist to other users but do leave the server and business exposed.
+  All issues are shown with the API but also work with the web embed.
+impacted_packages:
+  - purl: pkg:npm/flowise
+    affected_versions: vers:npm/<2.1.4
+    fixed_versions: vers:npm/2.1.4
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/flowise/GHSA-5cph-wvm9-45gj.yml
+weaknesses:
+  - CWE-15
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FlowiseAI/Flowise
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-5cph-wvm9-45gj
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5cph-wvm9-45gj
+    reference_type:
+    reference_id: GHSA-5cph-wvm9-45gj

@@ -1,0 +1,42 @@
+advisory_id: npm/directus/GHSA-q83v-hq3j-4pq3
+datasource_id: gitlab_importer_v2/npm/directus/GHSA-q83v-hq3j-4pq3
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/directus/GHSA-q83v-hq3j-4pq3.yml
+aliases:
+  - GHSA-q83v-hq3j-4pq3
+summary: |
+  Duplicate Advisory: Improper access control in Directus
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-3fff-gqw3-vj86. This link is maintained to preserve external references.
+
+  ## Original Description
+  Directus v10.13.0 allows an authenticated external attacker to modify presets created by the same user to assign them to another user. This is possible because the application only validates the user parameter in the 'POST /presets' request but not in the PATCH request. When chained with CVE-2024-6533, it could result in account takeover.
+impacted_packages:
+  - purl: pkg:npm/directus
+    affected_versions: vers:npm/<=10.13.0
+    fixed_versions: vers:npm/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/directus/GHSA-q83v-hq3j-4pq3.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-639
+references:
+  - url: https://directus.io
+    reference_type:
+    reference_id:
+  - url: https://fluidattacks.com/advisories/capaldi
+    reference_type:
+    reference_id:
+  - url: https://github.com/directus/directus
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-6534
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-q83v-hq3j-4pq3
+    reference_type:
+    reference_id: GHSA-q83v-hq3j-4pq3

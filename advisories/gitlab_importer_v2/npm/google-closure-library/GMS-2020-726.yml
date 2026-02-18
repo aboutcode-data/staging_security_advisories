@@ -1,0 +1,35 @@
+advisory_id: npm/google-closure-library/GMS-2020-726
+datasource_id: gitlab_importer_v2/npm/google-closure-library/GMS-2020-726
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/google-closure-library/GMS-2020-726.yml
+aliases:
+  - GHSA-r9q4-w3fm-wrm2
+  - GMS-2020-726
+summary: |
+  Cross-Site Scripting in google-closure-library
+  Versions of `google-closure-library` prior to 20190301.0.0 are vulnerable to Cross-Site Scripting. The `safedomtreeprocessor.processToString()` function improperly processed empty elements, which could allow attackers to execute arbitrary JavaScript through Mutation Cross-Site Scripting.
+
+
+  ## Recommendation
+
+  Upgrade to version 20190301.0.0 or later.
+impacted_packages:
+  - purl: pkg:npm/google-closure-library
+    affected_versions: vers:npm/<20190301.0.0
+    fixed_versions: vers:npm/20190301.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/google/closure-library/commit/c79ab48e8e962fee57e68739c00e16b9934c0ffa#commitcomment-33294853
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-GOOGLECLOSURELIBRARY-174519
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/878
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-r9q4-w3fm-wrm2
+    reference_type:
+    reference_id: GHSA-r9q4-w3fm-wrm2

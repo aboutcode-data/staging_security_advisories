@@ -1,0 +1,34 @@
+advisory_id: npm/loopback/GMS-2020-359
+datasource_id: gitlab_importer_v2/npm/loopback/GMS-2020-359
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/loopback/GMS-2020-359.yml
+aliases:
+  - GHSA-8wgc-jjvv-cv6v
+  - GMS-2020-359
+summary: |
+  Improper Authorization in loopback
+  Vulnerable versions of `loopback` may allow attackers to create Authentication Tokens on behalf of other users due to Improper Authorization. If the AccessToken model is publicly exposed, an attacker can create Authorization Tokens for any user as long as they know the target's `userId`. This will allow the attacker to access the user's data and their privileges. For loopback, upgrade to or later
+  For loopback, upgrade to or later
+impacted_packages:
+  - purl: pkg:npm/loopback
+    affected_versions: vers:npm/<=2.39.2|>=3.0.0|<=3.21.0
+    fixed_versions: vers:npm/2.40.0|3.22.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/strongloop/loopback
+    reference_type:
+    reference_id:
+  - url: https://loopback.io/doc/en/lb2/Security-advisory-08-08-2018.html]
+    reference_type:
+    reference_id:
+  - url: https://loopback.io/doc/en/lb3/Security-advisory-08-08-2018.html]
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/771
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-8wgc-jjvv-cv6v
+    reference_type:
+    reference_id: GHSA-8wgc-jjvv-cv6v

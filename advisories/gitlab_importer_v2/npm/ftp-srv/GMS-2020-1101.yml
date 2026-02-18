@@ -1,0 +1,29 @@
+advisory_id: npm/ftp-srv/GMS-2020-1101
+datasource_id: gitlab_importer_v2/npm/ftp-srv/GMS-2020-1101
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/ftp-srv/GMS-2020-1101.yml
+aliases:
+  - GHSA-r4m5-47cq-6qg8
+  - GMS-2020-1101
+summary: |
+  Server-Side Request Forgery in ftp-srv
+  All versions of `ftp-srv` is vulnerable to Server-Side Request Forgery (SSRF). The package fails to prevent remote clients to access other resources in the network, for example when connecting to the server through telnet. This allows attackers to access any network resources available to the server, including private resources in the hosting environment.
+
+
+  ## Recommendation
+
+  No fix is currently available. Consider using an alternative package until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/ftp-srv
+    affected_versions: vers:npm/>=1.0.0|<2.19.6|>=3.0.0|<3.1.2|>=4.0.0|<4.3.4
+    fixed_versions: vers:npm/2.19.6|3.1.2|4.3.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1445
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-r4m5-47cq-6qg8
+    reference_type:
+    reference_id: GHSA-r4m5-47cq-6qg8

@@ -1,0 +1,17 @@
+advisory_id: npm/html-janitor/GMS-2017-329
+datasource_id: gitlab_importer_v2/npm/html-janitor/GMS-2017-329
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/html-janitor/GMS-2017-329.yml
+aliases:
+  - GMS-2017-329
+summary: |
+  Sanitization bypassing leading to XSS
+  Arbitrary HTML can pass the sanitization process, which can be unexpected and dangerous (XSS) in case user-controlled input is passed to the clean function.
+impacted_packages:
+  - purl: pkg:npm/html-janitor
+    affected_versions: vers:npm/>=0.2.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

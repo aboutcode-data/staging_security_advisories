@@ -1,0 +1,20 @@
+advisory_id: npm/hekto/GMS-2018-24
+datasource_id: gitlab_importer_v2/npm/hekto/GMS-2018-24
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/hekto/GMS-2018-24.yml
+aliases:
+  - GMS-2018-24
+summary: |
+  Path Traversal
+  Hekto contains a path traversal vulnerability. It allows reading arbitrary files from the remote server.
+impacted_packages:
+  - purl: pkg:npm/hekto
+    affected_versions: vers:npm/<0.2.3
+    fixed_versions: vers:npm/0.2.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://hackerone.com/reports/311218
+    reference_type:
+    reference_id:

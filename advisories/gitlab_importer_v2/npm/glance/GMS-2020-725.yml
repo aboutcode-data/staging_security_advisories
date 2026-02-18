@@ -1,0 +1,29 @@
+advisory_id: npm/glance/GMS-2020-725
+datasource_id: gitlab_importer_v2/npm/glance/GMS-2020-725
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/glance/GMS-2020-725.yml
+aliases:
+  - GHSA-vw7g-jq9m-3q9v
+  - GMS-2020-725
+summary: "Unauthorized File Access in glance\nVersions of `glance` prior to 3.0.7 are vulnerable\
+  \ to Unauthorized File Access. The package provides a `--nodot` option meant to hide files\
+  \ and directories with names that begin with a `.`, such as `.git` but fails to hide files\
+  \ inside a folder that begins with `.`. \n\n\n## Recommendation\n\nUpgrade to version 3.0.7\
+  \ or later."
+impacted_packages:
+  - purl: pkg:npm/glance
+    affected_versions: vers:npm/<3.0.7
+    fixed_versions: vers:npm/3.0.7
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://hackerone.com/reports/490379
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/811
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-vw7g-jq9m-3q9v
+    reference_type:
+    reference_id: GHSA-vw7g-jq9m-3q9v

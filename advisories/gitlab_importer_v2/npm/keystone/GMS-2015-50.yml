@@ -1,0 +1,17 @@
+advisory_id: npm/keystone/GMS-2015-50
+datasource_id: gitlab_importer_v2/npm/keystone/GMS-2015-50
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/keystone/GMS-2015-50.yml
+aliases:
+  - GMS-2015-50
+summary: |
+  Authentication Weakness
+  Due to a bug in the the default sign in functionality, incomplete email addresses could be matched. A correct password is still required to complete sign in.
+impacted_packages:
+  - purl: pkg:npm/keystone
+    affected_versions: vers:npm/<0.3.16
+    fixed_versions: vers:npm/0.3.16
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

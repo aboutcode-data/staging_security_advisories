@@ -1,0 +1,24 @@
+advisory_id: npm/donotinstallthis/GMS-2020-235
+datasource_id: gitlab_importer_v2/npm/donotinstallthis/GMS-2020-235
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/donotinstallthis/GMS-2020-235.yml
+aliases:
+  - GHSA-73hr-6785-f5p8
+  - GMS-2020-235
+summary: |
+  Malicious Package
+  The package `donotinstallthis` contained malicious code. The package contained a script that was run as part of the install script. The script contacted a remote service tracking how many installations were done. There is no further compromise. Remove the package from your environment.
+impacted_packages:
+  - purl: pkg:npm/donotinstallthis
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/887
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-73hr-6785-f5p8
+    reference_type:
+    reference_id: GHSA-73hr-6785-f5p8

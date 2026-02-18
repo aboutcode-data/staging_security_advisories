@@ -1,0 +1,20 @@
+advisory_id: npm/fancy-server/GMS-2014-26
+datasource_id: gitlab_importer_v2/npm/fancy-server/GMS-2014-26
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/fancy-server/GMS-2014-26.yml
+aliases:
+  - GMS-2014-26
+summary: |
+  Directory Traversal
+  Versions less than of the static file server module fancy-server are vulnerable to directory traversal. An attacker can provide input such as `../` to read files outside of the served directory.
+impacted_packages:
+  - purl: pkg:npm/fancy-server
+    affected_versions: vers:npm/<0.1.4
+    fixed_versions: vers:npm/0.1.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: http://en.wikipedia.org/wiki/Directory_traversal_attack
+    reference_type:
+    reference_id:

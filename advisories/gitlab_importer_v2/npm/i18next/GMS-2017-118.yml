@@ -1,0 +1,20 @@
+advisory_id: npm/i18next/GMS-2017-118
+datasource_id: gitlab_importer_v2/npm/i18next/GMS-2017-118
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/i18next/GMS-2017-118.yml
+aliases:
+  - GMS-2017-118
+summary: |
+  Cross-Site Scripting
+  Because of how the interpolation is implemented, making replacements from the dictionary one at a time, untrusted user input can use the name of one of the dictionary keys to inject script into the browser.
+impacted_packages:
+  - purl: pkg:npm/i18next
+    affected_versions: vers:npm/<=1.10.2
+    fixed_versions: vers:npm/1.10.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/i18next/i18next/pull/443
+    reference_type:
+    reference_id:

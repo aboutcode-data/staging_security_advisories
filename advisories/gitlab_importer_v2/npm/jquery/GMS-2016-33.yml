@@ -1,0 +1,20 @@
+advisory_id: npm/jquery/GMS-2016-33
+datasource_id: gitlab_importer_v2/npm/jquery/GMS-2016-33
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/jquery/GMS-2016-33.yml
+aliases:
+  - GMS-2016-33
+summary: |
+  Exceeding Stack Call Limit DoS
+  A lowercasing logic is used on the attribute names. Because of this, boolean attributes whose names are not all lowercase cause infinite recursion, and will exceed the stack call limit.
+impacted_packages:
+  - purl: pkg:npm/jquery
+    affected_versions: vers:npm/<=2.2.4
+    fixed_versions: vers:npm/3.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/jquery/jquery/issues/3133
+    reference_type:
+    reference_id:

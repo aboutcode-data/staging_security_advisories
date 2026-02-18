@@ -1,0 +1,20 @@
+advisory_id: npm/liuyaserver/GMS-2017-261
+datasource_id: gitlab_importer_v2/npm/liuyaserver/GMS-2017-261
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/liuyaserver/GMS-2017-261.yml
+aliases:
+  - GMS-2017-261
+summary: |
+  Directory Traversal
+  `liuyaserver` is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing "../" in the url./n
+impacted_packages:
+  - purl: pkg:npm/liuyaserver
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/JacksonGL/NPM-Vuln-PoC/blob/master/directory-traversal/liuyaserver
+    reference_type:
+    reference_id:

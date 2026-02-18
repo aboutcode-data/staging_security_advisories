@@ -1,0 +1,20 @@
+advisory_id: npm/i18n-node-angular/GMS-2016-10
+datasource_id: gitlab_importer_v2/npm/i18n-node-angular/GMS-2016-10
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/i18n-node-angular/GMS-2016-10.yml
+aliases:
+  - GMS-2016-10
+summary: |
+  Denial of Service and Content Injection
+  A REST API endpoint that is used for development was not disabled in production environments, a malicious user can use it to fill up the server and cause a Denial of Service or content injection.
+impacted_packages:
+  - purl: pkg:npm/i18n-node-angular
+    affected_versions: vers:npm/<1.4.0
+    fixed_versions: vers:npm/1.4.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/oliversalzburg/i18n-node-angular/commit/877720d2d9bb90dc8233706e81ffa03f99fc9dc8
+    reference_type:
+    reference_id:
