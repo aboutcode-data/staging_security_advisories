@@ -1,0 +1,41 @@
+advisory_id: pypi/tensorflow-cpu/GMS-2022-7003
+datasource_id: gitlab_importer_v2/pypi/tensorflow-cpu/GMS-2022-7003
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/tensorflow-cpu/GMS-2022-7003.yml
+aliases:
+  - CVE-2022-41902
+  - GHSA-cg88-rpvp-cjv5
+  - GMS-2022-7003
+summary: |
+  Out of bounds write in grappler in Tensorflow
+  ### Impact
+  The function [MakeGrapplerFunctionItem](https://https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/grappler/utils/functions.cc#L221) takes arguments that determine the sizes of inputs and outputs. If the inputs given are greater than or equal to the sizes of the outputs, an out-of-bounds memory read or a crash is triggered.
+
+  ### Patches
+  We have patched the issue in GitHub commit [a65411a1d69edfb16b25907ffb8f73556ce36bb7](https://github.com/tensorflow/tensorflow/commit/a65411a1d69edfb16b25907ffb8f73556ce36bb7) .
+
+  The fix will be included in TensorFlow 2.11.0. We will also cherrypick this commit on TensorFlow 2.10.1.
+
+
+  ### For more information
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.
+impacted_packages:
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.8.4|>=2.9.0|<2.9.3|>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.8.4|2.9.3|2.10.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/tensorflow/tensorflow/commit/a65411a1d69edfb16b25907ffb8f73556ce36bb7
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-cg88-rpvp-cjv5
+    reference_type:
+    reference_id:
+  - url: https://https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/grappler/utils/functions.cc#L221
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cg88-rpvp-cjv5
+    reference_type:
+    reference_id: GHSA-cg88-rpvp-cjv5

@@ -1,0 +1,37 @@
+advisory_id: pypi/scapy/GHSA-cq46-m9x9-j8w2
+datasource_id: gitlab_importer_v2/pypi/scapy/GHSA-cq46-m9x9-j8w2
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/scapy/GHSA-cq46-m9x9-j8w2.yml
+aliases:
+  - GHSA-cq46-m9x9-j8w2
+summary: |
+  Scapy Session Loading Vulnerable to Arbitrary Code Execution via Untrusted Pickle Deserialization
+  An unsafe deserialization vulnerability in Scapy <v2.7.0 allows attackers to execute arbitrary code **when a malicious session file is locally loaded via the `-s` option**. This requires convincing a user to manually load a malicious session file.
+
+  ---
+impacted_packages:
+  - purl: pkg:pypi/scapy
+    affected_versions: vers:pypi/<=2.6.1
+    fixed_versions: vers:pypi/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/scapy/GHSA-cq46-m9x9-j8w2.yml
+weaknesses:
+  - CWE-502
+  - CWE-937
+  - CWE-1035
+references:
+  - url: https://github.com/secdev/scapy
+    reference_type:
+    reference_id:
+  - url: https://github.com/secdev/scapy/commit/13621d1145b3435e9d03caf20997107a84435c0b
+    reference_type:
+    reference_id:
+  - url: https://github.com/secdev/scapy/security/advisories/GHSA-cq46-m9x9-j8w2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cq46-m9x9-j8w2
+    reference_type:
+    reference_id: GHSA-cq46-m9x9-j8w2

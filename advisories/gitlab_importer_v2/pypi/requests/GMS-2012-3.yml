@@ -1,0 +1,25 @@
+advisory_id: pypi/requests/GMS-2012-3
+datasource_id: gitlab_importer_v2/pypi/requests/GMS-2012-3
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/requests/GMS-2012-3.yml
+aliases:
+  - GMS-2012-3
+summary: When using digest authentication with a wrong password, `requests` will retry the request
+  for infinity. This makes the package vulnerable to Denial of Service (DoS).
+impacted_packages:
+  - purl: pkg:pypi/requests
+    affected_versions: vers:pypi/<0.12.0
+    fixed_versions: vers:pypi/0.12.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/requests/requests/issues/541
+    reference_type:
+    reference_id:
+  - url: https://github.com/requests/requests/pull/547
+    reference_type:
+    reference_id:
+  - url: https://github.com/requests/requests/pull/547/commits/c3e6c41fc164d4348f8ce197bd0075aff05637af
+    reference_type:
+    reference_id:

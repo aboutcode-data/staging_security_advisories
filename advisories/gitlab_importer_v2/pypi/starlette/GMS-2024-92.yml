@@ -1,0 +1,38 @@
+advisory_id: pypi/starlette/GMS-2024-92
+datasource_id: gitlab_importer_v2/pypi/starlette/GMS-2024-92
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/starlette/GMS-2024-92.yml
+aliases:
+  - GHSA-93gm-qmq6-w238
+  - GMS-2024-92
+summary: |
+  Starlette Content-Type Header ReDoS
+  ### Summary
+
+  When using form data, `python-multipart` uses a Regular Expression to parse the HTTP `Content-Type` header, including options.
+
+  An attacker could send a custom-made `Content-Type` option that is very difficult for the RegEx to process, consuming CPU resources and stalling indefinitely (minutes or more) while holding the main event loop. You'll see the server locks up, is unable to serve anymore requests and one CPU core is pegged to 100%
+
+  You can even start uvicorn with multiple workers with the --workers 4 argument and as long as you send (workers + 1) requests you'll completely DoS the FastApi server.
+
+  If you try submitting Json to the /submit_json endpoint with the malicious Content-Type header you'll see it isn't vulnerable. So this only affects FastAPI when it parses Form data.
+impacted_packages:
+  - purl: pkg:pypi/starlette
+    affected_versions: vers:pypi/<=0.36.1
+    fixed_versions: vers:pypi/0.36.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/andrew-d/python-multipart/blob/d3d16dae4b061c34fe9d3c9081d9800c49fc1f7a/multipart/multipart.py#L72-L74
+    reference_type:
+    reference_id:
+  - url: https://github.com/encode/starlette/commit/13e5c26a27f4903924624736abd6131b2da80cc5
+    reference_type:
+    reference_id:
+  - url: https://github.com/encode/starlette/security/advisories/GHSA-93gm-qmq6-w238
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-93gm-qmq6-w238
+    reference_type:
+    reference_id: GHSA-93gm-qmq6-w238

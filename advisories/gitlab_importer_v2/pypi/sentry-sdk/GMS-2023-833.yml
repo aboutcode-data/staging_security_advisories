@@ -1,0 +1,30 @@
+advisory_id: pypi/sentry-sdk/GMS-2023-833
+datasource_id: gitlab_importer_v2/pypi/sentry-sdk/GMS-2023-833
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/sentry-sdk/GMS-2023-833.yml
+aliases:
+  - CVE-2023-28117
+  - GHSA-29pr-6jr8-q5jm
+  - GMS-2023-833
+summary: Cross-Site Request Forgery (CSRF) in sentry-sdk.
+impacted_packages:
+  - purl: pkg:pypi/sentry-sdk
+    affected_versions: vers:pypi/<1.14.0
+    fixed_versions: vers:pypi/1.14.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-352
+references:
+  - url: https://github.com/getsentry/sentry-python/pull/1842
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-python/releases/tag/1.14.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-python/security/advisories/GHSA-29pr-6jr8-q5jm
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-29pr-6jr8-q5jm
+    reference_type:
+    reference_id: GHSA-29pr-6jr8-q5jm

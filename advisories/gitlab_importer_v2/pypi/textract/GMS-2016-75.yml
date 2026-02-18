@@ -1,0 +1,22 @@
+advisory_id: pypi/textract/GMS-2016-75
+datasource_id: gitlab_importer_v2/pypi/textract/GMS-2016-75
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/textract/GMS-2016-75.yml
+aliases:
+  - GMS-2016-75
+summary: Parsing a file with a malicious name leads to arbitrary OS command injection, this
+  is especially risky when parsing user-supplied files on a server (e.g. uploaded files).
+impacted_packages:
+  - purl: pkg:pypi/textract
+    affected_versions: vers:pypi/<1.5.0
+    fixed_versions: vers:pypi/1.5.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: http://seclists.org/oss-sec/2016/q4/203
+    reference_type:
+    reference_id:
+  - url: https://github.com/deanmalmgren/textract/pull/114
+    reference_type:
+    reference_id:

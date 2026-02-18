@@ -1,0 +1,27 @@
+advisory_id: pypi/scrapy/GMS-2022-230
+datasource_id: gitlab_importer_v2/pypi/scrapy/GMS-2022-230
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/scrapy/GMS-2022-230.yml
+aliases:
+  - GHSA-mfjm-vh54-3f96
+  - GMS-2022-230
+summary: |
+  Cookie-setting is not restricted based on the public suffix list
+  Responses from domain names whose public domain name suffix contains 1 or more periods (e.g. responses from `example.co.uk`, given its public domain name suffix is `co.uk`) are able to set cookies that are included in requests to any other domain sharing the same domain name suffix.
+impacted_packages:
+  - purl: pkg:pypi/scrapy
+    affected_versions: vers:pypi/<1.8.2|>=2.0.0|<2.6.0
+    fixed_versions: vers:pypi/1.8.2|2.6.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/scrapy/scrapy/commit/e865c4430e58a4faa0e0766b23830f8423d6167a
+    reference_type:
+    reference_id:
+  - url: https://github.com/scrapy/scrapy/security/advisories/GHSA-mfjm-vh54-3f96
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mfjm-vh54-3f96
+    reference_type:
+    reference_id: GHSA-mfjm-vh54-3f96

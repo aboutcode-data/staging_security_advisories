@@ -1,0 +1,42 @@
+advisory_id: pypi/streamlit/GMS-2024-20
+datasource_id: gitlab_importer_v2/pypi/streamlit/GMS-2024-20
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/streamlit/GMS-2024-20.yml
+aliases:
+  - GHSA-8qw9-gf7w-42x5
+  - GMS-2024-20
+summary: |
+  Minor fix to previous patch for CVE-2022-35918
+  ### Impact
+
+  The initial vulnerability identified in Streamlit apps using custom components, allowing for directory traversal attacks, was addressed in version 1.11.1. However, a minor issue persisted, which could still potentially expose certain files on the server file-system under specific conditions.
+
+  ### Patches
+
+  We released an update in version 1.30.0 to further tighten security measures. Users are strongly advised to update to version 1.30.0 immediately for optimal security.
+
+  ### Workarounds
+
+  No additional workarounds are necessary once the update to version 1.30.0 is applied.
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+  * Email us at [security@streamlit.io](mailto:security@streamlit.io)
+impacted_packages:
+  - purl: pkg:pypi/streamlit
+    affected_versions: vers:pypi/>=0.63.0|<1.30.0
+    fixed_versions: vers:pypi/1.30.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/streamlit/streamlit/commit/bd0a8996c4c7ec55b9c6557e7b168b0c13a25b90
+    reference_type:
+    reference_id:
+  - url: https://github.com/streamlit/streamlit/security/advisories/GHSA-8qw9-gf7w-42x5
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-8qw9-gf7w-42x5
+    reference_type:
+    reference_id: GHSA-8qw9-gf7w-42x5

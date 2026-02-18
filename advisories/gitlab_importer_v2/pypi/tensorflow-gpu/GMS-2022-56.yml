@@ -1,0 +1,37 @@
+advisory_id: pypi/tensorflow-gpu/GMS-2022-56
+datasource_id: gitlab_importer_v2/pypi/tensorflow-gpu/GMS-2022-56
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/tensorflow-gpu/GMS-2022-56.yml
+aliases:
+  - GHSA-wcv5-vrvr-3rx2
+  - GMS-2022-56
+summary: "Integer Overflow or Wraparound in TensorFlow\n### Impact\nThe Grappler component of\
+  \ TensorFlow is vulnerable to a denial of service via `CHECK`-failure  in constant folding\
+  \  for ;\n    // ...\n  }\n```\n  \nThe `output_prop` tensor has a shape that is controlled\
+  \ by user input and this can result in triggering one of the `CHECK`s in the `PartialTensorShape`\
+  \ constructor. This is an instance of TFSA-2021-198 .\n\n### Patches\nWe have patched the\
+  \ issue in GitHub commit be7b286d40bc68cb0b56f702186cc4837d508058 fix will be included in\
+  \ TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3,\
+  \ and TensorFlow 2.5.3, as these are also affected and still in supported range.\n\n### For\
+  \ more information\nPlease consult [our security guide] for more information regarding the\
+  \ security model and how to contact us with issues and questions."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.5.3|>=2.6.0|<2.6.3|2.7.0
+    fixed_versions: vers:pypi/2.5.3|2.6.3|2.7.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/tensorflow/tensorflow/commit/be7b286d40bc68cb0b56f702186cc4837d508058
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-prcg-wp5q-rv7p
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-wcv5-vrvr-3rx2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wcv5-vrvr-3rx2
+    reference_type:
+    reference_id: GHSA-wcv5-vrvr-3rx2

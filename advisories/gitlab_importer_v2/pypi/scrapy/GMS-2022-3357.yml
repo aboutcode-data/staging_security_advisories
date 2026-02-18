@@ -1,0 +1,27 @@
+advisory_id: pypi/scrapy/GMS-2022-3357
+datasource_id: gitlab_importer_v2/pypi/scrapy/GMS-2022-3357
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/scrapy/GMS-2022-3357.yml
+aliases:
+  - GHSA-9x8m-2xpf-crp3
+  - GMS-2022-3357
+summary: |
+  Scrapy before v2.6.2 and v1.8.3 vulnerable to one proxy sending credentials to another
+  Because of request retries and redirects, the same request can be processed by downloader middlewares more than once, including both the built-in HTTP proxy downloader middleware and any third-party proxy-rotation downloader middleware. These third-party proxy-rotation downloader middlewares could change the `proxy` metadata of a request to a new value, but fail to remove the `Proxy-Authentication` header from the previous value of the `proxy` metadata, causing the credentials of one proxy to be leaked to a different proxy.
+impacted_packages:
+  - purl: pkg:pypi/scrapy
+    affected_versions: vers:pypi/<1.8.3|>=2.0.0|<2.6.2
+    fixed_versions: vers:pypi/1.8.3|2.6.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/scrapy/scrapy/commit/af7dd16d8ded3e6cb2946603688f4f4a5212e80f
+    reference_type:
+    reference_id:
+  - url: https://github.com/scrapy/scrapy/security/advisories/GHSA-9x8m-2xpf-crp3
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-9x8m-2xpf-crp3
+    reference_type:
+    reference_id: GHSA-9x8m-2xpf-crp3

@@ -1,0 +1,34 @@
+advisory_id: pypi/usd-core/GHSA-grjp-54v3-c442
+datasource_id: gitlab_importer_v2/pypi/usd-core/GHSA-grjp-54v3-c442
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/usd-core/GHSA-grjp-54v3-c442.yml
+aliases:
+  - GHSA-grjp-54v3-c442
+summary: |
+  OpenUSD File Parsing Use-After-Free Remote Code Execution Vulnerability
+  We have been advised by Zero Day Initiative that our usage of the USD framework may constitute a Use-After-Free Remote Code Execution Vulnerability. They have sent us the attached file illustrating the issue. Indeed, we see a use after free exception when running the file through our importer with an address sanitizer.
+
+  [zdi-23709-poc0.zip](https://github.com/user-attachments/files/17474297/zdi-23709-poc0.zip)
+
+  Thanks in advance.
+impacted_packages:
+  - purl: pkg:pypi/usd-core
+    affected_versions: vers:pypi/<25.11
+    fixed_versions: vers:pypi/25.11
+severities: []
+weaknesses:
+  - CWE-416
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/PixarAnimationStudios/OpenUSD
+    reference_type:
+    reference_id:
+  - url: https://github.com/PixarAnimationStudios/OpenUSD/commit/b9530922b6a8ea72cd43661226b693fff8abbe4c
+    reference_type:
+    reference_id:
+  - url: https://github.com/PixarAnimationStudios/OpenUSD/security/advisories/GHSA-grjp-54v3-c442
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-grjp-54v3-c442
+    reference_type:
+    reference_id: GHSA-grjp-54v3-c442
