@@ -1,0 +1,20 @@
+advisory_id: packagist/paragonie/random_compat/2016-03-16
+datasource_id: gitlab_importer_v2/packagist/paragonie/random_compat/2016-03-16
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/paragonie/random_compat/2016-03-16.yml
+aliases:
+  - '2016-03-16'
+summary: |
+  Cryptographic Issues
+  random_compat u ses insecure CSPRNG (`openssl_random_pseudo_bytes()`).
+impacted_packages:
+  - purl: pkg:composer/paragonie/random_compat
+    affected_versions: vers:composer/<2.0.0
+    fixed_versions: vers:composer/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/paragonie/random_compat/issues/96
+    reference_type:
+    reference_id:

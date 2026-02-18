@@ -1,0 +1,25 @@
+advisory_id: packagist/mautic/core/GMS-2022-182
+datasource_id: gitlab_importer_v2/packagist/mautic/core/GMS-2022-182
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/mautic/core/GMS-2022-182.yml
+aliases:
+  - CVE-2022-25769
+  - GHSA-mj6m-246h-9w56
+  - GMS-2022-182
+summary: |
+  Improper regex in htaccess file
+  The default .htaccess file has some restrictions in the access to PHP files to only allow specific PHP files to be executed in the root of the application.
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/<3.3.5|>=4.0.0|<4.2.0
+    fixed_versions: vers:composer/3.3.5|4.2.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-mj6m-246h-9w56
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mj6m-246h-9w56
+    reference_type:
+    reference_id: GHSA-mj6m-246h-9w56

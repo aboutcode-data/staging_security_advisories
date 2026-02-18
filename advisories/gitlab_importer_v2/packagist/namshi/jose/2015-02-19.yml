@@ -1,0 +1,20 @@
+advisory_id: packagist/namshi/jose/2015-02-19
+datasource_id: gitlab_importer_v2/packagist/namshi/jose/2015-02-19
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/namshi/jose/2015-02-19.yml
+aliases:
+  - '2015-02-19'
+summary: |
+  Improper Authentication
+  Attackers able to impersonate users.
+impacted_packages:
+  - purl: pkg:composer/namshi/jose
+    affected_versions: vers:composer/<1.1.2|>=1.2.0|<1.2.2|>=2.0.0|<2.0.3|>=2.1.0|<2.1.2
+    fixed_versions: vers:composer/1.1.2|1.2.2|2.0.3|2.1.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/namshi/jose/commit/009f86d6ced000b806b2f602c0b7393060ebb34e
+    reference_type:
+    reference_id:

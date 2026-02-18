@@ -1,0 +1,43 @@
+advisory_id: packagist/mautic/core/GHSA-5hc5-fxr9-5frc
+datasource_id: gitlab_importer_v2/packagist/mautic/core/GHSA-5hc5-fxr9-5frc
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/mautic/core/GHSA-5hc5-fxr9-5frc.yml
+aliases:
+  - GHSA-5hc5-fxr9-5frc
+summary: |
+  Duplicate Advisory: Mautic has insufficient authentication in upgrade flow
+  # Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-qf6m-6m4g-rmrc. This link is maintained to preserve external references.
+
+  # Original Description
+  Mautic allows you to update the application via an upgrade script.
+
+  The upgrade logic isn't shielded off correctly, which may lead to vulnerable situation.
+
+  This vulnerability is mitigated by the fact that Mautic needs to be installed in a certain way to be vulnerable.
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=1.0.0-beta3|<4.4.13|>=5.0.0|<5.1.1
+    fixed_versions: vers:composer/4.4.13|5.1.1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/mautic/core/GHSA-5hc5-fxr9-5frc.yml
+weaknesses:
+  - CWE-306
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-qf6m-6m4g-rmrc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25770
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5hc5-fxr9-5frc
+    reference_type:
+    reference_id: GHSA-5hc5-fxr9-5frc

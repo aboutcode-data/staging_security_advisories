@@ -1,0 +1,32 @@
+advisory_id: packagist/leantime/leantime/GHSA-92xh-6x7v-4rmq
+datasource_id: gitlab_importer_v2/packagist/leantime/leantime/GHSA-92xh-6x7v-4rmq
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/leantime/leantime/GHSA-92xh-6x7v-4rmq.yml
+aliases:
+  - GHSA-92xh-6x7v-4rmq
+summary: |
+  Leantime allows Cross-Site Request Forgery (CSRF)
+  A cross-site request forgery vulnerability allows a remote actor to create an account with Owner privileges. By luring an Owner or Administrator into clicking a button on an attacker-controlled website, a request will be issued, generating an account with the attacker's information and role of their choosing.
+impacted_packages:
+  - purl: pkg:composer/leantime/leantime
+    affected_versions: vers:composer/<3.1.2
+    fixed_versions: vers:composer/3.1.2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/leantime/leantime/GHSA-92xh-6x7v-4rmq.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-352
+references:
+  - url: https://github.com/Leantime/leantime
+    reference_type:
+    reference_id:
+  - url: https://github.com/Leantime/leantime/security/advisories/GHSA-92xh-6x7v-4rmq
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-92xh-6x7v-4rmq
+    reference_type:
+    reference_id: GHSA-92xh-6x7v-4rmq

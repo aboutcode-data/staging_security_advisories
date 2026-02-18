@@ -1,0 +1,34 @@
+advisory_id: packagist/laravel/framework/GHSA-qm5c-m76r-2hfr
+datasource_id: gitlab_importer_v2/packagist/laravel/framework/GHSA-qm5c-m76r-2hfr
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/laravel/framework/GHSA-qm5c-m76r-2hfr.yml
+aliases:
+  - GHSA-qm5c-m76r-2hfr
+summary: |
+  Laravel RCE vulnerability in "cookie" session driver
+  Applications using the "cookie" session driver that were also exposing an encryption oracle via their application were vulnerable to remote code execution. An encryption oracle is a mechanism where arbitrary user input is encrypted and the encrypted string is later displayed or exposed to the user. This combination of scenarios lets the user generate valid Laravel signed encryption strings for any plain-text string, thus allowing them to craft Laravel session payloads when an application is using the "cookie" driver.
+impacted_packages:
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=4.1.0|<6.18.31|>=7.0.0|<7.22.4
+    fixed_versions: vers:composer/6.18.31|7.22.4
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/laravel/framework/GHSA-qm5c-m76r-2hfr.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://blog.laravel.com/laravel-cookie-security-releases
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/2020-07-27-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-qm5c-m76r-2hfr
+    reference_type:
+    reference_id: GHSA-qm5c-m76r-2hfr

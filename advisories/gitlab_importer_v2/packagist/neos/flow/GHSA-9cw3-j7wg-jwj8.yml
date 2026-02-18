@@ -1,0 +1,34 @@
+advisory_id: packagist/neos/flow/GHSA-9cw3-j7wg-jwj8
+datasource_id: gitlab_importer_v2/packagist/neos/flow/GHSA-9cw3-j7wg-jwj8
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/neos/flow/GHSA-9cw3-j7wg-jwj8.yml
+aliases:
+  - GHSA-9cw3-j7wg-jwj8
+summary: |
+  Neos Flow Information disclosure in entity security
+  If you had used entity security and wanted to secure entities not just based on the user's role, but on some property of the user (like the company he belongs to), entity security did not work properly together with the doctrine query cache. This could lead to other users re-using SQL queries from the cache which were built for other users; and thus users could see entities which were not destined for them.
+impacted_packages:
+  - purl: pkg:composer/neos/flow
+    affected_versions: vers:composer/>=3.0.0|<3.0.12|>=3.1.0|<3.1.10|>=3.2.0|<3.2.13|>=3.3.0|<3.3.13|>=4.0.0|<4.0.6
+    fixed_versions: vers:composer/3.0.12|3.1.10|3.2.13|3.3.13|4.0.6
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/neos/flow/GHSA-9cw3-j7wg-jwj8.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/neos/flow/2017-04-12.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/neos/flow
+    reference_type:
+    reference_id:
+  - url: https://www.neos.io/blog/flow-bugfix-releases-for-entity-security.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-9cw3-j7wg-jwj8
+    reference_type:
+    reference_id: GHSA-9cw3-j7wg-jwj8

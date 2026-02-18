@@ -1,0 +1,61 @@
+advisory_id: packagist/league/commonmark/GHSA-c2pc-g5qf-rfrf
+datasource_id: gitlab_importer_v2/packagist/league/commonmark/GHSA-c2pc-g5qf-rfrf
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/league/commonmark/GHSA-c2pc-g5qf-rfrf.yml
+aliases:
+  - GHSA-c2pc-g5qf-rfrf
+summary: |
+  league/commonmark's quadratic complexity bugs may lead to a denial of service
+  Several polynomial time complexity issues in league/commonmark may lead to unbounded resource exhaustion and subsequent denial of service.
+
+  Malicious users could trigger that inefficient code with carefully crafted Markdown inputs that are specifically designed to ensure the worst-case performance is reached.  Sending multiple such requests in parallel could tie up all available CPU resources and/or PHP-FPM processes, leading to denial of service for legitimate users.
+impacted_packages:
+  - purl: pkg:composer/league/commonmark
+    affected_versions: vers:composer/<2.6.0
+    fixed_versions: vers:composer/2.6.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/league/commonmark/GHSA-c2pc-g5qf-rfrf.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-407
+references:
+  - url: https://github.com/commonmark/commonmark.js/issues/129
+    reference_type:
+    reference_id:
+  - url: https://github.com/commonmark/commonmark.js/issues/157
+    reference_type:
+    reference_id:
+  - url: https://github.com/commonmark/commonmark.js/issues/172
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/security/advisories/GHSA-24f7-9frr-5h2r
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/security/advisories/GHSA-29g3-96g3-jg6c
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/security/advisories/GHSA-66g8-4hjf-77xh
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/security/advisories/GHSA-r572-jvj2-3m8p
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/security/advisories/GHSA-r8vr-c48j-fcc5
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/security/advisories/GHSA-w4qg-3vf7-m9x5
+    reference_type:
+    reference_id:
+  - url: https://github.com/thephpleague/commonmark
+    reference_type:
+    reference_id:
+  - url: https://github.com/thephpleague/commonmark/security/advisories/GHSA-c2pc-g5qf-rfrf
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c2pc-g5qf-rfrf
+    reference_type:
+    reference_id: GHSA-c2pc-g5qf-rfrf

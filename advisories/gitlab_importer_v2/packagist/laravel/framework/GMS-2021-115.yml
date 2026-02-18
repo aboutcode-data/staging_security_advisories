@@ -1,0 +1,40 @@
+advisory_id: packagist/laravel/framework/GMS-2021-115
+datasource_id: gitlab_importer_v2/packagist/laravel/framework/GMS-2021-115
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/laravel/framework/GMS-2021-115.yml
+aliases:
+  - GHSA-4mg9-vhxq-vm7j
+  - GMS-2021-115
+summary: |
+  SQL Server LIMIT / OFFSET SQL Injection in laravel/framework and illuminate/database
+  ### Impact
+
+  Those using SQL Server with Laravel and allowing user input to be passed directly to the `limit` and `offset` functions is vulnerable to SQL injection. Other database drivers such as MySQL and Postgres are not affected by this vulnerability.
+
+  ### Patches
+
+  This problem has been patched on Laravel versions 6.20.26, 7.30.5, and 8.40.0.
+
+  ### Workarounds
+
+  You may workaround this vulnerability by ensuring that only integers are passed to the `limit` and `offset` functions, as well as the `skip` and `take` functions.
+impacted_packages:
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/<6.20.26|>=8.0.0|<8.40.0
+    fixed_versions: vers:composer/6.20.26|8.40.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/laravel/framework/security/advisories/GHSA-4mg9-vhxq-vm7j
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/illuminate/database
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/laravel/framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-4mg9-vhxq-vm7j
+    reference_type:
+    reference_id: GHSA-4mg9-vhxq-vm7j

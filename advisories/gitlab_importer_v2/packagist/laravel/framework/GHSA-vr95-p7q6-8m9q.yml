@@ -1,0 +1,41 @@
+advisory_id: packagist/laravel/framework/GHSA-vr95-p7q6-8m9q
+datasource_id: gitlab_importer_v2/packagist/laravel/framework/GHSA-vr95-p7q6-8m9q
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/laravel/framework/GHSA-vr95-p7q6-8m9q.yml
+aliases:
+  - GHSA-vr95-p7q6-8m9q
+summary: |
+  Laravel Cross-site Scripting (XSS) vulnerability in blade templating
+  Laravel 7.1.2 addresses a possible XSS related attack vector in the Laravel 7.x Blade Component tag attributes when users are allowed to dictate the value of attributes. All Laravel 7.x users are encouraged to upgrade as soon as possible.
+impacted_packages:
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=7.0.0|<7.1.2
+    fixed_versions: vers:composer/7.1.2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/laravel/framework/GHSA-vr95-p7q6-8m9q.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://blog.laravel.com/security-laravel-712-released
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/2020-03-13-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework/pull/31945
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework/releases/tag/v7.1.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-vr95-p7q6-8m9q
+    reference_type:
+    reference_id: GHSA-vr95-p7q6-8m9q

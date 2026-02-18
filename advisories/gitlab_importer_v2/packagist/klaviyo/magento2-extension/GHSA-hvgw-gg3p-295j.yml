@@ -1,0 +1,33 @@
+advisory_id: packagist/klaviyo/magento2-extension/GHSA-hvgw-gg3p-295j
+datasource_id: gitlab_importer_v2/packagist/klaviyo/magento2-extension/GHSA-hvgw-gg3p-295j
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/klaviyo/magento2-extension/GHSA-hvgw-gg3p-295j.yml
+aliases:
+  - GHSA-hvgw-gg3p-295j
+summary: |
+  Read private customer data reclaiming carts in Klaviyo Magento
+  A researcher identified an endpoint in a thirth party module Klaviyo Magento 2 which allows to read private customer data from stores. It works by reclaiming any guest-cart as your own and reading the private data for the orders in the Magento API.
+impacted_packages:
+  - purl: pkg:composer/klaviyo/magento2-extension
+    affected_versions: vers:composer/>=1.0.0|<3.0.0
+    fixed_versions: vers:composer/3.0.0
+severities: []
+weaknesses:
+  - CWE-200
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://gist.github.com/JeroenBoersma/f5864a45e3df63b198a57abdff366df2
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/klaviyo/magento2-extension/2021-05-25-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/klaviyo/magento2-klaviyo
+    reference_type:
+    reference_id:
+  - url: https://github.com/klaviyo/magento2-klaviyo/pull/107
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-hvgw-gg3p-295j
+    reference_type:
+    reference_id: GHSA-hvgw-gg3p-295j

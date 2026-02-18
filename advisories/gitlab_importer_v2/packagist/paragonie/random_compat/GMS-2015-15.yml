@@ -1,0 +1,23 @@
+advisory_id: packagist/paragonie/random_compat/GMS-2015-15
+datasource_id: gitlab_importer_v2/packagist/paragonie/random_compat/GMS-2015-15
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/paragonie/random_compat/GMS-2015-15.yml
+aliases:
+  - GMS-2015-15
+summary: |
+  Insecure CSPRNG
+  `random_compat` uses `openssl_random_pseudo_bytes()` but this Cryptographically Secure Pseudorandom Number Generator (CSPRNG) is insecure.
+impacted_packages:
+  - purl: pkg:composer/paragonie/random_compat
+    affected_versions: vers:composer/<2.0.0
+    fixed_versions: vers:composer/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/pull/146
+    reference_type:
+    reference_id:
+  - url: https://github.com/paragonie/random_compat/issues/5
+    reference_type:
+    reference_id:

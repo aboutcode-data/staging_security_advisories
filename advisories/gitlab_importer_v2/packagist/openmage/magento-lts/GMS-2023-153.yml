@@ -1,0 +1,36 @@
+advisory_id: packagist/openmage/magento-lts/GMS-2023-153
+datasource_id: gitlab_importer_v2/packagist/openmage/magento-lts/GMS-2023-153
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/openmage/magento-lts/GMS-2023-153.yml
+aliases:
+  - CVE-2023-23617
+  - GHSA-3p73-mm7v-4f6m
+  - GMS-2023-153
+summary: |
+  DoS vulnerability in MaliciousCode filter
+  ### Impact
+  Infinite loop in malicious code filter in certain conditions.
+
+  ### Workarounds
+
+  None
+impacted_packages:
+  - purl: pkg:composer/openmage/magento-lts
+    affected_versions: vers:composer/<19.4.22|>=20.0.0|<20.0.19
+    fixed_versions: vers:composer/19.4.22|20.0.19
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/OpenMage/magento-lts/releases/tag/v19.4.22
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenMage/magento-lts/releases/tag/v20.0.19
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenMage/magento-lts/security/advisories/GHSA-3p73-mm7v-4f6m
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3p73-mm7v-4f6m
+    reference_type:
+    reference_id: GHSA-3p73-mm7v-4f6m

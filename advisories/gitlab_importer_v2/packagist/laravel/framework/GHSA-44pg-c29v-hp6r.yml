@@ -1,0 +1,38 @@
+advisory_id: packagist/laravel/framework/GHSA-44pg-c29v-hp6r
+datasource_id: gitlab_importer_v2/packagist/laravel/framework/GHSA-44pg-c29v-hp6r
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/laravel/framework/GHSA-44pg-c29v-hp6r.yml
+aliases:
+  - GHSA-44pg-c29v-hp6r
+summary: |
+  Laravel Guard bypass in Eloquent models
+  In laravel releases before 6.18.34 and 7.23.2. It was possible to mass assign Eloquent attributes that included the model's table name:
+  ```
+  $model->fill(['users.name' => 'Taylor']);
+  ```
+  When doing so, Eloquent would remove the table name from the attribute for you. This was a "convenience" feature of Eloquent and was not documented.
+
+  However, when paired with validation, this can lead to unexpected and unvalidated values being saved to the database. For this reason, we have removed the automatic stripping of table names from mass-asignment operations so that the attributes go through the typical "fillable" / "guarded" logic. Any attributes containing table names that are not explicitly declared as fillable will be discarded.
+
+  This security release will be a breaking change for applications that were relying on the undocumented table name stripping during mass assignment. Since this feature was relatively unknown and undocumented, we expect the vast majority of Laravel applications to be able to upgrade without issues.
+impacted_packages:
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=5.5.0|<=5.5.49|>=6.0.0|<6.18.34|>=7.0.0|<7.23.2
+    fixed_versions: vers:composer/6.18.34|7.23.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-20
+references:
+  - url: https://blog.laravel.com/security-release-laravel-61834-7232
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/2020-08-06-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-44pg-c29v-hp6r
+    reference_type:
+    reference_id: GHSA-44pg-c29v-hp6r
