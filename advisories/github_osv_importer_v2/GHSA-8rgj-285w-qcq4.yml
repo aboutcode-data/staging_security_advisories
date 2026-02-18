@@ -1,0 +1,29 @@
+advisory_id: GHSA-8rgj-285w-qcq4
+datasource_id: github_osv_importer_v2/GHSA-8rgj-285w-qcq4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-8rgj-285w-qcq4/GHSA-8rgj-285w-qcq4.json
+aliases: []
+summary: |
+  Unknown vulnerability in Coinbase Wallet SDK
+  ### Impact
+  There is a security vulnerability in outdated versions of Coinbase Wallet SDK. This does not directly affect users' keys, smart contracts, or funds.
+
+  ### Patches
+  Please update to version >= 4.3.0.
+impacted_packages:
+  - purl: pkg:npm/%40coinbase/wallet-sdk
+    affected_versions: vers:npm/>=4.0.0-beta.0|<4.3.0
+    fixed_versions: vers:npm/4.3.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/coinbase/coinbase-wallet-sdk
+    reference_type:
+    reference_id:
+  - url: https://github.com/coinbase/coinbase-wallet-sdk/security/advisories/GHSA-8rgj-285w-qcq4
+    reference_type:
+    reference_id:

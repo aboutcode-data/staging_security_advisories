@@ -1,0 +1,79 @@
+advisory_id: GHSA-9442-gm4v-r222
+datasource_id: github_osv_importer_v2/GHSA-9442-gm4v-r222
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-9442-gm4v-r222/GHSA-9442-gm4v-r222.json
+aliases:
+  - CVE-2024-6162
+summary: |
+  Undertow's url-encoded request path information can be broken on ajp-listener
+  A vulnerability was found in Undertow, where URL-encoded request paths can be mishandled during concurrent requests on the AJP listener. This issue arises because the same buffer is used to decode the paths for multiple requests simultaneously, leading to incorrect path information being processed. As a result, the server may attempt to access the wrong path, causing errors such as "404 Not Found" or other application failures. This flaw can potentially lead to a denial of service, as legitimate resources become inaccessible due to the path mix-up.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/>=2.3.0.Alpha1|<2.3.14.Final
+    fixed_versions: vers:maven/2.3.14.Final
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<2.2.33.Final
+    fixed_versions: vers:maven/2.2.33.Final
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-9442-gm4v-r222/GHSA-9442-gm4v-r222.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-9442-gm4v-r222/GHSA-9442-gm4v-r222.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:1194
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:4386
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:4884
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-6162
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2293069
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/commit/90f202ada89b6d9883beed0f1fe10c99d470d9a8
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/commit/a28ac53076e2fa532266d25e0c0b1a01d0e9d2cf
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/pull/1612
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/releases/tag/2.2.33.Final
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/releases/tag/2.3.14.Final
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/JBEAP-26268
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/UNDERTOW-2334
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-6162
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20241129-0009
+    reference_type:
+    reference_id:

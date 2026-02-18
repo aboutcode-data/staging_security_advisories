@@ -1,0 +1,41 @@
+advisory_id: GHSA-88qf-5f3v-pm6m
+datasource_id: github_osv_importer_v2/GHSA-88qf-5f3v-pm6m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-88qf-5f3v-pm6m/GHSA-88qf-5f3v-pm6m.json
+aliases:
+  - CVE-2023-29566
+summary: |
+  Remote code execution in dawnsparks-node-tesseract
+  dawnsparks-node-tesseract before 0.4.1 was discovered to contain a remote code execution (RCE) vulnerability via the child_process function.
+impacted_packages:
+  - purl: pkg:npm/dawnsparks-node-tesseract
+    affected_versions: vers:npm/<0.4.1
+    fixed_versions: vers:npm/0.4.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-88qf-5f3v-pm6m/GHSA-88qf-5f3v-pm6m.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/omnitaint/Vulnerability-Reports/blob/ec3645003c7f8996459b5b24c722474adc2d599f/reports/dawnsparks-node-tesseract/report.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/rona-dinihari/dawnsparks-node-tesseract
+    reference_type:
+    reference_id:
+  - url: https://github.com/rona-dinihari/dawnsparks-node-tesseract/commit/81d1664f0b9fe521534acfae1d5b9c40127b36c1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-29566
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/dawnsparks-node-tesseract
+    reference_type:
+    reference_id:

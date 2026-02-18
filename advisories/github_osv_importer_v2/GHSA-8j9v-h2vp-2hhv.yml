@@ -1,0 +1,60 @@
+advisory_id: GHSA-8j9v-h2vp-2hhv
+datasource_id: github_osv_importer_v2/GHSA-8j9v-h2vp-2hhv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-8j9v-h2vp-2hhv/GHSA-8j9v-h2vp-2hhv.json
+aliases:
+  - CVE-2020-26293
+summary: |
+  XSS in HtmlSanitizer
+  ### Impact
+
+  If you have explicitly allowed the `<style>` tag, an attacker could craft HTML that includes script after passing through the sanitizer. The default settings disallow the `<style>` tag so there is no risk if you have not explicitly allowed the `<style>` tag.
+
+  ### Patches
+
+  The problem has been fixed in version 5.0.372.
+
+  ### Workarounds
+
+  Remove the `<style>` tag from the set of allowed tags.
+
+  ### For more information
+
+  If you have any questions or comments about this advisory open an issue in https://github.com/mganss/HtmlSanitizer
+
+  ### Credits
+
+  This issue was discovered by Michal Bentkowski of Securitum.
+impacted_packages:
+  - purl: pkg:nuget/HtmlSanitizer
+    affected_versions: vers:nuget/<5.0.372
+    fixed_versions: vers:nuget/5.0.372
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-8j9v-h2vp-2hhv/GHSA-8j9v-h2vp-2hhv.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-74
+references:
+  - url: https://github.com/mganss/HtmlSanitizer/commit/a3a7602a44d4155d51ec0fbbedc2a49e9c7e2eb8
+    reference_type:
+    reference_id:
+  - url: https://github.com/mganss/HtmlSanitizer/releases/tag/v5.0.372
+    reference_type:
+    reference_id:
+  - url: https://github.com/mganss/HtmlSanitizer/security/advisories/GHSA-8j9v-h2vp-2hhv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-26293
+    reference_type:
+    reference_id:
+  - url: https://www.nuget.org/packages/HtmlSanitizer
+    reference_type:
+    reference_id:

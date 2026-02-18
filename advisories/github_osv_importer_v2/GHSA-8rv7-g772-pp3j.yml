@@ -1,0 +1,35 @@
+advisory_id: GHSA-8rv7-g772-pp3j
+datasource_id: github_osv_importer_v2/GHSA-8rv7-g772-pp3j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-8rv7-g772-pp3j/GHSA-8rv7-g772-pp3j.json
+aliases:
+  - CVE-2023-40771
+summary: |
+  DataEase vulnerable to SQL injection
+  SQL injection vulnerability in DataEase v.1.18.9 allows a remote attacker to obtain sensitive information via a crafted string outside of the blacklist function.
+impacted_packages:
+  - purl: pkg:maven/io.dataease/dataease-plugin-common
+    affected_versions: vers:maven/<=1.18.9
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-8rv7-g772-pp3j/GHSA-8rv7-g772-pp3j.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/dataease/dataease
+    reference_type:
+    reference_id:
+  - url: https://github.com/dataease/dataease/issues/5861
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-40771
+    reference_type:
+    reference_id:

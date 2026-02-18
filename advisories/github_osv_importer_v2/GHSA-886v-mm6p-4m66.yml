@@ -1,0 +1,59 @@
+advisory_id: GHSA-886v-mm6p-4m66
+datasource_id: github_osv_importer_v2/GHSA-886v-mm6p-4m66
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-886v-mm6p-4m66/GHSA-886v-mm6p-4m66.json
+aliases: []
+summary: |
+  High severity vulnerability that affects gun
+  ## Urgent Upgrade
+
+  The static file server module included with GUN had a **serious vulnerability**:
+
+   - Using `curl --path-as-is` allowed reads on any parent directory or files.
+
+  This did not work via the browser or via curl without as-is option.
+
+   ### Fixed
+
+  This has been fixed since version `0.2019.416` and higher.
+
+   ### Who Was Effected?
+
+  Most NodeJS users who use the default setup, such as:
+
+   - `npm start`
+   - `node examples/http.js`
+   - `Heroku` 1-click-deploy
+   - `Docker`
+   - `Now`
+
+  If you have a custom NodeJS code then you are probably safe *unless* you have something like `require('http').createServer(Gun.serve(__dirname))` in it.
+
+  If you have not upgraded, it is **mandatory** or else it is highly likely your environment variables and AWS (or other) keys could be leaked.
+
+   ### Credit
+
+  It was reported and fixed by [JK0N](https://github.com/amark/gun/pull/527), but I did not understand the `--path-as-is` condition.
+
+  Joonas Loppi from [function61](http://function61.com) rediscovered it and explained the urgency to me to fix it.
+impacted_packages:
+  - purl: pkg:npm/gun
+    affected_versions: vers:npm/<0.2019.416
+    fixed_versions: vers:npm/0.2019.416
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/advisories/GHSA-886v-mm6p-4m66
+    reference_type:
+    reference_id:
+  - url: https://github.com/amark/gun
+    reference_type:
+    reference_id:
+  - url: https://github.com/amark/gun/security/advisories/GHSA-886v-mm6p-4m66
+    reference_type:
+    reference_id:

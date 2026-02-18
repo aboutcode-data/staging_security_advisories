@@ -1,0 +1,49 @@
+advisory_id: GHSA-9g95-qf3f-ggrw
+datasource_id: github_osv_importer_v2/GHSA-9g95-qf3f-ggrw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-9g95-qf3f-ggrw/GHSA-9g95-qf3f-ggrw.json
+aliases:
+  - CVE-2026-25053
+summary: "n8n has OS Command Injection in Git Node\n## Impact\n\nVulnerabilities in the Git\
+  \ node allowed authenticated users with permission to create or modify workflows to execute\
+  \ arbitrary system commands or read arbitrary files on the n8n host.\n\n## Patches\n\nThe\
+  \ issue has been fixed in n8n versions 2.5.0, and 1.123.10. Users should upgrade to this version\
+  \ or later to remediate the vulnerability.\n\n## Workarounds\n\nIf upgrading is not immediately\
+  \ possible, administrators should consider the following temporary mitigations:\n\n- Limit\
+  \ workflow creation and editing permissions to fully trusted users only.\n- Restrict or disable\
+  \ access to the Git node if not essential for operations.\n- Deploy n8n in a hardened environment\
+  \ with restricted operating system privileges and network access to reduce the impact of potential\
+  \ exploitation.\n\nThese workarounds do not fully remediate the risk and should only be used\
+  \ as short-term mitigation measures.\n\n## Resources\n\n- [n8n Documentation — Blocking nodes](https://docs.n8n.io/hosting/securing/blocking-nodes/) —\
+  \ how to globally disable specific nodes\n\n--- \n\nn8n has adopted CVSS 4.0 as primary score\
+  \ for all security advisories. CVSS 3.1 vector strings are provided for backward compatibility.\n\
+  \nCVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+impacted_packages:
+  - purl: pkg:npm/n8n
+    affected_versions: vers:npm/>=2.0.0|<2.5.0
+    fixed_versions: vers:npm/2.5.0
+  - purl: pkg:npm/n8n
+    affected_versions: vers:npm/<1.123.10
+    fixed_versions: vers:npm/1.123.10
+severities:
+  - score: '9.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-9g95-qf3f-ggrw/GHSA-9g95-qf3f-ggrw.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/n8n-io/n8n
+    reference_type:
+    reference_id:
+  - url: https://github.com/n8n-io/n8n/security/advisories/GHSA-9g95-qf3f-ggrw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25053
+    reference_type:
+    reference_id:

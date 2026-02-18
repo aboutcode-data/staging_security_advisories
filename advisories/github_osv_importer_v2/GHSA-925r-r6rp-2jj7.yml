@@ -1,0 +1,45 @@
+advisory_id: GHSA-925r-r6rp-2jj7
+datasource_id: github_osv_importer_v2/GHSA-925r-r6rp-2jj7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-925r-r6rp-2jj7/GHSA-925r-r6rp-2jj7.json
+aliases:
+  - CVE-2022-3952
+summary: |
+  ManyDesigns Portofino subject to creation of insecure temporary file
+  A vulnerability has been found in ManyDesigns Portofino 5.3.2. Affected by this vulnerability is the function createTempDir of the file WarFileLauncher.java. The manipulation leads to creation of temporary file in directory with insecure permissions. Upgrading to version 5.3.3 is able to address this issue. The name of the patch is 94653cb357806c9cf24d8d294e6afea33f8f0775. It is recommended to upgrade the affected component.
+impacted_packages:
+  - purl: pkg:maven/com.manydesigns/portofino
+    affected_versions: vers:maven/<5.3.3
+    fixed_versions: vers:maven/5.3.3
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-925r-r6rp-2jj7/GHSA-925r-r6rp-2jj7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+  - CWE-377
+references:
+  - url: https://github.com/ManyDesigns/Portofino
+    reference_type:
+    reference_id:
+  - url: https://github.com/ManyDesigns/Portofino/commit/94653cb357806c9cf24d8d294e6afea33f8f0775
+    reference_type:
+    reference_id:
+  - url: https://github.com/ManyDesigns/Portofino/pull/580
+    reference_type:
+    reference_id:
+  - url: https://github.com/ManyDesigns/Portofino/releases/tag/v5.3.3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3952
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.213457
+    reference_type:
+    reference_id:

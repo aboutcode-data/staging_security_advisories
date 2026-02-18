@@ -1,0 +1,35 @@
+advisory_id: GHSA-89fp-j8v7-p82h
+datasource_id: github_osv_importer_v2/GHSA-89fp-j8v7-p82h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-89fp-j8v7-p82h/GHSA-89fp-j8v7-p82h.json
+aliases:
+  - CVE-2020-13241
+summary: |
+  Microweber allows Unrestricted File Upload
+  Microweber 1.1.18 allows Unrestricted File Upload because `admin/view:modules/load_module:users#edit-user=1` does not verify that the file extension (used with the Add Image option on the Edit User screen) corresponds to an image file.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<=1.1.18
+    fixed_versions:
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-89fp-j8v7-p82h/GHSA-89fp-j8v7-p82h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://gist.github.com/virendratiwari03/0af29841fdf27207eb3abc8f28d326f3
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13241
+    reference_type:
+    reference_id:

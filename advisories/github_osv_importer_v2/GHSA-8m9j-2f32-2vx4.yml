@@ -1,0 +1,50 @@
+advisory_id: GHSA-8m9j-2f32-2vx4
+datasource_id: github_osv_importer_v2/GHSA-8m9j-2f32-2vx4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-8m9j-2f32-2vx4/GHSA-8m9j-2f32-2vx4.json
+aliases:
+  - CVE-2024-41955
+summary: "MobSF vulnerable to Open Redirect in Login Redirect\n### Impact\n_What kind of vulnerability\
+  \ is it? Who is impacted?_\n\nAn open redirect vulnerability exist in MobSF authentication\
+  \ view. \n\nPoC\n1. Go to http://127.0.0.1:8000/login/?next=//afine.com in a web browser.\n\
+  2. Enter credentials and press \"Sign In\".\n3. You will be redirected to [afine.com](http://afine.com/)\n\
+  \nUsers who are not using authentication are not impacted.\n\n### Patches\n_Has the problem\
+  \ been patched? What versions should users upgrade to?_\n\nUpdate to MobSF v4.0.5\n\n### Workarounds\n\
+  _Is there a way for users to fix or remediate the vulnerability without upgrading?_\nDisable\
+  \ Authentication\n\n### References\n_Are there any links users can visit to find out more?_\n\
+  Fix: https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/fdaad81314f393d324c1ede79627e9d47986c8c8\n\
+  \n### Reporter\nMarcin Węgłowski (AFINE Team)"
+impacted_packages:
+  - purl: pkg:pypi/mobsf
+    affected_versions: vers:pypi/<4.0.5
+    fixed_versions: vers:pypi/4.0.5
+severities:
+  - score: '5.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-8m9j-2f32-2vx4/GHSA-8m9j-2f32-2vx4.json
+  - score: '6.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:A/VC:L/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-8m9j-2f32-2vx4/GHSA-8m9j-2f32-2vx4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/MobSF/Mobile-Security-Framework-MobSF
+    reference_type:
+    reference_id:
+  - url: https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/fdaad81314f393d324c1ede79627e9d47986c8c8
+    reference_type:
+    reference_id:
+  - url: https://github.com/MobSF/Mobile-Security-Framework-MobSF/security/advisories/GHSA-8m9j-2f32-2vx4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-41955
+    reference_type:
+    reference_id:

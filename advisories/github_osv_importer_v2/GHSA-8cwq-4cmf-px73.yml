@@ -1,0 +1,46 @@
+advisory_id: GHSA-8cwq-4cmf-px73
+datasource_id: github_osv_importer_v2/GHSA-8cwq-4cmf-px73
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-8cwq-4cmf-px73/GHSA-8cwq-4cmf-px73.json
+aliases: []
+summary: |
+  PocketMine-MP invalid skin geometry JSON data leading to server crash
+  ### Impact
+  `pocketmine\entity\Skin` doesn't correctly handle errors produced by `adhocore/json-comment`, which throws `RuntimeException` rather than returning `false` as PocketMine-MP expects.
+
+  This leads to a server crash if the skin geometry data is invalid for some reason (e.g. a syntax error).
+
+  ### Patches
+  c9626c610b8f6810c8c987559c9197b2a291f0bb
+
+  ### Workarounds
+  A plugin could handle `LoginPacket` and `PlayerSkinPacket` to verify the skin geometry data can be parsed correctly, so that the error condition in the core code is never reached.
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at [security@pmmp.io](mailto:security@example.com)
+impacted_packages:
+  - purl: pkg:composer/pocketmine/pocketmine-mp
+    affected_versions: vers:composer/<4.7.2
+    fixed_versions: vers:composer/4.7.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-8cwq-4cmf-px73/GHSA-8cwq-4cmf-px73.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/pmmp/PocketMine-MP
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/commit/c9626c610b8f6810c8c987559c9197b2a291f0bb
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/security/advisories/GHSA-8cwq-4cmf-px73
+    reference_type:
+    reference_id:

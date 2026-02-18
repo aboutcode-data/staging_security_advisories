@@ -1,0 +1,42 @@
+advisory_id: GHSA-8w7f-8pr9-xgwj
+datasource_id: github_osv_importer_v2/GHSA-8w7f-8pr9-xgwj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-8w7f-8pr9-xgwj/GHSA-8w7f-8pr9-xgwj.json
+aliases:
+  - CVE-2025-48912
+summary: |
+  Apache Superset: Improper authorization bypass on row level security via SQL Injection
+  An authenticated malicious actor using specially crafted requests could bypass row level security configuration by injecting SQL into 'sqlExpression' fields. This allowed the execution of sub-queries to evade parsing defenses ultimately granting unauthorized access to data.
+
+  This issue affects Apache Superset: before 4.1.2.
+
+  Users are recommended to upgrade to version 4.1.2, which fixes the issue.
+impacted_packages:
+  - purl: pkg:pypi/apache-superset
+    affected_versions: vers:pypi/<4.1.2
+    fixed_versions: vers:pypi/4.1.2
+severities:
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-8w7f-8pr9-xgwj/GHSA-8w7f-8pr9-xgwj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/apache/superset
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/ms2t2oq218hb7l628trsogo4fj7h1135
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48912
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2025/05/30/3
+    reference_type:
+    reference_id:

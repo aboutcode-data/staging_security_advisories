@@ -1,0 +1,47 @@
+advisory_id: GHSA-8r5j-gm3j-cx9c
+datasource_id: github_osv_importer_v2/GHSA-8r5j-gm3j-cx9c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8r5j-gm3j-cx9c/GHSA-8r5j-gm3j-cx9c.json
+aliases:
+  - CVE-2024-29686
+summary: |
+  Winter CMS Server-Side Template Injection (SSTI) vulnerability
+  Server-side Template Injection (SSTI) vulnerability in Winter CMS v.1.2.3 allows a remote attacker to execute arbitrary code via a crafted payload to the CMS Pages field and Plugin components.
+impacted_packages:
+  - purl: pkg:composer/wintercms/winter
+    affected_versions: vers:composer/<=1.2.3
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8r5j-gm3j-cx9c/GHSA-8r5j-gm3j-cx9c.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8r5j-gm3j-cx9c/GHSA-8r5j-gm3j-cx9c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-75
+  - CWE-97
+references:
+  - url: https://forum.ksec.co.uk/t/webapps-winter-cms-1-2-3-server-side-template-injection-ssti-authenticated/2779
+    reference_type:
+    reference_id:
+  - url: https://github.com/wintercms/winter
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29686
+    reference_type:
+    reference_id:
+  - url: https://wintercms.com/docs/v1.2/docs/cms/themes#template-structure
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/51893
+    reference_type:
+    reference_id:

@@ -1,0 +1,46 @@
+advisory_id: GHSA-995c-qww8-64fj
+datasource_id: github_osv_importer_v2/GHSA-995c-qww8-64fj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-995c-qww8-64fj/GHSA-995c-qww8-64fj.json
+aliases:
+  - CVE-2024-55470
+summary: |
+  Oqtane Framework Incorrect Access Control vulnerability
+  Oqtane Framework 6.0.0 is vulnerable to Incorrect Access Control. By manipulating the entityid parameter, attackers can bypass passcode validation and successfully log into the application or access restricted data without proper authorization. The lack of server-side validation exacerbates the issue, as the application relies on client-side information for authentication.
+impacted_packages:
+  - purl: pkg:nuget/Oqtane.Framework
+    affected_versions: vers:nuget/<=6.0.0
+    fixed_versions:
+  - purl: pkg:nuget/Oqtane.Server
+    affected_versions: vers:nuget/<=6.0.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-995c-qww8-64fj/GHSA-995c-qww8-64fj.json
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-995c-qww8-64fj/GHSA-995c-qww8-64fj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-290
+references:
+  - url: https://gist.github.com/Kaushikjoshi/2d8ad350ba5e72030fcee2536498cfe4
+    reference_type:
+    reference_id:
+  - url: https://github.com/oqtane/oqtane.framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/oqtane/oqtane.framework/pull/4878/files
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-55470
+    reference_type:
+    reference_id:

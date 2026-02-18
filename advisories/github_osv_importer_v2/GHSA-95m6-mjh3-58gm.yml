@@ -1,0 +1,33 @@
+advisory_id: GHSA-95m6-mjh3-58gm
+datasource_id: github_osv_importer_v2/GHSA-95m6-mjh3-58gm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-95m6-mjh3-58gm/GHSA-95m6-mjh3-58gm.json
+aliases:
+  - CVE-2016-8609
+summary: |
+  Improper Authentication in org.keycloak:keycloak-core
+  It was found that the keycloak before 2.3.0 did not implement authentication flow correctly. An attacker could use this flaw to construct a phishing URL, from which he could hijack the user's session. This could lead to information disclosure, or permit further possible attacks.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<2.3.0
+    fixed_versions: vers:maven/2.3.0
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-95m6-mjh3-58gm/GHSA-95m6-mjh3-58gm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-384
+references:
+  - url: https://github.com/advisories/GHSA-95m6-mjh3-58gm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-8609
+    reference_type:
+    reference_id:

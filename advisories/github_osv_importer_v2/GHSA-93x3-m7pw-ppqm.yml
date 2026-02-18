@@ -1,0 +1,53 @@
+advisory_id: GHSA-93x3-m7pw-ppqm
+datasource_id: github_osv_importer_v2/GHSA-93x3-m7pw-ppqm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-93x3-m7pw-ppqm/GHSA-93x3-m7pw-ppqm.json
+aliases:
+  - CVE-2024-34077
+summary: "Mantis Bug Tracker (MantisBT) allows user account takeover in the signup/reset password\
+  \ process\nInsufficient access control in the registration and password reset process allows\
+  \ an attacker to reset another user's password and takeover their account, if the victim has\
+  \ an incomplete request pending.\n\nThe exploit is only possible while the verification token\
+  \ is valid, i.e for 5 minutes after the confirmation URL sent by e-mail has been opened, and\
+  \ the user did not complete the process by updating their password.\n\nA brute-force attack\
+  \ calling account_update.php with increasing user IDs is possible. \n \n### Impact\n\nA successful\
+  \ takeover would grant the attacker full access to the compromised account, including sensitive\
+  \ information and functionalities associated with the account, the extent of which depends\
+  \ on its privileges and the data it has access to.\n\n### Patches\n\n92d11a01b195a1b6717a2f205218089158ea6d00\n\
+  \n### Workarounds\n\nMitigate the risk by reducing the verification token's validity (change\
+  \ the value of the `TOKEN_EXPIRY_AUTHENTICATED` constant in *constants_inc.php*).\n\n### References\n\
+  \nhttps://mantisbt.org/bugs/view.php?id=34433\n\n### Credits\n\nAlexander Christian, from\
+  \ Vantage Point Security Indonesia"
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/<=2.26.1
+    fixed_versions: vers:composer/2.26.2
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-93x3-m7pw-ppqm/GHSA-93x3-m7pw-ppqm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-620
+  - CWE-305
+references:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/commit/92d11a01b195a1b6717a2f205218089158ea6d00
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/security/advisories/GHSA-93x3-m7pw-ppqm
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=34433
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34077
+    reference_type:
+    reference_id:

@@ -1,0 +1,43 @@
+advisory_id: GHSA-99pm-ch96-ccp2
+datasource_id: github_osv_importer_v2/GHSA-99pm-ch96-ccp2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-99pm-ch96-ccp2/GHSA-99pm-ch96-ccp2.json
+aliases:
+  - CVE-2025-32962
+summary: "Flask-AppBuilder open redirect vulnerability using HTTP host injection\n### Impact\n\
+  Flask-AppBuilder prior to 4.6.2 would allow for a malicious unauthenticated actor to perform\
+  \ an open redirect by manipulating the Host header in HTTP requests.\n \n### Patches\nFlask-AppBuilder\
+  \ 4.6.2 introduced the `FAB_SAFE_REDIRECT_HOSTS` configuration variable, which allows administrators\
+  \ to explicitly define which domains are considered safe for redirection.\n\nExamples:\n```\n\
+  FAB_SAFE_REDIRECT_HOSTS = [\"yourdomain.com\", \"sub.yourdomain.com\", \"*.yourcompany.com\"\
+  ]\n```\n\n### Workarounds\nUse a Reverse Proxy to Enforce Trusted Host Headers\n\n### References\n\
+  _Are there any links users can visit to find out more?_"
+impacted_packages:
+  - purl: pkg:pypi/flask-appbuilder
+    affected_versions: vers:pypi/<4.6.2
+    fixed_versions: vers:pypi/4.6.2
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-99pm-ch96-ccp2/GHSA-99pm-ch96-ccp2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/commit/32eedbbb5cb483a3e782c5f2732de4a6a650d9b6
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/security/advisories/GHSA-99pm-ch96-ccp2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-32962
+    reference_type:
+    reference_id:

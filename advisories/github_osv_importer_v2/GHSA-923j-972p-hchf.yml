@@ -1,0 +1,44 @@
+advisory_id: GHSA-923j-972p-hchf
+datasource_id: github_osv_importer_v2/GHSA-923j-972p-hchf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-923j-972p-hchf/GHSA-923j-972p-hchf.json
+aliases:
+  - CVE-2017-11908
+summary: |
+  ChakraCore RCE Vulnerability
+  ChakraCore and Windows 10 1709 allows an attacker to execute arbitrary code in the context of the current user, due to how the scripting engine handles objects in memory, aka "Scripting Engine Memory Corruption Vulnerability". This CVE ID is unique from CVE-2017-11886, CVE-2017-11889, CVE-2017-11890, CVE-2017-11893, CVE-2017-11894, CVE-2017-11895, CVE-2017-11901, CVE-2017-11903, CVE-2017-11905, CVE-2017-11905, CVE-2017-11907, CVE-2017-11909, CVE-2017-11910, CVE-2017-11911, CVE-2017-11912, CVE-2017-11913, CVE-2017-11914, CVE-2017-11916, CVE-2017-11918, and CVE-2017-11930.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.7.5
+    fixed_versions: vers:nuget/1.7.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-923j-972p-hchf/GHSA-923j-972p-hchf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-119
+references:
+  - url: https://github.com/chakra-core/ChakraCore/commit/39eecff7daecce96088f7ed737f145ee4774faa6
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/4411
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-11908
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11908
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124122457/http://www.securityfocus.com/bid/102052
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210829201729/http://www.securitytracker.com/id/1039990
+    reference_type:
+    reference_id:

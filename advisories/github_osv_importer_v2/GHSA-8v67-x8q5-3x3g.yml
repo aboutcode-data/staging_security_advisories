@@ -1,0 +1,52 @@
+advisory_id: GHSA-8v67-x8q5-3x3g
+datasource_id: github_osv_importer_v2/GHSA-8v67-x8q5-3x3g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/05/GHSA-8v67-x8q5-3x3g/GHSA-8v67-x8q5-3x3g.json
+aliases:
+  - CVE-2018-19048
+summary: |
+  Cross-Site Scripting in simditor
+  Versions of `simditor` prior to 2.3.22 are vulnerable to Cross-Site Scripting. The package does not sanitize user input that is rendered with `innerHTML`, allowing attackers to execute arbitrary JavaScript.
+
+
+  ## Recommendation
+
+  Upgrade to version 2.3.22 or later.
+impacted_packages:
+  - purl: pkg:npm/simditor
+    affected_versions: vers:npm/<2.3.22
+    fixed_versions: vers:npm/2.3.22
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/05/GHSA-8v67-x8q5-3x3g/GHSA-8v67-x8q5-3x3g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/hkglue/simditor_demo.git
+    reference_type:
+    reference_id:
+  - url: https://github.com/hkglue/simditor_dom_xss/blob/master/README.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/mycolorway/simditor/commit/ef01a643cbb7f8163535d6bfb71135f80ec6a6fd
+    reference_type:
+    reference_id:
+  - url: https://github.com/mycolorway/simditor/releases/tag/v2.3.22
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-19048
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SIMDITOR-174638
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/884
+    reference_type:
+    reference_id:

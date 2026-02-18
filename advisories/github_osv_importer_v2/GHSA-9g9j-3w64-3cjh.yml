@@ -1,0 +1,35 @@
+advisory_id: GHSA-9g9j-3w64-3cjh
+datasource_id: github_osv_importer_v2/GHSA-9g9j-3w64-3cjh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-9g9j-3w64-3cjh/GHSA-9g9j-3w64-3cjh.json
+aliases:
+  - CVE-2025-51510
+summary: |
+  MoonShine SQL Injection Vulnerability
+  MoonShine v3.12.5 was discovered to contain a SQL injection vulnerability via the Data parameter under the Blog module.
+impacted_packages:
+  - purl: pkg:composer/moonshine/moonshine
+    affected_versions: vers:composer/<=3.12.5
+    fixed_versions:
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-9g9j-3w64-3cjh/GHSA-9g9j-3w64-3cjh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/GiacoLenzo2109/MoonShine_Software_PoCs
+    reference_type:
+    reference_id:
+  - url: https://github.com/moonshine-software/moonshine
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-51510
+    reference_type:
+    reference_id:

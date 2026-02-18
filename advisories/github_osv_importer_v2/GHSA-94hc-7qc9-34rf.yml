@@ -1,0 +1,35 @@
+advisory_id: GHSA-94hc-7qc9-34rf
+datasource_id: github_osv_importer_v2/GHSA-94hc-7qc9-34rf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-94hc-7qc9-34rf/GHSA-94hc-7qc9-34rf.json
+aliases:
+  - CVE-2017-1000507
+summary: |
+  Canvs Canvas XSS Vulnerability
+  Canvs Canvas version 3.4.2 contains a Cross Site Scripting (XSS) vulnerability in User's details that can result in denial of service and execution of javascript code.
+impacted_packages:
+  - purl: pkg:composer/austintoddj/canvas
+    affected_versions: vers:composer/<=3.4.2
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-94hc-7qc9-34rf/GHSA-94hc-7qc9-34rf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/austintoddj/canvas
+    reference_type:
+    reference_id:
+  - url: https://github.com/austintoddj/canvas/issues/359
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000507
+    reference_type:
+    reference_id:

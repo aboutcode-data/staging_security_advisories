@@ -1,0 +1,83 @@
+advisory_id: GHSA-9mp4-77wg-rwx9
+datasource_id: github_osv_importer_v2/GHSA-9mp4-77wg-rwx9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-9mp4-77wg-rwx9/GHSA-9mp4-77wg-rwx9.json
+aliases:
+  - CVE-2025-53548
+summary: |
+  @clerk/backend Performs Insufficient Verification of Data Authenticity
+  ### Impact
+
+  Applications that use the `verifyWebhook()` helper to verify incoming Clerk webhooks are susceptible to accepting improperly signed webhook events.
+
+  ### Patches
+
+  * `@clerk/backend`: the helper has been patched as of `2.4.0`
+  * `@clerk/astro`: the helper has been patched as of `2.10.2`
+  * `@clerk/express`: the helper has been patched as of `1.7.4`
+  * `@clerk/fastify`: the helper has been patched as of `2.4.4`
+  * `@clerk/nextjs`: the helper has been patched as of `6.23.3`
+  * `@clerk/nuxt`: the helper has been patched as of `1.7.5`
+  * `@clerk/react-router`: the helper has been patched as of `1.6.4`
+  * `@clerk/remix`: the helper has been patched as of `4.8.5`
+  * `@clerk/tanstack-react-start`: the helper has been patched as of `0.18.3`
+
+  ### Resolution
+
+  The issue was resolved in **`@clerk/backend` `2.4.0`** by:
+
+  * Properly parsing the webhook request's signatures and comparing them against the signature generated from the received event
+
+  ### Workarounds
+
+  If unable to upgrade, developers can workaround this issue by verifying webhooks manually, per [this documentation](https://clerk.com/docs/webhooks/overview#protect-your-webhooks-from-abuse).
+impacted_packages:
+  - purl: pkg:npm/%40clerk/backend
+    affected_versions: vers:npm/>=2.0.0|<2.4.0
+    fixed_versions: vers:npm/2.4.0
+  - purl: pkg:npm/%40clerk/astro
+    affected_versions: vers:npm/>=2.9.0|<2.10.2
+    fixed_versions: vers:npm/2.10.2
+  - purl: pkg:npm/%40clerk/express
+    affected_versions: vers:npm/>=1.6.0|<1.7.4
+    fixed_versions: vers:npm/1.7.4
+  - purl: pkg:npm/%40clerk/fastify
+    affected_versions: vers:npm/>=2.3.0|<2.4.4
+    fixed_versions: vers:npm/2.4.4
+  - purl: pkg:npm/%40clerk/nextjs
+    affected_versions: vers:npm/>=6.2.10|<6.23.3
+    fixed_versions: vers:npm/6.23.3
+  - purl: pkg:npm/%40clerk/nuxt
+    affected_versions: vers:npm/>=1.7.0|<1.7.5
+    fixed_versions: vers:npm/1.7.5
+  - purl: pkg:npm/%40clerk/react-router
+    affected_versions: vers:npm/>=1.5.0|<1.6.4
+    fixed_versions: vers:npm/1.6.4
+  - purl: pkg:npm/%40clerk/remix
+    affected_versions: vers:npm/>=4.8.0|<4.8.5
+    fixed_versions: vers:npm/4.8.5
+  - purl: pkg:npm/%40clerk/tanstack-react-start
+    affected_versions: vers:npm/>=0.16.0|<0.18.3
+    fixed_versions: vers:npm/0.18.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-9mp4-77wg-rwx9/GHSA-9mp4-77wg-rwx9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-345
+references:
+  - url: https://github.com/clerk/javascript
+    reference_type:
+    reference_id:
+  - url: https://github.com/clerk/javascript/security/advisories/GHSA-9mp4-77wg-rwx9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-53548
+    reference_type:
+    reference_id:

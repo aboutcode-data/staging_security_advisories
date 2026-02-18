@@ -1,0 +1,41 @@
+advisory_id: GHSA-8fw4-xh83-3j6q
+datasource_id: github_osv_importer_v2/GHSA-8fw4-xh83-3j6q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-8fw4-xh83-3j6q/GHSA-8fw4-xh83-3j6q.json
+aliases: []
+summary: |
+  Cross-Site Scripting in diagram-js
+  Versions of `diagram-js` prior to 3.3.1 (for 3.x) and 2.6.2 (for 2.x) are vulnerable to Cross-Site Scripting. The package fails to escape output of user-controlled input in `search-pad`, allowing attackers to execute arbitrary JavaScript.
+
+
+  ## Recommendation
+
+  If you are using diagram-js 3.x, upgrade to version 3.3.1.
+  If you are using diagram-js 2.x, upgrade to version 2.6.2.
+impacted_packages:
+  - purl: pkg:npm/diagram-js
+    affected_versions: vers:npm/<2.6.2
+    fixed_versions: vers:npm/2.6.2
+  - purl: pkg:npm/diagram-js
+    affected_versions: vers:npm/>=3.0.0|<3.3.1
+    fixed_versions: vers:npm/3.3.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://bpmn.io/blog/posts/2019-html-injection-vulnerabilities-fixed.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/bpmn-io/diagram-js
+    reference_type:
+    reference_id:
+  - url: https://github.com/bpmn-io/diagram-js/commit/2565c40449379284a55163f290ec812db34244d1
+    reference_type:
+    reference_id:
+  - url: https://github.com/bpmn-io/diagram-js/commit/777fa06d70036daa9d02f3be6d0732cf4ccd8d6d
+    reference_type:
+    reference_id:

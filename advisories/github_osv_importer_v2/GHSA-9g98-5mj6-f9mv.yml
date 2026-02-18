@@ -1,0 +1,42 @@
+advisory_id: GHSA-9g98-5mj6-f9mv
+datasource_id: github_osv_importer_v2/GHSA-9g98-5mj6-f9mv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-9g98-5mj6-f9mv/GHSA-9g98-5mj6-f9mv.json
+aliases:
+  - CVE-2023-0264
+summary: |
+  Keycloak vulnerable to user impersonation via stolen UUID code
+  Keycloak's OpenID Connect user authentication was found to incorrectly authenticate requests. An authenticated attacker who could also obtain a certain piece of info from a user request, from a victim within the same realm, could use that data to impersonate the victim and generate new session tokens.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<21.0.1
+    fixed_versions: vers:maven/21.0.1
+severities:
+  - score: '8.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-9g98-5mj6-f9mv/GHSA-9g98-5mj6-f9mv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-345
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2023-0264
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/ec8109112e67208c13e13f6d1f8706a5a3ba8d4c
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-9g98-5mj6-f9mv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0264
+    reference_type:
+    reference_id:

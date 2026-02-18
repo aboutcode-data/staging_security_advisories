@@ -1,0 +1,53 @@
+advisory_id: GHSA-8m7c-hm88-2p97
+datasource_id: github_osv_importer_v2/GHSA-8m7c-hm88-2p97
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-8m7c-hm88-2p97/GHSA-8m7c-hm88-2p97.json
+aliases:
+  - CVE-2025-32045
+summary: |
+  Moodle shows hidden grades to users without permission on some grade reports
+  A flaw has been identified in Moodle where insufficient capability checks in certain grade reports allowed users without the necessary permissions to access hidden grades.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.17
+    fixed_versions: vers:composer/4.1.17
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0-beta|<4.3.11
+    fixed_versions: vers:composer/4.3.11
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.7
+    fixed_versions: vers:composer/4.4.7
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.3
+    fixed_versions: vers:composer/4.5.3
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-8m7c-hm88-2p97/GHSA-8m7c-hm88-2p97.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-81945
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-32045
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2356835
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=467086
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-32045
+    reference_type:
+    reference_id:

@@ -1,0 +1,74 @@
+advisory_id: GHSA-8m5q-crqq-6pmf
+datasource_id: github_osv_importer_v2/GHSA-8m5q-crqq-6pmf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-8m5q-crqq-6pmf/GHSA-8m5q-crqq-6pmf.json
+aliases:
+  - CVE-2012-1592
+summary: |
+  Unrestricted Upload of File with Dangerous Type in Apache Struts2
+  A local code execution issue exists in Apache Struts2 when processing malformed XSLT files, which could let a malicious user upload and execute arbitrary files. A patch exists as of version 2.5.22.
+impacted_packages:
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/>=2.0|<2.5.22
+    fixed_versions: vers:maven/2.5.22
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-8m5q-crqq-6pmf/GHSA-8m5q-crqq-6pmf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://access.redhat.com/security/cve/cve-2012-1592
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2012-1592
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts/blob/master/core/src/main/resources/struts-default.xml#L39-L76
+    reference_type:
+    reference_id:
+  - url: https://issues.apache.org/jira/browse/WW-5055
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r348ed455a140273c40b974f0615dee692f7c9b26c6de2118b4280ef2@%3Cissues.struts.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r348ed455a140273c40b974f0615dee692f7c9b26c6de2118b4280ef2%40%3Cissues.struts.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r593ebb2f4c95b064e6901fd273eff256c493db952bdb484395948ffc@%3Cissues.struts.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r593ebb2f4c95b064e6901fd273eff256c493db952bdb484395948ffc%40%3Cissues.struts.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r93c4e3f6cb138cd117c739714f07e47af547183ba099ba46be2b2a5b@%3Cissues.struts.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r93c4e3f6cb138cd117c739714f07e47af547183ba099ba46be2b2a5b%40%3Cissues.struts.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2012-1592
+    reference_type:
+    reference_id:
+  - url: https://seclists.org/bugtraq/2012/Mar/110
+    reference_type:
+    reference_id:
+  - url: https://security-tracker.debian.org/tracker/CVE-2012-1592
+    reference_type:
+    reference_id:
+  - url: https://struts.apache.org/security/#internal-security-mechanism
+    reference_type:
+    reference_id:
+  - url: https://www.openwall.com/lists/oss-security/2012/03/28/12
+    reference_type:
+    reference_id:

@@ -1,0 +1,44 @@
+advisory_id: GHSA-8v2h-4jpm-3wfm
+datasource_id: github_osv_importer_v2/GHSA-8v2h-4jpm-3wfm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8v2h-4jpm-3wfm/GHSA-8v2h-4jpm-3wfm.json
+aliases:
+  - CVE-2017-8658
+summary: |
+  ChakraCore RCE Vulnerability
+  A remote code execution vulnerability exists in the way that the Chakra JavaScript engine renders when handling objects in memory, aka "Scripting Engine Memory Corruption Vulnerability".
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.6.1
+    fixed_versions: vers:nuget/1.6.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8v2h-4jpm-3wfm/GHSA-8v2h-4jpm-3wfm.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-119
+references:
+  - url: https://github.com/chakra-core/ChakraCore
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/commit/2500e1cdc12cb35af73d5c8c9b85656aba6bab4d
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/3509
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-8658
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-8658
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124090857/http://www.securityfocus.com/bid/100036
+    reference_type:
+    reference_id:

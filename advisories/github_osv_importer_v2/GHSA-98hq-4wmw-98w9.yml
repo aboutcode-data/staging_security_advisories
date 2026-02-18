@@ -1,0 +1,71 @@
+advisory_id: GHSA-98hq-4wmw-98w9
+datasource_id: github_osv_importer_v2/GHSA-98hq-4wmw-98w9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-98hq-4wmw-98w9/GHSA-98hq-4wmw-98w9.json
+aliases:
+  - CVE-2024-23681
+summary: |
+  Arbitrary code execution in de.tum.in.ase:artemis-java-test-sandbox
+  ### Summary
+  Because of the missing `checkLink(String)` override in the SecurityManager, students can load libraries and execute arbitrary code.
+
+  ### Details
+  Using `System.load(String)` or `System.loadLibrary​(String)` students can load and execute arbitrary code.
+
+  ```java
+  private static native void start(List<String> args);
+
+  public static void main(String[] args) {
+    System.load(new File("path_to_lib.so").getAbsolutePath());
+    start(List.of(args));
+  }
+  ```
+
+  Adding this to the security manager (and a translation) should fix the issue:
+  ```java
+  @Override
+  public void checkExec(String cmd) {
+    try {
+      if (enterPublicInterface())
+        return;
+      throw new SecurityException(localized("security.error_link")); //$NON-NLS-1$
+    } finally {
+      exitPublicInterface();
+    }
+  }
+  ```
+
+  ### PoC
+  See details.
+
+  ### Impact
+  Arbitrary code execution.
+impacted_packages:
+  - purl: pkg:maven/de.tum.in.ase/artemis-java-test-sandbox
+    affected_versions: vers:maven/<1.11.2
+    fixed_versions: vers:maven/1.11.2
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-98hq-4wmw-98w9/GHSA-98hq-4wmw-98w9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/ls1intum/Ares
+    reference_type:
+    reference_id:
+  - url: https://github.com/ls1intum/Ares/security/advisories/GHSA-98hq-4wmw-98w9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23681
+    reference_type:
+    reference_id:
+  - url: https://vulncheck.com/advisories/vc-advisory-GHSA-98hq-4wmw-98w9
+    reference_type:
+    reference_id:

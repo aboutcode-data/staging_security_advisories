@@ -1,0 +1,49 @@
+advisory_id: GHSA-8xv9-qcr9-ww9j
+datasource_id: github_osv_importer_v2/GHSA-8xv9-qcr9-ww9j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-8xv9-qcr9-ww9j/GHSA-8xv9-qcr9-ww9j.json
+aliases: []
+summary: |
+  ### Impact
+  Authenticated XML External Entity Processing
+
+  ### Patches
+  We recommend to update to the current version 6.3.2.1. You can get the update to 6.3.2.1 regularly via the Auto-Updater or directly via the download overview.
+
+  https://www.shopware.com/en/download/#shopware-6
+
+  ### Workarounds
+  For older versions of 6.1 and 6.2 the corresponding changes are also available via plugin:
+  https://store.shopware.com/en/detail/index/sArticle/518463/number/Swag136939272659
+
+  ### For more information
+  https://docs.shopware.com/en/shopware-6-en/security-updates/security-update-10-2020
+impacted_packages:
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.3.2+0
+    fixed_versions: vers:composer/6.3.2+1
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.3.2+0
+    fixed_versions: vers:composer/6.3.2+1
+severities:
+  - score: '5.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-8xv9-qcr9-ww9j/GHSA-8xv9-qcr9-ww9j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/shopware/platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/security/advisories/GHSA-8xv9-qcr9-ww9j
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-PHP-SHOPWAREPLATFORM-1019470
+    reference_type:
+    reference_id:

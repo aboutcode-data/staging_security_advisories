@@ -1,0 +1,35 @@
+advisory_id: GHSA-8rmv-98m4-g5c6
+datasource_id: github_osv_importer_v2/GHSA-8rmv-98m4-g5c6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-8rmv-98m4-g5c6/GHSA-8rmv-98m4-g5c6.json
+aliases:
+  - CVE-2021-44791
+summary: |
+  Apache Druid before 0.23.0 vulnerable to reflected XSS via unescaped URL parameters
+  In Apache Druid 0.22.1 and earlier, certain specially-crafted links result in unescaped URL parameters being sent back in HTML responses. This makes it possible to execute reflected XSS attacks. This issue is patched in version 0.23.0.
+impacted_packages:
+  - purl: pkg:maven/org.apache.druid/druid
+    affected_versions: vers:maven/<0.23.0
+    fixed_versions: vers:maven/0.23.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-8rmv-98m4-g5c6/GHSA-8rmv-98m4-g5c6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/apache/druid
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/lh2kcl4j45q7xj4w6rqf6kwf0mvyp2o6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-44791
+    reference_type:
+    reference_id:

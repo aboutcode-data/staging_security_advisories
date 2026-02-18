@@ -1,0 +1,49 @@
+advisory_id: GHSA-8ppr-www8-hfjx
+datasource_id: github_osv_importer_v2/GHSA-8ppr-www8-hfjx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8ppr-www8-hfjx/GHSA-8ppr-www8-hfjx.json
+aliases:
+  - CVE-2024-29650
+summary: |
+  @thi.ng/paths Prototype Pollution vulnerability
+  An issue in @thi.ng/paths v.5.1.62 and before allows a remote attacker to execute arbitrary code via the `mutIn` and `mutInManyUnsafe` components.
+impacted_packages:
+  - purl: pkg:npm/%40thi.ng/paths
+    affected_versions: vers:npm/<5.1.63
+    fixed_versions: vers:npm/5.1.63
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8ppr-www8-hfjx/GHSA-8ppr-www8-hfjx.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-8ppr-www8-hfjx/GHSA-8ppr-www8-hfjx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://gist.github.com/tariqhawis/1bc340ca5ea6ae115c9ab9665cfd5921
+    reference_type:
+    reference_id:
+  - url: https://github.com/thi-ng/umbrella
+    reference_type:
+    reference_id:
+  - url: https://github.com/thi-ng/umbrella/commit/c78b484882ad5214a46ef83ddb8020571c171353
+    reference_type:
+    reference_id:
+  - url: https://github.com/thi-ng/umbrella/issues/445
+    reference_type:
+    reference_id:
+  - url: https://learn.snyk.io/lesson/prototype-pollution/#a0a863a5-fd3a-539f-e1ed-a0769f6c6e3b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29650
+    reference_type:
+    reference_id:

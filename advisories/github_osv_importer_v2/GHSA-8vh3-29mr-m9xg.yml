@@ -1,0 +1,42 @@
+advisory_id: GHSA-8vh3-29mr-m9xg
+datasource_id: github_osv_importer_v2/GHSA-8vh3-29mr-m9xg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-8vh3-29mr-m9xg/GHSA-8vh3-29mr-m9xg.json
+aliases:
+  - CVE-2021-3680
+summary: |
+  Inadequate Encryption Strength in showdoc
+  showdoc makes use of a hardcoded salt in its user password hash function
+impacted_packages:
+  - purl: pkg:composer/showdoc/showdoc
+    affected_versions: vers:composer/<=2.9.8
+    fixed_versions:
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-8vh3-29mr-m9xg/GHSA-8vh3-29mr-m9xg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-326
+  - CWE-347
+references:
+  - url: https://github.com/star7th/showdoc
+    reference_type:
+    reference_id:
+  - url: https://github.com/star7th/showdoc/blob/fd1740234a12804b45af9cac3563567d83ba414d/server/Application/Home/Model/UserModel.class.php#L20
+    reference_type:
+    reference_id:
+  - url: https://github.com/star7th/showdoc/commit/4b962c1740311e0d46775023b6acba39ad60e370
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/76b49607-fba9-4100-9be7-cb459fe6cfe2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3680
+    reference_type:
+    reference_id:

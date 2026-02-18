@@ -1,0 +1,34 @@
+advisory_id: GHSA-98pf-gfh3-x3mp
+datasource_id: github_osv_importer_v2/GHSA-98pf-gfh3-x3mp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-98pf-gfh3-x3mp/GHSA-98pf-gfh3-x3mp.json
+aliases: []
+summary: "Read the Docs vulnerable to Cross-Site Scripting (XSS)\n### Impact\n\nThis vulnerability\
+  \ allowed a malicious user to serve arbitrary HTML files from the main application domain\
+  \ (readthedocs[.]org/readthedocs[.]com) by exploiting a vulnerability in the code that serves\
+  \ downloadable content from a project. \n\nExploiting this would have required the attacker\
+  \ to get a logged-in user to visit the malicious URL, which would have allowed the attacker\
+  \ to take control of the user's session with JavaScript (making requests to the API/site on\
+  \ behalf of the user). This URL would have looked something like `hxxps[:]//readthedocs[.]org/projects/attacker-project/downloads/html/version-with-javascript-attack/`.\n\
+  \n### Patches\n\nThis issue has been patched in our 8.8.1 release."
+impacted_packages:
+  - purl: pkg:npm/readthedocs
+    affected_versions: vers:npm/<8.8.1
+    fixed_versions: vers:npm/8.8.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/readthedocs/readthedocs.org
+    reference_type:
+    reference_id:
+  - url: https://github.com/readthedocs/readthedocs.org/commit/b0ae626acd13882170ec5888e35f3ef2e48e6ff6
+    reference_type:
+    reference_id:
+  - url: https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-98pf-gfh3-x3mp
+    reference_type:
+    reference_id:

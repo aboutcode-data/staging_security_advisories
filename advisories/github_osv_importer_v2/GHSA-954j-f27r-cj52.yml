@@ -1,0 +1,62 @@
+advisory_id: GHSA-954j-f27r-cj52
+datasource_id: github_osv_importer_v2/GHSA-954j-f27r-cj52
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-954j-f27r-cj52/GHSA-954j-f27r-cj52.json
+aliases:
+  - CVE-2020-26228
+summary: |
+  Cleartext storage of session identifier
+  User session identifiers were stored in cleartext - without processing of additional cryptographic hashing algorithms. This vulnerability cannot be exploited directly and occurs in combination with a chained attack - like for instance SQL injection in any other component of the system.
+
+  ### Solution
+  Update to TYPO3 versions 9.5.23 or 10.4.10 that fix the problem described.
+
+  ### Credits
+  Thanks to TYPO3 security team member Helmut Hummel who reported this issue and to TYPO3 core & security team members Benni Mack & Oliver Hader as well as TYPO3 contributor Markus Klein who fixed the issue.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=9.0.0|<9.5.23
+    fixed_versions: vers:composer/9.5.23
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.0.0|<10.4.10
+    fixed_versions: vers:composer/10.4.10
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.7.0|<8.7.38
+    fixed_versions: vers:composer/8.7.38
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.0.0|<10.4.10
+    fixed_versions: vers:composer/10.4.10
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=9.0.0|<9.5.23
+    fixed_versions: vers:composer/9.5.23
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.7.0|<8.7.38
+    fixed_versions: vers:composer/8.7.38
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-954j-f27r-cj52/GHSA-954j-f27r-cj52.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-312
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2020-26228.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2020-26228.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/TYPO3.CMS/security/advisories/GHSA-954j-f27r-cj52
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-26228
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2020-011
+    reference_type:
+    reference_id:

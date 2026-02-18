@@ -1,0 +1,41 @@
+advisory_id: GHSA-9mgx-552f-59p6
+datasource_id: github_osv_importer_v2/GHSA-9mgx-552f-59p6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-9mgx-552f-59p6/GHSA-9mgx-552f-59p6.json
+aliases:
+  - CVE-2024-56521
+summary: |
+  TCPDF missing certificate validation
+  An issue was discovered in TCPDF before 6.8.0. If libcurl is used, CURLOPT_SSL_VERIFYHOST and CURLOPT_SSL_VERIFYPEER are set unsafely.
+impacted_packages:
+  - purl: pkg:composer/tecnickcom/tcpdf
+    affected_versions: vers:composer/<6.8.0
+    fixed_versions: vers:composer/6.8.0
+severities:
+  - score: '8.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-9mgx-552f-59p6/GHSA-9mgx-552f-59p6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://github.com/tecnickcom/TCPDF
+    reference_type:
+    reference_id:
+  - url: https://github.com/tecnickcom/TCPDF/commit/aab43ab0a824e956276141a28a24c7c0be20f554
+    reference_type:
+    reference_id:
+  - url: https://github.com/tecnickcom/TCPDF/compare/6.7.8...6.8.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-56521
+    reference_type:
+    reference_id:
+  - url: https://tcpdf.org
+    reference_type:
+    reference_id:

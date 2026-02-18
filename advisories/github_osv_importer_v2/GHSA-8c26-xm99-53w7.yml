@@ -1,0 +1,38 @@
+advisory_id: GHSA-8c26-xm99-53w7
+datasource_id: github_osv_importer_v2/GHSA-8c26-xm99-53w7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-8c26-xm99-53w7/GHSA-8c26-xm99-53w7.json
+aliases:
+  - CVE-2025-3602
+summary: |
+  Liferay Portal does not limit the depth of a GraphQL queries
+  Liferay Portal 7.4.0 through 7.4.3.97, and Liferay DXP 2023.Q3.1 through 2023.Q3.2, 7.4 GA through update 92, 7.3 GA through update 35, and 7.2 fix pack 8 through fix pack 20 does not limit the depth of a GraphQL queries, which allows remote attackers to perform denial-of-service (DoS) attacks on the application by executing complex queries.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.portal.vulcan.impl
+    affected_versions: vers:maven/<5.0.103
+    fixed_versions: vers:maven/5.0.103
+severities:
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-8c26-xm99-53w7/GHSA-8c26-xm99-53w7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/6c6dad38c9c891ad58cdee9deb2e35432d7e8816
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-3602
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-3602
+    reference_type:
+    reference_id:

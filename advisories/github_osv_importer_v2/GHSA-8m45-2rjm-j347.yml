@@ -1,0 +1,313 @@
+advisory_id: GHSA-8m45-2rjm-j347
+datasource_id: github_osv_importer_v2/GHSA-8m45-2rjm-j347
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-8m45-2rjm-j347/GHSA-8m45-2rjm-j347.json
+aliases:
+  - CVE-2024-30253
+summary: |
+  Handling untrusted input can result in a crash, leading to loss of availability / denial of service
+  Using particular inputs with `@solana/web3.js` will result in memory exhaustion (OOM).
+
+  If you have a server, client, mobile, or desktop product that accepts untrusted input for use with `@solana/web3.js`, your application/service may crash, resulting in a loss of availability.
+impacted_packages:
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.91.0|<1.91.3
+    fixed_versions: vers:npm/1.91.3
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.90.0|<1.90.2
+    fixed_versions: vers:npm/1.90.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.89.0|<1.89.2
+    fixed_versions: vers:npm/1.89.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.88.0
+    fixed_versions: vers:npm/1.88.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.87.0|<1.87.7
+    fixed_versions: vers:npm/1.87.7
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.86.0
+    fixed_versions: vers:npm/1.86.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.85.0
+    fixed_versions: vers:npm/1.85.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.84.0
+    fixed_versions: vers:npm/1.84.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.83.0
+    fixed_versions: vers:npm/1.83.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.82.0
+    fixed_versions: vers:npm/1.82.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.81.0
+    fixed_versions: vers:npm/1.81.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.80.0
+    fixed_versions: vers:npm/1.80.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.79.0
+    fixed_versions: vers:npm/1.79.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.78.0|<1.78.8
+    fixed_versions: vers:npm/1.78.8
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.77.0|<1.77.4
+    fixed_versions: vers:npm/1.77.4
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.76.0
+    fixed_versions: vers:npm/1.76.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.75.0
+    fixed_versions: vers:npm/1.75.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.74.0
+    fixed_versions: vers:npm/1.74.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.73.0|<1.73.5
+    fixed_versions: vers:npm/1.73.5
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.72.0
+    fixed_versions: vers:npm/1.72.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.71.0
+    fixed_versions: vers:npm/1.71.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.70.0|<1.70.4
+    fixed_versions: vers:npm/1.70.4
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.69.0
+    fixed_versions: vers:npm/1.69.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.68.0|<1.68.2
+    fixed_versions: vers:npm/1.68.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.67.0|<1.67.3
+    fixed_versions: vers:npm/1.67.3
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.66.0|<1.66.6
+    fixed_versions: vers:npm/1.66.6
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.65.0
+    fixed_versions: vers:npm/1.65.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.64.0
+    fixed_versions: vers:npm/1.64.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.63.0|<1.63.2
+    fixed_versions: vers:npm/1.63.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.62.0|<1.62.2
+    fixed_versions: vers:npm/1.62.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.61.0|<1.61.2
+    fixed_versions: vers:npm/1.61.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.60.0
+    fixed_versions: vers:npm/1.60.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.59.0|<1.59.2
+    fixed_versions: vers:npm/1.59.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.58.0
+    fixed_versions: vers:npm/1.58.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.57.0
+    fixed_versions: vers:npm/1.57.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.56.0|<1.56.3
+    fixed_versions: vers:npm/1.56.3
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.55.0
+    fixed_versions: vers:npm/1.55.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.54.0|<1.54.2
+    fixed_versions: vers:npm/1.54.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.53.0
+    fixed_versions: vers:npm/1.53.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.52.0
+    fixed_versions: vers:npm/1.52.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.51.0
+    fixed_versions: vers:npm/1.51.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.50.0|<1.50.2
+    fixed_versions: vers:npm/1.50.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.49.0
+    fixed_versions: vers:npm/1.49.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.48.0
+    fixed_versions: vers:npm/1.48.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.47.0|<1.47.5
+    fixed_versions: vers:npm/1.47.5
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.46.0
+    fixed_versions: vers:npm/1.46.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.45.0
+    fixed_versions: vers:npm/1.45.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.44.0|<1.44.4
+    fixed_versions: vers:npm/1.44.4
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.43.0|<1.43.7
+    fixed_versions: vers:npm/1.43.7
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.42.0
+    fixed_versions: vers:npm/1.42.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.41.0|<1.41.11
+    fixed_versions: vers:npm/1.41.11
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.40.0|<1.40.2
+    fixed_versions: vers:npm/1.40.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.39.0|<1.39.2
+    fixed_versions: vers:npm/1.39.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.38.0
+    fixed_versions: vers:npm/1.38.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.37.0|<1.37.3
+    fixed_versions: vers:npm/1.37.3
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.36.0
+    fixed_versions: vers:npm/1.36.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.35.0|<1.35.2
+    fixed_versions: vers:npm/1.35.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.34.0
+    fixed_versions: vers:npm/1.34.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.33.0
+    fixed_versions: vers:npm/1.33.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.32.0|<1.32.2
+    fixed_versions: vers:npm/1.32.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.31.0
+    fixed_versions: vers:npm/1.31.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.30.0|<1.30.3
+    fixed_versions: vers:npm/1.30.3
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.29.0|<1.29.4
+    fixed_versions: vers:npm/1.29.4
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.28.0
+    fixed_versions: vers:npm/1.28.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.27.0
+    fixed_versions: vers:npm/1.27.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.26.0
+    fixed_versions: vers:npm/1.26.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.25.0
+    fixed_versions: vers:npm/1.25.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.24.0|<1.24.3
+    fixed_versions: vers:npm/1.24.3
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.23.0
+    fixed_versions: vers:npm/1.23.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.22.0
+    fixed_versions: vers:npm/1.22.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.21.0
+    fixed_versions: vers:npm/1.21.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.20.0|<1.20.3
+    fixed_versions: vers:npm/1.20.3
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.19.0
+    fixed_versions: vers:npm/1.19.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.18.0
+    fixed_versions: vers:npm/1.18.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.17.0
+    fixed_versions: vers:npm/1.17.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.16.0|<1.16.2
+    fixed_versions: vers:npm/1.16.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.15.0
+    fixed_versions: vers:npm/1.15.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.14.0
+    fixed_versions: vers:npm/1.14.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.13.0
+    fixed_versions: vers:npm/1.13.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.12.0
+    fixed_versions: vers:npm/1.12.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.11.0
+    fixed_versions: vers:npm/1.11.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.10.0|<1.10.2
+    fixed_versions: vers:npm/1.10.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.9.0|<1.9.2
+    fixed_versions: vers:npm/1.9.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.8.0
+    fixed_versions: vers:npm/1.8.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.7.0|<1.7.2
+    fixed_versions: vers:npm/1.7.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.6.0
+    fixed_versions: vers:npm/1.6.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.5.0
+    fixed_versions: vers:npm/1.5.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.4.0
+    fixed_versions: vers:npm/1.4.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/1.3.0
+    fixed_versions: vers:npm/1.3.1
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.2.0|<1.2.8
+    fixed_versions: vers:npm/1.2.8
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/>=1.1.0|<1.1.2
+    fixed_versions: vers:npm/1.1.2
+  - purl: pkg:npm/%40solana/web3.js
+    affected_versions: vers:npm/<1.0.1
+    fixed_versions: vers:npm/1.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-8m45-2rjm-j347/GHSA-8m45-2rjm-j347.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-119
+references:
+  - url: https://github.com/solana-labs/solana-web3.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/solana-labs/solana-web3.js/commit/77d935221a4805107b20b60ae7c1148725e4e2d0
+    reference_type:
+    reference_id:
+  - url: https://github.com/solana-labs/solana-web3.js/security/advisories/GHSA-8m45-2rjm-j347
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-30253
+    reference_type:
+    reference_id:

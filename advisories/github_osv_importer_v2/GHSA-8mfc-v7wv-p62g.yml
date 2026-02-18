@@ -1,0 +1,35 @@
+advisory_id: GHSA-8mfc-v7wv-p62g
+datasource_id: github_osv_importer_v2/GHSA-8mfc-v7wv-p62g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-8mfc-v7wv-p62g/GHSA-8mfc-v7wv-p62g.json
+aliases:
+  - CVE-2020-8131
+summary: |
+  Path Traversal in Yarn
+  Arbitrary filesystem write vulnerability in Yarn 1.21.1 and earlier allows attackers to write to any path on the filesystem and potentially lead to arbitrary code execution by forcing the user to install a malicious package.
+impacted_packages:
+  - purl: pkg:npm/yarn
+    affected_versions: vers:npm/<=1.21.1
+    fixed_versions: vers:npm/1.22.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-8mfc-v7wv-p62g/GHSA-8mfc-v7wv-p62g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/yarnpkg/yarn/pull/7831
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/730239
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8131
+    reference_type:
+    reference_id:

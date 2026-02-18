@@ -1,0 +1,33 @@
+advisory_id: GHSA-8hc5-rmgf-qx6p
+datasource_id: github_osv_importer_v2/GHSA-8hc5-rmgf-qx6p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-8hc5-rmgf-qx6p/GHSA-8hc5-rmgf-qx6p.json
+aliases:
+  - CVE-2022-2232
+summary: |
+  Keycloak vulnerable to LDAP Injection on UsernameForm Login
+  A flaw was found in the Keycloak package. This flaw allows an attacker to benefit from an LDAP query and access existing usernames in the server.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-ldap-federation
+    affected_versions: vers:maven/<23.0.1
+    fixed_versions: vers:maven/23.0.1
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<23.0.1
+    fixed_versions: vers:maven/23.0.1
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-90
+references:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/4252e394cf725b16f7e4e19aa32b03fd3fe13fde
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-8hc5-rmgf-qx6p
+    reference_type:
+    reference_id:

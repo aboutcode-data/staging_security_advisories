@@ -1,0 +1,42 @@
+advisory_id: GHSA-8948-ffc6-jg52
+datasource_id: github_osv_importer_v2/GHSA-8948-ffc6-jg52
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-8948-ffc6-jg52/GHSA-8948-ffc6-jg52.json
+aliases: []
+summary: |
+  Insecure Default Configuration in redbird
+  Versions of `redbird` prior to 0.9.1 have a vulnerable default configuration of allowing TLS 1.0 connections on `lib/proxy.js`. The package does not provide an option to disable TLS 1.0 which is deprecated and vulnerable.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.9.1 or later.
+impacted_packages:
+  - purl: pkg:npm/redbird
+    affected_versions: vers:npm/<=0.9.0
+    fixed_versions:
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-8948-ffc6-jg52/GHSA-8948-ffc6-jg52.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/OptimalBits/redbird/commit/39c7a2da84a2ddddfe046ea80e98800518920516
+    reference_type:
+    reference_id:
+  - url: https://github.com/OptimalBits/redbird/pull/207
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-REDBIRD-174455
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/828
+    reference_type:
+    reference_id:

@@ -1,0 +1,46 @@
+advisory_id: GHSA-894w-w643-qvxv
+datasource_id: github_osv_importer_v2/GHSA-894w-w643-qvxv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-894w-w643-qvxv/GHSA-894w-w643-qvxv.json
+aliases:
+  - CVE-2025-62243
+summary: |
+  Liferay Publications is vulnerable to Incorrect Authorization
+  Insecure direct object reference (IDOR) vulnerability in Publications in Liferay Portal 7.4.1 through 7.4.3.112, and Liferay DXP 2023.Q4.0 through 2023.Q4.5, 2023.Q3.1 through 2023.Q3.8, and 7.4 GA through update 92 allows remote authenticated attackers to view publication comments via the `_com_liferay_change_tracking_web_portlet_PublicationsPortlet_value` parameter.
+
+  Publications comments in Liferay Portal 7.4.1 through 7.4.3.112, and Liferay DXP 2023.Q4.0 through 2023.Q4.5, 2023.Q3.1 through 2023.Q3.8, and 7.4 GA through update 92 does not properly check user permissions, which allows remote authenticated users to edit publication comments via crafted URLs.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.change.tracking.web
+    affected_versions: vers:maven/<2.0.122
+    fixed_versions: vers:maven/2.0.122
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-894w-w643-qvxv/GHSA-894w-w643-qvxv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/8190bb30e8a111879d92e256bded575857696c5a
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/e1457adf84fd596c6ec5a982adef97d7962347a4
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/f68ecf7fd8e08aba5fb806eb61d2c0f8ec6adec8
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-62243
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62243
+    reference_type:
+    reference_id:

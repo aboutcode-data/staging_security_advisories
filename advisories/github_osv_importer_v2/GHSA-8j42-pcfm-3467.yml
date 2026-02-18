@@ -1,0 +1,38 @@
+advisory_id: GHSA-8j42-pcfm-3467
+datasource_id: github_osv_importer_v2/GHSA-8j42-pcfm-3467
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-8j42-pcfm-3467/GHSA-8j42-pcfm-3467.json
+aliases:
+  - CVE-2024-4890
+summary: |
+  SQL injection in litellm
+  A blind SQL injection vulnerability exists in the berriai/litellm application, specifically within the '/team/update' process. The vulnerability arises due to the improper handling of the 'user_id' parameter in the raw SQL query used for deleting users. An attacker can exploit this vulnerability by injecting malicious SQL commands through the 'user_id' parameter, leading to potential unauthorized access to sensitive information such as API keys, user information, and tokens stored in the database. The affected version is 1.27.14.
+impacted_packages:
+  - purl: pkg:pypi/litellm
+    affected_versions: vers:pypi/<=1.27.14
+    fixed_versions:
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-8j42-pcfm-3467/GHSA-8j42-pcfm-3467.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/BerriAI/litellm
+    reference_type:
+    reference_id:
+  - url: https://github.com/BerriAI/litellm/pull/2954
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/a4f6d357-5b44-4e00-9cac-f1cc351211d2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-4890
+    reference_type:
+    reference_id:

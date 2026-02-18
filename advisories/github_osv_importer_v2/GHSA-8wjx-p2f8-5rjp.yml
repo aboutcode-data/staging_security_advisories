@@ -1,0 +1,38 @@
+advisory_id: GHSA-8wjx-p2f8-5rjp
+datasource_id: github_osv_importer_v2/GHSA-8wjx-p2f8-5rjp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-8wjx-p2f8-5rjp/GHSA-8wjx-p2f8-5rjp.json
+aliases:
+  - CVE-2023-27150
+summary: |
+  OpenCRX Cross-site Scripting vulnerability
+  openCRX 5.2.0 was discovered to contain a cross-site scripting (XSS) vulnerability via the Name field after creation of a Tracker in Manage Activity.
+impacted_packages:
+  - purl: pkg:maven/org.opencrx/opencrx-core
+    affected_versions: vers:maven/<=5.2.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-8wjx-p2f8-5rjp/GHSA-8wjx-p2f8-5rjp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/opencrx/opencrx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-27150
+    reference_type:
+    reference_id:
+  - url: https://www.esecforte.com/cve-2023-27150-cross-site-scripting-xss
+    reference_type:
+    reference_id:
+  - url: https://www.opencrx.org
+    reference_type:
+    reference_id:

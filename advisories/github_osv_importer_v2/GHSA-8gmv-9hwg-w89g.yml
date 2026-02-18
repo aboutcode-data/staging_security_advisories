@@ -1,0 +1,87 @@
+advisory_id: GHSA-8gmv-9hwg-w89g
+datasource_id: github_osv_importer_v2/GHSA-8gmv-9hwg-w89g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-8gmv-9hwg-w89g/GHSA-8gmv-9hwg-w89g.json
+aliases:
+  - CVE-2022-31046
+summary: |
+  Information Disclosure via Export Module
+  > ### Meta
+  > * CVSS: `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N/E:F/RL:O/RC:C` (4.0)
+
+  ### Problem
+  The export functionality fails to limit the result set to allowed columns of a particular database table. This allows authenticated users to export internal details of database tables to which they already have access.
+
+  ### Solution
+  Update to TYPO3 versions 7.6.57 ELTS, 8.7.47 ELTS, 9.5.35 ELTS, 10.4.29, 11.5.11 that fix the problem described above.
+
+  In order to address this issue, access to mentioned export functionality is completely denied for regular backend users.
+
+  ℹ️  **Strong security defaults - Manual actions required**
+  Following User TSconfig setting would allow using the export functionality for particular users:
+  ```
+  options.impexp.enableExportForNonAdminUser = 1
+  ```
+
+  ### Credits
+  Thanks to TYPO3 core merger Lina Wolf who reported this issue and to TYPO3 security member Torben Hansen  who fixed the issue.
+
+  ### References
+  * [TYPO3-CORE-SA-2022-001](https://typo3.org/security/advisory/typo3-core-sa-2022-001)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=7.0.0|<7.6.57
+    fixed_versions: vers:composer/7.6.57
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.0.0|<8.7.47
+    fixed_versions: vers:composer/8.7.47
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=9.0.0|<9.5.35
+    fixed_versions: vers:composer/9.5.35
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.0.0|<10.4.29
+    fixed_versions: vers:composer/10.4.29
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=11.0.0|<11.5.11
+    fixed_versions: vers:composer/11.5.11
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.0.0|<10.4.29
+    fixed_versions: vers:composer/10.4.29
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=11.0.0|<11.5.11
+    fixed_versions: vers:composer/11.5.11
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-8gmv-9hwg-w89g/GHSA-8gmv-9hwg-w89g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-319
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2022-31046.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2022-31046.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/7447a3d1283017d2ee08737a7972c720001a93e9
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-8gmv-9hwg-w89g
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31046
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2022-001
+    reference_type:
+    reference_id:

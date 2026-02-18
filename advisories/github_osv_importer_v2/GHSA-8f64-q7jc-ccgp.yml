@@ -1,0 +1,46 @@
+advisory_id: GHSA-8f64-q7jc-ccgp
+datasource_id: github_osv_importer_v2/GHSA-8f64-q7jc-ccgp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/08/GHSA-8f64-q7jc-ccgp/GHSA-8f64-q7jc-ccgp.json
+aliases:
+  - CVE-2018-3773
+summary: |
+  metascraper before v5.2.0 vulnerable to stored cross-site scripting
+  Versions of `metascraper` prior to 5.2.0 are vulnerable to stored cross-site scripting (XSS).
+
+
+  ## Recommendation
+
+  Upgrade to version 5.2.0 or later.
+impacted_packages:
+  - purl: pkg:npm/metascraper
+    affected_versions: vers:npm/<5.2.0
+    fixed_versions: vers:npm/5.2.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/08/GHSA-8f64-q7jc-ccgp/GHSA-8f64-q7jc-ccgp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/microlinkhq/metascraper
+    reference_type:
+    reference_id:
+  - url: https://github.com/microlinkhq/metascraper/pull/169
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/309367
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-3773
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/603
+    reference_type:
+    reference_id:

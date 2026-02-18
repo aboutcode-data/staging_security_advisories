@@ -1,0 +1,35 @@
+advisory_id: GHSA-8r2w-phx4-mgpv
+datasource_id: github_osv_importer_v2/GHSA-8r2w-phx4-mgpv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8r2w-phx4-mgpv/GHSA-8r2w-phx4-mgpv.json
+aliases:
+  - CVE-2020-13828
+summary: |
+  Dolibarr stored Cross-Site Scripting (XSS) vulnerability
+  Dolibarr 11.0.4 is affected by multiple stored Cross-Site Scripting (XSS) vulnerabilities that could allow remote authenticated attackers to inject arbitrary web script or HTML via ticket/card.php?action=create with the subject, message, or address parameter; adherents/card.php with the societe or address parameter; product/card.php with the label or customcode parameter; or societe/card.php with the alias or barcode parameter.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<=11.0.4
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8r2w-phx4-mgpv/GHSA-8r2w-phx4-mgpv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13828
+    reference_type:
+    reference_id:
+  - url: https://www.wizlynxgroup.com/security-research-advisories/vuln/WLX-2020-002
+    reference_type:
+    reference_id:

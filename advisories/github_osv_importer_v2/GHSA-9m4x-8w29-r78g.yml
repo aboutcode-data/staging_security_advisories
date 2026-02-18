@@ -1,0 +1,41 @@
+advisory_id: GHSA-9m4x-8w29-r78g
+datasource_id: github_osv_importer_v2/GHSA-9m4x-8w29-r78g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-9m4x-8w29-r78g/GHSA-9m4x-8w29-r78g.json
+aliases:
+  - CVE-2020-8205
+summary: |
+  Server-Side Request Forgery in @uppy/companion
+  The @uppy/companion npm package before versions 1.13.2 and 2.0.0-alpha.5 is vulnerable to a Server-Side Request Forgery (SSRF) vulnerability, which allows an attacker to scan local or external networks or otherwise interact with internal systems.
+impacted_packages:
+  - purl: pkg:npm/%40uppy/companion
+    affected_versions: vers:npm/<1.13.2
+    fixed_versions: vers:npm/1.13.2
+  - purl: pkg:npm/%40uppy/companion
+    affected_versions: vers:npm/<=2.0.0-alpha.4
+    fixed_versions: vers:npm/2.0.0-alpha.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-9m4x-8w29-r78g/GHSA-9m4x-8w29-r78g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/transloadit/uppy/blob/master/CHANGELOG.md#1161
+    reference_type:
+    reference_id:
+  - url: https://github.com/transloadit/uppy/pull/2322/commits/dbf2f4f30aeaf3bcc5971bb867bb0b5984084828
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/891270
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8205
+    reference_type:
+    reference_id:

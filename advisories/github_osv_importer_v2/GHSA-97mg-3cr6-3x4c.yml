@@ -1,0 +1,25 @@
+advisory_id: GHSA-97mg-3cr6-3x4c
+datasource_id: github_osv_importer_v2/GHSA-97mg-3cr6-3x4c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-97mg-3cr6-3x4c/GHSA-97mg-3cr6-3x4c.json
+aliases: []
+summary: "Remote Code Execution in mongodb-query-parser\nVersions of `mongodb-query-parser`\
+  \ prior to 2.0.0 are vulnerable to Remote Code Execution. The package fails to sanitize queries,\
+  \ allowing attackers to execute arbitrary code in the system.  Parsing the following payload\
+  \ executes `touch test-file`: \n\n```'(function () { return (clearImmediate.constructor(\"\
+  return process;\")()).mainModule.require(\"child_process\").execSync(\"touch test-file\").toString()})()'```\n\
+  \n\n\n## Recommendation\n\nUpgrade to version 2.0.0 or later."
+impacted_packages:
+  - purl: pkg:npm/mongodb-query-parser
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://www.npmjs.com/advisories/1448
+    reference_type:
+    reference_id:

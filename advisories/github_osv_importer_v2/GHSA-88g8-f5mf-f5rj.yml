@@ -1,0 +1,41 @@
+advisory_id: GHSA-88g8-f5mf-f5rj
+datasource_id: github_osv_importer_v2/GHSA-88g8-f5mf-f5rj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-88g8-f5mf-f5rj/GHSA-88g8-f5mf-f5rj.json
+aliases:
+  - CVE-2021-46320
+summary: |
+  Improper Initialization in OpenZeppelin
+  In OpenZeppelin <=v4.4.0, initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call. Once an initializer has finished running it can never be re-executed. However, an exception put in place to support multiple inheritance made reentrancy possible, breaking the expectation that there is a single execution.
+impacted_packages:
+  - purl: pkg:npm/%40openzeppelin/contracts
+    affected_versions: vers:npm/<4.4.1
+    fixed_versions: vers:npm/4.4.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-88g8-f5mf-f5rj/GHSA-88g8-f5mf-f5rj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-665
+references:
+  - url: https://github.com/OpenZeppelin/openzeppelin-contracts
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/3006
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v4.4.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenZeppelin/openzeppelin-contracts/security/advisories/GHSA-9c22-pwxw-p6hx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-46320
+    reference_type:
+    reference_id:

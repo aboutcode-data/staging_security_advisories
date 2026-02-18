@@ -1,0 +1,49 @@
+advisory_id: GHSA-99j5-fvg3-54pm
+datasource_id: github_osv_importer_v2/GHSA-99j5-fvg3-54pm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-99j5-fvg3-54pm/GHSA-99j5-fvg3-54pm.json
+aliases:
+  - CVE-2022-3327
+summary: |
+  Rdiffweb is missing authentication for critical function
+  Missing Authentication for Critical Function in GitHub repository ikus060/rdiffweb prior to 2.5.0.
+impacted_packages:
+  - purl: pkg:pypi/rdiffweb
+    affected_versions: vers:pypi/<2.5.0
+    fixed_versions: vers:pypi/2.5.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-99j5-fvg3-54pm/GHSA-99j5-fvg3-54pm.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-99j5-fvg3-54pm/GHSA-99j5-fvg3-54pm.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-306
+references:
+  - url: https://github.com/ikus060/rdiffweb
+    reference_type:
+    reference_id:
+  - url: https://github.com/ikus060/rdiffweb/commit/f2a32f2a9f3fb8be1a9432ac3d81d3aacdb13095
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/rdiffweb/PYSEC-2022-42977.yaml
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/ikus-soft/rdiffweb#next-release-250
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/02207c8f-2b15-4a31-a86a-74fd2fca0ed1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3327
+    reference_type:
+    reference_id:

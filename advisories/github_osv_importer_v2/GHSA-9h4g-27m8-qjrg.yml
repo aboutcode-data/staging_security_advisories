@@ -1,0 +1,41 @@
+advisory_id: GHSA-9h4g-27m8-qjrg
+datasource_id: github_osv_importer_v2/GHSA-9h4g-27m8-qjrg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-9h4g-27m8-qjrg/GHSA-9h4g-27m8-qjrg.json
+aliases:
+  - CVE-2020-15779
+summary: |
+  Path Traversal in socket.io-file
+  All versions of `socket.io-file` are vulnerable to Path Traversal. The package fails to sanitize user input and uses it to generate the file upload paths. The `socket.io-file::createFile` message contains a `name` option that is passed directly to `path.join()`.   It is possible to upload files to arbitrary folders on the server by sending relative paths on the `name` value, such as `../../test.js`.  The `uploadDir` and `rename` options can be used to define the file upload path.
+impacted_packages:
+  - purl: pkg:npm/socket.io-file
+    affected_versions: vers:npm/<=2.0.31
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-9h4g-27m8-qjrg/GHSA-9h4g-27m8-qjrg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/advisories/GHSA-9h4g-27m8-qjrg
+    reference_type:
+    reference_id:
+  - url: https://github.com/rico345100/socket.io-file
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15779
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1519
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/socket.io-file
+    reference_type:
+    reference_id:

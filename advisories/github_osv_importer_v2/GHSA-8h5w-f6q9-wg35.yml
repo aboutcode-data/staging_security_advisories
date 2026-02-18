@@ -1,0 +1,39 @@
+advisory_id: GHSA-8h5w-f6q9-wg35
+datasource_id: github_osv_importer_v2/GHSA-8h5w-f6q9-wg35
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-8h5w-f6q9-wg35/GHSA-8h5w-f6q9-wg35.json
+aliases:
+  - CVE-2023-32785
+summary: |
+  Langchain SQL Injection vulnerability
+  In Langchain before 0.0.247, prompt injection allows execution of arbitrary code against the SQL service provided by the chain.
+impacted_packages:
+  - purl: pkg:pypi/langchain
+    affected_versions: vers:pypi/<0.0.247
+    fixed_versions: vers:pypi/0.0.247
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-8h5w-f6q9-wg35/GHSA-8h5w-f6q9-wg35.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-89
+references:
+  - url: https://gist.github.com/rharang/9c58d39db8c01db5b7c888e467c0533f
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/issues/5923#issuecomment-1696053841
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-32785
+    reference_type:
+    reference_id:

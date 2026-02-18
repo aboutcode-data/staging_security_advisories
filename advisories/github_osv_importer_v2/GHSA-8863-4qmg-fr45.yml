@@ -1,0 +1,45 @@
+advisory_id: GHSA-8863-4qmg-fr45
+datasource_id: github_osv_importer_v2/GHSA-8863-4qmg-fr45
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-8863-4qmg-fr45/GHSA-8863-4qmg-fr45.json
+aliases:
+  - CVE-2024-45033
+summary: |
+  Apache Airflow Fab Provider Insufficient Session Expiration vulnerability
+  Insufficient Session Expiration vulnerability in Apache Airflow Fab Provider.
+
+  This issue affects Apache Airflow Fab Provider: before 1.5.2.
+
+  When user password has been changed with admin CLI, the sessions for that user have not been cleared, leading to insufficient session expiration, thus logged users could continue to be logged in even after the password was changed. This only happened when the password was changed with CLI. The problem does not happen in case change was done with webserver thus this is different from [CVE-2023-40273](https://github.com/advisories/GHSA-pm87-24wq-r8w9) which was addressed in Apache-Airflow 2.7.0
+
+
+  Users are recommended to upgrade to version 1.5.2, which fixes the issue.
+impacted_packages:
+  - purl: pkg:pypi/apache-airflow-providers-fab
+    affected_versions: vers:pypi/<1.5.2
+    fixed_versions: vers:pypi/1.5.2
+severities:
+  - score: '2.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-8863-4qmg-fr45/GHSA-8863-4qmg-fr45.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-613
+references:
+  - url: https://github.com/apache/airflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/airflow/pull/45139
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/yw535346rk766ybzpqtvrl36sjj789st
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45033
+    reference_type:
+    reference_id:

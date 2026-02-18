@@ -1,0 +1,66 @@
+advisory_id: GHSA-8rmm-gm28-pj8q
+datasource_id: github_osv_importer_v2/GHSA-8rmm-gm28-pj8q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-8rmm-gm28-pj8q/GHSA-8rmm-gm28-pj8q.json
+aliases:
+  - CVE-2023-6717
+summary: |
+  Keycloak Cross-site Scripting (XSS) via assertion consumer service URL in SAML POST-binding flow
+  Keycloak allows arbitrary URLs as SAML Assertion Consumer Service POST Binding URL (ACS), including JavaScript URIs (javascript:).
+
+  Allowing JavaScript URIs in combination with HTML forms leads to JavaScript evaluation in the context of the embedding origin on form submission.
+
+  #### Acknowledgements:
+  Special thanks to Lauritz Holtmann for reporting this issue and helping us improve our project.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<22.0.10
+    fixed_versions: vers:maven/22.0.10
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/>=23.0.0|<24.0.3
+    fixed_versions: vers:maven/24.0.3
+severities:
+  - score: '6.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-8rmm-gm28-pj8q/GHSA-8rmm-gm28-pj8q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-601
+  - CWE-20
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:1353
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1867
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1868
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:2945
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:4057
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-6717
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2253952
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-8rmm-gm28-pj8q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6717
+    reference_type:
+    reference_id:

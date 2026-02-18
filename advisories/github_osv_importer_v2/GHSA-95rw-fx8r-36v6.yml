@@ -1,0 +1,76 @@
+advisory_id: GHSA-95rw-fx8r-36v6
+datasource_id: github_osv_importer_v2/GHSA-95rw-fx8r-36v6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-95rw-fx8r-36v6/GHSA-95rw-fx8r-36v6.json
+aliases:
+  - CVE-2022-22818
+summary: |
+  Cross-site Scripting in Django
+  The `{% debug %}` template tag in Django 2.2 before 2.2.27, 3.2 before 3.2.12, and 4.0 before 4.0.2 does not properly encode the current context. This may lead to XSS.
+impacted_packages:
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=2.2|<2.2.27
+    fixed_versions: vers:pypi/2.2.27
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=3.2|<3.2.12
+    fixed_versions: vers:pypi/3.2.12
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=4.0|<4.0.2
+    fixed_versions: vers:pypi/4.0.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-95rw-fx8r-36v6/GHSA-95rw-fx8r-36v6.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-95rw-fx8r-36v6/GHSA-95rw-fx8r-36v6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://docs.djangoproject.com/en/4.0/releases/security
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-95rw-fx8r-36v6
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/01422046065d2b51f8f613409cad2c81b39487e5
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/1a1e8278c46418bde24c86a65443b0674bae65e2
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/c27a7eb9f40b64990398978152e62b6ff839c2e6
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2022-19.yaml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#!forum/django-announce
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/B4SQG2EAF4WCI2SLRL6XRDJ3RPK3ZRDV
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-22818
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220221-0003
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2022/dsa-5254
+    reference_type:
+    reference_id:
+  - url: https://www.djangoproject.com/weblog/2022/feb/01/security-releases
+    reference_type:
+    reference_id:

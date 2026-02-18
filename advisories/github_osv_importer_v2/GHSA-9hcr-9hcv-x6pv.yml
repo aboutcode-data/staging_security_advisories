@@ -1,0 +1,51 @@
+advisory_id: GHSA-9hcr-9hcv-x6pv
+datasource_id: github_osv_importer_v2/GHSA-9hcr-9hcv-x6pv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-9hcr-9hcv-x6pv/GHSA-9hcr-9hcv-x6pv.json
+aliases:
+  - CVE-2023-29005
+summary: |
+  Flask-AppBuilder Has No Rate Limiting on Login AUTH DB
+  ### Impact
+  Lack of rate limiting will allow an attacker to brute-force user credentials.
+
+  ### Patches
+  Ability to enable rate limiting on Flask-AppBuilder >=  4.3.0. Use `AUTH_RATE_LIMITED = True` and `RATELIMIT_ENABLED = True` set the limit itself by using `AUTH_RATE_LIMIT`. Will apply only to database authentication.
+
+  ### Workarounds
+  Implement rate limiting using a reverse proxy or other strategies.
+impacted_packages:
+  - purl: pkg:pypi/flask-appbuilder
+    affected_versions: vers:pypi/<4.3.0
+    fixed_versions: vers:pypi/4.3.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-9hcr-9hcv-x6pv/GHSA-9hcr-9hcv-x6pv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-307
+references:
+  - url: https://flask-limiter.readthedocs.io/en/stable/configuration.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/pull/1976
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/releases/tag/v4.3.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/security/advisories/GHSA-9hcr-9hcv-x6pv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-29005
+    reference_type:
+    reference_id:

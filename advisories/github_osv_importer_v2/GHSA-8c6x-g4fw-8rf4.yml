@@ -1,0 +1,45 @@
+advisory_id: GHSA-8c6x-g4fw-8rf4
+datasource_id: github_osv_importer_v2/GHSA-8c6x-g4fw-8rf4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-8c6x-g4fw-8rf4/GHSA-8c6x-g4fw-8rf4.json
+aliases: []
+summary: |
+  Whatsapp-Chat-Exporter has Cross-Site Scripting vulnerability in HTML output of chats.
+  ### Impact
+  A Cross-Site Scripting (XSS) vulnerability was found in the HTML output of chats. XSS is intended to be mitigated by Jinja's escape function. However, `autoescape=True` was missing when setting the environment. Although the actual impact is low, considering the HTML file is being viewed offline, an adversary may still be able to inject malicious payloads into the chat through WhatsApp. All users are affected.
+
+  ### Patches
+  The vulnerability is patched in 0.9.5. All users are strongly advised to update the exporter to the latest version.
+
+  ### Workarounds
+  No workaround is available. Please update the exporter to the latest version.
+
+  ### References
+  https://github.com/KnugiHK/WhatsApp-Chat-Exporter/commit/bfdc68cd6ad53ceecf132773f9aaba50dd80fe79
+  https://owasp.org/www-community/attacks/xss/
+impacted_packages:
+  - purl: pkg:pypi/whatsapp-chat-exporter
+    affected_versions: vers:pypi/<0.9.5
+    fixed_versions: vers:pypi/0.9.5
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-8c6x-g4fw-8rf4/GHSA-8c6x-g4fw-8rf4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/KnugiHK/WhatsApp-Chat-Exporter
+    reference_type:
+    reference_id:
+  - url: https://github.com/KnugiHK/WhatsApp-Chat-Exporter/commit/bfdc68cd6ad53ceecf132773f9aaba50dd80fe79
+    reference_type:
+    reference_id:
+  - url: https://github.com/KnugiHK/WhatsApp-Chat-Exporter/security/advisories/GHSA-8c6x-g4fw-8rf4
+    reference_type:
+    reference_id:

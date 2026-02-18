@@ -1,0 +1,47 @@
+advisory_id: GHSA-96qm-hwhp-2rm8
+datasource_id: github_osv_importer_v2/GHSA-96qm-hwhp-2rm8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-96qm-hwhp-2rm8/GHSA-96qm-hwhp-2rm8.json
+aliases:
+  - CVE-2024-5658
+summary: |
+  Improper Authentication in CraftCMS two factor authentication plugin
+  The CraftCMS plugin Two-Factor Authentication through 3.3.3 allows reuse of TOTP tokens multiple times within the validity period.
+impacted_packages:
+  - purl: pkg:composer/born05/craft-twofactorauthentication
+    affected_versions: vers:composer/<3.3.4
+    fixed_versions: vers:composer/3.3.4
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-96qm-hwhp-2rm8/GHSA-96qm-hwhp-2rm8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/born05/craft-twofactorauthentication
+    reference_type:
+    reference_id:
+  - url: https://github.com/born05/craft-twofactorauthentication/commit/89d2339463c0f3ee690e707d4bc8501360885289
+    reference_type:
+    reference_id:
+  - url: https://github.com/born05/craft-twofactorauthentication/releases/tag/3.3.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/sbaresearch/advisories/tree/public/2024/SBA-ADV-20240202-02_CraftCMS_Plugin_Two-Factor_Authentication_TOTP_Valid_After_Use
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-5658
+    reference_type:
+    reference_id:
+  - url: https://plugins.craftcms.com/two-factor-authentication?craft4
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2024/06/06/2
+    reference_type:
+    reference_id:

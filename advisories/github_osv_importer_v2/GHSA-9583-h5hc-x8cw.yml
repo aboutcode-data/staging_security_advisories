@@ -1,0 +1,48 @@
+advisory_id: GHSA-9583-h5hc-x8cw
+datasource_id: github_osv_importer_v2/GHSA-9583-h5hc-x8cw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-9583-h5hc-x8cw/GHSA-9583-h5hc-x8cw.json
+aliases:
+  - CVE-2025-61686
+summary: "React Router has Path Traversal in File Session Storage\nIf applications use `createFileSessionStorage()`\
+  \ from `@react-router/node` (or `@remix-run/node`/`@remix-run/deno` in Remix v2) with an [**unsigned\
+  \ cookie**](https://reactrouter.com/explanation/sessions-and-cookies#signing-cookies), it\
+  \ is possible for an attacker to cause the session to try to read/write from a location outside\
+  \ the specified session file directory. The success of the attack would depend on the permissions\
+  \ of the web server process to access those files. \n\nRead files cannot be returned directly\
+  \ to the attacker.  Session file reads would only succeed if the file matched the expected\
+  \ session file format. If the file matched the session file format, the data would be populated\
+  \ into the server side session but not directly returned to the attacker unless the application\
+  \ logic returned specific session information."
+impacted_packages:
+  - purl: pkg:npm/%40react-router/node
+    affected_versions: vers:npm/<=7.9.3
+    fixed_versions: vers:npm/7.9.4
+  - purl: pkg:npm/%40remix-run/node
+    affected_versions: vers:npm/<=2.17.1
+    fixed_versions: vers:npm/2.17.2
+  - purl: pkg:npm/%40remix-run/deno
+    affected_versions: vers:npm/<=2.17.1
+    fixed_versions: vers:npm/2.17.2
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-9583-h5hc-x8cw/GHSA-9583-h5hc-x8cw.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/remix-run/react-router
+    reference_type:
+    reference_id:
+  - url: https://github.com/remix-run/react-router/security/advisories/GHSA-9583-h5hc-x8cw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-61686
+    reference_type:
+    reference_id:

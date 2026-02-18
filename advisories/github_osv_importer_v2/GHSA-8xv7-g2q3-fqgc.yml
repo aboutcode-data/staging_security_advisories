@@ -1,0 +1,53 @@
+advisory_id: GHSA-8xv7-g2q3-fqgc
+datasource_id: github_osv_importer_v2/GHSA-8xv7-g2q3-fqgc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-8xv7-g2q3-fqgc/GHSA-8xv7-g2q3-fqgc.json
+aliases:
+  - CVE-2024-47053
+summary: "Mautic allows Improper Authorization in Reporting API\n### Summary\n\nThis advisory\
+  \ addresses an authorization vulnerability in Mautic's HTTP Basic Authentication implementation.\
+  \ This flaw could allow unauthorized access to sensitive report data.\n\n* **Improper Authorization:**\
+  \ An authorization flaw exists in Mautic's API Authorization implementation. Any authenticated\
+  \ user, regardless of assigned roles or permissions, can access all reports and their associated\
+  \ data via the API.  This bypasses the intended access controls governed by the \"Reporting\
+  \ Permissions > View Own\" and \"Reporting Permissions > View Others\" permissions, which\
+  \ should restrict access to non-System Reports. \n\n### Mitigation\n\nPlease update to Mautic\
+  \ 5.2.3 or later\n\n### Workarounds\n\n Disable the API in Mautic. See [documentation](https://docs.mautic.org/en/5.2/configuration/settings.html#api-settings).\n\
+  \n### References\nhttps://cwe.mitre.org/data/definitions/285.html\nhttps://docs.mautic.org/en/5.2/configuration/settings.html#api-settings\n\
+  \nIf you have any questions or comments about this advisory:\n\nEmail us at [security@mautic.org](mailto:security@mautic.org)"
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=1.0.1|<5.2.3
+    fixed_versions: vers:composer/5.2.3
+severities:
+  - score: '7.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-8xv7-g2q3-fqgc/GHSA-8xv7-g2q3-fqgc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://cwe.mitre.org/data/definitions/287.html
+    reference_type:
+    reference_id:
+  - url: https://docs.mautic.org/en/5.2/configuration/settings.html#api-settings
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/commit/9d7ee57c92502ef77cddb091011c5ffef14b11ee
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-8xv7-g2q3-fqgc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47053
+    reference_type:
+    reference_id:

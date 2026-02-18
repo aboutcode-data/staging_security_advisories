@@ -1,0 +1,41 @@
+advisory_id: GHSA-8jxq-gpmr-h4g4
+datasource_id: github_osv_importer_v2/GHSA-8jxq-gpmr-h4g4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8jxq-gpmr-h4g4/GHSA-8jxq-gpmr-h4g4.json
+aliases:
+  - CVE-2017-7204
+summary: |
+  imdbphp Cross-Site Scripting (XSS)
+  A Cross-Site Scripting (XSS) was discovered in imdbphp 5.1.1. The vulnerability exists due to insufficient filtration of user-supplied data (name) passed to the "imdbphp-master/demo/search.php" URL. An attacker could execute arbitrary HTML and script code in a browser in the context of the vulnerable website.
+impacted_packages:
+  - purl: pkg:composer/imdbphp/imdbphp
+    affected_versions: vers:composer/<=5.1.1
+    fixed_versions: vers:composer/5.2.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8jxq-gpmr-h4g4/GHSA-8jxq-gpmr-h4g4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/tboothman/imdbphp
+    reference_type:
+    reference_id:
+  - url: https://github.com/tboothman/imdbphp/commit/5875c75c6ca6a53dc4faaaeca973150d380e88e2
+    reference_type:
+    reference_id:
+  - url: https://github.com/tboothman/imdbphp/issues/88
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-7204
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/97002
+    reference_type:
+    reference_id:

@@ -1,0 +1,42 @@
+advisory_id: GHSA-9794-pc4r-438w
+datasource_id: github_osv_importer_v2/GHSA-9794-pc4r-438w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-9794-pc4r-438w/GHSA-9794-pc4r-438w.json
+aliases:
+  - CVE-2024-39903
+summary: "Local File Inclusion in Solara\nA Local File Inclusion (LFI) vulnerability was identified\
+  \ in widgetti/solara, in version <1.35.1, which was fixed in version 1.35.1. This vulnerability\
+  \ arises from the application's failure to properly validate URI fragments for directory traversal\
+  \ sequences such as '../' when serving static files. An attacker can exploit this flaw by\
+  \ manipulating the fragment part of the URI to read arbitrary files on the local file system.\
+  \ \n\n### References\n- https://github.com/widgetti/solara/security/advisories/GHSA-9794-pc4r-438w\n\
+  - https://github.com/widgetti/solara/commit/df2fd66a7f4e8ffd36e8678697a8a4f76760dc54\n- https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39903"
+impacted_packages:
+  - purl: pkg:pypi/solara
+    affected_versions: vers:pypi/<1.35.1
+    fixed_versions: vers:pypi/1.35.1
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-9794-pc4r-438w/GHSA-9794-pc4r-438w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/widgetti/solara
+    reference_type:
+    reference_id:
+  - url: https://github.com/widgetti/solara/commit/df2fd66a7f4e8ffd36e8678697a8a4f76760dc54
+    reference_type:
+    reference_id:
+  - url: https://github.com/widgetti/solara/security/advisories/GHSA-9794-pc4r-438w
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-39903
+    reference_type:
+    reference_id:

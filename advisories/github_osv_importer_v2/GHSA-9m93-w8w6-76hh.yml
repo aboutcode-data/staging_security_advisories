@@ -1,0 +1,53 @@
+advisory_id: GHSA-9m93-w8w6-76hh
+datasource_id: github_osv_importer_v2/GHSA-9m93-w8w6-76hh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-9m93-w8w6-76hh/GHSA-9m93-w8w6-76hh.json
+aliases:
+  - CVE-2023-3696
+summary: |
+  Mongoose Prototype Pollution vulnerability
+  Prototype Pollution in GitHub repository automattic/mongoose prior to 7.3.3, 6.11.3, and 5.13.20.
+impacted_packages:
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/>=7.0.0|<7.3.3
+    fixed_versions: vers:npm/7.3.3
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/>=6.0.0|<6.11.3
+    fixed_versions: vers:npm/6.11.3
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/<5.13.20
+    fixed_versions: vers:npm/5.13.20
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-9m93-w8w6-76hh/GHSA-9m93-w8w6-76hh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/Automattic/mongoose
+    reference_type:
+    reference_id:
+  - url: https://github.com/automattic/mongoose/commit/305ce4ff789261df7e3f6e72363d0703e025f80d
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/commit/e29578d2ec18a68aeb4717d66dd5eb66bae53de1
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/commit/f1efabf350522257364aa5c2cb36e441cf08f1a2
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/releases/tag/7.3.3
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/1eef5a72-f6ab-4f61-b31d-fc66f5b4b467
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-3696
+    reference_type:
+    reference_id:

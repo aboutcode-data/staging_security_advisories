@@ -1,0 +1,50 @@
+advisory_id: GHSA-9chr-4fjh-5rgw
+datasource_id: github_osv_importer_v2/GHSA-9chr-4fjh-5rgw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-9chr-4fjh-5rgw/GHSA-9chr-4fjh-5rgw.json
+aliases:
+  - CVE-2022-3704
+summary: "Cross-site Scripting in actionpack\nactionpack from the Ruby on Rails project is vulnerable\
+  \ to Cross-site Scripting in the Route Error Page. This issue has been patched with this [commit](https://github.com/rails/rails/commit/be177e4566747b73ff63fd5f529fab564e475ed4).\
+  \ \n\nThis vulnerability is disputed by the Rails security team. It requires that the developer\
+  \ is tricked into copy pasting a malicious javascript-containing string into a development-only\
+  \ error page accessible only via localhost."
+impacted_packages:
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<=7.0.4
+    fixed_versions:
+severities:
+  - score: '3.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-9chr-4fjh-5rgw/GHSA-9chr-4fjh-5rgw.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-707
+references:
+  - url: https://github.com/rails/rails
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/commit/be177e4566747b73ff63fd5f529fab564e475ed4
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/issues/46244
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/issues/46244#issuecomment-1380875153
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/pull/46269
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3704
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.212319
+    reference_type:
+    reference_id:

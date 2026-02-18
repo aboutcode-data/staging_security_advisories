@@ -1,0 +1,41 @@
+advisory_id: GHSA-9g95-48c6-r778
+datasource_id: github_osv_importer_v2/GHSA-9g95-48c6-r778
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-9g95-48c6-r778/GHSA-9g95-48c6-r778.json
+aliases:
+  - CVE-2025-14894
+summary: |
+  Livewire Filemanager does not restrict uploaded file types
+  Livewire Filemanager, commonly used in Laravel applications, contains LivewireFilemanagerComponent.php, which does not perform file type and MIME validation, allowing for RCE through upload of a malicious php file that can then be executed via the /storage/ URL if a commonly performed setup process within Laravel applications has been completed.
+impacted_packages:
+  - purl: pkg:composer/livewire-filemanager/filemanager
+    affected_versions: vers:composer/<=1.0.4
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-9g95-48c6-r778/GHSA-9g95-48c6-r778.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/livewire-filemanager/filemanager
+    reference_type:
+    reference_id:
+  - url: https://github.com/livewire-filemanager/filemanager/blob/master/docs.md#security
+    reference_type:
+    reference_id:
+  - url: https://hackingbydoing.wixsite.com/hackingbydoing/post/unauthenticated-rce-in-livewire-filemanager
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-14894
+    reference_type:
+    reference_id:
+  - url: https://www.kb.cert.org/vuls/id/650657
+    reference_type:
+    reference_id:

@@ -1,0 +1,45 @@
+advisory_id: GHSA-89p3-9j8c-fqh4
+datasource_id: github_osv_importer_v2/GHSA-89p3-9j8c-fqh4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-89p3-9j8c-fqh4/GHSA-89p3-9j8c-fqh4.json
+aliases: []
+summary: |
+  Duplicate Advisory: User account enumeration in eZ Publish Ibexa Kernel
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-gmrf-99gw-vvwj. This link is maintained to preserve external references.
+
+  ## Original Description
+
+  This Security Advisory is about a vulnerability in eZ Platform v1.13, v2.5, and v3.2, and in Ibexa DXP and Ibexa Open Source v3.3. The /user/sessions endpoint can let an attacker detect if a given username or email refers to a valid account. This can be detected through differences in the response data or response time of certain requests. The fix ensures neither attack is possible. The fix is distributed via Composer.
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=6.13.0|<6.13.8+1
+    fixed_versions: vers:composer/6.13.8+1
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=7.5.0|<7.5.15+1
+    fixed_versions: vers:composer/7.5.15+1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-89p3-9j8c-fqh4/GHSA-89p3-9j8c-fqh4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+references:
+  - url: https://github.com/ezsystems/ezpublish-kernel
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel/commit/b496f073c3f03707d3531a6941dc098b84e3cbed
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel/security/advisories/GHSA-gmrf-99gw-vvwj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-46876
+    reference_type:
+    reference_id:

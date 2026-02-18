@@ -1,0 +1,38 @@
+advisory_id: GHSA-974q-4vvr-vg9c
+datasource_id: github_osv_importer_v2/GHSA-974q-4vvr-vg9c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-974q-4vvr-vg9c/GHSA-974q-4vvr-vg9c.json
+aliases:
+  - CVE-2023-2998
+summary: |
+  thorsten/phpmyfaq vulnerable to cross-site scripting
+  In thorsten/phpmyfaq prior to 3.1.14, when admins create a FAQ News, they can pass xss to the "text of the record" section.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.1.14
+    fixed_versions: vers:composer/3.1.14
+severities:
+  - score: '6.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-974q-4vvr-vg9c/GHSA-974q-4vvr-vg9c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/c120070a66e6c497c328d3b6b067eebcd8ea8493
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/8282d78e-f399-4bf4-8403-f39103a31e78
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2998
+    reference_type:
+    reference_id:

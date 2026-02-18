@@ -1,0 +1,56 @@
+advisory_id: GHSA-87p2-cvhq-q4mv
+datasource_id: github_osv_importer_v2/GHSA-87p2-cvhq-q4mv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-87p2-cvhq-q4mv/GHSA-87p2-cvhq-q4mv.json
+aliases:
+  - CVE-2020-13929
+summary: |
+  Authentication bypass in Apache Zeppelin
+  Authentication bypass vulnerability in Apache Zeppelin allows an attacker to bypass Zeppelin authentication mechanism to act as another user. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+impacted_packages:
+  - purl: pkg:maven/org.apache.zeppelin/zeppelin
+    affected_versions: vers:maven/<0.10.0
+    fixed_versions: vers:maven/0.10.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-87p2-cvhq-q4mv/GHSA-87p2-cvhq-q4mv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/apache/zeppelin
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r768800925d6407a6a87ccae0ec98776b7bda50c0e3ed3d0130dad028@%3Cannounce.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r768800925d6407a6a87ccae0ec98776b7bda50c0e3ed3d0130dad028@%3Cusers.zeppelin.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r768800925d6407a6a87ccae0ec98776b7bda50c0e3ed3d0130dad028%40%3Cannounce.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r768800925d6407a6a87ccae0ec98776b7bda50c0e3ed3d0130dad028%40%3Cusers.zeppelin.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r99529e175a7c1c9a26bd41a02802c8af7aa97319fe561874627eb999@%3Cusers.zeppelin.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r99529e175a7c1c9a26bd41a02802c8af7aa97319fe561874627eb999%40%3Cusers.zeppelin.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13929
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202311-04
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2021/09/02/2
+    reference_type:
+    reference_id:

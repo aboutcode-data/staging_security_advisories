@@ -1,0 +1,42 @@
+advisory_id: GHSA-8v63-cqqc-6r2c
+datasource_id: github_osv_importer_v2/GHSA-8v63-cqqc-6r2c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-8v63-cqqc-6r2c/GHSA-8v63-cqqc-6r2c.json
+aliases:
+  - CVE-2021-3805
+summary: |
+  Prototype Pollution in object-path
+  object-path is vulnerable to Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution'). The `del()` function fails to validate which Object properties it deletes. This allows attackers to modify the prototype of Object, causing the modification of default properties like `toString` on all objects.
+impacted_packages:
+  - purl: pkg:npm/object-path
+    affected_versions: vers:npm/<0.11.8
+    fixed_versions: vers:npm/0.11.8
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-8v63-cqqc-6r2c/GHSA-8v63-cqqc-6r2c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+  - CWE-1321
+references:
+  - url: https://github.com/mariocasciaro/object-path
+    reference_type:
+    reference_id:
+  - url: https://github.com/mariocasciaro/object-path/commit/4f0903fd7c832d12ccbe0d9c3d7e25d985e9e884
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/571e3baf-7c46-46e3-9003-ba7e4e623053
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/01/msg00031.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3805
+    reference_type:
+    reference_id:

@@ -1,0 +1,60 @@
+advisory_id: GHSA-9hhc-pj4w-w5rv
+datasource_id: github_osv_importer_v2/GHSA-9hhc-pj4w-w5rv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-9hhc-pj4w-w5rv/GHSA-9hhc-pj4w-w5rv.json
+aliases:
+  - CVE-2022-4137
+summary: |
+  Keycloak Cross-site Scripting on OpenID connect login service
+  A reflected cross-site scripting (XSS) vulnerability was found in the `oob` OAuth endpoint due to incorrect null-byte handling. This issue allows a malicious link to insert an arbitrary URI into a Keycloak error page.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-parent
+    affected_versions: vers:maven/<20.0.5
+    fixed_versions: vers:maven/20.0.5
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-9hhc-pj4w-w5rv/GHSA-9hhc-pj4w-w5rv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-116
+references:
+  - url: https://access.redhat.com/errata/RHSA-2023:1043
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:1044
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:1045
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:1049
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2022-4137
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2148496
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/30d0e9d22dae51392e5a3748a1c68c116667359a
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/16774
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-9hhc-pj4w-w5rv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-4137
+    reference_type:
+    reference_id:

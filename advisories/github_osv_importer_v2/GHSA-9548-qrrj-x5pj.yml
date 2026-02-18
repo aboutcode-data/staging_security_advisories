@@ -1,0 +1,46 @@
+advisory_id: GHSA-9548-qrrj-x5pj
+datasource_id: github_osv_importer_v2/GHSA-9548-qrrj-x5pj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-9548-qrrj-x5pj/GHSA-9548-qrrj-x5pj.json
+aliases:
+  - CVE-2025-53643
+summary: |
+  AIOHTTP is vulnerable to HTTP Request/Response Smuggling through incorrect parsing of chunked trailer sections
+  ### Summary
+  The Python parser is vulnerable to a request smuggling vulnerability due to not parsing trailer sections of an HTTP request.
+
+  ### Impact
+  If a pure Python version of aiohttp is installed (i.e. without the usual C extensions) or AIOHTTP_NO_EXTENSIONS is enabled, then an attacker may be able to execute a request smuggling attack to bypass certain firewalls or proxy protections.
+
+  ----
+
+  Patch: https://github.com/aio-libs/aiohttp/commit/e8d774f635dc6d1cd3174d0e38891da5de0e2b6a
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<3.12.14
+    fixed_versions: vers:pypi/3.12.14
+severities:
+  - score: '1.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-9548-qrrj-x5pj/GHSA-9548-qrrj-x5pj.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/aio-libs/aiohttp
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/commit/e8d774f635dc6d1cd3174d0e38891da5de0e2b6a
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/security/advisories/GHSA-9548-qrrj-x5pj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-53643
+    reference_type:
+    reference_id:

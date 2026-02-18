@@ -1,0 +1,44 @@
+advisory_id: GHSA-98j2-3jv7-274m
+datasource_id: github_osv_importer_v2/GHSA-98j2-3jv7-274m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-98j2-3jv7-274m/GHSA-98j2-3jv7-274m.json
+aliases:
+  - CVE-2020-35128
+summary: |
+  Mautic stored Cross-site Scripting (XSS)
+  Mautic before 3.2.4 is affected by stored XSS. An attacker with permission to manage companies, an application feature, could attack other users, including administrators. For example, by loading an externally crafted JavaScript file, an attacker could eventually perform actions as the target user. These actions include changing the user passwords, altering user or email addresses, or adding a new administrator to the system.
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=3.2.0|<3.2.4
+    fixed_versions: vers:composer/3.2.4
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=2.0.0|<2.16.5
+    fixed_versions: vers:composer/2.16.5
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-98j2-3jv7-274m/GHSA-98j2-3jv7-274m.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://forum.mautic.org/c/announcements/16
+    reference_type:
+    reference_id:
+  - url: https://forum.mautic.org/t/security-release-for-all-versions-of-mautic-prior-to-2-16-5-and-3-2-4/17786
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://labs.bishopfox.com/advisories/mautic-version-3.2.2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-35128
+    reference_type:
+    reference_id:

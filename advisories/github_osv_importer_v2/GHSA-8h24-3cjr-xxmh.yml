@@ -1,0 +1,41 @@
+advisory_id: GHSA-8h24-3cjr-xxmh
+datasource_id: github_osv_importer_v2/GHSA-8h24-3cjr-xxmh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8h24-3cjr-xxmh/GHSA-8h24-3cjr-xxmh.json
+aliases:
+  - CVE-2018-16637
+summary: |
+  Evolution CMS Stored Cross-site Scripting (XSS)
+  Evolution CMS 1.4.x prior to 1.4.6 allows XSS via the page weblink title parameter to the manager/ URI.
+impacted_packages:
+  - purl: pkg:composer/evolutioncms/evolution
+    affected_versions: vers:composer/>=1.4.0|<1.4.6
+    fixed_versions: vers:composer/1.4.6
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8h24-3cjr-xxmh/GHSA-8h24-3cjr-xxmh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/evolution-cms/evolution
+    reference_type:
+    reference_id:
+  - url: https://github.com/evolution-cms/evolution/commit/2b8aaa6224997155de0fe9440ad106bd98dc4f4b
+    reference_type:
+    reference_id:
+  - url: https://github.com/evolution-cms/evolution/issues/788
+    reference_type:
+    reference_id:
+  - url: https://github.com/security-breachlock/CVE-2018-16637/blob/master/evolution_xss_stored.pdf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-16637
+    reference_type:
+    reference_id:

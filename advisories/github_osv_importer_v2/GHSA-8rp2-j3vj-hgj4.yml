@@ -1,0 +1,35 @@
+advisory_id: GHSA-8rp2-j3vj-hgj4
+datasource_id: github_osv_importer_v2/GHSA-8rp2-j3vj-hgj4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-8rp2-j3vj-hgj4/GHSA-8rp2-j3vj-hgj4.json
+aliases:
+  - CVE-2022-29648
+summary: |
+  Cross site scripting in Jfinal
+  A cross-site scripting (XSS) vulnerability in Jfinal CMS v5.1.0 allows attackers to execute arbitrary web scripts or HTML via a crafted X-Forwarded-For request.
+impacted_packages:
+  - purl: pkg:maven/com.jflyfox/jflyfox_jfinal
+    affected_versions: vers:maven/<=5.1.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-8rp2-j3vj-hgj4/GHSA-8rp2-j3vj-hgj4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/jflyfox/jfinal_cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/jflyfox/jfinal_cms/issues/34
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29648
+    reference_type:
+    reference_id:

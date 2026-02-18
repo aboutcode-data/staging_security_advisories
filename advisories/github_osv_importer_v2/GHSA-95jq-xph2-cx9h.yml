@@ -1,0 +1,44 @@
+advisory_id: GHSA-95jq-xph2-cx9h
+datasource_id: github_osv_importer_v2/GHSA-95jq-xph2-cx9h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-95jq-xph2-cx9h/GHSA-95jq-xph2-cx9h.json
+aliases:
+  - CVE-2025-8101
+summary: |
+  Linkify Allows Prototype Pollution & HTML Attribute Injection (XSS)
+  Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability in Linkify (linkifyjs) allows XSS Targeting HTML Attributes and Manipulating User-Controlled Variables.This issue affects Linkify: from 4.3.1 before 4.3.2.
+impacted_packages:
+  - purl: pkg:npm/linkifyjs
+    affected_versions: vers:npm/<4.3.2
+    fixed_versions: vers:npm/4.3.2
+severities:
+  - score: '8.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-95jq-xph2-cx9h/GHSA-95jq-xph2-cx9h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://caverav.cl/posts/linkify-xss/linkify-xss
+    reference_type:
+    reference_id:
+  - url: https://fluidattacks.com/advisories/charly
+    reference_type:
+    reference_id:
+  - url: https://github.com/nfrasser/linkifyjs
+    reference_type:
+    reference_id:
+  - url: https://github.com/nfrasser/linkifyjs/releases/tag/v4.3.2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-8101
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/linkifyjs
+    reference_type:
+    reference_id:

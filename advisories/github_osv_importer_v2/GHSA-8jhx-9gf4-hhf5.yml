@@ -1,0 +1,44 @@
+advisory_id: GHSA-8jhx-9gf4-hhf5
+datasource_id: github_osv_importer_v2/GHSA-8jhx-9gf4-hhf5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-8jhx-9gf4-hhf5/GHSA-8jhx-9gf4-hhf5.json
+aliases:
+  - CVE-2019-16377
+summary: |
+  Consul gem insufficient authentication check - Multiple powers in one controller are not always checked correctly
+  With the consul ruby gem before 1.0.3, if a controller checks multiple powers  using `:if` or `:except` conditions, these conditions are erroneously applied to all power checks in that controller. This can lead to skipped power checks and hence unauthenticated access to certain controller actions.
+impacted_packages:
+  - purl: pkg:gem/consul
+    affected_versions: vers:gem/<1.0.3
+    fixed_versions: vers:gem/1.0.3
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-8jhx-9gf4-hhf5/GHSA-8jhx-9gf4-hhf5.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/makandra/consul
+    reference_type:
+    reference_id:
+  - url: https://github.com/makandra/consul/issues/49
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/c26fbc13435b8be448ad59131428538049d165e4/gems/consul/CVE-2019-16377.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/consul/CVE-2019-16377.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16377
+    reference_type:
+    reference_id:
+  - url: https://rubygems.org/gems/consul
+    reference_type:
+    reference_id:

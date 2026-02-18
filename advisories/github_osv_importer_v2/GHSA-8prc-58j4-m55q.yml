@@ -1,0 +1,38 @@
+advisory_id: GHSA-8prc-58j4-m55q
+datasource_id: github_osv_importer_v2/GHSA-8prc-58j4-m55q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8prc-58j4-m55q/GHSA-8prc-58j4-m55q.json
+aliases:
+  - CVE-2019-14832
+summary: |
+  Keycloak Unauthenticated Access
+  A flaw was found in the Keycloak REST API before version 8.0.0, implemented in Keycloak before 7.0.1 where it would permit user access from a realm the user was not configured. An authenticated attacker with knowledge of a user id could use this flaw to access unauthorized information or to carry out further attacks.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-model-infinispan
+    affected_versions: vers:maven/<7.0.1
+    fixed_versions: vers:maven/7.0.1
+  - purl: pkg:maven/org.keycloak/keycloak-model-jpa
+    affected_versions: vers:maven/<7.0.1
+    fixed_versions: vers:maven/7.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8prc-58j4-m55q/GHSA-8prc-58j4-m55q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14832
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/0b73685ccf3181115ae3936a578708630215ac23
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-14832
+    reference_type:
+    reference_id:

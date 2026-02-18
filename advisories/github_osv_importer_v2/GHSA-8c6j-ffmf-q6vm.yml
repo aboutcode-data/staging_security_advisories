@@ -1,0 +1,71 @@
+advisory_id: GHSA-8c6j-ffmf-q6vm
+datasource_id: github_osv_importer_v2/GHSA-8c6j-ffmf-q6vm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8c6j-ffmf-q6vm/GHSA-8c6j-ffmf-q6vm.json
+aliases:
+  - CVE-2016-3081
+summary: |
+  Apache Struts RCE Vulnerability
+  Apache Struts 2.3.19 to 2.3.20.2, 2.3.21 to 2.3.24.1, and 2.3.25 to 2.3.28, when Dynamic Method Invocation is enabled, allow remote attackers to execute arbitrary code via method: prefix, related to chained expressions.
+impacted_packages:
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/<=2.3.20.2
+    fixed_versions: vers:maven/2.3.20.3
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/<=2.3.24.2
+    fixed_versions: vers:maven/2.3.24.3
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/<=2.3.28
+    fixed_versions: vers:maven/2.3.28.1
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-8c6j-ffmf-q6vm/GHSA-8c6j-ffmf-q6vm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: http://packetstormsecurity.com/files/136856/Apache-Struts-2.3.28-Dynamic-Method-Invocation-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-3081
+    reference_type:
+    reference_id:
+  - url: https://struts.apache.org/docs/s2-032.html
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210123152457/http://www.securityfocus.com/bid/91787
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210225192113/http://www.securityfocus.com/bid/87327
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210226011418/http://www.securitytracker.com/id/1035665
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/39756
+    reference_type:
+    reference_id:
+  - url: http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20160527-01-struts2-en
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html
+    reference_type:
+    reference_id:
+  - url: http://www.rapid7.com/db/modules/exploit/linux/http/struts_dmi_exec
+    reference_type:
+    reference_id:
+  - url: http://www.rapid7.com/db/modules/exploit/multi/http/struts_dmi_exec
+    reference_type:
+    reference_id:

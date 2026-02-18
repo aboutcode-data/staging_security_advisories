@@ -1,0 +1,44 @@
+advisory_id: GHSA-99fg-2h75-m92h
+datasource_id: github_osv_importer_v2/GHSA-99fg-2h75-m92h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-99fg-2h75-m92h/GHSA-99fg-2h75-m92h.json
+aliases:
+  - CVE-2023-39062
+summary: |
+  Spipu HTML2PDF vulnerable to cross-site scripting
+  Cross Site Scripting vulnerability in Spipu HTML2PDF before v.5.2.8 allows a remote attacker to execute arbitrary code via a crafted script to the forms.php.
+impacted_packages:
+  - purl: pkg:composer/spipu/html2pdf
+    affected_versions: vers:composer/<5.2.8
+    fixed_versions: vers:composer/5.2.8
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-99fg-2h75-m92h/GHSA-99fg-2h75-m92h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/afine-com/CVE-2023-39062
+    reference_type:
+    reference_id:
+  - url: https://github.com/sectroyer/CVEs/tree/main/CVE-2023-39062
+    reference_type:
+    reference_id:
+  - url: https://github.com/spipu/html2pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/spipu/html2pdf/blob/92afd81823d62ad95eb9d034858311bb63aeb4ac/CHANGELOG.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/spipu/html2pdf/commit/92afd81823d62ad95eb9d034858311bb63aeb4ac
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39062
+    reference_type:
+    reference_id:

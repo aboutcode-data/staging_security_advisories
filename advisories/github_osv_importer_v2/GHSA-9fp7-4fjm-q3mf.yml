@@ -1,0 +1,38 @@
+advisory_id: GHSA-9fp7-4fjm-q3mf
+datasource_id: github_osv_importer_v2/GHSA-9fp7-4fjm-q3mf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-9fp7-4fjm-q3mf/GHSA-9fp7-4fjm-q3mf.json
+aliases:
+  - CVE-2021-23760
+summary: |
+  Prototype Pollution in keyget
+  The package keyget from 0.0.0 are vulnerable to Prototype Pollution via the methods set, push, and at which could allow an attacker to cause a denial of service and may lead to remote code execution. **Note:** This vulnerability derives from an incomplete fix to [CVE-2020-28272](https://security.snyk.io/vuln/SNYK-JS-KEYGET-1048048)
+impacted_packages:
+  - purl: pkg:npm/keyget
+    affected_versions: vers:npm/<=2.4.0
+    fixed_versions:
+severities:
+  - score: '5.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-9fp7-4fjm-q3mf/GHSA-9fp7-4fjm-q3mf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/rumkin/keyget
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23760
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-KEYGET-1048048
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-KEYGET-2342624
+    reference_type:
+    reference_id:

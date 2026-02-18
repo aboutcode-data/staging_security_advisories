@@ -1,0 +1,73 @@
+advisory_id: GHSA-8xq9-g7ch-35hg
+datasource_id: github_osv_importer_v2/GHSA-8xq9-g7ch-35hg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-8xq9-g7ch-35hg/GHSA-8xq9-g7ch-35hg.json
+aliases:
+  - CVE-2024-47183
+summary: |
+  Parse Server's custom object ID allows to acquire role privileges
+  ### Impact
+
+  If the Parse Server option `allowCustomObjectId: true` is set, an attacker that is allowed to create a new user can set a custom object ID for that new user that exploits the vulnerability and acquires privileges of a specific role.
+
+  ### Patches
+
+  Improved validation for custom user object IDs. Session tokens for existing users with an object ID that exploits the vulnerability are now rejected.
+
+  ### Workarounds
+
+  - Disable custom object IDs by setting `allowCustomObjectId: false` or not setting the option which defaults to `false`.
+  - Use a Cloud Code Trigger to validate that a new user's object ID doesn't start with the prefix `role:`.
+
+  ### References
+
+  - https://github.com/parse-community/parse-server/security/advisories/GHSA-8xq9-g7ch-35hg
+  - https://github.com/parse-community/parse-server/pull/9317 (fix for Parse Server 7)
+  - https://github.com/parse-community/parse-server/pull/9318 (fix for Parse Server 6)
+impacted_packages:
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/<6.5.9
+    fixed_versions: vers:npm/6.5.9
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/>=7.0.0|<7.3.0
+    fixed_versions: vers:npm/7.3.0
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-8xq9-g7ch-35hg/GHSA-8xq9-g7ch-35hg.json
+  - score: '8.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-8xq9-g7ch-35hg/GHSA-8xq9-g7ch-35hg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://github.com/parse-community/parse-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/commit/13ee52f0d19ef3a3524b3d79aea100e587eb3cfc
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/commit/1bfbccf9ee7ea77533b2b2aa7c4c69f3bd35e66f
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/9317
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/9318
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/security/advisories/GHSA-8xq9-g7ch-35hg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47183
+    reference_type:
+    reference_id:

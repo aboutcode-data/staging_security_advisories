@@ -1,0 +1,39 @@
+advisory_id: GHSA-8c2c-jxwj-jqgf
+datasource_id: github_osv_importer_v2/GHSA-8c2c-jxwj-jqgf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-8c2c-jxwj-jqgf/GHSA-8c2c-jxwj-jqgf.json
+aliases:
+  - CVE-2022-41706
+summary: |
+  Browsershot does not validate URL protocols passed to Browsershot URL method
+  Browsershot version 3.57.2 allows an external attacker to remotely obtain arbitrary local files. This is possible because the application does not validate the URL protocol passed to the Browsershot::url method.
+impacted_packages:
+  - purl: pkg:composer/spatie/browsershot
+    affected_versions: vers:composer/<3.57.3
+    fixed_versions: vers:composer/3.57.3
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-8c2c-jxwj-jqgf/GHSA-8c2c-jxwj-jqgf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-20
+references:
+  - url: https://fluidattacks.com/advisories/eminem
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/browsershot
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/browsershot/commit/92cf16fc098211731f80d21687abeafbe2c457ad
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-41706
+    reference_type:
+    reference_id:

@@ -1,0 +1,40 @@
+advisory_id: GHSA-8w65-xjc5-9w79
+datasource_id: github_osv_importer_v2/GHSA-8w65-xjc5-9w79
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-8w65-xjc5-9w79/GHSA-8w65-xjc5-9w79.json
+aliases:
+  - CVE-2019-15607
+summary: |
+  Cross-Site Scripting in node-red
+  Versions of `node-red` prior to 0.20.8are vulnerable to Cross-Site Scripting (XSS). The package fails to sanitize the `name` field in new Flows, allowing attackers to execute arbitrary JavaScript in the victim's browser.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.18.6 or later.
+impacted_packages:
+  - purl: pkg:npm/node-red
+    affected_versions: vers:npm/<=0.20.7
+    fixed_versions: vers:npm/0.20.8
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-8w65-xjc5-9w79/GHSA-8w65-xjc5-9w79.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://hackerone.com/reports/681986
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-15607
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1456
+    reference_type:
+    reference_id:

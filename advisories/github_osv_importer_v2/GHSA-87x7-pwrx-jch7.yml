@@ -1,0 +1,50 @@
+advisory_id: GHSA-87x7-pwrx-jch7
+datasource_id: github_osv_importer_v2/GHSA-87x7-pwrx-jch7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-87x7-pwrx-jch7/GHSA-87x7-pwrx-jch7.json
+aliases:
+  - CVE-2021-29040
+summary: |
+  Liferay Portal and Liferay DXP Reveals Data via Overly Verbose Error Messages
+  The JSON web services in Liferay Portal 7.3.4 and earlier, and Liferay DXP 7.0 before fix pack 97, 7.1 before fix pack 20 and 7.2 before fix pack 10 may provide overly verbose error messages, which allows remote attackers to use the contents of error messages to help launch another, more focused attacks via crafted inputs.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/<7.3.5
+    fixed_versions: vers:maven/7.3.5
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<7.0.10.fp97
+    fixed_versions: vers:maven/7.0.10.fp97
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.1.0|<7.1.10.fp20
+    fixed_versions: vers:maven/7.1.10.fp20
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.2.0|<7.2.10.fp10
+    fixed_versions: vers:maven/7.2.10.fp10
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-87x7-pwrx-jch7/GHSA-87x7-pwrx-jch7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-209
+references:
+  - url: http://liferay.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29040
+    reference_type:
+    reference_id:
+  - url: https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743429
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20220828222656/https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743429
+    reference_type:
+    reference_id:

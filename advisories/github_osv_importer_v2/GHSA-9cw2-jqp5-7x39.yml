@@ -1,0 +1,39 @@
+advisory_id: GHSA-9cw2-jqp5-7x39
+datasource_id: github_osv_importer_v2/GHSA-9cw2-jqp5-7x39
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-9cw2-jqp5-7x39/GHSA-9cw2-jqp5-7x39.json
+aliases:
+  - CVE-2014-3743
+summary: |
+  Multiple Content Injection Vulnerabilities in marked
+  Versions 0.3.0 and earlier of `marked` are affected by two cross-site scripting vulnerabilities, even when `sanitize: true` is set.
+
+  The attack vectors for this vulnerability are GFM Codeblocks and JavaScript URLs.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.3.1 or later.
+impacted_packages:
+  - purl: pkg:npm/marked
+    affected_versions: vers:npm/<=0.3.0
+    fixed_versions: vers:npm/0.3.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-9cw2-jqp5-7x39/GHSA-9cw2-jqp5-7x39.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-1850
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/22
+    reference_type:
+    reference_id:

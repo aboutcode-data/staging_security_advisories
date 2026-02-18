@@ -1,0 +1,38 @@
+advisory_id: GHSA-9695-w6h2-jpv9
+datasource_id: github_osv_importer_v2/GHSA-9695-w6h2-jpv9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9695-w6h2-jpv9/GHSA-9695-w6h2-jpv9.json
+aliases:
+  - CVE-2020-10686
+summary: |
+  Keycloak users may be able to remove MFA from other users' devices
+  A community-only flaw was found where a malicious user can register himself and then uses the "remove devices" form to post different credential ids with the hope of removing MFA devices for other users.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<=9.0.1
+    fixed_versions: vers:maven/9.0.2
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9695-w6h2-jpv9/GHSA-9695-w6h2-jpv9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10686
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/5ddd605ee96b8551c7eb00b609a0b97939925b77
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-10686
+    reference_type:
+    reference_id:

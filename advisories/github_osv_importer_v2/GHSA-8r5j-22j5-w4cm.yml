@@ -1,0 +1,35 @@
+advisory_id: GHSA-8r5j-22j5-w4cm
+datasource_id: github_osv_importer_v2/GHSA-8r5j-22j5-w4cm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-8r5j-22j5-w4cm/GHSA-8r5j-22j5-w4cm.json
+aliases:
+  - CVE-2021-26642
+summary: |
+  XpressEngine vulnerable to Unrestricted Upload of File with Dangerous Type
+  When uploading an image file to a bulletin board developed with XpressEngine, a vulnerability in which an arbitrary file can be uploaded due to insufficient verification of the file. A remote attacker can use this vulnerability to execute arbitrary code on the server where the bulletin board is running.
+impacted_packages:
+  - purl: pkg:composer/xpressengine/xpressengine
+    affected_versions: vers:composer/<3.0.15
+    fixed_versions: vers:composer/3.0.15
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-8r5j-22j5-w4cm/GHSA-8r5j-22j5-w4cm.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://boho.or.kr/krcert/secNoticeView.do?bulletin_writing_sequence=67125
+    reference_type:
+    reference_id:
+  - url: https://github.com/xpressengine/xpressengine/issues/1366
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-26642
+    reference_type:
+    reference_id:

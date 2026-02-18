@@ -1,0 +1,38 @@
+advisory_id: GHSA-8v53-23mx-hcf9
+datasource_id: github_osv_importer_v2/GHSA-8v53-23mx-hcf9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-8v53-23mx-hcf9/GHSA-8v53-23mx-hcf9.json
+aliases:
+  - CVE-2023-0509
+summary: |
+  Improper Certificate Validation in pyload-ng
+  Improper Certificate Validation in GitHub repository pyload/pyload prior to 0.5.0b3.dev44.
+impacted_packages:
+  - purl: pkg:pypi/pyload-ng
+    affected_versions: vers:pypi/<0.5.0b3.dev44
+    fixed_versions: vers:pypi/0.5.0b3.dev44
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-8v53-23mx-hcf9/GHSA-8v53-23mx-hcf9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://github.com/pyload/pyload
+    reference_type:
+    reference_id:
+  - url: https://github.com/pyload/pyload/commit/a9098bdf7406e6faf9df3da6ff2d584e90c13bbb
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/a370e0c2-a41c-4871-ad91-bc6f31a8e839
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0509
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: GHSA-8wp3-cp9v-44fm
+datasource_id: github_osv_importer_v2/GHSA-8wp3-cp9v-44fm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-8wp3-cp9v-44fm/GHSA-8wp3-cp9v-44fm.json
+aliases: []
+summary: |
+  Cross-Site Scripting in marked
+  Versions 0.3.7 and earlier of marked unescape only lowercase while owsers support both lowercase and uppercase x in hexadecimal form of HTML character entity
+impacted_packages:
+  - purl: pkg:npm/marked
+    affected_versions: vers:npm/<0.3.9
+    fixed_versions: vers:npm/0.3.9
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/markedjs/marked/commit/6d1901ff71abb83aa32ca9a5ce47471382ea42a9
+    reference_type:
+    reference_id:
+  - url: https://github.com/markedjs/marked/issues/925
+    reference_type:
+    reference_id:

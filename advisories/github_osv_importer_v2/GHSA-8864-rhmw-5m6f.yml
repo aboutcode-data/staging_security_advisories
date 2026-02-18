@@ -1,0 +1,46 @@
+advisory_id: GHSA-8864-rhmw-5m6f
+datasource_id: github_osv_importer_v2/GHSA-8864-rhmw-5m6f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-8864-rhmw-5m6f/GHSA-8864-rhmw-5m6f.json
+aliases:
+  - CVE-2019-15479
+summary: |
+  Status Board vulnerable to Cross-Site Scripting before v1.1.82
+  Versions of `status-board` prior to 1.1.82 are vulnerable to Cross-Site Scripting. The `renderDashboard()` function concatenates the `safeDashboard` variable to the printed error message with insufficient sanitization. If this variable is controlled by user input it allows attackers to execute arbitrary JavaScript in a victim's browser.
+
+
+  ## Recommendation
+
+  Upgrade to version 1.1.82 to receive a patch.
+impacted_packages:
+  - purl: pkg:npm/status-board
+    affected_versions: vers:npm/<1.1.82
+    fixed_versions: vers:npm/1.1.82
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-8864-rhmw-5m6f/GHSA-8864-rhmw-5m6f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/jameswlane/status-board
+    reference_type:
+    reference_id:
+  - url: https://github.com/jameswlane/status-board/pull/948
+    reference_type:
+    reference_id:
+  - url: https://github.com/status-board/status-board/commit/19106617865406aa6f8edec036dcb1db427d5f71
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-15479
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-STATUSBOARD-460295
+    reference_type:
+    reference_id:

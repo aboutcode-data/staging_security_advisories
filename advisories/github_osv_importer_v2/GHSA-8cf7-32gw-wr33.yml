@@ -1,0 +1,58 @@
+advisory_id: GHSA-8cf7-32gw-wr33
+datasource_id: github_osv_importer_v2/GHSA-8cf7-32gw-wr33
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-8cf7-32gw-wr33/GHSA-8cf7-32gw-wr33.json
+aliases:
+  - CVE-2022-23539
+summary: "jsonwebtoken unrestricted key type could lead to legacy keys usage\n# Overview\n\n\
+  Versions `<=8.5.1` of `jsonwebtoken` library could be misconfigured so that legacy, insecure\
+  \ key types are used for signature verification. For example, DSA keys could be used with\
+  \ the RS256 algorithm. \n\n# Am I affected?\n\nYou are affected if you are using an algorithm\
+  \ and a key type other than the combinations mentioned below\n\n| Key type |  algorithm  \
+  \                                  |\n|----------|------------------------------------------|\n\
+  | ec           | ES256, ES384, ES512                      |\n| rsa          | RS256, RS384,\
+  \ RS512, PS256, PS384, PS512 |\n| rsa-pss  | PS256, PS384, PS512                      |\n\n\
+  And for Elliptic Curve algorithms:\n\n| `alg` | Curve      |\n|-------|------------|\n| ES256\
+  \ | prime256v1 |\n| ES384 | secp384r1  |\n| ES512 | secp521r1  |\n\n# How do I fix it?\n\n\
+  Update to version 9.0.0. This version validates for asymmetric key type and algorithm combinations.\
+  \ Please refer to the above mentioned algorithm / key type combinations for the valid secure\
+  \ configuration. After updating to version 9.0.0, If you still intend to continue with signing\
+  \ or verifying tokens using invalid key type/algorithm value combinations, you’ll need to\
+  \ set the `allowInvalidAsymmetricKeyTypes` option to `true` in the `sign()` and/or `verify()`\
+  \ functions.\n\n# Will the fix impact my users?\n\nThere will be no impact, if you update\
+  \ to version 9.0.0 and you already use a valid secure combination of key type and algorithm.\
+  \ Otherwise,  use the  `allowInvalidAsymmetricKeyTypes` option  to `true` in the `sign()`\
+  \ and `verify()` functions to continue usage of invalid key type/algorithm combination in\
+  \ 9.0.0 for legacy compatibility."
+impacted_packages:
+  - purl: pkg:npm/jsonwebtoken
+    affected_versions: vers:npm/<=8.5.1
+    fixed_versions: vers:npm/9.0.0
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-8cf7-32gw-wr33/GHSA-8cf7-32gw-wr33.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-327
+references:
+  - url: https://github.com/auth0/node-jsonwebtoken
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-8cf7-32gw-wr33
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23539
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240621-0007
+    reference_type:
+    reference_id:

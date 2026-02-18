@@ -1,0 +1,39 @@
+advisory_id: GHSA-98pq-pmw9-4gpm
+datasource_id: github_osv_importer_v2/GHSA-98pq-pmw9-4gpm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-98pq-pmw9-4gpm/GHSA-98pq-pmw9-4gpm.json
+aliases:
+  - CVE-2016-10550
+summary: |
+  SQL Injection in sequelize
+  Affected versions of `sequelize` are vulnerable to SQL Injection in locations where user input is passed into the `limit` or `order` parameters of `sequelize` query calls, such as `findOne` or `findAll`.
+
+
+
+  ## Recommendation
+
+  Update to version 3.17.0 or later.
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<3.17.0
+    fixed_versions: vers:npm/3.17.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/advisories/GHSA-98pq-pmw9-4gpm
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/pull/5167/commits/f282d85e60e3df5e57ecdb82adccb4eaef404f03
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10550
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/112
+    reference_type:
+    reference_id:

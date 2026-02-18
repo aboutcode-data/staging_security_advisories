@@ -1,0 +1,38 @@
+advisory_id: GHSA-893r-jr58-3hxr
+datasource_id: github_osv_importer_v2/GHSA-893r-jr58-3hxr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-893r-jr58-3hxr/GHSA-893r-jr58-3hxr.json
+aliases:
+  - CVE-2025-43829
+summary: |
+  Liferay Portal Commerce Shop is vulnerable to Stored XSS through SVG file
+  There is a Stored Cross-Site Scripting (XSS) vulnerability in diagram type products in Commerce in Liferay Portal 7.4.3.18 through 7.4.3.111, and Liferay DXP 2023.Q4.0 through 2023.Q4.5, 2023.Q3.1 through 2023.Q3.8, and 7.4 update 18 through update 92. This vulnerability allows remote attackers to inject arbitrary web script or HTML via a crafted payload injected into a SVG file.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.commerce/com.liferay.commerce.shop.by.diagram.web
+    affected_versions: vers:maven/>=1.0.41|<1.0.83
+    fixed_versions: vers:maven/1.0.83
+severities:
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-893r-jr58-3hxr/GHSA-893r-jr58-3hxr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/288ba1f41f8c3374c80d7af27346eeebb8c780d0
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43829
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43829
+    reference_type:
+    reference_id:

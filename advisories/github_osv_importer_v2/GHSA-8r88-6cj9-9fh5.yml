@@ -1,0 +1,55 @@
+advisory_id: GHSA-8r88-6cj9-9fh5
+datasource_id: github_osv_importer_v2/GHSA-8r88-6cj9-9fh5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-8r88-6cj9-9fh5/GHSA-8r88-6cj9-9fh5.json
+aliases:
+  - CVE-2025-48370
+summary: |
+  auth-js Vulnerable to Insecure Path Routing from Malformed User Input
+  ### Impact
+  The library functions `getUserById`, `deleteUser`, `updateUserById`, `listFactors` and `deleteFactor` did not require the user supplied values to be valid UUIDs. This could lead to a URL path traversal, resulting in the wrong API function being called.
+
+  Implementations that follow security best practice and validate user controlled inputs, such as the `userId` are not affected by this.
+
+  ### Patches
+  Strict value checks have been added to all affected functions. These functions now require that the `userId` and `factorId` parameters MUST be valid UUID (v4).
+
+  **Patched version:** >= 2.69.1
+
+  ### Workarounds
+  Implementations that follow security best practice and validate user controlled inputs, such as the `userId` are not affected by this. It is recommended that users of the auth-js library always follow security best practice and validate all inputs, before passing these to other functions or libraries.
+
+  ### References
+  https://github.com/supabase/auth-js/pull/1063
+impacted_packages:
+  - purl: pkg:npm/%40supabase/auth-js
+    affected_versions: vers:npm/<2.69.1
+    fixed_versions: vers:npm/2.69.1
+severities:
+  - score: '1.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-8r88-6cj9-9fh5/GHSA-8r88-6cj9-9fh5.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/supabase/auth-js
+    reference_type:
+    reference_id:
+  - url: https://github.com/supabase/auth-js/commit/1bcb76e479e51cd9bca2d7732d0bf3199e07a693
+    reference_type:
+    reference_id:
+  - url: https://github.com/supabase/auth-js/pull/1063
+    reference_type:
+    reference_id:
+  - url: https://github.com/supabase/auth-js/security/advisories/GHSA-8r88-6cj9-9fh5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48370
+    reference_type:
+    reference_id:

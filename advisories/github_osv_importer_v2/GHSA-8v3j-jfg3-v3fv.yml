@@ -1,0 +1,44 @@
+advisory_id: GHSA-8v3j-jfg3-v3fv
+datasource_id: github_osv_importer_v2/GHSA-8v3j-jfg3-v3fv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-8v3j-jfg3-v3fv/GHSA-8v3j-jfg3-v3fv.json
+aliases:
+  - CVE-2021-44908
+summary: |
+  Prototype Pollution in Sails.js
+  Sails.js <= 1.5.2 is vulnerable to Prototype Pollution via controller/load-action-modules.js, function loadActionModules(). A [patch](https://github.com/balderdashy/sails/commit/7c5379a656bb305c958df1dcc2b51a9668830358) is available in the `master` branch of Sails.js's GItHub repository.
+impacted_packages:
+  - purl: pkg:npm/sails
+    affected_versions: vers:npm/<=1.5.2
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-8v3j-jfg3-v3fv/GHSA-8v3j-jfg3-v3fv.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/balderdashy/sails
+    reference_type:
+    reference_id:
+  - url: https://github.com/balderdashy/sails/blob/master/lib/app/private/controller/load-action-modules.js#L32
+    reference_type:
+    reference_id:
+  - url: https://github.com/balderdashy/sails/commit/7c5379a656bb305c958df1dcc2b51a9668830358
+    reference_type:
+    reference_id:
+  - url: https://github.com/balderdashy/sails/issues/7209
+    reference_type:
+    reference_id:
+  - url: https://github.com/Marynk/JavaScript-vulnerability-detection/blob/main/sailsJS%20PoC.zip
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-44908
+    reference_type:
+    reference_id:

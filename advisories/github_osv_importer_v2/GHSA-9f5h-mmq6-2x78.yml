@@ -1,0 +1,72 @@
+advisory_id: GHSA-9f5h-mmq6-2x78
+datasource_id: github_osv_importer_v2/GHSA-9f5h-mmq6-2x78
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-9f5h-mmq6-2x78/GHSA-9f5h-mmq6-2x78.json
+aliases:
+  - CVE-2026-25496
+summary: |
+  Craft CMS Vulnerable to Stored XSS in Number Prefix & Suffix Fields
+  ## Summary
+
+  A stored XSS vulnerability exists in the Number field type settings. The Prefix and Suffix fields are rendered using the `|md|raw` Twig filter without proper escaping, allowing script execution when the Number field is displayed on users' profiles.
+
+  ## Proof of Concept
+
+  ### Required Permissions
+
+  - Administrator access
+  - `allowAdminChanges` is enabled in production, which is against our [security recommendations](https://craftcms.com/knowledge-base/securing-craft).
+
+  ### Steps to Reproduce
+  1. Log in with an admin account
+  2. Navigate to **Settings** → **Fields** → **New field**
+  3. Choose **Number** as the field type
+  4. Set the **Prefix/Suffix Text** field to: <img width="611" height="908" alt="image" src="https://github.com/user-attachments/assets/63766ca4-4fa9-490b-8bea-37364137527d" />
+  ```html
+  <img src=x onerror="alert('Number Prefix/Suffix XSS')" hidden>
+  ```
+  5. Save the field
+  6. Add this field to any element (e.g., User Profile fields via **Settings** → **Users** → **User Fields**)
+  7. Navigate to your account (`/admin/myaccount`) or any user profile (`/admin/users/{id}`)
+  8. XSS executes when viewing the form <img width="1246" height="677" alt="image-1" src="https://github.com/user-attachments/assets/dafeb2b7-905f-4a4b-b3d6-1c16a905498f" />
+
+  ## Mitigation
+  Sanitize prefix/suffix before rendering or use `|e` filter instead of `|raw`.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=5.8.21
+    fixed_versions: vers:composer/5.8.22
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=4.16.17
+    fixed_versions: vers:composer/4.16.18
+severities:
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-9f5h-mmq6-2x78/GHSA-9f5h-mmq6-2x78.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/cb5fb0e979e72f315c9178fc031883d49527f513
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/releases/tag/4.16.18
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/releases/tag/5.8.22
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/security/advisories/GHSA-9f5h-mmq6-2x78
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25496
+    reference_type:
+    reference_id:

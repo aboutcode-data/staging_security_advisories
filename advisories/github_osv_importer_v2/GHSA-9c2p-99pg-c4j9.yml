@@ -1,0 +1,35 @@
+advisory_id: GHSA-9c2p-99pg-c4j9
+datasource_id: github_osv_importer_v2/GHSA-9c2p-99pg-c4j9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9c2p-99pg-c4j9/GHSA-9c2p-99pg-c4j9.json
+aliases:
+  - CVE-2017-1000102
+summary: |
+  Persistent XSS vulnerability in Static Analysis Utilities
+  The Details view of some Static Analysis Utilities based plugins, was vulnerable to a persisted cross-site scripting vulnerability: Malicious users able to influence the input to these plugins, for example the console output which is parsed to extract build warnings (Warnings Plugin), could insert arbitrary HTML into this view.
+impacted_packages:
+  - purl: pkg:maven/org.jvnet.hudson.plugins/analysis-core
+    affected_versions: vers:maven/<=1.91
+    fixed_versions: vers:maven/1.92
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9c2p-99pg-c4j9/GHSA-9c2p-99pg-c4j9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://jenkins.io/security/advisory/2017-08-07
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000102
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/101061
+    reference_type:
+    reference_id:

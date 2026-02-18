@@ -1,0 +1,41 @@
+advisory_id: GHSA-9m82-f3wx-p625
+datasource_id: github_osv_importer_v2/GHSA-9m82-f3wx-p625
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9m82-f3wx-p625/GHSA-9m82-f3wx-p625.json
+aliases:
+  - CVE-2018-18478
+summary: |
+  LibreNMS XSS Vulnerability
+  Persistent Cross-Site Scripting (XSS) issues in LibreNMS before 1.44 allow remote attackers to inject arbitrary web script or HTML via the dashboard_name parameter in the /ajax_form.php resource, related to html/includes/forms/add-dashboard.inc.php, html/includes/forms/delete-dashboard.inc.php, and html/includes/forms/edit-dashboard.inc.php.
+impacted_packages:
+  - purl: pkg:composer/librenms/librenms
+    affected_versions: vers:composer/<1.44.0
+    fixed_versions: vers:composer/1.44.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-9m82-f3wx-p625/GHSA-9m82-f3wx-p625.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/librenms/librenms/issues/9170
+    reference_type:
+    reference_id:
+  - url: https://github.com/librenms/librenms/pull/9171
+    reference_type:
+    reference_id:
+  - url: https://github.com/librenms/librenms/releases/tag/1.44
+    reference_type:
+    reference_id:
+  - url: https://hackpuntes.com/cve-2018-18478-libre-nms-1-43-cross-site-scripting-persistente
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-18478
+    reference_type:
+    reference_id:

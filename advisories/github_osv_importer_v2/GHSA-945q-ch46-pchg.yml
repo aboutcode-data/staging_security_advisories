@@ -1,0 +1,38 @@
+advisory_id: GHSA-945q-ch46-pchg
+datasource_id: github_osv_importer_v2/GHSA-945q-ch46-pchg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-945q-ch46-pchg/GHSA-945q-ch46-pchg.json
+aliases:
+  - CVE-2021-22095
+summary: |
+  Deserialization of Untrusted Data in Spring AMQP
+  In Spring AMQP versions 2.2.0 - 2.2.19 and 2.3.0 - 2.3.11, the Spring AMQP Message object, in its toString() method, will create a new String object from the message body, regardless of its size. This can cause an OOM Error with a large message
+impacted_packages:
+  - purl: pkg:maven/org.springframework.amqp/spring-amqp
+    affected_versions: vers:maven/<=2.2.19
+    fixed_versions: vers:maven/2.2.20
+  - purl: pkg:maven/org.springframework.amqp/spring-amqp
+    affected_versions: vers:maven/<=2.3.10
+    fixed_versions: vers:maven/2.3.11
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-945q-ch46-pchg/GHSA-945q-ch46-pchg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/spring-projects/spring-amqp/commit/bde294d62a8b7f3f1d5a9f50f862c6f0782efb9d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-22095
+    reference_type:
+    reference_id:
+  - url: https://tanzu.vmware.com/security/cve-2021-22097
+    reference_type:
+    reference_id:

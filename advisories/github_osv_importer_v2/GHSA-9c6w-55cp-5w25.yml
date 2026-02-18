@@ -1,0 +1,82 @@
+advisory_id: GHSA-9c6w-55cp-5w25
+datasource_id: github_osv_importer_v2/GHSA-9c6w-55cp-5w25
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-9c6w-55cp-5w25/GHSA-9c6w-55cp-5w25.json
+aliases:
+  - CVE-2022-36107
+summary: |
+  TYPO3 CMS Stored Cross-Site Scripting via FileDumpController
+  > ### Meta
+  > * CVSS: `CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N/E:F/RL:O/RC:C` (5.0)
+
+  ### Problem
+  It has been discovered that the `FileDumpController` (backend and frontend context) is vulnerable to cross-site scripting when malicious files are displayed using this component. A valid backend user account is needed to exploit this vulnerability.
+
+  ### Solution
+  Update to TYPO3 version 7.6.58 ELTS, 8.7.48 ELTS, 9.5.37 ELTS, 10.4.32 or 11.5.16 that fix the problem described above.
+
+  ### Credits
+  Thanks to Vautia who reported this issue and to TYPO3 core & security team member Oliver Hader who fixed the issue.
+
+  ### References
+  * [TYPO3-CORE-SA-2022-009](https://typo3.org/security/advisory/typo3-core-sa-2022-009)
+  * [Vulnerability Report on huntr.dev](https://huntr.dev/bounties/51e9b709-193c-41fd-bd4a-833aaca0bd4e/) (embargoed +30 days)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=7.0.0|<7.6.58
+    fixed_versions: vers:composer/7.6.58
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.0.0|<8.7.48
+    fixed_versions: vers:composer/8.7.48
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=9.0.0|<9.5.37
+    fixed_versions: vers:composer/9.5.37
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.0.0|<10.4.32
+    fixed_versions: vers:composer/10.4.32
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=11.0.0|<11.5.16
+    fixed_versions: vers:composer/11.5.16
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.0.0|<10.4.32
+    fixed_versions: vers:composer/10.4.32
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=11.0.0|<11.5.16
+    fixed_versions: vers:composer/11.5.16
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-9c6w-55cp-5w25/GHSA-9c6w-55cp-5w25.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2022-36107.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2022-36107.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/546208428c861a09d62b86cde141eb19a81fae66
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/bd58d2ff2eeef89e63ef754a2389597d22622a39
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-9c6w-55cp-5w25
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-36107
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2022-009
+    reference_type:
+    reference_id:

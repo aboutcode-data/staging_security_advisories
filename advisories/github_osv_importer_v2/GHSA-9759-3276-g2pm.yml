@@ -1,0 +1,48 @@
+advisory_id: GHSA-9759-3276-g2pm
+datasource_id: github_osv_importer_v2/GHSA-9759-3276-g2pm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-9759-3276-g2pm/GHSA-9759-3276-g2pm.json
+aliases:
+  - CVE-2023-50709
+summary: |
+  Cube API denial of service attack
+  ### Impact
+  It is possible to make the entire Cube API unavailable by submitting a specially crafted request to a Cube API endpoint.
+
+  ### Patches
+  The issue has been patched in the `v0.34.34` and it's recommended that all users exposing Cube APIs to the public internet upgrade to the latest version to prevent service disruption.
+
+  ### Workarounds
+  There are currently no workaround for older versions, and the recommendation is to upgrade.
+
+  ### References
+  The issue was reported by [y0d3n](https://github.com/y0d3n) in our Community Slack and has been promptly patched in the recent update.
+impacted_packages:
+  - purl: pkg:npm/%40cubejs-backend/api-gateway
+    affected_versions: vers:npm/<0.34.34
+    fixed_versions: vers:npm/0.34.34
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-9759-3276-g2pm/GHSA-9759-3276-g2pm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/cube-js/cube
+    reference_type:
+    reference_id:
+  - url: https://github.com/cube-js/cube/releases/tag/v0.34.34
+    reference_type:
+    reference_id:
+  - url: https://github.com/cube-js/cube/security/advisories/GHSA-9759-3276-g2pm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-50709
+    reference_type:
+    reference_id:

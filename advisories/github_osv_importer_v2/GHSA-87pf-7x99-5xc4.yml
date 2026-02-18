@@ -1,0 +1,52 @@
+advisory_id: GHSA-87pf-7x99-5xc4
+datasource_id: github_osv_importer_v2/GHSA-87pf-7x99-5xc4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-87pf-7x99-5xc4/GHSA-87pf-7x99-5xc4.json
+aliases: []
+summary: |
+  Silverstripe Hostname, IP and Protocol Spoofing through HTTP Headers
+  In it's default configuration, SilverStripe trusts all originating IPs to include HTTP headers for Hostname, IP and Protocol. This enables reverse proxies to forward requests while still retaining the original request information. Trusted IPs can be limited via the SS_TRUSTED_PROXY_IPS constant. Even with this restriction in place, SilverStripe trusts a variety of HTTP headers due to different proxy notations (e.g. X-Forwarded-For vs. Client-IP). Unless a proxy explicitly unsets invalid HTTP headers from connecting clients, this can lead to spoofing requests being passed through trusted proxies.
+
+  The impact of spoofed headers can include Director::forceSSL() not being enforced, SS_HTTPRequest->getIP() returning a wrong IP (disabling any IP restrictions), and spoofed hostnames circumventing any hostname-specific restrictions enforced in SilverStripe Controllers.
+
+  Regardless on running a reverse proxy in your hosting infrastructure, please follow the instructions on Secure Coding: Request hostname forgery in order to opt-in to these protections. If your website is not behind a reverse proxy, you might already be protected if using Apache with mod_env enabled, and you have the following line in your .htaccess file: SetEnv BlockUntrustedIPs true.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<=3.1.16
+    fixed_versions: vers:composer/3.1.17
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<=3.2.1
+    fixed_versions: vers:composer/3.2.2
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.3.0-beta1|<3.3.0
+    fixed_versions: vers:composer/3.3.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-87pf-7x99-5xc4/GHSA-87pf-7x99-5xc4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/SS-2016-003-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/37059eb6b3546f304e9c031abca0f096ddb175c6
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/893e49703de4aa1855b5364919cbb0826f754fbf
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/faa94d51d570788dcebc2f2ef6e9de4d179ce1e4
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2016-003
+    reference_type:
+    reference_id:

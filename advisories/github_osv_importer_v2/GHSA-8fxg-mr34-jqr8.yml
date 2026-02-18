@@ -1,0 +1,60 @@
+advisory_id: GHSA-8fxg-mr34-jqr8
+datasource_id: github_osv_importer_v2/GHSA-8fxg-mr34-jqr8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-8fxg-mr34-jqr8/GHSA-8fxg-mr34-jqr8.json
+aliases:
+  - CVE-2023-50718
+summary: |
+  NocoDB SQL Injection vulnerability
+  ### Summary
+  ---
+  An authenticated attacker with create access could conduct a SQL Injection attack on MySQL DB using unescaped table_name.
+
+  ### Details
+  ---
+  ### SQL Injection vulnerability occurs in **VitessClient.ts**.
+  ```javascript
+  async columnList(args: any = {}) {
+      const func = this.columnList.name;
+      const result = new Result();
+      log.api(`${func}:args:`, args);
+
+      try {
+        args.databaseName = this.connectionConfig.connection.database;
+
+        const response = await this.sqlClient.raw(
+          `select *, table_name as tn from information_schema.columns where table_name = '${args.tn}' ORDER by ordinal_position`,
+        );
+  ```
+  The variable **${args.tn}** refers to the table name entered by the user.
+  A malicious attacker can escape the existing query by including a special character (') in the table name and insert and execute a new arbitrary SQL query.
+
+  ### Impact
+  ---
+  This vulnerability may result in leakage of sensitive data in the database.
+impacted_packages:
+  - purl: pkg:npm/nocodb
+    affected_versions: vers:npm/<=0.202.9
+    fixed_versions: vers:npm/0.202.10
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-8fxg-mr34-jqr8/GHSA-8fxg-mr34-jqr8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/nocodb/nocodb
+    reference_type:
+    reference_id:
+  - url: https://github.com/nocodb/nocodb/security/advisories/GHSA-8fxg-mr34-jqr8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-50718
+    reference_type:
+    reference_id:

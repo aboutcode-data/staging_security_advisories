@@ -1,0 +1,75 @@
+advisory_id: GHSA-8mq9-fqv8-59wf
+datasource_id: github_osv_importer_v2/GHSA-8mq9-fqv8-59wf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-8mq9-fqv8-59wf/GHSA-8mq9-fqv8-59wf.json
+aliases:
+  - CVE-2021-32667
+summary: |
+  Cross-Site Scripting in Page Preview
+  > ### Meta
+  > * CVSS: `CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N/E:F/RL:O/RC` (5.0)
+
+  ### Problem
+  Failing to properly encode _Page TSconfig_ settings, corresponding page preview module (_Web>View_) is vulnerable to persistent cross-site scripting. A valid backend user account is needed to exploit this vulnerability.
+
+  ### Solution
+  Update to TYPO3 versions 9.5.28, 10.4.18, 11.3.1 that fix the problem described.
+
+  ### Credits
+  Thanks to TYPO3 core merger Oliver Bartsch who reported and fixed the issue.
+
+  ### References
+  * [TYPO3-CORE-SA-2021-009](https://typo3.org/security/advisory/typo3-core-sa-2021-009)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=9.0.0|<9.5.28
+    fixed_versions: vers:composer/9.5.28
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.0.0|<10.4.18
+    fixed_versions: vers:composer/10.4.18
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=11.0.0|<11.3.1
+    fixed_versions: vers:composer/11.3.1
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.0.0|<10.4.18
+    fixed_versions: vers:composer/10.4.18
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=11.0.0|<11.3.1
+    fixed_versions: vers:composer/11.3.1
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=9.0.0|<9.5.28
+    fixed_versions: vers:composer/9.5.28
+severities:
+  - score: '6.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-8mq9-fqv8-59wf/GHSA-8mq9-fqv8-59wf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2021-32667.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2021-32667.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/TYPO3.CMS/security/advisories/GHSA-8mq9-fqv8-59wf
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-8mq9-fqv8-59wf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32667
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2021-009
+    reference_type:
+    reference_id:

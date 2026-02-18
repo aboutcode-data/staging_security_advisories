@@ -1,0 +1,69 @@
+advisory_id: GHSA-8gv3-3j7f-wg94
+datasource_id: github_osv_importer_v2/GHSA-8gv3-3j7f-wg94
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-8gv3-3j7f-wg94/GHSA-8gv3-3j7f-wg94.json
+aliases:
+  - CVE-2020-15227
+summary: "Potential Remote Code Execution vulnerability\nPackages nette/application versions\
+  \ prior to 2.2.10, 2.3.14, 2.4.16, 3.0.6 and nette/nette versions prior to 2.0.19 and 2.1.13\
+  \ are vulnerable to an code injection attack by passing specially formed parameters to URL\
+  \ that may possibly leading to RCE. \n\nReported by Cyku Hong from DEVCORE (https://devco.re)\n\
+  \n### Impact\nCode injection, possible remote code execution.\n\n### Patches\nFixed in nette/application\
+  \ 2.2.10, 2.3.14, 2.4.16, 3.0.6 and nette/nette 2.0.19 and 2.1.13"
+impacted_packages:
+  - purl: pkg:composer/nette/application
+    affected_versions: vers:composer/>=2.2.0|<2.2.10
+    fixed_versions: vers:composer/2.2.10
+  - purl: pkg:composer/nette/application
+    affected_versions: vers:composer/>=2.3.0|<2.3.14
+    fixed_versions: vers:composer/2.3.14
+  - purl: pkg:composer/nette/application
+    affected_versions: vers:composer/>=2.4.0|<2.4.16
+    fixed_versions: vers:composer/2.4.16
+  - purl: pkg:composer/nette/application
+    affected_versions: vers:composer/>=3.0.0|<3.0.6
+    fixed_versions: vers:composer/3.0.6
+  - purl: pkg:composer/nette/application
+    affected_versions: vers:composer/>=2.0.0|<2.0.19
+    fixed_versions: vers:composer/2.0.19
+  - purl: pkg:composer/nette/application
+    affected_versions: vers:composer/>=2.1.0|<2.1.13
+    fixed_versions: vers:composer/2.1.13
+severities:
+  - score: '8.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-8gv3-3j7f-wg94/GHSA-8gv3-3j7f-wg94.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-74
+references:
+  - url: https://blog.nette.org/en/cve-2020-15227-potential-remote-code-execution-vulnerability
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/nette/application/CVE-2020-15227.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/nette/application
+    reference_type:
+    reference_id:
+  - url: https://github.com/nette/application/security/advisories/GHSA-8gv3-3j7f-wg94
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/04/msg00003.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15227
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/nette/application
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/nette/nette
+    reference_type:
+    reference_id:

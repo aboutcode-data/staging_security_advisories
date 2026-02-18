@@ -1,0 +1,35 @@
+advisory_id: GHSA-97cc-825c-399g
+datasource_id: github_osv_importer_v2/GHSA-97cc-825c-399g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-97cc-825c-399g/GHSA-97cc-825c-399g.json
+aliases:
+  - CVE-2021-4050
+summary: |
+  Cross site scripting in remdex/livehelperchat
+  livehelperchat is vulnerable to Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+impacted_packages:
+  - purl: pkg:composer/remdex/livehelperchat
+    affected_versions: vers:composer/<=2.0.0
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-97cc-825c-399g/GHSA-97cc-825c-399g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/livehelperchat/livehelperchat/commit/0ce1dd2a13509747c240c8484228a5df8d6e03ec
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/27eb39d7-7636-4c4b-922c-a2f8fbe1ba05
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-4050
+    reference_type:
+    reference_id:

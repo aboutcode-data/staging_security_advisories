@@ -1,0 +1,35 @@
+advisory_id: GHSA-9gh8-877r-g477
+datasource_id: github_osv_importer_v2/GHSA-9gh8-877r-g477
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-9gh8-877r-g477/GHSA-9gh8-877r-g477.json
+aliases:
+  - CVE-2024-22533
+summary: |
+  Beetl Server-Side Template Injection vulnerability
+  Before Beetl v3.15.13.RELEASE, the rendering template has a server-side template injection (SSTI) vulnerability. When the incoming template is controllable, it will be filtered by the DefaultNativeSecurityManager blacklist. Because blacklist filtering is not strict, the blacklist can be bypassed, leading to arbitrary code execution.
+impacted_packages:
+  - purl: pkg:maven/com.ibeetl/beetl-core
+    affected_versions: vers:maven/<3.15.13.RELEASE
+    fixed_versions: vers:maven/3.15.13.RELEASE
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-9gh8-877r-g477/GHSA-9gh8-877r-g477.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://gitee.com/xiandafu/beetl
+    reference_type:
+    reference_id:
+  - url: https://gitee.com/xiandafu/beetl/issues/I8RU01
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-22533
+    reference_type:
+    reference_id:

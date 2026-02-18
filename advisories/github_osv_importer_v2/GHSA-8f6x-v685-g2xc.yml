@@ -1,0 +1,55 @@
+advisory_id: GHSA-8f6x-v685-g2xc
+datasource_id: github_osv_importer_v2/GHSA-8f6x-v685-g2xc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-8f6x-v685-g2xc/GHSA-8f6x-v685-g2xc.json
+aliases:
+  - CVE-2023-34149
+summary: |
+  Apache Struts vulnerable to memory exhaustion
+  Denial of service via out of memory (OOM) owing to not properly checking of list bounds. When a Multipart request has non-file normal form fields, Struts used to bring them into memory as Strings without checking their sizes. This could lead to OOM if developer has set struts.multipart.maxSize to a value equal or greater than the available memory.
+
+  Upgrade to Struts 2.5.31 or 6.1.2.1 or greater.
+impacted_packages:
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/<2.5.31
+    fixed_versions: vers:maven/2.5.31
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/>=6.0.0|<6.1.2.1
+    fixed_versions: vers:maven/6.1.2.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-8f6x-v685-g2xc/GHSA-8f6x-v685-g2xc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://cwiki.apache.org/confluence/display/WW/S2-063
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts/commit/2d6f1bc0a6f5ac575a56784ac6461816b67c4f21
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts/releases/tag/STRUTS_2_5_31
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts/releases/tag/STRUTS_6_1_2_1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-34149
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20230706-0005
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/06/14/2
+    reference_type:
+    reference_id:

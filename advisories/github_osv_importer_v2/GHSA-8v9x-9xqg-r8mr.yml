@@ -1,0 +1,43 @@
+advisory_id: GHSA-8v9x-9xqg-r8mr
+datasource_id: github_osv_importer_v2/GHSA-8v9x-9xqg-r8mr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-8v9x-9xqg-r8mr/GHSA-8v9x-9xqg-r8mr.json
+aliases:
+  - CVE-2020-8268
+summary: |
+  Prototype pollution in json8-merge-patch
+  Prototype pollution vulnerability in json8-merge-patch npm package < 1.0.3 may allow attackers to inject or modify methods and properties of the global object constructor.
+impacted_packages:
+  - purl: pkg:npm/json8-merge-patch
+    affected_versions: vers:npm/<1.0.3
+    fixed_versions: vers:npm/1.0.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-8v9x-9xqg-r8mr/GHSA-8v9x-9xqg-r8mr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-471
+  - CWE-1321
+  - CWE-20
+references:
+  - url: https://github.com/sonnyp/JSON8/commit/2e890261b66cbc54ae01d0c79c71b0fd18379e7e#diff-faa7bef039022bc7ca1c613331b2373950ddd3d65ebf25d1699fbdf89773a387
+    reference_type:
+    reference_id:
+  - url: https://github.com/sonnyp/JSON8/issues/113
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/980649
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8268
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/json8-merge-patch
+    reference_type:
+    reference_id:
