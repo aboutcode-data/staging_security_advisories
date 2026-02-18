@@ -1,0 +1,78 @@
+advisory_id: GHSA-h7ff-cfc9-wmmh
+datasource_id: github_osv_importer_v2/GHSA-h7ff-cfc9-wmmh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-h7ff-cfc9-wmmh/GHSA-h7ff-cfc9-wmmh.json
+aliases:
+  - CVE-2022-35990
+summary: "TensorFlow vulnerable to `CHECK` fail in `FakeQuantWithMinMaxVarsPerChannelGradient`\n\
+  ### Impact\nWhen `tf.quantization.fake_quant_with_min_max_vars_per_channel_gradient` receives\
+  \ input `min` or `max` of rank other than 1, it gives a `CHECK` fail that can trigger a denial\
+  \ of service attack.\n```python\nimport tensorflow as tf\narg_0=tf.random.uniform(shape=(1,1),\
+  \ dtype=tf.float32, maxval=None)\narg_1=tf.random.uniform(shape=(1,1), dtype=tf.float32, maxval=None)\n\
+  arg_2=tf.random.uniform(shape=(1,1), dtype=tf.float32, maxval=None)\narg_3=tf.random.uniform(shape=(1,1),\
+  \ dtype=tf.float32, maxval=None)\narg_4=8\narg_5=False\narg_6=None\ntf.quantization.fake_quant_with_min_max_vars_per_channel_gradient(gradients=arg_0,\
+  \ \n            inputs=arg_1, min=arg_2,  max=arg_3, num_bits=arg_4, \n            narrow_range=arg_5,\
+  \ name=arg_6)\n```\n\n### Patches\nWe have patched the issue in GitHub commit [f3cf67ac5705f4f04721d15e485e192bb319feed](https://github.com/tensorflow/tensorflow/commit/f3cf67ac5705f4f04721d15e485e192bb319feed).\n\
+  \nThe fix will be included in TensorFlow 2.10.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.9.1, TensorFlow 2.8.1, and TensorFlow 2.7.2, as these are also affected and still in supported\
+  \ range.\n\n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions.\n\n\n### Attribution\nThis vulnerability has been reported by \n - 刘力源, Information\
+  \ System & Security and Countermeasures Experiments Center, Beijing Institute of Technology\n\
+  \ - Neophytos Christou, Secure Systems Labs, Brown University"
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.9.0|<2.9.1
+    fixed_versions: vers:pypi/2.9.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.1
+    fixed_versions: vers:pypi/2.9.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.1
+    fixed_versions: vers:pypi/2.9.1
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-h7ff-cfc9-wmmh/GHSA-h7ff-cfc9-wmmh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-617
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/f3cf67ac5705f4f04721d15e485e192bb319feed
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.10.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-h7ff-cfc9-wmmh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-35990
+    reference_type:
+    reference_id:

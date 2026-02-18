@@ -1,0 +1,62 @@
+advisory_id: GHSA-gr8j-qm8r-rfgg
+datasource_id: github_osv_importer_v2/GHSA-gr8j-qm8r-rfgg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gr8j-qm8r-rfgg/GHSA-gr8j-qm8r-rfgg.json
+aliases:
+  - CVE-2016-3733
+summary: |
+  Moodle Improper Access Control
+  The "restore teacher" feature in Moodle 3.0 through 3.0.3, 2.9 through 2.9.5, 2.8 through 2.8.11, 2.7 through 2.7.13, and earlier allows remote authenticated users to overwrite the course idnumber.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=2.7.0|<2.7.14
+    fixed_versions: vers:composer/2.7.14
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=2.8.0|<2.8.12
+    fixed_versions: vers:composer/2.8.12
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=2.9.0|<2.9.6
+    fixed_versions: vers:composer/2.9.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.0.0|<3.0.4
+    fixed_versions: vers:composer/3.0.4
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gr8j-qm8r-rfgg/GHSA-gr8j-qm8r-rfgg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-51369
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1335933
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/12c28574868d6f6e5c57fb63298c82cb8bdd0bb6
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/24b0c3c86ae96e46b87d6e9d6bcf4a6014dae8f0
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/2950f9fb9128f9ae48e00b864da90be76c2bf139
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/3c9d2b104023a8b9fdc5f4d7e136083babd2609a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-3733
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2016/05/17/4
+    reference_type:
+    reference_id:
+  - url: http://www.securitytracker.com/id/1035902
+    reference_type:
+    reference_id:

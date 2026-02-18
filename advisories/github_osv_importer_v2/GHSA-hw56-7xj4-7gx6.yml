@@ -1,0 +1,53 @@
+advisory_id: GHSA-hw56-7xj4-7gx6
+datasource_id: github_osv_importer_v2/GHSA-hw56-7xj4-7gx6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-hw56-7xj4-7gx6/GHSA-hw56-7xj4-7gx6.json
+aliases:
+  - CVE-2022-42122
+summary: |
+  Liferay Portal and Liferay DXP Vulnerable to SQL Injection via Friendly URL Module
+  A SQL injection vulnerability in the Friendly Url module in Liferay Portal 7.3.7, and Liferay DXP 7.3 fix pack 2 through update 4 allows attackers to execute arbitrary SQL commands via a crafted payload injected into the `title` field of a friendly URL.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.3.7|<7.4.0-ga1
+    fixed_versions: vers:maven/7.4.0-ga1
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.3.10.fp2|<7.3.10.u4
+    fixed_versions: vers:maven/7.3.10.u4
+  - purl: pkg:maven/com.liferay/com.liferay.friendly.url.service
+    affected_versions: vers:maven/<4.0.3
+    fixed_versions: vers:maven/4.0.3
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-hw56-7xj4-7gx6/GHSA-hw56-7xj4-7gx6.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: http://liferay.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://issues.liferay.com/browse/LPE-17520
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2022-42122?p_r_p_assetEntryId=121613466&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt_redirect=https%3A%2F%2Fliferay.dev%3A443%2Fportal%2Fsecurity%2Fknown-vulnerabilities%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_r_p_assetEntryId%3D121613466%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt_cur%3D0%26p_r_p_resetCur%3Dfalse
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-42122
+    reference_type:
+    reference_id:
+  - url: https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/cve-2022-42122
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20221115051621/https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/cve-2022-42122
+    reference_type:
+    reference_id:

@@ -1,0 +1,62 @@
+advisory_id: GHSA-hw6f-rjfj-j7j7
+datasource_id: github_osv_importer_v2/GHSA-hw6f-rjfj-j7j7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-hw6f-rjfj-j7j7/GHSA-hw6f-rjfj-j7j7.json
+aliases:
+  - CVE-2025-58068
+summary: |
+  Eventlet affected by HTTP request smuggling in unparsed trailers
+  ### Impact
+  The Eventlet WSGI parser is vulnerable to HTTP Request Smuggling due to improper handling of HTTP trailer sections.
+
+  This vulnerability could enable attackers to:
+  - Bypass front-end security controls
+  - Launch targeted attacks against active site users
+  - Poison web caches
+
+  ### Patches
+  Problem has been patched in eventlet 0.40.3.
+
+  The patch just drops trailers. If a backend behind eventlet.wsgi proxy requires trailers, then this patch BREAKS your setup.
+
+  ### Workarounds
+  Do not use eventlet.wsgi facing untrusted clients.
+
+  ### References
+  - Patch https://github.com/eventlet/eventlet/pull/1062
+  - This issue is similar to https://github.com/advisories/GHSA-9548-qrrj-x5pj
+impacted_packages:
+  - purl: pkg:pypi/eventlet
+    affected_versions: vers:pypi/<0.40.3
+    fixed_versions: vers:pypi/0.40.3
+severities:
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-hw6f-rjfj-j7j7/GHSA-hw6f-rjfj-j7j7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/eventlet/eventlet
+    reference_type:
+    reference_id:
+  - url: https://github.com/eventlet/eventlet/commit/0bfebd1117d392559e25b4bfbfcc941754de88fb
+    reference_type:
+    reference_id:
+  - url: https://github.com/eventlet/eventlet/pull/1062
+    reference_type:
+    reference_id:
+  - url: https://github.com/eventlet/eventlet/security/advisories/GHSA-hw6f-rjfj-j7j7
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/09/msg00003.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-58068
+    reference_type:
+    reference_id:

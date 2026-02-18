@@ -1,0 +1,38 @@
+advisory_id: GHSA-gvvx-fc6p-2h9x
+datasource_id: github_osv_importer_v2/GHSA-gvvx-fc6p-2h9x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-gvvx-fc6p-2h9x/GHSA-gvvx-fc6p-2h9x.json
+aliases: []
+summary: |
+  Duplicate Advisory: Wallabag user can delete own API client unintentionally
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-gjvc-55fw-v6vq. This link is maintained to preserve external references.
+
+  ## Original Description
+  Cross-Site Request Forgery (CSRF) in GitHub repository wallabag/wallabag prior to 2.6.3.
+impacted_packages:
+  - purl: pkg:composer/wallabag/wallabag
+    affected_versions: vers:composer/<=2.6.2
+    fixed_versions: vers:composer/2.6.3
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-gvvx-fc6p-2h9x/GHSA-gvvx-fc6p-2h9x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/wallabag/wallabag/commit/ffcc5c9062fcc8cd922d7d6d65edbe5efae96806
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/5ab1b206-5fe8-4737-b275-d705e76f193a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-4455
+    reference_type:
+    reference_id:

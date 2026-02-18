@@ -1,0 +1,66 @@
+advisory_id: GHSA-hh32-7344-cg2f
+datasource_id: github_osv_importer_v2/GHSA-hh32-7344-cg2f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hh32-7344-cg2f/GHSA-hh32-7344-cg2f.json
+aliases:
+  - CVE-2022-22978
+summary: |
+  Authorization bypass in Spring Security
+  In Spring Security versions 5.5.6 and 5.5.7 and older unsupported versions, RegexRequestMatcher can easily be misconfigured to be bypassed on some servlet containers. Applications using RegexRequestMatcher with `.` in the regular expression are possibly vulnerable to an authorization bypass.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=5.5.0|<5.5.7
+    fixed_versions: vers:maven/5.5.7
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=5.6.0|<5.6.4
+    fixed_versions: vers:maven/5.6.4
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/<5.4.11
+    fixed_versions: vers:maven/5.4.11
+  - purl: pkg:maven/org.springframework.security/spring-security-web
+    affected_versions: vers:maven/>=5.5.0|<5.5.7
+    fixed_versions: vers:maven/5.5.7
+  - purl: pkg:maven/org.springframework.security/spring-security-web
+    affected_versions: vers:maven/>=5.6.0|<5.6.4
+    fixed_versions: vers:maven/5.6.4
+  - purl: pkg:maven/org.springframework.security/spring-security-web
+    affected_versions: vers:maven/<5.4.11
+    fixed_versions: vers:maven/5.4.11
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hh32-7344-cg2f/GHSA-hh32-7344-cg2f.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://github.com/anchore/grype/issues/2158
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-security
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-security/blob/main/web/src/main/java/org/springframework/security/web/util/matcher/RegexRequestMatcher.java
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-22978
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220707-0003
+    reference_type:
+    reference_id:
+  - url: https://spring.io/security/cve-2022-22978
+    reference_type:
+    reference_id:
+  - url: https://tanzu.vmware.com/security/cve-2022-22978
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

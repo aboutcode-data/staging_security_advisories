@@ -1,0 +1,62 @@
+advisory_id: GHSA-h4f4-gv6h-x824
+datasource_id: github_osv_importer_v2/GHSA-h4f4-gv6h-x824
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-h4f4-gv6h-x824/GHSA-h4f4-gv6h-x824.json
+aliases:
+  - CVE-2025-49559
+summary: |
+  Magento vulnerable to path traversal
+  Magento versions 2.4.9-alpha1, 2.4.8-p1, 2.4.7-p6, 2.4.6-p11, 2.4.5-p13, 2.4.4-p14 and earlier are affected by an Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability that could result in a security feature bypass. An attacker could leverage this vulnerability to modify limited data. Exploitation of this issue does not require user interaction.
+impacted_packages:
+  - purl: pkg:composer/magento/project-community-edition
+    affected_versions: vers:composer/<=2.0.2
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.9-alpha1|<2.4.9-alpha2
+    fixed_versions: vers:composer/2.4.9-alpha2
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.8-beta1|<2.4.8-p2
+    fixed_versions: vers:composer/2.4.8-p2
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.7-beta1|<2.4.7-p7
+    fixed_versions: vers:composer/2.4.7-p7
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.6-p1|<2.4.6-p12
+    fixed_versions: vers:composer/2.4.6-p12
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<2.4.5-p14
+    fixed_versions: vers:composer/2.4.5-p14
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.5
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.6
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.7
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.8
+    fixed_versions:
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-h4f4-gv6h-x824/GHSA-h4f4-gv6h-x824.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb25-71.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-49559
+    reference_type:
+    reference_id:

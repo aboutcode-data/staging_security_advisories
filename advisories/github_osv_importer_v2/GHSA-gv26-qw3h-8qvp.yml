@@ -1,0 +1,36 @@
+advisory_id: GHSA-gv26-qw3h-8qvp
+datasource_id: github_osv_importer_v2/GHSA-gv26-qw3h-8qvp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-gv26-qw3h-8qvp/GHSA-gv26-qw3h-8qvp.json
+aliases:
+  - CVE-2024-7046
+summary: |
+  Open WebUI Allows Viewing of Admin Details
+  An improper access control vulnerability in open-webui/open-webui v0.3.8 allows an attacker to view admin details. The application does not verify whether the attacker is an administrator, allowing the attacker to directly call the /api/v1/auths/admin/details interface to retrieve the first admin (owner) details.
+impacted_packages:
+  - purl: pkg:pypi/open-webui
+    affected_versions: vers:pypi/<=0.3.8
+    fixed_versions:
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-gv26-qw3h-8qvp/GHSA-gv26-qw3h-8qvp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+  - CWE-475
+references:
+  - url: https://github.com/open-webui/open-webui
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/684185e4-6766-4638-b08a-0de9c2820aee
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-7046
+    reference_type:
+    reference_id:

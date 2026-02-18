@@ -1,0 +1,41 @@
+advisory_id: GHSA-hw2c-8xgw-mf57
+datasource_id: github_osv_importer_v2/GHSA-hw2c-8xgw-mf57
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-hw2c-8xgw-mf57/GHSA-hw2c-8xgw-mf57.json
+aliases:
+  - CVE-2024-38460
+summary: |
+  SonarQube logs sensitive information
+  In SonarQube before 10.4 and 9.9.4 LTA, encrypted values generated using the Settings Encryption feature are potentially exposed in cleartext as part of the URL parameters in the logs (such as SonarQube Access Logs, Proxy Logs, etc).
+impacted_packages:
+  - purl: pkg:maven/org.sonarsource.sonarqube/sonar-web
+    affected_versions: vers:maven/<9.9.4
+    fixed_versions: vers:maven/9.9.4
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-hw2c-8xgw-mf57/GHSA-hw2c-8xgw-mf57.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://community.sonarsource.com/t/sonarqube-ce-10-3-0-leaking-encrypted-values-in-web-server-logs/108187
+    reference_type:
+    reference_id:
+  - url: https://github.com/SonarSource/sonarqube
+    reference_type:
+    reference_id:
+  - url: https://github.com/SonarSource/sonarqube/commit/48f43d6a3bf9bbd7c9b58eb5cde635572184ad01
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-38460
+    reference_type:
+    reference_id:
+  - url: https://sonarsource.atlassian.net/browse/SONAR-21559
+    reference_type:
+    reference_id:

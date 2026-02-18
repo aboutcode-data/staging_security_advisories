@@ -1,0 +1,74 @@
+advisory_id: GHSA-hx9v-6r9f-w677
+datasource_id: github_osv_importer_v2/GHSA-hx9v-6r9f-w677
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-hx9v-6r9f-w677/GHSA-hx9v-6r9f-w677.json
+aliases:
+  - CVE-2024-41950
+summary: |
+  Insecure Jinja2 templates rendered in Haystack Components can lead to RCE
+  ### Impact
+
+  Haystack clients that let their users create and run Pipelines from scratch are vulnerable to remote code executions.
+
+  Certain Components in Haystack use Jinja2 templates, if anyone can create and render that template on the client machine they run any code.
+
+  ### Patches
+
+  The problem has been fixed with PRs deepset-ai/haystack#8095 and deepset-ai/haystack#8096.
+
+  Both have been released with Haystack `2.3.1`.
+
+  ### Workarounds
+
+  Prevent users from running the affected Components, or only let users use preselected templates.
+
+  ### References
+
+  The list of impacted Components can be found in the release notes for `2.3.1`.
+  https://github.com/deepset-ai/haystack/releases/tag/v2.3.1
+impacted_packages:
+  - purl: pkg:pypi/haystack-ai
+    affected_versions: vers:pypi/<2.3.1
+    fixed_versions: vers:pypi/2.3.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-hx9v-6r9f-w677/GHSA-hx9v-6r9f-w677.json
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-hx9v-6r9f-w677/GHSA-hx9v-6r9f-w677.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1336
+references:
+  - url: https://github.com/deepset-ai/haystack
+    reference_type:
+    reference_id:
+  - url: https://github.com/deepset-ai/haystack/commit/3fed1366c448b02189851bf08166c1f6477a02b0
+    reference_type:
+    reference_id:
+  - url: https://github.com/deepset-ai/haystack/commit/6c25a5c73e83aa32c3241ba84a5cbb3ac0e8a89e
+    reference_type:
+    reference_id:
+  - url: https://github.com/deepset-ai/haystack/pull/8095
+    reference_type:
+    reference_id:
+  - url: https://github.com/deepset-ai/haystack/pull/8096
+    reference_type:
+    reference_id:
+  - url: https://github.com/deepset-ai/haystack/releases/tag/v2.3.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/deepset-ai/haystack/security/advisories/GHSA-hx9v-6r9f-w677
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-41950
+    reference_type:
+    reference_id:

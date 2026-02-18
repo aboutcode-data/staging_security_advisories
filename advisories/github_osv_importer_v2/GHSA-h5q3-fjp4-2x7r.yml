@@ -1,0 +1,51 @@
+advisory_id: GHSA-h5q3-fjp4-2x7r
+datasource_id: github_osv_importer_v2/GHSA-h5q3-fjp4-2x7r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-h5q3-fjp4-2x7r/GHSA-h5q3-fjp4-2x7r.json
+aliases:
+  - CVE-2024-45792
+summary: "MantisBT vulnerable to information disclosure with user profiles\nUsing a crafted\
+  \ POST request, an unprivileged, registered user is able to retrieve information about other\
+  \ users' personal system profiles. \n\n### Impact\nDisclosure of private system profiles:\
+  \ Platform, OS, OS version, Description.\n\n### Patches\n- https://github.com/mantisbt/mantisbt/commit/56bbd02dc1fb33a8de5898fd17dc3d698c847f55\n\
+  \n### Workarounds\nNone\n\n### References\nhttps://mantisbt.org/bugs/view.php?id=34640"
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/<=2.26.3
+    fixed_versions: vers:composer/2.26.4
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-h5q3-fjp4-2x7r/GHSA-h5q3-fjp4-2x7r.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-h5q3-fjp4-2x7r/GHSA-h5q3-fjp4-2x7r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/commit/56bbd02dc1fb33a8de5898fd17dc3d698c847f55
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/commit/ef0f820284032350cc20a39ff9cb2010d5463b41
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/security/advisories/GHSA-h5q3-fjp4-2x7r
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=34640
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45792
+    reference_type:
+    reference_id:

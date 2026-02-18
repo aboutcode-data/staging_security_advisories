@@ -1,0 +1,51 @@
+advisory_id: GHSA-hhw5-c326-822h
+datasource_id: github_osv_importer_v2/GHSA-hhw5-c326-822h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-hhw5-c326-822h/GHSA-hhw5-c326-822h.json
+aliases:
+  - CVE-2023-46750
+summary: |
+  Open redirect in Apache Shiro
+  URL Redirection to Untrusted Site ('Open Redirect') vulnerability when "form" authentication is used in Apache Shiro.
+  Mitigation: Update to Apache Shiro 1.13.0+ or 2.0.0-alpha-4+.
+impacted_packages:
+  - purl: pkg:maven/org.apache.shiro/shiro-web
+    affected_versions: vers:maven/<1.13.0
+    fixed_versions: vers:maven/1.13.0
+  - purl: pkg:maven/org.apache.shiro/shiro-web
+    affected_versions: vers:maven/>=2.0.0-alpha-1|<2.0.0-alpha-4
+    fixed_versions: vers:maven/2.0.0-alpha-4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-hhw5-c326-822h/GHSA-hhw5-c326-822h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/apache/shiro
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/shiro/commit/3b80f5c8e5a95ba31e92e4825ecc0ba3148b555a
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/shiro/commit/8400d08d5eac0bc4fae99d28c5adc82dd8a86eda
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/hoc9zdyzmmrfj1zhctsvvtx844tcq6w9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46750
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240808-0002
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20241108-0002
+    reference_type:
+    reference_id:

@@ -1,0 +1,57 @@
+advisory_id: GHSA-j6w9-fv6q-3q52
+datasource_id: github_osv_importer_v2/GHSA-j6w9-fv6q-3q52
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-j6w9-fv6q-3q52/GHSA-j6w9-fv6q-3q52.json
+aliases:
+  - CVE-2020-8184
+summary: |
+  Rack allows Percent-encoded cookies to overwrite existing prefixed cookie names
+  A reliance on cookies without validation/integrity check security vulnerability exists in rack < 2.2.3, rack < 2.1.4 that makes it possible for an attacker to forge a secure or host-only cookie prefix.
+impacted_packages:
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/<2.1.4
+    fixed_versions: vers:gem/2.1.4
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/>=2.2.0|<2.2.3
+    fixed_versions: vers:gem/2.2.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-j6w9-fv6q-3q52/GHSA-j6w9-fv6q-3q52.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-784
+  - CWE-20
+references:
+  - url: https://github.com/rack/rack
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack/commit/1f5763de6a9fe515ff84992b343d63c88104654c
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/rack/CVE-2020-8184.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/g/rubyonrails-security/c/OWtmozPH9Ak
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/895727
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2020/07/msg00006.html
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/01/msg00038.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8184
+    reference_type:
+    reference_id:
+  - url: https://usn.ubuntu.com/4561-1
+    reference_type:
+    reference_id:

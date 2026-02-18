@@ -1,0 +1,50 @@
+advisory_id: GHSA-gxxc-m74c-f48x
+datasource_id: github_osv_importer_v2/GHSA-gxxc-m74c-f48x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-gxxc-m74c-f48x/GHSA-gxxc-m74c-f48x.json
+aliases:
+  - CVE-2025-61674
+summary: "October CMS Vulnerable to Stored XSS via Editor and Branding Styles\nA cross-site\
+  \ scripting (XSS) vulnerabilities was identified in October CMS backend configuration forms:\n\
+  \n- **Editor Settings Markup Styles**  \n   A user with the `Global Editor Settings` permission\
+  \ could inject malicious HTML/JS into the stylesheet input at  \n   *Settings → Editor Settings\
+  \ → Markup Styles*.  \n\nA specially crafted input could break out of the intended `<style>`\
+  \ context, allowing arbitrary script execution across backend pages for all users.\n\n---\n\
+  \n### Impact\n- Persistent XSS across the backend interface.  \n- Exploitable by lower-privileged\
+  \ accounts with the above permissions.  \n- Potential consequences include privilege escalation,\
+  \ session hijacking, and execution of unauthorized actions in victim sessions.\n\n---\n\n\
+  ### Patches\nThe vulnerability has been patched in **v4.0.12** and **v3.7.13**.  \nStylesheet\
+  \ inputs are now sanitized to prevent injection of arbitrary HTML/JS.  \n\nAll users are strongly\
+  \ encouraged to upgrade to the latest patched version.\n\n---\n\n### Workarounds\nIf upgrading\
+  \ immediately is not possible:  \n- Restrict the permissions `Global Editor Settings` to fully\
+  \ trusted administrators only.  \n\nThis reduces exposure but does not fully eliminate risk.\n\
+  \n---\n\n### Credits\n- Reported by **[Nakkouch Tarek](https://github.com/nakkouchtarek)**"
+impacted_packages:
+  - purl: pkg:composer/october/system
+    affected_versions: vers:composer/<=3.7.12
+    fixed_versions: vers:composer/3.7.13
+  - purl: pkg:composer/october/system
+    affected_versions: vers:composer/<=4.0.11
+    fixed_versions: vers:composer/4.0.12
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-gxxc-m74c-f48x/GHSA-gxxc-m74c-f48x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/octobercms/october
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october/security/advisories/GHSA-gxxc-m74c-f48x
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-61674
+    reference_type:
+    reference_id:

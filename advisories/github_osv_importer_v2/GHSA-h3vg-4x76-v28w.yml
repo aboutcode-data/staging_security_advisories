@@ -1,0 +1,32 @@
+advisory_id: GHSA-h3vg-4x76-v28w
+datasource_id: github_osv_importer_v2/GHSA-h3vg-4x76-v28w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h3vg-4x76-v28w/GHSA-h3vg-4x76-v28w.json
+aliases:
+  - CVE-2017-14241
+summary: |
+  Dolibarr ERP and CRM contain XSS Vulnerability
+  Cross-site scripting (XSS) vulnerability in Dolibarr ERP/CRM 6.0.0 allows remote authenticated users to inject arbitrary web script or HTML via the Title parameter to htdocs/admin/menus/edit.php.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<6.0.1
+    fixed_versions: vers:composer/6.0.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h3vg-4x76-v28w/GHSA-h3vg-4x76-v28w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr/commit/d26b2a694de30f95e46ea54ea72cc54f0d38e548
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-14241
+    reference_type:
+    reference_id:

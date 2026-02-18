@@ -1,0 +1,51 @@
+advisory_id: GHSA-hpf4-v7v2-95p2
+datasource_id: github_osv_importer_v2/GHSA-hpf4-v7v2-95p2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-hpf4-v7v2-95p2/GHSA-hpf4-v7v2-95p2.json
+aliases:
+  - CVE-2023-39528
+summary: |
+  PrestaShop file access through path traversal
+  ### Impact
+  `displayAjaxEmailHTML` method can be used to read any file on the server, potentially even outside of the project if the server is not correctly configured.
+
+  This vulnerability can be exacerbated when coupled with [CWE-502](https://cwe.mitre.org/data/definitions/502.html), which pertains to the Deserialization of Untrusted Data. Such a combination could potentially lead to a Remote Code Execution (RCE) vulnerability
+
+  ### Patches
+  8.1.1
+
+  ### Found by
+  Aleksey Solovev (Positive Technologies)
+
+  ### Workarounds
+
+  ### References
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<=8.1.0
+    fixed_versions: vers:composer/8.1.1
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-hpf4-v7v2-95p2/GHSA-hpf4-v7v2-95p2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/11de3a84322fa4ecd0995ac40d575db61804724c
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-hpf4-v7v2-95p2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39528
+    reference_type:
+    reference_id:

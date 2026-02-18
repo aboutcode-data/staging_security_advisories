@@ -1,0 +1,38 @@
+advisory_id: GHSA-grw5-g9h2-wpg8
+datasource_id: github_osv_importer_v2/GHSA-grw5-g9h2-wpg8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-grw5-g9h2-wpg8/GHSA-grw5-g9h2-wpg8.json
+aliases:
+  - CVE-2022-1726
+summary: |
+  Cross-site Scripting in bootstrap-table
+  Bootstrap Tables XSS vulnerability with Table Export plug-in when exportOptions: htmlContent is true in GitHub repository wenzhixin/bootstrap-table prior to 1.20.2. Disclosing session cookies, disclosing secure session data, exfiltrating data to third-parties.
+impacted_packages:
+  - purl: pkg:npm/bootstrap-table
+    affected_versions: vers:npm/<1.20.2
+    fixed_versions: vers:npm/1.20.2
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-grw5-g9h2-wpg8/GHSA-grw5-g9h2-wpg8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/wenzhixin/bootstrap-table
+    reference_type:
+    reference_id:
+  - url: https://github.com/wenzhixin/bootstrap-table/commit/b4a1e5dd332be652e0bc376fd9256886cf4bbde9
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/9b85cc33-0395-4c31-8a42-3a94beb2efea
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1726
+    reference_type:
+    reference_id:

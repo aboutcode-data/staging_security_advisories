@@ -1,0 +1,53 @@
+advisory_id: GHSA-hx3r-jv9q-85jw
+datasource_id: github_osv_importer_v2/GHSA-hx3r-jv9q-85jw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-hx3r-jv9q-85jw/GHSA-hx3r-jv9q-85jw.json
+aliases:
+  - CVE-2018-17145
+summary: |
+  Bitcoin Inventory Out-of-Memory Denial-of-Service Attack (CVE-2018-17145)
+  There was an easily exploitable uncontrolled memory resource consumption denial-of-service vulnerability that existed in the peer-to-peer network code of three implementations of Bitcoin and several alternative chains.
+
+  For more details please see:
+  https://invdos.net/
+
+  For the paper:
+  https://invdos.net/paper/CVE-2018-17145.pdf
+impacted_packages:
+  - purl: pkg:npm/bcoin
+    affected_versions: vers:npm/<1.0.2
+    fixed_versions: vers:npm/1.0.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-hx3r-jv9q-85jw/GHSA-hx3r-jv9q-85jw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures#CVE-2018-17145
+    reference_type:
+    reference_id:
+  - url: https://github.com/bcoin-org/bcoin
+    reference_type:
+    reference_id:
+  - url: https://github.com/bcoin-org/bcoin/security/advisories/GHSA-hx3r-jv9q-85jw
+    reference_type:
+    reference_id:
+  - url: https://github.com/bitcoin/bitcoin/blob/v0.16.2/doc/release-notes.md
+    reference_type:
+    reference_id:
+  - url: https://invdos.net
+    reference_type:
+    reference_id:
+  - url: https://invdos.net/paper/CVE-2018-17145.pdf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-17145
+    reference_type:
+    reference_id:

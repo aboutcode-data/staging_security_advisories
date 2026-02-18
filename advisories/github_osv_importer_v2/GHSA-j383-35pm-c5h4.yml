@@ -1,0 +1,47 @@
+advisory_id: GHSA-j383-35pm-c5h4
+datasource_id: github_osv_importer_v2/GHSA-j383-35pm-c5h4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-j383-35pm-c5h4/GHSA-j383-35pm-c5h4.json
+aliases:
+  - CVE-2022-0436
+summary: |
+  Path Traversal in Grunt
+  Grunt prior to version 1.5.2 is vulnerable to path traversal.
+impacted_packages:
+  - purl: pkg:npm/grunt
+    affected_versions: vers:npm/<1.5.2
+    fixed_versions: vers:npm/1.5.2
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-j383-35pm-c5h4/GHSA-j383-35pm-c5h4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/gruntjs/grunt
+    reference_type:
+    reference_id:
+  - url: https://github.com/gruntjs/grunt/commit/aad3d4521c3098fb255fb2db8f2e1d691a033665
+    reference_type:
+    reference_id:
+  - url: https://github.com/gruntjs/grunt/commit/b0ec6e12426fc8d5720dee1702f6a67455c5986c
+    reference_type:
+    reference_id:
+  - url: https://github.com/gruntjs/grunt/pull/1743
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/f55315e9-9f6d-4dbb-8c40-bae50c1ae92b
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/04/msg00008.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0436
+    reference_type:
+    reference_id:

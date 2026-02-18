@@ -1,0 +1,49 @@
+advisory_id: GHSA-h632-p764-pjqm
+datasource_id: github_osv_importer_v2/GHSA-h632-p764-pjqm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-h632-p764-pjqm/GHSA-h632-p764-pjqm.json
+aliases:
+  - CVE-2021-41231
+summary: |
+  DataFlow upload remote code execution vulnerability
+  ### Impact
+  An administrator with the permissions to upload files via DataFlow and to create products was able to execute arbitrary code via the convert profile.
+impacted_packages:
+  - purl: pkg:composer/openmage/magento-lts
+    affected_versions: vers:composer/<19.4.22
+    fixed_versions: vers:composer/19.4.22
+  - purl: pkg:composer/openmage/magento-lts
+    affected_versions: vers:composer/>=20.0.0|<20.0.19
+    fixed_versions: vers:composer/20.0.19
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-h632-p764-pjqm/GHSA-h632-p764-pjqm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+  - CWE-77
+references:
+  - url: https://github.com/OpenMage/magento-lts
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenMage/magento-lts/commit/d16fc6c5a1e66c6f0d9f82020f11702a7ddd78e4
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenMage/magento-lts/releases/tag/v19.4.22
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenMage/magento-lts/releases/tag/v20.0.19
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenMage/magento-lts/security/advisories/GHSA-h632-p764-pjqm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41231
+    reference_type:
+    reference_id:

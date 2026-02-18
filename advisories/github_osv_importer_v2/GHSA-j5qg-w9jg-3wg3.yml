@@ -1,0 +1,65 @@
+advisory_id: GHSA-j5qg-w9jg-3wg3
+datasource_id: github_osv_importer_v2/GHSA-j5qg-w9jg-3wg3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-j5qg-w9jg-3wg3/GHSA-j5qg-w9jg-3wg3.json
+aliases: []
+summary: |
+  Inability to de-op players if listed in ops.txt with non-lowercase letters
+  ### Impact
+  Originally reported in iTXTech/Genisys#1188
+
+  ```txt
+  PotterHarry98
+  potterharry98
+  ```
+
+  `deop PotterHarry98`
+
+  will remove `potterharry98` from the ops.txt but not `PotterHarry98`.
+
+  Operator permissions are checked using `Config->exists()` with `lowercase=true`, which will result in a match:
+  https://github.com/pmmp/PocketMine-MP/blob/22bb1ce8e03dba57173debf0415390511d68e045/src/utils/Config.php#L449
+
+  This means that it's possible to make yourself impossible to de-op (using commands) by adding your name to ops.txt with uppercase letters.
+
+  ### Patches
+  4d37b79ff7f9d9452e988387f97919a9a1c4954e
+
+  ### Workarounds
+  This can be easily addressed by removing the offending lines from ops.txt manually.
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [pmmp/PocketMine-MP](https://github.com/pmmp/PocketMine-MP)
+  * Email us at [team@pmmp.io](mailto:team@pmmp.io)
+impacted_packages:
+  - purl: pkg:composer/pocketmine/pocketmine-mp
+    affected_versions: vers:composer/<4.0.3
+    fixed_versions: vers:composer/4.0.3
+severities:
+  - score: '3.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-j5qg-w9jg-3wg3/GHSA-j5qg-w9jg-3wg3.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/iTXTech/Genisys/issues/1188
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/blob/4.0.3/changelogs/4.0.md#403
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/commit/4d37b79ff7f9d9452e988387f97919a9a1c4954e
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/PocketMine-MP/security/advisories/GHSA-j5qg-w9jg-3wg3
+    reference_type:
+    reference_id:

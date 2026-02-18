@@ -1,0 +1,39 @@
+advisory_id: GHSA-hpw7-3vq3-mmv6
+datasource_id: github_osv_importer_v2/GHSA-hpw7-3vq3-mmv6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-hpw7-3vq3-mmv6/GHSA-hpw7-3vq3-mmv6.json
+aliases:
+  - CVE-2021-29508
+summary: |
+  Insecure deserialization in Wire
+  Due to how Wire handles type information in its serialization format, malicious payloads can be passed to a deserializer. e.g. using a surrogate on the sender end, an attacker can pass information about a different type for the receiving end. And by doing so allowing the serializer to create any type on the deserializing end.
+
+  **This is the same issue that exists for .NET BinaryFormatter https://docs.microsoft.com/en-us/visualstudio/code-quality/ca2300?view=vs-2019**
+
+  This also applies to the fork of Wire, AkkaDotNet/Hyperion.
+impacted_packages:
+  - purl: pkg:nuget/Wire
+    affected_versions: vers:nuget/<=1.0.0
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-hpw7-3vq3-mmv6/GHSA-hpw7-3vq3-mmv6.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/AsynkronIT/Wire/security/advisories/GHSA-hpw7-3vq3-mmv6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29508
+    reference_type:
+    reference_id:
+  - url: https://www.nuget.org/packages/Wire
+    reference_type:
+    reference_id:

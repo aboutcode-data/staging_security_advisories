@@ -1,0 +1,56 @@
+advisory_id: GHSA-hcm6-q6pc-xfhm
+datasource_id: github_osv_importer_v2/GHSA-hcm6-q6pc-xfhm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-hcm6-q6pc-xfhm/GHSA-hcm6-q6pc-xfhm.json
+aliases:
+  - CVE-2025-67856
+summary: |
+  Moodle has an authorization logic flaw
+  A flaw was found in Moodle. An authorization logic flaw, specifically due to incomplete role checks during the badge awarding process, allowed badges to be granted without proper verification. This could enable unauthorized users to obtain badges they are not entitled to, potentially leading to privilege escalation or unauthorized access to certain features.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.22
+    fixed_versions: vers:composer/4.1.22
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.12
+    fixed_versions: vers:composer/4.4.12
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.8
+    fixed_versions: vers:composer/4.5.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.0.0-beta|<5.0.4
+    fixed_versions: vers:composer/5.0.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.1.0-beta|<5.1.1
+    fixed_versions: vers:composer/5.1.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-hcm6-q6pc-xfhm/GHSA-hcm6-q6pc-xfhm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-67856
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2423864
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/0d48779e61bcacbabbcb82858a037b567351fce0
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=471306
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-67856
+    reference_type:
+    reference_id:

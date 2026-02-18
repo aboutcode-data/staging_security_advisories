@@ -1,0 +1,41 @@
+advisory_id: GHSA-hq4f-5qjv-fwrg
+datasource_id: github_osv_importer_v2/GHSA-hq4f-5qjv-fwrg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-hq4f-5qjv-fwrg/GHSA-hq4f-5qjv-fwrg.json
+aliases:
+  - CVE-2025-48201
+summary: |
+  The Backup Plus extension for TYPO3 (ns_backup) has a Predictable Resource Location
+  The ns_backup extension through 13.0.0 for TYPO3 has a Predictable Resource Location. This allows an unauthenticated remote user to download created backups and configuration files.
+impacted_packages:
+  - purl: pkg:composer/nitsan/ns-backup
+    affected_versions: vers:composer/<13.0.1
+    fixed_versions: vers:composer/13.0.1
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-hq4f-5qjv-fwrg/GHSA-hq4f-5qjv-fwrg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-425
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/nitsan/ns-backup/CVE-2025-48201.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/nitsan-technologies/ns_backup
+    reference_type:
+    reference_id:
+  - url: https://github.com/nitsan-technologies/ns_backup/commit/67b8102a19e8e516dc4228f5c42f9e4fba5046cb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48201
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2025-007
+    reference_type:
+    reference_id:

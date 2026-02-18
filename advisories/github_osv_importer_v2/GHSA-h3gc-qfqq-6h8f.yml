@@ -1,0 +1,89 @@
+advisory_id: GHSA-h3gc-qfqq-6h8f
+datasource_id: github_osv_importer_v2/GHSA-h3gc-qfqq-6h8f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-h3gc-qfqq-6h8f/GHSA-h3gc-qfqq-6h8f.json
+aliases:
+  - CVE-2025-48988
+summary: |
+  Apache Tomcat - DoS in multipart upload
+  Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.
+
+  This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105. The following versions were EOL at the time the CVE was created but are known to be affected: 8.5.0 though 8.5.100. Other, older, EOL versions may also be affected.
+
+  Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tomcat/tomcat-catalina
+    affected_versions: vers:maven/<=11.0.7
+    fixed_versions: vers:maven/11.0.8
+  - purl: pkg:maven/org.apache.tomcat/tomcat-catalina
+    affected_versions: vers:maven/<=10.1.41
+    fixed_versions: vers:maven/10.1.42
+  - purl: pkg:maven/org.apache.tomcat/tomcat-catalina
+    affected_versions: vers:maven/<=9.0.105
+    fixed_versions: vers:maven/9.0.106
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-core
+    affected_versions: vers:maven/<=11.0.7
+    fixed_versions: vers:maven/11.0.8
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-core
+    affected_versions: vers:maven/<=10.1.41
+    fixed_versions: vers:maven/10.1.42
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-core
+    affected_versions: vers:maven/<=9.0.105
+    fixed_versions: vers:maven/9.0.106
+  - purl: pkg:maven/org.apache.tomcat/tomcat-catalina
+    affected_versions: vers:maven/>=8.5.0|<=8.5.100
+    fixed_versions:
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-core
+    affected_versions: vers:maven/>=8.5.0|<=8.5.100
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-h3gc-qfqq-6h8f/GHSA-h3gc-qfqq-6h8f.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-h3gc-qfqq-6h8f/GHSA-h3gc-qfqq-6h8f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/apache/tomcat
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/2b0ab14fb55d4edc896e5f1817f2ab76f714ae5e
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/cdde8e655bc1c5c60a07efd216251d77c52fd7f6
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/ee8042ffce4cb9324dfd79efda5984f37bbb6910
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/nzkqsok8t42qofgqfmck536mtyzygp18
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/07/msg00009.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48988
+    reference_type:
+    reference_id:
+  - url: https://tomcat.apache.org/security-10.html
+    reference_type:
+    reference_id:
+  - url: https://tomcat.apache.org/security-11.html
+    reference_type:
+    reference_id:
+  - url: https://tomcat.apache.org/security-9.html
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2025/06/16/1
+    reference_type:
+    reference_id:

@@ -1,0 +1,67 @@
+advisory_id: GHSA-h25m-26qc-wcjf
+datasource_id: github_osv_importer_v2/GHSA-h25m-26qc-wcjf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-h25m-26qc-wcjf/GHSA-h25m-26qc-wcjf.json
+aliases: []
+summary: |
+  Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components
+  A vulnerability affects certain React Server Components packages for versions 19.0.x, 19.1.x, and 19.2.x and frameworks that use the affected packages, including Next.js 13.x, 14.x, 15.x, and 16.x using the App Router. The issue is tracked upstream as [CVE-2026-23864](https://github.com/facebook/react/security/advisories/GHSA-83fc-fqcc-2hmg).
+
+  A specially crafted HTTP request can be sent to any App Router Server Function endpoint that, when deserialized, may trigger excessive CPU usage, out-of-memory exceptions, or server crashes. This can result in denial of service in unpatched environments.
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=13.0.0|<15.0.8
+    fixed_versions: vers:npm/15.0.8
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.1.1-canary.0|<15.1.12
+    fixed_versions: vers:npm/15.1.12
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.2.0-canary.0|<15.2.9
+    fixed_versions: vers:npm/15.2.9
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.3.0-canary.0|<15.3.9
+    fixed_versions: vers:npm/15.3.9
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.4.0-canary.0|<15.4.11
+    fixed_versions: vers:npm/15.4.11
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.5.1-canary.0|<15.5.10
+    fixed_versions: vers:npm/15.5.10
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.6.0-canary.0|<15.6.0-canary.61
+    fixed_versions: vers:npm/15.6.0-canary.61
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=16.0.0-beta.0|<16.0.11
+    fixed_versions: vers:npm/16.0.11
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=16.1.0-canary.0|<16.1.5
+    fixed_versions: vers:npm/16.1.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-h25m-26qc-wcjf/GHSA-h25m-26qc-wcjf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+  - CWE-400
+references:
+  - url: https://github.com/facebook/react/security/advisories/GHSA-83fc-fqcc-2hmg
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-h25m-26qc-wcjf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-23864
+    reference_type:
+    reference_id:
+  - url: https://vercel.com/changelog/summary-of-cve-2026-23864
+    reference_type:
+    reference_id:

@@ -1,0 +1,44 @@
+advisory_id: GHSA-hgjh-723h-mx2j
+datasource_id: github_osv_importer_v2/GHSA-hgjh-723h-mx2j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-hgjh-723h-mx2j/GHSA-hgjh-723h-mx2j.json
+aliases:
+  - CVE-2022-0686
+summary: |
+  Authorization Bypass Through User-Controlled Key in url-parse
+  url-parse prior to version 1.5.8 is vulnerable to Authorization Bypass Through User-Controlled Key.
+impacted_packages:
+  - purl: pkg:npm/url-parse
+    affected_versions: vers:npm/<1.5.8
+    fixed_versions: vers:npm/1.5.8
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-hgjh-723h-mx2j/GHSA-hgjh-723h-mx2j.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: https://github.com/unshiftio/url-parse
+    reference_type:
+    reference_id:
+  - url: https://github.com/unshiftio/url-parse/commit/d5c64791ef496ca5459ae7f2176a31ea53b127e5
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/55fd06cd-9054-4d80-83be-eb5a454be78c
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/02/msg00030.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0686
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220325-0006
+    reference_type:
+    reference_id:

@@ -1,0 +1,50 @@
+advisory_id: GHSA-hw62-58pr-7wc5
+datasource_id: github_osv_importer_v2/GHSA-hw62-58pr-7wc5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-hw62-58pr-7wc5/GHSA-hw62-58pr-7wc5.json
+aliases:
+  - CVE-2025-27108
+summary: "DOM Expressions has a Cross-Site Scripting (XSS) vulnerability due to improper use\
+  \ of string.replace\n> [!NOTE]  \n> This advisory was originally emailed to community@solidjs.com\
+  \ by @nsysean.\n\nTo sum it up, the use of javascript's `.replace()` opens up to potential\
+  \ XSS vulnerabilities with the special replacement patterns beginning with `$`.\n\nParticularly,\
+  \ when the attributes of `Meta` tag from solid-meta are user-defined, attackers can utilise\
+  \ the special replacement patterns, either `$'` or `$\\`` to achieve XSS.\n\nThe solid-meta\
+  \ package has this issue since it uses `useAffect` and context providers, which injects the\
+  \ used assets in the html header. \"dom-expressions\" uses `.replace()` to insert the assets,\
+  \ which is vulnerable to the special replacement patterns listed above. \n\nThis effectively\
+  \ means that if the attributes of an asset tag contained user-controlled data, it would be\
+  \ vulnerable to XSS. For instance, there might be meta tags for the open graph protocol in\
+  \ a user profile page, but if attackers set the user query to some payload abusing `.replace()`,\
+  \ then they could execute arbitrary javascript in the victim's web browser. Moreover, it could\
+  \ be stored and cause more problems."
+impacted_packages:
+  - purl: pkg:npm/dom-expressions
+    affected_versions: vers:npm/<0.39.5
+    fixed_versions: vers:npm/0.39.5
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-hw62-58pr-7wc5/GHSA-hw62-58pr-7wc5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-116
+references:
+  - url: https://github.com/ryansolid/dom-expressions
+    reference_type:
+    reference_id:
+  - url: https://github.com/ryansolid/dom-expressions/commit/521f75dfa89ed24161646e7007d9d7d21da07767
+    reference_type:
+    reference_id:
+  - url: https://github.com/ryansolid/dom-expressions/security/advisories/GHSA-hw62-58pr-7wc5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-27108
+    reference_type:
+    reference_id:

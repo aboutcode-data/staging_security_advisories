@@ -1,0 +1,52 @@
+advisory_id: GHSA-j4rj-fgcq-wmqp
+datasource_id: github_osv_importer_v2/GHSA-j4rj-fgcq-wmqp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-j4rj-fgcq-wmqp/GHSA-j4rj-fgcq-wmqp.json
+aliases:
+  - CVE-2025-7053
+summary: |
+  Cockpit - Content Platform vulnerable to XSS through name or email argument names
+  A vulnerability was found in Cockpit versions up to 2.11.3. This issue affects some unknown processing instances of the file /system/users/save. The manipulation of the arguments "name" or "email" leads to cross-site scripting. The attack may be initiated remotely. Upgrading to version 2.11.4 will address this issue. It is recommended to upgrade the affected component. The vendor was contacted early about this disclosure and acted accordingly. A patch and new release were made available very quickly.
+impacted_packages:
+  - purl: pkg:composer/cockpit-hq/cockpit
+    affected_versions: vers:composer/<2.11.4
+    fixed_versions: vers:composer/2.11.4
+severities:
+  - score: '3.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-j4rj-fgcq-wmqp/GHSA-j4rj-fgcq-wmqp.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-j4rj-fgcq-wmqp/GHSA-j4rj-fgcq-wmqp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Cockpit-HQ/Cockpit
+    reference_type:
+    reference_id:
+  - url: https://github.com/Cockpit-HQ/Cockpit/commit/bdcd5e3bc651c0839c7eea807f3eb6af856dbc76
+    reference_type:
+    reference_id:
+  - url: https://github.com/Cockpit-HQ/Cockpit/releases/tag/2.11.4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-7053
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.314819
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.314819
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?submit.605594
+    reference_type:
+    reference_id:

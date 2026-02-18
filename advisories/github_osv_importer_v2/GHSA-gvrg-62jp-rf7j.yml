@@ -1,0 +1,46 @@
+advisory_id: GHSA-gvrg-62jp-rf7j
+datasource_id: github_osv_importer_v2/GHSA-gvrg-62jp-rf7j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-gvrg-62jp-rf7j/GHSA-gvrg-62jp-rf7j.json
+aliases:
+  - CVE-2023-43664
+summary: |
+  PrestaShop allows employee without any access rights to list all installed modules
+  ### Impact
+  In BO, an employee can list all modules without any access rights: method `ajaxProcessGetPossibleHookingListForModule` doesn't check access rights
+
+  ### Patches
+  Fixed on 8.1.2
+
+  ### Workarounds
+
+  ### References
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<8.1.2
+    fixed_versions: vers:composer/8.1.2
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-gvrg-62jp-rf7j/GHSA-gvrg-62jp-rf7j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/15bd281c18f032a5134a8d213b44d24829d45762
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-gvrg-62jp-rf7j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-43664
+    reference_type:
+    reference_id:

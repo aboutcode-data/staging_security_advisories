@@ -1,0 +1,35 @@
+advisory_id: GHSA-hhw5-29f6-hf4x
+datasource_id: github_osv_importer_v2/GHSA-hhw5-29f6-hf4x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-hhw5-29f6-hf4x/GHSA-hhw5-29f6-hf4x.json
+aliases:
+  - CVE-2024-10831
+summary: |
+  DB-GPT Absolute Path Traversal vulnerability
+  In eosphoros-ai/db-gpt version 0.6.0, the endpoint for uploading files is vulnerable to absolute path traversal. This vulnerability allows an attacker to upload arbitrary files to arbitrary locations on the target server. The issue arises because the `file_key` and `doc_file.filename` parameters are user-controllable, enabling the construction of paths outside the intended directory. This can lead to overwriting essential system files, such as SSH keys, for further exploitation.
+impacted_packages:
+  - purl: pkg:pypi/dbgpt
+    affected_versions: vers:pypi/<=0.6.0
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-hhw5-29f6-hf4x/GHSA-hhw5-29f6-hf4x.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-36
+references:
+  - url: https://github.com/eosphoros-ai/DB-GPT
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/5c34c39f-66d4-414c-ab6a-f7888a5d882a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-10831
+    reference_type:
+    reference_id:

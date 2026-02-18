@@ -1,0 +1,56 @@
+advisory_id: GHSA-hq29-vqg6-pjpw
+datasource_id: github_osv_importer_v2/GHSA-hq29-vqg6-pjpw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hq29-vqg6-pjpw/GHSA-hq29-vqg6-pjpw.json
+aliases:
+  - CVE-2016-3670
+summary: |
+  Liferay Portal Vulnerable to XSS in Profile Search Functionality
+  Cross-site scripting (XSS) vulnerability in users.jsp in the Profile Search functionality in Liferay Portal Search Web before 1.0.3 from Liferay (before 7.0.0 CE RC1) allows remote attackers to inject arbitrary web script or HTML via the FirstName field.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.portal.search.web
+    affected_versions: vers:maven/<1.0.3
+    fixed_versions: vers:maven/1.0.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hq29-vqg6-pjpw/GHSA-hq29-vqg6-pjpw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/137279/Liferay-CE-Stored-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2016/Jun/5
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/b7ce087039f3b753f36f558df5faefac4ad4b160
+    reference_type:
+    reference_id:
+  - url: https://issues.liferay.com/browse/LPS-62387
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-3670
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/39880
+    reference_type:
+    reference_id:
+  - url: http://www.securitytracker.com/id/1036083
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/jsp/webapps/39880.txt
+    reference_type: exploit
+    reference_id: CVE-2016-3670
+  - url: https://labs.integrity.pt/advisories/cve-2016-3670
+    reference_type: exploit
+    reference_id: CVE-2016-3670

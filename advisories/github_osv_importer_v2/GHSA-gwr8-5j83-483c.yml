@@ -1,0 +1,71 @@
+advisory_id: GHSA-gwr8-5j83-483c
+datasource_id: github_osv_importer_v2/GHSA-gwr8-5j83-483c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-gwr8-5j83-483c/GHSA-gwr8-5j83-483c.json
+aliases:
+  - CVE-2019-14904
+summary: |
+  OS Command Injection and Improper Input Validation in ansible
+  A flaw was found in the solaris_zone module from the Ansible Community modules. When setting the name for the zone on the Solaris host, the zone name is checked by listing the process with the 'ps' bare command on the remote machine. An attacker could take advantage of this flaw by crafting the name of the zone and executing arbitrary commands in the remote host. Ansible Engine 2.7.15, 2.8.7, and 2.9.2 as well as previous versions are affected.
+impacted_packages:
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/<2.7.16
+    fixed_versions: vers:pypi/2.7.16
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/>=2.8.0a1|<2.8.8
+    fixed_versions: vers:pypi/2.8.8
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/>=2.9.0a1|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-gwr8-5j83-483c/GHSA-gwr8-5j83-483c.json
+  - score: '8.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:L/VA:L/SC:H/SI:L/SA:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-gwr8-5j83-483c/GHSA-gwr8-5j83-483c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+  - CWE-20
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1776944
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-gwr8-5j83-483c
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/589a415f887b6f2bb65cd07fe6b2e9d0a8156b69
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/6a86650109b8654f5898369e45d3857624edf907
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/a1b0f72c98b4b2afaab8aafa255e82c2075049c8
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/pull/65686
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/ansible/PYSEC-2020-161.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/01/msg00023.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-14904
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2021/dsa-4950
+    reference_type:
+    reference_id:

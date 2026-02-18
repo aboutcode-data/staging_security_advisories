@@ -1,0 +1,38 @@
+advisory_id: GHSA-h7g4-65mf-6mxh
+datasource_id: github_osv_importer_v2/GHSA-h7g4-65mf-6mxh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h7g4-65mf-6mxh/GHSA-h7g4-65mf-6mxh.json
+aliases:
+  - CVE-2018-11650
+summary: |
+  Cross-site Scripting in Graylog Server
+  Graylog before v2.4.4 has an XSS security issue with unescaped text in notifications, related to toastr and util/UserNotification.js.
+impacted_packages:
+  - purl: pkg:maven/org.graylog2/graylog2-server
+    affected_versions: vers:maven/<2.4.4
+    fixed_versions: vers:maven/2.4.4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h7g4-65mf-6mxh/GHSA-h7g4-65mf-6mxh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Graylog2/graylog2-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/Graylog2/graylog2-server/pull/4727
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-11650
+    reference_type:
+    reference_id:
+  - url: https://www.graylog.org/post/announcing-graylog-v2-4-4
+    reference_type:
+    reference_id:

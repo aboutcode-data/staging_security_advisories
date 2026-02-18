@@ -1,0 +1,44 @@
+advisory_id: GHSA-hm7p-r324-hhf3
+datasource_id: github_osv_importer_v2/GHSA-hm7p-r324-hhf3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-hm7p-r324-hhf3/GHSA-hm7p-r324-hhf3.json
+aliases:
+  - CVE-2023-27560
+summary: |
+  phpseclib Infinite Loop vulnerability
+  Math/PrimeField.php in phpseclib has an infinite loop with composite primefields. This vulnerability was introduced in version 3.0.0, and has been patched in 3.0.19. The CVE for this issue originally identified the the vulnerable version as 2.x, however, the vulnerable functionality was not introduced until version 3.
+impacted_packages:
+  - purl: pkg:composer/phpseclib/phpseclib
+    affected_versions: vers:composer/>=3.0.0|<3.0.19
+    fixed_versions: vers:composer/3.0.19
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-hm7p-r324-hhf3/GHSA-hm7p-r324-hhf3.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-835
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/phpseclib/phpseclib/CVE-2023-27560.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpseclib/phpseclib
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpseclib/phpseclib/commit/6298d1cd55c3ffa44533bd41906caec246b60440
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpseclib/phpseclib/commit/6298d1cd55c3ffa44533bd41906caec246b60440#commitcomment-103226722
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpseclib/phpseclib/releases/tag/3.0.19
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-27560
+    reference_type:
+    reference_id:

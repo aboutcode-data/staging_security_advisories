@@ -1,0 +1,40 @@
+advisory_id: GHSA-gr4j-r575-g665
+datasource_id: github_osv_importer_v2/GHSA-gr4j-r575-g665
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-gr4j-r575-g665/GHSA-gr4j-r575-g665.json
+aliases: []
+summary: |
+  Cross-Site Scripting in highcharts
+  Versions of `highcharts` prior to 7.2.2 or 8.1.1 are vulnerable to Cross-Site Scripting (XSS).  The package fails to sanitize `href` values and does not restrict URL schemes, allowing attackers to execute arbitrary JavaScript in a victim's browser if they click the link.
+impacted_packages:
+  - purl: pkg:npm/highcharts
+    affected_versions: vers:npm/<7.2.2
+    fixed_versions: vers:npm/7.2.2
+  - purl: pkg:npm/highcharts
+    affected_versions: vers:npm/>=8.0.0|<8.1.1
+    fixed_versions: vers:npm/8.1.1
+severities:
+  - score: '8.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-gr4j-r575-g665/GHSA-gr4j-r575-g665.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/highcharts/highcharts
+    reference_type:
+    reference_id:
+  - url: https://github.com/highcharts/highcharts/commit/55c39dd55f12ce8dfab84f8ec13ad81423bee9f5
+    reference_type:
+    reference_id:
+  - url: https://github.com/highcharts/highcharts/issues/13559
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-HIGHCHARTS-571995
+    reference_type:
+    reference_id:

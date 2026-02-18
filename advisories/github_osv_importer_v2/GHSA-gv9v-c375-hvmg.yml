@@ -1,0 +1,50 @@
+advisory_id: GHSA-gv9v-c375-hvmg
+datasource_id: github_osv_importer_v2/GHSA-gv9v-c375-hvmg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gv9v-c375-hvmg/GHSA-gv9v-c375-hvmg.json
+aliases:
+  - CVE-2014-0097
+summary: |
+  Improper Authentication in Spring Security
+  The ActiveDirectoryLdapAuthenticator in Spring Security 3.2.0 to 3.2.1 and 3.1.0 to 3.1.5 does not check the password length. If the directory allows anonymous binds then it may incorrectly authenticate a user who supplies an empty password.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/<=3.2.1.RELEASE
+    fixed_versions: vers:maven/3.2.2.RELEASE
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/<=3.1.4.RELEASE
+    fixed_versions: vers:maven/3.1.5.RELEASE
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gv9v-c375-hvmg/GHSA-gv9v-c375-hvmg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/spring-projects/spring-security/commit/7dbb8e777ece8675f3333a1ef1cb4d6b9be80395
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-security/commit/88559882e967085c47a7e1dcbc4dc32c2c796868
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-security/commit/a7005bd74241ac8e2e7b38ae31bc4b0f641ef973
+    reference_type:
+    reference_id:
+  - url: https://jira.springsource.org/browse/SEC-2500
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-0097
+    reference_type:
+    reference_id:
+  - url: https://pivotal.io/security/cve-2014-0097
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:

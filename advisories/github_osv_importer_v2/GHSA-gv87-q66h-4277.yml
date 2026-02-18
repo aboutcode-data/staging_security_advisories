@@ -1,0 +1,50 @@
+advisory_id: GHSA-gv87-q66h-4277
+datasource_id: github_osv_importer_v2/GHSA-gv87-q66h-4277
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-gv87-q66h-4277/GHSA-gv87-q66h-4277.json
+aliases:
+  - CVE-2021-43113
+summary: |
+  Command injection in itext7-core
+  iTextPDF in iText before 7.1.17 allows command injection via a CompareTool filename that is mishandled on the gs (aka Ghostscript) command line in GhostscriptHelper.java.
+impacted_packages:
+  - purl: pkg:maven/com.itextpdf/itext7-core
+    affected_versions: vers:maven/<7.1.17
+    fixed_versions: vers:maven/7.1.17
+  - purl: pkg:maven/com.itextpdf/itextpdf
+    affected_versions: vers:maven/<5.5.13.3
+    fixed_versions: vers:maven/5.5.13.3
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-gv87-q66h-4277/GHSA-gv87-q66h-4277.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/itext/itext7
+    reference_type:
+    reference_id:
+  - url: https://github.com/itext/itext7/releases/tag/7.1.17
+    reference_type:
+    reference_id:
+  - url: https://github.com/itext/itextpdf/releases/tag/5.5.13.3
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/01/msg00013.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-43113
+    reference_type:
+    reference_id:
+  - url: https://pastebin.com/BXnkY9YY
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2023/dsa-5323
+    reference_type:
+    reference_id:

@@ -1,0 +1,37 @@
+advisory_id: GHSA-hc94-2wfr-4pwf
+datasource_id: github_osv_importer_v2/GHSA-hc94-2wfr-4pwf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-hc94-2wfr-4pwf/GHSA-hc94-2wfr-4pwf.json
+aliases:
+  - CVE-2016-10557
+summary: "appium-chromedriver downloads Resources over HTTP\nAffected versions of `appium-chromedriver`\
+  \ insecurely download resources over HTTP. \n\nIn scenarios where an attacker has a privileged\
+  \ network position, they can modify or read items send over HTTP at will. In this case, that\
+  \ includes the chromedriver binary, which may result in remote code execution if overwritten\
+  \ with a malicious binary.\n\n\n## Recommendation\n\nUpdate to version 2.9.4 or later."
+impacted_packages:
+  - purl: pkg:npm/appium-chromedriver
+    affected_versions: vers:npm/<2.9.4
+    fixed_versions: vers:npm/2.9.4
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-hc94-2wfr-4pwf/GHSA-hc94-2wfr-4pwf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+references:
+  - url: https://github.com/advisories/GHSA-hc94-2wfr-4pwf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10557
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/162
+    reference_type:
+    reference_id:

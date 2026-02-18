@@ -1,0 +1,53 @@
+advisory_id: GHSA-h73q-5wmj-q8pj
+datasource_id: github_osv_importer_v2/GHSA-h73q-5wmj-q8pj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-h73q-5wmj-q8pj/GHSA-h73q-5wmj-q8pj.json
+aliases:
+  - CVE-2021-23445
+summary: |
+  Cross site scripting in datatables.net
+  This affects the package datatables.net before 1.11.3. If an array is passed to the HTML escape entities function it would not have its contents escaped.
+impacted_packages:
+  - purl: pkg:npm/datatables.net
+    affected_versions: vers:npm/<1.11.3
+    fixed_versions: vers:npm/1.11.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-h73q-5wmj-q8pj/GHSA-h73q-5wmj-q8pj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://cdn.datatables.net/1.11.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/DataTables/Dist-DataTables
+    reference_type:
+    reference_id:
+  - url: https://github.com/DataTables/Dist-DataTables/commit/59a8d3f8a3c1138ab08704e783bc52bfe88d7c9b
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/08/msg00018.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23445
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240621-0006
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1715371
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1715376
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-DATATABLESNET-1540544
+    reference_type:
+    reference_id:

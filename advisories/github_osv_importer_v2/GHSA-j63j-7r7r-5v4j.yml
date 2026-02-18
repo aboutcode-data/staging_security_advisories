@@ -1,0 +1,45 @@
+advisory_id: GHSA-j63j-7r7r-5v4j
+datasource_id: github_osv_importer_v2/GHSA-j63j-7r7r-5v4j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-j63j-7r7r-5v4j/GHSA-j63j-7r7r-5v4j.json
+aliases:
+  - CVE-2024-7096
+summary: |
+  WSO2 products vulnerable to privilege escalation due to business logic flaw in SOAP admin services
+  A privilege escalation vulnerability exists in multiple WSO2 products due to a business logic flaw in SOAP admin services. A malicious actor can create a new user with elevated permissions only when all of the following conditions are met:
+    *  SOAP admin services are accessible to the attacker.
+    *  The deployment includes an internally used attribute that is not part of the default WSO2 product configuration.
+    *  At least one custom role exists with non-default permissions.
+    *  The attacker has knowledge of the custom role and the internal attribute used in the deployment.
+
+
+  Exploiting this vulnerability allows malicious actors to assign higher privileges to self-registered users, bypassing intended access control mechanisms.
+impacted_packages:
+  - purl: pkg:maven/org.wso2.am/am-parent
+    affected_versions: vers:maven/<=4.3.0
+    fixed_versions: vers:maven/4.4.0
+  - purl: pkg:maven/org.wso2.is/identity-server-parent
+    affected_versions: vers:maven/<=7.0.0
+    fixed_versions: vers:maven/7.1.0
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-j63j-7r7r-5v4j/GHSA-j63j-7r7r-5v4j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://github.com/wso2/docs-security/blob/cfd53689909eef62fc5427e193e35e7df8ab1ef8/en/docs/security-announcements/security-advisories/2024/WSO2-2024-3573.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-7096
+    reference_type:
+    reference_id:
+  - url: https://security.docs.wso2.com/en/latest/security-announcements/security-advisories/2024/WSO2-2024-3573
+    reference_type:
+    reference_id:

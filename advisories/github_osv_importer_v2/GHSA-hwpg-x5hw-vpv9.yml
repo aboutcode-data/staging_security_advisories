@@ -1,0 +1,43 @@
+advisory_id: GHSA-hwpg-x5hw-vpv9
+datasource_id: github_osv_importer_v2/GHSA-hwpg-x5hw-vpv9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-hwpg-x5hw-vpv9/GHSA-hwpg-x5hw-vpv9.json
+aliases:
+  - CVE-2025-52558
+summary: |
+  ChangeDetection.io XSS in watch overview
+  ### Impact
+  XSS - Errors in filters from website page change detection watches were not being filtered.
+
+  ### Patches
+
+  0.50.4
+impacted_packages:
+  - purl: pkg:pypi/changedetection.io
+    affected_versions: vers:pypi/<=0.50.3
+    fixed_versions: vers:pypi/0.50.4
+severities:
+  - score: '7.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-hwpg-x5hw-vpv9/GHSA-hwpg-x5hw-vpv9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/dgtlmoon/changedetection.io
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/commit/3d5a544ea674cfce517adcd498877a8d760d0931
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/security/advisories/GHSA-hwpg-x5hw-vpv9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-52558
+    reference_type:
+    reference_id:

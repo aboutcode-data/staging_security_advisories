@@ -1,0 +1,41 @@
+advisory_id: GHSA-hf5p-f83x-5q2g
+datasource_id: github_osv_importer_v2/GHSA-hf5p-f83x-5q2g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-hf5p-f83x-5q2g/GHSA-hf5p-f83x-5q2g.json
+aliases:
+  - CVE-2023-40315
+summary: |
+  OpenNMS privilege escalation vulnerability
+  In OpenNMS Horizon 31.0.8 and versions earlier than 32.0.2 and related Meridian versions, any user that has the ROLE_FILESYSTEM_EDITOR can easily escalate their privileges to ROLE_ADMIN or any other role. The solution is to upgrade to Meridian 2023.1.5 or Horizon 32.0.2 or newer. Meridian and Horizon installation instructions state that they are intended for installation within an organization's private networks and should not be directly accessible from the Internet. OpenNMS thanks Erik Wynter for reporting this issue.
+impacted_packages:
+  - purl: pkg:maven/org.opennms/opennms-webapp-rest
+    affected_versions: vers:maven/>=31.0.8|<32.0.2
+    fixed_versions: vers:maven/32.0.2
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:L/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-hf5p-f83x-5q2g/GHSA-hf5p-f83x-5q2g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://docs.opennms.com/meridian/2023/releasenotes/changelog.html#releasenotes-changelog-Meridian-2023.1.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenNMS/opennms
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenNMS/opennms/commit/f2caf7d0b9db58b59e98506490aaca37fbf243b6
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenNMS/opennms/pull/6250
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-40315
+    reference_type:
+    reference_id:

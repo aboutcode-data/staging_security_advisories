@@ -1,0 +1,46 @@
+advisory_id: GHSA-hm8f-75xx-w2vr
+datasource_id: github_osv_importer_v2/GHSA-hm8f-75xx-w2vr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-hm8f-75xx-w2vr/GHSA-hm8f-75xx-w2vr.json
+aliases:
+  - CVE-2026-24408
+summary: "sigstore CSRF possibility in OIDC authentication during signing\n### Summary\n\nThe\
+  \ sigstore-python OAuth authentication flow is susceptible to Cross-Site Request Forgery.\n\
+  \n### Details\n\n`_OAuthSession` creates a unique \"state\" and sends it as a parameter in\
+  \ the authentication request but the \"state\" in the server response seems not not be cross-checked\
+  \ with this value. \n\nFix should be fairly trivial.\n\n### Impact\n\nThis should be low impact:\
+  \ A man-in-the middle attacker could trick a sigstore-python user into signing something with\
+  \ an identity controlled by the attacker (by returning the response to an authentication request\
+  \ they created). This would be quite confusing but not dangerous."
+impacted_packages:
+  - purl: pkg:pypi/sigstore
+    affected_versions: vers:pypi/<4.2.0
+    fixed_versions: vers:pypi/4.2.0
+severities:
+  - score: '0.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-hm8f-75xx-w2vr/GHSA-hm8f-75xx-w2vr.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/sigstore/sigstore-python
+    reference_type:
+    reference_id:
+  - url: https://github.com/sigstore/sigstore-python/commit/5e77497fe8f0b202bdd118949074ec2f20da69aa
+    reference_type:
+    reference_id:
+  - url: https://github.com/sigstore/sigstore-python/releases/tag/v4.2.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/sigstore/sigstore-python/security/advisories/GHSA-hm8f-75xx-w2vr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24408
+    reference_type:
+    reference_id:

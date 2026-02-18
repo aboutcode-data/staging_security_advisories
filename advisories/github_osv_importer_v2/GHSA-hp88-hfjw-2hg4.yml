@@ -1,0 +1,42 @@
+advisory_id: GHSA-hp88-hfjw-2hg4
+datasource_id: github_osv_importer_v2/GHSA-hp88-hfjw-2hg4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-hp88-hfjw-2hg4/GHSA-hp88-hfjw-2hg4.json
+aliases: []
+summary: |
+  Duplicate Advisory: HAL Cross Site Scripting (XSS) vulnerability of user input when storing it in a data store
+  # Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-f7jh-m6wp-jm7f. This link is maintained to preserve external references.
+
+  # Original Description
+
+  A flaw was found in the JBoss EAP Management Console, where a stored Cross-site scripting vulnerability occurs when an application improperly sanitizes user input before storing it in a data store. When this stored data is later included in web pages without adequate sanitization, malicious scripts can execute in the context of users who view these pages, leading to potential data theft, session hijacking, or other malicious activities.
+impacted_packages:
+  - purl: pkg:maven/org.jboss.hal/hal-console
+    affected_versions: vers:maven/<3.7.11.Final
+    fixed_versions: vers:maven/3.7.11.Final
+severities:
+  - score: '4.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-hp88-hfjw-2hg4/GHSA-hp88-hfjw-2hg4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-2901
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2355685
+    reference_type:
+    reference_id:
+  - url: https://github.com/hal/console
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-2901
+    reference_type:
+    reference_id:

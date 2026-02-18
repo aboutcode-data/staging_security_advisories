@@ -1,0 +1,44 @@
+advisory_id: GHSA-hhvr-2q69-4563
+datasource_id: github_osv_importer_v2/GHSA-hhvr-2q69-4563
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-hhvr-2q69-4563/GHSA-hhvr-2q69-4563.json
+aliases:
+  - CVE-2021-3841
+summary: |
+  Cross site scripting in sylius/sylius
+  sylius/sylius versions prior to 1.9.10, 1.10.11, and 1.11.2 are vulnerable to stored cross-site scripting (XSS) through SVG files. This vulnerability allows attackers to inject malicious scripts that can be executed in the context of the user's browser.
+impacted_packages:
+  - purl: pkg:composer/sylius/sylius
+    affected_versions: vers:composer/<1.9.10
+    fixed_versions: vers:composer/1.9.10
+  - purl: pkg:composer/sylius/sylius
+    affected_versions: vers:composer/>=1.10.0|<1.10.11
+    fixed_versions: vers:composer/1.10.11
+  - purl: pkg:composer/sylius/sylius
+    affected_versions: vers:composer/>=1.11.0|<1.11.2
+    fixed_versions: vers:composer/1.11.2
+severities:
+  - score: '4.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-hhvr-2q69-4563/GHSA-hhvr-2q69-4563.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/sylius/sylius
+    reference_type:
+    reference_id:
+  - url: https://github.com/sylius/sylius/commit/3da169e0c23e752974d74223cc536c29a2a82edc
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/1625506791178-Sylius/Sylius
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3841
+    reference_type:
+    reference_id:

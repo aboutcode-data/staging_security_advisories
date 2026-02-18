@@ -1,0 +1,41 @@
+advisory_id: GHSA-hgf8-39gv-g3f2
+datasource_id: github_osv_importer_v2/GHSA-hgf8-39gv-g3f2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-hgf8-39gv-g3f2/GHSA-hgf8-39gv-g3f2.json
+aliases:
+  - CVE-2025-66221
+summary: |
+  Werkzeug safe_join() allows Windows special device names
+  Werkzeug's `safe_join` function allows path segments with Windows device names. On Windows, there are special device names such as `CON`, `AUX`, etc that are implicitly present and readable in every directory. `send_from_directory` uses `safe_join` to safely serve files at user-specified paths under a directory. If the application is running on Windows, and the requested path ends with a special device name, the file will be opened successfully, but reading will hang indefinitely.
+impacted_packages:
+  - purl: pkg:pypi/werkzeug
+    affected_versions: vers:pypi/<3.1.4
+    fixed_versions: vers:pypi/3.1.4
+severities:
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-hgf8-39gv-g3f2/GHSA-hgf8-39gv-g3f2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-67
+references:
+  - url: https://github.com/pallets/werkzeug
+    reference_type:
+    reference_id:
+  - url: https://github.com/pallets/werkzeug/commit/4b833376a45c323a189cd11d2362bcffdb1c0c13
+    reference_type:
+    reference_id:
+  - url: https://github.com/pallets/werkzeug/releases/tag/3.1.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pallets/werkzeug/security/advisories/GHSA-hgf8-39gv-g3f2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-66221
+    reference_type:
+    reference_id:

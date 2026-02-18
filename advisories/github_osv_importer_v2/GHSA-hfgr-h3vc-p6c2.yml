@@ -1,0 +1,53 @@
+advisory_id: GHSA-hfgr-h3vc-p6c2
+datasource_id: github_osv_importer_v2/GHSA-hfgr-h3vc-p6c2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-hfgr-h3vc-p6c2/GHSA-hfgr-h3vc-p6c2.json
+aliases:
+  - CVE-2023-48311
+summary: |
+  DockerSpawner allows any image by default
+  ### Impact
+
+  Users of JupyterHub deployments running DockerSpawner starting with 0.11.0 without specifying `DockerSpawner.allowed_images` configuration allow users to launch _any_ pullable image, instead of restricting to only the single configured image, as intended.
+
+  ### Patches
+
+  Upgrade to DockerSpawner 13.
+
+  ### Workarounds
+
+  Explicitly setting `DockerSpawner.allowed_images` to a non-empty list containing only the default image will result in the intended default behavior:
+
+  ```python
+  c.DockerSpawner.image = "your-image"
+  c.DockerSpawner.allowed_images = ["your-image"]
+  ```
+impacted_packages:
+  - purl: pkg:pypi/dockerspawner
+    affected_versions: vers:pypi/>=0.11.0|<13.0.0
+    fixed_versions: vers:pypi/13.0.0
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-hfgr-h3vc-p6c2/GHSA-hfgr-h3vc-p6c2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/jupyterhub/dockerspawner
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterhub/dockerspawner/commit/3ba4b665b6ca6027ea7a032d7ca3eab977574626
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterhub/dockerspawner/security/advisories/GHSA-hfgr-h3vc-p6c2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-48311
+    reference_type:
+    reference_id:

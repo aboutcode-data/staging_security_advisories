@@ -1,0 +1,62 @@
+advisory_id: GHSA-h4rc-386g-6m85
+datasource_id: github_osv_importer_v2/GHSA-h4rc-386g-6m85
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/04/GHSA-h4rc-386g-6m85/GHSA-h4rc-386g-6m85.json
+aliases:
+  - CVE-2020-11620
+summary: |
+  jackson-databind mishandles the interaction between serialization gadgets and typing
+  FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.apache.commons.jelly.impl.Embedded (aka commons-jelly).
+impacted_packages:
+  - purl: pkg:maven/com.fasterxml.jackson.core/jackson-databind
+    affected_versions: vers:maven/<=2.9.10.3
+    fixed_versions: vers:maven/2.9.10.4
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/04/GHSA-h4rc-386g-6m85/GHSA-h4rc-386g-6m85.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/FasterXML/jackson-databind
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/08fbfacf89a4a4c026a6227a1b470ab7a13e2e88
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/77040d85e3eb6710508e6445640ae1a3d5e60c22
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/issues/2682
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/rf1bbc0ea4a9f014cf94df9a12a6477d24a27f52741dbc87f2fd52ff2@%3Cissues.geode.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2020/04/msg00012.html
+    reference_type:
+    reference_id:
+  - url: https://medium.com/@cowtowncoder/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-11620
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20200511-0004
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2020.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2020.html
+    reference_type:
+    reference_id:

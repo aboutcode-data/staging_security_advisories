@@ -1,0 +1,38 @@
+advisory_id: GHSA-j544-7q9p-6xp8
+datasource_id: github_osv_importer_v2/GHSA-j544-7q9p-6xp8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j544-7q9p-6xp8/GHSA-j544-7q9p-6xp8.json
+aliases:
+  - CVE-2019-14322
+summary: |
+  Pallets Werkzeug vulnerable to Path Traversal
+  In Pallets Werkzeug before 0.15.5, SharedDataMiddleware mishandles drive names (such as C:) in Windows pathnames.
+impacted_packages:
+  - purl: pkg:pypi/werkzeug
+    affected_versions: vers:pypi/<0.15.5
+    fixed_versions: vers:pypi/0.15.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j544-7q9p-6xp8/GHSA-j544-7q9p-6xp8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://packetstormsecurity.com/files/163398/Pallets-Werkzeug-0.15.4-Path-Traversal.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/pallets/werkzeug
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-14322
+    reference_type:
+    reference_id:
+  - url: https://palletsprojects.com/blog/werkzeug-0-15-5-released
+    reference_type:
+    reference_id:

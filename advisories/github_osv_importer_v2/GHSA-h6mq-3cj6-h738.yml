@@ -1,0 +1,45 @@
+advisory_id: GHSA-h6mq-3cj6-h738
+datasource_id: github_osv_importer_v2/GHSA-h6mq-3cj6-h738
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-h6mq-3cj6-h738/GHSA-h6mq-3cj6-h738.json
+aliases: []
+summary: |
+  Reverse Tabnabbing in showdown
+  Versions of `showdown` prior to 1.9.1 are vulnerable to [Reverse Tabnabbing](https://www.owasp.org/index.php/Reverse_Tabnabbing). The package uses `target='_blank'` in anchor tags, allowing attackers to access `window.opener` for the original page when opening links. This is commonly used for phishing attacks.
+
+
+  ## Recommendation
+
+  Upgrade to version 1.9.1 or later.
+impacted_packages:
+  - purl: pkg:npm/showdown
+    affected_versions: vers:npm/<1.9.1
+    fixed_versions: vers:npm/1.9.1
+severities:
+  - score: '3.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-h6mq-3cj6-h738/GHSA-h6mq-3cj6-h738.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1022
+references:
+  - url: https://github.com/showdownjs/showdown
+    reference_type:
+    reference_id:
+  - url: https://github.com/showdownjs/showdown/commit/1cd281f0643ef613dc1d36847d4c6cbb22501d91
+    reference_type:
+    reference_id:
+  - url: https://github.com/showdownjs/showdown/pull/670
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SHOWDOWN-469487
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1302
+    reference_type:
+    reference_id:

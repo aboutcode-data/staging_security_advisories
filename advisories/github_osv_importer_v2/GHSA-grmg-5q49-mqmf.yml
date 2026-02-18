@@ -1,0 +1,41 @@
+advisory_id: GHSA-grmg-5q49-mqmf
+datasource_id: github_osv_importer_v2/GHSA-grmg-5q49-mqmf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-grmg-5q49-mqmf/GHSA-grmg-5q49-mqmf.json
+aliases:
+  - CVE-2018-1000422
+summary: |
+  Jenkins Crowd 2 Integration Plugin server-side request forgery vulnerability
+  An improper authorization vulnerability exists in Jenkins Crowd 2 Integration Plugin 2.0.0 and earlier in CrowdSecurityRealm.java that allows attackers to have Jenkins perform a connection test, connecting to an attacker-specified server with attacker-specified credentials and connection settings.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.plugins/crowd2
+    affected_versions: vers:maven/<=2.0.0
+    fixed_versions: vers:maven/2.0.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-grmg-5q49-mqmf/GHSA-grmg-5q49-mqmf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/jenkinsci/crowd2-plugin
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/crowd2-plugin/commit/a93d0fa221454adb4087520d8c1c087828211598
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2018-09-25/#SECURITY-1067
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000422
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200227092927/http://www.securityfocus.com/bid/106532
+    reference_type:
+    reference_id:

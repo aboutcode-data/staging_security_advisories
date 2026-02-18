@@ -1,0 +1,47 @@
+advisory_id: GHSA-gvpg-vgmx-xg6w
+datasource_id: github_osv_importer_v2/GHSA-gvpg-vgmx-xg6w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-gvpg-vgmx-xg6w/GHSA-gvpg-vgmx-xg6w.json
+aliases:
+  - CVE-2023-52428
+summary: |
+  Denial of Service in Connect2id Nimbus JOSE+JWT
+  In Connect2id Nimbus JOSE+JWT before 9.37.2, an attacker can cause a denial of service (resource consumption) via a large JWE p2c header value (aka iteration count) for the PasswordBasedDecrypter (PBKDF2) component.
+impacted_packages:
+  - purl: pkg:maven/com.nimbusds/nimbus-jose-jwt
+    affected_versions: vers:maven/<9.37.2
+    fixed_versions: vers:maven/9.37.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-gvpg-vgmx-xg6w/GHSA-gvpg-vgmx-xg6w.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-gvpg-vgmx-xg6w/GHSA-gvpg-vgmx-xg6w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-770
+references:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt/commits/3b3b77e
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt/issues/526
+    reference_type:
+    reference_id:
+  - url: https://connect2id.com/products/nimbus-jose-jwt
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-52428
+    reference_type:
+    reference_id:

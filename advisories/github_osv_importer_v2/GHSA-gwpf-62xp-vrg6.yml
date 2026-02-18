@@ -1,0 +1,55 @@
+advisory_id: GHSA-gwpf-62xp-vrg6
+datasource_id: github_osv_importer_v2/GHSA-gwpf-62xp-vrg6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-gwpf-62xp-vrg6/GHSA-gwpf-62xp-vrg6.json
+aliases:
+  - CVE-2016-6799
+summary: |
+  Information Exposure in cordova-android
+  Versions of `cordova-android` prior to 6.0.0 are vulnerable to Information Exposure through log files. The application calls methods of the Log class. Messages passed to these methods (Log.v(), Log.d(), Log.i(), Log.w(), and Log.e()) are stored in a series of circular buffers on the device. By default, a maximum of four 16 KB rotated logs are kept in addition to the current log. The logged data can be read using Logcat on the device. When using platforms prior to Android 4.1 (Jelly Bean), the log data is not sandboxed per application; any application installed on the device has the capability to read data logged by other applications.
+
+
+  ## Recommendation
+
+  Upgrade to version 6.0.0 or later.
+impacted_packages:
+  - purl: pkg:npm/cordova-android
+    affected_versions: vers:npm/<6.0.0
+    fixed_versions: vers:npm/6.0.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-gwpf-62xp-vrg6/GHSA-gwpf-62xp-vrg6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6799
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/cordova-android
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/cordova-android/commit/4a0a7bc424fae14c9689f4a8a2dc250ae3a47f82
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/1f3e7b0319d64b455f73616f572acee36fbca31f87f5b2e509c45b69@%3Cdev.cordova.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-6799
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-CORDOVAANDROID-174935
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/964
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/98365
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-j63m-2vr6-fv7m
+datasource_id: github_osv_importer_v2/GHSA-j63m-2vr6-fv7m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-j63m-2vr6-fv7m/GHSA-j63m-2vr6-fv7m.json
+aliases:
+  - CVE-2024-55415
+summary: |
+  DevDojo Voyager vulnerable to path traversal
+  DevDojo Voyager through 1.8.0 is vulnerable to path traversal at the /admin/compass.
+impacted_packages:
+  - purl: pkg:composer/tcg/voyager
+    affected_versions: vers:composer/<=1.8.0
+    fixed_versions:
+severities:
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-j63m-2vr6-fv7m/GHSA-j63m-2vr6-fv7m.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/thedevdojo/voyager
+    reference_type:
+    reference_id:
+  - url: https://github.com/thedevdojo/voyager/blob/1.6/src/Http/Controllers/VoyagerCompassController.php#L213
+    reference_type:
+    reference_id:
+  - url: https://github.com/thedevdojo/voyager/blob/1.6/src/Http/Controllers/VoyagerCompassController.php#L44
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-55415
+    reference_type:
+    reference_id:
+  - url: https://www.sonarsource.com/blog/the-tainted-voyage-uncovering-voyagers-vulnerabilities
+    reference_type:
+    reference_id:

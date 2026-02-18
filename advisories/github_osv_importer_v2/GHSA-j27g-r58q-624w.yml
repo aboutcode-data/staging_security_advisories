@@ -1,0 +1,41 @@
+advisory_id: GHSA-j27g-r58q-624w
+datasource_id: github_osv_importer_v2/GHSA-j27g-r58q-624w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j27g-r58q-624w/GHSA-j27g-r58q-624w.json
+aliases:
+  - CVE-2017-8385
+summary: |
+  Craft CMS subject to URL forgery
+  Craft CMS before 2.6.2976 does not prevent modification of the URL in a forgot-password email message.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<2.6.2976
+    fixed_versions: vers:composer/2.6.2976
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j27g-r58q-624w/GHSA-j27g-r58q-624w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-640
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/blob/2.6.2976/CHANGELOG.md#security
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/38c594badc8efc468b6162ec921d645011a50d35
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-8385
+    reference_type:
+    reference_id:
+  - url: https://twitter.com/CraftCMS/status/857743080224473088
+    reference_type:
+    reference_id:

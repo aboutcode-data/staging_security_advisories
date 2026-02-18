@@ -1,0 +1,44 @@
+advisory_id: GHSA-j2fp-9wp5-mg66
+datasource_id: github_osv_importer_v2/GHSA-j2fp-9wp5-mg66
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j2fp-9wp5-mg66/GHSA-j2fp-9wp5-mg66.json
+aliases:
+  - CVE-2017-1000442
+summary: |
+  Passbolt API is vulnerable to XSS in the url field on the password workspace grid and sidebar
+  Passbolt API version 1.6.4 and older are vulnerable to a XSS in the url field on the password workspace
+impacted_packages:
+  - purl: pkg:composer/passbolt/passbolt_api
+    affected_versions: vers:composer/<1.6.5
+    fixed_versions: vers:composer/1.6.5
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j2fp-9wp5-mg66/GHSA-j2fp-9wp5-mg66.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/passbolt/passbolt_api/CVE-2017-1000442.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/passbolt/passbolt_api
+    reference_type:
+    reference_id:
+  - url: https://github.com/passbolt/passbolt_api/commit/f5eb93485a90195439e12aa8072f45ceb37b19c3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000442
+    reference_type:
+    reference_id:
+  - url: https://www.passbolt.com/incidents/20170914_xss_on_resource_urls
+    reference_type:
+    reference_id:
+  - url: https://www.passbolt.com/release/notes#September
+    reference_type:
+    reference_id:

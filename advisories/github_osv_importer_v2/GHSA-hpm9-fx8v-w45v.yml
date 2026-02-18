@@ -1,0 +1,39 @@
+advisory_id: GHSA-hpm9-fx8v-w45v
+datasource_id: github_osv_importer_v2/GHSA-hpm9-fx8v-w45v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-hpm9-fx8v-w45v/GHSA-hpm9-fx8v-w45v.json
+aliases:
+  - CVE-2022-28135
+summary: |
+  Plaintext storage in Jenkins instant-messaging Plugin
+  Jenkins instant-messaging Plugin 1.41 and earlier stores passwords for group chats unencrypted in the global configuration file of plugins based on Jenkins instant-messaging Plugin on the Jenkins controller where they can be viewed by users with access to the Jenkins controller file system.
+impacted_packages:
+  - purl: pkg:maven/org.jvnet.hudson.plugins/instant-messaging
+    affected_versions: vers:maven/<1.42
+    fixed_versions: vers:maven/1.42
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-hpm9-fx8v-w45v/GHSA-hpm9-fx8v-w45v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-522
+  - CWE-256
+references:
+  - url: https://github.com/jenkinsci/instant-messaging-plugin
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-28135
+    reference_type:
+    reference_id:
+  - url: https://www.jenkins.io/security/advisory/2022-03-29/#SECURITY-2161
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/03/29/1
+    reference_type:
+    reference_id:

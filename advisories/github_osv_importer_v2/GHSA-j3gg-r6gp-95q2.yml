@@ -1,0 +1,26 @@
+advisory_id: GHSA-j3gg-r6gp-95q2
+datasource_id: github_osv_importer_v2/GHSA-j3gg-r6gp-95q2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-j3gg-r6gp-95q2/GHSA-j3gg-r6gp-95q2.json
+aliases: []
+summary: |
+  XSS in HEEx class attributes
+  The `class` attribute was not protected against XSS attacks when using HEEx.
+impacted_packages:
+  - purl: pkg:hex/phoenix_html
+    affected_versions: vers:hex/<3.0.4
+    fixed_versions: vers:hex/3.0.4
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/phoenixframework/phoenix_html
+    reference_type:
+    reference_id:
+  - url: https://github.com/phoenixframework/phoenix_html/commit/62a0139fb716bcdce697f6221244bd81d321d620
+    reference_type:
+    reference_id:

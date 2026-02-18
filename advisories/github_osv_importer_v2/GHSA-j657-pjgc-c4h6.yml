@@ -1,0 +1,38 @@
+advisory_id: GHSA-j657-pjgc-c4h6
+datasource_id: github_osv_importer_v2/GHSA-j657-pjgc-c4h6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-j657-pjgc-c4h6/GHSA-j657-pjgc-c4h6.json
+aliases:
+  - CVE-2023-2752
+summary: |
+  phpMyFAQ vulnerable to stored Cross-site Scripting
+  Cross-site Scripting (XSS) - Stored in GitHub repository thorsten/phpmyfaq prior to 3.2.0-beta.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.2.0-beta
+    fixed_versions: vers:composer/3.2.0-beta
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-j657-pjgc-c4h6/GHSA-j657-pjgc-c4h6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/thorsten/phpmyfaq
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/e7599d49b0ece7ceef3a4e8d334782cc3df98be8
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/efdf5b24-6d30-4d57-a5b0-13b253ba3ea4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2752
+    reference_type:
+    reference_id:

@@ -1,0 +1,44 @@
+advisory_id: GHSA-hhg2-g6h6-c266
+datasource_id: github_osv_importer_v2/GHSA-hhg2-g6h6-c266
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hhg2-g6h6-c266/GHSA-hhg2-g6h6-c266.json
+aliases:
+  - CVE-2018-7269
+summary: |
+  Yii SQL injection vulnerability
+  The findByCondition function in `framework/db/ActiveRecord.php` in Yii 2.x before 2.0.15 allows remote attackers to conduct SQL injection attacks via a findOne() or findAll() call, unless a developer recognizes an undocumented need to sanitize array input.
+impacted_packages:
+  - purl: pkg:composer/yiisoft/yii2-dev
+    affected_versions: vers:composer/<2.0.12+1
+    fixed_versions: vers:composer/2.0.12+1
+  - purl: pkg:composer/yiisoft/yii2-dev
+    affected_versions: vers:composer/>=2.0.13|<2.0.13+2
+    fixed_versions: vers:composer/2.0.13+2
+  - purl: pkg:composer/yiisoft/yii2-dev
+    affected_versions: vers:composer/>=2.0.14|<2.0.15
+    fixed_versions: vers:composer/2.0.15
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hhg2-g6h6-c266/GHSA-hhg2-g6h6-c266.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/yiisoft/yii2-dev/CVE-2018-7269.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/yiisoft/yii2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-7269
+    reference_type:
+    reference_id:
+  - url: https://www.yiiframework.com/news/168/releasing-yii-2-0-15-and-database-extensions-with-security-fixes
+    reference_type:
+    reference_id:

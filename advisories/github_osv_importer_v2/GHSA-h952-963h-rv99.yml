@@ -1,0 +1,41 @@
+advisory_id: GHSA-h952-963h-rv99
+datasource_id: github_osv_importer_v2/GHSA-h952-963h-rv99
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-h952-963h-rv99/GHSA-h952-963h-rv99.json
+aliases:
+  - CVE-2025-30402
+summary: |
+  ExecuTorch vulnerable to Heap-based Buffer Overflow attack
+  A heap-buffer-overflow vulnerability in the loading of ExecuTorch methods can cause the runtime to crash and potentially result in code execution or other undesirable effects. This issue affects ExecuTorch prior to commit 93b1a0c15f7eda49b2bc46b5b4c49557b4e9810f
+impacted_packages:
+  - purl: pkg:pypi/executorch
+    affected_versions: vers:pypi/<=0.6.0
+    fixed_versions: vers:pypi/0.7.0
+  - purl: pkg:maven/org.pytorch/executorch-android
+    affected_versions: vers:maven/<=0.6.0
+    fixed_versions: vers:maven/0.7.0-rc1
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-h952-963h-rv99/GHSA-h952-963h-rv99.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-122
+references:
+  - url: https://github.com/pytorch/executorch
+    reference_type:
+    reference_id:
+  - url: https://github.com/pytorch/executorch/commit/93b1a0c15f7eda49b2bc46b5b4c49557b4e9810f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-30402
+    reference_type:
+    reference_id:
+  - url: https://www.facebook.com/security/advisories/cve-2025-30402
+    reference_type:
+    reference_id:

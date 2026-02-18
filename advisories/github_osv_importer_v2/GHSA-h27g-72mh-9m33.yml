@@ -1,0 +1,43 @@
+advisory_id: GHSA-h27g-72mh-9m33
+datasource_id: github_osv_importer_v2/GHSA-h27g-72mh-9m33
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h27g-72mh-9m33/GHSA-h27g-72mh-9m33.json
+aliases:
+  - CVE-2019-10414
+summary: |
+  Jenkins Git Changelog Plugin has Insufficiently Protected Credentials
+  Git Changelog Plugin stored MediaWiki and Jira passwords unencrypted in job `config.xml` files on the Jenkins controller. These passwords could be viewed by users with Extended Read permission, or access to the Jenkins controller file system.
+
+  Git Changelog Plugin now stores these passwords encrypted. Existing jobs need to have their configuration saved for existing plain text passwords to be overwritten.
+impacted_packages:
+  - purl: pkg:maven/de.wellnerbou.jenkins/git-changelog
+    affected_versions: vers:maven/<2.18
+    fixed_versions: vers:maven/2.18
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h27g-72mh-9m33/GHSA-h27g-72mh-9m33.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-522
+references:
+  - url: https://github.com/jenkinsci/git-changelog-plugin
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/git-changelog-plugin/commit/356243aa6d3f6ad60f057e7567a3466910618441
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2019-09-25/#SECURITY-1574
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10414
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/09/25/3
+    reference_type:
+    reference_id:

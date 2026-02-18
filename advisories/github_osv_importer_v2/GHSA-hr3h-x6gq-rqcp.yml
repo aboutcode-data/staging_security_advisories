@@ -1,0 +1,86 @@
+advisory_id: GHSA-hr3h-x6gq-rqcp
+datasource_id: github_osv_importer_v2/GHSA-hr3h-x6gq-rqcp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-hr3h-x6gq-rqcp/GHSA-hr3h-x6gq-rqcp.json
+aliases:
+  - CVE-2021-35955
+summary: |
+  Cross site scripting via HTML attributes in the back end
+  ### Impact
+
+  It is possible for untrusted users to inject malicious code into HTML attributes in the back end, which will be executed both in the element preview (back end) and on the website (front end).
+
+  Installations are only affected if there are untrusted back end users who have the rights to modify HTML fields (e.g. TinyMCE).
+
+  ### Patches
+
+  Update to Contao 4.4.56, 4.9.18 or 4.11.7
+
+  ### Workarounds
+
+  Disable all fields that allow HTML for untrusted back end users or disable the login for these users.
+
+  ### References
+
+  https://contao.org/en/security-advisories/cross-site-scripting-via-html-attributes-in-the-back-end
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, open an issue in [contao/contao](https://github.com/contao/contao/issues/new/choose).
+
+  ### Credits
+
+  Thanks to Mikhail Khramenkov and Moritz Vondano for reporting this security issue.
+impacted_packages:
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.0.0|<4.4.56
+    fixed_versions: vers:composer/4.4.56
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.0.0|<4.4.56
+    fixed_versions: vers:composer/4.4.56
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.5.0|<4.9.18
+    fixed_versions: vers:composer/4.9.18
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.10.0|<4.11.7
+    fixed_versions: vers:composer/4.11.7
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.5.0|<4.9.18
+    fixed_versions: vers:composer/4.9.18
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.10.0|<4.11.7
+    fixed_versions: vers:composer/4.11.7
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-hr3h-x6gq-rqcp/GHSA-hr3h-x6gq-rqcp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://contao.org/en/news/contao-4-9-16-and-4-11-5-are-available.html
+    reference_type:
+    reference_id:
+  - url: https://contao.org/en/security-advisories/cross-site-scripting-via-html-attributes-in-the-back-end.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/security/advisories/GHSA-hr3h-x6gq-rqcp
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/contao/CVE-2021-35955.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/core-bundle/CVE-2021-35955.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-35955
+    reference_type:
+    reference_id:

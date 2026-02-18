@@ -1,0 +1,70 @@
+advisory_id: GHSA-gv7v-rgg6-548h
+datasource_id: github_osv_importer_v2/GHSA-gv7v-rgg6-548h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-gv7v-rgg6-548h/GHSA-gv7v-rgg6-548h.json
+aliases:
+  - CVE-2024-52301
+summary: |
+  Laravel environment manipulation via query string
+  ## Description
+
+  When the `register_argc_argv php` directive is set to `on` , and users call any URL with a special crafted query string, they are able to change the environment used by the framework when handling the request.
+
+  ## Resolution
+
+  The framework now ignores argv values for environment detection on non-cli SAPIs.
+impacted_packages:
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/<6.20.45
+    fixed_versions: vers:composer/6.20.45
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=7.0.0|<7.30.7
+    fixed_versions: vers:composer/7.30.7
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=8.0.0|<8.83.28
+    fixed_versions: vers:composer/8.83.28
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=9.0.0|<9.52.17
+    fixed_versions: vers:composer/9.52.17
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=10.0.0|<10.48.23
+    fixed_versions: vers:composer/10.48.23
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=11.0.0|<11.31.0
+    fixed_versions: vers:composer/11.31.0
+severities:
+  - score: '0.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-gv7v-rgg6-548h/GHSA-gv7v-rgg6-548h.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-gv7v-rgg6-548h/GHSA-gv7v-rgg6-548h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-88
+references:
+  - url: https://github.com/advisories/GHSA-gv7v-rgg6-548h
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/CVE-2024-52301.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework/security/advisories/GHSA-gv7v-rgg6-548h
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/12/msg00019.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-52301
+    reference_type:
+    reference_id:

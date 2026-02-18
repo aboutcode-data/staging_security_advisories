@@ -1,0 +1,43 @@
+advisory_id: GHSA-j7jm-8gf5-frcm
+datasource_id: github_osv_importer_v2/GHSA-j7jm-8gf5-frcm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-j7jm-8gf5-frcm/GHSA-j7jm-8gf5-frcm.json
+aliases:
+  - CVE-2024-28213
+summary: |
+  nGrinder vulnerable to unsafe Java objects deserialization
+  nGrinder before 3.5.9 allows to accept serialized Java objects from unauthenticated users, which could allow remote attacker to execute arbitrary code via unsafe Java objects deserialization.
+impacted_packages:
+  - purl: pkg:maven/org.ngrinder/ngrinder-core
+    affected_versions: vers:maven/<3.5.9
+    fixed_versions: vers:maven/3.5.9
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-j7jm-8gf5-frcm/GHSA-j7jm-8gf5-frcm.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-j7jm-8gf5-frcm/GHSA-j7jm-8gf5-frcm.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://cve.naver.com/detail/cve-2024-28213.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/naver/ngrinder
+    reference_type:
+    reference_id:
+  - url: https://github.com/naver/ngrinder/commit/85efa4a075354e077a700262ef78e2e9119881bf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-28213
+    reference_type:
+    reference_id:

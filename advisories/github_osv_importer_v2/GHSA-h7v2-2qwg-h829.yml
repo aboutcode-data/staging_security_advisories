@@ -1,0 +1,66 @@
+advisory_id: GHSA-h7v2-2qwg-h829
+datasource_id: github_osv_importer_v2/GHSA-h7v2-2qwg-h829
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-h7v2-2qwg-h829/GHSA-h7v2-2qwg-h829.json
+aliases:
+  - CVE-2014-6061
+summary: |
+  Symfony has a security issue when parsing the Authorization header
+  All 2.0.X, 2.1.X, 2.2.X, 2.3.X, 2.4.X, and 2.5.X versions of the Symfony HttpFoundation component are affected by this security issue.
+
+  This issue has been fixed in Symfony 2.3.19, 2.4.9, and 2.5.4. Note that no fixes are provided for Symfony 2.0, 2.1, and 2.2 as they are not maintained anymore.
+
+  ### Description
+  When an application uses an HTTP basic or digest authentication, Symfony does not parse the `Authorization` header properly, which could be exploited in some server setups (no exploits have been demonstrated though.)
+
+  ### Resolution
+  The parsing of the `Authorization` header has been fixed to comply to the HTTP specification.
+
+  The patch for this issue is available here: https://github.com/symfony/symfony/pull/11829
+impacted_packages:
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=2.0.0|<2.3.19
+    fixed_versions: vers:composer/2.3.19
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=2.4.0|<2.4.9
+    fixed_versions: vers:composer/2.4.9
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=2.5.0|<2.5.4
+    fixed_versions: vers:composer/2.5.4
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.0.0|<2.3.19
+    fixed_versions: vers:composer/2.3.19
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.4.0|<2.4.9
+    fixed_versions: vers:composer/2.4.9
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.5.0|<2.5.4
+    fixed_versions: vers:composer/2.5.4
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-h7v2-2qwg-h829/GHSA-h7v2-2qwg-h829.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/http-foundation/CVE-2014-6061.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2014-6061.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/3b4046e89467dc1fb5e079e377c2cfd4c239f904
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/pull/11829
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2014-6061
+    reference_type:
+    reference_id:

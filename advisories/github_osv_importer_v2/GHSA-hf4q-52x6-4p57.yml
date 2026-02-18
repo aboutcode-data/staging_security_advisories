@@ -1,0 +1,38 @@
+advisory_id: GHSA-hf4q-52x6-4p57
+datasource_id: github_osv_importer_v2/GHSA-hf4q-52x6-4p57
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-hf4q-52x6-4p57/GHSA-hf4q-52x6-4p57.json
+aliases:
+  - CVE-2022-0906
+summary: |
+  Unrestricted file upload leads to stored cross-site scripting in Microweber
+  Microweber prior to version 1.2.12 allows unrestricted file upload, which could lead to stored cross-site scripting.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.2.12
+    fixed_versions: vers:composer/1.2.12
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-hf4q-52x6-4p57/GHSA-hf4q-52x6-4p57.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/d9bae9df873c2d2a13a2eb08d512019d49ebca68
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/87ed3b42-9824-49b0-91a5-fd908a0601e8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0906
+    reference_type:
+    reference_id:

@@ -1,0 +1,50 @@
+advisory_id: GHSA-hhpm-5cp2-hg4x
+datasource_id: github_osv_importer_v2/GHSA-hhpm-5cp2-hg4x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hhpm-5cp2-hg4x/GHSA-hhpm-5cp2-hg4x.json
+aliases:
+  - CVE-2018-1000861
+summary: |
+  Deserialization of Untrusted Data in Jenkins
+  A code execution vulnerability exists in the Stapler web framework used by Jenkins 2.153 and earlier, LTS 2.138.3 and earlier in stapler/core/src/main/java/org/kohsuke/stapler/MetaClass.java that allows attackers to invoke some methods on Java objects by accessing crafted URLs that were not intended to be invoked this way.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.138.3
+    fixed_versions: vers:maven/2.138.4
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.153
+    fixed_versions: vers:maven/2.154
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hhpm-5cp2-hg4x/GHSA-hhpm-5cp2-hg4x.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: http://packetstormsecurity.com/files/166778/Jenkins-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHBA-2019:0024
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins/commit/47f38d714c99e1841fb737ad1005618eb26ed852
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2018-12-05/#SECURITY-595
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000861
+    reference_type:
+    reference_id:
+  - url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2018-1000861
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/106176
+    reference_type:
+    reference_id:

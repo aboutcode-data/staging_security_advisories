@@ -1,0 +1,38 @@
+advisory_id: GHSA-h755-h99p-9ffv
+datasource_id: github_osv_importer_v2/GHSA-h755-h99p-9ffv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h755-h99p-9ffv/GHSA-h755-h99p-9ffv.json
+aliases:
+  - CVE-2019-5312
+summary: |
+  XML External Entity Reference in weixin-java-tools
+  An issue was discovered in weixin-java-tools. There is an XXE vulnerability in the getXmlDoc method of the BaseWxPayResult.java file. NOTE: this issue exists because of an incomplete fix for CVE-2018-20318.
+impacted_packages:
+  - purl: pkg:maven/com.github.binarywang/weixin-java-common
+    affected_versions: vers:maven/<3.3.2.B
+    fixed_versions: vers:maven/3.3.2.B
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h755-h99p-9ffv/GHSA-h755-h99p-9ffv.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/Wechat-Group/WxJava/commit/8ec61d1328f50e23cd14285a950ca57a088b32b2
+    reference_type:
+    reference_id:
+  - url: https://github.com/Wechat-Group/WxJava/issues/903
+    reference_type:
+    reference_id:
+  - url: https://github.com/Wechat-Group/WxJava/issues/903#issuecomment-453747039
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-5312
+    reference_type:
+    reference_id:

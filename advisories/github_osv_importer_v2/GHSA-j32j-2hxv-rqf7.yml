@@ -1,0 +1,45 @@
+advisory_id: GHSA-j32j-2hxv-rqf7
+datasource_id: github_osv_importer_v2/GHSA-j32j-2hxv-rqf7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-j32j-2hxv-rqf7/GHSA-j32j-2hxv-rqf7.json
+aliases:
+  - CVE-2022-25852
+summary: |
+  pg-native and libpq vulnerable to uncontrolled resource consumption
+  pg-native before 3.0.1 and libpq before 1.8.10 are vulnerable to Denial of Service (DoS) when the addons attempt to cast the second argument to an array and fail. This happens for every non-array argument passed. **Note:** pg-native is a mere binding to npm's libpq library, which in turn has the addons and bindings to the actual C libpq library. This means that problems found in pg-native may transitively impact npm's libpq.
+impacted_packages:
+  - purl: pkg:npm/libpq
+    affected_versions: vers:npm/<=1.8.9
+    fixed_versions: vers:npm/1.8.10
+  - purl: pkg:npm/pg-native
+    affected_versions: vers:npm/<=3.0.0
+    fixed_versions: vers:npm/3.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-j32j-2hxv-rqf7/GHSA-j32j-2hxv-rqf7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-704
+  - CWE-400
+references:
+  - url: https://github.com/brianc/node-libpq/issues/84
+    reference_type:
+    reference_id:
+  - url: https://github.com/brianc/node-libpq/pull/86
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25852
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-LIBPQ-2392366
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-PGNATIVE-2392365
+    reference_type:
+    reference_id:

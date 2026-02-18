@@ -1,0 +1,35 @@
+advisory_id: GHSA-h92m-4g9m-72vr
+datasource_id: github_osv_importer_v2/GHSA-h92m-4g9m-72vr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-h92m-4g9m-72vr/GHSA-h92m-4g9m-72vr.json
+aliases:
+  - CVE-2023-46468
+summary: |
+  juzawebCMS Injection vulnerability
+  An issue in juzawebCMS v.3.4 and before allows a remote attacker to execute arbitrary code via a crafted file to the custom plugin function.
+impacted_packages:
+  - purl: pkg:composer/juzaweb/cms
+    affected_versions: vers:composer/<=3.4.0
+    fixed_versions:
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-h92m-4g9m-72vr/GHSA-h92m-4g9m-72vr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/juzaweb/cms
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46468
+    reference_type:
+    reference_id:
+  - url: https://www.sumor.top/index.php/archives/875
+    reference_type:
+    reference_id:

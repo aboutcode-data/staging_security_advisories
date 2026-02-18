@@ -1,0 +1,41 @@
+advisory_id: GHSA-hhcw-wwxv-g95c
+datasource_id: github_osv_importer_v2/GHSA-hhcw-wwxv-g95c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-hhcw-wwxv-g95c/GHSA-hhcw-wwxv-g95c.json
+aliases:
+  - CVE-2024-55471
+summary: |
+  Oqtane Framework Insecure Direct Object Reference vulnerability
+  Oqtane Framework is vulnerable to Insecure Direct Object Reference (IDOR) in Oqtane.Controllers.UserController. This allows unauthorized users to access sensitive information of other users by manipulating the id parameter.
+impacted_packages:
+  - purl: pkg:nuget/Oqtane.Framework
+    affected_versions: vers:nuget/<=6.0.0
+    fixed_versions:
+  - purl: pkg:nuget/Oqtane.Server
+    affected_versions: vers:nuget/<=6.0.0
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-hhcw-wwxv-g95c/GHSA-hhcw-wwxv-g95c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: https://github.com/oqtane/oqtane.framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/oqtane/oqtane.framework/pull/4880/files
+    reference_type:
+    reference_id:
+  - url: https://medium.com/@Rudra_2158/cve-2024-55471-breaking-down-the-idor-vulnerability-in-oqtane-framework-c0f4b02f12fc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-55471
+    reference_type:
+    reference_id:

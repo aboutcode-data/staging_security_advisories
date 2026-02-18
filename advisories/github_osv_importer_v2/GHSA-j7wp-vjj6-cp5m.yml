@@ -1,0 +1,30 @@
+advisory_id: GHSA-j7wp-vjj6-cp5m
+datasource_id: github_osv_importer_v2/GHSA-j7wp-vjj6-cp5m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-j7wp-vjj6-cp5m/GHSA-j7wp-vjj6-cp5m.json
+aliases: []
+summary: |
+  Cross-Site Scripting in @progress/kendo-angular-editor
+  Kendo UI for Angular Editor Component (npm package @progress/kendo-angular-editor) before version 1.2.3 is vulnerable to Cross-Site Scripting. When the Editor content contains potentially malicious scripts in element event handlers, they get executed.
+  Adding the following content to the Editor value demonstrates the issue: `<img src="" onerror=alert(document.domain)>`.
+impacted_packages:
+  - purl: pkg:npm/%40progress/kendo-angular-editor
+    affected_versions: vers:npm/<1.2.3
+    fixed_versions: vers:npm/1.2.3
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/telerik/kendo-angular-editor
+    reference_type:
+    reference_id:
+  - url: https://stackblitz.com/edit/angular-6xzuzp-tef7lb?file=app/app.component.ts
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1549
+    reference_type:
+    reference_id:

@@ -1,0 +1,65 @@
+advisory_id: GHSA-h47h-mwp9-c6q6
+datasource_id: github_osv_importer_v2/GHSA-h47h-mwp9-c6q6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-h47h-mwp9-c6q6/GHSA-h47h-mwp9-c6q6.json
+aliases:
+  - CVE-2024-47889
+summary: |
+  Possible ReDoS vulnerability in block_format in Action Mailer
+  There is a possible ReDoS vulnerability in the block_format helper in Action Mailer. This vulnerability has been assigned the CVE identifier CVE-2024-47889.
+
+  Impact
+  ------
+
+  Carefully crafted text can cause the block_format helper to take an unexpected amount of time, possibly resulting in a DoS vulnerability. All users running an affected release should either upgrade or apply the relevant patch immediately.
+
+  Ruby 3.2 has mitigations for this problem, so Rails applications using Ruby 3.2 or newer are unaffected. Rails 8.0.0.beta1 requires Ruby 3.2 or greater so is unaffected.
+
+
+  Releases
+  --------
+  The fixed releases are available at the normal locations.
+
+  Workarounds
+  -----------
+  Users can avoid calling the `block_format` helper or upgrade to Ruby 3.2
+
+  Credits
+  -------
+
+  Thanks to yuki_osaki for the report!
+impacted_packages:
+  - purl: pkg:gem/actionmailer
+    affected_versions: vers:gem/>=3.0.0|<6.1.7.9
+    fixed_versions: vers:gem/6.1.7.9
+  - purl: pkg:gem/actionmailer
+    affected_versions: vers:gem/>=7.0.0|<7.0.8.5
+    fixed_versions: vers:gem/7.0.8.5
+  - purl: pkg:gem/actionmailer
+    affected_versions: vers:gem/>=7.1.0|<7.1.4.1
+    fixed_versions: vers:gem/7.1.4.1
+  - purl: pkg:gem/actionmailer
+    affected_versions: vers:gem/>=7.2.0|<7.2.1.1
+    fixed_versions: vers:gem/7.2.1.1
+severities:
+  - score: '6.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-h47h-mwp9-c6q6/GHSA-h47h-mwp9-c6q6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/rails/rails
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/security/advisories/GHSA-h47h-mwp9-c6q6
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/actionmailer/CVE-2024-47889.yml
+    reference_type:
+    reference_id:

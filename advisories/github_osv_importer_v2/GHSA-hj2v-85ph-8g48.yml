@@ -1,0 +1,35 @@
+advisory_id: GHSA-hj2v-85ph-8g48
+datasource_id: github_osv_importer_v2/GHSA-hj2v-85ph-8g48
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hj2v-85ph-8g48/GHSA-hj2v-85ph-8g48.json
+aliases:
+  - CVE-2016-0712
+summary: |
+  Cross-site Scripting in Apache Jetspeed
+  Cross-site scripting (XSS) vulnerability in Apache Jetspeed before 2.3.1 allows remote attackers to inject arbitrary web script or HTML via the PATH_INFO to portal.
+impacted_packages:
+  - purl: pkg:maven/org.apache.portals.jetspeed-2/jetspeed
+    affected_versions: vers:maven/<2.3.1
+    fixed_versions: vers:maven/2.3.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hj2v-85ph-8g48/GHSA-hj2v-85ph-8g48.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://mail-archives.apache.org/mod_mbox/portals-jetspeed-user/201603.mbox/%3CF868DBFC-A05C-4ABB-8B91-17CA54C174B9@bluesunrise.com%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-0712
+    reference_type:
+    reference_id:
+  - url: https://portals.apache.org/jetspeed-2/security-reports.html#CVE-2016-0712
+    reference_type:
+    reference_id:

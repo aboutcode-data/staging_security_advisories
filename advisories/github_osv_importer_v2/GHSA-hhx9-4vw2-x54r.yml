@@ -1,0 +1,61 @@
+advisory_id: GHSA-hhx9-4vw2-x54r
+datasource_id: github_osv_importer_v2/GHSA-hhx9-4vw2-x54r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hhx9-4vw2-x54r/GHSA-hhx9-4vw2-x54r.json
+aliases:
+  - CVE-2015-0260
+summary: |
+  RhodeCode and Kallithea are vulnerable to sensitive information disclosure
+  RhodeCode before 2.2.7 and Kallithea 0.1 allows remote authenticated users to obtain API keys and other sensitive information via the get_repo API method.
+impacted_packages:
+  - purl: pkg:pypi/rhodecode
+    affected_versions: vers:pypi/<2.2.7
+    fixed_versions: vers:pypi/2.2.7
+  - purl: pkg:pypi/kallithea
+    affected_versions: vers:pypi/<0.2
+    fixed_versions: vers:pypi/0.2
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hhx9-4vw2-x54r/GHSA-hhx9-4vw2-x54r.json
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hhx9-4vw2-x54r/GHSA-hhx9-4vw2-x54r.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: http://seclists.org/oss-sec/2015/q1/505
+    reference_type:
+    reference_id:
+  - url: https://exchange.xforce.ibmcloud.com/vulnerabilities/100888
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/kallithea/PYSEC-2015-29.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/rhodecode/PYSEC-2015-32.yaml
+    reference_type:
+    reference_id:
+  - url: https://kallithea-scm.org/repos/kallithea/changeset/5923d74742879b812965568475e21c3496d722a9
+    reference_type:
+    reference_id:
+  - url: https://kallithea-scm.org/security/cve-2015-0260.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-0260
+    reference_type:
+    reference_id:
+  - url: https://rhodecode.com/blog/rhodecode-enterprise-security-release
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20150321135511/http://www.securityfocus.com/bid/72573
+    reference_type:
+    reference_id:

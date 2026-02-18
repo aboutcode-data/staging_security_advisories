@@ -1,0 +1,44 @@
+advisory_id: GHSA-grh7-935j-hg6w
+datasource_id: github_osv_importer_v2/GHSA-grh7-935j-hg6w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-grh7-935j-hg6w/GHSA-grh7-935j-hg6w.json
+aliases:
+  - CVE-2021-30151
+summary: |
+  Cross-site Scripting in Sidekiq
+  Sidekiq through 5.1.3 and 6.x through 6.2.0 allows XSS via the queue name of the live-poll feature when Internet Explorer is used.
+impacted_packages:
+  - purl: pkg:gem/sidekiq
+    affected_versions: vers:gem/<5.2.0
+    fixed_versions: vers:gem/5.2.0
+  - purl: pkg:gem/sidekiq
+    affected_versions: vers:gem/>=6.0.0|<6.2.1
+    fixed_versions: vers:gem/6.2.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-grh7-935j-hg6w/GHSA-grh7-935j-hg6w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/mperham/sidekiq
+    reference_type:
+    reference_id:
+  - url: https://github.com/mperham/sidekiq/commit/64f70339d1dcf50a55c00d36bfdb61d97ec63ed8
+    reference_type:
+    reference_id:
+  - url: https://github.com/mperham/sidekiq/issues/4852
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/03/msg00015.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-30151
+    reference_type:
+    reference_id:

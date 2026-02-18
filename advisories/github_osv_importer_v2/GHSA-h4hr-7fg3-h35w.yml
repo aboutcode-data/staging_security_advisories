@@ -1,0 +1,45 @@
+advisory_id: GHSA-h4hr-7fg3-h35w
+datasource_id: github_osv_importer_v2/GHSA-h4hr-7fg3-h35w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-h4hr-7fg3-h35w/GHSA-h4hr-7fg3-h35w.json
+aliases:
+  - CVE-2021-23341
+summary: |
+  Denial of service in prismjs
+  The package prismjs before 1.23.0 are vulnerable to Regular Expression Denial of Service (ReDoS) via the `prism-asciidoc`, `prism-rest`, `prism-tap` and `prism-eiffel` components.
+impacted_packages:
+  - purl: pkg:npm/prismjs
+    affected_versions: vers:npm/<1.23.0
+    fixed_versions: vers:npm/1.23.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/PrismJS/prism/commit/c2f6a64426f44497a675cb32dccb079b3eff1609
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrismJS/prism/issues/2583
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrismJS/prism/pull/2584
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23341
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1076583
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1076582
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-PRISMJS-1076581
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/prismjs
+    reference_type:
+    reference_id:

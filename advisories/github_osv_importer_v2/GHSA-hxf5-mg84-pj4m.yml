@@ -1,0 +1,27 @@
+advisory_id: GHSA-hxf5-mg84-pj4m
+datasource_id: github_osv_importer_v2/GHSA-hxf5-mg84-pj4m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-hxf5-mg84-pj4m/GHSA-hxf5-mg84-pj4m.json
+aliases: []
+summary: |
+  Moderate severity vulnerability that affects moment
+  Withdrawn, accidental duplicate publish.
+
+  The duration function in the moment package before 2.11.2 for Node.js allows remote attackers to cause a denial of service (CPU consumption) via a long string, aka a "regular expression Denial of Service (ReDoS)."
+impacted_packages:
+  - purl: pkg:npm/moment
+    affected_versions: vers:npm/<2.11.2
+    fixed_versions: vers:npm/2.11.2
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-hxf5-mg84-pj4m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-4055
+    reference_type:
+    reference_id:

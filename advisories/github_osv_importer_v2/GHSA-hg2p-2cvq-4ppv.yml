@@ -1,0 +1,35 @@
+advisory_id: GHSA-hg2p-2cvq-4ppv
+datasource_id: github_osv_importer_v2/GHSA-hg2p-2cvq-4ppv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-hg2p-2cvq-4ppv/GHSA-hg2p-2cvq-4ppv.json
+aliases:
+  - CVE-2020-7642
+summary: |
+  Cross-site scripting in lazysizes
+  lazysizes through 5.2.0 allows execution of malicious JavaScript. The following attributes are not sanitized by the video-embed plugin: `data-vimeo`, `data-vimeoparams`, `data-youtube` and `data-ytparams` which can be abused to inject malicious JavaScript.
+impacted_packages:
+  - purl: pkg:npm/lazysizes
+    affected_versions: vers:npm/<=5.2.0
+    fixed_versions: vers:npm/5.2.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-hg2p-2cvq-4ppv/GHSA-hg2p-2cvq-4ppv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/aFarkas/lazysizes/commit/3720ab8262552d4e063a38d8492f9490a231fd48
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7642
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-LAZYSIZES-567144
+    reference_type:
+    reference_id:

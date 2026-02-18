@@ -1,0 +1,70 @@
+advisory_id: GHSA-hgqx-r2hp-jr38
+datasource_id: github_osv_importer_v2/GHSA-hgqx-r2hp-jr38
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-hgqx-r2hp-jr38/GHSA-hgqx-r2hp-jr38.json
+aliases:
+  - CVE-2023-45819
+summary: "TinyMCE XSS vulnerability in notificationManager.open API\n### Impact\nA [cross-site\
+  \ scripting (XSS)](https://owasp.org/www-community/attacks/xss/) vulnerability was discovered\
+  \ in TinyMCE’s Notification Manager API. The vulnerability exploits TinyMCE's unfiltered notification\
+  \ system, which is used in error handling.  The conditions for this exploit requires carefully\
+  \ crafted malicious content to have been inserted into the editor and a notification to have\
+  \ been triggered.  \n\nWhen a notification was opened, the HTML within the text argument was\
+  \ displayed unfiltered in the notification. The vulnerability allowed arbitrary JavaScript\
+  \ execution when an notification presented in the TinyMCE UI for the current user.  This issue\
+  \ could also be exploited by any integration which uses a TinyMCE notification to display\
+  \ unfiltered HTML content.\n\n### Patches\nThis vulnerability has been patched in TinyMCE\
+  \ 5.10.8 and TinyMCE 6.7.1 by ensuring that the HTML displayed in the notification is sanitized,\
+  \ preventing the exploit.\n\n### Fix\nTo avoid this vulnerability:\n\n* Upgrade to TinyMCE\
+  \ 5.10.8 or higher for TinyMCE 5.x.\n* Upgrade to TinyMCE 6.7.1 or higher for TinyMCE 6.x.\n\
+  \n### References\n* <https://tiny.cloud/docs/release-notes/release-notes5108/#securityfixes>\n\
+  * <https://tiny.cloud/docs/tinymce/6/6.7.1-release-notes/#security-fixes>\n\n### For more\
+  \ information\nIf you have any questions or comments about this advisory:\n* Email us at <infosec@tiny.cloud>\n\
+  * Open an issue in the [TinyMCE repo](https://github.com/tinymce/tinymce/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)"
+impacted_packages:
+  - purl: pkg:npm/tinymce
+    affected_versions: vers:npm/>=6.0.0|<6.7.1
+    fixed_versions: vers:npm/6.7.1
+  - purl: pkg:nuget/TinyMCE
+    affected_versions: vers:nuget/>=6.0.0|<6.7.1
+    fixed_versions: vers:nuget/6.7.1
+  - purl: pkg:composer/tinymce/tinymce
+    affected_versions: vers:composer/>=6.0.0|<6.7.1
+    fixed_versions: vers:composer/6.7.1
+  - purl: pkg:npm/tinymce
+    affected_versions: vers:npm/<5.10.8
+    fixed_versions: vers:npm/5.10.8
+  - purl: pkg:nuget/TinyMCE
+    affected_versions: vers:nuget/<5.10.8
+    fixed_versions: vers:nuget/5.10.8
+  - purl: pkg:composer/tinymce/tinymce
+    affected_versions: vers:composer/<5.10.8
+    fixed_versions: vers:composer/5.10.8
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-hgqx-r2hp-jr38/GHSA-hgqx-r2hp-jr38.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/tinymce/tinymce
+    reference_type:
+    reference_id:
+  - url: https://github.com/tinymce/tinymce/security/advisories/GHSA-hgqx-r2hp-jr38
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-45819
+    reference_type:
+    reference_id:
+  - url: https://tiny.cloud/docs/release-notes/release-notes5108/#securityfixes
+    reference_type:
+    reference_id:
+  - url: https://tiny.cloud/docs/tinymce/6/6.7.1-release-notes/#security-fixes
+    reference_type:
+    reference_id:

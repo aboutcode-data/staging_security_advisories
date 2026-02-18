@@ -1,0 +1,44 @@
+advisory_id: GHSA-j3hp-pv6v-rgrx
+datasource_id: github_osv_importer_v2/GHSA-j3hp-pv6v-rgrx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j3hp-pv6v-rgrx/GHSA-j3hp-pv6v-rgrx.json
+aliases:
+  - CVE-2017-9232
+summary: |
+  Juju uses a UNIX domain socket without setting appropriate permissions
+  Juju before 1.25.12, 2.0.x before 2.0.4, and 2.1.x before 2.1.3 uses a UNIX domain socket without setting appropriate permissions, allowing privilege escalation by users on the system to root.
+impacted_packages: []
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j3hp-pv6v-rgrx/GHSA-j3hp-pv6v-rgrx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+references:
+  - url: https://bugs.launchpad.net/juju/+bug/1682411
+    reference_type:
+    reference_id:
+  - url: https://github.com/juju/juju
+    reference_type:
+    reference_id:
+  - url: https://github.com/juju/juju/commit/0417178a3c2869537860e8b3b5e787ce1732231f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-9232
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/44023
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/44023.rb
+    reference_type: exploit
+    reference_id: CVE-2017-9232
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/321b78b0fe8fd515d1efab64996f11b4eecbc27d/modules/exploits/linux/local/juju_run_agent_priv_esc.rb
+    reference_type: exploit
+    reference_id: CVE-2017-9232

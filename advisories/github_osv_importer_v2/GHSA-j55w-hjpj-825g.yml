@@ -1,0 +1,65 @@
+advisory_id: GHSA-j55w-hjpj-825g
+datasource_id: github_osv_importer_v2/GHSA-j55w-hjpj-825g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-j55w-hjpj-825g/GHSA-j55w-hjpj-825g.json
+aliases:
+  - CVE-2024-28234
+summary: |
+  Contao: Insufficient BBCode sanitizer
+  ### Impact
+
+  If BBCode is enabled for comments, users can inject CSS styles.
+
+  ### Patches
+
+  Update to Contao 4.13.40 or 5.3.4.
+
+  ### Workarounds
+
+  Disable BBCode for comments.
+
+  ### References
+
+  https://contao.org/en/security-advisories/insufficient-bbcode-sanitization
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, open an issue in [contao/contao](https://github.com/contao/contao/issues/new/choose).
+impacted_packages:
+  - purl: pkg:composer/contao/comments-bundle
+    affected_versions: vers:composer/>=2.0.0|<4.13.40
+    fixed_versions: vers:composer/4.13.40
+  - purl: pkg:composer/contao/comments-bundle
+    affected_versions: vers:composer/>=5.0.0-RC1|<5.3.4
+    fixed_versions: vers:composer/5.3.4
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-j55w-hjpj-825g/GHSA-j55w-hjpj-825g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://contao.org/en/security-advisories/insufficient-bbcode-sanitization
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/commit/55b995d8d35da0d36bc6a22c53fe6423ab0c4ae2
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/commit/6d42e667177c972ae7c219645593c262d7764ce2
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/security/advisories/GHSA-j55w-hjpj-825g
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-28234
+    reference_type:
+    reference_id:

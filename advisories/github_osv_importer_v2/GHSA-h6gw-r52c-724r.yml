@@ -1,0 +1,80 @@
+advisory_id: GHSA-h6gw-r52c-724r
+datasource_id: github_osv_importer_v2/GHSA-h6gw-r52c-724r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-h6gw-r52c-724r/GHSA-h6gw-r52c-724r.json
+aliases: []
+summary: "NULL Pointer Dereference and Access of Uninitialized Pointer in TensorFlow\n### Impact\
+  \ \nThe [code for boosted trees in TensorFlow](https://github.com/tensorflow/tensorflow/blob/e0b6e58c328059829c3eb968136f17aa72b6c876/tensorflow/core/kernels/boosted_trees/stats_ops.cc)\
+  \ is still missing validation. This allows malicious users to read and write outside of bounds\
+  \ of heap allocated data as well as trigger denial of service (via dereferencing `nullptr`s\
+  \ or via `CHECK`-failures).\n\nThis follows after CVE-2021-41208 where these APIs were still\
+  \ vulnerable to multiple security issues.\n\n**Note**: Given that the boosted trees implementation\
+  \ in TensorFlow is unmaintained, it is recommend to no longer use these APIs.  Instead, please\
+  \ use the downstream [TensorFlow Decision Forests](https://github.com/tensorflow/decision-forests)\
+  \ project which is newer and supports more features. \n  \nThese APIs are now deprecated in\
+  \ TensorFlow 2.8. We will remove TensorFlow's boosted trees APIs in subsequent releases.\n\
+  \  \n### Patches\nWe have patched the known issues in multiple GitHub commits.\n  \nThe fix\
+  \ will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported\
+  \ range.\n\nThis should allow users to use existing boosted trees APIs for a while until they\
+  \ migrate to [TensorFlow Decision Forests](https://github.com/tensorflow/decision-forests),\
+  \ while guaranteeing that known vulnerabilities are fixed.\n\n### For more information\nPlease\
+  \ consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions.\n\n### Attribution\nThese vulnerabilities have been reported by Yu Tian of Qihoo\
+  \ 360 AIVul Team and Faysal Hossain Shezan from University of Virginia. Some of the issues\
+  \ have been discovered internally after a careful audit of the APIs."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+severities:
+  - score: '9.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-h6gw-r52c-724r/GHSA-h6gw-r52c-724r.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-824
+  - CWE-476
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/blob/e0b6e58c328059829c3eb968136f17aa72b6c876/tensorflow/core/kernels/boosted_trees/stats_ops.cc
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-57wx-m983-2f88
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-h6gw-r52c-724r
+    reference_type:
+    reference_id:

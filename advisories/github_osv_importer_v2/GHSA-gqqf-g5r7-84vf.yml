@@ -1,0 +1,59 @@
+advisory_id: GHSA-gqqf-g5r7-84vf
+datasource_id: github_osv_importer_v2/GHSA-gqqf-g5r7-84vf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-gqqf-g5r7-84vf/GHSA-gqqf-g5r7-84vf.json
+aliases: []
+summary: |
+  TYPO3 HTML Sanitizer Bypasses Cross-Site Scripting Protection
+  > ### Meta
+  > * CVSS: `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N/E:F/RL:O/RC:C` (5.7)
+
+  ### Problem
+  Due to a parsing issue in upstream package [`masterminds/html5`](https://packagist.org/packages/masterminds/html5), malicious markup used in a sequence with special HTML comments cannot be filtered and sanitized. This allows to by-pass the cross-site scripting mechanism of [`typo3/html-sanitizer`](https://github.com/TYPO3/html-sanitizer).
+
+  ### Solution
+  Update to TYPO3 version 7.6.58 ELTS, 8.7.48 ELTS, 9.5.37 ELTS, 10.4.32 or 11.5.16 that fix the problem described above.
+
+  ### Credits
+  Thanks to David Klein who reported this issue, and to TYPO3 security team member Oliver Hader who fixed the issue.
+
+  ### References
+  * [TYPO3-CORE-SA-2022-011](https://typo3.org/security/advisory/typo3-core-sa-2022-011)
+  * [GHSA-47m6-46mj-p235](https://github.com/TYPO3/html-sanitizer/security/advisories/GHSA-47m6-46mj-p235)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=7.6.57
+    fixed_versions: vers:composer/7.6.58
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=8.7.47
+    fixed_versions: vers:composer/8.7.48
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=9.5.36
+    fixed_versions: vers:composer/9.5.37
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=10.4.31
+    fixed_versions: vers:composer/10.4.32
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=11.5.15
+    fixed_versions: vers:composer/11.5.16
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-gqqf-g5r7-84vf/GHSA-gqqf-g5r7-84vf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/d4f260570abd934fcf3819370a135bef33d729b7
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-gqqf-g5r7-84vf
+    reference_type:
+    reference_id:

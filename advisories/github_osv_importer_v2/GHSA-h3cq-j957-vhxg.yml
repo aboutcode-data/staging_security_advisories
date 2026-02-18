@@ -1,0 +1,41 @@
+advisory_id: GHSA-h3cq-j957-vhxg
+datasource_id: github_osv_importer_v2/GHSA-h3cq-j957-vhxg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-h3cq-j957-vhxg/GHSA-h3cq-j957-vhxg.json
+aliases:
+  - CVE-2022-1330
+summary: |
+  Cross-site Scripting in fullpage.js
+  using fullpage.js you can create a anchor tag . But when put href in anchor then it does not sanitize the url which allow for a break in the context of anchor element and can add our new element.
+impacted_packages:
+  - purl: pkg:npm/fullpage.js
+    affected_versions: vers:npm/<4.0.5
+    fixed_versions: vers:npm/4.0.5
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-h3cq-j957-vhxg/GHSA-h3cq-j957-vhxg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/alvarotrigo/fullpage.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/alvarotrigo/fullpage.js/commit/e7a5db42711700c8a584e61b5e532a64039fe92b
+    reference_type:
+    reference_id:
+  - url: https://github.com/alvarotrigo/fullPage.js/pull/4360
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/08d2a6d0-772f-4b05-834e-86343f263c35
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1330
+    reference_type:
+    reference_id:

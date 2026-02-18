@@ -1,0 +1,53 @@
+advisory_id: GHSA-j757-pf57-f8r4
+datasource_id: github_osv_importer_v2/GHSA-j757-pf57-f8r4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-j757-pf57-f8r4/GHSA-j757-pf57-f8r4.json
+aliases:
+  - CVE-2024-47869
+summary: "Gradio performs a non-constant-time comparison when comparing hashes\n### Impact \
+  \ \n**What kind of vulnerability is it? Who is impacted?**\n\nThis vulnerability involves\
+  \ a **timing attack** in the way Gradio compares hashes for the `analytics_dashboard` function.\
+  \ Since the comparison is not done in constant time, an attacker could exploit this by measuring\
+  \ the response time of different requests to infer the correct hash byte-by-byte. This can\
+  \ lead to unauthorized access to the analytics dashboard, especially if the attacker can repeatedly\
+  \ query the system with different keys.\n\n### Patches  \nYes, please upgrade to `gradio>4.44`\
+  \ to mitigate this issue.\n\n### Workarounds  \n**Is there a way for users to fix or remediate\
+  \ the vulnerability without upgrading?**\n\nTo mitigate the risk before applying the patch,\
+  \ developers can manually patch the `analytics_dashboard` dashboard to use a **constant-time\
+  \ comparison** function for comparing sensitive values, such as hashes. Alternatively, access\
+  \ to the analytics dashboard can be disabled."
+impacted_packages:
+  - purl: pkg:pypi/gradio
+    affected_versions: vers:pypi/<4.44.0
+    fixed_versions: vers:pypi/4.44.0
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-j757-pf57-f8r4/GHSA-j757-pf57-f8r4.json
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-j757-pf57-f8r4/GHSA-j757-pf57-f8r4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+  - CWE-208
+references:
+  - url: https://github.com/gradio-app/gradio
+    reference_type:
+    reference_id:
+  - url: https://github.com/gradio-app/gradio/security/advisories/GHSA-j757-pf57-f8r4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/gradio/PYSEC-2024-199.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47869
+    reference_type:
+    reference_id:

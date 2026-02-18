@@ -1,0 +1,30 @@
+advisory_id: GHSA-hww5-6x85-mc24
+datasource_id: github_osv_importer_v2/GHSA-hww5-6x85-mc24
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-hww5-6x85-mc24/GHSA-hww5-6x85-mc24.json
+aliases: []
+summary: |
+  Typo3 Arbitrary Code Execution and Cross-Site Scripting in Backend API
+  Backend API configuration using Page TSconfig is vulnerable to arbitrary code execution and cross-site scripting. TSconfig fields of page properties in backend forms can be used to inject malicious sequences. Field tsconfig_includes is vulnerable to directory traversal leading to same scenarios as having direct access to TSconfig settings.
+
+  A valid backend user account having access to modify values for fields pages.TSconfig and pages.tsconfig_includes is needed in order to exploit this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.7.27
+    fixed_versions: vers:composer/8.7.27
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=9.0.0|<9.5.8
+    fixed_versions: vers:composer/9.5.8
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2019-06-25-4.yaml
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2019-019
+    reference_type:
+    reference_id:

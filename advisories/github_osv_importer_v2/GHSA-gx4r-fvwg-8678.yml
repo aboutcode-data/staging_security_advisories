@@ -1,0 +1,38 @@
+advisory_id: GHSA-gx4r-fvwg-8678
+datasource_id: github_osv_importer_v2/GHSA-gx4r-fvwg-8678
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-gx4r-fvwg-8678/GHSA-gx4r-fvwg-8678.json
+aliases:
+  - CVE-2023-3109
+summary: |
+  Admidio vulnerable to Cross-site Scripting
+  Cross-site Scripting (XSS) - Stored in GitHub repository admidio/admidio prior to 4.2.8.
+impacted_packages:
+  - purl: pkg:composer/admidio/admidio
+    affected_versions: vers:composer/<4.2.8
+    fixed_versions: vers:composer/4.2.8
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-gx4r-fvwg-8678/GHSA-gx4r-fvwg-8678.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/admidio/admidio
+    reference_type:
+    reference_id:
+  - url: https://github.com/admidio/admidio/commit/a7c211b835cafe1158932fbfcff9e5552e57510a
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/6fa6070e-8f7f-43ae-8a84-e36b28256123
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-3109
+    reference_type:
+    reference_id:

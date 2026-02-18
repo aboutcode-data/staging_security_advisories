@@ -1,0 +1,76 @@
+advisory_id: GHSA-hwvq-6gjx-j797
+datasource_id: github_osv_importer_v2/GHSA-hwvq-6gjx-j797
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-hwvq-6gjx-j797/GHSA-hwvq-6gjx-j797.json
+aliases:
+  - CVE-2021-32798
+summary: |
+  Special Element Injection in notebook
+  ### Impact
+
+  Untrusted notebook can execute code on load. This is a remote code execution, but requires user action to open a notebook.
+
+  ### Patches
+
+  5.7.11, 6.4.1
+
+  ### References
+
+  [OWASP Page on Injection Prevention](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html#injection-prevention-rules)
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, or vulnerabilities to report, please email our security list security@ipython.org.
+
+  Credit: Guillaume Jeanne from Google
+
+
+  ### Example:
+
+  A notebook with the following content in a cell and it would display an alert when opened for the first time in Notebook (in an untrusted state):
+
+  ```
+  { "cell_type": "code", "execution_count": 0, "metadata": {}, "outputs": [ { "data": { "text/html": [ "<select><iframe></select><img src=x: onerror=alert('xss')>\n"], "text/plain": [] }, "metadata": {}, "output_type": "display_data" } ], "source": [ "" ] }
+  ````
+impacted_packages:
+  - purl: pkg:pypi/notebook
+    affected_versions: vers:pypi/<5.7.11
+    fixed_versions: vers:pypi/5.7.11
+  - purl: pkg:pypi/notebook
+    affected_versions: vers:pypi/>=6.0.0|<6.4.1
+    fixed_versions: vers:pypi/6.4.1
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-hwvq-6gjx-j797/GHSA-hwvq-6gjx-j797.json
+  - score: '7.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-hwvq-6gjx-j797/GHSA-hwvq-6gjx-j797.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-80
+  - CWE-75
+references:
+  - url: https://github.com/jupyter/notebook
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyter/notebook/commit/79fc76e890a8ec42f73a3d009e44ef84c14ef0d5
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyter/notebook/security/advisories/GHSA-hwvq-6gjx-j797
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/notebook/PYSEC-2021-118.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32798
+    reference_type:
+    reference_id:

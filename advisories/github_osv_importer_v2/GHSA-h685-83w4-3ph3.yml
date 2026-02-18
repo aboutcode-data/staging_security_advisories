@@ -1,0 +1,41 @@
+advisory_id: GHSA-h685-83w4-3ph3
+datasource_id: github_osv_importer_v2/GHSA-h685-83w4-3ph3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-h685-83w4-3ph3/GHSA-h685-83w4-3ph3.json
+aliases:
+  - CVE-2021-32860
+summary: |
+  iziModal Cross-site Scripting vulnerability
+  iziModal is a modal plugin with jQuery. Versions prior to 1.6.1 are vulnerable to cross-site scripting (XSS) when handling untrusted modal titles. An attacker who is able to influence the field `title` when creating a `iziModal` instance is able to supply arbitrary `html` or `javascript` code that will be rendered in the context of a user, potentially leading to `XSS`. Version 1.6.1 contains a patch for this issue
+impacted_packages:
+  - purl: pkg:npm/izimodal
+    affected_versions: vers:npm/<1.6.1
+    fixed_versions: vers:npm/1.6.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-h685-83w4-3ph3/GHSA-h685-83w4-3ph3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/marcelodolza/iziModal
+    reference_type:
+    reference_id:
+  - url: https://github.com/marcelodolza/iziModal/commit/01728ac52bac5c1b4512087dafe0ad8b091fdc9e
+    reference_type:
+    reference_id:
+  - url: https://github.com/marcelodolza/iziModal/issues/249
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32860
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2021-1044_iziModal
+    reference_type:
+    reference_id:

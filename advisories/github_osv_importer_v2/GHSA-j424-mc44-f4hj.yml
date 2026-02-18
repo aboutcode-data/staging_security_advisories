@@ -1,0 +1,38 @@
+advisory_id: GHSA-j424-mc44-f4hj
+datasource_id: github_osv_importer_v2/GHSA-j424-mc44-f4hj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-j424-mc44-f4hj/GHSA-j424-mc44-f4hj.json
+aliases: []
+summary: |
+  Duplicate Advisory: Picklescan Bypass is Possible via File Extension Mismatch
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-jgw4-cr84-mqxg. This link is maintained to preserve external references.
+
+  ### Original Description
+  An Improper Input Validation vulnerability in the scanning logic of mmaitre314 picklescan versions up to and including 0.0.30 allows a remote attacker to bypass pickle files security checks by supplying a standard pickle file with a PyTorch-related file extension. When the pickle file incorrectly considered safe is loaded, it can lead to the execution of malicious code.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.31
+    fixed_versions: vers:pypi/0.0.31
+severities:
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-j424-mc44-f4hj/GHSA-j424-mc44-f4hj.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/mmaitre314/picklescan/blob/58983e1c20973ac42f2df7ff15d7c8cd32f9b688/src/picklescan/scanner.py#L463
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-jgw4-cr84-mqxg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-10155
+    reference_type:
+    reference_id:

@@ -1,0 +1,39 @@
+advisory_id: GHSA-gvg8-r8w2-9gfj
+datasource_id: github_osv_importer_v2/GHSA-gvg8-r8w2-9gfj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-gvg8-r8w2-9gfj/GHSA-gvg8-r8w2-9gfj.json
+aliases:
+  - CVE-2023-1754
+summary: |
+  phpMyFAQ vulnerable to improper input validation
+  Improper Neutralization of Input During Web Page Generation in phpMyFAQ
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.1.12
+    fixed_versions: vers:composer/3.1.12
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-gvg8-r8w2-9gfj/GHSA-gvg8-r8w2-9gfj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-20
+references:
+  - url: https://github.com/thorsten/phpmyfaq
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/d773df925cb74e874527458beed1f66f966ec491
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/529f2361-eb2e-476f-b7ef-4e561a712e28
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-1754
+    reference_type:
+    reference_id:

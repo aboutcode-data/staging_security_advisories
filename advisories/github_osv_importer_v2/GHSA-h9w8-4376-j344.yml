@@ -1,0 +1,33 @@
+advisory_id: GHSA-h9w8-4376-j344
+datasource_id: github_osv_importer_v2/GHSA-h9w8-4376-j344
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h9w8-4376-j344/GHSA-h9w8-4376-j344.json
+aliases:
+  - CVE-2006-4936
+summary: |
+  Moodle does not properly validate module instance id
+  Moodle before 1.6.2 does not properly validate the module instance id when creating a course module object, which has unspecified impact and remote attack vectors.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<1.6.2
+    fixed_versions: vers:composer/1.6.2
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/0f69811d980002709668a2001477a811bfee4bab
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2006-4936
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20061230195936/http://docs.moodle.org/en/Release_notes#Moodle_1.6.2
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-hp97-5x6g-q538
+datasource_id: github_osv_importer_v2/GHSA-hp97-5x6g-q538
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-hp97-5x6g-q538/GHSA-hp97-5x6g-q538.json
+aliases:
+  - CVE-2024-10031
+summary: |
+  Eclipse GlassFish is vulnerable to Stored XSS attacks through configuration file modifications
+  In Eclipse GlassFish version 7.0.15 is possible to perform Stored Cross-site Scripting attacks by modifying the configuration file in the underlying operating system.
+impacted_packages:
+  - purl: pkg:maven/org.glassfish.main.admingui/console-common
+    affected_versions: vers:maven/<=7.0.25
+    fixed_versions:
+severities:
+  - score: '5.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:H/AT:N/PR:H/UI:P/VC:L/VI:H/VA:N/SC:H/SI:H/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-hp97-5x6g-q538/GHSA-hp97-5x6g-q538.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/eclipse-ee4j/glassfish
+    reference_type:
+    reference_id:
+  - url: https://gitlab.eclipse.org/security/cve-assignement/-/issues/41
+    reference_type:
+    reference_id:
+  - url: https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/229
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-10031
+    reference_type:
+    reference_id:

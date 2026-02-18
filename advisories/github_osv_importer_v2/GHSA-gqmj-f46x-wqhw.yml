@@ -1,0 +1,44 @@
+advisory_id: GHSA-gqmj-f46x-wqhw
+datasource_id: github_osv_importer_v2/GHSA-gqmj-f46x-wqhw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gqmj-f46x-wqhw/GHSA-gqmj-f46x-wqhw.json
+aliases:
+  - CVE-2018-7260
+summary: |
+  phpMyAdmin Cross-site scripting (XSS) vulnerability in central columns feature
+  Cross-site scripting (XSS) vulnerability in db_central_columns.php in phpMyAdmin before 4.7.8 allows remote authenticated users to inject arbitrary web script or HTML via a crafted URL.
+impacted_packages:
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/<4.7.8
+    fixed_versions: vers:composer/4.7.8
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gqmj-f46x-wqhw/GHSA-gqmj-f46x-wqhw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/phpmyadmin/composer
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpmyadmin/phpmyadmin/commit/d2886a3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-7260
+    reference_type:
+    reference_id:
+  - url: https://udiniya.wordpress.com/2018/02/21/a-tale-of-stealing-session-cookie-in-phpmyadmin
+    reference_type:
+    reference_id:
+  - url: https://www.phpmyadmin.net/security/PMASA-2018-1
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/103099
+    reference_type:
+    reference_id:

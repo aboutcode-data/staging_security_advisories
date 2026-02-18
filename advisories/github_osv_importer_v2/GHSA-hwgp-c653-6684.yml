@@ -1,0 +1,32 @@
+advisory_id: GHSA-hwgp-c653-6684
+datasource_id: github_osv_importer_v2/GHSA-hwgp-c653-6684
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hwgp-c653-6684/GHSA-hwgp-c653-6684.json
+aliases:
+  - CVE-2019-19596
+summary: |
+  GitBook allows Cross-site Scripting via a local .md file.
+  GitBook through 2.6.9 allows Cross-site Scripting via javascript inclusion in a local .md file.
+impacted_packages:
+  - purl: pkg:npm/gitbook
+    affected_versions: vers:npm/<=2.6.9
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hwgp-c653-6684/GHSA-hwgp-c653-6684.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/ianxtianxt/gitbook-xss
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19596
+    reference_type:
+    reference_id:

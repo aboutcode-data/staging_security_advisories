@@ -1,0 +1,35 @@
+advisory_id: GHSA-h538-r9x6-rcmc
+datasource_id: github_osv_importer_v2/GHSA-h538-r9x6-rcmc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-h538-r9x6-rcmc/GHSA-h538-r9x6-rcmc.json
+aliases:
+  - CVE-2023-30124
+summary: |
+  LavaLite vulnerable to Cross Site Scripting
+  LavaLite v9.0.0 is vulnerable to Cross Site Scripting (XSS).
+impacted_packages:
+  - purl: pkg:composer/lavalite/cms
+    affected_versions: vers:composer/<=9.0.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-h538-r9x6-rcmc/GHSA-h538-r9x6-rcmc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/LavaLite/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/LavaLite/cms/issues/389#issue-1636041104
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-30124
+    reference_type:
+    reference_id:

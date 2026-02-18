@@ -1,0 +1,34 @@
+advisory_id: GHSA-hpfq-8wx8-cgqw
+datasource_id: github_osv_importer_v2/GHSA-hpfq-8wx8-cgqw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-hpfq-8wx8-cgqw/GHSA-hpfq-8wx8-cgqw.json
+aliases: []
+summary: |
+  Cross-Site Scripting in ids-enterprise
+  Versions of `ids-enterprise` prior to 4.18.2 are vulnerable to Cross-Site Scripting (XSS). The `modal` component fails to sanitize input to the `title` attribute, which may allow attackers to execute arbitrary JavaScript.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.18.2 or later
+impacted_packages:
+  - purl: pkg:npm/ids-enterprise
+    affected_versions: vers:npm/<4.18.2
+    fixed_versions: vers:npm/4.18.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/infor-design/enterprise/commit/9b57aaa0321bf2e5baa6c4c5c1eb3b8312e215c4
+    reference_type:
+    reference_id:
+  - url: https://github.com/infor-design/enterprise-ng/issues/511
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/957
+    reference_type:
+    reference_id:

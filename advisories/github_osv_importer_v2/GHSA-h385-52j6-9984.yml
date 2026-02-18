@@ -1,0 +1,37 @@
+advisory_id: GHSA-h385-52j6-9984
+datasource_id: github_osv_importer_v2/GHSA-h385-52j6-9984
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-h385-52j6-9984/GHSA-h385-52j6-9984.json
+aliases:
+  - CVE-2020-7670
+summary: |
+  Withdrawn: HTTP Request Smuggling in Agoo
+  # Withdrawn reason
+  Withdrawn on 1/13/2021 due to [this comment from the maintainer](https://github.com/ohler55/agoo/issues/88#issuecomment-723580783).  This is no longer considered a vulnerability.
+
+  # Original description
+  agoo through 2.12.3 allows request smuggling attacks where agoo is used as a backend and a frontend proxy also being vulnerable. It is possible to conduct HTTP request smuggling attacks by sending the Content-Length header twice. Furthermore, invalid Transfer Encoding headers were found to be parsed as valid which could be leveraged for TE:CL smuggling attacks.
+impacted_packages:
+  - purl: pkg:gem/agoo
+    affected_versions: vers:gem/<=2.13.0
+    fixed_versions:
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/ohler55/agoo/commit/23d03535cf7b50d679a60a953a0cae9519a4a130
+    reference_type:
+    reference_id:
+  - url: https://github.com/ohler55/agoo/issues/88
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7670
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-RUBY-AGOO-569137
+    reference_type:
+    reference_id:

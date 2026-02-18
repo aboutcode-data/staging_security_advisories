@@ -1,0 +1,41 @@
+advisory_id: GHSA-h3rx-g5c9-8q4x
+datasource_id: github_osv_importer_v2/GHSA-h3rx-g5c9-8q4x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-h3rx-g5c9-8q4x/GHSA-h3rx-g5c9-8q4x.json
+aliases:
+  - CVE-2020-7736
+summary: |
+  Prototype Pollution in bmoor
+  The package bmoor before 0.8.12 are vulnerable to Prototype Pollution via the set function.
+impacted_packages:
+  - purl: pkg:npm/bmoor
+    affected_versions: vers:npm/<0.8.12
+    fixed_versions: vers:npm/0.8.12
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-h3rx-g5c9-8q4x/GHSA-h3rx-g5c9-8q4x.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/b-heilman/bmoor
+    reference_type:
+    reference_id:
+  - url: https://github.com/b-heilman/bmoor/commit/7d4a086a1dc3ef11ed0b323824d02348734b7da5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7736
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-BMOOR-598664
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/bmoor
+    reference_type:
+    reference_id:

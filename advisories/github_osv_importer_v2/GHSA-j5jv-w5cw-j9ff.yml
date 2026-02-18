@@ -1,0 +1,59 @@
+advisory_id: GHSA-j5jv-w5cw-j9ff
+datasource_id: github_osv_importer_v2/GHSA-j5jv-w5cw-j9ff
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-j5jv-w5cw-j9ff/GHSA-j5jv-w5cw-j9ff.json
+aliases:
+  - CVE-2025-67848
+summary: |
+  Moodle authentication bypass vulnerability
+  A flaw was found in Moodle. This authentication bypass vulnerability allows suspended users to authenticate through the Learning Tools Interoperability (LTI) Provider. The issue arises from the LTI authentication handlers failing to enforce the user's suspension status, enabling unauthorized access to the system. This can lead to information disclosure or other unauthorized actions by users who should be restricted.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.22
+    fixed_versions: vers:composer/4.1.22
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.12
+    fixed_versions: vers:composer/4.4.12
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.8
+    fixed_versions: vers:composer/4.5.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.0.0-beta|<5.0.4
+    fixed_versions: vers:composer/5.0.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.1.0-beta|<5.1.1
+    fixed_versions: vers:composer/5.1.1
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-j5jv-w5cw-j9ff/GHSA-j5jv-w5cw-j9ff.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-280
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-67848
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2423831
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/62f372e9d861d16df702d3c7726905fa2730e3d8
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/c2705e2c18962fec4f21b9c34ed386be2a379663
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=471298
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-67848
+    reference_type:
+    reference_id:

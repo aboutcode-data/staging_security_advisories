@@ -1,0 +1,61 @@
+advisory_id: GHSA-j4p3-2m2h-cv5f
+datasource_id: github_osv_importer_v2/GHSA-j4p3-2m2h-cv5f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j4p3-2m2h-cv5f/GHSA-j4p3-2m2h-cv5f.json
+aliases:
+  - CVE-2017-8031
+summary: |
+  Cloud Foundry UAA Denial of Service through client token revocation endpoint
+  An issue was discovered in Cloud Foundry Foundation cf-release (all versions prior to v279) and UAA (30.x versions prior to 30.6, 45.x versions prior to 45.4, 52.x versions prior to 52.1). In some cases, the UAA allows an authenticated user for a particular client to revoke client tokens for other users on the same client. This occurs only if the client is using opaque tokens or JWT tokens validated using the check_token endpoint. A malicious actor could cause denial of service.
+impacted_packages:
+  - purl: pkg:maven/org.cloudfoundry.identity/cloudfoundry-identity-server
+    affected_versions: vers:maven/>=4.6.0|<4.7.1
+    fixed_versions: vers:maven/4.7.1
+  - purl: pkg:maven/org.cloudfoundry.identity/cloudfoundry-identity-server
+    affected_versions: vers:maven/>=4.0.0|<4.5.3
+    fixed_versions: vers:maven/4.5.3
+  - purl: pkg:maven/org.cloudfoundry.identity/cloudfoundry-identity-server
+    affected_versions: vers:maven/<3.20.1
+    fixed_versions: vers:maven/3.20.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j4p3-2m2h-cv5f/GHSA-j4p3-2m2h-cv5f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/cloudfoundry/uaa
+    reference_type:
+    reference_id:
+  - url: https://github.com/cloudfoundry/uaa/commit/1e2a746968cdac5b53164ca8955646e4257ecc7
+    reference_type:
+    reference_id:
+  - url: https://github.com/cloudfoundry/uaa/commit/20808046de8bbdc6fb2ac62829d4cc9d7a19f37
+    reference_type:
+    reference_id:
+  - url: https://github.com/cloudfoundry/uaa/commit/66166d17781aa257ff77a2fb7c69f72d0b611be
+    reference_type:
+    reference_id:
+  - url: https://github.com/cloudfoundry/uaa/releases/tag/3.20.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/cloudfoundry/uaa/releases/tag/4.5.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/cloudfoundry/uaa/releases/tag/4.7.1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-8031
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200227134207/http://www.securityfocus.com/bid/101967
+    reference_type:
+    reference_id:
+  - url: https://www.cloudfoundry.org/cve-2017-8031
+    reference_type:
+    reference_id:

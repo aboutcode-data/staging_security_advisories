@@ -1,0 +1,38 @@
+advisory_id: GHSA-gw2q-qw9j-rgv7
+datasource_id: github_osv_importer_v2/GHSA-gw2q-qw9j-rgv7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-gw2q-qw9j-rgv7/GHSA-gw2q-qw9j-rgv7.json
+aliases:
+  - CVE-2024-10188
+summary: |
+  LiteLLM Vulnerable to Denial of Service (DoS)
+  A vulnerability in BerriAI/litellm, as of commit 26c03c9, allows unauthenticated users to cause a Denial of Service (DoS) by exploiting the use of ast.literal_eval to parse user input. This function is not safe and is prone to DoS attacks, which can crash the litellm Python server.
+impacted_packages:
+  - purl: pkg:pypi/litellm
+    affected_versions: vers:pypi/<1.53.1.dev1
+    fixed_versions: vers:pypi/1.53.1.dev1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-gw2q-qw9j-rgv7/GHSA-gw2q-qw9j-rgv7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/BerriAI/litellm
+    reference_type:
+    reference_id:
+  - url: https://github.com/berriai/litellm/commit/21156ff5d0d84a7dd93f951ca033275c77e4f73c
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/96a32812-213c-4819-ba4e-36143d35e95b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-10188
+    reference_type:
+    reference_id:

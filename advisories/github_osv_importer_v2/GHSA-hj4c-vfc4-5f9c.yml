@@ -1,0 +1,44 @@
+advisory_id: GHSA-hj4c-vfc4-5f9c
+datasource_id: github_osv_importer_v2/GHSA-hj4c-vfc4-5f9c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-hj4c-vfc4-5f9c/GHSA-hj4c-vfc4-5f9c.json
+aliases:
+  - CVE-2022-48614
+summary: |
+  Cross-site Scripting in Semantic MediaWiki
+  Special:Ask in Semantic MediaWiki before 4.0.2 allows Reflected XSS.
+impacted_packages:
+  - purl: pkg:composer/mediawiki/semantic-media-wiki
+    affected_versions: vers:composer/<4.0.2
+    fixed_versions: vers:composer/4.0.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-hj4c-vfc4-5f9c/GHSA-hj4c-vfc4-5f9c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/mediawiki/semantic-media-wiki/CVE-2022-48614.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/SemanticMediaWiki/SemanticMediaWiki
+    reference_type:
+    reference_id:
+  - url: https://github.com/SemanticMediaWiki/SemanticMediaWiki/commit/604968d44fcdfcbb7f1e00c5d662ca5d5a3a5613
+    reference_type:
+    reference_id:
+  - url: https://github.com/SemanticMediaWiki/SemanticMediaWiki/issues/5262
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-48614
+    reference_type:
+    reference_id:
+  - url: https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki_4.0.2
+    reference_type:
+    reference_id:

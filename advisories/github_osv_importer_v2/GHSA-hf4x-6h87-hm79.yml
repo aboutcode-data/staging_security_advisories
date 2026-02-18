@@ -1,0 +1,39 @@
+advisory_id: GHSA-hf4x-6h87-hm79
+datasource_id: github_osv_importer_v2/GHSA-hf4x-6h87-hm79
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-hf4x-6h87-hm79/GHSA-hf4x-6h87-hm79.json
+aliases:
+  - CVE-2023-22476
+summary: "MantisBT may expose private issues' summaries to unauthorized users\n### Impact\n\
+  Due to insufficient access-level checks, any logged-in user allowed to perform Group Actions\
+  \ can get access to the _Summary_ field of private Issues (i.e. having Private view status,\
+  \ or belonging to a private Project) via a crafted `bug_arr[]` parameter in *bug_actiongroup_ext.php*.\n\
+  \n### Patches\nThe vulnerability has been fixed in MantisBT version 2.25.6. \n\n### Workarounds\n\
+  None\n\n### Credits\nThanks to [d3vpoo1](https://github.com/jrckmcsb) for reporting the issue.\n\
+  \n### References\n- https://mantisbt.org/bugs/view.php?id=31086"
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/<=2.25.5
+    fixed_versions: vers:composer/2.25.6
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-hf4x-6h87-hm79/GHSA-hf4x-6h87-hm79.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/security/advisories/GHSA-hf4x-6h87-hm79
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=31086
+    reference_type:
+    reference_id:

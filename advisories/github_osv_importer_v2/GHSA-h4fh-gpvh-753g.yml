@@ -1,0 +1,47 @@
+advisory_id: GHSA-h4fh-gpvh-753g
+datasource_id: github_osv_importer_v2/GHSA-h4fh-gpvh-753g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h4fh-gpvh-753g/GHSA-h4fh-gpvh-753g.json
+aliases:
+  - CVE-2018-7274
+summary: |
+  Yab Quarx persistent cross-site scripting vulnerability
+  Yab Quarx before 2.4.5 is prone to multiple persistent cross-site scripting vulnerabilities: Blog (Title), FAQ (Question), Pages (Title), Widgets (Name), and Menus (Name).
+impacted_packages:
+  - purl: pkg:composer/yab/quarx
+    affected_versions: vers:composer/<2.4.5
+    fixed_versions: vers:composer/2.4.5
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h4fh-gpvh-753g/GHSA-h4fh-gpvh-753g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://seclists.org/bugtraq/2018/Feb/53
+    reference_type:
+    reference_id:
+  - url: https://github.com/GrafiteInc/CMS
+    reference_type:
+    reference_id:
+  - url: https://github.com/GrafiteInc/CMS/commit/dcc1a5ac3c6d48afd3b8b9d8b11a9c6bfeb75f77
+    reference_type:
+    reference_id:
+  - url: https://github.com/GrafiteInc/CMS/issues/115
+    reference_type:
+    reference_id:
+  - url: https://github.com/YABhq/Quarx/issues/116
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-7274
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/103081
+    reference_type:
+    reference_id:

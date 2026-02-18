@@ -1,0 +1,78 @@
+advisory_id: GHSA-hh7j-6x3q-f52h
+datasource_id: github_osv_importer_v2/GHSA-hh7j-6x3q-f52h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-hh7j-6x3q-f52h/GHSA-hh7j-6x3q-f52h.json
+aliases:
+  - CVE-2025-30150
+summary: |
+  Shopware 6 allows attackers to check for registered accounts through the store-api
+  ### Impact
+  Through the store-api it is possible as a attacker to check if a specific e-mail address has an account in the shop.
+
+  Using the store-api endpoint `/store-api/account/recovery-password` you get the response
+  ```
+  {"errors":[{"status":"404","code":"CHECKOUT__CUSTOMER_NOT_FOUND","title":"Not Found","detail":"No matching customer for the email \u0022asdasfd@asdads.de\u0022 was found.","meta":{"parameters":{"email":"asdasfd@asdads.de"}}}]}
+  ```
+
+  which indicates clearly that there is no account for this customer. In contrast you get a success response if the account was found.
+
+  ### Patches
+  Update to Shopware 6.6.10.3
+
+  ### Workarounds
+  For older versions of 6.5 or 6.4, corresponding security measures are also available via a plugin. For the full range of functions, we recommend updating to the latest Shopware version.
+impacted_packages:
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.6.10+2
+    fixed_versions: vers:composer/6.6.10+3
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.6.10+2
+    fixed_versions: vers:composer/6.6.10+3
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/6.7.0+0-rc1
+    fixed_versions: vers:composer/6.7.0+0-rc2
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/6.7.0+0-rc1
+    fixed_versions: vers:composer/6.7.0+0-rc2
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.5.8+17
+    fixed_versions: vers:composer/6.5.8+18
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.5.8+17
+    fixed_versions: vers:composer/6.5.8+18
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-hh7j-6x3q-f52h/GHSA-hh7j-6x3q-f52h.json
+  - score: '5.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/U:Green
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-hh7j-6x3q-f52h/GHSA-hh7j-6x3q-f52h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-204
+references:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v6.5.8.17
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v6.6.10.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v6.7.0.0-rc2
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-hh7j-6x3q-f52h
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-30150
+    reference_type:
+    reference_id:

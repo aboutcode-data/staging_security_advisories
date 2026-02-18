@@ -1,0 +1,35 @@
+advisory_id: GHSA-grvq-vjqr-x8vm
+datasource_id: github_osv_importer_v2/GHSA-grvq-vjqr-x8vm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-grvq-vjqr-x8vm/GHSA-grvq-vjqr-x8vm.json
+aliases:
+  - CVE-2023-39015
+summary: |
+  Code injection in webmagic-core
+  webmagic-extension v0.9.0 and below was discovered to contain a code injection vulnerability via the component us.codecraft.webmagic.downloader.PhantomJSDownloader.
+impacted_packages:
+  - purl: pkg:maven/us.codecraft/webmagic-core
+    affected_versions: vers:maven/<=0.9.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-grvq-vjqr-x8vm/GHSA-grvq-vjqr-x8vm.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/code4craft/webmagic
+    reference_type:
+    reference_id:
+  - url: https://github.com/code4craft/webmagic/issues/1122
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39015
+    reference_type:
+    reference_id:

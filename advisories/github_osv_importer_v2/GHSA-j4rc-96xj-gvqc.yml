@@ -1,0 +1,51 @@
+advisory_id: GHSA-j4rc-96xj-gvqc
+datasource_id: github_osv_importer_v2/GHSA-j4rc-96xj-gvqc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-j4rc-96xj-gvqc/GHSA-j4rc-96xj-gvqc.json
+aliases:
+  - CVE-2026-24422
+summary: |
+  phpMyFAQ: Public API endpoints expose emails and invisible questions
+  ### Summary
+  Several public API endpoints return email addresses and non‑public records (e.g. open questions with isVisible=false).
+
+  ### Details
+  OpenQuestionController::list() calls Question::getAll() with the default showAll=true, returning invisible questions and their emails. Similar exposures exist in comment/news/faq APIs.
+
+  ### PoC
+  ```
+  curl -i -H 'Accept-Language: en' \
+    http://192.168.40.16/phpmyfaq/api/v3.0/open-questions
+  ```
+
+  ### Impact
+  Privacy exposure of email addresses and non‑public content; increased risk of phishing/scraping.
+impacted_packages:
+  - purl: pkg:composer/phpmyfaq/phpmyfaq
+    affected_versions: vers:composer/<=4.0.16
+    fixed_versions: vers:composer/4.0.17
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<=4.0.16
+    fixed_versions: vers:composer/4.0.17
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-j4rc-96xj-gvqc/GHSA-j4rc-96xj-gvqc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-j4rc-96xj-gvqc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24422
+    reference_type:
+    reference_id:

@@ -1,0 +1,40 @@
+advisory_id: GHSA-hm54-fg2w-2g6j
+datasource_id: github_osv_importer_v2/GHSA-hm54-fg2w-2g6j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-hm54-fg2w-2g6j/GHSA-hm54-fg2w-2g6j.json
+aliases:
+  - CVE-2025-28010
+summary: |
+  MODX allows cross-site scripting (XSS) via an SVG file
+  A cross-site scripting (XSS) vulnerability has been identified in MODX prior to 3.1.0. The vulnerability allows authenticated users to upload SVG files containing malicious JavaScript code as profile images, which gets executed in victims' browsers when viewing the profile image.
+impacted_packages:
+  - purl: pkg:composer/modx/revolution
+    affected_versions: vers:composer/<=3.1.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-hm54-fg2w-2g6j/GHSA-hm54-fg2w-2g6j.json
+  - score: '2.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-hm54-fg2w-2g6j/GHSA-hm54-fg2w-2g6j.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/modxcms/revolution
+    reference_type:
+    reference_id:
+  - url: https://github.com/rtnthakur/CVE/blob/main/MODX/README.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-28010
+    reference_type:
+    reference_id:

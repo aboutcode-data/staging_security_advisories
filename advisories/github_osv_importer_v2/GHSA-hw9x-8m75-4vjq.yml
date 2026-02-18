@@ -1,0 +1,34 @@
+advisory_id: GHSA-hw9x-8m75-4vjq
+datasource_id: github_osv_importer_v2/GHSA-hw9x-8m75-4vjq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-hw9x-8m75-4vjq/GHSA-hw9x-8m75-4vjq.json
+aliases:
+  - CVE-2024-51093
+summary: Cross Site Scripting vulnerability in Snipe-IT v.7.0.13 allows a remote attacker to
+  escalate privileges via an unknown part of the file /users/{{user-id}}/#files.
+impacted_packages:
+  - purl: pkg:composer/snipe/snipe-it
+    affected_versions: vers:composer/<=7.0.13
+    fixed_versions:
+severities:
+  - score: '8.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-hw9x-8m75-4vjq/GHSA-hw9x-8m75-4vjq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://gist.githubusercontent.com/Tommywarren/ca70f1c43f4ec34dc19cd13459535780/raw/d13192ae50bc7c024b922412dfa3f530faa8d5db/CVE-2024-51093
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-51093
+    reference_type:
+    reference_id:

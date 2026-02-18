@@ -1,0 +1,56 @@
+advisory_id: GHSA-gwmx-9gcj-332h
+datasource_id: github_osv_importer_v2/GHSA-gwmx-9gcj-332h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-gwmx-9gcj-332h/GHSA-gwmx-9gcj-332h.json
+aliases:
+  - CVE-2026-25633
+summary: |
+  Statamic CMS's missing authorization allows access to assets
+  ### Impact
+  Users without permission to view assets are able are able to download them and view their metadata.
+
+  Logged-out users and users without permission to access the control panel are unable to take advantage of this.
+
+  ### Patches
+  This has been fixed in 5.73.6 and 6.2.5.
+impacted_packages:
+  - purl: pkg:composer/statamic/cms
+    affected_versions: vers:composer/<5.73.6
+    fixed_versions: vers:composer/5.73.6
+  - purl: pkg:composer/statamic/cms
+    affected_versions: vers:composer/>=6.0.0-alpha.1|<6.2.5
+    fixed_versions: vers:composer/6.2.5
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-gwmx-9gcj-332h/GHSA-gwmx-9gcj-332h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+references:
+  - url: https://github.com/statamic/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/commit/5a6f47246edf3a0c453727ffecbfa14333a6bc8a
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/pull/13883
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/releases/tag/v5.73.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/releases/tag/v6.2.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/security/advisories/GHSA-gwmx-9gcj-332h
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25633
+    reference_type:
+    reference_id:

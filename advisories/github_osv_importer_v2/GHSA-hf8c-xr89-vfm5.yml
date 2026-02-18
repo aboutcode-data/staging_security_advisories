@@ -1,0 +1,44 @@
+advisory_id: GHSA-hf8c-xr89-vfm5
+datasource_id: github_osv_importer_v2/GHSA-hf8c-xr89-vfm5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-hf8c-xr89-vfm5/GHSA-hf8c-xr89-vfm5.json
+aliases:
+  - CVE-2022-25766
+summary: |
+  Command Injection in ungit
+  The package ungit before 1.5.20 are vulnerable to Remote Code Execution (RCE) via argument injection. The issue occurs when calling the /api/fetch endpoint. User controlled values (remote and ref) are passed to the git fetch command. By injecting some git options it was possible to get arbitrary command execution.
+impacted_packages:
+  - purl: pkg:npm/ungit
+    affected_versions: vers:npm/<1.5.20
+    fixed_versions: vers:npm/1.5.20
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-hf8c-xr89-vfm5/GHSA-hf8c-xr89-vfm5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/FredrikNoren/ungit
+    reference_type:
+    reference_id:
+  - url: https://github.com/FredrikNoren/ungit/blob/master/CHANGELOG.md%231520
+    reference_type:
+    reference_id:
+  - url: https://github.com/FredrikNoren/ungit/pull/1510
+    reference_type:
+    reference_id:
+  - url: https://github.com/FredrikNoren/ungit/pull/1511
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25766
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-UNGIT-2414099
+    reference_type:
+    reference_id:

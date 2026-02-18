@@ -1,0 +1,36 @@
+advisory_id: GHSA-gvqv-h7hh-6fcc
+datasource_id: github_osv_importer_v2/GHSA-gvqv-h7hh-6fcc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-gvqv-h7hh-6fcc/GHSA-gvqv-h7hh-6fcc.json
+aliases:
+  - CVE-2024-24595
+summary: |
+  Allegro AI ClearML Stores Credentials in Plaintext in MongoDB Instance
+  Allegro AI’s open-source version of ClearML stores passwords in plaintext within the MongoDB instance, resulting in a compromised server leaking all user emails and passwords.
+impacted_packages:
+  - purl: pkg:pypi/clearml
+    affected_versions: vers:pypi/<=1.14.2
+    fixed_versions:
+severities:
+  - score: '6.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-gvqv-h7hh-6fcc/GHSA-gvqv-h7hh-6fcc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-522
+  - CWE-312
+references:
+  - url: https://github.com/allegroai/clearml
+    reference_type:
+    reference_id:
+  - url: https://hiddenlayer.com/research/not-so-clear-how-mlops-solutions-can-muddy-the-waters-of-your-supply-chain
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-24595
+    reference_type:
+    reference_id:

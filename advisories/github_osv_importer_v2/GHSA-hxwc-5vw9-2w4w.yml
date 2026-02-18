@@ -1,0 +1,34 @@
+advisory_id: GHSA-hxwc-5vw9-2w4w
+datasource_id: github_osv_importer_v2/GHSA-hxwc-5vw9-2w4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-hxwc-5vw9-2w4w/GHSA-hxwc-5vw9-2w4w.json
+aliases: []
+summary: |
+  NoSQL Injection in loopback-connector-mongodb
+  Versions of `loopback-connector-mongodb` prior to 3.6.0 are vulnerable to NoSQL Injection. Filters passed to the database query are not properly sanitized which leads to execution of code on the database driver and data leak.
+
+
+  ## Recommendation
+
+  Upgrade to version 3.6.0 or later.
+impacted_packages:
+  - purl: pkg:npm/loopback-connector-mongodb
+    affected_versions: vers:npm/<=3.5.0
+    fixed_versions: vers:npm/3.6.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/loopbackio/loopback-connector-mongodb
+    reference_type:
+    reference_id:
+  - url: https://loopback.io/doc/en/lb3/Security-advisory-08-15-2018.html
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/767
+    reference_type:
+    reference_id:

@@ -1,0 +1,36 @@
+advisory_id: GHSA-gqrq-j6pm-98c2
+datasource_id: github_osv_importer_v2/GHSA-gqrq-j6pm-98c2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-gqrq-j6pm-98c2/GHSA-gqrq-j6pm-98c2.json
+aliases:
+  - CVE-2023-6569
+summary: |
+  External Control of File Name or Path in h2oai/h2o-3
+  Remote unauthenticated attackers can overwrite arbitrary server files with attacker-controllable data. The data that the attacker can control is not entirely arbitrary. h2o writes a CSV/XLS/etc file to disk, so the attacker data is wrapped in quotations and starts with "C1", if they're exporting as CSV.
+impacted_packages:
+  - purl: pkg:pypi/h2o
+    affected_versions: vers:pypi/<=3.44.0.2
+    fixed_versions:
+severities:
+  - score: '9.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-gqrq-j6pm-98c2/GHSA-gqrq-j6pm-98c2.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-610
+  - CWE-73
+references:
+  - url: https://github.com/h2oai/h2o-3
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/a5d003dc-c23e-4c98-8dcf-35ba9252fa3c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6569
+    reference_type:
+    reference_id:

@@ -1,0 +1,58 @@
+advisory_id: GHSA-hprr-4vfq-fcxw
+datasource_id: github_osv_importer_v2/GHSA-hprr-4vfq-fcxw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hprr-4vfq-fcxw/GHSA-hprr-4vfq-fcxw.json
+aliases:
+  - CVE-2021-3313
+summary: |
+  Plone XSS in User Fullname Property and File Upload
+  Plone CMS until version 5.2.4 has a stored Cross-Site Scripting (XSS) vulnerability in the user fullname property and the file upload functionality. The user's input data is not properly encoded when being echoed back to the user. This data can be interpreted as executable code by the browser and allows an attacker to execute JavaScript in the context of the victim's browser if the victim opens a vulnerable page containing an XSS payload.
+impacted_packages:
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/<5.2.4
+    fixed_versions: vers:pypi/5.2.4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hprr-4vfq-fcxw/GHSA-hprr-4vfq-fcxw.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hprr-4vfq-fcxw/GHSA-hprr-4vfq-fcxw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/plone/Plone
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/plone/PYSEC-2021-78.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3313
+    reference_type:
+    reference_id:
+  - url: https://plone.org/download/releases/5.2.3
+    reference_type:
+    reference_id:
+  - url: https://plone.org/security/hotfix/20210518
+    reference_type:
+    reference_id:
+  - url: https://plone.org/security/hotfix/20210518/stored-xss-from-file-upload-svg-html
+    reference_type:
+    reference_id:
+  - url: https://plone.org/security/hotfix/20210518/stored-xss-from-user-fullname
+    reference_type:
+    reference_id:
+  - url: https://www.compass-security.com/fileadmin/Research/Advisories/2021-07_CSNC-2021-013_XSS_in_Plone_CMS.txt
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2021/05/22/1
+    reference_type:
+    reference_id:

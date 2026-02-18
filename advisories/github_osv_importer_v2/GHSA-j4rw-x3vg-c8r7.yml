@@ -1,0 +1,32 @@
+advisory_id: GHSA-j4rw-x3vg-c8r7
+datasource_id: github_osv_importer_v2/GHSA-j4rw-x3vg-c8r7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-j4rw-x3vg-c8r7/GHSA-j4rw-x3vg-c8r7.json
+aliases:
+  - CVE-2020-7721
+summary: |
+  Prototype Pollution in node-oojs
+  All versions of package node-oojs up to and including version 1.4.0 are vulnerable to Prototype Pollution via the setPath function.
+impacted_packages:
+  - purl: pkg:npm/node-oojs
+    affected_versions: vers:npm/<=1.4.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-j4rw-x3vg-c8r7/GHSA-j4rw-x3vg-c8r7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7721
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-NODEOOJS-598678
+    reference_type:
+    reference_id:

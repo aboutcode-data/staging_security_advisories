@@ -1,0 +1,71 @@
+advisory_id: GHSA-gvf2-2f4g-jqf4
+datasource_id: github_osv_importer_v2/GHSA-gvf2-2f4g-jqf4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-gvf2-2f4g-jqf4/GHSA-gvf2-2f4g-jqf4.json
+aliases:
+  - CVE-2024-55638
+summary: "Drupal core contains a potential PHP Object Injection vulnerability that (if combined\
+  \ with another exploit) could lead to Remote Code Execution. It is not directly exploitable.\n\
+  \nThis issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability\
+  \ must be present to allow an attacker to pass unsafe input to `unserialize()`. There are\
+  \ no such known exploits in Drupal core.\n\nTo help protect against this potential vulnerability,\
+  \ some additional checks have been added to Drupal core's database code. If you use a third-party\
+  \ database driver, check the release notes for additional configuration steps that may be\
+  \ required in certain cases. \n\nThis issue affects Drupal Core: from 7.0 before 7.102, from\
+  \ 8.0.0 before 10.2.11, from 10.3.0 before 10.3.9."
+impacted_packages:
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.8.0|<10.2.11
+    fixed_versions: vers:composer/10.2.11
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=10.3.0|<10.3.9
+    fixed_versions: vers:composer/10.3.9
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=7.0.0|<7.102.0
+    fixed_versions: vers:composer/7.102.0
+  - purl: pkg:composer/drupal/core-recommended
+    affected_versions: vers:composer/>=8.8.0|<10.2.11
+    fixed_versions: vers:composer/10.2.11
+  - purl: pkg:composer/drupal/core-recommended
+    affected_versions: vers:composer/>=10.3.0|<10.3.9
+    fixed_versions: vers:composer/10.3.9
+  - purl: pkg:composer/drupal/core-recommended
+    affected_versions: vers:composer/>=7.0.0|<7.102.0
+    fixed_versions: vers:composer/7.102.0
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=8.8.0|<10.2.11
+    fixed_versions: vers:composer/10.2.11
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=10.3.0|<10.3.9
+    fixed_versions: vers:composer/10.3.9
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=7.0.0|<7.102.0
+    fixed_versions: vers:composer/7.102.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-gvf2-2f4g-jqf4/GHSA-gvf2-2f4g-jqf4.json
+  - score: '7.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-gvf2-2f4g-jqf4/GHSA-gvf2-2f4g-jqf4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+  - CWE-502
+references:
+  - url: https://github.com/drupal/core
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-55638
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2024-008
+    reference_type:
+    reference_id:

@@ -1,0 +1,44 @@
+advisory_id: GHSA-h9h7-4jfm-3fxr
+datasource_id: github_osv_importer_v2/GHSA-h9h7-4jfm-3fxr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h9h7-4jfm-3fxr/GHSA-h9h7-4jfm-3fxr.json
+aliases:
+  - CVE-2018-0872
+summary: |
+  ChakraCore RCE Vulnerability
+  ChakraCore and Microsoft Edge in Microsoft Windows 10 Gold, 1511, 1607, 1703, 1709, and Windows Server 2016 allows remote code execution, due to how the Chakra scripting engine handles objects in memory, aka "Chakra Scripting Engine Memory Corruption Vulnerability". This CVE ID is unique from CVE-2018-0873, CVE-2018-0874, CVE-2018-0930, CVE-2018-0931, CVE-2018-0933, CVE-2018-0934, CVE-2018-0936, and CVE-2018-0937.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.8.2
+    fixed_versions: vers:nuget/1.8.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h9h7-4jfm-3fxr/GHSA-h9h7-4jfm-3fxr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://github.com/chakra-core/ChakraCore
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/commit/8b229ce07220eb81c81329566df9b01fea571d1a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-0872
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-0872
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124144651/http://www.securityfocus.com/bid/103267
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20211026192005/http://www.securitytracker.com/id/1040507
+    reference_type:
+    reference_id:

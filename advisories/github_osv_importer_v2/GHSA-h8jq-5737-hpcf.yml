@@ -1,0 +1,56 @@
+advisory_id: GHSA-h8jq-5737-hpcf
+datasource_id: github_osv_importer_v2/GHSA-h8jq-5737-hpcf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h8jq-5737-hpcf/GHSA-h8jq-5737-hpcf.json
+aliases:
+  - CVE-2018-8355
+summary: |
+  ChakraCore RCE Vulnerability
+  A remote code execution vulnerability exists in the way the scripting engine handles objects in memory in Microsoft browsers, aka "Scripting Engine Memory Corruption Vulnerability." This affects ChakraCore, Internet Explorer 11, Microsoft Edge. This CVE ID is unique from CVE-2018-8353, CVE-2018-8359, CVE-2018-8371, CVE-2018-8372, CVE-2018-8373, CVE-2018-8385, CVE-2018-8389, CVE-2018-8390.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.10.2
+    fixed_versions: vers:nuget/1.10.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-h8jq-5737-hpcf/GHSA-h8jq-5737-hpcf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://github.com/chakra-core/ChakraCore
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/commit/cf3ef506236da5b7651f4785966ab3131a4aa083
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/5596
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-8355
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8355
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210614055406/http://www.securityfocus.com/bid/104978
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20211203061111/http://www.securitytracker.com/id/1041457
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/45432
+    reference_type:
+    reference_id:
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=1588
+    reference_type: exploit
+    reference_id: CVE-2018-8355
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/dos/45432.js
+    reference_type: exploit
+    reference_id: CVE-2018-8355

@@ -1,0 +1,57 @@
+advisory_id: GHSA-gw32-9rmw-qwww
+datasource_id: github_osv_importer_v2/GHSA-gw32-9rmw-qwww
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-gw32-9rmw-qwww/GHSA-gw32-9rmw-qwww.json
+aliases: []
+summary: |
+  svelte is vulnerable to XSS with textarea bind:value
+  ### Summary
+
+  A server-side rendered `<textarea>` with two-way bound value does not have its value correctly escaped in the rendered HTML.
+
+  ### Details
+
+  In SSR, `<textarea bind:value={...}>` does not have its value escaped when it is rendered into the HTML as `<textarea>...</textarea>`.
+
+  ### PoC
+
+  Put this in a server-side-rendered Svelte component:
+
+  ```
+  <script>
+    let value = `test'"></textarea><script` + `>alert('BIM');</sc` + `ript>`;
+  </script>
+
+  <textarea bind:value />
+  ```
+
+  ### Impact
+
+  - Only affects SSR
+  - Needs a `<textarea bind:value>` filled by user content via two-way binding
+impacted_packages:
+  - purl: pkg:npm/svelte
+    affected_versions: vers:npm/>=3.0.0|<3.59.2
+    fixed_versions: vers:npm/3.59.2
+severities:
+  - score: '8.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:L/VA:N/SC:H/SI:H/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-gw32-9rmw-qwww/GHSA-gw32-9rmw-qwww.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/sveltejs/svelte
+    reference_type:
+    reference_id:
+  - url: https://github.com/sveltejs/svelte/commit/a31dec5eb30978cff7ff4d77f4bf316841f711bc
+    reference_type:
+    reference_id:
+  - url: https://github.com/sveltejs/svelte/security/advisories/GHSA-gw32-9rmw-qwww
+    reference_type:
+    reference_id:

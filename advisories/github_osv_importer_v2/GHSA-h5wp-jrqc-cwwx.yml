@@ -1,0 +1,46 @@
+advisory_id: GHSA-h5wp-jrqc-cwwx
+datasource_id: github_osv_importer_v2/GHSA-h5wp-jrqc-cwwx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-h5wp-jrqc-cwwx/GHSA-h5wp-jrqc-cwwx.json
+aliases:
+  - CVE-2022-4720
+summary: |
+  rdiffweb vulnerable to Open Redirect
+  Open Redirect in GitHub repository ikus060/rdiffweb prior to 2.5.5.
+impacted_packages:
+  - purl: pkg:pypi/rdiffweb
+    affected_versions: vers:pypi/<2.5.5
+    fixed_versions: vers:pypi/2.5.5
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-h5wp-jrqc-cwwx/GHSA-h5wp-jrqc-cwwx.json
+  - score: '8.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-h5wp-jrqc-cwwx/GHSA-h5wp-jrqc-cwwx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/ikus060/rdiffweb
+    reference_type:
+    reference_id:
+  - url: https://github.com/ikus060/rdiffweb/commit/6afaae56a29536f0118b3380d296c416aa6d078d
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/rdiffweb/PYSEC-2022-43006.yaml
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/339687af-6e25-4ad8-823d-c097f607ea70
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-4720
+    reference_type:
+    reference_id:

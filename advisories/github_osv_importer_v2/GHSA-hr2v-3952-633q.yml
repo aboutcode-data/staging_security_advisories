@@ -1,0 +1,46 @@
+advisory_id: GHSA-hr2v-3952-633q
+datasource_id: github_osv_importer_v2/GHSA-hr2v-3952-633q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-hr2v-3952-633q/GHSA-hr2v-3952-633q.json
+aliases:
+  - CVE-2018-3750
+summary: |
+  Prototype Pollution in deep-extend
+  Versions of `deep-extend` before 0.5.1 are vulnerable to prototype pollution.
+
+
+  ## Recommendation
+
+  Update to version 0.5.1 or later.
+impacted_packages:
+  - purl: pkg:npm/deep-extend
+    affected_versions: vers:npm/<0.5.1
+    fixed_versions: vers:npm/0.5.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-hr2v-3952-633q/GHSA-hr2v-3952-633q.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/advisories/GHSA-hr2v-3952-633q
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclechu/node-deep-extend/commit/9423fae877e2ab6b4aecc4db79a0ed63039d4703
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/311333
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-3750
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/612
+    reference_type:
+    reference_id:

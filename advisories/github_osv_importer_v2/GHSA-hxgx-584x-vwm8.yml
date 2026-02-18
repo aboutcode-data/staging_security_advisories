@@ -1,0 +1,44 @@
+advisory_id: GHSA-hxgx-584x-vwm8
+datasource_id: github_osv_importer_v2/GHSA-hxgx-584x-vwm8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-hxgx-584x-vwm8/GHSA-hxgx-584x-vwm8.json
+aliases:
+  - CVE-2023-27159
+summary: |
+  Appwrite Server-Side Request Forgery vulnerability
+  Appwrite up to v1.2.1 was discovered to contain a Server-Side Request Forgery (SSRF) via the component `/v1/avatars/favicon`. This vulnerability allows attackers to access network resources and sensitive information via a crafted GET request.
+impacted_packages:
+  - purl: pkg:composer/appwrite/server-ce
+    affected_versions: vers:composer/<=1.2.1
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-hxgx-584x-vwm8/GHSA-hxgx-584x-vwm8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: http://appwrite.com
+    reference_type:
+    reference_id:
+  - url: https://gist.github.com/b33t1e/43b26c31e895baf7e7aea2dbf9743a9a
+    reference_type:
+    reference_id:
+  - url: https://gist.github.com/b33t1e/e9e8192317c111e7897e04d2f9bf5fdb
+    reference_type:
+    reference_id:
+  - url: https://github.com/appwrite/appwrite
+    reference_type:
+    reference_id:
+  - url: https://notes.sjtu.edu.cn/gMNlpByZSDiwrl9uZyHTKA
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-27159
+    reference_type:
+    reference_id:

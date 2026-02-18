@@ -1,0 +1,41 @@
+advisory_id: GHSA-hwcf-pp87-7x6p
+datasource_id: github_osv_importer_v2/GHSA-hwcf-pp87-7x6p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/11/GHSA-hwcf-pp87-7x6p/GHSA-hwcf-pp87-7x6p.json
+aliases:
+  - CVE-2017-1000188
+summary: |
+  mde ejs vulnerable to XSS
+  nodejs ejs version older than 2.5.5 is vulnerable to a Cross-site-scripting in the `ejs.renderFile()` resulting in code injection
+impacted_packages:
+  - purl: pkg:npm/ejs
+    affected_versions: vers:npm/<2.5.5
+    fixed_versions: vers:npm/2.5.5
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/11/GHSA-hwcf-pp87-7x6p/GHSA-hwcf-pp87-7x6p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/advisories/GHSA-hwcf-pp87-7x6p
+    reference_type:
+    reference_id:
+  - url: https://github.com/mde/ejs
+    reference_type:
+    reference_id:
+  - url: https://github.com/mde/ejs/commit/49264e0037e313a0a3e033450b5c184112516d8f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000188
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200227134555/http://www.securityfocus.com/bid/101889
+    reference_type:
+    reference_id:

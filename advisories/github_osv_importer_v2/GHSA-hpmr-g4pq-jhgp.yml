@@ -1,0 +1,38 @@
+advisory_id: GHSA-hpmr-g4pq-jhgp
+datasource_id: github_osv_importer_v2/GHSA-hpmr-g4pq-jhgp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-hpmr-g4pq-jhgp/GHSA-hpmr-g4pq-jhgp.json
+aliases:
+  - CVE-2021-23371
+summary: |
+  Denial of service in chrono-node
+  This affects the package chrono-node before 2.2.4. It hangs on a date-like string with lots of embedded spaces.
+impacted_packages:
+  - purl: pkg:npm/chrono-node
+    affected_versions: vers:npm/<2.2.4
+    fixed_versions: vers:npm/2.2.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-hpmr-g4pq-jhgp/GHSA-hpmr-g4pq-jhgp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/wanasit/chrono/commit/98815b57622443b5c498a427210ebd603d705f4c
+    reference_type:
+    reference_id:
+  - url: https://github.com/wanasit/chrono/issues/382
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23371
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-CHRONONODE-1083228
+    reference_type:
+    reference_id:

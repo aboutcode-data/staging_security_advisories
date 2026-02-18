@@ -1,0 +1,71 @@
+advisory_id: GHSA-h58v-c6rf-g9f7
+datasource_id: github_osv_importer_v2/GHSA-h58v-c6rf-g9f7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-h58v-c6rf-g9f7/GHSA-h58v-c6rf-g9f7.json
+aliases:
+  - CVE-2021-35210
+summary: |
+  Cross site scripting in the system log
+  ### Impact
+
+  It is possible to inject code into the `tl_log` table that will be executed in the browser when the system log is called in the back end.
+
+  ### Patches
+
+  Update to Contao 4.9.16 or 4.11.5.
+
+  ### Workarounds
+
+  Disable the system log module in the back end for all users (especially admin users).
+
+  ### References
+
+  https://contao.org/en/security-advisories/cross-site-scripting-in-the-system-log-2021
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, open an issue in [contao/contao](https://github.com/contao/contao/issues/new/choose).
+impacted_packages:
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.5.0|<4.9.16
+    fixed_versions: vers:composer/4.9.16
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.10.0|<4.11.5
+    fixed_versions: vers:composer/4.11.5
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.5.0|<4.9.16
+    fixed_versions: vers:composer/4.9.16
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.10.0|<4.11.5
+    fixed_versions: vers:composer/4.11.5
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-h58v-c6rf-g9f7/GHSA-h58v-c6rf-g9f7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://contao.org/en/security-advisories/cross-site-scripting-in-the-system-log-2021.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/security/advisories/GHSA-h58v-c6rf-g9f7
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/contao/CVE-2021-35210.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/core-bundle/CVE-2021-35210.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-35210
+    reference_type:
+    reference_id:

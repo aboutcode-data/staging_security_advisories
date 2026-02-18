@@ -1,0 +1,64 @@
+advisory_id: GHSA-hmr7-m48g-48f6
+datasource_id: github_osv_importer_v2/GHSA-hmr7-m48g-48f6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-hmr7-m48g-48f6/GHSA-hmr7-m48g-48f6.json
+aliases:
+  - CVE-2023-40167
+summary: "Jetty accepts \"+\" prefixed value in Content-Length\n### Impact\n\nJetty accepts\
+  \ the '+' character proceeding the content-length value in a HTTP/1 header field.  This is\
+  \ more permissive than allowed by the RFC and other servers routinely reject such requests\
+  \ with 400 responses.  There is no known exploit scenario, but it is conceivable that request\
+  \ smuggling could result if jetty is used in combination with a server that does not close\
+  \ the connection after sending such a 400 response.\n\n### Workarounds\n\nThere is no workaround\
+  \ as there is no known exploit scenario.   \n\n### Original Report \n\n[RFC 9110 Secion 8.6](https://www.rfc-editor.org/rfc/rfc9110#section-8.6)\
+  \ defined the value of Content-Length header should be a string of 0-9 digits. However we\
+  \ found that Jetty accepts \"+\" prefixed Content-Length, which could lead to potential HTTP\
+  \ request smuggling.\n\nPayload:\n\n```\n POST / HTTP/1.1\n Host: a.com\n Content-Length:\
+  \ +16\n Connection: close\n ​\n 0123456789abcdef\n```\n\nWhen sending this payload to Jetty,\
+  \ it can successfully parse and identify the length.\n\nWhen sending this payload to NGINX,\
+  \ Apache HTTPd or other HTTP servers/parsers, they will return 400 bad request.\n\nThis behavior\
+  \ can lead to HTTP request smuggling and can be leveraged to bypass WAF or IDS."
+impacted_packages:
+  - purl: pkg:maven/org.eclipse.jetty/jetty-http
+    affected_versions: vers:maven/<=9.4.51
+    fixed_versions: vers:maven/9.4.52
+  - purl: pkg:maven/org.eclipse.jetty/jetty-http
+    affected_versions: vers:maven/<=10.0.15
+    fixed_versions: vers:maven/10.0.16
+  - purl: pkg:maven/org.eclipse.jetty/jetty-http
+    affected_versions: vers:maven/<=11.0.15
+    fixed_versions: vers:maven/11.0.16
+  - purl: pkg:maven/org.eclipse.jetty/jetty-http
+    affected_versions: vers:maven/12.0.0
+    fixed_versions: vers:maven/12.0.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-hmr7-m48g-48f6/GHSA-hmr7-m48g-48f6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-130
+references:
+  - url: https://github.com/eclipse/jetty.project
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse/jetty.project/security/advisories/GHSA-hmr7-m48g-48f6
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/09/msg00039.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-40167
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2023/dsa-5507
+    reference_type:
+    reference_id:
+  - url: https://www.rfc-editor.org/rfc/rfc9110#section-8.6
+    reference_type:
+    reference_id:

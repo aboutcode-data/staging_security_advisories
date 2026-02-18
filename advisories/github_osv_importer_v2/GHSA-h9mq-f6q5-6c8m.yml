@@ -1,0 +1,67 @@
+advisory_id: GHSA-h9mq-f6q5-6c8m
+datasource_id: github_osv_importer_v2/GHSA-h9mq-f6q5-6c8m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-h9mq-f6q5-6c8m/GHSA-h9mq-f6q5-6c8m.json
+aliases:
+  - CVE-2024-40094
+summary: |
+  GraphQL Java does not properly consider ExecutableNormalizedFields (ENFs) as part of preventing denial of service
+  GraphQL Java (aka graphql-java) before 21.5 does not properly consider ExecutableNormalizedFields (ENFs) as part of preventing denial of service via introspection queries. 20.9 and 19.11 are also fixed versions.
+impacted_packages:
+  - purl: pkg:maven/com.graphql-java/graphql-java
+    affected_versions: vers:maven/<19.11
+    fixed_versions: vers:maven/19.11
+  - purl: pkg:maven/com.graphql-java/graphql-java
+    affected_versions: vers:maven/>=20.0|<20.9
+    fixed_versions: vers:maven/20.9
+  - purl: pkg:maven/com.graphql-java/graphql-java
+    affected_versions: vers:maven/>=21.0|<21.5
+    fixed_versions: vers:maven/21.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-h9mq-f6q5-6c8m/GHSA-h9mq-f6q5-6c8m.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-h9mq-f6q5-6c8m/GHSA-h9mq-f6q5-6c8m.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/graphql-java/graphql-java/commit/16c159111507ef04d7e1839b2c23281d90c42b2b
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/commit/469caf6ee600ab6709ad5e8a06f371fe2ef3b8dd
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/commit/97743bc1b5caa2b0bd894dc8e128b47e4d771e4a
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/commit/fc6f304e66cab18b6d06a80c7009524938939a03
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/discussions/3641
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/pull/3539
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/releases/tag/v19.11
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/releases/tag/v20.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/releases/tag/v21.5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-40094
+    reference_type:
+    reference_id:

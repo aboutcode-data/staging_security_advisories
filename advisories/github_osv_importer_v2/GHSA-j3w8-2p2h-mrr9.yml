@@ -1,0 +1,46 @@
+advisory_id: GHSA-j3w8-2p2h-mrr9
+datasource_id: github_osv_importer_v2/GHSA-j3w8-2p2h-mrr9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-j3w8-2p2h-mrr9/GHSA-j3w8-2p2h-mrr9.json
+aliases:
+  - CVE-2023-42792
+summary: |
+  Apache Airflow vulnerable to privilege escalation
+  Apache Airflow, in versions prior to 2.7.2, contains a security vulnerability that allows an authenticated user with limited access to some DAGs, to craft a request that could give the user write access to various DAG resources for DAGs that the user had no access to, thus, enabling the user to clear DAGs they shouldn't.
+
+  Users of Apache Airflow are strongly advised to upgrade to version 2.7.2 or newer to mitigate the risk associated with this vulnerability.
+impacted_packages:
+  - purl: pkg:pypi/apache-airflow
+    affected_versions: vers:pypi/<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-j3w8-2p2h-mrr9/GHSA-j3w8-2p2h-mrr9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+references:
+  - url: https://github.com/apache/airflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/airflow/pull/34366
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/apache-airflow/PYSEC-2023-203.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/1spbo9nkn49fc2hnxqm9tf6mgqwp9tjq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-42792
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/12/21/1
+    reference_type:
+    reference_id:

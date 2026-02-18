@@ -1,0 +1,41 @@
+advisory_id: GHSA-h975-r69h-4w9p
+datasource_id: github_osv_importer_v2/GHSA-h975-r69h-4w9p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-h975-r69h-4w9p/GHSA-h975-r69h-4w9p.json
+aliases:
+  - CVE-2022-32533
+summary: |
+  Insufficient user input in Apache Jetspeed-2
+  ** UNSUPPORTED WHEN ASSIGNED ** Apache Jetspeed-2 does not sufficiently filter untrusted user input by default leading to a number of issues including XSS, CSRF, XXE, and SSRF. Setting the configuration option "xss.filter.post = true" may mitigate these issues. NOTE: Apache Jetspeed is a dormant project of Apache Portals and no updates will be provided for this issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.portals.jetspeed-2/jetspeed-commons
+    affected_versions: vers:maven/<=2.3.1
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-h975-r69h-4w9p/GHSA-h975-r69h-4w9p.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+  - CWE-79
+  - CWE-352
+  - CWE-918
+references:
+  - url: https://lists.apache.org/thread/d3g248pr03x8rvmh8p2t3xdlw0wn5dz2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-32533
+    reference_type:
+    reference_id:
+  - url: https://www.openwall.com/lists/oss-security/2022/07/06/1
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/07/06/1
+    reference_type:
+    reference_id:

@@ -1,0 +1,77 @@
+advisory_id: GHSA-hcxx-mp6g-6gr9
+datasource_id: github_osv_importer_v2/GHSA-hcxx-mp6g-6gr9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-hcxx-mp6g-6gr9/GHSA-hcxx-mp6g-6gr9.json
+aliases:
+  - CVE-2018-16153
+summary: |
+  Opencast publishes global system account credentials
+  The issue was mostly mitigated before, drastically reducing the risk. See references below for more information.
+
+  ### Impact
+
+  Opencast before version 10.6 will try to authenticate against any external services listed in a media package when it is trying to access the files, sending the global system user's credentials, regardless of the target being part of the Opencast cluster or not.
+
+  Previous mitigations already prevented clear text authentications for such requests (e.g. HTTP Basic authentication), but with enough malicious intent, even hashed credentials can be broken.
+
+  ### Patches
+
+  Opencast 10.6 will now send authentication requests only against servers which are part of the Opencast cluster, preventing external services from getting any form of authentication attempt in the first place.
+
+  ### Workarounds
+
+  No workaround available.
+
+  ### References
+
+  - [Patch fixing the issue](https://github.com/opencast/opencast/commit/776d5588f39c61eb04c03bb955416c4f77629d51)
+  - [Original security notice](https://groups.google.com/a/opencast.org/g/security-notices/c/XRZzRiqp-NE)
+  - [Original security mitigation](https://github.com/opencast/opencast/commit/fe8c3d3a60dc5869b468957270dbad5f8c30ead6)
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+  - Open an issue in [our issue tracker](https://github.com/opencast/opencast/issues)
+  - Email us at [security@opencast.org](mailto:security@opencast.org)
+impacted_packages:
+  - purl: pkg:maven/org.opencastproject/opencast-common
+    affected_versions: vers:maven/<10.6
+    fixed_versions: vers:maven/10.6
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-hcxx-mp6g-6gr9/GHSA-hcxx-mp6g-6gr9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-522
+references:
+  - url: https://docs.opencast.org/r/10.x/admin/#changelog
+    reference_type:
+    reference_id:
+  - url: https://docs.opencast.org/r/10.x/admin/#changelog/#opencast-106
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-hcxx-mp6g-6gr9
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast/commit/776d5588f39c61eb04c03bb955416c4f77629d51
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast/security/advisories/GHSA-hcxx-mp6g-6gr9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-16153
+    reference_type:
+    reference_id:
+  - url: https://www.apereo.org/projects/opencast/news
+    reference_type:
+    reference_id:

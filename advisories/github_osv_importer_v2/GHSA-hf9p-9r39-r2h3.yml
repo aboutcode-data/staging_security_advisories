@@ -1,0 +1,44 @@
+advisory_id: GHSA-hf9p-9r39-r2h3
+datasource_id: github_osv_importer_v2/GHSA-hf9p-9r39-r2h3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-hf9p-9r39-r2h3/GHSA-hf9p-9r39-r2h3.json
+aliases:
+  - CVE-2020-11476
+summary: |
+  Unrestricted Uploads in Concrete5
+  Concrete5 before 8.5.3 allows Unrestricted Upload of File with Dangerous Type such as a .phar file.
+impacted_packages:
+  - purl: pkg:composer/concrete5/concrete5
+    affected_versions: vers:composer/<8.5.3
+    fixed_versions: vers:composer/8.5.3
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-hf9p-9r39-r2h3/GHSA-hf9p-9r39-r2h3.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/concrete5/concrete5
+    reference_type:
+    reference_id:
+  - url: https://github.com/concrete5/concrete5/pull/8713
+    reference_type:
+    reference_id:
+  - url: https://github.com/concrete5/concrete5/releases/tag/8.5.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/concretecms/concretecms/commit/d296f4ba4f6ad94b199c21c1b16f0d185adab343
+    reference_type:
+    reference_id:
+  - url: https://herolab.usd.de/security-advisories/usd-2020-0041
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-11476
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-hpj2-4hfj-g233
+datasource_id: github_osv_importer_v2/GHSA-hpj2-4hfj-g233
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hpj2-4hfj-g233/GHSA-hpj2-4hfj-g233.json
+aliases:
+  - CVE-2020-5203
+summary: |
+  Fat-Free Framework arbitrary code execution
+  In Fat-Free Framework 3.7.1, attackers can achieve arbitrary code execution if developers choose to pass user controlled input (e.g., `$_REQUEST`, `$_GET`, or `$_POST`) to the framework's Clear method.
+impacted_packages:
+  - purl: pkg:composer/bcosca/fatfree
+    affected_versions: vers:composer/<3.7.2
+    fixed_versions: vers:composer/3.7.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-hpj2-4hfj-g233/GHSA-hpj2-4hfj-g233.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/bcosca/fatfree
+    reference_type:
+    reference_id:
+  - url: https://github.com/bcosca/fatfree-core/commit/dae95a0baf3963a9ef87c17cee52f78f77e21829
+    reference_type:
+    reference_id:
+  - url: https://github.com/bcosca/fatfree/releases
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-5203
+    reference_type:
+    reference_id:

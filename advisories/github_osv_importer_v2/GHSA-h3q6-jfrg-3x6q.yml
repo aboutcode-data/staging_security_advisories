@@ -1,0 +1,61 @@
+advisory_id: GHSA-h3q6-jfrg-3x6q
+datasource_id: github_osv_importer_v2/GHSA-h3q6-jfrg-3x6q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-h3q6-jfrg-3x6q/GHSA-h3q6-jfrg-3x6q.json
+aliases:
+  - CVE-2026-25630
+summary: |
+  survey-pdf Upgraded jsPDF Version Due to Security Vulnerability
+  The following security vulnerability was identified in jsPDF versions <=3.0.4: [Local File Inclusion/Path Traversal](https://github.com/parallax/jsPDF/security/advisories/GHSA-f8cm-6447-x5h2).
+
+  ### Impact
+
+  Since SurveyJS PDF Generator depends on jsPDF, any project using `survey-pdf` v1.12.58 and lower or v2.5.4 and lower could be exposed to this vulnerability.
+
+  ### Solution
+
+  SurveyJS PDF Generator has upgraded jsPDF to version >= 4.0.0 and included the fix in the following `survey-pdf` releases:
+
+  * [v1.12.59](https://www.npmjs.com/package/survey-pdf/v/1.12.59)
+  * [v2.5.5](https://www.npmjs.com/package/survey-pdf/v/2.5.5)
+
+  ### Action
+
+  Users should upgrade `survey-pdf` in their projects to v1.12.59+ or v2.5.5+ immediately.
+
+  ### Notes
+
+  No other `survey-pdf` dependencies are affected. This update is fully backward-compatible with previous `survey-pdf` releases.
+impacted_packages:
+  - purl: pkg:npm/survey-pdf
+    affected_versions: vers:npm/<=1.12.58
+    fixed_versions: vers:npm/1.12.59
+  - purl: pkg:npm/survey-pdf
+    affected_versions: vers:npm/<=2.5.4
+    fixed_versions: vers:npm/2.5.5
+severities:
+  - score: '9.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-h3q6-jfrg-3x6q/GHSA-h3q6-jfrg-3x6q.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-35
+  - CWE-73
+references:
+  - url: https://github.com/parallax/jsPDF/security/advisories/GHSA-f8cm-6447-x5h2
+    reference_type:
+    reference_id:
+  - url: https://github.com/surveyjs/survey-pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/surveyjs/survey-pdf/security/advisories/GHSA-h3q6-jfrg-3x6q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25630
+    reference_type:
+    reference_id:

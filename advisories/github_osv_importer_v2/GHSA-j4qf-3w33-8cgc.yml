@@ -1,0 +1,47 @@
+advisory_id: GHSA-j4qf-3w33-8cgc
+datasource_id: github_osv_importer_v2/GHSA-j4qf-3w33-8cgc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j4qf-3w33-8cgc/GHSA-j4qf-3w33-8cgc.json
+aliases:
+  - CVE-2017-18122
+summary: |
+  SimpleSAMLphp Signature validation bypass
+  A signature-validation bypass issue was discovered in SimpleSAMLphp through 1.14.16. A SimpleSAMLphp Service Provider using SAML 1.1 will regard as valid any unsigned SAML response containing more than one signed assertion, provided that the signature of at least one of the assertions is valid. Attributes contained in all the assertions received will be merged and the entityID of the first assertion received will be used, allowing an attacker to impersonate any user of any IdP given an assertion signed by the targeted IdP.
+impacted_packages:
+  - purl: pkg:composer/simplesamlphp/simplesamlphp
+    affected_versions: vers:composer/<1.14.17
+    fixed_versions: vers:composer/1.14.17
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j4qf-3w33-8cgc/GHSA-j4qf-3w33-8cgc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-347
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/simplesamlphp/simplesamlphp/CVE-2017-18122.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/simplesamlphp/simplesamlphp
+    reference_type:
+    reference_id:
+  - url: https://github.com/simplesamlphp/simplesamlphp/commit/e2d53086abbb253efb24ddcb49b116246eb0b6ca
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2018/02/msg00008.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-18122
+    reference_type:
+    reference_id:
+  - url: https://simplesamlphp.org/security/201710-01
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2018/dsa-4127
+    reference_type:
+    reference_id:

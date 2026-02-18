@@ -1,0 +1,40 @@
+advisory_id: GHSA-h2g5-2rhx-ffgj
+datasource_id: github_osv_importer_v2/GHSA-h2g5-2rhx-ffgj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-h2g5-2rhx-ffgj/GHSA-h2g5-2rhx-ffgj.json
+aliases:
+  - CVE-2022-24727
+summary: |
+  Duplicate Advisory: Command injection in Weblate
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-3872-f48p-pxqj. This link is maintained to preserve external references.
+
+  ## Original Description
+  Weblate is a web based localization tool with tight version control integration. Prior to version 4.11.1, Weblate didn't properly sanitize some arguments passed to Git and Mercurial, allowing them to change their behavior in an unintended way. Instances where untrusted users cannot create new components are not affected. The issues were fixed in the 4.11.1 release.
+impacted_packages:
+  - purl: pkg:pypi/weblate
+    affected_versions: vers:pypi/<4.11.1
+    fixed_versions: vers:pypi/4.11.1
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/WeblateOrg/weblate
+    reference_type:
+    reference_id:
+  - url: https://github.com/WeblateOrg/weblate/commit/35d59f1f040541c358cece0a8d4a63183ca919b8
+    reference_type:
+    reference_id:
+  - url: https://github.com/WeblateOrg/weblate/commit/d83672a3e7415da1490334e2c9431e5da1966842
+    reference_type:
+    reference_id:
+  - url: https://github.com/WeblateOrg/weblate/security/advisories/GHSA-3872-f48p-pxqj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24727
+    reference_type:
+    reference_id:

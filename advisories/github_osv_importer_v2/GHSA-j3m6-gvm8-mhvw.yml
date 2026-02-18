@@ -1,0 +1,70 @@
+advisory_id: GHSA-j3m6-gvm8-mhvw
+datasource_id: github_osv_importer_v2/GHSA-j3m6-gvm8-mhvw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-j3m6-gvm8-mhvw/GHSA-j3m6-gvm8-mhvw.json
+aliases:
+  - CVE-2023-49783
+summary: |
+  No permission checks for editing/deleting records with CSV import form
+  ### Impact
+  Users who don't have edit or delete permissions for records exposed in a `ModelAdmin` can still edit or delete records using the CSV import form, provided they have create permissions.
+
+  The likelyhood of a user having create permissions but _not_ having edit or delete permissions is low, but it _is_ possible.
+
+  Note that this doesn't affect any `ModelAdmin` which has had the import form disabled via the [`showImportForm` public property](https://api.silverstripe.org/4/SilverStripe/Admin/ModelAdmin.html#property_showImportForm), nor does it impact the `SecurityAdmin` section.
+
+  #### Action may be required
+
+  If you have a custom implementation of [`BulkLoader`](https://api.silverstripe.org/4/SilverStripe/Dev/BulkLoader.html), you should update your implementation to respect permissions when the return value of [`getCheckPermissions()`](https://api.silverstripe.org/4/SilverStripe/Dev/BulkLoader.html#method_getCheckPermissions) is true.
+
+  If you are using any `BulkLoader` in your own project logic, or maintain a module which uses it, you should consider passing `true` to [`setCheckPermissions()`](https://api.silverstripe.org/4/SilverStripe/Dev/BulkLoader.html#method_setCheckPermissions) if the data is provided by users.
+
+  **Base CVSS:** [4.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N/E:F/RL:O/RC:C&version=3.1)
+  **Reported by:** Guy Sartorelli from Silverstripe
+
+  ### References
+  - https://www.silverstripe.org/download/security-releases/CVE-2023-49783
+impacted_packages:
+  - purl: pkg:composer/silverstripe/admin
+    affected_versions: vers:composer/>=1.0.0|<1.13.19
+    fixed_versions: vers:composer/1.13.19
+  - purl: pkg:composer/silverstripe/admin
+    affected_versions: vers:composer/>=2.0.0|<2.1.8
+    fixed_versions: vers:composer/2.1.8
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-j3m6-gvm8-mhvw/GHSA-j3m6-gvm8-mhvw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/admin/CVE-2023-49783.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripeltd/product-issues/issues/832
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe-security/security-issues/issues/177
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-admin
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-admin/commit/9693130a0a637cdf512277cf5f07e83250b191db
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-admin/security/advisories/GHSA-j3m6-gvm8-mhvw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-49783
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/CVE-2023-49783
+    reference_type:
+    reference_id:

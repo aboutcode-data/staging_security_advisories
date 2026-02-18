@@ -1,0 +1,56 @@
+advisory_id: GHSA-j7mw-7crr-658v
+datasource_id: github_osv_importer_v2/GHSA-j7mw-7crr-658v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j7mw-7crr-658v/GHSA-j7mw-7crr-658v.json
+aliases:
+  - CVE-2018-14667
+summary: |
+  Richfaces vulnerable to arbitrary code execution
+  The RichFaces Framework 3.X through 3.3.4 is vulnerable to Expression Language (EL) injection via the UserResource resource. A remote, unauthenticated attacker could exploit this to execute arbitrary code using a chain of java serialized objects via `org.ajax4jsf.resource.UserResource$UriData`.
+impacted_packages:
+  - purl: pkg:maven/org.richfaces/richfaces-core
+    affected_versions: vers:maven/<3.3.4
+    fixed_versions: vers:maven/3.3.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-j7mw-7crr-658v/GHSA-j7mw-7crr-658v.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: http://packetstormsecurity.com/files/156663/Richsploit-RichFaces-Exploitation-Toolkit.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3517
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3518
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3519
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3581
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14667
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2020/Mar/21
+    reference_type:
+    reference_id:
+  - url: https://github.com/richfaces/richfaces/commit/1372eb716c1a215a5af124198f21bde33fafad06
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-14667
+    reference_type:
+    reference_id:
+  - url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2018-14667
+    reference_type:
+    reference_id:

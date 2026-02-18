@@ -1,0 +1,52 @@
+advisory_id: GHSA-j65r-g7q2-f8v3
+datasource_id: github_osv_importer_v2/GHSA-j65r-g7q2-f8v3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-j65r-g7q2-f8v3/GHSA-j65r-g7q2-f8v3.json
+aliases:
+  - CVE-2023-2881
+summary: |
+  Pimcore customers' list user password hash is disclosed
+  ### Impact
+  The customer view exposes the hashed password along with other deails. An attacker is then able to enum password of a particular id, likewise we can replace id with other user , for example 1015, password hash can be disclosed which can be further cracked with hashcat
+
+  ### Patches
+  Update to version 3.3.10 or apply this patch manually https://github.com/pimcore/customer-data-framework/commit/d1d58c10313f080737dc1e71fab3beb12488a1e6.patch
+
+  ### Workarounds
+  Apply https://github.com/pimcore/customer-data-framework/commit/d1d58c10313f080737dc1e71fab3beb12488a1e6.patch manually.
+
+  ### References
+  https://huntr.dev/bounties/db6c32f4-742e-4262-8fd5-cefd0f133416/
+impacted_packages:
+  - purl: pkg:composer/pimcore/customer-management-framework-bundle
+    affected_versions: vers:composer/<3.3.10
+    fixed_versions: vers:composer/3.3.10
+severities:
+  - score: '6.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-j65r-g7q2-f8v3/GHSA-j65r-g7q2-f8v3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-522
+  - CWE-257
+references:
+  - url: https://github.com/pimcore/customer-data-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/commit/d1d58c10313f080737dc1e71fab3beb12488a1e6
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/security/advisories/GHSA-j65r-g7q2-f8v3
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/db6c32f4-742e-4262-8fd5-cefd0f133416
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2881
+    reference_type:
+    reference_id:
