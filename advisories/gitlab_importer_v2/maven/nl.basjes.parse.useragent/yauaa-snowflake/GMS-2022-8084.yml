@@ -1,0 +1,25 @@
+advisory_id: maven/nl.basjes.parse.useragent/yauaa-snowflake/GMS-2022-8084
+datasource_id: gitlab_importer_v2/maven/nl.basjes.parse.useragent/yauaa-snowflake/GMS-2022-8084
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/nl.basjes.parse.useragent/yauaa-snowflake/GMS-2022-8084.yml
+aliases:
+  - CVE-2022-23496
+  - GHSA-c4pm-63cg-9j7h
+  - GMS-2022-8084
+summary: |
+  ArrayIndexOutOfBoundsException triggered by a crafted Sec-Ch-Ua-Full-Version-List
+  Applications using the Client Hints analysis feature introduced with 7.0.0 can crash because the Yauaa library throws an `ArrayIndexOutOfBoundsException`. Applications that do not use this feature are not affected.
+impacted_packages:
+  - purl: pkg:maven/nl.basjes.parse.useragent/yauaa-snowflake
+    affected_versions: vers:maven/>=7.0.0|<7.9.0
+    fixed_versions: vers:maven/7.9.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/nielsbasjes/yauaa/security/advisories/GHSA-c4pm-63cg-9j7h
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c4pm-63cg-9j7h
+    reference_type:
+    reference_id: GHSA-c4pm-63cg-9j7h
