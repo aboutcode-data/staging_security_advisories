@@ -1,0 +1,40 @@
+advisory_id: GHSA-g4xj-wcq6-qwx5
+datasource_id: github_osv_importer_v2/GHSA-g4xj-wcq6-qwx5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-g4xj-wcq6-qwx5/GHSA-g4xj-wcq6-qwx5.json
+aliases:
+  - CVE-2020-7697
+summary: "Code injection in mock2easy\nThis affects all versions up to and including version\
+  \ 0.0.24 of package mock2easy. a malicious user could inject commands through the `_data`\
+  \ variable: \n\nAffected Area\n\n```js\nrequire('../server/getJsonByCurl')(mock2easy, function(error,\
+  \ stdout) {\n    if (error) {\n        return res.json(500, error);\n    }\n    res.json(JSON.parse(stdout));\n\
+  }, '', _data.interfaceUrl, query, _data.cookie, _data.interfaceType);```"
+impacted_packages:
+  - purl: pkg:npm/mock2easy
+    affected_versions: vers:npm/<=0.0.24
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-g4xj-wcq6-qwx5/GHSA-g4xj-wcq6-qwx5.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/appLhui/mock2easy/blob/1da728fa0f61cc29fb415f0677e54ad4902261d3/routes/index.js#L132-L139
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7697
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-MOCK2EASY-572312
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/mock2easy
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-f7c7-j99h-c22f
+datasource_id: github_osv_importer_v2/GHSA-f7c7-j99h-c22f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-f7c7-j99h-c22f/GHSA-f7c7-j99h-c22f.json
+aliases:
+  - CVE-2021-41496
+summary: |
+  Buffer Copy without Checking Size of Input in NumPy
+  Buffer overflow in the array_from_pyobj function of fortranobject.c in NumPy < 1.19, which allows attackers to conduct a Denial of Service attacks by carefully constructing an array with negative values.
+impacted_packages:
+  - purl: pkg:pypi/numpy
+    affected_versions: vers:pypi/<=1.18.5
+    fixed_versions: vers:pypi/1.19
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-f7c7-j99h-c22f/GHSA-f7c7-j99h-c22f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-120
+references:
+  - url: https://github.com/numpy/numpy
+    reference_type:
+    reference_id:
+  - url: https://github.com/numpy/numpy/issues/19000
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41496
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-g4rw-82hq-8jpr
+datasource_id: github_osv_importer_v2/GHSA-g4rw-82hq-8jpr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g4rw-82hq-8jpr/GHSA-g4rw-82hq-8jpr.json
+aliases:
+  - CVE-2017-1000426
+summary: |
+  MapProxy vulnerable to cross-site scripting in demo service
+  MapProxy version 1.11.1 and older are vulnerable to cross-site scripting in the demo service resulting in possible information disclosure. An incomplete fix was released in v[1.10.4](https://github.com/mapproxy/mapproxy/issues/322#issuecomment-518573169), and a complete fix was released in v[1.11.1](https://github.com/mapproxy/mapproxy/commit/436c8f489761d1b4ee22b2440b53cc96bbc28aea).
+impacted_packages:
+  - purl: pkg:pypi/mapproxy
+    affected_versions: vers:pypi/<1.11.1
+    fixed_versions: vers:pypi/1.11.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g4rw-82hq-8jpr/GHSA-g4rw-82hq-8jpr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/mapproxy/mapproxy
+    reference_type:
+    reference_id:
+  - url: https://github.com/mapproxy/mapproxy/commit/420412aad45171e05752007a0a2350c03c28dfd8
+    reference_type:
+    reference_id:
+  - url: https://github.com/mapproxy/mapproxy/commit/436c8f489761d1b4ee22b2440b53cc96bbc28aea
+    reference_type:
+    reference_id:
+  - url: https://github.com/mapproxy/mapproxy/issues/322
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000426
+    reference_type:
+    reference_id:

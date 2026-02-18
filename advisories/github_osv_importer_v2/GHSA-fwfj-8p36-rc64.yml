@@ -1,0 +1,62 @@
+advisory_id: GHSA-fwfj-8p36-rc64
+datasource_id: github_osv_importer_v2/GHSA-fwfj-8p36-rc64
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-fwfj-8p36-rc64/GHSA-fwfj-8p36-rc64.json
+aliases:
+  - CVE-2023-35131
+summary: |
+  Moodle vulnerable to Cross-site Scripting
+  Content on the groups page required additional sanitizing to prevent an XSS risk. This flaw affects Moodle versions 4.2, 4.1 to 4.1.3, 4.0 to 4.0.8 and 3.11 to 3.11.14.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/4.2.0
+    fixed_versions: vers:composer/4.2.1
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.1.0|<4.1.4
+    fixed_versions: vers:composer/4.1.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.0.0|<4.0.9
+    fixed_versions: vers:composer/4.0.9
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<3.11.15
+    fixed_versions: vers:composer/3.11.15
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-fwfj-8p36-rc64/GHSA-fwfj-8p36-rc64.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-76683
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2214369
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/7A72KX4WU6GK2CX4TKYFGFASPKOEOJFC
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/I5QAEAGJ44NVXLAJFJXKARKC45OGEDXT
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7A72KX4WU6GK2CX4TKYFGFASPKOEOJFC
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I5QAEAGJ44NVXLAJFJXKARKC45OGEDXT
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=447829
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-35131
+    reference_type:
+    reference_id:

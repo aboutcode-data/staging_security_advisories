@@ -1,0 +1,38 @@
+advisory_id: GHSA-gfhf-2xr5-2fvw
+datasource_id: github_osv_importer_v2/GHSA-gfhf-2xr5-2fvw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gfhf-2xr5-2fvw/GHSA-gfhf-2xr5-2fvw.json
+aliases:
+  - CVE-2019-19211
+summary: |
+  Dolibarr ERP and CRM contain XSS Vulnerability
+  Dolibarr ERP/CRM before 10.0.3 has an Insufficient Filtering issue that can lead to user/card.php XSS.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<10.0.3
+    fixed_versions: vers:composer/10.0.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gfhf-2xr5-2fvw/GHSA-gfhf-2xr5-2fvw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://herolab.usd.de/en/security-advisories/usd-2019-0053
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19211
+    reference_type:
+    reference_id:
+  - url: https://www.dolibarr.org/forum/dolibarr-changelogs
+    reference_type:
+    reference_id:

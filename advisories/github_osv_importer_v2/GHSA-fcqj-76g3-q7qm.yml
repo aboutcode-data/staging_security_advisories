@@ -1,0 +1,41 @@
+advisory_id: GHSA-fcqj-76g3-q7qm
+datasource_id: github_osv_importer_v2/GHSA-fcqj-76g3-q7qm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-fcqj-76g3-q7qm/GHSA-fcqj-76g3-q7qm.json
+aliases:
+  - CVE-2026-22186
+summary: |
+  Bio-Formats has an XML External Entity (XXE) vulnerability
+  Bio-Formats versions up to and including 8.3.0 contain an XML External Entity (XXE) vulnerability in the Leica Microsystems metadata parsing component (e.g., XLEF). The parser uses an insecurely configured DocumentBuilderFactory when processing Leica XML-based metadata files, allowing external entity expansion and external DTD loading. A crafted metadata file can trigger outbound network requests (SSRF), access local system resources where readable, or cause a denial of service during XML parsing.
+impacted_packages:
+  - purl: pkg:maven/ome/pom-bio-formats
+    affected_versions: vers:maven/<=8.3.0
+    fixed_versions:
+severities:
+  - score: '4.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:A/VC:L/VI:N/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-fcqj-76g3-q7qm/GHSA-fcqj-76g3-q7qm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://docs.openmicroscopy.org/bio-formats
+    reference_type:
+    reference_id:
+  - url: https://github.com/ome/bioformats
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-22186
+    reference_type:
+    reference_id:
+  - url: https://seclists.org/fulldisclosure/2026/Jan/6
+    reference_type:
+    reference_id:
+  - url: https://www.vulncheck.com/advisories/bio-formats-xxe-in-leica-xlef-metadata-parser
+    reference_type:
+    reference_id:

@@ -1,0 +1,94 @@
+advisory_id: GHSA-gc7p-j5xm-xxh2
+datasource_id: github_osv_importer_v2/GHSA-gc7p-j5xm-xxh2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-gc7p-j5xm-xxh2/GHSA-gc7p-j5xm-xxh2.json
+aliases:
+  - CVE-2023-39345
+summary: |
+  Unauthorized Access to Private Fields in User Registration API
+  ### System Details
+  | Name     | Value                  |
+  |----------|------------------------|
+  | OS       | Windows 11             |
+  | Version  | 4.11.1 (node v16.14.2) |
+  | Database | mysql                  |
+
+
+  ### Description
+  I marked some fields as private fields in user content-type, and tried to register as a new user via api, at the same time I added content to fill the private fields and sent a post request, and as you can see from the images below, I can write to the private fields.
+
+  ![register](https://user-images.githubusercontent.com/32245914/246987508-9337ffd5-c681-4f51-9a0b-2490b424ca1e.png)
+
+  ![user](https://user-images.githubusercontent.com/32245914/246987564-9f440b3f-a7a3-4710-9b75-0854667fc35d.png)
+
+  ![private_field](https://user-images.githubusercontent.com/32245914/246987590-9c0ecefd-fd64-4221-b642-e730ea55d440.png)
+
+  ![table](https://user-images.githubusercontent.com/32245914/246987604-009e6808-5690-458e-aa87-57dda7d4589d.png)
+
+  To prevent this, I went to the extension area and tried to extend the register method, for this I wanted to do it using the sanitizeInput function that I know in the source codes of the strap. But the sanitizeInput function did not filter out private fields.
+
+  ```js
+    const { auth } = ctx.state;
+    const data = ctx.request.body;
+    const userSchema = strapi.getModel("plugin::users-permissions.user");
+
+    sanitize.contentAPI.input(data, userSchema, { auth });
+  ```
+
+  here's the solution I've temporarily kept to myself, code snippet
+
+  ```js
+    const body = ctx.request.body;
+
+    const { attributes } = strapi.getModel("plugin::users-permissions.user");
+
+    const sanitizedData = _.omitBy(body, (data, key) => {
+      const attribute = attributes[key];
+
+      if (_.isNil(attribute)) {
+        return false;
+      }
+
+      //? If you want, you can throw an error for fields that we did not expect.
+
+      // if (_.isNil(attribute))
+      //   throw new ApplicationError(`Unexpected value ${key}`);
+
+      // if private value is true, we do not want to send it to the database.
+      return attribute.private;
+    });
+
+    return sanitizedData;
+  ```
+impacted_packages:
+  - purl: pkg:npm/%40strapi/plugin-users-permissions
+    affected_versions: vers:npm/>=4.0.0|<4.13.1
+    fixed_versions: vers:npm/4.13.1
+  - purl: pkg:npm/%40strapi/strapi
+    affected_versions: vers:npm/>=4.0.0|<4.13.1
+    fixed_versions: vers:npm/4.13.1
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-gc7p-j5xm-xxh2/GHSA-gc7p-j5xm-xxh2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/strapi/strapi
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/security/advisories/GHSA-gc7p-j5xm-xxh2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39345
+    reference_type:
+    reference_id:
+  - url: https://strapi.io/blog/security-disclosure-of-vulnerabilities-sept-2023
+    reference_type:
+    reference_id:

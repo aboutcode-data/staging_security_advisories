@@ -1,0 +1,122 @@
+advisory_id: GHSA-g4g7-q726-v5hg
+datasource_id: github_osv_importer_v2/GHSA-g4g7-q726-v5hg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g4g7-q726-v5hg/GHSA-g4g7-q726-v5hg.json
+aliases:
+  - CVE-2018-11406
+summary: |
+  Symfony CSRF Token Fixation
+  An issue was discovered in the Security component in Symfony 2.7.x before 2.7.48, 2.8.x before 2.8.41, 3.3.x before 3.3.17, 3.4.x before 3.4.11, and 4.0.x before 4.0.11. By default, a user's session is invalidated when the user is logged out. This behavior can be disabled through the invalidate_session option. In this case, CSRF tokens were not erased during logout which allowed for CSRF token fixation.
+impacted_packages:
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.7.0|<2.7.48
+    fixed_versions: vers:composer/2.7.48
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.8.0|<2.8.41
+    fixed_versions: vers:composer/2.8.41
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.0.0|<3.3.17
+    fixed_versions: vers:composer/3.3.17
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.4.0|<3.4.11
+    fixed_versions: vers:composer/3.4.11
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.0.0|<4.0.11
+    fixed_versions: vers:composer/4.0.11
+  - purl: pkg:composer/symfony/security-bundle
+    affected_versions: vers:composer/>=2.7.0|<2.7.48
+    fixed_versions: vers:composer/2.7.48
+  - purl: pkg:composer/symfony/security-bundle
+    affected_versions: vers:composer/>=2.8.0|<2.8.41
+    fixed_versions: vers:composer/2.8.41
+  - purl: pkg:composer/symfony/security-bundle
+    affected_versions: vers:composer/>=3.0.0|<3.3.17
+    fixed_versions: vers:composer/3.3.17
+  - purl: pkg:composer/symfony/security-bundle
+    affected_versions: vers:composer/>=3.4.0|<3.4.11
+    fixed_versions: vers:composer/3.4.11
+  - purl: pkg:composer/symfony/security-bundle
+    affected_versions: vers:composer/>=4.0.0|<4.0.11
+    fixed_versions: vers:composer/4.0.11
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=2.7.0|<2.7.48
+    fixed_versions: vers:composer/2.7.48
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=2.8.0|<2.8.41
+    fixed_versions: vers:composer/2.8.41
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=3.0.0|<3.3.17
+    fixed_versions: vers:composer/3.3.17
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=3.4.0|<3.4.11
+    fixed_versions: vers:composer/3.4.11
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=4.0.0|<4.0.11
+    fixed_versions: vers:composer/4.0.11
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=2.7.0|<2.7.48
+    fixed_versions: vers:composer/2.7.48
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=2.8.0|<2.8.41
+    fixed_versions: vers:composer/2.8.41
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=3.0.0|<3.3.17
+    fixed_versions: vers:composer/3.3.17
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=3.4.0|<3.4.11
+    fixed_versions: vers:composer/3.4.11
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=4.0.0|<4.0.11
+    fixed_versions: vers:composer/4.0.11
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g4g7-q726-v5hg/GHSA-g4g7-q726-v5hg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security-bundle/CVE-2018-11406.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security/CVE-2018-11406.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security-http/CVE-2018-11406.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2018-11406.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/319e1bdd43979d9c1559497de8d69adea28ab8d1
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/G4XNBMFW33H47O5TZGA7JYCVLDBCXAJV
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UBQK7JDXIELADIPGZIOUCZKMAJM5LSBW
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WU5N2TZFNGXDGMXMPP7LZCWTFLENF6WH
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-11406
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/cve-2018-11406-csrf-token-fixation
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2018-11406
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2018/dsa-4262
+    reference_type:
+    reference_id:

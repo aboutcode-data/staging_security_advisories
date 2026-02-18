@@ -1,0 +1,38 @@
+advisory_id: GHSA-fxrq-xhj9-rf5j
+datasource_id: github_osv_importer_v2/GHSA-fxrq-xhj9-rf5j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-fxrq-xhj9-rf5j/GHSA-fxrq-xhj9-rf5j.json
+aliases:
+  - CVE-2023-0793
+summary: |
+  Weak Password Requirements in thorsten/phpmyfaq
+  Weak Password Requirements in GitHub repository thorsten/phpmyfaq prior to 3.1.11.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.1.11
+    fixed_versions: vers:composer/3.1.11
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-fxrq-xhj9-rf5j/GHSA-fxrq-xhj9-rf5j.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-521
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/00c04093c671607ee06cdfd670070809460f9547
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/b3881a1f-2f1e-45cb-86f3-735f66e660e9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0793
+    reference_type:
+    reference_id:

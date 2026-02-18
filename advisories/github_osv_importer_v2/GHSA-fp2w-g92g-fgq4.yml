@@ -1,0 +1,41 @@
+advisory_id: GHSA-fp2w-g92g-fgq4
+datasource_id: github_osv_importer_v2/GHSA-fp2w-g92g-fgq4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fp2w-g92g-fgq4/GHSA-fp2w-g92g-fgq4.json
+aliases:
+  - CVE-2023-2138
+summary: |
+  @nuxtlabs/github-module made Use of Hard-coded Credentials
+  https://nuxt.com had a hardcoded GitHub token in the source code of the page. This token had access to multiple repositories under `nuxt`, `nuxtlabs` and `nuxt-themes` GitHub organizations. A patch in version 1.6.2 fixed the issue.
+impacted_packages:
+  - purl: pkg:npm/%40nuxtlabs/github-module
+    affected_versions: vers:npm/<1.6.2
+    fixed_versions: vers:npm/1.6.2
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fp2w-g92g-fgq4/GHSA-fp2w-g92g-fgq4.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-798
+references:
+  - url: https://github.com/nuxtlabs/github-module
+    reference_type:
+    reference_id:
+  - url: https://github.com/nuxtlabs/github-module/commit/5490c43f729eee60f07920bf88c0aabdc1398b6e
+    reference_type:
+    reference_id:
+  - url: https://github.com/nuxtlabs/github-module/releases/tag/v1.6.2
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/65096ef9-eafc-49da-b49a-5b88c0203ca6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2138
+    reference_type:
+    reference_id:

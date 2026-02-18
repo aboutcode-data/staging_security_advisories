@@ -1,0 +1,41 @@
+advisory_id: GHSA-fg52-rc36-jp43
+datasource_id: github_osv_importer_v2/GHSA-fg52-rc36-jp43
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fg52-rc36-jp43/GHSA-fg52-rc36-jp43.json
+aliases:
+  - CVE-2016-4878
+summary: |
+  baserCMS Cross Site Request Forgery vulnerability
+  Cross-site request forgery (CSRF) vulnerability in baserCMS version 3.0.10 and earlier allows remote attackers to hijack the authentication of administrators via unspecified vectors.
+impacted_packages:
+  - purl: pkg:composer/baserproject/basercms
+    affected_versions: vers:composer/<=3.0.10
+    fixed_versions: vers:composer/3.0.11
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fg52-rc36-jp43/GHSA-fg52-rc36-jp43.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: http://basercms.net/security/JVN92765814
+    reference_type:
+    reference_id:
+  - url: https://github.com/baserproject/basercms
+    reference_type:
+    reference_id:
+  - url: https://jvn.jp/en/jp/JVN92765814/index.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-4878
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210308130052/http://www.securityfocus.com/bid/93217
+    reference_type:
+    reference_id:

@@ -1,0 +1,48 @@
+advisory_id: GHSA-gfhp-jgp6-838j
+datasource_id: github_osv_importer_v2/GHSA-gfhp-jgp6-838j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-gfhp-jgp6-838j/GHSA-gfhp-jgp6-838j.json
+aliases:
+  - CVE-2022-39256
+summary: "Orckestra C1 CMS's deserialization of untrusted data allows for arbitrary code execution.\n\
+  ### Impact\n\nThis vulnerability allows remote attackers to execute arbitrary code on affected\
+  \ installations of Orckestra C1 CMS. \nAuthentication is required to exploit this vulnerability.\n\
+  The authenticated user may perform the actions unknowingly by visiting a specially crafted\
+  \ site.\n\n### Patches\nPatched in C1 CMS v6.13\n\n### Workarounds\nUpgrade to C1 CMS v6.13\
+  \ or newer is required\n\n### Credit\nThis issue was discovered and reported by Markus Wulftange\
+  \  / [Code White GmbH](https://code-white.com/en/)."
+impacted_packages:
+  - purl: pkg:nuget/CompositeC1.Core
+    affected_versions: vers:nuget/<6.13.0
+    fixed_versions: vers:nuget/6.13.0
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-gfhp-jgp6-838j/GHSA-gfhp-jgp6-838j.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/Orckestra/C1-CMS-Foundation
+    reference_type:
+    reference_id:
+  - url: https://github.com/Orckestra/C1-CMS-Foundation/commit/af856ab5a62d19acf6aea1b1f4c6c3c4985c9446
+    reference_type:
+    reference_id:
+  - url: https://github.com/Orckestra/C1-CMS-Foundation/pull/814
+    reference_type:
+    reference_id:
+  - url: https://github.com/Orckestra/C1-CMS-Foundation/releases/tag/v6.13
+    reference_type:
+    reference_id:
+  - url: https://github.com/Orckestra/C1-CMS-Foundation/security/advisories/GHSA-gfhp-jgp6-838j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-39256
+    reference_type:
+    reference_id:

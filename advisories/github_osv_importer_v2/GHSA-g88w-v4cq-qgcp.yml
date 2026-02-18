@@ -1,0 +1,47 @@
+advisory_id: GHSA-g88w-v4cq-qgcp
+datasource_id: github_osv_importer_v2/GHSA-g88w-v4cq-qgcp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-g88w-v4cq-qgcp/GHSA-g88w-v4cq-qgcp.json
+aliases:
+  - CVE-2025-26531
+summary: |
+  Moodle has an IDOR in badges allows disabling of arbitrary badges
+  Insufficient capability checks made it possible to disable badges a user does not have permission to access.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.2
+    fixed_versions: vers:composer/4.5.2
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.6
+    fixed_versions: vers:composer/4.4.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0-beta|<4.3.10
+    fixed_versions: vers:composer/4.3.10
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.16
+    fixed_versions: vers:composer/4.1.16
+severities:
+  - score: '3.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-g88w-v4cq-qgcp/GHSA-g88w-v4cq-qgcp.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-84239
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=466148
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-26531
+    reference_type:
+    reference_id:

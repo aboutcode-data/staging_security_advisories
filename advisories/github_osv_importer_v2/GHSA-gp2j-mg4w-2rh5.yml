@@ -1,0 +1,38 @@
+advisory_id: GHSA-gp2j-mg4w-2rh5
+datasource_id: github_osv_importer_v2/GHSA-gp2j-mg4w-2rh5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gp2j-mg4w-2rh5/GHSA-gp2j-mg4w-2rh5.json
+aliases:
+  - CVE-2020-7645
+summary: |
+  chrome-launcher subject to OS Command Injection
+  chrome-launcher prior to 0.13.2 is subject to OS Command Injection via the `$HOME` environment variable in Linux operating systems. This issue is patched in version 0.13.2.
+impacted_packages:
+  - purl: pkg:npm/chrome-launcher
+    affected_versions: vers:npm/<0.13.2
+    fixed_versions: vers:npm/0.13.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gp2j-mg4w-2rh5/GHSA-gp2j-mg4w-2rh5.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/GoogleChrome/chrome-launcher
+    reference_type:
+    reference_id:
+  - url: https://github.com/GoogleChrome/chrome-launcher/pull/197
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7645
+    reference_type:
+    reference_id:
+  - url: http://snyk.io/vuln/SNYK-JS-CHROMELAUNCHER-537575
+    reference_type:
+    reference_id:

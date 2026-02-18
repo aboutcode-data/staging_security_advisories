@@ -1,0 +1,43 @@
+advisory_id: GHSA-ffmh-x56j-9rc3
+datasource_id: github_osv_importer_v2/GHSA-ffmh-x56j-9rc3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-ffmh-x56j-9rc3/GHSA-ffmh-x56j-9rc3.json
+aliases:
+  - CVE-2022-31147
+summary: |
+  jquery-validation Regular Expression Denial of Service due to arbitrary input to url2 method
+  Summary
+
+  Incomplete fix of CVE-2021-43306: An exponential ReDoS (Regular Expression Denial of Service) can be triggered in the jquery-validation npm package, when an attacker is able to supply arbitrary input to the url2 method.
+impacted_packages:
+  - purl: pkg:npm/jquery-validation
+    affected_versions: vers:npm/<1.19.5
+    fixed_versions: vers:npm/1.19.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-ffmh-x56j-9rc3/GHSA-ffmh-x56j-9rc3.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/jquery-validation/jquery-validation
+    reference_type:
+    reference_id:
+  - url: https://github.com/jquery-validation/jquery-validation/commit/5bbd80d27fc6b607d2f7f106c89522051a9fb0dd
+    reference_type:
+    reference_id:
+  - url: https://github.com/jquery-validation/jquery-validation/releases/tag/1.19.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/jquery-validation/jquery-validation/security/advisories/GHSA-ffmh-x56j-9rc3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31147
+    reference_type:
+    reference_id:

@@ -1,0 +1,59 @@
+advisory_id: GHSA-gf46-prm4-56pc
+datasource_id: github_osv_importer_v2/GHSA-gf46-prm4-56pc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-gf46-prm4-56pc/GHSA-gf46-prm4-56pc.json
+aliases:
+  - CVE-2023-39526
+summary: |
+  PrestaShop SQL manager vulnerability
+  ### Impact
+  Remote code execution through SQL injection and arbitrary file write in back office
+
+  ### Patches
+  1.7.8.10
+  8.0.5
+  8.1.1
+
+  ### Found by
+  Truff (via yeswehack)
+
+  ### Workarounds
+  none
+
+  ### References
+  none
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/8.1.0
+    fixed_versions: vers:composer/8.1.1
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/>=8.0.0|<8.0.5
+    fixed_versions: vers:composer/8.0.5
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<1.7.8+10
+    fixed_versions: vers:composer/1.7.8+10
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-gf46-prm4-56pc/GHSA-gf46-prm4-56pc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/817847e2347844a9b6add017581f1932bcd28c09
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-gf46-prm4-56pc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39526
+    reference_type:
+    reference_id:

@@ -1,0 +1,59 @@
+advisory_id: GHSA-g78x-7vwx-9f58
+datasource_id: github_osv_importer_v2/GHSA-g78x-7vwx-9f58
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-g78x-7vwx-9f58/GHSA-g78x-7vwx-9f58.json
+aliases:
+  - CVE-2025-13881
+summary: |
+  Keycloak Admin API allows an administrator with limited privileges to retrieve sensitive custom attributes
+  A flaw was found in Keycloak Admin API. This vulnerability allows an administrator with limited privileges to retrieve sensitive custom attributes via the /unmanagedAttributes endpoint, bypassing User Profile visibility settings.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/>=26.5.0|<26.5.2
+    fixed_versions: vers:maven/26.5.2
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<26.4.9
+    fixed_versions: vers:maven/26.4.9
+severities:
+  - score: '2.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-g78x-7vwx-9f58/GHSA-g78x-7vwx-9f58.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-266
+references:
+  - url: https://access.redhat.com/errata/RHSA-2026:2365
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2026:2366
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-13881
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2418330
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/1d7ab8d5fb1403902f5152820a8fc734d38b08d2
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/c5c83d6604d4c73139f38fce3ed7b7c4c38c09f2
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/issues/45873
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/45427
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-13881
+    reference_type:
+    reference_id:

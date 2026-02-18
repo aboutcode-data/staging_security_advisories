@@ -1,0 +1,41 @@
+advisory_id: GHSA-fh38-9fgr-454w
+datasource_id: github_osv_importer_v2/GHSA-fh38-9fgr-454w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-fh38-9fgr-454w/GHSA-fh38-9fgr-454w.json
+aliases:
+  - CVE-2024-23725
+summary: |
+  Cross-site Scripting in Ghost
+  Ghost before 5.76.0 allows XSS via a post excerpt in excerpt.js. An XSS payload can be rendered in post summaries.
+impacted_packages:
+  - purl: pkg:npm/ghost
+    affected_versions: vers:npm/<5.76.0
+    fixed_versions: vers:npm/5.76.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-fh38-9fgr-454w/GHSA-fh38-9fgr-454w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/TryGhost/Ghost
+    reference_type:
+    reference_id:
+  - url: https://github.com/TryGhost/Ghost/pull/17190
+    reference_type:
+    reference_id:
+  - url: https://github.com/TryGhost/Ghost/releases/tag/v5.76.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/yunaycompany/Ghost/commit/64d67717f7c76c77b3908e15627f473e9ef34002
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23725
+    reference_type:
+    reference_id:

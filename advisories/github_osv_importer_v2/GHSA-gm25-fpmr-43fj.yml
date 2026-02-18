@@ -1,0 +1,78 @@
+advisory_id: GHSA-gm25-fpmr-43fj
+datasource_id: github_osv_importer_v2/GHSA-gm25-fpmr-43fj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-gm25-fpmr-43fj/GHSA-gm25-fpmr-43fj.json
+aliases:
+  - CVE-2007-3227
+summary: |
+  Moderate severity vulnerability that affects rails
+  Cross-site scripting (XSS) vulnerability in the to_json (ActiveRecord::Base#to_json) function in Ruby on Rails before edge 9606 allows remote attackers to inject arbitrary web script via the input values.
+impacted_packages:
+  - purl: pkg:gem/rails
+    affected_versions: vers:gem/<1.2.5
+    fixed_versions: vers:gem/1.2.5
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://bugs.gentoo.org/show_bug.cgi?id=195315
+    reference_type:
+    reference_id:
+  - url: http://dev.rubyonrails.org/ticket/8371
+    reference_type:
+    reference_id:
+  - url: http://osvdb.org/36378
+    reference_type:
+    reference_id:
+  - url: http://pastie.caboo.se/65550.txt
+    reference_type:
+    reference_id:
+  - url: http://secunia.com/advisories/25699
+    reference_type:
+    reference_id:
+  - url: http://secunia.com/advisories/27657
+    reference_type:
+    reference_id:
+  - url: http://secunia.com/advisories/27756
+    reference_type:
+    reference_id:
+  - url: http://security.gentoo.org/glsa/glsa-200711-17.xml
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-gm25-fpmr-43fj
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/rails/CVE-2007-3227.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2007-3227
+    reference_type:
+    reference_id:
+  - url: http://weblog.rubyonrails.org/2007/10/12/rails-1-2-5-maintenance-release
+    reference_type:
+    reference_id:
+  - url: http://weblog.rubyonrails.org/2007/10/5/rails-1-2-4-maintenance-release
+    reference_type:
+    reference_id:
+  - url: http://www.novell.com/linux/security/advisories/2007_24_sr.html
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/24161
+    reference_type:
+    reference_id:
+  - url: http://www.vupen.com/english/advisories/2007/2216
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/30089.txt
+    reference_type: exploit
+    reference_id: CVE-2007-3227;OSVDB-36378
+  - url: https://www.securityfocus.com/bid/24161/info
+    reference_type: exploit
+    reference_id: CVE-2007-3227;OSVDB-36378

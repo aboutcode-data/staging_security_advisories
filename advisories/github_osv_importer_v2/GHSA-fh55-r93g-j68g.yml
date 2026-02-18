@@ -1,0 +1,46 @@
+advisory_id: GHSA-fh55-r93g-j68g
+datasource_id: github_osv_importer_v2/GHSA-fh55-r93g-j68g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-fh55-r93g-j68g/GHSA-fh55-r93g-j68g.json
+aliases:
+  - CVE-2025-69230
+summary: |
+  AIOHTTP Vulnerable to Cookie Parser Warning Storm
+  ### Summary
+  Reading multiple invalid cookies can lead to a logging storm.
+
+  ### Impact
+  If the ``cookies`` attribute is accessed in an application, then an attacker may be able to trigger a storm of warning-level logs using a specially crafted Cookie header.
+
+  ----
+
+  Patch: https://github.com/aio-libs/aiohttp/commit/64629a0834f94e46d9881f4e99c41a137e1f3326
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<=3.13.2
+    fixed_versions: vers:pypi/3.13.3
+severities:
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-fh55-r93g-j68g/GHSA-fh55-r93g-j68g.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-779
+references:
+  - url: https://github.com/aio-libs/aiohttp
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/commit/64629a0834f94e46d9881f4e99c41a137e1f3326
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/security/advisories/GHSA-fh55-r93g-j68g
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-69230
+    reference_type:
+    reference_id:

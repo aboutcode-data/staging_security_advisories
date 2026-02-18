@@ -1,0 +1,51 @@
+advisory_id: GHSA-fppq-f2m6-xv5c
+datasource_id: github_osv_importer_v2/GHSA-fppq-f2m6-xv5c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-fppq-f2m6-xv5c/GHSA-fppq-f2m6-xv5c.json
+aliases:
+  - CVE-2025-24434
+summary: |
+  Improper Authorization vulnerability in Magento and Adobe Commerce
+  Adobe Commerce versions 2.4.8-beta1, 2.4.7-p3, 2.4.6-p8, 2.4.5-p10, 2.4.4-p11 and earlier are affected by an Improper Authorization vulnerability that could result in Privilege escalation. An attacker could leverage this vulnerability to bypass security measures and gain unauthorized access. Exploitation of this issue does not require user interaction. A successful attacker can abuse this to achieve session takeover, increasing the confidentiality and integrity impact as high.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.8-beta1|<2.4.8-beta2
+    fixed_versions: vers:composer/2.4.8-beta2
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.7-beta1|<2.4.7-p4
+    fixed_versions: vers:composer/2.4.7-p4
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.6-p1|<2.4.6-p9
+    fixed_versions: vers:composer/2.4.6-p9
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.5-p1|<2.4.5-p11
+    fixed_versions: vers:composer/2.4.5-p11
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<2.4.4-p12
+    fixed_versions: vers:composer/2.4.4-p12
+  - purl: pkg:composer/magento/project-community-edition
+    affected_versions: vers:composer/<=2.0.2
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-fppq-f2m6-xv5c/GHSA-fppq-f2m6-xv5c.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb25-08.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-24434
+    reference_type:
+    reference_id:

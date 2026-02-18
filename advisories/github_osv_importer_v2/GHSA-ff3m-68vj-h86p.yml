@@ -1,0 +1,44 @@
+advisory_id: GHSA-ff3m-68vj-h86p
+datasource_id: github_osv_importer_v2/GHSA-ff3m-68vj-h86p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-ff3m-68vj-h86p/GHSA-ff3m-68vj-h86p.json
+aliases:
+  - CVE-2023-3432
+summary: |
+  PlantUML Server-Side Request Forgery vulnerability
+  Server-Side Request Forgery (SSRF) in GitHub repository plantuml/plantuml prior to 1.2023.9.
+impacted_packages:
+  - purl: pkg:maven/net.sourceforge.plantuml/plantuml-mit
+    affected_versions: vers:maven/<1.2023.9
+    fixed_versions: vers:maven/1.2023.9
+  - purl: pkg:maven/net.sourceforge.plantuml/plantuml
+    affected_versions: vers:maven/<1.2023.9
+    fixed_versions: vers:maven/1.2023.9
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-ff3m-68vj-h86p/GHSA-ff3m-68vj-h86p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/plantuml/plantuml
+    reference_type:
+    reference_id:
+  - url: https://github.com/plantuml/plantuml/commit/b32500bb61ae617bb312496d6d832e4be8190797
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/8ac3316f-431c-468d-87e4-3dafff2ecf51
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FV7XL3CY3K3K5ER3ASMEQA546MIQQ7QM
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-3432
+    reference_type:
+    reference_id:

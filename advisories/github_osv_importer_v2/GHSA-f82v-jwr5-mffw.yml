@@ -1,0 +1,87 @@
+advisory_id: GHSA-f82v-jwr5-mffw
+datasource_id: github_osv_importer_v2/GHSA-f82v-jwr5-mffw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-f82v-jwr5-mffw/GHSA-f82v-jwr5-mffw.json
+aliases:
+  - CVE-2025-29927
+summary: |
+  Authorization Bypass in Next.js Middleware
+  # Impact
+  It is possible to bypass authorization checks within a Next.js application, if the authorization check occurs in middleware.
+
+  # Patches
+  * For Next.js 15.x, this issue is fixed in `15.2.3`
+  * For Next.js 14.x, this issue is fixed in `14.2.25`
+  * For Next.js 13.x, this issue is fixed in 13.5.9
+  * For Next.js 12.x, this issue is fixed in 12.3.5
+  * For Next.js 11.x, consult the below workaround.
+
+  _Note: Next.js deployments hosted on Vercel are automatically protected against this vulnerability._
+
+  # Workaround
+  If patching to a safe version is infeasible, we recommend that you prevent external user requests which contain the `x-middleware-subrequest` header from reaching your Next.js application.
+
+  ## Credits
+
+  - Allam Rachid (zhero;)
+  - Allam Yasser (inzo_)
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=13.0.0|<13.5.9
+    fixed_versions: vers:npm/13.5.9
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=14.0.0|<14.2.25
+    fixed_versions: vers:npm/14.2.25
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.0.0|<15.2.3
+    fixed_versions: vers:npm/15.2.3
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=11.1.4|<12.3.5
+    fixed_versions: vers:npm/12.3.5
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-f82v-jwr5-mffw/GHSA-f82v-jwr5-mffw.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/commit/52a078da3884efe6501613c7834a3d02a91676d2
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/commit/5fd3ae8f8542677c6294f32d18022731eab6fe48
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/releases/tag/v12.3.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/releases/tag/v13.5.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-f82v-jwr5-mffw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-29927
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20250328-0002
+    reference_type:
+    reference_id:
+  - url: https://vercel.com/changelog/vercel-firewall-proactively-protects-against-vulnerability-with-middleware
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2025/03/23/3
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2025/03/23/4
+    reference_type:
+    reference_id:

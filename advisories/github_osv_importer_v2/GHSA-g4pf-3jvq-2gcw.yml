@@ -1,0 +1,35 @@
+advisory_id: GHSA-g4pf-3jvq-2gcw
+datasource_id: github_osv_importer_v2/GHSA-g4pf-3jvq-2gcw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-g4pf-3jvq-2gcw/GHSA-g4pf-3jvq-2gcw.json
+aliases: []
+summary: |
+  TYPO3 Remote Code Execution in third party library swiftmailer
+  TYPO3 uses the package swiftmailer/swiftmailer for mail actions. This package is known to be vulnerable to Remote Code Execution.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.30
+    fixed_versions: vers:composer/6.2.30
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.6.0|<7.6.15
+    fixed_versions: vers:composer/7.6.15
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.5.1
+    fixed_versions: vers:composer/8.5.1
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2017-01-03-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2017-001
+    reference_type:
+    reference_id:

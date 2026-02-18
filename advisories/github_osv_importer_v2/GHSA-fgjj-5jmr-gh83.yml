@@ -1,0 +1,52 @@
+advisory_id: GHSA-fgjj-5jmr-gh83
+datasource_id: github_osv_importer_v2/GHSA-fgjj-5jmr-gh83
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-fgjj-5jmr-gh83/GHSA-fgjj-5jmr-gh83.json
+aliases:
+  - CVE-2023-46126
+summary: |
+  Fides JavaScript Injection Vulnerability in Privacy Center URL
+  ### Impact
+  The Fides web application allows users to edit consent and privacy notices such as cookie banners. These privacy notices can then be served by other integrated websites, for example in cookie consent banners. One of the editable fields is a privacy policy URL and this input was found to not be validated.
+
+  The vulnerability makes it possible to craft a payload in the privacy policy URL which triggers JavaScript execution when the privacy notice is served by an integrated website. The domain scope of the executed JavaScript is that of the integrated website.
+
+  Exploitation is limited to Admin UI users with the contributor role or higher.
+
+  ### Patches
+  The vulnerability has been patched in Fides version `2.22.1`. Users are advised to upgrade to this version or later to secure their systems against this threat.
+
+  ### Workarounds
+  There are no workarounds.
+impacted_packages:
+  - purl: pkg:pypi/ethyca-fides
+    affected_versions: vers:pypi/<2.22.1
+    fixed_versions: vers:pypi/2.22.1
+severities:
+  - score: '3.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-fgjj-5jmr-gh83/GHSA-fgjj-5jmr-gh83.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/ethyca/fides
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/commit/3231d19699f9c895c986f6a967a64d882769c506
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/releases/tag/2.22.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/security/advisories/GHSA-fgjj-5jmr-gh83
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46126
+    reference_type:
+    reference_id:

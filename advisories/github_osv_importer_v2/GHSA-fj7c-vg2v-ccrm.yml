@@ -1,0 +1,54 @@
+advisory_id: GHSA-fj7c-vg2v-ccrm
+datasource_id: github_osv_importer_v2/GHSA-fj7c-vg2v-ccrm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-fj7c-vg2v-ccrm/GHSA-fj7c-vg2v-ccrm.json
+aliases:
+  - CVE-2021-3690
+summary: |
+  Undertow vulnerable to memory exhaustion due to buffer leak
+  Buffer leak on incoming WebSocket PONG message(s) in Undertow before 2.0.40 and 2.2.10 can lead to memory exhaustion and allow a denial of service.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<2.0.40
+    fixed_versions: vers:maven/2.0.40
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/>=2.2.0|<2.2.10
+    fixed_versions: vers:maven/2.2.10
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-fj7c-vg2v-ccrm/GHSA-fj7c-vg2v-ccrm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-401
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2021-3690
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/cve-2021-3690#cve-cvss-v3
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1991299
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/commit/c7e84a0b7efced38506d7d1dfea5902366973877
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/UNDERTOW-1935
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3690
+    reference_type:
+    reference_id:
+  - url: https://www.mend.io/vulnerability-database/CVE-2021-3690
+    reference_type:
+    reference_id:

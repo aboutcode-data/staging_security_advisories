@@ -1,0 +1,55 @@
+advisory_id: GHSA-gp6m-fq6h-cjcx
+datasource_id: github_osv_importer_v2/GHSA-gp6m-fq6h-cjcx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-gp6m-fq6h-cjcx/GHSA-gp6m-fq6h-cjcx.json
+aliases: []
+summary: |
+  Magento LTS vulnerable to stored XSS in admin file form
+  ### Summary
+  OpenMage is affected by a stored Cross-Site Scripting (XSS) vulnerability that could be abused by a low-privileged attacker to inject malicious scripts into vulnerable form fields.
+
+  ### Details
+  `Mage_Adminhtml_Block_System_Config_Form_Field_File` does not escape filename value in certain situations.
+  Same as: https://nvd.nist.gov/vuln/detail/CVE-2024-20717
+
+  ### PoC
+  1. Create empty file with this filename: `<img src=x onerror=alert(1)>.crt`
+  2. Go to _System_ > _Configuration_ > _Sales | Payment Methonds_.
+  3. Click **Configure** on _PayPal Express Checkout_.
+  4. Choose **API Certificate** from dropdown _API Authentication Methods_.
+  5. Choose the XSS-file and click **Save Config**.
+  6. Profit, alerts "1" -> XSS.
+  7. Reload, alerts "1" -> Stored XSS.
+
+  ### Impact
+  Affects admins that have access to any fileupload field in admin in core or custom implementations.
+  Malicious JavaScript may be executed in a victim’s browser when they browse to the page containing the vulnerable field.
+impacted_packages:
+  - purl: pkg:composer/openmage/magento-lts
+    affected_versions: vers:composer/>=20.0.0|<20.5.0
+    fixed_versions: vers:composer/20.5.0
+  - purl: pkg:composer/openmage/magento-lts
+    affected_versions: vers:composer/<19.5.3
+    fixed_versions: vers:composer/19.5.3
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-gp6m-fq6h-cjcx/GHSA-gp6m-fq6h-cjcx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/OpenMage/magento-lts
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenMage/magento-lts/security/advisories/GHSA-gp6m-fq6h-cjcx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-20717
+    reference_type:
+    reference_id:

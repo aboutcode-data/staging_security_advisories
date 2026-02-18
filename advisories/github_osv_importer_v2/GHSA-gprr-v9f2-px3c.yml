@@ -1,0 +1,44 @@
+advisory_id: GHSA-gprr-v9f2-px3c
+datasource_id: github_osv_importer_v2/GHSA-gprr-v9f2-px3c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-gprr-v9f2-px3c/GHSA-gprr-v9f2-px3c.json
+aliases:
+  - CVE-2025-24986
+summary: |
+  Azure PromptFlow remote code execution related to Jinja templates
+  Improper isolation or compartmentalization in Azure PromptFlow allows an unauthorized attacker to execute code over a network.
+impacted_packages:
+  - purl: pkg:pypi/promptflow-tools
+    affected_versions: vers:pypi/<1.6.0
+    fixed_versions: vers:pypi/1.6.0
+  - purl: pkg:pypi/promptflow-core
+    affected_versions: vers:pypi/<1.17.2
+    fixed_versions: vers:pypi/1.17.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-gprr-v9f2-px3c/GHSA-gprr-v9f2-px3c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-653
+references:
+  - url: https://github.com/microsoft/promptflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/microsoft/promptflow/commit/5f4a41ab4cb15607ade7f26138b0b863b4e4eb0a
+    reference_type:
+    reference_id:
+  - url: https://github.com/microsoft/promptflow/commit/625061724c51533d28fe6e0e3014b1042afdb07f
+    reference_type:
+    reference_id:
+  - url: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-24986
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-24986
+    reference_type:
+    reference_id:

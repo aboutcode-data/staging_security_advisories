@@ -1,0 +1,52 @@
+advisory_id: GHSA-fj58-h2fr-3pp2
+datasource_id: github_osv_importer_v2/GHSA-fj58-h2fr-3pp2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-fj58-h2fr-3pp2/GHSA-fj58-h2fr-3pp2.json
+aliases:
+  - CVE-2019-18413
+summary: |
+  SQL Injection and Cross-site Scripting in class-validator
+  In TypeStack class-validator, `validate()` input validation can be bypassed because certain internal attributes can be overwritten via a conflicting name. Even though there is an optional `forbidUnknownValues` parameter that can be used to reduce the risk of this bypass, this option is not documented and thus most developers configure input validation in the vulnerable default manner. With this vulnerability, attackers can launch SQL Injection or XSS attacks by injecting arbitrary malicious input.
+
+  The default settings for `forbidUnknownValues` has been changed to `true` in 0.14.0.
+
+  NOTE: a software maintainer agrees with the "is not documented" finding but suggests that much of the responsibility for the risk lies in a different product.
+impacted_packages:
+  - purl: pkg:npm/class-validator
+    affected_versions: vers:npm/<0.14.0
+    fixed_versions: vers:npm/0.14.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-fj58-h2fr-3pp2/GHSA-fj58-h2fr-3pp2.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-89
+references:
+  - url: https://github.com/typestack/class-validator
+    reference_type:
+    reference_id:
+  - url: https://github.com/typestack/class-validator/issues/1422#issuecomment-1344635415
+    reference_type:
+    reference_id:
+  - url: https://github.com/typestack/class-validator/issues/438
+    reference_type:
+    reference_id:
+  - url: https://github.com/typestack/class-validator/issues/438#issuecomment-964728471
+    reference_type:
+    reference_id:
+  - url: https://github.com/typestack/class-validator#passing-options
+    reference_type:
+    reference_id:
+  - url: https://github.com/typestack/class-validator/pull/1798
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-18413
+    reference_type:
+    reference_id:

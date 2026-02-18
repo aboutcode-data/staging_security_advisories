@@ -1,0 +1,38 @@
+advisory_id: GHSA-ghqq-jfx7-f6m9
+datasource_id: github_osv_importer_v2/GHSA-ghqq-jfx7-f6m9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-ghqq-jfx7-f6m9/GHSA-ghqq-jfx7-f6m9.json
+aliases:
+  - CVE-2023-3172
+summary: |
+  Froxlor vulnerable to Path Traversal
+  Path Traversal in GitHub repository froxlor/froxlor prior to 2.0.20.
+impacted_packages:
+  - purl: pkg:composer/froxlor/froxlor
+    affected_versions: vers:composer/<2.0.20
+    fixed_versions: vers:composer/2.0.20
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-ghqq-jfx7-f6m9/GHSA-ghqq-jfx7-f6m9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/froxlor/froxlor
+    reference_type:
+    reference_id:
+  - url: https://github.com/froxlor/froxlor/commit/da810ea95393dfaec68a70e30b7c887c50563a7e
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/e50966cd-9222-46b9-aedc-1feb3f2a0b0e
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-3172
+    reference_type:
+    reference_id:

@@ -1,0 +1,46 @@
+advisory_id: GHSA-ffrw-9mx8-89p8
+datasource_id: github_osv_importer_v2/GHSA-ffrw-9mx8-89p8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-ffrw-9mx8-89p8/GHSA-ffrw-9mx8-89p8.json
+aliases:
+  - CVE-2025-57319
+summary: |
+  Withdrawn Advisory: fast-redact vulnerable to prototype pollution
+  ## Withdrawn Advisory
+  This advisory has been withdrawn because the issue uses an internal undocumented utility function. This link is maintained to preserve external references.
+
+  ## Original Description
+
+  fast-redact is a package that provides do very fast object redaction. A Prototype Pollution vulnerability in the nestedRestore function of fast-redact version 3.5.0 and before allows attackers to inject properties on Object.prototype via supplying a crafted payload, causing denial of service (DoS) as the minimum consequence.
+impacted_packages:
+  - purl: pkg:npm/fast-redact
+    affected_versions: vers:npm/<=3.5.0
+    fixed_versions:
+severities:
+  - score: '2.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-ffrw-9mx8-89p8/GHSA-ffrw-9mx8-89p8.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/davidmarkclements/fast-redact
+    reference_type:
+    reference_id:
+  - url: https://github.com/davidmarkclements/fast-redact/issues/75
+    reference_type:
+    reference_id:
+  - url: https://github.com/VulnSageAgent/PoCs/blob/main/JavaScript/prototype-pollution/fast-redact%403.5.0/index.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/VulnSageAgent/PoCs/tree/main/JavaScript/prototype-pollution/CVE-2025-57319
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-57319
+    reference_type:
+    reference_id:

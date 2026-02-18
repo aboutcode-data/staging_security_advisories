@@ -1,0 +1,61 @@
+advisory_id: GHSA-g7vv-2v7x-gj9p
+datasource_id: github_osv_importer_v2/GHSA-g7vv-2v7x-gj9p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-g7vv-2v7x-gj9p/GHSA-g7vv-2v7x-gj9p.json
+aliases:
+  - CVE-2024-34062
+summary: |
+  tqdm CLI arguments injection attack
+  ### Impact
+  Any optional non-boolean CLI arguments (e.g. `--delim`, `--buf-size`, `--manpath`) are passed through python's `eval`, allowing arbitrary code execution. Example:
+
+  ```sh
+  python -m tqdm --manpath="\" + str(exec(\"import os\nos.system('echo hi && killall python3')\")) + \""
+  ```
+
+  ### Patches
+  https://github.com/tqdm/tqdm/commit/4e613f84ed2ae029559f539464df83fa91feb316 released in `tqdm>=4.66.3`
+
+  ### Workarounds
+  None
+
+  ### References
+  - https://github.com/tqdm/tqdm/releases/tag/v4.66.3
+impacted_packages:
+  - purl: pkg:pypi/tqdm
+    affected_versions: vers:pypi/>=4.4.0|<4.66.3
+    fixed_versions: vers:pypi/4.66.3
+severities:
+  - score: '3.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-g7vv-2v7x-gj9p/GHSA-g7vv-2v7x-gj9p.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/tqdm/tqdm
+    reference_type:
+    reference_id:
+  - url: https://github.com/tqdm/tqdm/commit/4e613f84ed2ae029559f539464df83fa91feb316
+    reference_type:
+    reference_id:
+  - url: https://github.com/tqdm/tqdm/security/advisories/GHSA-g7vv-2v7x-gj9p
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PA3GIGHPWAHCTT4UF57LTPZGWHAX3GW6
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QRECVQCCESHBS3UJOWNXQUIX725TKNY6
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VA337CYUS4SLRFV2P6MX6MZ2LKFURKJC
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34062
+    reference_type:
+    reference_id:

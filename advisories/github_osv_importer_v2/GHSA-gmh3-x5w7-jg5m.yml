@@ -1,0 +1,39 @@
+advisory_id: GHSA-gmh3-x5w7-jg5m
+datasource_id: github_osv_importer_v2/GHSA-gmh3-x5w7-jg5m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-gmh3-x5w7-jg5m/GHSA-gmh3-x5w7-jg5m.json
+aliases:
+  - CVE-2022-2353
+summary: |
+  Microweber before v1.2.20 vulnerable to cross-site scripting
+  Prior to Microweber v1.2.20, due to improper neutralization of input, an attacker can steal tokens to perform cross-site request forgery (CSRF), fetch contents from same-site and redirect a user.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.2.20
+    fixed_versions: vers:composer/1.2.20
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-gmh3-x5w7-jg5m/GHSA-gmh3-x5w7-jg5m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-352
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/79c6914bab8c9da07ac950fda17648d08c68b130
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/7782c095-9e8c-48b0-a7f5-3a8f52e8af52
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2353
+    reference_type:
+    reference_id:

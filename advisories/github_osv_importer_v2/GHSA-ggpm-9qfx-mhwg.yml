@@ -1,0 +1,45 @@
+advisory_id: GHSA-ggpm-9qfx-mhwg
+datasource_id: github_osv_importer_v2/GHSA-ggpm-9qfx-mhwg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-ggpm-9qfx-mhwg/GHSA-ggpm-9qfx-mhwg.json
+aliases:
+  - CVE-2023-46942
+summary: |
+  EverShop vulnerable to improper authorization in GraphQL endpoints
+  Lack of authentication in NPM's package @evershop/evershop before version 1.0.0-rc.9, allows remote attackers to obtain sensitive information via improper authorization in GraphQL endpoints.
+impacted_packages:
+  - purl: pkg:npm/%40evershop/evershop
+    affected_versions: vers:npm/<1.0.0-rc.9
+    fixed_versions: vers:npm/1.0.0-rc.9
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-ggpm-9qfx-mhwg/GHSA-ggpm-9qfx-mhwg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-285
+references:
+  - url: https://advisory.checkmarx.net/advisory/CVE-2023-46942
+    reference_type:
+    reference_id:
+  - url: https://devhub.checkmarx.com/cve-details/CVE-2023-46942
+    reference_type:
+    reference_id:
+  - url: https://devhub.checkmarx.com/cve-details/Cx00cea2d5-d2c5
+    reference_type:
+    reference_id:
+  - url: https://github.com/evershopcommerce/evershop
+    reference_type:
+    reference_id:
+  - url: https://github.com/evershopcommerce/evershop/commit/6e16f046e0b95efa16431a5ea41c22215273e9dd
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46942
+    reference_type:
+    reference_id:

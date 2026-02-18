@@ -1,0 +1,50 @@
+advisory_id: GHSA-fm22-g2q9-j3pw
+datasource_id: github_osv_importer_v2/GHSA-fm22-g2q9-j3pw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-fm22-g2q9-j3pw/GHSA-fm22-g2q9-j3pw.json
+aliases:
+  - CVE-2025-54476
+summary: |
+  Joomla! CMS vulnerable to XSS via the input filter
+  Improper handling of input could lead to a cross-site scripting (XSS) vector in the checkAttribute method of the input filter framework class.
+impacted_packages:
+  - purl: pkg:composer/joomla/filter
+    affected_versions: vers:composer/4.0.0
+    fixed_versions: vers:composer/4.0.1
+  - purl: pkg:composer/joomla/filter
+    affected_versions: vers:composer/>=3.0.0|<3.0.5
+    fixed_versions: vers:composer/3.0.5
+  - purl: pkg:composer/joomla/filter
+    affected_versions: vers:composer/<2.0.6
+    fixed_versions: vers:composer/2.0.6
+severities:
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-fm22-g2q9-j3pw/GHSA-fm22-g2q9-j3pw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://developer.joomla.org/security-centre/1010-20250901-core-inadequate-content-filtering-within-the-checkattribute-filter-code.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/joomla-framework/filter/commit/188dd3fccd6fa0532d105a52736affdf6b166217
+    reference_type:
+    reference_id:
+  - url: https://github.com/joomla-framework/filter/commit/852c7e101c649500d3af58ffb8baf15d7c86d825
+    reference_type:
+    reference_id:
+  - url: https://github.com/joomla-framework/filter/commit/fcde280785f188e93530f7da68102f7dd8f9f723
+    reference_type:
+    reference_id:
+  - url: https://github.com/joomla/joomla-cms
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-54476
+    reference_type:
+    reference_id:

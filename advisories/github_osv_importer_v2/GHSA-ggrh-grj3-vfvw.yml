@@ -1,0 +1,27 @@
+advisory_id: GHSA-ggrh-grj3-vfvw
+datasource_id: github_osv_importer_v2/GHSA-ggrh-grj3-vfvw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-ggrh-grj3-vfvw/GHSA-ggrh-grj3-vfvw.json
+aliases: []
+summary: |
+  Package discontinued because Bitly lowered the free quota
+  On November 17, 2022, an email was received from Bitly advising that the new link quota per free token is lowered to 50 per month (from its previous value of 1000 per month). As per the email, this change is effective on December 8, 2022.
+
+  The new quota is so low as to not be useful. For this reason, the maintenance of this package is being discontinued, although the package should continue to function with the limited new quota.
+impacted_packages:
+  - purl: pkg:pypi/bitlyshortener
+    affected_versions: vers:pypi/<=0.6.3
+    fixed_versions:
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/impredicative/bitlyshortener
+    reference_type:
+    reference_id:
+  - url: https://github.com/impredicative/bitlyshortener/security/advisories/GHSA-ggrh-grj3-vfvw
+    reference_type:
+    reference_id:

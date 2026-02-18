@@ -1,0 +1,51 @@
+advisory_id: GHSA-gmg8-593g-7mv3
+datasource_id: github_osv_importer_v2/GHSA-gmg8-593g-7mv3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-gmg8-593g-7mv3/GHSA-gmg8-593g-7mv3.json
+aliases:
+  - CVE-2025-31672
+summary: |
+  Apache POI OOXML Vulnerable to Improper Input Validation in OOXML File Parsing
+  Improper Input Validation vulnerability in Apache POI. The issue affects the parsing of OOXML format files like xlsx, docx and pptx. These file formats are basically zip files and it is possible for malicious users to add zip entries with duplicate names (including the path) in the zip. In this case, products reading the affected file could read different data because 1 of the zip entries with the duplicate name is selected over another but different products may choose a different zip entry.
+  This issue affects Apache POI poi-ooxml before 5.4.0. poi-ooxml 5.4.0 has a check that throws an exception if zip entries with duplicate file names are found in the input file.
+  Users are recommended to upgrade to version poi-ooxml 5.4.0, which fixes the issue. Please read  https://poi.apache.org/security.html  for recommendations about how to use the POI libraries securely.
+impacted_packages:
+  - purl: pkg:maven/org.apache.poi/poi-ooxml
+    affected_versions: vers:maven/<5.4.0
+    fixed_versions: vers:maven/5.4.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-gmg8-593g-7mv3/GHSA-gmg8-593g-7mv3.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-gmg8-593g-7mv3/GHSA-gmg8-593g-7mv3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://bz.apache.org/bugzilla/show_bug.cgi?id=69620
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/poi
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/k14w8vcjqy4h34hh5kzldko78kpylkq5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-31672
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20250523-0004
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2025/04/08/2
+    reference_type:
+    reference_id:

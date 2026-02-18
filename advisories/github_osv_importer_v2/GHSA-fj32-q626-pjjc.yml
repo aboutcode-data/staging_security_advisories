@@ -1,0 +1,58 @@
+advisory_id: GHSA-fj32-q626-pjjc
+datasource_id: github_osv_importer_v2/GHSA-fj32-q626-pjjc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-fj32-q626-pjjc/GHSA-fj32-q626-pjjc.json
+aliases:
+  - CVE-2023-38860
+summary: |
+  LangChain vulnerable to arbitrary code execution
+  An issue in LangChain prior to v.0.0.247 allows a remote attacker to execute arbitrary code via the prompt parameter.
+impacted_packages:
+  - purl: pkg:pypi/langchain
+    affected_versions: vers:pypi/<0.0.247
+    fixed_versions: vers:pypi/0.0.247
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-fj32-q626-pjjc/GHSA-fj32-q626-pjjc.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-fj32-q626-pjjc/GHSA-fj32-q626-pjjc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/hwchase17/langchain
+    reference_type:
+    reference_id:
+  - url: https://github.com/hwchase17/langchain/issues/7641
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/commit/d353d668e4b0514122a443cef91de7f76fea4245
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/commit/fab24457bcf8ede882abd11419769c92bc4e7751
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/issues/7641
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/pull/8092
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/pull/8425
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/langchain/PYSEC-2023-145.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-38860
+    reference_type:
+    reference_id:

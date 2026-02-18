@@ -1,0 +1,38 @@
+advisory_id: GHSA-ff9h-848c-4xfj
+datasource_id: github_osv_importer_v2/GHSA-ff9h-848c-4xfj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-ff9h-848c-4xfj/GHSA-ff9h-848c-4xfj.json
+aliases:
+  - CVE-2025-29744
+summary: |
+  pg-promise SQL Injection vulnerability
+  pg-promise before 11.5.5 is vulnerable to SQL Injection due to improper handling of negative numbers.
+impacted_packages:
+  - purl: pkg:npm/pg-promise
+    affected_versions: vers:npm/<11.5.5
+    fixed_versions: vers:npm/11.5.5
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-ff9h-848c-4xfj/GHSA-ff9h-848c-4xfj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/vitaly-t/pg-promise
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitaly-t/pg-promise/discussions/911
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-29744
+    reference_type:
+    reference_id:
+  - url: https://www.sonarsource.com/blog/double-dash-double-trouble-a-subtle-sql-injection-flaw
+    reference_type:
+    reference_id:

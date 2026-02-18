@@ -1,0 +1,35 @@
+advisory_id: GHSA-g66q-grxc-64j3
+datasource_id: github_osv_importer_v2/GHSA-g66q-grxc-64j3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g66q-grxc-64j3/GHSA-g66q-grxc-64j3.json
+aliases:
+  - CVE-2018-12432
+summary: |
+  Cross-site Scripting in JavaMelody
+  JavaMelody through 1.60.0 has XSS via the counter parameter in a clear_counter action to the /monitoring URI.
+impacted_packages:
+  - purl: pkg:maven/net.bull.javamelody/javamelody-core
+    affected_versions: vers:maven/<=1.60.0
+    fixed_versions: vers:maven/1.61.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g66q-grxc-64j3/GHSA-g66q-grxc-64j3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Hurdano/JavaMelody-XSS/wiki/Attack-Vector---JavaMelody
+    reference_type:
+    reference_id:
+  - url: https://github.com/javamelody/javamelody/commit/e0497c1980acebd257d3da78dfde29ae9bdffdf6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-12432
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-fffg-cwc9-xvj7
+datasource_id: github_osv_importer_v2/GHSA-fffg-cwc9-xvj7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-fffg-cwc9-xvj7/GHSA-fffg-cwc9-xvj7.json
+aliases:
+  - CVE-2023-52555
+summary: |
+  mongo-express Cross-site Request Forgery vulnerability
+  In mongo-express 1.0.2, /admin allows CSRF, as demonstrated by deletion of a Collection.
+impacted_packages:
+  - purl: pkg:npm/mongo-express
+    affected_versions: vers:npm/<=1.0.2
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-fffg-cwc9-xvj7/GHSA-fffg-cwc9-xvj7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/mongo-express/mongo-express
+    reference_type:
+    reference_id:
+  - url: https://github.com/mongo-express/mongo-express/issues/1338
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-52555
+    reference_type:
+    reference_id:

@@ -1,0 +1,63 @@
+advisory_id: GHSA-gmrm-8fx4-66x7
+datasource_id: github_osv_importer_v2/GHSA-gmrm-8fx4-66x7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-gmrm-8fx4-66x7/GHSA-gmrm-8fx4-66x7.json
+aliases: []
+summary: |
+  Duplicate Advisory: Keycloak: Leak of configured LDAP bind credentials
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-c25h-c27q-5qpv. This link is maintained to preserve external references.
+
+  ## Original Description
+
+  A vulnerability was found in Keycloak. The LDAP testing endpoint allows changing the Connection URL  independently without re-entering the currently configured LDAP bind credentials. This flaw allows an attacker with admin access (permission manage-realm) to change the LDAP host URL ("Connection URL") to a machine they control. The Keycloak server will connect to the attacker's host and try to authenticate with the configured credentials, thus leaking them to the attacker. As a consequence, an attacker who has compromised the admin console or compromised a user with sufficient privileges can leak domain credentials and attack the domain.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<=24.0.5
+    fixed_versions:
+severities:
+  - score: '2.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-gmrm-8fx4-66x7/GHSA-gmrm-8fx4-66x7.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-276
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:6493
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:6494
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:6495
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:6497
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:6499
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:6500
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:6501
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-5967
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2292200
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-5967
+    reference_type:
+    reference_id:

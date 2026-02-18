@@ -1,0 +1,41 @@
+advisory_id: GHSA-g7pc-799q-743f
+datasource_id: github_osv_importer_v2/GHSA-g7pc-799q-743f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g7pc-799q-743f/GHSA-g7pc-799q-743f.json
+aliases:
+  - CVE-2020-9691
+summary: |
+  Magento DOM-based Cross-site scripting vulnerability
+  Magento versions 2.3.5-p1 and earlier, and 2.3.5-p1 and earlier have a dom-based cross-site scripting vulnerability. Successful exploitation could lead to arbitrary code execution.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<2.3.5-p2
+    fixed_versions: vers:composer/2.3.5-p2
+  - purl: pkg:composer/magento/project-community-edition
+    affected_versions: vers:composer/<=2.0.2
+    fixed_versions:
+severities:
+  - score: '9.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g7pc-799q-743f/GHSA-g7pc-799q-743f.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://github.com/magento/magento2/commit/9436781734e47c83e96977fa770d255217680d5e
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb20-47.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-9691
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-gpvc-mx6g-cchv
+datasource_id: github_osv_importer_v2/GHSA-gpvc-mx6g-cchv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-gpvc-mx6g-cchv/GHSA-gpvc-mx6g-cchv.json
+aliases:
+  - CVE-2023-26139
+summary: |
+  underscore-keypath vulnerable to Prototype Pollution
+  Versions of the package underscore-keypath from 0.0.11 are vulnerable to Prototype Pollution via the name argument of the `setProperty()` function. Exploiting this vulnerability is possible due to improper input sanitization which allows the usage of arguments like `__proto__`.
+impacted_packages:
+  - purl: pkg:npm/underscore-keypath
+    affected_versions: vers:npm/>=0.0.11|<=0.9.3
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-gpvc-mx6g-cchv/GHSA-gpvc-mx6g-cchv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://gist.github.com/lelecolacola123/cc0d1e73780127aea9482c05f2ff3252
+    reference_type:
+    reference_id:
+  - url: https://github.com/jeeeyul/underscore-keypath
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-26139
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-UNDERSCOREKEYPATH-5416714
+    reference_type:
+    reference_id:

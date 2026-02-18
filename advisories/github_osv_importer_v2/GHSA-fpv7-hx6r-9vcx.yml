@@ -1,0 +1,46 @@
+advisory_id: GHSA-fpv7-hx6r-9vcx
+datasource_id: github_osv_importer_v2/GHSA-fpv7-hx6r-9vcx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fpv7-hx6r-9vcx/GHSA-fpv7-hx6r-9vcx.json
+aliases:
+  - CVE-2020-19002
+summary: |
+  Mezzanine Cross Site Scripting (XSS) vulnerability
+  Cross Site Scripting (XSS) in Mezzanine v4.3.1 allows remote attackers to execute arbitrary code via the `Description` field of the component `admin/blog/blogpost/add/`. This issue is different than CVE-2018-16632.
+impacted_packages:
+  - purl: pkg:pypi/mezzanine
+    affected_versions: vers:pypi/<=6.0.0
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fpv7-hx6r-9vcx/GHSA-fpv7-hx6r-9vcx.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fpv7-hx6r-9vcx/GHSA-fpv7-hx6r-9vcx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/mezzanine/PYSEC-2021-343.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/stephenmcd/mezzanine
+    reference_type:
+    reference_id:
+  - url: https://github.com/stephenmcd/mezzanine/blob/v6.0.0/mezzanine/blog/templates/blog/blog_post_list.html#L112
+    reference_type:
+    reference_id:
+  - url: https://github.com/stephenmcd/mezzanine/issues/1921
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-19002
+    reference_type:
+    reference_id:

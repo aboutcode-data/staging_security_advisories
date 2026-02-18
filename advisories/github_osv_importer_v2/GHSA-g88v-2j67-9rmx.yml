@@ -1,0 +1,51 @@
+advisory_id: GHSA-g88v-2j67-9rmx
+datasource_id: github_osv_importer_v2/GHSA-g88v-2j67-9rmx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-g88v-2j67-9rmx/GHSA-g88v-2j67-9rmx.json
+aliases:
+  - CVE-2025-48382
+summary: |
+  Fess has Insecure Temporary File Permissions
+  ### Summary
+  Fess (an open-source Enterprise Search Server) creates temporary files without restrictive permissions, which may allow local attackers to read sensitive information from these temporary files.
+
+  ### Details
+  The `createTempFile()` method in `org.codelibs.fess.helper.SystemHelper` creates temporary files without explicitly setting restrictive permissions. This could lead to potential information disclosure, allowing unauthorized local users to access sensitive data contained in these files.
+
+  ### Impact
+  This issue primarily affects environments where Fess is deployed in a shared or multi-user context. Typical single-user or isolated deployments have minimal or negligible practical impact.
+
+  ### Workarounds
+  Ensure local access to the environment running Fess is restricted to trusted users only.
+
+  ### References
+  - [CVE-2022-24823: Netty temporary file permissions vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2022-24823)
+impacted_packages:
+  - purl: pkg:maven/org.codelibs.fess/fess
+    affected_versions: vers:maven/<14.19.2
+    fixed_versions: vers:maven/14.19.2
+severities:
+  - score: '1.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-g88v-2j67-9rmx/GHSA-g88v-2j67-9rmx.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-732
+references:
+  - url: https://github.com/codelibs/fess
+    reference_type:
+    reference_id:
+  - url: https://github.com/codelibs/fess/commit/25b2009fea2a0f6ccd5aa8154aa54b536c08f6c4
+    reference_type:
+    reference_id:
+  - url: https://github.com/codelibs/fess/security/advisories/GHSA-g88v-2j67-9rmx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48382
+    reference_type:
+    reference_id:

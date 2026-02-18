@@ -1,0 +1,53 @@
+advisory_id: GHSA-fprp-p869-w6q2
+datasource_id: github_osv_importer_v2/GHSA-fprp-p869-w6q2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fprp-p869-w6q2/GHSA-fprp-p869-w6q2.json
+aliases:
+  - CVE-2023-29374
+summary: |
+  LangChain vulnerable to code injection
+  In LangChain through 0.0.131, the `LLMMathChain` chain allows prompt injection attacks that can execute arbitrary code via the Python `exec()` method.
+impacted_packages:
+  - purl: pkg:pypi/langchain
+    affected_versions: vers:pypi/<=0.0.131
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fprp-p869-w6q2/GHSA-fprp-p869-w6q2.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fprp-p869-w6q2/GHSA-fprp-p869-w6q2.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-74
+references:
+  - url: https://github.com/hwchase17/langchain/issues/1026
+    reference_type:
+    reference_id:
+  - url: https://github.com/hwchase17/langchain/issues/814
+    reference_type:
+    reference_id:
+  - url: https://github.com/hwchase17/langchain/pull/1119
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/langchain/PYSEC-2023-18.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-29374
+    reference_type:
+    reference_id:
+  - url: https://twitter.com/rharang/status/1641899743608463365/photo/1
+    reference_type:
+    reference_id:

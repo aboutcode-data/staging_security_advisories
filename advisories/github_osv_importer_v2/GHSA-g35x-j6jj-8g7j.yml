@@ -1,0 +1,51 @@
+advisory_id: GHSA-g35x-j6jj-8g7j
+datasource_id: github_osv_importer_v2/GHSA-g35x-j6jj-8g7j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-g35x-j6jj-8g7j/GHSA-g35x-j6jj-8g7j.json
+aliases: []
+summary: |
+  @mittwald/kubernetes's secret contents leaked via debug logging
+  ### Impact
+
+  When debug logging is enabled (via `DEBUG` environment variable), the Kubernetes client may log all response bodies into the debug log -- including sensitive data from `Secret` resources.
+
+  When running in a Kubernetes cluster, this might expose sensitive information to users who are _not_ authorised to access secrets, but have access to Pod logs (either directly using kubectl, or by Pod logs being shipped elsewhere).
+
+  ### Patches
+  Upgrade to 3.5.0 or newer.
+
+  ### Workarounds
+  Disable debug logging entirely, or exclude the `kubernetes:client` debug item (for example, using `DEBUG=*,-kubernetes:client`).
+
+  ### References
+
+  - https://cwe.mitre.org/data/definitions/532.html
+impacted_packages:
+  - purl: pkg:npm/%40mittwald/kubernetes
+    affected_versions: vers:npm/<3.5.0
+    fixed_versions: vers:npm/3.5.0
+severities:
+  - score: '4.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-g35x-j6jj-8g7j/GHSA-g35x-j6jj-8g7j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://github.com/mittwald/node-kubernetes
+    reference_type:
+    reference_id:
+  - url: https://github.com/mittwald/node-kubernetes/commit/04f6809fd438417c343d541e57f76f0040e069cd
+    reference_type:
+    reference_id:
+  - url: https://github.com/mittwald/node-kubernetes/releases/tag/v3.5.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/mittwald/node-kubernetes/security/advisories/GHSA-g35x-j6jj-8g7j
+    reference_type:
+    reference_id:

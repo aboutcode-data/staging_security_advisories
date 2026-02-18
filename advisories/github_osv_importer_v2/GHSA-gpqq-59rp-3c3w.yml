@@ -1,0 +1,41 @@
+advisory_id: GHSA-gpqq-59rp-3c3w
+datasource_id: github_osv_importer_v2/GHSA-gpqq-59rp-3c3w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-gpqq-59rp-3c3w/GHSA-gpqq-59rp-3c3w.json
+aliases:
+  - CVE-2023-27296
+summary: |
+  Apache InLong vulnerable to JDBC Deserialization of Untrusted Data
+  Apache InLong versions from 1.1.0 through 1.5.0 are vulnerable to Java Database Connectivity (JDBC) deserialization of untrusted data from the MySQL JDBC URL in MySQLDataNode. It could be triggered by authenticated users of InLong. This has been patched in version 1.6.0. Users are advised to upgrade to Apache InLong's latest version or cherry-pick the [patch](https://github.com/apache/inlong/pull/7422) to solve it.
+impacted_packages:
+  - purl: pkg:maven/org.apache.inlong/inlong-manager
+    affected_versions: vers:maven/>=1.1.0|<1.6.0
+    fixed_versions: vers:maven/1.6.0
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-gpqq-59rp-3c3w/GHSA-gpqq-59rp-3c3w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/apache/inlong
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/inlong/pull/7422
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/xbvtjw9bwzgbo9fp1by8o3p49nf59xzt
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-27296
+    reference_type:
+    reference_id:
+  - url: https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html
+    reference_type:
+    reference_id:

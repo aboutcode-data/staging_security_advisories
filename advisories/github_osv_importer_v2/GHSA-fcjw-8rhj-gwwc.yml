@@ -1,0 +1,44 @@
+advisory_id: GHSA-fcjw-8rhj-gwwc
+datasource_id: github_osv_importer_v2/GHSA-fcjw-8rhj-gwwc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-fcjw-8rhj-gwwc/GHSA-fcjw-8rhj-gwwc.json
+aliases:
+  - CVE-2019-16109
+summary: |
+  Authentication Bypass in Devise
+  An issue was discovered in Plataformatec Devise before 4.7.1. It confirms accounts upon receiving a request with a blank confirmation_token, if a database record has a blank value in the confirmation_token column. (However, there is no scenario within Devise itself in which such database records would exist.)
+impacted_packages:
+  - purl: pkg:gem/devise
+    affected_versions: vers:gem/<4.7.1
+    fixed_versions: vers:gem/4.7.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-fcjw-8rhj-gwwc/GHSA-fcjw-8rhj-gwwc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/plataformatec/devise
+    reference_type:
+    reference_id:
+  - url: https://github.com/plataformatec/devise/compare/v4.7.0...v4.7.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/plataformatec/devise/issues/5071
+    reference_type:
+    reference_id:
+  - url: https://github.com/plataformatec/devise/pull/5132
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/devise/CVE-2019-16109.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16109
+    reference_type:
+    reference_id:

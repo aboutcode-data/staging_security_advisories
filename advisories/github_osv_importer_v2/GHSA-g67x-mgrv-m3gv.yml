@@ -1,0 +1,41 @@
+advisory_id: GHSA-g67x-mgrv-m3gv
+datasource_id: github_osv_importer_v2/GHSA-g67x-mgrv-m3gv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g67x-mgrv-m3gv/GHSA-g67x-mgrv-m3gv.json
+aliases:
+  - CVE-2020-0812
+summary: |
+  ChakraCore RCE Vulnerability
+  A remote code execution vulnerability exists in the way that the Chakra scripting engine handles objects in memory in Microsoft Edge (HTML-based)L, aka Chakra Scripting Engine Memory Corruption Vulnerability. This CVE ID is unique from CVE-2020-0811.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.11.17
+    fixed_versions: vers:nuget/1.11.17
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g67x-mgrv-m3gv/GHSA-g67x-mgrv-m3gv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-119
+references:
+  - url: https://github.com/chakra-core/ChakraCore
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/6385
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/6385/commits/bdd48f21a93bd9dc7dd5f783b58df8bef72583c4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-0812
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0812
+    reference_type:
+    reference_id:

@@ -1,0 +1,53 @@
+advisory_id: GHSA-fw5r-6m3x-rh7p
+datasource_id: github_osv_importer_v2/GHSA-fw5r-6m3x-rh7p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-fw5r-6m3x-rh7p/GHSA-fw5r-6m3x-rh7p.json
+aliases:
+  - CVE-2024-45314
+summary: |
+  Flask-AppBuilder's login form allows browser to cache sensitive fields
+  ### Impact
+  Auth DB login form default cache directives allows browser to locally store sensitive data. This can be an issue on environments using shared computer resources.
+
+  ### Patches
+  Upgrade flask-appbuilder to version 4.5.1
+
+  ### Workarounds
+  If upgrading is not possible configure your web server to send the following HTTP headers for /login:
+  "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"
+  "Pragma": "no-cache"
+  "Expires": "0"
+impacted_packages:
+  - purl: pkg:pypi/flask-appbuilder
+    affected_versions: vers:pypi/<4.5.1
+    fixed_versions: vers:pypi/4.5.1
+severities:
+  - score: '3.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-fw5r-6m3x-rh7p/GHSA-fw5r-6m3x-rh7p.json
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-fw5r-6m3x-rh7p/GHSA-fw5r-6m3x-rh7p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-525
+references:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/commit/3030e881d2e44f4021764e18e489fe940a9b3636
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/security/advisories/GHSA-fw5r-6m3x-rh7p
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45314
+    reference_type:
+    reference_id:

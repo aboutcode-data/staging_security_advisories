@@ -1,0 +1,47 @@
+advisory_id: GHSA-gff3-739c-gxfq
+datasource_id: github_osv_importer_v2/GHSA-gff3-739c-gxfq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-gff3-739c-gxfq/GHSA-gff3-739c-gxfq.json
+aliases: []
+summary: |
+  Duplicate Advisory: Reflected cross-site scripting issue in Datasette
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-xw7c-jx9m-xh5g. This link is maintained to preserve external references.
+
+  ## Original Description
+  Datasette is an open source multi-tool for exploring and publishing data. The `?_trace=1` debugging feature in Datasette does not correctly escape generated HTML, resulting in a [reflected cross-site scripting](https://owasp.org/www-community/attacks/xss/#reflected-xss-attacks) vulnerability. This vulnerability is particularly relevant if your Datasette installation includes authenticated features using plugins such as [datasette-auth-passwords](https://datasette.io/plugins/datasette-auth-passwords) as an attacker could use the vulnerability to access protected data. Datasette 0.57 and 0.56.1 both include patches for this issue. If you run Datasette behind a proxy you can workaround this issue by rejecting any incoming requests with `?_trace=` or `&_trace=` in their query string parameters.
+impacted_packages:
+  - purl: pkg:pypi/datasette
+    affected_versions: vers:pypi/<0.56.1
+    fixed_versions: vers:pypi/0.56.1
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-gff3-739c-gxfq/GHSA-gff3-739c-gxfq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://datasette.io/plugins/datasette-auth-passwords
+    reference_type:
+    reference_id:
+  - url: https://github.com/simonw/datasette/issues/1360
+    reference_type:
+    reference_id:
+  - url: https://github.com/simonw/datasette/security/advisories/GHSA-xw7c-jx9m-xh5g
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32670
+    reference_type:
+    reference_id:
+  - url: https://owasp.org/www-community/attacks/xss/#reflected-xss-attacks
+    reference_type:
+    reference_id:
+  - url: https://pypi.org/project/datasette
+    reference_type:
+    reference_id:

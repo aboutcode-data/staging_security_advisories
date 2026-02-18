@@ -1,0 +1,50 @@
+advisory_id: GHSA-gcqq-w6gr-h9j9
+datasource_id: github_osv_importer_v2/GHSA-gcqq-w6gr-h9j9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-gcqq-w6gr-h9j9/GHSA-gcqq-w6gr-h9j9.json
+aliases:
+  - CVE-2017-5946
+summary: |
+  Directory traversal vulnerability in RubyZip
+  The `Zip::File` component in the rubyzip gem before 1.2.1 for Ruby has a directory traversal vulnerability. If a site allows uploading of .zip files, an attacker can upload a malicious file that uses `../` pathname substrings to write arbitrary files to the filesystem.
+impacted_packages:
+  - purl: pkg:gem/rubyzip
+    affected_versions: vers:gem/<1.2.1
+    fixed_versions: vers:gem/1.2.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-gcqq-w6gr-h9j9/GHSA-gcqq-w6gr-h9j9.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/rubyzip/CVE-2017-5946.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubyzip/rubyzip
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubyzip/rubyzip/commit/ce4208fdecc2ad079b05d3c49d70fe6ed1d07016
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubyzip/rubyzip/issues/315
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubyzip/rubyzip/releases
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-5946
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200227185727/http://www.securityfocus.com/bid/96445
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2017/dsa-3801
+    reference_type:
+    reference_id:

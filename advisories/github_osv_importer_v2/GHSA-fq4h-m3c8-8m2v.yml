@@ -1,0 +1,44 @@
+advisory_id: GHSA-fq4h-m3c8-8m2v
+datasource_id: github_osv_importer_v2/GHSA-fq4h-m3c8-8m2v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-fq4h-m3c8-8m2v/GHSA-fq4h-m3c8-8m2v.json
+aliases:
+  - CVE-2022-2063
+summary: |
+  Improper Privilege Management in NocoDB
+  Improper Privilege Management in GitHub repository nocodb/nocodb prior to 0.91.8.
+impacted_packages:
+  - purl: pkg:npm/nocodb
+    affected_versions: vers:npm/<0.91.8
+    fixed_versions: vers:npm/0.91.8
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-fq4h-m3c8-8m2v/GHSA-fq4h-m3c8-8m2v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+references:
+  - url: https://github.com/nocodb/nocodb
+    reference_type:
+    reference_id:
+  - url: https://github.com/nocodb/nocodb/commit/269a19c2ad89a0e8a7596498e3806ff2ec1040c2
+    reference_type:
+    reference_id:
+  - url: https://github.com/nocodb/nocodb/pull/2262
+    reference_type:
+    reference_id:
+  - url: https://github.com/nocodb/nocodb/pull/2337
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/156f405b-21d6-4384-9bff-17ebfe484e20
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2063
+    reference_type:
+    reference_id:

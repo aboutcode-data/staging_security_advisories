@@ -1,0 +1,58 @@
+advisory_id: GHSA-ffxj-547x-5j7c
+datasource_id: github_osv_importer_v2/GHSA-ffxj-547x-5j7c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-ffxj-547x-5j7c/GHSA-ffxj-547x-5j7c.json
+aliases:
+  - CVE-2022-25882
+summary: |
+  Directory Traversal in onnx
+  Versions of the package onnx before 1.13.0 are vulnerable to Directory Traversal as the external_data field of the tensor proto can have a path to the file which is outside the model current directory or user-provided directory, for example "../../../etc/passwd"
+impacted_packages:
+  - purl: pkg:pypi/onnx
+    affected_versions: vers:pypi/<1.13.0
+    fixed_versions: vers:pypi/1.13.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-ffxj-547x-5j7c/GHSA-ffxj-547x-5j7c.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-ffxj-547x-5j7c/GHSA-ffxj-547x-5j7c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://gist.github.com/jnovikov/02a9aff9bf2188033e77bd91ff062856
+    reference_type:
+    reference_id:
+  - url: https://github.com/onnx/onnx
+    reference_type:
+    reference_id:
+  - url: https://github.com/onnx/onnx/blob/96516aecd4c110b0ac57eba08ac236ebf7205728/onnx/checker.cc%23L129
+    reference_type:
+    reference_id:
+  - url: https://github.com/onnx/onnx/commit/f369b0e859024095d721f1d1612da5a8fa38988d
+    reference_type:
+    reference_id:
+  - url: https://github.com/onnx/onnx/issues/3991
+    reference_type:
+    reference_id:
+  - url: https://github.com/onnx/onnx/pull/4400
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/onnx/PYSEC-2023-38.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25882
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-PYTHON-ONNX-2395479
+    reference_type:
+    reference_id:

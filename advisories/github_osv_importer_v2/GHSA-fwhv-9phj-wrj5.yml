@@ -1,0 +1,35 @@
+advisory_id: GHSA-fwhv-9phj-wrj5
+datasource_id: github_osv_importer_v2/GHSA-fwhv-9phj-wrj5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fwhv-9phj-wrj5/GHSA-fwhv-9phj-wrj5.json
+aliases:
+  - CVE-2023-0325
+summary: |
+  Uvdesk vulnerable to stored cross-site scripting (XSS)
+  Uvdesk version 1.1.1 allows an unauthenticated remote attacker to exploit a stored XSS in the application. This is possible because the application does not correctly validate the message sent by the clients in the ticket.
+impacted_packages:
+  - purl: pkg:composer/uvdesk/community-skeleton
+    affected_versions: vers:composer/<=1.1.1
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fwhv-9phj-wrj5/GHSA-fwhv-9phj-wrj5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://fluidattacks.com/advisories/labrinth
+    reference_type:
+    reference_id:
+  - url: https://github.com/uvdesk/community-skeleton
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0325
+    reference_type:
+    reference_id:

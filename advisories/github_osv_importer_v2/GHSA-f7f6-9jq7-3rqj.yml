@@ -1,0 +1,66 @@
+advisory_id: GHSA-f7f6-9jq7-3rqj
+datasource_id: github_osv_importer_v2/GHSA-f7f6-9jq7-3rqj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-f7f6-9jq7-3rqj/GHSA-f7f6-9jq7-3rqj.json
+aliases:
+  - CVE-2025-32014
+summary: |
+  estree-util-value-to-estree allows prototype pollution in generated ESTree
+  ### Impact
+  When generating an ESTree from a value with a property named `__proto__`, `valueToEstree` would generate an object that specifies a prototype instead.
+
+  Example:
+
+  ```js
+  import { generate } from 'astring'
+  import { valueToEstree } from 'estree-util-value-to-estree'
+
+  const estree = valueToEstree({
+    ['__proto__']: {}
+  })
+  const code = generate(estree)
+  console.log(code)
+  ```
+
+  Output:
+
+  ```js
+  {
+    "__proto__": {}
+  }
+  ```
+
+  ### Patches
+  This was fixed in version [3.3.3](https://github.com/remcohaszing/estree-util-value-to-estree/releases/tag/v3.3.3).
+
+  ### Workarounds
+  If you control the input, don’t specify a property named `__proto__`. If you don’t control the output, strip any properties named `__proto__` before passing it to `valueToEstree`.
+impacted_packages:
+  - purl: pkg:npm/estree-util-value-to-estree
+    affected_versions: vers:npm/<3.3.3
+    fixed_versions: vers:npm/3.3.3
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-f7f6-9jq7-3rqj/GHSA-f7f6-9jq7-3rqj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/remcohaszing/estree-util-value-to-estree
+    reference_type:
+    reference_id:
+  - url: https://github.com/remcohaszing/estree-util-value-to-estree/commit/d0c394fbc64bc55937ffe4e162b81f15ba506e55
+    reference_type:
+    reference_id:
+  - url: https://github.com/remcohaszing/estree-util-value-to-estree/security/advisories/GHSA-f7f6-9jq7-3rqj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-32014
+    reference_type:
+    reference_id:

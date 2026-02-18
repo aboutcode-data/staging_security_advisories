@@ -1,0 +1,42 @@
+advisory_id: GHSA-gm48-83x4-84jg
+datasource_id: github_osv_importer_v2/GHSA-gm48-83x4-84jg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-gm48-83x4-84jg/GHSA-gm48-83x4-84jg.json
+aliases:
+  - CVE-2022-24969
+summary: |
+  Server-side request forgery in Apache Dubbo
+  bypass CVE-2021-25640 > In Apache Dubbo prior to 2.6.12 and 2.7.15, the usage of parseURL method will lead to the bypass of the white host check which can cause open redirect or SSRF vulnerability.
+impacted_packages:
+  - purl: pkg:maven/org.apache.dubbo/dubbo
+    affected_versions: vers:maven/>=2.5.0|<2.7.15
+    fixed_versions: vers:maven/2.7.15
+  - purl: pkg:maven/com.alibaba/dubbo
+    affected_versions: vers:maven/>=2.5.0|<2.6.12
+    fixed_versions: vers:maven/2.6.12
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-gm48-83x4-84jg/GHSA-gm48-83x4-84jg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+  - CWE-918
+references:
+  - url: https://github.com/advisories/GHSA-gw4j-4229-q4px
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/1xbckc3467wfk5r7n2o44r2brdsbwxgr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-25640
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24969
+    reference_type:
+    reference_id:

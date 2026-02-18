@@ -1,0 +1,51 @@
+advisory_id: GHSA-frqg-7g38-6gcf
+datasource_id: github_osv_importer_v2/GHSA-frqg-7g38-6gcf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-frqg-7g38-6gcf/GHSA-frqg-7g38-6gcf.json
+aliases:
+  - CVE-2021-41116
+summary: "Improper escaping of command arguments on Windows leading to command injection\n###\
+  \ Impact\nWindows users running Composer to install untrusted dependencies are affected and\
+  \ should definitely upgrade for safety. Other OSs and WSL are not affected. \n\n### Patches\n\
+  1.10.23 and 2.1.9 fix the issue\n\n### Workarounds\nNone"
+impacted_packages:
+  - purl: pkg:composer/composer/composer
+    affected_versions: vers:composer/<1.10.23
+    fixed_versions: vers:composer/1.10.23
+  - purl: pkg:composer/composer/composer
+    affected_versions: vers:composer/>=2.0.0-alpha1|<2.1.9
+    fixed_versions: vers:composer/2.1.9
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-frqg-7g38-6gcf/GHSA-frqg-7g38-6gcf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/composer/composer
+    reference_type:
+    reference_id:
+  - url: https://github.com/composer/composer/commit/ca5e2f8d505fd3bfac6f7c85b82f2740becbc0aa
+    reference_type:
+    reference_id:
+  - url: https://github.com/composer/composer/security/advisories/GHSA-frqg-7g38-6gcf
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/composer/composer/CVE-2021-41116.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41116
+    reference_type:
+    reference_id:
+  - url: https://www.sonarsource.com/blog/securing-developer-tools-package-managers
+    reference_type:
+    reference_id:
+  - url: https://www.tenable.com/security/tns-2022-09
+    reference_type:
+    reference_id:

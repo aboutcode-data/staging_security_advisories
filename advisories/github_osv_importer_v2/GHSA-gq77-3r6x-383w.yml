@@ -1,0 +1,38 @@
+advisory_id: GHSA-gq77-3r6x-383w
+datasource_id: github_osv_importer_v2/GHSA-gq77-3r6x-383w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-gq77-3r6x-383w/GHSA-gq77-3r6x-383w.json
+aliases:
+  - CVE-2022-0880
+summary: |
+  Cross-site Scripting in ShowDoc
+  ShowDoc version 2.10.3 and prior is vulnerable to stored cross-site scripting. A patch is available and anticipated to be part of version 2.10.4.
+impacted_packages:
+  - purl: pkg:composer/showdoc/showdoc
+    affected_versions: vers:composer/<=2.10.3
+    fixed_versions: vers:composer/2.10.4
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-gq77-3r6x-383w/GHSA-gq77-3r6x-383w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/star7th/showdoc
+    reference_type:
+    reference_id:
+  - url: https://github.com/star7th/showdoc/commit/818d7fe731f452acccacf731ce47ec27ad68049c
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/df347aa9-ed9b-4f75-af99-c83b8aad3bcf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0880
+    reference_type:
+    reference_id:

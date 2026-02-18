@@ -1,0 +1,63 @@
+advisory_id: GHSA-f9wg-5f46-cjmw
+datasource_id: github_osv_importer_v2/GHSA-f9wg-5f46-cjmw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-f9wg-5f46-cjmw/GHSA-f9wg-5f46-cjmw.json
+aliases:
+  - CVE-2022-24858
+summary: |
+  NextAuth.js default redirect callback vulnerable to open redirects
+  `next-auth` v3 users before version 3.29.2 are impacted. (We recommend upgrading to v4 in most cases. See our [migration guide](https://next-auth.js.org/getting-started/upgrade-v4)).`next-auth` v4 users before version 4.3.2 are impacted. Upgrading to 3.29.2 or 4.3.2 will patch this vulnerability. If you are not able to upgrade for any reason, you can add a configuration to your `callbacks` option:
+
+  ```js
+  // async redirect(url, baseUrl) { // v3
+  async redirect({ url, baseUrl }) { // v4
+      // Allows relative callback URLs
+      if (url.startsWith("/")) return new URL(url, baseUrl).toString()
+      // Allows callback URLs on the same origin
+      else if (new URL(url).origin === baseUrl) return url
+      return baseUrl
+  }
+  ```
+  If you already have a `redirect` callback, make sure that you match the incoming `url` origin against the `baseUrl`.
+impacted_packages:
+  - purl: pkg:npm/next-auth
+    affected_versions: vers:npm/<3.29.2
+    fixed_versions: vers:npm/3.29.2
+  - purl: pkg:npm/next-auth
+    affected_versions: vers:npm/>=4.0.0|<4.3.2
+    fixed_versions: vers:npm/4.3.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-f9wg-5f46-cjmw/GHSA-f9wg-5f46-cjmw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+  - CWE-290
+references:
+  - url: https://github.com/nextauthjs/next-auth
+    reference_type:
+    reference_id:
+  - url: https://github.com/nextauthjs/next-auth/commit/6e15bdcb2d93c1ad5ee3889f702607637e79db50
+    reference_type:
+    reference_id:
+  - url: https://github.com/nextauthjs/next-auth/releases/tag/next-auth%40v4.3.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/nextauthjs/next-auth/security/advisories/GHSA-f9wg-5f46-cjmw
+    reference_type:
+    reference_id:
+  - url: https://next-auth.js.org/configuration/callbacks#redirect-callback
+    reference_type:
+    reference_id:
+  - url: https://next-auth.js.org/getting-started/upgrade-v4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24858
+    reference_type:
+    reference_id:

@@ -1,0 +1,53 @@
+advisory_id: GHSA-fq77-7p7r-83rj
+datasource_id: github_osv_importer_v2/GHSA-fq77-7p7r-83rj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/03/GHSA-fq77-7p7r-83rj/GHSA-fq77-7p7r-83rj.json
+aliases:
+  - CVE-2020-5284
+summary: |
+  Directory Traversal in Next.js
+  ### Impact
+
+  - **Not affected**: Deployments on ZEIT Now v2 ([https://zeit.co](https://zeit.co/)) are not affected
+  - **Not affected**: Deployments using the `serverless` target
+  - **Not affected**: Deployments using `next export`
+  - **Affected**: Users of Next.js below 9.3.2
+
+  We recommend everyone to upgrade regardless of whether you can reproduce the issue or not.
+
+  ### Patches
+
+  https://github.com/zeit/next.js/releases/tag/v9.3.2
+
+  ### References
+
+  https://github.com/zeit/next.js/releases/tag/v9.3.2
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=0.9.9|<9.3.2
+    fixed_versions: vers:npm/9.3.2
+severities:
+  - score: '4.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/03/GHSA-fq77-7p7r-83rj/GHSA-fq77-7p7r-83rj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-23
+references:
+  - url: https://github.com/zeit/next.js/releases/tag/v9.3.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/zeit/next.js/security/advisories/GHSA-fq77-7p7r-83rj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-5284
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1503
+    reference_type:
+    reference_id:

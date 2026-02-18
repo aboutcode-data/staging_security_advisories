@@ -1,0 +1,38 @@
+advisory_id: GHSA-f7h5-c625-3795
+datasource_id: github_osv_importer_v2/GHSA-f7h5-c625-3795
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f7h5-c625-3795/GHSA-f7h5-c625-3795.json
+aliases:
+  - CVE-2024-9408
+summary: |
+  Eclipse GlassFish is vulnerable to Server Side Request Forgery attacks through specific endpoints
+  In Eclipse GlassFish version 6.2.5, it is possible to perform a Server Side Request Forgery attack using specific endpoints.
+impacted_packages:
+  - purl: pkg:maven/org.glassfish.main.admingui/console-common
+    affected_versions: vers:maven/<=6.2.5
+    fixed_versions:
+severities:
+  - score: '8.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f7h5-c625-3795/GHSA-f7h5-c625-3795.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/eclipse-ee4j/glassfish
+    reference_type:
+    reference_id:
+  - url: https://gitlab.eclipse.org/security/cve-assignement/-/issues/38
+    reference_type:
+    reference_id:
+  - url: https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/239
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-9408
+    reference_type:
+    reference_id:

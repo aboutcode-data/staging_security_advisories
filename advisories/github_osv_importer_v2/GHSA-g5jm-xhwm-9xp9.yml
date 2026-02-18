@@ -1,0 +1,38 @@
+advisory_id: GHSA-g5jm-xhwm-9xp9
+datasource_id: github_osv_importer_v2/GHSA-g5jm-xhwm-9xp9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-g5jm-xhwm-9xp9/GHSA-g5jm-xhwm-9xp9.json
+aliases:
+  - CVE-2022-22293
+summary: |
+  Cross site scripting in dolibarr
+  admin/limits.php in Dolibarr 7.0.2 allows HTML injection, as demonstrated by the MAIN_MAX_DECIMALS_TOT parameter.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<13.0.0
+    fixed_versions: vers:composer/13.0.0
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-g5jm-xhwm-9xp9/GHSA-g5jm-xhwm-9xp9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/issues/20237
+    reference_type:
+    reference_id:
+  - url: https://github.com/mustgundogdu/Research/blob/main/Dolibar_7.0.2-StoredXSS/README.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-22293
+    reference_type:
+    reference_id:

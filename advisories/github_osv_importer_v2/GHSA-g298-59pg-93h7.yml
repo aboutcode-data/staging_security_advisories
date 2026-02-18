@@ -1,0 +1,41 @@
+advisory_id: GHSA-g298-59pg-93h7
+datasource_id: github_osv_importer_v2/GHSA-g298-59pg-93h7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-g298-59pg-93h7/GHSA-g298-59pg-93h7.json
+aliases:
+  - CVE-2023-0406
+summary: |
+  Cross-Site Request Forgery in modoboa
+  Cross-Site Request Forgery (CSRF) in GitHub repository modoboa/modoboa prior to 2.0.4.
+impacted_packages:
+  - purl: pkg:pypi/modoboa
+    affected_versions: vers:pypi/<2.0.4
+    fixed_versions: vers:pypi/2.0.4
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-g298-59pg-93h7/GHSA-g298-59pg-93h7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/modoboa/modoboa
+    reference_type:
+    reference_id:
+  - url: https://github.com/modoboa/modoboa/commit/7f0573e917227686d2cc127be1364e2908740807
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/modoboa/PYSEC-2023-283.yaml
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/d7007f76-3dbc-48a7-a2fb-377040fe100c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0406
+    reference_type:
+    reference_id:

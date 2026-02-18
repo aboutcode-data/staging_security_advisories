@@ -1,0 +1,95 @@
+advisory_id: GHSA-g996-q5r8-w7g2
+datasource_id: github_osv_importer_v2/GHSA-g996-q5r8-w7g2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-g996-q5r8-w7g2/GHSA-g996-q5r8-w7g2.json
+aliases:
+  - CVE-2019-10909
+summary: |
+  Symfony Cross-site Scripting (XSS) vulnerability
+  In Symfony before 2.7.51, 2.8.x before 2.8.50, 3.x before 3.4.26, 4.x before 4.1.12, and 4.2.x before 4.2.7, validation messages are not escaped, which can lead to XSS when user input is included. This is related to symfony/framework-bundle.
+impacted_packages:
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.7.0|<2.7.51
+    fixed_versions: vers:composer/2.7.51
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.8.0|<2.8.50
+    fixed_versions: vers:composer/2.8.50
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.0.0|<3.4.26
+    fixed_versions: vers:composer/3.4.26
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.0.0|<4.1.12
+    fixed_versions: vers:composer/4.1.12
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.2.0|<4.2.7
+    fixed_versions: vers:composer/4.2.7
+  - purl: pkg:composer/symfony/framework-bundle
+    affected_versions: vers:composer/>=2.7.0|<2.7.51
+    fixed_versions: vers:composer/2.7.51
+  - purl: pkg:composer/symfony/framework-bundle
+    affected_versions: vers:composer/>=2.8.0|<2.8.50
+    fixed_versions: vers:composer/2.8.50
+  - purl: pkg:composer/symfony/framework-bundle
+    affected_versions: vers:composer/>=3.0.0|<3.4.26
+    fixed_versions: vers:composer/3.4.26
+  - purl: pkg:composer/symfony/framework-bundle
+    affected_versions: vers:composer/>=4.0.0|<4.1.12
+    fixed_versions: vers:composer/4.1.12
+  - purl: pkg:composer/symfony/framework-bundle
+    affected_versions: vers:composer/>=4.2.0|<4.2.7
+    fixed_versions: vers:composer/4.2.7
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.0.0|<8.5.15
+    fixed_versions: vers:composer/8.5.15
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.6.0|<8.6.15
+    fixed_versions: vers:composer/8.6.15
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=8.0.0|<8.5.15
+    fixed_versions: vers:composer/8.5.15
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=8.6.0|<8.6.15
+    fixed_versions: vers:composer/8.6.15
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-g996-q5r8-w7g2/GHSA-g996-q5r8-w7g2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/core/CVE-2019-10909.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/drupal/CVE-2019-10909.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/framework-bundle/CVE-2019-10909.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2019-10909.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/ab4d05358c3d0dd1a36fc8c306829f68e3dd84e2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10909
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/cve-2019-10909-escape-validation-messages-in-the-php-templating-engine
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2019-10909
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2019-005
+    reference_type:
+    reference_id:
+  - url: https://www.synology.com/security/advisory/Synology_SA_19_19
+    reference_type:
+    reference_id:

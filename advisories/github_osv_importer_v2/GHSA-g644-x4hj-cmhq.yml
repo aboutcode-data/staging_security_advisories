@@ -1,0 +1,41 @@
+advisory_id: GHSA-g644-x4hj-cmhq
+datasource_id: github_osv_importer_v2/GHSA-g644-x4hj-cmhq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g644-x4hj-cmhq/GHSA-g644-x4hj-cmhq.json
+aliases:
+  - CVE-2018-15845
+summary: |
+  Gleez CMS CSRF Allows Adding of Administrator Accounts
+  There is a CSRF vulnerability that can add an administrator account in Gleez CMS 1.2.0 via `admin/users/add`.
+impacted_packages:
+  - purl: pkg:composer/gleez/cms
+    affected_versions: vers:composer/<=1.2.0
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g644-x4hj-cmhq/GHSA-g644-x4hj-cmhq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/gleez/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/gleez/cms/issues/800
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-15845
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/45258
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/45258.txt
+    reference_type: exploit
+    reference_id: CVE-2018-15845

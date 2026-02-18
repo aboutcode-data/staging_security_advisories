@@ -1,0 +1,47 @@
+advisory_id: GHSA-g888-g2pp-82hf
+datasource_id: github_osv_importer_v2/GHSA-g888-g2pp-82hf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g888-g2pp-82hf/GHSA-g888-g2pp-82hf.json
+aliases:
+  - CVE-2018-7711
+summary: |
+  SimpleSAMLphp saml2 incorrect signature validation
+  HTTPRedirect.php in the saml2 library in SimpleSAMLphp before 1.15.4 has an incorrect check of return values in the signature validation utilities, allowing an attacker to get invalid signatures accepted as valid by forcing an error during validation. This occurs because of a dependency on PHP functionality that interprets a -1 error code as a true boolean value.
+impacted_packages:
+  - purl: pkg:composer/simplesamlphp/saml2
+    affected_versions: vers:composer/<1.10.6
+    fixed_versions: vers:composer/1.10.6
+  - purl: pkg:composer/simplesamlphp/saml2
+    affected_versions: vers:composer/>=2.0.0|<2.3.8
+    fixed_versions: vers:composer/2.3.8
+  - purl: pkg:composer/simplesamlphp/saml2
+    affected_versions: vers:composer/>=3.0.0|<3.1.4
+    fixed_versions: vers:composer/3.1.4
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g888-g2pp-82hf/GHSA-g888-g2pp-82hf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-347
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/simplesamlphp/saml2/CVE-2018-7711.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/simplesamlphp/saml2/commit/4f6af7f69f29df8555a18b9bb7b646906b45924d
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2018/03/msg00017.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-7711
+    reference_type:
+    reference_id:
+  - url: https://simplesamlphp.org/security/201803-01
+    reference_type:
+    reference_id:

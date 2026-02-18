@@ -1,0 +1,33 @@
+advisory_id: GHSA-g785-775g-f2g8
+datasource_id: github_osv_importer_v2/GHSA-g785-775g-f2g8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-g785-775g-f2g8/GHSA-g785-775g-f2g8.json
+aliases:
+  - CVE-2016-10602
+summary: "Downloads Resources over HTTP in haxe\nAffected versions of `haxe` insecurely download\
+  \ an executable over an unencrypted HTTP connection. \n\nIn scenarios where an attacker has\
+  \ a privileged network position, it is possible to intercept the response and replace the\
+  \ executable with a malicious one, resulting in code execution on the system running `haxe`.\n\
+  \n\n## Recommendation\n\nUpdate to version 5.0.10 or later."
+impacted_packages:
+  - purl: pkg:npm/haxe
+    affected_versions: vers:npm/<5.0.10
+    fixed_versions: vers:npm/5.0.10
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+  - CWE-269
+references:
+  - url: https://github.com/HaxeFoundation/npm-haxe
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10602
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/177
+    reference_type:
+    reference_id:

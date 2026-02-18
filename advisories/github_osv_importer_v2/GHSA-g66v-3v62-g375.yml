@@ -1,0 +1,41 @@
+advisory_id: GHSA-g66v-3v62-g375
+datasource_id: github_osv_importer_v2/GHSA-g66v-3v62-g375
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-g66v-3v62-g375/GHSA-g66v-3v62-g375.json
+aliases:
+  - CVE-2023-2202
+summary: |
+  RosarioSIS improper access control vulnerability
+  RosarioSIS prior to version 10.9.3 has a vulnerability that allows a user to return to a page containing personally identifiable information (PII) and sensitive information even after logging out of the application by using the browser's back button.
+impacted_packages:
+  - purl: pkg:composer/francoisjacquet/rosariosis
+    affected_versions: vers:composer/<10.9.3
+    fixed_versions: vers:composer/10.9.3
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-g66v-3v62-g375/GHSA-g66v-3v62-g375.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/francoisjacquet/rosariosis
+    reference_type:
+    reference_id:
+  - url: https://github.com/francoisjacquet/rosariosis/commit/6433946abfb34324616e833b1c00d0b2450753be
+    reference_type:
+    reference_id:
+  - url: https://github.com/francoisjacquet/rosariosis/compare/v10.9.2...v10.9.3
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/efe6ef47-d17c-4773-933a-4836c32db85c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2202
+    reference_type:
+    reference_id:

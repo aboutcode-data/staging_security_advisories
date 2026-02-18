@@ -1,0 +1,38 @@
+advisory_id: GHSA-fmq7-gh8v-mjvc
+datasource_id: github_osv_importer_v2/GHSA-fmq7-gh8v-mjvc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-fmq7-gh8v-mjvc/GHSA-fmq7-gh8v-mjvc.json
+aliases:
+  - CVE-2022-1278
+summary: |
+  WildFly vulnerable to Insecure Default Initialization of Resource
+  A flaw was found in WildFly, where an attacker can see deployment names, endpoints, and any other data the trace payload may contain.
+impacted_packages:
+  - purl: pkg:maven/org.wildfly.bom/wildfly
+    affected_versions: vers:maven/<27.0.0.Beta1
+    fixed_versions: vers:maven/27.0.0.Beta1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-fmq7-gh8v-mjvc/GHSA-fmq7-gh8v-mjvc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1188
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2073401
+    reference_type:
+    reference_id:
+  - url: https://github.com/wildfly/boms
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/WFLY-16238
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1278
+    reference_type:
+    reference_id:

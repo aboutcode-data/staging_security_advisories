@@ -1,0 +1,78 @@
+advisory_id: GHSA-fhvm-j76f-qmjv
+datasource_id: github_osv_importer_v2/GHSA-fhvm-j76f-qmjv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-fhvm-j76f-qmjv/GHSA-fhvm-j76f-qmjv.json
+aliases: []
+summary: |
+  OpenClaw has a potential access-group authorization bypass if channel type lookup fails
+  ## Summary
+
+  When Telegram webhook mode is enabled without a configured webhook secret, OpenClaw may accept unauthenticated HTTP POST requests at the Telegram webhook endpoint and trust attacker-controlled update JSON. This can allow forged Telegram updates that spoof `message.from.id` / `chat.id`, potentially bypassing sender allowlists and executing privileged bot commands.
+
+  ## Affected Packages / Versions
+
+  - Package: `openclaw` (npm)
+  - Affected: `<= 2026.1.30`
+  - Patched: `>= 2026.2.1`
+
+  ## Impact
+
+  An attacker who can reach the webhook endpoint can forge Telegram updates and impersonate allowlisted/paired senders by spoofing fields in the webhook payload (for example `message.from.id`). Impact depends on enabled commands/tools and the deployment’s network exposure.
+
+  ## Mitigations / Workarounds
+
+  - Configure a strong `channels.telegram.webhookSecret` and ensure your reverse proxy forwards the `X-Telegram-Bot-Api-Secret-Token` header unchanged.
+
+  ## Fix Commit(s)
+
+  - ca92597e1f9593236ad86810b66633144b69314d (config validation: `webhookUrl` requires `webhookSecret`)
+
+  Defense-in-depth / supporting fixes:
+
+  - 5643a934799dc523ec2ef18c007e1aa2c386b670 (default webhook listener bind host to loopback)
+  - 3cbcba10cf30c2ffb898f0d8c7dfb929f15f8930 (bound webhook request body size/time)
+  - 633fe8b9c17f02fcc68ecdb5ec212a5ace932f09 (runtime guard: reject webhook startup when secret is missing/empty)
+
+  ## Release Process Note
+
+  `patched_versions` is set to the first fixed release (`2026.2.1`).
+
+  Thanks @yueyueL for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.1
+    fixed_versions: vers:npm/2026.2.1
+severities:
+  - score: '9.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-fhvm-j76f-qmjv/GHSA-fhvm-j76f-qmjv.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/3cbcba10cf30c2ffb898f0d8c7dfb929f15f8930
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/5643a934799dc523ec2ef18c007e1aa2c386b670
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/633fe8b9c17f02fcc68ecdb5ec212a5ace932f09
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/ca92597e1f9593236ad86810b66633144b69314d
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-fhvm-j76f-qmjv
+    reference_type:
+    reference_id:

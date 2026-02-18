@@ -1,0 +1,40 @@
+advisory_id: GHSA-gj5f-73vh-wpf7
+datasource_id: github_osv_importer_v2/GHSA-gj5f-73vh-wpf7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-gj5f-73vh-wpf7/GHSA-gj5f-73vh-wpf7.json
+aliases:
+  - CVE-2025-11569
+summary: |
+  Withdrawn Advisory: cross-zip is vulnerable to Directory Traversal through selective use of zip/unzip operations
+  ### Withdrawn Advisory
+  This advisory has been withdrawn because it does not discuss a valid vulnerability. This link is maintained to preserve external references.
+
+  ### Original Description
+  All versions of the package cross-zip are vulnerable to Directory Traversal via consecutive usage of zipSync() and unzipSync () functions that allow arguments such as __dirname. An attacker can access system files by selectively doing zip/unzip operations.
+impacted_packages:
+  - purl: pkg:npm/cross-zip
+    affected_versions: vers:npm/<=4.0.1
+    fixed_versions:
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://gist.github.com/mcoimbra/9ab12a6187fac41d2fa7ba594ed535ac
+    reference_type:
+    reference_id:
+  - url: https://github.com/feross/cross-zip
+    reference_type:
+    reference_id:
+  - url: https://github.com/feross/cross-zip/blob/eba335474e6142468bd8904f6456208db906d40d/index.js%23L94
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-11569
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-CROSSZIP-6105396
+    reference_type:
+    reference_id:

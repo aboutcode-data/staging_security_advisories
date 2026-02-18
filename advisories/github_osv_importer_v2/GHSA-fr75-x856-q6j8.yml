@@ -1,0 +1,64 @@
+advisory_id: GHSA-fr75-x856-q6j8
+datasource_id: github_osv_importer_v2/GHSA-fr75-x856-q6j8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-fr75-x856-q6j8/GHSA-fr75-x856-q6j8.json
+aliases:
+  - CVE-2021-36711
+summary: |
+  Octobot mishandles Tentacles upload
+  WebInterface in OctoBot before 0.4.4 allows remote code execution because Tentacles upload is mishandled.
+impacted_packages:
+  - purl: pkg:pypi/octobot
+    affected_versions: vers:pypi/<0.4.4
+    fixed_versions: vers:pypi/0.4.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-fr75-x856-q6j8/GHSA-fr75-x856-q6j8.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-fr75-x856-q6j8/GHSA-fr75-x856-q6j8.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: http://packetstormsecurity.com/files/167780/OctoBot-WebInterface-0.4.3-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-fr75-x856-q6j8
+    reference_type:
+    reference_id:
+  - url: https://github.com/Drakkar-Software/OctoBot
+    reference_type:
+    reference_id:
+  - url: https://github.com/Drakkar-Software/OctoBot/blob/master/CHANGELOG.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/Drakkar-Software/OctoBot/blob/master/CHANGELOG.md#044---2022-06-01
+    reference_type:
+    reference_id:
+  - url: https://github.com/Drakkar-Software/OctoBot/issues/1966
+    reference_type:
+    reference_id:
+  - url: https://github.com/Nwqda/Sashimi-Evil-OctoBot-Tentacle
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/octobot/PYSEC-2022-235.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-36711
+    reference_type:
+    reference_id:
+  - url: https://packetstormsecurity.com/files/167721/Sashimi-Evil-OctoBot-Tentacle.html
+    reference_type:
+    reference_id:
+  - url: https://www.octobot.online
+    reference_type:
+    reference_id:

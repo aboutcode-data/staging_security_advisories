@@ -1,0 +1,41 @@
+advisory_id: GHSA-gjx9-wg9x-7gvp
+datasource_id: github_osv_importer_v2/GHSA-gjx9-wg9x-7gvp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-gjx9-wg9x-7gvp/GHSA-gjx9-wg9x-7gvp.json
+aliases:
+  - CVE-2025-29189
+summary: |
+  Flowise Vulnerable to SQL Injection via `tableName` Parameter
+  Flowise <= 2.2.3 is vulnerable to SQL Injection. via tableName parameter at Postgres_VectorStores.
+impacted_packages:
+  - purl: pkg:npm/flowise-components
+    affected_versions: vers:npm/<=2.2.3
+    fixed_versions: vers:npm/2.2.4
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-gjx9-wg9x-7gvp/GHSA-gjx9-wg9x-7gvp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://drive.google.com/file/d/1WHPslTmQmAM9xPJifULS2qAo7hcidB4L/view?usp=sharing
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise/commit/9a417bdc95f58d6dd92cbf60dad42414aba34754
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise/pull/3818
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-29189
+    reference_type:
+    reference_id:

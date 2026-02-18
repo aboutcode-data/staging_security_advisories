@@ -1,0 +1,47 @@
+advisory_id: GHSA-gm2x-6475-g9r8
+datasource_id: github_osv_importer_v2/GHSA-gm2x-6475-g9r8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-gm2x-6475-g9r8/GHSA-gm2x-6475-g9r8.json
+aliases:
+  - CVE-2021-32737
+summary: |
+  XSS Injection in Media Collection Title was possible
+  ### Impact
+
+  A logged in admin user was possible to add a script injection (XSS) in the collection title which was executed.
+
+  ### Workarounds
+
+  Manual patching the js files.
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:'
+
+   - Email us at [security@sulu.io](mailto:security@sulu.io)
+impacted_packages:
+  - purl: pkg:composer/sulu/sulu
+    affected_versions: vers:composer/<1.6.41
+    fixed_versions: vers:composer/1.6.41
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-gm2x-6475-g9r8/GHSA-gm2x-6475-g9r8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/sulu/sulu/releases/tag/1.6.41
+    reference_type:
+    reference_id:
+  - url: https://github.com/sulu/sulu/security/advisories/GHSA-gm2x-6475-g9r8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32737
+    reference_type:
+    reference_id:

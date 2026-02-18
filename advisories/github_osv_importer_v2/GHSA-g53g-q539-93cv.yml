@@ -1,0 +1,44 @@
+advisory_id: GHSA-g53g-q539-93cv
+datasource_id: github_osv_importer_v2/GHSA-g53g-q539-93cv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g53g-q539-93cv/GHSA-g53g-q539-93cv.json
+aliases:
+  - CVE-2022-1592
+summary: |
+  Server-Side Request Forgery in scout-browser
+  Pypi package scout-browser (GitHub repository clinical-genomics/scout) prior to v4.52 is vulnerable to server-side request forgery. An attacker could make the application perform arbitrary requests to steal cookies, request access to private areas, or lead to cross-site scripting.
+impacted_packages:
+  - purl: pkg:pypi/scout-browser
+    affected_versions: vers:pypi/<4.52
+    fixed_versions: vers:pypi/4.52
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g53g-q539-93cv/GHSA-g53g-q539-93cv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/clinical-genomics/scout
+    reference_type:
+    reference_id:
+  - url: https://github.com/clinical-genomics/scout/commit/b0ef15f4737d0c801154c1991b52ff5cab4f5c83
+    reference_type:
+    reference_id:
+  - url: https://github.com/Clinical-Genomics/scout/issues/3325
+    reference_type:
+    reference_id:
+  - url: https://github.com/Clinical-Genomics/scout/pull/3326
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/352b39da-0f2e-415a-9793-5480cae8bd27
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1592
+    reference_type:
+    reference_id:

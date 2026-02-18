@@ -1,0 +1,60 @@
+advisory_id: GHSA-fhj9-cjjh-27vm
+datasource_id: github_osv_importer_v2/GHSA-fhj9-cjjh-27vm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-fhj9-cjjh-27vm/GHSA-fhj9-cjjh-27vm.json
+aliases:
+  - CVE-2013-0277
+summary: |
+  Active Record contains deserialization of arbitrary YAML
+  ActiveRecord in Ruby on Rails before 2.3.17 and 3.x before 3.1.0 allows remote attackers to cause a denial of service or execute arbitrary code via crafted serialized attributes that cause the +serialize+ helper to deserialize arbitrary YAML.
+impacted_packages:
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/<2.3.17
+    fixed_versions: vers:gem/2.3.17
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/>=3.0.0|<3.1.0
+    fixed_versions: vers:gem/3.1.0
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: http://lists.apple.com/archives/security-announce/2013/Jun/msg00000.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-03/msg00048.html
+    reference_type:
+    reference_id:
+  - url: http://securitytracker.com/id?1028109
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/tree/v6.1.4.1/activerecord
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/activerecord/CVE-2013-0277.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/group/rubyonrails-security/msg/302ec7ce90f13837?dmode=source&output=gplain
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-0277
+    reference_type:
+    reference_id:
+  - url: https://puppet.com/security/cve/cve-2013-0277
+    reference_type:
+    reference_id:
+  - url: http://support.apple.com/kb/HT5784
+    reference_type:
+    reference_id:
+  - url: http://weblog.rubyonrails.org/2013/2/11/SEC-ANN-Rails-3-2-12-3-1-11-and-2-3-17-have-been-released
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2013/dsa-2620
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2013/02/11/6
+    reference_type:
+    reference_id:

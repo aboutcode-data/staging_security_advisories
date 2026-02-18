@@ -1,0 +1,48 @@
+advisory_id: GHSA-fpvg-m786-h5vr
+datasource_id: github_osv_importer_v2/GHSA-fpvg-m786-h5vr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-fpvg-m786-h5vr/GHSA-fpvg-m786-h5vr.json
+aliases:
+  - CVE-2023-33568
+summary: |
+  Dolibarr vulnerable to unauthenticated database access
+  An issue in Dolibarr v16.0.0 to v16.0.5 allows unauthenticated attackers to perform a database dump and access a company's entire customer file, prospects, suppliers, and employee information if a contact file exists.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/>=16.0.0|<16.0.5
+    fixed_versions: vers:composer/16.0.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-fpvg-m786-h5vr/GHSA-fpvg-m786-h5vr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-552
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/bb7b69ef43673ed403436eac05e0bc31d5033ff7
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/be82f51f68d738cce205f4ce5b469ef42ed82d9e
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-33568
+    reference_type:
+    reference_id:
+  - url: https://www.dolibarr.org/forum/t/dolibarr-16-0-security-breach/23471
+    reference_type:
+    reference_id:
+  - url: https://www.dolibarr.org/forum/t/dolibarr-16-0-security-breach/23471/1
+    reference_type:
+    reference_id:
+  - url: https://www.dsecbypass.com/en/dolibarr-pre-auth-contact-database-dump
+    reference_type:
+    reference_id:

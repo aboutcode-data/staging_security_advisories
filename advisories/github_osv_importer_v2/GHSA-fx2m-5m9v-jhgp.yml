@@ -1,0 +1,35 @@
+advisory_id: GHSA-fx2m-5m9v-jhgp
+datasource_id: github_osv_importer_v2/GHSA-fx2m-5m9v-jhgp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fx2m-5m9v-jhgp/GHSA-fx2m-5m9v-jhgp.json
+aliases:
+  - CVE-2018-18943
+summary: |
+  XSS in baserCMS before 4.1.4
+  An issue was discovered in baserCMS before 4.1.4. In the Register New Category feature of the Upload menu, the category name can be used for XSS via the `data[UploaderCategory][name]` parameter to an `admin/uploader/uploader_categories/edit` URI.
+impacted_packages:
+  - purl: pkg:composer/baserproject/basercms
+    affected_versions: vers:composer/<4.1.4
+    fixed_versions: vers:composer/4.1.4
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fx2m-5m9v-jhgp/GHSA-fx2m-5m9v-jhgp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-18943
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200130073341/https://basercms.net/release/4_1_4
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20211209034642/http://sunu11.com/2018/10/31/baserCMS
+    reference_type:
+    reference_id:

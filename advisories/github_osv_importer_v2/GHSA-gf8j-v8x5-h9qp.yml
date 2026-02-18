@@ -1,0 +1,38 @@
+advisory_id: GHSA-gf8j-v8x5-h9qp
+datasource_id: github_osv_importer_v2/GHSA-gf8j-v8x5-h9qp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-gf8j-v8x5-h9qp/GHSA-gf8j-v8x5-h9qp.json
+aliases:
+  - CVE-2019-18857
+summary: |
+  XSS in enshrined/svg-sanitize due to mishandled script and data values in attributes
+  enshrined/svg-sanitize before 0.12.0 mishandles script and data values in attributes, as demonstrated by unexpected whitespace such as in the javascript&#9;:alert substring.
+impacted_packages:
+  - purl: pkg:composer/enshrined/svg-sanitize
+    affected_versions: vers:composer/<0.12.0
+    fixed_versions: vers:composer/0.12.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-gf8j-v8x5-h9qp/GHSA-gf8j-v8x5-h9qp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/darylldoyle/svg-sanitizer
+    reference_type:
+    reference_id:
+  - url: https://github.com/darylldoyle/svg-sanitizer/commit/51ca4b713f3706d6b27769c6296bbc0c28a5bbd0
+    reference_type:
+    reference_id:
+  - url: https://github.com/darylldoyle/svg-sanitizer/compare/0.11.0...0.12.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-18857
+    reference_type:
+    reference_id:

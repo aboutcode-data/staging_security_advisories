@@ -1,0 +1,53 @@
+advisory_id: GHSA-f825-f98c-gj3g
+datasource_id: github_osv_importer_v2/GHSA-f825-f98c-gj3g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-f825-f98c-gj3g/GHSA-f825-f98c-gj3g.json
+aliases:
+  - CVE-2022-2564
+summary: |
+  automattic/mongoose vulnerable to Prototype pollution via Schema.path
+  Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Affected versions of this package are vulnerable to Prototype Pollution. The `Schema.path()` function is vulnerable to prototype pollution when setting the schema object. This vulnerability allows modification of the Object prototype and could be manipulated into a Denial of Service (DoS) attack.
+impacted_packages:
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/>=6.0.0|<6.4.6
+    fixed_versions: vers:npm/6.4.6
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/<5.13.15
+    fixed_versions: vers:npm/5.13.15
+severities:
+  - score: '7.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-f825-f98c-gj3g/GHSA-f825-f98c-gj3g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/automattic/mongoose
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/blob/51e758541763b6f14569744ced15cc23ab8b50c6/lib/schema.js#L88-L141
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/blob/master/CHANGELOG.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/commit/99b418941e2fc974199b8e5bd9d382bb50bf680a
+    reference_type:
+    reference_id:
+  - url: https://github.com/automattic/mongoose/commit/a45cfb6b0ce0067ae9794cfa80f7917e1fb3c6f8
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/compare/6.4.5...6.4.6
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/055be524-9296-4b2f-b68d-6d5b810d1ddd
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2564
+    reference_type:
+    reference_id:

@@ -1,0 +1,52 @@
+advisory_id: GHSA-gjh4-fcv3-whpq
+datasource_id: github_osv_importer_v2/GHSA-gjh4-fcv3-whpq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-gjh4-fcv3-whpq/GHSA-gjh4-fcv3-whpq.json
+aliases:
+  - CVE-2019-15782
+summary: |
+  Cross-Site Scripting in webtorrent
+  Versions of `webtorrent` prior to 0.107.6 are vulnerable to Cross-Site Scripting. `webtorrent` servers started with `torrent.createServer()` lists a torrent's title and files in the index page without sanitization. This allows attackers to execute arbitrary JavaScript in the victim's browser through files with names containing the malicious payload. The issue is mitigated due to the fact that the server only allows fetching data pieces from the torrent.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.107.6 or later.
+impacted_packages:
+  - purl: pkg:npm/webtorrent
+    affected_versions: vers:npm/<0.107.6
+    fixed_versions: vers:npm/0.107.6
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-gjh4-fcv3-whpq/GHSA-gjh4-fcv3-whpq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/webtorrent/webtorrent/commit/7e829b5d52c32d2e6d8f5fbcf0f8f418fffde083
+    reference_type:
+    reference_id:
+  - url: https://github.com/webtorrent/webtorrent/compare/v0.107.5...v0.107.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/webtorrent/webtorrent/pull/1714
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/681617
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-15782
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-WEBTORRENT-460351
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1158
+    reference_type:
+    reference_id:

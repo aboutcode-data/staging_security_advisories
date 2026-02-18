@@ -1,0 +1,45 @@
+advisory_id: GHSA-fxmw-jcgr-w44v
+datasource_id: github_osv_importer_v2/GHSA-fxmw-jcgr-w44v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-fxmw-jcgr-w44v/GHSA-fxmw-jcgr-w44v.json
+aliases:
+  - CVE-2025-13780
+summary: |
+  pgadmin4 has a Meta-Command Filter Command Execution
+  The PLAIN restore meta-command filter introduced in pgAdmin as part of the fix for CVE-2025-12762 does not detect meta-commands when a SQL file begins with a UTF-8 Byte Order Mark (EF BB BF) or other special byte sequences. The implemented filter uses the function `has_meta_commands()`, which scans raw bytes using a regular expression. The regex does not treat the bytes as ignorable, so meta-commands such as `\\!` remain undetected. When pgAdmin invokes psql with --file, psql strips the bytes and executes the command. This can result in remote command execution during a restore operation.
+impacted_packages:
+  - purl: pkg:pypi/pgadmin4
+    affected_versions: vers:pypi/<9.11
+    fixed_versions: vers:pypi/9.11
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-fxmw-jcgr-w44v/GHSA-fxmw-jcgr-w44v.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-77
+references:
+  - url: https://github.com/pgadmin-org/pgadmin4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/commit/1d397395f75320ca1d4ed5e9ca721c603415e836
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/commit/d5a909f14cb9713d89b49481ad1929fad89f4576
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/issues/9368
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/pull/9426
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-13780
+    reference_type:
+    reference_id:

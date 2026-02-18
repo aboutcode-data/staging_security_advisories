@@ -1,0 +1,35 @@
+advisory_id: GHSA-gc6c-5v9w-xmhw
+datasource_id: github_osv_importer_v2/GHSA-gc6c-5v9w-xmhw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-gc6c-5v9w-xmhw/GHSA-gc6c-5v9w-xmhw.json
+aliases:
+  - CVE-2016-10580
+summary: "Downloads Resources over HTTP in nodewebkit\nAffected versions of `nodewebkit` insecurely\
+  \ download an executable over an unencrypted HTTP connection. \n\nIn scenarios where an attacker\
+  \ has a privileged network position, it is possible to intercept the response and replace\
+  \ the executable with a malicious one, resulting in code execution on the system running `nodewebkit`.\n\
+  \n\n## Recommendation\n\nNo patch is currently available, and the package author has deprecated\
+  \ this package. \n\nThe best path forward in mitigating this vulnerability is to use the [official\
+  \ installer](https://www.npmjs.com/nw) instead of this package, as per the package author's\
+  \ instructions."
+impacted_packages:
+  - purl: pkg:npm/nodewebkit
+    affected_versions: vers:npm/<=0.11.6
+    fixed_versions:
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+references:
+  - url: https://github.com/advisories/GHSA-gc6c-5v9w-xmhw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10580
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/173
+    reference_type:
+    reference_id:

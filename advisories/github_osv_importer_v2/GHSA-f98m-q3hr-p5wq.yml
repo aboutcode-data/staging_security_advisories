@@ -1,0 +1,43 @@
+advisory_id: GHSA-f98m-q3hr-p5wq
+datasource_id: github_osv_importer_v2/GHSA-f98m-q3hr-p5wq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-f98m-q3hr-p5wq/GHSA-f98m-q3hr-p5wq.json
+aliases:
+  - CVE-2020-7719
+summary: |
+  Prototype Pollution in locutus
+  All versions of package locutus prior to version 2.0.12 are vulnerable to Prototype Pollution via the php.strings.parse_str function.
+impacted_packages:
+  - purl: pkg:npm/locutus
+    affected_versions: vers:npm/<2.0.12
+    fixed_versions: vers:npm/2.0.12
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-f98m-q3hr-p5wq/GHSA-f98m-q3hr-p5wq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+  - CWE-1321
+  - CWE-20
+references:
+  - url: https://github.com/kvz/locutus
+    reference_type:
+    reference_id:
+  - url: https://github.com/kvz/locutus/pull/418
+    reference_type:
+    reference_id:
+  - url: https://github.com/locutusjs/locutus/commit/0eb16d8541838e80f3c2340a9ef93ded7c97290f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7719
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-LOCUTUS-598675
+    reference_type:
+    reference_id:

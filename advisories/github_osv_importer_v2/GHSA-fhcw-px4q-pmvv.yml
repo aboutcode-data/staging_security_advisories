@@ -1,0 +1,46 @@
+advisory_id: GHSA-fhcw-px4q-pmvv
+datasource_id: github_osv_importer_v2/GHSA-fhcw-px4q-pmvv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-fhcw-px4q-pmvv/GHSA-fhcw-px4q-pmvv.json
+aliases:
+  - CVE-2025-62241
+summary: |
+  Liferay Commerce Order Content Web is Vulnerable to Authorization Bypass Through User-Controlled Key
+  Insecure Direct Object Reference (IDOR) vulnerability with shipment addresses in Liferay DXP 2023.Q4.1 through 2023.Q4.5 allows remote authenticated users to from one virtual instance to view the shipment addresses of different virtual instance via the _com_liferay_commerce_order_web_internal_portlet_CommerceOrderPortlet_commerceOrderId parameter.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.commerce/com.liferay.commerce.order.content.web
+    affected_versions: vers:maven/<4.0.114
+    fixed_versions: vers:maven/4.0.114
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-fhcw-px4q-pmvv/GHSA-fhcw-px4q-pmvv.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-fhcw-px4q-pmvv/GHSA-fhcw-px4q-pmvv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: https://github.com/liferay/liferay-portal/commit/53401963f02f593bbf555b4b321fdaeb59e03a53
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/75c39ea518eb91b3b5cbb0576074ebbbfd805401
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-17936
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-62241
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62241
+    reference_type:
+    reference_id:

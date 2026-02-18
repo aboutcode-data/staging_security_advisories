@@ -1,0 +1,47 @@
+advisory_id: GHSA-g7pj-3v97-3vxp
+datasource_id: github_osv_importer_v2/GHSA-g7pj-3v97-3vxp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g7pj-3v97-3vxp/GHSA-g7pj-3v97-3vxp.json
+aliases:
+  - CVE-2014-2921
+summary: |
+  Pimcore Vulnerable to PHP Object Injection Attacks
+  The `getObjectByToken` function in `Newsletter.php` in the `Pimcore_Tool_Newsletter` module in pimcore 1.4.9 through 2.0.0 does not properly handle an object obtained by unserializing Lucene search data, which allows remote attackers to conduct PHP object injection attacks and execute arbitrary code via vectors involving a `Zend_Pdf_ElementFactory_Proxy` object and a pathname with a trailing `\0` character.
+impacted_packages:
+  - purl: pkg:composer/pimcore/pimcore
+    affected_versions: vers:composer/>=1.4.9|<2.2.0
+    fixed_versions: vers:composer/2.2.0
+severities:
+  - score: '8.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g7pj-3v97-3vxp/GHSA-g7pj-3v97-3vxp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: http://openwall.com/lists/oss-security/2014/04/21/1
+    reference_type:
+    reference_id:
+  - url: https://github.com/pedrib/PoC/blob/caa03645e256a8b50f1101c983d39586ebc467ee/advisories/pimcore-2.1.0.txt
+    reference_type:
+    reference_id:
+  - url: https://github.com/pedrib/PoC/blob/master/pimcore-2.1.0.txt
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/commit/3cb2683e669b5644f180d362cfa9614c09bef280
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-2921
+    reference_type:
+    reference_id:
+  - url: http://www.pimcore.org/en/resources/blog/pimcore+2.2+released_b442
+    reference_type:
+    reference_id:

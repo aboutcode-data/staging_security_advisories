@@ -1,0 +1,32 @@
+advisory_id: GHSA-gjq3-997p-hg6f
+datasource_id: github_osv_importer_v2/GHSA-gjq3-997p-hg6f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gjq3-997p-hg6f/GHSA-gjq3-997p-hg6f.json
+aliases:
+  - CVE-2017-1000360
+summary: |
+  OpenDaylight NULL Pointer Dereference
+  StreamCorruptedException and NullPointerException in OpenDaylight odl-mdsal-xsql. Controller launches exceptions in the console. Component: OpenDaylight odl-mdsal-xsql is vulnerable to this flaw. Version: The tested versions are OpenDaylight 3.3 and 4.0.
+impacted_packages:
+  - purl: pkg:maven/org.opendaylight.controller/releasepom
+    affected_versions: vers:maven/<=4.0
+    fixed_versions:
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gjq3-997p-hg6f/GHSA-gjq3-997p-hg6f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-476
+references:
+  - url: https://aaltodoc.aalto.fi/bitstream/handle/123456789/21584/master_Bidaj_Andi_2016.pdf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000360
+    reference_type:
+    reference_id:

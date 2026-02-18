@@ -1,0 +1,79 @@
+advisory_id: GHSA-g56x-7j6w-g8r8
+datasource_id: github_osv_importer_v2/GHSA-g56x-7j6w-g8r8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-g56x-7j6w-g8r8/GHSA-g56x-7j6w-g8r8.json
+aliases:
+  - CVE-2023-50730
+summary: "Grackle has StackOverflowError in GraphQL query processing\n### Impact\n\nPrior to\
+  \ this fix, the GraphQL query parsing was vulnerable to `StackOverflowError`s. The possibility\
+  \ of small queries resulting in stack overflow is a potential denial of service vulnerability.\n\
+  \nThis potentially affects all applications using Grackle which have untrusted users.\n\n\
+  > [!CAUTION]  \n> **No specific knowledge of an application's GraphQL schema would be required\
+  \ to construct a pathological query.**\n\n### Patches\nThe stack overflow issues have been\
+  \ resolved in the v0.18.0 release of Grackle.\n\n### Workarounds\nUsers could interpose a\
+  \ sanitizing layer in between untrusted input and Grackle query processing."
+impacted_packages:
+  - purl: pkg:maven/org.typelevel/grackle-core_2.13
+    affected_versions: vers:maven/<0.18.0
+    fixed_versions: vers:maven/0.18.0
+  - purl: pkg:maven/org.typelevel/grackle-core_3
+    affected_versions: vers:maven/<0.18.0
+    fixed_versions: vers:maven/0.18.0
+  - purl: pkg:maven/org.typelevel/grackle-core_sjs1_2.13
+    affected_versions: vers:maven/<0.18.0
+    fixed_versions: vers:maven/0.18.0
+  - purl: pkg:maven/org.typelevel/grackle-core_sjs1_3
+    affected_versions: vers:maven/<0.18.0
+    fixed_versions: vers:maven/0.18.0
+  - purl: pkg:maven/org.typelevel/grackle-core_native0.4_2.13
+    affected_versions: vers:maven/<0.18.0
+    fixed_versions: vers:maven/0.18.0
+  - purl: pkg:maven/org.typelevel/grackle-core_native0.4_3
+    affected_versions: vers:maven/<0.18.0
+    fixed_versions: vers:maven/0.18.0
+  - purl: pkg:maven/edu.gemini/gsp-graphql-core_2.13
+    affected_versions: vers:maven/<=0.14.0
+    fixed_versions:
+  - purl: pkg:maven/edu.gemini/gsp-graphql-core_3
+    affected_versions: vers:maven/<=0.14.0
+    fixed_versions:
+  - purl: pkg:maven/edu.gemini/gsp-graphql-core_sjs1_2.13
+    affected_versions: vers:maven/<=0.14.0
+    fixed_versions:
+  - purl: pkg:maven/edu.gemini/gsp-graphql-core_sjs1_3
+    affected_versions: vers:maven/<=0.14.0
+    fixed_versions:
+  - purl: pkg:maven/edu.gemini/gsp-graphql-core_native0.4_2.13
+    affected_versions: vers:maven/<=0.14.0
+    fixed_versions:
+  - purl: pkg:maven/edu.gemini/gsp-graphql-core_native0.4_3
+    affected_versions: vers:maven/<=0.14.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-g56x-7j6w-g8r8/GHSA-g56x-7j6w-g8r8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/typelevel/grackle
+    reference_type:
+    reference_id:
+  - url: https://github.com/typelevel/grackle/commit/56e244b91659cf385df590fc6c46695b6f36cbfd
+    reference_type:
+    reference_id:
+  - url: https://github.com/typelevel/grackle/releases/tag/v0.18.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/typelevel/grackle/security/advisories/GHSA-g56x-7j6w-g8r8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-50730
+    reference_type:
+    reference_id:

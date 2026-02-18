@@ -1,0 +1,37 @@
+advisory_id: GHSA-gff2-p6vm-3p8g
+datasource_id: github_osv_importer_v2/GHSA-gff2-p6vm-3p8g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-gff2-p6vm-3p8g/GHSA-gff2-p6vm-3p8g.json
+aliases: []
+summary: |
+  ZendFramework potential remote code execution in zend-mail via Sendmail adapter
+  When using the zend-mail component to send email via the `Zend\Mail\Transport\Sendmail transport`, a malicious user may be able to inject arbitrary parameters to the system sendmail program. The attack is performed by providing additional quote characters within an address; when unsanitized, they can be interpreted as additional command line arguments, leading to the vulnerability.
+impacted_packages:
+  - purl: pkg:composer/zendframework/zendframework
+    affected_versions: vers:composer/>=2.0.0|<2.4.11
+    fixed_versions: vers:composer/2.4.11
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-gff2-p6vm-3p8g/GHSA-gff2-p6vm-3p8g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/zendframework/zendframework/ZF2016-04.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/zendframework/zendframework
+    reference_type:
+    reference_id:
+  - url: https://github.com/zendframework/zendframework/commit/7c1e89815f5a9c016f4b8088e59b07cb2bf99dc0
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20201107093523/https://framework.zend.com/security/advisory/ZF2016-04
+    reference_type:
+    reference_id:

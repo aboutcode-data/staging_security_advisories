@@ -1,0 +1,59 @@
+advisory_id: GHSA-gmg5-r3c4-3fm9
+datasource_id: github_osv_importer_v2/GHSA-gmg5-r3c4-3fm9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gmg5-r3c4-3fm9/GHSA-gmg5-r3c4-3fm9.json
+aliases:
+  - CVE-2019-10226
+summary: |
+  Withdrawn Advisory: Fat Free CRM Cross-site Scripting vulnerability
+  ## Withdrawn
+  This advisory has been withdrawn because the CVE has been disputed and the underlying vulnerability is likely invalid. This link is maintained to preserve external references.
+
+  [According to maintainers of Fat Free CRM](https://github.com/github/advisory-database/pull/3599), the CRM comment feature allows certain HTML markup, but santizes the output when rendered to page. This allows safe tags (such as `<h1>` which the author tested and reported as a vulnerability) but correctly disallows `<script>` tags and other dangerous entities.
+
+  ## Original Description
+  HTML Injection has been discovered in the v0.19.0 version of the Fat Free CRM product via an authenticated request to the /comments URI.
+impacted_packages:
+  - purl: pkg:gem/fat_free_crm
+    affected_versions: vers:gem/<=0.19.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gmg5-r3c4-3fm9/GHSA-gmg5-r3c4-3fm9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/152263/Fat-Free-CRM-0.19.0-HTML-Injection.html
+    reference_type:
+    reference_id:
+  - url: https://apidock.com/rails/ActionView/Helpers/TextHelper/simple_format
+    reference_type:
+    reference_id:
+  - url: https://github.com/fatfreecrm/fat_free_crm
+    reference_type:
+    reference_id:
+  - url: https://github.com/fatfreecrm/fat_free_crm/blob/master/app/views/comments/_comment.html.haml#L2
+    reference_type:
+    reference_id:
+  - url: https://github.com/fatfreecrm/fat_free_crm/issues/1235
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/pull/3599
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/fat_free_crm/CVE-2019-10226.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10226
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/46617
+    reference_type:
+    reference_id:

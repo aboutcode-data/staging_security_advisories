@@ -1,0 +1,47 @@
+advisory_id: GHSA-g95v-3pj6-j433
+datasource_id: github_osv_importer_v2/GHSA-g95v-3pj6-j433
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-g95v-3pj6-j433/GHSA-g95v-3pj6-j433.json
+aliases:
+  - CVE-2024-3462
+summary: |
+  Ant Media Server does not properly authorize non-administrative API calls
+  Ant Media Server Community Edition in a default configuration is vulnerable to an improper HTTP header based authorization, leading to a possible use of non-administrative API calls reserved only for authorized users. 
+  All versions up to 2.9.0 (tested) and possibly newer ones are believed to be vulnerable as the vendor has not confirmed releasing a patch.
+impacted_packages:
+  - purl: pkg:maven/io.antmedia/ant-media-server
+    affected_versions: vers:maven/<=2.9.0
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-g95v-3pj6-j433/GHSA-g95v-3pj6-j433.json
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-g95v-3pj6-j433/GHSA-g95v-3pj6-j433.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-302
+references:
+  - url: https://antmedia.io
+    reference_type:
+    reference_id:
+  - url: https://cert.pl/en/posts/2024/05/CVE-2024-3462
+    reference_type:
+    reference_id:
+  - url: https://cert.pl/posts/2024/05/CVE-2024-3462
+    reference_type:
+    reference_id:
+  - url: https://github.com/ant-media/Ant-Media-Server
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-3462
+    reference_type:
+    reference_id:

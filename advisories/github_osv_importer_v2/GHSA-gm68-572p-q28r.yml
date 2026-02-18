@@ -1,0 +1,48 @@
+advisory_id: GHSA-gm68-572p-q28r
+datasource_id: github_osv_importer_v2/GHSA-gm68-572p-q28r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-gm68-572p-q28r/GHSA-gm68-572p-q28r.json
+aliases: []
+summary: |
+  @vendure/admin-ui-plugin authenticated Cross-site Scripting vulnerability
+  ### Impact
+  Vendure provides an authorization system with different levels of privileges. For example, an administrator cannot create another administrator.
+
+  In the admin UI, there are a couple of places with description inputs, such as inventory/collection catalog, shipping methods, promotions, and more.
+
+  While the WYSIWYG editor allows limited customization, altering the request data (not in the ui) saves and returns arbitrary HTML with no sanitization. Causing an XSS when viewing the page.
+
+  The impact of this XSS is privilege escalation. A user that can write any type of description can trigger the attack. Then any other user that visits the vulnerable page is prone to arbitrary Javascript code execution, giving the attacker ability to execute actions on behalf of this user.
+
+  ### Patches
+  in progress
+
+  ### Workarounds
+  _Is there a way for users to fix or remediate the vulnerability without upgrading?_
+
+  ### References
+  _Are there any links users can visit to find out more?_
+impacted_packages:
+  - purl: pkg:npm/%40vendure/admin-ui-plugin
+    affected_versions: vers:npm/<2.0.3
+    fixed_versions: vers:npm/2.0.3
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/vendure-ecommerce/vendure
+    reference_type:
+    reference_id:
+  - url: https://github.com/vendure-ecommerce/vendure/blob/master/CHANGELOG.md#203-2023-07-04
+    reference_type:
+    reference_id:
+  - url: https://github.com/vendure-ecommerce/vendure/commit/0cdc92b241e6fd4017ddfc9fbdca189fc7c1ada0
+    reference_type:
+    reference_id:
+  - url: https://github.com/vendure-ecommerce/vendure/security/advisories/GHSA-gm68-572p-q28r
+    reference_type:
+    reference_id:

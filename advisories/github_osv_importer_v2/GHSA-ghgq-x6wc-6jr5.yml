@@ -1,0 +1,40 @@
+advisory_id: GHSA-ghgq-x6wc-6jr5
+datasource_id: github_osv_importer_v2/GHSA-ghgq-x6wc-6jr5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-ghgq-x6wc-6jr5/GHSA-ghgq-x6wc-6jr5.json
+aliases:
+  - CVE-2024-6833
+summary: |
+  Zowe CLI allows storage of previously entered secure credentials in a plaintext file
+  A vulnerability in Zowe CLI allows local, privileged actors to store previously entered secure credentials in a plaintext file as part of an auto-init operation.
+impacted_packages:
+  - purl: pkg:npm/%40zowe/cli
+    affected_versions: vers:npm/>=7.18.0|<7.23.5
+    fixed_versions: vers:npm/7.23.5
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-ghgq-x6wc-6jr5/GHSA-ghgq-x6wc-6jr5.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-ghgq-x6wc-6jr5/GHSA-ghgq-x6wc-6jr5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-256
+references:
+  - url: https://github.com/zowe/zowe-cli
+    reference_type:
+    reference_id:
+  - url: https://github.com/zowe/zowe-cli/commit/6778da5e03c65dfcd3e6e4b4097b94d9fbd5d01b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-6833
+    reference_type:
+    reference_id:

@@ -1,0 +1,53 @@
+advisory_id: GHSA-fq95-rx4q-qgg2
+datasource_id: github_osv_importer_v2/GHSA-fq95-rx4q-qgg2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fq95-rx4q-qgg2/GHSA-fq95-rx4q-qgg2.json
+aliases:
+  - CVE-2023-2341
+summary: |
+  Cross-site Scripting (XSS) in Admin Login too many attempts notice
+  ### Impact
+  Malicious JavaScript has access to all the same objects as the rest of the web page, including access to cookies and local storage, which are often used to store session tokens. If an attacker can obtain a user's session cookie, they can then impersonate that user.
+
+  Furthermore, JavaScript can read and make arbitrary modifications to the contents of a page being displayed to a user. Therefore, XSS in conjunction with some clever social engineering opens up a lot of possibilities for an attacker.
+
+  ### Patches
+  Update to version 10.5.21 or apply this patch manually https://github.com/pimcore/pimcore/commit/66f1089fb1b9bcd575bfce9b1d4abb0f0499df11.patch
+
+  ### Workarounds
+  Apply patch https://github.com/pimcore/pimcore/commit/66f1089fb1b9bcd575bfce9b1d4abb0f0499df11.patch manually.
+
+  ### References
+  https://huntr.dev/bounties/cf3901ac-a649-478f-ab08-094ef759c11d/
+impacted_packages:
+  - purl: pkg:composer/pimcore/pimcore
+    affected_versions: vers:composer/<10.5.21
+    fixed_versions: vers:composer/10.5.21
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fq95-rx4q-qgg2/GHSA-fq95-rx4q-qgg2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pimcore/pimcore
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/commit/66f1089fb1b9bcd575bfce9b1d4abb0f0499df11
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/security/advisories/GHSA-fq95-rx4q-qgg2
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/cf3901ac-a649-478f-ab08-094ef759c11d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2341
+    reference_type:
+    reference_id:

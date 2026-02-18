@@ -1,0 +1,38 @@
+advisory_id: GHSA-gc45-j3m5-8qfq
+datasource_id: github_osv_importer_v2/GHSA-gc45-j3m5-8qfq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-gc45-j3m5-8qfq/GHSA-gc45-j3m5-8qfq.json
+aliases:
+  - CVE-2021-30108
+summary: |
+  Server-Side Request Forgery in Feehi CMS
+  Feehi CMS 2.1.1 is affected by a Server-side request forgery (SSRF) vulnerability. When the user modifies the HTTP Referer header to any url, the server can make a request to it.
+impacted_packages:
+  - purl: pkg:composer/feehi/cms
+    affected_versions: vers:composer/<=2.1.1
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-gc45-j3m5-8qfq/GHSA-gc45-j3m5-8qfq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/liufee/cms/commit/d45cb9cb26d6f5ef491fa2c7d87ac7f26091bd7c
+    reference_type:
+    reference_id:
+  - url: https://github.com/liufee/cms/issues/57
+    reference_type:
+    reference_id:
+  - url: https://github.com/liufee/cms/issues/57#issuecomment-1230070460
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-30108
+    reference_type:
+    reference_id:

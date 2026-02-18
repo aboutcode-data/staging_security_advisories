@@ -1,0 +1,35 @@
+advisory_id: GHSA-g4cp-h53p-v3v8
+datasource_id: github_osv_importer_v2/GHSA-g4cp-h53p-v3v8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-g4cp-h53p-v3v8/GHSA-g4cp-h53p-v3v8.json
+aliases:
+  - CVE-2020-10705
+summary: |
+  Allocation of Resources Without Limits or Throttling in Undertow
+  A flaw was discovered in Undertow in versions before Undertow 2.1.1.Final where certain requests to the "Expect: 100-continue" header may cause an out of memory error. This flaw may potentially lead to a denial of service.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<=2.1.0.Final
+    fixed_versions: vers:maven/2.1.1.Final
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-g4cp-h53p-v3v8/GHSA-g4cp-h53p-v3v8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1803241
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-10705
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220210-0014
+    reference_type:
+    reference_id:

@@ -1,0 +1,52 @@
+advisory_id: GHSA-fx3v-553x-3c4q
+datasource_id: github_osv_importer_v2/GHSA-fx3v-553x-3c4q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-fx3v-553x-3c4q/GHSA-fx3v-553x-3c4q.json
+aliases:
+  - CVE-2020-15249
+summary: |
+  Stored XSS by authenticated backend user with access to upload files
+  ### Impact
+  Backend users with access to upload files were permitted to upload SVG files without any sanitization applied to the uploaded files. Since SVG files support being parsed as HTML by browsers, this means that they could theoretically upload Javascript that would be executed on a path under the website's domain (i.e. /storage/app/media/evil.svg), but they would have to convince their target to visit that location directly in the target's browser as the backend does not display SVGs inline anywhere, SVGs are only displayed as image resources in the backend and are thus unable to be executed.
+
+  ### Patches
+  Issue has been patched in Build 469 (v1.0.469) & v1.1.0.
+
+  ### Workarounds
+  Apply https://github.com/octobercms/library/commit/80aab47f044a2660aa352450f55137598f362aa4 to your installation manually if unable to upgrade to Build 469 or v1.1.0.
+
+  ### References
+  Reported by [Hoan Hoang](https://github.com/hoanhp)
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at [hello@octobercms.com](mailto:hello@octobercms.com)
+
+  ### Threat assessment:
+  <img width="1107" alt="Screen Shot 2020-10-10 at 1 47 49 PM" src="https://user-images.githubusercontent.com/7253840/95663787-378f2b80-0aff-11eb-8dfc-b97d162939da.png">
+impacted_packages:
+  - purl: pkg:composer/october/backend
+    affected_versions: vers:composer/>=1.0.319|<1.0.469
+    fixed_versions: vers:composer/1.0.469
+severities:
+  - score: '2.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-fx3v-553x-3c4q/GHSA-fx3v-553x-3c4q.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/octobercms/library/commit/80aab47f044a2660aa352450f55137598f362aa4
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october/security/advisories/GHSA-fx3v-553x-3c4q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15249
+    reference_type:
+    reference_id:

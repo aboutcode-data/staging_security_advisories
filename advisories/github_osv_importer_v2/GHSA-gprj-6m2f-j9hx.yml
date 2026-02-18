@@ -1,0 +1,72 @@
+advisory_id: GHSA-gprj-6m2f-j9hx
+datasource_id: github_osv_importer_v2/GHSA-gprj-6m2f-j9hx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-gprj-6m2f-j9hx/GHSA-gprj-6m2f-j9hx.json
+aliases:
+  - CVE-2024-45389
+summary: |
+  DOM clobbering could escalate to Cross-site Scripting (XSS)
+  Pagefind initializes its dynamic JavaScript and WebAssembly files relative to the location of the first script you load. This information is gathered by looking up the value of `document.currentScript.src`.
+
+  It is possible to "clobber" this lookup with otherwise benign HTML on the page, for example:
+  ```html
+  <img name="currentScript" src="blob:https://xxx.xxx.xxx/ui.js"></img>
+  ```
+
+  This will cause `document.currentScript.src` to resolve as an external domain, which will then be used by Pagefind to load dependencies.
+
+  This exploit would only work in the case that an attacker could inject HTML to your live, hosted, website. In these cases, this would act as a way to escalate the privilege available to an attacker. This assumes they have the ability to add some elements to the page (for example, `img` tags with a `name` attribute), but not others, as adding a `script` to the page would itself be the XSS vector.
+
+  Pagefind has tightened this resolution by ensuring the source is loaded from a valid script element. There are no reports of this being exploited in the wild via Pagefind.
+
+  ### Original Report
+
+  If an attacker can inject benign html, such as:
+  `<img name="currentScript" src="blob:https://xxx.xxx.xxx/ui.js"></img>`
+
+  they can clobber `document.currentScript.src` leading to XSS in your library.
+
+  Here is the same attack on webpack that was accepted: https://github.com/webpack/webpack/security/advisories/GHSA-4vvj-4cpr-p986
+impacted_packages:
+  - purl: pkg:npm/pagefind
+    affected_versions: vers:npm/<1.1.1
+    fixed_versions: vers:npm/1.1.1
+  - purl: pkg:npm/%40pagefind/default-ui
+    affected_versions: vers:npm/<1.1.1
+    fixed_versions: vers:npm/1.1.1
+  - purl: pkg:npm/%40pagefind/modular-ui
+    affected_versions: vers:npm/<1.1.1
+    fixed_versions: vers:npm/1.1.1
+severities:
+  - score: '6.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-gprj-6m2f-j9hx/GHSA-gprj-6m2f-j9hx.json
+  - score: '6.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:L/VI:L/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-gprj-6m2f-j9hx/GHSA-gprj-6m2f-j9hx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/CloudCannon/pagefind
+    reference_type:
+    reference_id:
+  - url: https://github.com/CloudCannon/pagefind/commit/14ec96864eabaf1d7d809d5da0186a8856261eeb
+    reference_type:
+    reference_id:
+  - url: https://github.com/CloudCannon/pagefind/security/advisories/GHSA-gprj-6m2f-j9hx
+    reference_type:
+    reference_id:
+  - url: https://github.com/webpack/webpack/security/advisories/GHSA-4vvj-4cpr-p986
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45389
+    reference_type:
+    reference_id:

@@ -1,0 +1,44 @@
+advisory_id: GHSA-f99h-h678-fgg4
+datasource_id: github_osv_importer_v2/GHSA-f99h-h678-fgg4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f99h-h678-fgg4/GHSA-f99h-h678-fgg4.json
+aliases:
+  - CVE-2020-7934
+summary: |
+  Liferay Portal Vulnerable to Persistent Cross-Site Scripting (XSS) in MyAccountPortlet
+  In LifeRay Portal CE 7.1.0 through 7.2.1, the First Name, Middle Name, and Last Name fields for user accounts in MyAccountPortlet are all vulnerable to a persistent XSS issue. Any user can modify these fields with a particular XSS payload, and it will be stored in the database. The payload will then be rendered when a user utilizes the search feature to search for other users (i.e., if a user with modified fields occurs in the search results).
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/<=7.2.1
+    fixed_versions: vers:maven/7.3.0
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f99h-h678-fgg4/GHSA-f99h-h678-fgg4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/160168/LifeRay-7.2.1-GA2-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/3ndG4me/liferay-xss-7.2.1GA2-poc-report-CVE-2020-7934
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7934
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200808034429/https://semanticbits.com/liferay-portal-authenticated-xss-disclosure
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/webapps/49091.txt
+    reference_type: exploit
+    reference_id: CVE-2020-7934

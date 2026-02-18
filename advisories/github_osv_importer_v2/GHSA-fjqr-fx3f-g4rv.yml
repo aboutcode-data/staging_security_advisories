@@ -1,0 +1,38 @@
+advisory_id: GHSA-fjqr-fx3f-g4rv
+datasource_id: github_osv_importer_v2/GHSA-fjqr-fx3f-g4rv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/03/GHSA-fjqr-fx3f-g4rv/GHSA-fjqr-fx3f-g4rv.json
+aliases:
+  - CVE-2018-1000118
+summary: |
+  Electron protocol handler browser vulnerable to Command Injection
+  Github Electron version Electron 1.8.2-beta.4 and earlier contains a Command Injection vulnerability in Protocol Handler that can result in command execute. This attack appear to be exploitable via the victim opening an electron protocol handler in their browser. This vulnerability appears to have been fixed in Electron 1.8.2-beta.5. This issue is due to an incomplete fix for CVE-2018-1000006, specifically the black list used was not case insensitive allowing an attacker to potentially bypass it.
+impacted_packages:
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/<=1.8.2-beta4
+    fixed_versions: vers:npm/1.8.2-beta5
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/03/GHSA-fjqr-fx3f-g4rv/GHSA-fjqr-fx3f-g4rv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://electronjs.org/releases#1.8.2-beta.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-fjqr-fx3f-g4rv
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/commit/ce361a12e355f9e1e99c989f1ea056c9e502dbe7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000118
+    reference_type:
+    reference_id:

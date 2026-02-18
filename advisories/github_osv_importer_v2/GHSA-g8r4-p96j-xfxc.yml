@@ -1,0 +1,55 @@
+advisory_id: GHSA-g8r4-p96j-xfxc
+datasource_id: github_osv_importer_v2/GHSA-g8r4-p96j-xfxc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-g8r4-p96j-xfxc/GHSA-g8r4-p96j-xfxc.json
+aliases:
+  - CVE-2021-29440
+summary: "Grav's Twig processing allowing dangerous PHP functions by default\n### Impact\n\n\
+  Twig processing of static pages can be enabled in the front matter by any administrative user\
+  \ allowed to create or edit pages. \nAs the Twig processor runs unsandboxed, this behavior\
+  \ can be used to gain arbitrary code execution and elevate privileges on the instance.\n\n\
+  ### Patches\n\nThe issue was addressed by preventing dangerous functions from being called\
+  \ in Twig templates. A configuration option has been added to manually allow arbitrary PHP\
+  \ functions (`system.twig.safe_functions`) and filters (`system.twig.safe_filters`). \n\n\
+  Futures major versions of Grav may disable this functionality by default. \n\n### Workarounds\n\
+  \nBlocking access to the `/admin` path from untrusted sources will reduce the probability\
+  \ of exploitation. \n\n### References\n\n- https://portswigger.net/research/server-side-template-injection\n\
+  - https://blog.sonarsource.com/grav-cms-code-execution-vulnerabilities\n\n### For more information\n\
+  \nIf you have any questions or comments about this advisory, you can contact:\n  - The original\
+  \ reporters, by sending an email to vulnerability.research [at] sonarsource.com;\n  - The\
+  \ maintainers, by opening an issue on this repository."
+impacted_packages:
+  - purl: pkg:composer/getgrav/grav
+    affected_versions: vers:composer/<=1.7.10
+    fixed_versions: vers:composer/1.7.11
+severities:
+  - score: '8.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-g8r4-p96j-xfxc/GHSA-g8r4-p96j-xfxc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: http://packetstormsecurity.com/files/162987/Grav-CMS-1.7.10-Server-Side-Template-Injection.html
+    reference_type:
+    reference_id:
+  - url: https://blog.sonarsource.com/grav-cms-code-execution-vulnerabilities
+    reference_type:
+    reference_id:
+  - url: https://github.com/getgrav/grav/security/advisories/GHSA-g8r4-p96j-xfxc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29440
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/getgrav/grav
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/49961.py
+    reference_type: exploit
+    reference_id: CVE-2021-29440

@@ -1,0 +1,38 @@
+advisory_id: GHSA-fh5x-4j57-6q5x
+datasource_id: github_osv_importer_v2/GHSA-fh5x-4j57-6q5x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fh5x-4j57-6q5x/GHSA-fh5x-4j57-6q5x.json
+aliases:
+  - CVE-2015-4165
+summary: |
+  Improper Access Control in Elasticsearch
+  The snapshot API in Elasticsearch before 1.6.0 when another application exists on the system that can read Lucene files and execute code from them, is accessible by the attacker, and the Java VM on which Elasticsearch is running can write to a location that the other application can read and execute from, allows remote authenticated users to write to and create arbitrary snapshot metadata files, and potentially execute arbitrary code.
+impacted_packages:
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/<1.6.0
+    fixed_versions: vers:maven/1.6.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fh5x-4j57-6q5x/GHSA-fh5x-4j57-6q5x.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: http://packetstormsecurity.com/files/132234/Elasticsearch-1.5.2-File-Creation.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1230761
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-4165
+    reference_type:
+    reference_id:
+  - url: https://www.elastic.co/community/security
+    reference_type:
+    reference_id:

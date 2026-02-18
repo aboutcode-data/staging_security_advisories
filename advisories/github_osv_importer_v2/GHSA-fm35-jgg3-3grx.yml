@@ -1,0 +1,45 @@
+advisory_id: GHSA-fm35-jgg3-3grx
+datasource_id: github_osv_importer_v2/GHSA-fm35-jgg3-3grx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-fm35-jgg3-3grx/GHSA-fm35-jgg3-3grx.json
+aliases: []
+summary: |
+  NaN/INF in serverbound movement packets can crash clients and servers
+  ### Impact
+  A malicious client may send a `MovePlayerPacket` to the server whose position or rotation contains NaN or INF. Since neither the server nor vanilla client handles this properly, a number of interesting side effects come into play.
+
+  - The server may crash in various ways if this exploit is used, because some mathematical operations on NaN/INF generate PHP warnings, which are converted into exceptions.
+  - Clients may not be able to see other clients who have a NaN/INF rotation.
+  - Clients may also crash in such cases.
+
+  ### Patches
+  A patch for this was included in the 3.18.1 release: https://github.com/pmmp/PocketMine-MP/commit/fb20bb38327b4c08ee3976640cd0dd547388a638
+
+  ### Workarounds
+  Workarounds could be implemented as plugins using `DataPacketReceiveEvent` to block any inbound movement packets containing bogus values.
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+
+  - Open an issue in [pmmp/PocketMine-MP](https://github.com/pmmp/PocketMine-MP)
+  - Email us at [team@pmmp.io](mailto:team@pmmp.io)
+impacted_packages:
+  - purl: pkg:composer/pocketmine/pocketmine-mp
+    affected_versions: vers:composer/<=3.18.0
+    fixed_versions: vers:composer/3.18.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-fm35-jgg3-3grx/GHSA-fm35-jgg3-3grx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/pmmp/PocketMine-MP/security/advisories/GHSA-fm35-jgg3-3grx
+    reference_type:
+    reference_id:

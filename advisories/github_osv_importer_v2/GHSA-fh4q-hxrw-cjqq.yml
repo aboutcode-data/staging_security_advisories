@@ -1,0 +1,47 @@
+advisory_id: GHSA-fh4q-hxrw-cjqq
+datasource_id: github_osv_importer_v2/GHSA-fh4q-hxrw-cjqq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fh4q-hxrw-cjqq/GHSA-fh4q-hxrw-cjqq.json
+aliases:
+  - CVE-2017-14251
+summary: |
+  TYPO3 Arbitrary Code Execution
+  Unrestricted File Upload vulnerability in the fileDenyPattern in sysext/core/Classes/Core/SystemEnvironmentBuilder.php in TYPO3 7.6.0 to 7.6.21 and 8.0.0 to 8.7.4 allows remote authenticated users to upload files with a .pht extension and consequently execute arbitrary PHP code.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.6.0|<7.6.22
+    fixed_versions: vers:composer/7.6.22
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.7.5
+    fixed_versions: vers:composer/8.7.5
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fh4q-hxrw-cjqq/GHSA-fh4q-hxrw-cjqq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: http://blog.emaze.net/2017/12/typo3-unrestricted-file-upload-remote.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-14251
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2017-007
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/100620
+    reference_type:
+    reference_id:
+  - url: http://www.securitytracker.com/id/1039295
+    reference_type:
+    reference_id:

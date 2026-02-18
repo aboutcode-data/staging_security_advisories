@@ -1,0 +1,41 @@
+advisory_id: GHSA-gcqw-45xq-xc63
+datasource_id: github_osv_importer_v2/GHSA-gcqw-45xq-xc63
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gcqw-45xq-xc63/GHSA-gcqw-45xq-xc63.json
+aliases:
+  - CVE-2018-17783
+summary: |
+  MantisBT allows XSS via Edit Filter page
+  A cross-site scripting (XSS) vulnerability in the Edit Filter page (manage_filter_edit page.php) in MantisBT 2.1.0 through 2.17.1 allows remote attackers (if access rights permit it) to inject arbitrary code (if CSP settings permit it) through a crafted project name.
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/>=2.1.0|<2.17.2
+    fixed_versions: vers:composer/2.17.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gcqw-45xq-xc63/GHSA-gcqw-45xq-xc63.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/commit/b9453cd7643b7c5b1b8c716b1dbd4d7d9571d1ec
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/blog/archives/mantisbt/613
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=24814
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-17783
+    reference_type:
+    reference_id:

@@ -1,0 +1,43 @@
+advisory_id: GHSA-g2qw-6vrr-v6pq
+datasource_id: github_osv_importer_v2/GHSA-g2qw-6vrr-v6pq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-g2qw-6vrr-v6pq/GHSA-g2qw-6vrr-v6pq.json
+aliases:
+  - CVE-2022-45136
+summary: |
+  Apache Jena vulnerable to Deserialization of Untrusted Data
+  Apache Jena SDB 3.17.0 and earlier is vulnerable to a JDBC Deserialisation attack if the attacker is able to control the JDBC URL used or cause the underlying database server to return malicious data. The mySQL JDBC driver in particular is known to be vulnerable to this class of attack. As a result an application using Apache Jena SDB can be subject to RCE when connected to a malicious database server. Apache Jena SDB has been EOL since December 2020 and users should migrate to alternative options e.g. Apache Jena TDB 2.
+impacted_packages:
+  - purl: pkg:maven/org.apache.jena/jena-sdb
+    affected_versions: vers:maven/<=3.17.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-g2qw-6vrr-v6pq/GHSA-g2qw-6vrr-v6pq.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-g2qw-6vrr-v6pq/GHSA-g2qw-6vrr-v6pq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/apache/jena
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/mc77cdl5stgjtjoldk467gdf756qjt31
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-45136
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/11/14/5
+    reference_type:
+    reference_id:

@@ -1,0 +1,57 @@
+advisory_id: GHSA-g3cp-pq72-hjpv
+datasource_id: github_osv_importer_v2/GHSA-g3cp-pq72-hjpv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-g3cp-pq72-hjpv/GHSA-g3cp-pq72-hjpv.json
+aliases:
+  - CVE-2025-49579
+summary: |
+  starcitizentools/citizen-skin allows stored XSS in menu heading message
+  ### Summary
+  All system messages in menu headings using the Menu.mustache template are inserted as raw HTML, allowing anybody who can edit those messages to insert arbitrary HTML into the DOM.
+
+  ### Details
+  The system messages for menu headings are inserted unescaped into raw HTML:
+  https://github.com/StarCitizenTools/mediawiki-skins-Citizen/blob/072e4365e9084e4b153eac62d3666566c06f5a49/templates/Menu.mustache#L8-L10
+
+  ### PoC
+  1. Go to any article using citizen with the `uselang` parameter set to `x-xss`
+  2. A large number of alerts will be shown for various messages, e.g.:
+  ![image](https://github.com/user-attachments/assets/6a18ec77-d2a0-4a0d-b4aa-83359304659a)
+  ![image](https://github.com/user-attachments/assets/eaadb8e1-58b6-41be-90d2-829c50cf75ac)
+
+  On the main page of my test wiki, the following messages were shown: `navigation`, `notifications`, `user-interface-preferences`, `personaltools`, `variants`, `views`, `associated-pages`, `cactions` and `toolbox`.
+
+  ### Impact
+  This impacts wikis where a group has the `editinterface` but not the `editsitejs` user right.
+impacted_packages:
+  - purl: pkg:composer/starcitizentools/citizen-skin
+    affected_versions: vers:composer/>=2.4.2|<3.3.1
+    fixed_versions: vers:composer/3.3.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-g3cp-pq72-hjpv/GHSA-g3cp-pq72-hjpv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/StarCitizenTools/mediawiki-skins-Citizen
+    reference_type:
+    reference_id:
+  - url: https://github.com/StarCitizenTools/mediawiki-skins-Citizen/commit/54c8717d45ce1594918f11cb9ce5d0ccd8dfee65
+    reference_type:
+    reference_id:
+  - url: https://github.com/StarCitizenTools/mediawiki-skins-Citizen/commit/93c36ac778397e0e7c46cf7adb1e5d848265f1bd
+    reference_type:
+    reference_id:
+  - url: https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-g3cp-pq72-hjpv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-49579
+    reference_type:
+    reference_id:

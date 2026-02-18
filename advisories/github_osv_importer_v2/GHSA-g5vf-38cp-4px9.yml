@@ -1,0 +1,82 @@
+advisory_id: GHSA-g5vf-38cp-4px9
+datasource_id: github_osv_importer_v2/GHSA-g5vf-38cp-4px9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g5vf-38cp-4px9/GHSA-g5vf-38cp-4px9.json
+aliases:
+  - CVE-2020-1147
+summary: A remote code execution vulnerability exists in .NET Framework, Microsoft SharePoint,
+  and Visual Studio when the software fails to check the source markup of XML file input, aka
+  '.NET Framework, SharePoint Server, and Visual Studio Remote Code Execution Vulnerability'.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.NETCore.App
+    affected_versions: vers:nuget/>=2.1.0|<2.1.20
+    fixed_versions: vers:nuget/2.1.20
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.linux-arm
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.linux-arm64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.linux-musl-arm64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.linux-musl-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.linux-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.osx-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.rhel.6-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.win-arm
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.win-arm64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.win-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+  - purl: pkg:nuget/Microsoft.NETCore.App.Runtime.win-x86
+    affected_versions: vers:nuget/>=3.1.0|<3.1.6
+    fixed_versions: vers:nuget/3.1.6
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g5vf-38cp-4px9/GHSA-g5vf-38cp-4px9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: http://packetstormsecurity.com/files/158694/SharePoint-DataSet-DataTable-Deserialization.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/158876/Microsoft-SharePoint-Server-2019-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/163644/Microsoft-SharePoint-Server-2019-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/dotnet/announcements/issues/159
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-1147
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-1147
+    reference_type:
+    reference_id:
+  - url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2020-1147
+    reference_type:
+    reference_id:
+  - url: https://www.exploitalert.com/view-details.html?id=35992
+    reference_type:
+    reference_id:

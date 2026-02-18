@@ -1,0 +1,42 @@
+advisory_id: GHSA-fh2c-86xm-pm2x
+datasource_id: github_osv_importer_v2/GHSA-fh2c-86xm-pm2x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-fh2c-86xm-pm2x/GHSA-fh2c-86xm-pm2x.json
+aliases:
+  - CVE-2024-8984
+summary: |
+  LiteLLM Vulnerable to Denial of Service (DoS) via Crafted HTTP Request
+  A Denial of Service (DoS) vulnerability exists in berriai/litellm version v1.44.5. This vulnerability can be exploited by appending characters, such as dashes (-), to the end of a multipart boundary in an HTTP request. The server continuously processes each character, leading to excessive resource consumption and rendering the service unavailable. The issue is unauthenticated and does not require any user interaction, impacting all users of the service.
+impacted_packages:
+  - purl: pkg:pypi/litellm
+    affected_versions: vers:pypi/<1.56.2
+    fixed_versions: vers:pypi/1.56.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-fh2c-86xm-pm2x/GHSA-fh2c-86xm-pm2x.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-770
+references:
+  - url: https://github.com/BerriAI/litellm
+    reference_type:
+    reference_id:
+  - url: https://github.com/BerriAI/litellm/blob/8c5ff150f6142608ffe968e4e68429f978fda187/litellm/tests/test_spend_logs.py#L242
+    reference_type:
+    reference_id:
+  - url: https://github.com/BerriAI/litellm/commit/4f49f836aa844ac9b6bfbeff27e6f6b2b9cf3f61
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/554fc76b-3097-4223-b4cf-110b853e9355
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-8984
+    reference_type:
+    reference_id:

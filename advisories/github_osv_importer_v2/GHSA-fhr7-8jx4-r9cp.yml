@@ -1,0 +1,58 @@
+advisory_id: GHSA-fhr7-8jx4-r9cp
+datasource_id: github_osv_importer_v2/GHSA-fhr7-8jx4-r9cp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-fhr7-8jx4-r9cp/GHSA-fhr7-8jx4-r9cp.json
+aliases:
+  - CVE-2023-3628
+summary: |
+  Infinispan REST Server's bulk read endpoints do not properly evaluate user permissions
+  A flaw was found in Infinispan's REST. Bulk read endpoints do not properly evaluate user permissions for the operation. This issue could allow an authenticated user to access information outside of their intended permissions.
+impacted_packages:
+  - purl: pkg:maven/org.infinispan/infinispan-server-rest
+    affected_versions: vers:maven/>=15.0.0.Dev01|<15.0.0.Dev04
+    fixed_versions: vers:maven/15.0.0.Dev04
+  - purl: pkg:maven/org.infinispan/infinispan-server-rest
+    affected_versions: vers:maven/<14.0.18.Final
+    fixed_versions: vers:maven/14.0.18.Final
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-fhr7-8jx4-r9cp/GHSA-fhr7-8jx4-r9cp.json
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-fhr7-8jx4-r9cp/GHSA-fhr7-8jx4-r9cp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-304
+references:
+  - url: https://access.redhat.com/errata/RHSA-2023:5396
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-3628
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2217924
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan/commit/70a50352d9195753a588d0fba8c2063b99f96263
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan/commit/b34488dcab8bdd4258972568b8405ee7111276ec
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-3628
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240125-0004
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-gjh6-wvhq-h4qx
+datasource_id: github_osv_importer_v2/GHSA-gjh6-wvhq-h4qx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-gjh6-wvhq-h4qx/GHSA-gjh6-wvhq-h4qx.json
+aliases:
+  - CVE-2022-25507
+summary: |
+  Cross-site Scripting in FreeTAKServer-UI
+  FreeTAKServer-UI v1.9.8 was discovered to contain a stored cross-site scripting (XSS) vulnerability via the Callsign parameter.
+impacted_packages:
+  - purl: pkg:pypi/freetakserver-ui
+    affected_versions: vers:pypi/<=1.9.8
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-gjh6-wvhq-h4qx/GHSA-gjh6-wvhq-h4qx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FreeTAKTeam/UI
+    reference_type:
+    reference_id:
+  - url: https://github.com/FreeTAKTeam/UI/issues/28
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25507
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-gf2c-jwcj-x929
+datasource_id: github_osv_importer_v2/GHSA-gf2c-jwcj-x929
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-gf2c-jwcj-x929/GHSA-gf2c-jwcj-x929.json
+aliases:
+  - CVE-2026-24909
+summary: |
+  vlt Mishandles Path Sanitization for tar
+  vlt before 1.0.0-rc.10 mishandles path sanitization for tar, leading to path traversal during extraction.
+impacted_packages:
+  - purl: pkg:npm/%40vltpkg/tar
+    affected_versions: vers:npm/<1.0.0-rc.10
+    fixed_versions: vers:npm/1.0.0-rc.10
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-gf2c-jwcj-x929/GHSA-gf2c-jwcj-x929.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-23
+references:
+  - url: https://github.com/vltpkg/vltpkg
+    reference_type:
+    reference_id:
+  - url: https://github.com/vltpkg/vltpkg/commit/ff8d4099a1929772cea2adf131285e90ede6b0dd
+    reference_type:
+    reference_id:
+  - url: https://github.com/vltpkg/vltpkg/pull/1334
+    reference_type:
+    reference_id:
+  - url: https://github.com/vltpkg/vltpkg/releases/tag/v1.0.0-rc.10
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24909
+    reference_type:
+    reference_id:
+  - url: https://www.koi.ai/blog/packagegate-6-zero-days-in-js-package-managers-but-npm-wont-act
+    reference_type:
+    reference_id:
+  - url: https://www.scworld.com/news/six-javascript-zero-day-bugs-lead-to-fears-of-supply-chain-attack
+    reference_type:
+    reference_id:

@@ -1,0 +1,27 @@
+advisory_id: GHSA-g6f4-j6c2-w3p3
+datasource_id: github_osv_importer_v2/GHSA-g6f4-j6c2-w3p3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-g6f4-j6c2-w3p3/GHSA-g6f4-j6c2-w3p3.json
+aliases: []
+summary: |
+  High severity vulnerability that affects uglify-js
+  Withdrawn, accidental duplicate publish.
+
+  The uglify-js package before 2.4.24 for Node.js does not properly account for non-boolean values when rewriting boolean expressions, which might allow attackers to bypass security mechanisms or possibly have unspecified other impact by leveraging improperly rewritten Javascript.
+impacted_packages:
+  - purl: pkg:npm/uglify-js
+    affected_versions: vers:npm/<2.4.24
+    fixed_versions: vers:npm/2.4.24
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-g6f4-j6c2-w3p3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-8857
+    reference_type:
+    reference_id:

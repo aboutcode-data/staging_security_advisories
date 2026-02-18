@@ -1,0 +1,55 @@
+advisory_id: GHSA-g7j3-p357-cw8p
+datasource_id: github_osv_importer_v2/GHSA-g7j3-p357-cw8p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-g7j3-p357-cw8p/GHSA-g7j3-p357-cw8p.json
+aliases:
+  - CVE-2017-16038
+summary: |
+  Directory Traversal in f2e-server
+  Affected versions of `f2e-server` resolve relative file paths, resulting in a directory traversal vulnerability. A malicious actor can use this vulnerability to access files outside of the intended directory root, which may result in the disclosure of private files on the vulnerable system.
+
+  **Example request:**
+  ```http
+  GET /../../../../../../../../../../etc/passwd HTTP/1.1
+  host:foo
+  ```
+
+
+  ## Recommendation
+
+  Update to version 1.12.12 or later.
+impacted_packages:
+  - purl: pkg:npm/f2e-server
+    affected_versions: vers:npm/<=1.12.11
+    fixed_versions: vers:npm/1.12.12
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-g7j3-p357-cw8p/GHSA-g7j3-p357-cw8p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/advisories/GHSA-g7j3-p357-cw8p
+    reference_type:
+    reference_id:
+  - url: https://github.com/shy2850/node-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/shy2850/node-server/issues/10
+    reference_type:
+    reference_id:
+  - url: https://github.com/shy2850/node-server/pull/12/files
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16038
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/346
+    reference_type:
+    reference_id:

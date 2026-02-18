@@ -1,0 +1,42 @@
+advisory_id: GHSA-g397-v4w5-4m79
+datasource_id: github_osv_importer_v2/GHSA-g397-v4w5-4m79
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-g397-v4w5-4m79/GHSA-g397-v4w5-4m79.json
+aliases:
+  - CVE-2022-21223
+summary: |
+  Command injection in cocoapods-downloader
+  The package cocoapods-downloader before 1.6.2 are vulnerable to Command Injection via hg argument injection. When calling the download function (when using hg), the url (and/or revision, tag, branch) is passed to the hg clone command in a way that additional flags can be set. The additional flags can be used to perform a command injection.
+impacted_packages:
+  - purl: pkg:gem/cocoapods-downloader
+    affected_versions: vers:gem/<1.6.2
+    fixed_versions: vers:gem/1.6.2
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-g397-v4w5-4m79/GHSA-g397-v4w5-4m79.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-88
+references:
+  - url: https://github.com/CocoaPods/cocoapods-downloader
+    reference_type:
+    reference_id:
+  - url: https://github.com/CocoaPods/cocoapods-downloader/pull/127
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/cocoapods-downloader/CVE-2022-21223.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21223
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-RUBY-COCOAPODSDOWNLOADER-2414280
+    reference_type:
+    reference_id:

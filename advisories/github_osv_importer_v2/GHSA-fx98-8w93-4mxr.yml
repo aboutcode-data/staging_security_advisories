@@ -1,0 +1,35 @@
+advisory_id: GHSA-fx98-8w93-4mxr
+datasource_id: github_osv_importer_v2/GHSA-fx98-8w93-4mxr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fx98-8w93-4mxr/GHSA-fx98-8w93-4mxr.json
+aliases:
+  - CVE-2019-10118
+summary: |
+  Snipe-IT XSS Vulnerability
+  Snipe-IT before 4.6.14 has XSS, as demonstrated by log_meta values and the user's last name in the API.
+impacted_packages:
+  - purl: pkg:composer/snipe/snipe-it
+    affected_versions: vers:composer/<4.6.14
+    fixed_versions: vers:composer/4.6.14
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fx98-8w93-4mxr/GHSA-fx98-8w93-4mxr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/snipe/snipe-it
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it/pull/6831
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10118
+    reference_type:
+    reference_id:

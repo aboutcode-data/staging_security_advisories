@@ -1,0 +1,38 @@
+advisory_id: GHSA-g3vf-47fv-8f3c
+datasource_id: github_osv_importer_v2/GHSA-g3vf-47fv-8f3c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-g3vf-47fv-8f3c/GHSA-g3vf-47fv-8f3c.json
+aliases:
+  - CVE-2021-26505
+summary: |
+  MrSwitch hello.js vulnerable to prototype pollution
+  A prototype pollution vulnerability in MrSwitch hello.js prior to version 1.18.8 allows remote attackers to execute arbitrary code via `hello.utils.extend` function.
+impacted_packages:
+  - purl: pkg:npm/hellojs
+    affected_versions: vers:npm/<1.18.8
+    fixed_versions: vers:npm/1.18.8
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-g3vf-47fv-8f3c/GHSA-g3vf-47fv-8f3c.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/MrSwitch/hello.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/MrSwitch/hello.js/commit/7ab50aeff2d41991f08d4ad6c0481125eea8f6b7
+    reference_type:
+    reference_id:
+  - url: https://github.com/MrSwitch/hello.js/issues/634
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-26505
+    reference_type:
+    reference_id:

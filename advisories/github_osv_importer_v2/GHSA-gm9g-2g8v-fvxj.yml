@@ -1,0 +1,43 @@
+advisory_id: GHSA-gm9g-2g8v-fvxj
+datasource_id: github_osv_importer_v2/GHSA-gm9g-2g8v-fvxj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-gm9g-2g8v-fvxj/GHSA-gm9g-2g8v-fvxj.json
+aliases: []
+summary: |
+  Prototype Pollution in upmerge
+  All versions of `upmerge` are vulnerable to Prototype Pollution. The merge() function fails to prevent user input to alter an Object's prototype, allowing attackers to modify override properties of all objects in the application. This may lead to Denial of Service or may be chained with other vulnerabilities leading to Remote Code Execution.
+
+
+  ## Recommendation
+
+  No fix is currently available. Consider using an alternative module until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/upmerge
+    affected_versions: vers:npm/<=0.1.8
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-gm9g-2g8v-fvxj/GHSA-gm9g-2g8v-fvxj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-345
+references:
+  - url: https://github.com/jazzfog/UpMerge
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/439120
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-UPMERGE-174133
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/809
+    reference_type:
+    reference_id:

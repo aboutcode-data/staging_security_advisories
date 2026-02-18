@@ -1,0 +1,37 @@
+advisory_id: GHSA-g336-c7wv-8hp3
+datasource_id: github_osv_importer_v2/GHSA-g336-c7wv-8hp3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-g336-c7wv-8hp3/GHSA-g336-c7wv-8hp3.json
+aliases: []
+summary: |
+  Cross-Site Scripting in swagger-ui
+  Affected versions of `swagger-ui` are vulnerable to cross-site scripting via the `url` query string parameter.
+
+
+  ## Recommendation
+
+  Update to 2.2.1 or later.
+impacted_packages:
+  - purl: pkg:npm/swagger-ui
+    affected_versions: vers:npm/<2.2.1
+    fixed_versions: vers:npm/2.2.1
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/swagger-api/swagger-ui
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/commit/a1aea70f2c64533bf053a41d4da5a8accd0117b7
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/issues/1617
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/137
+    reference_type:
+    reference_id:

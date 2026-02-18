@@ -1,0 +1,38 @@
+advisory_id: GHSA-g4r8-3qmh-pmch
+datasource_id: github_osv_importer_v2/GHSA-g4r8-3qmh-pmch
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-g4r8-3qmh-pmch/GHSA-g4r8-3qmh-pmch.json
+aliases:
+  - CVE-2025-12765
+summary: |
+  pgAdmin has vulnerability in LDAP authentication mechanism that allows bypassing TLS certificate verification
+  pgAdmin <= 9.9 is affected by a vulnerability in the LDAP authentication mechanism allows bypassing TLS certificate verification.
+impacted_packages:
+  - purl: pkg:pypi/pgadmin4
+    affected_versions: vers:pypi/<=9.9
+    fixed_versions: vers:pypi/9.10
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-g4r8-3qmh-pmch/GHSA-g4r8-3qmh-pmch.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://github.com/pgadmin-org/pgadmin4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/commit/09d2b7eeb0e330df73b1aef0cba57788fde52b6b
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/issues/9324
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-12765
+    reference_type:
+    reference_id:

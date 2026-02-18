@@ -1,0 +1,50 @@
+advisory_id: GHSA-g6ph-x5wf-g337
+datasource_id: github_osv_importer_v2/GHSA-g6ph-x5wf-g337
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-g6ph-x5wf-g337/GHSA-g6ph-x5wf-g337.json
+aliases:
+  - CVE-2022-4244
+summary: |
+  plexus-codehaus vulnerable to directory traversal
+  A flaw was found in plexus-codehaus. A directory traversal attack (also known as path traversal) aims to access files and directories stored outside the intended folder. By manipulating files with dot-dot-slash (`../`) sequences and their variations or by using absolute file paths, it may be possible to access arbitrary files and directories stored on the file system, including application source code, configuration, and other critical system files.
+impacted_packages:
+  - purl: pkg:maven/org.codehaus.plexus/plexus-utils
+    affected_versions: vers:maven/<3.0.24
+    fixed_versions: vers:maven/3.0.24
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-g6ph-x5wf-g337/GHSA-g6ph-x5wf-g337.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://access.redhat.com/errata/RHSA-2023:2135
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:3906
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2022-4244
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2149841
+    reference_type:
+    reference_id:
+  - url: https://github.com/codehaus-plexus/plexus-utils/commit/33a2853df8185b4519b1b8bfae284f03392618ef
+    reference_type:
+    reference_id:
+  - url: https://github.com/codehaus-plexus/plexus-utils/issues/4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-4244
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-ORGCODEHAUSPLEXUS-31521
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-gqj2-324p-vx73
+datasource_id: github_osv_importer_v2/GHSA-gqj2-324p-vx73
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-gqj2-324p-vx73/GHSA-gqj2-324p-vx73.json
+aliases:
+  - CVE-2023-48910
+summary: |
+  Microcks contains a Server-Side Request Forgery (SSRF) via the component /jobs and /artifact/download
+  Microcks up to version 1.17.1 was discovered to contain a Server-Side Request Forgery (SSRF) via the component /jobs and /artifact/download. This vulnerability allows attackers to access network resources and sensitive information via a crafted GET request.
+impacted_packages:
+  - purl: pkg:maven/io.github.microcks/microcks
+    affected_versions: vers:maven/<1.17.1
+    fixed_versions: vers:maven/1.17.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-gqj2-324p-vx73/GHSA-gqj2-324p-vx73.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://gist.github.com/b33t1e/2a2dc17cf36cd741b2c99425c892d826
+    reference_type:
+    reference_id:
+  - url: https://github.com/microcks/microcks
+    reference_type:
+    reference_id:
+  - url: https://github.com/orgs/microcks/discussions/892
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-48910
+    reference_type:
+    reference_id:

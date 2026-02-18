@@ -1,0 +1,32 @@
+advisory_id: GHSA-g9xh-3w5g-229r
+datasource_id: github_osv_importer_v2/GHSA-g9xh-3w5g-229r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/10/GHSA-g9xh-3w5g-229r/GHSA-g9xh-3w5g-229r.json
+aliases:
+  - CVE-2019-10671
+summary: |
+  SQL Injection in LibreNMS
+  An issue was discovered in LibreNMS through 1.47. It does not parameterize all user supplied input within database queries, resulting in SQL injection. An authenticated attacker can subvert these database queries to extract or manipulate data, as demonstrated by the graph.php sort parameter.
+impacted_packages:
+  - purl: pkg:composer/librenms/librenms
+    affected_versions: vers:composer/<1.50.1
+    fixed_versions: vers:composer/1.50.1
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/10/GHSA-g9xh-3w5g-229r/GHSA-g9xh-3w5g-229r.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10671
+    reference_type:
+    reference_id:
+  - url: https://www.darkmatter.ae/xen1thlabs/librenms-multiple-sql-injection-vulnerability-xl-19-025
+    reference_type:
+    reference_id:

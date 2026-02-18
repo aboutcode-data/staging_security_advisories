@@ -1,0 +1,36 @@
+advisory_id: GHSA-gfhx-jjwq-63gv
+datasource_id: github_osv_importer_v2/GHSA-gfhx-jjwq-63gv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-gfhx-jjwq-63gv/GHSA-gfhx-jjwq-63gv.json
+aliases:
+  - CVE-2021-42567
+summary: |
+  Cross-site Scripting in Apereo CAS
+  Apereo CAS through 6.4.1 allows XSS via POST requests sent to the REST API endpoints.
+impacted_packages:
+  - purl: pkg:maven/org.apereo.cas/cas-server-core-web
+    affected_versions: vers:maven/<6.4.2
+    fixed_versions: vers:maven/6.4.2
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://apereo.github.io/2021/10/18/restvuln
+    reference_type:
+    reference_id:
+  - url: https://github.com/apereo/cas
+    reference_type:
+    reference_id:
+  - url: https://github.com/apereo/cas/commit/376bf087d6d4267f61fc9f8028aa0d1ef407c3f0
+    reference_type:
+    reference_id:
+  - url: https://github.com/apereo/cas/releases
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-42567
+    reference_type:
+    reference_id:

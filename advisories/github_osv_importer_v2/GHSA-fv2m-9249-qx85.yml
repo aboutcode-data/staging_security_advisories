@@ -1,0 +1,63 @@
+advisory_id: GHSA-fv2m-9249-qx85
+datasource_id: github_osv_importer_v2/GHSA-fv2m-9249-qx85
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-fv2m-9249-qx85/GHSA-fv2m-9249-qx85.json
+aliases:
+  - CVE-2022-36108
+summary: "TYPO3 CMS vulnerable to Cross-Site Scripting in <f:asset.css> view helper\n> ### Meta\n\
+  > * CVSS: `CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:N/E:F/RL:O/RC:C` (4.1)\n\n### Problem\n\
+  It has been discovered that the `f:asset.css` view helper is vulnerable to cross-site scripting\
+  \ when user input is passed as variables to the CSS. \n\n### Solution\nUpdate to TYPO3 version\
+  \ 10.4.32 or 11.5.16 that fix the problem described above.\n\n### Credits\nThanks to TYPO3\
+  \ contributor member Frank Nägler who reported this issue and to TYPO3 core & security team\
+  \ member Oliver Hader who fixed the issue.\n\n### References\n* [TYPO3-CORE-SA-2022-010](https://typo3.org/security/advisory/typo3-core-sa-2022-010)"
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.3.0|<10.4.32
+    fixed_versions: vers:composer/10.4.32
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=11.0.0|<11.5.16
+    fixed_versions: vers:composer/11.5.16
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.3.0|<10.4.32
+    fixed_versions: vers:composer/10.4.32
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=11.0.0|<11.5.16
+    fixed_versions: vers:composer/11.5.16
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-fv2m-9249-qx85/GHSA-fv2m-9249-qx85.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2022-36108.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2022-36108.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/6863f73818c36b0b88c677ba533765c8074907b4
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/c62e16fac031c270d9759c7261e504c7e25405df
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-fv2m-9249-qx85
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-36108
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2022-010
+    reference_type:
+    reference_id:

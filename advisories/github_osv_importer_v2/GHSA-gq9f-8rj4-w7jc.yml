@@ -1,0 +1,44 @@
+advisory_id: GHSA-gq9f-8rj4-w7jc
+datasource_id: github_osv_importer_v2/GHSA-gq9f-8rj4-w7jc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-gq9f-8rj4-w7jc/GHSA-gq9f-8rj4-w7jc.json
+aliases:
+  - CVE-2024-34001
+summary: |
+  Moodle CSRF risk in admin preset tool management of presets
+  Actions in the admin preset tool did not include the necessary token to prevent a CSRF risk.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0|<4.3.4
+    fixed_versions: vers:composer/4.3.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0|<4.2.7
+    fixed_versions: vers:composer/4.2.7
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.10
+    fixed_versions: vers:composer/4.1.10
+severities:
+  - score: '8.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-gq9f-8rj4-w7jc/GHSA-gq9f-8rj4-w7jc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/03e93da556201291e4a345d353a06d08d5d04dd6
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=458389
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34001
+    reference_type:
+    reference_id:

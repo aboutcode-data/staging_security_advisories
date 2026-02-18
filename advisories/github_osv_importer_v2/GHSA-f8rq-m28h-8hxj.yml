@@ -1,0 +1,31 @@
+advisory_id: GHSA-f8rq-m28h-8hxj
+datasource_id: github_osv_importer_v2/GHSA-f8rq-m28h-8hxj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-f8rq-m28h-8hxj/GHSA-f8rq-m28h-8hxj.json
+aliases: []
+summary: |
+  Cross-Site Scripting in htmr
+  Versions of `htmr` prior to 0.8.7 are vulnerable to Cross-Site Scripting (XSS).  The package uses `innerHTML` to unescape HTML entities. This may lead to [DOM-based XSS](https://owasp.org/www-community/attacks/DOM_Based_XSS) through HTML-encoded XSS payloads. This may allow an attacker to execute arbitrary JavaScript in a victim's browser.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.8.7 or later.
+impacted_packages:
+  - purl: pkg:npm/htmr
+    affected_versions: vers:npm/<0.8.7
+    fixed_versions: vers:npm/0.8.7
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://hackerone.com/reports/753971
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1496
+    reference_type:
+    reference_id:

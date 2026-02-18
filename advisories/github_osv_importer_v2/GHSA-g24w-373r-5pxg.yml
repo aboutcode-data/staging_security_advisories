@@ -1,0 +1,66 @@
+advisory_id: GHSA-g24w-373r-5pxg
+datasource_id: github_osv_importer_v2/GHSA-g24w-373r-5pxg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g24w-373r-5pxg/GHSA-g24w-373r-5pxg.json
+aliases:
+  - CVE-2019-10754
+summary: |
+  Use of Insufficiently Random Values in Apereo CAS
+  Multiple classes used within Apereo CAS before release 6.1.0-RC5 makes use of apache commons-lang3 RandomStringUtils for token and ID generation which makes them predictable due to RandomStringUtils PRNG's algorithm not being cryptographically strong.
+impacted_packages:
+  - purl: pkg:maven/org.apereo.cas/cas-server-support-simple-mfa
+    affected_versions: vers:maven/<6.1.0-RC5
+    fixed_versions: vers:maven/6.1.0-RC5
+  - purl: pkg:maven/org.apereo.cas/cas-server-support-oidc
+    affected_versions: vers:maven/<6.1.0-RC5
+    fixed_versions: vers:maven/6.1.0-RC5
+  - purl: pkg:maven/org.apereo.cas/cas-server-core-services-api
+    affected_versions: vers:maven/<6.1.0-RC5
+    fixed_versions: vers:maven/6.1.0-RC5
+  - purl: pkg:maven/org.apereo.cas/cas-server-support-oauth-core-api
+    affected_versions: vers:maven/<6.1.0-RC5
+    fixed_versions: vers:maven/6.1.0-RC5
+  - purl: pkg:maven/org.apereo.cas/cas-server-support-shell
+    affected_versions: vers:maven/<6.1.0-RC5
+    fixed_versions: vers:maven/6.1.0-RC5
+  - purl: pkg:maven/org.apereo.cas/cas-server-core-services-authentication
+    affected_versions: vers:maven/<6.1.0-RC5
+    fixed_versions: vers:maven/6.1.0-RC5
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-g24w-373r-5pxg/GHSA-g24w-373r-5pxg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-330
+  - CWE-338
+references:
+  - url: https://github.com/apereo/cas
+    reference_type:
+    reference_id:
+  - url: https://github.com/apereo/cas/commit/40bf278e66786544411c471de5123e7a71826b9f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10754
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGAPEREOCAS-467402
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGAPEREOCAS-467404
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGAPEREOCAS-467406
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGAPEREOCAS-468868
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGAPEREOCAS-468869
+    reference_type:
+    reference_id:

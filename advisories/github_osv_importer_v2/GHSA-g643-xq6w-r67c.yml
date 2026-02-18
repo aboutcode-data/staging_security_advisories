@@ -1,0 +1,44 @@
+advisory_id: GHSA-g643-xq6w-r67c
+datasource_id: github_osv_importer_v2/GHSA-g643-xq6w-r67c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-g643-xq6w-r67c/GHSA-g643-xq6w-r67c.json
+aliases:
+  - CVE-2024-45772
+summary: |
+  Deserialization of Untrusted Data vulnerability in Apache Lucene Replicator.
+  This issue affects Apache Lucene's replicator module: from 4.4.0 before 9.12.0.
+  The deprecated org.apache.lucene.replicator.http package is affected.
+  The org.apache.lucene.replicator.nrt package is not affected.
+
+  Users are recommended to upgrade to version 9.12.0, which fixes the issue.
+
+  The deserialization can only be triggered if users actively deploy an network-accessible implementation and a corresponding client using a HTTP library that uses the API (e.g., a custom servlet and HTTPClient). Java serialization filters (such as -Djdk.serialFilter='!*' on the commandline) can mitigate the issue on vulnerable versions without impacting functionality.
+impacted_packages:
+  - purl: pkg:maven/org.apache.lucene/lucene-replicator
+    affected_versions: vers:maven/>=4.4.0|<9.12.0
+    fixed_versions: vers:maven/9.12.0
+severities:
+  - score: '5.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:C/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-g643-xq6w-r67c/GHSA-g643-xq6w-r67c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://gitbox.apache.org/repos/asf?p=lucene.git
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/3f3oph7bqnqspb9q5p0gm5mgc1b6thjo
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45772
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2024/09/29/1
+    reference_type:
+    reference_id:

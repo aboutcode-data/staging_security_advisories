@@ -1,0 +1,63 @@
+advisory_id: GHSA-ghjv-mh6x-7q6h
+datasource_id: github_osv_importer_v2/GHSA-ghjv-mh6x-7q6h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-ghjv-mh6x-7q6h/GHSA-ghjv-mh6x-7q6h.json
+aliases:
+  - CVE-2024-22191
+summary: "avo vulnerable to stored cross-site scripting (XSS) in key_value field\n### Summary\n\
+  A **stored cross-site scripting (XSS)** vulnerability was found in the **key_value** field\
+  \ of Avo v3.2.3. This vulnerability could allow an attacker to execute arbitrary JavaScript\
+  \ code in the victim's browser.\n\n### Details\nThe value of the key_value is inserted directly\
+  \ into the HTML code. In the current version of Avo (possibly also older versions), the value\
+  \ is not properly sanitized before it is inserted into the HTML code.\n\nThis vulnerability\
+  \ can be exploited by an attacker to inject malicious JavaScript code into the key_value field.\
+  \ When a victim views the page containing the malicious code, the code will be executed in\
+  \ their browser.\n\nIn [avo/fields/common/key_value_component.html.erb]( https://github.com/avo-hq/avo/blob/main/app/components/avo/fields/common/key_value_component.html.erb#L38C21-L38C33)\
+  \ the value is taken in lines **38** and **49** and seems to be interpreted directly as html\
+  \ in lines **44** and **55**.\n\n### PoC\n\n![POC](https://user-images.githubusercontent.com/26570201/295596307-5d4f563e-99c0-4981-a82e-fc42cfd902c5.gif)\n\
+  \n\nTo reproduce the vulnerability, follow these steps:\n\n1. Edit an entry with a key_value\
+  \ field.\n2. Enter the following payload into the value field:\n```POC\\\"> <script>alert(\
+  \ 'XSS in key_value' );</script> <strong>Outside-tag</strong```\n3. Save the entry.\n4. Go\
+  \ to the index page and click on the eye icon next to the entry.\n\nThe malicious JavaScript\
+  \ code will be executed and an alert box will be displayed. \n_On the show and edit page the\
+  \ alert seems not to pop up, but the strong tag breaks out of the expected html tag_\n\n###\
+  \ Impact\nThis vulnerability could be used to steal sensitive information from victims that\
+  \ could be used to hijack victims' accounts or redirect them to malicious websites."
+impacted_packages:
+  - purl: pkg:gem/avo
+    affected_versions: vers:gem/<=3.2.3
+    fixed_versions: vers:gem/3.2.4
+  - purl: pkg:gem/avo
+    affected_versions: vers:gem/<=2.46.0
+    fixed_versions: vers:gem/2.47.0
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-ghjv-mh6x-7q6h/GHSA-ghjv-mh6x-7q6h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/avo-hq/avo
+    reference_type:
+    reference_id:
+  - url: https://github.com/avo-hq/avo/commit/51bb80b181cd8e31744bdc4e7f9b501c81172347
+    reference_type:
+    reference_id:
+  - url: https://github.com/avo-hq/avo/commit/fc92a05a8556b1787c8694643286a1afa6a71258
+    reference_type:
+    reference_id:
+  - url: https://github.com/avo-hq/avo/security/advisories/GHSA-ghjv-mh6x-7q6h
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/avo/CVE-2024-22191.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-22191
+    reference_type:
+    reference_id:

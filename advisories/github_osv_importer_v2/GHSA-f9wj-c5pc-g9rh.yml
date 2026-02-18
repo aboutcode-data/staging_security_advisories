@@ -1,0 +1,41 @@
+advisory_id: GHSA-f9wj-c5pc-g9rh
+datasource_id: github_osv_importer_v2/GHSA-f9wj-c5pc-g9rh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f9wj-c5pc-g9rh/GHSA-f9wj-c5pc-g9rh.json
+aliases:
+  - CVE-2021-29053
+summary: |
+  Liferay Portal and Liferay DXP Vulnerable to Multiple SQL Injections
+  Multiple SQL injection vulnerabilities in Liferay Portal 7.3.5 and Liferay DXP 7.3 before fix pack 1 allow remote authenticated users to execute arbitrary SQL commands via the classPKField parameter to (1) CommerceChannelRelFinder.countByC_C, or (2) CommerceChannelRelFinder.findByC_C.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/7.3.5
+    fixed_versions: vers:maven/7.3.6
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<7.3.10.fp1
+    fixed_versions: vers:maven/7.3.10.fp1
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-f9wj-c5pc-g9rh/GHSA-f9wj-c5pc-g9rh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: http://liferay.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29053
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20221121171927/https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120778225
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-fwhw-chw4-gh37
+datasource_id: github_osv_importer_v2/GHSA-fwhw-chw4-gh37
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-fwhw-chw4-gh37/GHSA-fwhw-chw4-gh37.json
+aliases:
+  - CVE-2026-1518
+summary: |
+  Keycloak Server-Side Request Forgery (SSRF) vulnerability
+  A flaw was found in Keycloak’s CIBA feature where insufficient validation of client-configured backchannel notification endpoints could allow blind server-side requests to internal services.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-parent
+    affected_versions: vers:maven/<=26.5.2
+    fixed_versions:
+severities:
+  - score: '2.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-fwhw-chw4-gh37/GHSA-fwhw-chw4-gh37.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2026-1518
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2433727
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-1518
+    reference_type:
+    reference_id:

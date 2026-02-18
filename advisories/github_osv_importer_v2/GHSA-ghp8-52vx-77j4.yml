@@ -1,0 +1,47 @@
+advisory_id: GHSA-ghp8-52vx-77j4
+datasource_id: github_osv_importer_v2/GHSA-ghp8-52vx-77j4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-ghp8-52vx-77j4/GHSA-ghp8-52vx-77j4.json
+aliases:
+  - CVE-2023-5002
+summary: |
+  pgAdmin failed to properly control the server code
+  A flaw was found in pgAdmin. This issue occurs when the pgAdmin server HTTP API validates the path a user selects to external PostgreSQL utilities such as pg_dump and pg_restore. Versions of pgAdmin prior to 7.7 failed to properly control the server code executed on this API, allowing an authenticated user to run arbitrary commands on the server.
+impacted_packages:
+  - purl: pkg:pypi/pgadmin4
+    affected_versions: vers:pypi/<7.7
+    fixed_versions: vers:pypi/7.7
+severities:
+  - score: '6.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-ghp8-52vx-77j4/GHSA-ghp8-52vx-77j4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2239164
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/commit/35f05e49b3632a0a674b9b36535a7fe2d93dd0c2
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/issues/6763
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2S24D3S2GVNGTDNE6SF2OQSOPU3H72UW
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VIRTMQZEE6K7RD37ERZ2UFYFLEUXLQU3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5002
+    reference_type:
+    reference_id:

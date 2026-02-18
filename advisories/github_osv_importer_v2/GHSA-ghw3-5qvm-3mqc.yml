@@ -1,0 +1,59 @@
+advisory_id: GHSA-ghw3-5qvm-3mqc
+datasource_id: github_osv_importer_v2/GHSA-ghw3-5qvm-3mqc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-ghw3-5qvm-3mqc/GHSA-ghw3-5qvm-3mqc.json
+aliases:
+  - CVE-2022-23556
+summary: |
+  CodeIgniter4 allows spoofing of IP address when using proxy
+  ### Impact
+  This vulnerability may allow attackers to spoof their IP address when your server is behind a reverse proxy.
+
+  ### Patches
+  Upgrade to v4.2.11 or later, and configure `Config\App::$proxyIPs`.
+
+  ### Workarounds
+  Do not use `$request->getIPAddress()`.
+
+  ### References
+  - https://codeigniter4.github.io/userguide/incoming/request.html#CodeIgniter\HTTP\Request::getIPAddress
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [codeigniter4/CodeIgniter4](https://github.com/codeigniter4/CodeIgniter4/issues)
+  * Email us at [SECURITY.md](https://github.com/codeigniter4/CodeIgniter4/blob/develop/SECURITY.md)
+impacted_packages:
+  - purl: pkg:composer/codeigniter4/framework
+    affected_versions: vers:composer/<4.2.11
+    fixed_versions: vers:composer/4.2.11
+severities:
+  - score: '7.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-ghw3-5qvm-3mqc/GHSA-ghw3-5qvm-3mqc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-345
+references:
+  - url: https://codeigniter4.github.io/userguide/incoming/request.html#CodeIgniter\HTTP\Request::getIPAddress
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/CodeIgniter4
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/CodeIgniter4/commit/5ca8c99b2db09a2a08a013836628028ddc984659
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/CodeIgniter4/security/advisories/GHSA-ghw3-5qvm-3mqc
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/codeigniter4/framework/CVE-2022-23556.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23556
+    reference_type:
+    reference_id:

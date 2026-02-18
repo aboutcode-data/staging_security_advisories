@@ -1,0 +1,51 @@
+advisory_id: GHSA-g5qg-72qw-gw5v
+datasource_id: github_osv_importer_v2/GHSA-g5qg-72qw-gw5v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-g5qg-72qw-gw5v/GHSA-g5qg-72qw-gw5v.json
+aliases:
+  - CVE-2025-57752
+summary: |
+  Next.js Affected by Cache Key Confusion for Image Optimization API Routes
+  A vulnerability in Next.js Image Optimization has been fixed in v15.4.5 and v14.2.31. When images returned from API routes vary based on request headers (such as `Cookie` or `Authorization`), these responses could be incorrectly cached and served to unauthorized users due to a cache key confusion bug.
+
+  All users are encouraged to upgrade if they use API routes to serve images that depend on request headers and have image optimization enabled.
+
+  More details at [Vercel Changelog](https://vercel.com/changelog/cve-2025-57752)
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=0.9.9|<14.2.31
+    fixed_versions: vers:npm/14.2.31
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/<=15.4.4
+    fixed_versions: vers:npm/15.4.5
+severities:
+  - score: '6.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-g5qg-72qw-gw5v/GHSA-g5qg-72qw-gw5v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-524
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/commit/6b12c60c61ee80cb0443ccd20de82ca9b4422ddd
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/pull/82114
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-g5qg-72qw-gw5v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-57752
+    reference_type:
+    reference_id:
+  - url: https://vercel.com/changelog/cve-2025-57752
+    reference_type:
+    reference_id:

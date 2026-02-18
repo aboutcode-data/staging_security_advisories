@@ -1,0 +1,39 @@
+advisory_id: GHSA-fjqg-w8g6-hhq8
+datasource_id: github_osv_importer_v2/GHSA-fjqg-w8g6-hhq8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-fjqg-w8g6-hhq8/GHSA-fjqg-w8g6-hhq8.json
+aliases:
+  - CVE-2021-25956
+summary: |
+  Dolibarr vulnerable to Improper Authentication and Improper Access Control
+  In `Dolibarr` application, v3.3.beta1_20121221 to v13.0.2 have `Modify` access for admin level users to change other user’s details but fails to validate already existing “Login” name, while renaming the user `Login`. This leads to complete account takeover of the victim user. This happens since the password gets overwritten for the victim user having a similar login name.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<13.0.2
+    fixed_versions: vers:composer/14.0.0
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-fjqg-w8g6-hhq8/GHSA-fjqg-w8g6-hhq8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-284
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/c4cba43bade736ab89e31013a6ccee59a6e077ee
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-25956
+    reference_type:
+    reference_id:
+  - url: https://www.whitesourcesoftware.com/vulnerability-database/CVE-2021-25956
+    reference_type:
+    reference_id:

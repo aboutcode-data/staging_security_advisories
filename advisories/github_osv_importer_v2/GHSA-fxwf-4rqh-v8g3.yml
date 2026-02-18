@@ -1,0 +1,45 @@
+advisory_id: GHSA-fxwf-4rqh-v8g3
+datasource_id: github_osv_importer_v2/GHSA-fxwf-4rqh-v8g3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-fxwf-4rqh-v8g3/GHSA-fxwf-4rqh-v8g3.json
+aliases:
+  - CVE-2020-28481
+summary: |
+  CORS misconfiguration in socket.io
+  The package socket.io before 2.4.0 are vulnerable to Insecure Defaults due to CORS Misconfiguration. All domains are whitelisted by default.
+impacted_packages:
+  - purl: pkg:npm/socket.io
+    affected_versions: vers:npm/<2.4.0
+    fixed_versions: vers:npm/2.4.0
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-fxwf-4rqh-v8g3/GHSA-fxwf-4rqh-v8g3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-453
+  - CWE-346
+references:
+  - url: https://github.com/socketio/socket.io/commit/f78a575f66ab693c3ea96ea88429ddb1a44c86c7
+    reference_type:
+    reference_id:
+  - url: https://github.com/socketio/socket.io/issues/3671
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28481
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1056358
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1056357
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SOCKETIO-1024859
+    reference_type:
+    reference_id:

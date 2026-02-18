@@ -1,0 +1,36 @@
+advisory_id: GHSA-g8q2-24jh-5hpc
+datasource_id: github_osv_importer_v2/GHSA-g8q2-24jh-5hpc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-g8q2-24jh-5hpc/GHSA-g8q2-24jh-5hpc.json
+aliases: []
+summary: |
+  High severity vulnerability that affects jquery-ui
+  Withdrawn, accidental duplicate publish.
+
+  Cross-site scripting (XSS) vulnerability in jQuery UI before 1.12.0 might allow remote attackers to inject arbitrary web script or HTML via the closeText parameter of the dialog function.
+impacted_packages:
+  - purl: pkg:npm/jquery-ui
+    affected_versions: vers:npm/<1.12.0
+    fixed_versions: vers:npm/1.12.0
+  - purl: pkg:nuget/jQuery.UI.Combined
+    affected_versions: vers:nuget/<1.12.0
+    fixed_versions: vers:nuget/1.12.0
+  - purl: pkg:maven/org.webjars.npm/jquery-ui
+    affected_versions: vers:maven/<1.12.0
+    fixed_versions: vers:maven/1.12.0
+  - purl: pkg:gem/jquery-ui-rails
+    affected_versions: vers:gem/<6.0.0
+    fixed_versions: vers:gem/6.0.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-g8q2-24jh-5hpc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-7103
+    reference_type:
+    reference_id:

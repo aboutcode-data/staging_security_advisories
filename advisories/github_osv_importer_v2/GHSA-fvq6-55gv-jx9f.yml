@@ -1,0 +1,35 @@
+advisory_id: GHSA-fvq6-55gv-jx9f
+datasource_id: github_osv_importer_v2/GHSA-fvq6-55gv-jx9f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-fvq6-55gv-jx9f/GHSA-fvq6-55gv-jx9f.json
+aliases:
+  - CVE-2015-9244
+summary: |
+  SQL Injection in mysql
+  Versions of `mysql` prior to 2.0.0-alpha8 are affected by a SQL Injection vulnerability in the `mysql.escape()` function, which does not properly escape object keys.
+
+
+  ## Recommendation
+
+  Update to version 2.0.0-alpha8 or later.
+impacted_packages:
+  - purl: pkg:npm/mysql
+    affected_versions: vers:npm/<=2.0.0-alpha7
+    fixed_versions: vers:npm/2.0.0-alpha8
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/felixge/node-mysql/issues/342
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-9244
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/66
+    reference_type:
+    reference_id:

@@ -1,0 +1,92 @@
+advisory_id: GHSA-g8hw-794c-4j9g
+datasource_id: github_osv_importer_v2/GHSA-g8hw-794c-4j9g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-g8hw-794c-4j9g/GHSA-g8hw-794c-4j9g.json
+aliases:
+  - CVE-2018-1271
+summary: |
+  Path Traversal in org.springframework:spring-core
+  Spring Framework, versions 5.0 prior to 5.0.5 and versions 4.3 prior to 4.3.15 and older unsupported versions, allow applications to configure Spring MVC to serve static resources (e.g. CSS, JS, images). When static resources are served from a file system on Windows (as opposed to the classpath, or the ServletContext), a malicious user can send a request using a specially crafted URL that can lead a directory traversal attack.
+impacted_packages:
+  - purl: pkg:maven/org.springframework/spring-core
+    affected_versions: vers:maven/>=5.0.0|<5.0.5
+    fixed_versions: vers:maven/5.0.5
+  - purl: pkg:maven/org.springframework/spring-core
+    affected_versions: vers:maven/<4.3.15
+    fixed_versions: vers:maven/4.3.15
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-g8hw-794c-4j9g/GHSA-g8hw-794c-4j9g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:1320
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:2669
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:2939
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-g8hw-794c-4j9g
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/0e28bee0f155b9bf240b4bafc4646e4810cb23f8
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/13356a7ee2240f740737c5c83bdccdacc30603ab
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/695bf2961feffd35b5560ccc982a2189dcca611f
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/91b803a2310344d925e5d4b1709bbcea90375548
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/98ad23bef8e2e04143f8f5b201380543a8d8c0c3
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/b9ebdaaf3710db473a2e1fec8641c316483a22aa
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/f046a066eceefa0799d1bc89bd6e1318f39bdf69
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/f59ea610dfcf55cd0b42f6dd76a9b3dab0218aaa
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1271
+    reference_type:
+    reference_id:
+  - url: https://pivotal.io/security/cve-2018-1271
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2020.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/103699
+    reference_type:
+    reference_id:

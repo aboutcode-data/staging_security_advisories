@@ -1,0 +1,32 @@
+advisory_id: GHSA-gjf5-j475-p4g6
+datasource_id: github_osv_importer_v2/GHSA-gjf5-j475-p4g6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gjf5-j475-p4g6/GHSA-gjf5-j475-p4g6.json
+aliases:
+  - CVE-2020-36396
+summary: |
+  Stored XSS in LavaLite 5.8.0
+  A stored cross site scripting (XSS) vulnerability in the /admin/roles/role component of LavaLite 5.8.0 allows authenticated attackers to execute arbitrary web scripts or HTML via a crafted payload entered into the "New" parameter.
+impacted_packages:
+  - purl: pkg:composer/lavalite/cms
+    affected_versions: vers:composer/<=5.8.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-gjf5-j475-p4g6/GHSA-gjf5-j475-p4g6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/LavaLite/cms/issues/322
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-36396
+    reference_type:
+    reference_id:

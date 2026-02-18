@@ -1,0 +1,62 @@
+advisory_id: GHSA-fm6w-rrp3-2x4w
+datasource_id: github_osv_importer_v2/GHSA-fm6w-rrp3-2x4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-fm6w-rrp3-2x4w/GHSA-fm6w-rrp3-2x4w.json
+aliases:
+  - CVE-2025-14778
+summary: |
+  Keycloak Affected by Broken Access Control Vulnerability in the UserManagedPermissionService
+  A flaw was found in Keycloak. A significant Broken Access Control vulnerability exists in the UserManagedPermissionService (UMA Protection API). When updating or deleting a UMA policy associated with multiple resources, the authorization check only verifies the caller's ownership against the first resource in the policy's list. This allows a user (Owner A) who owns one resource (RA) to update a shared policy and modify authorization rules for other resources (e.g., RB) in that same policy, even if those other resources are owned by a different user (Owner B). This constitutes a horizontal privilege escalation.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<26.2.13
+    fixed_versions: vers:maven/26.2.13
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/>=26.5.0|<26.5.3
+    fixed_versions: vers:maven/26.5.3
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/>=26.3.0|<26.4.9
+    fixed_versions: vers:maven/26.4.9
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-fm6w-rrp3-2x4w/GHSA-fm6w-rrp3-2x4w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-266
+references:
+  - url: https://access.redhat.com/errata/RHSA-2026:2363
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2026:2364
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2026:2365
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2026:2366
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-14778
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2422600
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/issues/46147
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/46154
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-14778
+    reference_type:
+    reference_id:

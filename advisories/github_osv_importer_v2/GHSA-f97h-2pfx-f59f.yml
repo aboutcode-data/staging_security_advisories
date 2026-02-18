@@ -1,0 +1,43 @@
+advisory_id: GHSA-f97h-2pfx-f59f
+datasource_id: github_osv_importer_v2/GHSA-f97h-2pfx-f59f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-f97h-2pfx-f59f/GHSA-f97h-2pfx-f59f.json
+aliases:
+  - CVE-2020-7695
+summary: |
+  HTTP response splitting in uvicorn
+  Uvicorn before 0.11.7 is vulnerable to HTTP response splitting. CRLF sequences are not escaped in the value of HTTP headers. Attackers can exploit exploit this to add arbitrary headers to HTTP responses, or even return an arbitrary response body, whenever crafted input is used to construct HTTP headers.
+impacted_packages:
+  - purl: pkg:pypi/uvicorn
+    affected_versions: vers:pypi/<0.11.7
+    fixed_versions: vers:pypi/0.11.7
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-f97h-2pfx-f59f/GHSA-f97h-2pfx-f59f.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-f97h-2pfx-f59f/GHSA-f97h-2pfx-f59f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/encode/uvicorn
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/uvicorn/PYSEC-2020-151.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7695
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-PYTHON-UVICORN-570471
+    reference_type:
+    reference_id:

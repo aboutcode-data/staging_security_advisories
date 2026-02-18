@@ -1,0 +1,38 @@
+advisory_id: GHSA-f9cv-665r-275h
+datasource_id: github_osv_importer_v2/GHSA-f9cv-665r-275h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-f9cv-665r-275h/GHSA-f9cv-665r-275h.json
+aliases:
+  - CVE-2021-23421
+summary: |
+  Prototype Pollution in merge-change
+  All current versions of package merge-change are vulnerable to Prototype Pollution via the utils.set function.
+impacted_packages:
+  - purl: pkg:npm/merge-change
+    affected_versions: vers:npm/<=1.8.1
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-f9cv-665r-275h/GHSA-f9cv-665r-275h.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+references:
+  - url: https://github.com/VladimirShestakov/merge-change
+    reference_type:
+    reference_id:
+  - url: https://github.com/VladimirShestakov/merge-change/blob/9901f145e06158f284f52de42e6ba5b0f702fb65/utils.js#L89-L123
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23421
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-MERGECHANGE-1310985
+    reference_type:
+    reference_id:

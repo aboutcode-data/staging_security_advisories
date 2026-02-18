@@ -1,0 +1,38 @@
+advisory_id: GHSA-f8p3-q834-q9cj
+datasource_id: github_osv_importer_v2/GHSA-f8p3-q834-q9cj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-f8p3-q834-q9cj/GHSA-f8p3-q834-q9cj.json
+aliases:
+  - CVE-2021-30134
+summary: |
+  php-mod/curl allows Cross-site Scripting
+  php-mod/curl (a wrapper of the PHP cURL extension) before 2.3.2 allows XSS via the `post_file_path_upload.php` key parameter and the POST data to `post_multidimensional.php`.
+impacted_packages:
+  - purl: pkg:composer/php-mod/curl
+    affected_versions: vers:composer/<2.3.2
+    fixed_versions: vers:composer/2.3.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-f8p3-q834-q9cj/GHSA-f8p3-q834-q9cj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/php-mod/curl
+    reference_type:
+    reference_id:
+  - url: https://github.com/php-mod/curl/commit/0bddefe8bbd292065f23dd6e24d2c745c4865cf7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-30134
+    reference_type:
+    reference_id:
+  - url: https://wpscan.com/vulnerability/0b547728-27d2-402e-ae17-90d539344ec7
+    reference_type:
+    reference_id:

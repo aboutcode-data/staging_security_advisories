@@ -1,0 +1,44 @@
+advisory_id: GHSA-g95f-p29q-9xw4
+datasource_id: github_osv_importer_v2/GHSA-g95f-p29q-9xw4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-g95f-p29q-9xw4/GHSA-g95f-p29q-9xw4.json
+aliases: []
+summary: |
+  Duplicate Advisory: Regular Expression Denial of Service in braces
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-cwfw-4gq5-mrqx. This link is maintained to preserve external references.
+
+  ## Original Description
+  Versions of `braces` prior to 2.3.1 are vulnerable to Regular Expression Denial of Service (ReDoS). Untrusted input may cause catastrophic backtracking while matching regular expressions. This can cause the application to be unresponsive leading to Denial of Service.
+
+
+  ## Recommendation
+
+  Upgrade to version 2.3.1 or higher.
+impacted_packages:
+  - purl: pkg:npm/braces
+    affected_versions: vers:npm/<2.3.1
+    fixed_versions: vers:npm/2.3.1
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-g95f-p29q-9xw4/GHSA-g95f-p29q-9xw4.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-185
+references:
+  - url: https://github.com/micromatch/braces/commit/abdafb0cae1e0c00f184abbadc692f4eaa98f451
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/npm:braces:20180219
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/786
+    reference_type:
+    reference_id:

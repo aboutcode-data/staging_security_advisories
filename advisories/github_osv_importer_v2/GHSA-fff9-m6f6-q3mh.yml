@@ -1,0 +1,41 @@
+advisory_id: GHSA-fff9-m6f6-q3mh
+datasource_id: github_osv_importer_v2/GHSA-fff9-m6f6-q3mh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fff9-m6f6-q3mh/GHSA-fff9-m6f6-q3mh.json
+aliases:
+  - CVE-2018-9019
+summary: |
+  Dolibarr SQL Injection vulnerability
+  SQL Injection vulnerability in Dolibarr before version 7.0.2 allows remote attackers to execute arbitrary SQL commands via the sortfield parameter to /accountancy/admin/accountmodel.php, /accountancy/admin/categories_list.php, /accountancy/admin/journals_list.php, /admin/dict.php, /admin/mails_templates.php, or /admin/website.php.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<7.0.2
+    fixed_versions: vers:composer/7.0.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-fff9-m6f6-q3mh/GHSA-fff9-m6f6-q3mh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/blob/7.0.2/ChangeLog
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/83b762b681c6dfdceb809d26ce95f3667b614739
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-9019
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_type:
+    reference_id:

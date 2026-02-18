@@ -1,0 +1,50 @@
+advisory_id: GHSA-gfjr-3jmm-4g9v
+datasource_id: github_osv_importer_v2/GHSA-gfjr-3jmm-4g9v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-gfjr-3jmm-4g9v/GHSA-gfjr-3jmm-4g9v.json
+aliases:
+  - CVE-2015-8860
+summary: |
+  Symlink Arbitrary File Overwrite in tar
+  Versions of `tar` prior to 2.0.0 are affected by an arbitrary file write vulnerability. The vulnerability occurs because `tar` does not verify that extracted symbolic links to not resolve to targets outside of the extraction root directory.
+
+
+
+  ## Recommendation
+
+  Update to version 2.0.0 or later
+impacted_packages:
+  - purl: pkg:npm/tar
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-gfjr-3jmm-4g9v/GHSA-gfjr-3jmm-4g9v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-59
+references:
+  - url: https://github.com/advisories/GHSA-gfjr-3jmm-4g9v
+    reference_type:
+    reference_id:
+  - url: https://github.com/npm/npm
+    reference_type:
+    reference_id:
+  - url: https://github.com/npm/npm/releases/tag/v2.7.5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-8860
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/57
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2016/04/20/11
+    reference_type:
+    reference_id:

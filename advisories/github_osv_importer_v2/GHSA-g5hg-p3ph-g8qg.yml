@@ -1,0 +1,60 @@
+advisory_id: GHSA-g5hg-p3ph-g8qg
+datasource_id: github_osv_importer_v2/GHSA-g5hg-p3ph-g8qg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-g5hg-p3ph-g8qg/GHSA-g5hg-p3ph-g8qg.json
+aliases:
+  - CVE-2025-48997
+summary: |
+  Multer vulnerable to Denial of Service via unhandled exception
+  ### Impact
+
+  A vulnerability in Multer versions >=1.4.4-lts.1, <2.0.1 allows an attacker to trigger a Denial of Service (DoS) by sending an upload file request with an empty string field name. This request causes an unhandled exception, leading to a crash of the process.
+
+  ### Patches
+
+  Users should upgrade to `2.0.1`
+
+  ### Workarounds
+
+  None
+
+  ### References
+
+  https://github.com/expressjs/multer/commit/35a3272b611945155e046dd5cef11088587635e9
+  https://github.com/expressjs/multer/issues/1233
+  https://github.com/expressjs/multer/pull/1256
+impacted_packages:
+  - purl: pkg:npm/multer
+    affected_versions: vers:npm/>=1.4.4-lts.1|<2.0.1
+    fixed_versions: vers:npm/2.0.1
+severities:
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-g5hg-p3ph-g8qg/GHSA-g5hg-p3ph-g8qg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-248
+references:
+  - url: https://github.com/expressjs/multer
+    reference_type:
+    reference_id:
+  - url: https://github.com/expressjs/multer/commit/35a3272b611945155e046dd5cef11088587635e9
+    reference_type:
+    reference_id:
+  - url: https://github.com/expressjs/multer/issues/1233
+    reference_type:
+    reference_id:
+  - url: https://github.com/expressjs/multer/pull/1256
+    reference_type:
+    reference_id:
+  - url: https://github.com/expressjs/multer/security/advisories/GHSA-g5hg-p3ph-g8qg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48997
+    reference_type:
+    reference_id:

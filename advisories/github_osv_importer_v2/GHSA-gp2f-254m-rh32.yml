@@ -1,0 +1,57 @@
+advisory_id: GHSA-gp2f-254m-rh32
+datasource_id: github_osv_importer_v2/GHSA-gp2f-254m-rh32
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-gp2f-254m-rh32/GHSA-gp2f-254m-rh32.json
+aliases:
+  - CVE-2021-41251
+summary: |
+  Unauthorized access to data in @sap-cloud-sdk/core
+  ### Impact
+  This affects applications on SAP Business Technology Platform that use the SAP Cloud SDK and enabled caching of destinations.
+  In some cases, when user information was missing, destinations were cached without user information, allowing other users to retrieve the same destination with its permissions.
+  By default, destination caching is disabled. If it is enabled the maximum lifetime is 5 minutes which limits the attack vector.
+
+  ### Patches
+  The problem was fixed by #1769 and #1770. The security for caching has been increased. The changes are released in version 1.52.0.
+
+  ### Workarounds
+  Disable destination caching (it is disabled by default).
+
+  ### References
+  [destination cache API docs](https://sap.github.io/cloud-sdk/api/1.51.0/modules/sap_cloud_sdk_core#destinationCache)
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in https://github.com/SAP/cloud-sdk-js
+impacted_packages:
+  - purl: pkg:npm/%40sap-cloud-sdk/core
+    affected_versions: vers:npm/<1.52.0
+    fixed_versions: vers:npm/1.52.0
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-gp2f-254m-rh32/GHSA-gp2f-254m-rh32.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/SAP/cloud-sdk-js
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAP/cloud-sdk-js/pull/1769
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAP/cloud-sdk-js/pull/1770
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAP/cloud-sdk-js/security/advisories/GHSA-gp2f-254m-rh32
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41251
+    reference_type:
+    reference_id:

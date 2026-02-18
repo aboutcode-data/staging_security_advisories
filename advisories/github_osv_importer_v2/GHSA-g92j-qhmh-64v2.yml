@@ -1,0 +1,110 @@
+advisory_id: GHSA-g92j-qhmh-64v2
+datasource_id: github_osv_importer_v2/GHSA-g92j-qhmh-64v2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-g92j-qhmh-64v2/GHSA-g92j-qhmh-64v2.json
+aliases:
+  - CVE-2024-40647
+summary: |
+  Sentry's Python SDK unintentionally exposes environment variables to subprocesses
+  ### Impact
+
+  The bug in Sentry's Python SDK <2.8.0 results in the unintentional exposure of environment variables to subprocesses despite the `env={}` setting.
+
+  ### Details
+
+  In Python's `subprocess` calls, all environment variables are passed to subprocesses by default. However, if you specifically do not want them to be passed to subprocesses, you may use `env` argument in `subprocess` calls, like in this example:
+
+  ```
+  >>> subprocess.check_output(["env"], env={"TEST":"1"})
+  b'TEST=1\n'
+  ```
+
+  If you'd want to not pass any variables, you can set an empty dict:
+
+  ```
+  >>> subprocess.check_output(["env"], env={})
+  b''
+  ```
+
+  However, the bug in Sentry SDK <2.8.0 causes **all environment variables** to be passed to the subprocesses when `env={}` is set, unless the Sentry SDK's [Stdlib](https://docs.sentry.io/platforms/python/integrations/default-integrations/#stdlib) integration is disabled. The Stdlib integration is enabled by default.
+
+  ### Patches
+  The issue has been patched in https://github.com/getsentry/sentry-python/pull/3251 and the fix released in [sentry-sdk==2.8.0](https://github.com/getsentry/sentry-python/releases/tag/2.8.0). The fix was also backported to [sentry-sdk==1.45.1](https://github.com/getsentry/sentry-python/releases/tag/1.45.1).
+
+  ### Workarounds
+
+  We strongly recommend upgrading to the latest SDK version. However, if it's not possible, and if passing environment variables to child processes poses a security risk for you, there are two options:
+
+  1. In your application, replace `env={}` with the minimal dict `env={"EMPTY_ENV":"1"}` or similar.
+
+  OR
+
+  2. Disable Stdlib integration:
+  ```
+  import sentry_sdk
+
+  # Should go before sentry_sdk.init
+  sentry_sdk.integrations._DEFAULT_INTEGRATIONS.remove("sentry_sdk.integrations.stdlib.StdlibIntegration")
+
+  sentry_sdk.init(...)
+  ```
+
+  ### References
+  * Sentry docs: [Default integrations](https://docs.sentry.io/platforms/python/integrations/default-integrations/)
+  * Python docs: [subprocess module](https://docs.python.org/3/library/subprocess.html)
+  * Patch https://github.com/getsentry/sentry-python/pull/3251
+impacted_packages:
+  - purl: pkg:pypi/sentry-sdk
+    affected_versions: vers:pypi/>=2.0.0a1|<2.8.0
+    fixed_versions: vers:pypi/2.8.0
+  - purl: pkg:pypi/sentry-sdk
+    affected_versions: vers:pypi/<1.45.1
+    fixed_versions: vers:pypi/1.45.1
+severities:
+  - score: '2.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-g92j-qhmh-64v2/GHSA-g92j-qhmh-64v2.json
+  - score: '1.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:N/VC:N/VI:N/VA:N/SC:L/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-g92j-qhmh-64v2/GHSA-g92j-qhmh-64v2.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://docs.python.org/3/library/subprocess.html
+    reference_type:
+    reference_id:
+  - url: https://docs.sentry.io/platforms/python/integrations/default-integrations
+    reference_type:
+    reference_id:
+  - url: https://docs.sentry.io/platforms/python/integrations/default-integrations/#stdlib
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-python
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-python/commit/763e40aa4cb57ecced467f48f78f335c87e9bdff
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-python/pull/3251
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-python/releases/tag/1.45.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-python/releases/tag/2.8.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-python/security/advisories/GHSA-g92j-qhmh-64v2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-40647
+    reference_type:
+    reference_id:

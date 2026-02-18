@@ -1,0 +1,41 @@
+advisory_id: GHSA-fcpw-vqh5-6qwj
+datasource_id: github_osv_importer_v2/GHSA-fcpw-vqh5-6qwj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-fcpw-vqh5-6qwj/GHSA-fcpw-vqh5-6qwj.json
+aliases:
+  - CVE-2020-14320
+summary: |
+  Moodle reflected XSS Vulnerability
+  In Moodle before 3.9.1, 3.8.4 and 3.7.7, the filter in the admin task log required extra sanitizing to prevent a reflected XSS risk.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/3.9.0
+    fixed_versions: vers:composer/3.9.1
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.8.3
+    fixed_versions: vers:composer/3.8.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.7.6
+    fixed_versions: vers:composer/3.7.7
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-fcpw-vqh5-6qwj/GHSA-fcpw-vqh5-6qwj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/moodle/moodle/commit/c6ffe9588ebb02b73c33a09e5d8061f58acc1701
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=407392
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-14320
+    reference_type:
+    reference_id:

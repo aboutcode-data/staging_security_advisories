@@ -1,0 +1,41 @@
+advisory_id: GHSA-fr9g-2m2h-c27j
+datasource_id: github_osv_importer_v2/GHSA-fr9g-2m2h-c27j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-fr9g-2m2h-c27j/GHSA-fr9g-2m2h-c27j.json
+aliases: []
+summary: |
+  Duplicate Advisory: @excalidraw/excalidraw Cross-site Scripting vulnerability
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-v7v8-gjv7-ffmr. This link is maintained to preserve external references.
+
+  ## Original Description
+  Versions of the package @excalidraw/excalidraw from 0.0.0 are vulnerable to Cross-site Scripting (XSS) via embedded links in whiteboard objects due to improper input sanitization.
+impacted_packages:
+  - purl: pkg:npm/%40excalidraw/excalidraw
+    affected_versions: vers:npm/<0.15.3
+    fixed_versions: vers:npm/0.15.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-fr9g-2m2h-c27j/GHSA-fr9g-2m2h-c27j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/excalidraw/excalidraw/commit/b33fa6d6f64d27adc3a47b25c0aa55711740d0af
+    reference_type:
+    reference_id:
+  - url: https://github.com/excalidraw/excalidraw/pull/6728
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-26140
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-EXCALIDRAWEXCALIDRAW-5841658
+    reference_type:
+    reference_id:
