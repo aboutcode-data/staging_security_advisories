@@ -1,0 +1,38 @@
+advisory_id: GHSA-w3xg-7q6m-3xwp
+datasource_id: github_osv_importer_v2/GHSA-w3xg-7q6m-3xwp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w3xg-7q6m-3xwp/GHSA-w3xg-7q6m-3xwp.json
+aliases:
+  - CVE-2019-25060
+summary: |
+  Improper Access Control in wp-graphql
+  The WPGraphQL WordPress plugin before 0.3.5 doesn't properly restrict access to information about other users' roles on the affected site. Because of this, a remote attacker could forge a GraphQL query to retrieve the account roles of every user on the site.
+impacted_packages:
+  - purl: pkg:composer/wp-graphql/wp-graphql
+    affected_versions: vers:composer/<0.3.5
+    fixed_versions: vers:composer/0.3.5
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w3xg-7q6m-3xwp/GHSA-w3xg-7q6m-3xwp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/wp-graphql/wp-graphql
+    reference_type:
+    reference_id:
+  - url: https://github.com/wp-graphql/wp-graphql/pull/900
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-25060
+    reference_type:
+    reference_id:
+  - url: https://wpscan.com/vulnerability/393be73a-f8dc-462f-8670-f20ab89421fc
+    reference_type:
+    reference_id:

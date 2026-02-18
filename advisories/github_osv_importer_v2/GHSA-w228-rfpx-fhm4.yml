@@ -1,0 +1,49 @@
+advisory_id: GHSA-w228-rfpx-fhm4
+datasource_id: github_osv_importer_v2/GHSA-w228-rfpx-fhm4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-w228-rfpx-fhm4/GHSA-w228-rfpx-fhm4.json
+aliases: []
+summary: |
+  cg vulnerable to an Open Redirect Vulnerability on Referer Header
+  ### Summary
+
+  A vulnerability has been discovered in the handling of the referrer header in the application, which could allow an attacker to conduct open redirects. The issue arises from improper validation of the referrer header in certain conditions. By manipulating the referrer header, an attacker could potentially redirect users to malicious websites, phishing pages, or other dangerous destinations.
+
+  ### PoC
+
+  If you change the referer header, you will be redirected to that domain without verifying.
+
+  https://github.com/Clinical-Genomics/cg/blob/master/cg/server/invoices/views.py#L173
+
+  ### Impact
+
+  An attacker exploiting this vulnerability could trick users into visiting malicious websites or disclose sensitive information by redirecting them to unintended destinations. This could lead to various attacks including phishing, malware distribution, or further exploitation of other vulnerabilities.
+impacted_packages:
+  - purl: pkg:pypi/cg
+    affected_versions: vers:pypi/<60.2.12
+    fixed_versions: vers:pypi/60.2.12
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-w228-rfpx-fhm4/GHSA-w228-rfpx-fhm4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/Clinical-Genomics/cg
+    reference_type:
+    reference_id:
+  - url: https://github.com/Clinical-Genomics/cg/blob/master/cg/server/invoices/views.py#L173
+    reference_type:
+    reference_id:
+  - url: https://github.com/Clinical-Genomics/cg/commit/96e6a968a5a3639cc40ad251ad65952e4f38dd25
+    reference_type:
+    reference_id:
+  - url: https://github.com/Clinical-Genomics/cg/security/advisories/GHSA-w228-rfpx-fhm4
+    reference_type:
+    reference_id:

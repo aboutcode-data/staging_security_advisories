@@ -1,0 +1,52 @@
+advisory_id: GHSA-v6f3-gh5h-mqwx
+datasource_id: github_osv_importer_v2/GHSA-v6f3-gh5h-mqwx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-v6f3-gh5h-mqwx/GHSA-v6f3-gh5h-mqwx.json
+aliases:
+  - CVE-2024-29905
+summary: |
+  DIRAC: Unauthorized users can read proxy contents during generation
+  ### Impact
+
+  During the proxy generation process (e.g., when using `dirac-proxy-init`) it is possible for unauthorized users on the same machine to gain read access to the proxy. This allows the user to then perform any action that is possible with the original proxy.
+
+  This vulnerability only exists for a short period of time (sub-millsecond) during the generation process.
+
+  ### Patches
+
+  _Has the problem been patched? What versions should users upgrade to?_
+
+  ### Workarounds
+
+  Setting the `X509_USER_PROXY` environment variable to a path that is inside a directory that is only readable to the current user avoids the potential risk. After the file has been written it can be safely copied to the standard location (`/tmp/x509up_uNNNN`).
+
+  ### References
+impacted_packages:
+  - purl: pkg:pypi/dirac
+    affected_versions: vers:pypi/<8.0.41
+    fixed_versions: vers:pypi/8.0.41
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-v6f3-gh5h-mqwx/GHSA-v6f3-gh5h-mqwx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+references:
+  - url: https://github.com/DIRACGrid/DIRAC
+    reference_type:
+    reference_id:
+  - url: https://github.com/DIRACGrid/DIRAC/commit/1faa709341969a6321e29c843ca94039d33b2c3d
+    reference_type:
+    reference_id:
+  - url: https://github.com/DIRACGrid/DIRAC/security/advisories/GHSA-v6f3-gh5h-mqwx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29905
+    reference_type:
+    reference_id:

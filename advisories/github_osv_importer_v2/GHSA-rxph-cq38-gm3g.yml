@@ -1,0 +1,38 @@
+advisory_id: GHSA-rxph-cq38-gm3g
+datasource_id: github_osv_importer_v2/GHSA-rxph-cq38-gm3g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rxph-cq38-gm3g/GHSA-rxph-cq38-gm3g.json
+aliases:
+  - CVE-2019-16568
+summary: |
+  Jenkins SCTMExecutor Plugin stores credentials in plain text
+  Jenkins SCTMExecutor Plugin 2.2 and earlier transmits previously configured service credentials in plain text as part of the global configuration, as well as individual jobs' configurations.
+impacted_packages:
+  - purl: pkg:maven/hudson.plugins.sctmexecutor/SCTMExecutor
+    affected_versions: vers:maven/<=2.2
+    fixed_versions:
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rxph-cq38-gm3g/GHSA-rxph-cq38-gm3g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-319
+references:
+  - url: https://github.com/jenkins-infra/update-center2/pull/324
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2019-12-17/#SECURITY-1521
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16568
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/12/17/1
+    reference_type:
+    reference_id:

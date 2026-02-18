@@ -1,0 +1,38 @@
+advisory_id: GHSA-w5h7-mw56-4v7x
+datasource_id: github_osv_importer_v2/GHSA-w5h7-mw56-4v7x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-w5h7-mw56-4v7x/GHSA-w5h7-mw56-4v7x.json
+aliases:
+  - CVE-2024-44314
+summary: |
+  TastyIgniter Has an Incorrect Access Control Vulnerability
+  TastyIgniter 3.7.6 contains an Incorrect Access Control vulnerability in the Orders Management System, allowing unauthorized users to update order statuses. The issue occurs in the index_onUpdateStatus() function within Orders.php, which fails to verify if the user has permission to modify an order's status. This flaw can be exploited remotely, leading to unauthorized order manipulation.
+impacted_packages:
+  - purl: pkg:composer/tastyigniter/tastyigniter
+    affected_versions: vers:composer/<4.0.0
+    fixed_versions: vers:composer/4.0.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-w5h7-mw56-4v7x/GHSA-w5h7-mw56-4v7x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://github.com/tastyigniter/TastyIgniter
+    reference_type:
+    reference_id:
+  - url: https://github.com/tastyigniter/TastyIgniter/blob/3.x/app/admin/controllers/Orders.php
+    reference_type:
+    reference_id:
+  - url: https://medium.com/@cnetsec/cve-2024-44314-incorrect-access-control-in-function-updateorder-fc5f2b1b0467
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-44314
+    reference_type:
+    reference_id:

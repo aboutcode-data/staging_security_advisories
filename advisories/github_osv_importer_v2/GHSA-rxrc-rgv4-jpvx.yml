@@ -1,0 +1,50 @@
+advisory_id: GHSA-rxrc-rgv4-jpvx
+datasource_id: github_osv_importer_v2/GHSA-rxrc-rgv4-jpvx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-rxrc-rgv4-jpvx/GHSA-rxrc-rgv4-jpvx.json
+aliases:
+  - CVE-2023-5654
+summary: |
+  React Developer Tools extension Improper Authorization vulnerability
+  The React Developer Tools extension registers a message listener with window.addEventListener('message', <listener>) in a content script that is accessible to any webpage that is active in the browser. Within the listener is code that requests a URL derived from the received message via fetch(). The URL is not validated or sanitised before it is fetched, thus allowing a malicious web page to arbitrarily fetch URL’s via the victim's browser.
+impacted_packages:
+  - purl: pkg:npm/react-devtools-core
+    affected_versions: vers:npm/<4.28.4
+    fixed_versions: vers:npm/4.28.4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-rxrc-rgv4-jpvx/GHSA-rxrc-rgv4-jpvx.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-rxrc-rgv4-jpvx/GHSA-rxrc-rgv4-jpvx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-116
+  - CWE-285
+references:
+  - url: https://gist.github.com/CalumHutton/1fb89b64409570a43f89d1fd3274b231
+    reference_type:
+    reference_id:
+  - url: https://github.com/facebook/react
+    reference_type:
+    reference_id:
+  - url: https://github.com/facebook/react/commit/09285d5a7f1c08bec09f44cec3d0518a603597fc
+    reference_type:
+    reference_id:
+  - url: https://github.com/facebook/react/commit/94d5b5b2bf5204ebd289a113989c0e2c51b626ef
+    reference_type:
+    reference_id:
+  - url: https://github.com/facebook/react/pull/27417
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5654
+    reference_type:
+    reference_id:

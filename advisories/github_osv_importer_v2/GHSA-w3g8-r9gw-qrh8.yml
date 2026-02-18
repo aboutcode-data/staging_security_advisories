@@ -1,0 +1,52 @@
+advisory_id: GHSA-w3g8-r9gw-qrh8
+datasource_id: github_osv_importer_v2/GHSA-w3g8-r9gw-qrh8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-w3g8-r9gw-qrh8/GHSA-w3g8-r9gw-qrh8.json
+aliases:
+  - CVE-2024-11734
+summary: |
+  Denial of Service in Keycloak Server via Security Headers
+  A potential Denial of Service (DoS) vulnerability has been identified in Keycloak, which could allow an administrative user with the rights to change realm settings to disrupt the service. This is done by modifying any of the security headers and inserting newlines, which causes the Keycloak server to write to a request that is already terminated, leading to a failure of said request.
+
+  Service disruption may happen, users will be unable to access applications relying on Keycloak, or any of the consoles provided by Keycloak itself on the affected realm.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-quarkus-server
+    affected_versions: vers:maven/<26.0.8
+    fixed_versions: vers:maven/26.0.8
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-w3g8-r9gw-qrh8/GHSA-w3g8-r9gw-qrh8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-693
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:0299
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:0300
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-11734
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2328846
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/93b2a7327b2557eb132a8169086c5e63c81dff79
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-w3g8-r9gw-qrh8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-11734
+    reference_type:
+    reference_id:

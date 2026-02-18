@@ -1,0 +1,33 @@
+advisory_id: GHSA-vwfg-qj3r-6v3r
+datasource_id: github_osv_importer_v2/GHSA-vwfg-qj3r-6v3r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-vwfg-qj3r-6v3r/GHSA-vwfg-qj3r-6v3r.json
+aliases: []
+summary: |
+  Moderate severity vulnerability that affects actionpack
+  Withdrawn, accidental duplicate publish.
+
+  The http_basic_authenticate_with method in actionpack/lib/action_controller/metal/http_authentication.rb in the Basic Authentication implementation in Action Controller in Ruby on Rails before 3.2.22.1, 4.0.x and 4.1.x before 4.1.14.1, 4.2.x before 4.2.5.1, and 5.x before 5.0.0.beta1.1 does not use a constant-time algorithm for verifying credentials, which makes it easier for remote attackers to bypass authentication by measuring timing differences.
+impacted_packages:
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<=4.2.5.0
+    fixed_versions: vers:gem/4.2.5.1
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<=3.2.22.0
+    fixed_versions: vers:gem/3.2.22.1
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<=4.1.14.0
+    fixed_versions: vers:gem/4.1.14.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-vwfg-qj3r-6v3r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-7576
+    reference_type:
+    reference_id:

@@ -1,0 +1,65 @@
+advisory_id: GHSA-vqfx-gj96-3w95
+datasource_id: github_osv_importer_v2/GHSA-vqfx-gj96-3w95
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-vqfx-gj96-3w95/GHSA-vqfx-gj96-3w95.json
+aliases:
+  - CVE-2023-22579
+summary: "Unsafe fall-through in getWhereConditions\n### Impact\n\nProviding an invalid value\
+  \ to the `where` option of a query caused Sequelize to ignore that option instead of throwing\
+  \ an error. \n\nA finder call like the following did not throw an error:\n\n```ts\nUser.findAll({\n\
+  \  where: new Date(),\n});\n```\n\nAs this option is typically used with plain javascript\
+  \ objects, be aware that this only happens at the top level of this option.\n\n### Patches\n\
+  \nThis issue has been patched in [`sequelize@6.28.1`](https://github.com/sequelize/sequelize/pull/15699)\
+  \ & [`@sequelize/core@7.0.0.alpha-20`](https://github.com/sequelize/sequelize/pull/15375)\n\
+  \n### References\n\nA discussion thread about this issue is open at https://github.com/sequelize/sequelize/discussions/15698\n\
+  \nCVE:  CVE-2023-22579\nSnyk: https://security.snyk.io/vuln/SNYK-JS-SEQUELIZE-3324090"
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<6.28.1
+    fixed_versions: vers:npm/6.28.1
+  - purl: pkg:npm/%40sequelize/core
+    affected_versions: vers:npm/<7.0.0-alpha.20
+    fixed_versions: vers:npm/7.0.0-alpha.20
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-vqfx-gj96-3w95/GHSA-vqfx-gj96-3w95.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-843
+references:
+  - url: https://csirt.divd.nl/CVE-2023-22579
+    reference_type:
+    reference_id:
+  - url: https://csirt.divd.nl/DIVD-2022-00020
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/discussions/15698
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/pull/15375
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/pull/15699
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/releases/tag/v6.28.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/releases/tag/v7.0.0-alpha.20
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/security/advisories/GHSA-vqfx-gj96-3w95
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-22579
+    reference_type:
+    reference_id:

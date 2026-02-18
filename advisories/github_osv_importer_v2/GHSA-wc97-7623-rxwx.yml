@@ -1,0 +1,45 @@
+advisory_id: GHSA-wc97-7623-rxwx
+datasource_id: github_osv_importer_v2/GHSA-wc97-7623-rxwx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wc97-7623-rxwx/GHSA-wc97-7623-rxwx.json
+aliases:
+  - CVE-2022-29265
+summary: "Multiple components in Apache NiFi do not restrict XML External Entity references\n\
+  Apache NiFi is a system to process and distribute data. Multiple components in Apache NiFi\
+  \ 0.0.1 to 1.16.0 do not restrict XML External Entity references in the default configuration.\
+  \ The Standard Content Viewer service attempts to resolve XML External Entity references when\
+  \ viewing formatted XML files. The following Processors attempt to resolve XML External Entity\
+  \ references when configured with default property values: \n- EvaluateXPath \n- EvaluateXQuery\
+  \ \n- ValidateXml \n\nApache NiFi flow configurations that include these Processors are vulnerable\
+  \ to malicious XML documents that contain Document Type Declarations with XML External Entity\
+  \ references. NiFi 1.16.1 disables Document Type Declarations in the default configuration\
+  \ for these Processors and disallows XML External Entity resolution in standard services."
+impacted_packages:
+  - purl: pkg:maven/org.apache.nifi/nifi
+    affected_versions: vers:maven/>=0.0.1|<1.16.1
+    fixed_versions: vers:maven/1.16.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wc97-7623-rxwx/GHSA-wc97-7623-rxwx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/apache/nifi
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/47od9kr9n4cyv0mv81jh3pkyx815kyjl
+    reference_type:
+    reference_id:
+  - url: https://nifi.apache.org/security.html#CVE-2022-29265
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29265
+    reference_type:
+    reference_id:

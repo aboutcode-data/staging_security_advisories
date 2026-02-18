@@ -1,0 +1,56 @@
+advisory_id: GHSA-vwhw-vp9v-q9c9
+datasource_id: github_osv_importer_v2/GHSA-vwhw-vp9v-q9c9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-vwhw-vp9v-q9c9/GHSA-vwhw-vp9v-q9c9.json
+aliases:
+  - CVE-2025-67855
+summary: |
+  Moodle vulnerable to Cross-site Scripting
+  A flaw was found in Moodle. A remote attacker could exploit a reflected Cross-Site Scripting (XSS) vulnerability in the policy tool return URL. This vulnerability arises from insufficient sanitization of URL parameters, allowing attackers to inject malicious scripts through specially crafted links. Successful exploitation could lead to information disclosure or arbitrary client-side script execution within the user's browser.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.22
+    fixed_versions: vers:composer/4.1.22
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.12
+    fixed_versions: vers:composer/4.4.12
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.8
+    fixed_versions: vers:composer/4.5.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.0.0-beta|<5.0.4
+    fixed_versions: vers:composer/5.0.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.1.0-beta|<5.1.1
+    fixed_versions: vers:composer/5.1.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-vwhw-vp9v-q9c9/GHSA-vwhw-vp9v-q9c9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-67855
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2423861
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/0c146aa2612fb6d0544f200a018cb42da75db713
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=471305
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-67855
+    reference_type:
+    reference_id:

@@ -1,0 +1,42 @@
+advisory_id: GHSA-v287-9w3v-x5c5
+datasource_id: github_osv_importer_v2/GHSA-v287-9w3v-x5c5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-v287-9w3v-x5c5/GHSA-v287-9w3v-x5c5.json
+aliases:
+  - CVE-2019-15954
+summary: |
+  Total.js CMS RCE Vulnerability
+  An issue was discovered in Total.js CMS 12.0.0. An authenticated user with the widgets privilege can gain achieve Remote Command Execution (RCE) on the remote server by creating a malicious widget with a special tag containing JavaScript code that will be evaluated server side. In the process of evaluating the tag by the back-end, it is possible to escape the sandbox object by using the following payload: `<script total>global.process.mainModule.require(child_process).exec(RCE);</script>`
+impacted_packages:
+  - purl: pkg:npm/total4
+    affected_versions: vers:npm/12.0.0
+    fixed_versions:
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-v287-9w3v-x5c5/GHSA-v287-9w3v-x5c5.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+  - CWE-77
+references:
+  - url: http://packetstormsecurity.com/files/154924/Total.js-CMS-12-Widget-JavaScript-Code-Injection.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/beerpwn/CVE/blob/master/Totaljs_disclosure_report/report_final.pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/totaljs/cms
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-15954
+    reference_type:
+    reference_id:
+  - url: https://seclists.org/fulldisclosure/2019/Sep/5
+    reference_type:
+    reference_id:

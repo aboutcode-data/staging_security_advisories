@@ -1,0 +1,39 @@
+advisory_id: GHSA-wcj4-ff9m-5r7g
+datasource_id: github_osv_importer_v2/GHSA-wcj4-ff9m-5r7g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wcj4-ff9m-5r7g/GHSA-wcj4-ff9m-5r7g.json
+aliases:
+  - CVE-2014-1836
+summary: |
+  ImpressCMS Path Traversal to Arbitrary File Delete
+  Absolute path traversal vulnerability in `htdocs/libraries/image-editor/image-edit.php` in ImpressCMS before 1.3.6 allows remote attackers to delete arbitrary files via a full pathname in the `image_path` parameter in a cancel action.
+impacted_packages:
+  - purl: pkg:composer/impresscms/impresscms
+    affected_versions: vers:composer/<1.3.6
+    fixed_versions: vers:composer/1.3.6
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://community.impresscms.org/modules/smartsection/item.php?itemid=675
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2014/Feb/14
+    reference_type:
+    reference_id:
+  - url: https://github.com/ImpressCMS/impresscms/issues/914
+    reference_type:
+    reference_id:
+  - url: https://github.com/pedrib/PoC/blob/master/generic/impresscms-1.3.5.txt
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-1836
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200228234251/http://www.securityfocus.com/bid/65279
+    reference_type:
+    reference_id:

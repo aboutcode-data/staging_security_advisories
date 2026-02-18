@@ -1,0 +1,38 @@
+advisory_id: GHSA-w5hq-hm5m-4548
+datasource_id: github_osv_importer_v2/GHSA-w5hq-hm5m-4548
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-w5hq-hm5m-4548/GHSA-w5hq-hm5m-4548.json
+aliases:
+  - CVE-2024-57556
+summary: |
+  Cross Site Scripting vulnerability in store2
+  Cross Site Scripting vulnerability in nbubna store v.2.14.2 and before allows a remote attacker to execute arbitrary code via the store.deep.js component
+impacted_packages:
+  - purl: pkg:npm/store2
+    affected_versions: vers:npm/<2.14.4
+    fixed_versions: vers:npm/2.14.4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-w5hq-hm5m-4548/GHSA-w5hq-hm5m-4548.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/nbubna/store
+    reference_type:
+    reference_id:
+  - url: https://github.com/nbubna/store/issues/127
+    reference_type:
+    reference_id:
+  - url: https://github.com/nbubna/store/pull/128
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-57556
+    reference_type:
+    reference_id:

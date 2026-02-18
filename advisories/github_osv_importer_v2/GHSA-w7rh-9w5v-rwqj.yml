@@ -1,0 +1,41 @@
+advisory_id: GHSA-w7rh-9w5v-rwqj
+datasource_id: github_osv_importer_v2/GHSA-w7rh-9w5v-rwqj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w7rh-9w5v-rwqj/GHSA-w7rh-9w5v-rwqj.json
+aliases:
+  - CVE-2020-9591
+summary: |
+  Magento defense-in-depth security mitigation vulnerability
+  Magento versions 2.3.4 and earlier, 2.2.11 and earlier (see note), 1.14.4.4 and earlier, and 1.9.4.4 and earlier have a defense-in-depth security mitigation vulnerability. Successful exploitation could lead to unauthorized access to admin panel.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.3.0|<2.3.4-p2
+    fixed_versions: vers:composer/2.3.4-p2
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<=2.2.11
+    fixed_versions:
+  - purl: pkg:composer/magento/core
+    affected_versions: vers:composer/<1.9.4+5
+    fixed_versions: vers:composer/1.9.4+5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w7rh-9w5v-rwqj/GHSA-w7rh-9w5v-rwqj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb20-22.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-9591
+    reference_type:
+    reference_id:

@@ -1,0 +1,82 @@
+advisory_id: GHSA-vg46-2rrj-3647
+datasource_id: github_osv_importer_v2/GHSA-vg46-2rrj-3647
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-vg46-2rrj-3647/GHSA-vg46-2rrj-3647.json
+aliases:
+  - CVE-2022-39348
+summary: |
+  Twisted vulnerable to NameVirtualHost Host header injection
+  When the host header does not match a configured host, `twisted.web.vhost.NameVirtualHost` will return a `NoResource` resource which renders the Host header unescaped into the 404 response allowing HTML and script injection.
+
+  Example configuration:
+  ```python
+  from twisted.web.server import Site
+  from twisted.web.vhost import NameVirtualHost
+  from twisted.internet import reactor
+
+  resource = NameVirtualHost()
+  site = Site(resource)
+  reactor.listenTCP(8080, site)
+  reactor.run()
+  ```
+  Output:
+  ```
+  ❯ curl -H"Host:<h1>HELLO THERE</h1>" http://localhost:8080/
+
+  <html>
+    <head><title>404 - No Such Resource</title></head>
+    <body>
+      <h1>No Such Resource</h1>
+      <p>host b'<h1>hello there</h1>' not in vhost map</p>
+    </body>
+  </html>
+  ```
+
+  This vulnerability was introduced in f49041bb67792506d85aeda9cf6157e92f8048f4 and first appeared in the 0.9.4 release.
+impacted_packages:
+  - purl: pkg:pypi/twisted
+    affected_versions: vers:pypi/>=0.9.4|<22.10.0rc1
+    fixed_versions: vers:pypi/22.10.0rc1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-vg46-2rrj-3647/GHSA-vg46-2rrj-3647.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-vg46-2rrj-3647/GHSA-vg46-2rrj-3647.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-80
+references:
+  - url: https://github.com/twisted/twisted
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/commit/f2f5e81c03f14e253e85fe457e646130780db40b
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/commit/f49041bb67792506d85aeda9cf6157e92f8048f4
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/security/advisories/GHSA-vg46-2rrj-3647
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/11/msg00038.html
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/11/msg00028.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-39348
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202301-02
+    reference_type:
+    reference_id:

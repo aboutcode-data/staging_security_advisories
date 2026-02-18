@@ -1,0 +1,44 @@
+advisory_id: GHSA-w9pf-h6m6-v89h
+datasource_id: github_osv_importer_v2/GHSA-w9pf-h6m6-v89h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-w9pf-h6m6-v89h/GHSA-w9pf-h6m6-v89h.json
+aliases:
+  - CVE-2026-24838
+summary: |
+  DotNetNuke.Core Vulnerable to Stored XSS via Module Title
+  Module title supports richtext which could include scripts that would execute in certain scenarios.
+impacted_packages:
+  - purl: pkg:nuget/DotNetNuke.Core
+    affected_versions: vers:nuget/<9.13.10
+    fixed_versions: vers:nuget/9.13.10
+  - purl: pkg:nuget/DotNetNuke.Core
+    affected_versions: vers:nuget/>=10.0.0|<10.2.0
+    fixed_versions: vers:nuget/10.2.0
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-w9pf-h6m6-v89h/GHSA-w9pf-h6m6-v89h.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/dnnsoftware/Dnn.Platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnnsoftware/Dnn.Platform/commit/4a4bcbcdf3cedbf702816f8168c4d51bf688f7f6
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnnsoftware/Dnn.Platform/releases/tag/v10.2.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnnsoftware/Dnn.Platform/security/advisories/GHSA-w9pf-h6m6-v89h
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24838
+    reference_type:
+    reference_id:

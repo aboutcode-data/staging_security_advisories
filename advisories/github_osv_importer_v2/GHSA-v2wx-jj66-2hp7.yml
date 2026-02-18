@@ -1,0 +1,32 @@
+advisory_id: GHSA-v2wx-jj66-2hp7
+datasource_id: github_osv_importer_v2/GHSA-v2wx-jj66-2hp7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-v2wx-jj66-2hp7/GHSA-v2wx-jj66-2hp7.json
+aliases:
+  - CVE-2021-3536
+summary: |
+  Cross-site Scripting in Wildfly
+  A flaw was found in Wildfly in versions before 23.0.2.Final while creating a new role in domain mode via the admin console, it is possible to add a payload in the name field, leading to XSS. This affects Confidentiality and Integrity.
+impacted_packages:
+  - purl: pkg:maven/org.wildfly/wildfly-parent
+    affected_versions: vers:maven/<=23.0.1.Final
+    fixed_versions: vers:maven/23.0.2.Final
+severities:
+  - score: '3.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-v2wx-jj66-2hp7/GHSA-v2wx-jj66-2hp7.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1948001
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3536
+    reference_type:
+    reference_id:

@@ -1,0 +1,37 @@
+advisory_id: GHSA-w725-67p7-xv22
+datasource_id: github_osv_importer_v2/GHSA-w725-67p7-xv22
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-w725-67p7-xv22/GHSA-w725-67p7-xv22.json
+aliases: []
+summary: |
+  Command Injection in local-devices
+  Versions of `local-devices` prior to 3.0.0 are vulnerable to Command Injection. The package does not validate input on ip addresses and concatenates it to an exec call, allowing attackers to run arbitrary commands in the system.
+
+
+  ## Recommendation
+
+  Upgrade to version 3.0.0 or later.
+impacted_packages:
+  - purl: pkg:npm/local-devices
+    affected_versions: vers:npm/<3.0.0
+    fixed_versions: vers:npm/3.0.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/DylanPiercey/local-devices
+    reference_type:
+    reference_id:
+  - url: https://github.com/DylanPiercey/local-devices/commit/57b9a933c9d23d34bd5a055536db824de66db553
+    reference_type:
+    reference_id:
+  - url: https://github.com/DylanPiercey/local-devices/pull/16
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1020
+    reference_type:
+    reference_id:

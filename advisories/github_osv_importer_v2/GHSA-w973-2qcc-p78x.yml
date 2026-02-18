@@ -1,0 +1,66 @@
+advisory_id: GHSA-w973-2qcc-p78x
+datasource_id: github_osv_importer_v2/GHSA-w973-2qcc-p78x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-w973-2qcc-p78x/GHSA-w973-2qcc-p78x.json
+aliases:
+  - CVE-2017-5858
+summary: |
+  User Impersonation in converse.js
+  Versions of `converse.js` prior to 1.0.7 for 1.x or 2.0.5 for 2.x are vulnerable to User Impersonation. The package provides an incorrect implementation of [XEP-0280: Message Carbons](https://xmpp.org/extensions/xep-0280.html) that allows a remote attacker to impersonate any user, including contacts, in the vulnerable application's display. This allows for various kinds of social engineering attacks.
+
+
+  ## Recommendation
+
+  If you're using `converse.js` 1.x, upgrade to 1.0.7 or later.
+  If you're using `converse.js` 2.x, upgrade to 2.0.5 or later.
+impacted_packages:
+  - purl: pkg:npm/converse.js
+    affected_versions: vers:npm/<1.0.7
+    fixed_versions: vers:npm/1.0.7
+  - purl: pkg:npm/converse.js
+    affected_versions: vers:npm/>=2.0.0|<2.0.5
+    fixed_versions: vers:npm/2.0.5
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-w973-2qcc-p78x/GHSA-w973-2qcc-p78x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-346
+  - CWE-20
+references:
+  - url: http://openwall.com/lists/oss-security/2017/02/09/29
+    reference_type:
+    reference_id:
+  - url: https://github.com/jcbrand/converse.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/jcbrand/converse.js/commit/42f249cabbbf5c026398e6d3b350f6f9536ea572
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-5858
+    reference_type:
+    reference_id:
+  - url: https://rt-solutions.de/en/2017/02/CVE-2017-5589_xmpp_carbons
+    reference_type:
+    reference_id:
+  - url: https://rt-solutions.de/wp-content/uploads/2017/02/CVE-2017-5589_xmpp_carbons.pdf
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-CONVERSEJS-449664
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/974
+    reference_type:
+    reference_id:
+  - url: https://www.openwall.com/lists/oss-security/2017/02/09/29
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/96183
+    reference_type:
+    reference_id:

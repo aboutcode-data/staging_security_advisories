@@ -1,0 +1,57 @@
+advisory_id: GHSA-vx35-f379-4q49
+datasource_id: github_osv_importer_v2/GHSA-vx35-f379-4q49
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-vx35-f379-4q49/GHSA-vx35-f379-4q49.json
+aliases:
+  - CVE-2023-3574
+summary: |
+  Pimcore Customer Management Framework vulnerable to Improper Authorization in Rules Controller
+  ### Impact
+  The product performs authorization checks incorrectly when an unauthorized actor tries to access a resource or perform an actions.
+
+  The attacker can view and freely perform actions to add, modify, or delete rules.
+
+  ### Patches
+  Update to version 3.4.1 or apply this patch manually https://github.com/pimcore/customer-data-framework/commit/f15668c86db254e86ba7ac895bc3cdd1a2a3cc45.patch
+
+  ### Workarounds
+  Apply https://github.com/pimcore/customer-data-framework/commit/f15668c86db254e86ba7ac895bc3cdd1a2a3cc45.patch manually.
+
+  ### References
+  https://huntr.dev/bounties/1dcb4f01-e668-4aa3-a6a3-838532e500c6/
+impacted_packages:
+  - purl: pkg:composer/pimcore/customer-management-framework-bundle
+    affected_versions: vers:composer/<3.4.1
+    fixed_versions: vers:composer/3.4.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-vx35-f379-4q49/GHSA-vx35-f379-4q49.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://github.com/pimcore/customer-data-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/commit/f15668c86db254e86ba7ac895bc3cdd1a2a3cc45
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/commit/f15668c86db254e86ba7ac895bc3cdd1a2a3cc45.patch
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/security/advisories/GHSA-vx35-f379-4q49
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/1dcb4f01-e668-4aa3-a6a3-838532e500c6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-3574
+    reference_type:
+    reference_id:

@@ -1,0 +1,36 @@
+advisory_id: GHSA-vm2m-7hpw-fpmq
+datasource_id: github_osv_importer_v2/GHSA-vm2m-7hpw-fpmq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-vm2m-7hpw-fpmq/GHSA-vm2m-7hpw-fpmq.json
+aliases:
+  - CVE-2023-36566
+summary: Microsoft Common Data Model SDK Denial of Service Vulnerability
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.CommonDataModel.ObjectModel
+    affected_versions: vers:nuget/<1.7.4
+    fixed_versions: vers:nuget/1.7.4
+  - purl: pkg:maven/com.microsoft.commondatamodel/objectmodel
+    affected_versions: vers:maven/<1.7.4
+    fixed_versions: vers:maven/1.7.4
+  - purl: pkg:pypi/commondatamodel-objectmodel
+    affected_versions: vers:pypi/<1.7.4
+    fixed_versions: vers:pypi/1.7.4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-vm2m-7hpw-fpmq/GHSA-vm2m-7hpw-fpmq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36566
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-36566
+    reference_type:
+    reference_id:

@@ -1,0 +1,40 @@
+advisory_id: GHSA-vprp-94p9-5jp8
+datasource_id: github_osv_importer_v2/GHSA-vprp-94p9-5jp8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-vprp-94p9-5jp8/GHSA-vprp-94p9-5jp8.json
+aliases:
+  - CVE-2024-40137
+summary: |
+  Dolibarr ERP CRM vulnerable to remote code execution (RCE)
+  Dolibarr ERP CRM before 19.0.2 was discovered to contain a remote code execution (RCE) vulnerability via the Computed field parameter under the Users Module Setup function.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<19.0.2
+    fixed_versions: vers:composer/19.0.2
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-vprp-94p9-5jp8/GHSA-vprp-94p9-5jp8.json
+  - score: '7.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:L/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-vprp-94p9-5jp8/GHSA-vprp-94p9-5jp8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/c0d3x27/CVEs/tree/main/CVE-2024-40137
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-40137
+    reference_type:
+    reference_id:

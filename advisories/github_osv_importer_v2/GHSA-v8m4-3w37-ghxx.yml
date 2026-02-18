@@ -1,0 +1,49 @@
+advisory_id: GHSA-v8m4-3w37-ghxx
+datasource_id: github_osv_importer_v2/GHSA-v8m4-3w37-ghxx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-v8m4-3w37-ghxx/GHSA-v8m4-3w37-ghxx.json
+aliases: []
+summary: |
+  TYPO3 Cross-Site Scripting in Form Framework validation handling
+  It has been discovered that the output of field validation errors in the Form Framework is vulnerable to cross-site scripting.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.0.0|<10.2.1
+    fixed_versions: vers:composer/10.2.1
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.7.30
+    fixed_versions: vers:composer/8.7.30
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=9.0.0|<9.5.12
+    fixed_versions: vers:composer/9.5.12
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-v8m4-3w37-ghxx/GHSA-v8m4-3w37-ghxx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2019-12-17-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/966a0038c16c04d484c1703fba9fdc13f3e7a95c
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/9692bf83f8310cca17c9a968c4fe92ffe0deb59d
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/e971b012c837f1e64c1498b567ef6eec304febe5
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2019-021
+    reference_type:
+    reference_id:

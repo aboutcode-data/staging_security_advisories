@@ -1,0 +1,49 @@
+advisory_id: GHSA-vxq2-p937-3px3
+datasource_id: github_osv_importer_v2/GHSA-vxq2-p937-3px3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-vxq2-p937-3px3/GHSA-vxq2-p937-3px3.json
+aliases:
+  - CVE-2023-45824
+summary: "Pinned entity creation form shows wrong data\n### Impact\n\nLogged in user can access\
+  \ page state data of pinned pages of other users by pageId hash.\n\n\n### Patch\n\n```patch\n\
+  --- src/Oro/Bundle/NavigationBundle/Controller/Api/PagestateController.php\n+++ src/Oro/Bundle/NavigationBundle/Controller/Api/PagestateController.php\n\
+  @@ -158,6 +158,13 @@\n             AbstractPageState::generateHash($this->get('request_stack')->getCurrentRequest()->get('pageId'))\n\
+  \         );\n \n+        if ($entity) {\n+            $entity = $this->getEntity($entity->getId());\n\
+  +        }\n+        if (!$entity) {\n+            return $this->handleNotFound();\n+    \
+  \    }\n+\n         return $this->handleView($this->view($this->getState($entity), Response::HTTP_OK));\n\
+  \     }\n \n```"
+impacted_packages:
+  - purl: pkg:composer/oro/platform
+    affected_versions: vers:composer/<=5.1.3
+    fixed_versions: vers:composer/5.1.4
+  - purl: pkg:composer/oro/platform
+    affected_versions: vers:composer/>=5.0.0|<=5.0.12
+    fixed_versions:
+  - purl: pkg:composer/oro/platform
+    affected_versions: vers:composer/>=4.2.0|<=4.2.10
+    fixed_versions:
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-vxq2-p937-3px3/GHSA-vxq2-p937-3px3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/oroinc/platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/oroinc/platform/commit/cf94df7595afca052796e26b299d2ce031e289cd
+    reference_type:
+    reference_id:
+  - url: https://github.com/oroinc/platform/security/advisories/GHSA-vxq2-p937-3px3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-45824
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-vx3x-hwph-grvw
+datasource_id: github_osv_importer_v2/GHSA-vx3x-hwph-grvw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-vx3x-hwph-grvw/GHSA-vx3x-hwph-grvw.json
+aliases:
+  - CVE-2022-3005
+summary: |
+  YetiForce CRM vulnerable to stored Cross-site Scripting via SlaPolicy module
+  YetiForce CRM versions 6.4.0 and prior are vulnerable to cross-site scripting via the `SlaPolicy` module. A patch is available at commit e55886781509fe39951fc7528347696474a17884.
+impacted_packages:
+  - purl: pkg:composer/yetiforce/yetiforce-crm
+    affected_versions: vers:composer/<=6.4.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-vx3x-hwph-grvw/GHSA-vx3x-hwph-grvw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/YetiForceCompany/YetiForceCRM
+    reference_type:
+    reference_id:
+  - url: https://github.com/yetiforcecompany/yetiforcecrm/commit/e55886781509fe39951fc7528347696474a17884
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/4b144433-a979-4c4e-a627-659838acc217
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3005
+    reference_type:
+    reference_id:

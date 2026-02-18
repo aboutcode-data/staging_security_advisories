@@ -1,0 +1,87 @@
+advisory_id: GHSA-w3f4-3q6j-rh82
+datasource_id: github_osv_importer_v2/GHSA-w3f4-3q6j-rh82
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-w3f4-3q6j-rh82/GHSA-w3f4-3q6j-rh82.json
+aliases:
+  - CVE-2018-5968
+summary: |
+  Deserialization of Untrusted Data in jackson-databind
+  FasterXML jackson-databind through 2.8.11 and 2.9.x through 2.9.3 allows unauthenticated remote code execution because of an incomplete fix for the CVE-2017-7525 and CVE-2017-17485 deserialization flaws. This is exploitable via two different gadgets that bypass a blacklist.
+impacted_packages:
+  - purl: pkg:maven/com.fasterxml.jackson.core/jackson-databind
+    affected_versions: vers:maven/<2.8.11
+    fixed_versions: vers:maven/2.8.11.1
+  - purl: pkg:maven/com.fasterxml.jackson.core/jackson-databind
+    affected_versions: vers:maven/>=2.9.0|<2.9.4
+    fixed_versions: vers:maven/2.9.4
+  - purl: pkg:maven/com.fasterxml.jackson.core/jackson-databind
+    affected_versions: vers:maven/<2.7.9.5
+    fixed_versions: vers:maven/2.7.9.5
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-w3f4-3q6j-rh82/GHSA-w3f4-3q6j-rh82.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+  - CWE-184
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:0478
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0479
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0480
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0481
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:1525
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:2858
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:3149
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/038b471e2efde2e8f96b4e0be958d3e5a1ff1d0
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/03ea0bec6293d4330b5ad19d1d62aca0e3cb6381
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/454be8bb8c913be18298327a84ca45a280b61605
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/issues/1899
+    reference_type:
+    reference_id:
+  - url: https://github.com/GulajavaMinistudio/jackson-databind/pull/92/commits/038b471e2efde2e8f96b4e0be958d3e5a1ff1d05
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-5968
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20180423-0002
+    reference_type:
+    reference_id:
+  - url: https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf03902en_us
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2018/dsa-4114
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2020.html
+    reference_type:
+    reference_id:

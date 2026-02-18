@@ -1,0 +1,77 @@
+advisory_id: GHSA-vh22-6c6h-rm8q
+datasource_id: github_osv_importer_v2/GHSA-vh22-6c6h-rm8q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-vh22-6c6h-rm8q/GHSA-vh22-6c6h-rm8q.json
+aliases:
+  - CVE-2025-23026
+summary: |
+  jte's HTML templates containing Javascript template strings are subject to XSS
+  ### Summary
+  Jte HTML templates with `script` tags or script attributes that include a Javascript template string (backticks) are subject to XSS.
+
+  ### Details
+  The `javaScriptBlock` and `javaScriptAttribute` methods in the `Escape` class ([source](https://github.com/casid/jte/blob/main/jte-runtime/src/main/java/gg/jte/html/escape/Escape.java#L43-L83)) do not escape backticks, which are used for Javascript [template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#description). Dollar signs in template strings should also be escaped as well to prevent undesired interpolation.
+
+  ### PoC
+  1. Use the [Jte Gradle Plugin](https://jte.gg/gradle-plugin/) with the following code in `src/jte/xss.jte`:
+      ```html
+      @param String someMessage
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <title>XSS Test</title>
+          <script>window.someVariable = `${someMessage}`;</script>
+      </head>
+      <body>
+      <h1>XSS Test</h1>
+      </body>
+      </html>
+      ```
+  2. Use the following Java code to demonstrate the XSS vulnerability:
+      ```java
+      final StringOutput output = new StringOutput();
+      JtexssGenerated.render(new OwaspHtmlTemplateOutput(output), null, "` + alert(`xss`) + `");
+      renderHtml(output);
+      ```
+
+  ### Impact
+  HTML templates rendered by Jte's `OwaspHtmlTemplateOutput` in versions less than or equal to `3.1.15` with `script` tags or script attributes that contain Javascript template strings (backticks) are vulnerable.
+impacted_packages:
+  - purl: pkg:maven/gg.jte/jte
+    affected_versions: vers:maven/<=3.1.15
+    fixed_versions: vers:maven/3.1.16
+  - purl: pkg:maven/gg.jte/jte-runtime
+    affected_versions: vers:maven/<=3.1.15
+    fixed_versions: vers:maven/3.1.16
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-vh22-6c6h-rm8q/GHSA-vh22-6c6h-rm8q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-150
+references:
+  - url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#description
+    reference_type:
+    reference_id:
+  - url: https://github.com/casid/jte
+    reference_type:
+    reference_id:
+  - url: https://github.com/casid/jte/blob/main/jte-runtime/src/main/java/gg/jte/html/escape/Escape.java#L43-L83
+    reference_type:
+    reference_id:
+  - url: https://github.com/casid/jte/commit/a6fb00d53c7b8dbb86de933215dbe1b9191a57f1
+    reference_type:
+    reference_id:
+  - url: https://github.com/casid/jte/security/advisories/GHSA-vh22-6c6h-rm8q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-23026
+    reference_type:
+    reference_id:

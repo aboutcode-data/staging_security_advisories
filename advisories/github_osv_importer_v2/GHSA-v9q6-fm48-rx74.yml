@@ -1,0 +1,47 @@
+advisory_id: GHSA-v9q6-fm48-rx74
+datasource_id: github_osv_importer_v2/GHSA-v9q6-fm48-rx74
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-v9q6-fm48-rx74/GHSA-v9q6-fm48-rx74.json
+aliases:
+  - CVE-2024-3408
+summary: |
+  Authentication bypass in dtale
+  man-group/dtale version 3.10.0 is vulnerable to an authentication bypass and remote code execution (RCE) due to improper input validation. The vulnerability arises from a hardcoded `SECRET_KEY` in the flask configuration, allowing attackers to forge a session cookie if authentication is enabled. Additionally, the application fails to properly restrict custom filter queries, enabling attackers to execute arbitrary code on the server by bypassing the restriction on the `/update-settings` endpoint, even when `enable_custom_filters` is not enabled. This vulnerability allows attackers to bypass authentication mechanisms and execute remote code on the server.
+impacted_packages:
+  - purl: pkg:pypi/dtale
+    affected_versions: vers:pypi/<=3.10.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-v9q6-fm48-rx74/GHSA-v9q6-fm48-rx74.json
+  - score: '8.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-v9q6-fm48-rx74/GHSA-v9q6-fm48-rx74.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-798
+  - CWE-20
+references:
+  - url: https://github.com/man-group/dtale
+    reference_type:
+    reference_id:
+  - url: https://github.com/man-group/dtale/commit/32bd6fb4a63de779ff1e51823a456865ea3cbd13
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/dtale/PYSEC-2024-117.yaml
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/57a06666-ff85-4577-af19-f3dfb7b02f91
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-3408
+    reference_type:
+    reference_id:

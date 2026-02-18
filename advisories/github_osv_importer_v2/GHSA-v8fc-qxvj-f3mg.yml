@@ -1,0 +1,41 @@
+advisory_id: GHSA-v8fc-qxvj-f3mg
+datasource_id: github_osv_importer_v2/GHSA-v8fc-qxvj-f3mg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-v8fc-qxvj-f3mg/GHSA-v8fc-qxvj-f3mg.json
+aliases:
+  - CVE-2023-45885
+summary: |
+  NASA Open MCT Cross Site Scripting vulnerability
+  Cross Site Scripting (XSS) vulnerability in NASA Open MCT (aka openmct) through 3.1.0 allows attackers to run arbitrary code via the new component feature in the `flexibleLayout` plugin.
+impacted_packages:
+  - purl: pkg:npm/openmct
+    affected_versions: vers:npm/<=3.1.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-v8fc-qxvj-f3mg/GHSA-v8fc-qxvj-f3mg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/nasa/openmct
+    reference_type:
+    reference_id:
+  - url: https://github.com/nasa/openmct/pull/7148
+    reference_type:
+    reference_id:
+  - url: https://github.com/nasa/openmct/pull/7148/commits/4e95e12559c9c5364269ff366a59768573baacb4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-45885
+    reference_type:
+    reference_id:
+  - url: https://www.linkedin.com/pulse/xss-nasas-open-mct-v302-visionspace-technologies-ubg4f
+    reference_type:
+    reference_id:

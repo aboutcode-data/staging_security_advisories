@@ -1,0 +1,41 @@
+advisory_id: GHSA-vqqg-xgv7-cf68
+datasource_id: github_osv_importer_v2/GHSA-vqqg-xgv7-cf68
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vqqg-xgv7-cf68/GHSA-vqqg-xgv7-cf68.json
+aliases:
+  - CVE-2017-8045
+summary: |
+  Deserialization of Untrusted Data in Spring AMQP
+  In Pivotal Spring AMQP versions prior to 1.7.4, 1.6.11, and 1.5.7, an org.springframework.amqp.core.Message may be unsafely deserialized when being converted into a string. A malicious payload could be crafted to exploit this and enable a remote code execution attack.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.amqp/spring-amqp
+    affected_versions: vers:maven/<1.5.7
+    fixed_versions: vers:maven/1.5.7
+  - purl: pkg:maven/org.springframework.amqp/spring-amqp
+    affected_versions: vers:maven/>=1.6.0|<1.6.11
+    fixed_versions: vers:maven/1.6.11
+  - purl: pkg:maven/org.springframework.amqp/spring-amqp
+    affected_versions: vers:maven/>=1.7.0|<1.7.4
+    fixed_versions: vers:maven/1.7.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vqqg-xgv7-cf68/GHSA-vqqg-xgv7-cf68.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-8045
+    reference_type:
+    reference_id:
+  - url: https://pivotal.io/security/cve-2017-8045
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/100936
+    reference_type:
+    reference_id:

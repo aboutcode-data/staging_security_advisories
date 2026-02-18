@@ -1,0 +1,40 @@
+advisory_id: GHSA-vvvh-5xrm-pxff
+datasource_id: github_osv_importer_v2/GHSA-vvvh-5xrm-pxff
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vvvh-5xrm-pxff/GHSA-vvvh-5xrm-pxff.json
+aliases:
+  - CVE-2020-0813
+summary: |
+  ChakraCore information disclosure vulnerability
+  An information disclosure vulnerability exists when Chakra improperly discloses the contents of its memory, which could provide an attacker with information to further compromise the user's computer or data. To exploit the vulnerability, an attacker must know the memory address of where the object was created.The update addresses the vulnerability by changing the way certain functions handle objects in memory., aka 'Scripting Engine Information Disclosure Vulnerability'.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.11.17
+    fixed_versions: vers:nuget/1.11.17
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vvvh-5xrm-pxff/GHSA-vvvh-5xrm-pxff.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/chakra-core/ChakraCore
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/6385
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/6385/commits/e6abd1d110442e6357351c23a7f882f83e4bbe4d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-0813
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0813
+    reference_type:
+    reference_id:

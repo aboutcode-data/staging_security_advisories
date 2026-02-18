@@ -1,0 +1,71 @@
+advisory_id: GHSA-wcv5-vrvr-3rx2
+datasource_id: github_osv_importer_v2/GHSA-wcv5-vrvr-3rx2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-wcv5-vrvr-3rx2/GHSA-wcv5-vrvr-3rx2.json
+aliases: []
+summary: "Integer Overflow or Wraparound in TensorFlow\n### Impact\nThe Grappler component of\
+  \ TensorFlow is vulnerable to a denial of service via `CHECK`-failure (assertion failure)\
+  \ in [constant folding](https://github.com/tensorflow/tensorflow/blob/a1320ec1eac186da1d03f033109191f715b2b130/tensorflow/core/grappler/optimizers/constant_folding.cc#L963-L1035):\n\
+  \n```cc\n  for (const auto& output_prop : output_props) {\n    const PartialTensorShape output_shape(output_prop.shape());\n\
+  \    // ...\n  }\n```\n  \nThe `output_prop` tensor has a shape that is controlled by user\
+  \ input and this can result in triggering one of the `CHECK`s in the `PartialTensorShape`\
+  \ constructor. This is an instance of [TFSA-2021-198](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/security/advisory/tfsa-2021-198.md)\
+  \ (CVE-2021-41197).\n\n### Patches\nWe have patched the issue in GitHub commit [be7b286d40bc68cb0b56f702186cc4837d508058](https://github.com/tensorflow/tensorflow/commit/be7b286d40bc68cb0b56f702186cc4837d508058).\n\
+  \nThe fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported\
+  \ range.\n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-wcv5-vrvr-3rx2/GHSA-wcv5-vrvr-3rx2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-190
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/be7b286d40bc68cb0b56f702186cc4837d508058
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-prcg-wp5q-rv7p
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-wcv5-vrvr-3rx2
+    reference_type:
+    reference_id:

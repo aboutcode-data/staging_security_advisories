@@ -1,0 +1,38 @@
+advisory_id: GHSA-w2g4-g8xr-px4x
+datasource_id: github_osv_importer_v2/GHSA-w2g4-g8xr-px4x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w2g4-g8xr-px4x/GHSA-w2g4-g8xr-px4x.json
+aliases:
+  - CVE-2018-18921
+summary: |
+  CSRF in PHP Server Monitor before 3.3.2
+  PHP Server Monitor before 3.3.2 has CSRF, as demonstrated by a Delete action.
+impacted_packages:
+  - purl: pkg:composer/phpservermon/phpservermon
+    affected_versions: vers:composer/<=3.3.1
+    fixed_versions: vers:composer/3.3.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w2g4-g8xr-px4x/GHSA-w2g4-g8xr-px4x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/phpservermon/phpservermon/commit/30150714a8af0c82259b733f604fce54c0dcbf40
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpservermon/phpservermon/issues/670#issuecomment-440873239
+    reference_type:
+    reference_id:
+  - url: https://medium.com/bugbountywriteup/cve-2018-18921-php-server-monitor-3-3-1-cross-site-request-forgery-a73e8dae563
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-18921
+    reference_type:
+    reference_id:

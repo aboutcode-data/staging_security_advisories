@@ -1,0 +1,41 @@
+advisory_id: GHSA-w7qg-j435-78qw
+datasource_id: github_osv_importer_v2/GHSA-w7qg-j435-78qw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-w7qg-j435-78qw/GHSA-w7qg-j435-78qw.json
+aliases:
+  - CVE-2023-1712
+summary: |
+  Use of hard-coded, security-relevant constants in deepset-ai/haystack
+  Use of Hard-coded, Security-relevant Constants in GitHub repository deepset-ai/haystack in version 1.15.0 and prior. A patch is available at commit 5fc84904f198de661d5b933fde756aa922bf09f1.
+impacted_packages:
+  - purl: pkg:pypi/farm-haystack
+    affected_versions: vers:pypi/<=1.15.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-w7qg-j435-78qw/GHSA-w7qg-j435-78qw.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-547
+references:
+  - url: https://github.com/deepset-ai/haystack
+    reference_type:
+    reference_id:
+  - url: https://github.com/deepset-ai/haystack/commit/5fc84904f198de661d5b933fde756aa922bf09f1
+    reference_type:
+    reference_id:
+  - url: https://github.com/deepset-ai/haystack/pull/4535
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/9a6b1fb4-ec9b-4cfa-af1e-9ce304924829
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-1712
+    reference_type:
+    reference_id:

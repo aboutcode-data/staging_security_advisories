@@ -1,0 +1,44 @@
+advisory_id: GHSA-w5fc-gj3h-26rx
+datasource_id: github_osv_importer_v2/GHSA-w5fc-gj3h-26rx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-w5fc-gj3h-26rx/GHSA-w5fc-gj3h-26rx.json
+aliases:
+  - CVE-2024-21526
+summary: |
+  speaker vulnerable to Denial of Service
+  All versions of the package speaker are vulnerable to Denial of Service (DoS) when providing unexpected input types to the channels property of the Speaker object makes it possible to reach an assert macro. Exploiting this vulnerability can lead to a process crash.
+impacted_packages:
+  - purl: pkg:npm/speaker
+    affected_versions: vers:npm/<=0.5.5
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-w5fc-gj3h-26rx/GHSA-w5fc-gj3h-26rx.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-w5fc-gj3h-26rx/GHSA-w5fc-gj3h-26rx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-241
+references:
+  - url: https://github.com/TooTallNate/node-speaker
+    reference_type:
+    reference_id:
+  - url: https://github.com/TooTallNate/node-speaker/blob/316afff5a393fce438cf7296011fcfc6e12aa9dc/src/binding.c#L48
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21526
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-SPEAKER-6370676
+    reference_type:
+    reference_id:

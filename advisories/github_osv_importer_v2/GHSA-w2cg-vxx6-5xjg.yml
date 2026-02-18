@@ -1,0 +1,64 @@
+advisory_id: GHSA-w2cg-vxx6-5xjg
+datasource_id: github_osv_importer_v2/GHSA-w2cg-vxx6-5xjg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-w2cg-vxx6-5xjg/GHSA-w2cg-vxx6-5xjg.json
+aliases: []
+summary: |
+  OpenClaw: denial of service through large base64 media files allocating large buffers before limit checks
+  ## Summary
+
+  Base64-backed media inputs could be decoded into Buffers before enforcing decoded-size budgets. An attacker supplying oversized base64 payloads can force large allocations, causing memory pressure and denial of service.
+
+  ## Attack Scenario Notes
+
+  - Recommended deployments bind the gateway to loopback by default and require gateway auth for HTTP endpoints. In that configuration, this is best modeled as a local/authorized DoS.
+  - If an operator exposes the gateway to untrusted networks (or disables/weakens auth and rate limits), treat this as a higher-severity network DoS risk.
+
+  ## Affected Packages / Versions
+
+  - openclaw (npm): <= 2026.2.13
+  - clawdbot (npm): <= 2026.1.24-3
+
+  ## Fixed In
+
+  - openclaw (npm): 2026.2.14 (planned)
+  - clawdbot (npm): no patched release planned; migrate to openclaw
+
+  ## Fix Commit(s)
+
+  - 31791233d60495725fa012745dde8d6ee69e9595
+
+  ## Credits
+  Thanks @vincentkoc for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.14
+    fixed_versions: vers:npm/2026.2.14
+  - purl: pkg:npm/clawdbot
+    affected_versions: vers:npm/<=2026.1.24-3
+    fixed_versions:
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-w2cg-vxx6-5xjg/GHSA-w2cg-vxx6-5xjg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/31791233d60495725fa012745dde8d6ee69e9595
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.14
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-w2cg-vxx6-5xjg
+    reference_type:
+    reference_id:

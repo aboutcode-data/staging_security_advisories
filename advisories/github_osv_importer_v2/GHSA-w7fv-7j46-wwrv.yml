@@ -1,0 +1,40 @@
+advisory_id: GHSA-w7fv-7j46-wwrv
+datasource_id: github_osv_importer_v2/GHSA-w7fv-7j46-wwrv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w7fv-7j46-wwrv/GHSA-w7fv-7j46-wwrv.json
+aliases:
+  - CVE-2019-10364
+summary: |
+  Jenkins Amazon EC2 Plugin leaked beginning of private key in system log
+  Jenkins Amazon EC2 Plugin printed a log message that contained the beginning of the private key to the Jenkins system log.
+
+  The log message no longer includes the beginning of the private key.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.plugins/ec2
+    affected_versions: vers:maven/<=1.43
+    fixed_versions: vers:maven/1.44
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w7fv-7j46-wwrv/GHSA-w7fv-7j46-wwrv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://github.com/jenkinsci/ec2-plugin/commit/78c3c49a227ac8eccb8b1be7193d5605363fe251
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2019-07-31/#SECURITY-673
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10364
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/07/31/1
+    reference_type:
+    reference_id:

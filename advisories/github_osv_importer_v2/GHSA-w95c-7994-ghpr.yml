@@ -1,0 +1,48 @@
+advisory_id: GHSA-w95c-7994-ghpr
+datasource_id: github_osv_importer_v2/GHSA-w95c-7994-ghpr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-w95c-7994-ghpr/GHSA-w95c-7994-ghpr.json
+aliases:
+  - CVE-2024-56522
+summary: |
+  TCPDF has incorrect comparison
+  An issue was discovered in TCPDF before 6.8.0. unserializeTCPDFtag uses != (aka loose comparison) and does not use a constant-time function to compare TCPDF tag hashes.
+impacted_packages:
+  - purl: pkg:composer/tecnickcom/tcpdf
+    affected_versions: vers:composer/<6.8.0
+    fixed_versions: vers:composer/6.8.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-w95c-7994-ghpr/GHSA-w95c-7994-ghpr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-697
+  - CWE-843
+references:
+  - url: https://github.com/tecnickcom/TCPDF
+    reference_type:
+    reference_id:
+  - url: https://github.com/tecnickcom/TCPDF/commit/d54b97cec33f4f1a5ad81119a82085cad93cec89
+    reference_type:
+    reference_id:
+  - url: https://github.com/tecnickcom/TCPDF/compare/6.7.8...6.8.0
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/06/msg00004.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-56522
+    reference_type:
+    reference_id:
+  - url: https://tcpdf.org
+    reference_type:
+    reference_id:
+  - url: https://www.php.net/manual/en/types.comparisons.php
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-vqrm-83g6-pfv4
+datasource_id: github_osv_importer_v2/GHSA-vqrm-83g6-pfv4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-vqrm-83g6-pfv4/GHSA-vqrm-83g6-pfv4.json
+aliases:
+  - CVE-2024-10029
+summary: |
+  Eclipse GlassFish is vulnerable to Reflected XSS attacks through its Administration Console
+  In Eclipse GlassFish version 7.0.15, it is possible to perform Reflected Cross-Site Scripting attacks through the Administration Console.
+impacted_packages:
+  - purl: pkg:maven/org.glassfish.main.admingui/console-common
+    affected_versions: vers:maven/<=7.0.25
+    fixed_versions:
+  - purl: pkg:maven/org.glassfish.main.admingui/console-cluster-plugin
+    affected_versions: vers:maven/<=7.0.25
+    fixed_versions:
+severities:
+  - score: '4.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:H/UI:A/VC:L/VI:L/VA:N/SC:H/SI:H/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-vqrm-83g6-pfv4/GHSA-vqrm-83g6-pfv4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/eclipse-ee4j/glassfish
+    reference_type:
+    reference_id:
+  - url: https://gitlab.eclipse.org/security/cve-assignement/-/issues/40
+    reference_type:
+    reference_id:
+  - url: https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/226
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-10029
+    reference_type:
+    reference_id:

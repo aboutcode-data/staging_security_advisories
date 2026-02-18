@@ -1,0 +1,59 @@
+advisory_id: GHSA-vf2r-cxg9-p7rf
+datasource_id: github_osv_importer_v2/GHSA-vf2r-cxg9-p7rf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-vf2r-cxg9-p7rf/GHSA-vf2r-cxg9-p7rf.json
+aliases:
+  - CVE-2025-54119
+summary: |
+  The ADOdb sqlite3 driver allows SQL injection
+  Improper escaping of a query parameter may allow an attacker to execute arbitrary SQL statements when the code using ADOdb connects to a sqlite3 database and calls the metaColumns(), metaForeignKeys() or metaIndexes() methods with a crafted table name.
+
+  Note that the indicated Severity corresponds to a worst-case usage scenario, e.g. allowing user-supplied data to be sent as-is to the above-mentioned methods.
+
+  ### Impact
+  SQLite3 driver.
+
+  ### Patches
+  Vulnerability is fixed in ADOdb 5.22.10 (https://github.com/ADOdb/ADOdb/commit/5b8bd52cdcffefb4ecded1b399c98cfa516afe03).
+
+  ### Workarounds
+  Only pass controlled data to metaColumns(), metaForeignKeys() and metaIndexes() method's $table parameter.
+
+  ### Credits
+
+  Thanks to Marco Nappi (@mrcnpp) for reporting this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/adodb/adodb-php
+    affected_versions: vers:composer/<=5.22.9
+    fixed_versions: vers:composer/5.22.10
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-vf2r-cxg9-p7rf/GHSA-vf2r-cxg9-p7rf.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/ADOdb/ADOdb
+    reference_type:
+    reference_id:
+  - url: https://github.com/ADOdb/ADOdb/commit/5b8bd52cdcffefb4ecded1b399c98cfa516afe03
+    reference_type:
+    reference_id:
+  - url: https://github.com/ADOdb/ADOdb/issues/1083
+    reference_type:
+    reference_id:
+  - url: https://github.com/ADOdb/ADOdb/security/advisories/GHSA-vf2r-cxg9-p7rf
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/10/msg00020.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-54119
+    reference_type:
+    reference_id:

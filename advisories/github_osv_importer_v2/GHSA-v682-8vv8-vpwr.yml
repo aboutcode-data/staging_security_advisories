@@ -1,0 +1,84 @@
+advisory_id: GHSA-v682-8vv8-vpwr
+datasource_id: github_osv_importer_v2/GHSA-v682-8vv8-vpwr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-v682-8vv8-vpwr/GHSA-v682-8vv8-vpwr.json
+aliases:
+  - CVE-2024-23672
+summary: |
+  Denial of Service via incomplete cleanup vulnerability in Apache Tomcat. It was possible for WebSocket clients to keep WebSocket connections open leading to increased resource consumption.This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98. Older, EOL versions may also be affected.
+
+  Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tomcat/tomcat-websocket
+    affected_versions: vers:maven/<=11.0.0-M16
+    fixed_versions: vers:maven/11.0.0-M17
+  - purl: pkg:maven/org.apache.tomcat/tomcat-websocket
+    affected_versions: vers:maven/<=10.1.18
+    fixed_versions: vers:maven/10.1.19
+  - purl: pkg:maven/org.apache.tomcat/tomcat-websocket
+    affected_versions: vers:maven/<=9.0.85
+    fixed_versions: vers:maven/9.0.86
+  - purl: pkg:maven/org.apache.tomcat/tomcat-websocket
+    affected_versions: vers:maven/<=8.5.98
+    fixed_versions: vers:maven/8.5.99
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket
+    affected_versions: vers:maven/<=11.0.0-M16
+    fixed_versions: vers:maven/11.0.0-M17
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket
+    affected_versions: vers:maven/<=10.1.18
+    fixed_versions: vers:maven/10.1.19
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket
+    affected_versions: vers:maven/<=9.0.85
+    fixed_versions: vers:maven/9.0.86
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket
+    affected_versions: vers:maven/<=8.5.98
+    fixed_versions: vers:maven/8.5.99
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-v682-8vv8-vpwr/GHSA-v682-8vv8-vpwr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-459
+references:
+  - url: https://github.com/apache/tomcat
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/0052b374684b613b0c849899b325ebe334ac6501
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/3631adb1342d8bbd8598802a12b63ad02c37d591
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/52d6650e062d880704898d7d8c1b2b7a3efe8068
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/b0e3b1bd78de270d53e319d7cb79eb282aa53cb9
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/04/msg00001.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UWIS5MMGYDZBLJYT674ZI5AWFHDZ46B
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/736G4GPZWS2DSQO5WKXO3G6OMZKFEK55
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23672
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240402-0002
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2024/03/13/4
+    reference_type:
+    reference_id:

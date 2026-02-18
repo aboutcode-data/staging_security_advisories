@@ -1,0 +1,38 @@
+advisory_id: GHSA-vjc4-3vgx-pq9h
+datasource_id: github_osv_importer_v2/GHSA-vjc4-3vgx-pq9h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-vjc4-3vgx-pq9h/GHSA-vjc4-3vgx-pq9h.json
+aliases:
+  - CVE-2024-34529
+summary: |
+  Nebari prints temporary Keycloak root password
+  Nebari through 2024.4.1 prints the temporary Keycloak root password.
+impacted_packages:
+  - purl: pkg:pypi/nebari
+    affected_versions: vers:pypi/<=2024.4.1
+    fixed_versions:
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-vjc4-3vgx-pq9h/GHSA-vjc4-3vgx-pq9h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/nebari-dev/nebari
+    reference_type:
+    reference_id:
+  - url: https://github.com/nebari-dev/nebari/blob/5463e8df9e8d53a266a7b9d3d4e27353ec43c40b/src/_nebari/deploy.py#L71
+    reference_type:
+    reference_id:
+  - url: https://github.com/nebari-dev/nebari/issues/2282
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34529
+    reference_type:
+    reference_id:

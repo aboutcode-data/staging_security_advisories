@@ -1,0 +1,79 @@
+advisory_id: GHSA-w7jx-j77m-wp65
+datasource_id: github_osv_importer_v2/GHSA-w7jx-j77m-wp65
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-w7jx-j77m-wp65/GHSA-w7jx-j77m-wp65.json
+aliases:
+  - CVE-2024-21911
+summary: |
+  Cross-site scripting vulnerability in TinyMCE
+  ### Impact
+  A cross-site scripting (XSS) vulnerability was discovered in the URL sanitization logic of the core parser. The vulnerability allowed arbitrary JavaScript execution when inserting a specially crafted piece of content into the editor using the clipboard or APIs. This impacts all users who are using TinyMCE 5.5.1 or lower.
+
+  ### Patches
+  This vulnerability has been patched in TinyMCE 5.6.0 by improved URL sanitization logic.
+
+  ### Workarounds
+  To work around this vulnerability, either:
+  - Upgrade to TinyMCE 5.6.0 or higher
+  - Manually sanitize `iframe`, `object` and `embed` URL attributes using a [TinyMCE node filter](https://www.tiny.cloud/docs/api/tinymce.html/tinymce.html.domparser/#addnodefilter).
+  - Disable `iframe`, `object`, and `embed` elements in your content using the [invalid_elements](https://www.tiny.cloud/docs/configure/content-filtering/#invalid_elements) setting.
+
+  #### Example: Sanitizing using a node filter
+  ```js
+  editor.parser.addNodeFilter('iframe,object,embed', function(nodes) {
+    nodes.forEach(function(node) {
+      if (node.attributes) {
+        node.attributes.forEach(function(attr) {
+          var name = attr.name;
+          var value = attr.value;
+          // Sanitize the attribute value here or remove it entirely
+          var sanitizedValue = ...;
+          node.attr(name, santizedValue);
+        });
+      }
+    });
+  });
+  ```
+
+  #### Example: Using invalid_elements
+  ```js
+  invalid_elements: 'iframe,object,embed'
+  ```
+
+  ### Acknowledgements
+  Tiny Technologies would like to thank Aaron Bishop at SecurityMetrics for discovering this vulnerability.
+
+  ### References
+  https://www.tiny.cloud/docs/release-notes/release-notes56/#securityfixes
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in the [TinyMCE repo](https://github.com/tinymce/tinymce/issues)
+  * Email us at [infosec@tiny.cloud](mailto:infosec@tiny.cloud)
+impacted_packages:
+  - purl: pkg:npm/tinymce
+    affected_versions: vers:npm/<5.6.0
+    fixed_versions: vers:npm/5.6.0
+  - purl: pkg:nuget/TinyMCE
+    affected_versions: vers:nuget/<5.6.0
+    fixed_versions: vers:nuget/5.6.0
+  - purl: pkg:composer/tinymce/tinymce
+    affected_versions: vers:composer/<5.6.0
+    fixed_versions: vers:composer/5.6.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/tinymce/tinymce/security/advisories/GHSA-w7jx-j77m-wp65
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/tinymce
+    reference_type:
+    reference_id:
+  - url: https://www.tiny.cloud/docs/release-notes/release-notes56/#securityfixes
+    reference_type:
+    reference_id:

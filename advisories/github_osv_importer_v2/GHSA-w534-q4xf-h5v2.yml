@@ -1,0 +1,55 @@
+advisory_id: GHSA-w534-q4xf-h5v2
+datasource_id: github_osv_importer_v2/GHSA-w534-q4xf-h5v2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-w534-q4xf-h5v2/GHSA-w534-q4xf-h5v2.json
+aliases:
+  - CVE-2020-15231
+summary: |
+  XSS in Mapfish Print relating to JSONP support
+  ### Impact
+  A user can use the JSONP support to do a Cross-site scripting.
+
+  ### Patches
+  Use version >= 3.24
+
+  ### Workarounds
+  No
+
+  ### References
+  * https://github.com/mapfish/mapfish-print/pull/1397/commits/89155f2506b9cee822e15ce60ccae390a1419d5e
+  * https://cwe.mitre.org/data/definitions/79.html
+
+  ### For more information
+  If you have any questions or comments about this advisory Comment the pull request: https://github.com/mapfish/mapfish-print/pull/1397
+impacted_packages:
+  - purl: pkg:maven/org.mapfish.print/print-lib
+    affected_versions: vers:maven/<3.24
+    fixed_versions: vers:maven/3.24
+  - purl: pkg:maven/org.mapfish.print/print-servlet
+    affected_versions: vers:maven/<3.24
+    fixed_versions: vers:maven/3.24
+  - purl: pkg:maven/org.mapfish.print/print-standalone
+    affected_versions: vers:maven/<3.24
+    fixed_versions: vers:maven/3.24
+severities:
+  - score: '9.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-w534-q4xf-h5v2/GHSA-w534-q4xf-h5v2.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/mapfish/mapfish-print/pull/1397/commits/89155f2506b9cee822e15ce60ccae390a1419d5e
+    reference_type:
+    reference_id:
+  - url: https://github.com/mapfish/mapfish-print/security/advisories/GHSA-w534-q4xf-h5v2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15231
+    reference_type:
+    reference_id:

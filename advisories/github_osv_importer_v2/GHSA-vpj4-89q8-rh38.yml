@@ -1,0 +1,28 @@
+advisory_id: GHSA-vpj4-89q8-rh38
+datasource_id: github_osv_importer_v2/GHSA-vpj4-89q8-rh38
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-vpj4-89q8-rh38/GHSA-vpj4-89q8-rh38.json
+aliases: []
+summary: |
+  Cross-Site Scripting in bpmn-js-properties-panel
+  Versions of `bpmn-js-properties-panel` prior to 0.31.0 are vulnerable to Cross-Site Scripting (XSS). The package fails to sanitize input in specially configured diagrams, which may allow attackers to inject arbitrary JavaScript in the embedding website.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.31.0 or later.
+impacted_packages:
+  - purl: pkg:npm/bpmn-js-properties-panel
+    affected_versions: vers:npm/<0.31.0
+    fixed_versions: vers:npm/0.31.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://www.npmjs.com/advisories/1079
+    reference_type:
+    reference_id:

@@ -1,0 +1,50 @@
+advisory_id: GHSA-w47p-5q88-hj5g
+datasource_id: github_osv_importer_v2/GHSA-w47p-5q88-hj5g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w47p-5q88-hj5g/GHSA-w47p-5q88-hj5g.json
+aliases:
+  - CVE-2016-0709
+summary: |
+  Path Traversal in Apache Jetspeed
+  Directory traversal vulnerability in the Import/Export function in the Portal Site Manager in Apache Jetspeed before 2.3.1 allows remote authenticated administrators to write to arbitrary files, and consequently execute arbitrary code, via a .. (dot dot) in a ZIP archive entry, as demonstrated by "../../webapps/x.jsp."
+impacted_packages:
+  - purl: pkg:maven/org.apache.portals.jetspeed-2/jetspeed
+    affected_versions: vers:maven/<2.3.1
+    fixed_versions: vers:maven/2.3.1
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w47p-5q88-hj5g/GHSA-w47p-5q88-hj5g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://haxx.ml/post/140552592371/remote-code-execution-in-apache-jetspeed-230-and
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/136489/Apache-Jetspeed-Arbitrary-File-Upload.html
+    reference_type:
+    reference_id:
+  - url: https://mail-archives.apache.org/mod_mbox/portals-jetspeed-user/201603.mbox/%3C281D02D0-6A03-4421-9D86-E73B001C8677@bluesunrise.com%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-0709
+    reference_type:
+    reference_id:
+  - url: https://portals.apache.org/jetspeed-2/security-reports.html#CVE-2016-0709
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/39643
+    reference_type:
+    reference_id:
+  - url: http://www.rapid7.com/db/modules/exploit/multi/http/apache_jetspeed_file_upload
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/java/remote/39643.rb
+    reference_type: exploit
+    reference_id: CVE-2016-0710;CVE-2016-0709

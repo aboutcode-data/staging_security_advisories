@@ -1,0 +1,41 @@
+advisory_id: GHSA-vcmm-ppqx-95ch
+datasource_id: github_osv_importer_v2/GHSA-vcmm-ppqx-95ch
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vcmm-ppqx-95ch/GHSA-vcmm-ppqx-95ch.json
+aliases:
+  - CVE-2016-1000221
+summary: |
+  Logstash Logs Sensitive Information
+  Logstash prior to version 2.3.4, Elasticsearch Output plugin would log to file HTTP authorization headers which could contain sensitive information.
+impacted_packages:
+  - purl: pkg:gem/logstash-core
+    affected_versions: vers:gem/<2.3.4
+    fixed_versions: vers:gem/2.3.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vcmm-ppqx-95ch/GHSA-vcmm-ppqx-95ch.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/elastic/logstash
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/logstash/commit/0999050144adad7f4d99d43e561c2882fd7c512b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-1000221
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124065200/http://www.securityfocus.com/bid/99126
+    reference_type:
+    reference_id:
+  - url: https://www.elastic.co/community/security
+    reference_type:
+    reference_id:

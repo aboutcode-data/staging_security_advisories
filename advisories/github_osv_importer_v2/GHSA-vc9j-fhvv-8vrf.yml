@@ -1,0 +1,46 @@
+advisory_id: GHSA-vc9j-fhvv-8vrf
+datasource_id: github_osv_importer_v2/GHSA-vc9j-fhvv-8vrf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-vc9j-fhvv-8vrf/GHSA-vc9j-fhvv-8vrf.json
+aliases:
+  - CVE-2020-14000
+summary: "Remote Code Execution in scratch-vm\nMIT Lifelong Kindergarten Scratch scratch-vm\
+  \ before `0.2.0-prerelease.20200714185213` loads extension URLs from untrusted project.json\
+  \ files with certain `_` characters, resulting in remote code execution because the URL's\
+  \ content is treated as a script and is executed as a worker. The responsible code is `getExtensionIdForOpcode`\
+  \ in serialization/sb3.js. The use of `_` is incompatible with a protection mechanism in older\
+  \ versions, in which URLs were split and consequently deserialization attacks were prevented.\
+  \ \n\n**NOTE**: the scratch.mit.edu hosted service is not affected because of the lack of\
+  \ worker scripts."
+impacted_packages:
+  - purl: pkg:npm/scratch-vm
+    affected_versions: vers:npm/<=0.2.0-prerelease.20200709173451
+    fixed_versions: vers:npm/0.2.0-prerelease.20200714185213
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-vc9j-fhvv-8vrf/GHSA-vc9j-fhvv-8vrf.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/LLK/scratch-vm
+    reference_type:
+    reference_id:
+  - url: https://github.com/LLK/scratch-vm/pull/2476
+    reference_type:
+    reference_id:
+  - url: https://github.com/LLK/scratch-vm/pull/2476/commits/90b9da45f4084958535338d1c4d71a22d6136aab
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-14000
+    reference_type:
+    reference_id:
+  - url: https://scratch.mit.edu/discuss/topic/422904/?page=1#post-4223443
+    reference_type:
+    reference_id:

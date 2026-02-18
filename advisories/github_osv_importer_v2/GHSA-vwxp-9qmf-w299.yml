@@ -1,0 +1,38 @@
+advisory_id: GHSA-vwxp-9qmf-w299
+datasource_id: github_osv_importer_v2/GHSA-vwxp-9qmf-w299
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-vwxp-9qmf-w299/GHSA-vwxp-9qmf-w299.json
+aliases:
+  - CVE-2022-0394
+summary: |
+  Cross-site Scripting in LiveHelperChat
+  LiveHelperChat (remdex/livehelperchat in Packagist) has a stored Cross-site Scripting (XSS) vulnerability prior to version 3.93.
+impacted_packages:
+  - purl: pkg:composer/remdex/livehelperchat
+    affected_versions: vers:composer/<3.93.0
+    fixed_versions: vers:composer/3.93.0
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-vwxp-9qmf-w299/GHSA-vwxp-9qmf-w299.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/livehelperchat/livehelperchat
+    reference_type:
+    reference_id:
+  - url: https://github.com/livehelperchat/livehelperchat/commit/d7b85466c217b3750eaccc8703ce54ba8785c4d3
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/e13823d0-271c-448b-a0c5-8549ea7ea272
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0394
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-w2pm-fr62-jgv4
+datasource_id: github_osv_importer_v2/GHSA-w2pm-fr62-jgv4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-w2pm-fr62-jgv4/GHSA-w2pm-fr62-jgv4.json
+aliases:
+  - CVE-2021-27131
+summary: |
+  Moodle vulnerable to stored Cross-site Scripting
+  Moodle 3.10.1 is vulnerable to persistent/stored cross-site scripting (XSS) due to the improper input sanitization on the "Additional HTML Section" via "Header and Footer" parameter in `/admin/settings.php`. This vulnerability may lead an attacker to steal admin and all user account cookies by storing the malicious XSS payload in Header and Footer.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.10.1
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-w2pm-fr62-jgv4/GHSA-w2pm-fr62-jgv4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://docs.moodle.org/402/en/Risks
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/p4nk4jv/CVEs-Assigned/blob/master/Moodle-3.10.1-CVE-2021-27131.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-27131
+    reference_type:
+    reference_id:

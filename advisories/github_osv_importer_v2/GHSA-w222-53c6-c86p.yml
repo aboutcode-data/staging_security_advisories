@@ -1,0 +1,88 @@
+advisory_id: GHSA-w222-53c6-c86p
+datasource_id: github_osv_importer_v2/GHSA-w222-53c6-c86p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/01/GHSA-w222-53c6-c86p/GHSA-w222-53c6-c86p.json
+aliases:
+  - CVE-2018-1000006
+summary: |
+  Remote Code Execution in electron
+  Affected versions of `electron` may be susceptible to a remote code execution flaw when certain conditions are met:
+  1. The electron application is running on Windows.
+  2. The electron application registers as the default handler for a protocol, such as `nodeapp://`.
+
+  This vulnerability is caused by a failure to sanitize additional arguments to chromium in the command line handler for Electron.
+
+  MacOS and Linux are not vulnerable.
+
+
+  ## Recommendation
+
+  Update electron to a version that is not vulnerable. If updating is not possible, the electron team has provided the following guidance:
+
+
+  If for some reason you are unable to upgrade your Electron version, you can append `--` as the last argument when calling `app.setAsDefaultProtocolClient`, which prevents Chromium from parsing further options. The double dash `--` signifies the end of command options, after which only positional parameters are accepted.
+  ```
+  app.setAsDefaultProtocolClient(protocol, process.execPath, [
+    '--your-switches-here',
+    '--'
+  ])
+  ```
+impacted_packages:
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=1.7.0|<1.7.11
+    fixed_versions: vers:npm/1.7.11
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=1.6.0|<1.6.16
+    fixed_versions: vers:npm/1.6.16
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/<=1.8.2-beta.3
+    fixed_versions: vers:npm/1.8.2-beta.4
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/01/GHSA-w222-53c6-c86p/GHSA-w222-53c6-c86p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://electronjs.org/blog/protocol-handler-fix
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-w222-53c6-c86p
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/releases/tag/v1.8.2-beta.4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000006
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/43899
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/44357
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/563
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/102796
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/remote/43899.html
+    reference_type: exploit
+    reference_id: CVE-2018-1000006
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/remote/44357.rb
+    reference_type: exploit
+    reference_id: CVE-2018-1000006
+  - url: https://medium.com/@Wflki/exploiting-electron-rce-in-exodus-wallet-d9e6db13c374
+    reference_type: exploit
+    reference_id: CVE-2018-1000006
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/0a0bef0c4fc52c418782015b1b49daf067ce964c/modules/exploits/windows/browser/exodus.rb
+    reference_type: exploit
+    reference_id: CVE-2018-1000006

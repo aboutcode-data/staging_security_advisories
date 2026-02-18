@@ -1,0 +1,32 @@
+advisory_id: GHSA-vpq9-c67q-23fq
+datasource_id: github_osv_importer_v2/GHSA-vpq9-c67q-23fq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vpq9-c67q-23fq/GHSA-vpq9-c67q-23fq.json
+aliases:
+  - CVE-2017-13761
+summary: |
+  Fastly Magento2 sensitive information disclosure
+  The Fastly CDN module before 1.2.26 for Magento2, when used with a third-party authentication plugin, might allow remote authenticated users to obtain sensitive information from authenticated sessions via vectors involving caching of redirect responses.
+impacted_packages:
+  - purl: pkg:composer/fastly/magento2
+    affected_versions: vers:composer/<1.2.26
+    fixed_versions: vers:composer/1.2.26
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vpq9-c67q-23fq/GHSA-vpq9-c67q-23fq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-13761
+    reference_type:
+    reference_id:
+  - url: https://www.fastly.com/security-advisories/vulnerability-fastly-open-source-cdn-module-intended-be-integrated-magento2
+    reference_type:
+    reference_id:

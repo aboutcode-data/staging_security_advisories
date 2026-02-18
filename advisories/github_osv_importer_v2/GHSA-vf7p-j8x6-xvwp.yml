@@ -1,0 +1,35 @@
+advisory_id: GHSA-vf7p-j8x6-xvwp
+datasource_id: github_osv_importer_v2/GHSA-vf7p-j8x6-xvwp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-vf7p-j8x6-xvwp/GHSA-vf7p-j8x6-xvwp.json
+aliases:
+  - CVE-2021-29943
+summary: |
+  Incorrect Authorization in Apache Solr
+  When using ConfigurableInternodeAuthHadoopPlugin for authentication, Apache Solr versions prior to 8.8.2 would forward/proxy distributed requests using server credentials instead of original client credentials. This would result in incorrect authorization resolution on the receiving hosts.
+impacted_packages:
+  - purl: pkg:maven/org.apache.solr/solr-parent
+    affected_versions: vers:maven/<8.8.2
+    fixed_versions: vers:maven/8.8.2
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-vf7p-j8x6-xvwp/GHSA-vf7p-j8x6-xvwp.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://lists.apache.org/thread.html/r91dd0ff556e0c9aab4c92852e0e540c59d4633718ce12881558cf44d%40%3Cusers.solr.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29943
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210604-0009
+    reference_type:
+    reference_id:

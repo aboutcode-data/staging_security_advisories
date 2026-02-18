@@ -1,0 +1,47 @@
+advisory_id: GHSA-vr4j-gj8q-m89v
+datasource_id: github_osv_importer_v2/GHSA-vr4j-gj8q-m89v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vr4j-gj8q-m89v/GHSA-vr4j-gj8q-m89v.json
+aliases:
+  - CVE-2016-7189
+summary: |
+  ChakraCore RCE Vulnerability
+  The Chakra JavaScript engine in Microsoft Edge allows remote attackers to execute arbitrary code via a crafted web site, aka "Scripting Engine Remote Code Execution Vulnerability."
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.2.1
+    fixed_versions: vers:nuget/1.2.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vr4j-gj8q-m89v/GHSA-vr4j-gj8q-m89v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-119
+references:
+  - url: https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-119
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/commit/f05c42e64c3b2d057ae1a52fe1917af26c9f2737
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/1737
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-7189
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210123174832/http://www.securityfocus.com/bid/93427
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20211208062350/http://www.securitytracker.com/id/1036993
+    reference_type:
+    reference_id:

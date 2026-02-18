@@ -1,0 +1,44 @@
+advisory_id: GHSA-v38p-mqq3-m6v5
+datasource_id: github_osv_importer_v2/GHSA-v38p-mqq3-m6v5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-v38p-mqq3-m6v5/GHSA-v38p-mqq3-m6v5.json
+aliases:
+  - CVE-2017-12158
+summary: |
+  Keycloak Reflected XSS
+  It was found that Keycloak would accept a HOST header URL in the admin console and use it to determine web resource locations. An attacker could use this flaw against an authenticated user to attain reflected XSS via a malicious server.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-parent
+    affected_versions: vers:maven/<3.4.0
+    fixed_versions: vers:maven/3.4.0
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-v38p-mqq3-m6v5/GHSA-v38p-mqq3-m6v5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://access.redhat.com/errata/RHSA-2017:2904
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:2905
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:2906
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1489161
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-12158
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124114020/http://www.securityfocus.com/bid/101618
+    reference_type:
+    reference_id:

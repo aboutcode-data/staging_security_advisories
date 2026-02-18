@@ -1,0 +1,38 @@
+advisory_id: GHSA-w86j-99wg-r29f
+datasource_id: github_osv_importer_v2/GHSA-w86j-99wg-r29f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w86j-99wg-r29f/GHSA-w86j-99wg-r29f.json
+aliases:
+  - CVE-2018-1999025
+summary: |
+  Jenkins TraceTronic ECU-TEST Plugin Man in the middle vulnerability
+  A man in the middle vulnerability exists in Jenkins TraceTronic ECU-TEST Plugin 2.3 and earlier in ATXPublisher.java, ATXValidator.java that allows attackers to impersonate any service that Jenkins connects to.
+impacted_packages:
+  - purl: pkg:maven/de.tracetronic.jenkins.plugins/ecutest
+    affected_versions: vers:maven/<=2.3
+    fixed_versions: vers:maven/2.4
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w86j-99wg-r29f/GHSA-w86j-99wg-r29f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://github.com/jenkinsci/ecutest-plugin
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/ecutest-plugin/commit/d2b730c0e1c986d53d8d48c0cd5bb9a3b205a2bb
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2018-07-30/#SECURITY-932
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1999025
+    reference_type:
+    reference_id:

@@ -1,0 +1,54 @@
+advisory_id: GHSA-wfrc-r6c6-7j9r
+datasource_id: github_osv_importer_v2/GHSA-wfrc-r6c6-7j9r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wfrc-r6c6-7j9r/GHSA-wfrc-r6c6-7j9r.json
+aliases:
+  - CVE-2008-4310
+summary: |
+  WEBrick Denial of Service Vulnerability
+  httputils.rb in WEBrick in Ruby 1.8.1 and 1.8.5, as used in Red Hat Enterprise Linux 4 and 5, allows remote attackers to cause a denial of service (CPU consumption) via a crafted HTTP request.  NOTE: this issue exists because of an incomplete fix for CVE-2008-3656.
+impacted_packages:
+  - purl: pkg:gem/webrick
+    affected_versions: vers:gem/<1.3.1
+    fixed_versions: vers:gem/1.3.1
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=470252
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/webrick/CVE-2008-4310.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/ruby/webrick
+    reference_type:
+    reference_id:
+  - url: https://github.com/ruby/webrick/commit/b2ccd5ff7ddd67a4548299e110dcc5a4728a5534
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2008-4310
+    reference_type:
+    reference_id:
+  - url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10250
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20111230125610/http://secunia.com/advisories/33013
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2008/12/04/2
+    reference_type:
+    reference_id:
+  - url: http://www.redhat.com/support/errata/RHSA-2008-0981.html
+    reference_type:
+    reference_id:
+  - url: https://www.securityfocus.com/bid/30644/info
+    reference_type: exploit
+    reference_id: CVE-2008-3657;OSVDB-47472;CVE-2008-3655;OSVDB-47470
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/32222.rb
+    reference_type: exploit
+    reference_id: CVE-2008-4310;OSVDB-47471;CVE-2008-3656

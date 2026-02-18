@@ -1,0 +1,43 @@
+advisory_id: GHSA-w3v3-cxq5-9vr4
+datasource_id: github_osv_importer_v2/GHSA-w3v3-cxq5-9vr4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-w3v3-cxq5-9vr4/GHSA-w3v3-cxq5-9vr4.json
+aliases:
+  - CVE-2022-0179
+summary: |
+  Incorrect Default Permissions and Improper Access Control in snipe-it
+  snipe-it is vulnerable to Improper Access Control/Incorrect Default Permissions.
+impacted_packages:
+  - purl: pkg:composer/snipe/snipe-it
+    affected_versions: vers:composer/<5.3.7
+    fixed_versions: vers:composer/5.3.7
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-w3v3-cxq5-9vr4/GHSA-w3v3-cxq5-9vr4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+  - CWE-284
+  - CWE-276
+references:
+  - url: https://github.com/snipe/snipe-it
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it/commit/cf14a0222c67472086cd08b2155f045edaf75f2e
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it/pull/10498
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/efdf2ead-f9d1-4767-9f02-d11f762d15e7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0179
+    reference_type:
+    reference_id:

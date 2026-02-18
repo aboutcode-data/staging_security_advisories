@@ -1,0 +1,44 @@
+advisory_id: GHSA-vhxf-7vqr-mrjg
+datasource_id: github_osv_importer_v2/GHSA-vhxf-7vqr-mrjg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-vhxf-7vqr-mrjg/GHSA-vhxf-7vqr-mrjg.json
+aliases:
+  - CVE-2025-26791
+summary: |
+  DOMPurify allows Cross-site Scripting (XSS)
+  DOMPurify before 3.2.4 has an incorrect template literal regular expression when SAFE_FOR_TEMPLATES is set to true, sometimes leading to mutation cross-site scripting (mXSS).
+impacted_packages:
+  - purl: pkg:npm/dompurify
+    affected_versions: vers:npm/<3.2.4
+    fixed_versions: vers:npm/3.2.4
+severities:
+  - score: '4.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-vhxf-7vqr-mrjg/GHSA-vhxf-7vqr-mrjg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://ensy.zip/posts/dompurify-323-bypass
+    reference_type:
+    reference_id:
+  - url: https://github.com/cure53/DOMPurify
+    reference_type:
+    reference_id:
+  - url: https://github.com/cure53/DOMPurify/commit/d18ffcb554e0001748865da03ac75dd7829f0f02
+    reference_type:
+    reference_id:
+  - url: https://github.com/cure53/DOMPurify/releases/tag/3.2.4
+    reference_type:
+    reference_id:
+  - url: https://nsysean.github.io/posts/dompurify-323-bypass
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-26791
+    reference_type:
+    reference_id:

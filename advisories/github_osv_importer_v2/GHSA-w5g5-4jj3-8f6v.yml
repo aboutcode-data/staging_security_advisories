@@ -1,0 +1,35 @@
+advisory_id: GHSA-w5g5-4jj3-8f6v
+datasource_id: github_osv_importer_v2/GHSA-w5g5-4jj3-8f6v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-w5g5-4jj3-8f6v/GHSA-w5g5-4jj3-8f6v.json
+aliases:
+  - CVE-2024-33298
+summary: |
+  Microweber Cross-site Scripting vulnerability
+  Microweber Cross Site Scripting vulnerability in Microweber v.2.0.9 allows a remote attacker to execute arbitrary code via the create new backup function in the endpoint /admin/module/view?type=admin__backup
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<=2.0.9
+    fixed_versions:
+severities:
+  - score: '5.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-w5g5-4jj3-8f6v/GHSA-w5g5-4jj3-8f6v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/MathSabo/CVE-2024-33298
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-33298
+    reference_type:
+    reference_id:

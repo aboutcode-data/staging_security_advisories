@@ -1,0 +1,53 @@
+advisory_id: GHSA-vghf-hv5q-vc2g
+datasource_id: github_osv_importer_v2/GHSA-vghf-hv5q-vc2g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-vghf-hv5q-vc2g/GHSA-vghf-hv5q-vc2g.json
+aliases:
+  - CVE-2025-12758
+summary: |
+  Validator is Vulnerable to Incomplete Filtering of One or More Instances of Special Elements
+  Versions of the package validator before 13.15.22 are vulnerable to Incomplete Filtering of One or More Instances of Special Elements in the isLength() function that does not take into account Unicode variation selectors (\uFE0F, \uFE0E) appearing in a sequence which lead to improper string length calculation. This can lead to an application using isLength for input validation accepting strings significantly longer than intended, resulting in issues like data truncation in databases, buffer overflows in other system components, or denial-of-service.
+impacted_packages:
+  - purl: pkg:npm/validator
+    affected_versions: vers:npm/<13.15.22
+    fixed_versions: vers:npm/13.15.22
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-vghf-hv5q-vc2g/GHSA-vghf-hv5q-vc2g.json
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-vghf-hv5q-vc2g/GHSA-vghf-hv5q-vc2g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-792
+  - CWE-172
+references:
+  - url: http://seclists.org/fulldisclosure/2026/Jan/27
+    reference_type:
+    reference_id:
+  - url: https://gist.github.com/koral--/ad31208b25b9e3d1e2e35f1d4d72572e
+    reference_type:
+    reference_id:
+  - url: https://github.com/validatorjs/validator.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/validatorjs/validator.js/commit/d457ecaf55b0f3d8bd379d82757425d0d13dd382
+    reference_type:
+    reference_id:
+  - url: https://github.com/validatorjs/validator.js/pull/2616
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-12758
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-VALIDATOR-13653476
+    reference_type:
+    reference_id:

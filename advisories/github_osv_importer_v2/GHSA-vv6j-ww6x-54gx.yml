@@ -1,0 +1,73 @@
+advisory_id: GHSA-vv6j-ww6x-54gx
+datasource_id: github_osv_importer_v2/GHSA-vv6j-ww6x-54gx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-vv6j-ww6x-54gx/GHSA-vv6j-ww6x-54gx.json
+aliases:
+  - CVE-2022-0609
+summary: |
+  CVE-2022-0609: Use after free in Animation
+
+  - https://chromereleases.googleblog.com/2022/02/stable-channel-update-for-desktop_14.html
+  - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0609
+
+  Google is aware of reports that exploits for CVE-2022-0609 exist in the wild.
+
+  The exploitation is known to be easy. The attack may be initiated remotely. No form of authentication is needed for a successful exploitation. It demands that the victim is doing some kind of user interaction. Technical details are unknown but an exploit is available.
+
+  There is currently little other public information on the issue other than it has been flagged as `High` severity.
+impacted_packages:
+  - purl: pkg:nuget/CefSharp.Common
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+  - purl: pkg:nuget/CefSharp.OffScreen
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+  - purl: pkg:nuget/CefSharp.WinForms
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+  - purl: pkg:nuget/CefSharp.Wpf
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+  - purl: pkg:nuget/CefSharp.Wpf.HwndHost
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+  - purl: pkg:nuget/CefSharp.Common.NETCore
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+  - purl: pkg:nuget/CefSharp.OffScreen.NETCore
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+  - purl: pkg:nuget/CefSharp.WinForms.NETCore
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+  - purl: pkg:nuget/CefSharp.Wpf.NETCore
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-vv6j-ww6x-54gx/GHSA-vv6j-ww6x-54gx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-416
+references:
+  - url: https://chromereleases.googleblog.com/2022/02/stable-channel-update-for-desktop_14.html
+    reference_type:
+    reference_id:
+  - url: https://crbug.com/1296150
+    reference_type:
+    reference_id:
+  - url: https://github.com/cefsharp/CefSharp
+    reference_type:
+    reference_id:
+  - url: https://github.com/cefsharp/CefSharp/security/advisories/GHSA-vv6j-ww6x-54gx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0609
+    reference_type:
+    reference_id:

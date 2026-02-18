@@ -1,0 +1,72 @@
+advisory_id: GHSA-v6c6-vqqg-w888
+datasource_id: github_osv_importer_v2/GHSA-v6c6-vqqg-w888
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-v6c6-vqqg-w888/GHSA-v6c6-vqqg-w888.json
+aliases: []
+summary: |
+  OpenClaw affected by potential code execution via unsafe hook module path handling in Gateway
+  ## Summary
+
+  OpenClaw Gateway supports hook mappings with optional JavaScript/TypeScript transform modules. In affected versions, the gateway did not sufficiently constrain configured module paths before passing them to dynamic `import()`. Under some configurations, a user who can modify gateway configuration could cause the gateway process to load and execute an unintended local module.
+
+  ## Impact
+
+  Potential code execution in the OpenClaw gateway Node.js process.
+
+  This requires access that can modify gateway configuration (for example via the gateway config endpoints). Treat such access as high privilege.
+
+  ## Affected Packages / Versions
+
+  - npm package: `openclaw`
+  - Affected: `>= 2026.1.5` and `<= 2026.2.13`
+
+  ## Patched Versions
+
+  - `>= 2026.2.14`
+
+  ## Fix Commit(s)
+
+  - `a0361b8ba959e8506dc79d638b6e6a00d12887e4` (restrict hook transform module loading)
+  - `35c0e66ed057f1a9f7ad2515fdcef516bd6584ce` (harden hooks module loading)
+
+  ## Mitigation
+
+  - Upgrade to `2026.2.14` or newer.
+  - Avoid exposing gateway configuration endpoints to untrusted networks.
+  - Review config for unsafe values:
+    - `hooks.mappings[].transform.module`
+    - `hooks.internal.handlers[].module`
+
+  Thanks @222n5 for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/>=2026.1.5|<2026.2.14
+    fixed_versions: vers:npm/2026.2.14
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-v6c6-vqqg-w888/GHSA-v6c6-vqqg-w888.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/35c0e66ed057f1a9f7ad2515fdcef516bd6584ce
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/a0361b8ba959e8506dc79d638b6e6a00d12887e4
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.14
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-v6c6-vqqg-w888
+    reference_type:
+    reference_id:

@@ -1,0 +1,42 @@
+advisory_id: GHSA-vhw5-3g5m-8ggf
+datasource_id: github_osv_importer_v2/GHSA-vhw5-3g5m-8ggf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-vhw5-3g5m-8ggf/GHSA-vhw5-3g5m-8ggf.json
+aliases:
+  - CVE-2026-24052
+summary: "Claude Code has a Domain Validation Bypass which Allows Automatic Requests to Attacker-Controlled\
+  \ Domains\nClaude Code contained insufficient URL validation in its trusted domain verification\
+  \ mechanism for WebFetch requests. The application used a `startsWith()` function to validate\
+  \ trusted domains (e.g., `docs.python.org`, `modelcontextprotocol.io`), this could have enabled\
+  \ attackers to register domains like `modelcontextprotocol.io.example.com` that would pass\
+  \ validation. This could enable automatic requests to attacker-controlled domains without\
+  \ user consent, potentially leading to data exfiltration. \n\nUsers on standard Claude Code\
+  \ auto-update have received this fix already. Users performing manual updates are advised\
+  \ to update to the latest version.\n\nThank you to hackerone.com/47sid-praetorian for reporting\
+  \ this issue!"
+impacted_packages:
+  - purl: pkg:npm/%40anthropic-ai/claude-code
+    affected_versions: vers:npm/<1.0.111
+    fixed_versions: vers:npm/1.0.111
+severities:
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-vhw5-3g5m-8ggf/GHSA-vhw5-3g5m-8ggf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/anthropics/claude-code
+    reference_type:
+    reference_id:
+  - url: https://github.com/anthropics/claude-code/security/advisories/GHSA-vhw5-3g5m-8ggf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24052
+    reference_type:
+    reference_id:

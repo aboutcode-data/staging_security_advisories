@@ -1,0 +1,41 @@
+advisory_id: GHSA-w7rx-824v-rgx5
+datasource_id: github_osv_importer_v2/GHSA-w7rx-824v-rgx5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-w7rx-824v-rgx5/GHSA-w7rx-824v-rgx5.json
+aliases:
+  - CVE-2023-6835
+summary: |
+  WSO2 API Manager allows attackers to change the API rating
+  Multiple WSO2 products have been identified as vulnerable due to lack of server-side input validation in the Forum feature, API rating could be manipulated.
+impacted_packages:
+  - purl: pkg:maven/org.wso2.carbon.apimgt/forum
+    affected_versions: vers:maven/<=9.0.78
+    fixed_versions:
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-w7rx-824v-rgx5/GHSA-w7rx-824v-rgx5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/wso2/carbon-apimgt
+    reference_type:
+    reference_id:
+  - url: https://github.com/wso2/carbon-apimgt/blob/81e0c0b8ed0bd2dace1e9006be21acbb731c835e/components/forum/org.wso2.carbon.forum/src/main/java/org/wso2/carbon/forum/registry/RegistryForumManager.java#L762
+    reference_type:
+    reference_id:
+  - url: https://github.com/wso2/carbon-apimgt/commit/2e9591b72bc286dfcd22b57768e984d867c902ba
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6835
+    reference_type:
+    reference_id:
+  - url: https://security.docs.wso2.com/en/latest/security-announcements/security-advisories/2021/WSO2-2021-1357
+    reference_type:
+    reference_id:

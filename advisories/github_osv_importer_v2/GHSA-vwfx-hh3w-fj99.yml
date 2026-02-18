@@ -1,0 +1,45 @@
+advisory_id: GHSA-vwfx-hh3w-fj99
+datasource_id: github_osv_importer_v2/GHSA-vwfx-hh3w-fj99
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-vwfx-hh3w-fj99/GHSA-vwfx-hh3w-fj99.json
+aliases:
+  - CVE-2021-21418
+summary: |
+  Potential XSS injection in the newsletter conditions field
+  ### Impact
+  An employee can inject javascript in the newsletter condition field that will then be executed on the front office
+
+  ### Patches
+  The issue has been fixed in 2.6.1
+impacted_packages:
+  - purl: pkg:composer/prestashop/ps_emailsubscription
+    affected_versions: vers:composer/<2.6.1
+    fixed_versions: vers:composer/2.6.1
+severities:
+  - score: '4.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-vwfx-hh3w-fj99/GHSA-vwfx-hh3w-fj99.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/PrestaShop/ps_emailsubscription/commit/664ffb225e2afb4a32640bbedad667dc6e660b70
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/ps_emailsubscription/releases/tag/v2.6.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/ps_emailsubscription/security/advisories/GHSA-vwfx-hh3w-fj99
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-21418
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/prestashop/ps_emailsubscription
+    reference_type:
+    reference_id:

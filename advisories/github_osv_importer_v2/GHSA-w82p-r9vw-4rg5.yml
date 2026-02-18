@@ -1,0 +1,42 @@
+advisory_id: GHSA-w82p-r9vw-4rg5
+datasource_id: github_osv_importer_v2/GHSA-w82p-r9vw-4rg5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-w82p-r9vw-4rg5/GHSA-w82p-r9vw-4rg5.json
+aliases:
+  - CVE-2025-1396
+summary: |
+  WSO2's Input Validation Management Service contains Observable Discrepancy when Multi-Attribute Login is enabled
+  A username enumeration vulnerability exists in multiple WSO2 products when Multi-Attribute Login is enabled. In this configuration, the system returns a distinct "User does not exist" error message to the login form, regardless of the validate_username setting. This behavior allows malicious actors to determine which usernames exist in the system based on observable discrepancies in the application's responses.
+
+  Exploitation of this vulnerability could aid in brute-force attacks, targeted phishing campaigns, or other social engineering techniques by confirming the validity of user identifiers within the system.
+
+  There is a fix available in version 7.8.491, however it has not been published to the Maven registry.
+impacted_packages:
+  - purl: pkg:maven/org.wso2.carbon.identity.framework/org.wso2.carbon.identity.input.validation.mgt
+    affected_versions: vers:maven/<=7.8.103
+    fixed_versions:
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-w82p-r9vw-4rg5/GHSA-w82p-r9vw-4rg5.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+references:
+  - url: https://github.com/wso2/carbon-identity-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/wso2/carbon-identity-framework/commit/5d5d592882a0377c12e19967c6272ccce0fb18ab
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-1396
+    reference_type:
+    reference_id:
+  - url: https://security.docs.wso2.com/en/latest/security-announcements/security-advisories/2025/WSO2-2025-3983
+    reference_type:
+    reference_id:

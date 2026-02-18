@@ -1,0 +1,44 @@
+advisory_id: GHSA-w98g-5fmx-wm4x
+datasource_id: github_osv_importer_v2/GHSA-w98g-5fmx-wm4x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-w98g-5fmx-wm4x/GHSA-w98g-5fmx-wm4x.json
+aliases: []
+summary: |
+  pocketmine/raklib reliable-ordered queue size is unlimited, allowing a session to hog server memory
+  ### Impact
+  A client can send reliable-ordered packets 0, 2, 3, 4, 5 ... etc, and all the packets 2 and up will stay in the reliable-ordered queue until 1 arrives. A malicious client can exploit this to waste all available server memory by simply never sending the missing packet. Since the server doesn't make any effort to limit the size of the queue or detect this kind of abuse, this problem is easy to abuse.
+
+  ### Patches
+  This bug was fixed on the 0.14.x and 0.15.x release lines by 371190f5854372154d1b263cd2a10e658e92bebe.
+
+  ### Workarounds
+  No workaround is known.
+impacted_packages:
+  - purl: pkg:composer/pocketmine/raklib
+    affected_versions: vers:composer/>=0.14.0|<0.14.6
+    fixed_versions: vers:composer/0.14.6
+  - purl: pkg:composer/pocketmine/raklib
+    affected_versions: vers:composer/>=0.15.0|<0.15.1
+    fixed_versions: vers:composer/0.15.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-w98g-5fmx-wm4x/GHSA-w98g-5fmx-wm4x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/pmmp/RakLib
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/RakLib/commit/371190f5854372154d1b263cd2a10e658e92bebe
+    reference_type:
+    reference_id:
+  - url: https://github.com/pmmp/RakLib/security/advisories/GHSA-w98g-5fmx-wm4x
+    reference_type:
+    reference_id:

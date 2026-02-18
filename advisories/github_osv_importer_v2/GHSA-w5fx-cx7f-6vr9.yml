@@ -1,0 +1,55 @@
+advisory_id: GHSA-w5fx-cx7f-6vr9
+datasource_id: github_osv_importer_v2/GHSA-w5fx-cx7f-6vr9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-w5fx-cx7f-6vr9/GHSA-w5fx-cx7f-6vr9.json
+aliases:
+  - CVE-2023-45363
+summary: |
+  MediaWiki Denial of Service vulnerability
+  An issue was discovered in ApiPageSet.php in MediaWiki before 1.35.12, 1.36.x through 1.39.x before 1.39.5, and 1.40.x before 1.40.1. It allows attackers to cause a denial of service (unbounded loop and RequestTimeoutException) when querying pages redirected to other variants with redirects and converttitles set.
+impacted_packages:
+  - purl: pkg:composer/mediawiki/core
+    affected_versions: vers:composer/<1.35.12
+    fixed_versions: vers:composer/1.35.12
+  - purl: pkg:composer/mediawiki/core
+    affected_versions: vers:composer/>=1.36.0|<1.39.5
+    fixed_versions: vers:composer/1.39.5
+  - purl: pkg:composer/mediawiki/core
+    affected_versions: vers:composer/1.40.0
+    fixed_versions: vers:composer/1.40.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-w5fx-cx7f-6vr9/GHSA-w5fx-cx7f-6vr9.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-w5fx-cx7f-6vr9/GHSA-w5fx-cx7f-6vr9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-835
+references:
+  - url: https://github.com/wikimedia/mediawiki
+    reference_type:
+    reference_id:
+  - url: https://github.com/wikimedia/mediawiki/commit/24c3ef2474c6daa20ed48168d46196a55346dfd8
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/11/msg00027.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-45363
+    reference_type:
+    reference_id:
+  - url: https://phabricator.wikimedia.org/T333050
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2023/dsa-5520
+    reference_type:
+    reference_id:

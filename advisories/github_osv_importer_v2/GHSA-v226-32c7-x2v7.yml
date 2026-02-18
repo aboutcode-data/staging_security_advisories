@@ -1,0 +1,46 @@
+advisory_id: GHSA-v226-32c7-x2v7
+datasource_id: github_osv_importer_v2/GHSA-v226-32c7-x2v7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-v226-32c7-x2v7/GHSA-v226-32c7-x2v7.json
+aliases:
+  - CVE-2026-25958
+summary: "Cube Core is vulnerable to privilege escalation via a specially crafted request\n\
+  ### **Impact**\n\nIt is possible to make a specially crafted request with a valid API token\
+  \ that leads to privilege escalation.\n\n### Affected Versions:\n\n`≥= 0.27.19` \n\n### Mitigation:\n\
+  \nUpgrade to a patched version:\n\n- 1.5.13 and later (regular release)\n- 1.4.2 (active [LTS\
+  \ release](https://cube.dev/docs/product/administration/distribution#long-term-support))\n\
+  - 1.0.14 (end-of-life LTS release)\n\n### **References**\n\nThe issue was reported by our\
+  \ Core engineer, Dmitrii Patsura (@ovr), in our internal Slack and was promptly patched in\
+  \ a recent update."
+impacted_packages:
+  - purl: pkg:npm/%40cubejs-backend/server-core
+    affected_versions: vers:npm/>=0.27.19|<1.0.14
+    fixed_versions: vers:npm/1.0.14
+  - purl: pkg:npm/%40cubejs-backend/server-core
+    affected_versions: vers:npm/>=1.1.0|<1.4.2
+    fixed_versions: vers:npm/1.4.2
+  - purl: pkg:npm/%40cubejs-backend/server-core
+    affected_versions: vers:npm/>=1.5.0|<1.5.13
+    fixed_versions: vers:npm/1.5.13
+severities:
+  - score: '7.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-v226-32c7-x2v7/GHSA-v226-32c7-x2v7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-807
+references:
+  - url: https://github.com/cube-js/cube
+    reference_type:
+    reference_id:
+  - url: https://github.com/cube-js/cube/security/advisories/GHSA-v226-32c7-x2v7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25958
+    reference_type:
+    reference_id:

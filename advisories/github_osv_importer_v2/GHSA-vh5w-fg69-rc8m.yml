@@ -1,0 +1,35 @@
+advisory_id: GHSA-vh5w-fg69-rc8m
+datasource_id: github_osv_importer_v2/GHSA-vh5w-fg69-rc8m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-vh5w-fg69-rc8m/GHSA-vh5w-fg69-rc8m.json
+aliases:
+  - CVE-2020-8910
+summary: |
+  Improper Input Validation in Google Closure Library
+  A URL parsing issue in goog.uri of the Google Closure Library versions up to and including v20200224 allows an attacker to send malicious URLs to be parsed by the library and return the wrong authority. Mitigation -- update your library to version v20200315.
+impacted_packages:
+  - purl: pkg:npm/google-closure-library
+    affected_versions: vers:npm/<=20200224.0.0
+    fixed_versions: vers:npm/20200315.0.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-vh5w-fg69-rc8m/GHSA-vh5w-fg69-rc8m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/google/closure-library/commit/294fc00b01d248419d8f8de37580adf2a0024fc9
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/closure-library/releases/tag/v20200315
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8910
+    reference_type:
+    reference_id:

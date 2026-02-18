@@ -1,0 +1,48 @@
+advisory_id: GHSA-vxpm-8hcp-qh27
+datasource_id: github_osv_importer_v2/GHSA-vxpm-8hcp-qh27
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-vxpm-8hcp-qh27/GHSA-vxpm-8hcp-qh27.json
+aliases:
+  - CVE-2023-23941
+summary: |
+  Payment information sent to PayPal not necessarily identical to created order
+  ### Impact
+  If JavaScript-based PayPal checkout methods are used (PayPal Plus, Smart Payment Buttons, SEPA, Pay Later, Venmo, Credit card), the amount and item list sent to PayPal may not be identical to the one in the created order.
+
+  ### Patches
+  The problem has been fixed with version 5.4.4
+
+  ### Workarounds
+  Disable the aforementioned payment methods or use the Security Plugin in version >= 1.0.21.
+
+  ### References
+  [Shopware blog post](https://news.shopware.com/security-issue-in-paypal-plugin-update-required)
+impacted_packages:
+  - purl: pkg:composer/swag/paypal
+    affected_versions: vers:composer/<5.4.4
+    fixed_versions: vers:composer/5.4.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-vxpm-8hcp-qh27/GHSA-vxpm-8hcp-qh27.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-345
+references:
+  - url: https://github.com/shopware/SwagPayPal
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/SwagPayPal/commit/57db5f4a57ef0a1646b509b415de9f03bf441b08
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/SwagPayPal/security/advisories/GHSA-vxpm-8hcp-qh27
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-23941
+    reference_type:
+    reference_id:

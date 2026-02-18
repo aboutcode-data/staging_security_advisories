@@ -1,0 +1,44 @@
+advisory_id: GHSA-v2mw-5mch-w8c5
+datasource_id: github_osv_importer_v2/GHSA-v2mw-5mch-w8c5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-v2mw-5mch-w8c5/GHSA-v2mw-5mch-w8c5.json
+aliases:
+  - CVE-2025-25977
+summary: |
+  canvg Prototype Pollution vulnerability
+  An issue in canvg prior to v.4.0.3 and v3.0.11 can lead to prototype pollution via the Constructor of the class StyleElement.
+impacted_packages:
+  - purl: pkg:npm/canvg
+    affected_versions: vers:npm/>=4.0.0|<4.0.3
+    fixed_versions: vers:npm/4.0.3
+  - purl: pkg:npm/canvg
+    affected_versions: vers:npm/<3.0.11
+    fixed_versions: vers:npm/3.0.11
+severities:
+  - score: '8.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-v2mw-5mch-w8c5/GHSA-v2mw-5mch-w8c5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/canvg/canvg
+    reference_type:
+    reference_id:
+  - url: https://github.com/canvg/canvg/blob/937668eced93e0335c67a255d0d2277ea708b2cb/src/Document/StyleElement.ts
+    reference_type:
+    reference_id:
+  - url: https://github.com/canvg/canvg/commit/c3743e6345f3e01aefdcdd412c3f26494f4b5d7d
+    reference_type:
+    reference_id:
+  - url: https://github.com/canvg/canvg/issues/1749
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-25977
+    reference_type:
+    reference_id:

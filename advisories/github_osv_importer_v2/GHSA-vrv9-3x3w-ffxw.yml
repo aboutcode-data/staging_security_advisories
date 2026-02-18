@@ -1,0 +1,41 @@
+advisory_id: GHSA-vrv9-3x3w-ffxw
+datasource_id: github_osv_importer_v2/GHSA-vrv9-3x3w-ffxw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-vrv9-3x3w-ffxw/GHSA-vrv9-3x3w-ffxw.json
+aliases:
+  - CVE-2022-3783
+summary: |
+  node-red-dashboard vulnerable to Cross-site Scripting
+  node-red-dashboard contains a cross-site scripting vulnerability. This issue affects some unknown processing of the file `components/ui-component/ui-component-ctrl.js` of the component ui_text Format Handler. The attack may be initiated remotely. The issue is patched in version 3.2.0.
+impacted_packages:
+  - purl: pkg:npm/node-red-dashboard
+    affected_versions: vers:npm/<3.2.0
+    fixed_versions: vers:npm/3.2.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-vrv9-3x3w-ffxw/GHSA-vrv9-3x3w-ffxw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/node-red/node-red-dashboard
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-red/node-red-dashboard/commit/9305d1a82f19b235dfad24a7d1dd4ed244db7743
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-red/node-red-dashboard/issues/772
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3783
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.212555
+    reference_type:
+    reference_id:

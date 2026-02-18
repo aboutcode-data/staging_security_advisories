@@ -1,0 +1,41 @@
+advisory_id: GHSA-wfm2-rq5g-f8v5
+datasource_id: github_osv_importer_v2/GHSA-wfm2-rq5g-f8v5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-wfm2-rq5g-f8v5/GHSA-wfm2-rq5g-f8v5.json
+aliases: []
+summary: |
+  @account-kit/smart-contracts Allowlist Module Bypass Vulnerability
+  ### Summary
+  Allowlist module contains a bypass vulnerability
+
+  ### Details
+  The logic for using an allowlist on a Modular Account V2 contained a bug that allowed session keys to bypass any allowlist configuration
+
+  ### Action
+  If you are using @aa-sdk and/or @account-kit/smart-contracts between the versions of >=4.8.0 and <4.28.1, please upgrade to 4.28.2
+impacted_packages:
+  - purl: pkg:npm/%40account-kit/smart-contracts
+    affected_versions: vers:npm/>=4.8.0|<4.28.2
+    fixed_versions: vers:npm/4.28.2
+severities:
+  - score: '6.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-wfm2-rq5g-f8v5/GHSA-wfm2-rq5g-f8v5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-288
+references:
+  - url: https://github.com/alchemyplatform/aa-sdk
+    reference_type:
+    reference_id:
+  - url: https://github.com/alchemyplatform/aa-sdk/commit/b65bafdb9eec3a009df2cbabf09a35a76550e9d0
+    reference_type:
+    reference_id:
+  - url: https://github.com/alchemyplatform/aa-sdk/security/advisories/GHSA-wfm2-rq5g-f8v5
+    reference_type:
+    reference_id:

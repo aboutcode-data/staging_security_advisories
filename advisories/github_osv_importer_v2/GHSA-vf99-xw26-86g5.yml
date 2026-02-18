@@ -1,0 +1,38 @@
+advisory_id: GHSA-vf99-xw26-86g5
+datasource_id: github_osv_importer_v2/GHSA-vf99-xw26-86g5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-vf99-xw26-86g5/GHSA-vf99-xw26-86g5.json
+aliases:
+  - CVE-2023-22626
+summary: |
+  PgHero Allows Information Disclosure Through EXPLAIN Feature
+  PgHero before 3.1.0 allows Information Disclosure via EXPLAIN because query results may be present in an error message. (Depending on database user privileges, this may only be information from the database, or may be information from file contents on the database server.)
+impacted_packages:
+  - purl: pkg:gem/pghero
+    affected_versions: vers:gem/<3.1.0
+    fixed_versions: vers:gem/3.1.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-vf99-xw26-86g5/GHSA-vf99-xw26-86g5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-209
+references:
+  - url: https://github.com/ankane/pghero
+    reference_type:
+    reference_id:
+  - url: https://github.com/ankane/pghero/issues/439
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/pghero/CVE-2023-22626.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-22626
+    reference_type:
+    reference_id:

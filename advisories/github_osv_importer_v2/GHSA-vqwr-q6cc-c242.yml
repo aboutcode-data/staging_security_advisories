@@ -1,0 +1,38 @@
+advisory_id: GHSA-vqwr-q6cc-c242
+datasource_id: github_osv_importer_v2/GHSA-vqwr-q6cc-c242
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-vqwr-q6cc-c242/GHSA-vqwr-q6cc-c242.json
+aliases:
+  - CVE-2024-4315
+summary: |
+  parisneo/lollms Local File Inclusion (LFI) attack
+  parisneo/lollms version 9.5 is vulnerable to Local File Inclusion (LFI) attacks due to insufficient path sanitization. The `sanitize_path_from_endpoint` function fails to properly sanitize Windows-style paths (backward slash `\`), allowing attackers to perform directory traversal attacks on Windows systems. This vulnerability can be exploited through various routes, including `personalities` and `/del_preset`, to read or delete any file on the Windows filesystem, compromising the system's availability.
+impacted_packages:
+  - purl: pkg:pypi/lollms
+    affected_versions: vers:pypi/<9.5.0
+    fixed_versions: vers:pypi/9.5.0
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-vqwr-q6cc-c242/GHSA-vqwr-q6cc-c242.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/ParisNeo/lollms
+    reference_type:
+    reference_id:
+  - url: https://github.com/parisneo/lollms/commit/95ad36eeffc6a6be3e3f35ed35a384d768f0ecf6
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/8a1b0197-2c36-4276-b92b-630a2a9bb09c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-4315
+    reference_type:
+    reference_id:

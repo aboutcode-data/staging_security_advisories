@@ -1,0 +1,41 @@
+advisory_id: GHSA-vcpr-hm2m-gjjj
+datasource_id: github_osv_importer_v2/GHSA-vcpr-hm2m-gjjj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-vcpr-hm2m-gjjj/GHSA-vcpr-hm2m-gjjj.json
+aliases:
+  - CVE-2023-28475
+summary: |
+  Reflected cross site scripting
+  Concrete CMS (previously concrete5) before 9.2 is vulnerable to Reflected XSS on the Reply form because msgID was not sanitized.
+impacted_packages:
+  - purl: pkg:composer/concrete5/concrete5
+    affected_versions: vers:composer/<9.2.0
+    fixed_versions: vers:composer/9.2.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-vcpr-hm2m-gjjj/GHSA-vcpr-hm2m-gjjj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://concretecms.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/concretecms/concretecms/commit/861ba66d248165c9ee9d6d11a0457908b97d68f0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-28475
+    reference_type:
+    reference_id:
+  - url: https://www.concretecms.org/about/project-news/security/2023-11-09-security-blog-about-updated-cves-and-new-release
+    reference_type:
+    reference_id:
+  - url: https://www.concretecms.org/about/project-news/security/concrete-cms-security-advisory-2023-04-20
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-vx9g-377x-xwxq
+datasource_id: github_osv_importer_v2/GHSA-vx9g-377x-xwxq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-vx9g-377x-xwxq/GHSA-vx9g-377x-xwxq.json
+aliases:
+  - CVE-2022-27311
+summary: |
+  Server side request forgery in gibbon
+  Gibbon v3.4.3 and below allows attackers to execute a Server-Side Request Forgery (SSRF) via a crafted URL. This issue has been resolved in version 3.4.4
+impacted_packages:
+  - purl: pkg:gem/gibbon
+    affected_versions: vers:gem/<3.4.4
+    fixed_versions: vers:gem/3.4.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-vx9g-377x-xwxq/GHSA-vx9g-377x-xwxq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/amro/gibbon
+    reference_type:
+    reference_id:
+  - url: https://github.com/amro/gibbon/commit/b2eb99ed304d7491a6d348a5bbdc83a008fc6e0b
+    reference_type:
+    reference_id:
+  - url: https://github.com/amro/gibbon/commit/cade20ca2438cd1b182dad70cbb77fb895779d10
+    reference_type:
+    reference_id:
+  - url: https://github.com/amro/gibbon/pull/321
+    reference_type:
+    reference_id:
+  - url: https://github.com/amro/gibbon/pull/321#issuecomment-1113147155
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/gibbon/CVE-2022-27311.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-27311
+    reference_type:
+    reference_id:

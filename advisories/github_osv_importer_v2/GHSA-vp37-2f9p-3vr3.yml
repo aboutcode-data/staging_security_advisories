@@ -1,0 +1,41 @@
+advisory_id: GHSA-vp37-2f9p-3vr3
+datasource_id: github_osv_importer_v2/GHSA-vp37-2f9p-3vr3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-vp37-2f9p-3vr3/GHSA-vp37-2f9p-3vr3.json
+aliases:
+  - CVE-2022-29577
+summary: |
+  Cross-site Scripting in OWASP AntiSamy
+  AntiSamy is a library for performing fast, configurable cleansing of HTML coming from untrusted sources. OWASP AntiSamy before 1.6.7 allows XSS via HTML tag smuggling on STYLE content with crafted input. The output serializer does not properly encode the supposed Cascading Style Sheets (CSS) content. NOTE: this issue exists because of an incomplete fix for CVE-2022-28367.
+impacted_packages:
+  - purl: pkg:maven/org.owasp.antisamy/antisamy
+    affected_versions: vers:maven/<1.6.7
+    fixed_versions: vers:maven/1.6.7
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-vp37-2f9p-3vr3/GHSA-vp37-2f9p-3vr3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/nahsra/antisamy
+    reference_type:
+    reference_id:
+  - url: https://github.com/nahsra/antisamy/commit/32e273507da0e964b58c50fd8a4c94c9d9363af0
+    reference_type:
+    reference_id:
+  - url: https://github.com/nahsra/antisamy/releases/tag/v1.6.7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29577
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

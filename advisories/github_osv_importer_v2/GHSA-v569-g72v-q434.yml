@@ -1,0 +1,44 @@
+advisory_id: GHSA-v569-g72v-q434
+datasource_id: github_osv_importer_v2/GHSA-v569-g72v-q434
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-v569-g72v-q434/GHSA-v569-g72v-q434.json
+aliases:
+  - CVE-2018-1296
+summary: |
+  Exposure of Sensitive Information to an Unauthorized Actor in Hadoop
+  In Apache Hadoop 3.0.0-alpha1 to 3.0.0, 2.9.0, 2.8.0 to 2.8.3, and 2.5.0 to 2.7.5, HDFS exposes extended attribute key/value pairs during listXAttrs, verifying only path-level search access to the directory rather than path-level read permission to the referent.
+impacted_packages:
+  - purl: pkg:maven/org.apache.hadoop/hadoop-main
+    affected_versions: vers:maven/<2.7.6
+    fixed_versions: vers:maven/2.7.6
+  - purl: pkg:maven/org.apache.hadoop/hadoop-main
+    affected_versions: vers:maven/>=2.8.0|<2.8.4
+    fixed_versions: vers:maven/2.8.4
+  - purl: pkg:maven/org.apache.hadoop/hadoop-main
+    affected_versions: vers:maven/2.9.0
+    fixed_versions: vers:maven/2.9.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-v569-g72v-q434/GHSA-v569-g72v-q434.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/advisories/GHSA-v569-g72v-q434
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/a5b15bc76fbdad2ee40761aacf954a13aeef67e305f86d483f267e8e@%3Cuser.hadoop.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1296
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/106764
+    reference_type:
+    reference_id:

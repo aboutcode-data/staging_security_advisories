@@ -1,0 +1,42 @@
+advisory_id: GHSA-vm28-mrm7-fpjq
+datasource_id: github_osv_importer_v2/GHSA-vm28-mrm7-fpjq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-vm28-mrm7-fpjq/GHSA-vm28-mrm7-fpjq.json
+aliases:
+  - CVE-2014-2888
+summary: |
+  sfpagent Command Injection vulnerability
+  `lib/sfpagent/bsig.rb` in the sfpagent gem before 0.4.15 for Ruby allows remote attackers to execute arbitrary commands via shell metacharacters in the module name in a JSON request.
+impacted_packages:
+  - purl: pkg:gem/sfpagent
+    affected_versions: vers:gem/<0.4.15
+    fixed_versions: vers:gem/0.4.15
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: http://seclists.org/fulldisclosure/2014/Apr/243
+    reference_type:
+    reference_id:
+  - url: https://github.com/herry13/sfpagent
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/sfpagent/CVE-2014-2888.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-2888
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20201029141944/http://www.vapid.dhs.org/advisories/spfagent-remotecmd.html
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2014/04/16/1
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2014/04/18/4
+    reference_type:
+    reference_id:

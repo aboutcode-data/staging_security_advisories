@@ -1,0 +1,50 @@
+advisory_id: GHSA-vq59-x6mq-4wgw
+datasource_id: github_osv_importer_v2/GHSA-vq59-x6mq-4wgw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vq59-x6mq-4wgw/GHSA-vq59-x6mq-4wgw.json
+aliases:
+  - CVE-2019-11512
+summary: |
+  Contao SQL injection in the file manager
+  David Wind, penetration tester with A1 Digital, has discovered that the SQL injection vulnerability originally published under CVE-2017-16558 can still be exploited in the file manager in Contao 4.
+impacted_packages:
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.1.0|<4.4.39
+    fixed_versions: vers:composer/4.4.39
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.5.0|<4.7.5
+    fixed_versions: vers:composer/4.7.5
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.1.0|<4.4.39
+    fixed_versions: vers:composer/4.4.39
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.5.0|<4.7.5
+    fixed_versions: vers:composer/4.7.5
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vq59-x6mq-4wgw/GHSA-vq59-x6mq-4wgw.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://contao.org/en/news/security-vulnerability-cve-2019-11512.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/commit/87d92f823b08b91a0aeb522284537c8afcdb8aba
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/contao/CVE-2019-11512.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/core-bundle/CVE-2019-11512.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-11512
+    reference_type:
+    reference_id:

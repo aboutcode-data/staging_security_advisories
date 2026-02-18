@@ -1,0 +1,58 @@
+advisory_id: GHSA-v3c5-jqr6-7qm8
+datasource_id: github_osv_importer_v2/GHSA-v3c5-jqr6-7qm8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-v3c5-jqr6-7qm8/GHSA-v3c5-jqr6-7qm8.json
+aliases:
+  - CVE-2022-40899
+summary: |
+  Python Charmers Future denial of service vulnerability
+  An issue discovered in Python Charmers Future 0.18.2 and earlier allows remote attackers to cause a denial of service via crafted Set-Cookie header from malicious web server. This issue has been patched in version 0.18.3.
+impacted_packages:
+  - purl: pkg:pypi/future
+    affected_versions: vers:pypi/<=0.18.2
+    fixed_versions: vers:pypi/0.18.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-v3c5-jqr6-7qm8/GHSA-v3c5-jqr6-7qm8.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-v3c5-jqr6-7qm8/GHSA-v3c5-jqr6-7qm8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/future/PYSEC-2022-42991.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/PythonCharmers/python-future
+    reference_type:
+    reference_id:
+  - url: https://github.com/PythonCharmers/python-future/blob/master/src/future/backports/http/cookiejar.py#L215
+    reference_type:
+    reference_id:
+  - url: https://github.com/PythonCharmers/python-future/commit/c91d70b34ef0402aef3e9d04364ba98509dca76f
+    reference_type:
+    reference_id:
+  - url: https://github.com/PythonCharmers/python-future/pull/610
+    reference_type:
+    reference_id:
+  - url: https://github.com/python/cpython/pull/17157
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-40899
+    reference_type:
+    reference_id:
+  - url: https://pypi.org/project/future
+    reference_type:
+    reference_id:
+  - url: https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages
+    reference_type:
+    reference_id:

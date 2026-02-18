@@ -1,0 +1,71 @@
+advisory_id: GHSA-w457-6q6x-cgp9
+datasource_id: github_osv_importer_v2/GHSA-w457-6q6x-cgp9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-w457-6q6x-cgp9/GHSA-w457-6q6x-cgp9.json
+aliases:
+  - CVE-2019-19919
+summary: |
+  Prototype Pollution in handlebars
+  Versions of `handlebars` prior to 3.0.8 or 4.3.0 are vulnerable to Prototype Pollution leading to Remote Code Execution. Templates may alter an Objects' `__proto__` and `__defineGetter__` properties, which may allow an attacker to execute arbitrary code through crafted payloads.
+
+
+  ## Recommendation
+
+  Upgrade to version 3.0.8, 4.3.0 or later.
+impacted_packages:
+  - purl: pkg:npm/handlebars
+    affected_versions: vers:npm/>=4.0.0|<4.3.0
+    fixed_versions: vers:npm/4.3.0
+  - purl: pkg:gem/bootstrap-wysihtml5-rails
+    affected_versions: vers:gem/>=0.3.3.5|<=0.3.3.8
+    fixed_versions:
+  - purl: pkg:npm/handlebars
+    affected_versions: vers:npm/<3.0.8
+    fixed_versions: vers:npm/3.0.8
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-w457-6q6x-cgp9/GHSA-w457-6q6x-cgp9.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-1321
+references:
+  - url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19919
+    reference_type:
+    reference_id:
+  - url: https://github.com/handlebars-lang/handlebars.js/commit/156061eb7707575293613d7fdf90e2bdaac029ee
+    reference_type:
+    reference_id:
+  - url: https://github.com/handlebars-lang/handlebars.js/commit/90ad8d97ad2933852fb83fcc054699dc99e094db
+    reference_type:
+    reference_id:
+  - url: https://github.com/Nerian/bootstrap-wysihtml5-rails/blob/master/vendor/assets/javascripts/bootstrap-wysihtml5/handlebars.runtime.min.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/Nerian/bootstrap-wysihtml5-rails/tree/master/vendor/assets/javascripts/bootstrap-wysihtml5
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/bootstrap-wysihtml5-rails/CVE-2019-19919.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/wycats/handlebars.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/wycats/handlebars.js/commit/2078c727c627f25d4a149962f05c1e069beb18bc
+    reference_type:
+    reference_id:
+  - url: https://github.com/wycats/handlebars.js/issues/1558
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19919
+    reference_type:
+    reference_id:
+  - url: https://www.tenable.com/security/tns-2021-14
+    reference_type:
+    reference_id:

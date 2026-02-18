@@ -1,0 +1,38 @@
+advisory_id: GHSA-vp4r-h765-5mwp
+datasource_id: github_osv_importer_v2/GHSA-vp4r-h765-5mwp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-vp4r-h765-5mwp/GHSA-vp4r-h765-5mwp.json
+aliases:
+  - CVE-2023-0877
+summary: |
+  Code Injection in froxlor/froxlor
+  Code Injection in GitHub repository froxlor/froxlor prior to 2.0.11.
+impacted_packages:
+  - purl: pkg:composer/froxlor/froxlor
+    affected_versions: vers:composer/<2.0.11
+    fixed_versions: vers:composer/2.0.11
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-vp4r-h765-5mwp/GHSA-vp4r-h765-5mwp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/Froxlor/Froxlor
+    reference_type:
+    reference_id:
+  - url: https://github.com/froxlor/froxlor/commit/aa48ffca2bcaf7ae57be3b8147bb3138abdab984
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/b29cf038-06f1-4fb0-9437-08f2991f92a8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0877
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-w2xw-44r3-4v9g
+datasource_id: github_osv_importer_v2/GHSA-w2xw-44r3-4v9g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w2xw-44r3-4v9g/GHSA-w2xw-44r3-4v9g.json
+aliases:
+  - CVE-2022-29623
+summary: |
+  Connect-Multiparty allows arbitrary file upload
+  An arbitrary file upload vulnerability in the file upload module of Express Connect-Multiparty 2.2.0 allows attackers to execute arbitrary code via a crafted PDF file. NOTE: the Supplier has not verified this vulnerability report.
+impacted_packages:
+  - purl: pkg:npm/connect-multiparty
+    affected_versions: vers:npm/<=2.2.0
+    fixed_versions:
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-w2xw-44r3-4v9g/GHSA-w2xw-44r3-4v9g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/expressjs/connect-multiparty
+    reference_type:
+    reference_id:
+  - url: https://github.com/expressjs/connect-multiparty/releases/tag/2.2.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29623
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/connect-multiparty
+    reference_type:
+    reference_id:
+  - url: https://www.youtube.com/watch?v=i3xJR-91rrM
+    reference_type:
+    reference_id:

@@ -1,0 +1,50 @@
+advisory_id: GHSA-rxmr-c9jm-7mm8
+datasource_id: github_osv_importer_v2/GHSA-rxmr-c9jm-7mm8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-rxmr-c9jm-7mm8/GHSA-rxmr-c9jm-7mm8.json
+aliases:
+  - CVE-2018-1284
+summary: |
+  Exposure of Sensitive Information to an Unauthorized Actor in Apache hive
+  In Apache Hive 0.6.0 to 2.3.2, malicious user might use any xpath UDFs (xpath/xpath_string/xpath_boolean/xpath_number/xpath_double/xpath_float/xpath_long/xpath_int/xpath_short) to expose the content of a file on the machine running HiveServer2 owned by HiveServer2 user (usually hive) if hive.server2.enable.doAs=false.
+impacted_packages:
+  - purl: pkg:maven/org.apache.hive/hive
+    affected_versions: vers:maven/>=0.6.0|<2.3.3
+    fixed_versions: vers:maven/2.3.3
+  - purl: pkg:maven/org.apache.hive/hive-exec
+    affected_versions: vers:maven/>=0.6.0|<2.3.3
+    fixed_versions: vers:maven/2.3.3
+  - purl: pkg:maven/org.apache.hive/hive-service
+    affected_versions: vers:maven/>=0.6.0|<2.3.3
+    fixed_versions: vers:maven/2.3.3
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-rxmr-c9jm-7mm8/GHSA-rxmr-c9jm-7mm8.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/advisories/GHSA-rxmr-c9jm-7mm8
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/hive/commit/f80a38ae1174553022deae4f8774918401d9756d
+    reference_type:
+    reference_id:
+  - url: https://issues.apache.org/jira/browse/HIVE-18879
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/29184dbce4a37be2af36e539ecb479b1d27868f73ccfdff46c7174b4@%3Cdev.hive.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1284
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/103750
+    reference_type:
+    reference_id:

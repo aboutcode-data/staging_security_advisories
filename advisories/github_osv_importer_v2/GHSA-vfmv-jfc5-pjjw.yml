@@ -1,0 +1,82 @@
+advisory_id: GHSA-vfmv-jfc5-pjjw
+datasource_id: github_osv_importer_v2/GHSA-vfmv-jfc5-pjjw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-vfmv-jfc5-pjjw/GHSA-vfmv-jfc5-pjjw.json
+aliases:
+  - CVE-2024-29034
+summary: |
+  CarrierWave content-Type allowlist bypass vulnerability which possibly leads to XSS remained
+  ### Impact
+  The vulnerability [CVE-2023-49090](https://github.com/carrierwaveuploader/carrierwave/security/advisories/GHSA-gxhx-g4fq-49hj) wasn't fully addressed.
+
+  This vulnerability is caused by the fact that when uploading to object storage, including Amazon S3, it is possible to set a Content-Type value that is interpreted by browsers to be different from what's allowed by `content_type_allowlist`, by providing multiple values separated by commas.
+
+  This bypassed value can be used to cause XSS.
+
+  ### Patches
+  Upgrade to [3.0.7](https://rubygems.org/gems/carrierwave/versions/3.0.7) or [2.2.6](https://rubygems.org/gems/carrierwave/versions/2.2.6).
+
+  ### Workarounds
+  Use the following monkey patch to let CarrierWave parse the Content-type by using `Marcel::MimeType.for`.
+
+  ```ruby
+  # For CarrierWave 3.x
+  CarrierWave::SanitizedFile.class_eval do
+    def declared_content_type
+      @declared_content_type ||
+        if @file.respond_to?(:content_type) && @file.content_type
+          Marcel::MimeType.for(declared_type: @file.content_type.to_s.chomp)
+        end
+    end
+  end
+  ```
+
+  ```ruby
+  # For CarrierWave 2.x
+  CarrierWave::SanitizedFile.class_eval do
+    def existing_content_type
+      if @file.respond_to?(:content_type) && @file.content_type
+        Marcel::MimeType.for(declared_type: @file.content_type.to_s.chomp)
+      end
+    end
+  end
+  ```
+
+  ### References
+  [OWASP - File Upload Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html#content-type-validation)
+impacted_packages:
+  - purl: pkg:gem/carrierwave
+    affected_versions: vers:gem/>=3.0.0|<3.0.7
+    fixed_versions: vers:gem/3.0.7
+  - purl: pkg:gem/carrierwave
+    affected_versions: vers:gem/<2.2.6
+    fixed_versions: vers:gem/2.2.6
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-vfmv-jfc5-pjjw/GHSA-vfmv-jfc5-pjjw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-436
+references:
+  - url: https://github.com/carrierwaveuploader/carrierwave
+    reference_type:
+    reference_id:
+  - url: https://github.com/carrierwaveuploader/carrierwave/commit/25b1c800d45ef8e78dc445ebe3bd8a6e3f0a3477
+    reference_type:
+    reference_id:
+  - url: https://github.com/carrierwaveuploader/carrierwave/security/advisories/GHSA-vfmv-jfc5-pjjw
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/carrierwave/CVE-2024-29034.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29034
+    reference_type:
+    reference_id:

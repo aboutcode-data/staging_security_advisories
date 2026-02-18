@@ -1,0 +1,38 @@
+advisory_id: GHSA-w7r6-v4j7-h94w
+datasource_id: github_osv_importer_v2/GHSA-w7r6-v4j7-h94w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-w7r6-v4j7-h94w/GHSA-w7r6-v4j7-h94w.json
+aliases:
+  - CVE-2023-26269
+summary: |
+  Apache James server's JMX management service vulnerable to privilege escalation by local user
+  Apache James server version 3.7.3 and earlier provides a JMX management service without authentication by default. This allows privilege escalation by a malicious local user. Administrators are advised to disable JMX, or set up a JMX password. Note that version 3.7.4 onward will set up a JMX password automatically for Guice users.
+impacted_packages:
+  - purl: pkg:maven/org.apache.james/javax-mail-extension
+    affected_versions: vers:maven/<3.7.4
+    fixed_versions: vers:maven/3.7.4
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-w7r6-v4j7-h94w/GHSA-w7r6-v4j7-h94w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+references:
+  - url: https://github.com/apache/james-project
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/2z44rg93pflbjhvbwy3xtz505bx41cbs
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-26269
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/04/18/3
+    reference_type:
+    reference_id:

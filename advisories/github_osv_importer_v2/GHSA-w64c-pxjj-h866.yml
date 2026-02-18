@@ -1,0 +1,58 @@
+advisory_id: GHSA-w64c-pxjj-h866
+datasource_id: github_osv_importer_v2/GHSA-w64c-pxjj-h866
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-w64c-pxjj-h866/GHSA-w64c-pxjj-h866.json
+aliases:
+  - CVE-2015-3908
+summary: |
+  Ansible does not verify that the server hostname matches a domain name in certificates
+  Ansible before 1.9.2 does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate.
+impacted_packages:
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/<1.9.2
+    fixed_versions: vers:pypi/1.9.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-w64c-pxjj-h866/GHSA-w64c-pxjj-h866.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-w64c-pxjj-h866/GHSA-w64c-pxjj-h866.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-345
+references:
+  - url: http://lists.opensuse.org/opensuse-updates/2015-07/msg00051.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2015-08/msg00029.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-w64c-pxjj-h866
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/ansible/PYSEC-2015-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2019/09/msg00016.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-3908
+    reference_type:
+    reference_id:
+  - url: http://www.ansible.com/security
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2015/07/14/4
+    reference_type:
+    reference_id:

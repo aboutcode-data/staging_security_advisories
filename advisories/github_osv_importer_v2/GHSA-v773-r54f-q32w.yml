@@ -1,0 +1,62 @@
+advisory_id: GHSA-v773-r54f-q32w
+datasource_id: github_osv_importer_v2/GHSA-v773-r54f-q32w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-v773-r54f-q32w/GHSA-v773-r54f-q32w.json
+aliases: []
+summary: |
+  OpenClaw Slack: dmPolicy=open allowed any DM sender to run privileged slash commands
+  ## Summary
+
+  When Slack DMs are configured with `dmPolicy=open`, the Slack slash-command handler incorrectly treated any DM sender as command-authorized. This allowed any Slack user who could DM the bot to execute privileged slash commands via DM, bypassing intended allowlist/access-group restrictions.
+
+  ## Affected Packages / Versions
+
+  - Package: `openclaw` (npm)
+  - Affected versions: `<= 2026.2.13`
+  - Affected configuration: Slack DMs enabled with `channels.slack.dm.policy: open` (aka `dmPolicy=open`)
+
+  ## Impact
+
+  Any Slack user in the workspace who can DM the bot could invoke privileged slash commands via DM.
+
+  ## Fix
+
+  The slash-command path now computes `CommandAuthorized` for DMs using the same allowlist/access-group gating logic as other inbound paths.
+
+  Fix commit(s):
+  - f19eabee54c49e9a2e264b4965edf28a2f92e657
+
+  ## Release Process Note
+
+  `patched_versions` is set to the planned next release (`2026.2.14`). Once that npm release is published, this advisory should be published.
+
+  Thanks @christos-eth for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.14
+    fixed_versions: vers:npm/2026.2.14
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-v773-r54f-q32w/GHSA-v773-r54f-q32w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/f19eabee54c49e9a2e264b4965edf28a2f92e657
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.14
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-v773-r54f-q32w
+    reference_type:
+    reference_id:

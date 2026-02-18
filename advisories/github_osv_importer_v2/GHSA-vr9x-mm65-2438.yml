@@ -1,0 +1,30 @@
+advisory_id: GHSA-vr9x-mm65-2438
+datasource_id: github_osv_importer_v2/GHSA-vr9x-mm65-2438
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-vr9x-mm65-2438/GHSA-vr9x-mm65-2438.json
+aliases:
+  - CVE-2020-8178
+summary: |
+  Command Injection in jison
+  **Withdrawn:** This vulnerability is not present in the released npm package.  Rather the vulnerable code is
+  part of the repo, but not part of the package. See linked hackerone report for more details.
+
+  Insufficient input validation in npm package `jison` <= 0.4.18 may lead to OS command injection attacks.
+impacted_packages:
+  - purl: pkg:npm/jison
+    affected_versions: vers:npm/<=0.4.18
+    fixed_versions:
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://hackerone.com/reports/690010
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8178
+    reference_type:
+    reference_id:

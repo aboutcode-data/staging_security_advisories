@@ -1,0 +1,38 @@
+advisory_id: GHSA-vgj7-895j-gpr6
+datasource_id: github_osv_importer_v2/GHSA-vgj7-895j-gpr6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vgj7-895j-gpr6/GHSA-vgj7-895j-gpr6.json
+aliases:
+  - CVE-2022-30618
+summary: |
+  Improper Removal of Sensitive Information Before Storage or Transfer in Strapi
+  An authenticated user with access to the Strapi admin panel can view private and sensitive data, such as email and password reset tokens, for API users if content types accessible to the authenticated user contain relationships to API users (from:users-permissions). There are many scenarios in which such details from API users can leak in the JSON response within the admin panel, either through a direct or indirect relationship. Access to this information enables a user to compromise these users’ accounts if the password reset API endpoints have been enabled. In a worst-case scenario, a low-privileged user could get access to a high-privileged API account, and could read and modify any data as well as block access to both the admin panel and API by revoking privileges for all other users.
+impacted_packages:
+  - purl: pkg:npm/strapi
+    affected_versions: vers:npm/>=3.0.0|<3.6.9
+    fixed_versions: vers:npm/3.6.9
+  - purl: pkg:npm/%40strapi/strapi
+    affected_versions: vers:npm/<4.1.9
+    fixed_versions: vers:npm/4.1.9
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vgj7-895j-gpr6/GHSA-vgj7-895j-gpr6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-212
+references:
+  - url: https://github.com/strapi/strapi
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-30618
+    reference_type:
+    reference_id:
+  - url: https://www.synopsys.com/blogs/software-security/cyrc-advisory-strapi
+    reference_type:
+    reference_id:

@@ -1,0 +1,56 @@
+advisory_id: GHSA-vf6r-mmhc-3xcm
+datasource_id: github_osv_importer_v2/GHSA-vf6r-mmhc-3xcm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vf6r-mmhc-3xcm/GHSA-vf6r-mmhc-3xcm.json
+aliases:
+  - CVE-2018-14642
+summary: |
+  Exposure of Sensitive Information to an Unauthorized Actor in Undertow
+  An information leak vulnerability was found in Undertow. If all headers are not written out in the first write() call then the code that handles flushing the buffer will always write out the full contents of the writevBuffer buffer, which may contain data from previous requests.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<=2.0.18.FINAL
+    fixed_versions: vers:maven/2.0.19.FINAL
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-vf6r-mmhc-3xcm/GHSA-vf6r-mmhc-3xcm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://access.redhat.com/errata/RHSA-2019:0362
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:0364
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:0365
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:0380
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:1106
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:1107
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:1108
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:1140
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14642
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-14642
+    reference_type:
+    reference_id:

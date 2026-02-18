@@ -1,0 +1,81 @@
+advisory_id: GHSA-wfcc-pff6-rgc5
+datasource_id: github_osv_importer_v2/GHSA-wfcc-pff6-rgc5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-wfcc-pff6-rgc5/GHSA-wfcc-pff6-rgc5.json
+aliases:
+  - CVE-2017-9735
+summary: |
+  Jetty vulnerable to exposure of sensitive information due to observable discrepancy
+  Jetty through 9.4.x contains a timing channel attack in `util/security/Password.java`, which allows attackers to obtain access by observing elapsed times before rejection of incorrect passwords.
+impacted_packages:
+  - purl: pkg:maven/org.eclipse.jetty/jetty-server
+    affected_versions: vers:maven/<=9.4.5.v20170502
+    fixed_versions: vers:maven/9.4.6.v20170531
+  - purl: pkg:maven/org.eclipse.jetty/jetty-server
+    affected_versions: vers:maven/<=9.3.19.v20170502
+    fixed_versions: vers:maven/9.3.20.v20170531
+  - purl: pkg:maven/org.eclipse.jetty/jetty-server
+    affected_versions: vers:maven/<=9.2.21.v20170120
+    fixed_versions: vers:maven/9.2.22.v20170606
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-wfcc-pff6-rgc5/GHSA-wfcc-pff6-rgc5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-203
+references:
+  - url: https://bugs.debian.org/864631
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse/jetty.project
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse/jetty.project/commit/042f325f1cd6e7891d72c7e668f5947b5457dc02
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse/jetty.project/issues/1556
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/053d9ce4d579b02203db18545fee5e33f35f2932885459b74d1e4272@%3Cissues.activemq.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/36870f6c51f5bc25e6f7bb1fcace0e57e81f1524019b11f466738559@%3Ccommon-dev.hadoop.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/f887a5978f5e4c62b9cfe876336628385cff429e796962649649ec8a@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/ff8dcfe29377088ab655fda9d585dccd5b1f07fabd94ae84fd60a7f8@%3Ccommits.pulsar.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/05/msg00016.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-9735
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20170826163336/http://www.securityfocus.com/bid/99104
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com//security-alerts/cpujul2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2020.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html
+    reference_type:
+    reference_id:

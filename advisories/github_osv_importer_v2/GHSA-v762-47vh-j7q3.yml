@@ -1,0 +1,38 @@
+advisory_id: GHSA-v762-47vh-j7q3
+datasource_id: github_osv_importer_v2/GHSA-v762-47vh-j7q3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-v762-47vh-j7q3/GHSA-v762-47vh-j7q3.json
+aliases:
+  - CVE-2020-21146
+summary: |
+  Feehi CMS vulnerable to Cross-site Scripting in Username Field
+  Feehi CMS 2.0.8 is affected by a cross-site scripting (XSS) vulnerability. When the user name is inserted as JavaScript code, browsing the post will trigger the XSS.
+impacted_packages:
+  - purl: pkg:composer/feehi/cms
+    affected_versions: vers:composer/<=2.0.8
+    fixed_versions: vers:composer/2.0.8+1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-v762-47vh-j7q3/GHSA-v762-47vh-j7q3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liufee/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/liufee/cms/commit/e92f6877d96e53498101d0664174956e94223d6e
+    reference_type:
+    reference_id:
+  - url: https://github.com/liufee/cms/issues/43
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-21146
+    reference_type:
+    reference_id:

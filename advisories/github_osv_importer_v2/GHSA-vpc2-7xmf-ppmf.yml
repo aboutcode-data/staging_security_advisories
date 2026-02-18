@@ -1,0 +1,38 @@
+advisory_id: GHSA-vpc2-7xmf-ppmf
+datasource_id: github_osv_importer_v2/GHSA-vpc2-7xmf-ppmf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-vpc2-7xmf-ppmf/GHSA-vpc2-7xmf-ppmf.json
+aliases:
+  - CVE-2020-17048
+summary: |
+  Out-of-bounds Write in ChakraCore
+  Chakra Scripting Engine Memory Corruption Vulnerability This CVE ID is unique from CVE-2020-17054.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.11.23
+    fixed_versions: vers:nuget/1.11.23
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-vpc2-7xmf-ppmf/GHSA-vpc2-7xmf-ppmf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://github.com/chakra-core/ChakraCore/pull/6528
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/6528/commits/90e222e9a9ba64bd808666f44e6a0913d6318f78
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-17048
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-17048
+    reference_type:
+    reference_id:

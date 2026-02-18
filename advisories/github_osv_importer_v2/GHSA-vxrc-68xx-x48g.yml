@@ -1,0 +1,50 @@
+advisory_id: GHSA-vxrc-68xx-x48g
+datasource_id: github_osv_importer_v2/GHSA-vxrc-68xx-x48g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-vxrc-68xx-x48g/GHSA-vxrc-68xx-x48g.json
+aliases:
+  - CVE-2019-9942
+summary: |
+  Twig Sandbox Information Disclosure
+  A sandbox information disclosure exists in Twig before 1.38.0 and 2.x before 2.7.0 because, under some circumstances, it is possible to call the `__toString()` method on an object even if not allowed by the security policy in place.
+impacted_packages:
+  - purl: pkg:composer/twig/twig
+    affected_versions: vers:composer/<1.38.0
+    fixed_versions: vers:composer/1.38.0
+  - purl: pkg:composer/twig/twig
+    affected_versions: vers:composer/>=2.0.0|<2.7.0
+    fixed_versions: vers:composer/2.7.0
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-vxrc-68xx-x48g/GHSA-vxrc-68xx-x48g.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2019-9942.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig/commit/eac5422956e1dcca89a3669a03a3ff32f0502077
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-9942
+    reference_type:
+    reference_id:
+  - url: https://seclists.org/bugtraq/2019/Mar/60
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/twig-sandbox-information-disclosure
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2019/dsa-4419
+    reference_type:
+    reference_id:

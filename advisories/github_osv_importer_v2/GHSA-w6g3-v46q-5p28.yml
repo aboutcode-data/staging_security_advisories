@@ -1,0 +1,38 @@
+advisory_id: GHSA-w6g3-v46q-5p28
+datasource_id: github_osv_importer_v2/GHSA-w6g3-v46q-5p28
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-w6g3-v46q-5p28/GHSA-w6g3-v46q-5p28.json
+aliases:
+  - CVE-2018-11762
+summary: |
+  Moderate severity vulnerability that affects org.apache.tika:tika-core
+  In Apache Tika 0.9 to 1.18, in a rare edge case where a user does not specify an extract directory on the commandline (--extract-dir=) and the input file has an embedded file with an absolute path, such as "C:/evil.bat", tika-app would overwrite that file.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tika/tika-core
+    affected_versions: vers:maven/>=0.9|<1.19
+    fixed_versions: vers:maven/1.19
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-w6g3-v46q-5p28/GHSA-w6g3-v46q-5p28.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/advisories/GHSA-w6g3-v46q-5p28
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/ab2e1af38975f5fc462ba89b517971ef892ec3d06bee12ea2258895b@%3Cdev.tika.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-11762
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/105515
+    reference_type:
+    reference_id:

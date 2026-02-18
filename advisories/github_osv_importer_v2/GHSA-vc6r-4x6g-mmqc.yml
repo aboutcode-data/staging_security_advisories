@@ -1,0 +1,37 @@
+advisory_id: GHSA-vc6r-4x6g-mmqc
+datasource_id: github_osv_importer_v2/GHSA-vc6r-4x6g-mmqc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-vc6r-4x6g-mmqc/GHSA-vc6r-4x6g-mmqc.json
+aliases: []
+summary: |
+  Path Traversal in m-server
+  Versions of `m-server` before 1.4.2 are vulnerable to path traversal allowing a remote attacker to display content of arbitrary files from the server.
+
+
+  ## Recommendation
+
+  Update to version 1.4.2 or later.
+impacted_packages:
+  - purl: pkg:npm/m-server
+    affected_versions: vers:npm/<1.4.2
+    fixed_versions: vers:npm/1.4.2
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/nodejs/security-wg/blob/master/vuln/npm/468.json
+    reference_type:
+    reference_id:
+  - url: https://github.com/nunnly/m-server/commit/01f13f040d1961ca3146dce7e2db990156e65e9a
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/319795
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/731
+    reference_type:
+    reference_id:

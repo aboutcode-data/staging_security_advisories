@@ -1,0 +1,54 @@
+advisory_id: GHSA-v64r-7wg9-23pr
+datasource_id: github_osv_importer_v2/GHSA-v64r-7wg9-23pr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-v64r-7wg9-23pr/GHSA-v64r-7wg9-23pr.json
+aliases:
+  - CVE-2025-68456
+summary: "Unauthenticated Craft CMS users can trigger a database backup\nUnauthenticated users\
+  \ can trigger database backup operations the `updater/backup` action, potentially leading\
+  \ to resource exhaustion or information disclosure.\n\nUsers should update to the patched\
+  \ versions (5.8.21 and 4.16.17) to mitigate the issue.\n\nCraft 3 users should update to the\
+  \ latest Craft 4 and 5 releases, which include the fixes.\n\nReferences:\n\nhttps://github.com/craftcms/cms/commit/f83d4e0c6b906743206b4747db4abf8164b8da39\n\
+  \nhttps://github.com/craftcms/cms/blob/5.x/CHANGELOG.md#5821---2025-12-04\n\n## Affected Endpoints\n\
+  \n- `POST /admin/actions/updater/backup` (unauthenticated)\n\n## Vulnerability Details\n\n\
+  ### Root Cause\nAll `updater/*` actions are explicitly configured with anonymous access:\n\
+  \n```php\n// BaseUpdaterController.php  \nprotected array|bool|int $allowAnonymous = self::ALLOW_ANONYMOUS_LIVE\
+  \ | self::ALLOW_ANONYMOUS_OFFLINE;\n```\n\n### Attack Vector\n1. Send unauthenticated POST\
+  \ request to `/admin/actions/updater/backup`\n2. Database backup executes with configured\
+  \ `backupCommand`"
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=5.8.20
+    fixed_versions: vers:composer/5.8.21
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=4.16.16
+    fixed_versions: vers:composer/4.16.17
+severities:
+  - score: '7.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-v64r-7wg9-23pr/GHSA-v64r-7wg9-23pr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-202
+  - CWE-770
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/blob/5.x/CHANGELOG.md#5821---2025-12-04
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/f83d4e0c6b906743206b4747db4abf8164b8da39
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/security/advisories/GHSA-v64r-7wg9-23pr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-68456
+    reference_type:
+    reference_id:

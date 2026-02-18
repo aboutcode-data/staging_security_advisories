@@ -1,0 +1,41 @@
+advisory_id: GHSA-v9gj-5rgp-w33r
+datasource_id: github_osv_importer_v2/GHSA-v9gj-5rgp-w33r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-v9gj-5rgp-w33r/GHSA-v9gj-5rgp-w33r.json
+aliases:
+  - CVE-2023-0398
+summary: |
+  Modoboa is vulnerable to Cross-Site Request Forgery
+  Modoboa 2.0.3 and prior is vulnerable to Cross-Site Request Forgery. A patch is available and anticipated to be part of version 2.0.4.
+impacted_packages:
+  - purl: pkg:pypi/modoboa
+    affected_versions: vers:pypi/<=2.0.3
+    fixed_versions: vers:pypi/2.0.4
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-v9gj-5rgp-w33r/GHSA-v9gj-5rgp-w33r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/modoboa/modoboa
+    reference_type:
+    reference_id:
+  - url: https://github.com/modoboa/modoboa/commit/8e14ac93669df4f35fcdebd55dc9d2f0fed3ed48
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/modoboa/PYSEC-2023-282.yaml
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/0a852351-00ed-44d2-a650-9055b7beed58
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0398
+    reference_type:
+    reference_id:

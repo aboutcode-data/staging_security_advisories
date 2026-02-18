@@ -1,0 +1,32 @@
+advisory_id: GHSA-v42q-78w8-8fcc
+datasource_id: github_osv_importer_v2/GHSA-v42q-78w8-8fcc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-v42q-78w8-8fcc/GHSA-v42q-78w8-8fcc.json
+aliases:
+  - CVE-2021-23373
+summary: |
+  set-deep-prop Prototype Pollution
+  All versions of package set-deep-prop are vulnerable to Prototype Pollution via the main functionality.
+impacted_packages:
+  - purl: pkg:npm/set-deep-prop
+    affected_versions: vers:npm/<=1.0.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-v42q-78w8-8fcc/GHSA-v42q-78w8-8fcc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23373
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-SETDEEPPROP-1083231
+    reference_type:
+    reference_id:

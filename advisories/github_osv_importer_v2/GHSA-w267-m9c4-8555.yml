@@ -1,0 +1,58 @@
+advisory_id: GHSA-w267-m9c4-8555
+datasource_id: github_osv_importer_v2/GHSA-w267-m9c4-8555
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-w267-m9c4-8555/GHSA-w267-m9c4-8555.json
+aliases:
+  - CVE-2022-24744
+summary: |
+  Shopware user session is not logged out if the password is reset via password recovery
+  ### Impact
+  User session is not logged out if the password is reset via password recovery
+
+  ## Patches
+  Fixed in 6.4.8.1, maintainers recommend updating to the current version 6.4.8.2. You can get the update to 6.4.8.2 regularly via the Auto-Updater or directly via the download overview.
+
+  https://www.shopware.com/en/download/#shopware-6
+
+  ## Workarounds
+  For older versions of 6.1, 6.2, and 6.3, corresponding security measures are also available via a plugin. For the full range of functions, we recommend updating to the latest Shopware version.
+
+  https://store.shopware.com/en/detail/index/sArticle/518463/number/Swag136939272659
+impacted_packages:
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.4.8+0
+    fixed_versions: vers:composer/6.4.8+1
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.4.8+0
+    fixed_versions: vers:composer/6.4.8+1
+severities:
+  - score: '2.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-w267-m9c4-8555/GHSA-w267-m9c4-8555.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-613
+references:
+  - url: https://docs.shopware.com/en/shopware-6-en/security-updates/security-update-02-2022?category=security-updates
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/core/commit/324cd1b57db58481df1b1d0030ffc307e2d9fe64
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/commit/47b4b094c13f62db860be2f431138bb45c0bd0b6
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/security/advisories/GHSA-w267-m9c4-8555
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24744
+    reference_type:
+    reference_id:

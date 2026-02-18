@@ -1,0 +1,38 @@
+advisory_id: GHSA-v5pj-jrpv-h6g2
+datasource_id: github_osv_importer_v2/GHSA-v5pj-jrpv-h6g2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-v5pj-jrpv-h6g2/GHSA-v5pj-jrpv-h6g2.json
+aliases:
+  - CVE-2024-12777
+summary: |
+  Aim vulnerable to Synchronous Access of Remote Resource without Timeout
+  A vulnerability in aimhubio/aim version 3.25.0 allows for a denial of service through the misuse of the sshfs-client. The tracking server, which is single-threaded, can be made unresponsive by requesting it to connect to an unresponsive socket via sshfs. The lack of an additional timeout setting in the sshfs-client causes the server to hang for a significant amount of time, preventing it from responding to other requests.
+impacted_packages:
+  - purl: pkg:pypi/aim
+    affected_versions: vers:pypi/<=3.25.0
+    fixed_versions:
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-v5pj-jrpv-h6g2/GHSA-v5pj-jrpv-h6g2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1088
+references:
+  - url: https://github.com/aimhubio/aim
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimhubio/aim/blob/d4ad66ac87606b1f377d3e685e861abb2eef6c45/aim/ext/sshfs/utils.py#L151-L154
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/cdf8db79-c290-4fe5-9383-4c518bfba4a8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-12777
+    reference_type:
+    reference_id:

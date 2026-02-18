@@ -1,0 +1,43 @@
+advisory_id: GHSA-wf98-vxv9-jqfv
+datasource_id: github_osv_importer_v2/GHSA-wf98-vxv9-jqfv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-wf98-vxv9-jqfv/GHSA-wf98-vxv9-jqfv.json
+aliases: []
+summary: |
+  XSS Injection Vulnerability
+  ### Impact
+
+  Under some circumstances, the Feeds widget on the dashboard could have an XSS vulnerability if a malformed feed was supplied.
+
+  ### Patches
+
+  This has been patched in Craft 3.7.29.
+
+  ### References
+
+  * https://github.com/craftcms/cms/blob/develop/CHANGELOG.md#3729---2022-01-18
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, email us at [support@craftcms.com](mailto:support@craftcms.com)
+
+  ----------
+
+  Credits: https://github.com/noobpk
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<3.7.29
+    fixed_versions: vers:composer/3.7.29
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/security/advisories/GHSA-wf98-vxv9-jqfv
+    reference_type:
+    reference_id:

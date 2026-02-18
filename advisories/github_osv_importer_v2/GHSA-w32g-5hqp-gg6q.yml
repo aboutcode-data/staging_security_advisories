@@ -1,0 +1,34 @@
+advisory_id: GHSA-w32g-5hqp-gg6q
+datasource_id: github_osv_importer_v2/GHSA-w32g-5hqp-gg6q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-w32g-5hqp-gg6q/GHSA-w32g-5hqp-gg6q.json
+aliases: []
+summary: |
+  Cross-Site Scripting in mermaid
+  Versions of `mermaid` prior to 8.2.3 are vulnerable to Cross-Site Scripting. If malicious input  such as `A["<img src=invalid onerror=alert('XSS')></img>"] ` is provided to the application, it will execute the code instead of rendering it as text due to improper output encoding.
+
+
+  ## Recommendation
+
+  Upgrade to version 8.2.3 or later
+impacted_packages:
+  - purl: pkg:npm/mermaid
+    affected_versions: vers:npm/<8.2.3
+    fixed_versions: vers:npm/8.2.3
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/knsv/mermaid
+    reference_type:
+    reference_id:
+  - url: https://github.com/knsv/mermaid/issues/847
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/751
+    reference_type:
+    reference_id:

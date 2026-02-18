@@ -1,0 +1,38 @@
+advisory_id: GHSA-w6v7-w58j-pg5r
+datasource_id: github_osv_importer_v2/GHSA-w6v7-w58j-pg5r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-w6v7-w58j-pg5r/GHSA-w6v7-w58j-pg5r.json
+aliases:
+  - CVE-2021-41038
+summary: |
+  Improper Verification of Communication Channel in @theia/plugin-ext
+  In versions of the @theia/plugin-ext component of Eclipse Theia prior to 1.18.0, Webview contents can be hijacked via postMessage().
+impacted_packages:
+  - purl: pkg:npm/%40theia/plugin-ext
+    affected_versions: vers:npm/<1.18.0
+    fixed_versions: vers:npm/1.18.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-w6v7-w58j-pg5r/GHSA-w6v7-w58j-pg5r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-940
+references:
+  - url: https://bugs.eclipse.org/bugs/show_bug.cgi?id=575924
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse-theia/theia
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse-theia/theia/pull/10125
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41038
+    reference_type:
+    reference_id:

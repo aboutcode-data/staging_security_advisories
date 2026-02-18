@@ -1,0 +1,43 @@
+advisory_id: GHSA-w392-75q8-vr67
+datasource_id: github_osv_importer_v2/GHSA-w392-75q8-vr67
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-w392-75q8-vr67/GHSA-w392-75q8-vr67.json
+aliases:
+  - CVE-2024-45858
+summary: |
+  Guardrails has an arbitrary code execution vulnerability
+  An arbitrary code execution vulnerability exists in versions 0.2.9 up to 0.5.10 of the Guardrails AI Guardrails framework because of the way it validates XML files. If a victim user loads a maliciously crafted XML file containing Python code, the code will be passed to an eval function, causing it to execute on the user's machine.
+impacted_packages:
+  - purl: pkg:pypi/guardrails-ai
+    affected_versions: vers:pypi/>=0.2.9|<0.5.10
+    fixed_versions: vers:pypi/0.5.10
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-w392-75q8-vr67/GHSA-w392-75q8-vr67.json
+  - score: '8.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-w392-75q8-vr67/GHSA-w392-75q8-vr67.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-95
+references:
+  - url: https://github.com/guardrails-ai/guardrails
+    reference_type:
+    reference_id:
+  - url: https://github.com/guardrails-ai/guardrails/commit/ab12701e8c3ef41273ff9b3912f2e4e28ae8306f
+    reference_type:
+    reference_id:
+  - url: https://hiddenlayer.com/sai-security-advisory/2024-09-guardrails
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45858
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-w8v7-c7pm-7wfr
+datasource_id: github_osv_importer_v2/GHSA-w8v7-c7pm-7wfr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-w8v7-c7pm-7wfr/GHSA-w8v7-c7pm-7wfr.json
+aliases: []
+summary: |
+  Duplicate Advisory: Keycloak vulnerable to Cross-Site Scripting (XSS)
+  ## Duplicate Advisory
+  This advisory is a duplicate of [GHSA-w9mf-83w3-fv49](https://github.com/advisories/GHSA-w9mf-83w3-fv49). This link is maintained to preserve external references.
+
+  ## Original Description
+  A stored Cross-site scripting (XSS) vulnerability was found in keycloak as shipped in Red Hat Single Sign-On 7. This flaw allows a privileged attacker to execute malicious scripts in the admin console, abusing the default roles functionality.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<=19.0.1
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-w8v7-c7pm-7wfr/GHSA-w8v7-c7pm-7wfr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2101942
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-w9mf-83w3-fv49
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2256
+    reference_type:
+    reference_id:

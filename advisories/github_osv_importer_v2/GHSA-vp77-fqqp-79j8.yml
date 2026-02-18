@@ -1,0 +1,39 @@
+advisory_id: GHSA-vp77-fqqp-79j8
+datasource_id: github_osv_importer_v2/GHSA-vp77-fqqp-79j8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-vp77-fqqp-79j8/GHSA-vp77-fqqp-79j8.json
+aliases:
+  - CVE-2020-28449
+summary: |
+  Prototype Pollution in decal
+  This affects all versions of package decal. The vulnerability is in the set function.
+impacted_packages:
+  - purl: pkg:npm/decal
+    affected_versions: vers:npm/<=2.1.3
+    fixed_versions:
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-vp77-fqqp-79j8/GHSA-vp77-fqqp-79j8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-1321
+references:
+  - url: https://github.com/gigafied/decal.js/blob/master/src/utils/set.js%23L45-L73
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28449
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-DECAL-1051007
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/decal
+    reference_type:
+    reference_id:

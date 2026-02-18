@@ -1,0 +1,38 @@
+advisory_id: GHSA-w4m2-qmh3-2g8f
+datasource_id: github_osv_importer_v2/GHSA-w4m2-qmh3-2g8f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-w4m2-qmh3-2g8f/GHSA-w4m2-qmh3-2g8f.json
+aliases:
+  - CVE-2023-45277
+summary: |
+  Yamcs Path Traversal vulnerability
+  Yamcs 5.8.6 is vulnerable to directory traversal (issue 1 of 2). The vulnerability is in the storage functionality of the API and allows one to escape the base directory of the buckets, freely navigate system directories, and read arbitrary files.
+impacted_packages:
+  - purl: pkg:maven/org.yamcs/yamcs
+    affected_versions: vers:maven/<5.8.7
+    fixed_versions: vers:maven/5.8.7
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-w4m2-qmh3-2g8f/GHSA-w4m2-qmh3-2g8f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/yamcs/yamcs
+    reference_type:
+    reference_id:
+  - url: https://github.com/yamcs/yamcs/compare/yamcs-5.8.6...yamcs-5.8.7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-45277
+    reference_type:
+    reference_id:
+  - url: https://www.linkedin.com/pulse/yamcs-vulnerability-assessment-visionspace-technologies
+    reference_type:
+    reference_id:

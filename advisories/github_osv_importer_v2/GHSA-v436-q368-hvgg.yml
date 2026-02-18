@@ -1,0 +1,41 @@
+advisory_id: GHSA-v436-q368-hvgg
+datasource_id: github_osv_importer_v2/GHSA-v436-q368-hvgg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-v436-q368-hvgg/GHSA-v436-q368-hvgg.json
+aliases:
+  - CVE-2023-0091
+summary: |
+  Keycloak has lack of validation of access token on client registrations endpoint
+  When a service account with the create-client or manage-clients role can use the client-registration endpoints to create/manage clients with an access token.
+
+  If the access token is leaked, there is an option to revoke the specific token. However, the check is not performed in client-registration endpoints.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<=20.0.2
+    fixed_versions: vers:maven/20.0.3
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-v436-q368-hvgg/GHSA-v436-q368-hvgg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-284
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2023-0091
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-v436-q368-hvgg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0091
+    reference_type:
+    reference_id:

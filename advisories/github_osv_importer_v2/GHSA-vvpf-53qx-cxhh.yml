@@ -1,0 +1,47 @@
+advisory_id: GHSA-vvpf-53qx-cxhh
+datasource_id: github_osv_importer_v2/GHSA-vvpf-53qx-cxhh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-vvpf-53qx-cxhh/GHSA-vvpf-53qx-cxhh.json
+aliases:
+  - CVE-2024-25610
+summary: |
+  Liferay Portal has a Stored XSS with Blog entries (Insecure defaults)
+  In Liferay Portal 7.2.0 through 7.4.3.12, and older unsupported versions, and Liferay DXP 7.4 before update 9, 7.3 before update 4, 7.2 before fix pack 19, and older unsupported versions, the default configuration does not sanitize blog entries of JavaScript, which allows remote authenticated users to inject arbitrary web script or HTML (XSS) via a crafted payload injected into a blog entry’s content text field.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/<7.4.3.13
+    fixed_versions: vers:maven/7.4.3.13
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.4.0|<7.4.13.u9
+    fixed_versions: vers:maven/7.4.13.u9
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.3.0|<7.3.10.u4
+    fixed_versions: vers:maven/7.3.10.u4
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<7.2.10.fp19
+    fixed_versions: vers:maven/7.2.10.fp19
+  - purl: pkg:maven/com.liferay.portal/com.liferay.portal.web
+    affected_versions: vers:maven/<5.0.96
+    fixed_versions: vers:maven/5.0.96
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-vvpf-53qx-cxhh/GHSA-vvpf-53qx-cxhh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1188
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2024-25610
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-25610
+    reference_type:
+    reference_id:

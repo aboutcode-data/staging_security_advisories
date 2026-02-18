@@ -1,0 +1,52 @@
+advisory_id: GHSA-v39m-5m9j-m9w9
+datasource_id: github_osv_importer_v2/GHSA-v39m-5m9j-m9w9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-v39m-5m9j-m9w9/GHSA-v39m-5m9j-m9w9.json
+aliases:
+  - CVE-2025-59940
+summary: |
+  mkdocs-include-markdown-plugin susceptible to unvalidated input colliding with substitution placeholders
+  ### Impact
+  CWE-20: Improper Input Validation
+  Low impact
+
+  ### Patches
+  Patched in v7.1.8 (commit https://github.com/mondeja/mkdocs-include-markdown-plugin/commit/7466d67aa0de8ffbc427204ad2475fed07678915)
+
+  ### Workarounds
+  No
+impacted_packages:
+  - purl: pkg:pypi/mkdocs-include-markdown-plugin
+    affected_versions: vers:pypi/<7.1.8
+    fixed_versions: vers:pypi/7.1.8
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-v39m-5m9j-m9w9/GHSA-v39m-5m9j-m9w9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/mondeja/mkdocs-include-markdown-plugin
+    reference_type:
+    reference_id:
+  - url: https://github.com/mondeja/mkdocs-include-markdown-plugin/commit/7466d67aa0de8ffbc427204ad2475fed07678915
+    reference_type:
+    reference_id:
+  - url: https://github.com/mondeja/mkdocs-include-markdown-plugin/issues/274
+    reference_type:
+    reference_id:
+  - url: https://github.com/mondeja/mkdocs-include-markdown-plugin/pull/277
+    reference_type:
+    reference_id:
+  - url: https://github.com/mondeja/mkdocs-include-markdown-plugin/security/advisories/GHSA-v39m-5m9j-m9w9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-59940
+    reference_type:
+    reference_id:

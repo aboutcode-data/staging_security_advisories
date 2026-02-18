@@ -1,0 +1,34 @@
+advisory_id: GHSA-vp93-gcx5-4w52
+datasource_id: github_osv_importer_v2/GHSA-vp93-gcx5-4w52
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-vp93-gcx5-4w52/GHSA-vp93-gcx5-4w52.json
+aliases: []
+summary: |
+  Cross-Site Scripting in swagger-ui
+  Versions of `swagger-ui` prior to 2.2.1 are vulnerable to Cross-Site Scripting (XSS). The package fails to sanitize JSON schemas, allowing attackers to execute arbitrary JavaScript using `<script>` tags in the method descriptions.
+
+
+  ## Recommendation
+
+  Upgrade to version 2.2.1 or later.
+impacted_packages:
+  - purl: pkg:npm/swagger-ui
+    affected_versions: vers:npm/<2.2.1
+    fixed_versions: vers:npm/2.2.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/swagger-api/swagger-ui
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/issues/1864
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/986
+    reference_type:
+    reference_id:

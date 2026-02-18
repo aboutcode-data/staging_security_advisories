@@ -1,0 +1,51 @@
+advisory_id: GHSA-v4gr-v679-42p7
+datasource_id: github_osv_importer_v2/GHSA-v4gr-v679-42p7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-v4gr-v679-42p7/GHSA-v4gr-v679-42p7.json
+aliases:
+  - CVE-2023-39530
+summary: |
+  PrestaShop file deletion via CustomerMessage
+  ### Impact
+  It is possible to delete files from the server via the CustomerMessage API
+
+  ### Patches
+  8.1.1
+
+  ### Found by
+  Kto94 (via Yeswehack)
+
+  ### Workarounds
+  none
+
+  ### References
+  none
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<=8.1.0
+    fixed_versions: vers:composer/8.1.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-v4gr-v679-42p7/GHSA-v4gr-v679-42p7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/6ce750b2367a7309b6bf50166f1873cb86ad57e9
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-v4gr-v679-42p7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39530
+    reference_type:
+    reference_id:

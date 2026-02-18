@@ -1,0 +1,39 @@
+advisory_id: GHSA-v94v-pxqp-5qgj
+datasource_id: github_osv_importer_v2/GHSA-v94v-pxqp-5qgj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-v94v-pxqp-5qgj/GHSA-v94v-pxqp-5qgj.json
+aliases:
+  - CVE-2022-0950
+summary: |
+  Cross-site Scripting in ShowDoc
+  The upload feature of ShowDoc prior to version 2.10.4 allows files with the extension `.*html`, which leads to stored cross-site scripting.
+impacted_packages:
+  - purl: pkg:composer/showdoc/showdoc
+    affected_versions: vers:composer/<2.10.4
+    fixed_versions: vers:composer/2.10.4
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-v94v-pxqp-5qgj/GHSA-v94v-pxqp-5qgj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+  - CWE-79
+references:
+  - url: https://github.com/star7th/showdoc
+    reference_type:
+    reference_id:
+  - url: https://github.com/star7th/showdoc/commit/237ac6d43bf3728bf3587c486a23b4a48ea7acb3
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/acc23996-bd57-448f-9eb4-05a8a046c2dc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0950
+    reference_type:
+    reference_id:

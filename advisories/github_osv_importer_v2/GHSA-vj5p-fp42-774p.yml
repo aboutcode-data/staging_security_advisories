@@ -1,0 +1,60 @@
+advisory_id: GHSA-vj5p-fp42-774p
+datasource_id: github_osv_importer_v2/GHSA-vj5p-fp42-774p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-vj5p-fp42-774p/GHSA-vj5p-fp42-774p.json
+aliases:
+  - CVE-2023-1402
+summary: |
+  Moodle may display roles to users who don't have access to them
+  The course participation report required additional checks to prevent roles being displayed which the user did not have access to view.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.1.0|<4.1.2
+    fixed_versions: vers:composer/4.1.2
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.0.0|<4.0.7
+    fixed_versions: vers:composer/4.0.7
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.11.0|<3.11.13
+    fixed_versions: vers:composer/3.11.13
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<3.9.20
+    fixed_versions: vers:composer/3.9.20
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-vj5p-fp42-774p/GHSA-vj5p-fp42-774p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-668
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2179427
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/f0a557bffbdb450648d0e4cedb391d14d8a0a253
+    reference_type:
+    reference_id:
+  - url: https://git.moodle.org/gw?p=moodle.git;a=commitdiff;h=f0a557bffbdb450648d0e4cedb391d14d8a0a253
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/3QZN34VSF4HTCW3C3ZP2OZYSLYUKADPF
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3QZN34VSF4HTCW3C3ZP2OZYSLYUKADPF
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=445069
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-1402
+    reference_type:
+    reference_id:

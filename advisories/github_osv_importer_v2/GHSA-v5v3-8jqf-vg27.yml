@@ -1,0 +1,32 @@
+advisory_id: GHSA-v5v3-8jqf-vg27
+datasource_id: github_osv_importer_v2/GHSA-v5v3-8jqf-vg27
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-v5v3-8jqf-vg27/GHSA-v5v3-8jqf-vg27.json
+aliases:
+  - CVE-2016-10558
+summary: "Downloads Resources over HTTP in aerospike\nAffected versions of `aerospike` insecurely\
+  \ download an executable over an unencrypted HTTP connection. \n\nIn scenarios where an attacker\
+  \ has a privileged network position, it is possible to intercept the response and replace\
+  \ the executable with a malicious one, resulting in code execution on the system running `aerospike`.\n\
+  \n\n## Recommendation\n\nUpdate to version 2.4.2 or later"
+impacted_packages:
+  - purl: pkg:npm/aerospike
+    affected_versions: vers:npm/<2.4.2
+    fixed_versions: vers:npm/2.4.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+references:
+  - url: https://github.com/advisories/GHSA-v5v3-8jqf-vg27
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10558
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/167
+    reference_type:
+    reference_id:

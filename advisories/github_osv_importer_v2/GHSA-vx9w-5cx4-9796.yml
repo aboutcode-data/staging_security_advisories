@@ -1,0 +1,74 @@
+advisory_id: GHSA-vx9w-5cx4-9796
+datasource_id: github_osv_importer_v2/GHSA-vx9w-5cx4-9796
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-vx9w-5cx4-9796/GHSA-vx9w-5cx4-9796.json
+aliases:
+  - CVE-2026-26217
+summary: |
+  Crawl4AI Has Local File Inclusion in Docker API via file:// URLs
+  A local file inclusion vulnerability exists in the Crawl4AI Docker API. The /execute_js, /screenshot, /pdf, and /html endpoints accept file:// URLs, allowing attackers to read arbitrary files from the server filesystem.
+
+  Attack Vector:
+  ```json
+  POST /execute_js
+  {
+      "url": "file:///etc/passwd",
+      "scripts": ["document.body.innerText"]
+  }
+  ```
+  Impact
+
+  An unauthenticated attacker can:
+  - Read sensitive files (/etc/passwd, /etc/shadow, application configs)
+  - Access environment variables via /proc/self/environ
+  - Discover internal application structure
+  - Potentially read credentials and API keys
+
+  Workarounds
+
+  1. Disable the Docker API
+  2. Add authentication to the API
+  3. Use network-level filtering
+impacted_packages:
+  - purl: pkg:pypi/crawl4ai
+    affected_versions: vers:pypi/<0.8.0
+    fixed_versions: vers:pypi/0.8.0
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-vx9w-5cx4-9796/GHSA-vx9w-5cx4-9796.json
+  - score: '9.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-vx9w-5cx4-9796/GHSA-vx9w-5cx4-9796.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/unclecode/crawl4ai
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclecode/crawl4ai/blob/main/docs/blog/release-v0.8.0.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclecode/crawl4ai/blob/release/v0.8.0/docs/blog/release-v0.8.0.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclecode/crawl4ai/blob/release/v0.8.0/docs/migration/v0.8.0-upgrade-guide.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclecode/crawl4ai/security/advisories/GHSA-vx9w-5cx4-9796
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-26217
+    reference_type:
+    reference_id:
+  - url: https://www.vulncheck.com/advisories/crawl4ai-docker-api-local-file-inclusion-via-file-url-handling
+    reference_type:
+    reference_id:

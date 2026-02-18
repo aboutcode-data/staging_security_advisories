@@ -1,0 +1,46 @@
+advisory_id: GHSA-w3x5-427h-wfq6
+datasource_id: github_osv_importer_v2/GHSA-w3x5-427h-wfq6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-w3x5-427h-wfq6/GHSA-w3x5-427h-wfq6.json
+aliases:
+  - CVE-2022-46166
+summary: |
+  Spring Boot Admins integrated notifier support allows arbitrary code execution
+  ### Impact
+  All users who run Spring Boot Admin Server, having enabled Notifiers (e.g. Teams-Notifier) and write access to environment variables via UI are possibly affected.
+
+  ### Patches
+  In the most recent releases of Spring Boot Admin 2.6.10 and 2.7.8 the issue is fixed by implementing `SimpleExecutionContext` of SpEL. This prevents the arbitrary code execution (i.e. SpEL injection).
+
+  ### Workarounds
+   * Disable any notifier
+   * Disable write access (POST request) on `/env` actuator endpoint
+impacted_packages:
+  - purl: pkg:maven/de.codecentric/spring-boot-admin
+    affected_versions: vers:maven/<2.6.10
+    fixed_versions: vers:maven/2.6.10
+  - purl: pkg:maven/de.codecentric/spring-boot-admin
+    affected_versions: vers:maven/>=2.7.0|<2.7.8
+    fixed_versions: vers:maven/2.7.8
+  - purl: pkg:maven/de.codecentric/spring-boot-admin
+    affected_versions: vers:maven/>=3.0.0-M1|<3.0.0-M6
+    fixed_versions: vers:maven/3.0.0-M6
+severities:
+  - score: '8.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-w3x5-427h-wfq6/GHSA-w3x5-427h-wfq6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/codecentric/spring-boot-admin
+    reference_type:
+    reference_id:
+  - url: https://github.com/codecentric/spring-boot-admin/security/advisories/GHSA-w3x5-427h-wfq6
+    reference_type:
+    reference_id:

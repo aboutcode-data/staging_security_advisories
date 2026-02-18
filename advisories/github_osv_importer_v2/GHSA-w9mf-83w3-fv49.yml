@@ -1,0 +1,48 @@
+advisory_id: GHSA-w9mf-83w3-fv49
+datasource_id: github_osv_importer_v2/GHSA-w9mf-83w3-fv49
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-w9mf-83w3-fv49/GHSA-w9mf-83w3-fv49.json
+aliases:
+  - CVE-2022-2256
+summary: "Keycloak vulnerable to Stored Cross site Scripting (XSS) when loading default roles\n\
+  A Stored XSS vulnerability was reported in the Keycloak Security mailing list, affecting all\
+  \ the versions of Keycloak, including the latest release (18.0.1). The vulnerability allows\
+  \ a privileged attacker to execute malicious scripts in the admin console, abusing of the\
+  \ default roles functionality. \n\n### CVSS 3.1 - **3.8**\n\n**Vector String:** AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N\n\
+  \n**Vector Clarification:**\n\n* User interaction is not required as the admin console is\
+  \ regularly used during an administrator's work\n* The scope is unchanged since the admin\
+  \ console web application is both the vulnerable component and where the exploit executes\n\
+  \n### Credits\n\nAytaç Kalıncı, Ilker Bulgurcu, Yasin Yılmaz (@aytackalinci, @smileronin,\
+  \ @yasinyilmaz) - NETAŞ PENTEST TEAM"
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-parent
+    affected_versions: vers:maven/<19.0.2
+    fixed_versions: vers:maven/19.0.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-w9mf-83w3-fv49/GHSA-w9mf-83w3-fv49.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2101942
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/8e705a65ab2aa2b079374ec859ee7a75fad5a7d9
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-w9mf-83w3-fv49
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2256
+    reference_type:
+    reference_id:

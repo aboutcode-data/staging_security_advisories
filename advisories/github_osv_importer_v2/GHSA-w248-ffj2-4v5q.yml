@@ -1,0 +1,73 @@
+advisory_id: GHSA-w248-ffj2-4v5q
+datasource_id: github_osv_importer_v2/GHSA-w248-ffj2-4v5q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-w248-ffj2-4v5q/GHSA-w248-ffj2-4v5q.json
+aliases:
+  - CVE-2022-31043
+summary: |
+  Fix failure to strip Authorization header on HTTP downgrade
+  ### Impact
+
+  `Authorization` headers on requests are sensitive information. On making a request using the `https` scheme to a server which responds with a redirect to a URI with the `http` scheme, we should not forward the `Authorization` header on. This is much the same as to how we don't forward on the header if the host changes. Prior to this fix, `https` to `http` downgrades did not result in the `Authorization` header being removed, only changes to the host.
+
+  ### Patches
+
+  Affected Guzzle 7 users should upgrade to Guzzle 7.4.4 as soon as possible. Affected users using any earlier series of Guzzle should upgrade to Guzzle 6.5.7 or 7.4.4.
+
+  ### Workarounds
+
+  An alternative approach would be to use your own redirect middleware, rather than ours, if you are unable to upgrade. If you do not require or expect redirects to be followed, one should simply disable redirects all together.
+
+  ### References
+
+  * [RFC9110 Section 15.4](https://www.rfc-editor.org/rfc/rfc9110.html#name-redirection-3xx)
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, please get in touch with us in `#guzzle` on the [PHP HTTP Slack](https://php-http.slack.com/). Do not report additional security advisories in that public channel, however - please follow our [vulnerability reporting process](https://github.com/guzzle/guzzle/security/policy).
+impacted_packages:
+  - purl: pkg:composer/guzzlehttp/guzzle
+    affected_versions: vers:composer/>=4.0.0|<6.5.7
+    fixed_versions: vers:composer/6.5.7
+  - purl: pkg:composer/guzzlehttp/guzzle
+    affected_versions: vers:composer/>=7.0.0|<7.4.4
+    fixed_versions: vers:composer/7.4.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-w248-ffj2-4v5q/GHSA-w248-ffj2-4v5q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-863
+  - CWE-212
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/guzzlehttp/guzzle/CVE-2022-31043.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/guzzle/guzzle
+    reference_type:
+    reference_id:
+  - url: https://github.com/guzzle/guzzle/commit/e3ff079b22820c2029d4c2a87796b6a0b8716ad8
+    reference_type:
+    reference_id:
+  - url: https://github.com/guzzle/guzzle/security/advisories/GHSA-w248-ffj2-4v5q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31043
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2022/dsa-5246
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2022-011
+    reference_type:
+    reference_id:
+  - url: https://www.rfc-editor.org/rfc/rfc9110.html#name-redirection-3xx
+    reference_type:
+    reference_id:

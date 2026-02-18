@@ -1,0 +1,39 @@
+advisory_id: GHSA-v65g-f3cj-fjp4
+datasource_id: github_osv_importer_v2/GHSA-v65g-f3cj-fjp4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-v65g-f3cj-fjp4/GHSA-v65g-f3cj-fjp4.json
+aliases:
+  - CVE-2022-1930
+summary: |
+  Regular expression denial of service in eth-account
+  An exponential ReDoS (Regular Expression Denial of Service) can be triggered in the eth-account PyPI package, when an attacker is able to supply arbitrary input to the encode_structured_data method
+impacted_packages:
+  - purl: pkg:pypi/eth-account
+    affected_versions: vers:pypi/<0.5.9
+    fixed_versions: vers:pypi/0.5.9
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-v65g-f3cj-fjp4/GHSA-v65g-f3cj-fjp4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-697
+  - CWE-1333
+references:
+  - url: https://github.com/ethereum/eth-account
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethereum/eth-account/commit/70f89be700df0d5f08ef696252c88741f8414060
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1930
+    reference_type:
+    reference_id:
+  - url: https://research.jfrog.com/vulnerabilities/eth-account-redos-xray-248681
+    reference_type:
+    reference_id:
