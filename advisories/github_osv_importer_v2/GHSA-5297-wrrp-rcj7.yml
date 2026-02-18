@@ -1,0 +1,54 @@
+advisory_id: GHSA-5297-wrrp-rcj7
+datasource_id: github_osv_importer_v2/GHSA-5297-wrrp-rcj7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-5297-wrrp-rcj7/GHSA-5297-wrrp-rcj7.json
+aliases:
+  - CVE-2024-31447
+summary: "Shopware Improper Session Handling in store-api account logout\n### Impact\n\nWhen\
+  \ a authentificated request is made to `POST /store-api/account/logout`, the cart will be\
+  \ cleared, but the User won't be logged out. This affects only the direct store-api usage,\
+  \ as the PHP Storefront listens additionally on `CustomerLogoutEvent` and invalidates the\
+  \ session additionally. \n\n### Patches\nThe problem has been fixed with Shopware 6.6.1.0\
+  \ and 6.5.8.8.\n\n### Workarounds\nWhen you are not able to update, you can install the latest\
+  \ version of the Shopware Security Plugin."
+impacted_packages:
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/>=6.3.5+0|<6.5.8+8
+    fixed_versions: vers:composer/6.5.8+8
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/>=6.3.5+0|<6.5.8+8
+    fixed_versions: vers:composer/6.5.8+8
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/>=6.6.0+0-rc1|<6.6.1+0
+    fixed_versions: vers:composer/6.6.1+0
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/>=6.6.0+0-rc1|<6.6.1+0
+    fixed_versions: vers:composer/6.6.1+0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-5297-wrrp-rcj7/GHSA-5297-wrrp-rcj7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-613
+references:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/5cc84ddd817ad0c1d07f9b3c79ab346d50514a77
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/d29775aa758f70d08e0c5999795c7c26d230e7d3
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-5297-wrrp-rcj7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-31447
+    reference_type:
+    reference_id:

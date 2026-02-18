@@ -1,0 +1,55 @@
+advisory_id: GHSA-424x-cxvh-wq9p
+datasource_id: github_osv_importer_v2/GHSA-424x-cxvh-wq9p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-424x-cxvh-wq9p/GHSA-424x-cxvh-wq9p.json
+aliases:
+  - CVE-2024-47057
+summary: |
+  Mautic allows user name enumeration due to response time difference on password reset form
+  ### Summary
+
+  This advisory addresses a security vulnerability in Mautic related to the "Forget your password" functionality. This vulnerability could be exploited by unauthenticated users to enumerate valid usernames.
+
+  User Enumeration via Timing Attack: A user enumeration vulnerability exists in the "Forget your password" functionality. Differences in response times for existing and non-existing users, combined with a lack of request limiting, allow an attacker to determine the existence of usernames through a timing-based attack.
+
+  ### Mitigation
+  Please update to a version that addresses this timing vulnerability, where password reset responses are normalized to respond at the same time regardless of user existence.
+
+  ### Workarounds
+  None
+
+  If you have any questions or comments about this advisory:
+  Email us at security@mautic.org
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=1.0.0|<4.4.16
+    fixed_versions: vers:composer/4.4.16
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=5.0.0-alpha|<5.2.6
+    fixed_versions: vers:composer/5.2.6
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=6.0.0-alpha|<6.0.2
+    fixed_versions: vers:composer/6.0.2
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-424x-cxvh-wq9p/GHSA-424x-cxvh-wq9p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+  - CWE-204
+references:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-424x-cxvh-wq9p
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47057
+    reference_type:
+    reference_id:

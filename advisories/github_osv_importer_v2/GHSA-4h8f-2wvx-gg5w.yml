@@ -1,0 +1,59 @@
+advisory_id: GHSA-4h8f-2wvx-gg5w
+datasource_id: github_osv_importer_v2/GHSA-4h8f-2wvx-gg5w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-4h8f-2wvx-gg5w/GHSA-4h8f-2wvx-gg5w.json
+aliases:
+  - CVE-2024-34447
+summary: |
+  Bouncy Castle Java Cryptography API vulnerable to DNS poisoning
+  An issue was discovered in the Bouncy Castle Crypto Package For Java before BC TLS Java 1.0.19 (ships with BC Java 1.78, BC Java (LTS) 2.73.6) and before BC FIPS TLS Java 1.0.19. When endpoint identification is enabled in the BCJSSE and an SSL socket is created without an explicit hostname (as happens with HttpsURLConnection), hostname verification could be performed against a DNS-resolved IP address in some situations, opening up a possibility of DNS poisoning.
+impacted_packages:
+  - purl: pkg:maven/org.bouncycastle/bcprov-jdk18on
+    affected_versions: vers:maven/>=1.61|<1.78
+    fixed_versions: vers:maven/1.78
+  - purl: pkg:maven/org.bouncycastle/bcprov-jdk15to18
+    affected_versions: vers:maven/>=1.61|<1.78
+    fixed_versions: vers:maven/1.78
+  - purl: pkg:maven/org.bouncycastle/bcprov-jdk14
+    affected_versions: vers:maven/>=1.61|<1.78
+    fixed_versions: vers:maven/1.78
+  - purl: pkg:maven/org.bouncycastle/bcprov-jdk12
+    affected_versions: vers:maven/>=1.61|<1.78
+    fixed_versions: vers:maven/1.78
+  - purl: pkg:maven/org.bouncycastle/bctls-fips
+    affected_versions: vers:maven/<1.0.19
+    fixed_versions: vers:maven/1.0.19
+  - purl: pkg:maven/org.bouncycastle/bcprov-lts8on
+    affected_versions: vers:maven/<2.73.6
+    fixed_versions: vers:maven/2.73.6
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-4h8f-2wvx-gg5w/GHSA-4h8f-2wvx-gg5w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-297
+references:
+  - url: https://github.com/bcgit/bc-java
+    reference_type:
+    reference_id:
+  - url: https://github.com/bcgit/bc-java/issues/1656
+    reference_type:
+    reference_id:
+  - url: https://github.com/bcgit/bc-java/wiki/CVE%E2%80%902024%E2%80%9034447
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34447
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240614-0007
+    reference_type:
+    reference_id:
+  - url: https://www.bouncycastle.org/latest_releases.html
+    reference_type:
+    reference_id:

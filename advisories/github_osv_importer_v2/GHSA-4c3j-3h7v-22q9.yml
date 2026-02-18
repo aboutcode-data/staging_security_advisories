@@ -1,0 +1,102 @@
+advisory_id: GHSA-4c3j-3h7v-22q9
+datasource_id: github_osv_importer_v2/GHSA-4c3j-3h7v-22q9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-4c3j-3h7v-22q9/GHSA-4c3j-3h7v-22q9.json
+aliases:
+  - CVE-2025-62780
+summary: |
+  changedetection.io: Stored XSS in Watch update via API
+  ### Summary
+
+  A Stored Cross Site Scripting is present in the changedetection.io Watch update API due to unsufficient security checks.
+
+  ### Details
+
+  Tested on changedetection.io version *v0.50.24*
+
+  ```console
+  REPOSITORY                            TAG       IMAGE ID       CREATED        SIZE
+  ghcr.io/dgtlmoon/changedetection.io   latest    0367276509a0   23 hours ago   599MB
+  ```
+
+  When a user tries to add an unsafe URL as a Watch in the changedetection.io UI, the action is blocked with the error message "Watch protocol is not permitted by SAFE_PROTOCOL_REGEX or incorrect URL format".
+  This is catched by the function `validate_url(test_url)`.
+
+  ```python
+  def validate_url(test_url):
+      # ...
+      from .model.Watch import is_safe_url
+      if not is_safe_url(test_url):
+          # This should be wtforms.validators.
+          raise ValidationError('Watch protocol is not permitted by SAFE_PROTOCOL_REGEX or incorrect URL format')
+  ```
+
+  When instead the Watch API is used, this check is not performed resulting in unsafe URLs added as Watch.
+
+  ### PoC
+
+  Update an existing watch with an unsafe URL
+  ```console
+  curl -X PUT "http://example.site/api/v1/watch/1242e1c5-d59e-4352-0078-203a55b21282" \
+    -H "x-api-key: XXX" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "url": "javascript:alert(document.domain)",
+      "title": "XSS PoC",
+      "paused": false
+    }'
+  ```
+
+  ### Impact
+
+  Two scenarios are possibile:
+
+  1. An attacker can insert a new watch with an arbitrary URL which really points to a web page. Once the HTML content is retrieved, the attacker updates the URL with a JavaScript payload.
+  2. An attacker substitutes the URL in an existing watch with a new URL that is in reality a JavaScript payload.
+
+  When the user clicks on *Preview* and then on the malicious link, the JavaScript malicious code is executed.
+
+  <img width="1200" height="643" alt="poc1" src="https://github.com/user-attachments/assets/db81e0c7-b6d3-4332-b15d-a688a48c3227" />
+  <br>
+  <img width="1200" height="643" alt="poc2" src="https://github.com/user-attachments/assets/e704b37c-d339-4322-9fc0-ad50dd86b31d" />
+
+
+
+  ### Credits
+
+  Edoardo Ottavianelli @edoardottt
+impacted_packages:
+  - purl: pkg:pypi/changedetection.io
+    affected_versions: vers:pypi/<0.50.34
+    fixed_versions: vers:pypi/0.50.34
+severities:
+  - score: '3.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-4c3j-3h7v-22q9/GHSA-4c3j-3h7v-22q9.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/dgtlmoon/changedetection.io
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/issues/3562
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/pull/3564
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/releases/tag/0.50.34
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/security/advisories/GHSA-4c3j-3h7v-22q9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62780
+    reference_type:
+    reference_id:

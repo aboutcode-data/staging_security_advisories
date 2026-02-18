@@ -1,0 +1,53 @@
+advisory_id: GHSA-4pg4-qvpc-4q3h
+datasource_id: github_osv_importer_v2/GHSA-4pg4-qvpc-4q3h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-4pg4-qvpc-4q3h/GHSA-4pg4-qvpc-4q3h.json
+aliases:
+  - CVE-2025-47944
+summary: |
+  Multer vulnerable to Denial of Service from maliciously crafted requests
+  ### Impact
+  A vulnerability in Multer versions >=1.4.4-lts.1 allows an attacker to trigger a Denial of Service (DoS) by sending a malformed multi-part upload request. This request causes an unhandled exception, leading to a crash of the process.
+
+  ### Patches
+  Users should upgrade to `2.0.0`
+
+  ### Workarounds
+  None
+
+  ### References
+
+  - https://github.com/expressjs/multer/issues/1176
+  - https://github.com/expressjs/multer/commit/2c8505f207d923dd8de13a9f93a4563e59933665
+impacted_packages:
+  - purl: pkg:npm/multer
+    affected_versions: vers:npm/>=1.4.4-lts.1|<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-4pg4-qvpc-4q3h/GHSA-4pg4-qvpc-4q3h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-248
+references:
+  - url: https://github.com/expressjs/multer
+    reference_type:
+    reference_id:
+  - url: https://github.com/expressjs/multer/commit/2c8505f207d923dd8de13a9f93a4563e59933665
+    reference_type:
+    reference_id:
+  - url: https://github.com/expressjs/multer/issues/1176
+    reference_type:
+    reference_id:
+  - url: https://github.com/expressjs/multer/security/advisories/GHSA-4pg4-qvpc-4q3h
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-47944
+    reference_type:
+    reference_id:

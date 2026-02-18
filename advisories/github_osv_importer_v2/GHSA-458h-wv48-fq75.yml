@@ -1,0 +1,50 @@
+advisory_id: GHSA-458h-wv48-fq75
+datasource_id: github_osv_importer_v2/GHSA-458h-wv48-fq75
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-458h-wv48-fq75/GHSA-458h-wv48-fq75.json
+aliases:
+  - CVE-2018-14655
+summary: |
+  Keycloak vulnerable to cross-site scripting via the state parameter
+  A flaw was found in Keycloak 3.4.3.Final, 4.0.0.Beta2, 4.3.0.Final. When using `response_mode=form_post` it is possible to inject arbitrary Javascript-Code via the 'state'-parameter in the authentication URL. This allows an XSS-Attack upon succesfully login.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-parent
+    affected_versions: vers:maven/<=3.4.3.Final
+    fixed_versions:
+  - purl: pkg:maven/org.keycloak/keycloak-parent
+    affected_versions: vers:maven/>=4.0.0.Beta1|<=4.0.0.Beta2
+    fixed_versions:
+  - purl: pkg:maven/org.keycloak/keycloak-parent
+    affected_versions: vers:maven/4.3.0.Final
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-458h-wv48-fq75/GHSA-458h-wv48-fq75.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:3592
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3593
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3595
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14655
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-14655
+    reference_type:
+    reference_id:

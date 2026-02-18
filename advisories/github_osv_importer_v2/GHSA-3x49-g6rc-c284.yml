@@ -1,0 +1,77 @@
+advisory_id: GHSA-3x49-g6rc-c284
+datasource_id: github_osv_importer_v2/GHSA-3x49-g6rc-c284
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-3x49-g6rc-c284/GHSA-3x49-g6rc-c284.json
+aliases:
+  - CVE-2022-23535
+summary: |
+  LiteDB may deserialize bad JSON on object type using _type
+  ### Impact
+  LiteDB use a special field in JSON documents to cast diferent types from `BsonDocument` do POCO classes. When instance of an object are not the same of class, `BsonMapper` use a special field `_type` string info with full class name with assembly to be loaded and fit in your model.
+  If your end-user can send to your app a plain JSON string, deserialization can load an unsafe  object to fit in your model.
+
+  ### Patches
+  Version >= 5.0.13 add some basic fixes to avoid this, but is not 100% guaranteed when using `Object` type
+  Next major version will contains a allow-list to select what king of Assembly can be loaded
+
+  ### Workarounds
+  - Avoid users send to your app a JSON string to be direct insert/update into database
+  - Avoid use classes with `Object` type - try use an interface when possible
+
+  If your app send a plain JSON string to be insert/update into database, prefer this:
+  ```
+  // Bad
+  public class Customer {
+      public int Id { get; set; }
+      public string Name { get; set; }
+      public Object AnyData { get; set; } // <= Avoid use `Object` base type
+  }
+
+  // Good
+  public class Customer {
+      public int Id { get; set; }
+      public string Name { get; set; }
+      public IDictionary<string, string> AnyData { get; set; } // Will accept only key/value strings
+  }
+
+  ```
+
+  ### References
+  See this workaround fix on this commit:
+
+  https://github.com/mbdavid/LiteDB/commit/4382ff4dd0dd8b8b16a4e37dfd29727c5f70f93f
+impacted_packages:
+  - purl: pkg:nuget/LiteDB
+    affected_versions: vers:nuget/<5.0.13
+    fixed_versions: vers:nuget/5.0.13
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-3x49-g6rc-c284/GHSA-3x49-g6rc-c284.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/mbdavid/LiteDB
+    reference_type:
+    reference_id:
+  - url: https://github.com/mbdavid/LiteDB/commit/4382ff4dd0dd8b8b16a4e37dfd29727c5f70f93f
+    reference_type:
+    reference_id:
+  - url: https://github.com/mbdavid/LiteDB/commit/d72c6774e6a13de2cfcd7d477d3575efeb75c8f2
+    reference_type:
+    reference_id:
+  - url: https://github.com/mbdavid/LiteDB/releases/tag/v5.0.13
+    reference_type:
+    reference_id:
+  - url: https://github.com/mbdavid/LiteDB/security/advisories/GHSA-3x49-g6rc-c284
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23535
+    reference_type:
+    reference_id:

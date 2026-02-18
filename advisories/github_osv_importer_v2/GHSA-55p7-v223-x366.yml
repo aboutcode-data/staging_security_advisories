@@ -1,0 +1,53 @@
+advisory_id: GHSA-55p7-v223-x366
+datasource_id: github_osv_importer_v2/GHSA-55p7-v223-x366
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-55p7-v223-x366/GHSA-55p7-v223-x366.json
+aliases: []
+summary: |
+  IdentityServer Open Redirect vulnerability
+  ### Impact
+  It is possible for an attacker to craft malicious Urls that certain functions in IdentityServer will incorrectly treat as local and trusted. If such a Url is returned as a redirect, some browsers will follow it to a third-party, untrusted site.
+
+  ### Affected Methods
+  - In the `DefaultIdentityServerInteractionService`, the `GetAuthorizationContextAsync` method may return non-null and the `IsValidReturnUrl` method may return true for malicious Urls, indicating incorrectly that they can be safely redirected to.
+
+     _UI code calling these two methods is the most commonly used code path that will expose the vulnerability. The default UI templates rely on this behavior in the Login, Challenge, and Consent pages. Customized user interface code might also rely on this behavior. The following uncommonly used APIs are also vulnerable:_
+
+  - The `ServerUrlExtensions.GetIdentityServerRelativeUrl`, `ReturnUrlParser.ParseAsync` and `OidcReturnUrlParser.ParseAsync`  methods may incorrectly return non-null, and the `ReturnUrlParser.IsValidReturnUrl` and `OidcReturnUrlParser.IsValidReturnUrl` methods may incorrectly return true for malicious Urls.
+
+  ### Patches
+  IdentityServer4 is no longer supported and will not be receiving updates. Please consider updating to [Duende.IdentityServer](https://duendesoftware.com).
+impacted_packages:
+  - purl: pkg:nuget/IdentityServer4
+    affected_versions: vers:nuget/<=4.1.2
+    fixed_versions:
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-55p7-v223-x366/GHSA-55p7-v223-x366.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-55p7-v223-x366/GHSA-55p7-v223-x366.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/DuendeSoftware/IdentityServer/security/advisories/GHSA-ff4q-64jc-gx98
+    reference_type:
+    reference_id:
+  - url: https://github.com/IdentityServer/IdentityServer4
+    reference_type:
+    reference_id:
+  - url: https://github.com/IdentityServer/IdentityServer4/security/advisories/GHSA-55p7-v223-x366
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-39694
+    reference_type:
+    reference_id:

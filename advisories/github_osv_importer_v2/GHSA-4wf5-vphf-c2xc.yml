@@ -1,0 +1,50 @@
+advisory_id: GHSA-4wf5-vphf-c2xc
+datasource_id: github_osv_importer_v2/GHSA-4wf5-vphf-c2xc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-4wf5-vphf-c2xc/GHSA-4wf5-vphf-c2xc.json
+aliases:
+  - CVE-2022-25858
+summary: |
+  Terser insecure use of regular expressions leads to ReDoS
+  The package terser before 4.8.1, from 5.0.0 and before 5.14.2 are vulnerable to Regular Expression Denial of Service (ReDoS) due to insecure usage of regular expressions.
+impacted_packages:
+  - purl: pkg:npm/terser
+    affected_versions: vers:npm/<4.8.1
+    fixed_versions: vers:npm/4.8.1
+  - purl: pkg:npm/terser
+    affected_versions: vers:npm/>=5.0.0|<5.14.2
+    fixed_versions: vers:npm/5.14.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-4wf5-vphf-c2xc/GHSA-4wf5-vphf-c2xc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/terser/terser
+    reference_type:
+    reference_id:
+  - url: https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135
+    reference_type:
+    reference_id:
+  - url: https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b
+    reference_type:
+    reference_id:
+  - url: https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25858
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-TERSER-2806366
+    reference_type:
+    reference_id:

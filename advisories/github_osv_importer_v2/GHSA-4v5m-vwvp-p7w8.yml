@@ -1,0 +1,35 @@
+advisory_id: GHSA-4v5m-vwvp-p7w8
+datasource_id: github_osv_importer_v2/GHSA-4v5m-vwvp-p7w8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-4v5m-vwvp-p7w8/GHSA-4v5m-vwvp-p7w8.json
+aliases:
+  - CVE-2022-38916
+summary: |
+  Pagekit vulnerable to Unrestricted Upload of File with Dangerous Type
+  A file upload vulnerability exists in the storage feature of pagekit 1.0.18, which allows an attacker to upload malicious files
+impacted_packages:
+  - purl: pkg:composer/pagekit/pagekit
+    affected_versions: vers:composer/<=1.0.18
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-4v5m-vwvp-p7w8/GHSA-4v5m-vwvp-p7w8.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/pagekit/pagekit
+    reference_type:
+    reference_id:
+  - url: https://github.com/pagekit/pagekit/issues/970
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-38916
+    reference_type:
+    reference_id:

@@ -1,0 +1,70 @@
+advisory_id: GHSA-4487-x383-qpph
+datasource_id: github_osv_importer_v2/GHSA-4487-x383-qpph
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-4487-x383-qpph/GHSA-4487-x383-qpph.json
+aliases:
+  - CVE-2018-1272
+summary: |
+  Possible privilege escalation in org.springframework:spring-core
+  Spring Framework, versions 5.0 prior to 5.0.5 and versions 4.3 prior to 4.3.15 and older unsupported versions, provide client-side support for multipart requests. When Spring MVC or Spring WebFlux server application (server A) receives input from a remote client, and then uses that input to make a multipart request to another server (server B), it can be exposed to an attack, where an extra multipart is inserted in the content of the request from server A, causing server B to use the wrong value for a part it expects. This could to lead privilege escalation, for example, if the part content represents a username or user roles.
+impacted_packages:
+  - purl: pkg:maven/org.springframework/spring-core
+    affected_versions: vers:maven/<4.3.15
+    fixed_versions: vers:maven/4.3.15
+  - purl: pkg:maven/org.springframework/spring-core
+    affected_versions: vers:maven/>=5.0.0|<5.0.5
+    fixed_versions: vers:maven/5.0.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-4487-x383-qpph/GHSA-4487-x383-qpph.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:1320
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:2669
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-4487-x383-qpph
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/ab2410c754b67902f002bfcc0c3895bd7772d39
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/e02ff3a0da50744b0980d5d665fd242eedea767
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1272
+    reference_type:
+    reference_id:
+  - url: https://pivotal.io/security/cve-2018-1272
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2020.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/103697
+    reference_type:
+    reference_id:

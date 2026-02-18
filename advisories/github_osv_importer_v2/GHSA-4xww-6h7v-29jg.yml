@@ -1,0 +1,33 @@
+advisory_id: GHSA-4xww-6h7v-29jg
+datasource_id: github_osv_importer_v2/GHSA-4xww-6h7v-29jg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-4xww-6h7v-29jg/GHSA-4xww-6h7v-29jg.json
+aliases:
+  - CVE-2022-0083
+summary: |
+  User enumeration in livehelperchat
+  livehelperchat is vulnerable to Generation of Error Message Containing Sensitive Information. There is an observable discrepancy between errors generated for users that exist and those that do not.
+impacted_packages:
+  - purl: pkg:composer/remdex/livehelperchat
+    affected_versions: vers:composer/<3.91.0
+    fixed_versions: vers:composer/3.91.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-209
+references:
+  - url: https://github.com/livehelperchat/livehelperchat
+    reference_type:
+    reference_id:
+  - url: https://github.com/livehelperchat/livehelperchat/commit/fbed8728be59040a7218610e72f6eceb5f8bc152
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/4c477440-3b03-42eb-a6e2-a31b55090736
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0083
+    reference_type:
+    reference_id:

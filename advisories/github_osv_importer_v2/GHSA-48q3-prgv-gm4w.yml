@@ -1,0 +1,60 @@
+advisory_id: GHSA-48q3-prgv-gm4w
+datasource_id: github_osv_importer_v2/GHSA-48q3-prgv-gm4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-48q3-prgv-gm4w/GHSA-48q3-prgv-gm4w.json
+aliases:
+  - CVE-2025-53364
+summary: |
+  Parse Server exposes the data schema via GraphQL API
+  ### Impact
+
+  The Parse Server GraphQL API previously allowed public access to the GraphQL schema without requiring a session token or the master key. While schema introspection reveals only metadata and not actual data, this metadata can still expand the potential attack surface.
+
+  ### Patches
+
+  The issue has been addressed by requiring the master key for schema introspection. Additionally, a new Parse Server configuration option, `graphQLPublicIntrospection`, has been introduced. This option allows developers to re-enable public schema introspection if their application relies on it. However, it is strongly recommended to use this option only temporarily and to update the application to function without depending on public introspection.
+
+  ### Workarounds
+
+  None available.
+
+  ### References
+
+  - GitHub security advisory: https://github.com/parse-community/parse-server/security/advisories/GHSA-48q3-prgv-gm4w
+  - Fix for Parse Server 7: https://github.com/parse-community/parse-server/pull/9820
+  - Fix for Parse Server 8: https://github.com/parse-community/parse-server/pull/9819
+impacted_packages:
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/>=8.0.0|<8.2.2
+    fixed_versions: vers:npm/8.2.2
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/>=5.3.0|<7.5.3
+    fixed_versions: vers:npm/7.5.3
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-48q3-prgv-gm4w/GHSA-48q3-prgv-gm4w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-497
+references:
+  - url: https://github.com/parse-community/parse-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/9819
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/9820
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/security/advisories/GHSA-48q3-prgv-gm4w
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-53364
+    reference_type:
+    reference_id:

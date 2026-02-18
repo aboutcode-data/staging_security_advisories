@@ -1,0 +1,71 @@
+advisory_id: GHSA-4jrw-64vr-7g8m
+datasource_id: github_osv_importer_v2/GHSA-4jrw-64vr-7g8m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-4jrw-64vr-7g8m/GHSA-4jrw-64vr-7g8m.json
+aliases:
+  - CVE-2025-66169
+summary: |
+  Apache Camel camel-neo4j component is vulnerable to cypher injection
+  Cypher Injection vulnerability in Apache Camel camel-neo4j component.
+
+  This issue affects Apache Camel: from 4.10.0 before 4.10.8, from 4.14.0 before 4.14.3, from 4.15.0 before 4.17.0
+
+  Users are recommended to upgrade to version 4.10.8 for 4.10.x LTS and 4.14.3 for 4.14.x LTS and 4.17.0.
+impacted_packages:
+  - purl: pkg:maven/org.apache.camel/camel-neo4j
+    affected_versions: vers:maven/>=4.10.0|<4.10.8
+    fixed_versions: vers:maven/4.10.8
+  - purl: pkg:maven/org.apache.camel/camel-neo4j
+    affected_versions: vers:maven/>=4.14.0|<4.14.3
+    fixed_versions: vers:maven/4.14.3
+  - purl: pkg:maven/org.apache.camel/camel-neo4j
+    affected_versions: vers:maven/>=4.15.0|<4.17.0
+    fixed_versions: vers:maven/4.17.0
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-4jrw-64vr-7g8m/GHSA-4jrw-64vr-7g8m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-943
+  - CWE-89
+references:
+  - url: https://camel.apache.org/security/CVE-2025-66169.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/camel
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/camel/commit/66715d3feb4ba15df30cffe437e45efeedfba10d
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/camel/commit/723e2cd98ce4b4ceb1dd38837bc113fca0cef170
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/camel/commit/e46c4c0ef542a64dc791253763a8273dfd7fb179
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/camel/pull/20035
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/camel/pull/20036
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/camel/pull/20037
+    reference_type:
+    reference_id:
+  - url: https://issues.apache.org/jira/browse/CAMEL-22719
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-66169
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2026/01/13/5
+    reference_type:
+    reference_id:

@@ -1,0 +1,51 @@
+advisory_id: GHSA-434g-2637-qmqr
+datasource_id: github_osv_importer_v2/GHSA-434g-2637-qmqr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-434g-2637-qmqr/GHSA-434g-2637-qmqr.json
+aliases:
+  - CVE-2024-48949
+summary: |
+  Elliptic's verify function omits uniqueness validation
+  The Elliptic package 6.5.5 for Node.js for EDDSA implementation does not perform the required check if the signature proof(s) is within the bounds of the order n of the base point of the elliptic curve, leading to signature malleability. Namely, the `verify` function in `lib/elliptic/eddsa/index.js` omits `sig.S().gte(sig.eddsa.curve.n) || sig.S().isNeg()` validation.
+
+  This vulnerability could have a security-relevant impact if an application relies on the uniqueness of a signature.
+impacted_packages:
+  - purl: pkg:npm/elliptic
+    affected_versions: vers:npm/<6.5.6
+    fixed_versions: vers:npm/6.5.6
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-434g-2637-qmqr/GHSA-434g-2637-qmqr.json
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-434g-2637-qmqr/GHSA-434g-2637-qmqr.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-347
+references:
+  - url: https://blog.trailofbits.com/2025/11/18/we-found-cryptography-bugs-in-the-elliptic-library-using-wycheproof
+    reference_type:
+    reference_id:
+  - url: https://github.com/indutny/elliptic
+    reference_type:
+    reference_id:
+  - url: https://github.com/indutny/elliptic/commit/7ac5360118f74eb02da73bdf9f24fd0c72ff5281
+    reference_type:
+    reference_id:
+  - url: https://github.com/indutny/elliptic/compare/v6.5.5...v6.5.6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-48949
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20241227-0003
+    reference_type:
+    reference_id:

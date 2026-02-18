@@ -1,0 +1,60 @@
+advisory_id: GHSA-424m-fj2q-g7vg
+datasource_id: github_osv_importer_v2/GHSA-424m-fj2q-g7vg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-424m-fj2q-g7vg/GHSA-424m-fj2q-g7vg.json
+aliases:
+  - CVE-2025-66468
+summary: |
+  Aimeos GrapesJS CMS extension has possible stored XSS that's exploitable by authenticated editors
+  ### Impact
+
+  Javascript code can be injected by malicious editors for a stored XSS attack if the standard Content Security Policy is disabled.
+
+  ### Workaround
+
+  If the standard CSP rules are active (default in production mode), an exploit isn't possible.
+
+  ### Credits
+
+  Lwin Min Oo <lwinminoo2244@gmail.com>
+impacted_packages:
+  - purl: pkg:composer/aimeos/ai-cms-grapesjs
+    affected_versions: vers:composer/>=2021.4.1|<2021.10.8
+    fixed_versions: vers:composer/2021.10.8
+  - purl: pkg:composer/aimeos/ai-cms-grapesjs
+    affected_versions: vers:composer/>=2022.4.1|<2022.10.9
+    fixed_versions: vers:composer/2022.10.9
+  - purl: pkg:composer/aimeos/ai-cms-grapesjs
+    affected_versions: vers:composer/>=2023.4.1|<2023.10.15
+    fixed_versions: vers:composer/2023.10.15
+  - purl: pkg:composer/aimeos/ai-cms-grapesjs
+    affected_versions: vers:composer/>=2024.4.1|<2024.10.8
+    fixed_versions: vers:composer/2024.10.8
+  - purl: pkg:composer/aimeos/ai-cms-grapesjs
+    affected_versions: vers:composer/>=2025.4.1|<2025.10.2
+    fixed_versions: vers:composer/2025.10.2
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-424m-fj2q-g7vg/GHSA-424m-fj2q-g7vg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/aimeos/ai-cms-grapesjs
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-cms-grapesjs/commit/2214f71ac27cdea25f11c8adf6bb5816db47a042
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-cms-grapesjs/security/advisories/GHSA-424m-fj2q-g7vg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-66468
+    reference_type:
+    reference_id:

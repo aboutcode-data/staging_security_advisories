@@ -1,0 +1,41 @@
+advisory_id: GHSA-3qh2-mccc-q5m6
+datasource_id: github_osv_importer_v2/GHSA-3qh2-mccc-q5m6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3qh2-mccc-q5m6/GHSA-3qh2-mccc-q5m6.json
+aliases:
+  - CVE-2018-14658
+summary: |
+  Keycloak Open Redirect
+  A flaw was found in JBOSS Keycloak 3.2.1.Final. The Redirect URL for both Login and Logout are not normalized in `org.keycloak.protocol.oidc.utils.RedirectUtils` before the redirect url is verified. This can lead to an Open Redirection attack
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<=3.2.1.Final
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3qh2-mccc-q5m6/GHSA-3qh2-mccc-q5m6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:3592
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3593
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3595
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14658
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-14658
+    reference_type:
+    reference_id:

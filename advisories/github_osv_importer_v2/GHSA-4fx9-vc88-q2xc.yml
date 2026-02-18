@@ -1,0 +1,31 @@
+advisory_id: GHSA-4fx9-vc88-q2xc
+datasource_id: github_osv_importer_v2/GHSA-4fx9-vc88-q2xc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-4fx9-vc88-q2xc/GHSA-4fx9-vc88-q2xc.json
+aliases: []
+summary: |
+  Infinite loop in Pillow
+  JpegImagePlugin may append an EOF marker to the end of a truncated file, so that the last segment of the data will still be processed by the decoder.
+
+  If the EOF marker is not detected as such however, this could lead to an infinite loop where JpegImagePlugin keeps trying to end the file.
+impacted_packages:
+  - purl: pkg:pypi/pillow
+    affected_versions: vers:pypi/<9.0.0
+    fixed_versions: vers:pypi/9.0.0
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/python-pillow/Pillow
+    reference_type:
+    reference_id:
+  - url: https://github.com/python-pillow/Pillow/commit/baae9ec4b67c68e3adaf1208cf54e8de5e38a6fd
+    reference_type:
+    reference_id:
+  - url: https://pillow.readthedocs.io/en/stable/releasenotes/9.0.0.html#ensure-jpegimageplugin-stops-at-the-end-of-a-truncated-file
+    reference_type:
+    reference_id:

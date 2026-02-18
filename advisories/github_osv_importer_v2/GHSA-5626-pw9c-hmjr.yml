@@ -1,0 +1,61 @@
+advisory_id: GHSA-5626-pw9c-hmjr
+datasource_id: github_osv_importer_v2/GHSA-5626-pw9c-hmjr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-5626-pw9c-hmjr/GHSA-5626-pw9c-hmjr.json
+aliases:
+  - CVE-2024-23637
+summary: |
+  OctoPrint Unverified Password Change via Access Control Settings
+  ### Impact
+
+  OctoPrint versions up until and including 1.9.3 contain a vulnerability that allows malicious admins to change the password of other admin accounts, including their own, without having to repeat their password.
+
+  An attacker who managed to hijack an admin account might use this to lock out actual admins from their OctoPrint instance.
+
+  ### Patches
+
+  The vulnerability will be patched in version 1.10.0.
+
+  ### Workarounds
+
+  OctoPrint administrators are strongly advised to thoroughly vet who has admin access to their installation.
+
+  ### Credits
+
+  This vulnerability was discovered and responsibly disclosed to OctoPrint by Timothy "TK" Ruppert.
+impacted_packages:
+  - purl: pkg:pypi/octoprint
+    affected_versions: vers:pypi/<=1.9.3
+    fixed_versions: vers:pypi/1.10.0rc1
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-5626-pw9c-hmjr/GHSA-5626-pw9c-hmjr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-620
+  - CWE-287
+references:
+  - url: https://github.com/OctoPrint/OctoPrint
+    reference_type:
+    reference_id:
+  - url: https://github.com/OctoPrint/OctoPrint/commit/1729d167b4ae4a5835bbc7211b92c6828b1c4125
+    reference_type:
+    reference_id:
+  - url: https://github.com/OctoPrint/OctoPrint/releases/tag/1.10.0rc1
+    reference_type:
+    reference_id:
+  - url: https://github.com/OctoPrint/OctoPrint/security/advisories/GHSA-5626-pw9c-hmjr
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/octoprint/PYSEC-2024-29.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23637
+    reference_type:
+    reference_id:

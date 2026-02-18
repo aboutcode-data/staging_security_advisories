@@ -1,0 +1,67 @@
+advisory_id: GHSA-5545-r4hg-rj4m
+datasource_id: github_osv_importer_v2/GHSA-5545-r4hg-rj4m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-5545-r4hg-rj4m/GHSA-5545-r4hg-rj4m.json
+aliases:
+  - CVE-2024-10492
+summary: |
+  Keycloak Path Traversal Vulnerability Due to External Control of File Name or Path
+  A vulnerability was found in Keycloak. A user with high privileges could read sensitive information from a Vault file that is not within the expected context. This attacker must have previous high access to the Keycloak server in order to perform resource creation, for example, an LDAP provider configuration and set up a Vault read file, which will only inform whether that file exists or not.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-quarkus-server
+    affected_versions: vers:maven/<24.0.9
+    fixed_versions: vers:maven/26.0.6
+  - purl: pkg:maven/org.keycloak/keycloak-quarkus-server
+    affected_versions: vers:maven/>=25.0.0|<26.0.6
+    fixed_versions: vers:maven/26.0.6
+severities:
+  - score: '2.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-5545-r4hg-rj4m/GHSA-5545-r4hg-rj4m.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-5545-r4hg-rj4m/GHSA-5545-r4hg-rj4m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-73
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:10175
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:10176
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:10177
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:10178
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-10492
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2322447
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/d60cb9aaefc4035d322862edd8f9f252af6da951
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/issues/35215
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-5545-r4hg-rj4m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-10492
+    reference_type:
+    reference_id:

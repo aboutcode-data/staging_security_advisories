@@ -1,0 +1,73 @@
+advisory_id: GHSA-44jg-mv3h-wj6g
+datasource_id: github_osv_importer_v2/GHSA-44jg-mv3h-wj6g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-44jg-mv3h-wj6g/GHSA-44jg-mv3h-wj6g.json
+aliases: []
+summary: |
+  solspace/craft-freeform Vulnerable to XSS in `PhpSpreadsheet` HTML Writer Due to Unsanitized Styling Data
+  ### Summary
+  _Short summary of the problem. Make the impact and severity as clear as possible. For example: An unsafe deserialization vulnerability allows any unauthenticated user to execute arbitrary code on the server._
+
+  \PhpOffice\PhpSpreadsheet\Writer\Html doesn't sanitize spreadsheet styling information such as font names, allowing an attacker to inject arbitrary JavaScript on the page.
+
+  ### Details
+  _Give all details on the vulnerability. Pointing to the incriminated source code is very helpful for the maintainer._
+
+  See https://github.com/advisories/GHSA-wgmf-q9vr-vww6
+
+  ### PoC
+  _Complete instructions, including specific configuration details, to reproduce the vulnerability._
+
+  Example target script:
+
+  ```
+  <?php
+
+  require 'vendor/autoload.php';
+
+  $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader("Xlsx");
+  $spreadsheet = $reader->load(__DIR__ . '/book.xlsx');
+
+  $writer = new \PhpOffice\PhpSpreadsheet\Writer\Html($spreadsheet);
+  print($writer->generateHTMLAll());
+  ```
+
+  Save this file in the same directory:
+
+  [book.xlsx](https://github.com/PHPOffice/PhpSpreadsheet/files/15212797/book.xlsx)
+
+  Open index.php in a web browser. An alert should be displayed.
+
+  ### Impact
+  _What kind of vulnerability is it? Who is impacted?_
+
+  Full takeover of the session of users viewing spreadsheet files as HTML.
+impacted_packages:
+  - purl: pkg:composer/solspace/craft-freeform
+    affected_versions: vers:composer/<4.1.23
+    fixed_versions: vers:composer/4.1.23
+severities:
+  - score: '1.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-44jg-mv3h-wj6g/GHSA-44jg-mv3h-wj6g.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-wgmf-q9vr-vww6
+    reference_type:
+    reference_id:
+  - url: https://github.com/solspace/craft-freeform
+    reference_type:
+    reference_id:
+  - url: https://github.com/solspace/craft-freeform/releases/tag/v4.1.23
+    reference_type:
+    reference_id:
+  - url: https://github.com/solspace/craft-freeform/security/advisories/GHSA-44jg-mv3h-wj6g
+    reference_type:
+    reference_id:

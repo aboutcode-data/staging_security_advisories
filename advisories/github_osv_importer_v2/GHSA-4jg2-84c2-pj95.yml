@@ -1,0 +1,51 @@
+advisory_id: GHSA-4jg2-84c2-pj95
+datasource_id: github_osv_importer_v2/GHSA-4jg2-84c2-pj95
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-4jg2-84c2-pj95/GHSA-4jg2-84c2-pj95.json
+aliases:
+  - CVE-2023-23619
+summary: "Improper Control of Generation of Code ('Code Injection') in @asyncapi/modelina\n\
+  ### Impact\nAnyone who is using the default presets and/or does not handle the functionality\
+  \ themself.\n\n### Patches\nIt is impossible to fully guard against this, because users have\
+  \ access to the original raw information. However, as of version 1, if you only access the\
+  \ constrained models, you will not encounter this issue.\n\nFurther similar situations are\
+  \ NOT seen as a security issue, but intended behavior.\n\n### Workarounds\nFully custom presets\
+  \ that change the entire rendering process which can then escape the user input.\n\n### For\
+  \ more information\nEven though that I changed all the presets here, the vulnerability is\
+  \ still present throughout. I am using a JSON Schema here for simplicity.\n```ts\nconst jsonSchemaDoc\
+  \ = {\n  $id: 'CustomClass',\n  type: 'object',\n  properties: {\n      'property: any; \\\
+  n constructor(){console.log(\"injected\")} \\n private _temp': { type: 'string' },\n  }\n\
+  };\ngenerator = new TypeScriptGenerator(\n  { \n    presets: [\n      {\n        class: {\n\
+  \            property({ propertyName, content }) {\n              return `private ${propertyName}:\
+  \ any;`;\n            },\n            ctor() {\n              return '';\n            },\n\
+  \            getter() {\n              return '';\n            },\n            setter() {\n\
+  \              return '';\n            }\n        }\n      }\n    ]\n  }\n);\nconst inputModel\
+  \ = await generator.process(jsonSchemaDoc);\n```\nThis would render\n```ts\nexport class CustomClass\
+  \ {\n  private property: any; \n   constructor(){console.log(\"injected\")} \n   private _temp:\
+  \ any;\n  private additionalProperties: any;\n}\n```"
+impacted_packages:
+  - purl: pkg:npm/%40asyncapi/modelina
+    affected_versions: vers:npm/<1.0.0
+    fixed_versions: vers:npm/1.0.0
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-4jg2-84c2-pj95/GHSA-4jg2-84c2-pj95.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/asyncapi/modelina
+    reference_type:
+    reference_id:
+  - url: https://github.com/asyncapi/modelina/security/advisories/GHSA-4jg2-84c2-pj95
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-23619
+    reference_type:
+    reference_id:

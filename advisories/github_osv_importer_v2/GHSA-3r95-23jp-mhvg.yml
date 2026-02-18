@@ -1,0 +1,75 @@
+advisory_id: GHSA-3r95-23jp-mhvg
+datasource_id: github_osv_importer_v2/GHSA-3r95-23jp-mhvg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-3r95-23jp-mhvg/GHSA-3r95-23jp-mhvg.json
+aliases:
+  - CVE-2022-31048
+summary: |
+  Cross-Site Scripting in TYPO3's Form Framework
+  > ### Meta
+  > * CVSS: `CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N/E:F/RL:O/RC:C` (4.9)
+
+  ### Problem
+  It has been discovered that the Form Designer backend module of the Form Framework is vulnerable to cross-site scripting. A valid backend user account with access to the form module is needed to exploit this vulnerability.
+
+  ### Solution
+  Update to TYPO3 versions 8.7.47 ELTS, 9.5.35 ELTS, 10.4.29, 11.5.11 that fix the problem described above.
+
+  ### Credits
+  Thanks to Gabe Troyan who reported and fixed the issue.
+
+  ### References
+  * [TYPO3-CORE-SA-2022-003](https://typo3.org/security/advisory/typo3-core-sa-2022-003)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.0.0|<8.7.47
+    fixed_versions: vers:composer/8.7.47
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=9.0.0|<9.5.35
+    fixed_versions: vers:composer/9.5.35
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.0.0|<10.4.29
+    fixed_versions: vers:composer/10.4.29
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=11.0.0|<11.5.11
+    fixed_versions: vers:composer/11.5.11
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.0.0|<10.4.29
+    fixed_versions: vers:composer/10.4.29
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=11.0.0|<11.5.11
+    fixed_versions: vers:composer/11.5.11
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-3r95-23jp-mhvg/GHSA-3r95-23jp-mhvg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2022-31048.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2022-31048.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/6f2554dc4ea0b670fd5599c54fd788d4db96c4a0
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-3r95-23jp-mhvg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31048
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2022-003
+    reference_type:
+    reference_id:

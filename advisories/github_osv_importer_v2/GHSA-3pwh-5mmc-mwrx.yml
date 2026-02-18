@@ -1,0 +1,41 @@
+advisory_id: GHSA-3pwh-5mmc-mwrx
+datasource_id: github_osv_importer_v2/GHSA-3pwh-5mmc-mwrx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-3pwh-5mmc-mwrx/GHSA-3pwh-5mmc-mwrx.json
+aliases:
+  - CVE-2017-16025
+summary: |
+  Denial of Service in nes
+  Affected versions of `nes` are vulnerable to denial of service when given an invalid `cookie` header, and websocket authentication is set to `cookie`. Submitting an invalid cookie on the websocket upgrade request will cause the node process to throw and exit.
+
+
+  ## Recommendation
+
+  Update to version 6.4.1 or later.
+impacted_packages:
+  - purl: pkg:npm/nes
+    affected_versions: vers:npm/<=6.4.0
+    fixed_versions: vers:npm/6.4.1
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/advisories/GHSA-3pwh-5mmc-mwrx
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/nes/commit/249ba1755ed6977fbc208463c87364bf884ad655
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/nes/issues/171
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16025
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/331
+    reference_type:
+    reference_id:

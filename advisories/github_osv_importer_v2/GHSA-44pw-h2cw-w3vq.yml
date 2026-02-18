@@ -1,0 +1,42 @@
+advisory_id: GHSA-44pw-h2cw-w3vq
+datasource_id: github_osv_importer_v2/GHSA-44pw-h2cw-w3vq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-44pw-h2cw-w3vq/GHSA-44pw-h2cw-w3vq.json
+aliases:
+  - CVE-2022-29167
+summary: |
+  Uncontrolled Resource Consumption in Hawk
+  Hawk is an HTTP authentication scheme providing mechanisms for making authenticated HTTP requests with partial cryptographic verification of the request and response, covering the HTTP method, request URI, host, and optionally the request payload. Hawk used a regular expression to parse `Host` HTTP header (`Hawk.utils.parseHost()`), which was subject to regular expression DoS attack - meaning each added character in the attacker's input increases the computation time exponentially. `parseHost()` was patched in `9.0.1` to use built-in `URL` class to parse hostname instead.`Hawk.authenticate()` accepts `options` argument. If that contains `host` and `port`, those would be used instead of a call to `utils.parseHost()`.
+impacted_packages:
+  - purl: pkg:npm/hawk
+    affected_versions: vers:npm/<9.0.1
+    fixed_versions: vers:npm/9.0.1
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-44pw-h2cw-w3vq/GHSA-44pw-h2cw-w3vq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-1333
+references:
+  - url: https://github.com/mozilla/hawk
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/hawk/commit/d10d72ca82db967f6c5fcf866ff78e3ca25ce1ab
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/hawk/pull/286
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/hawk/security/advisories/GHSA-44pw-h2cw-w3vq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29167
+    reference_type:
+    reference_id:

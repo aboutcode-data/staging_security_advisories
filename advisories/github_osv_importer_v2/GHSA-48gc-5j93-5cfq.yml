@@ -1,0 +1,31 @@
+advisory_id: GHSA-48gc-5j93-5cfq
+datasource_id: github_osv_importer_v2/GHSA-48gc-5j93-5cfq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-48gc-5j93-5cfq/GHSA-48gc-5j93-5cfq.json
+aliases: []
+summary: |
+  Path Traversal in serve
+  Versions of `serve` prior to 10.1.2 are vulnerable to Path Traversal. Explicitly ignored folders can be accessed through relative paths, which allows attackers to access hidden folders and files.
+
+
+  ## Recommendation
+
+  Upgrade to version 10.1.2 or later.
+impacted_packages:
+  - purl: pkg:npm/serve
+    affected_versions: vers:npm/<10.1.2
+    fixed_versions: vers:npm/10.1.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://hackerone.com/reports/486933
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/965
+    reference_type:
+    reference_id:

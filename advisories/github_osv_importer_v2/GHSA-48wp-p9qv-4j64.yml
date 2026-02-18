@@ -1,0 +1,56 @@
+advisory_id: GHSA-48wp-p9qv-4j64
+datasource_id: github_osv_importer_v2/GHSA-48wp-p9qv-4j64
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-48wp-p9qv-4j64/GHSA-48wp-p9qv-4j64.json
+aliases: []
+summary: |
+  Commonmarker vulnerable to to several quadratic complexity bugs that may lead to denial of service
+  ## Impact
+
+  Several quadratic complexity bugs in commonmarker's underlying [`cmark-gfm`](https://github.com/github/cmark-gfm) library may lead to unbounded resource exhaustion and subsequent denial of service.
+
+  The following vulnerabilities were addressed:
+
+  * [CVE-2023-24824](https://github.com/github/cmark-gfm/security/advisories/GHSA-66g8-4hjf-77xh)
+  * [CVE-2023-26485](https://github.com/github/cmark-gfm/security/advisories/GHSA-r8vr-c48j-fcc5)
+
+  For more information, consult the release notes for version [`0.23.0.gfm.10`](https://github.com/github/cmark-gfm/releases/tag/0.29.0.gfm.10) and [`0.23.0.gfm.11`](https://github.com/github/cmark-gfm/releases/tag/0.29.0.gfm.11).
+
+  ## Mitigation
+
+  Users are advised to upgrade to commonmarker version [`0.23.9`](https://rubygems.org/gems/commonmarker/versions/0.23.9).
+impacted_packages:
+  - purl: pkg:gem/commonmarker
+    affected_versions: vers:gem/<0.23.9
+    fixed_versions: vers:gem/0.23.9
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/github/cmark-gfm/releases/tag/0.29.0.gfm.10
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/releases/tag/0.29.0.gfm.11
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/security/advisories/GHSA-66g8-4hjf-77xh
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/security/advisories/GHSA-r8vr-c48j-fcc5
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker/pull/236
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker/releases/tag/v0.23.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker/security/advisories/GHSA-48wp-p9qv-4j64
+    reference_type:
+    reference_id:

@@ -1,0 +1,40 @@
+advisory_id: GHSA-444m-px7r-qpvv
+datasource_id: github_osv_importer_v2/GHSA-444m-px7r-qpvv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-444m-px7r-qpvv/GHSA-444m-px7r-qpvv.json
+aliases:
+  - CVE-2026-24819
+summary: |
+  weixin4j has Improperly Controlled Sequential Memory Allocation
+  Improperly Controlled Sequential Memory Allocation vulnerability in foxinmy weixin4j (weixin4j-base/src/main/java/com/foxinmy/weixin4j/util modules). This vulnerability is associated with program files CharArrayBuffer.Java, ClassUtil.Java.
+
+  This issue affects all versions of weixin4j. A path is available:  [d1c8258](https://github.com/foxinmy/weixin4j/commit/4b7ad14df6567064b468b4c9cb7a8bfeff48c8bd)
+impacted_packages:
+  - purl: pkg:maven/com.foxinmy/weixin4j-base
+    affected_versions: vers:maven/<=1.10.2
+    fixed_versions:
+severities:
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N/AU:Y/R:A/V:D/RE:M/U:Amber
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-444m-px7r-qpvv/GHSA-444m-px7r-qpvv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1325
+references:
+  - url: https://github.com/foxinmy/weixin4j
+    reference_type:
+    reference_id:
+  - url: https://github.com/foxinmy/weixin4j/commit/d1c825835802cd3a0c04772be1220ff4476ea27c
+    reference_type:
+    reference_id:
+  - url: https://github.com/foxinmy/weixin4j/pull/229
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24819
+    reference_type:
+    reference_id:

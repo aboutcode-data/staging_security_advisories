@@ -1,0 +1,38 @@
+advisory_id: GHSA-4g77-cvgw-grvw
+datasource_id: github_osv_importer_v2/GHSA-4g77-cvgw-grvw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-4g77-cvgw-grvw/GHSA-4g77-cvgw-grvw.json
+aliases:
+  - CVE-2021-23470
+summary: |
+  Prototype Pollution in putil-merge
+  This affects the package putil-merge before 3.8.0. The merge() function does not check the values passed into the argument. An attacker can supply a malicious value by adjusting the value to include the constructor property. Note: This vulnerability derives from an incomplete fix in https://security.snyk.io/vuln/SNYK-JS-PUTILMERGE-1317077
+impacted_packages:
+  - purl: pkg:npm/putil-merge
+    affected_versions: vers:npm/<3.8.0
+    fixed_versions: vers:npm/3.8.0
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-4g77-cvgw-grvw/GHSA-4g77-cvgw-grvw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/panates/putil-merge
+    reference_type:
+    reference_id:
+  - url: https://github.com/panates/putil-merge/commit/476d00078dfb2827d7c9ee0f2392c81b864f7bc5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23470
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-PUTILMERGE-2391487
+    reference_type:
+    reference_id:

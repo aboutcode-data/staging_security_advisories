@@ -1,0 +1,31 @@
+advisory_id: GHSA-4vvp-x9h2-x2vf
+datasource_id: github_osv_importer_v2/GHSA-4vvp-x9h2-x2vf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-4vvp-x9h2-x2vf/GHSA-4vvp-x9h2-x2vf.json
+aliases: []
+summary: |
+  Path Traversal in public
+  All versions of `public` are vulnerable to Path Traversal. This vulnerability allows an attacker to access files outside the webroot since it allows symlink navigation in the URL.
+
+
+  ## Recommendation
+
+  No fix is currently available. Do not use `public` in production or consider using an alternative module until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/public
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions:
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://hackerone.com/reports/593911
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1144
+    reference_type:
+    reference_id:

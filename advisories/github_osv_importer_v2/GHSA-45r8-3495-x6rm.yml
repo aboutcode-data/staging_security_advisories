@@ -1,0 +1,40 @@
+advisory_id: GHSA-45r8-3495-x6rm
+datasource_id: github_osv_importer_v2/GHSA-45r8-3495-x6rm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/01/GHSA-45r8-3495-x6rm/GHSA-45r8-3495-x6rm.json
+aliases:
+  - CVE-2018-18893
+summary: |
+  Jinjava calls getClass
+  Jinjava before 2.4.6 does not block the getClass method, related to com/hubspot/jinjava/el/ext/JinjavaBeanELResolver.java.
+impacted_packages:
+  - purl: pkg:maven/com.hubspot.jinjava/jinjava
+    affected_versions: vers:maven/<2.4.6
+    fixed_versions: vers:maven/2.4.6
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/01/GHSA-45r8-3495-x6rm/GHSA-45r8-3495-x6rm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-45r8-3495-x6rm
+    reference_type:
+    reference_id:
+  - url: https://github.com/HubSpot/jinjava
+    reference_type:
+    reference_id:
+  - url: https://github.com/HubSpot/jinjava/blob/master/CHANGES.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/HubSpot/jinjava/pull/230
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-18893
+    reference_type:
+    reference_id:

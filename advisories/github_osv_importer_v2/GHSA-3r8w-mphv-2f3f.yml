@@ -1,0 +1,32 @@
+advisory_id: GHSA-3r8w-mphv-2f3f
+datasource_id: github_osv_importer_v2/GHSA-3r8w-mphv-2f3f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-3r8w-mphv-2f3f/GHSA-3r8w-mphv-2f3f.json
+aliases:
+  - CVE-2021-23396
+summary: |
+  Prototype Pollution in lutils
+  All versions of package lutils are vulnerable to Prototype Pollution via the main (merge) function.
+impacted_packages:
+  - purl: pkg:npm/lutils
+    affected_versions: vers:npm/<=2.4.0
+    fixed_versions:
+severities:
+  - score: '5.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-3r8w-mphv-2f3f/GHSA-3r8w-mphv-2f3f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23396
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-LUTILS-1311023
+    reference_type:
+    reference_id:

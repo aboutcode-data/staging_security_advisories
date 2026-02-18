@@ -1,0 +1,31 @@
+advisory_id: GHSA-4rr6-gf59-ggw5
+datasource_id: github_osv_importer_v2/GHSA-4rr6-gf59-ggw5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-4rr6-gf59-ggw5/GHSA-4rr6-gf59-ggw5.json
+aliases: []
+summary: |
+  namshi/jose - Verification bypass
+  Several widely-used JSON Web Token (JWT) libraries, including node-jsonwebtoken, pyjwt, namshi/jose, php-jwt, and jsjwt, are affected by critical vulnerabilities that could allow attackers to bypass the verification step when using asymmetric keys (RS256, RS384, RS512, ES256, ES384, ES512).
+impacted_packages:
+  - purl: pkg:composer/namshi/jose
+    affected_versions: vers:composer/<2.2.0
+    fixed_versions: vers:composer/2.2.0
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries
+    reference_type:
+    reference_id:
+  - url: https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/namshi/jose/2015-03-10.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/namshi/jose
+    reference_type:
+    reference_id:

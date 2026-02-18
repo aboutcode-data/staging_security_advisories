@@ -1,0 +1,36 @@
+advisory_id: GHSA-49m6-vrr9-2cqm
+datasource_id: github_osv_importer_v2/GHSA-49m6-vrr9-2cqm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-49m6-vrr9-2cqm/GHSA-49m6-vrr9-2cqm.json
+aliases:
+  - CVE-2025-0453
+summary: |
+  MLflow Uncontrolled Resource Consumption vulnerability
+  In mlflow/mlflow version 2.17.2, the `/graphql` endpoint is vulnerable to a denial of service attack. An attacker can create large batches of queries that repeatedly request all runs from a given experiment. This can tie up all the workers allocated by MLFlow, rendering the application unable to respond to other requests. This vulnerability is due to uncontrolled resource consumption.
+impacted_packages:
+  - purl: pkg:pypi/mlflow
+    affected_versions: vers:pypi/<=2.17.2
+    fixed_versions:
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-49m6-vrr9-2cqm/GHSA-49m6-vrr9-2cqm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-410
+  - CWE-400
+references:
+  - url: https://github.com/mlflow/mlflow
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/788327ec-714a-4d5c-83aa-8df04dd7612b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-0453
+    reference_type:
+    reference_id:

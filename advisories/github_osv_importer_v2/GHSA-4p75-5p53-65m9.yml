@@ -1,0 +1,68 @@
+advisory_id: GHSA-4p75-5p53-65m9
+datasource_id: github_osv_importer_v2/GHSA-4p75-5p53-65m9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-4p75-5p53-65m9/GHSA-4p75-5p53-65m9.json
+aliases:
+  - CVE-2024-45604
+summary: |
+  Contao affected by directory traversal in the file selector widget
+  ### Impact
+
+  Back end users can list files outside their file mounts or the document root in the FileSelector widget.
+
+  ### Patches
+
+  Update to Contao 4.13.49.
+
+  ### Workarounds
+
+  None.
+
+  ### References
+
+  https://contao.org/en/security-advisories/directory-traversal-in-the-fileselector-widget
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, open an issue in [contao/contao](https://github.com/contao/contao/issues/new/choose).
+
+  ### Credits
+
+  Thanks to Jakob Steeg from usd AG for reporting this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/<4.13.49
+    fixed_versions: vers:composer/4.13.49
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-4p75-5p53-65m9/GHSA-4p75-5p53-65m9.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-4p75-5p53-65m9/GHSA-4p75-5p53-65m9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://contao.org/en/security-advisories/directory-traversal-in-the-fileselector-widget
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/commit/63409c6bdfd95197d9906e229d765b630d45742e
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/security/advisories/GHSA-4p75-5p53-65m9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45604
+    reference_type:
+    reference_id:

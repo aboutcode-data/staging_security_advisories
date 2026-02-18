@@ -1,0 +1,59 @@
+advisory_id: GHSA-3pph-2595-cgfh
+datasource_id: github_osv_importer_v2/GHSA-3pph-2595-cgfh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-3pph-2595-cgfh/GHSA-3pph-2595-cgfh.json
+aliases:
+  - CVE-2018-1308
+summary: |
+  There is a XML external entity expansion (XXE) vulnerability in Apache Solr
+  This vulnerability in Apache Solr 1.2 to 6.6.2 and 7.0.0 to 7.2.1 relates to an XML external entity expansion (XXE) in the `&dataConfig=<inlinexml>` parameter of Solr's DataImportHandler. It can be used as XXE using file/ftp/http protocols in order to read arbitrary local files from the Solr server or the internal network.
+impacted_packages:
+  - purl: pkg:maven/org.apache.solr/solr-core
+    affected_versions: vers:maven/>=1.2|<6.6.3
+    fixed_versions: vers:maven/6.6.3
+  - purl: pkg:maven/org.apache.solr/solr-core
+    affected_versions: vers:maven/>=7.0.0|<7.3.0
+    fixed_versions: vers:maven/7.3.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-3pph-2595-cgfh/GHSA-3pph-2595-cgfh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/advisories/GHSA-3pph-2595-cgfh
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/lucene-solr/commit/3530397f1777332872eac2760f9aa0e2ae1d7450
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/lucene-solr/commit/739a7933
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/lucene-solr/commit/dd3be31f7062dcb2f3b2d7f0e89df29e197dee63
+    reference_type:
+    reference_id:
+  - url: https://issues.apache.org/jira/browse/SOLR-11971
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/708d94141126eac03011144a971a6411fcac16d9c248d1d535a39451@%3Csolr-user.lucene.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2018/04/msg00025.html
+    reference_type:
+    reference_id:
+  - url: https://mail-archives.apache.org/mod_mbox/www-announce/201804.mbox/%3C000001d3cf68%245ac69af0%241053d0d0%24%40apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1308
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2018/dsa-4194
+    reference_type:
+    reference_id:

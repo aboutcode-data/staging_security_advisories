@@ -1,0 +1,38 @@
+advisory_id: GHSA-4p92-fv6v-fhfj
+datasource_id: github_osv_importer_v2/GHSA-4p92-fv6v-fhfj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-4p92-fv6v-fhfj/GHSA-4p92-fv6v-fhfj.json
+aliases:
+  - CVE-2022-0723
+summary: |
+  Cross-site Scripting in microweber
+  Microweber prior to 1.2.11 is vulnerable to reflected cross-site scripting.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.2.11
+    fixed_versions: vers:composer/1.2.11
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-4p92-fv6v-fhfj/GHSA-4p92-fv6v-fhfj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/15e519a86e4b24526abaf9e6dc81cb1af86843a5
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/16b0547b-1bb3-493c-8a00-5b6a11fca1c5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0723
+    reference_type:
+    reference_id:

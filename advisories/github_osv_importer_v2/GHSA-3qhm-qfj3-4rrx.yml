@@ -1,0 +1,44 @@
+advisory_id: GHSA-3qhm-qfj3-4rrx
+datasource_id: github_osv_importer_v2/GHSA-3qhm-qfj3-4rrx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3qhm-qfj3-4rrx/GHSA-3qhm-qfj3-4rrx.json
+aliases:
+  - CVE-2019-6257
+summary: |
+  elFinder Server Side Request Forgery (SSRF)
+  A Server Side Request Forgery (SSRF) vulnerability in elFinder before 2.1.49 could allow a malicious user to access the content of internal network resources. This occurs in `get_remote_contents()` in `php/elFinder.class.php`.
+impacted_packages:
+  - purl: pkg:composer/studio-42/elfinder
+    affected_versions: vers:composer/<2.1.49
+    fixed_versions: vers:composer/2.1.49
+severities:
+  - score: '7.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3qhm-qfj3-4rrx/GHSA-3qhm-qfj3-4rrx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/studio-42/elfinder/CVE-2019-6257.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/Studio-42/elFinder
+    reference_type:
+    reference_id:
+  - url: https://github.com/Studio-42/elFinder/blob/2.1.49/Changelog
+    reference_type:
+    reference_id:
+  - url: https://github.com/Studio-42/elFinder/commit/2f522db8f037a66ce9040ee0b216aa4a0359286c
+    reference_type:
+    reference_id:
+  - url: https://github.com/Studio-42/elFinder/releases/tag/2.1.49
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-6257
+    reference_type:
+    reference_id:

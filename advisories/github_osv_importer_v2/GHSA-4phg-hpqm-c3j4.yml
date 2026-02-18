@@ -1,0 +1,50 @@
+advisory_id: GHSA-4phg-hpqm-c3j4
+datasource_id: github_osv_importer_v2/GHSA-4phg-hpqm-c3j4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-4phg-hpqm-c3j4/GHSA-4phg-hpqm-c3j4.json
+aliases:
+  - CVE-2022-31367
+summary: |
+  Strapi mishandles hidden attributes within admin API responses
+  Strapi before 3.6.10 and 4.x before 4.1.10 mishandles hidden attributes within admin API responses.
+impacted_packages:
+  - purl: pkg:npm/strapi
+    affected_versions: vers:npm/<3.6.10
+    fixed_versions: vers:npm/3.6.10
+  - purl: pkg:npm/%40strapi/strapi
+    affected_versions: vers:npm/>=4.0.0-next.0|<4.1.10
+    fixed_versions: vers:npm/4.1.10
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-4phg-hpqm-c3j4/GHSA-4phg-hpqm-c3j4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/kos0ng/CVEs/tree/main/CVE-2022-31367
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/pull/13185
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/pull/13189
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/releases/tag/v3.6.10
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/releases/tag/v4.1.10
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31367
+    reference_type:
+    reference_id:

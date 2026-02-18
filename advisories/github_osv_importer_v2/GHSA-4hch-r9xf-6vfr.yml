@@ -1,0 +1,44 @@
+advisory_id: GHSA-4hch-r9xf-6vfr
+datasource_id: github_osv_importer_v2/GHSA-4hch-r9xf-6vfr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4hch-r9xf-6vfr/GHSA-4hch-r9xf-6vfr.json
+aliases:
+  - CVE-2020-12827
+summary: |
+  MJML vulnerable to path traversal
+  MJML prior to 4.6.3 contains a path traversal vulnerability when processing the `mj-include` directive within an MJML document.
+impacted_packages:
+  - purl: pkg:npm/mjml
+    affected_versions: vers:npm/<4.6.3
+    fixed_versions: vers:npm/4.6.3
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4hch-r9xf-6vfr/GHSA-4hch-r9xf-6vfr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://packetstormsecurity.com/files/158111/MJML-4.6.2-Path-Traversal.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2020/Jun/23
+    reference_type:
+    reference_id:
+  - url: https://github.com/mjmlio/mjml
+    reference_type:
+    reference_id:
+  - url: https://github.com/mjmlio/mjml/commit/30e29ed2cdaec8684d60a6d12ea07b611c765a12
+    reference_type:
+    reference_id:
+  - url: https://github.com/mjmlio/mjml/releases/tag/v4.6.3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-12827
+    reference_type:
+    reference_id:

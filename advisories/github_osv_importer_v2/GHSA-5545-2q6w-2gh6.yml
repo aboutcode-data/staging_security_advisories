@@ -1,0 +1,44 @@
+advisory_id: GHSA-5545-2q6w-2gh6
+datasource_id: github_osv_importer_v2/GHSA-5545-2q6w-2gh6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-5545-2q6w-2gh6/GHSA-5545-2q6w-2gh6.json
+aliases:
+  - CVE-2021-41495
+summary: |
+  NumPy NULL Pointer Dereference
+  Null Pointer Dereference vulnerability exists in numpy.sort in NumPy &lt and 1.19 in the PyArray_DescrNew function due to missing return-value validation, which allows attackers to conduct DoS attacks by repetitively creating sort arrays.
+impacted_packages:
+  - purl: pkg:pypi/numpy
+    affected_versions: vers:pypi/<=1.18.5
+    fixed_versions: vers:pypi/1.19
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-5545-2q6w-2gh6/GHSA-5545-2q6w-2gh6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-476
+references:
+  - url: https://github.com/advisories/GHSA-5545-2q6w-2gh6
+    reference_type:
+    reference_id:
+  - url: https://github.com/numpy/numpy
+    reference_type:
+    reference_id:
+  - url: https://github.com/numpy/numpy/issues/19038
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/numpy/PYSEC-2021-856.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41495
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-4hx9-p925-qcv7
+datasource_id: github_osv_importer_v2/GHSA-4hx9-p925-qcv7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4hx9-p925-qcv7/GHSA-4hx9-p925-qcv7.json
+aliases:
+  - CVE-2019-11767
+summary: |
+  phpBB Server side request forgery (SSRF)
+  Server side request forgery (SSRF) in phpBB before 3.2.6 allows checking for the existence of files and services on the local network of the host through the remote avatar upload function.
+impacted_packages:
+  - purl: pkg:composer/phpbb/phpbb
+    affected_versions: vers:composer/<3.2.6
+    fixed_versions: vers:composer/3.2.6
+severities:
+  - score: '5.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4hx9-p925-qcv7/GHSA-4hx9-p925-qcv7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/phpbb/phpbb-app
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-11767
+    reference_type:
+    reference_id:
+  - url: https://www.phpbb.com/community/viewtopic.php?f=14&t=2509941
+    reference_type:
+    reference_id:

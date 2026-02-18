@@ -1,0 +1,38 @@
+advisory_id: GHSA-3v99-hpv7-9hh9
+datasource_id: github_osv_importer_v2/GHSA-3v99-hpv7-9hh9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3v99-hpv7-9hh9/GHSA-3v99-hpv7-9hh9.json
+aliases:
+  - CVE-2017-6952
+summary: |
+  Capstone Integer overflow
+  Integer overflow in the cs_winkernel_malloc function in winkernel_mm.c in Capstone 3.0.4 and earlier allows attackers to cause a denial of service (heap-based buffer overflow in a kernel driver) or possibly have unspecified other impact via a large value.
+impacted_packages:
+  - purl: pkg:pypi/capstone
+    affected_versions: vers:pypi/<3.0.5rc2
+    fixed_versions: vers:pypi/3.0.5rc2
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3v99-hpv7-9hh9/GHSA-3v99-hpv7-9hh9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-190
+references:
+  - url: https://github.com/aquynh/capstone/commit/6fe86eef621b9849f51a5e1e5d73258a93440403
+    reference_type:
+    reference_id:
+  - url: https://github.com/capstone-engine/capstone
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/capstone/PYSEC-2017-113.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-6952
+    reference_type:
+    reference_id:

@@ -1,0 +1,75 @@
+advisory_id: GHSA-4v9q-cgpw-cf38
+datasource_id: github_osv_importer_v2/GHSA-4v9q-cgpw-cf38
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-4v9q-cgpw-cf38/GHSA-4v9q-cgpw-cf38.json
+aliases:
+  - CVE-2022-29255
+summary: |
+  Multiple evaluation of contract address in call in vyper
+  ### Impact
+  when a calling an external contract with no return value, the contract address could be evaluated twice. this is usually only an efficiency problem, but if evaluation of the contract address has side effects, it could result in double evaluation of the side effects.
+
+  in the following example, `Foo(msg.sender).bar()` is the contract address for the following call (to `.foo()`), and could get evaluated twice
+
+  ```vyper
+  interface Foo:
+      def foo(): nonpayable
+      def bar() -> address: nonpayable
+
+  @external
+  def do_stuff():
+      Foo(Foo(msg.sender).bar()).foo()
+  ```
+
+  ### Patches
+  6b4d8ff185de071252feaa1c319712b2d6577f8d
+
+  ### Workarounds
+  assign contract addresses to variables. the above example would change to
+  ```vyper
+  @external
+  def do_stuff():
+      t: Foo = Foo(msg.sender).bar()
+      t.foo()
+  ```
+
+  ### References
+
+  ### For more information
+impacted_packages:
+  - purl: pkg:pypi/vyper
+    affected_versions: vers:pypi/<0.3.4
+    fixed_versions: vers:pypi/0.3.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-4v9q-cgpw-cf38/GHSA-4v9q-cgpw-cf38.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-4v9q-cgpw-cf38/GHSA-4v9q-cgpw-cf38.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-670
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/vyper/PYSEC-2022-43053.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/vyperlang/vyper
+    reference_type:
+    reference_id:
+  - url: https://github.com/vyperlang/vyper/commit/6b4d8ff185de071252feaa1c319712b2d6577f8d
+    reference_type:
+    reference_id:
+  - url: https://github.com/vyperlang/vyper/security/advisories/GHSA-4v9q-cgpw-cf38
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29255
+    reference_type:
+    reference_id:

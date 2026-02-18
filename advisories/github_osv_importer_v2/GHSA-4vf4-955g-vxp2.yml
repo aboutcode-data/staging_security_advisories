@@ -1,0 +1,36 @@
+advisory_id: GHSA-4vf4-955g-vxp2
+datasource_id: github_osv_importer_v2/GHSA-4vf4-955g-vxp2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-4vf4-955g-vxp2/GHSA-4vf4-955g-vxp2.json
+aliases:
+  - CVE-2022-31037
+summary: |
+  OroCommerce Cross site scripting vulnerability during shipping rule editing for UPS integration
+  ### Impact
+  Shipping rule edit page is vulnerable to cross site scripting (XSS) payload added to UPS Surcharge field. The attacker should have permission to create or edit a shipping rule.
+impacted_packages:
+  - purl: pkg:composer/oro/commerce
+    affected_versions: vers:composer/>=4.1.0|<5.0.6
+    fixed_versions: vers:composer/5.0.6
+severities:
+  - score: '6.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-4vf4-955g-vxp2/GHSA-4vf4-955g-vxp2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/oroinc/orocommerce
+    reference_type:
+    reference_id:
+  - url: https://github.com/oroinc/orocommerce/security/advisories/GHSA-4vf4-955g-vxp2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31037
+    reference_type:
+    reference_id:

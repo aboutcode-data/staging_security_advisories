@@ -1,0 +1,53 @@
+advisory_id: GHSA-49q3-8867-5wmp
+datasource_id: github_osv_importer_v2/GHSA-49q3-8867-5wmp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-49q3-8867-5wmp/GHSA-49q3-8867-5wmp.json
+aliases:
+  - CVE-2021-32673
+summary: |
+  Remote Command Execution in reg-keygen-git-hash-plugin
+  ### Impact
+
+  `reg-keygen-git-hash-plugin` through 0.10.15 allow remote attackers to execute of arbitrary commands.
+
+  ### Patches
+
+  Upgrade to version 0.10.16 or later.
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+  - Open an issue in [reg-viz/reg-suit](https://github.com/reg-viz/reg-suit)
+impacted_packages:
+  - purl: pkg:npm/reg-keygen-git-hash-plugin
+    affected_versions: vers:npm/<0.10.16
+    fixed_versions: vers:npm/0.10.16
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-49q3-8867-5wmp/GHSA-49q3-8867-5wmp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-78
+references:
+  - url: https://github.com/reg-viz/reg-suit/commit/f84ad9c7a22144d6c147dc175c52756c0f444d87
+    reference_type:
+    reference_id:
+  - url: https://github.com/reg-viz/reg-suit/releases/tag/v0.10.16
+    reference_type:
+    reference_id:
+  - url: https://github.com/reg-viz/reg-suit/security/advisories/GHSA-49q3-8867-5wmp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32673
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/reg-keygen-git-hash-plugin
+    reference_type:
+    reference_id:

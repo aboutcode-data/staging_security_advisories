@@ -1,0 +1,41 @@
+advisory_id: GHSA-44cg-qcpr-fwjh
+datasource_id: github_osv_importer_v2/GHSA-44cg-qcpr-fwjh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-44cg-qcpr-fwjh/GHSA-44cg-qcpr-fwjh.json
+aliases:
+  - CVE-2021-44565
+summary: |
+  Cross site scripting in francoisjacquet/rosariosis
+  A Cross Site Scripting (XSS) vulnerabilty exits in RosarioSIS before 7.6.1 via the xss_clean function in classes/Security.php, which allows remote malicious users to inject arbitrary JaveScript of HTML.An example of affected components are all Markdown input fields.
+impacted_packages:
+  - purl: pkg:composer/francoisjacquet/rosariosis
+    affected_versions: vers:composer/<7.6.1
+    fixed_versions: vers:composer/7.6.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-44cg-qcpr-fwjh/GHSA-44cg-qcpr-fwjh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://gitlab.com/francoisjacquet/rosariosis
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/francoisjacquet/rosariosis/-/blob/mobile/CHANGES.md#changes-in-761
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/francoisjacquet/rosariosis/-/commit/0f5d1f1d193bc6b711d1644f172579d498ec1636
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/francoisjacquet/rosariosis/-/issues/307
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-44565
+    reference_type:
+    reference_id:

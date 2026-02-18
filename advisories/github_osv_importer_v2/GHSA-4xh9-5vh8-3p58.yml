@@ -1,0 +1,44 @@
+advisory_id: GHSA-4xh9-5vh8-3p58
+datasource_id: github_osv_importer_v2/GHSA-4xh9-5vh8-3p58
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4xh9-5vh8-3p58/GHSA-4xh9-5vh8-3p58.json
+aliases:
+  - CVE-2017-7271
+summary: |
+  Yii Framework Reflected XSS
+  Reflected Cross-site scripting (XSS) vulnerability in Yii Framework before 2.0.11, when development mode is used, allows remote attackers to inject arbitrary web script or HTML via crafted request data that is mishandled on the debug-mode exception screen.
+impacted_packages:
+  - purl: pkg:composer/yiisoft/yii2
+    affected_versions: vers:composer/<2.0.11
+    fixed_versions: vers:composer/2.0.11
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4xh9-5vh8-3p58/GHSA-4xh9-5vh8-3p58.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/yiisoft/yii2
+    reference_type:
+    reference_id:
+  - url: https://github.com/yiisoft/yii2/commit/97171a0db7cda0a49931ee0c3b998ef50bd06756
+    reference_type:
+    reference_id:
+  - url: https://github.com/yiisoft/yii2/pull/13401
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-7271
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210125191138/http://www.securityfocus.com/bid/97167
+    reference_type:
+    reference_id:
+  - url: http://www.yiiframework.com/news/123/yii-2-0-11-is-released
+    reference_type:
+    reference_id:

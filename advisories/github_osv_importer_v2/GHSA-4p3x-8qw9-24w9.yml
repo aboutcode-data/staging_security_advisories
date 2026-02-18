@@ -1,0 +1,77 @@
+advisory_id: GHSA-4p3x-8qw9-24w9
+datasource_id: github_osv_importer_v2/GHSA-4p3x-8qw9-24w9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-4p3x-8qw9-24w9/GHSA-4p3x-8qw9-24w9.json
+aliases:
+  - CVE-2021-41188
+summary: |
+  Authenticated Stored XSS in shopware/shopware
+  ### Impact
+  Authenticated Stored XSS in Administration
+
+  ### Patches
+  Use the Security Plugin:
+  https://store.shopware.com/en/swag575294366635f/shopware-security-plugin.html
+
+  ### Workarounds
+  If you cannot use the security plugin, add the following config to your `.htaccess` file
+
+  ```
+  <IfModule mod_headers.c>
+      <FilesMatch "\.(?i:svg)$">
+          Header set Content-Security-Policy "script-src 'none'"
+      </FilesMatch>
+  </IfModule>
+  ```
+
+  If you are using nginx as server config, you can add the following to your configuration:
+  ```
+  server {
+      # ...
+
+      location ~* ^.+\.svg$ {
+          add_header Content-Security-Policy "script-src 'none'";
+      }
+  }
+  ```
+
+  ### References
+  https://docs.shopware.com/en/shopware-5-en/sicherheitsupdates/security-update-10-2021
+impacted_packages:
+  - purl: pkg:composer/shopware/shopware
+    affected_versions: vers:composer/<5.7.6
+    fixed_versions: vers:composer/5.7.6
+severities:
+  - score: '5.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-4p3x-8qw9-24w9/GHSA-4p3x-8qw9-24w9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://docs.shopware.com/en/shopware-5-en/sicherheitsupdates/security-update-10-2021
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/37213e91d525c95df262712cba80d1497e395a58
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/releases/tag/v5.7.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-4p3x-8qw9-24w9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41188
+    reference_type:
+    reference_id:
+  - url: https://store.shopware.com/en/swag575294366635f/shopware-security-plugin.html
+    reference_type:
+    reference_id:

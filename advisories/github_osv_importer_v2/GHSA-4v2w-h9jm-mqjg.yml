@@ -1,0 +1,48 @@
+advisory_id: GHSA-4v2w-h9jm-mqjg
+datasource_id: github_osv_importer_v2/GHSA-4v2w-h9jm-mqjg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-4v2w-h9jm-mqjg/GHSA-4v2w-h9jm-mqjg.json
+aliases:
+  - CVE-2020-26245
+summary: |
+  Prototype Pollution in systeminformation
+  ### Impact
+  command injection vulnerability by prototype pollution
+
+  ### Patches
+  Problem was fixed with a rewrite of shell sanitations to avoid prototyper pollution problems. Please upgrade to version >= 4.30.2
+
+  ### Workarounds
+  If you cannot upgrade, be sure to check or sanitize service parameter strings that are passed to si.inetChecksite()
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+
+  * Open an issue in [systeminformation](https://github.com/sebhildebrandt/systeminformation/issues/new?template=bug_report.md)
+impacted_packages:
+  - purl: pkg:npm/systeminformation
+    affected_versions: vers:npm/<4.30.5
+    fixed_versions: vers:npm/4.30.5
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-4v2w-h9jm-mqjg/GHSA-4v2w-h9jm-mqjg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-471
+  - CWE-78
+references:
+  - url: https://github.com/sebhildebrandt/systeminformation/commit/8113ff0e87b2f422a5756c48f1057575e73af016
+    reference_type:
+    reference_id:
+  - url: https://github.com/sebhildebrandt/systeminformation/security/advisories/GHSA-4v2w-h9jm-mqjg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-26245
+    reference_type:
+    reference_id:

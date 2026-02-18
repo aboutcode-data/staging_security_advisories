@@ -1,0 +1,52 @@
+advisory_id: GHSA-54gp-qff8-946c
+datasource_id: github_osv_importer_v2/GHSA-54gp-qff8-946c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-54gp-qff8-946c/GHSA-54gp-qff8-946c.json
+aliases:
+  - CVE-2021-37709
+summary: |
+  ### Impact
+  Insecure direct object reference of log files of the Import/Export feature
+
+  ### Patches
+  We recommend updating to the current version 6.4.3.1. You can get the update to 6.4.3.1 regularly via the Auto-Updater or directly via the download overview.
+
+  https://www.shopware.com/en/download/#shopware-6
+
+  ### Workarounds
+  For older versions of 6.1, 6.2, and 6.3, corresponding security measures are also available via a plugin. For the full range of functions, we recommend updating to the latest Shopware version.
+
+  https://store.shopware.com/en/detail/index/sArticle/518463/number/Swag136939272659
+impacted_packages:
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.4.3+0
+    fixed_versions: vers:composer/6.4.3+1
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.4.3+0
+    fixed_versions: vers:composer/6.4.3+1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-54gp-qff8-946c/GHSA-54gp-qff8-946c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+  - CWE-639
+references:
+  - url: https://github.com/shopware/platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/commit/a9f52abb6eb503654c492b6b2076f8d924831fec
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/security/advisories/GHSA-54gp-qff8-946c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-37709
+    reference_type:
+    reference_id:

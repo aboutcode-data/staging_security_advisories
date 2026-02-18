@@ -1,0 +1,50 @@
+advisory_id: GHSA-4xjh-m3qx-49wc
+datasource_id: github_osv_importer_v2/GHSA-4xjh-m3qx-49wc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-4xjh-m3qx-49wc/GHSA-4xjh-m3qx-49wc.json
+aliases:
+  - CVE-2018-17567
+summary: |
+  Jekyll allows attackers to access arbitrary files by specifying a symlink
+  Jekyll through 3.6.2, 3.7.x through 3.7.3, and 3.8.x through 3.8.3 allows attackers to access arbitrary files by specifying a symlink in the `include` key in the `_config.yml` file.
+impacted_packages:
+  - purl: pkg:gem/jekyll
+    affected_versions: vers:gem/<3.6.3
+    fixed_versions: vers:gem/3.6.3
+  - purl: pkg:gem/jekyll
+    affected_versions: vers:gem/>=3.7.0|<3.7.4
+    fixed_versions: vers:gem/3.7.4
+  - purl: pkg:gem/jekyll
+    affected_versions: vers:gem/>=3.8.0|<3.8.4
+    fixed_versions: vers:gem/3.8.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-4xjh-m3qx-49wc/GHSA-4xjh-m3qx-49wc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-59
+references:
+  - url: https://github.com/jekyll/jekyll
+    reference_type:
+    reference_id:
+  - url: https://github.com/jekyll/jekyll/pull/7224
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/jekyll/CVE-2018-17567.yml
+    reference_type:
+    reference_id:
+  - url: https://jekyllrb.com/news/2018/09/19/security-fixes-for-3-6-3-7-3-8
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/71da391f584b2fb301d2df0e491b279d87287e2fb4b11309f04ad984@%3Ccommits.accumulo.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-17567
+    reference_type:
+    reference_id:

@@ -1,0 +1,37 @@
+advisory_id: GHSA-52jr-x6h6-xj6g
+datasource_id: github_osv_importer_v2/GHSA-52jr-x6h6-xj6g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-52jr-x6h6-xj6g/GHSA-52jr-x6h6-xj6g.json
+aliases:
+  - CVE-2024-11942
+summary: |
+  Drupal core vulnerable to improper error handling
+  Under certain uncommon site configurations, a bug in the CKEditor 5 module can cause some image uploads to move the entire webroot to a different location on the file system. This could be exploited by a malicious user to take down a site.
+
+  The issue is mitigated by the fact that several non-default site configurations must exist simultaneously for this to occur.
+impacted_packages:
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=10.0.0|<10.2.10
+    fixed_versions: vers:composer/10.2.10
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-52jr-x6h6-xj6g/GHSA-52jr-x6h6-xj6g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-390
+references:
+  - url: https://github.com/drupal/core
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-11942
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2024-002
+    reference_type:
+    reference_id:

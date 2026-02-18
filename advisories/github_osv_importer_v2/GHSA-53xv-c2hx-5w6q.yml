@@ -1,0 +1,47 @@
+advisory_id: GHSA-53xv-c2hx-5w6q
+datasource_id: github_osv_importer_v2/GHSA-53xv-c2hx-5w6q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-53xv-c2hx-5w6q/GHSA-53xv-c2hx-5w6q.json
+aliases:
+  - CVE-2021-45459
+summary: |
+  Command Injection in node-windows
+  lib/cmd.js in the node-windows package before 1.0.0-beta.6 for Node.js allows command injection via the PID parameter.
+impacted_packages:
+  - purl: pkg:npm/node-windows
+    affected_versions: vers:npm/<=1.0.0-beta.5
+    fixed_versions: vers:npm/1.0.0-beta.6
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-53xv-c2hx-5w6q/GHSA-53xv-c2hx-5w6q.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://advisory.dw1.io/4
+    reference_type:
+    reference_id:
+  - url: https://github.com/coreybutler/node-windows
+    reference_type:
+    reference_id:
+  - url: https://github.com/coreybutler/node-windows/commit/a379d31366edbd7a672a981e6c09e185ab448dd3
+    reference_type:
+    reference_id:
+  - url: https://github.com/coreybutler/node-windows/compare/1.0.0-beta.5...1.0.0-beta.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/dwisiswant0/advisory/issues/4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-45459
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220107-0004
+    reference_type:
+    reference_id:

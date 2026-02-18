@@ -1,0 +1,68 @@
+advisory_id: GHSA-46c8-635v-68r2
+datasource_id: github_osv_importer_v2/GHSA-46c8-635v-68r2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-46c8-635v-68r2/GHSA-46c8-635v-68r2.json
+aliases:
+  - CVE-2023-6544
+summary: |
+  Keycloak Authorization Bypass vulnerability
+  Due to a permissive regular expression hardcoded for filtering allowed hosts to register a dynamic client, a malicious user with enough information about the environment could benefit and jeopardize an environment with this specific Dynamic Client Registration with TrustedDomain configuration previously unauthorized.
+
+  #### Acknowledgements:
+  Special thanks to Bastian Kanbach for reporting this issue and helping us improve our security.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<22.0.10
+    fixed_versions: vers:maven/22.0.10
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/>=23.0.0|<24.0.3
+    fixed_versions: vers:maven/24.0.3
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-46c8-635v-68r2/GHSA-46c8-635v-68r2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-625
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:1860
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1861
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1862
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1864
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1866
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1867
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1868
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-6544
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2253116
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-46c8-635v-68r2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6544
+    reference_type:
+    reference_id:

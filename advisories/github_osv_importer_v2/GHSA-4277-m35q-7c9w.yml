@@ -1,0 +1,44 @@
+advisory_id: GHSA-4277-m35q-7c9w
+datasource_id: github_osv_importer_v2/GHSA-4277-m35q-7c9w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-4277-m35q-7c9w/GHSA-4277-m35q-7c9w.json
+aliases:
+  - CVE-2023-34049
+summary: |
+  Salt preflight script could be attacker controlled
+  The Salt-SSH pre-flight option copies the script to the target at a predictable path, which allows an attacker to force Salt-SSH to run their script. If an attacker has access to the target VM and knows the path to the pre-flight script before it runs they can ensure Salt-SSH runs their script with the privileges of the user running Salt-SSH. Do not make the copy path on the target predictable and ensure we check return codes of the scp command if the copy fails.
+impacted_packages:
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/<3005.4
+    fixed_versions: vers:pypi/3005.4
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=3006.0rc1|<3006.4
+    fixed_versions: vers:pypi/3006.4
+severities:
+  - score: '6.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-4277-m35q-7c9w/GHSA-4277-m35q-7c9w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-340
+references:
+  - url: https://github.com/saltstack/salt
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/commit/286d55eb5a6e6bf9428405bdf5632b419bdf8444
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/commit/7a14112f2a16ce70e3c3e1862c92e37af5f2c7a4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-34049
+    reference_type:
+    reference_id:
+  - url: https://saltproject.io/security-announcements/2023-10-27-advisory
+    reference_type:
+    reference_id:

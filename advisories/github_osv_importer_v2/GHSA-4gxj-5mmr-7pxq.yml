@@ -1,0 +1,43 @@
+advisory_id: GHSA-4gxj-5mmr-7pxq
+datasource_id: github_osv_importer_v2/GHSA-4gxj-5mmr-7pxq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-4gxj-5mmr-7pxq/GHSA-4gxj-5mmr-7pxq.json
+aliases:
+  - CVE-2024-35058
+summary: |
+  NASA AIT-Core vulnerable to remote code execution
+  An issue in the API wait function of NASA AIT-Core v2.5.2 allows attackers to execute arbitrary code via supplying a crafted string.
+impacted_packages:
+  - purl: pkg:pypi/ait-core
+    affected_versions: vers:pypi/<=2.5.2
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-4gxj-5mmr-7pxq/GHSA-4gxj-5mmr-7pxq.json
+  - score: '9.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-4gxj-5mmr-7pxq/GHSA-4gxj-5mmr-7pxq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-319
+references:
+  - url: https://github.com/NASA-AMMOS/AIT-Core
+    reference_type:
+    reference_id:
+  - url: https://github.com/NASA-AMMOS/AIT-Core/issues/528
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-35058
+    reference_type:
+    reference_id:
+  - url: https://www.linkedin.com/pulse/remote-code-execution-via-man-in-the-middle-more-ujkze
+    reference_type:
+    reference_id:

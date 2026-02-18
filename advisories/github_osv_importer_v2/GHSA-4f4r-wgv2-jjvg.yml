@@ -1,0 +1,111 @@
+advisory_id: GHSA-4f4r-wgv2-jjvg
+datasource_id: github_osv_importer_v2/GHSA-4f4r-wgv2-jjvg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-4f4r-wgv2-jjvg/GHSA-4f4r-wgv2-jjvg.json
+aliases:
+  - CVE-2023-4853
+summary: |
+  Quarkus HTTP vulnerable to incorrect evaluation of permissions
+  A flaw was found in Quarkus where HTTP security policies are not sanitizing certain character permutations correctly when accepting requests, resulting in incorrect evaluation of permissions. This issue could allow an attacker to bypass the security policy altogether, resulting in unauthorized endpoint access and possibly a denial of service.
+impacted_packages:
+  - purl: pkg:maven/io.quarkus/quarkus-vertx-http
+    affected_versions: vers:maven/<2.16.11.Final
+    fixed_versions: vers:maven/2.16.11.Final
+  - purl: pkg:maven/io.quarkus/quarkus-vertx-http
+    affected_versions: vers:maven/>=3.0.0|<3.2.6.Final
+    fixed_versions: vers:maven/3.2.6.Final
+  - purl: pkg:maven/io.quarkus/quarkus-vertx-http
+    affected_versions: vers:maven/>=3.3.0|<3.3.3
+    fixed_versions: vers:maven/3.3.3
+  - purl: pkg:maven/io.quarkus/quarkus-undertow
+    affected_versions: vers:maven/<2.16.11.Final
+    fixed_versions: vers:maven/2.16.11.Final
+  - purl: pkg:maven/io.quarkus/quarkus-undertow
+    affected_versions: vers:maven/>=3.0.0|<3.2.6.Final
+    fixed_versions: vers:maven/3.2.6.Final
+  - purl: pkg:maven/io.quarkus/quarkus-undertow
+    affected_versions: vers:maven/>=3.3.0|<3.3.3
+    fixed_versions: vers:maven/3.3.3
+  - purl: pkg:maven/io.quarkus/quarkus-csrf-reactive
+    affected_versions: vers:maven/<2.16.11.Final
+    fixed_versions: vers:maven/2.16.11.Final
+  - purl: pkg:maven/io.quarkus/quarkus-csrf-reactive
+    affected_versions: vers:maven/>=3.0.0|<3.2.6.Final
+    fixed_versions: vers:maven/3.2.6.Final
+  - purl: pkg:maven/io.quarkus/quarkus-csrf-reactive
+    affected_versions: vers:maven/>=3.3.0|<3.3.3
+    fixed_versions: vers:maven/3.3.3
+  - purl: pkg:maven/io.quarkus/quarkus-keycloak-authorization
+    affected_versions: vers:maven/<2.16.11.Final
+    fixed_versions: vers:maven/2.16.11.Final
+  - purl: pkg:maven/io.quarkus/quarkus-keycloak-authorization
+    affected_versions: vers:maven/>=3.0.0|<3.2.6.Final
+    fixed_versions: vers:maven/3.2.6.Final
+  - purl: pkg:maven/io.quarkus/quarkus-keycloak-authorization
+    affected_versions: vers:maven/>=3.3.0|<3.3.3
+    fixed_versions: vers:maven/3.3.3
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-4f4r-wgv2-jjvg/GHSA-4f4r-wgv2-jjvg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-148
+references:
+  - url: https://access.redhat.com/articles/11258
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:5170
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:5310
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:5337
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:5446
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:5479
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:5480
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:6107
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:6112
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:7653
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-4853
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/RHSB-2023-002
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2238034
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/discussions/35940
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/issues/35785
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-4853
+    reference_type:
+    reference_id:

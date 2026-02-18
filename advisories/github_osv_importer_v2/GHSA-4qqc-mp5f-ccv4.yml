@@ -1,0 +1,25 @@
+advisory_id: GHSA-4qqc-mp5f-ccv4
+datasource_id: github_osv_importer_v2/GHSA-4qqc-mp5f-ccv4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-4qqc-mp5f-ccv4/GHSA-4qqc-mp5f-ccv4.json
+aliases: []
+summary: |
+  Command Injection in bestzip
+  Versions of `bestzip` prior to 2.1.7 are vulnerable to Command Injection. The package fails to sanitize input rules and passes it directly to an `exec` call on the `zip` function . This may allow attackers to execute arbitrary code in the system as long as the values of `destination` is user-controlled. This only affects users with a native `zip` command available. The following examples demonstrate the issue from the CLI and also programatically:
+  - `bestzip test.zip 'sourcefile; mkdir folder'`
+  - `zip({ source: 'sourcefile', destination: './test.zip; mkdir folder' })`
+impacted_packages:
+  - purl: pkg:npm/bestzip
+    affected_versions: vers:npm/<2.1.7
+    fixed_versions: vers:npm/2.1.7
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://www.npmjs.com/advisories/1554
+    reference_type:
+    reference_id:

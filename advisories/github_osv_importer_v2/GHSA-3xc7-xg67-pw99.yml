@@ -1,0 +1,45 @@
+advisory_id: GHSA-3xc7-xg67-pw99
+datasource_id: github_osv_importer_v2/GHSA-3xc7-xg67-pw99
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-3xc7-xg67-pw99/GHSA-3xc7-xg67-pw99.json
+aliases: []
+summary: |
+  Sensitive Data Exposure in sequelize-cli
+  Versions of `sequelize-cli` prior to 5.5.0 are vulnerable to Sensitive Data Exposure. The function `filteredURL()` does not properly sanitize the `config.password` value which may cause passwords with special characters to be logged in plain text.
+
+
+  ## Recommendation
+
+  Upgrade to version 5.5.0 or later.
+impacted_packages:
+  - purl: pkg:npm/sequelize-cli
+    affected_versions: vers:npm/<=5.4.0
+    fixed_versions:
+severities:
+  - score: '3.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-3xc7-xg67-pw99/GHSA-3xc7-xg67-pw99.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://github.com/FelixLC/cli/commit/da59652c061a798282e18efad0b6d0afefa15465
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/cli/issues/172
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/cli/pull/722
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SEQUELIZECLI-174320
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/825
+    reference_type:
+    reference_id:

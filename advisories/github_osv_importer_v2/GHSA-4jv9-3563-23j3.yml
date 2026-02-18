@@ -1,0 +1,47 @@
+advisory_id: GHSA-4jv9-3563-23j3
+datasource_id: github_osv_importer_v2/GHSA-4jv9-3563-23j3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-4jv9-3563-23j3/GHSA-4jv9-3563-23j3.json
+aliases:
+  - CVE-2016-20018
+summary: |
+  Knex.js has a limited SQL injection vulnerability
+  Knex Knex.js through 2.3.0 has a limited SQL injection vulnerability that can be exploited to ignore the WHERE clause of a SQL query. This vulnerability has been fixed in version 2.4.0.
+impacted_packages:
+  - purl: pkg:npm/knex
+    affected_versions: vers:npm/<2.4.0
+    fixed_versions: vers:npm/2.4.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-4jv9-3563-23j3/GHSA-4jv9-3563-23j3.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/knex/knex
+    reference_type:
+    reference_id:
+  - url: https://github.com/knex/knex/commit/e145322da92749be7749f9ade5b5f5a66d6586a4
+    reference_type:
+    reference_id:
+  - url: https://github.com/knex/knex/issues/1227
+    reference_type:
+    reference_id:
+  - url: https://github.com/knex/knex/pull/5417
+    reference_type:
+    reference_id:
+  - url: https://github.com/knex/knex/releases/tag/2.4.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-20018
+    reference_type:
+    reference_id:
+  - url: https://www.ghostccamm.com/blog/knex_sqli
+    reference_type:
+    reference_id:

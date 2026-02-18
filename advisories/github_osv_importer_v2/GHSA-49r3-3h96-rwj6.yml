@@ -1,0 +1,34 @@
+advisory_id: GHSA-49r3-3h96-rwj6
+datasource_id: github_osv_importer_v2/GHSA-49r3-3h96-rwj6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-49r3-3h96-rwj6/GHSA-49r3-3h96-rwj6.json
+aliases: []
+summary: |
+  Cross-Site Scripting in ids-enterprise
+  Versions of `ids-enterprise` prior to 4.18.2 are vulnerable to Cross-Site Scripting (XSS). The `soho-dropdown` component does not properly encode its output and may allow attackers to execute arbitrary JavaScript.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.18.2 or later
+impacted_packages:
+  - purl: pkg:npm/ids-enterprise
+    affected_versions: vers:npm/<4.18.2
+    fixed_versions: vers:npm/4.18.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/infor-design/enterprise/commit/6bd74d8f38c268b22f31e8169316e065e0093362
+    reference_type:
+    reference_id:
+  - url: https://github.com/infor-design/enterprise-ng/issues/503
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/956
+    reference_type:
+    reference_id:

@@ -1,0 +1,70 @@
+advisory_id: GHSA-54w6-vxfh-fw7f
+datasource_id: github_osv_importer_v2/GHSA-54w6-vxfh-fw7f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-54w6-vxfh-fw7f/GHSA-54w6-vxfh-fw7f.json
+aliases:
+  - CVE-2023-22465
+summary: "Http4s improperly parses User-Agent and Server headers\n### Impact\n\nThe `User-Agent`\
+  \ and `Server` header parsers are susceptible to a fatal error on certain inputs.  In http4s,\
+  \ modeled headers are lazily parsed, so this only applies to services that explicitly request\
+  \ these typed headers. \n\n#### v0.21.x\n\n```scala\nval unsafe: Option[`User-Agent`] = req.headers.get(`User-Agent`)\n\
+  ```\n\n#### v0.22.x, v0.23.x, v1.x\n\n```scala\nval unsafe: Option[`User-Agent`] = req.headers.get[`User-Agent`]\n\
+  val alsoUnsafe: Option[`Server`] = req.headers.get[Server]\n```\n\n### Patches\n\nFixes are\
+  \ released in 0.21.34, 0.22.15, 0.23.17, and 1.0.0-M38.\n\n### Workarounds\n\n#### Use the\
+  \ weakly typed header interface\n\n##### v0.21.x\n\n```scala\nval safe: Option[Header] = req.headers.get(\"\
+  User-Agent\".ci)\n// but don't do this\nval unsafe = header.map(_.parsed) \n```\n\n##### v0.22.x,\
+  \ v0.23.x, v1.x\n\n```scala\nval safe: Option[Header] = req.headers.get(ci\"User-Agent\")\n\
+  ```"
+impacted_packages:
+  - purl: pkg:maven/org.http4s/http4s-core_2.13
+    affected_versions: vers:maven/>=0.1.0|<0.21.34
+    fixed_versions: vers:maven/0.21.34
+  - purl: pkg:maven/org.http4s/http4s-core_2.13
+    affected_versions: vers:maven/>=0.22.0|<0.22.15
+    fixed_versions: vers:maven/0.22.15
+  - purl: pkg:maven/org.http4s/http4s-core_2.13
+    affected_versions: vers:maven/>=0.23.0|<0.23.17
+    fixed_versions: vers:maven/0.23.17
+  - purl: pkg:maven/org.http4s/http4s-core_2.13
+    affected_versions: vers:maven/>=1.0.0-M1|<1.0.0-M38
+    fixed_versions: vers:maven/1.0.0-M38
+  - purl: pkg:maven/org.http4s/http4s-core_2.10
+    affected_versions: vers:maven/>=0.1.0|<=0.9.3
+    fixed_versions:
+  - purl: pkg:maven/org.http4s/http4s-core_2.11
+    affected_versions: vers:maven/>=0.1.0|<=0.21.0-M1
+    fixed_versions:
+  - purl: pkg:maven/org.http4s/http4s-core_2.12
+    affected_versions: vers:maven/>=0.1.0|<0.21.34
+    fixed_versions: vers:maven/0.21.34
+  - purl: pkg:maven/org.http4s/http4s-core_2.12
+    affected_versions: vers:maven/>=0.22.0|<0.22.15
+    fixed_versions: vers:maven/0.22.15
+  - purl: pkg:maven/org.http4s/http4s-core_2.12
+    affected_versions: vers:maven/>=0.23.0|<0.23.17
+    fixed_versions: vers:maven/0.23.17
+  - purl: pkg:maven/org.http4s/http4s-core
+    affected_versions: vers:maven/>=1.0.0-M1|<=1.0.0-M30
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-54w6-vxfh-fw7f/GHSA-54w6-vxfh-fw7f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/http4s/http4s
+    reference_type:
+    reference_id:
+  - url: https://github.com/http4s/http4s/security/advisories/GHSA-54w6-vxfh-fw7f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-22465
+    reference_type:
+    reference_id:

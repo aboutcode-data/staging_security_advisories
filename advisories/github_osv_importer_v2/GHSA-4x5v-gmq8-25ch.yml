@@ -1,0 +1,36 @@
+advisory_id: GHSA-4x5v-gmq8-25ch
+datasource_id: github_osv_importer_v2/GHSA-4x5v-gmq8-25ch
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-4x5v-gmq8-25ch/GHSA-4x5v-gmq8-25ch.json
+aliases:
+  - CVE-2021-43307
+summary: |
+  Regular expression denial of service in semver-regex
+  An exponential ReDoS (Regular Expression Denial of Service) can be triggered in the semver-regex npm package, when an attacker is able to supply arbitrary input to the test() method
+impacted_packages:
+  - purl: pkg:npm/semver-regex
+    affected_versions: vers:npm/<3.1.4
+    fixed_versions: vers:npm/3.1.4
+  - purl: pkg:npm/semver-regex
+    affected_versions: vers:npm/>=4.0.0|<4.0.3
+    fixed_versions: vers:npm/4.0.3
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/sindresorhus/semver-regex
+    reference_type:
+    reference_id:
+  - url: https://github.com/sindresorhus/semver-regex/commit/d8ba39a528c1027c43ab23f12eec28ca4d40dd0c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-43307
+    reference_type:
+    reference_id:
+  - url: https://research.jfrog.com/vulnerabilities/semver-regex-redos-xray-211349
+    reference_type:
+    reference_id:

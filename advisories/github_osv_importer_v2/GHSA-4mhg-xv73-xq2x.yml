@@ -1,0 +1,60 @@
+advisory_id: GHSA-4mhg-xv73-xq2x
+datasource_id: github_osv_importer_v2/GHSA-4mhg-xv73-xq2x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-4mhg-xv73-xq2x/GHSA-4mhg-xv73-xq2x.json
+aliases:
+  - CVE-2024-37302
+summary: |
+  Synapse denial of service through media disk space consumption
+  ### Impact
+
+  Synapse versions before 1.106 are vulnerable to a disk fill attack, where an unauthenticated adversary can induce Synapse to download and cache large amounts of remote media. The default rate limit strategy is insufficient to mitigate this. This can lead to a denial of service, ranging from further media uploads/downloads failing to completely unavailability of the Synapse process, depending on how Synapse was deployed.
+
+  ### Patches
+
+  Synapse 1.106 introduces a new "leaky bucket" rate limit on remote media downloads to reduce the amount of data a user can request at a time. This does not fully address the issue, but does limit an unauthenticated user's ability to request large amounts of data to be cached.
+
+  ### Workarounds
+
+  Synapse deployments can currently decrease the maximum file size allowed, as well as increase request rate limits. However, this does not as effectively address the issue as a dedicated rate limit on remote media downloads.
+
+  Server operators may also wish to consider putting media on a dedicated disk or volume, reducing the impact of a disk fill condition.
+
+  ### References
+
+  * https://en.wikipedia.org/wiki/Leaky_bucket#As_a_meter
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, please email us at [security at element.io](mailto:security@element.io).
+impacted_packages:
+  - purl: pkg:pypi/matrix-synapse
+    affected_versions: vers:pypi/<1.106
+    fixed_versions: vers:pypi/1.106
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-4mhg-xv73-xq2x/GHSA-4mhg-xv73-xq2x.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-4mhg-xv73-xq2x/GHSA-4mhg-xv73-xq2x.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/element-hq/synapse
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-hq/synapse/security/advisories/GHSA-4mhg-xv73-xq2x
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-37302
+    reference_type:
+    reference_id:

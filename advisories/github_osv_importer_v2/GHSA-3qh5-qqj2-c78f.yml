@@ -1,0 +1,59 @@
+advisory_id: GHSA-3qh5-qqj2-c78f
+datasource_id: github_osv_importer_v2/GHSA-3qh5-qqj2-c78f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-3qh5-qqj2-c78f/GHSA-3qh5-qqj2-c78f.json
+aliases:
+  - CVE-2023-2422
+summary: |
+  Keycloak vulnerable to Improper Client Certificate Validation for OAuth/OpenID clients
+  When a Keycloak server is configured to support mTLS authentication for OAuth/OpenID clients, it does not properly verify the client certificate chain. A client that possesses a proper certificate can authorize itself as any other client and therefore access data that belongs to other clients.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<21.1.2
+    fixed_versions: vers:maven/21.1.2
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-3qh5-qqj2-c78f/GHSA-3qh5-qqj2-c78f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://access.redhat.com/errata/RHSA-2023:3883
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:3884
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:3885
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:3888
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:3892
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-2422
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2191668
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/5c6c55945a384bfd82e51283096204dcb6f63d91
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-3qh5-qqj2-c78f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2422
+    reference_type:
+    reference_id:

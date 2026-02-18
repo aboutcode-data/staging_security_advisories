@@ -1,0 +1,40 @@
+advisory_id: GHSA-4h72-34j6-j8x7
+datasource_id: github_osv_importer_v2/GHSA-4h72-34j6-j8x7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-4h72-34j6-j8x7/GHSA-4h72-34j6-j8x7.json
+aliases: []
+summary: |
+  Maloja error page XSS vulnerability
+  ### Impact
+  The error page for a missing path echoes the path back to the user. If this contains HTML, an attacker could execute a script on the user's machine inside the Maloja context and perform authorized actions like scrobbling or deleting scrobbles.
+  This does not affect the security of your server. The exploit is purely client-side.
+  Since there is very little incentive to mess with your scrobble data and it requires very specific targeting (an attacker would have to send a user a link to their own server),  the severity rating might be misleading.
+
+  ### Patches
+  The Vulnerability is patched in 3.2.2
+impacted_packages:
+  - purl: pkg:pypi/malojaserver
+    affected_versions: vers:pypi/<3.2.2
+    fixed_versions: vers:pypi/3.2.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-4h72-34j6-j8x7/GHSA-4h72-34j6-j8x7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/krateng/maloja
+    reference_type:
+    reference_id:
+  - url: https://github.com/krateng/maloja/commit/febaff97228b37a192f2630aa331cac5e5c3e98e
+    reference_type:
+    reference_id:
+  - url: https://github.com/krateng/maloja/security/advisories/GHSA-4h72-34j6-j8x7
+    reference_type:
+    reference_id:

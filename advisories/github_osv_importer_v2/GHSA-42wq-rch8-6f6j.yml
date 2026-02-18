@@ -1,0 +1,64 @@
+advisory_id: GHSA-42wq-rch8-6f6j
+datasource_id: github_osv_importer_v2/GHSA-42wq-rch8-6f6j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-42wq-rch8-6f6j/GHSA-42wq-rch8-6f6j.json
+aliases:
+  - CVE-2022-31175
+summary: "CKEditor5 cross-site scripting vulnerability caused by the editor instance destroying\
+  \ process\n### Affected packages\n@ckeditor/ckeditor5-markdown-gfm\n@ckeditor/ckeditor5-html-support\n\
+  @ckeditor/ckeditor5-html-embed\n\n### Impact\nA cross-site scripting vulnerability has been\
+  \ discovered affecting three optional CKEditor 5's packages. The vulnerability allowed to\
+  \ trigger a JavaScript code after fulfilling special conditions:\n\na) Using one of the affected\
+  \ packages. In case of `ckeditor5-html-support` and `ckeditor5-html-embed`, additionally,\
+  \ it was required to use a configuration that allows unsafe markup inside the editor,\nb)\
+  \ Initializing the editor on an element and using an element other than `<textarea>` as a\
+  \ base,\nc) Destroying the editor instance.\n\nThe root cause of the issue was a mechanism\
+  \ responsible for updating the source element with the markup coming from the CKEditor 5 data\
+  \ pipeline after destroying the editor. \n\nThis vulnerability might affect a small percent\
+  \ of integrators that depend on dynamic editor initialization/destroy and use [Markdown](https://ckeditor.com/docs/ckeditor5/latest/features/markdown.html),\
+  \ [General HTML Support](https://ckeditor.com/docs/ckeditor5/latest/features/general-html-support.html)\
+  \ or [HTML embed](https://ckeditor.com/docs/ckeditor5/latest/features/html-embed.html) features.\n\
+  \n### Patches\nThe problem has been recognized and patched. The fix will be available in version\
+  \ 35.0.1.\n\n### For more information\nEmail us at [security@cksource.com](mailto:security@cksource.com)\
+  \ if you have any questions or comments about this advisory."
+impacted_packages:
+  - purl: pkg:npm/%40ckeditor/ckeditor5-markdown-gfm
+    affected_versions: vers:npm/<35.0.1
+    fixed_versions: vers:npm/35.0.1
+  - purl: pkg:npm/%40ckeditor/ckeditor5-html-support
+    affected_versions: vers:npm/<35.0.1
+    fixed_versions: vers:npm/35.0.1
+  - purl: pkg:npm/%40ckeditor/ckeditor5-html-embed
+    affected_versions: vers:npm/<35.0.1
+    fixed_versions: vers:npm/35.0.1
+severities:
+  - score: '5.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-42wq-rch8-6f6j/GHSA-42wq-rch8-6f6j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://ckeditor.com/docs/ckeditor5/latest/features/general-html-support.html
+    reference_type:
+    reference_id:
+  - url: https://ckeditor.com/docs/ckeditor5/latest/features/html-embed.html
+    reference_type:
+    reference_id:
+  - url: https://ckeditor.com/docs/ckeditor5/latest/features/markdown.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/ckeditor/ckeditor5
+    reference_type:
+    reference_id:
+  - url: https://github.com/ckeditor/ckeditor5/security/advisories/GHSA-42wq-rch8-6f6j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31175
+    reference_type:
+    reference_id:

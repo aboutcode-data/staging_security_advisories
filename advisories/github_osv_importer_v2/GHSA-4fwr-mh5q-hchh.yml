@@ -1,0 +1,83 @@
+advisory_id: GHSA-4fwr-mh5q-hchh
+datasource_id: github_osv_importer_v2/GHSA-4fwr-mh5q-hchh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-4fwr-mh5q-hchh/GHSA-4fwr-mh5q-hchh.json
+aliases:
+  - CVE-2025-1634
+summary: |
+  io.quarkus:quarkus-resteasy: Memory Leak in Quarkus RESTEasy Classic When Client Requests Timeout
+  A flaw was found in the quarkus-resteasy extension, which causes memory leaks when client requests with low timeouts are made. If a client request times out, a buffer is not released correctly, leading to increased memory usage and eventual application crash due to OutOfMemoryError.
+impacted_packages:
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy
+    affected_versions: vers:maven/>=3.16.0.CR1|<3.19.1
+    fixed_versions: vers:maven/3.19.1
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy
+    affected_versions: vers:maven/>=3.9.0.CR1|<3.15.3.1
+    fixed_versions: vers:maven/3.15.3.1
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy
+    affected_versions: vers:maven/<3.8.6.1
+    fixed_versions: vers:maven/3.8.6.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-4fwr-mh5q-hchh/GHSA-4fwr-mh5q-hchh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-401
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:12511
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:1884
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:1885
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:2067
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:23417
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:9922
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-1634
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2347319
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/291296befabf659b71acbfc6e03a12bd09a920f8
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/30d949a4c54ba1057738849a804d2329c09e57be
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/70ffbd00d71d43afa7eade32d6ed586cf927c237
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/80b8eb41678cdccb46e964dc324d048a5ef00f4b
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/issues/46412
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/pull/46425
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/pull/46426
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-1634
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-4wrm-qmq2-5fjx
+datasource_id: github_osv_importer_v2/GHSA-4wrm-qmq2-5fjx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-4wrm-qmq2-5fjx/GHSA-4wrm-qmq2-5fjx.json
+aliases:
+  - CVE-2023-46493
+summary: |
+  Directory Traversal in evershop
+  Directory Traversal vulnerability in EverShop NPM versions before v.1.0.0-rc.8 allows a remote attacker to obtain sensitive information via a crafted request to the readDirSync function in fileBrowser/browser.js.
+impacted_packages:
+  - purl: pkg:npm/%40evershop/evershop
+    affected_versions: vers:npm/<1.0.0-rc.8
+    fixed_versions: vers:npm/1.0.0-rc.8
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-4wrm-qmq2-5fjx/GHSA-4wrm-qmq2-5fjx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://devhub.checkmarx.com/cve-details/CVE-2023-46493
+    reference_type:
+    reference_id:
+  - url: https://devhub.checkmarx.com/cve-details/Cxa4d94170-be41
+    reference_type:
+    reference_id:
+  - url: https://github.com/evershopcommerce/evershop
+    reference_type:
+    reference_id:
+  - url: https://github.com/evershopcommerce/evershop/pull/338
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46493
+    reference_type:
+    reference_id:

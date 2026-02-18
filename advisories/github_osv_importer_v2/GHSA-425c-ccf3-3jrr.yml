@@ -1,0 +1,55 @@
+advisory_id: GHSA-425c-ccf3-3jrr
+datasource_id: github_osv_importer_v2/GHSA-425c-ccf3-3jrr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-425c-ccf3-3jrr/GHSA-425c-ccf3-3jrr.json
+aliases:
+  - CVE-2019-16762
+summary: |
+  Critical severity vulnerability that affects slpjs
+  ## Validator parsing discrepancy due to string encoding
+
+  ### Impact
+  A specially crafted Bitcoin script can cause a discrepancy between the specified SLP consensus rules and the validation result of the slpjs npm package. An attacker could create a specially crafted Bitcoin script in order to cause a hard-fork from the SLP consensus.
+
+  ### Patches
+  All versions > 0.21.3 are patched.
+
+  ### Workarounds
+  Upgrade to any version >= 0.21.4.
+
+  ### References
+  The bug was located and fixed [here](https://github.com/simpleledger/slpjs/commit/ac8809b42e47790a6f0205991b36f2699ed10c84#diff-fe58606994c412ba56a65141a7aa4a62L701).
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in the [slpjs repo](https://github.com/simpleledger/slpjs/issues)
+  * Email us at [info@slp.cash](mailto:info@slp.cash)
+impacted_packages:
+  - purl: pkg:npm/slpjs
+    affected_versions: vers:npm/<0.21.4
+    fixed_versions: vers:npm/0.21.4
+severities:
+  - score: '5.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-425c-ccf3-3jrr/GHSA-425c-ccf3-3jrr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/advisories/GHSA-425c-ccf3-3jrr
+    reference_type:
+    reference_id:
+  - url: https://github.com/simpleledger/slpjs/commit/ac8809b42e47790a6f0205991b36f2699ed10c84#diff-fe58606994c412ba56a65141a7aa4a62L701
+    reference_type:
+    reference_id:
+  - url: https://github.com/simpleledger/slpjs/security/advisories/GHSA-425c-ccf3-3jrr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16762
+    reference_type:
+    reference_id:

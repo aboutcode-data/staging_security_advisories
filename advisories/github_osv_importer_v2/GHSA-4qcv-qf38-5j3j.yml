@@ -1,0 +1,64 @@
+advisory_id: GHSA-4qcv-qf38-5j3j
+datasource_id: github_osv_importer_v2/GHSA-4qcv-qf38-5j3j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-4qcv-qf38-5j3j/GHSA-4qcv-qf38-5j3j.json
+aliases:
+  - CVE-2023-2850
+summary: |
+  Unintentional leakage of private information via cross-origin websocket session hijacking
+  ### Impact
+
+  Private messages or posts might be leaked to third parties if victim opens the attackers site while browsing nodebb.
+
+  ### Patches
+
+  * Patched in v3.1.3
+  * Backported to v2.x line via v2.8.13
+
+  ### Workarounds
+
+  Users can cherry-pick https://github.com/NodeBB/NodeBB/commit/51096ad2345fb1d1380bec0a447113489ef6c359 if they are on v3.x
+
+  If you are running v2.x of NodeBB, you can cherry-pick a5d92da9ddac5607ab7f737520a66eaed6d3ddee followed by 62e162cf1e735e42462be1db9b4954b5a69accdf
+impacted_packages:
+  - purl: pkg:npm/nodebb
+    affected_versions: vers:npm/>=3.0.0|<3.1.3
+    fixed_versions: vers:npm/3.1.3
+  - purl: pkg:npm/nodebb
+    affected_versions: vers:npm/<2.8.13
+    fixed_versions: vers:npm/2.8.13
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-4qcv-qf38-5j3j/GHSA-4qcv-qf38-5j3j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-346
+  - CWE-1385
+references:
+  - url: https://github.com/NodeBB/NodeBB
+    reference_type:
+    reference_id:
+  - url: https://github.com/NodeBB/NodeBB/commit/51096ad2345fb1d1380bec0a447113489ef6c359
+    reference_type:
+    reference_id:
+  - url: https://github.com/NodeBB/NodeBB/commit/62e162cf1e735e42462be1db9b4954b5a69accdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/NodeBB/NodeBB/commit/a5d92da9ddac5607ab7f737520a66eaed6d3ddee
+    reference_type:
+    reference_id:
+  - url: https://github.com/NodeBB/NodeBB/releases/tag/v3.1.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/NodeBB/NodeBB/security/advisories/GHSA-4qcv-qf38-5j3j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2850
+    reference_type:
+    reference_id:

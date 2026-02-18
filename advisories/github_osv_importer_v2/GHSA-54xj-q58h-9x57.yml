@@ -1,0 +1,43 @@
+advisory_id: GHSA-54xj-q58h-9x57
+datasource_id: github_osv_importer_v2/GHSA-54xj-q58h-9x57
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-54xj-q58h-9x57/GHSA-54xj-q58h-9x57.json
+aliases:
+  - CVE-2019-10765
+summary: |
+  Arbitrary File Write in iobroker.admin
+  Versions of `iobroker.admin` prior to 3.6.12 are vulnerable to Path Traversal. The package fails to restrict access to folders outside of the intended folder in the `/log/` route, which may allow attackers to include arbitrary files in the system. An attacker would need to be authenticated to perform the attack but the package has authentication disabled by default.
+
+
+  ## Recommendation
+
+  Upgrade to version 3.6.12 or later.
+impacted_packages:
+  - purl: pkg:npm/iobroker.admin
+    affected_versions: vers:npm/<3.6.12
+    fixed_versions: vers:npm/3.6.12
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-54xj-q58h-9x57/GHSA-54xj-q58h-9x57.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/ioBroker/ioBroker.admin/commit/16b2b325ab47896090bc7f54b77b0a97ed74f5cd
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10765
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-IOBROKERADMIN-534634
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1346
+    reference_type:
+    reference_id:

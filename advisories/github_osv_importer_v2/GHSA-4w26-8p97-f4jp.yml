@@ -1,0 +1,60 @@
+advisory_id: GHSA-4w26-8p97-f4jp
+datasource_id: github_osv_importer_v2/GHSA-4w26-8p97-f4jp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-4w26-8p97-f4jp/GHSA-4w26-8p97-f4jp.json
+aliases:
+  - CVE-2025-27105
+summary: |
+  AugAssign evaluation order causing OOB write within the object in Vyper
+  Vyper handles AugAssign statements by first caching the target location to avoid double evaluation. However, in the case when target is an access to a DynArray and the rhs modifies the array, the cached target will evaluate first, and the bounds check will not be re-evaluated during the write portion of the statement. In other words, the following code
+
+  ```vyper
+  def poc():
+      a: DynArray[uint256, 2] = [1, 2]
+      a[1] += a.pop()
+  ```
+
+  is equivalent to:
+  ```vyper
+  def poc():
+      a: DynArray[uint256, 2] = [1, 2]
+      a[1] += a[len(a) - 1]
+      a.pop()
+  ```
+  rather than:
+  ```vyper
+  def poc():
+      a: DynArray[uint256, 2] = [1, 2]
+      s: uint256 = a[1]
+      t: uint256 = a.pop()
+      a[1] = s + t  # reverts due to oob access
+  ```
+impacted_packages:
+  - purl: pkg:pypi/vyper
+    affected_versions: vers:pypi/<=0.4.0
+    fixed_versions: vers:pypi/0.4.1
+severities:
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-4w26-8p97-f4jp/GHSA-4w26-8p97-f4jp.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/vyper/PYSEC-2025-31.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/vyperlang/vyper
+    reference_type:
+    reference_id:
+  - url: https://github.com/vyperlang/vyper/security/advisories/GHSA-4w26-8p97-f4jp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-27105
+    reference_type:
+    reference_id:

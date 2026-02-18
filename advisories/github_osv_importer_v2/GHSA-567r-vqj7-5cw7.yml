@@ -1,0 +1,43 @@
+advisory_id: GHSA-567r-vqj7-5cw7
+datasource_id: github_osv_importer_v2/GHSA-567r-vqj7-5cw7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-567r-vqj7-5cw7/GHSA-567r-vqj7-5cw7.json
+aliases:
+  - CVE-2016-6629
+summary: |
+  phpMyAdmin Authentication Bypass
+  An issue was discovered in phpMyAdmin involving the `$cfg['ArbitraryServerRegexp']` configuration directive. An attacker could reuse certain cookie values in a way of bypassing the servers defined by ArbitraryServerRegexp. All 4.6.x versions (prior to 4.6.4), 4.4.x versions (prior to 4.4.15.8), and 4.0.x versions (prior to 4.0.10.17) are affected.
+impacted_packages:
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=4.6.0|<4.6.4
+    fixed_versions: vers:composer/4.6.4
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=4.4.0|<4.4.15+8
+    fixed_versions: vers:composer/4.4.15+8
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=4.0.0|<4.0.10+17
+    fixed_versions: vers:composer/4.0.10+17
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-567r-vqj7-5cw7/GHSA-567r-vqj7-5cw7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-6629
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/201701-32
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210725054025/http://www.securityfocus.com/bid/92493
+    reference_type:
+    reference_id:
+  - url: https://www.phpmyadmin.net/security/PMASA-2016-52
+    reference_type:
+    reference_id:

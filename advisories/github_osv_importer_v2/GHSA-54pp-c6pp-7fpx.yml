@@ -1,0 +1,89 @@
+advisory_id: GHSA-54pp-c6pp-7fpx
+datasource_id: github_osv_importer_v2/GHSA-54pp-c6pp-7fpx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-54pp-c6pp-7fpx/GHSA-54pp-c6pp-7fpx.json
+aliases:
+  - CVE-2022-41886
+summary: |
+  Overflow in `ImageProjectiveTransformV2`
+  ### Impact
+  When [`tf.raw_ops.ImageProjectiveTransformV2`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/image/image_ops.cc) is given a large output shape, it overflows.
+  ```python
+  import tensorflow as tf
+
+  interpolation = "BILINEAR"
+  fill_mode = "REFLECT"
+  images = tf.constant(0.184634328, shape=[2,5,8,3], dtype=tf.float32)
+  transforms = tf.constant(0.378575385, shape=[2,8], dtype=tf.float32)
+  output_shape = tf.constant([1879048192,1879048192], shape=[2], dtype=tf.int32)
+  tf.raw_ops.ImageProjectiveTransformV2(images=images, transforms=transforms, output_shape=output_shape, interpolation=interpolation, fill_mode=fill_mode)
+  ```
+
+  ### Patches
+  We have patched the issue in GitHub commit [8faa6ea692985dbe6ce10e1a3168e0bd60a723ba](https://github.com/tensorflow/tensorflow/commit/8faa6ea692985dbe6ce10e1a3168e0bd60a723ba).
+
+  The fix will be included in TensorFlow 2.11. We will also cherrypick this commit on TensorFlow 2.10.1, 2.9.3, and TensorFlow 2.8.4, as these are also affected and still in supported range.
+
+
+  ### For more information
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.
+
+
+  ### Attribution
+  This vulnerability has been reported by Neophytos Christou from the Secure Systems Lab (SSL) at Brown University.
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-54pp-c6pp-7fpx/GHSA-54pp-c6pp-7fpx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-131
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/image/image_ops.cc
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/8faa6ea692985dbe6ce10e1a3168e0bd60a723ba
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-54pp-c6pp-7fpx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-41886
+    reference_type:
+    reference_id:

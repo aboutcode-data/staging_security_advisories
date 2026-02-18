@@ -1,0 +1,41 @@
+advisory_id: GHSA-4gxf-g5gf-22h4
+datasource_id: github_osv_importer_v2/GHSA-4gxf-g5gf-22h4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-4gxf-g5gf-22h4/GHSA-4gxf-g5gf-22h4.json
+aliases:
+  - CVE-2023-26132
+summary: |
+  dottie vulnerable to Prototype Pollution
+  Versions of the package dottie before 2.0.4 are vulnerable to Prototype Pollution due to insufficient checks, via the `set()` function and the current variable in the `/dottie.js` file.
+impacted_packages:
+  - purl: pkg:npm/dottie
+    affected_versions: vers:npm/<2.0.4
+    fixed_versions: vers:npm/2.0.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-4gxf-g5gf-22h4/GHSA-4gxf-g5gf-22h4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/mickhansen/dottie.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/mickhansen/dottie.js/blob/b48e22714aae4489ea6276452f22cc61980ba5a4/dottie.js#L107
+    reference_type:
+    reference_id:
+  - url: https://github.com/mickhansen/dottie.js/commit/7d3aee1c9c3c842720506e131de7e181e5c8db68
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-26132
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-DOTTIE-3332763
+    reference_type:
+    reference_id:

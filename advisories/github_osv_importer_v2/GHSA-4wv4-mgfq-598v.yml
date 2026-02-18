@@ -1,0 +1,29 @@
+advisory_id: GHSA-4wv4-mgfq-598v
+datasource_id: github_osv_importer_v2/GHSA-4wv4-mgfq-598v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-4wv4-mgfq-598v/GHSA-4wv4-mgfq-598v.json
+aliases: []
+summary: |
+  Code injection in nobelprizeparser
+  Code injection through use of eval.
+impacted_packages:
+  - purl: pkg:npm/nobelprizeparser
+    affected_versions: vers:npm/<1.0.2
+    fixed_versions: vers:npm/1.0.2
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/AnneTheDev/nobelprize/commit/00639d375b0efd097bc1eca18d9dc021691b9286
+    reference_type:
+    reference_id:
+  - url: https://github.com/AnneTheDev/nobelprize/security/advisories/GHSA-4wv4-mgfq-598v
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/nobelprizeparser
+    reference_type:
+    reference_id:

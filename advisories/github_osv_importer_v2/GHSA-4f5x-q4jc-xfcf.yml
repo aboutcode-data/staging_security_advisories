@@ -1,0 +1,38 @@
+advisory_id: GHSA-4f5x-q4jc-xfcf
+datasource_id: github_osv_importer_v2/GHSA-4f5x-q4jc-xfcf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-4f5x-q4jc-xfcf/GHSA-4f5x-q4jc-xfcf.json
+aliases:
+  - CVE-2022-0262
+summary: |
+  Cross-site Scripting in pimcore
+  Cross-site Scripting (XSS) - Stored in Packagist pimcore/pimcore.
+impacted_packages:
+  - purl: pkg:composer/pimcore/pimcore
+    affected_versions: vers:composer/<10.2.7
+    fixed_versions: vers:composer/10.2.7
+severities:
+  - score: '6.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-4f5x-q4jc-xfcf/GHSA-4f5x-q4jc-xfcf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pimcore/pimcore
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/commit/6f36e841ce55f67e2e95253dd58f80659ef166c7
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/b38a4e14-5dcb-4e49-9990-494dc2a8fa0d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0262
+    reference_type:
+    reference_id:

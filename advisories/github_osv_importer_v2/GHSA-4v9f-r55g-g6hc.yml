@@ -1,0 +1,50 @@
+advisory_id: GHSA-4v9f-r55g-g6hc
+datasource_id: github_osv_importer_v2/GHSA-4v9f-r55g-g6hc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-4v9f-r55g-g6hc/GHSA-4v9f-r55g-g6hc.json
+aliases:
+  - CVE-2024-8183
+summary: |
+  Prefect CORS (Cross-Origin Resource Sharing) misconfiguration
+  A CORS (Cross-Origin Resource Sharing) misconfiguration in prefecthq/prefect prior to version 3.0.3 allows unauthorized domains to access sensitive data. This vulnerability can lead to unauthorized access to the database, resulting in potential data leaks, loss of confidentiality, service disruption, and data integrity risks.
+impacted_packages:
+  - purl: pkg:pypi/prefect
+    affected_versions: vers:pypi/>=3.0.0rc1|<3.0.3
+    fixed_versions: vers:pypi/3.0.3
+  - purl: pkg:pypi/prefect
+    affected_versions: vers:pypi/<2.20.17
+    fixed_versions: vers:pypi/2.20.17
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-4v9f-r55g-g6hc/GHSA-4v9f-r55g-g6hc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-346
+references:
+  - url: https://github.com/PrefectHQ/prefect
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrefectHQ/prefect/commit/8f159b404126d93964a4daace7619bc553fa318c
+    reference_type:
+    reference_id:
+  - url: https://github.com/prefecthq/prefect/commit/a69266e077169b8a32ad76b1dd3ea63b96d011c2
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrefectHQ/prefect/issues/15074
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrefectHQ/prefect/releases/tag/2.20.17
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/b801de43-ff9f-4db9-b583-4797d4f7d3d2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-8183
+    reference_type:
+    reference_id:

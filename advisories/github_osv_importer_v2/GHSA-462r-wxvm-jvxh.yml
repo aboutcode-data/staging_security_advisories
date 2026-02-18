@@ -1,0 +1,35 @@
+advisory_id: GHSA-462r-wxvm-jvxh
+datasource_id: github_osv_importer_v2/GHSA-462r-wxvm-jvxh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-462r-wxvm-jvxh/GHSA-462r-wxvm-jvxh.json
+aliases:
+  - CVE-2022-38639
+summary: |
+  Markdown-Nice v1.8.22 vulnerable to Cross-site Scripting
+  A cross-site scripting (XSS) vulnerability in Markdown-Nice v1.8.22 allows attackers to execute arbitrary web scripts or HTML via a crafted payload injected into the Community Posting field.
+impacted_packages:
+  - purl: pkg:npm/markdown-nice
+    affected_versions: vers:npm/<=1.8.22
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-462r-wxvm-jvxh/GHSA-462r-wxvm-jvxh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/mdnice/markdown-nice
+    reference_type:
+    reference_id:
+  - url: https://github.com/mdnice/markdown-nice/issues/327
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-38639
+    reference_type:
+    reference_id:

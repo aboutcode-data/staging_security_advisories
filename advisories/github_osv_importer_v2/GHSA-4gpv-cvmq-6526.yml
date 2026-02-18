@@ -1,0 +1,31 @@
+advisory_id: GHSA-4gpv-cvmq-6526
+datasource_id: github_osv_importer_v2/GHSA-4gpv-cvmq-6526
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-4gpv-cvmq-6526/GHSA-4gpv-cvmq-6526.json
+aliases: []
+summary: |
+  Denial of Service in protobufjs
+  Withdrawn: Duplicate of GHSA-762f-c2wg-m8c8
+impacted_packages:
+  - purl: pkg:npm/protobufjs
+    affected_versions: vers:npm/>=6.0.0|<6.8.6
+    fixed_versions: vers:npm/6.8.6
+  - purl: pkg:npm/protobufjs
+    affected_versions: vers:npm/<5.0.3
+    fixed_versions: vers:npm/5.0.3
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/dcodeIO/protobuf.js/blob/6.8.5/src/parse.js#L27
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/319576
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/605
+    reference_type:
+    reference_id:

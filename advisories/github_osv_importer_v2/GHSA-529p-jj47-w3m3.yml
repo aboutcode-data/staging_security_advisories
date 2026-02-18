@@ -1,0 +1,57 @@
+advisory_id: GHSA-529p-jj47-w3m3
+datasource_id: github_osv_importer_v2/GHSA-529p-jj47-w3m3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-529p-jj47-w3m3/GHSA-529p-jj47-w3m3.json
+aliases:
+  - CVE-2024-27095
+summary: "Decidim cross-site scripting (XSS) in the admin panel\n### Impact\n\nThe admin panel\
+  \ is subject to potential XSS attach in case the attacker manages to modify some records being\
+  \ uploaded to the server.\n\nThe attacker is able to change  e.g. to `<svg onload=alert('XSS')>`\
+  \ if they know how to craft these requests themselves. And then enter the returned blob ID\
+  \ to the form inputs manually by modifying the edit page source.\n\n### Patches\n\nAvailable\
+  \ in versions 0.27.6 and 0.28.1.\n\n### Workarounds\n\nReview the user accounts that have\
+  \ access to the admin panel (i.e. general Administrators, and participatory space's Administrators)\
+  \ and remove access to them if they don't need it. \n\n### References\n\nOWASP ASVS v4.0.3-5.1.3"
+impacted_packages:
+  - purl: pkg:gem/decidim-admin
+    affected_versions: vers:gem/<0.27.6
+    fixed_versions: vers:gem/0.27.6
+  - purl: pkg:gem/decidim-admin
+    affected_versions: vers:gem/>=0.28.0.rc1|<0.28.1
+    fixed_versions: vers:gem/0.28.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-529p-jj47-w3m3/GHSA-529p-jj47-w3m3.json
+  - score: '6.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:H/UI:P/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-529p-jj47-w3m3/GHSA-529p-jj47-w3m3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/decidim/decidim
+    reference_type:
+    reference_id:
+  - url: https://github.com/decidim/decidim/releases/tag/v0.27.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/decidim/decidim/releases/tag/v0.28.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/decidim/decidim/security/advisories/GHSA-529p-jj47-w3m3
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/decidim-admin/CVE-2024-27095.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-27095
+    reference_type:
+    reference_id:

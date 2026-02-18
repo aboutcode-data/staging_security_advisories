@@ -1,0 +1,73 @@
+advisory_id: GHSA-4r65-35qq-ch8j
+datasource_id: github_osv_importer_v2/GHSA-4r65-35qq-ch8j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-4r65-35qq-ch8j/GHSA-4r65-35qq-ch8j.json
+aliases:
+  - CVE-2021-3620
+summary: |
+  Ansible discloses sensitive information in traceback error message
+  Ansible is an IT automation system that handles configuration management, application deployment, cloud provisioning, ad-hoc task execution, network automation, and multi-node orchestration. A flaw was found in Ansible Engine's ansible-connection module where sensitive information, such as the Ansible user credentials, is disclosed by default in the traceback error message when Ansible receives an unexpected response from `set_options`. The highest threat from this vulnerability is confidentiality.
+impacted_packages:
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/<2.9.27
+    fixed_versions: vers:pypi/2.9.27
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-4r65-35qq-ch8j/GHSA-4r65-35qq-ch8j.json
+  - score: '6.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-4r65-35qq-ch8j/GHSA-4r65-35qq-ch8j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-209
+references:
+  - url: https://access.redhat.com/errata/RHSA-2021:3871
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2021:3872
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2021:3874
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2021:4703
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2021:4750
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2021-3620
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1975767
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-4r65-35qq-ch8j
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/blob/stable-2.9/changelogs/CHANGELOG-v2.9.rst#security-fixes
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/fe28767970c8ec62aabe493c46b53a5de1e5fac0
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/ansible/PYSEC-2022-164.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/12/msg00018.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3620
+    reference_type:
+    reference_id:

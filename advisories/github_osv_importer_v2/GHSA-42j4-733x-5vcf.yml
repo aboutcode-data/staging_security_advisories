@@ -1,0 +1,46 @@
+advisory_id: GHSA-42j4-733x-5vcf
+datasource_id: github_osv_importer_v2/GHSA-42j4-733x-5vcf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-42j4-733x-5vcf/GHSA-42j4-733x-5vcf.json
+aliases:
+  - CVE-2020-36320
+summary: |
+  Regular expression denial of service (ReDoS) in EmailValidator class in Vaadin 7
+  Unsafe validation RegEx in `EmailValidator` class in `com.vaadin:vaadin-server` versions 7.0.0 through 7.7.21 (Vaadin 7.0.0 through 7.7.21) allows attackers to cause uncontrolled resource consumption by submitting malicious email addresses.
+
+  - https://vaadin.com/security/cve-2020-36320
+impacted_packages:
+  - purl: pkg:maven/com.vaadin/vaadin-bom
+    affected_versions: vers:maven/>=7.0.0.beta1|<7.7.22
+    fixed_versions: vers:maven/7.7.22
+  - purl: pkg:maven/com.vaadin/vaadin-server
+    affected_versions: vers:maven/>=7.0.0.beta1|<7.7.22
+    fixed_versions: vers:maven/7.7.22
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-42j4-733x-5vcf/GHSA-42j4-733x-5vcf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/vaadin/framework/issues/7757
+    reference_type:
+    reference_id:
+  - url: https://github.com/vaadin/framework/pull/12104
+    reference_type:
+    reference_id:
+  - url: https://github.com/vaadin/framework/security/advisories/GHSA-42j4-733x-5vcf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-36320
+    reference_type:
+    reference_id:
+  - url: https://vaadin.com/security/cve-2020-36320
+    reference_type:
+    reference_id:

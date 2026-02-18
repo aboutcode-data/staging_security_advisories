@@ -1,0 +1,38 @@
+advisory_id: GHSA-48cg-9c55-j2q7
+datasource_id: github_osv_importer_v2/GHSA-48cg-9c55-j2q7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-48cg-9c55-j2q7/GHSA-48cg-9c55-j2q7.json
+aliases:
+  - CVE-2025-51606
+summary: |
+  hippo4j Includes Hard Coded Secret Key in JWT Creation
+  hippo4j 1.0.0 to 1.5.0, uses a hard-coded secret key in its JWT (JSON Web Token) creation. This allows attackers with access to the source code or compiled binary to forge valid access tokens and impersonate any user, including privileged ones such as "admin". The vulnerability poses a critical security risk in systems where authentication and authorization rely on the integrity of JWTs.
+impacted_packages:
+  - purl: pkg:maven/cn.hippo4j/hippo4j-core
+    affected_versions: vers:maven/>=1.0.0|<=1.5.0
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-48cg-9c55-j2q7/GHSA-48cg-9c55-j2q7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-798
+references:
+  - url: https://github.com/opengoofy/hippo4j
+    reference_type:
+    reference_id:
+  - url: https://github.com/opengoofy/hippo4j/blob/7d78be3cab526501ad876495862f4cec108da2af/threadpool/server/auth/src/main/java/cn/hippo4j/auth/security/JwtTokenManager.java#L51
+    reference_type:
+    reference_id:
+  - url: https://github.com/ShenxiuSec/cve-proofs/blob/main/POC-20250610-01.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-51606
+    reference_type:
+    reference_id:

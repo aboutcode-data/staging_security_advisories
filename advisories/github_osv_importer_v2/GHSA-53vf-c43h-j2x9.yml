@@ -1,0 +1,49 @@
+advisory_id: GHSA-53vf-c43h-j2x9
+datasource_id: github_osv_importer_v2/GHSA-53vf-c43h-j2x9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-53vf-c43h-j2x9/GHSA-53vf-c43h-j2x9.json
+aliases:
+  - CVE-2025-68436
+summary: |
+  Craft CMS vulnerable to potential information disclosure via unchecked asset relocation
+  Authenticated users on a Craft installation could potentially expose sensitive assets via their user profile photo via maliciously crafted requests.
+
+  Users should update to the patched versions (5.8.21 and 4.16.17) to mitigate the issue.
+
+  Resources:
+
+  https://github.com/craftcms/cms/commit/4bcb0db554e273b66ce3b75263a13414c2368fc9
+
+  https://github.com/craftcms/cms/commit/4bcb0db554e273b66ce3b75263a13414c2368fc9
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=5.8.20
+    fixed_versions: vers:composer/5.8.21
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=4.16.16
+    fixed_versions: vers:composer/4.16.17
+severities:
+  - score: '4.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-53vf-c43h-j2x9/GHSA-53vf-c43h-j2x9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/4bcb0db554e273b66ce3b75263a13414c2368fc9
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/security/advisories/GHSA-53vf-c43h-j2x9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-68436
+    reference_type:
+    reference_id:

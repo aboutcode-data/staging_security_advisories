@@ -1,0 +1,38 @@
+advisory_id: GHSA-4p4m-5qp7-479x
+datasource_id: github_osv_importer_v2/GHSA-4p4m-5qp7-479x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-4p4m-5qp7-479x/GHSA-4p4m-5qp7-479x.json
+aliases:
+  - CVE-2023-1753
+summary: |
+  phpMyFAQ has weak password requirements
+  Weak password requirements in GitHub repository thorsten/phpmyfaq prior to 3.1.12.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.1.12
+    fixed_versions: vers:composer/3.1.12
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-4p4m-5qp7-479x/GHSA-4p4m-5qp7-479x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-521
+references:
+  - url: https://github.com/thorsten/phpmyfaq
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/f612a72494080e04947da7028340fee4493fe8a5
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/01d6ae23-3a8f-42a8-99f4-10246187d71b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-1753
+    reference_type:
+    reference_id:

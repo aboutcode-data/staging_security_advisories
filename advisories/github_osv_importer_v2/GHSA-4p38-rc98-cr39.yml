@@ -1,0 +1,44 @@
+advisory_id: GHSA-4p38-rc98-cr39
+datasource_id: github_osv_importer_v2/GHSA-4p38-rc98-cr39
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-4p38-rc98-cr39/GHSA-4p38-rc98-cr39.json
+aliases:
+  - CVE-2022-44136
+summary: |
+  Zenario CMS is vulnerable to Remote Code Execution (RCE).
+  Zenario CMS 9.3.57186 is vulnerable to RCE.
+impacted_packages:
+  - purl: pkg:composer/tribalsystems/zenario
+    affected_versions: vers:composer/<9.0.57473
+    fixed_versions: vers:composer/9.0.57473
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-4p38-rc98-cr39/GHSA-4p38-rc98-cr39.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://com0t.github.io/zenar.io/2022/10/18/Unauthent-RCE-Zenar.io~9.3.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/TribalSystems/Zenario
+    reference_type:
+    reference_id:
+  - url: https://github.com/TribalSystems/Zenario/commit/4f95a557af3c0b82e448a6ff8f4c167525972e4a
+    reference_type:
+    reference_id:
+  - url: https://github.com/TribalSystems/Zenario/compare/9.0.55141...9.0.57473
+    reference_type:
+    reference_id:
+  - url: https://github.com/TribalSystems/Zenario/releases/tag/9.0.57473
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-44136
+    reference_type:
+    reference_id:

@@ -1,0 +1,57 @@
+advisory_id: GHSA-428g-f7cq-pgp5
+datasource_id: github_osv_importer_v2/GHSA-428g-f7cq-pgp5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-428g-f7cq-pgp5/GHSA-428g-f7cq-pgp5.json
+aliases:
+  - CVE-2025-68480
+summary: |
+  Marshmallow has DoS in Schema.load(many)
+  ### Impact
+
+  `Schema.load(data, many=True)` is vulnerable to denial of service attacks. A moderately sized request can consume a disproportionate amount of CPU time.
+
+  ### Patches
+
+  4.1.2, 3.26.2
+
+  ### Workarounds
+
+  ```py
+  # Fail fast
+  def load_many(schema, data, **kwargs):
+      if not isinstance(data, list):
+          raise ValidationError(['Invalid input type.'])
+      return [schema.load(item, **kwargs) for item in data]
+  ```
+impacted_packages:
+  - purl: pkg:pypi/marshmallow
+    affected_versions: vers:pypi/>=3.0.0rc1|<3.26.2
+    fixed_versions: vers:pypi/3.26.2
+  - purl: pkg:pypi/marshmallow
+    affected_versions: vers:pypi/>=4.0.0|<4.1.2
+    fixed_versions: vers:pypi/4.1.2
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-428g-f7cq-pgp5/GHSA-428g-f7cq-pgp5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-405
+references:
+  - url: https://github.com/marshmallow-code/marshmallow
+    reference_type:
+    reference_id:
+  - url: https://github.com/marshmallow-code/marshmallow/commit/d24a0c9df061c4daa92f71cf85aca25b83eee508
+    reference_type:
+    reference_id:
+  - url: https://github.com/marshmallow-code/marshmallow/security/advisories/GHSA-428g-f7cq-pgp5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-68480
+    reference_type:
+    reference_id:

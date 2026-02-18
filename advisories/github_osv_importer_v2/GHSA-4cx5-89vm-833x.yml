@@ -1,0 +1,63 @@
+advisory_id: GHSA-4cx5-89vm-833x
+datasource_id: github_osv_importer_v2/GHSA-4cx5-89vm-833x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-4cx5-89vm-833x/GHSA-4cx5-89vm-833x.json
+aliases:
+  - CVE-2024-52800
+summary: |
+  veraPDF CLI has potential XXE (XML External Entity Injection) vulnerability
+  ### Impact
+  Executing policy checks using custom schematron files via the CLI invokes an XSL transformation that may theoretically lead to a remote code execution (RCE) vulnerability.
+
+  ### Patches
+  We are currently working on a patch that will be released when ready.
+
+  ### Workarounds
+  This doesn't affect the standard validation and policy checks functionality, veraPDF's common use cases. Most veraPDF users don't insert any custom XSLT code into policy profiles, which are based on Schematron syntax rather than direct XSL transforms. For users who do, only load custom policy files from sources you trust.
+
+  ### References
+  Original issue: #1488
+impacted_packages:
+  - purl: pkg:maven/org.verapdf/core
+    affected_versions: vers:maven/<=1.26.1
+    fixed_versions: vers:maven/1.26.2
+  - purl: pkg:maven/org.verapdf/core-jakarta
+    affected_versions: vers:maven/<=1.26.1
+    fixed_versions: vers:maven/1.26.2
+  - purl: pkg:maven/org.verapdf/core-arlington
+    affected_versions: vers:maven/<=1.26.1
+    fixed_versions: vers:maven/1.26.2
+  - purl: pkg:maven/org.verapdf/verapdf-library
+    affected_versions: vers:maven/<=1.26.1
+    fixed_versions: vers:maven/1.26.2
+  - purl: pkg:maven/org.verapdf/verapdf-library-jakarta
+    affected_versions: vers:maven/<=1.26.1
+    fixed_versions: vers:maven/1.26.2
+  - purl: pkg:maven/org.verapdf/verapdf-library-arlington
+    affected_versions: vers:maven/<=1.26.1
+    fixed_versions: vers:maven/1.26.2
+severities:
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-4cx5-89vm-833x/GHSA-4cx5-89vm-833x.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/veraPDF/veraPDF-library
+    reference_type:
+    reference_id:
+  - url: https://github.com/veraPDF/veraPDF-library/issues/1488
+    reference_type:
+    reference_id:
+  - url: https://github.com/veraPDF/veraPDF-library/security/advisories/GHSA-4cx5-89vm-833x
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-52800
+    reference_type:
+    reference_id:

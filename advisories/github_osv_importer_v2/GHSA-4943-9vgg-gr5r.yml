@@ -1,0 +1,49 @@
+advisory_id: GHSA-4943-9vgg-gr5r
+datasource_id: github_osv_importer_v2/GHSA-4943-9vgg-gr5r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-4943-9vgg-gr5r/GHSA-4943-9vgg-gr5r.json
+aliases:
+  - CVE-2021-3163
+summary: |
+  Cross-site Scripting in quill
+  A vulnerability in the HTML editor of Slab Quill allows an attacker to execute arbitrary JavaScript by storing an XSS payload (a crafted `onloadstart` attribute of an IMG element) in a text field. No patch exists and no further releases are planned.
+
+  This CVE is disputed. Researchers have claimed that this issue is not within the product itself, but is intended behavior in a web browser. More information can be found [here](https://github.com/quilljs/quill/issues/3364).
+impacted_packages:
+  - purl: pkg:npm/quill
+    affected_versions: vers:npm/<=1.3.7
+    fixed_versions:
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-4943-9vgg-gr5r/GHSA-4943-9vgg-gr5r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://burninatorsec.blogspot.com/2021/04/cve-2021-3163-xss-slab-quill-js.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/quilljs/quill
+    reference_type:
+    reference_id:
+  - url: https://github.com/quilljs/quill/issues/3273
+    reference_type:
+    reference_id:
+  - url: https://github.com/quilljs/quill/issues/3359
+    reference_type:
+    reference_id:
+  - url: https://github.com/quilljs/quill/issues/3364
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3163
+    reference_type:
+    reference_id:
+  - url: https://quilljs.com
+    reference_type:
+    reference_id:

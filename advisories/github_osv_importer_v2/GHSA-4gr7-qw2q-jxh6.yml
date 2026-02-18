@@ -1,0 +1,50 @@
+advisory_id: GHSA-4gr7-qw2q-jxh6
+datasource_id: github_osv_importer_v2/GHSA-4gr7-qw2q-jxh6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-4gr7-qw2q-jxh6/GHSA-4gr7-qw2q-jxh6.json
+aliases:
+  - CVE-2021-44667
+summary: |
+  Cross-site Scripting in Nacos
+  A Cross Site Scripting (XSS) vulnerability exists in Nacos prior to 1.4.5 and 2.1.0-BETA in auth/users via the (1) pageSize and (2) pageNo parameters.
+impacted_packages:
+  - purl: pkg:maven/com.alibaba.nacos/nacos-common
+    affected_versions: vers:maven/>=2.0.0-ALPHA.1|<2.1.0-BETA
+    fixed_versions: vers:maven/2.1.0-BETA
+  - purl: pkg:maven/com.alibaba.nacos/nacos-common
+    affected_versions: vers:maven/<1.4.5
+    fixed_versions: vers:maven/1.4.5
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-4gr7-qw2q-jxh6/GHSA-4gr7-qw2q-jxh6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/alibaba/nacos
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/nacos/commit/cd6d7e33b94f24814701f3faf8b632e5e85444c5
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/nacos/commit/d062fcafad0acd01673d404319526415a4af372b
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/nacos/issues/7359
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/nacos/pull/7364
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/nacos/pull/8980
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-44667
+    reference_type:
+    reference_id:

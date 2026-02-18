@@ -1,0 +1,41 @@
+advisory_id: GHSA-4qv6-37xq-mgq2
+datasource_id: github_osv_importer_v2/GHSA-4qv6-37xq-mgq2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-4qv6-37xq-mgq2/GHSA-4qv6-37xq-mgq2.json
+aliases:
+  - CVE-2023-44760
+summary: |
+  Concrete CMS Cross-site Scripting vulnerability
+  Multiple Cross Site Scripting (XSS) vulnerabilities in Concrete CMS v.9.2.1 allow an attacker to execute arbitrary code via a crafted script to the Header and Footer Tracking Codes of the SEO & Statistics.
+impacted_packages:
+  - purl: pkg:composer/concrete5/concrete5
+    affected_versions: vers:composer/<=9.2.1
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-4qv6-37xq-mgq2/GHSA-4qv6-37xq-mgq2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/concretecms/concretecms
+    reference_type:
+    reference_id:
+  - url: https://github.com/sromanhu/ConcreteCMS-Stored-XSS---TrackingCodes
+    reference_type:
+    reference_id:
+  - url: https://github.com/sromanhu/CVE-2023-44760_ConcreteCMS-Stored-XSS---TrackingCodes/issues/1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-44760
+    reference_type:
+    reference_id:
+  - url: https://www.concretecms.org/about/project-news/security/security-advisory-2023-10-31-concrete-cms-rejects-cve-2023-44760-and-cve-2023-44766
+    reference_type:
+    reference_id:

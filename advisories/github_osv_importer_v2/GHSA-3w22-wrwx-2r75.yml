@@ -1,0 +1,41 @@
+advisory_id: GHSA-3w22-wrwx-2r75
+datasource_id: github_osv_importer_v2/GHSA-3w22-wrwx-2r75
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3w22-wrwx-2r75/GHSA-3w22-wrwx-2r75.json
+aliases:
+  - CVE-2018-6905
+summary: |
+  Typo3 XSS Vulnerability
+  The page module in TYPO3 before 8.7.11 has XSS via `$GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename']`, as demonstrated by an admin entering a crafted site name during the installation process.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/<9.2.0
+    fixed_versions: vers:composer/9.2.0
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3w22-wrwx-2r75/GHSA-3w22-wrwx-2r75.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://forge.typo3.org/issues/84191
+    reference_type:
+    reference_id:
+  - url: https://github.com/pradeepjairamani/TYPO3-XSS-POC
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/d2c0ea7db3b31a796a82f9d39f77f9983beb7c35
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-6905
+    reference_type:
+    reference_id:
+  - url: http://www.securitytracker.com/id/1040755
+    reference_type:
+    reference_id:

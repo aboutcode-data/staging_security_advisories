@@ -1,0 +1,38 @@
+advisory_id: GHSA-3xph-cp8f-2229
+datasource_id: github_osv_importer_v2/GHSA-3xph-cp8f-2229
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-3xph-cp8f-2229/GHSA-3xph-cp8f-2229.json
+aliases:
+  - CVE-2021-3815
+summary: |
+  Prototype Pollution in @fabiocaccamo/utils.js
+  utils.js is vulnerable to Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution').
+impacted_packages:
+  - purl: pkg:npm/%40fabiocaccamo/utils.js
+    affected_versions: vers:npm/<0.17.2
+    fixed_versions: vers:npm/0.17.2
+severities:
+  - score: '8.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-3xph-cp8f-2229/GHSA-3xph-cp8f-2229.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/fabiocaccamo/utils.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/fabiocaccamo/utils.js/commit/102efafb291ce1916985514440d3bf8a6826890a
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/20f48c63-f078-4173-bcac-a9f34885f2c0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3815
+    reference_type:
+    reference_id:

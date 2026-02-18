@@ -1,0 +1,32 @@
+advisory_id: GHSA-45q2-34rf-mr94
+datasource_id: github_osv_importer_v2/GHSA-45q2-34rf-mr94
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/12/GHSA-45q2-34rf-mr94/GHSA-45q2-34rf-mr94.json
+aliases:
+  - CVE-2020-35149
+summary: |
+  Code Injection in mquery
+  lib/utils.js in mquery before 3.2.3 allows a pollution attack because a special property (e.g., __proto__) can be copied during a merge or clone operation.
+impacted_packages:
+  - purl: pkg:npm/mquery
+    affected_versions: vers:npm/<3.2.3
+    fixed_versions: vers:npm/3.2.3
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/12/GHSA-45q2-34rf-mr94/GHSA-45q2-34rf-mr94.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/aheckmann/mquery/commit/792e69fd0a7281a0300be5cade5a6d7c1d468ad4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-35149
+    reference_type:
+    reference_id:

@@ -1,0 +1,52 @@
+advisory_id: GHSA-422v-w6c5-vq42
+datasource_id: github_osv_importer_v2/GHSA-422v-w6c5-vq42
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-422v-w6c5-vq42/GHSA-422v-w6c5-vq42.json
+aliases:
+  - CVE-2025-62400
+summary: Moodle exposed the names of hidden groups to users who had permission to create calendar
+  events but not to view hidden groups. This could reveal private or restricted group information.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.0.0-beta|<5.0.3
+    fixed_versions: vers:composer/5.0.3
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.7
+    fixed_versions: vers:composer/4.5.7
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0-beta|<4.4.11
+    fixed_versions: vers:composer/4.4.11
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.21
+    fixed_versions: vers:composer/4.1.21
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-422v-w6c5-vq42/GHSA-422v-w6c5-vq42.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-62400
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2404433
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/0c70d67059658879a71152ea075c74154a627d05
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=470389
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62400
+    reference_type:
+    reference_id:

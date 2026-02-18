@@ -1,0 +1,35 @@
+advisory_id: GHSA-4xfw-599q-fmp6
+datasource_id: github_osv_importer_v2/GHSA-4xfw-599q-fmp6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4xfw-599q-fmp6/GHSA-4xfw-599q-fmp6.json
+aliases:
+  - CVE-2018-19992
+summary: |
+  Dolibarr stored cross-site scripting (XSS) vulnerability
+  A stored cross-site scripting (XSS) vulnerability in Dolibarr 8.0.2 allows remote authenticated users to inject arbitrary web script or HTML via the "address" (POST) or "town" (POST) parameter to adherents/type.php.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<8.0.4
+    fixed_versions: vers:composer/8.0.4
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4xfw-599q-fmp6/GHSA-4xfw-599q-fmp6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/0f06e39d23636bd1e4039ac61a743c79725c798b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-19992
+    reference_type:
+    reference_id:

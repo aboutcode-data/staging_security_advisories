@@ -1,0 +1,47 @@
+advisory_id: GHSA-3vqj-43w4-2q58
+datasource_id: github_osv_importer_v2/GHSA-3vqj-43w4-2q58
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-3vqj-43w4-2q58/GHSA-3vqj-43w4-2q58.json
+aliases:
+  - CVE-2022-45688
+summary: |
+  json stack overflow vulnerability
+  A stack overflow in the XML.toJSONObject component of hutool-json v5.8.10 and org.json:json before version 20230227 allows attackers to cause a Denial of Service (DoS) via crafted JSON or XML data.
+impacted_packages:
+  - purl: pkg:maven/cn.hutool/hutool-json
+    affected_versions: vers:maven/<5.8.25
+    fixed_versions: vers:maven/5.8.25
+  - purl: pkg:maven/org.json/json
+    affected_versions: vers:maven/<20230227
+    fixed_versions: vers:maven/20230227
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-3vqj-43w4-2q58/GHSA-3vqj-43w4-2q58.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://github.com/dromara/hutool/commit/6a2b585de0a380e8c12016dbaa1620b69be11b8c
+    reference_type:
+    reference_id:
+  - url: https://github.com/dromara/hutool/issues/2748
+    reference_type:
+    reference_id:
+  - url: https://github.com/dromara/hutool/releases/tag/5.8.25
+    reference_type:
+    reference_id:
+  - url: https://github.com/stleary/JSON-java/commit/a6e412bded7a0ad605adfeca029318f184c32102
+    reference_type:
+    reference_id:
+  - url: https://github.com/stleary/JSON-java/issues/708
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-45688
+    reference_type:
+    reference_id:

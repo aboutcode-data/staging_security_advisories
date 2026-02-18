@@ -1,0 +1,38 @@
+advisory_id: GHSA-435g-r2m8-gjvm
+datasource_id: github_osv_importer_v2/GHSA-435g-r2m8-gjvm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-435g-r2m8-gjvm/GHSA-435g-r2m8-gjvm.json
+aliases:
+  - CVE-2018-11651
+summary: |
+  Cross-site Scripting in Graylog
+  Graylog before v2.4.4 has an XSS security issue with unescaped text in dashboard names, related to components/dashboard/Dashboard.jsx, components/dashboard/EditDashboardModal.jsx, and pages/ShowDashboardPage.jsx.
+impacted_packages:
+  - purl: pkg:maven/org.graylog2/graylog2-server
+    affected_versions: vers:maven/<2.4.4
+    fixed_versions: vers:maven/2.4.4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-435g-r2m8-gjvm/GHSA-435g-r2m8-gjvm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Graylog2/graylog2-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/Graylog2/graylog2-server/pull/4739
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-11651
+    reference_type:
+    reference_id:
+  - url: https://www.graylog.org/post/announcing-graylog-v2-4-4
+    reference_type:
+    reference_id:

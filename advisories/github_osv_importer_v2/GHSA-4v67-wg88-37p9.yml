@@ -1,0 +1,35 @@
+advisory_id: GHSA-4v67-wg88-37p9
+datasource_id: github_osv_importer_v2/GHSA-4v67-wg88-37p9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4v67-wg88-37p9/GHSA-4v67-wg88-37p9.json
+aliases:
+  - CVE-2017-7683
+summary: |
+  Apache OpenMeetings displays Tomcat version and detailed error stack trace
+  Apache OpenMeetings 1.0.0 displays Tomcat version and detailed error stack trace, which is not secure. The issue is fixed in version 3.3.0.
+impacted_packages:
+  - purl: pkg:maven/org.apache.openmeetings/openmeetings-parent
+    affected_versions: vers:maven/>=1.0.0|<3.3.0
+    fixed_versions: vers:maven/3.3.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4v67-wg88-37p9/GHSA-4v67-wg88-37p9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: http://markmail.org/message/hint6fp66lijqdvu
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/openmeetings
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-7683
+    reference_type:
+    reference_id:

@@ -1,0 +1,39 @@
+advisory_id: GHSA-4qcx-jx49-6qrh
+datasource_id: github_osv_importer_v2/GHSA-4qcx-jx49-6qrh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-4qcx-jx49-6qrh/GHSA-4qcx-jx49-6qrh.json
+aliases:
+  - CVE-2024-8769
+summary: |
+  Aim  path traversal in LockManager.release_locks
+  A vulnerability in the `LockManager.release_locks` function in aimhubio/aim (commit bb76afe) allows for arbitrary file deletion through relative path traversal. The `run_hash` parameter, which is user-controllable, is concatenated without normalization as part of a path used to specify file deletion. This vulnerability is exposed through the `Repo._close_run()` method, which is accessible via the tracking server instruction API. As a result, an attacker can exploit this to delete any arbitrary file on the machine running the tracking server.
+impacted_packages:
+  - purl: pkg:pypi/aim
+    affected_versions: vers:pypi/>=3.15.0|<=3.27.0
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-4qcx-jx49-6qrh/GHSA-4qcx-jx49-6qrh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-29
+  - CWE-22
+references:
+  - url: https://github.com/aimhubio/aim
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimhubio/aim/blob/bb76afe6e9a54364f322520cc4fea2679238f904/aim/sdk/lock_manager.py#L140
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/59d3472f-f581-4beb-a090-afd36a00ecf7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-8769
+    reference_type:
+    reference_id:

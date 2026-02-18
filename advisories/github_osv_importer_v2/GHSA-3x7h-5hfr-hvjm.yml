@@ -1,0 +1,32 @@
+advisory_id: GHSA-3x7h-5hfr-hvjm
+datasource_id: github_osv_importer_v2/GHSA-3x7h-5hfr-hvjm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-3x7h-5hfr-hvjm/GHSA-3x7h-5hfr-hvjm.json
+aliases:
+  - CVE-2017-2670
+summary: |
+  Moderate severity vulnerability that affects io.undertow:undertow-core
+  It was found in Undertow before 1.3.28 that with non-clean TCP close, the Websocket server gets into infinite loop on every IO thread, effectively causing DoS.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<1.3.28
+    fixed_versions: vers:maven/1.3.28
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-3x7h-5hfr-hvjm/GHSA-3x7h-5hfr-hvjm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-835
+references:
+  - url: https://github.com/advisories/GHSA-3x7h-5hfr-hvjm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-2670
+    reference_type:
+    reference_id:

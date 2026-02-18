@@ -1,0 +1,41 @@
+advisory_id: GHSA-4p8f-mmfj-r45g
+datasource_id: github_osv_importer_v2/GHSA-4p8f-mmfj-r45g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-4p8f-mmfj-r45g/GHSA-4p8f-mmfj-r45g.json
+aliases:
+  - CVE-2018-20975
+summary: |
+  Cross-site scripting in fat_free_crm
+  Fat Free CRM before 0.18.1 has XSS in the `tags_helpe`r in `app/helpers/tags_helper.rb`.
+impacted_packages:
+  - purl: pkg:gem/fat_free_crm
+    affected_versions: vers:gem/<0.18.1
+    fixed_versions: vers:gem/0.18.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-4p8f-mmfj-r45g/GHSA-4p8f-mmfj-r45g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/fatfreecrm/fat_free_crm/commit/6d60bc8ed010c4eda05d6645c64849f415f68d65
+    reference_type:
+    reference_id:
+  - url: https://github.com/fatfreecrm/fat_free_crm/compare/v0.17.3...v0.18.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/fatfreecrm/fat_free_crm/releases/tag/v0.18.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/fat_free_crm/CVE-2018-20975.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-20975
+    reference_type:
+    reference_id:

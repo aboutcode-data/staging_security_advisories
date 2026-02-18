@@ -1,0 +1,99 @@
+advisory_id: GHSA-54rr-7fvw-6x8f
+datasource_id: github_osv_importer_v2/GHSA-54rr-7fvw-6x8f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-54rr-7fvw-6x8f/GHSA-54rr-7fvw-6x8f.json
+aliases:
+  - CVE-2024-26146
+summary: |
+  Rack Header Parsing leads to Possible Denial of Service Vulnerability
+  # Possible Denial of Service Vulnerability in Rack Header Parsing
+
+  There is a possible denial of service vulnerability in the header parsing
+  routines in Rack.  This vulnerability has been assigned the CVE identifier
+  CVE-2024-26146.
+
+  Versions Affected:  All.
+  Not affected:       None
+  Fixed Versions:     2.0.9.4, 2.1.4.4, 2.2.8.1, 3.0.9.1
+
+  Impact
+  ------
+  Carefully crafted headers can cause header parsing in Rack to take longer than
+  expected resulting in a possible denial of service issue. Accept and Forwarded
+  headers are impacted.
+
+  Ruby 3.2 has mitigations for this problem, so Rack applications using Ruby 3.2
+  or newer are unaffected.
+
+  Releases
+  --------
+  The fixed releases are available at the normal locations.
+
+  Workarounds
+  -----------
+  There are no feasible workarounds for this issue.
+
+  Patches
+  -------
+  To aid users who aren't able to upgrade immediately we have provided patches for
+  the two supported release series. They are in git-am format and consist of a
+  single changeset.
+
+  * 2-0-header-redos.patch - Patch for 2.0 series
+  * 2-1-header-redos.patch - Patch for 2.1 series
+  * 2-2-header-redos.patch - Patch for 2.2 series
+  * 3-0-header-redos.patch - Patch for 3.0 series
+
+  Credits
+  -------
+
+  Thanks to [svalkanov](https://hackerone.com/svalkanov) for reporting this and
+  providing patches!
+impacted_packages:
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/>=3.0.0|<3.0.9.1
+    fixed_versions: vers:gem/3.0.9.1
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/>=2.2.0|<2.2.8.1
+    fixed_versions: vers:gem/2.2.8.1
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/>=2.1.0|<2.1.4.4
+    fixed_versions: vers:gem/2.1.4.4
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/<2.0.9.4
+    fixed_versions: vers:gem/2.0.9.4
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://discuss.rubyonrails.org/t/possible-denial-of-service-vulnerability-in-rack-header-parsing/84942
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack/commit/30b8e39a578b25d4bdcc082c1c52c6f164b59716
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack/commit/6c5d90bdcec0949f7ba06db62fb740dab394b582
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack/commit/a227cd793778c7c3a827d32808058571569cda6f
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack/commit/e4c117749ba24a66f8ec5a08eddf68deeb425ccd
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack/security/advisories/GHSA-54rr-7fvw-6x8f
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/rack/CVE-2024-26146.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-26146
+    reference_type:
+    reference_id:

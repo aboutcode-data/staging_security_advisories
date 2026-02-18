@@ -1,0 +1,55 @@
+advisory_id: GHSA-446m-mv8f-q348
+datasource_id: github_osv_importer_v2/GHSA-446m-mv8f-q348
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/03/GHSA-446m-mv8f-q348/GHSA-446m-mv8f-q348.json
+aliases:
+  - CVE-2017-18214
+summary: |
+  Regular Expression Denial of Service in moment
+  Affected versions of `moment` are vulnerable to a low severity regular expression denial of service when parsing dates as strings.
+
+
+  ## Recommendation
+
+  Update to version 2.19.3 or later.
+impacted_packages:
+  - purl: pkg:npm/moment
+    affected_versions: vers:npm/<2.19.3
+    fixed_versions: vers:npm/2.19.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/03/GHSA-446m-mv8f-q348/GHSA-446m-mv8f-q348.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/advisories/GHSA-446m-mv8f-q348
+    reference_type:
+    reference_id:
+  - url: https://github.com/moment/moment
+    reference_type:
+    reference_id:
+  - url: https://github.com/moment/moment/commit/69ed9d44957fa6ab12b73d2ae29d286a857b80eb
+    reference_type:
+    reference_id:
+  - url: https://github.com/moment/moment/issues/4163
+    reference_type:
+    reference_id:
+  - url: https://github.com/moment/moment/pull/4326
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-18214
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/532
+    reference_type:
+    reference_id:
+  - url: https://www.tenable.com/security/tns-2019-02
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-4mqv-gcr3-pff9
+datasource_id: github_osv_importer_v2/GHSA-4mqv-gcr3-pff9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-4mqv-gcr3-pff9/GHSA-4mqv-gcr3-pff9.json
+aliases:
+  - CVE-2020-7776
+summary: |
+  Cross-site scripting in phpoffice/phpspreadsheet
+  This affects the package phpoffice/phpspreadsheet. The library is vulnerable to XSS when creating an html output from an excel file by adding a comment on any cell. The root cause of this issue is within the HTML writer where user comments are concatenated as part of link and this is returned as HTML.
+impacted_packages:
+  - purl: pkg:composer/phpoffice/phpspreadsheet
+    affected_versions: vers:composer/<1.16.0
+    fixed_versions: vers:composer/1.16.0
+  - purl: pkg:composer/phpoffice/phpexcel
+    affected_versions: vers:composer/<=1.8.2
+    fixed_versions:
+severities:
+  - score: '6.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-4mqv-gcr3-pff9/GHSA-4mqv-gcr3-pff9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/phpoffice/phpspreadsheet/CVE-2020-7776.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet/blob/master/src/PhpSpreadsheet/Writer/Html.php%23L1792
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet/commit/0ed5b800be2136bcb8fa9c1bdf59abc957a98845
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet/pull/1719
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7776
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-PHP-PHPOFFICEPHPSPREADSHEET-1048856
+    reference_type:
+    reference_id:

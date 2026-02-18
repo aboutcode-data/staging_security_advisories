@@ -1,0 +1,35 @@
+advisory_id: GHSA-4qgj-9mvg-3929
+datasource_id: github_osv_importer_v2/GHSA-4qgj-9mvg-3929
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4qgj-9mvg-3929/GHSA-4qgj-9mvg-3929.json
+aliases:
+  - CVE-2015-5209
+summary: |
+  Special top object can be used to access Struts' internals
+  ValueStack defines special top object which represents root of execution context. It can be used to manipulate Struts' internals or can be used to affect container's settings. Applying better regex which includes pattern to exclude request parameters trying to use top object. This issue was patched in Struts 2.3.24.1.
+impacted_packages:
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/<2.3.24.1
+    fixed_versions: vers:maven/2.3.24.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4qgj-9mvg-3929/GHSA-4qgj-9mvg-3929.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-5209
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20180629-0002
+    reference_type:
+    reference_id:
+  - url: https://struts.apache.org/docs/s2-026.html
+    reference_type:
+    reference_id:

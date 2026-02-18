@@ -1,0 +1,42 @@
+advisory_id: GHSA-4j3g-rwwq-4p54
+datasource_id: github_osv_importer_v2/GHSA-4j3g-rwwq-4p54
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-4j3g-rwwq-4p54/GHSA-4j3g-rwwq-4p54.json
+aliases:
+  - CVE-2026-1622
+summary: |
+  Neo4j Enterprise and Community vulnerable to a potential information disclosure
+  Neo4j Enterprise and Community editions versions prior to 2026.01.3 and 5.26.21 are vulnerable to a potential information disclosure by a user who has ability to access the local log files.
+
+  The "obfuscate_literals" option in the query logs does not redact error information, exposing unredacted data in the query log when a customer writes a query that fails. It can allow a user with legitimate access to the local log files to obtain information they are not authorised to see. If this user is also in a position to run queries and trigger errors, this vulnerability can potentially help them to infer information they are not authorised to see through their intended database access.
+
+  Neo4j recommends upgrading to versions 2026.01.3 (or 5.26.21) where the issue is fixed, and reviewing query log files permissions to ensure restricted access. If a project's configuration had db.logs.query.obfuscate_literals enabled, and users wish for the obfuscation to cover the error messages as well, theyneed to enable the new configuration setting db.logs.query.obfuscate_errors once they have upgraded Neo4j.
+impacted_packages:
+  - purl: pkg:maven/org.neo4j/neo4j
+    affected_versions: vers:maven/<5.26.21
+    fixed_versions: vers:maven/5.26.21
+  - purl: pkg:maven/org.neo4j/neo4j
+    affected_versions: vers:maven/>=2025.01.0|<2026.01.3
+    fixed_versions: vers:maven/2026.01.3
+severities:
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-4j3g-rwwq-4p54/GHSA-4j3g-rwwq-4p54.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://github.com/neo4j/neo4j
+    reference_type:
+    reference_id:
+  - url: https://neo4j.com/security/CVE-2026-1622
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-1622
+    reference_type:
+    reference_id:

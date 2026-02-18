@@ -1,0 +1,59 @@
+advisory_id: GHSA-3pc2-fm7p-q2vg
+datasource_id: github_osv_importer_v2/GHSA-3pc2-fm7p-q2vg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-3pc2-fm7p-q2vg/GHSA-3pc2-fm7p-q2vg.json
+aliases:
+  - CVE-2020-4061
+summary: |
+  Cross-site Scripting in October
+  ### Impact
+  Pasting content copied from malicious websites into the Froala richeditor could result in a successful self-XSS attack.
+
+  ### Patches
+  Issue has been patched in Build 467 (v1.0.467).
+
+  ### Workarounds
+  Apply https://github.com/octobercms/october/commit/b384954a29b89117e1c0d6035b3ede4f46df67c5 to your installation manually if unable to upgrade to Build 467.
+
+  ### References
+  - https://research.securitum.com/the-curious-case-of-copy-paste/
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at [hello@octobercms.com](mailto:hello@octobercms.com)
+
+  ### Threat Assessment
+  Assessed as Low given that by the nature of the attack it can only impact users that do it to themselves by copying and pasting from malicious websites.
+
+  ### Acknowledgements
+
+  Thanks to [Michał Bentkowski of Securitum](https://research.securitum.com/authors/michal-bentkowski/) for finding the original issue in Froala and @tomaszstrojny for reporting the issue to the October CMS team.
+impacted_packages:
+  - purl: pkg:composer/october/backend
+    affected_versions: vers:composer/>=1.0.319|<1.0.467
+    fixed_versions: vers:composer/1.0.467
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-3pc2-fm7p-q2vg/GHSA-3pc2-fm7p-q2vg.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/octobercms/october/commit/b384954a29b89117e1c0d6035b3ede4f46df67c5
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october/security/advisories/GHSA-3pc2-fm7p-q2vg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-4061
+    reference_type:
+    reference_id:
+  - url: https://research.securitum.com/the-curious-case-of-copy-paste
+    reference_type:
+    reference_id:

@@ -1,0 +1,59 @@
+advisory_id: GHSA-484f-743f-6jx2
+datasource_id: github_osv_importer_v2/GHSA-484f-743f-6jx2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-484f-743f-6jx2/GHSA-484f-743f-6jx2.json
+aliases:
+  - CVE-2019-16774
+summary: |
+  Object injection in cookie driver in phpfastcache
+  ### Impact
+  An possible object injection has been discovered in cookie driver prior 5.0.13 versions (of 5.x releases).
+
+  ### Patches
+  The issue has been addressed by enforcing JSON conversion when deserializing
+
+  ### Workarounds
+  If you can't fix it, use another driver such as "Files" (Filesystem)
+
+  ### References
+  Fixing release: https://github.com/PHPSocialNetwork/phpfastcache/releases/tag/5.0.13
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [the issue tracker](https://github.com/PHPSocialNetwork/phpfastcache/issues)
+  * Email us at [security@geolim4.com](mailto:security@geolim4.com)
+impacted_packages:
+  - purl: pkg:composer/phpfastcache/phpfastcache
+    affected_versions: vers:composer/>=5.0.0|<5.0.13
+    fixed_versions: vers:composer/5.0.13
+severities:
+  - score: '4.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-484f-743f-6jx2/GHSA-484f-743f-6jx2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/advisories/GHSA-484f-743f-6jx2
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPSocialNetwork/phpfastcache
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPSocialNetwork/phpfastcache/commit/c4527205cb7a402b595790c74310791f5b04a1a4
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPSocialNetwork/phpfastcache/releases/tag/5.0.13
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPSocialNetwork/phpfastcache/security/advisories/GHSA-484f-743f-6jx2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16774
+    reference_type:
+    reference_id:

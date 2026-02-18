@@ -1,0 +1,35 @@
+advisory_id: GHSA-4r8c-pj7x-m5jx
+datasource_id: github_osv_importer_v2/GHSA-4r8c-pj7x-m5jx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4r8c-pj7x-m5jx/GHSA-4r8c-pj7x-m5jx.json
+aliases:
+  - CVE-2020-13868
+summary: |
+  Comments plugin Cross-Site Request Forgery (CSRF)
+  An issue was discovered in the Comments plugin before 1.5.5 for Craft CMS. CSRF affects comment integrity.
+impacted_packages:
+  - purl: pkg:composer/verbb/comments
+    affected_versions: vers:composer/<1.5.5
+    fixed_versions: vers:composer/1.5.5
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-4r8c-pj7x-m5jx/GHSA-4r8c-pj7x-m5jx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/verbb/comments
+    reference_type:
+    reference_id:
+  - url: https://github.com/verbb/comments/blob/craft-3/CHANGELOG.md#155---2020-05-28-critical
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13868
+    reference_type:
+    reference_id:

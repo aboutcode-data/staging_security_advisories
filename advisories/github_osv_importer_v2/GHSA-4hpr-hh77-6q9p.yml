@@ -1,0 +1,38 @@
+advisory_id: GHSA-4hpr-hh77-6q9p
+datasource_id: github_osv_importer_v2/GHSA-4hpr-hh77-6q9p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-4hpr-hh77-6q9p/GHSA-4hpr-hh77-6q9p.json
+aliases:
+  - CVE-2022-2036
+summary: |
+  Cross site scripting in francoisjacquet/rosariosis
+  A Cross-site Scripting (XSS) vulnerability exists in in GitHub repository francoisjacquet/rosariosis prior to 9.1. HTML entities are not properly decoded from the URL.
+impacted_packages:
+  - purl: pkg:composer/francoisjacquet/rosariosis
+    affected_versions: vers:composer/<9.1.0
+    fixed_versions: vers:composer/9.1.0
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-4hpr-hh77-6q9p/GHSA-4hpr-hh77-6q9p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/francoisjacquet/rosariosis
+    reference_type:
+    reference_id:
+  - url: https://github.com/francoisjacquet/rosariosis/commit/6e213b17e6ac3a3961e1eabcdaba1c892844398a
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/c7715149-f99c-4d62-a5c6-c78bfdb41905
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2036
+    reference_type:
+    reference_id:

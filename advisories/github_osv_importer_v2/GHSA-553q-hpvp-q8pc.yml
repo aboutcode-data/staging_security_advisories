@@ -1,0 +1,38 @@
+advisory_id: GHSA-553q-hpvp-q8pc
+datasource_id: github_osv_importer_v2/GHSA-553q-hpvp-q8pc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-553q-hpvp-q8pc/GHSA-553q-hpvp-q8pc.json
+aliases:
+  - CVE-2021-4075
+summary: |
+  Server-Side Request Forgery in snipe/snipe-it
+  Admin users on the external network can perform blind POST-based SSRF (issue requests on behalf of the server into the internal network) via the Slack Integration. This vulnerability is capable of port-scanning of the internal network, issue POST requests to web servers on the internal network which can be escalated to higher-impact.
+impacted_packages:
+  - purl: pkg:composer/snipe/snipe-it
+    affected_versions: vers:composer/<=5.3.3
+    fixed_versions: vers:composer/6.0.0-GM
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-553q-hpvp-q8pc/GHSA-553q-hpvp-q8pc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/snipe/snipe-it
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it/commit/4612b9e711b3ff5d2bcddbec5b18866d25f8e34e
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/4386fd8b-8c80-42bb-87b8-b506c46597de
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-4075
+    reference_type:
+    reference_id:

@@ -1,0 +1,71 @@
+advisory_id: GHSA-43xg-8wmj-cw8h
+datasource_id: github_osv_importer_v2/GHSA-43xg-8wmj-cw8h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-43xg-8wmj-cw8h/GHSA-43xg-8wmj-cw8h.json
+aliases:
+  - CVE-2022-31777
+summary: |
+  Apache Spark vulnerable to Log Injection
+  A stored cross-site scripting (XSS) vulnerability in Apache Spark 3.2.1 and earlier, and 3.3.0, allows remote attackers to execute arbitrary JavaScript in the web browser of a user, by including a malicious payload into the logs which would be returned in logs rendered in the UI.
+impacted_packages:
+  - purl: pkg:pypi/pyspark
+    affected_versions: vers:pypi/<3.2.2
+    fixed_versions: vers:pypi/3.2.2
+  - purl: pkg:pypi/pyspark
+    affected_versions: vers:pypi/3.3.0
+    fixed_versions: vers:pypi/3.3.1
+  - purl: pkg:maven/org.apache.spark/spark-core_2.9.3
+    affected_versions: vers:maven/<3.2.2
+    fixed_versions:
+  - purl: pkg:maven/org.apache.spark/spark-core_2.13
+    affected_versions: vers:maven/<3.2.2
+    fixed_versions: vers:maven/3.2.2
+  - purl: pkg:maven/org.apache.spark/spark-core_2.13
+    affected_versions: vers:maven/3.3.0
+    fixed_versions: vers:maven/3.3.1
+  - purl: pkg:maven/org.apache.spark/spark-core_2.12
+    affected_versions: vers:maven/<3.2.2
+    fixed_versions: vers:maven/3.2.2
+  - purl: pkg:maven/org.apache.spark/spark-core_2.12
+    affected_versions: vers:maven/3.3.0
+    fixed_versions: vers:maven/3.3.1
+  - purl: pkg:maven/org.apache.spark/spark-core_2.11
+    affected_versions: vers:maven/<3.2.2
+    fixed_versions:
+  - purl: pkg:maven/org.apache.spark/spark-core_2.10
+    affected_versions: vers:maven/<3.2.2
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-43xg-8wmj-cw8h/GHSA-43xg-8wmj-cw8h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/apache/spark
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/spark/commit/ad90195de56688ce0898691eb9d04297ab0871ad
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/pyspark/PYSEC-2022-42976.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/60mgbswq2lsmrxykfxpqq13ztkm2ht6q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31777
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20220728105026/https://issues.apache.org/jira/browse/SPARK-39505
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/11/01/14
+    reference_type:
+    reference_id:

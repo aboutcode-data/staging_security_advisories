@@ -1,0 +1,38 @@
+advisory_id: GHSA-4jqw-vfmj-9rmh
+datasource_id: github_osv_importer_v2/GHSA-4jqw-vfmj-9rmh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-4jqw-vfmj-9rmh/GHSA-4jqw-vfmj-9rmh.json
+aliases:
+  - CVE-2021-36686
+summary: |
+  Cross-site Scripting in yapi-vendor
+  Cross Site Scripting (XSS) vulnerability in yapi 1.9.1 allows attackers to execute arbitrary code via the /interface/api edit page.
+impacted_packages:
+  - purl: pkg:npm/yapi-vendor
+    affected_versions: vers:npm/<=1.9.1
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-4jqw-vfmj-9rmh/GHSA-4jqw-vfmj-9rmh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/YMFE/yapi
+    reference_type:
+    reference_id:
+  - url: https://github.com/YMFE/yapi/issues/2190
+    reference_type:
+    reference_id:
+  - url: https://github.com/YMFE/yapi/issues/2240
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-36686
+    reference_type:
+    reference_id:
