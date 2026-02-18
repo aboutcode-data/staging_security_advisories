@@ -1,0 +1,46 @@
+advisory_id: GHSA-5v95-j4rr-6f3c
+datasource_id: github_osv_importer_v2/GHSA-5v95-j4rr-6f3c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-5v95-j4rr-6f3c/GHSA-5v95-j4rr-6f3c.json
+aliases:
+  - CVE-2022-3290
+summary: |
+  rdiffweb's unlimited username field length can lead to DoS
+  rdiffweb prior to 2.4.8 is vulnerable to a potential Dos attack via an unlimited length "username" field. This can result in excess memory consumption, or memory corruption, leading to a Denial of Service (DoS). This issue is patched in version 2.4.8. There are no known workarounds.
+impacted_packages:
+  - purl: pkg:pypi/rdiffweb
+    affected_versions: vers:pypi/<2.4.8
+    fixed_versions: vers:pypi/2.4.8
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-5v95-j4rr-6f3c/GHSA-5v95-j4rr-6f3c.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-5v95-j4rr-6f3c/GHSA-5v95-j4rr-6f3c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-130
+references:
+  - url: https://github.com/ikus060/rdiffweb
+    reference_type:
+    reference_id:
+  - url: https://github.com/ikus060/rdiffweb/commit/667657c6fe2b336c90be37f37fb92f65df4feee3
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/rdiffweb/PYSEC-2022-292.yaml
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/d8b8519d-96a5-484c-8141-624c54290bf5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3290
+    reference_type:
+    reference_id:

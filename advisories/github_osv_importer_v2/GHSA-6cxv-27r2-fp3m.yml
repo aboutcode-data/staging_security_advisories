@@ -1,0 +1,35 @@
+advisory_id: GHSA-6cxv-27r2-fp3m
+datasource_id: github_osv_importer_v2/GHSA-6cxv-27r2-fp3m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-6cxv-27r2-fp3m/GHSA-6cxv-27r2-fp3m.json
+aliases:
+  - CVE-2023-44771
+summary: |
+  Zenario CMS Cross-site Scripting vulnerability
+  A Cross-Site Scripting (XSS) vulnerability in Zenario CMS v.9.4.59197 allows a local attacker to execute arbitrary code via a crafted script to the Page Layout.
+impacted_packages:
+  - purl: pkg:composer/tribalsystems/zenario
+    affected_versions: vers:composer/<=9.4.59197
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-6cxv-27r2-fp3m/GHSA-6cxv-27r2-fp3m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/sromanhu/ZenarioCMS--Stored-XSS---Page-Layout
+    reference_type:
+    reference_id:
+  - url: https://github.com/TribalSystems/Zenario
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-44771
+    reference_type:
+    reference_id:

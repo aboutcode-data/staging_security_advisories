@@ -1,0 +1,35 @@
+advisory_id: GHSA-5gq7-826w-8282
+datasource_id: github_osv_importer_v2/GHSA-5gq7-826w-8282
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5gq7-826w-8282/GHSA-5gq7-826w-8282.json
+aliases:
+  - CVE-2021-3846
+summary: |
+  Unrestricted File Upload vulnerability in Firefly III
+  firefly-iii is vulnerable to Unrestricted Upload of File with Dangerous Type
+impacted_packages:
+  - purl: pkg:composer/grumpydictator/firefly-iii
+    affected_versions: vers:composer/<5.6.2
+    fixed_versions: vers:composer/5.6.2
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5gq7-826w-8282/GHSA-5gq7-826w-8282.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/firefly-iii/firefly-iii/commit/a85b6420c19ace35134f896e094e1971d8c7954b
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/5267ec1c-d204-40d2-bd4f-6c2dd495ee18
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3846
+    reference_type:
+    reference_id:

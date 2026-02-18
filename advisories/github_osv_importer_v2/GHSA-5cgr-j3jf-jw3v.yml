@@ -1,0 +1,40 @@
+advisory_id: GHSA-5cgr-j3jf-jw3v
+datasource_id: github_osv_importer_v2/GHSA-5cgr-j3jf-jw3v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-5cgr-j3jf-jw3v/GHSA-5cgr-j3jf-jw3v.json
+aliases:
+  - CVE-2025-68143
+summary: |
+  mcp-server-git's unrestricted git_init tool allows repository creation at arbitrary filesystem locations
+  In mcp-server-git versions prior to 2025.9.25, the git_init tool accepted arbitrary filesystem paths and created Git repositories without validating the target location. Unlike other tools which required an existing repository, git_init could operate on any directory accessible to the server process, making those directories eligible for subsequent git operations. The tool was removed entirely, as the server is intended to operate on existing repositories only. Users are advised to upgrade to 2025.9.25 or newer to remediate this issue.
+
+  Thank you to https://hackerone.com/yardenporat for disclosure, @0dd for contributing the fix.
+impacted_packages:
+  - purl: pkg:pypi/mcp-server-git
+    affected_versions: vers:pypi/<2025.9.25
+    fixed_versions: vers:pypi/2025.9.25
+severities:
+  - score: '6.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-5cgr-j3jf-jw3v/GHSA-5cgr-j3jf-jw3v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/modelcontextprotocol/servers
+    reference_type:
+    reference_id:
+  - url: https://github.com/modelcontextprotocol/servers/commit/eac56e7bcde48fb64d5a973924d05d69a7d876e6
+    reference_type:
+    reference_id:
+  - url: https://github.com/modelcontextprotocol/servers/security/advisories/GHSA-5cgr-j3jf-jw3v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-68143
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-6293-2vg2-pmp5
+datasource_id: github_osv_importer_v2/GHSA-6293-2vg2-pmp5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-6293-2vg2-pmp5/GHSA-6293-2vg2-pmp5.json
+aliases:
+  - CVE-2022-2064
+summary: |
+  Insufficient Session Expiration in NocoDB
+  Insufficient Session Expiration in GitHub repository nocodb/nocodb prior to 0.91.9.
+impacted_packages:
+  - purl: pkg:npm/nocodb
+    affected_versions: vers:npm/<0.91.9
+    fixed_versions: vers:npm/0.91.9
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-6293-2vg2-pmp5/GHSA-6293-2vg2-pmp5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-613
+references:
+  - url: https://github.com/nocodb/nocodb
+    reference_type:
+    reference_id:
+  - url: https://github.com/nocodb/nocodb/commit/c9b5111b25aea2781e19395a8e9107ddbd235a2b
+    reference_type:
+    reference_id:
+  - url: https://github.com/nocodb/nocodb/pull/2262
+    reference_type:
+    reference_id:
+  - url: https://github.com/nocodb/nocodb/pull/2338
+    reference_type:
+    reference_id:
+  - url: https://github.com/nocodb/nocodb/releases/tag/0.91.9
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/39523d51-fc5c-48b8-a082-171da79761bb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2064
+    reference_type:
+    reference_id:

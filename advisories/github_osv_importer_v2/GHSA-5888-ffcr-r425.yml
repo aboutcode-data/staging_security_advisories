@@ -1,0 +1,55 @@
+advisory_id: GHSA-5888-ffcr-r425
+datasource_id: github_osv_importer_v2/GHSA-5888-ffcr-r425
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-5888-ffcr-r425/GHSA-5888-ffcr-r425.json
+aliases:
+  - CVE-2022-23631
+summary: "Prototype Pollution leading to Remote Code Execution in superjson\n### Impact\n\n\
+  This is critical vulnerability, as it allows to run arbitrary code on any server using superjson\
+  \ input, including a Blitz.js server, without prior authentication or knowledge. Attackers\
+  \ gain full control over the server so they could steal and manipulate data or attack further\
+  \ systems. The only requirement is that the server implements at least one endpoint which\
+  \ uses superjson during request processing. In the case of Blitz.js, it would be at least\
+  \ one RPC call. \n\n### Patches\nThis has been patched in superjson 1.8.1 and Blitz.js 0.45.3.\
+  \ \n\nIf you are unable to upgrade to Blitz.js 0.45.3 in a timely manner, you can instead\
+  \ upgrade only superjson to version 1.8.1 using yarn resolutions are similar. Blitz versions\
+  \ < 0.45.3 are only affected because they used superjson versions < 1.8.1.\n\n### Workarounds\n\
+  None\n\n### For more information\nIf you have any questions or comments about this advisory:\n\
+  * Open an issue in https://github.com/blitz-js/superjson\n* Email us at b@bayer.ws\n\n###\
+  \ References\n* https://www.sonarsource.com/blog/blitzjs-prototype-pollution/"
+impacted_packages:
+  - purl: pkg:npm/superjson
+    affected_versions: vers:npm/<1.8.1
+    fixed_versions: vers:npm/1.8.1
+  - purl: pkg:npm/blitz
+    affected_versions: vers:npm/<0.45.3
+    fixed_versions: vers:npm/0.45.3
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-5888-ffcr-r425/GHSA-5888-ffcr-r425.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-1321
+references:
+  - url: https://github.com/advisories/GHSA-5888-ffcr-r425
+    reference_type:
+    reference_id:
+  - url: https://github.com/blitz-js/superjson
+    reference_type:
+    reference_id:
+  - url: https://github.com/blitz-js/superjson/security/advisories/GHSA-5888-ffcr-r425
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23631
+    reference_type:
+    reference_id:
+  - url: https://www.sonarsource.com/blog/blitzjs-prototype-pollution
+    reference_type:
+    reference_id:

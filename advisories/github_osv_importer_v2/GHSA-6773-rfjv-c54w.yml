@@ -1,0 +1,39 @@
+advisory_id: GHSA-6773-rfjv-c54w
+datasource_id: github_osv_importer_v2/GHSA-6773-rfjv-c54w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-6773-rfjv-c54w/GHSA-6773-rfjv-c54w.json
+aliases:
+  - CVE-2023-38886
+summary: |
+  Dolibarr allows a remote privileged attacker to execute arbitrary code via a crafted command/script
+  An issue in Dolibarr ERP CRM v.17.0.1 and before allows a remote privileged attacker to execute arbitrary code via a crafted command/script.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<17.0.1
+    fixed_versions: vers:composer/17.0.1
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-6773-rfjv-c54w/GHSA-6773-rfjv-c54w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-78
+references:
+  - url: http://dolibarr.com
+    reference_type:
+    reference_id:
+  - url: https://akerva.com/wp-content/uploads/2023/09/AKERVA_Security-Advisory_CVE-2023-38886_Dolibarr_RCE-1.pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-38886
+    reference_type:
+    reference_id:

@@ -1,0 +1,53 @@
+advisory_id: GHSA-66c2-p8rh-qx87
+datasource_id: github_osv_importer_v2/GHSA-66c2-p8rh-qx87
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-66c2-p8rh-qx87/GHSA-66c2-p8rh-qx87.json
+aliases:
+  - CVE-2023-44379
+summary: |
+  baserCMS Cross-site Scripting vulnerability in Site search Feature
+  There is a XSS Vulnerability in Site search Feature to baserCMS.
+
+  ### Target
+  baserCMS 5.0.8 and earlier versions
+
+  ### Vulnerability
+  Malicious code may be executed in Site search Feature.
+
+  ### Countermeasures
+  Update to the latest version of baserCMS
+
+  Please refer to the following page to reference for more information.
+  https://basercms.net/security/JVN_73283159
+impacted_packages:
+  - purl: pkg:composer/baserproject/basercms
+    affected_versions: vers:composer/<5.0.9
+    fixed_versions: vers:composer/5.0.9
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-66c2-p8rh-qx87/GHSA-66c2-p8rh-qx87.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://basercms.net/security/JVN_73283159
+    reference_type:
+    reference_id:
+  - url: https://github.com/baserproject/basercms
+    reference_type:
+    reference_id:
+  - url: https://github.com/baserproject/basercms/commit/18549396e5a9b8294306a54a876af164b0b57da4
+    reference_type:
+    reference_id:
+  - url: https://github.com/baserproject/basercms/security/advisories/GHSA-66c2-p8rh-qx87
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-44379
+    reference_type:
+    reference_id:

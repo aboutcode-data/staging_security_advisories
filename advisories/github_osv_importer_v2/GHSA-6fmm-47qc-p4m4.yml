@@ -1,0 +1,40 @@
+advisory_id: GHSA-6fmm-47qc-p4m4
+datasource_id: github_osv_importer_v2/GHSA-6fmm-47qc-p4m4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-6fmm-47qc-p4m4/GHSA-6fmm-47qc-p4m4.json
+aliases:
+  - CVE-2019-5438
+summary: |
+  Unauthorized File Access in harp
+  All versions of `harp` are vulnerable to Unauthorized File Access. If a symlink in the project's base directory points to a file outside of the directory, the file is served. This could allow an attacker to access sensitive files on the server.
+
+
+  ## Recommendation
+
+  No fix is currently available. Consider using an alternative module until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/harp
+    affected_versions: vers:npm/<0.40.3
+    fixed_versions: vers:npm/0.40.3
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-6fmm-47qc-p4m4/GHSA-6fmm-47qc-p4m4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://hackerone.com/reports/530289
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-5438
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/816
+    reference_type:
+    reference_id:

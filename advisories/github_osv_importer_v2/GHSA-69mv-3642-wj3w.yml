@@ -1,0 +1,45 @@
+advisory_id: GHSA-69mv-3642-wj3w
+datasource_id: github_osv_importer_v2/GHSA-69mv-3642-wj3w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-69mv-3642-wj3w/GHSA-69mv-3642-wj3w.json
+aliases:
+  - CVE-2018-1000060
+summary: "Low severity vulnerability that affects sensu\nThe sensu rubygem prior to version\
+  \ 1.2.0 contains a CWE-522 (Insufficiently Protected Credentials) flaw that can result in\
+  \ sensitive configuration data (e.g. passwords) being logged in clear-text. \n\nUsers are\
+  \ advised to upgrade to rubygem version 1.2.1 or later."
+impacted_packages:
+  - purl: pkg:gem/sensu
+    affected_versions: vers:gem/<1.2.1
+    fixed_versions: vers:gem/1.2.1
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:0616
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:1112
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:1606
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-69mv-3642-wj3w
+    reference_type:
+    reference_id:
+  - url: https://github.com/sensu/sensu
+    reference_type:
+    reference_id:
+  - url: https://github.com/sensu/sensu/issues/1804
+    reference_type:
+    reference_id:
+  - url: https://github.com/sensu/sensu/pull/1810
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000060
+    reference_type:
+    reference_id:

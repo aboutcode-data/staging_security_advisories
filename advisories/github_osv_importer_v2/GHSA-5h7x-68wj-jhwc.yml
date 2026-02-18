@@ -1,0 +1,41 @@
+advisory_id: GHSA-5h7x-68wj-jhwc
+datasource_id: github_osv_importer_v2/GHSA-5h7x-68wj-jhwc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5h7x-68wj-jhwc/GHSA-5h7x-68wj-jhwc.json
+aliases:
+  - CVE-2021-30074
+summary: |
+  Docsify vulnerable to cross-site scripting due to mishandled encoding
+  docsify versions 4.12.1 and earlier are vulnerable to cross-site scripting (XSS) because the search component does not appropriately encode Code Blocks and mishandles the `"` character.
+impacted_packages:
+  - purl: pkg:npm/docsify
+    affected_versions: vers:npm/<=4.12.1
+    fixed_versions: vers:npm/4.12.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5h7x-68wj-jhwc/GHSA-5h7x-68wj-jhwc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/docsifyjs/docsify
+    reference_type:
+    reference_id:
+  - url: https://github.com/docsifyjs/docsify/commit/c24f7f6f0b87a87f6dd3755f69eb0969ebb029c9
+    reference_type:
+    reference_id:
+  - url: https://github.com/docsifyjs/docsify/issues/1549
+    reference_type:
+    reference_id:
+  - url: https://github.com/docsifyjs/docsify/pull/1551
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-30074
+    reference_type:
+    reference_id:

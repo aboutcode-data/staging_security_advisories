@@ -1,0 +1,38 @@
+advisory_id: GHSA-62mf-vhhw-xmf8
+datasource_id: github_osv_importer_v2/GHSA-62mf-vhhw-xmf8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-62mf-vhhw-xmf8/GHSA-62mf-vhhw-xmf8.json
+aliases:
+  - CVE-2025-48376
+summary: |
+  DNN site Import could use an external source with a crafted request
+  A malicious SuperUser (Host) could craft a request to use an external url for a site export to then be imported.
+impacted_packages:
+  - purl: pkg:nuget/DotNetNuke.SiteExportImport
+    affected_versions: vers:nuget/<9.13.9
+    fixed_versions: vers:nuget/9.13.9
+severities:
+  - score: '3.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-62mf-vhhw-xmf8/GHSA-62mf-vhhw-xmf8.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-841
+references:
+  - url: https://github.com/dnnsoftware/Dnn.Platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnnsoftware/Dnn.Platform/commit/13fb13ee76173c3467d7ee8d120b20ca7bd4fa63
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnnsoftware/Dnn.Platform/security/advisories/GHSA-62mf-vhhw-xmf8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48376
+    reference_type:
+    reference_id:

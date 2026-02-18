@@ -1,0 +1,38 @@
+advisory_id: GHSA-67q3-gwww-pm4g
+datasource_id: github_osv_importer_v2/GHSA-67q3-gwww-pm4g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-67q3-gwww-pm4g/GHSA-67q3-gwww-pm4g.json
+aliases:
+  - CVE-2017-7664
+summary: |
+  Apache OpenMeetings does not correctly validate uploaded XML documents
+  Uploaded XML documents were not correctly validated in Apache OpenMeetings 3.1.0. The issue is fixed in version 3.3.0.
+impacted_packages:
+  - purl: pkg:maven/org.apache.openmeetings/openmeetings-parent
+    affected_versions: vers:maven/>=3.1.0|<3.3.0
+    fixed_versions: vers:maven/3.3.0
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-67q3-gwww-pm4g/GHSA-67q3-gwww-pm4g.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: http://markmail.org/message/cwr552iapmhukb45
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/openmeetings
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-7664
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/99576
+    reference_type:
+    reference_id:

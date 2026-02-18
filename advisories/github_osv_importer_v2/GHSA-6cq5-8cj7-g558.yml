@@ -1,0 +1,59 @@
+advisory_id: GHSA-6cq5-8cj7-g558
+datasource_id: github_osv_importer_v2/GHSA-6cq5-8cj7-g558
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-6cq5-8cj7-g558/GHSA-6cq5-8cj7-g558.json
+aliases:
+  - CVE-2022-46170
+summary: |
+  CodeIgniter4 Potential Session Handlers Vulnerability
+  ### Impact
+  When an application uses (1) multiple session cookies (e.g., one for user pages and one for admin pages) and (2)  a session handler is set to `DatabaseHandler`, `MemcachedHandler`, or `RedisHandler`, then if an attacker gets one session cookie (e.g., one for user pages), they may be able to access pages that require another session cookie (e.g., for admin pages).
+
+  ### Patches
+  Upgrade to version 4.2.11 or later.
+
+  ### Workarounds
+  - Use only one session cookie.
+
+  ### References
+  - https://codeigniter4.github.io/userguide/libraries/sessions.html#session-drivers
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [codeigniter4/CodeIgniter4](https://github.com/codeigniter4/CodeIgniter4/issues)
+  * Email us at [SECURITY.md](https://github.com/codeigniter4/CodeIgniter4/blob/develop/SECURITY.md)
+impacted_packages:
+  - purl: pkg:composer/codeigniter4/framework
+    affected_versions: vers:composer/<4.2.11
+    fixed_versions: vers:composer/4.2.11
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-6cq5-8cj7-g558/GHSA-6cq5-8cj7-g558.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://codeigniter4.github.io/userguide/libraries/sessions.html#session-drivers
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/CodeIgniter4
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/CodeIgniter4/commit/f9fb6574fbeb5a4aa63f7ea87296523e10db9328
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/CodeIgniter4/security/advisories/GHSA-6cq5-8cj7-g558
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/codeigniter4/framework/CVE-2022-46170.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-46170
+    reference_type:
+    reference_id:

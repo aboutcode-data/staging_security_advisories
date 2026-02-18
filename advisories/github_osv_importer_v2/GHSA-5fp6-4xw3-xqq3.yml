@@ -1,0 +1,51 @@
+advisory_id: GHSA-5fp6-4xw3-xqq3
+datasource_id: github_osv_importer_v2/GHSA-5fp6-4xw3-xqq3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-5fp6-4xw3-xqq3/GHSA-5fp6-4xw3-xqq3.json
+aliases: []
+summary: |
+  @keystone-6/core's bundled cuid package known to be insecure
+  ### Summary
+  The `cuid` package used by `@keystone-6/*` and upstream dependencies is deprecated and [marked as insecure by the author](https://github.com/paralleldrive/cuid#status-deprecated-due-to-security-use-cuid2-instead).
+
+  As reported by the author
+  > Cuid and other k-sortable and non-cryptographic ids (Ulid, ObjectId, KSUID, all UUIDs) are all insecure. Use @paralleldrive/cuid2 instead.
+
+  ### What are doing about this?
+  - [We are waiting on Prisma](https://github.com/keystonejs/keystone/issues/8282) to add support for [`cuid2`](https://github.com/paralleldrive/cuid2)
+  - Alternatively, we might default to a random string ourselves
+
+  ### What can I do about this?
+  We have added a work-around for users who want to provide custom identifiers in https://github.com/keystonejs/keystone/pull/8645
+
+  ### What if I need a `cuid`?
+  The features marked as a security vulnerability by @paralleldrive are sometimes actually needed ([as written in the README of `cuid`](https://github.com/paralleldrive/cuid#motivation)) - the problem is the inherent risks that features like this can have.
+
+  You might actually want the features of a monotonically increasing (auto-increment, k-sortable), and timestamp-based id as part of your application, and keystone should support that - but you might not want them by _default_.
+  This is why this security advisory has been accepted by me (@dcousens), we currently use cuid identifiers by default, and that should change.
+
+  ### Impact
+  I have accepted this security advisory on the basis that we don't need this kind of identifier typically, and the need for them should be driven by an application's requirements, not a convenient default.
+impacted_packages:
+  - purl: pkg:npm/%40keystone-6/core
+    affected_versions: vers:npm/<=5.3.1
+    fixed_versions:
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/keystonejs/keystone
+    reference_type:
+    reference_id:
+  - url: https://github.com/keystonejs/keystone/issues/8282#issuecomment-1586019823
+    reference_type:
+    reference_id:
+  - url: https://github.com/keystonejs/keystone/security/advisories/GHSA-5fp6-4xw3-xqq3
+    reference_type:
+    reference_id:
+  - url: https://github.com/paralleldrive/cuid#status-deprecated-due-to-security-use-cuid2-instead
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-5wjw-qjhm-v43h
+datasource_id: github_osv_importer_v2/GHSA-5wjw-qjhm-v43h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-5wjw-qjhm-v43h/GHSA-5wjw-qjhm-v43h.json
+aliases:
+  - CVE-2024-53615
+summary: |
+  files.photo.gallery command injection
+  A command injection vulnerability in the video thumbnail rendering component of files.photo.gallery v0.3.0 through 0.11.0 allows remote attackers to execute arbitrary code via a crafted video file.
+impacted_packages:
+  - purl: pkg:npm/files.photo.gallery
+    affected_versions: vers:npm/>=0.3.0|<=0.11.0
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-5wjw-qjhm-v43h/GHSA-5wjw-qjhm-v43h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/beune/CVE-2024-53615
+    reference_type:
+    reference_id:
+  - url: https://github.com/mjau-mjau/files.photo.gallery
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-53615
+    reference_type:
+    reference_id:

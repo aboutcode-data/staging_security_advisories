@@ -1,0 +1,44 @@
+advisory_id: GHSA-6jmr-r7p6-f5wr
+datasource_id: github_osv_importer_v2/GHSA-6jmr-r7p6-f5wr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-6jmr-r7p6-f5wr/GHSA-6jmr-r7p6-f5wr.json
+aliases:
+  - CVE-2025-0520
+summary: |
+  ShowDoc unrestricted file upload vulnerability
+  An unrestricted file upload vulnerability in ShowDoc caused by improper validation of file extension allows execution of arbitrary PHP, leading to remote code execution. This issue affects ShowDoc: before 2.8.7.
+impacted_packages:
+  - purl: pkg:composer/showdoc/showdoc
+    affected_versions: vers:composer/<2.8.7
+    fixed_versions: vers:composer/2.8.7
+severities:
+  - score: '9.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-6jmr-r7p6-f5wr/GHSA-6jmr-r7p6-f5wr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/star7th/showdoc
+    reference_type:
+    reference_id:
+  - url: https://github.com/star7th/showdoc/pull/1059
+    reference_type:
+    reference_id:
+  - url: https://github.com/vulhub/vulhub/tree/master/showdoc/CNVD-2020-26585
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-0520
+    reference_type:
+    reference_id:
+  - url: https://www.cnvd.org.cn/flaw/show/CNVD-2020-26585
+    reference_type:
+    reference_id:
+  - url: https://www.vulncheck.com/advisories/showdoc-unauthenticated-file-upload-rce
+    reference_type:
+    reference_id:

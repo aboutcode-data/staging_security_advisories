@@ -1,0 +1,59 @@
+advisory_id: GHSA-5957-5crx-79jx
+datasource_id: github_osv_importer_v2/GHSA-5957-5crx-79jx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5957-5crx-79jx/GHSA-5957-5crx-79jx.json
+aliases:
+  - CVE-2015-3154
+summary: |
+  Zenario CMS vulnerable to CRLF injection
+  CRLF injection vulnerability in Zend\Mail (Zend_Mail) in Zend Framework before 1.12.12, 2.x before 2.3.8, and 2.4.x before 2.4.1 allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via CRLF sequences in the header of an email.
+impacted_packages:
+  - purl: pkg:composer/zendframework/zend-http
+    affected_versions: vers:composer/>=2.0.0-beta4|<2.3.8
+    fixed_versions: vers:composer/2.3.8
+  - purl: pkg:composer/zendframework/zend-http
+    affected_versions: vers:composer/>=2.4.0-rc1|<2.4.1
+    fixed_versions: vers:composer/2.4.1
+  - purl: pkg:composer/zendframework/zendframework
+    affected_versions: vers:composer/>=2.0.0-beta4|<2.3.8
+    fixed_versions: vers:composer/2.3.8
+  - purl: pkg:composer/zendframework/zendframework
+    affected_versions: vers:composer/>=2.4.0-rc1|<2.4.1
+    fixed_versions: vers:composer/2.4.1
+  - purl: pkg:composer/zendframework/zendframework1
+    affected_versions: vers:composer/<1.12.12
+    fixed_versions: vers:composer/1.12.12
+  - purl: pkg:composer/zendframework/zend-http
+    affected_versions: vers:composer/<1.12.12
+    fixed_versions: vers:composer/1.12.12
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5957-5crx-79jx/GHSA-5957-5crx-79jx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://framework.zend.com/security/advisory/ZF2015-04
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/zendframework/zendframework1/CVE-2015-3154.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/zendframework/zendframework/CVE-2015-3154.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/zendframework/zend-http/CVE-2015-3154.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/zendframework/zendframework
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-3154
+    reference_type:
+    reference_id:

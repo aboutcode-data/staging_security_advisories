@@ -1,0 +1,44 @@
+advisory_id: GHSA-67mm-m3wx-j7fr
+datasource_id: github_osv_importer_v2/GHSA-67mm-m3wx-j7fr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-67mm-m3wx-j7fr/GHSA-67mm-m3wx-j7fr.json
+aliases:
+  - CVE-2021-26541
+summary: |
+  Command injection in gitlog
+  The gitlog function in src/index.ts in gitlog before 4.0.4 has a command injection vulnerability.
+impacted_packages:
+  - purl: pkg:npm/gitlog
+    affected_versions: vers:npm/<4.0.4
+    fixed_versions: vers:npm/4.0.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-67mm-m3wx-j7fr/GHSA-67mm-m3wx-j7fr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://advisory.checkmarx.net/advisory/CX-2020-4301
+    reference_type:
+    reference_id:
+  - url: https://github.com/domharrington/node-gitlog
+    reference_type:
+    reference_id:
+  - url: https://github.com/domharrington/node-gitlog/pull/65
+    reference_type:
+    reference_id:
+  - url: https://github.com/domharrington/node-gitlog/pull/65/commits/bb22ffb2c907e0284f887ab625e12b88c31f4bf4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-26541
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/gitlog
+    reference_type:
+    reference_id:

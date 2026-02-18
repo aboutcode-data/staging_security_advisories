@@ -1,0 +1,64 @@
+advisory_id: GHSA-6f65-4fv2-wwch
+datasource_id: github_osv_importer_v2/GHSA-6f65-4fv2-wwch
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6f65-4fv2-wwch/GHSA-6f65-4fv2-wwch.json
+aliases:
+  - CVE-2026-25050
+summary: |
+  Vendure vulnerable to timing attack that enables user enumeration in NativeAuthenticationStrategy
+  ### Summary
+  The `NativeAuthenticationStrategy.authenticate()` method is vulnerable to a timing attack that allows attackers to enumerate valid usernames (email addresses).
+
+  ### Details
+  In `packages/core/src/config/auth/native-authentication-strategy.ts`, the authenticate method returns immediately if a user is not found:
+
+  ```typescript
+  const user = await this.userService.getUserByEmailAddress(ctx, data.username);
+  if (!user) {
+      return false; // Instant return (~1-5ms)
+  }
+  const passwordMatch = await this.verifyUserPassword(ctx, user.id, data.password);
+  // Password check takes ~200-400ms with bcrypt (12 rounds)
+  ```
+
+  The significant timing difference (~200-400ms for bcrypt vs ~1-5ms for DB miss) allows attackers to reliably distinguish between existing and non-existing accounts.
+
+  ### Impact
+  - Attackers can enumerate valid user accounts
+  - Enables targeted brute-force or phishing attacks
+  - Information disclosure (account existence)
+
+  ### Recommended Fix
+  Perform a dummy bcrypt check when user is not found to ensure consistent response times.
+impacted_packages:
+  - purl: pkg:npm/%40vendure/core
+    affected_versions: vers:npm/<3.5.3
+    fixed_versions: vers:npm/3.5.3
+severities:
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6f65-4fv2-wwch/GHSA-6f65-4fv2-wwch.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-202
+references:
+  - url: https://github.com/vendurehq/vendure
+    reference_type:
+    reference_id:
+  - url: https://github.com/vendurehq/vendure/commit/7f0c5556ecddb44a5d5208677a45fdd5923b0cc9
+    reference_type:
+    reference_id:
+  - url: https://github.com/vendurehq/vendure/releases/tag/v3.5.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/vendurehq/vendure/security/advisories/GHSA-6f65-4fv2-wwch
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25050
+    reference_type:
+    reference_id:

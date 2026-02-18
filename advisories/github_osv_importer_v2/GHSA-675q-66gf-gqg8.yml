@@ -1,0 +1,45 @@
+advisory_id: GHSA-675q-66gf-gqg8
+datasource_id: github_osv_importer_v2/GHSA-675q-66gf-gqg8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-675q-66gf-gqg8/GHSA-675q-66gf-gqg8.json
+aliases:
+  - CVE-2025-66028
+summary: "OneUptime is Vulnerable to Privilege Escalation via Login Response Manipulation\n\
+  ### Summary\n\nDuring the login process, the server response included a parameter called isMasterAdmin.\
+  \ By intercepting and modifying this parameter value from false to true, a user is able to\
+  \ gain access to the admin dashboard interface.  However, despite accessing the admin panel,\
+  \ the user does not have sufficient permissions to view or interact with actual data. \n\n\
+  \n### PoC\nIntercept the login response and change \"isMasterAdmin\": false → \"isMasterAdmin\"\
+  : true \n<img width=\"1405\" height=\"567\" alt=\"image\" src=\"https://github.com/user-attachments/assets/7036398b-bb41-46c1-b66a-e49ec2bc3abb\"\
+  \ />\n<img width=\"1533\" height=\"476\" alt=\"2\" src=\"https://github.com/user-attachments/assets/4efcaef5-a939-4729-be43-3af62a7d02f8\"\
+  \ />\n\n\n### Impact\nThe admin dashboard is viewable."
+impacted_packages:
+  - purl: pkg:npm/%40oneuptime/common
+    affected_versions: vers:npm/<8.0.5567
+    fixed_versions: vers:npm/8.0.5567
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-675q-66gf-gqg8/GHSA-675q-66gf-gqg8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-284
+references:
+  - url: https://github.com/OneUptime/oneuptime
+    reference_type:
+    reference_id:
+  - url: https://github.com/OneUptime/oneuptime/commit/3e72b2a9a4f50f98cf1f6cf13fa3e405715bb370
+    reference_type:
+    reference_id:
+  - url: https://github.com/OneUptime/oneuptime/security/advisories/GHSA-675q-66gf-gqg8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-66028
+    reference_type:
+    reference_id:

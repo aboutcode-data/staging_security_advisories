@@ -1,0 +1,47 @@
+advisory_id: GHSA-589f-c66p-hxr4
+datasource_id: github_osv_importer_v2/GHSA-589f-c66p-hxr4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-589f-c66p-hxr4/GHSA-589f-c66p-hxr4.json
+aliases:
+  - CVE-2022-21802
+summary: |
+  grapesjs before 0.19.5 vulnerable to Cross-site Scripting
+  The package grapesjs before 0.19.5 is vulnerable to Cross-site Scripting (XSS) due to an improper sanitization of the class name in Selector Manager.
+impacted_packages:
+  - purl: pkg:npm/grapesjs
+    affected_versions: vers:npm/<0.19.5
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-589f-c66p-hxr4/GHSA-589f-c66p-hxr4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/artf/grapesjs
+    reference_type:
+    reference_id:
+  - url: https://github.com/artf/grapesjs/commit/13e85d152d486b968265c4b8017e8901e7d89ff3
+    reference_type:
+    reference_id:
+  - url: https://github.com/artf/grapesjs/issues/4411%23issuecomment-1167202709
+    reference_type:
+    reference_id:
+  - url: https://github.com/artf/grapesjs/releases/tag/v0.19.5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21802
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2936781
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-GRAPESJS-2935960
+    reference_type:
+    reference_id:

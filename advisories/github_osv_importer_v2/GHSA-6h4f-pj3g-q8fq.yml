@@ -1,0 +1,74 @@
+advisory_id: GHSA-6h4f-pj3g-q8fq
+datasource_id: github_osv_importer_v2/GHSA-6h4f-pj3g-q8fq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-6h4f-pj3g-q8fq/GHSA-6h4f-pj3g-q8fq.json
+aliases:
+  - CVE-2024-3884
+summary: |
+  Undertow OutOfMemory when parsing form data encoding with application/x-www-form-urlencoded
+  A flaw was found in Undertow that can cause remote denial of service attacks. When the server uses the FormEncodedDataDefinition.doParse(StreamSourceChannel) method to parse large form data encoding with application/x-www-form-urlencoded, the method will cause an OutOfMemory issue. This flaw allows unauthorized users to cause a remote denial of service (DoS) attack.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<2.3.21.Final
+    fixed_versions: vers:maven/2.3.21.Final
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/2.4.0.Alpha1
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-6h4f-pj3g-q8fq/GHSA-6h4f-pj3g-q8fq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:22773
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:22775
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:22777
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:3990
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:3992
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2026:0383
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2026:0384
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2026:0386
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-3884
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2275287
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/pull/1856
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/pull/1860
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/releases/tag/2.3.21.Final
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-3884
+    reference_type:
+    reference_id:

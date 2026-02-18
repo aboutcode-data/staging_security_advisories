@@ -1,0 +1,57 @@
+advisory_id: GHSA-67g8-c724-8mp3
+datasource_id: github_osv_importer_v2/GHSA-67g8-c724-8mp3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-67g8-c724-8mp3/GHSA-67g8-c724-8mp3.json
+aliases:
+  - CVE-2023-28104
+summary: |
+  DDOS attack on graphql endpoints
+  An attacker could use a specially crafted graphql query to execute a Distributed Denial of Service attack (DDOS attack) against a website. This mostly affects websites with publicly exposed and particularly large/complex graphql schemas.
+
+  If your Silverstripe CMS project does not expose a public facing graphql schema, a user account is required to trigger the DDOS attack. If your site is hosted behind a content delivery network (CDN), such as Imperva or CloudFlare, this will likely further mitigate the risk.
+
+  Upgrade to `silverstripe/graphql` 4.2.3 or 4.1.2 or above to remedy the vulnerability.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/graphql
+    affected_versions: vers:composer/>=4.1.1|<4.1.2
+    fixed_versions: vers:composer/4.1.2
+  - purl: pkg:composer/silverstripe/graphql
+    affected_versions: vers:composer/>=4.2.2|<4.2.3
+    fixed_versions: vers:composer/4.2.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-67g8-c724-8mp3/GHSA-67g8-c724-8mp3.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/graphql/CVE-2023-28104.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-graphql
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-graphql/pull/526
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-graphql/releases/tag/4.1.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-graphql/releases/tag/4.2.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-graphql/security/advisories/GHSA-67g8-c724-8mp3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-28104
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/CVE-2023-28104
+    reference_type:
+    reference_id:

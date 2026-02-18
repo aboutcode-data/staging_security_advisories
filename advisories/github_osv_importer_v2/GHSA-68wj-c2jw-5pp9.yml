@@ -1,0 +1,52 @@
+advisory_id: GHSA-68wj-c2jw-5pp9
+datasource_id: github_osv_importer_v2/GHSA-68wj-c2jw-5pp9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-68wj-c2jw-5pp9/GHSA-68wj-c2jw-5pp9.json
+aliases:
+  - CVE-2023-24769
+summary: |
+  Stored cross site scripting in changedetection.io
+  Changedetection.io before 0.40.2 was discovered to contain a stored cross-site scripting (XSS) vulnerability in the main page. This vulnerability allows attackers to execute arbitrary web scripts or HTML via a crafted payload injected into the URL parameter under the "Add a new change detection watch" function.
+impacted_packages:
+  - purl: pkg:pypi/changedetection.io
+    affected_versions: vers:pypi/<0.40.2
+    fixed_versions: vers:pypi/0.40.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-68wj-c2jw-5pp9/GHSA-68wj-c2jw-5pp9.json
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-68wj-c2jw-5pp9/GHSA-68wj-c2jw-5pp9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/dgtlmoon/changedetection.io
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/issues/1358
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/pull/1359
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/changedetection-io/PYSEC-2023-10.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-24769
+    reference_type:
+    reference_id:
+  - url: https://www.edoardoottavianelli.it/CVE-2023-24769
+    reference_type:
+    reference_id:
+  - url: https://www.youtube.com/watch?v=TRTpRlkU3Hc
+    reference_type:
+    reference_id:

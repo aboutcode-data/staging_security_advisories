@@ -1,0 +1,55 @@
+advisory_id: GHSA-624f-cqvr-3qw4
+datasource_id: github_osv_importer_v2/GHSA-624f-cqvr-3qw4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-624f-cqvr-3qw4/GHSA-624f-cqvr-3qw4.json
+aliases:
+  - CVE-2021-32805
+summary: "Flask-AppBuilder Open Redirect vulnerability\n### Impact\nIf using Flask-AppBuilder\
+  \ OAuth, an attacker can share a carefully crafted URL with a trusted domain for an application\
+  \ built with Flask-AppBuilder, this URL can redirect a user to a malicious site. This is an\
+  \ open redirect vulnerability \n\n### Patches\nInstall Flask-AppBuilder 3.2.2 or above\n\n\
+  ### Workarounds\nFilter HTTP traffic containing `?next={next-site}` where the `next-site`\
+  \ domain is different from the application you are protecting"
+impacted_packages:
+  - purl: pkg:pypi/flask-appbuilder
+    affected_versions: vers:pypi/<3.3.2
+    fixed_versions: vers:pypi/3.3.2
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-624f-cqvr-3qw4/GHSA-624f-cqvr-3qw4.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-624f-cqvr-3qw4/GHSA-624f-cqvr-3qw4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/commit/6af28521589599b1dbafd6313256229ee9a4fa74
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/releases/tag/v3.3.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/security/advisories/GHSA-624f-cqvr-3qw4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/flask-appbuilder/PYSEC-2021-359.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32805
+    reference_type:
+    reference_id:
+  - url: https://pypi.org/project/Flask-AppBuilder
+    reference_type:
+    reference_id:

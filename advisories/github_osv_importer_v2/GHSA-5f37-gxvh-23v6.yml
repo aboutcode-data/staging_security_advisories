@@ -1,0 +1,111 @@
+advisory_id: GHSA-5f37-gxvh-23v6
+datasource_id: github_osv_importer_v2/GHSA-5f37-gxvh-23v6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/03/GHSA-5f37-gxvh-23v6/GHSA-5f37-gxvh-23v6.json
+aliases:
+  - CVE-2016-10033
+summary: |
+  Remote code execution in PHPMailer
+  ### Impact
+  The `mailSend` function in the default `isMail` transport in PHPMailer before 5.2.18 might allow remote attackers to pass extra parameters to the mail command and consequently execute arbitrary code via a \&quot; (backslash double quote) in a crafted `Sender` property.
+
+  ### Patches
+  Fixed in 5.2.18
+
+  ### Workarounds
+  Filter and validate user input before passing it to internal functions.
+
+  ### References
+  https://nvd.nist.gov/vuln/detail/CVE-2016-10033
+  Related to a follow-on issue in https://nvd.nist.gov/vuln/detail/CVE-2016-10045
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open a private issue in [the PHPMailer project](https://github.com/PHPMailer/PHPMailer)
+impacted_packages:
+  - purl: pkg:composer/phpmailer/phpmailer
+    affected_versions: vers:composer/>=5.0.0|<5.2.18
+    fixed_versions: vers:composer/5.2.18
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/03/GHSA-5f37-gxvh-23v6/GHSA-5f37-gxvh-23v6.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+  - CWE-88
+references:
+  - url: http://packetstormsecurity.com/files/140291/PHPMailer-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/140350/PHPMailer-Sendmail-Argument-Injection.html
+    reference_type:
+    reference_id:
+  - url: https://developer.joomla.org/security-centre/668-20161205-phpmailer-security-advisory.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2016/Dec/78
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/phpmailer/phpmailer/CVE-2016-10033.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPMailer/PHPMailer
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPMailer/PHPMailer/releases/tag/v5.2.18
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-5f37-gxvh-23v6
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPMailer/PHPMailer/wiki/About-the-CVE-2016-10033-and-CVE-2016-10045-vulnerabilities
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10033
+    reference_type:
+    reference_id:
+  - url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2016-10033
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/psa-2016-004
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/40968
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/40969
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/40970
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/40974
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/40986
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/41962
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/41996
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/42024
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/42221
+    reference_type:
+    reference_id:
+  - url: http://www.rapid7.com/db/modules/exploit/multi/http/phpmailer_arg_injection
+    reference_type:
+    reference_id:
+  - url: https://legalhackers.com/advisories/PHPMailer-Exploit-Remote-Code-Exec-CVE-2016-10033-Vuln.html
+    reference_type: exploit
+    reference_id: CVE-2016-10033

@@ -1,0 +1,82 @@
+advisory_id: GHSA-595p-g7xc-c333
+datasource_id: github_osv_importer_v2/GHSA-595p-g7xc-c333
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-595p-g7xc-c333/GHSA-595p-g7xc-c333.json
+aliases: []
+summary: |
+  Algolia Search & Discovery for Magento 2 Has Untrusted Data Handling
+  ### Impact
+
+  Versions of the Algolia Search & Discovery extension for Magento 2 prior to **3.17.2** and **3.16.2** contain a vulnerability where data read from the database was treated as a trusted source during job execution.
+
+  If an attacker is able to modify records used by the extension’s indexing queue, this could result in **arbitrary PHP code execution** when the affected job is processed.
+
+  Exploitation requires the ability to write malicious data to the Magento database and for the indexing queue to be enabled.
+
+  ---
+
+  ### Patches
+
+  This vulnerability has been fixed in the following versions:
+
+  - **3.17.2**
+  - **3.16.2**
+
+  Merchants should upgrade to a supported patched version immediately.
+
+  Versions outside the supported maintenance window do **not** receive security updates and remain vulnerable.
+
+  ---
+
+  ### Workarounds
+
+  Upgrading to a patched version is the only recommended remediation.
+
+  If an immediate upgrade is not possible, the following temporary risk mitigations may reduce exposure:
+
+  - Disable the Algolia indexing queue to prevent queued jobs from being executed.
+  - Restrict job execution logic to an explicit allowlist of permitted operations.
+  - Review the contents of the `algoliasearch_queue` table for unexpected or unrecognized entries.
+  - If queue archiving is enabled, review historical records in `algoliasearch_queue_archive`.
+
+  These mitigations are provided as guidance only and do not replace upgrading to a patched version.
+
+  ---
+
+  ### References
+
+  - Algolia Search & Discovery for Magento 2 releases:
+    - [3.16.2](https://github.com/algolia/algoliasearch-magento-2/releases/tag/3.16.2)
+    - [3.17.2](https://github.com/algolia/algoliasearch-magento-2/releases/tag/3.17.2)
+impacted_packages:
+  - purl: pkg:composer/algolia/algoliasearch-magento-2
+    affected_versions: vers:composer/<=3.17.1
+    fixed_versions: vers:composer/3.17.2
+  - purl: pkg:composer/algolia/algoliasearch-magento-2
+    affected_versions: vers:composer/<=3.16.1
+    fixed_versions: vers:composer/3.16.2
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-595p-g7xc-c333/GHSA-595p-g7xc-c333.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/algolia/algoliasearch-magento-2
+    reference_type:
+    reference_id:
+  - url: https://github.com/algolia/algoliasearch-magento-2/releases/tag/3.16.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/algolia/algoliasearch-magento-2/releases/tag/3.17.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/algolia/algoliasearch-magento-2/security/advisories/GHSA-595p-g7xc-c333
+    reference_type:
+    reference_id:

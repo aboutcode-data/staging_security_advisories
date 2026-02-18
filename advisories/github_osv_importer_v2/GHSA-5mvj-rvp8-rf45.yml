@@ -1,0 +1,93 @@
+advisory_id: GHSA-5mvj-rvp8-rf45
+datasource_id: github_osv_importer_v2/GHSA-5mvj-rvp8-rf45
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-5mvj-rvp8-rf45/GHSA-5mvj-rvp8-rf45.json
+aliases:
+  - CVE-2023-38489
+summary: |
+  Insufficient Session Expiration after a password change
+  ### TL;DR
+
+  This vulnerability affects all Kirby sites with user accounts (unless Kirby's API and Panel are disabled in the config).
+
+  It can only be abused if a Kirby user is logged in on a device or browser that is shared with potentially untrusted users or if an attacker already maliciously used a previous password to log in to a Kirby site as the affected user.
+
+  ----
+
+  ### Introduction
+
+  Insufficient Session Expiration is when a web site permits an attacker to reuse old session credentials or session IDs for authorization.
+
+  In the variation described in this advisory, it allows attackers to stay logged in to a Kirby site on another device or browser even if the logged in user has since changed their password.
+
+  ### Impact
+
+  Kirby did not invalidate old user sessions after the user password was changed by the user or by a site admin.
+
+  If a user changed their password to lock out an attacker who was already in possession of the previous password or of a login session on another device or browser, the attacker would not be reliably prevented from accessing the Kirby site as the affected user.
+
+  ### Patches
+
+  The problem has been patched in [Kirby 3.5.8.3](https://github.com/getkirby/kirby/releases/tag/3.5.8.3), [Kirby 3.6.6.3](https://github.com/getkirby/kirby/releases/tag/3.6.6.3), [Kirby 3.7.5.2](https://github.com/getkirby/kirby/releases/tag/3.7.5.2), [Kirby 3.8.4.1](https://github.com/getkirby/kirby/releases/tag/3.8.4.1) and [Kirby 3.9.6](https://github.com/getkirby/kirby/releases/tag/3.9.6). Please update to one of these or a [later version](https://github.com/getkirby/kirby/releases) to fix the vulnerability.
+
+  In all of the mentioned releases, we have updated the authentication implementation to keep track of the last time the password was changed. If a new password was set since the login, the session is invalidated. To enforce this fix even if the vulnerability was previously abused, all users are logged out from the Kirby site after updating to one of the patched releases.
+
+  ### Credits
+
+  Thanks to Shankar Acharya (@5hank4r) for responsibly reporting the identified issue.
+impacted_packages:
+  - purl: pkg:composer/getkirby/cms
+    affected_versions: vers:composer/<3.5.8+3
+    fixed_versions: vers:composer/3.5.8+3
+  - purl: pkg:composer/getkirby/cms
+    affected_versions: vers:composer/>=3.6.0|<3.6.6+3
+    fixed_versions: vers:composer/3.6.6+3
+  - purl: pkg:composer/getkirby/cms
+    affected_versions: vers:composer/>=3.7.0|<3.7.5+2
+    fixed_versions: vers:composer/3.7.5+2
+  - purl: pkg:composer/getkirby/cms
+    affected_versions: vers:composer/>=3.8.0|<3.8.4+1
+    fixed_versions: vers:composer/3.8.4+1
+  - purl: pkg:composer/getkirby/cms
+    affected_versions: vers:composer/>=3.9.0|<3.9.6
+    fixed_versions: vers:composer/3.9.6
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-5mvj-rvp8-rf45/GHSA-5mvj-rvp8-rf45.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-613
+references:
+  - url: https://github.com/getkirby/kirby
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/commit/7a0a2014c69fdb925ea02f30e7793bb50115e931
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/releases/tag/3.5.8.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/releases/tag/3.6.6.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/releases/tag/3.7.5.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/releases/tag/3.8.4.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/releases/tag/3.9.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/getkirby/kirby/security/advisories/GHSA-5mvj-rvp8-rf45
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-38489
+    reference_type:
+    reference_id:

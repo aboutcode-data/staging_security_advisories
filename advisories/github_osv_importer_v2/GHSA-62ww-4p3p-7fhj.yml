@@ -1,0 +1,38 @@
+advisory_id: GHSA-62ww-4p3p-7fhj
+datasource_id: github_osv_importer_v2/GHSA-62ww-4p3p-7fhj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-62ww-4p3p-7fhj/GHSA-62ww-4p3p-7fhj.json
+aliases:
+  - CVE-2021-22135
+summary: |
+  API information disclosure flaw in Elasticsearch
+  Elasticsearch versions before 7.11.2 and 6.8.15 contain a document disclosure flaw was found in the Elasticsearch suggester and profile API when Document and Field Level Security are enabled. The suggester and profile API are normally disabled for an index when document level security is enabled on the index. Certain queries are able to enable the profiler and suggester which could lead to disclosing the existence of documents and fields the attacker should not be able to view.
+impacted_packages:
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/>=7.0.0|<7.11.2
+    fixed_versions: vers:maven/7.11.2
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/<6.8.15
+    fixed_versions: vers:maven/6.8.15
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-62ww-4p3p-7fhj/GHSA-62ww-4p3p-7fhj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-22135
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210625-0003
+    reference_type:
+    reference_id:

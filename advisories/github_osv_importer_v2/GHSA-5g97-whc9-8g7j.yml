@@ -1,0 +1,47 @@
+advisory_id: GHSA-5g97-whc9-8g7j
+datasource_id: github_osv_importer_v2/GHSA-5g97-whc9-8g7j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-5g97-whc9-8g7j/GHSA-5g97-whc9-8g7j.json
+aliases:
+  - CVE-2023-26111
+summary: |
+  node-static and @nubosoftware/node-static vulnerable to Directory Traversal
+  node-static and its fork, @nubosoftware/node-static, are vulnerable to Directory Traversal due to improper file path sanitization in the startsWith() method in the servePath function.
+impacted_packages:
+  - purl: pkg:npm/node-static
+    affected_versions: vers:npm/<=0.7.11
+    fixed_versions:
+  - purl: pkg:npm/%40nubosoftware/node-static
+    affected_versions: vers:npm/<=0.7.11
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-5g97-whc9-8g7j/GHSA-5g97-whc9-8g7j.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://gist.github.com/lirantal/c80b28e7bee148dc287339cb483e42bc
+    reference_type:
+    reference_id:
+  - url: https://github.com/cloudhead/node-static
+    reference_type:
+    reference_id:
+  - url: https://github.com/cloudhead/node-static/blob/master/lib/node-static.js#23L160-L163
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-26111
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-NODESTATIC-3149928
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-NUBOSOFTWARENODESTATIC-3149927
+    reference_type:
+    reference_id:

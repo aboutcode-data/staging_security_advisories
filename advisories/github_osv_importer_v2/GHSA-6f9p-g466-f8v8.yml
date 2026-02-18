@@ -1,0 +1,41 @@
+advisory_id: GHSA-6f9p-g466-f8v8
+datasource_id: github_osv_importer_v2/GHSA-6f9p-g466-f8v8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-6f9p-g466-f8v8/GHSA-6f9p-g466-f8v8.json
+aliases:
+  - CVE-2023-26143
+summary: |
+  blamer vulnerable to Arbitrary Argument Injection via the blameByFile() API
+  Versions of the blamer package before 1.0.4 are vulnerable to Arbitrary Argument Injection via the blameByFile() API. The library does not sanitize for user input or validate the given file path conforms to a specific schema, nor does it properly pass command-line flags to the git binary using the double-dash POSIX characters (--) to communicate the end of options.
+impacted_packages:
+  - purl: pkg:npm/blamer
+    affected_versions: vers:npm/<1.0.4
+    fixed_versions: vers:npm/1.0.4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-6f9p-g466-f8v8/GHSA-6f9p-g466-f8v8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-88
+references:
+  - url: https://gist.github.com/lirantal/14c3686370a86461f555d3f0703e02f9
+    reference_type:
+    reference_id:
+  - url: https://github.com/kucherenko/blamer
+    reference_type:
+    reference_id:
+  - url: https://github.com/kucherenko/blamer/commit/0965877f115753371a2570f10a63c455d2b2cde3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-26143
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-BLAMER-5731318
+    reference_type:
+    reference_id:

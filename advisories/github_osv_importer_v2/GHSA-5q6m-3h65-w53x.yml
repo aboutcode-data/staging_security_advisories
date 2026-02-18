@@ -1,0 +1,44 @@
+advisory_id: GHSA-5q6m-3h65-w53x
+datasource_id: github_osv_importer_v2/GHSA-5q6m-3h65-w53x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-5q6m-3h65-w53x/GHSA-5q6m-3h65-w53x.json
+aliases:
+  - CVE-2021-24033
+summary: |
+  react-dev-utils OS Command Injection in function `getProcessForPort`
+  react-dev-utils prior to v11.0.4 exposes a function, `getProcessForPort`, where an input argument is concatenated into a command string to be executed. This function is typically used from react-scripts (in Create React App projects), where the usage is safe. Only when this function is manually invoked with user-provided values (ie: by custom code) is there the potential for command injection. If you're consuming it from react-scripts then this issue does not affect you.
+impacted_packages:
+  - purl: pkg:npm/react-dev-utils
+    affected_versions: vers:npm/>=0.4.0|<11.0.4
+    fixed_versions: vers:npm/11.0.4
+severities:
+  - score: '5.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-5q6m-3h65-w53x/GHSA-5q6m-3h65-w53x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/facebook/create-react-app
+    reference_type:
+    reference_id:
+  - url: https://github.com/facebook/create-react-app/commit/f5e415f3a5b66f07dcc60aba1b445fa7cda97268
+    reference_type:
+    reference_id:
+  - url: https://github.com/facebook/create-react-app/pull/10644
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-24033
+    reference_type:
+    reference_id:
+  - url: https://www.facebook.com/security/advisories/cve-2021-24033
+    reference_type:
+    reference_id:
+  - url: https://www.huntr.dev/bounties/1-npm-react-dev-utils
+    reference_type:
+    reference_id:

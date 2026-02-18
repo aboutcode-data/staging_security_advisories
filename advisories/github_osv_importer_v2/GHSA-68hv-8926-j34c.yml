@@ -1,0 +1,44 @@
+advisory_id: GHSA-68hv-8926-j34c
+datasource_id: github_osv_importer_v2/GHSA-68hv-8926-j34c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-68hv-8926-j34c/GHSA-68hv-8926-j34c.json
+aliases:
+  - CVE-2015-10018
+summary: |
+  DBRisinajumi d2files SQL Injection vulnerability
+  A vulnerability has been found in DBRisinajumi d2files and classified as critical. Affected by this vulnerability is the function `actionUpload/actionDownloadFile` of the file `controllers/D2filesController.php`. The manipulation leads to sql injection. Upgrading to version 1.0.0 can address this issue. The name of the patch is b5767f2ec9d0f3cbfda7f13c84740e2179c90574. It is recommended to upgrade the affected component. The identifier VDB-217561 was assigned to this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/dbrisinajumi/d2files
+    affected_versions: vers:composer/<1.0.0
+    fixed_versions: vers:composer/1.0.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-68hv-8926-j34c/GHSA-68hv-8926-j34c.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/DBRisinajumi/d2files
+    reference_type:
+    reference_id:
+  - url: https://github.com/DBRisinajumi/d2files/commit/b5767f2ec9d0f3cbfda7f13c84740e2179c90574
+    reference_type:
+    reference_id:
+  - url: https://github.com/DBRisinajumi/d2files/releases/tag/1.0.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-10018
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.217561
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.217561
+    reference_type:
+    reference_id:

@@ -1,0 +1,55 @@
+advisory_id: GHSA-5834-xv5q-cgfw
+datasource_id: github_osv_importer_v2/GHSA-5834-xv5q-cgfw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-5834-xv5q-cgfw/GHSA-5834-xv5q-cgfw.json
+aliases:
+  - CVE-2022-31148
+summary: |
+  Shopware vulnerable to persistent cross site scripting (XSS) in customer module
+  ### Impact
+  Persistent XSS in customer module
+
+  ### Patches
+
+  We recommend updating to the current version 5.7.14. You can get the update to 5.7.14 regularly via the Auto-Updater or directly via the download overview.
+
+  For older versions you can use the Security Plugin:
+  https://store.shopware.com/en/swag575294366635f/shopware-security-plugin.html
+
+  ### References
+  https://docs.shopware.com/en/shopware-5-en/security-updates/security-update-07-2022
+impacted_packages:
+  - purl: pkg:composer/shopware/shopware
+    affected_versions: vers:composer/<=5.7.13
+    fixed_versions: vers:composer/5.7.14
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-5834-xv5q-cgfw/GHSA-5834-xv5q-cgfw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://docs.shopware.com/en/shopware-5-en/security-updates/security-update-07-2022
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/7875855005648fba7b39371a70816afae2e07daf
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-5834-xv5q-cgfw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31148
+    reference_type:
+    reference_id:
+  - url: https://www.shopware.com/en/changelog-sw5/#5-7-14
+    reference_type:
+    reference_id:

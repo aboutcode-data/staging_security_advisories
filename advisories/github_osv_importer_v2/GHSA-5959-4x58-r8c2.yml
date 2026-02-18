@@ -1,0 +1,72 @@
+advisory_id: GHSA-5959-4x58-r8c2
+datasource_id: github_osv_importer_v2/GHSA-5959-4x58-r8c2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-5959-4x58-r8c2/GHSA-5959-4x58-r8c2.json
+aliases:
+  - CVE-2022-36106
+summary: |
+  TYPO3 CMS missing check for expiration time of password reset token for backend users
+  > ### Meta
+  > * CVSS: `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N/E:F/RL:O/RC:C` (5.0)
+
+  ### Problem
+  It has been discovered that the expiration time of a password reset link for TYPO3 backend users has never been evaluated. As a result, a password reset link could be used to perform a password reset even if the default expiry time of two hours has been exceeded.
+
+  ### Solution
+  Update to TYPO3 version 10.4.32 or 11.5.16 that fix the problem described above.
+
+  ### Credits
+  Thanks to Ingo Fabbri who reported this issue and to TYPO3 security team member Torben Hansen who fixed the issue.
+
+  ### References
+  * [TYPO3-CORE-SA-2022-008](https://typo3.org/security/advisory/typo3-core-sa-2022-008)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.4.0|<10.4.32
+    fixed_versions: vers:composer/10.4.32
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=11.0.0|<11.5.16
+    fixed_versions: vers:composer/11.5.16
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.4.0|<10.4.32
+    fixed_versions: vers:composer/10.4.32
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=11.0.0|<11.5.16
+    fixed_versions: vers:composer/11.5.16
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-5959-4x58-r8c2/GHSA-5959-4x58-r8c2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2022-36106.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2022-36106.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/00b52a443b21baaaab35f8606dbb0ce427261bb5
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/56af2bd3a432156c30af9be71c9d6f7ef3a6159a
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-5959-4x58-r8c2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-36106
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2022-008
+    reference_type:
+    reference_id:

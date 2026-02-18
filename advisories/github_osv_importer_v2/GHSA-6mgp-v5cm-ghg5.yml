@@ -1,0 +1,35 @@
+advisory_id: GHSA-6mgp-v5cm-ghg5
+datasource_id: github_osv_importer_v2/GHSA-6mgp-v5cm-ghg5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-6mgp-v5cm-ghg5/GHSA-6mgp-v5cm-ghg5.json
+aliases: []
+summary: |
+  Drupal core Remote Code Execution
+  In Drupal core, when sending email some variables were not being sanitized for shell arguments in `DefaultMailSystem::mail()`, which could lead to remote code execution.
+impacted_packages:
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=7.0.0|<7.60.0
+    fixed_versions: vers:composer/7.60.0
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.0.0|<8.5.8
+    fixed_versions: vers:composer/8.5.8
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.6.0|<8.6.2
+    fixed_versions: vers:composer/8.6.2
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/drupal/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/core/2018-10-17-4.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2018-006
+    reference_type:
+    reference_id:

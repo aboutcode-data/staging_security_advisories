@@ -1,0 +1,47 @@
+advisory_id: GHSA-6c88-gvxw-f5hg
+datasource_id: github_osv_importer_v2/GHSA-6c88-gvxw-f5hg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6c88-gvxw-f5hg/GHSA-6c88-gvxw-f5hg.json
+aliases:
+  - CVE-2021-33325
+summary: |
+  Liferay Portal and Liferay DXP Stores User Passwords in Cleartext
+  The Portal Workflow module in Liferay Portal 7.3.2 and earlier, and Liferay DXP 7.0 before fix pack 93, 7.1 before fix pack 19, and 7.2 before fix pack 7, user's clear text passwords are stored in the database if workflow is enabled for user creation, which allows attackers with access to the database to obtain a user's password.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.3.0|<=7.3.2
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<7.0.10.fp93
+    fixed_versions: vers:maven/7.0.10.fp93
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.1.0|<7.1.10.fp19
+    fixed_versions: vers:maven/7.1.10.fp19
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.2.0|<7.2.10.fp7
+    fixed_versions: vers:maven/7.2.10.fp7
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6c88-gvxw-f5hg/GHSA-6c88-gvxw-f5hg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-312
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://issues.liferay.com/browse/LPE-17042
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-33325
+    reference_type:
+    reference_id:
+  - url: https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120748389
+    reference_type:
+    reference_id:

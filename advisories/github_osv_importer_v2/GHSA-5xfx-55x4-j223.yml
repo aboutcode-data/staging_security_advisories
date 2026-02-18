@@ -1,0 +1,35 @@
+advisory_id: GHSA-5xfx-55x4-j223
+datasource_id: github_osv_importer_v2/GHSA-5xfx-55x4-j223
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-5xfx-55x4-j223/GHSA-5xfx-55x4-j223.json
+aliases:
+  - CVE-2024-0669
+summary: A Cross-Frame Scripting vulnerability has been found on Plone CMS affecting version
+  below 6.0.5. An attacker could store a malicious URL to be opened by an administrator and
+  execute a malicios iframe element.
+impacted_packages:
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/<=6.0.5
+    fixed_versions: vers:pypi/6.0.7
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-5xfx-55x4-j223/GHSA-5xfx-55x4-j223.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1021
+references:
+  - url: https://github.com/plone/Plone
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-0669
+    reference_type:
+    reference_id:
+  - url: https://www.incibe.es/en/incibe-cert/notices/aviso/cross-frame-scripting-xfs-plone-cms
+    reference_type:
+    reference_id:

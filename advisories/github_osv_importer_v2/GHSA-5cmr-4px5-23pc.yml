@@ -1,0 +1,47 @@
+advisory_id: GHSA-5cmr-4px5-23pc
+datasource_id: github_osv_importer_v2/GHSA-5cmr-4px5-23pc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-5cmr-4px5-23pc/GHSA-5cmr-4px5-23pc.json
+aliases:
+  - CVE-2025-57809
+summary: |
+  XGrammar affected by Denial of Service by infinite recursion grammars
+  ### Summary
+  This issue: http://github.com/mlc-ai/xgrammar/issues/250 should have it's own security advisory. Since several tools accept and pass user supplied grammars to xgrammar, and it is so easy to trigger it seems like a High.
+impacted_packages:
+  - purl: pkg:pypi/xgrammar
+    affected_versions: vers:pypi/<0.1.21
+    fixed_versions: vers:pypi/0.1.21
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-5cmr-4px5-23pc/GHSA-5cmr-4px5-23pc.json
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-5cmr-4px5-23pc/GHSA-5cmr-4px5-23pc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-674
+references:
+  - url: https://github.com/mlc-ai/xgrammar
+    reference_type:
+    reference_id:
+  - url: https://github.com/mlc-ai/xgrammar/commit/b943feacb5a1caf4d39de8ec3bf7c7ce066dcee5
+    reference_type:
+    reference_id:
+  - url: https://github.com/mlc-ai/xgrammar/issues/250
+    reference_type:
+    reference_id:
+  - url: https://github.com/mlc-ai/xgrammar/security/advisories/GHSA-5cmr-4px5-23pc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-57809
+    reference_type:
+    reference_id:

@@ -1,0 +1,34 @@
+advisory_id: GHSA-5ff8-jcf9-fw62
+datasource_id: github_osv_importer_v2/GHSA-5ff8-jcf9-fw62
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-5ff8-jcf9-fw62/GHSA-5ff8-jcf9-fw62.json
+aliases: []
+summary: |
+  Cross-Site Scripting in markdown-it-katex
+  All versions of `markdown-it-katex` are vulnerable to Cross-Site Scripting (XSS). The package fails to properly escape error messages, which may allow attackers to execute arbitrary JavaScript in a victim's browser by triggering an error.
+
+
+  ## Recommendation
+
+  No fix is currently available. Consider using an alternative package until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/markdown-it-katex
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions:
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/waylonflinn/markdown-it-katex
+    reference_type:
+    reference_id:
+  - url: https://github.com/waylonflinn/markdown-it-katex/issues/26
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1466
+    reference_type:
+    reference_id:

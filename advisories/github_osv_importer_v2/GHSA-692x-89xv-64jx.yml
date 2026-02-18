@@ -1,0 +1,38 @@
+advisory_id: GHSA-692x-89xv-64jx
+datasource_id: github_osv_importer_v2/GHSA-692x-89xv-64jx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-692x-89xv-64jx/GHSA-692x-89xv-64jx.json
+aliases:
+  - CVE-2019-19013
+summary: |
+  Pagekit File Upload vulnerability
+  A CSRF vulnerability in Pagekit 1.0.17 allows an attacker to upload an arbitrary file by removing the CSRF token from a request.
+impacted_packages:
+  - purl: pkg:composer/pagekit/pagekit
+    affected_versions: vers:composer/<=1.0.17
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-692x-89xv-64jx/GHSA-692x-89xv-64jx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/pagekit/pagekit
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/gitlab-org/security-products/gemnasium-db/-/commit/fdf885ccf7c57c69f4d256bbb3ec76a927267a2b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19013
+    reference_type:
+    reference_id:
+  - url: https://packetstormsecurity.com/files/155426/Pagekit-CMS-1.0.17-Cross-Site-Request-Forgery.html
+    reference_type:
+    reference_id:

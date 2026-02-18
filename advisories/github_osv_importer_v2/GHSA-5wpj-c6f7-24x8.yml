@@ -1,0 +1,90 @@
+advisory_id: GHSA-5wpj-c6f7-24x8
+datasource_id: github_osv_importer_v2/GHSA-5wpj-c6f7-24x8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5wpj-c6f7-24x8/GHSA-5wpj-c6f7-24x8.json
+aliases:
+  - CVE-2022-29207
+summary: "Undefined behavior when users supply invalid resource handles\n### Impact\nMultiple\
+  \ TensorFlow operations misbehave in eager mode when the resource handle provided to them\
+  \ is invalid:\n\n```python\nimport tensorflow as tf\n\ntf.raw_ops.QueueIsClosedV2(handle=[])\n\
+  ```\n\n```python\nimport tensorflow as tf\n\ntf.summary.flush(writer=())\n```\n  \nIn graph\
+  \ mode, it would have been impossible to perform these API calls, but migration to TF 2.x\
+  \ eager mode opened up this vulnerability. If the resource handle is empty, then a reference\
+  \ is bound to a null pointer inside TensorFlow codebase (various codepaths). This is undefined\
+  \ behavior.\n\n### Patches\nWe have patched the issue in GitHub commit [a5b89cd68c02329d793356bda85d079e9e69b4e7](https://github.com/tensorflow/tensorflow/commit/a5b89cd68c02329d793356bda85d079e9e69b4e7)\
+  \ and GitHub commit [dbdd98c37bc25249e8f288bd30d01e118a7b4498](https://github.com/tensorflow/tensorflow/commit/dbdd98c37bc25249e8f288bd30d01e118a7b4498).\n\
+  \nThe fix will be included in TensorFlow 2.9.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.8.1, TensorFlow 2.7.2, and TensorFlow 2.6.4, as these are also affected and still in supported\
+  \ range.\n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions.\n\n### Attribution\nThis vulnerability has been reported by Hong Jin from Singapore\
+  \ Management University."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.6.4
+    fixed_versions: vers:pypi/2.6.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.7.0|<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.6.4
+    fixed_versions: vers:pypi/2.6.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.7.0|<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.6.4
+    fixed_versions: vers:pypi/2.6.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.7.0|<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5wpj-c6f7-24x8/GHSA-5wpj-c6f7-24x8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-475
+  - CWE-20
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/a5b89cd68c02329d793356bda85d079e9e69b4e7
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/dbdd98c37bc25249e8f288bd30d01e118a7b4498
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-5wpj-c6f7-24x8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29207
+    reference_type:
+    reference_id:

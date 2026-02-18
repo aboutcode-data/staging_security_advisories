@@ -1,0 +1,41 @@
+advisory_id: GHSA-5p26-hw7f-3cpr
+datasource_id: github_osv_importer_v2/GHSA-5p26-hw7f-3cpr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-5p26-hw7f-3cpr/GHSA-5p26-hw7f-3cpr.json
+aliases:
+  - CVE-2018-16481
+summary: |
+  Cross-Site Scripting in html-pages
+  All versions of `html-pages` are vulnerable to Cross-Site Scripting (XSS). The package fails to sanitize folder names, allowing attackers to execute arbitrary JavaScript in the victim's browser through folders with names containing malicious code.
+
+
+  ## Recommendation
+
+  No fix is currently available. Consider using an alternative package until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/html-pages
+    affected_versions: vers:npm/<=3.1.0
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-5p26-hw7f-3cpr/GHSA-5p26-hw7f-3cpr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-64
+references:
+  - url: https://hackerone.com/reports/330356
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-16481
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1001
+    reference_type:
+    reference_id:

@@ -1,0 +1,61 @@
+advisory_id: GHSA-5cf7-cxrf-mq73
+datasource_id: github_osv_importer_v2/GHSA-5cf7-cxrf-mq73
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-5cf7-cxrf-mq73/GHSA-5cf7-cxrf-mq73.json
+aliases:
+  - CVE-2024-41962
+summary: |
+  Bostr Improper Authorization vulnerability
+  Even with `authorized_keys` is filled with allowed pubkeys, If `noscraper` is enabled, It will allow anyone to use bouncer even it's pubkey is not in `authorized_keys`.
+
+  ### Impact
+  - Private bouncer
+
+  ### Patches
+  Available on version [3.0.10](https://github.com/Yonle/bostr/releases/tag/3.0.10)
+
+  ### Workarounds
+  Disable `noscraper` if you have `authorized_keys` being set in config
+
+  ### References
+  This [line of code](https://github.com/Yonle/bostr/blob/8665374a66e2afb9f92d0414b0d6f420a95d5d2d/auth.js#L21) is the cause.
+impacted_packages:
+  - purl: pkg:npm/bostr
+    affected_versions: vers:npm/<3.0.10
+    fixed_versions: vers:npm/3.0.10
+severities:
+  - score: '4.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-5cf7-cxrf-mq73/GHSA-5cf7-cxrf-mq73.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-5cf7-cxrf-mq73/GHSA-5cf7-cxrf-mq73.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://github.com/Yonle/bostr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Yonle/bostr/blob/8665374a66e2afb9f92d0414b0d6f420a95d5d2d/auth.js#L21
+    reference_type:
+    reference_id:
+  - url: https://github.com/Yonle/bostr/commit/49181f4ec9ae1472c6675cab56bbc01e723855af
+    reference_type:
+    reference_id:
+  - url: https://github.com/Yonle/bostr/releases/tag/3.0.10
+    reference_type:
+    reference_id:
+  - url: https://github.com/Yonle/bostr/security/advisories/GHSA-5cf7-cxrf-mq73
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-41962
+    reference_type:
+    reference_id:

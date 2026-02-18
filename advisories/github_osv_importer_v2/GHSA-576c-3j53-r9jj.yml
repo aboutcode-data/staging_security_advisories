@@ -1,0 +1,55 @@
+advisory_id: GHSA-576c-3j53-r9jj
+datasource_id: github_osv_importer_v2/GHSA-576c-3j53-r9jj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-576c-3j53-r9jj/GHSA-576c-3j53-r9jj.json
+aliases:
+  - CVE-2024-47167
+summary: "Gradio vulnerable to SSRF in the path parameter of /queue/join\n### Impact  \n**What\
+  \ kind of vulnerability is it? Who is impacted?**\n\nThis vulnerability relates to **Server-Side\
+  \ Request Forgery (SSRF)** in the `/queue/join` endpoint. Gradio’s `async_save_url_to_cache`\
+  \ function allows attackers to force the Gradio server to send HTTP requests to user-controlled\
+  \ URLs. This could enable attackers to target internal servers or services within a local\
+  \ network and possibly exfiltrate data or cause unwanted internal requests. Additionally,\
+  \ the content from these URLs is stored locally, making it easier for attackers to upload\
+  \ potentially malicious files to the server. This impacts users deploying Gradio servers that\
+  \ use components like the Video component which involve URL fetching.\n\n### Patches  \nYes,\
+  \ please upgrade to `gradio>=5` to address this issue.\n\n### Workarounds  \n**Is there a\
+  \ way for users to fix or remediate the vulnerability without upgrading?**\n\nAs a workaround,\
+  \ users can disable or heavily restrict URL-based inputs in their Gradio applications to trusted\
+  \ domains only. Additionally, implementing stricter URL validation (such as allowinglist-based\
+  \ validation) and ensuring that local or internal network addresses cannot be requested via\
+  \ the `/queue/join` endpoint can help mitigate the risk of SSRF attacks."
+impacted_packages:
+  - purl: pkg:pypi/gradio
+    affected_versions: vers:pypi/<5.0.0
+    fixed_versions: vers:pypi/5.0.0
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-576c-3j53-r9jj/GHSA-576c-3j53-r9jj.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-576c-3j53-r9jj/GHSA-576c-3j53-r9jj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/gradio-app/gradio
+    reference_type:
+    reference_id:
+  - url: https://github.com/gradio-app/gradio/security/advisories/GHSA-576c-3j53-r9jj
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/gradio/PYSEC-2024-215.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47167
+    reference_type:
+    reference_id:

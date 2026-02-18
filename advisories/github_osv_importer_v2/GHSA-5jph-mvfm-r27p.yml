@@ -1,0 +1,54 @@
+advisory_id: GHSA-5jph-mvfm-r27p
+datasource_id: github_osv_importer_v2/GHSA-5jph-mvfm-r27p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5jph-mvfm-r27p/GHSA-5jph-mvfm-r27p.json
+aliases:
+  - CVE-2015-0218
+summary: |
+  Moodle cross-site request forgery (CSRF) vulnerability
+  Cross-site request forgery (CSRF) vulnerability in auth/shibboleth/logout.php in Moodle through 2.5.9, 2.6.x before 2.6.7, 2.7.x before 2.7.4, and 2.8.x before 2.8.2 allows remote attackers to hijack the authentication of arbitrary users for requests that trigger a logout.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<2.6.7
+    fixed_versions: vers:composer/2.6.7
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=2.7.0|<2.7.4
+    fixed_versions: vers:composer/2.7.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=2.8.0|<2.8.2
+    fixed_versions: vers:composer/2.8.2
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-47964
+    reference_type:
+    reference_id:
+  - url: http://openwall.com/lists/oss-security/2015/01/19/1
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/371d58d70d4ef866f35e33ea6898007112bfe654
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/693918c30e6b7c95dddd9c5973f98d98342a59d9
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/b82b4c562b705ea8f11893d9126889bb696b9612
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/fb60e23a67931eeba8fc9aacf3cc838e462f21f2
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=278618
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-0218
+    reference_type:
+    reference_id:

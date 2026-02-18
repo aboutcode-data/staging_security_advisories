@@ -1,0 +1,39 @@
+advisory_id: GHSA-5q5w-mqp6-g2gh
+datasource_id: github_osv_importer_v2/GHSA-5q5w-mqp6-g2gh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-5q5w-mqp6-g2gh/GHSA-5q5w-mqp6-g2gh.json
+aliases:
+  - CVE-2022-0472
+summary: |
+  Unrestricted Upload of File with Dangerous Type in jsdecena/laracom
+  jsdecena/laracom prior to version 2.0.9 is vulnerable to Unrestricted Upload of File with Dangerous Type.
+impacted_packages:
+  - purl: pkg:composer/jsdecena/laracom
+    affected_versions: vers:composer/<2.0.9
+    fixed_versions: vers:composer/2.0.9
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-5q5w-mqp6-g2gh/GHSA-5q5w-mqp6-g2gh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+  - CWE-79
+references:
+  - url: https://github.com/jsdecena/laracom
+    reference_type:
+    reference_id:
+  - url: https://github.com/jsdecena/laracom/commit/256026193ce994dc4c1365e02f414d8a0cd77ae8
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/cb5b8563-15cf-408c-9f79-4871ea0a8713
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0472
+    reference_type:
+    reference_id:

@@ -1,0 +1,46 @@
+advisory_id: GHSA-6jhg-hg63-jvvf
+datasource_id: github_osv_importer_v2/GHSA-6jhg-hg63-jvvf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6jhg-hg63-jvvf/GHSA-6jhg-hg63-jvvf.json
+aliases:
+  - CVE-2025-69228
+summary: |
+  AIOHTTP vulnerable to  denial of service through large payloads
+  ### Summary
+  A request can be crafted in such a way that an aiohttp server's memory fills up uncontrollably during processing.
+
+  ### Impact
+  If an application includes a handler that uses the `Request.post()` method, an attacker may be able to freeze the server by exhausting the memory.
+
+  -----
+
+  Patch: https://github.com/aio-libs/aiohttp/commit/b7dbd35375aedbcd712cbae8ad513d56d11cce60
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<=3.13.2
+    fixed_versions: vers:pypi/3.13.3
+severities:
+  - score: '6.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6jhg-hg63-jvvf/GHSA-6jhg-hg63-jvvf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/aio-libs/aiohttp
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/commit/b7dbd35375aedbcd712cbae8ad513d56d11cce60
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/security/advisories/GHSA-6jhg-hg63-jvvf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-69228
+    reference_type:
+    reference_id:

@@ -1,0 +1,80 @@
+advisory_id: GHSA-579w-22j4-4749
+datasource_id: github_osv_importer_v2/GHSA-579w-22j4-4749
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-579w-22j4-4749/GHSA-579w-22j4-4749.json
+aliases:
+  - CVE-2022-44566
+summary: "Denial of Service Vulnerability in ActiveRecord's PostgreSQL adapter\nThere is a potential\
+  \ denial of service vulnerability present in ActiveRecord's PostgreSQL adapter.\n\nThis has\
+  \ been assigned the CVE identifier CVE-2022-44566.\n\nVersions Affected: All. Not affected:\
+  \ None.\n\n## Fixed Versions\n\n- 2.3.18.47 (Rails LTS, which is a paid service and not part\
+  \ of the rubygem)\n- 3.2.22.34 (Rails LTS, which is a paid service and not part of the rubygem)\n\
+  - 4.2.11.27 (Rails LTS, which is a paid service and not part of the rubygem)\n- 5.2.8.15 (Rails\
+  \ LTS, which is a paid service and not part of the rubygem)\n- 6.1.7.1\n- 7.0.4.1\n\n## Impact\n\
+  \nIn ActiveRecord < 7.0.4.1 and < 6.1.7.1, when a value outside the range for a 64bit signed\
+  \ integer is provided to the PostgreSQL connection adapter, it will treat the target column\
+  \ type as numeric. Comparing integer values against numeric values can result in a slow sequential\
+  \ scan resulting in potential Denial of Service.\n\n## Releases\n\nThe fixed releases are\
+  \ available at the normal locations.\n\n## Workarounds\n\nEnsure that user supplied input\
+  \ which is provided to ActiveRecord clauses do not contain integers wider than a signed 64bit\
+  \ representation or floats. \n\n## Patches\n\nTo aid users who aren't able to upgrade immediately\
+  \ we have provided patches for the supported release series in accordance with our maintenance\
+  \ policy 1 regarding security issues. They are in git-am format and consist of a single changeset.\n\
+  \n 6-1-Added-integer-width-check-to-PostgreSQL-Quoting.patch - Patch for 6.1 series\n 7-0-Added-integer-width-check-to-PostgreSQL-Quoting.patch\
+  \ - Patch for 7.0 series"
+impacted_packages:
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/<6.1.7.1
+    fixed_versions: vers:gem/6.1.7.1
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/>=7.0.0|<7.0.4.1
+    fixed_versions: vers:gem/7.0.4.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-579w-22j4-4749/GHSA-579w-22j4-4749.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://code.jeremyevans.net/2022-11-01-forcing-sequential-scans-on-postgresql.html
+    reference_type:
+    reference_id:
+  - url: https://discuss.rubyonrails.org/t/cve-2022-44566-possible-denial-of-service-vulnerability-in-activerecords-postgresql-adapter/82119
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/commit/4f44aa9d514e701ada92b5cf08beccf566eeaebf
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/commit/82bcdc011e2ff674e7dd8fd8cee3a831c908d29b
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/releases/tag/v6.1.7.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/releases/tag/v7.0.4.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/activerecord/CVE-2022-44566.yml
+    reference_type:
+    reference_id:
+  - url: https://mailchi.mp/railslts/rails-lts-multiple-dos-vulnerabilities-in-rails-rack-and-globalid
+    reference_type:
+    reference_id:
+  - url: https://makandracards.com/railslts/508019-rails-5-2-lts-changelog#section-jan-20th-2023-rails-version-5-2-8-15
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-44566
+    reference_type:
+    reference_id:
+  - url: https://rubyonrails.org/2023/1/17/Rails-Versions-6-0-6-1-6-1-7-1-7-0-4-1-have-been-released
+    reference_type:
+    reference_id:

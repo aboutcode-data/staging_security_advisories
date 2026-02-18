@@ -1,0 +1,36 @@
+advisory_id: GHSA-69wp-xwm7-69wm
+datasource_id: github_osv_importer_v2/GHSA-69wp-xwm7-69wm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-69wp-xwm7-69wm/GHSA-69wp-xwm7-69wm.json
+aliases:
+  - CVE-2022-25481
+summary: |
+  Exposure of Resource to Wrong Sphere in ThinkPHP Framework
+  ThinkPHP Framework v5.0.24 was discovered to be configured without the PATHINFO parameter. This allows attackers to access all system environment parameters from index.php.
+impacted_packages:
+  - purl: pkg:composer/topthink/framework
+    affected_versions: vers:composer/<=5.0.24
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-69wp-xwm7-69wm/GHSA-69wp-xwm7-69wm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+  - CWE-284
+references:
+  - url: https://github.com/Lyther/VulnDiscover/blob/master/Web/ThinkPHP_InfoLeak.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/top-think/framework
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25481
+    reference_type:
+    reference_id:

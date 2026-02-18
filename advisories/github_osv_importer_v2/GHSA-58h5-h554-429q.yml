@@ -1,0 +1,32 @@
+advisory_id: GHSA-58h5-h554-429q
+datasource_id: github_osv_importer_v2/GHSA-58h5-h554-429q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-58h5-h554-429q/GHSA-58h5-h554-429q.json
+aliases: []
+summary: |
+  ezplatform-admin-ui vulnerable to Cross-Site Scripting (XSS)
+  It is possible to inject JavaScript XSS in the content type entries "name" and "short name". To exploit this, one must already have permission to edit content types, which limits it in many cases to people who are already administrators. However, please verify which users have this permission. The fix ensures any injections are escaped.
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezplatform-admin-ui
+    affected_versions: vers:composer/>=2.3.0|<2.3.26
+    fixed_versions: vers:composer/2.3.26
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://developers.ibexa.co/security-advisories/ibexa-sa-2022-009-critical-vulnerabilities-in-graphql-role-assignment-ct-editing-and-drafts-tooltips
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezplatform-admin-ui
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezplatform-admin-ui/commit/29e156a7bbecca5abd946c99546a261679587d29
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezplatform-admin-ui/security/advisories/GHSA-58h5-h554-429q
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-5rcc-6cmj-7728
+datasource_id: github_osv_importer_v2/GHSA-5rcc-6cmj-7728
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-5rcc-6cmj-7728/GHSA-5rcc-6cmj-7728.json
+aliases:
+  - CVE-2022-0877
+summary: |
+  Cross-site Scripting in BookStack
+  Iframe tags don't have a sandbox attribute, this makes an attacker able to execute malicious javascript via an iframe and perform phishing attacks. The sandbox attribute will block script execution and prevents the content to navigate its top-level browsing context which will stop this type of attack.
+impacted_packages:
+  - purl: pkg:composer/ssddanbrown/bookstack
+    affected_versions: vers:composer/<22.2.3
+    fixed_versions: vers:composer/22.2.3
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-5rcc-6cmj-7728/GHSA-5rcc-6cmj-7728.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/bookstackapp/bookstack
+    reference_type:
+    reference_id:
+  - url: https://github.com/bookstackapp/bookstack/commit/856fca8289b7370cafa033ea21c408e7d4303fd6
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/b04df4e3-ae5a-4dc6-81ec-496248b15f3c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0877
+    reference_type:
+    reference_id:

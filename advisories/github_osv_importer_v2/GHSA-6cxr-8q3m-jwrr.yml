@@ -1,0 +1,42 @@
+advisory_id: GHSA-6cxr-8q3m-jwrr
+datasource_id: github_osv_importer_v2/GHSA-6cxr-8q3m-jwrr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-6cxr-8q3m-jwrr/GHSA-6cxr-8q3m-jwrr.json
+aliases:
+  - CVE-2023-6020
+summary: |
+  Ray Missing Authorization vulnerability
+  LFI in Ray's /static/ directory allows attackers to read any file on the server without authentication. The issue is fixed in version 2.8.1+. Ray maintainers response can be found here: https://www.anyscale.com/blog/update-on-ray-cves-cve-2023-6019-cve-2023-6020-cve-2023-6021-cve-2023-48022-cve-2023-48023
+impacted_packages:
+  - purl: pkg:pypi/ray
+    affected_versions: vers:pypi/<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+severities:
+  - score: '9.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-6cxr-8q3m-jwrr/GHSA-6cxr-8q3m-jwrr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-598
+  - CWE-862
+references:
+  - url: https://github.com/ray-project/ray
+    reference_type:
+    reference_id:
+  - url: https://github.com/ray-project/ray/releases/tag/ray-2.8.1
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/83dd8619-6dc3-4c98-8f1b-e620fedcd1f6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6020
+    reference_type:
+    reference_id:
+  - url: https://www.anyscale.com/blog/update-on-ray-cves-cve-2023-6019-cve-2023-6020-cve-2023-6021-cve-2023-48022-cve-2023-48023
+    reference_type:
+    reference_id:

@@ -1,0 +1,43 @@
+advisory_id: GHSA-6c6r-39cv-x5fq
+datasource_id: github_osv_importer_v2/GHSA-6c6r-39cv-x5fq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6c6r-39cv-x5fq/GHSA-6c6r-39cv-x5fq.json
+aliases:
+  - CVE-2019-0649
+summary: |
+  Chakra JIT server Privilege Escalation
+  A vulnerability exists in Microsoft Chakra JIT server, aka 'Scripting Engine Elevation of Privileges Vulnerability'.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.11.6
+    fixed_versions: vers:nuget/1.11.6
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6c6r-39cv-x5fq/GHSA-6c6r-39cv-x5fq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/chakra-core/ChakraCore
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/commit/beba75a1aed0933cf3c76efb4dc67529dc035901
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/5936
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-0649
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0649
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210125001406/https://www.securityfocus.com/bid/106877
+    reference_type:
+    reference_id:

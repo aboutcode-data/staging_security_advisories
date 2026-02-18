@@ -1,0 +1,41 @@
+advisory_id: GHSA-697v-pxg3-j262
+datasource_id: github_osv_importer_v2/GHSA-697v-pxg3-j262
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-697v-pxg3-j262/GHSA-697v-pxg3-j262.json
+aliases:
+  - CVE-2020-28191
+summary: |
+  Togglz console missing cross-site request forgery (CSRF) protection
+  Togglz is an implementation of the Feature Toggles pattern for Java. There is no CSRF protection in the togglz console and could allow an attacker to guess the CSRF token value. Version 2.9.4 adds the necessary CSRF protection.
+impacted_packages:
+  - purl: pkg:maven/org.togglz/togglz-console
+    affected_versions: vers:maven/<2.9.4
+    fixed_versions: vers:maven/2.9.4
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-697v-pxg3-j262/GHSA-697v-pxg3-j262.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/togglz/togglz
+    reference_type:
+    reference_id:
+  - url: https://github.com/togglz/togglz/commit/ed66e3f584de954297ebaf98ea4a235286784707
+    reference_type:
+    reference_id:
+  - url: https://github.com/togglz/togglz/pull/495
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28191
+    reference_type:
+    reference_id:
+  - url: https://www.mend.io/vulnerability-database/CVE-2020-28191
+    reference_type:
+    reference_id:

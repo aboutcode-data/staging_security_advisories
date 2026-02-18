@@ -1,0 +1,54 @@
+advisory_id: GHSA-58f5-hfqc-jgch
+datasource_id: github_osv_importer_v2/GHSA-58f5-hfqc-jgch
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-58f5-hfqc-jgch/GHSA-58f5-hfqc-jgch.json
+aliases:
+  - CVE-2021-29443
+summary: |
+  Padding Oracle Attack due to Observable Timing Discrepancy in jose
+  jose is an npm library providing a number of cryptographic operations.
+  ### Impact
+
+  [AES_CBC_HMAC_SHA2 Algorithm](https://tools.ietf.org/html/rfc7518#section-5.2) (A128CBC-HS256, A192CBC-HS384, A256CBC-HS512) decryption would always execute both HMAC tag verification and CBC decryption, if either failed `JWEDecryptionFailed` would be thrown. But a possibly observable difference in timing when padding error would occur while decrypting the ciphertext makes a padding oracle and an adversary might be able to make use of that oracle to decrypt data without knowing the decryption key by issuing on average 128*b calls to the padding oracle (where b is the number of bytes in the ciphertext block).
+
+  ### Patches
+
+  All major release versions have had a patch released which ensures the HMAC tag is verified before performing CBC decryption. The fixed versions are `^1.28.1 || ^2.0.5 || >=3.11.4`.
+
+  Users should upgrade their v1.x dependency to [`^1.28.1`](https://github.com/panva/jose/releases/tag/v1.28.1), their v2.x dependency to [`^2.0.5`](https://github.com/panva/jose/releases/tag/v2.0.5), and their v3.x dependency to [`^3.11.4`](https://github.com/panva/jose/releases/tag/v3.11.4)
+
+  ### Credits
+  Thanks to Morgan Brown of Microsoft for bringing this up and Eva Sarafianou (@esarafianou) for helping to score this advisory.
+impacted_packages:
+  - purl: pkg:npm/jose
+    affected_versions: vers:npm/>=1.0.0|<1.28.1
+    fixed_versions: vers:npm/1.28.1
+  - purl: pkg:npm/jose
+    affected_versions: vers:npm/>=2.0.0|<2.0.5
+    fixed_versions: vers:npm/2.0.5
+  - purl: pkg:npm/jose
+    affected_versions: vers:npm/>=3.0.0|<3.11.4
+    fixed_versions: vers:npm/3.11.4
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-58f5-hfqc-jgch/GHSA-58f5-hfqc-jgch.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+  - CWE-696
+references:
+  - url: https://github.com/panva/jose/security/advisories/GHSA-58f5-hfqc-jgch
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29443
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/jose
+    reference_type:
+    reference_id:

@@ -1,0 +1,28 @@
+advisory_id: GHSA-57h7-r3q3-w57j
+datasource_id: github_osv_importer_v2/GHSA-57h7-r3q3-w57j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-57h7-r3q3-w57j/GHSA-57h7-r3q3-w57j.json
+aliases: []
+summary: |
+  Cross-Site Scripting
+  Django-Rest-Framework, before 3.9.1, has a XSS vulnerability caused by disabled autoescaping in the default DRF Browsable API view templates.
+impacted_packages:
+  - purl: pkg:pypi/djangorestframework
+    affected_versions: vers:pypi/<3.9.1
+    fixed_versions: vers:pypi/3.9.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/encode/django-rest-framework/commit/343ce4a03cad02631752a5e9bde26218fd647c14
+    reference_type:
+    reference_id:
+  - url: https://github.com/encode/django-rest-framework/commit/75a489150ae24c2f3c794104a8e98fa43e2c9ce9
+    reference_type:
+    reference_id:
+  - url: https://github.com/encode/django-rest-framework/pull/6330
+    reference_type:
+    reference_id:

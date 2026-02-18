@@ -1,0 +1,49 @@
+advisory_id: GHSA-6h2x-4gjf-jc5w
+datasource_id: github_osv_importer_v2/GHSA-6h2x-4gjf-jc5w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-6h2x-4gjf-jc5w/GHSA-6h2x-4gjf-jc5w.json
+aliases: []
+summary: |
+  autogluon.multimodal vulnerable to unsafe YAML deserialization
+  ### Impact
+
+  A potential unsafe deserialization issue exists within the `autogluon.multimodal` module, where YAML files are loaded via `yaml.load()` instead of `yaml.safe_load()`. The deserialization of untrusted data may allow an unprivileged third party to cause remote code execution, denial of service, and impact to both confidentiality and integrity.
+
+  Impacted versions: `>=0.4.0;<0.4.3`, `>=0.5.0;<0.5.2`.
+
+  ### Patches
+  The patches are included in `autogluon.multimodal==0.4.3`, `autogluon.multimodal==0.5.2` and Deep Learning Containers `0.4.3` and `0.5.2`.
+
+  ### Workarounds
+  Do not load data which originated from an untrusted source, or that could have been tampered with. **Only load data you trust.**
+
+  ### References
+  * https://cwe.mitre.org/data/definitions/502.html
+  * https://www.cvedetails.com/cve/CVE-2017-18342/
+impacted_packages:
+  - purl: pkg:pypi/autogluon.multimodal
+    affected_versions: vers:pypi/>=0.4.0|<0.4.3
+    fixed_versions: vers:pypi/0.4.3
+  - purl: pkg:pypi/autogluon.multimodal
+    affected_versions: vers:pypi/>=0.5.0|<0.5.2
+    fixed_versions: vers:pypi/0.5.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/awslabs/autogluon
+    reference_type:
+    reference_id:
+  - url: https://github.com/awslabs/autogluon/commit/23a37e74e58d03055c84a1b89c5af6c3db296b5e
+    reference_type:
+    reference_id:
+  - url: https://github.com/awslabs/autogluon/pull/1987
+    reference_type:
+    reference_id:
+  - url: https://github.com/awslabs/autogluon/security/advisories/GHSA-6h2x-4gjf-jc5w
+    reference_type:
+    reference_id:

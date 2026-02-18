@@ -1,0 +1,56 @@
+advisory_id: GHSA-67rr-84xm-4c7r
+datasource_id: github_osv_importer_v2/GHSA-67rr-84xm-4c7r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-67rr-84xm-4c7r/GHSA-67rr-84xm-4c7r.json
+aliases:
+  - CVE-2025-49826
+summary: |
+  Next.JS vulnerability can lead to DoS via cache poisoning
+  ### Summary
+  A vulnerability affecting Next.js has been addressed. It impacted versions 15.0.4 through 15.1.8 and involved a cache poisoning bug leading to a Denial of Service (DoS) condition.
+
+  Under certain conditions, this issue may allow a HTTP 204 response to be cached for static pages, leading to the 204 response being served to all users attempting to access the page
+
+  More details: [CVE-2025-49826](https://vercel.com/changelog/cve-2025-49826)
+
+  ## Credits
+  - Allam Rachid [zhero;](https://zhero-web-sec.github.io/research-and-things/)
+  - Allam Yasser (inzo)
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.0.4-canary.51|<15.1.8
+    fixed_versions: vers:npm/15.1.8
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-67rr-84xm-4c7r/GHSA-67rr-84xm-4c7r.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/commit/16bfce64ef2157f2c1dfedcfdb7771bc63103fd2
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/commit/a15b974ed707d63ad4da5b74c1441f5b7b120e93
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/releases/tag/v15.1.8
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-67rr-84xm-4c7r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-49826
+    reference_type:
+    reference_id:
+  - url: https://vercel.com/changelog/cve-2025-49826
+    reference_type:
+    reference_id:

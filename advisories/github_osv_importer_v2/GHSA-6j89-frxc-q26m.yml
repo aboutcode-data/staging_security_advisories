@@ -1,0 +1,56 @@
+advisory_id: GHSA-6j89-frxc-q26m
+datasource_id: github_osv_importer_v2/GHSA-6j89-frxc-q26m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-6j89-frxc-q26m/GHSA-6j89-frxc-q26m.json
+aliases:
+  - CVE-2024-29181
+summary: "@strapi/plugin-content-manager leaks data via relations via the Admin Panel\n### Summary\n\
+  1. If a super admin creates a collection where an item in the collection has an association\
+  \ to another collection, a user with the Author Role can see the list of associated items\
+  \ they did not create. They should only see their own items that they created, not all items\
+  \ ever created.\n\n### Details\nAt the top level every collection shows blank items for an\
+  \ Author if they did not create the item. This is ideal and works great. However if you associate\
+  \ one private collection to another private collection and an Author creates a new item. The\
+  \ pull down should not show the admins list of previously created items. It should be blank\
+  \ unitl they add their own items.\n\n### PoC\n1. Sign in as Admin. Navigate to content creation.\n\
+  2. Select a collection and verify you have items you created there. And that they have associations\
+  \ to other protected collections.\n3. Verify role permissions for your collections are set\
+  \ to CRUD if user created.\n4. Log out and sign in as a unrelated Author.\n5. Navigate to\
+  \ content management and verify you see collections built by admin but empty for you (as expected)\n\
+  6. Create a new item as an Author and see the card appear with attributes to fill out.\n7.\
+  \ Use the form pull down for the associations.\n8. Notice that protected collection items\
+  \ from Admin appear in drop down. These should be hidden\n\n### Impact\nSecurity vulnerability\
+  \ where authors have access to protected data created by admin. This could be passwords emails\
+  \ or any other item created for the admin's collection. \n\nSee images below for more context\n\
+  \nPermissions set\n![image](https://user-images.githubusercontent.com/364910/265132222-66e85726-5e01-4ad3-901a-809270a7f11b.png)\n\
+  \nGood at top level no items seen\n![image](https://user-images.githubusercontent.com/364910/265132292-d63fa6df-f32d-48a3-80d0-48a651c570a8.png)\n\
+  \nDrop down in Author login can see Admin data\n![image](https://user-images.githubusercontent.com/364910/265132393-8105bae2-b45c-4327-b1c6-da093557e64f.png)"
+impacted_packages:
+  - purl: pkg:npm/%40strapi/plugin-content-manager
+    affected_versions: vers:npm/<4.19.1
+    fixed_versions: vers:npm/4.19.1
+severities:
+  - score: '2.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-6j89-frxc-q26m/GHSA-6j89-frxc-q26m.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: https://github.com/strapi/strapi
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/commit/e1dfd4d9f1cab25cf6da3614c1975e4e508e01c6
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/security/advisories/GHSA-6j89-frxc-q26m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29181
+    reference_type:
+    reference_id:

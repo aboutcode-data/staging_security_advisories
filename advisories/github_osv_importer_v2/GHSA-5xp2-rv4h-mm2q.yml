@@ -1,0 +1,62 @@
+advisory_id: GHSA-5xp2-rv4h-mm2q
+datasource_id: github_osv_importer_v2/GHSA-5xp2-rv4h-mm2q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5xp2-rv4h-mm2q/GHSA-5xp2-rv4h-mm2q.json
+aliases:
+  - CVE-2019-10133
+summary: |
+  Moodle Open Redirect Vulnerability
+  A flaw was found in Moodle before 3.7, 3.6.4, 3.5.6, 3.4.9 and 3.1.18. The form to upload cohorts contained a redirect field, which was not restricted to internal URLs.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.6.3
+    fixed_versions: vers:composer/3.6.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.5.5
+    fixed_versions: vers:composer/3.5.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.4.8
+    fixed_versions: vers:composer/3.4.9
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.1.17
+    fixed_versions: vers:composer/3.1.18
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5xp2-rv4h-mm2q/GHSA-5xp2-rv4h-mm2q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10133
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/5a89ac9640b3a695720845b6ddeff65e69a289fc
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/a6258d0934f707b1d033f50fb41ffbcf45bb2102
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/c509d108216524887c7ca08b1c451054d669ea75
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/cd6fb4322b6b1914c05f05033a71ed060f875fd4
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/d5067bffd230d733ad24f6aeaa56aaa17eca5bfb
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=386523
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10133
+    reference_type:
+    reference_id:

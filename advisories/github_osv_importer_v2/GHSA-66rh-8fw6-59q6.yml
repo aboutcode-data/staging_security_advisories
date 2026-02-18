@@ -1,0 +1,53 @@
+advisory_id: GHSA-66rh-8fw6-59q6
+datasource_id: github_osv_importer_v2/GHSA-66rh-8fw6-59q6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-66rh-8fw6-59q6/GHSA-66rh-8fw6-59q6.json
+aliases:
+  - CVE-2019-10745
+summary: |
+  assign-deep Vulnerable to Prototype Pollution
+  Versions of `assign-deep` prior to 1.0.1 and 0.4.8 are vulnerable to Prototype Pollution. The `assign` function fails to validate which Object properties it updates. This allows attackers to modify the prototype of Object, causing the addition or modification of an existing property on all objects.
+
+  ## Recommendation
+
+  Upgrade to versions 1.0.1, 0.4.8, or later.
+impacted_packages:
+  - purl: pkg:npm/assign-deep
+    affected_versions: vers:npm/<0.4.8
+    fixed_versions: vers:npm/0.4.8
+  - purl: pkg:npm/assign-deep
+    affected_versions: vers:npm/1.0.0
+    fixed_versions: vers:npm/1.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-66rh-8fw6-59q6/GHSA-66rh-8fw6-59q6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+  - CWE-1321
+  - CWE-20
+references:
+  - url: https://github.com/jonschlinkert/assign-deep
+    reference_type:
+    reference_id:
+  - url: https://github.com/jonschlinkert/assign-deep/commit/8e3cc4a34246733672c71e96532105384937e56c
+    reference_type:
+    reference_id:
+  - url: https://github.com/jonschlinkert/assign-deep/commit/90bf1c551d05940898168d04066bbf15060f50cc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10745
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-ASSIGNDEEP-450211
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1014
+    reference_type:
+    reference_id:

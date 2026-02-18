@@ -1,0 +1,50 @@
+advisory_id: GHSA-6mvj-2569-3mcm
+datasource_id: github_osv_importer_v2/GHSA-6mvj-2569-3mcm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-6mvj-2569-3mcm/GHSA-6mvj-2569-3mcm.json
+aliases:
+  - CVE-2022-23474
+summary: |
+  Editor.js vulnerable to Code Injection
+  Editor.js is a block-style editor with clean JSON output. Versions prior to 2.26.0 are vulnerable to Code Injection via pasted input. The processHTML method passes pasted input into wrapper’s innerHTML. This issue is patched in version 2.26.0.
+impacted_packages:
+  - purl: pkg:npm/%40editorjs/editorjs
+    affected_versions: vers:npm/<2.26.0
+    fixed_versions: vers:npm/2.26.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-6mvj-2569-3mcm/GHSA-6mvj-2569-3mcm.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-6mvj-2569-3mcm/GHSA-6mvj-2569-3mcm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-79
+references:
+  - url: https://github.com/codex-team/editor.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/codex-team/editor.js/commit/f659015be6de8e6f0c322c5ff4d1a4532d2f29a2
+    reference_type:
+    reference_id:
+  - url: https://github.com/codex-team/editor.js/pull/2100
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23474
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2022-028_codex-team_editor_js
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-5f4x-hwv2-w9w2
+datasource_id: github_osv_importer_v2/GHSA-5f4x-hwv2-w9w2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-5f4x-hwv2-w9w2/GHSA-5f4x-hwv2-w9w2.json
+aliases:
+  - CVE-2024-39943
+summary: |
+  rejetto HFS vulnerable to OS Command Execution by remote authenticated users
+  rejetto HFS (aka HTTP File Server) 3 before 0.52.10 on Linux, UNIX, and macOS allows OS command execution by remote authenticated users (if they have Upload permissions). This occurs because a shell is used to execute df (i.e., with execSync instead of spawnSync in child_process in Node.js).
+impacted_packages:
+  - purl: pkg:npm/hfs
+    affected_versions: vers:npm/<0.52.10
+    fixed_versions: vers:npm/0.52.10
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-5f4x-hwv2-w9w2/GHSA-5f4x-hwv2-w9w2.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-5f4x-hwv2-w9w2/GHSA-5f4x-hwv2-w9w2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+  - CWE-284
+references:
+  - url: https://github.com/rejetto/hfs
+    reference_type:
+    reference_id:
+  - url: https://github.com/rejetto/hfs/commit/305381bd36eee074fb238b64302a252668daad1d
+    reference_type:
+    reference_id:
+  - url: https://github.com/rejetto/hfs/compare/v0.52.9...v0.52.10
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-39943
+    reference_type:
+    reference_id:
+  - url: https://www.rejetto.com/wiki/index.php/HFS:_Working_with_uploads
+    reference_type:
+    reference_id:

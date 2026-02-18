@@ -1,0 +1,38 @@
+advisory_id: GHSA-5p3h-7fwh-92rc
+datasource_id: github_osv_importer_v2/GHSA-5p3h-7fwh-92rc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-5p3h-7fwh-92rc/GHSA-5p3h-7fwh-92rc.json
+aliases:
+  - CVE-2023-6018
+summary: |
+  Remote Code Execution due to Full Controled File Write in mlflow
+  The mlflow web server includes tools for tracking experiments, packaging code into reproducible runs, and sharing and deploying models. As this vulnerability allows to write / overwrite any file on the file system, it gives a lot of ways to archive code execution (like overwriting `/home/<user>/.bashrc`). A malicious user could use this issue to get command execution on the vulnerable machine and get access to data & models information.
+impacted_packages:
+  - purl: pkg:pypi/mlflow
+    affected_versions: vers:pypi/<=2.8.1
+    fixed_versions: vers:pypi/2.9.2
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-5p3h-7fwh-92rc/GHSA-5p3h-7fwh-92rc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/mlflow/mlflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/mlflow/mlflow/commit/55c72d02380e8db8118595a4fdae7879cb7ac5bd
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/7cf918b5-43f4-48c0-a371-4d963ce69b30
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6018
+    reference_type:
+    reference_id:

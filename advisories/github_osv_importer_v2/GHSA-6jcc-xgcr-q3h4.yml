@@ -1,0 +1,126 @@
+advisory_id: GHSA-6jcc-xgcr-q3h4
+datasource_id: github_osv_importer_v2/GHSA-6jcc-xgcr-q3h4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-6jcc-xgcr-q3h4/GHSA-6jcc-xgcr-q3h4.json
+aliases:
+  - CVE-2025-54888
+summary: |
+  @fedify/fedify has Improper Authentication and Incorrect Authorization
+  ### Summary
+   An authentication bypass vulnerability allows any unauthenticated attacker to impersonate any ActivityPub actor by sending forged activities signed with their own keys. Activities are processed before verifying the signing key belongs to the claimed actor, enabling complete actor impersonation across all Fedify instances
+
+  ### Details
+  The vulnerability exists in handleInboxInternal function in fedify/federation/handler.ts. The critical flaw is in the order of operations:
+
+    1. Line 1712: routeActivity() is called first, which processes the activity (either immediately or by adding to queue)
+    2. Line 1730: Authentication check (doesActorOwnKey) happens AFTER processing
+
+  ```ts
+    // fedify/federation/handler.ts:1712-1750
+    const routeResult = await routeActivity({  // ← Activity processed here
+      context: ctx,
+      json,
+      activity,
+      recipient,
+      inboxListeners,
+      inboxContextFactory,
+      inboxErrorHandler,
+      kv,
+      kvPrefixes,
+      queue,
+      span,
+      tracerProvider,
+    });
+
+    if (
+      httpSigKey != null && !await doesActorOwnKey(activity, httpSigKey, ctx)  // ← Auth check too late
+    ) {
+      // Returns 401, but activity already processed
+      return new Response("The signer and the actor do not match.", {
+        status: 401,
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
+      });
+    }
+  ```
+
+  By the time the 401 response is returned, the malicious activity has already been processed or queued.
+
+  ### PoC
+
+    1. Create an activity claiming to be from any actor:
+  ```ts
+    const maliciousActivity = {
+      "@context": "https://www.w3.org/ns/activitystreams",
+      "type": "Create",
+      "actor": "https://victim.example.com/users/alice",  // Impersonating victim
+      "object": {
+        "type": "Note",
+        "content": "This is a forged message!"
+      }
+    }
+  ```
+    2. Sign the HTTP request with attacker's key (not the victim's):
+  ```ts
+    // Sign with attacker's key: https://attacker.com/users/eve#main-key
+    const signedRequest = await signRequest(request, attackerPrivateKey, attackerKeyId);
+  ```
+    3. Send to any Fedify inbox - the activity will be processed despite the key mismatch.
+
+  ### Impact
+
+  Type: Authentication Bypass / Actor Impersonation
+
+  Who is impacted: All Fedify instances and their users
+
+  Consequences: Allows complete impersonation of any ActivityPub actor, enabling:
+    - Sending fake posts/messages as any user
+    - Creating/removing follows as any user
+    - Boosting/sharing content as any user
+    - Complete compromise of federation trust model
+
+  The vulnerability affects all Fedify instances but does not propagate to other ActivityPub implementations (Mastodon, etc.) which properly validate before processing.
+impacted_packages:
+  - purl: pkg:npm/%40fedify/fedify
+    affected_versions: vers:npm/<1.3.20
+    fixed_versions: vers:npm/1.3.20
+  - purl: pkg:npm/%40fedify/fedify
+    affected_versions: vers:npm/>=1.4.0-dev.585|<1.4.13
+    fixed_versions: vers:npm/1.4.13
+  - purl: pkg:npm/%40fedify/fedify
+    affected_versions: vers:npm/>=1.5.0-dev.636|<1.5.5
+    fixed_versions: vers:npm/1.5.5
+  - purl: pkg:npm/%40fedify/fedify
+    affected_versions: vers:npm/>=1.6.0-dev.754|<1.6.8
+    fixed_versions: vers:npm/1.6.8
+  - purl: pkg:npm/%40fedify/fedify
+    affected_versions: vers:npm/>=1.7.0-pr.251.885|<1.7.9
+    fixed_versions: vers:npm/1.7.9
+  - purl: pkg:npm/%40fedify/fedify
+    affected_versions: vers:npm/>=1.8.0-dev.909|<1.8.5
+    fixed_versions: vers:npm/1.8.5
+severities:
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-6jcc-xgcr-q3h4/GHSA-6jcc-xgcr-q3h4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-863
+references:
+  - url: https://github.com/fedify-dev/fedify
+    reference_type:
+    reference_id:
+  - url: https://github.com/fedify-dev/fedify/commit/14a2f8c6d2c3cbc00c3170a86ad3b7b8555c6847
+    reference_type:
+    reference_id:
+  - url: https://github.com/fedify-dev/fedify/security/advisories/GHSA-6jcc-xgcr-q3h4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-54888
+    reference_type:
+    reference_id:

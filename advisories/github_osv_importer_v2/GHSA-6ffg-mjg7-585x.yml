@@ -1,0 +1,52 @@
+advisory_id: GHSA-6ffg-mjg7-585x
+datasource_id: github_osv_importer_v2/GHSA-6ffg-mjg7-585x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-6ffg-mjg7-585x/GHSA-6ffg-mjg7-585x.json
+aliases:
+  - CVE-2025-27601
+summary: |
+  Umbraco Allows Improper API Access Control to Low-Privilege Users to Data Type Functionality
+  ### Impact
+  An improper API access control issue has been identified, allowing low-privilege, authenticated users to create and update data type information that should be restricted to users with access to the settings section.
+
+  ### Patches
+  Will be patched in 14.3.3 and 15.2.3.
+
+  ### Workarounds
+  None available.
+impacted_packages:
+  - purl: pkg:nuget/Umbraco.Cms.Api.Management
+    affected_versions: vers:nuget/<=15.2.2
+    fixed_versions: vers:nuget/15.2.3
+  - purl: pkg:nuget/Umbraco.Cms.Api.Management
+    affected_versions: vers:nuget/<=14.3.2
+    fixed_versions: vers:nuget/14.3.3
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-6ffg-mjg7-585x/GHSA-6ffg-mjg7-585x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://github.com/umbraco/Umbraco-CMS
+    reference_type:
+    reference_id:
+  - url: https://github.com/umbraco/Umbraco-CMS/commit/d9fb6df16e9adf8656181cac8497fc5ba23321cd
+    reference_type:
+    reference_id:
+  - url: https://github.com/umbraco/Umbraco-CMS/commit/ebb6a580dc1da2c772a99838dc7b4660bf77eb9c
+    reference_type:
+    reference_id:
+  - url: https://github.com/umbraco/Umbraco-CMS/security/advisories/GHSA-6ffg-mjg7-585x
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-27601
+    reference_type:
+    reference_id:

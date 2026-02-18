@@ -1,0 +1,41 @@
+advisory_id: GHSA-5xqr-grq4-qwgx
+datasource_id: github_osv_importer_v2/GHSA-5xqr-grq4-qwgx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-5xqr-grq4-qwgx/GHSA-5xqr-grq4-qwgx.json
+aliases:
+  - CVE-2018-12418
+summary: |
+  Junrar vulnerable to Infinite Loop
+  Archive.java in Junrar before 1.0.1, as used in Apache Tika and other products, is affected by a denial of service vulnerability due to an infinite loop when handling corrupt RAR files.
+impacted_packages:
+  - purl: pkg:maven/com.github.junrar/junrar
+    affected_versions: vers:maven/<1.0.1
+    fixed_versions: vers:maven/1.0.1
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-5xqr-grq4-qwgx/GHSA-5xqr-grq4-qwgx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-835
+references:
+  - url: https://github.com/advisories/GHSA-5xqr-grq4-qwgx
+    reference_type:
+    reference_id:
+  - url: https://github.com/junrar/junrar
+    reference_type:
+    reference_id:
+  - url: https://github.com/junrar/junrar/commit/ad8d0ba8e155630da8a1215cee3f253e0af45817
+    reference_type:
+    reference_id:
+  - url: https://github.com/junrar/junrar/pull/8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-12418
+    reference_type:
+    reference_id:

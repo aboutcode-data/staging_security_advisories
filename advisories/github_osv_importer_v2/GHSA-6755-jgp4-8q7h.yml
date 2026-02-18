@@ -1,0 +1,44 @@
+advisory_id: GHSA-6755-jgp4-8q7h
+datasource_id: github_osv_importer_v2/GHSA-6755-jgp4-8q7h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6755-jgp4-8q7h/GHSA-6755-jgp4-8q7h.json
+aliases:
+  - CVE-2019-10327
+summary: |
+  XML External Entity processing vulnerability in Pipeline Maven Integration Jenkins Plugin
+  An XML external entities (XXE) vulnerability in Jenkins Pipeline Maven Integration Plugin 1.7.0 and earlier allowed attackers able to control a temporary directory's content on the agent running the Maven build to have Jenkins parse a maliciously crafted XML file that uses external entities for extraction of secrets from the Jenkins master, server-side request forgery, or denial-of-service attacks.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.plugins/pipeline-maven
+    affected_versions: vers:maven/<3.7.1
+    fixed_versions: vers:maven/3.7.1
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6755-jgp4-8q7h/GHSA-6755-jgp4-8q7h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/jenkinsci/pipeline-maven-plugin/commit/e7cb858852c05d2423e3fd9922a090982dcd6392
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/pipeline-maven-plugin/tree/master/pipeline-maven
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2019-05-31/#SECURITY-1409
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10327
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/05/31/2
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/108540
+    reference_type:
+    reference_id:

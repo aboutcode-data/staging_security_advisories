@@ -1,0 +1,150 @@
+advisory_id: GHSA-5pv8-ppvj-4h68
+datasource_id: github_osv_importer_v2/GHSA-5pv8-ppvj-4h68
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-5pv8-ppvj-4h68/GHSA-5pv8-ppvj-4h68.json
+aliases:
+  - CVE-2021-21424
+summary: |
+  Prevent user enumeration using Guard or the new Authenticator-based Security
+  Description
+  -----------
+
+  The ability to enumerate users was possible without relevant permissions due to different exception messages depending on whether the user existed or not. It was also possible to enumerate users by using a timing attack, by comparing time elapsed when authenticating an existing user and authenticating a non-existing user.
+
+  Resolution
+  ----------
+
+  We now ensure that 403s are returned whether the user exists or not if the password is invalid or if the user does not exist.
+
+  The patch for this issue is available [here](https://github.com/symfony/symfony/commit/2a581d22cc621b33d5464ed65c4bc2057f72f011) for branch 3.4.
+
+  Credits
+  -------
+
+  I would like to thank James Isaac and Mathias Brodala for reporting the issue and Robin Chalas for fixing the issue.
+impacted_packages:
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=5.0.0|<5.2.8
+    fixed_versions: vers:composer/5.2.8
+  - purl: pkg:composer/symfony/security-guard
+    affected_versions: vers:composer/>=2.8.0|<3.4.48
+    fixed_versions: vers:composer/3.4.48
+  - purl: pkg:composer/symfony/security-guard
+    affected_versions: vers:composer/>=4.0.0|<4.4.23
+    fixed_versions: vers:composer/4.4.23
+  - purl: pkg:composer/symfony/security-guard
+    affected_versions: vers:composer/>=5.0.0|<5.2.8
+    fixed_versions: vers:composer/5.2.8
+  - purl: pkg:composer/symfony/security-core
+    affected_versions: vers:composer/>=2.8.0|<3.4.48
+    fixed_versions: vers:composer/3.4.48
+  - purl: pkg:composer/symfony/security-core
+    affected_versions: vers:composer/>=4.0.0|<4.4.23
+    fixed_versions: vers:composer/4.4.23
+  - purl: pkg:composer/symfony/security-core
+    affected_versions: vers:composer/>=5.0.0|<5.2.8
+    fixed_versions: vers:composer/5.2.8
+  - purl: pkg:composer/lexik/jwt-authentication-bundle
+    affected_versions: vers:composer/>=2.0.0|<2.10.7
+    fixed_versions: vers:composer/2.10.7
+  - purl: pkg:composer/lexik/jwt-authentication-bundle
+    affected_versions: vers:composer/>=2.11.0|<2.11.3
+    fixed_versions: vers:composer/2.11.3
+  - purl: pkg:composer/symfony/maker-bundle
+    affected_versions: vers:composer/>=1.27.0|<1.29.2
+    fixed_versions: vers:composer/1.29.2
+  - purl: pkg:composer/symfony/maker-bundle
+    affected_versions: vers:composer/>=1.30.0|<1.31.1
+    fixed_versions: vers:composer/1.31.1
+  - purl: pkg:composer/symfony/security-http
+    affected_versions: vers:composer/>=5.1.0|<5.2.8
+    fixed_versions: vers:composer/5.2.8
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=2.8.0|<3.4.49
+    fixed_versions: vers:composer/3.4.49
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=4.0.0|<4.4.24
+    fixed_versions: vers:composer/4.4.24
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.8.0|<3.4.49
+    fixed_versions: vers:composer/3.4.49
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.0.0|<4.4.24
+    fixed_versions: vers:composer/4.4.24
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=5.0.0|<5.2.9
+    fixed_versions: vers:composer/5.2.9
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-5pv8-ppvj-4h68/GHSA-5pv8-ppvj-4h68.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-203
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/lexik/jwt-authentication-bundle/CVE-2021-21424.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/maker-bundle/CVE-2021-21424.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security/CVE-2021-21424.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security-guard/CVE-2021-21424.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security-http/CVE-2021-21424.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2021-21424.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/2a581d22cc621b33d5464ed65c4bc2057f72f011
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/security/advisories/GHSA-5pv8-ppvj-4h68
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/07/msg00014.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/KENRNLB3FYXYGDWRBH2PDBOZZKOD7VY4
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/RH7TMM5CHQYBFFGXWRPJDPB3SKCZXI2M
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/UC7BND775DVZDQT3RMGD2HVB2PKLJDJW
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VRUS2H2SSOQWNLBD35SKIWIDQEMV2PD3
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KENRNLB3FYXYGDWRBH2PDBOZZKOD7VY4
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RH7TMM5CHQYBFFGXWRPJDPB3SKCZXI2M
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UC7BND775DVZDQT3RMGD2HVB2PKLJDJW
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VRUS2H2SSOQWNLBD35SKIWIDQEMV2PD3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-21424
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2021-21424
+    reference_type:
+    reference_id:

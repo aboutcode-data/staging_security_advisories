@@ -1,0 +1,42 @@
+advisory_id: GHSA-5xw2-57jx-pgjp
+datasource_id: github_osv_importer_v2/GHSA-5xw2-57jx-pgjp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-5xw2-57jx-pgjp/GHSA-5xw2-57jx-pgjp.json
+aliases:
+  - CVE-2025-13827
+summary: "GrapesJsBuilder File Upload allows all file uploads\n### Summary\n\nArbitrary files\
+  \ can be uploaded via the GrapesJS Builder, as the types of files that can be uploaded are\
+  \ not restricted. \n\n### Impact\n\nIf the media folder is not restricted from running files\
+  \ this can lead to a remote code execution."
+impacted_packages:
+  - purl: pkg:composer/mautic/grapes-js-builder-bundle
+    affected_versions: vers:composer/>=4.0.0|<4.4.18
+    fixed_versions: vers:composer/4.4.18
+  - purl: pkg:composer/mautic/grapes-js-builder-bundle
+    affected_versions: vers:composer/>=5.0.0|<5.2.9
+    fixed_versions: vers:composer/5.2.9
+  - purl: pkg:composer/mautic/grapes-js-builder-bundle
+    affected_versions: vers:composer/>=6.0.0|<6.0.7
+    fixed_versions: vers:composer/6.0.7
+severities:
+  - score: '8.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-5xw2-57jx-pgjp/GHSA-5xw2-57jx-pgjp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-5xw2-57jx-pgjp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-13827
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-57q5-h622-3cpx
+datasource_id: github_osv_importer_v2/GHSA-57q5-h622-3cpx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-57q5-h622-3cpx/GHSA-57q5-h622-3cpx.json
+aliases:
+  - CVE-2024-3137
+summary: |
+  UVDesk Community Helpdesk Improper Privilege Management
+  Improper Privilege Management in uvdesk/community-skeleton
+impacted_packages:
+  - purl: pkg:composer/uvdesk/core-framework
+    affected_versions: vers:composer/<=1.1.1
+    fixed_versions:
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-57q5-h622-3cpx/GHSA-57q5-h622-3cpx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+references:
+  - url: https://github.com/uvdesk/core-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/uvdesk/core-framework/blob/master/Controller/Thread.php#L44
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/faf74783-644c-40cd-aa98-2239e5fafcd1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-3137
+    reference_type:
+    reference_id:

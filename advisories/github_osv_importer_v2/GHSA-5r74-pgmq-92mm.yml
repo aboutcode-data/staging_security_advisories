@@ -1,0 +1,44 @@
+advisory_id: GHSA-5r74-pgmq-92mm
+datasource_id: github_osv_importer_v2/GHSA-5r74-pgmq-92mm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5r74-pgmq-92mm/GHSA-5r74-pgmq-92mm.json
+aliases:
+  - CVE-2019-1003034
+summary: |
+  Script security sandbox bypass in Jenkins Job DSL Plugin
+  A sandbox bypass vulnerability exists in Jenkins Job DSL Plugin 1.71 and earlier in job-dsl-core/src/main/groovy/javaposse/jobdsl/dsl/AbstractDslScriptLoader.groovy, job-dsl-plugin/build.gradle, job-dsl-plugin/src/main/groovy/javaposse/jobdsl/plugin/JobDslWhitelist.groovy, job-dsl-plugin/src/main/groovy/javaposse/jobdsl/plugin/SandboxDslScriptLoader.groovy that allows attackers with control over Job DSL definitions to execute arbitrary code on the Jenkins master JVM.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.plugins/job-dsl
+    affected_versions: vers:maven/<1.72
+    fixed_versions: vers:maven/1.72
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5r74-pgmq-92mm/GHSA-5r74-pgmq-92mm.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-693
+references:
+  - url: https://access.redhat.com/errata/RHSA-2019:0739
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/job-dsl-plugin
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/job-dsl-plugin/commit/a2dc2def098cd6e91df0981fdf838fb44a991496
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2019-03-06/#SECURITY-1342
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-1003034
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/107476
+    reference_type:
+    reference_id:

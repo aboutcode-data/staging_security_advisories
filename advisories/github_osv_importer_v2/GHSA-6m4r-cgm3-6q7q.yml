@@ -1,0 +1,46 @@
+advisory_id: GHSA-6m4r-cgm3-6q7q
+datasource_id: github_osv_importer_v2/GHSA-6m4r-cgm3-6q7q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-6m4r-cgm3-6q7q/GHSA-6m4r-cgm3-6q7q.json
+aliases:
+  - CVE-2019-15478
+summary: |
+  Cross-Site Scripting in status-board
+  All versions of `status-board` are vulnerable to Cross-Site Scripting. The `renderJsDashboard()` function concatenates the `safeDashboard` variable to the HTTP response message with insufficient sanitization. If this variable is controlled by user input it may allow attackers to execute arbitrary JavaScript in a victim's browser.
+
+
+  ## Recommendation
+
+  No fix is currently available. Consider using an alternative package until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/status-board
+    affected_versions: vers:npm/<1.1.82
+    fixed_versions: vers:npm/1.1.82
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-6m4r-cgm3-6q7q/GHSA-6m4r-cgm3-6q7q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/jameswlane/status-board/pull/949
+    reference_type:
+    reference_id:
+  - url: https://github.com/jameswlane/status-board/pull/949/files
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-15478
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-STATUSBOARD-460293
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1151
+    reference_type:
+    reference_id:

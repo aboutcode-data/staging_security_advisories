@@ -1,0 +1,32 @@
+advisory_id: GHSA-592v-7frm-h44q
+datasource_id: github_osv_importer_v2/GHSA-592v-7frm-h44q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-592v-7frm-h44q/GHSA-592v-7frm-h44q.json
+aliases:
+  - CVE-2020-23700
+summary: |
+  Cross-site scripting in LavaLite-CMS
+  Cross Site Scripting (XSS) vulnerability in LavaLite-CMS 5.8.0 via the Menu Links feature.
+impacted_packages:
+  - purl: pkg:composer/lavalite/cms
+    affected_versions: vers:composer/<=5.8.0
+    fixed_versions:
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-592v-7frm-h44q/GHSA-592v-7frm-h44q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/LavaLite/cms/issues/319
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-23700
+    reference_type:
+    reference_id:

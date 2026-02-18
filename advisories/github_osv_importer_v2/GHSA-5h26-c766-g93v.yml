@@ -1,0 +1,39 @@
+advisory_id: GHSA-5h26-c766-g93v
+datasource_id: github_osv_importer_v2/GHSA-5h26-c766-g93v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-5h26-c766-g93v/GHSA-5h26-c766-g93v.json
+aliases:
+  - CVE-2021-20293
+summary: A reflected Cross-Site Scripting (XSS) flaw was found in RESTEasy in all versions of
+  RESTEasy up to 4.6.0.Final, where it did not properly handle URL encoding when calling @javax.ws.rs.PathParam
+  without any @Produces MediaType. This flaw allows an attacker to launch a reflected XSS attack.
+  The highest threat from this vulnerability is to data confidentiality and integrity.
+impacted_packages:
+  - purl: pkg:maven/org.jboss.resteasy/resteasy-bom
+    affected_versions: vers:maven/<=4.6.0.Final
+    fixed_versions:
+  - purl: pkg:maven/org.jboss.resteasy/resteasy-core
+    affected_versions: vers:maven/<=4.6.0.Final
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-5h26-c766-g93v/GHSA-5h26-c766-g93v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1942819
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-20293
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210727-0005
+    reference_type:
+    reference_id:

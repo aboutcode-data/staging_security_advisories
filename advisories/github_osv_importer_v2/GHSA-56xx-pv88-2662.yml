@@ -1,0 +1,35 @@
+advisory_id: GHSA-56xx-pv88-2662
+datasource_id: github_osv_importer_v2/GHSA-56xx-pv88-2662
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-56xx-pv88-2662/GHSA-56xx-pv88-2662.json
+aliases:
+  - CVE-2020-25262
+summary: |
+  PyroCMS Vulnerable to CSRF
+  PyroCMS 3.7 is vulnerable to cross-site request forgery (CSRF) via the `admin/pages/delete/` URI: pages will be deleted.
+impacted_packages:
+  - purl: pkg:composer/pyrocms/pyrocms
+    affected_versions: vers:composer/<=3.7.0
+    fixed_versions:
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-56xx-pv88-2662/GHSA-56xx-pv88-2662.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://gist.github.com/farid007/2af454d909fa5a60a07e4e547e99964e
+    reference_type:
+    reference_id:
+  - url: https://github.com/pyrocms/pyrocms
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-25262
+    reference_type:
+    reference_id:

@@ -1,0 +1,37 @@
+advisory_id: GHSA-5gr6-97fv-52cc
+datasource_id: github_osv_importer_v2/GHSA-5gr6-97fv-52cc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-5gr6-97fv-52cc/GHSA-5gr6-97fv-52cc.json
+aliases: []
+summary: |
+  Cross-Site Scripting in TYPO3 CMS
+  Failing to properly encode user input, several places of the TYPO3 CMS are vulnerable to Cross-Site Scripting.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.6.0|<7.6.16
+    fixed_versions: vers:composer/7.6.16
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.6.1
+    fixed_versions: vers:composer/8.6.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-5gr6-97fv-52cc/GHSA-5gr6-97fv-52cc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2017-02-28-2.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2017-003
+    reference_type:
+    reference_id:

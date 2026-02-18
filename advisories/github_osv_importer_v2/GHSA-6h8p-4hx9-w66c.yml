@@ -1,0 +1,42 @@
+advisory_id: GHSA-6h8p-4hx9-w66c
+datasource_id: github_osv_importer_v2/GHSA-6h8p-4hx9-w66c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-6h8p-4hx9-w66c/GHSA-6h8p-4hx9-w66c.json
+aliases:
+  - CVE-2023-32786
+summary: |
+  Langchain Server-Side Request Forgery vulnerability
+  In Langchain before 0.0.329, prompt injection allows an attacker to force the service to retrieve data from an arbitrary URL, essentially providing SSRF and potentially injecting content into downstream tasks.
+impacted_packages:
+  - purl: pkg:pypi/langchain
+    affected_versions: vers:pypi/<0.0.329
+    fixed_versions: vers:pypi/0.0.329
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-6h8p-4hx9-w66c/GHSA-6h8p-4hx9-w66c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-918
+references:
+  - url: https://gist.github.com/rharang/d265f46fc3161b31ac2e81db44d662e1
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/pull/12747
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/releases/tag/v0.0.329
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-32786
+    reference_type:
+    reference_id:

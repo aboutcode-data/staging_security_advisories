@@ -1,0 +1,48 @@
+advisory_id: GHSA-5v7r-jg9r-vq44
+datasource_id: github_osv_importer_v2/GHSA-5v7r-jg9r-vq44
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-5v7r-jg9r-vq44/GHSA-5v7r-jg9r-vq44.json
+aliases: []
+summary: |
+  Insecure Cryptography Algorithm in simple-crypto-js
+  Versions of `simple-crypto-js` prior to 2.3.0 use AES-CBC with PKCS#7 padding, which is vulnerable to padding oracle attacks. This may allow attackers to break the encryption and access sensitive data.
+
+
+  ## Recommendation
+
+  Upgrade to version 2.3.0 or later.
+impacted_packages:
+  - purl: pkg:npm/simple-crypto-js
+    affected_versions: vers:npm/<2.3.0
+    fixed_versions: vers:npm/2.3.0
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-5v7r-jg9r-vq44/GHSA-5v7r-jg9r-vq44.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-327
+references:
+  - url: https://github.com/danang-id/simple-crypto-js
+    reference_type:
+    reference_id:
+  - url: https://github.com/danang-id/simple-crypto-js/commit/416584369de1dad9b21ac3fe85df0b71cf5718b2
+    reference_type:
+    reference_id:
+  - url: https://github.com/danang-id/simple-crypto-js/issues/12
+    reference_type:
+    reference_id:
+  - url: https://github.com/danang-id/simple-crypto-js/pull/17
+    reference_type:
+    reference_id:
+  - url: https://robertheaton.com/2013/07/29/padding-oracle-attack
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SIMPLECRYPTOJS-544027
+    reference_type:
+    reference_id:

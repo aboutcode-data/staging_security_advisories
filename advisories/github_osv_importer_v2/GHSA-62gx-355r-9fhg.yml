@@ -1,0 +1,95 @@
+advisory_id: GHSA-62gx-355r-9fhg
+datasource_id: github_osv_importer_v2/GHSA-62gx-355r-9fhg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-62gx-355r-9fhg/GHSA-62gx-355r-9fhg.json
+aliases:
+  - CVE-2021-29518
+summary: "Session operations in eager mode lead to null pointer dereferences\n### Impact\nIn\
+  \ eager mode (default in TF 2.0 and later), session operations are invalid. However, users\
+  \ could still call the raw ops associated with them and trigger a null pointer dereference:\n\
+  \n```python\nimport tensorflow as tf\ntf.raw_ops.GetSessionTensor(handle=['\\x12\\x1a\\x07'],dtype=4)\n\
+  ```\n```python\nimport tensorflow as tf\ntf.raw_ops.DeleteSessionTensor(handle=['\\x12\\x1a\\\
+  x07'])\n``` \n\nThe [implementation](https://github.com/tensorflow/tensorflow/blob/eebb96c2830d48597d055d247c0e9aebaea94cd5/tensorflow/core/kernels/session_ops.cc#L104)\
+  \ dereferences the session state pointer without checking if it is valid:\n  \n```cc\n  OP_REQUIRES_OK(ctx,\
+  \ ctx->session_state()->GetTensor(name, &val));\n```\n\nThus, in eager mode, `ctx->session_state()`\
+  \ is nullptr and the call of the member function is undefined behavior.\n\n### Patches\nWe\
+  \ have patched the issue in GitHub commit [ff70c47a396ef1e3cb73c90513da4f5cb71bebba](https://github.com/tensorflow/tensorflow/commit/ff70c47a396ef1e3cb73c90513da4f5cb71bebba).\n\
+  \nThe fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected\
+  \ and still in supported range.\n\n### For more information\nPlease consult [our security\
+  \ guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information\
+  \ regarding the security model and how to contact us with issues and questions.\n\n### Attribution\n\
+  This vulnerability has been reported by members of the Aivul Team from Qihoo 360."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+severities:
+  - score: '2.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-62gx-355r-9fhg/GHSA-62gx-355r-9fhg.json
+  - score: '2.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-62gx-355r-9fhg/GHSA-62gx-355r-9fhg.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-476
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-cpu/PYSEC-2021-446.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-gpu/PYSEC-2021-644.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow/PYSEC-2021-155.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/ff70c47a396ef1e3cb73c90513da4f5cb71bebba
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-62gx-355r-9fhg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29518
+    reference_type:
+    reference_id:

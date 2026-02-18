@@ -1,0 +1,61 @@
+advisory_id: GHSA-5v8f-xx9m-wj44
+datasource_id: github_osv_importer_v2/GHSA-5v8f-xx9m-wj44
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-5v8f-xx9m-wj44/GHSA-5v8f-xx9m-wj44.json
+aliases:
+  - CVE-2024-23444
+summary: |
+  Elasticsearch stores private key on disk unencrypted
+  It was discovered by Elastic engineering that when elasticsearch-certutil CLI tool is used with the csr option in order to create a new Certificate Signing Requests, the associated private key that is generated is stored on disk unencrypted even if the `--pass` parameter is passed in the command invocation.
+impacted_packages:
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/>=8.0.0-alpha1|<8.13.0
+    fixed_versions: vers:maven/8.13.0
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/<7.17.23
+    fixed_versions: vers:maven/7.17.23
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-5v8f-xx9m-wj44/GHSA-5v8f-xx9m-wj44.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-5v8f-xx9m-wj44/GHSA-5v8f-xx9m-wj44.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+references:
+  - url: https://discuss.elastic.co/t/elasticsearch-8-13-0-7-17-23-security-update-esa-2024-12/364157
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/elasticsearch
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/elasticsearch/commit/07296d596a1dee24730e33ad40b6726f70c6fc23
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/elasticsearch/commit/321c4e1e6b738bf80faa41dbb9881489a4ab44e5
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/elasticsearch/commit/bb1eddada3678257838b0590090ff9eb68acaa1b
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/elasticsearch/pull/106105
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/elasticsearch/pull/109834
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23444
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20250404-0001
+    reference_type:
+    reference_id:

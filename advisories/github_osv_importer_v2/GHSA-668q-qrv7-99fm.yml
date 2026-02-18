@@ -1,0 +1,62 @@
+advisory_id: GHSA-668q-qrv7-99fm
+datasource_id: github_osv_importer_v2/GHSA-668q-qrv7-99fm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-668q-qrv7-99fm/GHSA-668q-qrv7-99fm.json
+aliases:
+  - CVE-2021-42550
+summary: |
+  Deserialization of Untrusted Data in logback
+  In logback version 1.2.7 and prior versions, an attacker with the required privileges to edit configurations files could craft a malicious configuration allowing to execute arbitrary code loaded from LDAP servers.
+impacted_packages:
+  - purl: pkg:maven/ch.qos.logback/logback-core
+    affected_versions: vers:maven/<1.2.9
+    fixed_versions: vers:maven/1.2.9
+severities:
+  - score: '6.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-668q-qrv7-99fm/GHSA-668q-qrv7-99fm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: http://logback.qos.ch/news.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/167794/Open-Xchange-App-Suite-7.10.x-Cross-Site-Scripting-Command-Injection.html
+    reference_type:
+    reference_id:
+  - url: https://cert-portal.siemens.com/productcert/pdf/ssa-371761.pdf
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2022/Jul/11
+    reference_type:
+    reference_id:
+  - url: https://github.com/cn-panda/logbackRceDemo
+    reference_type:
+    reference_id:
+  - url: https://github.com/qos-ch/logback
+    reference_type:
+    reference_id:
+  - url: https://github.com/qos-ch/logback/blob/1502cba4c1dfd135b2e715bc0cf80c0045d4d128/logback-site/src/site/pages/news.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/qos-ch/logback/commit/87291079a1de9369ac67e20dc70a8fdc7cc4359c
+    reference_type:
+    reference_id:
+  - url: https://github.com/qos-ch/logback/commit/ef4fc4186b74b45ce80d86833820106ff27edd42
+    reference_type:
+    reference_id:
+  - url: https://jira.qos.ch/browse/LOGBACK-1591
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-42550
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20211229-0001
+    reference_type:
+    reference_id:

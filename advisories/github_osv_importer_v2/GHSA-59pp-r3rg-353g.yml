@@ -1,0 +1,56 @@
+advisory_id: GHSA-59pp-r3rg-353g
+datasource_id: github_osv_importer_v2/GHSA-59pp-r3rg-353g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-59pp-r3rg-353g/GHSA-59pp-r3rg-353g.json
+aliases:
+  - CVE-2025-67746
+summary: |
+  Composer is vulnerable to ANSI sequence injection
+  ### Impact
+  Attackers controlling remote sources that Composer downloads from might in some way inject ANSI control characters in the terminal output of various Composer commands, causing mangled output and potentially leading to confusion or DoS of the terminal application.
+
+  There is no proven exploit and this has thus a low severity but Composer still published a CVE as it has potential for abuse, and Composer wants to be on the safe side informing users that they should upgrade.
+
+  ### Patches
+  2.2.26 for 2.2 LTS or 2.9.3 for mainline.
+impacted_packages:
+  - purl: pkg:composer/composer/composer
+    affected_versions: vers:composer/>=2.0.0|<2.2.26
+    fixed_versions: vers:composer/2.2.26
+  - purl: pkg:composer/composer/composer
+    affected_versions: vers:composer/>=2.3.0|<2.9.3
+    fixed_versions: vers:composer/2.9.3
+severities:
+  - score: '1.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-59pp-r3rg-353g/GHSA-59pp-r3rg-353g.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/composer/composer
+    reference_type:
+    reference_id:
+  - url: https://github.com/composer/composer/commit/1d40a95c9d39a6b7f80d404ab30336c586da9917
+    reference_type:
+    reference_id:
+  - url: https://github.com/composer/composer/commit/5db1876a76fdef76d3c4f8a27995c434c7a43e71
+    reference_type:
+    reference_id:
+  - url: https://github.com/composer/composer/releases/tag/2.2.26
+    reference_type:
+    reference_id:
+  - url: https://github.com/composer/composer/releases/tag/2.9.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/composer/composer/security/advisories/GHSA-59pp-r3rg-353g
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-67746
+    reference_type:
+    reference_id:

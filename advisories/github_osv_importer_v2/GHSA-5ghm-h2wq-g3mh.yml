@@ -1,0 +1,38 @@
+advisory_id: GHSA-5ghm-h2wq-g3mh
+datasource_id: github_osv_importer_v2/GHSA-5ghm-h2wq-g3mh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-5ghm-h2wq-g3mh/GHSA-5ghm-h2wq-g3mh.json
+aliases:
+  - CVE-2023-5573
+summary: |
+  Allocation of Resources Without Limits or Throttling in vriteio/vrite
+  Allocation of Resources Without Limits or Throttling in GitHub repository vriteio/vrite prior to 0.3.0.
+impacted_packages:
+  - purl: pkg:npm/%40vrite/sdk
+    affected_versions: vers:npm/<0.3.0
+    fixed_versions: vers:npm/0.3.0
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-5ghm-h2wq-g3mh/GHSA-5ghm-h2wq-g3mh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/vriteio/vrite
+    reference_type:
+    reference_id:
+  - url: https://github.com/vriteio/vrite/commit/1877683b932bb33fb20d688e476284b70bb9fe23
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/46a2bb2c-712a-4008-a147-b862e3af7d72
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5573
+    reference_type:
+    reference_id:

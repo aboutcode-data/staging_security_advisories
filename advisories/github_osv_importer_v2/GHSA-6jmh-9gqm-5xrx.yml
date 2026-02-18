@@ -1,0 +1,38 @@
+advisory_id: GHSA-6jmh-9gqm-5xrx
+datasource_id: github_osv_importer_v2/GHSA-6jmh-9gqm-5xrx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-6jmh-9gqm-5xrx/GHSA-6jmh-9gqm-5xrx.json
+aliases:
+  - CVE-2022-0226
+summary: |
+  Cross-Site Request Forgery (CSRF) in livehelperchat
+  A CSRF issue is found in the audit configuration under settings. It was found that no CSRF token validation is getting done on the server-side. If we remove the CSRF token and keep the CSRF token field empty, the action is getting performed.
+impacted_packages:
+  - purl: pkg:composer/remdex/livehelperchat
+    affected_versions: vers:composer/<3.92.0
+    fixed_versions: vers:composer/3.92.0
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-6jmh-9gqm-5xrx/GHSA-6jmh-9gqm-5xrx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/livehelperchat/livehelperchat
+    reference_type:
+    reference_id:
+  - url: https://github.com/livehelperchat/livehelperchat/commit/f59ffb02984c0ce2fbb19ac39365066507de9370
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/635d0abf-7680-47f6-a277-d9a91471c73f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0226
+    reference_type:
+    reference_id:

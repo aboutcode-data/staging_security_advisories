@@ -1,0 +1,38 @@
+advisory_id: GHSA-6449-vf6p-9hfp
+datasource_id: github_osv_importer_v2/GHSA-6449-vf6p-9hfp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-6449-vf6p-9hfp/GHSA-6449-vf6p-9hfp.json
+aliases:
+  - CVE-2023-0312
+summary: |
+  thorsten/phpmyfaq is vulnerable to cross-site scripting (XSS)
+  Cross-site Scripting (XSS) - Stored in GitHub repository thorsten/phpmyfaq prior to 3.1.10.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.1.10
+    fixed_versions: vers:composer/3.1.10
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-6449-vf6p-9hfp/GHSA-6449-vf6p-9hfp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/65d419ca04111ee2612ae81cdd59753654cfe18a
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/f50ec8d1-cd60-4c2d-9ab8-3711870d83b9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0312
+    reference_type:
+    reference_id:

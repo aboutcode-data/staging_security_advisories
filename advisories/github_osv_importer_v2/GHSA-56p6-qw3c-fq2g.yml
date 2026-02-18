@@ -1,0 +1,57 @@
+advisory_id: GHSA-56p6-qw3c-fq2g
+datasource_id: github_osv_importer_v2/GHSA-56p6-qw3c-fq2g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-56p6-qw3c-fq2g/GHSA-56p6-qw3c-fq2g.json
+aliases:
+  - CVE-2025-30351
+summary: |
+  Suspended Directus user can continue to use session token to access API
+  ### Summary
+  Since the user status is not checked when verifying a session token a suspended user can use the token generated in session auth mode to access the API despite their status.
+
+  ### Details
+  There is a check missing in `verifySessionJWT` to verify that a user is actually still active and allowed to access the API. Right now one can extract the session token obtained by, e.g. login in to the app while still active and then, after the user has been suspended continue to use that token until it expires.
+
+  ### PoC
+  * Create an active user
+  * Log in with that user and note the session cookie
+  * Suspend the user (and don't trigger an `/auth/refresh` call, as that invalidates the session
+  * Access the API with `Authorization: Bearer <token>`
+
+  ### Impact
+  This weakens the security of suspending users.
+impacted_packages:
+  - purl: pkg:npm/directus
+    affected_versions: vers:npm/>=10.10.0|<11.5.0
+    fixed_versions: vers:npm/11.5.0
+  - purl: pkg:npm/%40directus/api
+    affected_versions: vers:npm/>=18.0.0|<24.0.1
+    fixed_versions: vers:npm/24.0.1
+  - purl: pkg:npm/%40directus/types
+    affected_versions: vers:npm/>=11.0.7|<13.0.0
+    fixed_versions: vers:npm/13.0.0
+severities:
+  - score: '3.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-56p6-qw3c-fq2g/GHSA-56p6-qw3c-fq2g.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-672
+references:
+  - url: https://github.com/directus/directus
+    reference_type:
+    reference_id:
+  - url: https://github.com/directus/directus/commit/ef179931c55b50c110feca8404901d5633940771
+    reference_type:
+    reference_id:
+  - url: https://github.com/directus/directus/security/advisories/GHSA-56p6-qw3c-fq2g
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-30351
+    reference_type:
+    reference_id:

@@ -1,0 +1,49 @@
+advisory_id: GHSA-5h3x-6gwf-73jm
+datasource_id: github_osv_importer_v2/GHSA-5h3x-6gwf-73jm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-5h3x-6gwf-73jm/GHSA-5h3x-6gwf-73jm.json
+aliases:
+  - CVE-2024-24770
+summary: |
+  vantage6 vulnerable to a username timing attack on recover password/MFA token
+  ### Impact
+  Much like https://github.com/vantage6/vantage6/security/advisories/GHSA-45gq-q4xh-cp53, it is possible to find which usernames exist in vantage6 by calling the API routes `/recover/lost` and `/2fa/lost`, which send emails to users if they have lost their password or MFA token. Usernames can be found by assessing response time differences, and additionally, they can be found because the endpoint gives a response "Failed to login" if the username exists.
+
+  ### Patches
+  No
+
+  ### Workarounds
+  No
+impacted_packages:
+  - purl: pkg:pypi/vantage6
+    affected_versions: vers:pypi/<=4.2.2
+    fixed_versions: vers:pypi/4.3.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-5h3x-6gwf-73jm/GHSA-5h3x-6gwf-73jm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-362
+  - CWE-208
+references:
+  - url: https://github.com/vantage6/vantage6
+    reference_type:
+    reference_id:
+  - url: https://github.com/vantage6/vantage6/commit/aecfd6d0e83165a41a60ebd52d2287b0217be26b
+    reference_type:
+    reference_id:
+  - url: https://github.com/vantage6/vantage6/security/advisories/GHSA-45gq-q4xh-cp53
+    reference_type:
+    reference_id:
+  - url: https://github.com/vantage6/vantage6/security/advisories/GHSA-5h3x-6gwf-73jm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-24770
+    reference_type:
+    reference_id:

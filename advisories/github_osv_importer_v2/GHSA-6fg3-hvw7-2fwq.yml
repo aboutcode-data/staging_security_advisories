@@ -1,0 +1,47 @@
+advisory_id: GHSA-6fg3-hvw7-2fwq
+datasource_id: github_osv_importer_v2/GHSA-6fg3-hvw7-2fwq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6fg3-hvw7-2fwq/GHSA-6fg3-hvw7-2fwq.json
+aliases:
+  - CVE-2025-9611
+summary: |
+  Microsoft Playwright MCP Server vulnerable to DNS Rebinding Attack; Allows Attackers Access to All Server Tools
+  Microsoft Playwright MCP Server versions prior to 0.0.40 fails to validate the Origin header on incoming connections. This allows an attacker to perform a DNS rebinding attack via a victim’s web browser and send unauthorized requests to a locally running MCP server, resulting in unintended invocation of MCP tool endpoints.
+impacted_packages:
+  - purl: pkg:npm/%40playwright/mcp
+    affected_versions: vers:npm/<0.0.40
+    fixed_versions: vers:npm/0.0.40
+severities:
+  - score: '7.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:H/SC:L/SI:L/SA:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6fg3-hvw7-2fwq/GHSA-6fg3-hvw7-2fwq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-749
+references:
+  - url: https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-8rgw-6xp9-2fg3
+    reference_type:
+    reference_id:
+  - url: https://github.com/microsoft/playwright/commit/1313fbd
+    reference_type:
+    reference_id:
+  - url: https://github.com/microsoft/playwright-mcp
+    reference_type:
+    reference_id:
+  - url: https://github.com/microsoft/playwright-mcp/issues/1206
+    reference_type:
+    reference_id:
+  - url: https://msrc.microsoft.com/report/vulnerability/VULN-164412
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-9611
+    reference_type:
+    reference_id:
+  - url: https://www.vulncheck.com/advisories/microsoft-playwright-mcp-server-dns-rebinding-via-missing-origin-header-validation
+    reference_type:
+    reference_id:

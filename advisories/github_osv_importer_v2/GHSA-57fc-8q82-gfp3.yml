@@ -1,0 +1,47 @@
+advisory_id: GHSA-57fc-8q82-gfp3
+datasource_id: github_osv_importer_v2/GHSA-57fc-8q82-gfp3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-57fc-8q82-gfp3/GHSA-57fc-8q82-gfp3.json
+aliases:
+  - CVE-2023-36188
+summary: |
+  langchain vulnerable to arbitrary code execution
+  An issue in langchain allows a remote attacker to execute arbitrary code via the PALChain parameter in the Python exec method.
+impacted_packages:
+  - purl: pkg:pypi/langchain
+    affected_versions: vers:pypi/<0.0.236
+    fixed_versions: vers:pypi/0.0.236
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-57fc-8q82-gfp3/GHSA-57fc-8q82-gfp3.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/langchain-ai/langchain
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/commit/e294ba475a355feb95003ed8f1a2b99942509a9e
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/issues/5872
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/pull/6003
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/pull/8425
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/langchain/PYSEC-2023-109.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-36188
+    reference_type:
+    reference_id:

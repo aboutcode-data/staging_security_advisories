@@ -1,0 +1,47 @@
+advisory_id: GHSA-6g23-fww6-rfrj
+datasource_id: github_osv_importer_v2/GHSA-6g23-fww6-rfrj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6g23-fww6-rfrj/GHSA-6g23-fww6-rfrj.json
+aliases:
+  - CVE-2018-8354
+summary: |
+  ChakraCore RCE Vulnerability
+  A remote code execution vulnerability exists in the way that the scripting engine handles objects in memory in Microsoft Edge, aka "Scripting Engine Memory Corruption Vulnerability." This affects Microsoft Edge, ChakraCore. This CVE ID is unique from CVE-2018-8391, CVE-2018-8456, CVE-2018-8457, CVE-2018-8459.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.11.1
+    fixed_versions: vers:nuget/1.11.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6g23-fww6-rfrj/GHSA-6g23-fww6-rfrj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://github.com/chakra-core/ChakraCore
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/commit/5192cdc08a030a580ba15d1d9aa50f81a6d92211
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/5688
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-8354
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8354
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124202704/http://www.securityfocus.com/bid/105232
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210517133345/http://www.securitytracker.com/id/1041623
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-5rf4-f24c-hpvh
+datasource_id: github_osv_importer_v2/GHSA-5rf4-f24c-hpvh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-5rf4-f24c-hpvh/GHSA-5rf4-f24c-hpvh.json
+aliases:
+  - CVE-2022-37199
+summary: |
+  SQL injection in jflyfox jfinal
+  JFinal CMS 5.1.0 is vulnerable to SQL Injection via /jfinal_cms/system/user/list.
+impacted_packages:
+  - purl: pkg:maven/com.jflyfox/jflyfox_jfinal
+    affected_versions: vers:maven/<=5.1.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-5rf4-f24c-hpvh/GHSA-5rf4-f24c-hpvh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/jflyfox/jfinal_cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/jflyfox/jfinal_cms/issues/48
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37199
+    reference_type:
+    reference_id:

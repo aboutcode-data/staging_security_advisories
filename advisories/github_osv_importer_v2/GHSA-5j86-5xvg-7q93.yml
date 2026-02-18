@@ -1,0 +1,28 @@
+advisory_id: GHSA-5j86-5xvg-7q93
+datasource_id: github_osv_importer_v2/GHSA-5j86-5xvg-7q93
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-5j86-5xvg-7q93/GHSA-5j86-5xvg-7q93.json
+aliases: []
+summary: |
+  TYPO3 Cross-Site Scripting (XSS) in form component
+  Failing to sanitize content from unauthenticated  website visitors, the form component is susceptible to Cross-Site Scripting.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.18
+    fixed_versions: vers:composer/6.2.18
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2016-02-16-4.yaml
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2016-004
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-004
+    reference_type:
+    reference_id:

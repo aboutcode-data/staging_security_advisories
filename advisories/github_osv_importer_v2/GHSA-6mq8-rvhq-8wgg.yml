@@ -1,0 +1,47 @@
+advisory_id: GHSA-6mq8-rvhq-8wgg
+datasource_id: github_osv_importer_v2/GHSA-6mq8-rvhq-8wgg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6mq8-rvhq-8wgg/GHSA-6mq8-rvhq-8wgg.json
+aliases:
+  - CVE-2025-69223
+summary: |
+  AIOHTTP's HTTP Parser auto_decompress feature is vulnerable to zip bomb
+  ### Summary
+  A zip bomb can be used to execute a DoS against the aiohttp server.
+
+  ### Impact
+  An attacker may be able to send a compressed request that when decompressed by aiohttp could exhaust the host's memory.
+
+  ------
+
+  Patch: https://github.com/aio-libs/aiohttp/commit/2b920c39002cee0ec5b402581779bbaaf7c9138a
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<=3.13.2
+    fixed_versions: vers:pypi/3.13.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6mq8-rvhq-8wgg/GHSA-6mq8-rvhq-8wgg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-409
+  - CWE-770
+references:
+  - url: https://github.com/aio-libs/aiohttp
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/commit/2b920c39002cee0ec5b402581779bbaaf7c9138a
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/security/advisories/GHSA-6mq8-rvhq-8wgg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-69223
+    reference_type:
+    reference_id:

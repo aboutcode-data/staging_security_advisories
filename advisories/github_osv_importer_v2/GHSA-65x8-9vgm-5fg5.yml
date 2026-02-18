@@ -1,0 +1,35 @@
+advisory_id: GHSA-65x8-9vgm-5fg5
+datasource_id: github_osv_importer_v2/GHSA-65x8-9vgm-5fg5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-65x8-9vgm-5fg5/GHSA-65x8-9vgm-5fg5.json
+aliases:
+  - CVE-2020-22643
+summary: |
+  Feehi CMS arbitrary file upload vulnerability
+  Feehi CMS 2.1.0-beta is affected by an arbitrary file upload vulnerability, potentially resulting in remote code execution. After an administrator logs in, open the administrator image upload page to potentially upload malicious files.
+impacted_packages:
+  - purl: pkg:composer/feehi/cms
+    affected_versions: vers:composer/<=2.1.0-beta
+    fixed_versions:
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-65x8-9vgm-5fg5/GHSA-65x8-9vgm-5fg5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/liufee/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/liufee/cms/issues/51
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-22643
+    reference_type:
+    reference_id:

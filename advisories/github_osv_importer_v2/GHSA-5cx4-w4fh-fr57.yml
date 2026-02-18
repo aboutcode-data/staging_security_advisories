@@ -1,0 +1,53 @@
+advisory_id: GHSA-5cx4-w4fh-fr57
+datasource_id: github_osv_importer_v2/GHSA-5cx4-w4fh-fr57
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-5cx4-w4fh-fr57/GHSA-5cx4-w4fh-fr57.json
+aliases:
+  - CVE-2025-67853
+summary: |
+  Moodle Affected by Improper Restriction of Excessive Authentication Attempts
+  A flaw was found in Moodle. A remote attacker could exploit a lack of proper rate limiting in the confirmation email service. This vulnerability allows attackers to more easily enumerate or guess user credentials, facilitating brute-force attacks against user accounts.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.22
+    fixed_versions: vers:composer/4.1.22
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.12
+    fixed_versions: vers:composer/4.4.12
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.8
+    fixed_versions: vers:composer/4.5.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.0.0-beta|<5.0.4
+    fixed_versions: vers:composer/5.0.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.1.0-beta|<5.1.1
+    fixed_versions: vers:composer/5.1.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-5cx4-w4fh-fr57/GHSA-5cx4-w4fh-fr57.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-307
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-67853
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2423847
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=471303
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-67853
+    reference_type:
+    reference_id:

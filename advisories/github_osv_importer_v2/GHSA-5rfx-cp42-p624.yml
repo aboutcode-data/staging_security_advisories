@@ -1,0 +1,49 @@
+advisory_id: GHSA-5rfx-cp42-p624
+datasource_id: github_osv_importer_v2/GHSA-5rfx-cp42-p624
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-5rfx-cp42-p624/GHSA-5rfx-cp42-p624.json
+aliases:
+  - CVE-2025-66560
+summary: |
+  Quarkus REST has potential worker thread starvation when HTTP connection is closed while waiting to write
+  A vulnerability exists in the HTTP layer of Quarkus REST related to response handling. When a response is being written, the framework waits for previously written response chunks to be fully transmitted before proceeding. If the client connection is dropped during this waiting period, the associated worker thread is never released and becomes permanently blocked. Under sustained or repeated occurrences, this can exhaust the available worker threads, leading to degraded performance, or complete unavailability of the application.
+
+  ## Workarounds
+
+  For versions without the fix applied, it is recommended to implement a health check that monitors the status and saturation of the worker thread pool. This helps detect abnormal thread retention early and allows operators to take corrective action before the application’s responsiveness is impacted.
+
+  ## Credits
+
+  CVE reported by Shaswata Jash, Nokia
+impacted_packages:
+  - purl: pkg:maven/io.quarkus/quarkus-rest
+    affected_versions: vers:maven/<3.20.5
+    fixed_versions: vers:maven/3.20.5
+  - purl: pkg:maven/io.quarkus/quarkus-rest
+    affected_versions: vers:maven/>=3.21.0|<3.27.2
+    fixed_versions: vers:maven/3.27.2
+  - purl: pkg:maven/io.quarkus/quarkus-rest
+    affected_versions: vers:maven/>=3.30.0|<3.31.0
+    fixed_versions: vers:maven/3.31.0
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-5rfx-cp42-p624/GHSA-5rfx-cp42-p624.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/quarkusio/quarkus
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/security/advisories/GHSA-5rfx-cp42-p624
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-66560
+    reference_type:
+    reference_id:

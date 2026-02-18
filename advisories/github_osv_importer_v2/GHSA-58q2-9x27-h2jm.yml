@@ -1,0 +1,61 @@
+advisory_id: GHSA-58q2-9x27-h2jm
+datasource_id: github_osv_importer_v2/GHSA-58q2-9x27-h2jm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-58q2-9x27-h2jm/GHSA-58q2-9x27-h2jm.json
+aliases: []
+summary: |
+  solspace/craft-freeform Has a DoS Vulnerability
+  ### Summary
+  Freeform plugin v4.1.29 uses vulnerable Axios ^1.7.7 allowing unauthenticated attackers to crash servers via malicious data: URIs causing memory exhaustion (CVE-2025-58754).
+
+  Freeform version: 4.1.29
+  Craft CMS version: 4.16.8
+
+  ### Impact
+  When Axios runs on Node.js and is given a URL with the `data:` scheme, it does not perform HTTP. Instead, its Node http adapter decodes the entire payload into memory (`Buffer`/`Blob`) and returns a synthetic 200 response. This path ignores `maxContentLength` / `maxBodyLength` (which only protect HTTP responses), so an attacker can supply a very large `data:` URI and cause the process to allocate unbounded memory and crash (DoS), even if the caller requested `responseType: 'stream'`.
+
+  https://github.com/axios/axios/security/advisories/GHSA-4hjh-wcwx-xvwj
+  https://github.com/axios/axios/pull/7011
+  https://github.com/axios/axios/commit/945435fc51467303768202250debb8d4ae892593
+  https://github.com/axios/axios/releases/tag/v1.12.0
+impacted_packages:
+  - purl: pkg:composer/solspace/craft-freeform
+    affected_versions: vers:composer/<4.1.29
+    fixed_versions: vers:composer/4.1.30
+severities:
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-58q2-9x27-h2jm/GHSA-58q2-9x27-h2jm.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/axios/axios/commit/945435fc51467303768202250debb8d4ae892593
+    reference_type:
+    reference_id:
+  - url: https://github.com/axios/axios/pull/7011
+    reference_type:
+    reference_id:
+  - url: https://github.com/axios/axios/releases/tag/v1.12.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/axios/axios/security/advisories/GHSA-4hjh-wcwx-xvwj
+    reference_type:
+    reference_id:
+  - url: https://github.com/solspace/craft-freeform
+    reference_type:
+    reference_id:
+  - url: https://github.com/solspace/craft-freeform/commit/e7402a1d1ce9f28ecb6ce659885ac66391d3a040
+    reference_type:
+    reference_id:
+  - url: https://github.com/solspace/craft-freeform/releases/tag/v4.1.30
+    reference_type:
+    reference_id:
+  - url: https://github.com/solspace/craft-freeform/security/advisories/GHSA-58q2-9x27-h2jm
+    reference_type:
+    reference_id:

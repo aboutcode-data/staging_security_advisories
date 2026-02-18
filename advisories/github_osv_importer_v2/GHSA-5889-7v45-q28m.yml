@@ -1,0 +1,89 @@
+advisory_id: GHSA-5889-7v45-q28m
+datasource_id: github_osv_importer_v2/GHSA-5889-7v45-q28m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5889-7v45-q28m/GHSA-5889-7v45-q28m.json
+aliases:
+  - CVE-2022-29213
+summary: "Incomplete validation in signal ops leads to crashes in TensorFlow\n### Impact\nThe\
+  \ `tf.compat.v1.signal.rfft2d` and `tf.compat.v1.signal.rfft3d` lack input validation and\
+  \ under certain condition can result in crashes (due to `CHECK`-failures).\n\n### Patches\
+  \ \nWe have patched the issue in GitHub commit [0a8a781e597b18ead006d19b7d23d0a369e9ad73](https://github.com/tensorflow/tensorflow/commit/0a8a781e597b18ead006d19b7d23d0a369e9ad73)\
+  \ (merging GitHub PR [#55274](https://github.com/tensorflow/tensorflow/pull/55274)).\n\nThe\
+  \ fix will be included in TensorFlow 2.9.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.8.1, TensorFlow 2.7.2, and TensorFlow 2.6.4, as these are also affected and still in supported\
+  \ range.\n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions.\n\n### Attribution\nThis vulnerability has been reported externally via a [GitHub\
+  \ issue](https://github.com/tensorflow/tensorflow/issues/55263)."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.6.4
+    fixed_versions: vers:pypi/2.6.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.7.0|<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.6.4
+    fixed_versions: vers:pypi/2.6.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.7.0|<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.6.4
+    fixed_versions: vers:pypi/2.6.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.7.0|<2.7.2
+    fixed_versions: vers:pypi/2.7.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.8.0|<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5889-7v45-q28m/GHSA-5889-7v45-q28m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-617
+  - CWE-20
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/0a8a781e597b18ead006d19b7d23d0a369e9ad73
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/issues/55263
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/pull/55274
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-5889-7v45-q28m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29213
+    reference_type:
+    reference_id:

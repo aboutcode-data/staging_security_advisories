@@ -1,0 +1,31 @@
+advisory_id: GHSA-5mrr-rgp6-x4gr
+datasource_id: github_osv_importer_v2/GHSA-5mrr-rgp6-x4gr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-5mrr-rgp6-x4gr/GHSA-5mrr-rgp6-x4gr.json
+aliases: []
+summary: |
+  Command Injection in marsdb
+  All versions of `marsdb` are vulnerable to Command Injection. In the `DocumentMatcher` class, selectors on `$where` clauses are passed to a Function constructor unsanitized. This allows attackers to run arbitrary commands in the system when the function is executed.
+
+
+  ## Recommendation
+
+  No fix is currently available. Consider using an alternative package until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/marsdb
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions:
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/bkimminich/juice-shop/issues/1173
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1122
+    reference_type:
+    reference_id:

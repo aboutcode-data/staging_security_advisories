@@ -1,0 +1,53 @@
+advisory_id: GHSA-5j3g-jfq3-7jwx
+datasource_id: github_osv_importer_v2/GHSA-5j3g-jfq3-7jwx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-5j3g-jfq3-7jwx/GHSA-5j3g-jfq3-7jwx.json
+aliases:
+  - CVE-2014-7205
+summary: |
+  Arbitrary JavaScript Execution in bassmaster
+  A vulnerability exists in bassmaster <= 1.5.1 that allows for an attacker to provide arbitrary JavaScript that is then executed server side via eval.
+
+
+  ## Recommendation
+
+  Update to bassmaster version 1.5.2 or greater.
+impacted_packages:
+  - purl: pkg:npm/bassmaster
+    affected_versions: vers:npm/<1.5.2
+    fixed_versions: vers:npm/1.5.2
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://exchange.xforce.ibmcloud.com/vulnerabilities/96730
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5j3g-jfq3-7jwx
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/bassmaster
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/bassmaster/commit/b751602d8cb7194ee62a61e085069679525138c4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-7205
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/40689
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2014/09/30/10
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/70180
+    reference_type:
+    reference_id:

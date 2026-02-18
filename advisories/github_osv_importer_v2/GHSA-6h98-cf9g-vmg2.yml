@@ -1,0 +1,42 @@
+advisory_id: GHSA-6h98-cf9g-vmg2
+datasource_id: github_osv_importer_v2/GHSA-6h98-cf9g-vmg2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6h98-cf9g-vmg2/GHSA-6h98-cf9g-vmg2.json
+aliases:
+  - CVE-2017-1000424
+summary: |
+  Electron vulnerable to URL spoofing via PDFium
+  Electron version 1.7.0 - 1.7.5 is vulnerable to a URL Spoofing problem when opening PDFs in PDFium resulting loading arbitrary PDFs that a hacker can control.
+impacted_packages:
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=1.7.0|<1.7.6
+    fixed_versions: vers:npm/1.7.6
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6h98-cf9g-vmg2/GHSA-6h98-cf9g-vmg2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-290
+  - CWE-345
+references:
+  - url: https://github.com/electron/electron
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/pull/10008
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/pull/10008/files
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/releases/tag/v1.7.6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000424
+    reference_type:
+    reference_id:

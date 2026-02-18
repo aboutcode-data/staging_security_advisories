@@ -1,0 +1,36 @@
+advisory_id: GHSA-6mv8-95x5-xcq9
+datasource_id: github_osv_importer_v2/GHSA-6mv8-95x5-xcq9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-6mv8-95x5-xcq9/GHSA-6mv8-95x5-xcq9.json
+aliases:
+  - CVE-2023-6038
+summary: |
+  H2O local file inclusion vulnerability
+  A Local File Inclusion (LFI) vulnerability exists in the h2o-3 REST API, allowing unauthenticated remote attackers to read arbitrary files on the server with the permissions of the user running the h2o-3 instance. This issue affects the default installation and does not require user interaction. The vulnerability can be exploited by making specific GET or POST requests to the ImportFiles and ParseSetup endpoints, respectively. This issue was identified in version 3.40.0.4 of h2o-3.
+impacted_packages:
+  - purl: pkg:maven/ai.h2o/h2o-core
+    affected_versions: vers:maven/<=3.40.0.4
+    fixed_versions:
+severities:
+  - score: '9.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-6mv8-95x5-xcq9/GHSA-6mv8-95x5-xcq9.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-29
+  - CWE-862
+references:
+  - url: https://github.com/h2oai/h2o-3
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/380fce33-fec5-49d9-a101-12c972125d8c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6038
+    reference_type:
+    reference_id:

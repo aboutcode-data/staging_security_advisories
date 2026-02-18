@@ -1,0 +1,59 @@
+advisory_id: GHSA-583g-g682-crxf
+datasource_id: github_osv_importer_v2/GHSA-583g-g682-crxf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-583g-g682-crxf/GHSA-583g-g682-crxf.json
+aliases:
+  - CVE-2024-23639
+summary: |
+  Micronaut management endpoints vulnerable to drive-by localhost attack
+  ### Summary
+  Enabled but unsecured management endpoints are susceptible to drive-by localhost attacks. While not typical of a production application, these attacks may have more impact on a development environment where such endpoints may be flipped on without much thought.
+
+  ### Details
+  A malicious/compromised website can make HTTP requests to `localhost`. Normally, such requests would trigger a CORS preflight check which would prevent the request; however, some requests are ["simple"](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests) and do not require a preflight check. These endpoints, if enabled and not secured, are vulnerable to being triggered.
+
+  ### Impact
+  Production environments typically disable unused endpoints and secure/restrict access to needed endpoints. A more likely victim is the developer in their local development host, who has enabled endpoints without security for the sake of easing development.
+impacted_packages:
+  - purl: pkg:maven/io.micronaut/micronaut-http-server
+    affected_versions: vers:maven/<3.8.3
+    fixed_versions: vers:maven/3.8.3
+  - purl: pkg:maven/io.micronaut/micronaut-http-server-netty
+    affected_versions: vers:maven/<3.8.3
+    fixed_versions: vers:maven/3.8.3
+  - purl: pkg:maven/io.micronaut/micronaut-http-server-tck
+    affected_versions: vers:maven/<3.8.3
+    fixed_versions: vers:maven/3.8.3
+severities:
+  - score: '5.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-583g-g682-crxf/GHSA-583g-g682-crxf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-15
+  - CWE-664
+  - CWE-610
+references:
+  - url: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests
+    reference_type:
+    reference_id:
+  - url: https://github.com/micronaut-projects/micronaut-core
+    reference_type:
+    reference_id:
+  - url: https://github.com/micronaut-projects/micronaut-core/commit/01adb21e57137caaf7004313d2055c5a78b1f47b
+    reference_type:
+    reference_id:
+  - url: https://github.com/micronaut-projects/micronaut-core/pull/8642
+    reference_type:
+    reference_id:
+  - url: https://github.com/micronaut-projects/micronaut-core/security/advisories/GHSA-583g-g682-crxf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23639
+    reference_type:
+    reference_id:

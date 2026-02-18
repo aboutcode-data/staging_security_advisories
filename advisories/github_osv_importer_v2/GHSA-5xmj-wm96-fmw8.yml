@@ -1,0 +1,33 @@
+advisory_id: GHSA-5xmj-wm96-fmw8
+datasource_id: github_osv_importer_v2/GHSA-5xmj-wm96-fmw8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-5xmj-wm96-fmw8/GHSA-5xmj-wm96-fmw8.json
+aliases: []
+summary: |
+  Moderate severity vulnerability that affects actionpack
+  Withdrawn, accidental duplicate publish.
+
+  Directory traversal vulnerability in actionpack/lib/action_dispatch/middleware/static.rb in Action Pack in Ruby on Rails 3.x before 3.2.21, 4.0.x before 4.0.12, 4.1.x before 4.1.8, and 4.2.x before 4.2.0.beta4, when serve_static_assets is enabled, allows remote attackers to determine the existence of files outside the application root via vectors involving a \ (backslash) character, a similar issue to CVE-2014-7818.
+impacted_packages:
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<3.2.21
+    fixed_versions: vers:gem/3.2.21
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=4.0.0|<4.0.12
+    fixed_versions: vers:gem/4.0.12
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=4.1.0|<4.1.8
+    fixed_versions: vers:gem/4.1.8
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-5xmj-wm96-fmw8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-7829
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-6c9x-mj3g-h47x
+datasource_id: github_osv_importer_v2/GHSA-6c9x-mj3g-h47x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-6c9x-mj3g-h47x/GHSA-6c9x-mj3g-h47x.json
+aliases:
+  - CVE-2021-46708
+summary: |
+  Spoofing attack in swagger-ui-dist
+  The swagger-ui-dist package before 4.1.3 for Node.js could allow a remote attacker to hijack the clicking action of the victim. By persuading a victim to visit a malicious Web site, a remote attacker could exploit this vulnerability to hijack the victim's click actions and possibly launch further attacks against the victim.
+impacted_packages:
+  - purl: pkg:npm/swagger-ui-dist
+    affected_versions: vers:npm/<4.1.3
+    fixed_versions: vers:npm/4.1.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-6c9x-mj3g-h47x/GHSA-6c9x-mj3g-h47x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1021
+references:
+  - url: https://github.com/swagger-api/swagger-ui
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-46708
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220407-0004
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-SWAGGERUIDIST-2314884
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/swagger-ui-dist/v/4.1.3
+    reference_type:
+    reference_id:

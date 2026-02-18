@@ -1,0 +1,30 @@
+advisory_id: GHSA-5vj8-3v2h-h38v
+datasource_id: github_osv_importer_v2/GHSA-5vj8-3v2h-h38v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-5vj8-3v2h-h38v/GHSA-5vj8-3v2h-h38v.json
+aliases: []
+summary: |
+  Remote Code Execution in next
+  Versions of `next` prior to 5.1.0 are vulnerable to Remote Code Execution. The `/path:` route fails to properly sanitize input and passes it to a `require()` call. This allows attackers to execute JavaScript code on the server. Note that prior version 0.9.9 package `next` npm package hosted a different utility (0.4.1 being the latest version of that codebase), and this advisory does not apply to those versions.
+
+  ## Recommendation
+
+  Upgrade to version 5.1.0.
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=0.9.9|<5.1.0
+    fixed_versions: vers:npm/5.1.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1538
+    reference_type:
+    reference_id:

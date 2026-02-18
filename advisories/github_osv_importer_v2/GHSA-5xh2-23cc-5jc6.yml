@@ -1,0 +1,93 @@
+advisory_id: GHSA-5xh2-23cc-5jc6
+datasource_id: github_osv_importer_v2/GHSA-5xh2-23cc-5jc6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-5xh2-23cc-5jc6/GHSA-5xh2-23cc-5jc6.json
+aliases:
+  - CVE-2025-22151
+summary: |
+  Strawberry GraphQL has type resolution vulnerability in node interface that allows potential data leakage through incorrect type resolution
+  **Vulnerability Summary**
+  A type confusion vulnerability exists in Strawberry GraphQL's relay integration that affects multiple ORM integrations (Django, SQLAlchemy, Pydantic). The vulnerability occurs when multiple GraphQL types are mapped to the same underlying model while using the relay `node` interface.
+
+  **Affected Components**
+  - Strawberry GraphQL relay integration
+  - Specifically impacts implementations using:
+    - Django integration
+    - SQLAlchemy integration
+    - Pydantic integration
+
+  **Technical Details**
+
+  The vulnerability manifests when:
+  1. Multiple GraphQL types inherit from `relay.Node`
+  2. These types are mapped to the same database model
+  3. The global `node` field is used for type resolution
+
+  Example of vulnerable code:
+
+  ```python
+  from fruits.models import Fruit
+  import strawberry_django
+  import strawberry
+
+  @strawberry_django.type(Fruit)
+  class FruitType(relay.Node):
+      name: strawberry.auto
+
+  @strawberry_django.type(Fruit)
+  class SpecialFruitType(relay.Node):
+      secret_name: strawberry.auto
+
+  @strawberry.type
+  class Query:
+      node: relay.Node = strawberry_django.node()
+  ```
+
+  **Security Impact**
+
+  When querying for a specific type using the global `node` field (e.g., `FruitType:some-id`), the resolver may incorrectly return an instance of a different type mapped to the same model (e.g., `SpecialFruitType`). This can lead to:
+
+  1. Information disclosure if the alternate type exposes sensitive fields
+  2. Potential privilege escalation if the alternate type contains data intended for restricted access
+
+  **Note**
+  Even with knowledge of the correct type name (e.g., `SpecialFruitType`), attackers may still be able to access unauthorized data through direct type queries.
+
+  We recommend to use permission on fields instead of creating a dedicate type.
+
+  **Recommendations**
+  1. Avoid mapping multiple relay Node types to the same model
+  2. Implement strict access controls at the field resolution level (using permissions)
+  3. Consider using separate models for different access levels of the same data
+  4. Update to `strawberry-graphql>=0.257.0`
+  5. If using `strawberry-graphql-django`, update to `strawberry-graphql-django>=0.54.0`
+impacted_packages:
+  - purl: pkg:pypi/strawberry-graphql
+    affected_versions: vers:pypi/>=0.182.0|<0.257.0
+    fixed_versions: vers:pypi/0.257.0
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-5xh2-23cc-5jc6/GHSA-5xh2-23cc-5jc6.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-351
+  - CWE-843
+references:
+  - url: https://github.com/strawberry-graphql/strawberry
+    reference_type:
+    reference_id:
+  - url: https://github.com/strawberry-graphql/strawberry/commit/526eb82b70451c0e59d5a71ae9b7396f59974bd8
+    reference_type:
+    reference_id:
+  - url: https://github.com/strawberry-graphql/strawberry/security/advisories/GHSA-5xh2-23cc-5jc6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-22151
+    reference_type:
+    reference_id:

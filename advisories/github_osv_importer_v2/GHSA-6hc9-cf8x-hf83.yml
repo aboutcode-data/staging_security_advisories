@@ -1,0 +1,67 @@
+advisory_id: GHSA-6hc9-cf8x-hf83
+datasource_id: github_osv_importer_v2/GHSA-6hc9-cf8x-hf83
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-6hc9-cf8x-hf83/GHSA-6hc9-cf8x-hf83.json
+aliases:
+  - CVE-2023-1584
+summary: A flaw was found in Quarkus. Quarkus OIDC can leak both ID and access tokens in the
+  authorization code flow when an insecure HTTP protocol is used, which can allow attackers
+  to access sensitive user data directly from the ID token or by using the access token to access
+  user data from OIDC provider services. Please note that passwords are not stored in access
+  tokens.
+impacted_packages:
+  - purl: pkg:maven/io.quarkus/quarkus-oidc
+    affected_versions: vers:maven/<2.13.0.Final
+    fixed_versions: vers:maven/2.13.0.Final
+  - purl: pkg:maven/io.quarkus/quarkus-oidc
+    affected_versions: vers:maven/>=3.0.0|<3.1.0.Final
+    fixed_versions: vers:maven/3.1.0.Final
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-6hc9-cf8x-hf83/GHSA-6hc9-cf8x-hf83.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://access.redhat.com/errata/RHSA-2023:3809
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:7653
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-1584
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2180886
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/5369d7ff233d3afe84ecd9160c541fba52b38e69
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/df305ff12386cf28b33567b8d9a18db164f019dd
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/pull/32192
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/pull/32192/commits/5369d7ff233d3afe84ecd9160c541fba52b38e69
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/pull/33414
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/pull/33414/commits/df305ff12386cf28b33567b8d9a18db164f019dd
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-1584
+    reference_type:
+    reference_id:

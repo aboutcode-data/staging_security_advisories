@@ -1,0 +1,44 @@
+advisory_id: GHSA-6fvw-x6gw-4wv8
+datasource_id: github_osv_importer_v2/GHSA-6fvw-x6gw-4wv8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6fvw-x6gw-4wv8/GHSA-6fvw-x6gw-4wv8.json
+aliases:
+  - CVE-2021-42325
+summary: |
+  Froxlor SQL injection vulnerability
+  Froxlor through 0.10.29.1 allows SQL injection in `Database/Manager/DbManagerMySQL.php` via a custom DB name.
+impacted_packages:
+  - purl: pkg:composer/froxlor/froxlor
+    affected_versions: vers:composer/<=0.10.29+1
+    fixed_versions: vers:composer/0.10.30
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6fvw-x6gw-4wv8/GHSA-6fvw-x6gw-4wv8.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: http://packetstormsecurity.com/files/164800/Froxlor-0.10.29.1-SQL-Injection.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/Froxlor/Froxlor
+    reference_type:
+    reference_id:
+  - url: https://github.com/Froxlor/Froxlor/commit/eb592340b022298f62a0a3e8450dbfbe29585782
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-42325
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/50502
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/50502.txt
+    reference_type: exploit
+    reference_id: CVE-2021-42325

@@ -1,0 +1,46 @@
+advisory_id: GHSA-69f9-5gxw-wvc2
+datasource_id: github_osv_importer_v2/GHSA-69f9-5gxw-wvc2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-69f9-5gxw-wvc2/GHSA-69f9-5gxw-wvc2.json
+aliases:
+  - CVE-2025-69224
+summary: |
+  AIOHTTP's unicode processing of header values could cause parsing discrepancies
+  ### Summary
+  The Python HTTP parser may allow a request smuggling attack with the presence of non-ASCII characters.
+
+  ### Impact
+  If a pure Python version of aiohttp is installed (i.e. without the usual C extensions) or AIOHTTP_NO_EXTENSIONS is enabled, then an attacker may be able to execute a request smuggling attack to bypass certain firewalls or proxy protections.
+
+  ------
+
+  Patch: https://github.com/aio-libs/aiohttp/commit/32677f2adfd907420c078dda6b79225c6f4ebce0
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<=3.13.2
+    fixed_versions: vers:pypi/3.13.3
+severities:
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-69f9-5gxw-wvc2/GHSA-69f9-5gxw-wvc2.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/aio-libs/aiohttp
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/commit/32677f2adfd907420c078dda6b79225c6f4ebce0
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/security/advisories/GHSA-69f9-5gxw-wvc2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-69224
+    reference_type:
+    reference_id:

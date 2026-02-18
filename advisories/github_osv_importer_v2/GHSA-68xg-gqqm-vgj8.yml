@@ -1,0 +1,77 @@
+advisory_id: GHSA-68xg-gqqm-vgj8
+datasource_id: github_osv_importer_v2/GHSA-68xg-gqqm-vgj8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-68xg-gqqm-vgj8/GHSA-68xg-gqqm-vgj8.json
+aliases:
+  - CVE-2023-40175
+summary: |
+  Puma HTTP Request/Response Smuggling vulnerability
+  ### Impact
+  Prior to version 6.3.1, puma exhibited incorrect behavior when parsing chunked transfer encoding bodies and zero-length Content-Length headers in a way that allowed HTTP request smuggling.
+
+  The following vulnerabilities are addressed by this advisory:
+
+  * Incorrect parsing of trailing fields in chunked transfer encoding bodies
+  * Parsing of blank/zero-length Content-Length headers
+
+  ### Patches
+  The vulnerability has been fixed in 6.3.1 and 5.6.7.
+
+  ### Workarounds
+  No known workarounds.
+
+  ### References
+  [HTTP Request Smuggling](https://portswigger.net/web-security/request-smuggling)
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+
+  Open an issue in [Puma](https://github.com/puma/puma)
+  See our [security policy](https://github.com/puma/puma/security/policy)
+impacted_packages:
+  - purl: pkg:gem/puma
+    affected_versions: vers:gem/<5.6.7
+    fixed_versions: vers:gem/5.6.7
+  - purl: pkg:gem/puma
+    affected_versions: vers:gem/>=6.0.0|<6.3.1
+    fixed_versions: vers:gem/6.3.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-68xg-gqqm-vgj8/GHSA-68xg-gqqm-vgj8.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/puma/puma
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/commit/690155e7d644b80eeef0a6094f9826ee41f1080a
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/commit/7405a219801dcebc0ad6e0aa108d4319ca23f662
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/commit/ed0f2f94b56982c687452504b95d5f1fbbe3eed1
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/releases/tag/v5.6.7
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/releases/tag/v6.3.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/security/advisories/GHSA-68xg-gqqm-vgj8
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/puma/CVE-2023-40175.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-40175
+    reference_type:
+    reference_id:

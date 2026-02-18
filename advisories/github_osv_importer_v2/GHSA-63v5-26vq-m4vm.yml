@@ -1,0 +1,43 @@
+advisory_id: GHSA-63v5-26vq-m4vm
+datasource_id: github_osv_importer_v2/GHSA-63v5-26vq-m4vm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-63v5-26vq-m4vm/GHSA-63v5-26vq-m4vm.json
+aliases:
+  - CVE-2026-1190
+summary: |
+  Keycloak's missing timestamp validation allows attackers to extend SAML response validity periods
+  A flaw was found in Keycloak's SAML brokering functionality. When Keycloak is configured as a client in a Security Assertion Markup Language (SAML) setup, it fails to validate the `NotOnOrAfter` timestamp within the `SubjectConfirmationData`. This allows an attacker to delay the expiration of SAML responses, potentially extending the time a response is considered valid and leading to unexpected session durations or resource consumption.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<=26.5.2
+    fixed_versions:
+severities:
+  - score: '3.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-63v5-26vq-m4vm/GHSA-63v5-26vq-m4vm.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-112
+  - CWE-347
+  - CWE-613
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2026-1190
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2430835
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/issues/45646
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-1190
+    reference_type:
+    reference_id:

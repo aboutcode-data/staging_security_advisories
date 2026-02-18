@@ -1,0 +1,67 @@
+advisory_id: GHSA-6377-hfv9-hqf6
+datasource_id: github_osv_importer_v2/GHSA-6377-hfv9-hqf6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-6377-hfv9-hqf6/GHSA-6377-hfv9-hqf6.json
+aliases:
+  - CVE-2024-51754
+summary: |
+  Twig has unguarded calls to `__toString()` when nesting an object into an array
+  ### Description
+
+  In a sandbox, an attacker can call `__toString()` on an object even if the `__toString()` method is not allowed by the security policy when the object is part of an array or an argument list (arguments to a function or a filter for instance).
+
+  ### Resolution
+
+  The sandbox mode now checks the `__toString()` method call on all objects.
+
+  The patch for this issue is available [here](https://github.com/twigphp/Twig/commit/cafc608ece310e62a35a76f17e25c04ab9ed05cc) for the 3.11.x branch, and [here](https://github.com/twigphp/Twig/commit/d4a302681bca9f7c6ce2835470d53609cdf3e23e) for the 3.x branch.
+
+  ### Credits
+
+  We would like to thank Jamie Schouten for reporting the issue and Fabien Potencier for providing the fix.
+impacted_packages:
+  - purl: pkg:composer/twig/twig
+    affected_versions: vers:composer/<3.11.2
+    fixed_versions: vers:composer/3.11.2
+  - purl: pkg:composer/twig/twig
+    affected_versions: vers:composer/>=3.12.0|<3.14.1
+    fixed_versions: vers:composer/3.14.1
+severities:
+  - score: '2.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-6377-hfv9-hqf6/GHSA-6377-hfv9-hqf6.json
+  - score: '2.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-6377-hfv9-hqf6/GHSA-6377-hfv9-hqf6.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2024-51754.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig/commit/2bb8c2460a2c519c498df9b643d5277117155a73
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig/security/advisories/GHSA-6377-hfv9-hqf6
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/05/msg00039.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-51754
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/unguarded-calls-to-__tostring-when-nesting-an-object-into-an-array
+    reference_type:
+    reference_id:

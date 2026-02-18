@@ -1,0 +1,41 @@
+advisory_id: GHSA-66q4-vfjg-2qhh
+datasource_id: github_osv_importer_v2/GHSA-66q4-vfjg-2qhh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-66q4-vfjg-2qhh/GHSA-66q4-vfjg-2qhh.json
+aliases:
+  - CVE-2026-25722
+summary: "Claude Code Vulnerable to Command Injection via Directory Change Bypasses Write Protection\n\
+  Claude Code failed to properly validate directory changes when combined with write operations\
+  \ to protected folders. By using the `cd` command to navigate into sensitive directories like\
+  \ `.claude`, it was possible to bypass write protection and create or modify files without\
+  \ user confirmation. Reliably exploiting this required the ability to add untrusted content\
+  \ into a Claude Code context window. \n\nUsers on standard Claude Code auto-update received\
+  \ this fix automatically. Users performing manual updates are advised to update to the latest\
+  \ version.\n\nAbout\nClaude Code thanks hackerone.com/nil221 for reporting this issue!"
+impacted_packages:
+  - purl: pkg:npm/%40anthropic-ai/claude-code
+    affected_versions: vers:npm/<2.0.57
+    fixed_versions: vers:npm/2.0.57
+severities:
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-66q4-vfjg-2qhh/GHSA-66q4-vfjg-2qhh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+  - CWE-20
+references:
+  - url: https://github.com/anthropics/claude-code
+    reference_type:
+    reference_id:
+  - url: https://github.com/anthropics/claude-code/security/advisories/GHSA-66q4-vfjg-2qhh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25722
+    reference_type:
+    reference_id:

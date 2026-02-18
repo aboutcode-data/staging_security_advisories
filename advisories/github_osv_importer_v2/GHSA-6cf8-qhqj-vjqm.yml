@@ -1,0 +1,48 @@
+advisory_id: GHSA-6cf8-qhqj-vjqm
+datasource_id: github_osv_importer_v2/GHSA-6cf8-qhqj-vjqm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-6cf8-qhqj-vjqm/GHSA-6cf8-qhqj-vjqm.json
+aliases:
+  - CVE-2020-28495
+summary: |
+  Prototype pollution in total.js
+  There is a prototype pollution vulnerability in the package total.js before version 3.4.7. The set function can be used to set a value into the object according to the path. However the keys of the path being set are not properly sanitized, leading to a prototype pollution vulnerability. The impact depends on the application. In some cases it is possible to achieve Denial of service (DoS), Remote Code Execution or Property Injection.
+impacted_packages:
+  - purl: pkg:npm/total.js
+    affected_versions: vers:npm/<3.4.7
+    fixed_versions: vers:npm/3.4.7
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-6cf8-qhqj-vjqm/GHSA-6cf8-qhqj-vjqm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-1321
+references:
+  - url: https://docs.totaljs.com/latest/en.html%23api~FrameworkUtils~U.set
+    reference_type:
+    reference_id:
+  - url: https://github.com/totaljs/framework/blob/master/utils.js%23L6606
+    reference_type:
+    reference_id:
+  - url: https://github.com/totaljs/framework/blob/master/utils.js%23L6617
+    reference_type:
+    reference_id:
+  - url: https://github.com/totaljs/framework/commit/b3f901561d66ab799a4a99279893b94cad7ae4ff
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28495
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-TOTALJS-1046671
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/total.js
+    reference_type:
+    reference_id:

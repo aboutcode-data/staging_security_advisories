@@ -1,0 +1,50 @@
+advisory_id: GHSA-582f-p4pg-xc74
+datasource_id: github_osv_importer_v2/GHSA-582f-p4pg-xc74
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/10/GHSA-582f-p4pg-xc74/GHSA-582f-p4pg-xc74.json
+aliases:
+  - CVE-2019-17592
+summary: |
+  Regular Expression Denial of Service in csv-parse
+  Versions of `csv-parse` prior to 4.4.6 are vulnerable to Regular Expression Denial of Service. The `__isInt()` function contains a malformed regular expression that processes large specially-crafted input very slowly, leading to a Denial of Service. This is triggered when using the `cast` option.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.4.6 or later.
+impacted_packages:
+  - purl: pkg:npm/csv-parse
+    affected_versions: vers:npm/<4.4.6
+    fixed_versions: vers:npm/4.4.6
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/10/GHSA-582f-p4pg-xc74/GHSA-582f-p4pg-xc74.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-20
+references:
+  - url: https://github.com/adaltas/node-csv-parse
+    reference_type:
+    reference_id:
+  - url: https://github.com/adaltas/node-csv-parse/commit/b9d35940c6815cdf1dfd6b21857a1f6d0fd51e4a
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z36UKPO5F3PQ3Q2POMF5LEKXWAH5RUFP
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-17592
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20191127-0002
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1171
+    reference_type:
+    reference_id:

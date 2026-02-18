@@ -1,0 +1,58 @@
+advisory_id: GHSA-62r4-hw23-cc8v
+datasource_id: github_osv_importer_v2/GHSA-62r4-hw23-cc8v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-62r4-hw23-cc8v/GHSA-62r4-hw23-cc8v.json
+aliases:
+  - CVE-2025-68668
+summary: |
+  n8n Vulnerable to Arbitrary Command Execution in Pyodide based Python Code Node
+  ### Impact
+  A sandbox bypass vulnerability exists in the Python Code Node that uses Pyodide.
+
+  An authenticated user with permission to create or modify workflows can exploit this vulnerability to execute arbitrary commands on the host system running n8n, using the same privileges as the n8n process.
+
+  ### Patches
+  In n8n version 1.111.0, a task-runner-based native Python implementation was introduced as an optional feature, providing a more secure isolation model.
+
+  To enable it, you need to configure the `N8N_RUNNERS_ENABLED` and `N8N_NATIVE_PYTHON_RUNNER` environment variables.
+
+  This implementation became the default starting with n8n version 2.0.0.
+
+  ### Workarounds
+  - Disable the Code Node by setting the environment variable `NODES_EXCLUDE: "[\"n8n-nodes-base.code\"]"` ([Docs)](https://docs.n8n.io/hosting/securing/blocking-nodes/)
+  - Disable Python support in the Code node by setting the environment variable `N8N_PYTHON_ENABLED=false`, which was introduced in n8n version 1.104.0.
+  - Configure n8n to use the task runner based Python sandbox via the `N8N_RUNNERS_ENABLED` and `N8N_NATIVE_PYTHON_RUNNER` environment variables. ([Docs](https://docs.n8n.io/hosting/configuration/task-runners/))
+
+  ### Resources
+  - n8n documentation: [Blocking access to nodes](https://docs.n8n.io/hosting/securing/blocking-nodes/)
+  - n8n documentation: [Code Node (Python)](https://docs.n8n.io/code/code-node/#python-native)
+  - n8n documentation: [Task Runners](https://docs.n8n.io/hosting/configuration/task-runners/)
+impacted_packages:
+  - purl: pkg:npm/n8n
+    affected_versions: vers:npm/>=1.0.0|<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-62r4-hw23-cc8v/GHSA-62r4-hw23-cc8v.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-693
+references:
+  - url: https://github.com/n8n-io/n8n
+    reference_type:
+    reference_id:
+  - url: https://github.com/n8n-io/n8n/security/advisories/GHSA-62r4-hw23-cc8v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-68668
+    reference_type:
+    reference_id:
+  - url: https://www.smartkeyss.com/post/cve-2025-68668-breaking-out-of-the-python-sandbox-in-n8n
+    reference_type:
+    reference_id:

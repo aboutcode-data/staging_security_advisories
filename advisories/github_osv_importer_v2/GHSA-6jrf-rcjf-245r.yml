@@ -1,0 +1,75 @@
+advisory_id: GHSA-6jrf-rcjf-245r
+datasource_id: github_osv_importer_v2/GHSA-6jrf-rcjf-245r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-6jrf-rcjf-245r/GHSA-6jrf-rcjf-245r.json
+aliases:
+  - CVE-2024-51998
+summary: |
+  changedetection.io path traversal using file URI scheme without supplying hostname
+  ### Summary
+
+  The validation for the file URI scheme falls short, and results in an attacker being able to read any file on the system. This issue only affects instances with a webdriver enabled, and `ALLOW_FILE_URI` false or not defined.
+
+  ### Details
+
+  The check used for URL protocol, `is_safe_url`, allows `file:` as a URL scheme:
+
+  https://github.com/dgtlmoon/changedetection.io/blob/e0abf0b50507a8a3d0c1d8522ab23519b3e4cdf4/changedetectionio/model/Watch.py#L11-L13
+
+  It later checks if local files are permitted, but one of the preconditions for the check is that the URL starts with `file://`. The issue comes with the fact that the file URI scheme is not required to have double slashes.
+
+  > A valid file URI must therefore begin with either `file:/path` (no hostname), `file:///path` (empty hostname), or `file://hostname/path`.
+  > — [Wikipedia](https://en.wikipedia.org/wiki/File_URI_scheme#Number_of_slash_characters)
+
+  https://github.com/dgtlmoon/changedetection.io/blob/e0abf0b50507a8a3d0c1d8522ab23519b3e4cdf4/changedetectionio/processors/__init__.py#L37-L41
+
+  ### PoC
+
+  1. Open up a changedetection.io instance with a webdriver configured
+  2. Create a new watch: `file:/etc/passwd` or a similar path for your operating system. Enable webdriver mode
+  3. Wait for it to be checked
+  4. Open preview
+  5. Notice contents of the file
+impacted_packages:
+  - purl: pkg:pypi/changedetection.io
+    affected_versions: vers:pypi/<=0.47.5
+    fixed_versions: vers:pypi/0.47.6
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-6jrf-rcjf-245r/GHSA-6jrf-rcjf-245r.json
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-6jrf-rcjf-245r/GHSA-6jrf-rcjf-245r.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/dgtlmoon/changedetection.io
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/blob/e0abf0b50507a8a3d0c1d8522ab23519b3e4cdf4/changedetectionio/model/Watch.py#L11-L13
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/blob/e0abf0b50507a8a3d0c1d8522ab23519b3e4cdf4/changedetectionio/processors/__init__.py#L37-L41
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/commit/49bc982c697169c98b79698889fb9d26f6b3317f
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/releases/tag/0.47.06
+    reference_type:
+    reference_id:
+  - url: https://github.com/dgtlmoon/changedetection.io/security/advisories/GHSA-6jrf-rcjf-245r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-51998
+    reference_type:
+    reference_id:

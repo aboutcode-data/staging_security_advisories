@@ -1,0 +1,38 @@
+advisory_id: GHSA-5vr6-hm68-5j9p
+datasource_id: github_osv_importer_v2/GHSA-5vr6-hm68-5j9p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-5vr6-hm68-5j9p/GHSA-5vr6-hm68-5j9p.json
+aliases:
+  - CVE-2021-44279
+summary: |
+  Cross-site Scripting in LibreNMS
+  LibreNMS 21.11.0 is affected by is affected by a Cross Site Scripting (XSS) vulnerability in includes/html/forms/poller-groups.inc.php.
+impacted_packages:
+  - purl: pkg:composer/librenms/librenms
+    affected_versions: vers:composer/<=21.11.0
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-5vr6-hm68-5j9p/GHSA-5vr6-hm68-5j9p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/librenms/librenms
+    reference_type:
+    reference_id:
+  - url: https://github.com/librenms/librenms/pull/13554
+    reference_type:
+    reference_id:
+  - url: https://github.com/librenms/librenms/pull/13554/commits/4f231a0f49b6c953d506913364ffd7fb3a660630
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-44279
+    reference_type:
+    reference_id:

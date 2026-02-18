@@ -1,0 +1,44 @@
+advisory_id: GHSA-6hr3-44gx-g6wh
+datasource_id: github_osv_importer_v2/GHSA-6hr3-44gx-g6wh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-6hr3-44gx-g6wh/GHSA-6hr3-44gx-g6wh.json
+aliases:
+  - CVE-2023-25727
+summary: |
+  Cross-site Scripting vulnerability in drag-and-drop upload of phpMyAdmin
+  In phpMyAdmin before 4.9.11 and 5.x before 5.2.1, an authenticated user can trigger Cross-site Scripting (XSS) by uploading a crafted .sql file through the drag-and-drop interface. By disabling the configuration directive `$cfg['enable_drag_drop_import']`, users will be unable to use the drag and drop upload which would protect against the vulnerability.
+impacted_packages:
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=4.3.0|<4.9.11
+    fixed_versions: vers:composer/4.9.11
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=5.0.0|<5.2.1
+    fixed_versions: vers:composer/5.2.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-6hr3-44gx-g6wh/GHSA-6hr3-44gx-g6wh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/phpmyadmin/composer
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpmyadmin/phpmyadmin/commit/53f70fd7f3b388639922e6cc1ca51fbe890c91cc
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpmyadmin/phpmyadmin/commit/efa2406695551667f726497750d3db91fb6f662e
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-25727
+    reference_type:
+    reference_id:
+  - url: https://www.phpmyadmin.net/security/PMASA-2023-1
+    reference_type:
+    reference_id:

@@ -1,0 +1,34 @@
+advisory_id: GHSA-57ww-2cvr-wv38
+datasource_id: github_osv_importer_v2/GHSA-57ww-2cvr-wv38
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-57ww-2cvr-wv38/GHSA-57ww-2cvr-wv38.json
+aliases:
+  - CVE-2019-1003016
+summary: |
+  Jenkins Job Import Plugin vulnerable to exposure of sensitive information
+  Jenkins Job Import Plugin did not check user permissions on its API endpoint used to access remote Jenkins instances. This allowed users with Overall/Read access to Jenkins to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.
+
+  Job Import Plugin 3.0 will only access Jenkins instances using credentials defined in the global configuration.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.plugins/job-import-plugin
+    affected_versions: vers:maven/<=2.1
+    fixed_versions: vers:maven/3.0
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-57ww-2cvr-wv38/GHSA-57ww-2cvr-wv38.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://jenkins.io/security/advisory/2019-01-28/#SECURITY-905%20(2)
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-1003016
+    reference_type:
+    reference_id:

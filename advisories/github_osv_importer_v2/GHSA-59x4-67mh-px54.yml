@@ -1,0 +1,38 @@
+advisory_id: GHSA-59x4-67mh-px54
+datasource_id: github_osv_importer_v2/GHSA-59x4-67mh-px54
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-59x4-67mh-px54/GHSA-59x4-67mh-px54.json
+aliases:
+  - CVE-2022-24953
+summary: |
+  Crypt_GPG does not prevent additional options in GPG calls
+  The Crypt_GPG extension before 1.6.7 for PHP does not prevent additional options in GPG calls, which presents a risk for certain environments and GPG versions.
+impacted_packages:
+  - purl: pkg:composer/pear/crypt_gpg
+    affected_versions: vers:composer/<1.6.7
+    fixed_versions: vers:composer/1.6.7
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-59x4-67mh-px54/GHSA-59x4-67mh-px54.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/pear/Crypt_GPG
+    reference_type:
+    reference_id:
+  - url: https://github.com/pear/Crypt_GPG/commit/29c0fbe96d0d4063ecd5c9a4644cb65a7fb7cc4e
+    reference_type:
+    reference_id:
+  - url: https://github.com/pear/Crypt_GPG/commit/74c8f989cefbe0887274b461dc56197e121bfd04
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24953
+    reference_type:
+    reference_id:

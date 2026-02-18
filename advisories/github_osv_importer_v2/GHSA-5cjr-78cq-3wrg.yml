@@ -1,0 +1,41 @@
+advisory_id: GHSA-5cjr-78cq-3wrg
+datasource_id: github_osv_importer_v2/GHSA-5cjr-78cq-3wrg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5cjr-78cq-3wrg/GHSA-5cjr-78cq-3wrg.json
+aliases:
+  - CVE-2022-29933
+summary: |
+  Improper account password reset in Craft CMS
+  Craft CMS through 3.7.36 allows a remote unauthenticated attacker, who knows at least one valid username, to reset the account's password and take over the account by providing a crafted HTTP header to the application while using the password reset functionality. Specifically, the attacker must send X-Forwarded-Host to the /index.php?p=admin/actions/users/send-password-reset-email URI. NOTE: the vendor's position is that a customer can already work around this by adjusting the configuration (i.e., by not using the default configuration).
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<3.7.36
+    fixed_versions: vers:composer/3.7.36
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5cjr-78cq-3wrg/GHSA-5cjr-78cq-3wrg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-640
+references:
+  - url: http://packetstormsecurity.com/files/166989/Craft-CMS-3.7.36-Password-Reset-Poisoning-Attack.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29933
+    reference_type:
+    reference_id:
+  - url: https://sec-consult.com/vulnerability-lab
+    reference_type:
+    reference_id:
+  - url: https://sec-consult.com/vulnerability-lab/advisory/password-reset-poisoning-attack-craft-cms
+    reference_type:
+    reference_id:

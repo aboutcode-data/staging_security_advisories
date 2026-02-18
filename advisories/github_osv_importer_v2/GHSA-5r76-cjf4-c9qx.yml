@@ -1,0 +1,52 @@
+advisory_id: GHSA-5r76-cjf4-c9qx
+datasource_id: github_osv_importer_v2/GHSA-5r76-cjf4-c9qx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-5r76-cjf4-c9qx/GHSA-5r76-cjf4-c9qx.json
+aliases:
+  - CVE-2018-16406
+summary: |
+  Moderate severity vulnerability that affects mayan-edms
+  An issue was discovered in Mayan EDMS before 3.0.2. The Cabinets app has XSS via a crafted cabinet label.
+impacted_packages:
+  - purl: pkg:pypi/mayan-edms
+    affected_versions: vers:pypi/<3.0.2
+    fixed_versions: vers:pypi/3.0.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-5r76-cjf4-c9qx/GHSA-5r76-cjf4-c9qx.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-5r76-cjf4-c9qx/GHSA-5r76-cjf4-c9qx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/advisories/GHSA-5r76-cjf4-c9qx
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/mayan-edms/PYSEC-2018-14.yaml
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/mayan-edms/mayan-edms
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/mayan-edms/mayan-edms/commit/48dfc06e49c7f773749e063f8cc69c95509d1c32
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/mayan-edms/mayan-edms/issues/495
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-16406
+    reference_type:
+    reference_id:

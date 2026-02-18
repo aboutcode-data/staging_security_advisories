@@ -1,0 +1,41 @@
+advisory_id: GHSA-5rg2-6qr5-2xp8
+datasource_id: github_osv_importer_v2/GHSA-5rg2-6qr5-2xp8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-5rg2-6qr5-2xp8/GHSA-5rg2-6qr5-2xp8.json
+aliases:
+  - CVE-2021-3863
+summary: |
+  Cross-site Scripting in snipe-it
+  snipe-it is vulnerable to Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+impacted_packages:
+  - purl: pkg:composer/snipe/snipe-it
+    affected_versions: vers:composer/<5.3.0
+    fixed_versions: vers:composer/5.3.0
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-5rg2-6qr5-2xp8/GHSA-5rg2-6qr5-2xp8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/snipe/snipe-it
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it/commit/fc5efd857f61f7e45c61db567bb66612bcb53128
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it/releases/tag/v5.3.0
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/1dbc8d79-1b53-44a3-a576-faec78f29ba0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3863
+    reference_type:
+    reference_id:

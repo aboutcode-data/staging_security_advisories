@@ -1,0 +1,38 @@
+advisory_id: GHSA-5mfx-4wcx-rv27
+datasource_id: github_osv_importer_v2/GHSA-5mfx-4wcx-rv27
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-5mfx-4wcx-rv27/GHSA-5mfx-4wcx-rv27.json
+aliases:
+  - CVE-2023-36414
+summary: |
+  Azure Identity SDK Remote Code Execution Vulnerability
+  Azure Identity SDK is vulnerable to remote code execution.
+impacted_packages:
+  - purl: pkg:nuget/Azure.Identity
+    affected_versions: vers:nuget/<1.10.2
+    fixed_versions: vers:nuget/1.10.2
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-5mfx-4wcx-rv27/GHSA-5mfx-4wcx-rv27.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/Azure/azure-sdk-for-net
+    reference_type:
+    reference_id:
+  - url: https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/identity/Azure.Identity/CHANGELOG.md#1102-2023-10-10
+    reference_type:
+    reference_id:
+  - url: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36414
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-36414
+    reference_type:
+    reference_id:

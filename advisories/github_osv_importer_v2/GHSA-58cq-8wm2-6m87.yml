@@ -1,0 +1,44 @@
+advisory_id: GHSA-58cq-8wm2-6m87
+datasource_id: github_osv_importer_v2/GHSA-58cq-8wm2-6m87
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-58cq-8wm2-6m87/GHSA-58cq-8wm2-6m87.json
+aliases:
+  - CVE-2025-43755
+summary: |
+  Liferay Portal Stored Cross-Site Scripting Vulnerability via GroupPagesPortlet_type Parameter
+  A Stored cross-site scripting vulnerability in the Liferay Portal 7.4.0 t through 7.4.3.132, and Liferay DXP 2025.Q2.0, 2025.Q1.0 through 2025.Q1.13, 2024.Q4.0 through 2024.Q4.7, 2024.Q3.0 through 2024.Q3.13, 2024.Q2.0 through 2024.Q2.13, 2024.Q1.1 through 2024.Q1.17 and 7.4 GA through update 92 allows an remote authenticated attacker to inject JavaScript into the _com_liferay_layout_admin_web_portlet_GroupPagesPortlet_type parameter.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.layout.admin.web
+    affected_versions: vers:maven/<5.0.191
+    fixed_versions: vers:maven/5.0.191
+severities:
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-58cq-8wm2-6m87/GHSA-58cq-8wm2-6m87.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/5db1ab018d71689fc1eaebcbd27c202e9c2b44d9
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/f91c374d28c478db38006f5c2d1802c2ab55d034
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-18238
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43755
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43755
+    reference_type:
+    reference_id:

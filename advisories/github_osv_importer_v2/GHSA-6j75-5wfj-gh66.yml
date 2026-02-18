@@ -1,0 +1,83 @@
+advisory_id: GHSA-6j75-5wfj-gh66
+datasource_id: github_osv_importer_v2/GHSA-6j75-5wfj-gh66
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-6j75-5wfj-gh66/GHSA-6j75-5wfj-gh66.json
+aliases:
+  - CVE-2024-45411
+summary: |
+  Twig has a possible sandbox bypass
+  ### Description
+
+  Under some circumstances, the sandbox security checks are not run which allows user-contributed templates to bypass the sandbox restrictions.
+
+  The security issue happens when all these conditions are met:
+
+   * The sandbox is disabled globally;
+   * The sandbox is enabled via a sandboxed `include()` function which references a template name (like `included.twig`) and not a `Template` or `TemplateWrapper` instance;
+   * The included template has been loaded before the `include()` call but in a non-sandbox context (possible as the sandbox has been globally disabled).
+
+  ### Resolution
+
+  The patch ensures that the sandbox security checks are always run at runtime.
+
+  ### Credits
+
+  We would like to thank Fabien Potencier for reporting and fixing the issue.
+impacted_packages:
+  - purl: pkg:composer/twig/twig
+    affected_versions: vers:composer/>=1.0.0|<1.44.8
+    fixed_versions: vers:composer/1.44.8
+  - purl: pkg:composer/twig/twig
+    affected_versions: vers:composer/>=2.0.0|<2.16.1
+    fixed_versions: vers:composer/2.16.1
+  - purl: pkg:composer/twig/twig
+    affected_versions: vers:composer/>=3.12.0|<3.14.0
+    fixed_versions: vers:composer/3.14.0
+  - purl: pkg:composer/twig/twig
+    affected_versions: vers:composer/>=3.0.0|<3.11.1
+    fixed_versions: vers:composer/3.11.1
+severities:
+  - score: '8.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-6j75-5wfj-gh66/GHSA-6j75-5wfj-gh66.json
+  - score: '5.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-6j75-5wfj-gh66/GHSA-6j75-5wfj-gh66.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-693
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2024-45411.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig/commit/11f68e2aeb526bfaf638e30d4420d8a710f3f7c6
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig/commit/2102dd135986db79192d26fb5f5817a566e0a7de
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig/commit/41103dcdc2daab4c83cdd05b5b4fde5b7e41e635
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig/commit/7afa198603de49d147e90d18062e7b9addcf5233
+    reference_type:
+    reference_id:
+  - url: https://github.com/twigphp/Twig/security/advisories/GHSA-6j75-5wfj-gh66
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45411
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/twig-security-release-possible-sandbox-bypass
+    reference_type:
+    reference_id:

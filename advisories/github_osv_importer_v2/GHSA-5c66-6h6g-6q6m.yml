@@ -1,0 +1,57 @@
+advisory_id: GHSA-5c66-6h6g-6q6m
+datasource_id: github_osv_importer_v2/GHSA-5c66-6h6g-6q6m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5c66-6h6g-6q6m/GHSA-5c66-6h6g-6q6m.json
+aliases:
+  - CVE-2013-7398
+summary: |
+  Insufficient Verification of Data Authenticity in Async Http Client
+  main/java/com/ning/http/client/AsyncHttpClientConfig.java in Async Http Client (aka AHC or async-http-client) before 1.9.0 does not require a hostname match during verification of X.509 certificates, which allows man-in-the-middle attackers to spoof HTTPS servers via an arbitrary valid certificate.
+impacted_packages:
+  - purl: pkg:maven/com.ning/async-http-client
+    affected_versions: vers:maven/<1.9.0
+    fixed_versions: vers:maven/1.9.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-345
+references:
+  - url: http://openwall.com/lists/oss-security/2014/08/26/1
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2015-0850.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2015-0851.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2015-1176.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2015-1551.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/AsyncHttpClient/async-http-client
+    reference_type:
+    reference_id:
+  - url: https://github.com/AsyncHttpClient/async-http-client/commit/a894583921c11c3b01f160ada36a8bb9d5158e9
+    reference_type:
+    reference_id:
+  - url: https://github.com/AsyncHttpClient/async-http-client/issues/197
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/ff8dcfe29377088ab655fda9d585dccd5b1f07fabd94ae84fd60a7f8@%3Ccommits.pulsar.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-7398
+    reference_type:
+    reference_id:
+  - url: https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2016-06-20
+    reference_type:
+    reference_id:

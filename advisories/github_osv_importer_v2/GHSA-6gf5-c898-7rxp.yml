@@ -1,0 +1,77 @@
+advisory_id: GHSA-6gf5-c898-7rxp
+datasource_id: github_osv_importer_v2/GHSA-6gf5-c898-7rxp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-6gf5-c898-7rxp/GHSA-6gf5-c898-7rxp.json
+aliases:
+  - CVE-2023-32070
+summary: |
+  Improper Neutralization of Script in Attributes in XWiki (X)HTML renderers
+  ### Impact
+
+  HTML rendering didn't check for dangerous attributes/attribute values. This allowed cross-site scripting (XSS) attacks via attributes and link URLs, e.g., supported in XWiki syntax.
+
+  ### Patches
+  This has been patched in XWiki 14.6 RC1.
+
+  ### Workarounds
+  There are no known workarounds apart from upgrading to a fixed version.
+
+  ### References
+  * https://github.com/xwiki/xwiki-rendering/commit/c40e2f5f9482ec6c3e71dbf1fff5ba8a5e44cdc1
+  * https://jira.xwiki.org/browse/XRENDERING-663
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [Jira XWiki.org](https://jira.xwiki.org/)
+  * Email us at [Security Mailing List](mailto:security@xwiki.org)
+impacted_packages:
+  - purl: pkg:maven/org.xwiki.rendering/xwiki-rendering-syntax-xhtml
+    affected_versions: vers:maven/<14.6-rc-1
+    fixed_versions: vers:maven/14.6-rc-1
+  - purl: pkg:maven/org.xwiki.platform/xwiki-core-rendering-api
+    affected_versions: vers:maven/<=3.0-milestone-2
+    fixed_versions:
+  - purl: pkg:maven/org.xwiki.rendering/xwiki-rendering-syntax-html
+    affected_versions: vers:maven/<14.6-rc-1
+    fixed_versions: vers:maven/14.6-rc-1
+  - purl: pkg:maven/org.xwiki.rendering/xwiki-rendering-syntax-html5
+    affected_versions: vers:maven/<14.6-rc-1
+    fixed_versions: vers:maven/14.6-rc-1
+  - purl: pkg:maven/org.xwiki.rendering/xwiki-rendering-syntax-annotatedxhtml
+    affected_versions: vers:maven/<14.6-rc-1
+    fixed_versions: vers:maven/14.6-rc-1
+  - purl: pkg:maven/org.xwiki.rendering/xwiki-rendering-syntax-annotatedhtml5
+    affected_versions: vers:maven/<14.6-rc-1
+    fixed_versions: vers:maven/14.6-rc-1
+  - purl: pkg:maven/org.xwiki.platform/xwiki-platform-annotation-core
+    affected_versions: vers:maven/<14.6-rc-1
+    fixed_versions: vers:maven/14.6-rc-1
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-6gf5-c898-7rxp/GHSA-6gf5-c898-7rxp.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-83
+  - CWE-79
+references:
+  - url: https://github.com/xwiki/xwiki-rendering
+    reference_type:
+    reference_id:
+  - url: https://github.com/xwiki/xwiki-rendering/commit/c40e2f5f9482ec6c3e71dbf1fff5ba8a5e44cdc1
+    reference_type:
+    reference_id:
+  - url: https://github.com/xwiki/xwiki-rendering/security/advisories/GHSA-6gf5-c898-7rxp
+    reference_type:
+    reference_id:
+  - url: https://jira.xwiki.org/browse/XRENDERING-663
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-32070
+    reference_type:
+    reference_id:

@@ -1,0 +1,48 @@
+advisory_id: GHSA-5mhg-wv8w-p59j
+datasource_id: github_osv_importer_v2/GHSA-5mhg-wv8w-p59j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-5mhg-wv8w-p59j/GHSA-5mhg-wv8w-p59j.json
+aliases:
+  - CVE-2024-27296
+summary: |
+  Directus version number disclosure
+  ### Impact
+
+  Currently the exact Directus version number is being shipped in compiled JS bundles which are accessible without authentication. With this information a malicious attacker can trivially look for known vulnerabilities in Directus core or any of its shipped dependencies in that specific running version.
+
+  ### Patches
+
+  The problem has been resolved in versions 10.8.3 and newer
+
+  ### Workarounds
+
+  None
+impacted_packages:
+  - purl: pkg:npm/directus
+    affected_versions: vers:npm/<=10.8.2
+    fixed_versions: vers:npm/10.8.3
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-5mhg-wv8w-p59j/GHSA-5mhg-wv8w-p59j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/directus/directus
+    reference_type:
+    reference_id:
+  - url: https://github.com/directus/directus/commit/a5a1c26ac48795ed3212a4c51b9523588aff4fa0
+    reference_type:
+    reference_id:
+  - url: https://github.com/directus/directus/security/advisories/GHSA-5mhg-wv8w-p59j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-27296
+    reference_type:
+    reference_id:

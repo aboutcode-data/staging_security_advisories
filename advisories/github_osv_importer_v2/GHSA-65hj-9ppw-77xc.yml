@@ -1,0 +1,38 @@
+advisory_id: GHSA-65hj-9ppw-77xc
+datasource_id: github_osv_importer_v2/GHSA-65hj-9ppw-77xc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-65hj-9ppw-77xc/GHSA-65hj-9ppw-77xc.json
+aliases:
+  - CVE-2022-44262
+summary: |
+  ff4j is vulnerable to Remote Code Execution (RCE)
+  ff4j 1.8.1 is vulnerable to Remote Code Execution (RCE). This issue has been patched in version 1.9.
+impacted_packages:
+  - purl: pkg:maven/org.ff4j/ff4j-core
+    affected_versions: vers:maven/>=1.8.1|<1.9
+    fixed_versions: vers:maven/1.9
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-65hj-9ppw-77xc/GHSA-65hj-9ppw-77xc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/ff4j/ff4j
+    reference_type:
+    reference_id:
+  - url: https://github.com/ff4j/ff4j/commit/62d03140f3bfbd380d0f4b4e5a94dcb8baa9d9c6
+    reference_type:
+    reference_id:
+  - url: https://github.com/ff4j/ff4j/issues/624
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-44262
+    reference_type:
+    reference_id:

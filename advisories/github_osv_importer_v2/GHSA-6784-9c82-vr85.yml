@@ -1,0 +1,70 @@
+advisory_id: GHSA-6784-9c82-vr85
+datasource_id: github_osv_importer_v2/GHSA-6784-9c82-vr85
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-6784-9c82-vr85/GHSA-6784-9c82-vr85.json
+aliases:
+  - CVE-2024-47617
+summary: |
+  Injection of arbitrary HTML/JavaScript code through the media download URL
+  ### Impact
+
+  This vulnerability allows an attacker to inject arbitrary HTML/JavaScript code through the media download URL in Sulu CMS. It affects the SuluMediaBundle component. The vulnerability is a Reflected Cross-Site Scripting (XSS) issue, which could potentially allow attackers to steal sensitive information, manipulate the website's content, or perform actions on behalf of the victim.
+
+  ### Patches
+
+  The problem has not been patched yet. Users should upgrade to patched versions once they become available. Currently affected versions are:
+
+  * 2.6.4
+  * 2.5.20
+
+  ### Workarounds
+
+  Until an official patch is released, users can implement additional input validation and output encoding for the 'slug' parameter in the MediaStreamController's downloadAction method. Alternatively, configuring a Web Application Firewall (WAF) to filter potentially malicious input could serve as a temporary mitigation.
+
+  ### References
+
+  * GitHub repository: https://github.com/sulu/sulu
+  * Vulnerable code: https://github.com/sulu/sulu/blob/2.6/src/Sulu/Bundle/MediaBundle/Controller/MediaStreamController.php#L106
+impacted_packages:
+  - purl: pkg:composer/sulu/sulu
+    affected_versions: vers:composer/<=2.6.4
+    fixed_versions: vers:composer/2.6.5
+  - purl: pkg:composer/sulu/sulu
+    affected_versions: vers:composer/<=2.5.20
+    fixed_versions: vers:composer/2.5.21
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-6784-9c82-vr85/GHSA-6784-9c82-vr85.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-6784-9c82-vr85/GHSA-6784-9c82-vr85.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/sulu/sulu
+    reference_type:
+    reference_id:
+  - url: https://github.com/sulu/sulu/blob/2.6/src/Sulu/Bundle/MediaBundle/Controller/MediaStreamController.php#L106
+    reference_type:
+    reference_id:
+  - url: https://github.com/sulu/sulu/commit/a5a5ae555d282e88ff8559d38cfb46dea7939bda
+    reference_type:
+    reference_id:
+  - url: https://github.com/sulu/sulu/commit/eeacd14b6cf55f710084788140d40ebb00314b29
+    reference_type:
+    reference_id:
+  - url: https://github.com/sulu/sulu/security/advisories/GHSA-6784-9c82-vr85
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47617
+    reference_type:
+    reference_id:

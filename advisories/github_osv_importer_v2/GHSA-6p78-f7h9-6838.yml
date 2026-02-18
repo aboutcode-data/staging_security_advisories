@@ -1,0 +1,44 @@
+advisory_id: GHSA-6p78-f7h9-6838
+datasource_id: github_osv_importer_v2/GHSA-6p78-f7h9-6838
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-6p78-f7h9-6838/GHSA-6p78-f7h9-6838.json
+aliases:
+  - CVE-2023-36260
+summary: |
+  Craft CMS Feed-Me
+  An issue discovered in Craft CMS version 4.6.1.1 allows remote attackers to cause a denial of service (DoS) via crafted string to Feed-Me Name and Feed-Me URL fields due to saving a feed using an Asset element type with no volume selected.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<4.6.2
+    fixed_versions: vers:composer/4.6.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-6p78-f7h9-6838/GHSA-6p78-f7h9-6838.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/craftcms/feed-me
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/feed-me/commit/b5d6ede51848349bd91bc95fec288b6793f15e28
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/feed-me/commit/b5d6ede51848349bd91bc95fec288b6793f15e28%29
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/feed-me/releases/tag/4.6.2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-36260
+    reference_type:
+    reference_id:
+  - url: https://www.linkedin.com/pulse/threat-briefing-craftcms-amrcybersecurity-emi0e/?trackingId=E75GttWvQp6gfvPiJDDUBA%3D%3D
+    reference_type:
+    reference_id:

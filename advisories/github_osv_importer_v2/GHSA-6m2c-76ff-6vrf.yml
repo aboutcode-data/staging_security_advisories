@@ -1,0 +1,50 @@
+advisory_id: GHSA-6m2c-76ff-6vrf
+datasource_id: github_osv_importer_v2/GHSA-6m2c-76ff-6vrf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-6m2c-76ff-6vrf/GHSA-6m2c-76ff-6vrf.json
+aliases:
+  - CVE-2025-2000
+summary: |
+  Qiskit allows arbitrary code execution decoding QPY format versions < 13
+  ### Impact
+
+  A maliciously crafted QPY file can potentially execute arbitrary-code embedded in the payload without privilege escalation when deserializing QPY formats < 13. A python process calling Qiskit's `qiskit.qpy.load()` function could potentially execute any arbitrary Python code embedded in the correct place in the binary file as part of a specially constructed payload.
+
+  ### Patches
+
+  Fixed in Qiskit 1.4.2 and in Qiskit 2.0.0rc2
+impacted_packages:
+  - purl: pkg:pypi/qiskit-terra
+    affected_versions: vers:pypi/>=0.18.0|<=0.46.3
+    fixed_versions:
+  - purl: pkg:pypi/qiskit
+    affected_versions: vers:pypi/<=1.4.1
+    fixed_versions: vers:pypi/1.4.2
+  - purl: pkg:pypi/qiskit
+    affected_versions: vers:pypi/2.0.0rc1
+    fixed_versions: vers:pypi/2.0.0rc2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-6m2c-76ff-6vrf/GHSA-6m2c-76ff-6vrf.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/Qiskit/qiskit
+    reference_type:
+    reference_id:
+  - url: https://github.com/Qiskit/qiskit/security/advisories/GHSA-6m2c-76ff-6vrf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-2000
+    reference_type:
+    reference_id:
+  - url: https://www.ibm.com/support/pages/node/7185949
+    reference_type:
+    reference_id:

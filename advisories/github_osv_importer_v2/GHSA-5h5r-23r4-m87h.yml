@@ -1,0 +1,40 @@
+advisory_id: GHSA-5h5r-23r4-m87h
+datasource_id: github_osv_importer_v2/GHSA-5h5r-23r4-m87h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-5h5r-23r4-m87h/GHSA-5h5r-23r4-m87h.json
+aliases:
+  - CVE-2017-16019
+summary: |
+  Cross-Site Scripting in gitbook
+  Affected versions of `gitbook` do not properly sanitize user input outside of backticks, which may result in cross-site scripting in the online reader.
+
+
+  ## Recommendation
+
+  Update to version 3.2.2 or later.
+impacted_packages:
+  - purl: pkg:npm/gitbook
+    affected_versions: vers:npm/<3.2.2
+    fixed_versions: vers:npm/3.2.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-5h5r-23r4-m87h/GHSA-5h5r-23r4-m87h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/GitbookIO/gitbook/issues/1609
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16019
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/159
+    reference_type:
+    reference_id:

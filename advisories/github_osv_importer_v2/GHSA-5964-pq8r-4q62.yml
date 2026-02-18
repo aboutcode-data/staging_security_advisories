@@ -1,0 +1,59 @@
+advisory_id: GHSA-5964-pq8r-4q62
+datasource_id: github_osv_importer_v2/GHSA-5964-pq8r-4q62
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5964-pq8r-4q62/GHSA-5964-pq8r-4q62.json
+aliases:
+  - CVE-2012-4399
+summary: |
+  CakePHPallows remote attackers to read arbitrary files via XML data containing external entity references
+  The Xml class in CakePHP 2.1.x before 2.1.5 and 2.2.x before 2.2.1 allows remote attackers to read arbitrary files via XML data containing external entity references, aka an XML external entity (XXE) injection attack.
+impacted_packages:
+  - purl: pkg:composer/cakephp/cakephp
+    affected_versions: vers:composer/>=2.1.0-alpha|<2.1.5
+    fixed_versions: vers:composer/2.1.5
+  - purl: pkg:composer/cakephp/cakephp
+    affected_versions: vers:composer/>=2.2.0-beta|<2.2.1
+    fixed_versions: vers:composer/2.2.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-5964-pq8r-4q62/GHSA-5964-pq8r-4q62.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: http://bakery.cakephp.org/articles/markstory/2012/07/14/security_release_-_cakephp_2_1_5_2_2_1
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/bugtraq/2012/Jul/101
+    reference_type:
+    reference_id:
+  - url: http://secunia.com/advisories/49900
+    reference_type:
+    reference_id:
+  - url: https://github.com/cakephp/cakephp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2012-4399
+    reference_type:
+    reference_id:
+  - url: http://www.exploit-db.com/exploits/19863
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2012/09/03/1
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2012/09/03/2
+    reference_type:
+    reference_id:
+  - url: http://www.osvdb.org/84042
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/19863.txt
+    reference_type: exploit
+    reference_id: OSVDB-84042;CVE-2012-4399

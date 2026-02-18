@@ -1,0 +1,41 @@
+advisory_id: GHSA-65wv-528r-m892
+datasource_id: github_osv_importer_v2/GHSA-65wv-528r-m892
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-65wv-528r-m892/GHSA-65wv-528r-m892.json
+aliases:
+  - CVE-2020-13961
+summary: |
+  Improper Input Validation in strapi
+  Strapi before 3.0.2 could allow a remote authenticated attacker to bypass security restrictions because templates are stored in a global variable without any sanitation. By sending a specially crafted request, an attacker could exploit this vulnerability to update the email template for both password reset and account confirmation emails.
+impacted_packages:
+  - purl: pkg:npm/strapi
+    affected_versions: vers:npm/<3.0.2
+    fixed_versions: vers:npm/3.0.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-65wv-528r-m892/GHSA-65wv-528r-m892.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://exchange.xforce.ibmcloud.com/vulnerabilities/183045
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/pull/6599
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/releases/tag/v3.0.2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13961
+    reference_type:
+    reference_id:

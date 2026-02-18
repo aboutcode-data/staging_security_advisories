@@ -1,0 +1,47 @@
+advisory_id: GHSA-673x-f5wx-fxpw
+datasource_id: github_osv_importer_v2/GHSA-673x-f5wx-fxpw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-673x-f5wx-fxpw/GHSA-673x-f5wx-fxpw.json
+aliases:
+  - CVE-2020-15159
+summary: |
+  Cross Site Scripting and RCE in baserCMS
+  baserCMS 4.3.6 and earlier is affected by Cross Site Scripting (XSS) and Remote Code Execution (RCE).
+
+  * Impact: XSS to RCE via Arbitrary file upload.
+  * Attack vector is: Administrator must be logged in.
+  * Components are: ThemeFilesController.php, UploaderFilesController.php.
+  * Tested baserCMS Version : 4.3.6 (Latest)
+  * Affected baserCMS Version : 4.2.0 ~ 4.3.6 (XSS), 3.0.10 ~ 4.3.6 (RCE)
+  * Patches : https://basercms.net/security/20200827
+
+  Found by Vulnerability Research team in [Flatt Security Inc.](https://flatt.tech/)
+impacted_packages:
+  - purl: pkg:composer/baserproject/basercms
+    affected_versions: vers:composer/<=4.3.6
+    fixed_versions: vers:composer/4.3.7
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-673x-f5wx-fxpw/GHSA-673x-f5wx-fxpw.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://basercms.net/security/20200827
+    reference_type:
+    reference_id:
+  - url: https://github.com/baserproject/basercms/commit/16a7b3cd09a0ca355474119c76897eac2034a66d
+    reference_type:
+    reference_id:
+  - url: https://github.com/baserproject/basercms/security/advisories/GHSA-673x-f5wx-fxpw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15159
+    reference_type:
+    reference_id:

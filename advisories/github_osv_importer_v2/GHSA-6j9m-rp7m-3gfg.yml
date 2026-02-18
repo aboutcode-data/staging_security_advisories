@@ -1,0 +1,50 @@
+advisory_id: GHSA-6j9m-rp7m-3gfg
+datasource_id: github_osv_importer_v2/GHSA-6j9m-rp7m-3gfg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6j9m-rp7m-3gfg/GHSA-6j9m-rp7m-3gfg.json
+aliases:
+  - CVE-2018-14716
+summary: |
+  SEOmatic plugin for Craft CMS SSTI Vulnerability
+  A Server Side Template Injection (SSTI) was discovered in the SEOmatic plugin before 3.1.4 for Craft CMS, because requests that don't match any elements incorrectly generate the canonicalUrl, and can lead to execution of Twig code.
+impacted_packages:
+  - purl: pkg:composer/nystudio107/craft-seomatic
+    affected_versions: vers:composer/<3.1.4
+    fixed_versions: vers:composer/3.1.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6j9m-rp7m-3gfg/GHSA-6j9m-rp7m-3gfg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: http://ha.cker.info/exploitation-of-server-side-template-injection-with-craft-cms-plguin-seomatic
+    reference_type:
+    reference_id:
+  - url: https://github.com/nystudio107/craft-seomatic
+    reference_type:
+    reference_id:
+  - url: https://github.com/nystudio107/craft-seomatic/commit/1e7d1d084ac3a89e7ec70620f2749110508d1ce1
+    reference_type:
+    reference_id:
+  - url: https://github.com/nystudio107/craft-seomatic/releases/tag/3.1.4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-14716
+    reference_type:
+    reference_id:
+  - url: https://twitter.com/nystudio107/status/1021847835418009605
+    reference_type:
+    reference_id:
+  - url: https://twitter.com/nystudio107/status/1021855169515057152
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/45108
+    reference_type:
+    reference_id:

@@ -1,0 +1,64 @@
+advisory_id: GHSA-593f-38f6-jp5m
+datasource_id: github_osv_importer_v2/GHSA-593f-38f6-jp5m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-593f-38f6-jp5m/GHSA-593f-38f6-jp5m.json
+aliases:
+  - CVE-2025-25200
+summary: |
+  Inefficient Regular Expression Complexity in koa
+  ### Summary
+  Koa uses an evil regex to parse the `X-Forwarded-Proto` and `X-Forwarded-Host` HTTP headers. This can be exploited to carry out a Denial-of-Service attack.
+
+  ### PoC
+
+  Coming soon.
+
+  ### Impact
+  This is a Regex Denial-of-Service attack and causes memory exhaustion. The regex should be improved and empty values should not be allowed.
+impacted_packages:
+  - purl: pkg:npm/koa
+    affected_versions: vers:npm/>=2.0.0|<2.15.4
+    fixed_versions: vers:npm/2.15.4
+  - purl: pkg:npm/koa
+    affected_versions: vers:npm/>=3.0.0-alpha.0|<3.0.0-alpha.3
+    fixed_versions: vers:npm/3.0.0-alpha.3
+  - purl: pkg:npm/koa
+    affected_versions: vers:npm/>=1.0.0|<1.7.1
+    fixed_versions: vers:npm/1.7.1
+  - purl: pkg:npm/koa
+    affected_versions: vers:npm/<0.21.2
+    fixed_versions: vers:npm/0.21.2
+severities:
+  - score: '9.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-593f-38f6-jp5m/GHSA-593f-38f6-jp5m.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/koajs/koa
+    reference_type:
+    reference_id:
+  - url: https://github.com/koajs/koa/commit/5054af6e31ffd451a4151a1fe144cef6e5d0d83c
+    reference_type:
+    reference_id:
+  - url: https://github.com/koajs/koa/commit/5f294bb1c7c8d9c61904378d250439a321bffd32
+    reference_type:
+    reference_id:
+  - url: https://github.com/koajs/koa/commit/93fe903fc966635a991bcf890cfc3427d33a1a08
+    reference_type:
+    reference_id:
+  - url: https://github.com/koajs/koa/releases/tag/2.15.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/koajs/koa/security/advisories/GHSA-593f-38f6-jp5m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-25200
+    reference_type:
+    reference_id:

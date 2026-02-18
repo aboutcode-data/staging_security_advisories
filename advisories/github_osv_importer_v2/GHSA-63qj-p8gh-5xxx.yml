@@ -1,0 +1,41 @@
+advisory_id: GHSA-63qj-p8gh-5xxx
+datasource_id: github_osv_importer_v2/GHSA-63qj-p8gh-5xxx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-63qj-p8gh-5xxx/GHSA-63qj-p8gh-5xxx.json
+aliases:
+  - CVE-2018-8947
+summary: |
+  Plaintext Storage of Sensitive Information in Laravel Log Viewer before v0.13.0
+  rap2hpoutre Laravel Log Viewer before v0.13.0 relies on Base64 encoding for l, dl, and del requests, which makes it easier for remote attackers to bypass intended access restrictions, as demonstrated by reading arbitrary files via a dl request.
+impacted_packages:
+  - purl: pkg:composer/rap2hpoutre/laravel-log-viewer
+    affected_versions: vers:composer/<0.13.0
+    fixed_versions: vers:composer/0.13.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-63qj-p8gh-5xxx/GHSA-63qj-p8gh-5xxx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-312
+references:
+  - url: https://github.com/rap2hpoutre/laravel-log-viewer/commit/cda89c06dc5331d06fab863d7cb1c4047ad68357
+    reference_type:
+    reference_id:
+  - url: https://github.com/rap2hpoutre/laravel-log-viewer/releases/tag/v0.13.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-8947
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/44343
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/44343.py
+    reference_type: exploit
+    reference_id: CVE-2018-8947

@@ -1,0 +1,54 @@
+advisory_id: GHSA-57m8-f3v5-hm5m
+datasource_id: github_osv_importer_v2/GHSA-57m8-f3v5-hm5m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-57m8-f3v5-hm5m/GHSA-57m8-f3v5-hm5m.json
+aliases:
+  - CVE-2023-4586
+summary: |
+  Withdrawn Advisory: Netty-handler does not validate host names by default
+  ## Withdrawn Advisory
+  This advisory has been withdrawn because the underlying vulnerability only concerns Red Hat's Hot Rod client, which is not in one of the GitHub Advisory Database's [supported ecosystems](https://github.com/github/advisory-database/blob/main/README.md#supported-ecosystems). This link is maintained to preserve external references.
+
+  ## Original Description
+  Netty-handler has been found to no validate hostnames when using TLS in its default configuration. As a result netty-handler is vulnerable to man-in-the-middle attacks. Users would need to set the protocol to "HTTPS" in the SSLParameters of the SSLEngine to opt in to host name validation. A change in default behavior is expected in the `5.x` release branch with no backport planned.
+
+  In the interim users are advised to enable host name validation in their configurations.
+  See https://github.com/netty/netty/issues/8537 for details on the forthcoming change in default behavior.
+impacted_packages:
+  - purl: pkg:maven/io.netty/netty-handler
+    affected_versions: vers:maven/>=4.1.0.Final|<=4.1.99.Final
+    fixed_versions:
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-57m8-f3v5-hm5m/GHSA-57m8-f3v5-hm5m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2023-4586
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2235564
+    reference_type:
+    reference_id:
+  - url: https://docs.oracle.com/javase/8/docs/api/javax/net/ssl/SSLParameters.html#setEndpointIdentificationAlgorithm-java.lang.String-
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/issues/8537
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-4586
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-1042268
+    reference_type:
+    reference_id:

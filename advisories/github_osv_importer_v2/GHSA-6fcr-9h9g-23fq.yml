@@ -1,0 +1,42 @@
+advisory_id: GHSA-6fcr-9h9g-23fq
+datasource_id: github_osv_importer_v2/GHSA-6fcr-9h9g-23fq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-6fcr-9h9g-23fq/GHSA-6fcr-9h9g-23fq.json
+aliases: []
+summary: |
+  Denial of Service in ipfs-bitswap
+  Versions of `ipfs-bitswap` prior to 0.24.1 are vulnerable to Denial of Service (DoS). The package put unwanted blocks in the blockstore, which could be used to exhaust system resources in specific conditions.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.24.1 or later.
+impacted_packages:
+  - purl: pkg:npm/ipfs-bitswap
+    affected_versions: vers:npm/<0.24.1
+    fixed_versions: vers:npm/0.24.1
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-6fcr-9h9g-23fq/GHSA-6fcr-9h9g-23fq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/ipfs/js-ipfs-bitswap
+    reference_type:
+    reference_id:
+  - url: https://github.com/ipfs/js-ipfs-bitswap/pull/194
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-IPFSBITSWAP-174847
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/916
+    reference_type:
+    reference_id:

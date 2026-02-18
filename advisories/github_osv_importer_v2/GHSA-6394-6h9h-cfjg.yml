@@ -1,0 +1,23 @@
+advisory_id: GHSA-6394-6h9h-cfjg
+datasource_id: github_osv_importer_v2/GHSA-6394-6h9h-cfjg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-6394-6h9h-cfjg/GHSA-6394-6h9h-cfjg.json
+aliases: []
+summary: |
+  Regular Expression Denial of Service
+  A Regular Expression vulnerability was found in nwmatcher before 1.4.4. The fix replacing multiple repeated instances of the "\s*" pattern.
+impacted_packages:
+  - purl: pkg:npm/nwmatcher
+    affected_versions: vers:npm/<1.4.4
+    fixed_versions: vers:npm/1.4.4
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/dperini/nwmatcher/commit/9dcc2b039beeabd18327a5ebaa537625872e16f0
+    reference_type:
+    reference_id:

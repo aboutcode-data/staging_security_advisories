@@ -1,0 +1,44 @@
+advisory_id: GHSA-6g88-99wj-8mgg
+datasource_id: github_osv_importer_v2/GHSA-6g88-99wj-8mgg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-6g88-99wj-8mgg/GHSA-6g88-99wj-8mgg.json
+aliases:
+  - CVE-2020-1960
+summary: |
+  Command injection in Apache Flink
+  A vulnerability in Apache Flink where, when running a process with an enabled JMXReporter, with a port configured via metrics.reporter.reporter_name>.port, an attacker with local access to the machine and JMX port can execute a man-in-the-middle attack using a specially crafted request to rebind the JMXRMI registry to one under the attacker's control. This compromises any connection established to the process via JMX, allowing extraction of credentials and any other transferred data.
+impacted_packages:
+  - purl: pkg:maven/org.apache.flink/flink-core
+    affected_versions: vers:maven/<1.9.2
+    fixed_versions: vers:maven/1.9.3
+  - purl: pkg:maven/org.apache.flink/flink-core
+    affected_versions: vers:maven/1.10.0
+    fixed_versions: vers:maven/1.10.1
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-6g88-99wj-8mgg/GHSA-6g88-99wj-8mgg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://lists.apache.org/thread.html/r23e559dee1e69741557b5fe431846de1f1a5981356d0ddb9482df88a%40%3Cdev.flink.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r26fcdd4fe288323006253437ebc4dd6fdfadfb5e93465a0e4f68420d@%3Cuser-zh.flink.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r28f17e564950d663e68cc6fe75756012dda62ac623766bb9bc5e7034@%3Cissues.flink.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r663cf0d5c386bba2f562d45ad484d786151a84f0b95e45e2b0fb8e50@%3Cissues.flink.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-1960
+    reference_type:
+    reference_id:

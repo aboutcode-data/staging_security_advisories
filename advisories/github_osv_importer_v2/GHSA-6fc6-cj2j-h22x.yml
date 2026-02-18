@@ -1,0 +1,31 @@
+advisory_id: GHSA-6fc6-cj2j-h22x
+datasource_id: github_osv_importer_v2/GHSA-6fc6-cj2j-h22x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-6fc6-cj2j-h22x/GHSA-6fc6-cj2j-h22x.json
+aliases: []
+summary: |
+  TYPO3 Multiple Cross-Site Scripting vulnerabilities in frontend
+  Failing to properly encode editor input, several frontend components are susceptible to Cross-Site Scripting, allowing authenticated editors to inject arbitrary HTML.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.16
+    fixed_versions: vers:composer/6.2.16
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.0.0|<7.6.1
+    fixed_versions: vers:composer/7.6.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2015-12-15-3.yaml
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2015-013
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-013
+    reference_type:
+    reference_id:

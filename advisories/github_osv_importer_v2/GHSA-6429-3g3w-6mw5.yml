@@ -1,0 +1,38 @@
+advisory_id: GHSA-6429-3g3w-6mw5
+datasource_id: github_osv_importer_v2/GHSA-6429-3g3w-6mw5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6429-3g3w-6mw5/GHSA-6429-3g3w-6mw5.json
+aliases:
+  - CVE-2022-25324
+summary: |
+  Uncaught Exception in bignum
+  All versions of the npm package bignum are vulnerable to Denial of Service (DoS) due to a type-check exception in V8. When verifying the type of the second argument to the .powm function, V8 will crash regardless of Node try/catch blocks.
+impacted_packages:
+  - purl: pkg:npm/bignum
+    affected_versions: vers:npm/<=0.13.1
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6429-3g3w-6mw5/GHSA-6429-3g3w-6mw5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-248
+references:
+  - url: https://github.com/justmoon/node-bignum
+    reference_type:
+    reference_id:
+  - url: https://github.com/justmoon/node-bignum/blob/ef2e02533e598d6df8421000033c4753cde89ee2/index.js#L111
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25324
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-BIGNUM-2388581
+    reference_type:
+    reference_id:

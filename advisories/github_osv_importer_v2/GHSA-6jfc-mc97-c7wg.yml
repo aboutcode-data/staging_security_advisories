@@ -1,0 +1,54 @@
+advisory_id: GHSA-6jfc-mc97-c7wg
+datasource_id: github_osv_importer_v2/GHSA-6jfc-mc97-c7wg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6jfc-mc97-c7wg/GHSA-6jfc-mc97-c7wg.json
+aliases:
+  - CVE-2019-10354
+summary: |
+  Missing Authorization in Jenkins
+  A vulnerability in the Stapler web framework used in Jenkins 2.185 and earlier, LTS 2.176.1 and earlier allowed attackers to access view fragments directly, bypassing permission checks and possibly obtain sensitive information.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.176.1
+    fixed_versions: vers:maven/2.176.2
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.185
+    fixed_versions: vers:maven/2.186
+  - purl: pkg:maven/org.kohsuke.stapler/stapler-parent
+    affected_versions: vers:maven/<1.257.1
+    fixed_versions: vers:maven/1.257.1
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6jfc-mc97-c7wg/GHSA-6jfc-mc97-c7wg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+  - CWE-425
+references:
+  - url: https://access.redhat.com/errata/RHSA-2019:2503
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:2548
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins/commit/279d8109eddb7a494428baf25af9756c2e33576b
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/stapler/commit/19637555a9f32d3875356b47234131d8b1e9fee4
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2019-07-17/#SECURITY-534
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10354
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/07/17/2
+    reference_type:
+    reference_id:
