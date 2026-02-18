@@ -1,0 +1,32 @@
+advisory_id: packagist/ezsystems/ezpublish-legacy/GHSA-cc2j-92jq-wgjg
+datasource_id: gitlab_importer_v2/packagist/ezsystems/ezpublish-legacy/GHSA-cc2j-92jq-wgjg
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/ezsystems/ezpublish-legacy/GHSA-cc2j-92jq-wgjg.yml
+aliases:
+  - GHSA-cc2j-92jq-wgjg
+summary: |
+  eZ Publish Information disclosure in backend content tree menu
+  This security advisory fixes an information disclosure vulnerability in the legacy admin content tree menu. If a view has been disabled in site.ini [SiteAccessRules] Rules, and an attacker accesses the backend with the URL to this module, then the tree menu may be displayed. Since the tree menu may contain hidden items, this may lead to information disclosure. We recommend that you install this Security Update as soon as possible.
+
+  To install, use Composer to update to one of the "Resolving versions" mentioned above, or apply this patch manually: https://github.com/ezsystems/ezpublish-legacy/commit/a4a0470f8d80f012fe14e4f8ab11c7d14375986c
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/>=5.3.0|<5.3.12+2|>=5.4.0|<5.4.10+1|>=2011.0.0|<2017.8.1+1
+    fixed_versions: vers:composer/5.3.12+2|5.4.10+1|2017.8.1+1
+severities: []
+weaknesses:
+  - CWE-200
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/ezsystems/ezpublish-legacy
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-legacy/commit/a4a0470f8d80f012fe14e4f8ab11c7d14375986c
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/ezsystems/ezpublish-legacy/2017-09-11-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cc2j-92jq-wgjg
+    reference_type:
+    reference_id: GHSA-cc2j-92jq-wgjg

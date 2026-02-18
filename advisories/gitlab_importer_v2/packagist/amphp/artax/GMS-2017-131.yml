@@ -1,0 +1,20 @@
+advisory_id: packagist/amphp/artax/GMS-2017-131
+datasource_id: gitlab_importer_v2/packagist/amphp/artax/GMS-2017-131
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/amphp/artax/GMS-2017-131.yml
+aliases:
+  - GMS-2017-131
+summary: |
+  Cookie leakage, non-restricted cookie acceptance
+  Cookies of `foo.bar.example.com` are leaked to foo.bar. Additionally, any site can set cookies for any other site.
+impacted_packages:
+  - purl: pkg:composer/amphp/artax
+    affected_versions: vers:composer/<2.0.6
+    fixed_versions: vers:composer/2.0.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/amphp/artax/releases/tag/v2.0.6
+    reference_type:
+    reference_id:

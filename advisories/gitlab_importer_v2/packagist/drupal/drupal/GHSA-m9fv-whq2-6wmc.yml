@@ -1,0 +1,38 @@
+advisory_id: packagist/drupal/drupal/GHSA-m9fv-whq2-6wmc
+datasource_id: gitlab_importer_v2/packagist/drupal/drupal/GHSA-m9fv-whq2-6wmc
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/drupal/GHSA-m9fv-whq2-6wmc.yml
+aliases:
+  - GHSA-m9fv-whq2-6wmc
+summary: |
+  Drupal core Multiple vulnerabilities due to the use of the third-party library Archive_Tar
+  The Drupal project uses the third-party library [Archive_Tar](https://pear.php.net/package/Archive_Tar/), which has released a security improvement that is needed to protect some Drupal configurations.
+
+  Multiple vulnerabilities are possible if Drupal is configured to allow .tar, .tar.gz, .bz2 or .tlz file uploads and processes them.
+
+  The latest versions of Drupal update Archive_Tar to 1.4.9 to mitigate the file processing vulnerabilities.
+impacted_packages:
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=7.0.0|<7.69.0|>=8.0.0|<8.7.11|>=8.8.0|<8.8.1
+    fixed_versions: vers:composer/7.69.0|8.7.11|8.8.1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/drupal/GHSA-m9fv-whq2-6wmc.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/drupal/drupal
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/drupal/2019-12-18-4.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2019-012
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-m9fv-whq2-6wmc
+    reference_type:
+    reference_id: GHSA-m9fv-whq2-6wmc

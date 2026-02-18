@@ -1,0 +1,32 @@
+advisory_id: packagist/ezsystems/ezplatform-kernel/GMS-2022-6754
+datasource_id: gitlab_importer_v2/packagist/ezsystems/ezplatform-kernel/GMS-2022-6754
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/ezsystems/ezplatform-kernel/GMS-2022-6754.yml
+aliases:
+  - GHSA-8h83-chh2-fchp
+  - GMS-2022-6754
+summary: |
+  eZ Platform users with the Company admin role can assign any role to any user
+  Critical severity. Users with the Company admin role (introduced by the company account feature in v4) can assign any role to any user. This also applies to any other user that has the role / assign policy. Any subtree limitation in place does not have any effect.
+
+  The role / assign policy is typically only given to administrators, which limits the scope in most cases, but please verify who has this policy in your installaton. The fix ensures that subtree limitations are working as intended.
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezplatform-kernel
+    affected_versions: vers:composer/>=1.3.0|<1.3.26
+    fixed_versions: vers:composer/1.3.26
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://developers.ibexa.co/security-advisories/ibexa-sa-2022-009-critical-vulnerabilities-in-graphql-role-assignment-ct-editing-and-drafts-tooltips
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezplatform-kernel/commit/2a7479958584a15ee046dfa886d6bfeb4ebfa2f6
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezplatform-kernel/security/advisories/GHSA-8h83-chh2-fchp
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-8h83-chh2-fchp
+    reference_type:
+    reference_id: GHSA-8h83-chh2-fchp

@@ -1,0 +1,52 @@
+advisory_id: packagist/dolibarr/dolibarr/GHSA-49xw-hw94-fmv2
+datasource_id: gitlab_importer_v2/packagist/dolibarr/dolibarr/GHSA-49xw-hw94-fmv2
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/dolibarr/dolibarr/GHSA-49xw-hw94-fmv2.yml
+aliases:
+  - GHSA-49xw-hw94-fmv2
+summary: |
+  Dolibarr has Remote Code Execution Vulnerability (Bypass)
+  The Dolibarr backend provides the function of adding Menu, and supports setting permissions for the added Menu:
+
+  ![](https://raw.githubusercontent.com/wh0amitx/Misc/main/images/image-20240228164114688.png)
+
+  This is the trigger point of the vulnerability. The submitted permission can be php code, and it will be executed when viewing the created Menu:
+
+  - htdocs/admin/menus/edit.php
+
+  ![](https://raw.githubusercontent.com/wh0amitx/Misc/main/images/image-20240228164445656.png)
+
+  As you can see, in edit.php, if the created menu is set to `$menu->perms`, the `dol_eval()` method will be called. Following the `dol_eval()` method, we can see that it will filter the dangerous php functions in `$menu->perms` through the `blacklist` set in `$forbiddenphpfunctions`:
+
+  ![](https://raw.githubusercontent.com/wh0amitx/Misc/main/images/image-20240228164725548.png)
+
+  However, the `blacklist` here is not comprehensive. For example, the `include_once` and `require_once` functions can easily pass the `blacklist` check, which will cause file inclusion vulnerabilities. Moreover, if the `allow_url_include` option is enabled in php.ini, arbitrary code execution will occur. **The most serious thing is that we can cooperate with the file upload at `/htdocs/user/document.php?id=1&uploadform=1` to achieve more general arbitrary code execution.**
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<=21.0.2
+    fixed_versions: vers:composer/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/dolibarr/dolibarr/GHSA-49xw-hw94-fmv2.yml
+weaknesses:
+  - CWE-1035
+  - CWE-98
+  - CWE-937
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/blob/21.0.2/htdocs/admin/menus/edit.php
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/blob/21.0.2/htdocs/user/document.php
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/security/advisories/GHSA-49xw-hw94-fmv2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-49xw-hw94-fmv2
+    reference_type:
+    reference_id: GHSA-49xw-hw94-fmv2

@@ -1,0 +1,40 @@
+advisory_id: packagist/auth0/symfony/GHSA-f3r2-88mq-9v4g
+datasource_id: gitlab_importer_v2/packagist/auth0/symfony/GHSA-f3r2-88mq-9v4g
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/auth0/symfony/GHSA-f3r2-88mq-9v4g.yml
+aliases:
+  - GHSA-f3r2-88mq-9v4g
+summary: |
+  Auth0 Symfony SDK has Improper Audience Validation via Auth0-PHP SDK
+  In applications built with the Auth0-PHP SDK, the audience validation in access tokens is performed improperly. Without proper validation, affected applications may accept ID tokens as Access tokens.
+impacted_packages:
+  - purl: pkg:composer/auth0/symfony
+    affected_versions: vers:composer/>=5.0.0|<5.6.0
+    fixed_versions: vers:composer/5.6.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/auth0/symfony/GHSA-f3r2-88mq-9v4g.yml
+weaknesses:
+  - CWE-863
+  - CWE-345
+  - CWE-1395
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/auth0/symfony
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/symfony/commit/0103d6f8dcef6996653fad1f823d1c167f472479
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/symfony/releases/tag/5.6.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/symfony/security/advisories/GHSA-f3r2-88mq-9v4g
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-f3r2-88mq-9v4g
+    reference_type:
+    reference_id: GHSA-f3r2-88mq-9v4g

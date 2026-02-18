@@ -1,0 +1,31 @@
+advisory_id: packagist/drupal/drupal/GHSA-r67r-42wx-c8r7
+datasource_id: gitlab_importer_v2/packagist/drupal/drupal/GHSA-r67r-42wx-c8r7
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/drupal/GHSA-r67r-42wx-c8r7.yml
+aliases:
+  - GHSA-r67r-42wx-c8r7
+summary: |
+  Drupal External URL injection through URL aliases leading to Open Redirect
+  The path module in Drupal allows users with the 'administer paths' to create pretty URLs for content.
+  In certain circumstances the user can enter a particular path that triggers an open redirect to a malicious url.
+impacted_packages:
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=7.0.0|<7.60.0|>=8.0.0|<8.5.8|>=8.6.0|<8.6.2
+    fixed_versions: vers:composer/7.60.0|8.5.8|8.6.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-601
+  - CWE-937
+references:
+  - url: https://github.com/drupal/drupal
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/drupal/2018-10-17-2.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2018-006
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-r67r-42wx-c8r7
+    reference_type:
+    reference_id: GHSA-r67r-42wx-c8r7

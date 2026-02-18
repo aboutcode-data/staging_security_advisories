@@ -1,0 +1,27 @@
+advisory_id: packagist/ezsystems/ezpublish-kernel/GMS-2022-1046
+datasource_id: gitlab_importer_v2/packagist/ezsystems/ezpublish-kernel/GMS-2022-1046
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/ezsystems/ezpublish-kernel/GMS-2022-1046.yml
+aliases:
+  - GHSA-5x4f-7xgq-r42x
+  - GMS-2022-1046
+summary: |
+  Object state limitation has no effect
+  Object state limitation is a policy you can use in your roles to limit access to content based on specific object state values. Due to a flawed earlier update, these limitations were ineffective in releases made since February 16th 2022. They would grant access to the given content regardless of the object state. Depending on how your frontent is designed, knowing the URL to the content may or may not be required to access it. If you are using object state limitations in your roles, this issue is critical. Please apply the fix as soon as possible.
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=7.5.0|<7.5.28
+    fixed_versions: vers:composer/7.5.28
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://developers.ibexa.co/security-advisories/ibexa-sa-2022-004-ineffective-object-state-limitation-and-unauthenticated-fastly-purge
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel/security/advisories/GHSA-5x4f-7xgq-r42x
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5x4f-7xgq-r42x
+    reference_type:
+    reference_id: GHSA-5x4f-7xgq-r42x

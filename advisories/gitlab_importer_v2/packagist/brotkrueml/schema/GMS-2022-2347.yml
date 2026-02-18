@@ -1,0 +1,28 @@
+advisory_id: packagist/brotkrueml/schema/GMS-2022-2347
+datasource_id: gitlab_importer_v2/packagist/brotkrueml/schema/GMS-2022-2347
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/brotkrueml/schema/GMS-2022-2347.yml
+aliases:
+  - CVE-2022-33154
+  - GHSA-374w-gwqr-fmxg
+  - GMS-2022-2347
+summary: |
+  Cross-Site Scripting
+  The extension fails to properly encode user input for output in HTML context. A TYPO3 backend user account is required to exploit the vulnerability.
+impacted_packages:
+  - purl: pkg:composer/brotkrueml/schema
+    affected_versions: vers:composer/<1.13.1|>=2.0.0|<2.5.1
+    fixed_versions: vers:composer/1.13.1|2.5.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/brotkrueml/schema/CVE-2022-33154.yaml
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2022-012
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-374w-gwqr-fmxg
+    reference_type:
+    reference_id: GHSA-374w-gwqr-fmxg

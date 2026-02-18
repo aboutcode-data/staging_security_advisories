@@ -1,0 +1,44 @@
+advisory_id: packagist/ezsystems/ezplatform-http-cache/GHSA-mgfg-7533-7jf6
+datasource_id: gitlab_importer_v2/packagist/ezsystems/ezplatform-http-cache/GHSA-mgfg-7533-7jf6
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/ezsystems/ezplatform-http-cache/GHSA-mgfg-7533-7jf6.yml
+aliases:
+  - GHSA-mgfg-7533-7jf6
+summary: |
+  ezsystems/ezplatform-http-cache affected by Breach with Varnish VCL
+  This is not a vulnerability in the code per se, but included Varnish VCL templates enable compression of API and JSON messages. This is a potential case of the BREACH vulnerability, which affects HTTP compression, where secrets can be extracted through carefully crafted requests. The fix disables compression in these templates. Please make sure to make the same change in your configuration files, see the release notes for specific instructions. Please check your web server configuration as well.
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezplatform-http-cache
+    affected_versions: vers:composer/<2.3.16
+    fixed_versions: vers:composer/2.3.16
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://developers.ibexa.co/security-advisories/ibexa-sa-2024-006-vulnerabilities-in-content-name-pattern-commerce-shop-and-varnish-vhost-templates
+    reference_type:
+    reference_id:
+  - url: https://doc.ibexa.co/en/latest/update_and_migration/from_3.3/update_from_3.3/#v3341
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezplatform-http-cache
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezplatform-http-cache/commit/ca8a5cf69b2c14fbec90412aeeef5c755c51457b
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezplatform-http-cache/security/advisories/GHSA-mgfg-7533-7jf6
+    reference_type:
+    reference_id:
+  - url: https://github.com/ibexa/http-cache/security/advisories/GHSA-fh7v-q458-7vmw
+    reference_type:
+    reference_id:
+  - url: https://github.com/ibexa/post-install/security/advisories/GHSA-4h8f-c635-25p7
+    reference_type:
+    reference_id:
+  - url: https://www.breachattack.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mgfg-7533-7jf6
+    reference_type:
+    reference_id: GHSA-mgfg-7533-7jf6

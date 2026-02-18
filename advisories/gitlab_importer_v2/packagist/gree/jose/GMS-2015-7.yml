@@ -1,0 +1,23 @@
+advisory_id: packagist/gree/jose/GMS-2015-7
+datasource_id: gitlab_importer_v2/packagist/gree/jose/GMS-2015-7
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/gree/jose/GMS-2015-7.yml
+aliases:
+  - GMS-2015-7
+summary: |
+  JWT Verification bypass
+  It is possible for an attacker to bypass verification when "a token digitally signed with an asymetric key (RS/ES family) of algorithms but instead the attacker send a token digitally signed with a symmetric algorithm (HS* family)".
+impacted_packages:
+  - purl: pkg:composer/gree/jose
+    affected_versions: vers:composer/<2.2.1
+    fixed_versions: vers:composer/2.2.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
+    reference_type:
+    reference_id:
+  - url: https://github.com/nov/jose-php/commit/1cce55e27adf0274193eb1cd74b927a398a3df4b
+    reference_type:
+    reference_id:

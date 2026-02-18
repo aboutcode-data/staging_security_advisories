@@ -1,0 +1,39 @@
+advisory_id: packagist/drupal/core/GMS-2022-3361
+datasource_id: gitlab_importer_v2/packagist/drupal/core/GMS-2022-3361
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/core/GMS-2022-3361.yml
+aliases:
+  - CVE-2022-25277
+  - GHSA-6955-67hm-vjjq
+  - GMS-2022-3361
+summary: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+  in drupal/core.
+impacted_packages:
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.0.0|<9.3.19|>=9.4.0|<9.4.3
+    fixed_versions: vers:composer/9.3.19|9.4.3
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/core/GMS-2022-3361.yml
+weaknesses:
+  - CWE-434
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/drupal/core/commit/1cd1830d79f221cc8490f53c2bb487dd07094f17
+    reference_type:
+    reference_id:
+  - url: https://github.com/drupal/core/commit/5d464ea4407c50e40dcf6cb5ee376e7b8dd36f3a
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/core/CVE-2022-25277.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2022-014
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-6955-67hm-vjjq
+    reference_type:
+    reference_id: GHSA-6955-67hm-vjjq

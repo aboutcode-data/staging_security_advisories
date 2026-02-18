@@ -1,0 +1,49 @@
+advisory_id: packagist/ezsystems/ezpublish-legacy/GHSA-p9mp-vq4v-v5m5
+datasource_id: gitlab_importer_v2/packagist/ezsystems/ezpublish-legacy/GHSA-p9mp-vq4v-v5m5
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/ezsystems/ezpublish-legacy/GHSA-p9mp-vq4v-v5m5.yml
+aliases:
+  - GHSA-p9mp-vq4v-v5m5
+summary: |
+  eZ Publish Legacy Passwordless login for LDAP users
+  This security advisory fixes a vulnerability in eZ Publish Legacy, and we recommend that you install it as soon as possible if you are using Legacy.
+
+  Installations that are using the legacy LDAP login handler or the TextFile login handler in combination with the standard legacy login handler, may in rare cases be vulnerable to a failure of the standard login handler to verify passwords correctly, allowing unauthorised access.
+
+  If your installation has never used the LDAP or TextFile login handlers, or never used legacy login at all, then it is not affected. Still, we recommend installing the update, to be on the safe side.
+
+  To install, use Composer to update to one of the "Resolving versions" mentioned above, or apply this patch manually:
+  https://github.com/ezsystems/ezpublish-legacy/commit/13f03a2be6c0ee4d0caaafaef05904ea9b0c4d9d
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/>=5.3.0|<5.3.12+4|>=5.4.0|<5.4.12+1|>=2011.0.0|<2017.12.4+1|>=2018.6.0|<2018.6.1+2|>=2018.9.0|<2018.9.1+1
+    fixed_versions: vers:composer/5.3.12+4|5.4.12+1|2017.12.4+1|2018.6.1+2|2018.9.1+1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-285
+references:
+  - url: https://github.com/ezsystems/ezpublish-legacy
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-legacy/commit/01930a95637389301f762be1439f726013e58aba
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-legacy/pull/1394
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/ezsystems/ezpublish-legacy/2018-10-31-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://issues.ibexa.co/browse/EZP-29703
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20201027063527/https://magento.com/security/news/new-zend-framework-1-security-vulnerability
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210614184552/https://share.ez.no/community-project/security-advisories/ezsa-2018-005-passwordless-login-for-ldap-users
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-p9mp-vq4v-v5m5
+    reference_type:
+    reference_id: GHSA-p9mp-vq4v-v5m5

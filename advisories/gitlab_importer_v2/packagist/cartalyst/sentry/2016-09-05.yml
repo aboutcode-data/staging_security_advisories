@@ -1,0 +1,20 @@
+advisory_id: packagist/cartalyst/sentry/2016-09-05
+datasource_id: gitlab_importer_v2/packagist/cartalyst/sentry/2016-09-05
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/cartalyst/sentry/2016-09-05.yml
+aliases:
+  - '2016-09-05'
+summary: |
+  Weak Password Recovery Mechanism for Forgotten Password
+  Null reset codes are allowed through sentry.
+impacted_packages:
+  - purl: pkg:composer/cartalyst/sentry
+    affected_versions: vers:composer/<=2.1.6
+    fixed_versions: vers:composer/2.1.7
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://haxx.ml/post/149975211631/how-i-hacked-your-cfp-and-probably-some-other
+    reference_type:
+    reference_id:

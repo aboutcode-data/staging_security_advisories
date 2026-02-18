@@ -1,0 +1,18 @@
+advisory_id: packagist/drupal/core/SA-CORE-2018-003
+datasource_id: gitlab_importer_v2/packagist/drupal/core/SA-CORE-2018-003
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/core/SA-CORE-2018-003.yml
+aliases:
+  - SA-CORE-2018-003
+summary: |
+  XSS Vulnerability
+  CKEditor, a third-party JavaScript library included in Drupal core, is affected by a cross-site scripting (XSS) vulnerability. It's possible to execute XSS inside CKEditor when using the `image2` plugin.
+impacted_packages:
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/<8.4.7|>=8.5.0-alpha0|<8.5.2
+    fixed_versions: vers:composer/8.4.7|8.5.2
+severities: []
+weaknesses: []
+references:
+  - url: https://www.drupal.org/sa-core-2018-003
+    reference_type:
+    reference_id:

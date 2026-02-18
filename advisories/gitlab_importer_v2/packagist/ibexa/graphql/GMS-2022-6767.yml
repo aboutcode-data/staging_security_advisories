@@ -1,0 +1,30 @@
+advisory_id: packagist/ibexa/graphql/GMS-2022-6767
+datasource_id: gitlab_importer_v2/packagist/ibexa/graphql/GMS-2022-6767
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/ibexa/graphql/GMS-2022-6767.yml
+aliases:
+  - GHSA-3p7g-wrgg-wq45
+  - GMS-2022-6767
+summary: |
+  GraphQL queries can expose password hashes
+  Unauthenticated GraphQL queries for user accounts can expose password hashes of users that have created or modified content, typically but not necessarily limited to administrators and editors.
+impacted_packages:
+  - purl: pkg:composer/ibexa/graphql
+    affected_versions: vers:composer/>=2.5.0|<2.5.31|>=3.3.0|<3.3.28|>=4.2.0|<4.2.3
+    fixed_versions: vers:composer/2.5.31|3.3.28|4.2.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://developers.ibexa.co/security-advisories/ibexa-sa-2022-009-critical-vulnerabilities-in-graphql-role-assignment-ct-editing-and-drafts-tooltips
+    reference_type:
+    reference_id:
+  - url: https://github.com/ibexa/graphql/commit/5ae5fb4d1d292ddde8528e040ef8a7c8dd7f9c6d
+    reference_type:
+    reference_id:
+  - url: https://github.com/ibexa/graphql/security/advisories/GHSA-3p7g-wrgg-wq45
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3p7g-wrgg-wq45
+    reference_type:
+    reference_id: GHSA-3p7g-wrgg-wq45

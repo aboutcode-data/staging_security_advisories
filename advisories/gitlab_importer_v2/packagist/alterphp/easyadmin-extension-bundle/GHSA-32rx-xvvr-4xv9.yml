@@ -1,0 +1,34 @@
+advisory_id: packagist/alterphp/easyadmin-extension-bundle/GHSA-32rx-xvvr-4xv9
+datasource_id: gitlab_importer_v2/packagist/alterphp/easyadmin-extension-bundle/GHSA-32rx-xvvr-4xv9
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/alterphp/easyadmin-extension-bundle/GHSA-32rx-xvvr-4xv9.yml
+aliases:
+  - GHSA-32rx-xvvr-4xv9
+summary: |
+  easyadmin-extension-bundle action case insensitivity
+  In alterphp/easyadmin-extension-bundle, role based access rules do not handle action name case sensitivity which may lead to unauthorized access.
+impacted_packages:
+  - purl: pkg:composer/alterphp/easyadmin-extension-bundle
+    affected_versions: vers:composer/>=1.2.0|<1.2.11|>=1.3.0|<1.3.1
+    fixed_versions: vers:composer/1.2.11|1.3.1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/alterphp/easyadmin-extension-bundle/GHSA-32rx-xvvr-4xv9.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/alterphp/EasyAdminExtensionBundle/commit/68407ca5be644d1c53fb894453df951230afc6dc
+    reference_type:
+    reference_id:
+  - url: https://github.com/alterphp/EasyAdminExtensionBundle/releases/tag/v1.3.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/alterphp/easyadmin-extension-bundle/2018-10-02.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-32rx-xvvr-4xv9
+    reference_type:
+    reference_id: GHSA-32rx-xvvr-4xv9

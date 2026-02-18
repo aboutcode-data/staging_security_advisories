@@ -1,0 +1,34 @@
+advisory_id: packagist/cartalyst/sentry/GHSA-2m5g-8xpw-42vp
+datasource_id: gitlab_importer_v2/packagist/cartalyst/sentry/GHSA-2m5g-8xpw-42vp
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/cartalyst/sentry/GHSA-2m5g-8xpw-42vp.yml
+aliases:
+  - GHSA-2m5g-8xpw-42vp
+summary: |
+  OpenCFP Framework (Sentry) Account takeover via null password reset codes
+  OpenCFP, an open-source conference talk submission system written in PHP, contains a security vulnerability in its third-party authentication framework, Sentry, developed by Cartalyst. The vulnerability stems from how Sentry handles password reset checks. Users lacking a password reset token stored in the database default to having NULL in the reset_password_code column. Exploiting this flaw could allow unauthorized manipulation of any OpenCFP user's password, particularly those without an unused password reset token. Although successful login still requires correlating the numeric user ID with an email address, the identification of likely organizers (users 1-5) may facilitate this process.
+impacted_packages:
+  - purl: pkg:composer/cartalyst/sentry
+    affected_versions: vers:composer/<=2.1.6
+    fixed_versions: vers:composer/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:L
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/cartalyst/sentry/GHSA-2m5g-8xpw-42vp.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/cartalyst/sentry
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/cartalyst/sentry/2016-09-05.yaml
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20180119075946/https://haxx.ml/post/149975211631/how-i-hacked-your-cfp-and-probably-some-other
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-2m5g-8xpw-42vp
+    reference_type:
+    reference_id: GHSA-2m5g-8xpw-42vp

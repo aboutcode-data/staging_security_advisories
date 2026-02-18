@@ -1,0 +1,39 @@
+advisory_id: packagist/ezsystems/ezpublish-kernel/GHSA-c737-jhwr-fqxj
+datasource_id: gitlab_importer_v2/packagist/ezsystems/ezpublish-kernel/GHSA-c737-jhwr-fqxj
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/ezsystems/ezpublish-kernel/GHSA-c737-jhwr-fqxj.yml
+aliases:
+  - GHSA-c737-jhwr-fqxj
+summary: |
+  Duplicate Advisory: Cross Site Scripting in eZ Platform Ibexa Kernel
+  In file upload it is possible by certain means to upload files like .html and .js. These may contain XSS exploits which will be run when links to them are accessed by victims.
+  Patches
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=6.13.0|<6.13.8+2|>=7.5.0|<7.5.15+2
+    fixed_versions: vers:composer/6.13.8+2|7.5.15+2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/ezsystems/ezpublish-kernel/GHSA-c737-jhwr-fqxj.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/ezsystems/ezpublish-kernel
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel/commit/29fecd2afe86f763510f10c02f14962d028f311b
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel/security/advisories/GHSA-mrvj-7q4f-5p42
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-46875
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c737-jhwr-fqxj
+    reference_type:
+    reference_id: GHSA-c737-jhwr-fqxj

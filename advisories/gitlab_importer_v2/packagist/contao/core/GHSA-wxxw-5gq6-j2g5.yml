@@ -1,0 +1,43 @@
+advisory_id: packagist/contao/core/GHSA-wxxw-5gq6-j2g5
+datasource_id: gitlab_importer_v2/packagist/contao/core/GHSA-wxxw-5gq6-j2g5
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/contao/core/GHSA-wxxw-5gq6-j2g5.yml
+aliases:
+  - GHSA-wxxw-5gq6-j2g5
+summary: |
+  contao/core Insufficient input validation allows for code injection and remote execution
+  contao/core versions 2.x prior to 2.11.17 and 3.x prior to 3.2.9 are vulnerable to arbitrary code execution on the server due to insufficient input validation. In fact, attackers can remove or change pathconfig.php by entering a URL, meaning that the entire Contao installation will no longer be accessible or malicious code can be executed.
+impacted_packages:
+  - purl: pkg:composer/contao/core
+    affected_versions: vers:composer/>=2.0.0|<2.11.17|>=3.0.0|<3.2.9
+    fixed_versions: vers:composer/2.11.17|3.2.9
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/contao/core/GHSA-wxxw-5gq6-j2g5.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://c-c-a.org/aktuelles/news/details/eine-neue-kritische-sicherheitsluecke-in-contao-entdeckt
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/core/commit/d45503568751a868193929ef349a49ae5e6686f0
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/core/commit/d4a14f167e0cbb2e77c7829299e5b36f55c1ebce
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/core/issues/6855
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/core/2014-04-07.yaml
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20240214121817/https://contao.org/en/news/new-security-hole-found-in-contao
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wxxw-5gq6-j2g5
+    reference_type:
+    reference_id: GHSA-wxxw-5gq6-j2g5

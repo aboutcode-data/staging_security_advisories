@@ -1,0 +1,29 @@
+advisory_id: packagist/drupal/core/GHSA-f84q-mgj9-8jfc
+datasource_id: gitlab_importer_v2/packagist/drupal/core/GHSA-f84q-mgj9-8jfc
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/core/GHSA-f84q-mgj9-8jfc.yml
+aliases:
+  - GHSA-f84q-mgj9-8jfc
+summary: |
+  Drupal Content moderation Access bypass
+  In some conditions, drupal content moderation fails to check a users access to use certain transitions, leading to an access bypass.
+impacted_packages:
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.0.0|<8.5.8|>=8.6.0|<8.6.2
+    fixed_versions: vers:composer/8.5.8|8.6.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/drupal/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/core/2018-10-17-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2018-006
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-f84q-mgj9-8jfc
+    reference_type:
+    reference_id: GHSA-f84q-mgj9-8jfc

@@ -1,0 +1,31 @@
+advisory_id: packagist/drupal/drupal/GHSA-jjx7-8462-w4m4
+datasource_id: gitlab_importer_v2/packagist/drupal/drupal/GHSA-jjx7-8462-w4m4
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/drupal/GHSA-jjx7-8462-w4m4.yml
+aliases:
+  - GHSA-jjx7-8462-w4m4
+summary: |
+  Drupal Core Insufficient Contextual Links validation leads to Remote Code Execution
+  The Contextual Links module doesn't sufficiently validate the requested contextual links.
+  This vulnerability is mitigated by the fact that an attacker must have a role with the permission "access contextual links".
+impacted_packages:
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=8.0.0|<8.5.8|>=8.6.0|<8.6.2
+    fixed_versions: vers:composer/8.5.8|8.6.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-20
+references:
+  - url: https://github.com/drupal/drupal
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/drupal/2018-10-17-5.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2018-006
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jjx7-8462-w4m4
+    reference_type:
+    reference_id: GHSA-jjx7-8462-w4m4

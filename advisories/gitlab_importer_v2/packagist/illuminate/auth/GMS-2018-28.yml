@@ -1,0 +1,20 @@
+advisory_id: packagist/illuminate/auth/GMS-2018-28
+datasource_id: gitlab_importer_v2/packagist/illuminate/auth/GMS-2018-28
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/illuminate/auth/GMS-2018-28.yml
+aliases:
+  - GMS-2018-28
+summary: |
+  Unsafe payload decryption
+  There's a potential exploit of the Laravel Encrypter component that may cause the Encrypter to fail on decryption and unexpectedly return false. To exploit this, the attacker must be able to modify the encrypted payload before it is decrypted. This could lead to unexpected behavior when combined with weak type comparisons.
+impacted_packages:
+  - purl: pkg:composer/illuminate/auth
+    affected_versions: vers:composer/<5.5.40|>=5.6.0-alpha0|<5.6.15
+    fixed_versions: vers:composer/5.5.40|5.6.15
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://medium.com/@taylorotwell/laravel-security-release-5-6-15-and-5-5-40-56f1257933a0
+    reference_type:
+    reference_id:

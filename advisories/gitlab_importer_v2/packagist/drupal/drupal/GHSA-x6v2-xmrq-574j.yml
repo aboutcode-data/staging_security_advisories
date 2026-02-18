@@ -1,0 +1,35 @@
+advisory_id: packagist/drupal/drupal/GHSA-x6v2-xmrq-574j
+datasource_id: gitlab_importer_v2/packagist/drupal/drupal/GHSA-x6v2-xmrq-574j
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/drupal/GHSA-x6v2-xmrq-574j.yml
+aliases:
+  - GHSA-x6v2-xmrq-574j
+summary: |
+  Drupal Anonymous Open Redirect
+  Drupal core and contributed modules frequently use a "destination" query string parameter in URLs to redirect users to a new destination after completing an action on the current page. Under certain circumstances, malicious users can use this parameter to construct a URL that will trick users into being redirected to a 3rd party website, thereby exposing the users to potential social engineering attacks.
+impacted_packages:
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=8.0.0|<8.5.8|>=8.6.0|<8.6.2
+    fixed_versions: vers:composer/8.5.8|8.6.2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/drupal/drupal/GHSA-x6v2-xmrq-574j.yml
+weaknesses:
+  - CWE-1035
+  - CWE-601
+  - CWE-937
+references:
+  - url: https://github.com/drupal/drupal
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/drupal/2018-10-17-3.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2018-006
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-x6v2-xmrq-574j
+    reference_type:
+    reference_id: GHSA-x6v2-xmrq-574j
