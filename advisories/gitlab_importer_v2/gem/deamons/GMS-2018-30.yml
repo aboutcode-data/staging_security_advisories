@@ -1,0 +1,20 @@
+advisory_id: gem/deamons/GMS-2018-30
+datasource_id: gitlab_importer_v2/gem/deamons/GMS-2018-30
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/deamons/GMS-2018-30.yml
+aliases:
+  - GMS-2018-30
+summary: |
+  Malicious package (Typosquatting)
+  The daemons package loads and executes malicious scripts.
+impacted_packages:
+  - purl: pkg:gem/deamons
+    affected_versions: vers:gem/>=0
+    fixed_versions: vers:gem/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/rubysec/ruby-advisory-db/issues/345
+    reference_type:
+    reference_id:

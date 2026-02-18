@@ -1,0 +1,18 @@
+advisory_id: gem/kajam/OSVDB-108530
+datasource_id: gitlab_importer_v2/gem/kajam/OSVDB-108530
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/kajam/OSVDB-108530.yml
+aliases:
+  - OSVDB-108530
+summary: |
+  Arbitrary code execution
+  There is a flaw in /dataset/lib/dataset/database/postgresql.rb that is triggered when handling metacharacters. This may allow a remote attacker to execute arbitrary commands.
+impacted_packages:
+  - purl: pkg:gem/kajam
+    affected_versions: vers:gem/>=0.0
+    fixed_versions: vers:gem/
+severities: []
+weaknesses: []
+references:
+  - url: http://osvdb.org/show/osvdb/108530
+    reference_type:
+    reference_id:

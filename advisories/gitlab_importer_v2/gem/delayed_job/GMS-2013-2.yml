@@ -1,0 +1,20 @@
+advisory_id: gem/delayed_job/GMS-2013-2
+datasource_id: gitlab_importer_v2/gem/delayed_job/GMS-2013-2
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/delayed_job/GMS-2013-2.yml
+aliases:
+  - GMS-2013-2
+summary: |
+  Man-in-the-Middle
+  This package is vulnerable to Man-in-the-middle (MitM) attacks due to attacks due to downloading gems over an insecure protocol. Without a secure connection, it is possible for an attacker to intercept this connection and alter the packages received. In serious cases, this may even lead to Remote Code Execution (RCE) on your host server.
+impacted_packages:
+  - purl: pkg:gem/delayed_job
+    affected_versions: vers:gem/>=2.0.4|<4.0.0.beta1
+    fixed_versions: vers:gem/4.0.0.beta1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/collectiveidea/delayed_job/commit/03c34c4a9b41a5d5d7594457c7c25044d215dd63
+    reference_type:
+    reference_id:

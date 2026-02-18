@@ -1,0 +1,20 @@
+advisory_id: gem/yard/GMS-2013-20
+datasource_id: gitlab_importer_v2/gem/yard/GMS-2013-20
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/yard/GMS-2013-20.yml
+aliases:
+  - GMS-2013-20
+summary: This package is vulnerable to Cross-site Scripting (XSS). Strings parsed from the anchor
+  in the address bar were not sanitized, allowing for arbitrary HTML to be embedded into the
+  page.
+impacted_packages:
+  - purl: pkg:gem/yard
+    affected_versions: vers:gem/>=0.8.0|<0.8.7.1
+    fixed_versions: vers:gem/0.8.7.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/lsegal/yard/commit/715d6cb462392e610ab751fcfee7b622850fa802
+    reference_type:
+    reference_id:

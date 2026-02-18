@@ -1,0 +1,24 @@
+advisory_id: gem/nokogiri/GMS-2022-5550
+datasource_id: gitlab_importer_v2/gem/nokogiri/GMS-2022-5550
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/nokogiri/GMS-2022-5550.yml
+aliases:
+  - GHSA-2qc6-mcvw-92cw
+  - GMS-2022-5550
+summary: |
+  Update bundled libxml2 to v2.10.3 to resolve multiple CVEs
+  Please note that this advisory only applies to the CRuby implementation of Nokogiri < 1.13.9, and only if the packaged libraries are being used. If you've overridden defaults at installation time to use system libraries instead of packaged libraries, you should instead pay attention to your distro's libxml2 release announcements.
+impacted_packages:
+  - purl: pkg:gem/nokogiri
+    affected_versions: vers:gem/<1.13.9
+    fixed_versions: vers:gem/1.13.9
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-2qc6-mcvw-92cw
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-2qc6-mcvw-92cw
+    reference_type:
+    reference_id: GHSA-2qc6-mcvw-92cw

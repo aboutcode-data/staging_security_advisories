@@ -1,0 +1,50 @@
+advisory_id: gem/nokogiri/GHSA-mrxw-mxhj-p664
+datasource_id: gitlab_importer_v2/gem/nokogiri/GHSA-mrxw-mxhj-p664
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/nokogiri/GHSA-mrxw-mxhj-p664.yml
+aliases:
+  - GHSA-mrxw-mxhj-p664
+summary: |
+  Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+  Nokogiri v1.18.4 upgrades its dependency libxslt to [v1.1.43](https://gitlab.gnome.org/GNOME/libxslt/-/releases/v1.1.43).
+
+  libxslt v1.1.43 resolves:
+
+  - CVE-2025-24855: Fix use-after-free of XPath context node
+  - CVE-2024-55549: Fix UAF related to excluded namespaces
+impacted_packages:
+  - purl: pkg:gem/nokogiri
+    affected_versions: vers:gem/<1.18.4
+    fixed_versions: vers:gem/1.18.4
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/nokogiri/GHSA-mrxw-mxhj-p664.yml
+weaknesses:
+  - CWE-416
+  - CWE-1035
+  - CWE-937
+  - CWE-1395
+references:
+  - url: https://github.com/sparklemotion/nokogiri
+    reference_type:
+    reference_id:
+  - url: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+    reference_type:
+    reference_id:
+  - url: https://gitlab.gnome.org/GNOME/libxslt/-/issues/127
+    reference_type:
+    reference_id:
+  - url: https://gitlab.gnome.org/GNOME/libxslt/-/issues/128
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-55549
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-24855
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mrxw-mxhj-p664
+    reference_type:
+    reference_id: GHSA-mrxw-mxhj-p664

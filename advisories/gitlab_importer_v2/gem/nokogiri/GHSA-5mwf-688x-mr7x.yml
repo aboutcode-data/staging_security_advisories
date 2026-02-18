@@ -1,0 +1,38 @@
+advisory_id: gem/nokogiri/GHSA-5mwf-688x-mr7x
+datasource_id: gitlab_importer_v2/gem/nokogiri/GHSA-5mwf-688x-mr7x
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/nokogiri/GHSA-5mwf-688x-mr7x.yml
+aliases:
+  - GHSA-5mwf-688x-mr7x
+summary: |
+  Duplicate Advisory: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+  Nokogiri v1.18.3 upgrades its dependency libxml2 to
+  [v2.13.6](https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.13.6).
+
+  libxml2 v2.13.6 addresses:
+
+  - CVE-2025-24928
+  - described at https://gitlab.gnome.org/GNOME/libxml2/-/issues/847
+  - CVE-2024-56171
+  - described at https://gitlab.gnome.org/GNOME/libxml2/-/issues/828
+impacted_packages:
+  - purl: pkg:gem/nokogiri
+    affected_versions: vers:gem/<1.18.3
+    fixed_versions: vers:gem/1.18.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-1395
+references:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/nokogiri/GHSA-vvfq-8hwr-qm4m.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/sparklemotion/nokogiri
+    reference_type:
+    reference_id:
+  - url: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5mwf-688x-mr7x
+    reference_type:
+    reference_id: GHSA-5mwf-688x-mr7x

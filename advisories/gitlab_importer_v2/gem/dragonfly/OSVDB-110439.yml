@@ -1,0 +1,18 @@
+advisory_id: gem/dragonfly/OSVDB-110439
+datasource_id: gitlab_importer_v2/gem/dragonfly/OSVDB-110439
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/dragonfly/OSVDB-110439.yml
+aliases:
+  - OSVDB-110439
+summary: |
+  Remote Code Execution
+  The gem contains a flaw in Uploading & Processing that is due to the gem failing to restrict arbitrary commands to imagemagicks convert. This may allow a remote attacker to gain read/write access to the filesystem and execute arbitrary commands.
+impacted_packages:
+  - purl: pkg:gem/dragonfly
+    affected_versions: vers:gem/<1.0.7
+    fixed_versions: vers:gem/1.0.7
+severities: []
+weaknesses: []
+references:
+  - url: http://osvdb.org/show/osvdb/110439
+    reference_type:
+    reference_id:

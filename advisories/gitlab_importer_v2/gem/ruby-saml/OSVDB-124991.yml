@@ -1,0 +1,18 @@
+advisory_id: gem/ruby-saml/OSVDB-124991
+datasource_id: gitlab_importer_v2/gem/ruby-saml/OSVDB-124991
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/ruby-saml/OSVDB-124991.yml
+aliases:
+  - OSVDB-124991
+summary: |
+  XPath Injection Vulnerability
+  The gem is vulnerable to XPath injection on xml_security.rb. The lack of prepared statements allows for command injection, leading to arbitrary code execution.
+impacted_packages:
+  - purl: pkg:gem/ruby-saml
+    affected_versions: vers:gem/<1.0.0
+    fixed_versions: vers:gem/1.0.0
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/onelogin/ruby-saml/commit/9853651b96b99653ea8627d757d46bfe62ab6448
+    reference_type:
+    reference_id:

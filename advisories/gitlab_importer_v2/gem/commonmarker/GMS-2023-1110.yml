@@ -1,0 +1,36 @@
+advisory_id: gem/commonmarker/GMS-2023-1110
+datasource_id: gitlab_importer_v2/gem/commonmarker/GMS-2023-1110
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/commonmarker/GMS-2023-1110.yml
+aliases:
+  - GHSA-48wp-p9qv-4j64
+  - GMS-2023-1110
+summary: |
+  Commonmarker vulnerable to to several quadratic complexity bugs that may lead to denial of service
+  Several quadratic complexity bugs in commonmarker's underlying cmark-gfm library may lead to unbounded resource exhaustion and subsequent denial of service.
+impacted_packages:
+  - purl: pkg:gem/commonmarker
+    affected_versions: vers:gem/<0.23.9
+    fixed_versions: vers:gem/0.23.9
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/github/cmark-gfm/releases/tag/0.29.0.gfm.10
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/cmark-gfm/releases/tag/0.29.0.gfm.11
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker/pull/236
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker/releases/tag/v0.23.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker/security/advisories/GHSA-48wp-p9qv-4j64
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-48wp-p9qv-4j64
+    reference_type:
+    reference_id: GHSA-48wp-p9qv-4j64

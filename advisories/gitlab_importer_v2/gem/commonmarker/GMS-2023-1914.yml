@@ -1,0 +1,45 @@
+advisory_id: gem/commonmarker/GMS-2023-1914
+datasource_id: gitlab_importer_v2/gem/commonmarker/GMS-2023-1914
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/commonmarker/GMS-2023-1914.yml
+aliases:
+  - GHSA-7vh7-fw88-wj87
+  - GMS-2023-1914
+summary: |
+  Several quadratic complexity bugs may lead to denial of service in Commonmarker
+  ## Impact
+
+  Several quadratic complexity bugs in commonmarker's underlying [`cmark-gfm`](https://github.com/github/cmark-gfm) library may lead to unbounded resource exhaustion and subsequent denial of service.
+
+  The following vulnerabilities were addressed:
+
+  * [CVE-2023-37463](https://github.com/github/cmark-gfm/security/advisories/GHSA-w4qg-3vf7-m9x5)
+
+  For more information, consult the release notes for version [`0.29.0.gfm.12`](https://github.com/github/cmark-gfm/releases/tag/0.29.0.gfm.12).
+
+  ## Mitigation
+
+  Users are advised to upgrade to commonmarker version [`0.23.10`](https://rubygems.org/gems/commonmarker/versions/0.23.10).
+impacted_packages:
+  - purl: pkg:gem/commonmarker
+    affected_versions: vers:gem/<0.23.10
+    fixed_versions: vers:gem/0.23.10
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/github/cmark-gfm/releases/tag/0.29.0.gfm.12
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker/commit/db8cd377b54541f7fd484d168b7682a282a680f7
+    reference_type:
+    reference_id:
+  - url: https://github.com/gjtorikian/commonmarker/security/advisories/GHSA-7vh7-fw88-wj87
+    reference_type:
+    reference_id:
+  - url: https://rubygems.org/gems/commonmarker/versions/0.23.10
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-7vh7-fw88-wj87
+    reference_type:
+    reference_id: GHSA-7vh7-fw88-wj87

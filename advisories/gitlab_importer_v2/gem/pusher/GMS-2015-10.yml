@@ -1,0 +1,23 @@
+advisory_id: gem/pusher/GMS-2015-10
+datasource_id: gitlab_importer_v2/gem/pusher/GMS-2015-10
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/pusher/GMS-2015-10.yml
+aliases:
+  - GMS-2015-10
+summary: |
+  Auth delegation trough crafted socket ID
+  It's possible for an attacker to circumvent authentication by crafting special socket ID.
+impacted_packages:
+  - purl: pkg:gem/pusher
+    affected_versions: vers:gem/<0.14.5
+    fixed_versions: vers:gem/0.14.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/pusher/pusher-http-ruby/blob/master/CHANGELOG.md#0145--2015-05-11
+    reference_type:
+    reference_id:
+  - url: https://github.com/pusher/pusher-http-ruby/commit/c9fb93a0d9c1423da7bf9b7e846b3617a21975c7
+    reference_type:
+    reference_id:

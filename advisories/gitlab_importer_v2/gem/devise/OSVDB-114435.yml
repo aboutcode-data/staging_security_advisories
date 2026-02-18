@@ -1,0 +1,22 @@
+advisory_id: gem/devise/OSVDB-114435
+datasource_id: gitlab_importer_v2/gem/devise/OSVDB-114435
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/devise/OSVDB-114435.yml
+aliases:
+  - OSVDB-114435
+summary: Devise has been reported to be vulnerable to CSRF token fixation attacks. The attack
+  can only be exploited if the attacker can set the target session, either by subdomain cookies
+  or by fixation over the same Wi-Fi network. If the user knows the CSRF token, cross-site forgery
+  requests can be made.
+impacted_packages:
+  - purl: pkg:gem/devise
+    affected_versions: vers:gem/>=2.0.0|<2.2.5|>=3.0.0|<3.0.1
+    fixed_versions: vers:gem/2.2.5|3.0.1
+severities: []
+weaknesses: []
+references:
+  - url: http://blog.plataformatec.com.br/2013/08/csrf-token-fixation-attacks-in-devise/
+    reference_type:
+    reference_id:
+  - url: http://homakov.blogspot.com.es/2013/06/cookie-forcing-protection-made-easy.html
+    reference_type:
+    reference_id:

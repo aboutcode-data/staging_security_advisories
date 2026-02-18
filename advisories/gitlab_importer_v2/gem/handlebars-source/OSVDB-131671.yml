@@ -1,0 +1,21 @@
+advisory_id: gem/handlebars-source/OSVDB-131671
+datasource_id: gitlab_importer_v2/gem/handlebars-source/OSVDB-131671
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/handlebars-source/OSVDB-131671.yml
+aliases:
+  - OSVDB-131671
+summary: |
+  XSS vulnerability due to improper value escaping
+  The library does not properly escape attribute values making XSS exploits possible.
+impacted_packages:
+  - purl: pkg:gem/handlebars-source
+    affected_versions: vers:gem/<4.0.0
+    fixed_versions: vers:gem/4.0.0
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/wycats/handlebars.js/commit/83b8e846a3569bd366cf0b6bdc1e4604d1a2077e
+    reference_type:
+    reference_id:
+  - url: https://github.com/wycats/handlebars.js/issues/1114
+    reference_type:
+    reference_id:

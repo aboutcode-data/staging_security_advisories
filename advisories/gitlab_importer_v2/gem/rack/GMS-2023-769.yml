@@ -1,0 +1,31 @@
+advisory_id: gem/rack/GMS-2023-769
+datasource_id: gitlab_importer_v2/gem/rack/GMS-2023-769
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/rack/GMS-2023-769.yml
+aliases:
+  - CVE-2023-27539
+  - GHSA-c6qg-cjj8-47qp
+  - GMS-2023-769
+summary: |
+  Possible Denial of Service Vulnerability in Rack’s header parsing
+  There is a denial of service vulnerability in the header parsing component of Rack. Carefully crafted input can cause header parsing in Rack to take an unexpected amount of time, possibly resulting in a denial of service attack vector. Any applications that parse headers using Rack (virtually all Rails applications) are impacted. Workarounds Setting `Regexp.timeout` in Ruby 3.2 is a possible workaround.
+impacted_packages:
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/>=2.0.0|<2.2.6.4|>=3.0.0|<3.0.6.1
+    fixed_versions: vers:gem/2.2.6.4|3.0.6.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://discuss.rubyonrails.org/t/cve-2023-27539-possible-denial-of-service-vulnerability-in-racks-header-parsing/82466
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/rack/CVE-2023-27539.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-27539
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c6qg-cjj8-47qp
+    reference_type:
+    reference_id: GHSA-c6qg-cjj8-47qp

@@ -1,0 +1,24 @@
+advisory_id: gem/jruby_sandbox/OSVDB-106279
+datasource_id: gitlab_importer_v2/gem/jruby_sandbox/OSVDB-106279
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/jruby_sandbox/OSVDB-106279.yml
+aliases:
+  - OSVDB-106279
+summary: |
+  Security bypass using Java imports
+  An attacker can Import Java classes to circumvent the security protections and execute arbitrary code outside the sandboxed environment.
+impacted_packages:
+  - purl: pkg:gem/jruby_sandbox
+    affected_versions: vers:gem/<=0.2.2
+    fixed_versions: vers:gem/0.2.3
+severities: []
+weaknesses: []
+references:
+  - url: http://packetstormsecurity.com/files/126317/JRuby-Sandbox-0.2.2-Bypass.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2014/Apr/att-264/jruby-sandbox.txt
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/33028.txt
+    reference_type: exploit
+    reference_id: OSVDB-106279

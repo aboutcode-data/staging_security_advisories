@@ -1,0 +1,24 @@
+advisory_id: gem/delayed_job_web/GMS-2014-1
+datasource_id: gitlab_importer_v2/gem/delayed_job_web/GMS-2014-1
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/delayed_job_web/GMS-2014-1.yml
+aliases:
+  - GMS-2014-1
+summary: This package is vulnerable to Cross-site Scripting (XSS).
+impacted_packages:
+  - purl: pkg:gem/delayed_job_web
+    affected_versions: vers:gem/<1.2.9
+    fixed_versions: vers:gem/1.2.9
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/ejschmitt/delayed_job_web/commit/b328b269d14d878c056289fb9b1eb8358b5d61fd
+    reference_type:
+    reference_id:
+  - url: https://github.com/ejschmitt/delayed_job_web/issues/49
+    reference_type:
+    reference_id:
+  - url: https://github.com/ejschmitt/delayed_job_web/pull/55
+    reference_type:
+    reference_id:

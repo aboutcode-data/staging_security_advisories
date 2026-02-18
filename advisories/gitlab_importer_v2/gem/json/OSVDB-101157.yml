@@ -1,0 +1,18 @@
+advisory_id: gem/json/OSVDB-101157
+datasource_id: gitlab_importer_v2/gem/json/OSVDB-101157
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/json/OSVDB-101157.yml
+aliases:
+  - OSVDB-101157
+summary: |
+  Data Handling Stack Buffer Overflow
+  This package contains an overflow condition that is triggered as user-supplied input is not properly validated when handling specially crafted data. This may allow a remote attacker to cause a stack-based buffer overflow, resulting in a denial of service or potentially allowing the execution of arbitrary code.
+impacted_packages:
+  - purl: pkg:gem/json
+    affected_versions: vers:gem/<1.1.0
+    fixed_versions: vers:gem/1.1.0
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/json/OSVDB-101157.yml
+    reference_type:
+    reference_id:

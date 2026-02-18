@@ -1,0 +1,20 @@
+advisory_id: gem/octokit/GMS-2013-1
+datasource_id: gitlab_importer_v2/gem/octokit/GMS-2013-1
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/octokit/GMS-2013-1.yml
+aliases:
+  - GMS-2013-1
+summary: |
+  PubSubHubbub Service Hooks support is broken
+  The PubSubHubbub Service Hooks support was broken since url_encoded requests have been removed.
+impacted_packages:
+  - purl: pkg:gem/octokit
+    affected_versions: vers:gem/>=1.19|<1.22
+    fixed_versions: vers:gem/1.22.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/pengwynn/octokit/pull/203#commits-pushed-6ecd347
+    reference_type:
+    reference_id:

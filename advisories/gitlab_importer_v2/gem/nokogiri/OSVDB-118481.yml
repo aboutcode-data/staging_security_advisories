@@ -1,0 +1,18 @@
+advisory_id: gem/nokogiri/OSVDB-118481
+datasource_id: gitlab_importer_v2/gem/nokogiri/OSVDB-118481
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/nokogiri/OSVDB-118481.yml
+aliases:
+  - OSVDB-118481
+summary: |
+  XML Document Root Element Handling Memory Consumption Remote DoS
+  This package contains a flaw that is triggered when handling a root element in an XML document. This may allow a remote attacker to cause a consumption of memory resources.
+impacted_packages:
+  - purl: pkg:gem/nokogiri
+    affected_versions: vers:gem/<1.6.3
+    fixed_versions: vers:gem/1.6.3
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/sparklemotion/nokogiri/pull/1087
+    reference_type:
+    reference_id:

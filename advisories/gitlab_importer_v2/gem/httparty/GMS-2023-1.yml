@@ -1,0 +1,29 @@
+advisory_id: gem/httparty/GMS-2023-1
+datasource_id: gitlab_importer_v2/gem/httparty/GMS-2023-1
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/gem/httparty/GMS-2023-1.yml
+aliases:
+  - GHSA-5pq7-52mg-hr42
+  - GMS-2023-1
+summary: Improper Neutralization in httparty.
+impacted_packages:
+  - purl: pkg:gem/httparty
+    affected_versions: vers:gem/<=0.20.0
+    fixed_versions: vers:gem/0.21.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-707
+references:
+  - url: https://github.com/advisories/GHSA-5pq7-52mg-hr42
+    reference_type:
+    reference_id:
+  - url: https://github.com/jnunemaker/httparty/blob/4416141d37fd71bdba4f37589ec265f55aa446ce/lib/httparty/request/body.rb#L43
+    reference_type:
+    reference_id:
+  - url: https://github.com/jnunemaker/httparty/commit/cdb45a678c43e44570b4e73f84b1abeb5ec22b8e
+    reference_type:
+    reference_id:
+  - url: https://github.com/jnunemaker/httparty/security/advisories/GHSA-5pq7-52mg-hr42
+    reference_type:
+    reference_id:
