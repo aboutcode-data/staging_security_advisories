@@ -1,0 +1,33 @@
+advisory_id: maven/org.bitbucket.b_c/jose4j/GMS-2023-1246
+datasource_id: gitlab_importer_v2/maven/org.bitbucket.b_c/jose4j/GMS-2023-1246
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.bitbucket.b_c/jose4j/GMS-2023-1246.yml
+aliases:
+  - GHSA-jgvc-jfgh-rjvv
+  - GMS-2023-1246
+summary: |
+  Chosen Ciphertext Attack in Jose4j
+  RSA1_5 in jose4j is susceptible to chosen ciphertext attacks. The attack allows to decrypt RSA1_5 or RSA_OAEP encrypted ciphertexts. It may be feasible to sign with affected keys.
+impacted_packages:
+  - purl: pkg:maven/org.bitbucket.b_c/jose4j
+    affected_versions: vers:maven/<0.9.3
+    fixed_versions: vers:maven/0.9.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://bitbucket.org/b_c/jose4j/commits/14e62a8dee9decb4ff6e0625aedc5724601bfdb6
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/b_c/jose4j/commits/63b86581e7bfcc2d9d04ee15caea4b5bfb911f59
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/b_c/jose4j/commits/tag/jose4j-0.9.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/security-research/security/advisories/GHSA-jgvc-jfgh-rjvv
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jgvc-jfgh-rjvv
+    reference_type:
+    reference_id: GHSA-jgvc-jfgh-rjvv

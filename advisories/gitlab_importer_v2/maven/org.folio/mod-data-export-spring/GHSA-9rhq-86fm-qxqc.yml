@@ -1,0 +1,54 @@
+advisory_id: maven/org.folio/mod-data-export-spring/GHSA-9rhq-86fm-qxqc
+datasource_id: gitlab_importer_v2/maven/org.folio/mod-data-export-spring/GHSA-9rhq-86fm-qxqc
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.folio/mod-data-export-spring/GHSA-9rhq-86fm-qxqc.yml
+aliases:
+  - GHSA-9rhq-86fm-qxqc
+summary: |
+  Duplicate Advisory: Hard-coded credentials in org.folio:mod-data-export-spring
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-vf78-3q9f-92g3. This link is maintained to preserve external references.
+
+  ## Original Description
+  Hard-coded credentials in FOLIO mod-data-export-spring versions before 1.5.4 and from 2.0.0 to 2.0.2 allows unauthenticated users to access critical APIs, modify user data, modify configurations including single-sign-on, and manipulate fees/fines.
+impacted_packages:
+  - purl: pkg:maven/org.folio/mod-data-export-spring
+    affected_versions: vers:maven/<1.5.4|>=2.0.0|<3.0.0
+    fixed_versions: vers:maven/1.5.4|3.0.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.folio/mod-data-export-spring/GHSA-9rhq-86fm-qxqc.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-798
+references:
+  - url: https://github.com/advisories/GHSA-vf78-3q9f-92g3
+    reference_type:
+    reference_id:
+  - url: https://github.com/folio-org/mod-data-export-spring
+    reference_type:
+    reference_id:
+  - url: https://github.com/folio-org/mod-data-export-spring/commit/93aff4566bff59e30f4121b5a2bda5b0b508a446
+    reference_type:
+    reference_id:
+  - url: https://github.com/folio-org/mod-data-export-spring/commit/cb6785565067a2a90c1e2250c241e5b23214c691
+    reference_type:
+    reference_id:
+  - url: https://github.com/folio-org/mod-data-export-spring/security/advisories/GHSA-vf78-3q9f-92g3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23687
+    reference_type:
+    reference_id:
+  - url: https://vulncheck.com/advisories/vc-advisory-GHSA-vf78-3q9f-92g3
+    reference_type:
+    reference_id:
+  - url: https://wiki.folio.org/x/hbMMBw
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-9rhq-86fm-qxqc
+    reference_type:
+    reference_id: GHSA-9rhq-86fm-qxqc

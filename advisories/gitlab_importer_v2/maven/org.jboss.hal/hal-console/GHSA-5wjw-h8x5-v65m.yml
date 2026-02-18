@@ -1,0 +1,48 @@
+advisory_id: maven/org.jboss.hal/hal-console/GHSA-5wjw-h8x5-v65m
+datasource_id: gitlab_importer_v2/maven/org.jboss.hal/hal-console/GHSA-5wjw-h8x5-v65m
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.jboss.hal/hal-console/GHSA-5wjw-h8x5-v65m.yml
+aliases:
+  - GHSA-5wjw-h8x5-v65m
+summary: |
+  Duplicate Advisory: Wildfly HAL Console Cross-Site Scripting
+  # Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-jhvj-f397-8w6q. This link is maintained to preserve external references.
+
+  # Original Description
+  A flaw was found in the HAL Console in the Wildfly component, which does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output used as a web page that is served to other users. The attacker must be authenticated as a user that belongs to management groups “SuperUser”, “Admin”, or “Maintainer”.
+impacted_packages:
+  - purl: pkg:maven/org.jboss.hal/hal-console
+    affected_versions: vers:maven/<=3.7.7.Final
+    fixed_versions: vers:maven/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.jboss.hal/hal-console/GHSA-5wjw-h8x5-v65m.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:10924
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:10926
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-23366
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2337619
+    reference_type:
+    reference_id:
+  - url: https://github.com/hal/console
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-23366
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5wjw-h8x5-v65m
+    reference_type:
+    reference_id: GHSA-5wjw-h8x5-v65m
