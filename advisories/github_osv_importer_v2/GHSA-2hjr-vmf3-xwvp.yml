@@ -1,0 +1,43 @@
+advisory_id: GHSA-2hjr-vmf3-xwvp
+datasource_id: github_osv_importer_v2/GHSA-2hjr-vmf3-xwvp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-2hjr-vmf3-xwvp/GHSA-2hjr-vmf3-xwvp.json
+aliases:
+  - CVE-2023-49921
+summary: |
+  Elasticsearch Insertion of Sensitive Information into Log File
+  An issue was discovered by Elastic whereby Watcher search input logged the search query results on DEBUG log level. This could lead to raw contents of documents stored in Elasticsearch to be printed in logs. Elastic has released 8.11.2 and 7.17.16 that resolves this issue by removing this excessive logging. This issue only affects users that use Watcher and have a Watch defined that uses the search input and additionally have set the search input’s logger to DEBUG or finer, for example using: org.elasticsearch.xpack.watcher.input.search, org.elasticsearch.xpack.watcher.input, org.elasticsearch.xpack.watcher, or wider, since the loggers are hierarchical.
+impacted_packages:
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/<7.17.16
+    fixed_versions: vers:maven/7.17.16
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/>=8.0.0|<8.11.2
+    fixed_versions: vers:maven/8.11.2
+severities:
+  - score: '5.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-2hjr-vmf3-xwvp/GHSA-2hjr-vmf3-xwvp.json
+  - score: '4.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:A/AC:L/AT:P/PR:L/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-2hjr-vmf3-xwvp/GHSA-2hjr-vmf3-xwvp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://discuss.elastic.co/t/elasticsearch-8-11-2-7-17-16-security-update-esa-2023-29/349179
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/elasticsearch
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-49921
+    reference_type:
+    reference_id:

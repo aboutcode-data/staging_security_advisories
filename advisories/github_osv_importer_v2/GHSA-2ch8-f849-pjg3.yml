@@ -1,0 +1,55 @@
+advisory_id: GHSA-2ch8-f849-pjg3
+datasource_id: github_osv_importer_v2/GHSA-2ch8-f849-pjg3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2ch8-f849-pjg3/GHSA-2ch8-f849-pjg3.json
+aliases:
+  - CVE-2014-4301
+summary: |
+  Eugene Pankov Ajenti Cross-site scripting Vulnerabilities
+  Multiple cross-site scripting (XSS) vulnerabilities in the `respond_error` function in `routing.py` in Eugene Pankov Ajenti before 1.2.21.7 allow remote attackers to inject arbitrary web script or HTML via the `PATH_INFO` to (1) `resources.js` or (2) resources.css in `ajenti:static/`, related to the traceback page.
+impacted_packages:
+  - purl: pkg:pypi/ajenti
+    affected_versions: vers:pypi/<1.2.21.7
+    fixed_versions: vers:pypi/1.2.21.7
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2ch8-f849-pjg3/GHSA-2ch8-f849-pjg3.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2ch8-f849-pjg3/GHSA-2ch8-f849-pjg3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://secunia.com/advisories/59177
+    reference_type:
+    reference_id:
+  - url: https://github.com/Eugeny/ajenti
+    reference_type:
+    reference_id:
+  - url: https://github.com/Eugeny/ajenti/commit/d3fc5eb142ff16d55d158afb050af18d5ff09120
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/ajenti/PYSEC-2014-99.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-4301
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20171119051123/http://www.securityfocus.com/bid/68047
+    reference_type:
+    reference_id:
+  - url: https://www.netsparker.com/critical-xss-vulnerabilities-in-ajenti
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/68047
+    reference_type:
+    reference_id:

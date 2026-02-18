@@ -1,0 +1,33 @@
+advisory_id: GHSA-28fw-88hq-6jmm
+datasource_id: github_osv_importer_v2/GHSA-28fw-88hq-6jmm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-28fw-88hq-6jmm/GHSA-28fw-88hq-6jmm.json
+aliases: []
+summary: |
+  ### Impact
+  Persistent XSS in shopping worlds
+
+  ### Patches
+
+  We recommend updating to the current version 5.6.9. You can get the update to 5.6.9 regularly via the Auto-Updater or directly via the download overview.
+
+  For older versions you can use the Security Plugin:
+  https://store.shopware.com/en/swag575294366635f/shopware-security-plugin.html
+
+  ### References
+  https://docs.shopware.com/en/shopware-5-en/security-updates/security-update-11-2020
+impacted_packages:
+  - purl: pkg:composer/shopware/shopware
+    affected_versions: vers:composer/<5.6.9
+    fixed_versions: vers:composer/5.6.9
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-28fw-88hq-6jmm
+    reference_type:
+    reference_id:

@@ -1,0 +1,45 @@
+advisory_id: GHSA-32gv-6cf3-wcmq
+datasource_id: github_osv_importer_v2/GHSA-32gv-6cf3-wcmq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-32gv-6cf3-wcmq/GHSA-32gv-6cf3-wcmq.json
+aliases: []
+summary: |
+  HTTP/2 DoS Attacks: Ping, Reset, and Settings Floods
+  ### Impact
+  Twisted web servers that utilize the optional HTTP/2 support suffer from the following flow-control related vulnerabilities:
+
+  Ping flood: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9512
+  Reset flood: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9514
+  Settings flood: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9515
+
+  A Twisted web server supports HTTP/2 requests if you've installed the [`http2` optional dependency set](https://twistedmatrix.com/documents/19.2.0/installation/howto/optional.html).
+
+  ### Workarounds
+  There are no workarounds.
+
+  ### References
+  https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-002.md
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [Twisted's Trac](https://twistedmatrix.com/trac/)
+impacted_packages:
+  - purl: pkg:pypi/twisted
+    affected_versions: vers:pypi/<19.10.0
+    fixed_versions: vers:pypi/19.10.0
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/twisted/twisted
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/commit/a40ab1ce5210f231abe7a448a54d7e88e48f2d5d
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/security/advisories/GHSA-32gv-6cf3-wcmq
+    reference_type:
+    reference_id:

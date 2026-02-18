@@ -1,0 +1,59 @@
+advisory_id: GHSA-2qfp-q593-8484
+datasource_id: github_osv_importer_v2/GHSA-2qfp-q593-8484
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-2qfp-q593-8484/GHSA-2qfp-q593-8484.json
+aliases:
+  - CVE-2025-6176
+summary: |
+  Scrapy is vulnerable to a denial of service (DoS) attack due to flaws in brotli decompression implementation
+  Scrapy versions up to 2.13.3 are vulnerable to a denial of service (DoS) attack due to a flaw in its brotli decompression implementation. The protection mechanism against decompression bombs fails to mitigate the brotli variant, allowing remote servers to crash clients with less than 80GB of available memory. This occurs because brotli can achieve extremely high compression ratios for zero-filled data, leading to excessive memory consumption during decompression. Mitigation for this vulnerability needs security enhancement added in brotli v1.2.0.
+impacted_packages:
+  - purl: pkg:pypi/brotli
+    affected_versions: vers:pypi/<=1.1.0
+    fixed_versions: vers:pypi/1.2.0
+  - purl: pkg:pypi/scrapy
+    affected_versions: vers:pypi/<=2.13.3
+    fixed_versions: vers:pypi/2.13.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-2qfp-q593-8484/GHSA-2qfp-q593-8484.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/google/brotli
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/brotli/commit/67d78bc41db1a0d03f2e763497748f2f69946627
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/brotli/issues/1327
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/brotli/issues/1375
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/brotli/pull/1234
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/brotli/releases/tag/v1.2.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/scrapy/scrapy/commit/14737e91edc513967f516fc839cc9c8a4f8d91da
+    reference_type:
+    reference_id:
+  - url: https://github.com/scrapy/scrapy/pull/7134
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/2c26a886-5984-47ee-a421-0d5fe1344eb0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-6176
+    reference_type:
+    reference_id:

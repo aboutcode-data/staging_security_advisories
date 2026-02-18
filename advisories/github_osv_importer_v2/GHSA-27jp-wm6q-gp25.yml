@@ -1,0 +1,43 @@
+advisory_id: GHSA-27jp-wm6q-gp25
+datasource_id: github_osv_importer_v2/GHSA-27jp-wm6q-gp25
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-27jp-wm6q-gp25/GHSA-27jp-wm6q-gp25.json
+aliases: []
+summary: |
+  sqlparse: formatting list of tuples leads to denial of service
+  ### Summary
+  The below gist hangs while attempting to format a long list of tuples.
+
+  This was found while [drafting a regression test for Dja
+  ngo 5.2's composite primary key feature](https://code.djangoproject.com/ticket/36416#comment:3), which allows querying composite fields with tuples.
+
+  ###
+impacted_packages:
+  - purl: pkg:pypi/sqlparse
+    affected_versions: vers:pypi/<=0.5.3
+    fixed_versions: vers:pypi/0.5.4
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-27jp-wm6q-gp25/GHSA-27jp-wm6q-gp25.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/andialbrecht/sqlparse
+    reference_type:
+    reference_id:
+  - url: https://github.com/andialbrecht/sqlparse/commit/40ed3aa958657fa4a82055927fa9de70ab903360
+    reference_type:
+    reference_id:
+  - url: https://github.com/andialbrecht/sqlparse/releases/tag/0.5.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/andialbrecht/sqlparse/security/advisories/GHSA-27jp-wm6q-gp25
+    reference_type:
+    reference_id:

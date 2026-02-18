@@ -1,0 +1,58 @@
+advisory_id: GHSA-3787-6prv-h9w3
+datasource_id: github_osv_importer_v2/GHSA-3787-6prv-h9w3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-3787-6prv-h9w3/GHSA-3787-6prv-h9w3.json
+aliases:
+  - CVE-2024-24758
+summary: "Undici proxy-authorization header not cleared on cross-origin redirect in fetch\n\
+  ### Impact\n\nUndici already cleared Authorization headers on cross-origin redirects, but\
+  \ did not clear `Proxy-Authorization` headers. \n\n### Patches\n\nThis is patched in v5.28.3\
+  \ and v6.6.1\n\n### Workarounds\n\nThere are no known workarounds.\n\n### References\n\n-\
+  \ https://fetch.spec.whatwg.org/#authentication-entries\n- https://github.com/nodejs/undici/security/advisories/GHSA-wqq4-5wpv-mx2g"
+impacted_packages:
+  - purl: pkg:npm/undici
+    affected_versions: vers:npm/<=5.28.2
+    fixed_versions: vers:npm/5.28.3
+  - purl: pkg:npm/undici
+    affected_versions: vers:npm/<=6.6.0
+    fixed_versions: vers:npm/6.6.1
+severities:
+  - score: '3.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-3787-6prv-h9w3/GHSA-3787-6prv-h9w3.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/nodejs/undici
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/commit/b9da3e40f1f096a06b4caedbb27c2568730434ef
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/commit/d3aa574b1259c1d8d329a0f0f495ee82882b1458
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/releases/tag/v5.28.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/releases/tag/v6.6.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/security/advisories/GHSA-3787-6prv-h9w3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-24758
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240419-0007
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2024/03/11/1
+    reference_type:
+    reference_id:

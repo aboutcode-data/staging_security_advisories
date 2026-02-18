@@ -1,0 +1,39 @@
+advisory_id: GHSA-358m-fq53-hp87
+datasource_id: github_osv_importer_v2/GHSA-358m-fq53-hp87
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-358m-fq53-hp87/GHSA-358m-fq53-hp87.json
+aliases:
+  - CVE-2025-53393
+summary: In Akka through 2.10.6, akka-cluster-metrics uses Java serialization for cluster metrics.
+impacted_packages:
+  - purl: pkg:maven/com.typesafe.akka/akka-cluster-metrics_3
+    affected_versions: vers:maven/<=2.10.6
+    fixed_versions:
+  - purl: pkg:maven/com.typesafe.akka/akka-cluster-metrics_2.13
+    affected_versions: vers:maven/<=2.10.6
+    fixed_versions:
+severities:
+  - score: '6.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-358m-fq53-hp87/GHSA-358m-fq53-hp87.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/akka/akka
+    reference_type:
+    reference_id:
+  - url: https://github.com/akka/akka/commit/d69a082abfa26ccc076f090a6486ccfee9d7c481
+    reference_type:
+    reference_id:
+  - url: https://github.com/akka/akka/pull/32748
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-53393
+    reference_type:
+    reference_id:

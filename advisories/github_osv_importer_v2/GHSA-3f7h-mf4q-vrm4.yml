@@ -1,0 +1,53 @@
+advisory_id: GHSA-3f7h-mf4q-vrm4
+datasource_id: github_osv_importer_v2/GHSA-3f7h-mf4q-vrm4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-3f7h-mf4q-vrm4/GHSA-3f7h-mf4q-vrm4.json
+aliases:
+  - CVE-2022-40152
+summary: |
+  Denial of Service due to parser crash
+  Those using FasterXML/woodstox to seralize XML data may be vulnerable to Denial of Service attacks (DOS). If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stackoverflow. This effect may support a denial of service attack.
+
+  This vulnerability is only relevant for users making use of the DTD parsing functionality.
+impacted_packages:
+  - purl: pkg:maven/com.fasterxml.woodstox/woodstox-core
+    affected_versions: vers:maven/>=6.0.0|<6.4.0
+    fixed_versions: vers:maven/6.4.0
+  - purl: pkg:maven/com.fasterxml.woodstox/woodstox-core
+    affected_versions: vers:maven/<5.4.0
+    fixed_versions: vers:maven/5.4.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-3f7h-mf4q-vrm4/GHSA-3f7h-mf4q-vrm4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-121
+  - CWE-787
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47434
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/woodstox
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/woodstox/issues/157
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/woodstox/issues/160
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/woodstox/pull/159
+    reference_type:
+    reference_id:
+  - url: https://github.com/x-stream/xstream/issues/304
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-40152
+    reference_type:
+    reference_id:

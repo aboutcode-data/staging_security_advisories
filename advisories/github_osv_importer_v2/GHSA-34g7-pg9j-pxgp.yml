@@ -1,0 +1,53 @@
+advisory_id: GHSA-34g7-pg9j-pxgp
+datasource_id: github_osv_importer_v2/GHSA-34g7-pg9j-pxgp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-34g7-pg9j-pxgp/GHSA-34g7-pg9j-pxgp.json
+aliases:
+  - CVE-2025-3647
+summary: |
+  Moodle allows IDOR when accessing the cohorts report
+  A flaw was discovered in Moodle. Additional checks were required to ensure that users can only access cohort data they are authorized to retrieve.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.18
+    fixed_versions: vers:composer/4.1.18
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0-beta|<4.3.12
+    fixed_versions: vers:composer/4.3.12
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.8
+    fixed_versions: vers:composer/4.4.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.4
+    fixed_versions: vers:composer/4.5.4
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-34g7-pg9j-pxgp/GHSA-34g7-pg9j-pxgp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-3647
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2359762
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/bd6ec0ac84cf0f73ab35e7e244e1f9b06929083a
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=467607
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-3647
+    reference_type:
+    reference_id:

@@ -1,0 +1,44 @@
+advisory_id: GHSA-32r8-54hf-c9p3
+datasource_id: github_osv_importer_v2/GHSA-32r8-54hf-c9p3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-32r8-54hf-c9p3/GHSA-32r8-54hf-c9p3.json
+aliases:
+  - CVE-2024-46455
+summary: |
+  unstructured XML External Entity (XXE)
+  unstructured v.0.14.2 and before is vulnerable to XML External Entity (XXE) via the XMLParser.
+impacted_packages:
+  - purl: pkg:pypi/unstructured
+    affected_versions: vers:pypi/<0.14.3
+    fixed_versions: vers:pypi/0.14.3
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-32r8-54hf-c9p3/GHSA-32r8-54hf-c9p3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://binarysouljour.me/cve-2024-46455
+    reference_type:
+    reference_id:
+  - url: https://github.com/Unstructured-IO/unstructured
+    reference_type:
+    reference_id:
+  - url: https://github.com/Unstructured-IO/unstructured/commit/171b5df09fc3346aba8ce91c04de5b3e094a86bd
+    reference_type:
+    reference_id:
+  - url: https://github.com/Unstructured-IO/unstructured/pull/3088
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-46455
+    reference_type:
+    reference_id:
+  - url: https://www.tenable.com/cve/CVE-2024-46455
+    reference_type:
+    reference_id:

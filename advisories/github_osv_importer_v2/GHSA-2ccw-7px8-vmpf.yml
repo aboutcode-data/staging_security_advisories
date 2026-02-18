@@ -1,0 +1,48 @@
+advisory_id: GHSA-2ccw-7px8-vmpf
+datasource_id: github_osv_importer_v2/GHSA-2ccw-7px8-vmpf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-2ccw-7px8-vmpf/GHSA-2ccw-7px8-vmpf.json
+aliases:
+  - CVE-2022-24776
+summary: |
+  Open Redirect in Flask-AppBuilder
+  Flask-AppBuilder is an application development framework built on top of Flask. Versions prior to 3.4.5 contain an open redirect vulnerability when using the database authentication login page. There are no known workarounds. Users are recommended to upgrade to version 3.4.5 or later.
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [Flask-AppBuilder](https://github.com/dpgaspar/Flask-AppBuilder)
+impacted_packages:
+  - purl: pkg:pypi/flask-appbuilder
+    affected_versions: vers:pypi/<3.4.5
+    fixed_versions: vers:pypi/3.4.5
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-2ccw-7px8-vmpf/GHSA-2ccw-7px8-vmpf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/pull/1804
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/pull/1804/commits/5214d975ebad2ff32057443d2cc20fef1c04d0ea
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/releases/tag/v3.4.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/security/advisories/GHSA-2ccw-7px8-vmpf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24776
+    reference_type:
+    reference_id:

@@ -1,0 +1,32 @@
+advisory_id: GHSA-277v-gwfr-hmpj
+datasource_id: github_osv_importer_v2/GHSA-277v-gwfr-hmpj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/10/GHSA-277v-gwfr-hmpj/GHSA-277v-gwfr-hmpj.json
+aliases:
+  - CVE-2019-10668
+summary: |
+  Missing Authentication for Critical Function in LibreNMS
+  An issue was discovered in LibreNMS through 1.47. A number of scripts import the Authentication libraries, but do not enforce an actual authentication check. Several of these scripts disclose information or expose functions that are of a sensitive nature and are not expected to be publicly accessible.
+impacted_packages:
+  - purl: pkg:composer/librenms/librenms
+    affected_versions: vers:composer/<1.50.1
+    fixed_versions: vers:composer/1.50.1
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/10/GHSA-277v-gwfr-hmpj/GHSA-277v-gwfr-hmpj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-306
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10668
+    reference_type:
+    reference_id:
+  - url: https://www.darkmatter.ae/xen1thlabs/librenms-authentication-bypass-vulnerability-xl-19-016
+    reference_type:
+    reference_id:

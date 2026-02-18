@@ -1,0 +1,125 @@
+advisory_id: GHSA-36p3-wjmg-h94x
+datasource_id: github_osv_importer_v2/GHSA-36p3-wjmg-h94x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-36p3-wjmg-h94x/GHSA-36p3-wjmg-h94x.json
+aliases:
+  - CVE-2022-22965
+summary: "Remote Code Execution in Spring Framework\nSpring Framework prior to versions 5.2.20\
+  \ and 5.3.18 contains a remote code execution vulnerability known as `Spring4Shell`. \n\n\
+  ## Impact\n\nA Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable\
+  \ to remote code execution (RCE) via data binding. The specific exploit requires the application\
+  \ to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable\
+  \ jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability\
+  \ is more general, and there may be other ways to exploit it.\n\nThese are the prerequisites\
+  \ for the exploit:\n- JDK 9 or higher\n- Apache Tomcat as the Servlet container\n- Packaged\
+  \ as WAR\n- `spring-webmvc` or `spring-webflux` dependency\n\n## Patches\n\n- Spring Framework\
+  \ [5.3.18](https://github.com/spring-projects/spring-framework/releases/tag/v5.3.18) and [5.2.20](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.20.RELEASE)\n\
+  - Spring Boot [2.6.6](https://github.com/spring-projects/spring-boot/releases/tag/v2.6.6)\
+  \ and [2.5.12](https://github.com/spring-projects/spring-boot/releases/tag/v2.5.12)\n\n##\
+  \ Workarounds\n\nFor those who are unable to upgrade, leaked reports recommend setting `disallowedFields`\
+  \ on `WebDataBinder` through an `@ControllerAdvice`. This works generally, but as a centrally\
+  \ applied workaround fix, may leave some loopholes, in particular if a controller sets `disallowedFields`\
+  \ locally through its own `@InitBinder` method, which overrides the global setting.\n\nTo\
+  \ apply the workaround in a more fail-safe way, applications could extend `RequestMappingHandlerAdapter`\
+  \ to update the `WebDataBinder` at the end after all other initialization. In order to do\
+  \ that, a Spring Boot application can declare a `WebMvcRegistrations` bean (Spring MVC) or\
+  \ a `WebFluxRegistrations` bean (Spring WebFlux)."
+impacted_packages:
+  - purl: pkg:maven/org.springframework/spring-beans
+    affected_versions: vers:maven/<5.2.20.RELEASE
+    fixed_versions: vers:maven/5.2.20.RELEASE
+  - purl: pkg:maven/org.springframework/spring-beans
+    affected_versions: vers:maven/>=5.3.0|<5.3.18
+    fixed_versions: vers:maven/5.3.18
+  - purl: pkg:maven/org.springframework/spring-webmvc
+    affected_versions: vers:maven/<5.2.20.RELEASE
+    fixed_versions: vers:maven/5.2.20.RELEASE
+  - purl: pkg:maven/org.springframework/spring-webmvc
+    affected_versions: vers:maven/>=5.3.0|<5.3.18
+    fixed_versions: vers:maven/5.3.18
+  - purl: pkg:maven/org.springframework.boot/spring-boot-starter-web
+    affected_versions: vers:maven/<2.5.12
+    fixed_versions: vers:maven/2.5.12
+  - purl: pkg:maven/org.springframework.boot/spring-boot-starter-web
+    affected_versions: vers:maven/>=2.6.0|<2.6.6
+    fixed_versions: vers:maven/2.6.6
+  - purl: pkg:maven/org.springframework/spring-webflux
+    affected_versions: vers:maven/<5.2.20.RELEASE
+    fixed_versions: vers:maven/5.2.20.RELEASE
+  - purl: pkg:maven/org.springframework/spring-webflux
+    affected_versions: vers:maven/>=5.3.0|<5.3.18
+    fixed_versions: vers:maven/5.3.18
+  - purl: pkg:maven/org.springframework.boot/spring-boot-starter-webflux
+    affected_versions: vers:maven/<2.5.12
+    fixed_versions: vers:maven/2.5.12
+  - purl: pkg:maven/org.springframework.boot/spring-boot-starter-webflux
+    affected_versions: vers:maven/>=2.6.0|<2.6.6
+    fixed_versions: vers:maven/2.6.6
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-36p3-wjmg-h94x/GHSA-36p3-wjmg-h94x.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-74
+references:
+  - url: http://packetstormsecurity.com/files/166713/Spring4Shell-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/167011/Spring4Shell-Spring-Framework-Class-Property-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-boot/releases/tag/v2.5.12
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-boot/releases/tag/v2.6.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/002546b3e4b8d791ea6acccb81eb3168f51abb15
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/releases/tag/v5.2.20.RELEASE
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/releases/tag/v5.3.18
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-22965
+    reference_type:
+    reference_id:
+  - url: https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0005
+    reference_type:
+    reference_id:
+  - url: https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement
+    reference_type:
+    reference_id:
+  - url: https://tanzu.vmware.com/security/cve-2022-22965
+    reference_type:
+    reference_id:
+  - url: https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-java-spring-rce-Zx9GUc67
+    reference_type:
+    reference_id:
+  - url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2022-22965
+    reference_type:
+    reference_id:
+  - url: https://www.kb.cert.org/vuls/id/970766
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-27g3-58v4-fg9w
+datasource_id: github_osv_importer_v2/GHSA-27g3-58v4-fg9w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-27g3-58v4-fg9w/GHSA-27g3-58v4-fg9w.json
+aliases:
+  - CVE-2022-2130
+summary: |
+  Cross-site Scripting in Microweber
+  Microweber versions 1.2.17 and prior are vulnerable to cross-site scripting. A patch is available on the `dev laravel9-php8` branch of the repository.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<=1.2.17
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-27g3-58v4-fg9w/GHSA-27g3-58v4-fg9w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/dbd37dda91911360db23269897c737e0abae2c24
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/0142970a-5cb8-4dba-8bbc-4fa2f3bee65c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2130
+    reference_type:
+    reference_id:

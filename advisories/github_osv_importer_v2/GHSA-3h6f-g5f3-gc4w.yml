@@ -1,0 +1,54 @@
+advisory_id: GHSA-3h6f-g5f3-gc4w
+datasource_id: github_osv_importer_v2/GHSA-3h6f-g5f3-gc4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-3h6f-g5f3-gc4w/GHSA-3h6f-g5f3-gc4w.json
+aliases:
+  - CVE-2023-34034
+summary: |
+  Access Control Bypass in Spring Security
+  Using "**" as a pattern in Spring Security configuration for WebFlux creates a mismatch in pattern matching between Spring Security and Spring WebFlux, and the potential for a security bypass.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.security/spring-security-config
+    affected_versions: vers:maven/>=5.6.0|<5.6.12
+    fixed_versions: vers:maven/5.6.12
+  - purl: pkg:maven/org.springframework.security/spring-security-config
+    affected_versions: vers:maven/>=5.7.0|<5.7.10
+    fixed_versions: vers:maven/5.7.10
+  - purl: pkg:maven/org.springframework.security/spring-security-config
+    affected_versions: vers:maven/>=5.8.0|<5.8.5
+    fixed_versions: vers:maven/5.8.5
+  - purl: pkg:maven/org.springframework.security/spring-security-config
+    affected_versions: vers:maven/>=6.0.0|<6.0.5
+    fixed_versions: vers:maven/6.0.5
+  - purl: pkg:maven/org.springframework.security/spring-security-config
+    affected_versions: vers:maven/>=6.1.0|<6.1.2
+    fixed_versions: vers:maven/6.1.2
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-3h6f-g5f3-gc4w/GHSA-3h6f-g5f3-gc4w.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-281
+  - CWE-284
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-34034
+    reference_type:
+    reference_id:
+  - url: https://ossindex.sonatype.org/vulnerability/CVE-2023-34034
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20230814-0008
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORKSECURITY-5777893
+    reference_type:
+    reference_id:
+  - url: https://spring.io/security/cve-2023-34034
+    reference_type:
+    reference_id:

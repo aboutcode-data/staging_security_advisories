@@ -1,0 +1,77 @@
+advisory_id: GHSA-2xm2-xj2q-qgpj
+datasource_id: github_osv_importer_v2/GHSA-2xm2-xj2q-qgpj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-2xm2-xj2q-qgpj/GHSA-2xm2-xj2q-qgpj.json
+aliases:
+  - CVE-2020-15270
+summary: |
+  receiving subscription objects with deleted session
+  Original Message:
+  Hi,
+
+  I create objects with one client with an ACL of all users with a specific column value. Thats working so far.
+
+  Then I deleted the session object from one user to look if he can receive subscription objects and he can receive them.
+  The client with the deleted session cant create new objects, which Parse restricts right.
+
+  The LiveQueryServer doesnt detect deleted sessions after the websocket connection was established.
+  There should be a mechanism that checks in an specific interval if the session exists.
+  I dont know if its true with expired sessions.
+
+  Any solutions?
+
+  Parse version: 4.3.0
+  Parse js SDK version: 2.17
+
+  Solution:
+  Hi guys.
+
+  I've found and fixed the problem. It happens because there are two caches in place for the session token:
+
+  - at Parse Server level, which, according with the docs, should be changed via cacheTTL option and defaults to 5 seconds;
+  - at Parse Live Query level, which, according with the docs, should be changed via liveQueryServerOptions.cacheTimeout and defaults to 30 days.
+
+  But there are three problems:
+
+  - cacheTTL has currently no effect over Live Query Server;
+  - cacheTimeout also has currently no effect over Live Query Server;
+  - cacheTimeout actually defaults to 1h.
+
+  So, currently, if you wait 1 hour after the session token was invalidated, the clients using the old session token are not able to receive the events.
+
+  What I did:
+
+  - Added a test case for the problem;
+  - Fixed cacheTTL for Live Query Server;
+  - Fixed cacheTimeout for Live Query Server;
+  - Changed the cacheTimeout to default 5s;
+  - Changed the docs to reflect the actual 5s default for cacheTimeout.
+impacted_packages:
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/<4.4.0
+    fixed_versions: vers:npm/4.4.0
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-2xm2-xj2q-qgpj/GHSA-2xm2-xj2q-qgpj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-672
+references:
+  - url: https://github.com/parse-community/parse-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/commit/78b59fb26b1c36e3cdbd42ba9fec025003267f58
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/security/advisories/GHSA-2xm2-xj2q-qgpj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15270
+    reference_type:
+    reference_id:

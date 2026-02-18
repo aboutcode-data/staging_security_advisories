@@ -1,0 +1,32 @@
+advisory_id: GHSA-2pmw-cvc7-frvh
+datasource_id: github_osv_importer_v2/GHSA-2pmw-cvc7-frvh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-2pmw-cvc7-frvh/GHSA-2pmw-cvc7-frvh.json
+aliases:
+  - CVE-2021-44868
+summary: |
+  SQL injection in MCMS
+  A problem was found in ming-soft MCMS v5.1. There is a sql injection vulnerability in /ms/cms/content/list.do
+impacted_packages:
+  - purl: pkg:maven/net.mingsoft/ms-mcms
+    affected_versions: vers:maven/<=5.1
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-2pmw-cvc7-frvh/GHSA-2pmw-cvc7-frvh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/ming-soft/MCMS/issues/58
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-44868
+    reference_type:
+    reference_id:

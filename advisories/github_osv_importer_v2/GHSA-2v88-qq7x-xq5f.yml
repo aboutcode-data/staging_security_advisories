@@ -1,0 +1,51 @@
+advisory_id: GHSA-2v88-qq7x-xq5f
+datasource_id: github_osv_importer_v2/GHSA-2v88-qq7x-xq5f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-2v88-qq7x-xq5f/GHSA-2v88-qq7x-xq5f.json
+aliases:
+  - CVE-2021-39170
+summary: |
+  Improper Encoding or Escaping of Output in Asset Metadata Component
+  Pimcore is an open source data & experience management platform. Prior to version 10.1.2, an authenticated user could add XSS code as a value of custom metadata on assets. There is a patch for this issue in Pimcore version 10.1.2. As a workaround, users may apply the patch manually.
+impacted_packages:
+  - purl: pkg:composer/pimcore/pimcore
+    affected_versions: vers:composer/<10.1.1
+    fixed_versions: vers:composer/10.1.2
+severities:
+  - score: '8.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-2v88-qq7x-xq5f/GHSA-2v88-qq7x-xq5f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-116
+references:
+  - url: https://github.com/pimcore/pimcore
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/pull/10178
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/pull/10178.patch
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/pull/10206
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/security/advisories/GHSA-2v88-qq7x-xq5f
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/c3e4cf79-a4b5-4982-af27-729f66281501
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/e4cb9cd8-89cf-427c-8d2e-37ca40099bf2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-39170
+    reference_type:
+    reference_id:

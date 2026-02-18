@@ -1,0 +1,46 @@
+advisory_id: GHSA-2cc5-23r7-vc4v
+datasource_id: github_osv_importer_v2/GHSA-2cc5-23r7-vc4v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-2cc5-23r7-vc4v/GHSA-2cc5-23r7-vc4v.json
+aliases:
+  - CVE-2021-29480
+summary: "Ratpack's default client side session signing key is highly predictable\n### Impact\n\
+  \nThe client side session module uses the application startup time as the signing key by default.\
+  \ This means that if an attacker can determine this time, and if encryption is not also used\
+  \ (which is recommended, but is not on by default), the session data could be tampered with\
+  \ by someone with the ability to write cookies. \n\nThe default configuration is unsuitable\
+  \ for production use as an application restart renders all sessions invalid and is not multi-host\
+  \ compatible, but its use is not actively prevented.\n\n### Vulnerability Location\n\nhttps://github.com/ratpack/ratpack/blob/29434f7ac6fd4b36a4495429b70f4c8163100332/ratpack-session/src/main/java/ratpack/session/clientside/ClientSideSessionConfig.java#L29\n\
+  \n### Patches\n\nAs of Ratpack 1.9.0 the default value is a securely randomly generated value,\
+  \ generated at application startup time. \n\n### Workarounds\n\nSupply an alternative signing\
+  \ key, as per the documentation's recommendation."
+impacted_packages:
+  - purl: pkg:maven/io.ratpack/ratpack-session
+    affected_versions: vers:maven/<1.9.0
+    fixed_versions: vers:maven/1.9.0
+severities:
+  - score: '4.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-2cc5-23r7-vc4v/GHSA-2cc5-23r7-vc4v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-340
+  - CWE-330
+references:
+  - url: https://github.com/ratpack/ratpack
+    reference_type:
+    reference_id:
+  - url: https://github.com/ratpack/ratpack/blob/29434f7ac6fd4b36a4495429b70f4c8163100332/ratpack-session/src/main/java/ratpack/session/clientside/ClientSideSessionConfig.java#L29
+    reference_type:
+    reference_id:
+  - url: https://github.com/ratpack/ratpack/security/advisories/GHSA-2cc5-23r7-vc4v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29480
+    reference_type:
+    reference_id:

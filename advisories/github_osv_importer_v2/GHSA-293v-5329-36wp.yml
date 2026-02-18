@@ -1,0 +1,35 @@
+advisory_id: GHSA-293v-5329-36wp
+datasource_id: github_osv_importer_v2/GHSA-293v-5329-36wp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-293v-5329-36wp/GHSA-293v-5329-36wp.json
+aliases:
+  - CVE-2020-22755
+summary: |
+  MCMS vulnerable to arbitrary code execution via crafted thumbnail
+  File upload vulnerability in MCMS 5.0 allows attackers to execute arbitrary code via a crafted thumbnail. A different vulnerability than CVE-2022-31943.
+impacted_packages:
+  - purl: pkg:maven/net.mingsoft/ms-mcms
+    affected_versions: vers:maven/<=5.0.0
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-293v-5329-36wp/GHSA-293v-5329-36wp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/ming-soft/MCMS
+    reference_type:
+    reference_id:
+  - url: https://github.com/ming-soft/MCMS/issues/42
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-22755
+    reference_type:
+    reference_id:

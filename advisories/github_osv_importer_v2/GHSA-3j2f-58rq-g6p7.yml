@@ -1,0 +1,41 @@
+advisory_id: GHSA-3j2f-58rq-g6p7
+datasource_id: github_osv_importer_v2/GHSA-3j2f-58rq-g6p7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-3j2f-58rq-g6p7/GHSA-3j2f-58rq-g6p7.json
+aliases:
+  - CVE-2023-31581
+summary: |
+  Sureness uses hardcoded key
+  Dromara Sureness before v1.0.8 was discovered to use a hardcoded key.
+impacted_packages:
+  - purl: pkg:maven/com.usthe.sureness/sureness-core
+    affected_versions: vers:maven/<1.0.8
+    fixed_versions: vers:maven/1.0.8
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-3j2f-58rq-g6p7/GHSA-3j2f-58rq-g6p7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-798
+references:
+  - url: https://github.com/dromara/sureness
+    reference_type:
+    reference_id:
+  - url: https://github.com/dromara/sureness/commit/12987a72cbf1eabbca1e308ed1fe9445958aeca7
+    reference_type:
+    reference_id:
+  - url: https://github.com/dromara/sureness/issues/164
+    reference_type:
+    reference_id:
+  - url: https://github.com/xubowenW/JWTissues/blob/main/sureness%20secure%20issues.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-31581
+    reference_type:
+    reference_id:

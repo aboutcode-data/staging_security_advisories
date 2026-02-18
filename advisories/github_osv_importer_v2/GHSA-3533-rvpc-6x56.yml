@@ -1,0 +1,33 @@
+advisory_id: GHSA-3533-rvpc-6x56
+datasource_id: github_osv_importer_v2/GHSA-3533-rvpc-6x56
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3533-rvpc-6x56/GHSA-3533-rvpc-6x56.json
+aliases:
+  - CVE-2012-5055
+summary: |
+  Exposure of Sensitive Information to an Unauthorized Actor in Spring Security
+  DaoAuthenticationProvider in VMware SpringSource Spring Security before 2.0.8, 3.0.x before 3.0.8, and 3.1.x before 3.1.3 does not check the password if the user is not found, which makes the response delay shorter and might allow remote attackers to enumerate valid usernames via a series of login requests.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/<2.0.8
+    fixed_versions: vers:maven/2.0.8
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=3.0.0|<3.0.8
+    fixed_versions: vers:maven/3.0.8
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=3.1.0|<3.1.3
+    fixed_versions: vers:maven/3.1.3
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2012-5055
+    reference_type:
+    reference_id:
+  - url: http://support.springsource.com/security/CVE-2012-5055
+    reference_type:
+    reference_id:

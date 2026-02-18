@@ -1,0 +1,68 @@
+advisory_id: GHSA-286v-pcf5-25rc
+datasource_id: github_osv_importer_v2/GHSA-286v-pcf5-25rc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-286v-pcf5-25rc/GHSA-286v-pcf5-25rc.json
+aliases:
+  - CVE-2021-3537
+summary: |
+  Nokogiri Implements libxml2 version vulnerable to null pointer dereferencing
+  A vulnerability found in libxml2 in versions before 2.9.11 shows that it did not propagate errors while parsing XML mixed content, causing a NULL dereference. If an untrusted XML document was parsed in recovery mode and post-validated, the flaw could be used to crash the application. The highest threat from this vulnerability is to system availability.
+impacted_packages:
+  - purl: pkg:gem/nokogiri
+    affected_versions: vers:gem/<1.11.4
+    fixed_versions: vers:gem/1.11.4
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-286v-pcf5-25rc/GHSA-286v-pcf5-25rc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-476
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1956522
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/nokogiri/CVE-2021-3537.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/sparklemotion/nokogiri
+    reference_type:
+    reference_id:
+  - url: https://github.com/sparklemotion/nokogiri/blob/2edbbef95f1dc12c1ddc5ebda71b9159026245fe/CHANGELOG.md?plain=1#L722
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/05/msg00008.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BZOMV5J4PMZAORVT64BKLV6YIZAFDGX6
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QVM4UJ3376I6ZVOYMHBNX4GY3NIV52WV
+    reference_type:
+    reference_id:
+  - url: https://nokogiri.org/CHANGELOG.html#1114-2021-05-14
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3537
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202107-05
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210625-0002
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_type:
+    reference_id:

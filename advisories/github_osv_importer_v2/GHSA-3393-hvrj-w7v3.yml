@@ -1,0 +1,41 @@
+advisory_id: GHSA-3393-hvrj-w7v3
+datasource_id: github_osv_importer_v2/GHSA-3393-hvrj-w7v3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-3393-hvrj-w7v3/GHSA-3393-hvrj-w7v3.json
+aliases:
+  - CVE-2021-22144
+summary: |
+  Denial of Service in Elasticsearch
+  In Elasticsearch versions before 7.13.3 and 6.8.17 an uncontrolled recursion vulnerability that could lead to a denial of service attack was identified in the Elasticsearch Grok parser. A user with the ability to submit arbitrary queries to Elasticsearch could create a malicious Grok query that will crash the Elasticsearch node.
+impacted_packages:
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/<6.8.17
+    fixed_versions: vers:maven/6.8.17
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/>=7.0.0-alpha1|<7.13.3
+    fixed_versions: vers:maven/7.13.3
+severities:
+  - score: '5.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-3393-hvrj-w7v3/GHSA-3393-hvrj-w7v3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-674
+references:
+  - url: https://discuss.elastic.co/t/elasticsearch-7-13-3-and-6-8-17-security-update/278100
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-22144
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210827-0006
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:

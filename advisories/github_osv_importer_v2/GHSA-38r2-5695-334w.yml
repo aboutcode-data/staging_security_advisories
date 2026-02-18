@@ -1,0 +1,72 @@
+advisory_id: GHSA-38r2-5695-334w
+datasource_id: github_osv_importer_v2/GHSA-38r2-5695-334w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-38r2-5695-334w/GHSA-38r2-5695-334w.json
+aliases:
+  - CVE-2024-25118
+summary: |
+  TYPO3 Backend Forms vulnerable to Information Disclosure of Hashed Passwords
+  ### Problem
+  Password hashes were being reflected in the editing forms of the TYPO3 backend user interface. This allowed attackers to crack the plaintext password using brute force techniques. Exploiting this vulnerability requires a valid backend user account.
+
+  ### Solution
+  Update to TYPO3 versions 8.7.57 ELTS, 9.5.46 ELTS, 10.4.43 ELTS, 11.5.35 LTS, 12.4.11 LTS, 13.0.1 that fix the problem described.
+
+  ### Credits
+  Thanks to the TYPO3 framework merger Christian Kuhn and external security researchers Maximilian Beckmann, Klaus-Günther Schmidt who reported this issue, and TYPO3 security team member Oliver Hader who fixed the issue.
+
+  ### References
+  * [TYPO3-CORE-SA-2024-003](https://typo3.org/security/advisory/typo3-core-sa-2024-003)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=12.4.10
+    fixed_versions: vers:composer/12.4.11
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/13.0.0
+    fixed_versions: vers:composer/13.0.1
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=8.7.56
+    fixed_versions: vers:composer/8.7.57
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=9.5.45
+    fixed_versions: vers:composer/9.5.46
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=10.4.42
+    fixed_versions: vers:composer/10.4.43
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<=11.5.34
+    fixed_versions: vers:composer/11.5.35
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-38r2-5695-334w/GHSA-38r2-5695-334w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/1186b2fec8a665a8f228ed66e6d60abf8407c17b
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/c7a135c25a14b852eebe4335f21ba3c606188f3a
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/cafc5af7fdce7734e6c8f9ecf2efd17b246fc049
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-38r2-5695-334w
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-25118
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2024-003
+    reference_type:
+    reference_id:

@@ -1,0 +1,60 @@
+advisory_id: GHSA-36fq-jgmw-4r9c
+datasource_id: github_osv_importer_v2/GHSA-36fq-jgmw-4r9c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-36fq-jgmw-4r9c/GHSA-36fq-jgmw-4r9c.json
+aliases:
+  - CVE-2025-9906
+summary: |
+  Keras is vulnerable to Deserialization of Untrusted Data
+  ### Arbitrary Code Execution in Keras
+
+  Keras versions prior to 3.11.0 allow for arbitrary code execution when loading a crafted `.keras` model archive, even when `safe_mode=True`.
+
+  The issue arises because the archive’s `config.json` is parsed before layer deserialization. This can invoke `keras.config.enable_unsafe_deserialization()`, effectively disabling safe mode from within the loading process itself. An attacker can place this call first in the archive and then include a `Lambda` layer whose function is deserialized from a pickle, leading to the execution of attacker-controlled Python code as soon as a victim loads the model file.
+
+  Exploitation requires a user to open an untrusted model; no additional privileges are needed. The fix in version 3.11.0 enforces safe-mode semantics *before* reading any user-controlled configuration and prevents the toggling of unsafe deserialization via the config file.
+
+  **Affected versions:** < 3.11.0
+  **Patched version:** 3.11.0
+
+  It is recommended to upgrade to version 3.11.0 or later and to avoid opening untrusted model files.
+impacted_packages:
+  - purl: pkg:pypi/keras
+    affected_versions: vers:pypi/<3.11.0
+    fixed_versions: vers:pypi/3.11.0
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-36fq-jgmw-4r9c/GHSA-36fq-jgmw-4r9c.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-36fq-jgmw-4r9c/GHSA-36fq-jgmw-4r9c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/keras-team/keras
+    reference_type:
+    reference_id:
+  - url: https://github.com/keras-team/keras/commit/713172ab56b864e59e2aa79b1a51b0e728bba858
+    reference_type:
+    reference_id:
+  - url: https://github.com/keras-team/keras/pull/21429
+    reference_type:
+    reference_id:
+  - url: https://github.com/keras-team/keras/releases/tag/v3.11.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-9906
+    reference_type:
+    reference_id:
+  - url: https://osv.dev/vulnerability/CVE-2025-9906
+    reference_type:
+    reference_id:

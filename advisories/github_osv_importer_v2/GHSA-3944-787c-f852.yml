@@ -1,0 +1,35 @@
+advisory_id: GHSA-3944-787c-f852
+datasource_id: github_osv_importer_v2/GHSA-3944-787c-f852
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/04/GHSA-3944-787c-f852/GHSA-3944-787c-f852.json
+aliases:
+  - CVE-2020-10203
+summary: |
+  Persistent Cross-Site scripting in Nexus Repository Manager
+  Sonatype Nexus Repository before 3.21.2 allows XSS.
+impacted_packages:
+  - purl: pkg:maven/org.sonatype.nexus/nexus-core
+    affected_versions: vers:maven/<3.21.2
+    fixed_versions: vers:maven/3.21.2
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/04/GHSA-3944-787c-f852/GHSA-3944-787c-f852.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-10203
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2020-016-nxrm-sonatype
+    reference_type:
+    reference_id:
+  - url: https://support.sonatype.com/hc/en-us/articles/360044361594
+    reference_type:
+    reference_id:

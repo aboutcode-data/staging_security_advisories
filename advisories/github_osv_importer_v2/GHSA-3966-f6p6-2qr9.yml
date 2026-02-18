@@ -1,0 +1,44 @@
+advisory_id: GHSA-3966-f6p6-2qr9
+datasource_id: github_osv_importer_v2/GHSA-3966-f6p6-2qr9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-3966-f6p6-2qr9/GHSA-3966-f6p6-2qr9.json
+aliases:
+  - CVE-2026-0775
+summary: |
+  Duplicate Advisory: npm cli Uncontrolled Search Path Element Local Privilege Escalation Vulnerability
+  ### Duplicate Advisory
+  This advisory has been withdrawn because describes a dependency bump and therefore, per [CVE CNA rule 4.1.12](https://www.cve.org/ResourcesSupport/AllResources/CNARules/#section_4-1_Vulnerability_Determination), is a duplicate of GHSA-34x7-hfp2-rc4v/CVE-2026-24842. Additionally, per https://github.com/npm/cli/issues/8939#issuecomment-3862719883, npm cli should not be listed as an affected product. This link is maintained to preserve external references.
+
+  ### Original Description
+  npm cli Incorrect Permission Assignment Local Privilege Escalation Vulnerability. This vulnerability allows local attackers to escalate privileges on affected installations of npm cli. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.
+
+  The specific flaw exists within the handling of modules. The application loads modules from an unsecured location. An attacker can leverage this vulnerability to escalate privileges and execute arbitrary code in the context of a target user.
+impacted_packages:
+  - purl: pkg:npm/npm
+    affected_versions: vers:npm/<=11.8.0
+    fixed_versions:
+severities:
+  - score: '7.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-3966-f6p6-2qr9/GHSA-3966-f6p6-2qr9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-732
+references:
+  - url: https://github.com/npm/cli
+    reference_type:
+    reference_id:
+  - url: https://github.com/npm/cli/issues/8939
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-0775
+    reference_type:
+    reference_id:
+  - url: https://www.zerodayinitiative.com/advisories/ZDI-26-043
+    reference_type:
+    reference_id:

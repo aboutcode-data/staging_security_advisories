@@ -1,0 +1,66 @@
+advisory_id: GHSA-39wj-j3jc-858m
+datasource_id: github_osv_importer_v2/GHSA-39wj-j3jc-858m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-39wj-j3jc-858m/GHSA-39wj-j3jc-858m.json
+aliases:
+  - CVE-2020-35124
+summary: |
+  XSS vulnerability leveraged through referrers could allow un-authorized admin access in Mautic
+  ### Impact
+  This is a cross-site scripting vulnerability which affects every version of Mautic and could allow an attacker unauthorised administrator level access to Mautic.
+
+  This vulnerability was reported by Naveen Sunkavally at Horizon3.ai.
+
+  ### Patches
+  Upgrade to 3.2.4 or 2.16.5.
+
+  Link to patch for 2.x versions: https://github.com/mautic/mautic/compare/2.16.4...2.16.5.diff
+
+  Link to patch for 3.x versions: https://github.com/mautic/mautic/compare/3.2.2...3.2.4.diff
+
+  ### Workarounds
+  None
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Post in https://forum.mautic.org/c/support
+  * Email us at security@mautic.org
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=3.0.0|<3.2.4
+    fixed_versions: vers:composer/3.2.4
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=2.0.0|<2.16.5
+    fixed_versions: vers:composer/2.16.5
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://forum.mautic.org/c/announcements/16
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/mautic/core/CVE-2020-35124.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/commit/20c5dc39b62164f6922ce53ea42cbb4ccec64e57
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-39wj-j3jc-858m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-35124
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/mautic/core
+    reference_type:
+    reference_id:
+  - url: https://www.horizon3.ai/disclosures/mautic-unauth-xss-to-rce
+    reference_type:
+    reference_id:
+  - url: https://www.mautic.org/blog/community/security-release-all-versions-mautic-prior-2-16-5-and-3-2-4
+    reference_type:
+    reference_id:

@@ -1,0 +1,81 @@
+advisory_id: GHSA-3crr-9vmg-864v
+datasource_id: github_osv_importer_v2/GHSA-3crr-9vmg-864v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-3crr-9vmg-864v/GHSA-3crr-9vmg-864v.json
+aliases:
+  - CVE-2013-1854
+summary: |
+  Active Record Improper Input Validation
+  The Active Record component in Ruby on Rails 2.3.x before 2.3.18, 3.1.x before 3.1.12, and 3.2.x before 3.2.13 processes certain queries by converting hash keys to symbols, which allows remote attackers to cause a denial of service via crafted input to a where method.
+impacted_packages:
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/>=2.3.0|<2.3.18
+    fixed_versions: vers:gem/2.3.18
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/>=3.1.0|<3.1.12
+    fixed_versions: vers:gem/3.1.12
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/>=3.2.0|<3.2.13
+    fixed_versions: vers:gem/3.2.13
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: http://lists.apple.com/archives/security-announce/2013/Jun/msg00000.html
+    reference_type:
+    reference_id:
+  - url: http://lists.apple.com/archives/security-announce/2013/Oct/msg00006.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-04/msg00070.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-04/msg00071.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-04/msg00075.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-04/msg00078.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-04/msg00079.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2013-0699.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-1863.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2013:0699
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2014:1863
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2013-1854
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=921329
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/activerecord/CVE-2013-1854.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/group/ruby-security-ann/msg/34e0d780b04308de?dmode=source&output=gplain
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-1854
+    reference_type:
+    reference_id:
+  - url: http://support.apple.com/kb/HT5784
+    reference_type:
+    reference_id:
+  - url: http://weblog.rubyonrails.org/2013/3/18/SEC-ANN-Rails-3-2-13-3-1-12-and-2-3-18-have-been-released
+    reference_type:
+    reference_id:

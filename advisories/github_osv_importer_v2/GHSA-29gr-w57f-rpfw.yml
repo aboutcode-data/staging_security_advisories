@@ -1,0 +1,51 @@
+advisory_id: GHSA-29gr-w57f-rpfw
+datasource_id: github_osv_importer_v2/GHSA-29gr-w57f-rpfw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-29gr-w57f-rpfw/GHSA-29gr-w57f-rpfw.json
+aliases:
+  - CVE-2014-7818
+summary: |
+  actionpack vulnerable to Path Traversal
+  Directory traversal vulnerability in `actionpack/lib/action_dispatch/middleware/static.rb` in Action Pack in Ruby on Rails 3.x before 3.2.20, 4.0.x before 4.0.11, 4.1.x before 4.1.7, and 4.2.x before 4.2.0.beta3, when `serve_static_assets` is enabled, allows remote attackers to determine the existence of files outside the application root via a `/..%2F` sequence.
+impacted_packages:
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=3.0.0|<3.2.20
+    fixed_versions: vers:gem/3.2.20
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=4.0.0|<4.0.11
+    fixed_versions: vers:gem/4.0.11
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=4.1.0|<4.1.7
+    fixed_versions: vers:gem/4.1.7
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=4.2.0.beta1|<4.2.0.beta3
+    fixed_versions: vers:gem/4.2.0.beta3
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://lists.opensuse.org/opensuse-updates/2014-11/msg00112.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-29gr-w57f-rpfw
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/actionpack/CVE-2014-7818.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/message/raw?msg=rubyonrails-security/dCp7duBiQgo/v_R_8PFs5IwJ
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#!topic/rubyonrails-security/dCp7duBiQgo
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-7818
+    reference_type:
+    reference_id:
+  - url: https://puppet.com/security/cve/cve-2014-7829
+    reference_type:
+    reference_id:

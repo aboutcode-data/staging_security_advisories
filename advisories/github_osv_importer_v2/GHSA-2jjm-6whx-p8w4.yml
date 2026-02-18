@@ -1,0 +1,35 @@
+advisory_id: GHSA-2jjm-6whx-p8w4
+datasource_id: github_osv_importer_v2/GHSA-2jjm-6whx-p8w4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2jjm-6whx-p8w4/GHSA-2jjm-6whx-p8w4.json
+aliases:
+  - CVE-2017-16880
+summary: |
+  filp whoops Cross-site Scripting vulnerability
+  The dump function in `Util/TemplateHelper.php` in filp whoops before 2.1.13 has a Cross-site Scripting vulnerability.
+impacted_packages:
+  - purl: pkg:composer/filp/whoops
+    affected_versions: vers:composer/<2.1.13
+    fixed_versions: vers:composer/2.1.13
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2jjm-6whx-p8w4/GHSA-2jjm-6whx-p8w4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/filp/whoops
+    reference_type:
+    reference_id:
+  - url: https://github.com/filp/whoops/commit/c16791d28d1ca3139e398145f0c6565c523c291a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16880
+    reference_type:
+    reference_id:

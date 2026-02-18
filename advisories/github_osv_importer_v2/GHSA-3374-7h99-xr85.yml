@@ -1,0 +1,38 @@
+advisory_id: GHSA-3374-7h99-xr85
+datasource_id: github_osv_importer_v2/GHSA-3374-7h99-xr85
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-3374-7h99-xr85/GHSA-3374-7h99-xr85.json
+aliases:
+  - CVE-2020-23049
+summary: |
+  Cross-site scripting in forkcms
+  Fork CMS Content Management System v5.8.0 was discovered to contain a cross-site scripting (XSS) vulnerability in the `Displayname` field when using the `Add`, `Edit` or `Register' functions. This vulnerability allows attackers to execute arbitrary web scripts or HTML.
+impacted_packages:
+  - purl: pkg:composer/forkcms/forkcms
+    affected_versions: vers:composer/<5.8.1
+    fixed_versions: vers:composer/5.8.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-3374-7h99-xr85/GHSA-3374-7h99-xr85.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/forkcms/forkcms
+    reference_type:
+    reference_id:
+  - url: https://github.com/forkcms/forkcms/commit/6ec6171206a7507a39695edc8bbd1b97ef1041c6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-23049
+    reference_type:
+    reference_id:
+  - url: https://www.vulnerability-lab.com/get_content.php?id=2208
+    reference_type:
+    reference_id:

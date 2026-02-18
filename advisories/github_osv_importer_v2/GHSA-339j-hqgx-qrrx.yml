@@ -1,0 +1,32 @@
+advisory_id: GHSA-339j-hqgx-qrrx
+datasource_id: github_osv_importer_v2/GHSA-339j-hqgx-qrrx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-339j-hqgx-qrrx/GHSA-339j-hqgx-qrrx.json
+aliases:
+  - CVE-2021-23395
+summary: |
+  Prototype Pollution in nedb
+  This affects all versions of package nedb. The library could be tricked into adding or modifying properties of Object.prototype using a __proto__ or constructor.prototype payload.
+impacted_packages:
+  - purl: pkg:npm/nedb
+    affected_versions: vers:npm/<=1.8.0
+    fixed_versions:
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-339j-hqgx-qrrx/GHSA-339j-hqgx-qrrx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23395
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-NEDB-1305279
+    reference_type:
+    reference_id:

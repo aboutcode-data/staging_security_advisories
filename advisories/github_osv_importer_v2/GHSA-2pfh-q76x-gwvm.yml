@@ -1,0 +1,69 @@
+advisory_id: GHSA-2pfh-q76x-gwvm
+datasource_id: github_osv_importer_v2/GHSA-2pfh-q76x-gwvm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-2pfh-q76x-gwvm/GHSA-2pfh-q76x-gwvm.json
+aliases:
+  - CVE-2021-3583
+summary: |
+  Improper Input Validation and Command Injection in Ansible
+  A flaw was found in Ansible, where a user's controller is vulnerable to template injection. This issue can occur through facts used in the template if the user is trying to put templates in multi-line YAML strings and the facts being handled do not routinely include special template characters. This flaw allows attackers to perform command injection, which discloses sensitive information. The highest threat from this vulnerability is to confidentiality and integrity.
+impacted_packages:
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/<2.9.23rc1
+    fixed_versions: vers:pypi/2.9.23rc1
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/>=2.10.0a1|<2.10.11rc1
+    fixed_versions: vers:pypi/2.10.11rc1
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/>=2.11.0a1|<2.11.2rc1
+    fixed_versions: vers:pypi/2.11.2rc1
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-2pfh-q76x-gwvm/GHSA-2pfh-q76x-gwvm.json
+  - score: '8.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-2pfh-q76x-gwvm/GHSA-2pfh-q76x-gwvm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-77
+  - CWE-20
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1968412
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-2pfh-q76x-gwvm
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/03aff644cc1c00e1f7551195c68fbd0d13a39e6e
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/8aa850e3573e48c9a2f12aef84e8a3a6f5ba4847
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/8b17e5b9229ffaecfe10a4881bc3f87dd2c184e1
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/pull/74960
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/ansible/PYSEC-2021-358.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/12/msg00018.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3583
+    reference_type:
+    reference_id:

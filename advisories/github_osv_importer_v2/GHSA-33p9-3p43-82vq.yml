@@ -1,0 +1,53 @@
+advisory_id: GHSA-33p9-3p43-82vq
+datasource_id: github_osv_importer_v2/GHSA-33p9-3p43-82vq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-33p9-3p43-82vq/GHSA-33p9-3p43-82vq.json
+aliases:
+  - CVE-2025-30167
+summary: |
+  Jupyter Core on Windows Has Uncontrolled Search Path Element Local Privilege Escalation Vulnerability
+  ## Impact
+
+  On Windows, the shared `%PROGRAMDATA%` directory is searched for configuration files (`SYSTEM_CONFIG_PATH` and `SYSTEM_JUPYTER_PATH`), which may allow users to create configuration files affecting other users.
+
+  Only shared Windows systems with multiple users and unprotected `%PROGRAMDATA%` are affected.
+
+  ## Mitigations
+
+  - upgrade to `jupyter_core>=5.8.1` (5.8.0 is patched but breaks `jupyter-server`) , or
+  - as administrator, modify the permissions on the `%PROGRAMDATA%` directory so it is not writable by unauthorized users, or
+  - as administrator, create the `%PROGRAMDATA%\jupyter` directory with appropriately restrictive permissions, or
+  - as user or administrator, set the `%PROGRAMDATA%` environment variable to a directory with appropriately restrictive permissions (e.g. controlled by administrators _or_ the current user)
+
+  ## Credit
+
+  Reported via Trend Micro Zero Day Initiative as ZDI-CAN-25932
+impacted_packages:
+  - purl: pkg:pypi/jupyter-core
+    affected_versions: vers:pypi/<5.8.0
+    fixed_versions: vers:pypi/5.8.1
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-33p9-3p43-82vq/GHSA-33p9-3p43-82vq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-427
+references:
+  - url: https://github.com/jupyter/jupyter_core
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyter/jupyter_core/commit/5e8965600adda6b416692ce7e85ecb2bd814bd52
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyter/jupyter_core/security/advisories/GHSA-33p9-3p43-82vq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-30167
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-2689-cw26-6cpj
+datasource_id: github_osv_importer_v2/GHSA-2689-cw26-6cpj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-2689-cw26-6cpj/GHSA-2689-cw26-6cpj.json
+aliases:
+  - CVE-2024-53305
+summary: |
+  Whoogle allows attackers to execute arbitrary code via supplying a crafted search query
+  An issue in the component /models/config.py of Whoogle search v0.9.0 allows attackers to execute arbitrary code via supplying a crafted search query.
+impacted_packages:
+  - purl: pkg:pypi/whoogle-search
+    affected_versions: vers:pypi/<0.9.1
+    fixed_versions: vers:pypi/0.9.1
+severities:
+  - score: '8.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-2689-cw26-6cpj/GHSA-2689-cw26-6cpj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://fern89.github.io/posts/whoogle-rce
+    reference_type:
+    reference_id:
+  - url: https://gist.github.com/fern89/ca5fe76ad81b4bc363e7341e523a1651
+    reference_type:
+    reference_id:
+  - url: https://github.com/benbusby/whoogle-search
+    reference_type:
+    reference_id:
+  - url: https://github.com/benbusby/whoogle-search/commit/223f00c3c0533423114f99b30c561278bc0b42ba
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-53305
+    reference_type:
+    reference_id:

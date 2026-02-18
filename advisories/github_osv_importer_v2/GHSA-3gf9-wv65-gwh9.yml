@@ -1,0 +1,43 @@
+advisory_id: GHSA-3gf9-wv65-gwh9
+datasource_id: github_osv_importer_v2/GHSA-3gf9-wv65-gwh9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-3gf9-wv65-gwh9/GHSA-3gf9-wv65-gwh9.json
+aliases:
+  - CVE-2024-48052
+summary: |
+  gradio Server Side Request Forgery vulnerability
+  In gradio <=4.42.0, the gr.DownloadButton function has a hidden server-side request forgery (SSRF) vulnerability. The reason is that within the save_url_to_cache function, there are no restrictions on the URL, which allows access to local target resources. This can lead to the download of local resources and sensitive information.
+impacted_packages:
+  - purl: pkg:pypi/gradio
+    affected_versions: vers:pypi/<=4.42.0
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-3gf9-wv65-gwh9/GHSA-3gf9-wv65-gwh9.json
+  - score: '5.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-3gf9-wv65-gwh9/GHSA-3gf9-wv65-gwh9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://gist.github.com/AfterSnows/45ffc23797f9127e00755376cc610e12
+    reference_type:
+    reference_id:
+  - url: https://github.com/gradio-app/gradio
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-48052
+    reference_type:
+    reference_id:
+  - url: https://rumbling-slice-eb0.notion.site/FULL-SSRF-in-gr-DownloadButton-in-gradio-app-gradio-870b21e0908b48cbafd914719ac1a4e6?pvs=4
+    reference_type:
+    reference_id:

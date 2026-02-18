@@ -1,0 +1,60 @@
+advisory_id: GHSA-2m8v-572m-ff2v
+datasource_id: github_osv_importer_v2/GHSA-2m8v-572m-ff2v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-2m8v-572m-ff2v/GHSA-2m8v-572m-ff2v.json
+aliases:
+  - CVE-2021-21315
+summary: |
+  Command Injection Vulnerability
+  ### Impact
+  command injection vulnerability
+
+  ### Patches
+  Problem was fixed with a parameter check. Please upgrade to version >= 5.3.1
+
+  ### Workarounds
+  If you cannot upgrade, be sure to check or sanitize service parameters that are passed to si.inetLatency(), si.inetChecksite(), si.services(), si.processLoad() ... do only allow strings, reject any arrays. String sanitation works as expected.
+impacted_packages:
+  - purl: pkg:npm/systeminformation
+    affected_versions: vers:npm/<5.3.1
+    fixed_versions: vers:npm/5.3.1
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-2m8v-572m-ff2v/GHSA-2m8v-572m-ff2v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/sebhildebrandt/systeminformation
+    reference_type:
+    reference_id:
+  - url: https://github.com/sebhildebrandt/systeminformation/commit/07daa05fb06f24f96297abaa30c2ace8bfd8b525
+    reference_type:
+    reference_id:
+  - url: https://github.com/sebhildebrandt/systeminformation/security/advisories/GHSA-2m8v-572m-ff2v
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r8afea9a83ed568f2647cccc6d8d06126f9815715ddf9a4d479b26b05@%3Cissues.cordova.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r8afea9a83ed568f2647cccc6d8d06126f9815715ddf9a4d479b26b05%40%3Cissues.cordova.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-21315
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210312-0007
+    reference_type:
+    reference_id:
+  - url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2021-21315
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/systeminformation
+    reference_type:
+    reference_id:

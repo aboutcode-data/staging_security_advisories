@@ -1,0 +1,51 @@
+advisory_id: GHSA-3h52-269p-cp9r
+datasource_id: github_osv_importer_v2/GHSA-3h52-269p-cp9r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-3h52-269p-cp9r/GHSA-3h52-269p-cp9r.json
+aliases:
+  - CVE-2025-48068
+summary: |
+  Information exposure in Next.js dev server due to lack of origin verification
+  ## Summary
+
+  A low-severity vulnerability in **Next.js** has been fixed in **version 15.2.2**. This issue may have allowed limited source code exposure when the dev server was running with the App Router enabled. The vulnerability only affects local development environments and requires the user to visit a malicious webpage while `npm run dev` is active.
+
+  Because the mitigation is potentially a breaking change for some development setups, to opt-in to the fix, you must configure `allowedDevOrigins` in your next config after upgrading to a patched version. [Learn more](https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins).
+
+  Learn more: https://vercel.com/changelog/cve-2025-48068
+
+  ## Credit
+
+  Thanks to [sapphi-red](https://github.com/sapphi-red) and [Radman Siddiki](https://github.com/R4356th) for responsibly disclosing this issue.
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.0.0|<15.2.2
+    fixed_versions: vers:npm/15.2.2
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=13.0.0|<14.2.30
+    fixed_versions: vers:npm/14.2.30
+severities:
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-3h52-269p-cp9r/GHSA-3h52-269p-cp9r.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1385
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-3h52-269p-cp9r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48068
+    reference_type:
+    reference_id:
+  - url: https://vercel.com/changelog/cve-2025-48068
+    reference_type:
+    reference_id:

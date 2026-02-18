@@ -1,0 +1,45 @@
+advisory_id: GHSA-2g4c-8fpm-c46v
+datasource_id: github_osv_importer_v2/GHSA-2g4c-8fpm-c46v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-2g4c-8fpm-c46v/GHSA-2g4c-8fpm-c46v.json
+aliases:
+  - CVE-2024-21505
+summary: "web3-utils Prototype Pollution vulnerability\n### Impact: \nThe mergeDeep() function\
+  \ in the web3-utils package has been identified for Prototype Pollution vulnerability. An\
+  \ attacker has the ability to modify an object's prototype, which could result in changing\
+  \ the behavior of all objects that inherit from the impacted prototype by providing carefully\
+  \ crafted input to function.\n\n### Patches: \nIt has been fixed in web3-utils version 4.2.1\
+  \ so all packages and apps depending on web3-utils >=4.0.1 and <=4.2.0 should upgrade to web3-utils\
+  \ 4.2.1.\n\n### Workarounds: \nNone"
+impacted_packages:
+  - purl: pkg:npm/web3-utils
+    affected_versions: vers:npm/>=4.0.1|<4.2.1
+    fixed_versions: vers:npm/4.2.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-2g4c-8fpm-c46v/GHSA-2g4c-8fpm-c46v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/web3/web3.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/web3/web3.js/commit/8ed041c6635d807b3da8960ad49e125e3d1b0e80
+    reference_type:
+    reference_id:
+  - url: https://github.com/web3/web3.js/security/advisories/GHSA-2g4c-8fpm-c46v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21505
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-WEB3UTILS-6229337
+    reference_type:
+    reference_id:

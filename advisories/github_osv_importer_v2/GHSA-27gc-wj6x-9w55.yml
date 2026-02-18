@@ -1,0 +1,59 @@
+advisory_id: GHSA-27gc-wj6x-9w55
+datasource_id: github_osv_importer_v2/GHSA-27gc-wj6x-9w55
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-27gc-wj6x-9w55/GHSA-27gc-wj6x-9w55.json
+aliases:
+  - CVE-2025-10044
+summary: |
+  Keycloak error_description injection on error pages that can trigger phishing attacks
+  Keycloak’s account console accepts arbitrary text in the `error_description` query parameter. This text is directly rendered in error pages without validation or sanitization. While HTML encoding prevents XSS, an attacker can craft URLs with misleading messages (e.g., fake support phone numbers or URLs), which are displayed within the trusted Keycloak UI. This creates a phishing vector, potentially tricking users into contacting malicious actors.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-account-ui
+    affected_versions: vers:maven/<26.2.9
+    fixed_versions: vers:maven/26.2.9
+  - purl: pkg:maven/org.keycloak/keycloak-account-ui
+    affected_versions: vers:maven/>=26.3.0|<26.3.4
+    fixed_versions: vers:maven/26.3.4
+  - purl: pkg:maven/org.keycloak/keycloak-admin-ui
+    affected_versions: vers:maven/<26.2.9
+    fixed_versions: vers:maven/26.2.9
+  - purl: pkg:maven/org.keycloak/keycloak-admin-ui
+    affected_versions: vers:maven/>=26.3.0|<26.3.4
+    fixed_versions: vers:maven/26.3.4
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-27gc-wj6x-9w55/GHSA-27gc-wj6x-9w55.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:16399
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:16400
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-10044
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2393551
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/42035
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-27gc-wj6x-9w55
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-10044
+    reference_type:
+    reference_id:

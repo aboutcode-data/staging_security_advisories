@@ -1,0 +1,38 @@
+advisory_id: GHSA-25h3-mw3p-w8r7
+datasource_id: github_osv_importer_v2/GHSA-25h3-mw3p-w8r7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-25h3-mw3p-w8r7/GHSA-25h3-mw3p-w8r7.json
+aliases:
+  - CVE-2020-14201
+summary: |
+  Dolibarr CRM allows Privilege Escalation
+  Dolibarr CRM before 11.0.5 allows privilege escalation. This could allow remote authenticated attackers to upload arbitrary files via societe/document.php in which "disabled" is changed to "enabled" in the HTML source code.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<11.0.5
+    fixed_versions: vers:composer/11.0.5
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-25h3-mw3p-w8r7/GHSA-25h3-mw3p-w8r7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/blob/e76641c491e4105e9cb1ded6149771c621d822b5/ChangeLog#L2933
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-14201
+    reference_type:
+    reference_id:
+  - url: https://www.wizlynxgroup.com/security-research-advisories/vuln/WLX-2020-011
+    reference_type:
+    reference_id:

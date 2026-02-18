@@ -1,0 +1,45 @@
+advisory_id: GHSA-26fg-v32r-h663
+datasource_id: github_osv_importer_v2/GHSA-26fg-v32r-h663
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-26fg-v32r-h663/GHSA-26fg-v32r-h663.json
+aliases:
+  - CVE-2023-5545
+summary: |
+  Moodle Exposure of Sensitive Information to an Unauthorized Actor vulnerability
+  H5P metadata automatically populated the author with the user's username, which could be sensitive information.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.3.0-rc2
+    fixed_versions: vers:composer/4.3.0-rc2
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-26fg-v32r-h663/GHSA-26fg-v32r-h663.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-668
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-78820
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2243444
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/100ac7c6467a7de2c05713a0a924984ff1593d53
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=451586
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5545
+    reference_type:
+    reference_id:

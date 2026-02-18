@@ -1,0 +1,38 @@
+advisory_id: GHSA-333x-qr3v-g4xx
+datasource_id: github_osv_importer_v2/GHSA-333x-qr3v-g4xx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-333x-qr3v-g4xx/GHSA-333x-qr3v-g4xx.json
+aliases:
+  - CVE-2020-7782
+summary: |
+  Command injection in spritesheet-js
+  This affects all versions of package spritesheet-js. It depends on a vulnerable package platform-command. The injection point is located in line 32 in lib/generator.js, which is triggered by main entry of the package.
+impacted_packages:
+  - purl: pkg:npm/spritesheet-js
+    affected_versions: vers:npm/<=1.2.6
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-333x-qr3v-g4xx/GHSA-333x-qr3v-g4xx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/krzysztof-o/spritesheet.js/blob/master/lib/generator.js#23L32
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7782
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SPRITESHEETJS-1048333
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/spritesheet-js
+    reference_type:
+    reference_id:

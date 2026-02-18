@@ -1,0 +1,45 @@
+advisory_id: GHSA-2jx3-5j9v-prpp
+datasource_id: github_osv_importer_v2/GHSA-2jx3-5j9v-prpp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-2jx3-5j9v-prpp/GHSA-2jx3-5j9v-prpp.json
+aliases:
+  - CVE-2022-31101
+summary: |
+  BlockWishList SQL Injection vulnerability
+  ### Impact
+  An authenticated customer can perform SQL injection
+
+  ### Patches
+  Issue is fixed in 2.1.1
+impacted_packages:
+  - purl: pkg:composer/prestashop/blockwishlist
+    affected_versions: vers:composer/>=2.0.0|<2.1.1
+    fixed_versions: vers:composer/2.1.1
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-2jx3-5j9v-prpp/GHSA-2jx3-5j9v-prpp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: http://packetstormsecurity.com/files/168003/Prestashop-Blockwishlist-2.1.0-SQL-Injection.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/blockwishlist
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/blockwishlist/commit/b3ec4b85af5fd73f74d55390b226d221298ca084
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/blockwishlist/security/advisories/GHSA-2jx3-5j9v-prpp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31101
+    reference_type:
+    reference_id:

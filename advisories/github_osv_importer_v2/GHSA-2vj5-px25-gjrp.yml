@@ -1,0 +1,56 @@
+advisory_id: GHSA-2vj5-px25-gjrp
+datasource_id: github_osv_importer_v2/GHSA-2vj5-px25-gjrp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-2vj5-px25-gjrp/GHSA-2vj5-px25-gjrp.json
+aliases:
+  - CVE-2021-4118
+summary: pytorch-lightning is vulnerable to Deserialization of Untrusted Data.
+impacted_packages:
+  - purl: pkg:pypi/pytorch-lightning
+    affected_versions: vers:pypi/<1.6.0
+    fixed_versions: vers:pypi/1.6.0
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-2vj5-px25-gjrp/GHSA-2vj5-px25-gjrp.json
+  - score: '8.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-2vj5-px25-gjrp/GHSA-2vj5-px25-gjrp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/advisories/GHSA-2vj5-px25-gjrp
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/pytorch-lightning/PYSEC-2021-874.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pytorchlightning/pytorch-lightning
+    reference_type:
+    reference_id:
+  - url: https://github.com/pytorchlightning/pytorch-lightning/commit/62f1e82e032eb16565e676d39e0db0cac7e34ace
+    reference_type:
+    reference_id:
+  - url: https://github.com/PyTorchLightning/pytorch-lightning/issues/11045
+    reference_type:
+    reference_id:
+  - url: https://github.com/PyTorchLightning/pytorch-lightning/pull/11099
+    reference_type:
+    reference_id:
+  - url: https://github.com/PyTorchLightning/pytorch-lightning/releases/tag/1.6.0
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/31832f0c-e5bb-4552-a12c-542f81f111e6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-4118
+    reference_type:
+    reference_id:

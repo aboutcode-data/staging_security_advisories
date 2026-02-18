@@ -1,0 +1,41 @@
+advisory_id: GHSA-37hx-4mcq-wc3h
+datasource_id: github_osv_importer_v2/GHSA-37hx-4mcq-wc3h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-37hx-4mcq-wc3h/GHSA-37hx-4mcq-wc3h.json
+aliases:
+  - CVE-2021-28128
+summary: |
+  Weak Password Recovery Mechanism for Forgotten Password in Strapi
+  In Strapi through 3.6.0, the admin panel allows the changing of one's own password without entering the current password. An attacker who gains access to a valid session can use this to take over an account by changing the password.
+impacted_packages:
+  - purl: pkg:npm/strapi
+    affected_versions: vers:npm/<=3.6.0
+    fixed_versions:
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-37hx-4mcq-wc3h/GHSA-37hx-4mcq-wc3h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-640
+references:
+  - url: https://github.com/strapi/strapi
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/issues/9657
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/releases/tag/v3.6.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-28128
+    reference_type:
+    reference_id:
+  - url: https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2021-008.txt
+    reference_type:
+    reference_id:

@@ -1,0 +1,40 @@
+advisory_id: GHSA-2hpj-g53m-9gj6
+datasource_id: github_osv_importer_v2/GHSA-2hpj-g53m-9gj6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-2hpj-g53m-9gj6/GHSA-2hpj-g53m-9gj6.json
+aliases:
+  - CVE-2016-10583
+summary: "closure-util downloads Resources over HTTP\nAffected versions of `closure-util` insecurely\
+  \ download an executable over an unencrypted HTTP connection. \n\nIn scenarios where an attacker\
+  \ has a privileged network position, it is possible to intercept the response and replace\
+  \ the executable with a malicious one, resulting in code execution on the system running `closure-util`.\n\
+  \n\n## Recommendation\n\nTo mitigate this issue:\n1. Install the package using npm's `--ignore-scripts`\
+  \ flag.\n2. Navigate to the package directory, and open `default-config.json` in a text editor\n\
+  3. Change the download URLs in the `compiler_url` and `library_url` to `https` equivalents\n\
+  4. run `npm i` in the package directory."
+impacted_packages:
+  - purl: pkg:npm/closure-util
+    affected_versions: vers:npm/<=2.0.0-beta.1
+    fixed_versions:
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-2hpj-g53m-9gj6/GHSA-2hpj-g53m-9gj6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+references:
+  - url: https://github.com/advisories/GHSA-2hpj-g53m-9gj6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10583
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/165
+    reference_type:
+    reference_id:

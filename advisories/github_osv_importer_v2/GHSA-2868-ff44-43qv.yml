@@ -1,0 +1,35 @@
+advisory_id: GHSA-2868-ff44-43qv
+datasource_id: github_osv_importer_v2/GHSA-2868-ff44-43qv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-2868-ff44-43qv/GHSA-2868-ff44-43qv.json
+aliases:
+  - CVE-2023-33946
+summary: |
+  Liferay portal unauthorized access to objects via OAuth 2 scope
+  The Object module in Liferay Portal 7.4.3.4 through 7.4.3.48, and Liferay DXP 7.4 before update 49 does properly isolate objects in difference virtual instances, which allows remote authenticated users in one virtual instance to view objects in a different virtual instance via OAuth 2 scope administration page.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.4.3.4|<7.4.3.49
+    fixed_versions: vers:maven/7.4.3.49
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-2868-ff44-43qv/GHSA-2868-ff44-43qv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2023-33946
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-33946
+    reference_type:
+    reference_id:

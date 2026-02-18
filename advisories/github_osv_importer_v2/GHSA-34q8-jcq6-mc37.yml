@@ -1,0 +1,46 @@
+advisory_id: GHSA-34q8-jcq6-mc37
+datasource_id: github_osv_importer_v2/GHSA-34q8-jcq6-mc37
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-34q8-jcq6-mc37/GHSA-34q8-jcq6-mc37.json
+aliases:
+  - CVE-2024-21489
+summary: |
+  uPlot Prototype Pollution vulnerability
+  Versions of the package uplot before 1.6.31 are vulnerable to Prototype Pollution via the uplot.assign function due to missing check if the attribute resolves to the object prototype.
+impacted_packages:
+  - purl: pkg:npm/uplot
+    affected_versions: vers:npm/<1.6.31
+    fixed_versions: vers:npm/1.6.31
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-34q8-jcq6-mc37/GHSA-34q8-jcq6-mc37.json
+  - score: '8.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-34q8-jcq6-mc37/GHSA-34q8-jcq6-mc37.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/leeoniya/uPlot
+    reference_type:
+    reference_id:
+  - url: https://github.com/leeoniya/uPlot/blob/c52e5001c1d959a99ac495a53e4deca5c44464d2/src/utils.js#L437-L452
+    reference_type:
+    reference_id:
+  - url: https://github.com/leeoniya/uPlot/commit/5756e3e9b91270b303157e14bd0174311047d983
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21489
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-UPLOT-6209224
+    reference_type:
+    reference_id:

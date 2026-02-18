@@ -1,0 +1,82 @@
+advisory_id: GHSA-3p22-ghq8-v749
+datasource_id: github_osv_importer_v2/GHSA-3p22-ghq8-v749
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-3p22-ghq8-v749/GHSA-3p22-ghq8-v749.json
+aliases:
+  - CVE-2022-21718
+summary: |
+  Renderers can obtain access to random bluetooth device without permission in Electron
+  ### Impact
+  This vulnerability allows renderers to obtain access to a random bluetooth device via the [web bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API) if the app has not configured a custom `select-bluetooth-device` event handler.  The device that is accessed is random and the attacker would have no way of selecting a specific device.
+
+  All current stable versions of Electron are affected.
+
+  ### Patches
+  This has been patched and the following Electron versions contain the fix:
+  * `17.0.0-alpha.6`
+  * `16.0.6`
+  * `15.3.5`
+  * `14.2.4`
+  * `13.6.6`
+
+  ### Workarounds
+  Adding this code to your app can workaround the issue.
+
+  ```js
+  app.on('web-contents-created', (event, webContents) => {
+    webContents.on('select-bluetooth-device', (event, devices, callback) => {
+      // Prevent default behavior
+      event.preventDefault();
+      // Cancel the request
+      callback('');
+    });
+  });
+  ```
+
+  For more information
+  If you have any questions or comments about this advisory, email us at security@electronjs.org.
+impacted_packages:
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/<13.6.6
+    fixed_versions: vers:npm/13.6.6
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=14.0.0-beta.1|<14.2.4
+    fixed_versions: vers:npm/14.2.4
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=15.0.0-beta.1|<15.3.5
+    fixed_versions: vers:npm/15.3.5
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=16.0.0-beta.1|<16.0.6
+    fixed_versions: vers:npm/16.0.6
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/<=17.0.0-alpha.5
+    fixed_versions: vers:npm/17.0.0-alpha.6
+severities:
+  - score: '3.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-3p22-ghq8-v749/GHSA-3p22-ghq8-v749.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+  - CWE-668
+references:
+  - url: https://github.com/electron/electron
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/pull/32178
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/pull/32240
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/security/advisories/GHSA-3p22-ghq8-v749
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21718
+    reference_type:
+    reference_id:

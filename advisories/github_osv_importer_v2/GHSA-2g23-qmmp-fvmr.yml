@@ -1,0 +1,41 @@
+advisory_id: GHSA-2g23-qmmp-fvmr
+datasource_id: github_osv_importer_v2/GHSA-2g23-qmmp-fvmr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2g23-qmmp-fvmr/GHSA-2g23-qmmp-fvmr.json
+aliases:
+  - CVE-2019-9553
+summary: |
+  Bolt Cross-site Scripting via the slug, teaser or title parameters
+  Bolt 3.6.4 has XSS via the slug, teaser, or title parameter to `editcontent/pages`, a related issue to CVE-2017-11128 and CVE-2018-19933.
+impacted_packages:
+  - purl: pkg:composer/bolt/bolt
+    affected_versions: vers:composer/3.6.4
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2g23-qmmp-fvmr/GHSA-2g23-qmmp-fvmr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/bolt/bolt
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-9553
+    reference_type:
+    reference_id:
+  - url: https://packetstormsecurity.com/files/151943/Bold-CMS-3.6.4-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/46495
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/46495.txt
+    reference_type: exploit
+    reference_id: CVE-2019-9553

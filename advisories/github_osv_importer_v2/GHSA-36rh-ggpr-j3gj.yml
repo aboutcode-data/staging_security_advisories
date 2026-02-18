@@ -1,0 +1,29 @@
+advisory_id: GHSA-36rh-ggpr-j3gj
+datasource_id: github_osv_importer_v2/GHSA-36rh-ggpr-j3gj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-36rh-ggpr-j3gj/GHSA-36rh-ggpr-j3gj.json
+aliases: []
+summary: "Renovate vulnerable to Azure DevOps token leakage in logs\n### Impact\n\nApplies to\
+  \ Azure DevOps users only. The bot's token may be exposed in server or pipeline logs due to\
+  \ the `http.extraheader=AUTHORIZATION` parameter being logged without redaction. It is recommended\
+  \ that Azure DevOps users revoke their existing bot credentials and generate new ones after\
+  \ upgrading if there's a potential that logs have been saved to a location that others can\
+  \ view.\n\n### Patches\n\nFixed in \n\n### Workarounds\n\nDo not share Renovate logs with\
+  \ anyone who cannot be trusted with access to the token."
+impacted_packages:
+  - purl: pkg:npm/renovate
+    affected_versions: vers:npm/>=19.180.0|<23.25.1
+    fixed_versions: vers:npm/23.25.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/renovatebot/renovate
+    reference_type:
+    reference_id:
+  - url: https://github.com/renovatebot/renovate/security/advisories/GHSA-36rh-ggpr-j3gj
+    reference_type:
+    reference_id:

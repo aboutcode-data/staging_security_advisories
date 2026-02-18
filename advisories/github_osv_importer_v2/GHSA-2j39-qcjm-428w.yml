@@ -1,0 +1,60 @@
+advisory_id: GHSA-2j39-qcjm-428w
+datasource_id: github_osv_importer_v2/GHSA-2j39-qcjm-428w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-2j39-qcjm-428w/GHSA-2j39-qcjm-428w.json
+aliases:
+  - CVE-2023-50164
+summary: |
+  Apache Struts vulnerable to path traversal
+  An attacker can manipulate file upload params to enable paths traversal and under some circumstances this can lead to uploading a malicious file which can be used to perform Remote Code Execution.
+  Users are recommended to upgrade to versions Struts 2.5.33 or Struts 6.3.0.2 or greater to fix this issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/>=2.0.0|<2.5.33
+    fixed_versions: vers:maven/2.5.33
+  - purl: pkg:maven/org.apache.struts/struts2-core
+    affected_versions: vers:maven/>=6.0.0|<6.3.0.2
+    fixed_versions: vers:maven/6.3.0.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-2j39-qcjm-428w/GHSA-2j39-qcjm-428w.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-552
+references:
+  - url: http://packetstormsecurity.com/files/176157/Struts-S2-066-File-Upload-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://cwiki.apache.org/confluence/display/WW/S2-066
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts/commit/162e29fee9136f4bfd9b2376da2cbf590f9ea163
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/struts/commit/d8c69691ef1d15e76a5f4fcf33039316da2340b6
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/yh09b3fkf6vz5d6jdgrlvmg60lfwtqhj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-50164
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20231214-0010
+    reference_type:
+    reference_id:
+  - url: https://www.openwall.com/lists/oss-security/2023/12/07/1
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/12/07/1
+    reference_type:
+    reference_id:

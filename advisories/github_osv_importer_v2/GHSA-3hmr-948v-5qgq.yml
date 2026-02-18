@@ -1,0 +1,44 @@
+advisory_id: GHSA-3hmr-948v-5qgq
+datasource_id: github_osv_importer_v2/GHSA-3hmr-948v-5qgq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3hmr-948v-5qgq/GHSA-3hmr-948v-5qgq.json
+aliases:
+  - CVE-2017-7491
+summary: |
+  Moodle Cross-Site Request Forgery (CSRF)
+  In Moodle 2.x and 3.x, a CSRF attack is possible that allows attackers to change the "number of courses displayed in the course overview block" configuration setting.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.2.0|<3.2.3
+    fixed_versions: vers:composer/3.2.3
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.1.0|<3.1.6
+    fixed_versions: vers:composer/3.1.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.0.0|<3.0.10
+    fixed_versions: vers:composer/3.0.10
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=2.7.0|<2.7.20
+    fixed_versions: vers:composer/2.7.20
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3hmr-948v-5qgq/GHSA-3hmr-948v-5qgq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=352355
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-7491
+    reference_type:
+    reference_id:

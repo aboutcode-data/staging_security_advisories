@@ -1,0 +1,32 @@
+advisory_id: GHSA-32j2-c7mx-v4jj
+datasource_id: github_osv_importer_v2/GHSA-32j2-c7mx-v4jj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-32j2-c7mx-v4jj/GHSA-32j2-c7mx-v4jj.json
+aliases:
+  - CVE-2023-49447
+summary: |
+  Cross-Site Request Forgery in JFinalCMS via /admin/nav/update
+  JFinalCMS v5.0.0 was discovered to contain a Cross-Site Request Forgery (CSRF) vulnerability via /admin/nav/update.
+impacted_packages:
+  - purl: pkg:maven/com.jfinal/jfinal
+    affected_versions: vers:maven/<=5.0.0
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-32j2-c7mx-v4jj/GHSA-32j2-c7mx-v4jj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/ysuzhangbin/cms/blob/main/CSRF%20exists%20at%20the%20navigation%20management%20modification%20location.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-49447
+    reference_type:
+    reference_id:

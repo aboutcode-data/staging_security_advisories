@@ -1,0 +1,59 @@
+advisory_id: GHSA-3hcm-ggvf-rch5
+datasource_id: github_osv_importer_v2/GHSA-3hcm-ggvf-rch5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-3hcm-ggvf-rch5/GHSA-3hcm-ggvf-rch5.json
+aliases: []
+summary: |
+  OpenClaw has an exec allowlist bypass via command substitution/backticks inside double quotes
+  ### Summary
+
+  Exec approvals allowlist bypass via command substitution/backticks inside double quotes.
+
+  ### Affected Packages / Versions
+
+  - Package: `openclaw` (npm)
+  - Affected: `<= 2026.2.1`
+  - Fixed: `>= 2026.2.2`
+
+  ### Impact
+
+  Only affects setups that explicitly enable the optional exec approvals allowlist feature. Default installs are unaffected.
+
+  ### Fix
+
+  Reject unescaped `$()` and backticks inside double quotes during allowlist analysis.
+
+  ### Fix Commit(s)
+
+  - d1ecb46076145deb188abcba8f0699709ea17198
+
+  Thanks @simecek for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.2
+    fixed_versions: vers:npm/2026.2.2
+severities:
+  - score: '7.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-3hcm-ggvf-rch5/GHSA-3hcm-ggvf-rch5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/d1ecb46076145deb188abcba8f0699709ea17198
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-3hcm-ggvf-rch5
+    reference_type:
+    reference_id:

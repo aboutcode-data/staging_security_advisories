@@ -1,0 +1,68 @@
+advisory_id: GHSA-3fqr-4cg8-h96q
+datasource_id: github_osv_importer_v2/GHSA-3fqr-4cg8-h96q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-3fqr-4cg8-h96q/GHSA-3fqr-4cg8-h96q.json
+aliases:
+  - CVE-2026-26317
+summary: |
+  OpenClaw affected by cross-site request forgery (CSRF) through loopback browser mutation endpoints
+  ## Summary
+  Browser-facing localhost mutation routes accepted cross-origin browser requests without explicit Origin/Referer validation. Loopback binding reduces remote exposure but does not prevent browser-initiated requests from malicious origins.
+
+  ## Impact
+  A malicious website can trigger unauthorized state changes against a victim's local OpenClaw browser control plane (for example opening tabs, starting/stopping the browser, mutating storage/cookies) if the browser control service is reachable on loopback in the victim's browser context.
+
+  ## Affected Packages / Versions
+  - openclaw (npm): <= 2026.2.13
+  - clawdbot (npm): <= 2026.1.24-3
+
+  ## Details
+  The browser control servers bind to loopback but exposed mutating HTTP endpoints without a CSRF-style guard. Browsers may send cross-origin requests to loopback addresses; without explicit validation, state-changing operations could be triggered from a non-loopback Origin/Referer.
+
+  ## Fix
+  Mutating HTTP methods (POST/PUT/PATCH/DELETE) are rejected when the request indicates a non-loopback Origin/Referer (or `Sec-Fetch-Site: cross-site`).
+
+  ## Fix Commit(s)
+  - openclaw/openclaw: b566b09f81e2b704bf9398d8d97d5f7a90aa94c3
+
+  ## Workarounds / Mitigations
+  - Enable browser control auth (token/password) and avoid running with auth disabled.
+  - Upgrade to a release that includes the fix.
+
+  ## Credits
+  - Reporter: @vincentkoc
+
+  ## Release Process Note
+  `patched_versions` is set to the planned next release version. Once that npm release is published, the advisory should be ready to publish with no further edits.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.14
+    fixed_versions: vers:npm/2026.2.14
+  - purl: pkg:npm/clawdbot
+    affected_versions: vers:npm/<=2026.1.24-3
+    fixed_versions:
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-3fqr-4cg8-h96q/GHSA-3fqr-4cg8-h96q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/b566b09f81e2b704bf9398d8d97d5f7a90aa94c3
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.14
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-3fqr-4cg8-h96q
+    reference_type:
+    reference_id:

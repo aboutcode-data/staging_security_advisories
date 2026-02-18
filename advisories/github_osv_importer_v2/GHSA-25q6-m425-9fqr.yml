@@ -1,0 +1,38 @@
+advisory_id: GHSA-25q6-m425-9fqr
+datasource_id: github_osv_importer_v2/GHSA-25q6-m425-9fqr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-25q6-m425-9fqr/GHSA-25q6-m425-9fqr.json
+aliases:
+  - CVE-2022-34140
+summary: |
+  Feehi CMS Cross-site Scripting
+  A stored cross-site scripting (XSS) vulnerability in `/index.php?r=site%2Fsignup` of Feehi CMS v2.1.1 allows attackers to execute arbitrary web scripts or HTML via a crafted payload injected into the username field.
+impacted_packages:
+  - purl: pkg:composer/feehi/cms
+    affected_versions: vers:composer/<=2.1.1
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-25q6-m425-9fqr/GHSA-25q6-m425-9fqr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/168012/Feehi-CMS-2.1.1-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/liufee/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/liufee/cms/issues/61
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-34140
+    reference_type:
+    reference_id:

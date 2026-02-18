@@ -1,0 +1,38 @@
+advisory_id: GHSA-397g-4jpj-44xg
+datasource_id: github_osv_importer_v2/GHSA-397g-4jpj-44xg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-397g-4jpj-44xg/GHSA-397g-4jpj-44xg.json
+aliases:
+  - CVE-2016-4879
+summary: |
+  CSRF in baserCMS 3.0.10 and earlier
+  Cross-site request forgery (CSRF) vulnerability in baserCMS plugin Mail version 3.0.10 and earlier allows remote attackers to hijack the authentication of administrators via unspecified vectors.
+impacted_packages:
+  - purl: pkg:composer/baserproject/basercms
+    affected_versions: vers:composer/<=3.0.10
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-397g-4jpj-44xg/GHSA-397g-4jpj-44xg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: http://basercms.net/security/JVN92765814
+    reference_type:
+    reference_id:
+  - url: https://jvn.jp/en/jp/JVN92765814/index.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-4879
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210308130052/http://www.securityfocus.com/bid/93217
+    reference_type:
+    reference_id:

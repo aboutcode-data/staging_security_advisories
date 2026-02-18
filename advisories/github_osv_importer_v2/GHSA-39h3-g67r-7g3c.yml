@@ -1,0 +1,95 @@
+advisory_id: GHSA-39h3-g67r-7g3c
+datasource_id: github_osv_importer_v2/GHSA-39h3-g67r-7g3c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-39h3-g67r-7g3c/GHSA-39h3-g67r-7g3c.json
+aliases:
+  - CVE-2026-22770
+summary: |
+  ImageMagick releases an invalid pointer in BilateralBlur when memory allocation fails
+  The BilateralBlurImage method will allocate a set of double buffers inside AcquireBilateralTLS. But the last element in the set is not properly initialized. This will result in a release of an invalid pointer inside DestroyBilateralTLS when the memory allocation fails.
+impacted_packages:
+  - purl: pkg:nuget/Magick.NET-Q8-x64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q8-arm64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q8-x86
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q8-OpenMP-x64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q8-OpenMP-arm64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-x64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-arm64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-x86
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-OpenMP-x64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-OpenMP-arm64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-OpenMP-x86
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-HDRI-x64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-HDRI-arm64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-HDRI-x86
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-HDRI-OpenMP-x64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-HDRI-OpenMP-arm64
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q8-AnyCPU
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-AnyCPU
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+  - purl: pkg:nuget/Magick.NET-Q16-HDRI-AnyCPU
+    affected_versions: vers:nuget/<14.10.2
+    fixed_versions: vers:nuget/14.10.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-39h3-g67r-7g3c/GHSA-39h3-g67r-7g3c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-763
+references:
+  - url: https://github.com/dlemstra/Magick.NET/releases/tag/14.10.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/ImageMagick/ImageMagick
+    reference_type:
+    reference_id:
+  - url: https://github.com/ImageMagick/ImageMagick/commit/3e0330721020e0c5bb52e4b77c347527dd71658e
+    reference_type:
+    reference_id:
+  - url: https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-39h3-g67r-7g3c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-22770
+    reference_type:
+    reference_id:

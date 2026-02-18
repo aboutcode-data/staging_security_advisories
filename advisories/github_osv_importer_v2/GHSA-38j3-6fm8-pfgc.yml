@@ -1,0 +1,47 @@
+advisory_id: GHSA-38j3-6fm8-pfgc
+datasource_id: github_osv_importer_v2/GHSA-38j3-6fm8-pfgc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-38j3-6fm8-pfgc/GHSA-38j3-6fm8-pfgc.json
+aliases:
+  - CVE-2021-40660
+summary: |
+  Regular expression denial of service in Delight Nashorn Sandbox
+  An issue was discovered in Delight Nashorn Sandbox. There is an ReDoS vulnerability that can be exploited to launching a denial of service (DoS) attack.
+impacted_packages:
+  - purl: pkg:maven/org.javadelight/delight-nashorn-sandbox
+    affected_versions: vers:maven/<0.3.1
+    fixed_versions: vers:maven/0.3.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-38j3-6fm8-pfgc/GHSA-38j3-6fm8-pfgc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/javadelight/delight-nashorn-sandbox
+    reference_type:
+    reference_id:
+  - url: https://github.com/javadelight/delight-nashorn-sandbox/commit/b899b8ecad46090fdc042ac7683e1164114a69de
+    reference_type:
+    reference_id:
+  - url: https://github.com/javadelight/delight-nashorn-sandbox/issues/117
+    reference_type:
+    reference_id:
+  - url: https://github.com/javadelight/delight-nashorn-sandbox/issues/117#issuecomment-1564983722
+    reference_type:
+    reference_id:
+  - url: https://github.com/javadelight/delight-nashorn-sandbox/pull/139
+    reference_type:
+    reference_id:
+  - url: https://github.com/javadelight/delight-nashorn-sandbox/releases/tag/0.3.1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-40660
+    reference_type:
+    reference_id:

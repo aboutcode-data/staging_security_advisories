@@ -1,0 +1,56 @@
+advisory_id: GHSA-27g8-r9vw-765x
+datasource_id: github_osv_importer_v2/GHSA-27g8-r9vw-765x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-27g8-r9vw-765x/GHSA-27g8-r9vw-765x.json
+aliases:
+  - CVE-2021-32624
+summary: |
+  Private Field data leak
+  This security advisory relates to a newly discovered capability in our query infrastructure to directly or indirectly expose the values of private fields, bypassing the configured access control.
+
+  This is an access control related oracle attack in that the attack method guides an attacker during their attempt to reveal information they do not have access to. The complexity of completing the attack is limited by some length-dependent behaviors and the fidelity of the exposed information.
+
+  ### Impact
+
+  Under some circumstances, field values or field value meta data can be determined, despite the field or list having `read` access control configured. If you use private fields or lists, you may be impacted.
+
+  ### Patches
+
+  None, at this time
+
+  ### Workarounds
+
+  None, at this time
+
+  ### References
+
+  None
+
+  ### For more information
+
+  For the protection of the community and private deployments, we think that the best course of action will be to not disclose further details on any open GitHub issues related to this advisory until a hot-fix or work-around has been deployed or published.
+
+  If needed, you can email us at keystone@thinkmill.com.au
+impacted_packages:
+  - purl: pkg:npm/%40keystonejs/keystone
+    affected_versions: vers:npm/<=19.3.2
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-27g8-r9vw-765x/GHSA-27g8-r9vw-765x.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/keystonejs/keystone-5/security/advisories/GHSA-27g8-r9vw-765x
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32624
+    reference_type:
+    reference_id:

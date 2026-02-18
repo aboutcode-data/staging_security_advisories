@@ -1,0 +1,38 @@
+advisory_id: GHSA-2qfv-wwfx-fh34
+datasource_id: github_osv_importer_v2/GHSA-2qfv-wwfx-fh34
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2qfv-wwfx-fh34/GHSA-2qfv-wwfx-fh34.json
+aliases:
+  - CVE-2017-6215
+summary: |
+  paypal/permissions-sdk-php reflected Cross-site Scripting (XSS)
+  paypal/permissions-sdk-php is vulnerable to reflected XSS in the samples/GetAccessToken.php verification_code parameter, resulting in code execution.
+impacted_packages:
+  - purl: pkg:composer/paypal/permissions-sdk-php
+    affected_versions: vers:composer/<=3.9.1
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2qfv-wwfx-fh34/GHSA-2qfv-wwfx-fh34.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/paypal/permissions-sdk-php
+    reference_type:
+    reference_id:
+  - url: https://github.com/paypal/permissions-sdk-php/commit/a897893d467ca50b9b024b21bd8072ceb3bf2cf8
+    reference_type:
+    reference_id:
+  - url: https://github.com/paypal/permissions-sdk-php/issues/19
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-6215
+    reference_type:
+    reference_id:

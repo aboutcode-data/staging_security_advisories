@@ -1,0 +1,45 @@
+advisory_id: GHSA-26jh-r8g2-6fpr
+datasource_id: github_osv_importer_v2/GHSA-26jh-r8g2-6fpr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-26jh-r8g2-6fpr/GHSA-26jh-r8g2-6fpr.json
+aliases: []
+summary: "Gradio's dropdown component pre-process step does not limit the values to those in\
+  \ the dropdown list\n### Impact\n**What kind of vulnerability is it? Who is impacted?**\n\n\
+  This vulnerability is a **data validation issue** in the Gradio `Dropdown` component's pre-processing\
+  \ step. Even if the `allow_custom_value` parameter is set to `False`, attackers can bypass\
+  \ this restriction by sending custom requests with arbitrary values, effectively breaking\
+  \ the developer’s intended input constraints. While this alone is not a severe vulnerability,\
+  \ it can lead to more critical security issues, particularly when paired with other vulnerabilities\
+  \ like file downloads from the user's machine.\n\n### Patches\nYes, this issue is addressed\
+  \ in `gradio>=5.0`. Please upgrade to the latest version to resolve the problem.\n\n### Workarounds\
+  \  \n**Is there a way for users to fix or remediate the vulnerability without upgrading?**\n\
+  \nTo mitigate the issue without upgrading, developers can add manual validation in their prediction\
+  \ function to check the received values against the allowed dropdown values before processing\
+  \ them."
+impacted_packages:
+  - purl: pkg:pypi/gradio
+    affected_versions: vers:pypi/<5.0.0
+    fixed_versions: vers:pypi/5.0.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-26jh-r8g2-6fpr/GHSA-26jh-r8g2-6fpr.json
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-26jh-r8g2-6fpr/GHSA-26jh-r8g2-6fpr.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/gradio-app/gradio
+    reference_type:
+    reference_id:
+  - url: https://github.com/gradio-app/gradio/security/advisories/GHSA-26jh-r8g2-6fpr
+    reference_type:
+    reference_id:

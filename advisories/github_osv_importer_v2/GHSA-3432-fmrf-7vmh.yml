@@ -1,0 +1,51 @@
+advisory_id: GHSA-3432-fmrf-7vmh
+datasource_id: github_osv_importer_v2/GHSA-3432-fmrf-7vmh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-3432-fmrf-7vmh/GHSA-3432-fmrf-7vmh.json
+aliases:
+  - CVE-2025-48883
+summary: |
+  Chrome PHP is missing encoding in `CssSelector`
+  ### Impact
+
+  CSS Selector expressions are not properly encoded, which can lead to XSS (cross-site scripting) vulnerabilities.
+
+  ### Patches
+
+  This is patched in v1.14.0.
+
+  ### Workarounds
+
+  Users can apply encoding manually to their selectors, if they are unable to upgrade.
+impacted_packages:
+  - purl: pkg:composer/chrome-php/chrome
+    affected_versions: vers:composer/<1.14.0
+    fixed_versions: vers:composer/1.14.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-3432-fmrf-7vmh/GHSA-3432-fmrf-7vmh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/chrome-php/chrome
+    reference_type:
+    reference_id:
+  - url: https://github.com/chrome-php/chrome/commit/34b2b8d1691f4e3940b1e1e95d388fffe81169c8
+    reference_type:
+    reference_id:
+  - url: https://github.com/chrome-php/chrome/pull/691
+    reference_type:
+    reference_id:
+  - url: https://github.com/chrome-php/chrome/security/advisories/GHSA-3432-fmrf-7vmh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48883
+    reference_type:
+    reference_id:

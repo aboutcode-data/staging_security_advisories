@@ -1,0 +1,59 @@
+advisory_id: GHSA-26wc-3wqp-g3rp
+datasource_id: github_osv_importer_v2/GHSA-26wc-3wqp-g3rp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-26wc-3wqp-g3rp/GHSA-26wc-3wqp-g3rp.json
+aliases:
+  - CVE-2017-1000353
+summary: |
+  Deserialization of Untrusted Data in Jenkins
+  Jenkins versions 2.56 and earlier as well as 2.46.1 LTS and earlier are vulnerable to an unauthenticated remote code execution. An unauthenticated remote code execution vulnerability allowed attackers to transfer a serialized Java `SignedObject` object to the Jenkins CLI, that would be deserialized using a new `ObjectInputStream`, bypassing the existing blacklist-based protection mechanism. We're fixing this issue by adding `SignedObject` to the blacklist. We're also backporting the new HTTP CLI protocol from Jenkins 2.54 to LTS 2.46.2, and deprecating the remoting-based (i.e. Java serialization) CLI protocol, disabling it by default.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.56
+    fixed_versions: vers:maven/2.57
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.46.1
+    fixed_versions: vers:maven/2.46.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-26wc-3wqp-g3rp/GHSA-26wc-3wqp-g3rp.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: http://packetstormsecurity.com/files/159266/Jenkins-2.56-CLI-Deserialization-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins/commit/36b8285a41eb28333549e8d851f81fd80a184076
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins/commit/f237601afd750a0eaaf961e8120b08de238f2c3f
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2017-04-26
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000353
+    reference_type:
+    reference_id:
+  - url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2017-1000353
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/41965
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/98056
+    reference_type:
+    reference_id:

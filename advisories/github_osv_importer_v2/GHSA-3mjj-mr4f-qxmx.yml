@@ -1,0 +1,52 @@
+advisory_id: GHSA-3mjj-mr4f-qxmx
+datasource_id: github_osv_importer_v2/GHSA-3mjj-mr4f-qxmx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3mjj-mr4f-qxmx/GHSA-3mjj-mr4f-qxmx.json
+aliases:
+  - CVE-2018-13347
+summary: |
+  Mercurial mishandles integer addition and subtraction
+  `mpatch.c` in Mercurial before 4.6.1 mishandles integer addition and subtraction, aka OVE-20180430-0002.
+impacted_packages:
+  - purl: pkg:pypi/mercurial
+    affected_versions: vers:pypi/<4.6.1
+    fixed_versions: vers:pypi/4.6.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3mjj-mr4f-qxmx/GHSA-3mjj-mr4f-qxmx.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3mjj-mr4f-qxmx/GHSA-3mjj-mr4f-qxmx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-190
+references:
+  - url: https://access.redhat.com/errata/RHSA-2019:2276
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/mercurial/PYSEC-2018-89.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2020/07/msg00032.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-13347
+    reference_type:
+    reference_id:
+  - url: https://www.mercurial-scm.org/repo/hg-committed/log?rev=modifies%28%22mercurial%2Fmpatch.c%22%29+and+4.5%3A%3A
+    reference_type:
+    reference_id:
+  - url: https://www.mercurial-scm.org/repo/hg/rev/1acfc35d478c
+    reference_type:
+    reference_id:
+  - url: https://www.mercurial-scm.org/wiki/WhatsNew#Mercurial_4.6.1_.282018-06-06.29
+    reference_type:
+    reference_id:

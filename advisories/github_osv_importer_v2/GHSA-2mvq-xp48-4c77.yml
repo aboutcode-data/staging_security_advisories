@@ -1,0 +1,34 @@
+advisory_id: GHSA-2mvq-xp48-4c77
+datasource_id: github_osv_importer_v2/GHSA-2mvq-xp48-4c77
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-2mvq-xp48-4c77/GHSA-2mvq-xp48-4c77.json
+aliases: []
+summary: |
+  Denial of Service in subtext
+  All versions of `subtext` are vulnerable to Denial of Service (DoS). The package fails to enforce the `maxBytes` configuration for payloads with chunked encoding that are written to the file system. This allows attackers to send requests with arbitrary payload sizes, which may exhaust system resources leading to Denial of Service.
+
+
+  ## Recommendation
+
+  This package is not actively maintained and has been moved to `@hapi/subtext` where version 6.1.2.
+impacted_packages:
+  - purl: pkg:npm/subtext
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions:
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/hapijs/subtext
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/subtext/issues/72
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1168
+    reference_type:
+    reference_id:

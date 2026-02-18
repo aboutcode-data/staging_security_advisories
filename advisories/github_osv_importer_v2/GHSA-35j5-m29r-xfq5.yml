@@ -1,0 +1,66 @@
+advisory_id: GHSA-35j5-m29r-xfq5
+datasource_id: github_osv_importer_v2/GHSA-35j5-m29r-xfq5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-35j5-m29r-xfq5/GHSA-35j5-m29r-xfq5.json
+aliases:
+  - CVE-2023-37912
+summary: |
+  XWiki Rendering's footnote macro vulnerable to privilege escalation via the footnote macro
+  ### Impact
+
+  The footnote macro executed its content in a potentially different context than the one in which it was defined. In particular in combination with the include macro, this allows privilege escalation from a simple user account in XWiki to programming rights and thus remote code execution, impacting the confidentiality, integrity and availability of the whole XWiki installation.
+
+  To reproduce, perform the following steps:
+
+  1. Edit your user profile with the object editor and add an object of type DocumentSheetBinding with value XWiki.ClassSheet
+  2. Edit your user profile with the wiki editor and add the syntax `{{footnote}}{{groovy}}println("Hello " + "from groovy!"){{/groovy}}{{/footnote}}`
+
+  When the text "Hello from groovy!" is displayed at the bottom of the document, the installation is vulnerable. Instead, an error should be displayed.
+
+  ### Patches
+  This vulnerability has been patched in XWiki 14.10.6 and 15.1-rc-1.
+
+  ### Workarounds
+  There is no workaround apart from upgrading to a fixed version of the footnote macro.
+
+  ### References
+  * https://jira.xwiki.org/browse/XRENDERING-688
+  * https://github.com/xwiki/xwiki-rendering/commit/5f558b8fac8b716d19999225f38cb8ed0814116e
+impacted_packages:
+  - purl: pkg:maven/org.xwiki.rendering/xwiki-rendering-macro-footnotes
+    affected_versions: vers:maven/<14.10.6
+    fixed_versions: vers:maven/14.10.6
+  - purl: pkg:maven/org.xwiki.rendering/xwiki-rendering-macro-footnotes
+    affected_versions: vers:maven/>=15.0-rc-1|<15.1-rc-1
+    fixed_versions: vers:maven/15.1-rc-1
+  - purl: pkg:maven/org.xwiki.platform/xwiki-core-rendering-macro-footnotes
+    affected_versions: vers:maven/<14.10.6
+    fixed_versions: vers:maven/14.10.6
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-35j5-m29r-xfq5/GHSA-35j5-m29r-xfq5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-270
+references:
+  - url: https://github.com/xwiki/xwiki-rendering
+    reference_type:
+    reference_id:
+  - url: https://github.com/xwiki/xwiki-rendering/commit/5f558b8fac8b716d19999225f38cb8ed0814116e
+    reference_type:
+    reference_id:
+  - url: https://github.com/xwiki/xwiki-rendering/security/advisories/GHSA-35j5-m29r-xfq5
+    reference_type:
+    reference_id:
+  - url: https://jira.xwiki.org/browse/XRENDERING-688
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-37912
+    reference_type:
+    reference_id:

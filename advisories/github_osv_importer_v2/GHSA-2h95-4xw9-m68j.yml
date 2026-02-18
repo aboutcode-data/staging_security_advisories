@@ -1,0 +1,38 @@
+advisory_id: GHSA-2h95-4xw9-m68j
+datasource_id: github_osv_importer_v2/GHSA-2h95-4xw9-m68j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2h95-4xw9-m68j/GHSA-2h95-4xw9-m68j.json
+aliases:
+  - CVE-2019-1003009
+summary: |
+  Jenkins Active Directory Plugin Improper certificate validation with StartTLS
+  An improper certificate validation vulnerability exists in Jenkins Active Directory Plugin 2.10 and earlier in src/main/java/hudson/plugins/active_directory/ActiveDirectoryDomain.java, src/main/java/hudson/plugins/active_directory/ActiveDirectorySecurityRealm.java, src/main/java/hudson/plugins/active_directory/ActiveDirectoryUnixAuthenticationProvider.java that allows attackers to impersonate the Active Directory server Jenkins connects to for authentication if Jenkins is configured to use StartTLS.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.plugins/active-directory
+    affected_versions: vers:maven/<=2.10
+    fixed_versions: vers:maven/2.11
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2h95-4xw9-m68j/GHSA-2h95-4xw9-m68j.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://github.com/jenkinsci/active-directory-plugin
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/active-directory-plugin/commit/520faf5bb1078d75e5fed10b7bf5ac6241fe2fc4
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2019-01-28/#SECURITY-859
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-1003009
+    reference_type:
+    reference_id:

@@ -1,0 +1,78 @@
+advisory_id: GHSA-3m3q-x3gj-f79x
+datasource_id: github_osv_importer_v2/GHSA-3m3q-x3gj-f79x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-3m3q-x3gj-f79x/GHSA-3m3q-x3gj-f79x.json
+aliases: []
+summary: |
+  OpenClaw optional voice-call plugin: webhook verification may be bypassed behind certain proxy configurations
+  ## Affected Packages / Versions
+
+  This issue affects the optional voice-call plugin only. It is not enabled by default; it only applies to installations where the plugin is installed and enabled.
+
+  - Package: `@openclaw/voice-call`
+  - Vulnerable versions: `< 2026.2.3`
+  - Patched versions: `>= 2026.2.3`
+
+  Legacy package name (if you are still using it):
+
+  - Package: `@clawdbot/voice-call`
+  - Vulnerable versions: `<= 2026.1.24`
+  - Patched versions: none published under this package name; migrate to `@openclaw/voice-call`
+
+  ## Summary
+
+  In certain reverse-proxy / forwarding setups, webhook verification can be bypassed if untrusted forwarded headers are accepted.
+
+  ## Impact
+
+  An external party may be able to send voice-call webhook requests that are accepted as valid, which can result in spoofed webhook events being processed.
+
+  ## Root Cause
+
+  Some deployments implicitly trusted forwarded headers (for example `Forwarded` / `X-Forwarded-*`) when determining request properties used during webhook verification. If those headers are not overwritten by a trusted proxy, a client can supply them directly and influence verification.
+
+  ## Resolution
+
+  Ignore forwarded headers by default unless explicitly trusted and allowlisted in configuration. Keep any loopback-only development bypass restricted to local development only. Upgrade to a patched version.
+
+  If you cannot upgrade immediately, strip `Forwarded` and `X-Forwarded-*` headers at the edge so clients cannot supply them directly.
+
+  ## Fix Commit(s)
+
+  - `a749db9820eb6d6224032a5a34223d286d2dcc2f`
+
+  ## Credits
+
+  Thanks `@0x5t` for reporting.
+impacted_packages:
+  - purl: pkg:npm/%40openclaw/voice-call
+    affected_versions: vers:npm/<2026.2.3
+    fixed_versions: vers:npm/2026.2.3
+  - purl: pkg:npm/%40clawdbot/voice-call
+    affected_versions: vers:npm/<=2026.1.24
+    fixed_versions:
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-3m3q-x3gj-f79x/GHSA-3m3q-x3gj-f79x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/a749db9820eb6d6224032a5a34223d286d2dcc2f
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-3m3q-x3gj-f79x
+    reference_type:
+    reference_id:

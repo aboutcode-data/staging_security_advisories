@@ -1,0 +1,37 @@
+advisory_id: GHSA-32fj-r8qw-r8w8
+datasource_id: github_osv_importer_v2/GHSA-32fj-r8qw-r8w8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-32fj-r8qw-r8w8/GHSA-32fj-r8qw-r8w8.json
+aliases:
+  - CVE-2024-45856
+summary: |
+  MindsDB Cross-site Scripting vulnerability
+  A cross-site scripting (XSS) vulnerability exists in all versions of the MindsDB platform, enabling the execution of a JavaScript payload whenever a user enumerates an ML Engine, database, project, or dataset containing arbitrary JavaScript code within the web UI.
+impacted_packages:
+  - purl: pkg:pypi/mindsdb
+    affected_versions: vers:pypi/<=24.9.2.1
+    fixed_versions:
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-32fj-r8qw-r8w8/GHSA-32fj-r8qw-r8w8.json
+  - score: '6.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-32fj-r8qw-r8w8/GHSA-32fj-r8qw-r8w8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://hiddenlayer.com/sai-security-advisory/2024-09-mindsdb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45856
+    reference_type:
+    reference_id:

@@ -1,0 +1,50 @@
+advisory_id: GHSA-2hh3-jmv8-5fmx
+datasource_id: github_osv_importer_v2/GHSA-2hh3-jmv8-5fmx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2hh3-jmv8-5fmx/GHSA-2hh3-jmv8-5fmx.json
+aliases:
+  - CVE-2016-5013
+summary: |
+  Moodle Does Not Escape Characters In Email Headers
+  In Moodle 2.x and 3.x, text injection can occur in email headers, potentially leading to outbound spam.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.1.0|<3.1.1
+    fixed_versions: vers:composer/3.1.1
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.0.4
+    fixed_versions: vers:composer/3.0.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=2.9.6
+    fixed_versions: vers:composer/2.9.7
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=2.8.0|<=2.8.12
+    fixed_versions:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=2.7.14
+    fixed_versions: vers:composer/2.7.15
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2hh3-jmv8-5fmx/GHSA-2hh3-jmv8-5fmx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/moodle/moodle/commit/ed63718caa48803843a14140d8a27f04aba9c8c4
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=336698
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-5013
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210123154543/http://www.securityfocus.com/bid/92040
+    reference_type:
+    reference_id:

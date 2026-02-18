@@ -1,0 +1,63 @@
+advisory_id: GHSA-2ww3-72rp-wpp4
+datasource_id: github_osv_importer_v2/GHSA-2ww3-72rp-wpp4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-2ww3-72rp-wpp4/GHSA-2ww3-72rp-wpp4.json
+aliases:
+  - CVE-2026-25592
+summary: |
+  Semantic Kernel has Arbitrary File Write via AI Agent Function Calling in .NET SDK
+  ### Impact
+  _What kind of vulnerability is it? Who is impacted?_
+
+  An Arbitrary File Write vulnerability has been identified in Microsoft's Semantic Kernel .NET SDK, specifically within the `SessionsPythonPlugin`.
+  Developers who have built applications which include Microsoft's Semantic Kernel .NET SDK and are using the `SessionsPythonPlugin`.
+
+  ### Patches
+  _Has the problem been patched? What versions should users upgrade to?_
+
+  The problem has been fixed in [Microsoft.SemanticKernel.Core version 1.70.0](https://www.nuget.org/packages/Microsoft.SemanticKernel.Core/1.70.0). Users should upgrade to version 1.70.0 or higher.
+
+  ### Workarounds
+  _Is there a way for users to fix or remediate the vulnerability without upgrading?_
+
+  Users can create a [Function Invocation Filter](https://learn.microsoft.com/en-us/semantic-kernel/concepts/enterprise-readiness/filters?pivots=programming-language-csharp#function-invocation-filter) which checks the arguments being passed to any calls to `DownloadFileAsync ` or `UploadFileAsync` and ensures the provided `localFilePath` is allow listed.
+
+  ### References
+  _Are there any links users can visit to find out more?_
+  - [Sample showing safe use of the CodeInterpreterPlugin](https://github.com/microsoft/semantic-kernel/blob/main/dotnet/samples/Demos/CodeInterpreterPlugin/Program.cs#L61-L64)
+  - [PR to Add file upload security controls to SessionsPythonPlugin](https://github.com/microsoft/semantic-kernel/pull/13478/changes#diff-88d3cacba2bfa84eef8f2aa171b34f9940338cbb784a3ffc49f5fe3af1b8943d)
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.SemanticKernel.Core
+    affected_versions: vers:nuget/<1.70.0
+    fixed_versions: vers:nuget/1.70.0
+  - purl: pkg:pypi/semantic-kernel
+    affected_versions: vers:pypi/<1.39.3
+    fixed_versions: vers:pypi/1.39.3
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-2ww3-72rp-wpp4/GHSA-2ww3-72rp-wpp4.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/microsoft/semantic-kernel
+    reference_type:
+    reference_id:
+  - url: https://github.com/microsoft/semantic-kernel/blob/main/dotnet/samples/Demos/CodeInterpreterPlugin/Program.cs#L61-L64
+    reference_type:
+    reference_id:
+  - url: https://github.com/microsoft/semantic-kernel/pull/13478/changes#diff-88d3cacba2bfa84eef8f2aa171b34f9940338cbb784a3ffc49f5fe3af1b8943d
+    reference_type:
+    reference_id:
+  - url: https://github.com/microsoft/semantic-kernel/security/advisories/GHSA-2ww3-72rp-wpp4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25592
+    reference_type:
+    reference_id:

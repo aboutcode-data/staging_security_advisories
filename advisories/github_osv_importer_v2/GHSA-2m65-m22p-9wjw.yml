@@ -1,0 +1,125 @@
+advisory_id: GHSA-2m65-m22p-9wjw
+datasource_id: github_osv_importer_v2/GHSA-2m65-m22p-9wjw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-2m65-m22p-9wjw/GHSA-2m65-m22p-9wjw.json
+aliases: []
+summary: |
+  Duplicate Advisory: .NET Information Disclosure Vulnerability
+  # Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-vh55-786g-wjwj. This link is maintained to preserve external references.
+
+  # Original Description
+  Microsoft is releasing this security advisory to provide information about a vulnerability in .NET Core 3.1 and .NET 6.0.  An information disclosure vulnerability exists in .NET Core 3.1 and .NET 6.0 that could lead to unauthorized access of privileged information.
+
+  ## Affected software
+
+  * Any .NET 6.0 application running on .NET 6.0.7 or earlier.
+  * Any .NET Core 3.1 applicaiton running on .NET Core 3.1.27 or earlier.
+
+  ## Patches
+
+  * If you're using .NET 6.0, you should download and install Runtime 6.0.8 or SDK 6.0.108 (for Visual Studio 2022 v17.1) from https://dotnet.microsoft.com/download/dotnet-core/6.0.
+  * If you're using .NET Core 3.1, you should download and install Runtime 3.1.28 (for Visual Studio 2019 v16.9) from https://dotnet.microsoft.com/download/dotnet-core/3.1.
+impacted_packages:
+  - purl: pkg:nuget/System.Security.Cryptography.Xml
+    affected_versions: vers:nuget/<4.7.1
+    fixed_versions: vers:nuget/4.7.1
+  - purl: pkg:nuget/System.Security.Cryptography.Xml
+    affected_versions: vers:nuget/>=5.0.0|<6.0.1
+    fixed_versions: vers:nuget/6.0.1
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.win-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.win-x64
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-x64
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.win-x86
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.win-x86
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.osx-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.osx-x64
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-musl-x64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-musl-x64
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-arm64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-arm64
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-arm
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-arm
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.win-arm64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.win-arm64
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.win-arm
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.win-arm
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-musl-arm64
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-musl-arm64
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-musl-arm
+    affected_versions: vers:nuget/>=3.1.0|<3.1.28
+    fixed_versions: vers:nuget/3.1.28
+  - purl: pkg:nuget/Microsoft.AspNetCore.App.Runtime.linux-musl-arm
+    affected_versions: vers:nuget/>=6.0.0|<6.0.8
+    fixed_versions: vers:nuget/6.0.8
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-2m65-m22p-9wjw/GHSA-2m65-m22p-9wjw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/dotnet/announcements/issues/232
+    reference_type:
+    reference_id:
+  - url: https://github.com/dotnet/aspnetcore/issues/43166
+    reference_type:
+    reference_id:
+  - url: https://github.com/dotnet/aspnetcore/security/advisories/GHSA-vh55-786g-wjwj
+    reference_type:
+    reference_id:
+  - url: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-34716
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-34716
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2022-34716
+    reference_type:
+    reference_id:

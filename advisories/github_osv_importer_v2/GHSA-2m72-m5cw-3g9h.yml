@@ -1,0 +1,54 @@
+advisory_id: GHSA-2m72-m5cw-3g9h
+datasource_id: github_osv_importer_v2/GHSA-2m72-m5cw-3g9h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2m72-m5cw-3g9h/GHSA-2m72-m5cw-3g9h.json
+aliases:
+  - CVE-2021-20283
+summary: |
+  Missing permission check in Moodle
+  The web service responsible for fetching other users' enrolled courses did not validate that the requesting user had permission to view that information in each course in moodle before 3.10.2, 3.9.5, 3.8.8, 3.5.17.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.10.0|<3.10.2
+    fixed_versions: vers:composer/3.10.2
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.9.0|<3.9.5
+    fixed_versions: vers:composer/3.9.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.8.0|<3.8.8
+    fixed_versions: vers:composer/3.8.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<3.5.17
+    fixed_versions: vers:composer/3.5.17
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2m72-m5cw-3g9h/GHSA-2m72-m5cw-3g9h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+  - CWE-863
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1939051
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AFSNJ7XHVTC52RSRX2GBQFF3VEEAY2MS
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UFH5DDMU5TZ3JT4Q52WMRAHACA5MHIMT
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=419654
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-20283
+    reference_type:
+    reference_id:

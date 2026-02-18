@@ -1,0 +1,52 @@
+advisory_id: GHSA-3m3h-v9hv-9j4h
+datasource_id: github_osv_importer_v2/GHSA-3m3h-v9hv-9j4h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-3m3h-v9hv-9j4h/GHSA-3m3h-v9hv-9j4h.json
+aliases:
+  - CVE-2021-25986
+summary: |
+  Cross-site Scripting in django-wiki
+  In Django-wiki, versions 0.0.20 to 0.7.8 are vulnerable to Stored Cross-Site Scripting (XSS) in Notifications Section. An attacker who has access to edit pages can inject JavaScript payload in the title field. When a victim gets a notification regarding the changes made in the application, the payload in the notification panel renders and loads external JavaScript.
+impacted_packages:
+  - purl: pkg:pypi/wiki
+    affected_versions: vers:pypi/>=0.0.20|<0.7.9
+    fixed_versions: vers:pypi/0.7.9
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-3m3h-v9hv-9j4h/GHSA-3m3h-v9hv-9j4h.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-3m3h-v9hv-9j4h/GHSA-3m3h-v9hv-9j4h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/django-wiki/django-wiki
+    reference_type:
+    reference_id:
+  - url: https://github.com/django-wiki/django-wiki/commit/9eaccc7519e4206a4d2f22640882f0737b2da9c5
+    reference_type:
+    reference_id:
+  - url: https://github.com/django-wiki/django-wiki/pull/1148
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/wiki/PYSEC-2021-850.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-25986
+    reference_type:
+    reference_id:
+  - url: https://pypi.org/project/wiki
+    reference_type:
+    reference_id:
+  - url: https://www.whitesourcesoftware.com/vulnerability-database/CVE-2021-25986
+    reference_type:
+    reference_id:

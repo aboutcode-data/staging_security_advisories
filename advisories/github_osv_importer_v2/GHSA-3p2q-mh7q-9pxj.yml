@@ -1,0 +1,32 @@
+advisory_id: GHSA-3p2q-mh7q-9pxj
+datasource_id: github_osv_importer_v2/GHSA-3p2q-mh7q-9pxj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-3p2q-mh7q-9pxj/GHSA-3p2q-mh7q-9pxj.json
+aliases: []
+summary: |
+  Duplicate Advisory: elFinder vulnerable to path traversal in LocalVolumeDriver connector
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-wm5g-p99q-66g4. This link is maintained to preserve external references.
+
+  ### Original Description
+  _joinPath in elFinderVolumeLocalFileSystem.class.php in elFinder before 2.1.62 allows path traversal in the PHP LocalVolumeDriver connector.
+impacted_packages:
+  - purl: pkg:composer/studio-42/elfinder
+    affected_versions: vers:composer/<2.1.62
+    fixed_versions: vers:composer/2.1.62
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/Studio-42/elFinder/commit/bb9aaa7b096a1b83f2f85657c43f12131ece2891
+    reference_type:
+    reference_id:
+  - url: https://github.com/Studio-42/elFinder/security/advisories/GHSA-wm5g-p99q-66g4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-35840
+    reference_type:
+    reference_id:

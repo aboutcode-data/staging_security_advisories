@@ -1,0 +1,46 @@
+advisory_id: GHSA-265q-222x-52m6
+datasource_id: github_osv_importer_v2/GHSA-265q-222x-52m6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-265q-222x-52m6/GHSA-265q-222x-52m6.json
+aliases: []
+summary: |
+  silverstripe/framework has potential SQL Injection vulnerability in PostgreSQL database connector
+  A potential SQL injection vulnerability was identified by using the silverstripe/postgresql database adapter. While unlikely to be exploitable, we have patched silverstripe/framework to ensure that table names are safely escaped before being passed to database adapters or user code.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=4.0.0-rc1|<4.0.6
+    fixed_versions: vers:composer/4.0.6
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=4.1.0-rc1|<4.1.4
+    fixed_versions: vers:composer/4.1.4
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=4.2.0-rc1|<4.2.3
+    fixed_versions: vers:composer/4.2.3
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-265q-222x-52m6/GHSA-265q-222x-52m6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/SS-2018-020-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/48bd335648188df9dae72be1e5f9c808f3fe1e77
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/fecedc2d98eeaaff6424fb59dc70ef6bdc6dc92d
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2018-020
+    reference_type:
+    reference_id:

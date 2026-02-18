@@ -1,0 +1,43 @@
+advisory_id: GHSA-2wqp-jmcc-mc77
+datasource_id: github_osv_importer_v2/GHSA-2wqp-jmcc-mc77
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-2wqp-jmcc-mc77/GHSA-2wqp-jmcc-mc77.json
+aliases:
+  - CVE-2021-31405
+summary: |
+  Regular expression denial of service (ReDoS) in EmailField component in Vaadin 14 and 15-17
+  Unsafe validation RegEx in `EmailField` component in `com.vaadin:vaadin-text-field-flow` versions 2.0.4 through 2.3.2 (Vaadin 14.0.6 through 14.4.3), and 3.0.0 through 4.0.2 (Vaadin 15.0.0 through 17.0.10) allows attackers to cause uncontrolled resource consumption by submitting malicious email addresses.
+
+  - https://vaadin.com/security/cve-2021-31405
+impacted_packages:
+  - purl: pkg:maven/com.vaadin/vaadin-bom
+    affected_versions: vers:maven/>=14.0.6|<14.4.4
+    fixed_versions: vers:maven/14.4.4
+  - purl: pkg:maven/com.vaadin/vaadin-bom
+    affected_versions: vers:maven/>=15.0.0|<17.0.11
+    fixed_versions: vers:maven/17.0.11
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-2wqp-jmcc-mc77/GHSA-2wqp-jmcc-mc77.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/vaadin/flow-components/pull/442
+    reference_type:
+    reference_id:
+  - url: https://github.com/vaadin/platform/security/advisories/GHSA-2wqp-jmcc-mc77
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-31405
+    reference_type:
+    reference_id:
+  - url: https://vaadin.com/security/cve-2021-31405
+    reference_type:
+    reference_id:

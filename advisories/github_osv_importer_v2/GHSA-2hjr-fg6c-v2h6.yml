@@ -1,0 +1,44 @@
+advisory_id: GHSA-2hjr-fg6c-v2h6
+datasource_id: github_osv_importer_v2/GHSA-2hjr-fg6c-v2h6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-2hjr-fg6c-v2h6/GHSA-2hjr-fg6c-v2h6.json
+aliases:
+  - CVE-2020-12668
+summary: |
+  Unauthorized access to Class instance in Jinjava
+  Jinjava before 2.5.4 allow access to arbitrary classes by calling Java methods on objects passed into a Jinjava context. This could allow for abuse of the application class loader, including Arbitrary File Disclosure.
+impacted_packages:
+  - purl: pkg:maven/com.hubspot.jinjava/jinjava
+    affected_versions: vers:maven/<2.5.4
+    fixed_versions: vers:maven/2.5.4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-2hjr-fg6c-v2h6/GHSA-2hjr-fg6c-v2h6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/HubSpot/jinjava/compare/jinjava-2.5.3...jinjava-2.5.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/HubSpot/jinjava/pull/426/commits/5dfa5b87318744a4d020b66d5f7747acc36b213b
+    reference_type:
+    reference_id:
+  - url: https://github.com/HubSpot/jinjava/pull/435/commits/1b9aaa4b420c58b4a301cf4b7d26207f1c8d1165
+    reference_type:
+    reference_id:
+  - url: https://github.com/HubSpot/jinjava/releases/tag/jinjava-2.5.4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-12668
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2020-072-hubspot_jinjava
+    reference_type:
+    reference_id:

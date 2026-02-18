@@ -1,0 +1,36 @@
+advisory_id: GHSA-2hw7-mxvj-m455
+datasource_id: github_osv_importer_v2/GHSA-2hw7-mxvj-m455
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-2hw7-mxvj-m455/GHSA-2hw7-mxvj-m455.json
+aliases:
+  - CVE-2021-3223
+summary: |
+  Path traversal in Node-RED-Dashboard
+  In Node-RED-Dashboard before 2.26.2 there is a path traversal vulnerability. It allows ui_base/js/..%2f directory traversal to read files.
+impacted_packages:
+  - purl: pkg:npm/node-red-dashboard
+    affected_versions: vers:npm/<2.26.2
+    fixed_versions: vers:npm/2.26.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/node-red/node-red-dashboard/commit/f48f356df966f607ba3d09c27396074b81f2ae97
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-red/node-red-dashboard/issues/669
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-red/node-red-dashboard/releases/tag/2.26.2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3223
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/node-red-dashboard
+    reference_type:
+    reference_id:

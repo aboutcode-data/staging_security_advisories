@@ -1,0 +1,72 @@
+advisory_id: GHSA-3f84-rpwh-47g6
+datasource_id: github_osv_importer_v2/GHSA-3f84-rpwh-47g6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-3f84-rpwh-47g6/GHSA-3f84-rpwh-47g6.json
+aliases:
+  - CVE-2024-49769
+summary: |
+  Waitress vulnerable to DoS leading to high CPU usage/resource exhaustion
+  ### Impact
+
+  When a remote client closes the connection before waitress has had the opportunity to call `getpeername()` waitress won't correctly clean up the connection leading to the main thread attempting to write to a socket that no longer exists, but not removing it from the list of sockets to attempt to process. This leads to a busy-loop calling the write function.
+
+  A remote attacker could run waitress out of available sockets with very little resources required.
+
+  ### Patches
+
+  Waitress 3.0.1 contains fixes that remove the race condition.
+
+  ### Workarounds
+
+  No work-around.
+
+  ### References
+
+  - https://github.com/Pylons/waitress/issues/418
+  - https://github.com/Pylons/waitress/pull/435
+impacted_packages:
+  - purl: pkg:pypi/waitress
+    affected_versions: vers:pypi/<3.0.1
+    fixed_versions: vers:pypi/3.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-3f84-rpwh-47g6/GHSA-3f84-rpwh-47g6.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-3f84-rpwh-47g6/GHSA-3f84-rpwh-47g6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-772
+references:
+  - url: https://github.com/Pylons/waitress
+    reference_type:
+    reference_id:
+  - url: https://github.com/Pylons/waitress/commit/1ae4e894c9f76543bee06584001583fc6fa8c95c
+    reference_type:
+    reference_id:
+  - url: https://github.com/Pylons/waitress/issues/418
+    reference_type:
+    reference_id:
+  - url: https://github.com/Pylons/waitress/pull/435
+    reference_type:
+    reference_id:
+  - url: https://github.com/Pylons/waitress/security/advisories/GHSA-3f84-rpwh-47g6
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/waitress/PYSEC-2024-211.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/11/msg00012.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-49769
+    reference_type:
+    reference_id:

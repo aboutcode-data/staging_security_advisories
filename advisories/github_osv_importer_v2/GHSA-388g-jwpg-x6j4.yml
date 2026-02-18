@@ -1,0 +1,42 @@
+advisory_id: GHSA-388g-jwpg-x6j4
+datasource_id: github_osv_importer_v2/GHSA-388g-jwpg-x6j4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-388g-jwpg-x6j4/GHSA-388g-jwpg-x6j4.json
+aliases: []
+summary: |
+  Cross-Site Scripting in swagger-ui
+  Versions of `swagger-ui` prior to 3.0.13 are vulnerable to Cross-Site Scripting (XSS). The package fails to sanitize YAML files imported from URLs or copied-pasted. This may allow attackers to execute arbitrary JavaScript.
+
+
+  ## Recommendation
+
+  Upgrade to version 3.0.13 or later.
+impacted_packages:
+  - purl: pkg:npm/swagger-ui
+    affected_versions: vers:npm/<3.0.13
+    fixed_versions: vers:npm/3.0.13
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-388g-jwpg-x6j4/GHSA-388g-jwpg-x6j4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/swagger-api/swagger-ui
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/issues/3163
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SWAGGERUI-449941
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/985
+    reference_type:
+    reference_id:

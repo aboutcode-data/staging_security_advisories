@@ -1,0 +1,41 @@
+advisory_id: GHSA-374w-gwqr-fmxg
+datasource_id: github_osv_importer_v2/GHSA-374w-gwqr-fmxg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-374w-gwqr-fmxg/GHSA-374w-gwqr-fmxg.json
+aliases:
+  - CVE-2022-33154
+summary: |
+  brotkrueml/schema fails to properly encode user input for output in HTML context, leading to XSS
+  The extension fails to properly encode user input for output in HTML context. A TYPO3 backend user account is required to exploit the vulnerability.
+impacted_packages:
+  - purl: pkg:composer/brotkrueml/schema
+    affected_versions: vers:composer/>=2.0.0|<2.5.1
+    fixed_versions: vers:composer/2.5.1
+  - purl: pkg:composer/brotkrueml/schema
+    affected_versions: vers:composer/<1.13.1
+    fixed_versions: vers:composer/1.13.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-374w-gwqr-fmxg/GHSA-374w-gwqr-fmxg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/brotkrueml/schema
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/brotkrueml/schema/CVE-2022-33154.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-33154
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2022-012
+    reference_type:
+    reference_id:

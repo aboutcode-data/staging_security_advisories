@@ -1,0 +1,51 @@
+advisory_id: GHSA-3gx9-37ww-9qw6
+datasource_id: github_osv_importer_v2/GHSA-3gx9-37ww-9qw6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-3gx9-37ww-9qw6/GHSA-3gx9-37ww-9qw6.json
+aliases:
+  - CVE-2022-22947
+summary: |
+  Spring Cloud Gateway vulnerable to Code Injection when Gateway Actuator endpoint enabled, exposed, unsecured
+  In Spring Cloud Gateway versions prior to 3.1.1+ and 3.0.7+ , applications are vulnerable to a code injection attack when the Gateway Actuator endpoint is enabled, exposed, and unsecured. A remote attacker could make a maliciously crafted request resulting in arbitrary remote execution on the remote host.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.cloud/spring-cloud-gateway
+    affected_versions: vers:maven/<3.0.7
+    fixed_versions: vers:maven/3.0.7
+  - purl: pkg:maven/org.springframework.cloud/spring-cloud-gateway
+    affected_versions: vers:maven/>=3.1.0|<3.1.1
+    fixed_versions: vers:maven/3.1.1
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-3gx9-37ww-9qw6/GHSA-3gx9-37ww-9qw6.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-917
+references:
+  - url: http://packetstormsecurity.com/files/166219/Spring-Cloud-Gateway-3.1.0-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/168742/Spring-Cloud-Gateway-3.1.0-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-22947
+    reference_type:
+    reference_id:
+  - url: https://tanzu.vmware.com/security/cve-2022-22947
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/java/webapps/50799.py
+    reference_type: exploit
+    reference_id: CVE-2022-22947

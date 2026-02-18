@@ -1,0 +1,38 @@
+advisory_id: GHSA-28w5-j8xj-2xwc
+datasource_id: github_osv_importer_v2/GHSA-28w5-j8xj-2xwc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-28w5-j8xj-2xwc/GHSA-28w5-j8xj-2xwc.json
+aliases:
+  - CVE-2021-36788
+summary: |
+  Cross-site Scripting in the yoast_seo TYPO3 extension
+  The extension fails to properly encode user input for output in HTML context. A TYPO3 backend user account is required to exploit the vulnerability.
+impacted_packages:
+  - purl: pkg:composer/yoast-seo-for-typo3/yoast_seo
+    affected_versions: vers:composer/<7.2.3
+    fixed_versions: vers:composer/7.2.3
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-28w5-j8xj-2xwc/GHSA-28w5-j8xj-2xwc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Yoast/Yoast-SEO-for-TYPO3
+    reference_type:
+    reference_id:
+  - url: https://github.com/Yoast/Yoast-SEO-for-TYPO3/commit/a8278dae97dce8cd0722d38f7f5a30b563668590
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-36788
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2021-012
+    reference_type:
+    reference_id:

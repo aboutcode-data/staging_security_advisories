@@ -1,0 +1,36 @@
+advisory_id: GHSA-38g6-x6jv-jwff
+datasource_id: github_osv_importer_v2/GHSA-38g6-x6jv-jwff
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-38g6-x6jv-jwff/GHSA-38g6-x6jv-jwff.json
+aliases:
+  - CVE-2021-29002
+summary: |
+  Plone XSS Vulnerability
+  A stored cross-site scripting (XSS) vulnerability in Plone CMS 5.2.3 exists in site-controlpanel via the `form.widgets.site_title` parameter.
+impacted_packages:
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/<=5.2.3
+    fixed_versions:
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/plone/Plone
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/Products.CMFPlone/issues/3255
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/plone/PYSEC-2021-889.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29002
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/49668
+    reference_type:
+    reference_id:

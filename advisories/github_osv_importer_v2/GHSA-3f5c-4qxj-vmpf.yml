@@ -1,0 +1,38 @@
+advisory_id: GHSA-3f5c-4qxj-vmpf
+datasource_id: github_osv_importer_v2/GHSA-3f5c-4qxj-vmpf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/12/GHSA-3f5c-4qxj-vmpf/GHSA-3f5c-4qxj-vmpf.json
+aliases:
+  - CVE-2017-16877
+summary: |
+  Next.js Directory Traversal Vulnerability
+  Next.js before 2.4.1 has directory traversal under the `/_next` and `/static` request namespace, allowing attackers to obtain sensitive information.
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=1.0.0|<2.4.1
+    fixed_versions: vers:npm/2.4.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/12/GHSA-3f5c-4qxj-vmpf/GHSA-3f5c-4qxj-vmpf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/vercel/next.js/commit/02fe7cf63f6265d73bdaf8bc50a4f2fb539dcd00
+    reference_type:
+    reference_id:
+  - url: https://github.com/zeit/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/zeit/next.js/releases/tag/2.4.1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16877
+    reference_type:
+    reference_id:

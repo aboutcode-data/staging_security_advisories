@@ -1,0 +1,49 @@
+advisory_id: GHSA-32hw-3pvh-vcvc
+datasource_id: github_osv_importer_v2/GHSA-32hw-3pvh-vcvc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-32hw-3pvh-vcvc/GHSA-32hw-3pvh-vcvc.json
+aliases:
+  - CVE-2021-27909
+summary: "XSS vulnerability on password reset page\n### Impact\nFor Mautic versions prior to\
+  \ 3.3.4, there is an XSS vulnerability on Mautic's password reset page where a vulnerable\
+  \ parameter, \"bundle,\" in the URL could allow an attacker to execute Javascript code. The\
+  \ attacker would be required to convince or trick the target into clicking a password reset\
+  \ URL with the vulnerable parameter utilized. \n\n### Patches\n\nUpgrade to 3.3.4 or 4.0.0\n\
+  \n### Workarounds\n\nNo\n\n### References\n\nhttps://github.com/mautic/mautic/releases/tag/3.3.4\n\
+  https://github.com/mautic/mautic/releases/tag/4.0.0\n\n### For more information\nIf you have\
+  \ any questions or comments about this advisory:\n* Email us at [security@mautic.org](mailto:security@mautic.org)"
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/<3.3.4
+    fixed_versions: vers:composer/3.3.4
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=4.0.0-alpha1|<4.0.0
+    fixed_versions: vers:composer/4.0.0
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-32hw-3pvh-vcvc/GHSA-32hw-3pvh-vcvc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/mautic/core/CVE-2021-27909.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/commit/942cb6992df619fdf1c181bfad9e25d5d4178b6f
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-32hw-3pvh-vcvc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-27909
+    reference_type:
+    reference_id:

@@ -1,0 +1,79 @@
+advisory_id: GHSA-25w4-hfqg-4r52
+datasource_id: github_osv_importer_v2/GHSA-25w4-hfqg-4r52
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-25w4-hfqg-4r52/GHSA-25w4-hfqg-4r52.json
+aliases:
+  - CVE-2023-5675
+summary: |
+  Quarkus: authorization flaw in quarkus resteasy reactive and classic
+  A flaw was found in Quarkus. When a Quarkus RestEasy Classic or Reactive JAX-RS endpoint has its methods declared in the abstract Java class or customized by Quarkus extensions using the annotation processor, the authorization of these methods will not be enforced if it is enabled by either 'quarkus.security.jaxrs.deny-unannotated-endpoints' or 'quarkus.security.jaxrs.default-roles-allowed' properties.
+
+  While backports of this fix exist in versions 3.6.9 and 3.7.1 users of older versions are encouraged to update to the 3.8.x LTS branch.
+impacted_packages:
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy-reactive-common-deployment
+    affected_versions: vers:maven/<3.2.10.Final
+    fixed_versions: vers:maven/3.2.10.Final
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy-reactive-common
+    affected_versions: vers:maven/<3.2.10.Final
+    fixed_versions: vers:maven/3.2.10.Final
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy-reactive-common-deployment
+    affected_versions: vers:maven/>=3.3.0|<3.6.9
+    fixed_versions: vers:maven/3.6.9
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy-reactive-common
+    affected_versions: vers:maven/>=3.3.0|<3.6.9
+    fixed_versions: vers:maven/3.6.9
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy-reactive-common-deployment
+    affected_versions: vers:maven/>=3.7.0|<3.7.1
+    fixed_versions: vers:maven/3.7.1
+  - purl: pkg:maven/io.quarkus/quarkus-resteasy-reactive-common
+    affected_versions: vers:maven/>=3.7.0|<3.7.1
+    fixed_versions: vers:maven/3.7.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-25w4-hfqg-4r52/GHSA-25w4-hfqg-4r52.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-25w4-hfqg-4r52/GHSA-25w4-hfqg-4r52.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-285
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:0494
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:0495
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-5675
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2245197
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/b7dd69a3012a872f2846d73072ff232e07da74dd
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/bf2ef6c504b989f74ceb5947d823b6ab208f8b6e
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/c026b1cf6f2e07cc50b65c824d922319248d9341
+    reference_type:
+    reference_id:
+  - url: https://github.com/quarkusio/quarkus/commit/d802748128cd1932279b7c334f3792d481814ef5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5675
+    reference_type:
+    reference_id:

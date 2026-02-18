@@ -1,0 +1,55 @@
+advisory_id: GHSA-333x-9vgq-v2j4
+datasource_id: github_osv_importer_v2/GHSA-333x-9vgq-v2j4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-333x-9vgq-v2j4/GHSA-333x-9vgq-v2j4.json
+aliases:
+  - CVE-2015-5688
+summary: |
+  Directory Traversal in geddy
+  Versions 13.0.8 and earlier of geddy are vulnerable to a directory traversal attack via URI encoded attack vectors.
+
+  ### Proof of Concept
+  ```
+  http://localhost:4000/..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc/passwd
+  ```
+
+
+  ## Recommendation
+
+  Update geddy to version >= 13.0.8
+impacted_packages:
+  - purl: pkg:npm/geddy
+    affected_versions: vers:npm/<13.0.8
+    fixed_versions: vers:npm/13.0.8
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/advisories/GHSA-333x-9vgq-v2j4
+    reference_type:
+    reference_id:
+  - url: https://github.com/geddy/geddy
+    reference_type:
+    reference_id:
+  - url: https://github.com/geddy/geddy/commit/2de63b68b3aa6c08848f261ace550a37959ef231
+    reference_type:
+    reference_id:
+  - url: https://github.com/geddy/geddy/issues/697
+    reference_type:
+    reference_id:
+  - url: https://github.com/geddy/geddy/pull/699
+    reference_type:
+    reference_id:
+  - url: https://github.com/geddy/geddy/releases/tag/v13.0.8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-5688
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/10
+    reference_type:
+    reference_id:

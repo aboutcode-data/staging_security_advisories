@@ -1,0 +1,95 @@
+advisory_id: GHSA-29j3-2446-5j4w
+datasource_id: github_osv_importer_v2/GHSA-29j3-2446-5j4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-29j3-2446-5j4w/GHSA-29j3-2446-5j4w.json
+aliases:
+  - CVE-2020-25592
+summary: |
+  SaltStack Salt Improper Validation of eauth credentials and tokens in salt-netapi
+  In SaltStack the salt-netapi improperly validates eauth credentials and tokens. A user can bypass authentication and invoke Salt SSH.
+impacted_packages:
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/<2015.8.13
+    fixed_versions: vers:pypi/2015.8.13
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2016.3.0|<2016.3.8
+    fixed_versions: vers:pypi/2016.3.8
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2016.11.0|<2016.11.10
+    fixed_versions: vers:pypi/2016.11.10
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2017.5.0|<2017.7.8
+    fixed_versions: vers:pypi/2017.7.8
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2018.2.0|<2018.3.5
+    fixed_versions: vers:pypi/2018.3.5
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2019.2.0|<2019.2.7
+    fixed_versions: vers:pypi/2019.2.7
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=3000.0|<3000.5
+    fixed_versions: vers:pypi/3000.5
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=3001.0|<3001.3
+    fixed_versions: vers:pypi/3001.3
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=3002.0|<3002.1
+    fixed_versions: vers:pypi/3002.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-29j3-2446-5j4w/GHSA-29j3-2446-5j4w.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2020-11/msg00029.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/160039/SaltStack-Salt-REST-API-Arbitrary-Command-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://docs.saltstack.com/en/latest/topics/releases/index.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/salt/PYSEC-2020-106.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/blob/8f9405cf8e6f7d7776d5000841c886dec6d96250/doc/topics/releases/2019.2.7.rst#L12
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/blob/8f9405cf8e6f7d7776d5000841c886dec6d96250/doc/topics/releases/3000.5.rst#L12
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/blob/8f9405cf8e6f7d7776d5000841c886dec6d96250/doc/topics/releases/3001.3.rst#L12
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/blob/8f9405cf8e6f7d7776d5000841c886dec6d96250/doc/topics/releases/3002.1.rst#L14
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2020/12/msg00007.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TPOGB2F6XUAIGFDTOCQDNB2VIXFXHWMA
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-25592
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202011-13
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2021/dsa-4837
+    reference_type:
+    reference_id:
+  - url: https://www.saltstack.com/blog/on-november-3-2020-saltstack-publicly-disclosed-three-new-cves
+    reference_type:
+    reference_id:

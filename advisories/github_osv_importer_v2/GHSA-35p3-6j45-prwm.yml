@@ -1,0 +1,36 @@
+advisory_id: GHSA-35p3-6j45-prwm
+datasource_id: github_osv_importer_v2/GHSA-35p3-6j45-prwm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-35p3-6j45-prwm/GHSA-35p3-6j45-prwm.json
+aliases:
+  - CVE-2024-12778
+summary: |
+  Aim Uncontrolled Resource Consumption vulnerability
+  A vulnerability in aimhubio/aim version 3.25.0 allows for a denial of service (DoS) attack. The issue arises when a large number of tracked metrics are retrieved simultaneously from the Aim web API, causing the web server to become unresponsive. The root cause is the lack of a limit on the number of metrics that can be requested per call, combined with the server's single-threaded nature, leading to excessive resource consumption and blocking of the server.
+impacted_packages:
+  - purl: pkg:pypi/aim
+    affected_versions: vers:pypi/<=3.25.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-35p3-6j45-prwm/GHSA-35p3-6j45-prwm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-770
+references:
+  - url: https://github.com/aimhubio/aim
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/892a9eee-0251-4e57-94a4-dad2e7f32715
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-12778
+    reference_type:
+    reference_id:

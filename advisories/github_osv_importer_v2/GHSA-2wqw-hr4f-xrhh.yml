@@ -1,0 +1,49 @@
+advisory_id: GHSA-2wqw-hr4f-xrhh
+datasource_id: github_osv_importer_v2/GHSA-2wqw-hr4f-xrhh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-2wqw-hr4f-xrhh/GHSA-2wqw-hr4f-xrhh.json
+aliases:
+  - CVE-2024-27926
+summary: |
+  RSSHub Cross-site Scripting vulnerability caused by internal media proxy
+  ## Impact
+  When the specially crafted image is supplied to the internal media proxy, it proxies the image without handling XSS vulnerabilities, allowing for the execution of arbitrary JavaScript code.
+
+  Users who access the deliberately constructed URL are affected.
+
+  ## Patches
+
+  This vulnerability was fixed in version https://github.com/DIYgod/RSSHub/commit/4d3e5d79c1c17837e931b4cd253d2013b487aa87. Please upgrade to this or a later version.
+
+  ## Workarounds
+
+  No.
+impacted_packages:
+  - purl: pkg:npm/rsshub
+    affected_versions: vers:npm/>=1.0.0-master.cbbd829|<1.0.0-master.d8ca915
+    fixed_versions: vers:npm/1.0.0-master.d8ca915
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-2wqw-hr4f-xrhh/GHSA-2wqw-hr4f-xrhh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/DIYgod/RSSHub
+    reference_type:
+    reference_id:
+  - url: https://github.com/DIYgod/RSSHub/commit/4d3e5d79c1c17837e931b4cd253d2013b487aa87
+    reference_type:
+    reference_id:
+  - url: https://github.com/DIYgod/RSSHub/security/advisories/GHSA-2wqw-hr4f-xrhh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-27926
+    reference_type:
+    reference_id:

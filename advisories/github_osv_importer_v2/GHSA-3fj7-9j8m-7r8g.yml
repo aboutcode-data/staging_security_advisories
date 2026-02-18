@@ -1,0 +1,59 @@
+advisory_id: GHSA-3fj7-9j8m-7r8g
+datasource_id: github_osv_importer_v2/GHSA-3fj7-9j8m-7r8g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3fj7-9j8m-7r8g/GHSA-3fj7-9j8m-7r8g.json
+aliases:
+  - CVE-2019-3850
+summary: |
+  Moodle Stored HTML in assignment submission comments allowed links to be opened directly
+  A vulnerability was found in moodle before versions 3.6.3, 3.5.5, 3.4.8 and 3.1.17. Links within assignment submission comments would open directly (in the same window). Although links themselves may be valid, opening within the same window and without the no-referrer header policy made them more susceptible to exploits.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<3.1.17
+    fixed_versions: vers:composer/3.1.17
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.2.0|<3.4.8
+    fixed_versions: vers:composer/3.4.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.5.0|<3.5.5
+    fixed_versions: vers:composer/3.5.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.6.0|<3.6.3
+    fixed_versions: vers:composer/3.6.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3fj7-9j8m-7r8g/GHSA-3fj7-9j8m-7r8g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3850
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/1fc481dd7b09e08e85824c1fe6733b303a36bdce
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/772c908d40a944efd91d897d524b255626d330d4
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/907b377e51c32ea37feef53e10684b504e103273
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/d3f2f990dd3c5d4e6073a77154c6423d1c304647
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=384013#p1547745
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-3850
+    reference_type:
+    reference_id:

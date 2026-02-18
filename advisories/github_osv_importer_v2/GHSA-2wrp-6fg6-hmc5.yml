@@ -1,0 +1,49 @@
+advisory_id: GHSA-2wrp-6fg6-hmc5
+datasource_id: github_osv_importer_v2/GHSA-2wrp-6fg6-hmc5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-2wrp-6fg6-hmc5/GHSA-2wrp-6fg6-hmc5.json
+aliases:
+  - CVE-2024-22262
+summary: |
+  Spring Framework URL Parsing with Host Validation
+  Applications that use UriComponentsBuilder to parse an externally provided URL (e.g. through a query parameter) AND perform validation checks on the host of the parsed URL may be vulnerable to a  open redirect https://cwe.mitre.org/data/definitions/601.html  attack or to a SSRF attack if the URL is used after passing validation checks.
+
+  This is the same as  CVE-2024-22259 https://spring.io/security/cve-2024-22259  and  CVE-2024-22243 https://spring.io/security/cve-2024-22243 , but with different input.
+impacted_packages:
+  - purl: pkg:maven/org.springframework/spring-web
+    affected_versions: vers:maven/<5.3.34
+    fixed_versions: vers:maven/5.3.34
+  - purl: pkg:maven/org.springframework/spring-web
+    affected_versions: vers:maven/>=6.0.0|<6.0.19
+    fixed_versions: vers:maven/6.0.19
+  - purl: pkg:maven/org.springframework/spring-web
+    affected_versions: vers:maven/>=6.1.0|<6.1.6
+    fixed_versions: vers:maven/6.1.6
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-2wrp-6fg6-hmc5/GHSA-2wrp-6fg6-hmc5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/spring-projects/spring-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/web/util/UriComponentsBuilder.java
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-22262
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240524-0003
+    reference_type:
+    reference_id:
+  - url: https://spring.io/security/cve-2024-22262
+    reference_type:
+    reference_id:

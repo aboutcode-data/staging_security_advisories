@@ -1,0 +1,75 @@
+advisory_id: GHSA-3hw2-h67c-wq66
+datasource_id: github_osv_importer_v2/GHSA-3hw2-h67c-wq66
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3hw2-h67c-wq66/GHSA-3hw2-h67c-wq66.json
+aliases:
+  - CVE-2021-42697
+summary: |
+  Uncontrolled Recursion in Akka HTTP
+  Akka HTTP 10.1.x and 10.2.x before 10.2.7 can encounter stack exhaustion while parsing HTTP headers, which allows a remote attacker to conduct a Denial of Service attack by sending a User-Agent header with deeply nested comments.
+impacted_packages:
+  - purl: pkg:maven/com.typesafe.akka/akka-http-core_2.13.0-RC3
+    affected_versions: vers:maven/<10.1.15
+    fixed_versions:
+  - purl: pkg:maven/com.typesafe.akka/akka-http-core_2.13.0-RC2
+    affected_versions: vers:maven/<10.1.15
+    fixed_versions:
+  - purl: pkg:maven/com.typesafe.akka/akka-http-core_2.13.0-M5
+    affected_versions: vers:maven/<10.1.15
+    fixed_versions:
+  - purl: pkg:maven/com.typesafe.akka/aakka-http-core_2.13.0-M3
+    affected_versions: vers:maven/<10.1.15
+    fixed_versions:
+  - purl: pkg:maven/com.typesafe.akka/akka-http-core_2.13
+    affected_versions: vers:maven/>=10.1.0|<10.1.15
+    fixed_versions: vers:maven/10.1.15
+  - purl: pkg:maven/com.typesafe.akka/akka-http-core_2.13
+    affected_versions: vers:maven/>=10.2.0-M1|<10.2.7
+    fixed_versions: vers:maven/10.2.7
+  - purl: pkg:maven/com.typesafe.akka/akka-http-core_2.12
+    affected_versions: vers:maven/>=10.1.0|<10.1.15
+    fixed_versions: vers:maven/10.1.15
+  - purl: pkg:maven/com.typesafe.akka/akka-http-core_2.12
+    affected_versions: vers:maven/>=10.2.0-M1|<10.2.7
+    fixed_versions: vers:maven/10.2.7
+  - purl: pkg:maven/com.typesafe.akka/akka-http-core_2.11
+    affected_versions: vers:maven/>=10.1.0|<10.1.15
+    fixed_versions: vers:maven/10.1.15
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-3hw2-h67c-wq66/GHSA-3hw2-h67c-wq66.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-674
+  - CWE-787
+references:
+  - url: http://packetstormsecurity.com/files/167018/Akka-HTTP-10.1.14-Denial-Of-Service.html
+    reference_type:
+    reference_id:
+  - url: https://akka.io/blog
+    reference_type:
+    reference_id:
+  - url: https://akka.io/blog/news/2021/11/02/akka-http-10.2.7-released
+    reference_type:
+    reference_id:
+  - url: https://akka.io/blog/news/2021/11/22/akka-http-10.1.15-released
+    reference_type:
+    reference_id:
+  - url: https://doc.akka.io/docs/akka-http/current/security/2021-CVE-2021-42697-stack-overflow-parsing-user-agent.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/akka/akka-http
+    reference_type:
+    reference_id:
+  - url: https://github.com/akka/akka-http/pull/3924
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-42697
+    reference_type:
+    reference_id:

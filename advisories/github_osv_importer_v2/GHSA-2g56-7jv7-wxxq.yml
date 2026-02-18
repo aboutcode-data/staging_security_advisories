@@ -1,0 +1,48 @@
+advisory_id: GHSA-2g56-7jv7-wxxq
+datasource_id: github_osv_importer_v2/GHSA-2g56-7jv7-wxxq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2g56-7jv7-wxxq/GHSA-2g56-7jv7-wxxq.json
+aliases:
+  - CVE-2013-5960
+summary: |
+  Missing Cryptographic Step in OWASP Enterprise Security API for Java
+  The authenticated-encryption feature in the symmetric-encryption implementation in the OWASP Enterprise Security API (ESAPI) for Java 2.x before 2.1.0.1 does not properly resist tampering with serialized ciphertext, which makes it easier for remote attackers to bypass intended cryptographic protection mechanisms via an attack against the intended cipher mode in a non-default configuration, a different vulnerability than CVE-2013-5679.
+impacted_packages:
+  - purl: pkg:maven/org.owasp.esapi/esapi
+    affected_versions: vers:maven/<=2.1.0.0
+    fixed_versions: vers:maven/2.1.0.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-325
+references:
+  - url: http://code.google.com/p/owasp-esapi-java/issues/detail?id=306
+    reference_type:
+    reference_id:
+  - url: http://lists.owasp.org/pipermail/esapi-dev/2013-August/002285.html
+    reference_type:
+    reference_id:
+  - url: http://owasp-esapi-java.googlecode.com/svn/trunk/documentation/ESAPI-security-bulletin1.pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/ESAPI/esapi-java-legacy
+    reference_type:
+    reference_id:
+  - url: https://github.com/ESAPI/esapi-java-legacy/blob/master/documentation/esapi4java-core-2.1.0.1-release-notes.txt
+    reference_type:
+    reference_id:
+  - url: https://github.com/ESAPI/esapi-java-legacy/commit/b7cbc53f9cc967cf1a5a9463d8c6fef9ed6ef4f7
+    reference_type:
+    reference_id:
+  - url: https://github.com/esapi/esapi-java-legacy/issues/306
+    reference_type:
+    reference_id:
+  - url: https://github.com/ESAPI/esapi-java-legacy/issues/359
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-5960
+    reference_type:
+    reference_id:

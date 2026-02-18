@@ -1,0 +1,55 @@
+advisory_id: GHSA-2p49-45hj-7mc9
+datasource_id: github_osv_importer_v2/GHSA-2p49-45hj-7mc9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-2p49-45hj-7mc9/GHSA-2p49-45hj-7mc9.json
+aliases:
+  - CVE-2026-24047
+summary: |
+  @backstage/cli-common has a possible `resolveSafeChildPath` Symlink Chain Bypass
+  ### Impact
+
+  The `resolveSafeChildPath` utility function in `@backstage/backend-plugin-api`, which is used to prevent path traversal attacks, failed to properly validate symlink chains and dangling symlinks. An attacker could bypass the path validation by:
+
+  1. **Symlink chains**: Creating `link1 → link2 → /outside` where intermediate symlinks eventually resolve outside the allowed directory
+  2. **Dangling symlinks**: Creating symlinks pointing to non-existent paths outside the base directory, which would later be created during file operations
+
+  This function is used by Scaffolder actions and other backend components to ensure file operations stay within designated directories.
+
+  ### Patches
+
+  This vulnerability is fixed in `@backstage/backend-plugin-api` version 0.1.17. Users should upgrade to this version or later.
+
+  ### Workarounds
+
+  - Run Backstage in a containerised environment with limited filesystem access
+  - Restrict template creation to trusted users
+impacted_packages:
+  - purl: pkg:npm/%40backstage/cli-common
+    affected_versions: vers:npm/<=0.1.16
+    fixed_versions: vers:npm/0.1.17
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-2p49-45hj-7mc9/GHSA-2p49-45hj-7mc9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-61
+  - CWE-59
+references:
+  - url: https://github.com/backstage/backstage
+    reference_type:
+    reference_id:
+  - url: https://github.com/backstage/backstage/commit/ae4dd5d1572a4f639e1a466fd982656b50f8e692
+    reference_type:
+    reference_id:
+  - url: https://github.com/backstage/backstage/security/advisories/GHSA-2p49-45hj-7mc9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24047
+    reference_type:
+    reference_id:

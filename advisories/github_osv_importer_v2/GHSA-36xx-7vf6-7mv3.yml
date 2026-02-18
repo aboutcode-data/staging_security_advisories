@@ -1,0 +1,74 @@
+advisory_id: GHSA-36xx-7vf6-7mv3
+datasource_id: github_osv_importer_v2/GHSA-36xx-7vf6-7mv3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-36xx-7vf6-7mv3/GHSA-36xx-7vf6-7mv3.json
+aliases:
+  - CVE-2023-32302
+summary: |
+  Silverstripe Framework: Members with no password can be created and bypass custom login forms
+  When a new `Member` record was created in the cms it was possible to set a blank password. If an attacker knows the email address of the user with the blank password then they can attempt to log in using an empty password. The default member authenticator, login form and basic auth all require a non-empty password, however if a custom authentication method is used it may allow a successful login with the empty password. Starting with this release, blank passwords are no no longer allowed when members are created in the CMS. Programatically created `Member` records, such as those used in unit tests, still allow blank passwords. You may have some `Member` records in your system already which have empty passwords. To detect these, you can loop over all `Member` records with `Member::get()` and pass each record into the below method. It might be sensible to create a [`BuildTask`](https://api.silverstripe.org/5/SilverStripe/Dev/BuildTask.html) for this purpose.
+    ```php
+      private function memberHasBlankPassword(Member $member): bool
+      {
+          // skip default admin as this is created programatically
+          if ($member->isDefaultAdmin()) {
+              return false;
+          }
+          // return true if a blank password is valid for this member
+          $authenticator = new MemberAuthenticator();
+          return $authenticator->checkPassword($member, '')->isValid();
+      }
+    ```
+    Once you have identified the records with empty passwords, it's up to you how to handle this. The most sensible way to resolve this is probably to generate a new secure password for each of these members, mark it as immediately expired, and email each affected member (assuming they have a valid email address in the system).
+
+  Users would need to opt-in to insecure behavior by using a configuration which allowed for empty passwords. These configurations are not expected and hence this advisory is primarily informational in nature.
+
+  Reported by: [Sabina Talipova](https://www.silverstripe.com/about-us/team/?member=sabina-talipova) from Silverstripe and [Christian Bünte](https://github.com/bimthebam)
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.0.0|<4.13.14
+    fixed_versions: vers:composer/4.13.14
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=5.0.0|<5.0.13
+    fixed_versions: vers:composer/5.0.13
+severities:
+  - score: '0.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-36xx-7vf6-7mv3/GHSA-36xx-7vf6-7mv3.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+  - CWE-20
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/CVE-2023-32302.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/pull/2575
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/7b21b38ac4532d06565dfcefad50540ebd2b50f4
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/releases/tag/4.13.14
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/releases/tag/5.0.13
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/security/advisories/GHSA-36xx-7vf6-7mv3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-32302
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/CVE-2023-32302
+    reference_type:
+    reference_id:

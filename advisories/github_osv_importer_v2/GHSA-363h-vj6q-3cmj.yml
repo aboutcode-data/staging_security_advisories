@@ -1,0 +1,77 @@
+advisory_id: GHSA-363h-vj6q-3cmj
+datasource_id: github_osv_importer_v2/GHSA-363h-vj6q-3cmj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/08/GHSA-363h-vj6q-3cmj/GHSA-363h-vj6q-3cmj.json
+aliases:
+  - CVE-2014-4671
+summary: |
+  Rosetta-Flash JSONP Vulnerability in hapi
+  This description taken from the pull request provided by Patrick Kettner.
+
+
+
+  Versions 6.1.0 and earlier of hapi are vulnerable to a rosetta-flash attack, which can be used by attackers to send data across domains and break the browser same-origin-policy.
+
+
+
+
+
+  ## Recommendation
+
+  - Update hapi to version 6.1.1 or later.
+
+  Alternatively, a solution previously implemented by Google, Facebook, and Github is to prepend callbacks with an empty inline comment. This will cause the flash parser to break on invalid inputs and prevent the issue, and how the issue has been resolved internally in hapi.
+impacted_packages:
+  - purl: pkg:npm/hapi
+    affected_versions: vers:npm/<6.1.0
+    fixed_versions: vers:npm/6.1.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: http://helpx.adobe.com/security/products/flash-player/apsb14-17.html
+    reference_type:
+    reference_id:
+  - url: http://miki.it/blog/2014/7/8/abusing-jsonp-with-rosetta-flash
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-0860.html
+    reference_type:
+    reference_id:
+  - url: http://secunia.com/advisories/59774
+    reference_type:
+    reference_id:
+  - url: http://secunia.com/advisories/59837
+    reference_type:
+    reference_id:
+  - url: http://security.gentoo.org/glsa/glsa-201407-02.xml
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/hapi/commit/d47f57abf23bdaa84f61aed2bac94ae5f358afb7
+    reference_type:
+    reference_id:
+  - url: https://github.com/patrickkettner
+    reference_type:
+    reference_id:
+  - url: https://github.com/spumko/hapi
+    reference_type:
+    reference_id:
+  - url: https://github.com/spumko/hapi/pull/1766
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-4671
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/12
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/68457
+    reference_type:
+    reference_id:
+  - url: http://www.securitytracker.com/id/1030533
+    reference_type:
+    reference_id:

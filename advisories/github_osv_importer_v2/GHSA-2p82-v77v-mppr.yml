@@ -1,0 +1,38 @@
+advisory_id: GHSA-2p82-v77v-mppr
+datasource_id: github_osv_importer_v2/GHSA-2p82-v77v-mppr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-2p82-v77v-mppr/GHSA-2p82-v77v-mppr.json
+aliases:
+  - CVE-2019-16060
+summary: |
+  Airbrake keys not being filtered
+  The Airbrake Ruby notifier 4.2.3 for Airbrake mishandles the blacklist_keys configuration option and consequently may disclose passwords to unauthorized actors. This is fixed in 4.2.4 (also, 4.2.2 and earlier are unaffected).
+impacted_packages:
+  - purl: pkg:gem/airbrake-ruby
+    affected_versions: vers:gem/4.2.3
+    fixed_versions: vers:gem/4.2.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/09/GHSA-2p82-v77v-mppr/GHSA-2p82-v77v-mppr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/airbrake/airbrake-ruby/issues/468
+    reference_type:
+    reference_id:
+  - url: https://github.com/airbrake/airbrake-ruby/pull/469/commits/d29925e7838031bf7dea7016b22de52532503796
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/airbrake-ruby/CVE-2019-16060.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16060
+    reference_type:
+    reference_id:

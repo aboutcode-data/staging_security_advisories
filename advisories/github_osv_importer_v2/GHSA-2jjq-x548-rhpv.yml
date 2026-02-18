@@ -1,0 +1,47 @@
+advisory_id: GHSA-2jjq-x548-rhpv
+datasource_id: github_osv_importer_v2/GHSA-2jjq-x548-rhpv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-2jjq-x548-rhpv/GHSA-2jjq-x548-rhpv.json
+aliases:
+  - CVE-2022-39266
+summary: |
+  isolated-vm has vulnerable CachedDataOptions in API
+  ### Impact
+  If the untrusted v8 cached data is passed to the API through CachedDataOptions, the attackers can bypass the sandbox and run arbitrary code in the nodejs process. Version 4.3.7 changes the documentation to warn users that they should not accept `cachedData` payloads from a user.
+impacted_packages:
+  - purl: pkg:npm/isolated-vm
+    affected_versions: vers:npm/<=4.3.6
+    fixed_versions: vers:npm/4.3.7
+severities:
+  - score: '9.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-2jjq-x548-rhpv/GHSA-2jjq-x548-rhpv.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-693
+  - CWE-20
+references:
+  - url: https://github.com/laverdet/isolated-vm
+    reference_type:
+    reference_id:
+  - url: https://github.com/laverdet/isolated-vm/commit/218e87a6d4e8cb818bea76d1ab30cd0be51920e8
+    reference_type:
+    reference_id:
+  - url: https://github.com/laverdet/isolated-vm/commits/v4.3.7
+    reference_type:
+    reference_id:
+  - url: https://github.com/laverdet/isolated-vm/issues/379
+    reference_type:
+    reference_id:
+  - url: https://github.com/laverdet/isolated-vm/security/advisories/GHSA-2jjq-x548-rhpv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-39266
+    reference_type:
+    reference_id:

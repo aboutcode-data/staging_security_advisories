@@ -1,0 +1,41 @@
+advisory_id: GHSA-2589-w6xf-983r
+datasource_id: github_osv_importer_v2/GHSA-2589-w6xf-983r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-2589-w6xf-983r/GHSA-2589-w6xf-983r.json
+aliases:
+  - CVE-2021-23398
+summary: |
+  Cross-site scripting in react-bootstrap-table
+  All versions of package react-bootstrap-table are vulnerable to Cross-site Scripting (XSS) via the dataFormat parameter. The problem is triggered when an invalid React element is returned, leading to dangerouslySetInnerHTML being used, which does not sanitize the output.
+impacted_packages:
+  - purl: pkg:npm/react-bootstrap-table
+    affected_versions: vers:npm/<=4.3.1
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-2589-w6xf-983r/GHSA-2589-w6xf-983r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/AllenFang/react-bootstrap-table/blob/26d07defab759e4f9bce22d1d568690830b8d9d7/src/TableBody.js%23L114-L118
+    reference_type:
+    reference_id:
+  - url: https://github.com/AllenFang/react-bootstrap-table/issues/2071
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23398
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1314286
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-REACTBOOTSTRAPTABLE-1314285
+    reference_type:
+    reference_id:

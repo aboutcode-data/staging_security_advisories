@@ -1,0 +1,45 @@
+advisory_id: GHSA-2qp4-g3q3-f92w
+datasource_id: github_osv_importer_v2/GHSA-2qp4-g3q3-f92w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-2qp4-g3q3-f92w/GHSA-2qp4-g3q3-f92w.json
+aliases:
+  - CVE-2022-24329
+summary: |
+  Improper Locking in JetBrains Kotlin
+  In JetBrains Kotlin before 1.6.0, it was not possible to lock dependencies for Multiplatform Gradle Projects.
+impacted_packages:
+  - purl: pkg:maven/org.jetbrains.kotlin/kotlin-stdlib
+    affected_versions: vers:maven/<=1.5.32
+    fixed_versions: vers:maven/1.6.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-2qp4-g3q3-f92w/GHSA-2qp4-g3q3-f92w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-829
+  - CWE-667
+references:
+  - url: https://blog.jetbrains.com
+    reference_type:
+    reference_id:
+  - url: https://blog.jetbrains.com/blog/2022/02/08/jetbrains-security-bulletin-q4-2021
+    reference_type:
+    reference_id:
+  - url: https://github.com/JetBrains/kotlin
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24329
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

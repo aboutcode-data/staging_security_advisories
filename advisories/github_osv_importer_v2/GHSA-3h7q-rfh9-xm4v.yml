@@ -1,0 +1,71 @@
+advisory_id: GHSA-3h7q-rfh9-xm4v
+datasource_id: github_osv_importer_v2/GHSA-3h7q-rfh9-xm4v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-3h7q-rfh9-xm4v/GHSA-3h7q-rfh9-xm4v.json
+aliases:
+  - CVE-2024-31208
+summary: |
+  Synapse V2 state resolution weakness allows Denial of Service (DoS)
+  ### Impact
+
+  A remote Matrix user with malicious intent, sharing a room with Synapse instances before 1.105.1, can dispatch specially crafted events to exploit a weakness in how the auth chain cover index is calculated. This can induce high CPU consumption and accumulate excessive data in the database of such instances, resulting in a denial of service.
+
+  Servers in private federations, or those that do not federate, are not affected.
+
+  ### Patches
+
+  Server administrators should upgrade to 1.105.1 or later.
+
+  ### Workarounds
+
+  One can:
+  - ban the malicious users or ACL block servers from the rooms; and/or
+  - leave the room and purge the room using the admin API
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, please email us at [security AT element.io](mailto:security@element.io).
+impacted_packages:
+  - purl: pkg:pypi/matrix-synapse
+    affected_versions: vers:pypi/<1.105.1
+    fixed_versions: vers:pypi/1.105.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-3h7q-rfh9-xm4v/GHSA-3h7q-rfh9-xm4v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/element-hq/synapse
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-hq/synapse/commit/55b0aa847a61774b6a3acdc4b177a20dc019f01a
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-hq/synapse/releases/tag/v1.105.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-hq/synapse/security/advisories/GHSA-3h7q-rfh9-xm4v
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/matrix-synapse/PYSEC-2024-50.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R6FCCO4ODTZ3FDS7TMW76PKOSEL2TQVB
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RR53FNHV446CB37TP45GZ6F6HZLZCK3K
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VSF4NJJSTSQRJQ47PLYYSCFYKJBP7DET
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-31208
+    reference_type:
+    reference_id:

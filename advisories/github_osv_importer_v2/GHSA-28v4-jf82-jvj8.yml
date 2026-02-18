@@ -1,0 +1,41 @@
+advisory_id: GHSA-28v4-jf82-jvj8
+datasource_id: github_osv_importer_v2/GHSA-28v4-jf82-jvj8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-28v4-jf82-jvj8/GHSA-28v4-jf82-jvj8.json
+aliases:
+  - CVE-2022-37262
+summary: |
+  steal vulnerable to Regular Expression Denial of Service via source and sourceWithComments
+  A Regular Expression Denial of Service (ReDoS) flaw was found in stealjs steal via the source and sourceWithComments variable in main.js.
+impacted_packages:
+  - purl: pkg:npm/steal
+    affected_versions: vers:npm/<=2.3.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-28v4-jf82-jvj8/GHSA-28v4-jf82-jvj8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/stealjs/steal
+    reference_type:
+    reference_id:
+  - url: https://github.com/stealjs/steal/blob/c9dd1eb19ed3f97aeb93cf9dcea5d68ad5d0ced9/main.js#L3497
+    reference_type:
+    reference_id:
+  - url: https://github.com/stealjs/steal/blob/c9dd1eb19ed3f97aeb93cf9dcea5d68ad5d0ced9/main.js#L3507
+    reference_type:
+    reference_id:
+  - url: https://github.com/stealjs/steal/issues/1531
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37262
+    reference_type:
+    reference_id:

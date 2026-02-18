@@ -1,0 +1,59 @@
+advisory_id: GHSA-37gf-gmxv-74wv
+datasource_id: github_osv_importer_v2/GHSA-37gf-gmxv-74wv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-37gf-gmxv-74wv/GHSA-37gf-gmxv-74wv.json
+aliases:
+  - CVE-2026-1486
+summary: |
+  Keycloak fails to verify if an Identity Provider (IdP) is enabled before issuing tokens
+  A flaw was found in Keycloak. A vulnerability exists in the jwt-authorization-grant flow where the server fails to verify if an Identity Provider (IdP) is enabled before issuing tokens. The issuer lookup mechanism (lookupIdentityProviderFromIssuer) retrieves the IdP configuration but does not filter for isEnabled=false. If an administrator disables an IdP (e.g., due to a compromise or offboarding), an entity possessing that IdP's signing key can still generate valid JWT assertions that Keycloak accepts, resulting in the issuance of valid access tokens.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/>=26.5.0|<26.5.3
+    fixed_versions: vers:maven/26.5.3
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<26.4.9
+    fixed_versions: vers:maven/26.4.9
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-37gf-gmxv-74wv/GHSA-37gf-gmxv-74wv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-358
+references:
+  - url: https://access.redhat.com/errata/RHSA-2026:2365
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2026:2366
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2026-1486
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2433347
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/176dc8902ce552056d3648c4601d519afc6fb043
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/8316e8538f0037d9f998181e73122cff93a94035
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/issues/46146
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/46148
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-1486
+    reference_type:
+    reference_id:

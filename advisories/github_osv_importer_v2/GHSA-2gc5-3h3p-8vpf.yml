@@ -1,0 +1,35 @@
+advisory_id: GHSA-2gc5-3h3p-8vpf
+datasource_id: github_osv_importer_v2/GHSA-2gc5-3h3p-8vpf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2gc5-3h3p-8vpf/GHSA-2gc5-3h3p-8vpf.json
+aliases:
+  - CVE-2018-19993
+summary: |
+  Dolibarr reflected cross-site scripting (XSS) vulnerability
+  A reflected cross-site scripting (XSS) vulnerability in Dolibarr 8.0.2 allows remote attackers to inject arbitrary web script or HTML via the transphrase parameter to public/notice.php.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<8.0.4
+    fixed_versions: vers:composer/8.0.4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-2gc5-3h3p-8vpf/GHSA-2gc5-3h3p-8vpf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/fc3fcc5455d9a610b85723e89e8be43a41ad1378
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-19993
+    reference_type:
+    reference_id:

@@ -1,0 +1,49 @@
+advisory_id: GHSA-393x-fr59-r8fg
+datasource_id: github_osv_importer_v2/GHSA-393x-fr59-r8fg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-393x-fr59-r8fg/GHSA-393x-fr59-r8fg.json
+aliases:
+  - CVE-2018-3771
+summary: |
+  statics-server Cross-site Scripting vulnerability
+  An XSS in statics-server <= 0.0.9 can be used via injected iframe in the filename when statics-server displays directory index in the browser. Statics-server does not implement any HTML escaping when displays directory index in the browser. Variable `v` is used in `<a href>` element without escaping, which allows to embed HTML `<iframe>` tag with `src` attribute points to another HTML file in the directory. This file can contain malicious JavaScript code, which will be executed:
+
+  ```js
+  // ./node_modules/statics-server/index.js, line 18:
+
+      if(fs.lstatSync(staticPath).isDirectory()){
+          var files=fs.readdirSync(staticPath);
+          var lis='';
+          files.forEach((v,i)=>{
+              if(fs.lstatSync(path.resolve(staticPath,v)).isDirectory()){
+                  lis+=`<li><a href="${req.url}${v}/">${v}/</a></li>`;
+              }else {
+                  lis+=`<li><a href="${req.url}${v}">${v}</a></li>`
+              }
+          });
+
+          (...)
+  ```
+impacted_packages:
+  - purl: pkg:npm/statics-server
+    affected_versions: vers:npm/<=0.0.9
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-393x-fr59-r8fg/GHSA-393x-fr59-r8fg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://hackerone.com/reports/355458
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-3771
+    reference_type:
+    reference_id:

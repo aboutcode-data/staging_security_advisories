@@ -1,0 +1,42 @@
+advisory_id: GHSA-3f7v-qx94-666m
+datasource_id: github_osv_importer_v2/GHSA-3f7v-qx94-666m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-3f7v-qx94-666m/GHSA-3f7v-qx94-666m.json
+aliases:
+  - CVE-2025-32372
+summary: |
+  DotNetNuke.Core Vulnerable to Server-Side Request Forgery (SSRF)
+  A bypass has been identified for the previously known vulnerability CVE-2017-0929, allowing unauthenticated attackers to execute arbitrary GET requests against target systems, including internal or adjacent networks.
+
+  ### Impact
+
+  This vulnerability facilitates a semi-blind SSRF attack, allowing attackers to make the target server send requests to internal or external URLs without viewing the full responses. Potential impacts include internal network reconnaissance, bypassing firewalls.
+impacted_packages:
+  - purl: pkg:nuget/DotNetNuke.Core
+    affected_versions: vers:nuget/<9.13.8
+    fixed_versions: vers:nuget/9.13.8
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-3f7v-qx94-666m/GHSA-3f7v-qx94-666m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/dnnsoftware/Dnn.Platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnnsoftware/Dnn.Platform/commit/4721dd9eef846936d3b1a3676499e46968d15feb
+    reference_type:
+    reference_id:
+  - url: https://github.com/dnnsoftware/Dnn.Platform/security/advisories/GHSA-3f7v-qx94-666m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-32372
+    reference_type:
+    reference_id:

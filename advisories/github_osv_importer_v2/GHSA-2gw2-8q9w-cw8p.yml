@@ -1,0 +1,44 @@
+advisory_id: GHSA-2gw2-8q9w-cw8p
+datasource_id: github_osv_importer_v2/GHSA-2gw2-8q9w-cw8p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/08/GHSA-2gw2-8q9w-cw8p/GHSA-2gw2-8q9w-cw8p.json
+aliases:
+  - CVE-2018-1000201
+summary: |
+  Ruby-ffi has a DLL loading issue
+  ruby-ffi version 1.9.23 and earlier has a DLL loading issue which can be hijacked on Windows OS, when a Symbol is used as DLL name instead of a String This vulnerability appears to have been fixed in v1.9.24 and later.
+impacted_packages:
+  - purl: pkg:gem/ffi
+    affected_versions: vers:gem/<1.9.24
+    fixed_versions: vers:gem/1.9.24
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/08/GHSA-2gw2-8q9w-cw8p/GHSA-2gw2-8q9w-cw8p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-426
+references:
+  - url: https://github.com/ffi/ffi
+    reference_type:
+    reference_id:
+  - url: https://github.com/ffi/ffi/commit/09e0c6076466b4383da7fa4e13f714311109945a
+    reference_type:
+    reference_id:
+  - url: https://github.com/ffi/ffi/commit/e0fe486df0e117ed67b0282b6ada04b7214ca05c
+    reference_type:
+    reference_id:
+  - url: https://github.com/ffi/ffi/releases/tag/1.9.24
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/ffi/CVE-2018-1000201.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000201
+    reference_type:
+    reference_id:

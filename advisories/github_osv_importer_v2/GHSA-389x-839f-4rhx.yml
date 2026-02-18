@@ -1,0 +1,55 @@
+advisory_id: GHSA-389x-839f-4rhx
+datasource_id: github_osv_importer_v2/GHSA-389x-839f-4rhx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-389x-839f-4rhx/GHSA-389x-839f-4rhx.json
+aliases:
+  - CVE-2025-25193
+summary: |
+  Denial of Service attack on windows app using Netty
+  ### Summary
+  An unsafe reading of environment file could potentially cause a denial of service in Netty.
+  When loaded on an Windows application, Netty attemps to load a file that does not exist. If an attacker creates such a large file, the Netty application crash.
+
+  ### Details
+  A similar issue was previously reported in https://github.com/netty/netty/security/advisories/GHSA-xq3w-v528-46rv
+  This issue was fixed, but the fix was incomplete in that null-bytes were not counted against the input limit.
+
+
+  ### PoC
+  The PoC is the same as for https://github.com/netty/netty/security/advisories/GHSA-xq3w-v528-46rv with the detail that the file should only contain null-bytes; 0x00.
+  When the null-bytes are encountered by the `InputStreamReader`, it will issue replacement characters in its charset decoding, which will fill up the line-buffer in the `BufferedReader.readLine()`, because the replacement character is not a line-break character.
+
+  ### Impact
+  Impact is the same as https://github.com/netty/netty/security/advisories/GHSA-xq3w-v528-46rv
+impacted_packages:
+  - purl: pkg:maven/io.netty/netty-common
+    affected_versions: vers:maven/<4.1.118.Final
+    fixed_versions: vers:maven/4.1.118.Final
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-389x-839f-4rhx/GHSA-389x-839f-4rhx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/netty/netty
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/commit/d1fbda62d3a47835d3fb35db8bd42ecc205a5386
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/security/advisories/GHSA-389x-839f-4rhx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-25193
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20250221-0006
+    reference_type:
+    reference_id:

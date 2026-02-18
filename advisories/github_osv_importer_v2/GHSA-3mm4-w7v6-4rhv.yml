@@ -1,0 +1,41 @@
+advisory_id: GHSA-3mm4-w7v6-4rhv
+datasource_id: github_osv_importer_v2/GHSA-3mm4-w7v6-4rhv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-3mm4-w7v6-4rhv/GHSA-3mm4-w7v6-4rhv.json
+aliases:
+  - CVE-2022-23435
+summary: |
+  android-gif-drawable vulerable to denial of service due to unrestricted comment length
+  decoding.c in android-gif-drawable before 1.2.24 does not limit the maximum length of a comment, leading to denial of service.
+impacted_packages:
+  - purl: pkg:maven/pl.droidsonroids.gif/android-gif-drawable
+    affected_versions: vers:maven/<1.2.24
+    fixed_versions: vers:maven/1.2.24
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-3mm4-w7v6-4rhv/GHSA-3mm4-w7v6-4rhv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/koral--/android-gif-drawable
+    reference_type:
+    reference_id:
+  - url: https://github.com/koral--/android-gif-drawable/commit/9f0f0c89e6fa38548163771feeb4bde84b828887
+    reference_type:
+    reference_id:
+  - url: https://github.com/koral--/android-gif-drawable/compare/v1.2.23...v1.2.24
+    reference_type:
+    reference_id:
+  - url: https://github.com/koral--/android-gif-drawable/issues/792#issuecomment-1048850678
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23435
+    reference_type:
+    reference_id:

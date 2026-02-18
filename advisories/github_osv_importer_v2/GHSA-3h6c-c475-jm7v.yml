@@ -1,0 +1,65 @@
+advisory_id: GHSA-3h6c-c475-jm7v
+datasource_id: github_osv_importer_v2/GHSA-3h6c-c475-jm7v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-3h6c-c475-jm7v/GHSA-3h6c-c475-jm7v.json
+aliases:
+  - CVE-2020-14144
+summary: |
+  Arbitrary Code Execution in Gitea
+  The git hook feature in Gitea 1.1.0 through 1.12.5 allows for authenticated remote code execution.
+impacted_packages: []
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-3h6c-c475-jm7v/GHSA-3h6c-c475-jm7v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: http://packetstormsecurity.com/files/162122/Gitea-Git-Hooks-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://docs.github.com/en/enterprise-server@2.19/admin/policies/creating-a-pre-receive-hook-script
+    reference_type:
+    reference_id:
+  - url: https://docs.github.com/en/enterprise-server%402.19/admin/policies/creating-a-pre-receive-hook-script
+    reference_type:
+    reference_id:
+  - url: https://docs.gitlab.com/ee/administration/server_hooks.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/go-gitea/gitea
+    reference_type:
+    reference_id:
+  - url: https://github.com/go-gitea/gitea/commit/8fe8ab5cbf2977f3a01ea12361df2cd76dce3ea9
+    reference_type:
+    reference_id:
+  - url: https://github.com/go-gitea/gitea/pull/13058
+    reference_type:
+    reference_id:
+  - url: https://github.com/go-gitea/gitea/releases
+    reference_type:
+    reference_id:
+  - url: https://github.com/PandatiX/CVE-2021-28378
+    reference_type:
+    reference_id:
+  - url: https://github.com/PandatiX/CVE-2021-28378#notes
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-14144
+    reference_type:
+    reference_id:
+  - url: https://podalirius.net/articles/exploiting-cve-2020-14144-gitea-authenticated-remote-code-execution
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/49571
+    reference_type:
+    reference_id:
+  - url: https://www.fzi.de/en/news/news/detail-en/artikel/fsa-2020-3-schwachstelle-in-gitea-1125-und-gogs-0122-ermoeglicht-ausfuehrung-von-code-nach-authent
+    reference_type:
+    reference_id:

@@ -1,0 +1,36 @@
+advisory_id: GHSA-2q2f-h83x-cx3x
+datasource_id: github_osv_importer_v2/GHSA-2q2f-h83x-cx3x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-2q2f-h83x-cx3x/GHSA-2q2f-h83x-cx3x.json
+aliases:
+  - CVE-2024-31556
+summary: |
+  Reportico Web fails to invalidate cookies upon logout
+  An issue in Reportico Web before v.8.1.0. This vulnerability arises from the failure of the web application to properly invalidate session cookies upon logout. When a user logs out of the application, the session cookie should be invalidated to prevent unauthorized access. However, due to the oversight in the application's implementation, the session cookie remains active even after logout. Consequently, if an attacker obtains the session cookie, they can exploit it to access the user's session and perform unauthorized actions.
+impacted_packages:
+  - purl: pkg:composer/reportico-web/reportico
+    affected_versions: vers:composer/<=8.1.0
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-2q2f-h83x-cx3x/GHSA-2q2f-h83x-cx3x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+  - CWE-613
+references:
+  - url: https://github.com/reportico-web/reportico
+    reference_type:
+    reference_id:
+  - url: https://github.com/reportico-web/reportico/issues/53
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-31556
+    reference_type:
+    reference_id:
