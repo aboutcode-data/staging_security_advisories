@@ -1,0 +1,36 @@
+advisory_id: mfsa2010-22
+datasource_id: mozilla_importer_v2/mfsa2010-22
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2010/mfsa2010-22.md
+aliases: []
+summary: |
+  Mozilla developers added support in the Network Security Services
+  module for preventing a type of man-in-the-middle attack against TLS
+  using forced renegotiation.
+  Note that to benefit from the fix, Firefox 3.6 and
+  Firefox 3.5 users will need to set
+  their security.ssl.require_safe_negotiation preference to
+  true.  Firefox 3 does not contain the fix for this issue.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.2
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.9
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/3.0.4
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.4
+severities:
+  - score: low
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-22
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-22
+    reference_type:
+    reference_id:

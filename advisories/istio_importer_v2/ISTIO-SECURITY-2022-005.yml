@@ -1,0 +1,25 @@
+advisory_id: ISTIO-SECURITY-2022-005
+datasource_id: istio_importer_v2/ISTIO-SECURITY-2022-005
+datasource_url: https://github.com/istio/istio.io/blob/master/content/en/news/security/istio-security-2022-005/index.md
+aliases:
+  - CVE-2022-29224
+  - CVE-2022-29225
+  - CVE-2022-29226
+  - CVE-2022-29227
+  - CVE-2022-29228
+  - CVE-2022-31045
+summary: Ill-formed headers sent to Envoy in certain configurations can lead to unexpected memory
+  access resulting in undefined behavior or crashing.
+impacted_packages:
+  - purl: pkg:github/istio/istio
+    affected_versions: vers:github/<1.12.0|>=1.12.0|<=1.12.7|>=1.13.0|<=1.13.4|1.14.0
+    fixed_versions:
+  - purl: pkg:golang/istio.io/istio
+    affected_versions: vers:golang/<1.12.0|>=1.12.0|<=1.12.7|>=1.13.0|<=1.13.4|1.14.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://istio.io/latest/news/security/ISTIO-SECURITY-2022-005/
+    reference_type:
+    reference_id: ISTIO-SECURITY-2022-005

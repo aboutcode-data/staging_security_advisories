@@ -1,0 +1,29 @@
+advisory_id: mfsa2016-58
+datasource_id: mozilla_importer_v2/mfsa2016-58
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2016/mfsa2016-58.md
+aliases: []
+summary: |
+  Security researcher sushi Anton Larsson reported that when paired
+  fullscreen and pointerlock requests are done in combination with closing windows, a
+  pointerlock can be created within a fullscreen window without user permission. This
+  pointerlock cannot then be cancelled without terminating the browser, resulting in a
+  persistent denial of service attack. This can also be used for spoofing and clickjacking
+  attacks against the browser UI.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/47.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/45.2.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-58
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-58
+    reference_type:
+    reference_id:

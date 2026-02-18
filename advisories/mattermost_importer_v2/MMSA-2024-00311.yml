@@ -1,0 +1,19 @@
+advisory_id: MMSA-2024-00311
+datasource_id: mattermost_importer_v2/MMSA-2024-00311
+datasource_url: https://securityupdates.mattermost.com/security_updates.json
+aliases:
+  - CVE-2024-29221
+summary: (CWE-284) Fixed an issue where a team admin could get the invite ID of their team,
+  thus allowing them to invite users, even if the "Add Members" permission was explicitly removed
+  from team admins. Thanks to omar ahmed for contributing to this improvement under the Mattermost
+  responsible disclosure policy.
+impacted_packages:
+  - purl: pkg:github/mattermost/mattermost-server
+    affected_versions:
+    fixed_versions: vers:github/8.1.11|9.3.3|9.4.4|9.5.2|9.6.0
+severities: []
+weaknesses: []
+references:
+  - url: https://mattermost.com/security-updates/
+    reference_type:
+    reference_id:

@@ -1,0 +1,20 @@
+advisory_id: MMSA-2025-00499
+datasource_id: mattermost_importer_v2/MMSA-2025-00499
+datasource_url: https://securityupdates.mattermost.com/security_updates.json
+aliases:
+  - CVE-2025-8023
+summary: (CWE-74) Fixed an issue where insufficient path validation in template file uploads
+  in Boards could allow a system admin to perform path traversal attacks, potentially enabling
+  malicious file placement outside intended directories through specially crafted parameters.
+  Thanks to Dawid Kulikowski (daw10) for contributing to this improvement under the Mattermost
+  responsible disclosure policy.
+impacted_packages:
+  - purl: pkg:github/mattermost/mattermost-server
+    affected_versions:
+    fixed_versions: vers:github/9.11.18|10.5.9|10.8.4|10.9.3|10.10.0
+severities: []
+weaknesses: []
+references:
+  - url: https://mattermost.com/security-updates/
+    reference_type:
+    reference_id:

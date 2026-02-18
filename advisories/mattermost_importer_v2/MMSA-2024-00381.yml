@@ -1,0 +1,19 @@
+advisory_id: MMSA-2024-00381
+datasource_id: mattermost_importer_v2/MMSA-2024-00381
+datasource_url: https://securityupdates.mattermost.com/security_updates.json
+aliases:
+  - CVE-2024-42000
+summary: (CWE-284) Fixed an issue where a User or System Manager, with "Read Groups" permission
+  but with no access for channels, could retrieve details about private channels that they were
+  not a member of by sending a request to /api/v4/channels. Thanks to othman for contributing
+  to this improvement under the Mattermost responsible disclosure policy.
+impacted_packages:
+  - purl: pkg:github/mattermost/mattermost-server
+    affected_versions:
+    fixed_versions: vers:github/9.5.10|9.10.3|9.11.2|10.0.1|10.1.0
+severities: []
+weaknesses: []
+references:
+  - url: https://mattermost.com/security-updates/
+    reference_type:
+    reference_id:

@@ -1,0 +1,27 @@
+advisory_id: mfsa2015-153
+datasource_id: mozilla_importer_v2/mfsa2015-153
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-153.md
+aliases: []
+summary: |
+  Mozilla fixed a bug in the l10n localization of the default homescreen
+  app of Firefox OS reported by security researcher Muneaki
+  Nishimura. Exploiting this issue requires tricking the user into
+  bookmarking a specially crafted web page via the 'Add to home screen'
+  functionality. As a result, an iframe controlled by the
+  attacker would be executed with homescreen privileges, potentially
+  leading to further system compromise.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox%20OS
+    affected_versions:
+    fixed_versions: vers:generic/2.5.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-153
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-153
+    reference_type:
+    reference_id:

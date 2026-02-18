@@ -1,0 +1,25 @@
+advisory_id: mfsa2006-49
+datasource_id: mozilla_importer_v2/mfsa2006-49
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2006/mfsa2006-49.md
+aliases: []
+summary: |
+  A VCard attachment with a malformed base64 field (such as a photo) can
+  trigger a heap buffer overwrite. These have proven exploitable in the
+  past, though in this case the overwrite is accompanied by an integer
+  underflow that would attempt to copy more data than the typical machine
+  has, leading to a crash.
+impacted_packages:
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.0.3
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-49
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-49
+    reference_type:
+    reference_id:

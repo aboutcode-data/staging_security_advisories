@@ -1,0 +1,37 @@
+advisory_id: mfsa2013-32
+datasource_id: mozilla_importer_v2/mfsa2013-32
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2013/mfsa2013-32.md
+aliases: []
+summary: |
+  Security researcher Frédéric Hoguin discovered
+  that the Mozilla Maintenance Service on Windows was vulnerable to a buffer
+  overflow. This system is used to update software without invoking the User
+  Account Control (UAC) prompt. The Mozilla Maintenance Service is configured to
+  allow unprivileged users to start it with arbitrary arguments. By manipulating
+  the data passed in these arguments, an attacker can execute arbitrary code with
+  the system privileges used by the service. This issue requires local file system
+  access to be exploitable.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/20.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.5
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/17.0.5
+  - purl: pkg:mozilla/Thunderbird%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.5
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2013-32
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2013-32
+    reference_type:
+    reference_id:

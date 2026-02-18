@@ -1,0 +1,33 @@
+advisory_id: mfsa2015-28
+datasource_id: mozilla_importer_v2/mfsa2015-28
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-28.md
+aliases: []
+summary: |
+  Security researcher Mariusz Mlynski reported, through HP
+  Zero Day Initiative's Pwn2Own contest, a method to run arbitrary scripts in a
+  privileged context. This bypassed the same-origin policy protections by using a
+  flaw in the processing of SVG format content navigation.
+
+  An incomplete version of this fix was shipped in Firefox 36.0.3
+  and Firefox ESR 31.5.2.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/36.0.4
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/31.5.3
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.33.1
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-28
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-28
+    reference_type:
+    reference_id:

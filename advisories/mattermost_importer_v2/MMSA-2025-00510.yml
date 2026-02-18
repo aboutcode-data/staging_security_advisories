@@ -1,0 +1,19 @@
+advisory_id: MMSA-2025-00510
+datasource_id: mattermost_importer_v2/MMSA-2025-00510
+datasource_url: https://securityupdates.mattermost.com/security_updates.json
+aliases:
+  - CVE-2025-62190
+summary: (CWE-352) Fixed an issue where an external webpage could initiate Calls plugin calls
+  and inject messages without user consent by exploiting a CSRF vulnerability in the widget
+  page. Thanks to DoyenSec for contributing to this improvement under the Mattermost responsible
+  disclosure policy.
+impacted_packages:
+  - purl: pkg:github/mattermost/mattermost-server
+    affected_versions:
+    fixed_versions: vers:github/10.11.7|10.12.3|11.0.5|11.1.0
+severities: []
+weaknesses: []
+references:
+  - url: https://mattermost.com/security-updates/
+    reference_type:
+    reference_id:

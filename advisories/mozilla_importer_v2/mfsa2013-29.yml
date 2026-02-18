@@ -1,0 +1,34 @@
+advisory_id: mfsa2013-29
+datasource_id: mozilla_importer_v2/mfsa2013-29
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2013/mfsa2013-29.md
+aliases: []
+summary: VUPEN Security, via TippingPoint's Zero Day Initiative, reported a use-after-free within
+  the HTML editor when content script is run by the document.execCommand() function while internal
+  editor operations are occurring. This could allow for arbitrary code execution.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/19.0.2
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.4
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/17.0.4
+  - purl: pkg:mozilla/Thunderbird%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.4
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.16.1
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2013-29
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2013-29
+    reference_type:
+    reference_id:

@@ -1,0 +1,33 @@
+advisory_id: mfsa2016-34
+datasource_id: mozilla_importer_v2/mfsa2016-34
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2016/mfsa2016-34.md
+aliases: []
+summary: "Security researcher Ronald Crane reported an out-of-bounds read\nfollowing a failed\
+  \ allocation in the HTML parser while working with unicode strings. This\ncan also affect\
+  \ the parsing of XML and SVG format data. This leads to a potentially\nexploitable crash.\
+  \ \n\nIn general this flaw cannot be exploited through email in the\nThunderbird product because\
+  \ scripting is disabled, but is potentially a risk in\nbrowser or browser-like contexts."
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/45.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/38.7.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/45.0.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/38.7.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-34
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-34
+    reference_type:
+    reference_id:

@@ -1,0 +1,20 @@
+advisory_id: MMSA-2024-00391
+datasource_id: mattermost_importer_v2/MMSA-2024-00391
+datasource_url: https://securityupdates.mattermost.com/security_updates.json
+aliases:
+  - CVE-2025-35965
+summary: (CWE-400) Fixed an issue in the Playbooks plugin where the UpdateRunTaskActions GraphQL
+  operation did not properly validate the uniqueness or quantity of task actions, allowing users
+  to create an excessive number of actions on task items, which could result in denial-of-service
+  (DoS) by crashing the application server. Thanks to vultza for contributing to this improvement
+  under the Mattermost responsible disclosure policy.
+impacted_packages:
+  - purl: pkg:github/mattermost/mattermost-server
+    affected_versions:
+    fixed_versions: vers:github/9.11.11|10.4.3|10.5.1|10.6.0
+severities: []
+weaknesses: []
+references:
+  - url: https://mattermost.com/security-updates/
+    reference_type:
+    reference_id:

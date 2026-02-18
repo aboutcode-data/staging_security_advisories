@@ -1,0 +1,49 @@
+advisory_id: mfsa2015-71
+datasource_id: mozilla_importer_v2/mfsa2015-71
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-71.md
+aliases: []
+summary: |
+  Security researcher Karthikeyan Bhargavan reported an issue
+  in Network Security Services (NSS) where the client allows for a ECDHE_ECDSA
+  exchange where the server does not send its ServerKeyExchange
+  message instead of aborting the handshake. Instead, the NSS client will take the
+  EC key from the ECDSA certificate. This violates the TLS protocol and also has
+  some security implications for forward secrecy. In this situation, the browser
+  thinks it is engaged in an ECDHE exchange, but has been silently downgraded to a
+  non-forward secret mixed-ECDH exchange instead. As a result, if False
+  Start is enabled, the browser will start sending data encrypted under
+  these non-forward-secret connection keys. This issue was fixed in NSS version
+  3.19.1.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/39.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/31.8.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/38.1.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/38.1.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/31.8.0
+  - purl: pkg:mozilla/Firefox%20OS
+    affected_versions:
+    fixed_versions: vers:generic/2.2.0
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.35.0
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-71
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-71
+    reference_type:
+    reference_id:

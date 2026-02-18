@@ -1,0 +1,28 @@
+advisory_id: mfsa2009-38
+datasource_id: mozilla_importer_v2/mfsa2009-38
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2009/mfsa2009-38.md
+aliases: []
+summary: |
+  Andrej Andolsek reported that when Firefox
+  receives a reply from a SOCKS5 proxy which contains a DNS name longer
+  than 15 characters, the subsequent data stream in the response can
+  become corrupted.  There was no evidence of memory corruption,
+  however, and the severity of the issue was determined to be low.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.2
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.0.12
+severities:
+  - score: low
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-38
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-38
+    reference_type:
+    reference_id:

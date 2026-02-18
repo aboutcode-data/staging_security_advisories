@@ -1,0 +1,33 @@
+advisory_id: mfsa2010-32
+datasource_id: mozilla_importer_v2/mfsa2010-32
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2010/mfsa2010-32.md
+aliases: []
+summary: |
+  Security researcher Ilja van Sprundel of IOActive
+  reported that the Content-Disposition: attachment HTTP
+  header was ignored when Content-Type: multipart was also
+  present.  This issue could potentially lead to XSS problems in sites
+  that allow users to upload arbitrary files and specify a Content-Type
+  but rely on Content-Disposition: attachment to prevent
+  the content from being displayed inline.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.4
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.10
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.5
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-32
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-32
+    reference_type:
+    reference_id:

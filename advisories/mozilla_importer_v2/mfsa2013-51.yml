@@ -1,0 +1,43 @@
+advisory_id: mfsa2013-51
+datasource_id: mozilla_importer_v2/mfsa2013-51
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2013/mfsa2013-51.md
+aliases: []
+summary: |
+  Security researcher Mariusz Mlynski reported that it is
+  possible to compile a user-defined function in the XBL scope of a specific
+  element and then trigger an event within this scope to run code. In some
+  circumstances, when this code is run, it can access content protected by System
+  Only Wrappers (SOW) and chrome-privileged pages. This could potentially lead to
+  arbitrary code execution. Additionally, Chrome Object Wrappers (COW) can be
+  bypassed by web content to access privileged methods, leading to a cross-site
+  scripting (XSS) attack from privileged pages.
+  In general these flaws cannot be exploited through email in the
+  Thunderbird and SeaMonkey products because scripting is disabled, but are
+  potentially a risk in browser or browser-like contexts in those products.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/22.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.7
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/17.0.7
+  - purl: pkg:mozilla/Thunderbird%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.7
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.19.0
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2013-51
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2013-51
+    reference_type:
+    reference_id:

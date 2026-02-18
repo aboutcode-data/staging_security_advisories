@@ -1,0 +1,29 @@
+advisory_id: mfsa2012-78
+datasource_id: mozilla_importer_v2/mfsa2012-78
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2012/mfsa2012-78.md
+aliases: []
+summary: |
+  Security researcher Warren He reported that when a page is
+  transitioned into Reader Mode in Firefox for Android, the resulting page has
+  chrome privileges and its content is not thoroughly sanitized. A successful
+  attack requires user enabling of reader mode for a malicious page, which could
+  then perform an attack similar to cross-site scripting (XSS) to gain the
+  privileges allowed to Firefox on an Android device. This has been fixed by
+  changing the Reader Mode page into an unprivileged page.
+
+  This vulnerability only affects Firefox for Android.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/16.0.0
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-78
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-78
+    reference_type:
+    reference_id:

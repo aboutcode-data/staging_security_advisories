@@ -1,0 +1,45 @@
+advisory_id: pypi/uv/GHSA-w476-p2h3-79g9
+datasource_id: gitlab_importer_v2/pypi/uv/GHSA-w476-p2h3-79g9
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/uv/GHSA-w476-p2h3-79g9.yml
+aliases:
+  - GHSA-w476-p2h3-79g9
+summary: |
+  uv has differential in tar extraction with PAX headers
+  In versions 0.9.4 and earlier of uv, tar archives containing PAX headers with file size overrides were not handled properly. As a result, an attacker could contrive a source distribution (as a tar archive) that would extract differently when installed via uv versus other Python package installers.
+
+  The underlying parsing differential here originates with astral-tokio-tar, which disclosed this vulnerability as CVE-2025-62518.
+
+  In practice, the impact of this vulnerability is **low**: only source distributions can be formatted as tar archives, and source distributions execute arbitrary code at build/installation time by definition. Consequently, a parser differential in tar extraction is strictly less powerful than the capabilities already exposed to an attacker who has the ability to control source distributions.
+
+  However, this particular source of malleability in source distributions is unintentional and not operating by design, and therefore we consider it a vulnerability despite its overlap in capabilities with intended behavior.
+impacted_packages:
+  - purl: pkg:pypi/uv
+    affected_versions: vers:pypi/<0.9.5
+    fixed_versions: vers:pypi/0.9.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-843
+  - CWE-937
+references:
+  - url: https://github.com/advisories/GHSA-j5gw-2vrg-8fgx
+    reference_type:
+    reference_id:
+  - url: https://github.com/astral-sh/uv
+    reference_type:
+    reference_id:
+  - url: https://github.com/astral-sh/uv/commit/ae450662d1546e9853f67a8c61a506d3a892d963
+    reference_type:
+    reference_id:
+  - url: https://github.com/astral-sh/uv/pull/16387
+    reference_type:
+    reference_id:
+  - url: https://github.com/astral-sh/uv/releases/tag/0.9.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/astral-sh/uv/security/advisories/GHSA-w476-p2h3-79g9
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-w476-p2h3-79g9
+    reference_type:
+    reference_id: GHSA-w476-p2h3-79g9

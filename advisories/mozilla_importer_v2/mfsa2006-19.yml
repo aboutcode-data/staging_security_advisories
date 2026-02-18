@@ -1,0 +1,50 @@
+advisory_id: mfsa2006-19
+datasource_id: mozilla_importer_v2/mfsa2006-19
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2006/mfsa2006-19.md
+aliases: []
+summary: |
+  moz_bug_r_a4 discovered that .valueOf.call() and .valueOf.apply()
+  when called with no arguments were returning the Object class
+  prototype rather than the caller's global window object. When
+  called on a reachable property of another window this provides
+  a hook to get around the same-origin protection, allowing an
+  attacker to inject script into another window.
+  Cross-site script injection can be used to steal confidential
+  data such as cookies or passwords, or perform actions on
+  the user's behalf. It can also be used to alter the content
+  of the other window which could be used to fool a user
+  into trusting bogus information or downloaded content.
+  Thunderbird shares the JavaScript engine with Firefox
+  and could be vulnerable if JavaScript were to be enabled in mail. This is not
+  the default setting and we strongly discourage users from running
+  JavaScript in mail.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/1.5.0
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/1.0.8
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/1.5.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/1.0.8
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.0.0
+  - purl: pkg:mozilla/Mozilla%20Suite
+    affected_versions:
+    fixed_versions: vers:generic/1.7.13
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-19
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-19
+    reference_type:
+    reference_id:

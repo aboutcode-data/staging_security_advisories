@@ -1,0 +1,27 @@
+advisory_id: mfsa2016-64
+datasource_id: mozilla_importer_v2/mfsa2016-64
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2016/mfsa2016-64.md
+aliases: []
+summary: |
+  Using the Address Sanitizer tool, security researcher Atte Kettunen
+  found a buffer overflow during the rendering of SVG format graphics with directional
+  content. This is caused by a flaw in directional-isolate processing and results in a
+  potentially exploitable crash.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/48.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/45.3.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-64
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-64
+    reference_type:
+    reference_id:

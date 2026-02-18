@@ -1,0 +1,29 @@
+advisory_id: mfsa2009-21
+datasource_id: mozilla_importer_v2/mfsa2009-21
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2009/mfsa2009-21.md
+aliases: []
+summary: |
+  Developer and Mozilla community member Paolo
+  Amadini reported that when saving the inner frame of a web
+  page as a file when the outer page has POST data associated with it,
+  the POST data will be incorrectly sent to the URL of the inner frame.
+  This could potentially result in a user's sensitive data being sent to
+  a site for which it was not intended.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.0.9
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.1.17
+severities:
+  - score: low
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-21
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-21
+    reference_type:
+    reference_id:

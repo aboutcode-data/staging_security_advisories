@@ -1,0 +1,34 @@
+advisory_id: mfsa2013-42
+datasource_id: mozilla_importer_v2/mfsa2013-42
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2013/mfsa2013-42.md
+aliases: []
+summary: "Security researcher Cody Crews reported a method to call a\ncontent level constructor\
+  \ that allows for this constructor to have chrome\nprivileged access. This affects chrome\
+  \ object wrappers (COW) and allows for\nwrite actions on objects when only read actions should\
+  \ be allowed. This can lead\nto cross-site scripting (XSS) attacks. \n\nIn general these flaws\
+  \ cannot be exploited through email in the\nThunderbird product because scripting is disabled,\
+  \ but are\npotentially a risk in browser or browser-like contexts."
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/21.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.6
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/17.0.6
+  - purl: pkg:mozilla/Thunderbird%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.6
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2013-42
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2013-42
+    reference_type:
+    reference_id:

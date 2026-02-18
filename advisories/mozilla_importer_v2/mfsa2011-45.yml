@@ -1,0 +1,31 @@
+advisory_id: mfsa2011-45
+datasource_id: mozilla_importer_v2/mfsa2011-45
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2011/mfsa2011-45.md
+aliases: []
+summary: |
+  University of California, Davis researchers Liang Cai
+  and Hao Chen presented a paper at the 2011 USENIX HotSec
+  workshop on inferring keystrokes from device motion data on mobile devices.
+  Web pages can now receive data similar to the apps studied in that paper
+  and likely present a similar risk. We have decided to limit motion data
+  events to the currently-active tab to prevent the possibility of background
+  tabs attempting to decipher keystrokes the user is entering into the
+  foreground tab.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/7.0.0
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.4.0
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2011-45
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2011-45
+    reference_type:
+    reference_id:

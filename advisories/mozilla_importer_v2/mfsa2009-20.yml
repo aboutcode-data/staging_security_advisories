@@ -1,0 +1,27 @@
+advisory_id: mfsa2009-20
+datasource_id: mozilla_importer_v2/mfsa2009-20
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2009/mfsa2009-20.md
+aliases: []
+summary: |
+  Security researcher Prateek Saxena reported that a
+  malicious MozSearch plugin could be created using a javascript: URI in
+  the SearchForm value.  This URI is used as the default
+  landing page when an empty search is performed.  If an attacker could
+  get a user to install the malicious plugin and perform an empty
+  search, the SearchForm javascript: URI would be executed
+  within the context of the currently open page.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.0.9
+severities:
+  - score: low
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-20
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-20
+    reference_type:
+    reference_id:

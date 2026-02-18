@@ -1,0 +1,40 @@
+advisory_id: mfsa2012-54
+datasource_id: mozilla_importer_v2/mfsa2012-54
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2012/mfsa2012-54.md
+aliases: []
+summary: |
+  Security Researcher Matt McCutchen reported that a
+  clickjacking attack using the certificate warning page. A man-in-the-middle
+  (MITM) attacker can use an iframe to display its own certificate error warning
+  page (about:certerror) with the "Add Exception" button of a real warning page
+  from a malicious site. This can mislead users to adding a certificate exception
+  for a different site than the perceived one. This can lead to compromised
+  communications with the user perceived site through the MITM attack once the
+  certificate exception has been added.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/13.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/10.0.6
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/13.0.0
+  - purl: pkg:mozilla/Thunderbird%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/10.0.6
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.10.0
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-54
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-54
+    reference_type:
+    reference_id:

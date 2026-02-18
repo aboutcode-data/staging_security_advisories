@@ -1,0 +1,38 @@
+advisory_id: mfsa2010-29
+datasource_id: mozilla_importer_v2/mfsa2010-29
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2010/mfsa2010-29.md
+aliases: []
+summary: |
+  Security researcher Nils of MWR InfoSecurity
+  reported that the routine for setting the text value for certain types
+  of DOM nodes contained an integer overflow vulnerability.  When a very
+  long string was passed to this routine, the integer value used in
+  creating a new memory buffer to hold the string would overflow,
+  resulting in too small a buffer being allocated.  An attacker could
+  use this vulnerability to write data past the end of the buffer,
+  causing a crash and potentially running arbitrary code on a victim's
+  computer.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.4
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.10
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/3.0.5
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.5
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-29
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-29
+    reference_type:
+    reference_id:

@@ -1,0 +1,46 @@
+advisory_id: mfsa2006-15
+datasource_id: mozilla_importer_v2/mfsa2006-15
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2006/mfsa2006-15.md
+aliases: []
+summary: |
+  shutdown discovered it was possible to use the Object.watch()
+  method to access an internal function object (the "clone parent")
+  which could then be used to run arbitrary JavaScript code with
+  full permission. This could be used to install malware such as
+  password sniffers or viruses.
+  In pre-release versions of Firefox 1.5 the same technique could
+  be applied to the Array generic methods introduced in that release.
+  Thunderbird shares the JavaScript engine with Firefox
+  and could be vulnerable if JavaScript were to be enabled in mail. This is not
+  the default setting and we strongly discourage users from running
+  JavaScript in mail.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/1.5.0
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/1.0.8
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/1.5.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/1.0.8
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.0.0
+  - purl: pkg:mozilla/Mozilla%20Suite
+    affected_versions:
+    fixed_versions: vers:generic/1.7.13
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-15
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-15
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: mfsa2014-43
+datasource_id: mozilla_importer_v2/mfsa2014-43
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2014/mfsa2014-43.md
+aliases: []
+summary: "Mozilla security researcher moz_bug_r_a4 reported a method\nto use browser navigations\
+  \ through history to load a website with that page's\nbaseURI property pointing to that of\
+  \ another site instead of the seemingly\nloaded one. The user will continue to see the incorrect\
+  \ site in the addressbar\nof the browser. This allows for a cross-site scripting (XSS) attack\
+  \ or the theft\nof data through a phishing attack. \n\nIn general this flaw cannot be exploited\
+  \ through email in the\nThunderbird and Seamonkey products because scripting is disabled,\
+  \ but is\npotentially a risk in browser or browser-like contexts."
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/29.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/24.5.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/24.5.0
+  - purl: pkg:mozilla/Seamonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.26.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2014-43
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2014-43
+    reference_type:
+    reference_id:

@@ -1,0 +1,36 @@
+advisory_id: mfsa2015-57
+datasource_id: mozilla_importer_v2/mfsa2015-57
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-57.md
+aliases: []
+summary: "Mozilla Developer Jed Davis and Mozilla security engineer\nChristoph Diehl reported\
+  \ that Mozilla had inherited a\nInter-process Communication (IPC) vulnerability when IPC was\
+  \ introduced into\nMozilla products through third-party code. This could allow for privilege\n\
+  escalation through IPC channels due to lack of message validation in the\nlistener process.\
+  \ \n\nThis issue only affects systems running Windows, leaving Linux\nand OS X unaffected."
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/38.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/31.7.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/38.0.1
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/31.7.0
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.35.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-57
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-57
+    reference_type:
+    reference_id:

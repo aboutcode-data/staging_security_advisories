@@ -1,0 +1,35 @@
+advisory_id: mfsa2010-24
+datasource_id: mozilla_importer_v2/mfsa2010-24
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2010/mfsa2010-24.md
+aliases: []
+summary: |
+  Mozilla community member Wladimir Palant reported
+  that XML documents were failing to call certain security checks when
+  loading new content.  This could result in certain resources being
+  loaded that would otherwise violate security policies set by the
+  browser or installed add-ons.
+  This issue has not been fixed in Firefox 3.0
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.2
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.9
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/3.0.4
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.4
+severities:
+  - score: low
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-24
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-24
+    reference_type:
+    reference_id:

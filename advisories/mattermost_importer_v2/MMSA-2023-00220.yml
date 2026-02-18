@@ -1,0 +1,19 @@
+advisory_id: MMSA-2023-00220
+datasource_id: mattermost_importer_v2/MMSA-2023-00220
+datasource_url: https://securityupdates.mattermost.com/security_updates.json
+aliases:
+  -
+summary: (CWE-319) Fixed an issue where the Mattermost iOS app failed to validate the server
+  certificate properly while initializing the TLS connection allowing a network attacker to
+  intercept the WebSockets connection. Thanks to aapo for contributing to this improvement under
+  the Mattermost responsible disclosure policy.
+impacted_packages:
+  - purl: pkg:github/mattermost/mattermost-mobile
+    affected_versions:
+    fixed_versions: vers:github/2.5.1
+severities: []
+weaknesses: []
+references:
+  - url: https://mattermost.com/security-updates/
+    reference_type:
+    reference_id:

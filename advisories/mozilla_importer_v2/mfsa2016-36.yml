@@ -1,0 +1,37 @@
+advisory_id: mfsa2016-36
+datasource_id: mozilla_importer_v2/mfsa2016-36
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2016/mfsa2016-36.md
+aliases: []
+summary: |
+  Mozilla developer Tim Taubert used the Address Sanitizer tool and
+  software fuzzing to discover a use-after-free vulnerability while processing DER encoded
+  keys in the Network Security Services (NSS) libraries. The vulnerability overwrites the
+  freed memory with zeroes. This issue has been addressed in NSS 3.21.1, shipping in Firefox
+  45.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/45.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/38.8.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/45.0.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/38.8.0
+  - purl: pkg:mozilla/NSS
+    affected_versions:
+    fixed_versions: vers:generic/3.21.1
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-36
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-36
+    reference_type:
+    reference_id:

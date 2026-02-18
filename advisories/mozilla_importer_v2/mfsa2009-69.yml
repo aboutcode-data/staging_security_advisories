@@ -1,0 +1,41 @@
+advisory_id: mfsa2009-69
+datasource_id: mozilla_importer_v2/mfsa2009-69
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2009/mfsa2009-69.md
+aliases: []
+summary: |
+  Security researcher Jonathan Morgan reported that
+  when a page loaded over an insecure protocol, such as http: or file:,
+  sets its document.location to a https: URL which
+  responds with a 204 status and empty response body, the insecure page
+  will receive SSL indicators near the location bar, but will not have
+  its page content modified in any way.  This could lead to a user
+  believing they were on a secure page when in fact they were not.
+  Security researcher Jordi Chancel reported an
+  issue similar to one fixed
+  in mfsa2009-44 in which a web page can
+  set document.location to a URL that can't be displayed
+  properly and then inject content into the resulting blank page.  An
+  attacker could use this vulnerability to place a legitimate-looking
+  but invalid URL in the location bar and inject HTML and JavaScript
+  into the body of the page, resulting in a spoofing attack.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.6
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.0.16
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.1
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-69
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-69
+    reference_type:
+    reference_id:

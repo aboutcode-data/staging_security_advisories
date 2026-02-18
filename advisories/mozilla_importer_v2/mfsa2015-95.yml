@@ -1,0 +1,38 @@
+advisory_id: mfsa2015-95
+datasource_id: mozilla_importer_v2/mfsa2015-95
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-95.md
+aliases: []
+summary: |
+  Security researcher Bas Venis reported a mechanism where add-ons could
+  be installed from a different source than user expectations. Normally, when a user enters
+  the URL to an add-on directly in the addressbar, warning prompts are bypassed because it
+  is the result of direct user action. He discovered that a data: URL could be
+  manipulated on a loaded page to simulate this direct user input of the add-on's URL, which
+  would result in a bypassing of the install permission prompt. He also reported that in the
+  absence of the permission prompt, it is possible to cause the actual installation prompt
+  to appear above another site's location by causing a page navigation immediately after
+  triggering add-on installation. This could manipulate a user into falsely believing a
+  trusted site (such as addons.mozilla.org) has
+  initiated the installation. This could lead to users installing an add-on from a malicious
+  source.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/40.0.3
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/38.2.1
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.35.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-95
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-95
+    reference_type:
+    reference_id:

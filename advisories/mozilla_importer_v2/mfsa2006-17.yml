@@ -1,0 +1,45 @@
+advisory_id: mfsa2006-17
+datasource_id: mozilla_importer_v2/mfsa2006-17
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2006/mfsa2006-17.md
+aliases: []
+summary: |
+  shutdown demonstrated how to use the window.controllers array
+  to bypass same-origin protections, allowing a malicious site to
+  inject script into content from another site. This could allow
+  the malicious page to steal information such as cookies or
+  passwords from the other site, or perform transactions on the user's
+  behalf if the user were already logged in.
+  Thunderbird shares the JavaScript engine with Firefox
+  and could be vulnerable if JavaScript were to be enabled in mail. This is not
+  the default setting and we strongly discourage users from running
+  JavaScript in mail.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/1.5.0
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/1.0.8
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/1.5.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/1.0.8
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.0.0
+  - purl: pkg:mozilla/Mozilla%20Suite
+    affected_versions:
+    fixed_versions: vers:generic/1.7.13
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-17
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-17
+    reference_type:
+    reference_id:

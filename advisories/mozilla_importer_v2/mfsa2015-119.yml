@@ -1,0 +1,27 @@
+advisory_id: mfsa2015-119
+datasource_id: mozilla_importer_v2/mfsa2015-119
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-119.md
+aliases: []
+summary: |
+  Security researcher Jordi Chancel reported when Firefox
+  for Android exits fullscreen mode, it can be induce through script to not restore the
+  addressbar when the window is redrawn in normal mode. This could allow an attacker to
+  spoof the addressbar with their own content.
+
+  This issue only affects Firefox for Android. Firefox on other operating
+  systems is not affected.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/42.0.0
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-119
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-119
+    reference_type:
+    reference_id:

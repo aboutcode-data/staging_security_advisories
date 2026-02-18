@@ -1,0 +1,39 @@
+advisory_id: mfsa2010-03
+datasource_id: mozilla_importer_v2/mfsa2010-03
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2010/mfsa2010-03.md
+aliases: []
+summary: |
+  Security researcher Alin Rad Pop of Secunia
+  Research reported that the HTML parser incorrectly freed used memory
+  when insufficient space was available to process remaining input.
+  Under such circumstances, memory occupied by in-use objects was freed
+  and could later be filled with attacker-controlled text.  These
+  conditions could result in the execution or arbitrary code if methods
+  on the freed objects were subsequently called.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.0
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.8
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.0.18
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/3.0.2
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.3
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-03
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-03
+    reference_type:
+    reference_id:

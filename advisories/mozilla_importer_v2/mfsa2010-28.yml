@@ -1,0 +1,33 @@
+advisory_id: mfsa2010-28
+datasource_id: mozilla_importer_v2/mfsa2010-28
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2010/mfsa2010-28.md
+aliases: []
+summary: |
+  Microsoft Vulnerability Research reported that two
+  plugin instances could interact in a way in which one plugin gets a
+  reference to an object owned by a second plugin and continues to hold
+  that reference after the second plugin is unloaded and its object is
+  destroyed.  In these cases, the first plugin would contain a pointer
+  to freed memory which, if accessed, could be used by an attacker to
+  execute arbitrary code on a victim's computer.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.4
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.10
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.5
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-28
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-28
+    reference_type:
+    reference_id:

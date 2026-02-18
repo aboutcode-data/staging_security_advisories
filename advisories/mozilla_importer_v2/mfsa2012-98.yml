@@ -1,0 +1,38 @@
+advisory_id: mfsa2012-98
+datasource_id: mozilla_importer_v2/mfsa2012-98
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2012/mfsa2012-98.md
+aliases: []
+summary: "Security researcher Robert Kugler reported that when a specifically named DLL file\
+  \ on a Windows computer is placed in the default downloads directory with the Firefox installer,\
+  \ the Firefox installer will load this DLL when it is launched. In circumstances where the\
+  \ installer is run by an administrator privileged account, this allows for the downloaded\
+  \ DLL file to be run with administrator privileges. This can lead to arbitrary code execution\
+  \ from a privileged account. \n\nAdditional vulnerable DLL file names were found and fixed\
+  \ in Firefox 18.0, Firefox ESR 17.0.1, and Firefox ESR 10.0.12 releases."
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/17.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/10.0.11
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/18.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/17.0.1
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/10.0.12
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-98
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-98
+    reference_type:
+    reference_id:

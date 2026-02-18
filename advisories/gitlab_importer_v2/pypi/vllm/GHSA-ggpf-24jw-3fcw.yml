@@ -1,0 +1,42 @@
+advisory_id: pypi/vllm/GHSA-ggpf-24jw-3fcw
+datasource_id: gitlab_importer_v2/pypi/vllm/GHSA-ggpf-24jw-3fcw
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/vllm/GHSA-ggpf-24jw-3fcw.yml
+aliases:
+  - GHSA-ggpf-24jw-3fcw
+summary: |
+  CVE-2025-24357 Malicious model remote code execution fix bypass with PyTorch < 2.6.0
+  https://github.com/vllm-project/vllm/security/advisories/GHSA-rh4j-5rhw-hr54 reported a vulnerability where loading a malicious model could result in code execution on the vllm host. The fix applied to specify `weights_only=True` to calls to `torch.load()` did not solve the problem prior to PyTorch 2.6.0.
+
+  PyTorch has issued a new CVE about this problem: https://github.com/advisories/GHSA-53q9-r3pm-6pq6
+
+  This means that versions of vLLM using PyTorch before 2.6.0 are vulnerable to this problem.
+impacted_packages:
+  - purl: pkg:pypi/vllm
+    affected_versions: vers:pypi/<0.8.0
+    fixed_versions: vers:pypi/0.8.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/vllm/GHSA-ggpf-24jw-3fcw.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-1395
+references:
+  - url: https://github.com/pytorch/pytorch/security/advisories/GHSA-53q9-r3pm-6pq6
+    reference_type:
+    reference_id:
+  - url: https://github.com/vllm-project/vllm
+    reference_type:
+    reference_id:
+  - url: https://github.com/vllm-project/vllm/security/advisories/GHSA-ggpf-24jw-3fcw
+    reference_type:
+    reference_id:
+  - url: https://github.com/vllm-project/vllm/security/advisories/GHSA-rh4j-5rhw-hr54
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-ggpf-24jw-3fcw
+    reference_type:
+    reference_id: GHSA-ggpf-24jw-3fcw

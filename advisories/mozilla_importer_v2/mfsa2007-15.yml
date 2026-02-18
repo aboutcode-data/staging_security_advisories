@@ -1,0 +1,41 @@
+advisory_id: mfsa2007-15
+datasource_id: mozilla_importer_v2/mfsa2007-15
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2007/mfsa2007-15.md
+aliases: []
+summary: |
+  Gaëtan Leurent informed us of a weakness in APOP
+  authentication that could allow an attacker to recover the first
+  part of your mail password if the attacker could interpose
+  a malicious mail server on your network masquerading as your legitimate
+  mail server. With normal settings it could take several hours for
+  the attacker to gather enough data to recover just a few characters
+  of the password. This result was presented at the
+  Fast Software Encryption 2007 conference.
+  In a rump session at the same conference a team from The University of
+  Electro-Communications claimed that a variant on the same hash-collision
+  attack allowed them to recover a 31 character password.
+  Fixed versions of Thunderbird and SeaMonkey mail prevent this
+  technique by stricter enforcement of the Message-ID format used
+  by APOP.
+  POP mail accounts which do not use any authentication are
+  common and in the same hypothetical situation the password could
+  be recovered immediately without any special programming on the
+  attacker's part.
+impacted_packages:
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.0.9
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.1.2
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2007-15
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2007-15
+    reference_type:
+    reference_id:

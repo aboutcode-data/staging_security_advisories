@@ -1,0 +1,32 @@
+advisory_id: mfsa2010-35
+datasource_id: mozilla_importer_v2/mfsa2010-35
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2010/mfsa2010-35.md
+aliases: []
+summary: |
+  Security researcher regenrecht reported via
+  TippingPoint's Zero Day Initiative an error in the DOM attribute
+  cloning routine where under certain circumstances an event attribute
+  node can be deleted while another object still contains a reference to
+  it.  This reference could subsequently be accessed, potentially
+  causing the execution of attacker controlled memory.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.7
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.11
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.6
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-35
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-35
+    reference_type:
+    reference_id:

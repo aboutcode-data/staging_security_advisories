@@ -1,0 +1,19 @@
+advisory_id: MMSA-2024-00339
+datasource_id: mattermost_importer_v2/MMSA-2024-00339
+datasource_url: https://securityupdates.mattermost.com/security_updates.json
+aliases:
+  - CVE-2024-39836
+summary: (CWE-693) Fixed an issue where the munged email addresses created by shared channels
+  could be valid, functional emails in which case they could be used to receive email notifications
+  and to reset passwords. Thanks to Juho Forsén for contributing to this improvement under the
+  Mattermost responsible disclosure policy.
+impacted_packages:
+  - purl: pkg:github/mattermost/mattermost-server
+    affected_versions:
+    fixed_versions: vers:github/9.5.8|9.8.3|9.9.2|9.10.1|9.11.0
+severities: []
+weaknesses: []
+references:
+  - url: https://mattermost.com/security-updates/
+    reference_type:
+    reference_id:

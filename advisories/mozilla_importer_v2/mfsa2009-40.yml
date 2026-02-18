@@ -1,0 +1,31 @@
+advisory_id: mfsa2009-40
+datasource_id: mozilla_importer_v2/mfsa2009-40
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2009/mfsa2009-40.md
+aliases: []
+summary: |
+  Mozilla security researcher moz_bug_r_a4 reported
+  a series of vulnerabilities in which objects that normally receive
+  a XPCCrossOriginWrapper are constructed without the
+  wrapper.  This can lead to cases where JavaScript from one website may
+  unsafely access properties of such an object which had been set by a
+  different website.  A malicious website could use this vulnerability
+  to launch a XSS attack and run arbitrary JavaScript within the context
+  of another site.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.0
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.0.12
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-40
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-40
+    reference_type:
+    reference_id:

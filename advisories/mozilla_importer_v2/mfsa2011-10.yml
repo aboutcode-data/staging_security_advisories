@@ -1,0 +1,35 @@
+advisory_id: mfsa2011-10
+datasource_id: mozilla_importer_v2/mfsa2011-10
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2011/mfsa2011-10.md
+aliases: []
+summary: |
+  Independent security researcher Kuza55 and
+  Microsoft security researcher Tom Gallagher reported
+  that when plugin-initiated requests receive a 307 redirect response,
+  the plugin is not notified and the request is forwarded to the new
+  location.  This is true even for cross-site redirects, so any custom
+  headers that were added as part of the initial request would be
+  forwarded intact across origins.  This poses a CSRF risk for web
+  applications that rely on custom headers only being present in
+  requests from their own origin.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.14
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.5.17
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.0.12
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2011-10
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2011-10
+    reference_type:
+    reference_id:

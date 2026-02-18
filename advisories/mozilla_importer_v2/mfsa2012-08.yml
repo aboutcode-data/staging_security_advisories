@@ -1,0 +1,37 @@
+advisory_id: mfsa2012-08
+datasource_id: mozilla_importer_v2/mfsa2012-08
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2012/mfsa2012-08.md
+aliases: []
+summary: |
+  Security researchers Nicolas Grégoire and Aki
+  Helin independently reported that when processing a malformed
+  embedded XSLT stylesheet, Firefox can crash due to a memory corruption.
+  While there is no evidence that this is directly exploitable, there is
+  a possibility of remote code execution.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/10.0.0
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.26
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/10.0.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/3.1.18
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.7.0
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-08
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-08
+    reference_type:
+    reference_id:

@@ -1,0 +1,19 @@
+advisory_id: MMSA-2025-00428
+datasource_id: mattermost_importer_v2/MMSA-2025-00428
+datasource_url: https://securityupdates.mattermost.com/security_updates.json
+aliases:
+  - CVE-2025-24490
+summary: (CWE-74) Fixed an issue where an attacker could cause a SQL injection retrieving data
+  from the database, via reordering specially crafted  boards categories. This vulnerability
+  is limited to Mattermost instances with Boards enabled. Thanks to visat for contributing to
+  this improvement under the Mattermost responsible disclosure policy.
+impacted_packages:
+  - purl: pkg:github/mattermost/mattermost-server
+    affected_versions:
+    fixed_versions: vers:github/9.11.8|10.2.3|10.3.3|10.4.2
+severities: []
+weaknesses: []
+references:
+  - url: https://mattermost.com/security-updates/
+    reference_type:
+    reference_id:

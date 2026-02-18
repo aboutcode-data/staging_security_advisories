@@ -1,0 +1,34 @@
+advisory_id: mfsa2015-89
+datasource_id: mozilla_importer_v2/mfsa2015-89
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-89.md
+aliases: []
+summary: |
+  Security researcher Abhishek Arya (Inferno) of the Google
+  Chrome Security Team used the Address Sanitizer tool to discover two buffer
+  overflow issues in the Libvpx library used for WebM video when decoding a
+  malformed WebM video file. These buffer overflows result in potentially
+  exploitable crashes.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/40.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/38.2.0
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.35.0
+  - purl: pkg:mozilla/Firefox%20OS
+    affected_versions:
+    fixed_versions: vers:generic/2.5.0
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-89
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-89
+    reference_type:
+    reference_id:

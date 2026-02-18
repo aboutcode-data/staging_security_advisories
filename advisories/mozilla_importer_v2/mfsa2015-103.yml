@@ -1,0 +1,28 @@
+advisory_id: mfsa2015-103
+datasource_id: mozilla_importer_v2/mfsa2015-103
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-103.md
+aliases: []
+summary: |
+  Security researcher Juho Nurminen reported a mechanism to spoof the
+  URL displayed in the addressbar in reader mode by manipulating the loaded URL. This flaw
+  allows for the URL displayed to be different than that the web content rendered. This
+  allows for potential spoofing but the effects are mitigated due to the restrictions reader
+  mode places when rendering content.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/41.0.0
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.38.0
+severities:
+  - score: low
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-103
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-103
+    reference_type:
+    reference_id:

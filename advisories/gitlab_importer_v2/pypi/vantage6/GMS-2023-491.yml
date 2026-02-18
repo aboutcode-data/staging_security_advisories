@@ -1,0 +1,48 @@
+advisory_id: pypi/vantage6/GMS-2023-491
+datasource_id: gitlab_importer_v2/pypi/vantage6/GMS-2023-491
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/vantage6/GMS-2023-491.yml
+aliases:
+  - CVE-2022-39228
+  - GHSA-36gx-9q6h-g429
+  - GMS-2023-491
+summary: |
+  vantage6 vulnerable to Observable Response Discrepancy
+  ### Impact
+  We are incorporating the password policies listed in https://github.com/vantage6/vantage6/issues/59. One measure is that we don't let the user know in case of wrong username/password combination if the username actually exists, to prevent that bots can guess usernames. However, if a wrong password is entered a number of times, the user account is blocked temporarily. This way you could still find out which usernames exist.
+
+  ### Patches
+  Update to 3.8.0+
+
+  ### Workarounds
+  No
+
+  ### References
+  https://github.com/vantage6/vantage6/issues/59
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at [vantage6@iknl.nl](mailto:vantage6@iknl.nl)
+impacted_packages:
+  - purl: pkg:pypi/vantage6
+    affected_versions: vers:pypi/>=3.3.3|<3.8.0
+    fixed_versions: vers:pypi/3.8.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/vantage6/vantage6/commit/ab4381c35d24add06f75d5a8a284321f7a340bd2
+    reference_type:
+    reference_id:
+  - url: https://github.com/vantage6/vantage6/issues/59
+    reference_type:
+    reference_id:
+  - url: https://github.com/vantage6/vantage6/pull/281
+    reference_type:
+    reference_id:
+  - url: https://github.com/vantage6/vantage6/security/advisories/GHSA-36gx-9q6h-g429
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-36gx-9q6h-g429
+    reference_type:
+    reference_id: GHSA-36gx-9q6h-g429

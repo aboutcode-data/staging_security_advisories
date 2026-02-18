@@ -1,0 +1,32 @@
+advisory_id: mfsa2008-56
+datasource_id: mozilla_importer_v2/mfsa2008-56
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2008/mfsa2008-56.md
+aliases: []
+summary: |
+  Mozilla security researcher moz_bug_r_a4 reported
+  that the same-origin check in
+  nsXMLHttpRequest::NotifyEventListeners() could be
+  bypassed. This vulnerability could be used to execute JavaScript in
+  the context of a different website.
+  Thunderbird shares the browser engine with Firefox and
+  could be vulnerable if JavaScript were to be enabled in mail. This is
+  not the default setting and we strongly discourage users from running
+  JavaScript in mail.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.0.4
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.1.13
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2008-56
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2008-56
+    reference_type:
+    reference_id:

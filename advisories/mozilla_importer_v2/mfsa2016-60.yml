@@ -1,0 +1,26 @@
+advisory_id: mfsa2016-60
+datasource_id: mozilla_importer_v2/mfsa2016-60
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2016/mfsa2016-60.md
+aliases: []
+summary: |
+  Mozilla engineer Matt Wobensmith reported that Content Security Policy
+  (CSP) does not block the loading of cross-domain Java applets when specified by policy.
+  This is because the Java applet is loaded by the Java plugin, which then mediates all
+  network requests without checking against CSP. This could allow a malicious site to
+  manipulate content through a Java applet to bypass CSP protections, allowing for possible
+  cross-site scripting (XSS) attacks.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/47.0.0
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-60
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-60
+    reference_type:
+    reference_id:

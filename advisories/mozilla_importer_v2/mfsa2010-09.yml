@@ -1,0 +1,25 @@
+advisory_id: mfsa2010-09
+datasource_id: mozilla_importer_v2/mfsa2010-09
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2010/mfsa2010-09.md
+aliases: []
+summary: |
+  Security researcher regenrecht reported (via TippingPoint's
+  Zero Day Initiative) a potential reuse of a deleted image frame in Firefox
+  3.6's handling of multipart/x-mixed-replace images. Although
+  no exploit was shown, re-use of freed memory has led to exploitable
+  vulnerabilities in the past.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.6.2
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-09
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2010-09
+    reference_type:
+    reference_id:

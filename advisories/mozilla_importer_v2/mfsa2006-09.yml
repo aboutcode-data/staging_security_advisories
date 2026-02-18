@@ -1,0 +1,50 @@
+advisory_id: mfsa2006-09
+datasource_id: mozilla_importer_v2/mfsa2006-09
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2006/mfsa2006-09.md
+aliases: []
+summary: |
+  shutdown reported a method of injecting running JavaScript code into
+  a page on another site using a modal alert to suspend an event handler
+  while a new page is being loaded. This vulnerability allows an attacker
+  to steal any confidential information the new page might contain,
+  including any passwords and cookies which might allow the attacker
+  to log on to that site as the victim.
+  shutdown also reported a variant using the two-argument form of eval() that
+  did not require a modal dialog and would be much less obtrusive.
+  moz_bug_r_a4 reported two variants that bypassed our initial fixes,
+  one using "new Script()", the other extending the eval() attack using
+  window.__proto__
+  Thunderbird shares the browser engine with Firefox
+  and could be vulnerable if JavaScript were to be enabled in mail. This is not
+  the default setting and we strongly discourage users from running
+  JavaScript in mail.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/1.5.0
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/1.0.8
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/1.5.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/1.0.8
+  - purl: pkg:mozilla/Mozilla%20Suite
+    affected_versions:
+    fixed_versions: vers:generic/1.7.13
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/1.0.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-09
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2006-09
+    reference_type:
+    reference_id:

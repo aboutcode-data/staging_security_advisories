@@ -1,0 +1,37 @@
+advisory_id: mfsa2012-26
+datasource_id: mozilla_importer_v2/mfsa2012-26
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2012/mfsa2012-26.md
+aliases: []
+summary: |
+  Mozilla community member Matias Juntunen discovered an error
+  in WebGLBuffer where FindMaxElementInSubArray receives wrong template arguments
+  from FindMaxUshortElement. This bug causes maximum index to be computed
+  incorrectly within WebGL.drawElements, allowing the reading of illegal video
+  memory.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/12.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/10.0.4
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/12.0.0
+  - purl: pkg:mozilla/Thunderbird%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/10.0.4
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.9.0
+severities:
+  - score: high
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-26
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2012-26
+    reference_type:
+    reference_id:

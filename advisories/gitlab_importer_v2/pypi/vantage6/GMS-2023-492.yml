@@ -1,0 +1,37 @@
+advisory_id: pypi/vantage6/GMS-2023-492
+datasource_id: gitlab_importer_v2/pypi/vantage6/GMS-2023-492
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/vantage6/GMS-2023-492.yml
+aliases:
+  - CVE-2023-23929
+  - GHSA-4w59-c3gc-rrhp
+  - GMS-2023-492
+summary: |
+  vantage6 refresh tokens do not expire
+  vantage6 is a privacy preserving federated learning infrastructure for secure insight exchange. Currently, the refresh token is valid indefinitely. The refresh token should get a validity of 24-48 hours. A fix was released in version 3.8.0.
+impacted_packages:
+  - purl: pkg:pypi/vantage6
+    affected_versions: vers:pypi/<3.8.0
+    fixed_versions: vers:pypi/3.8.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/vantage6/GMS-2023-492.yml
+weaknesses:
+  - CWE-1035
+  - CWE-613
+  - CWE-937
+references:
+  - url: https://github.com/vantage6/vantage6/commit/48ebfca42359e9a6743e9598684585e2522cdce8
+    reference_type:
+    reference_id:
+  - url: https://github.com/vantage6/vantage6/security/advisories/GHSA-4w59-c3gc-rrhp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-23929
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-4w59-c3gc-rrhp
+    reference_type:
+    reference_id: GHSA-4w59-c3gc-rrhp

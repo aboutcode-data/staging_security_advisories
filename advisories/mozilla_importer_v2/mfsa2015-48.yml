@@ -1,0 +1,43 @@
+advisory_id: mfsa2015-48
+datasource_id: mozilla_importer_v2/mfsa2015-48
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2015/mfsa2015-48.md
+aliases: []
+summary: |
+  Using the Address Sanitizer tool, security researcher Atte
+  Kettunen found a buffer overflow during the rendering of SVG format
+  graphics when combined with specific CSS properties on a page. This results in a
+  potentially exploitable crash.
+
+  In general this flaw cannot be exploited through email in the
+  Thunderbird product because scripting is disabled, but is potentially a risk in
+  browser or browser-like contexts.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/38.0.0
+  - purl: pkg:mozilla/Firefox%20ESR
+    affected_versions:
+    fixed_versions: vers:generic/31.7.0
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/38.0.1
+  - purl: pkg:mozilla/Thunderbird
+    affected_versions:
+    fixed_versions: vers:generic/31.7.0
+  - purl: pkg:mozilla/Firefox%20OS
+    affected_versions:
+    fixed_versions: vers:generic/2.2.0
+  - purl: pkg:mozilla/SeaMonkey
+    affected_versions:
+    fixed_versions: vers:generic/2.35.0
+severities:
+  - score: critical
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-48
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2015-48
+    reference_type:
+    reference_id:

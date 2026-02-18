@@ -1,0 +1,28 @@
+advisory_id: mfsa2009-22
+datasource_id: mozilla_importer_v2/mfsa2009-22
+datasource_url: https://github.com/mozilla/foundation-security-advisories/blob/master/announce/2009/mfsa2009-22.md
+aliases: []
+summary: |
+  Mozilla community member Michael reported that
+  when a server responds with a Refresh header containing a
+  javascript: URI, Firefox will redirect to the javascript: URI.  If an
+  attacker could inject a Refresh header into a server
+  response, or could control the value that a site places in
+  the Refresh header, they could use this vulnerability to
+  perform an XSS attack and execute arbitrary JavaScript within the
+  context of that site.
+impacted_packages:
+  - purl: pkg:mozilla/Firefox
+    affected_versions:
+    fixed_versions: vers:generic/3.0.9
+severities:
+  - score: medium
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-22
+weaknesses: []
+references:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2009-22
+    reference_type:
+    reference_id:
