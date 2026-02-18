@@ -1,0 +1,38 @@
+advisory_id: pypi/omero-web/GHSA-j4gv-6x9v-v23g
+datasource_id: gitlab_importer_v2/pypi/omero-web/GHSA-j4gv-6x9v-v23g
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/omero-web/GHSA-j4gv-6x9v-v23g.yml
+aliases:
+  - GHSA-j4gv-6x9v-v23g
+summary: |
+  OMERO.web uses jquery-form library, which may be vulnerable to XSS attack
+  OMERO.web uses the jquery-form library throughout to handle form submission and response processing. Due to some unpatched potential vulnerabilities in jquery-form, OMERO.web 5.29.2 and earlier may be susceptible to XSS attacks.
+impacted_packages:
+  - purl: pkg:pypi/omero-web
+    affected_versions: vers:pypi/<5.29.3
+    fixed_versions: vers:pypi/5.29.3
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/omero-web/GHSA-j4gv-6x9v-v23g.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/jquery-form/form/issues/604
+    reference_type:
+    reference_id:
+  - url: https://github.com/ome/omero-web
+    reference_type:
+    reference_id:
+  - url: https://github.com/ome/omero-web/commit/a3eadf722cfada2b844b97abe65baf5856e77c4f
+    reference_type:
+    reference_id:
+  - url: https://github.com/ome/omero-web/security/advisories/GHSA-j4gv-6x9v-v23g
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-j4gv-6x9v-v23g
+    reference_type:
+    reference_id: GHSA-j4gv-6x9v-v23g

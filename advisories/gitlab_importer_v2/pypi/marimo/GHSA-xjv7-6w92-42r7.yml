@@ -1,0 +1,41 @@
+advisory_id: pypi/marimo/GHSA-xjv7-6w92-42r7
+datasource_id: gitlab_importer_v2/pypi/marimo/GHSA-xjv7-6w92-42r7
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/marimo/GHSA-xjv7-6w92-42r7.yml
+aliases:
+  - GHSA-xjv7-6w92-42r7
+summary: |
+  marimo vulnerable to proxy abuse of /mpl/{port}/
+  The  `/mpl/<port>/<route>` endpoint, which is accessible without authentication on default Marimo installations allows for external attackers to reach internal services and arbitrary ports.
+impacted_packages:
+  - purl: pkg:pypi/marimo
+    affected_versions: vers:pypi/>=0.9.20|<0.16.4
+    fixed_versions: vers:pypi/0.16.4
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/marimo/GHSA-xjv7-6w92-42r7.yml
+weaknesses:
+  - CWE-441
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/marimo-team/marimo
+    reference_type:
+    reference_id:
+  - url: https://github.com/marimo-team/marimo/commit/0312706d5e594acdb405209b2c8d87c98f46b22b
+    reference_type:
+    reference_id:
+  - url: https://github.com/marimo-team/marimo/releases/tag/0.16.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/marimo-team/marimo/security/advisories/GHSA-xjv7-6w92-42r7
+    reference_type:
+    reference_id:
+  - url: https://marimo-team.notion.site/cve-proxy-without-authentication
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-xjv7-6w92-42r7
+    reference_type:
+    reference_id: GHSA-xjv7-6w92-42r7

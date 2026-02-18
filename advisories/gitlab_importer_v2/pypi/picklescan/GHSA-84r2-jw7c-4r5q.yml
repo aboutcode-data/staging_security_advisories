@@ -1,0 +1,45 @@
+advisory_id: pypi/picklescan/GHSA-84r2-jw7c-4r5q
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-84r2-jw7c-4r5q
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-84r2-jw7c-4r5q.yml
+aliases:
+  - GHSA-84r2-jw7c-4r5q
+summary: |
+  Picklescan has Incomplete List of Disallowed Inputs
+  Currently picklescanner only blocks some specific functions of the pydoc and operator modules. Attackers can use other functions within these allowed modules to go through undetected and achieve RCE on the final user. Particularly
+  * pydoc.locate: Can dynamically resolve and import arbitrary modules (e.g., resolving the string "os" to the actual os module).
+  * operator.methodcaller: Allows executing a method on an object. When combined with a resolved module object, it can execute functions like system.
+
+  Since locate and methodcaller are not explicitly listed in the deny-list, picklescan treats them as "Safe" or "Suspicious" (depending on configuration) but does not flag them as "Dangerous", allowing the malicious file to bypass the security check.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.33
+    fixed_versions: vers:pypi/0.0.33
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-84r2-jw7c-4r5q.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-184
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/70c1c6c31beb6baaf52c8db1b6c3c0e84a6f9dab
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/pull/53
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/releases/tag/v0.0.33
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-84r2-jw7c-4r5q
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-84r2-jw7c-4r5q
+    reference_type:
+    reference_id: GHSA-84r2-jw7c-4r5q

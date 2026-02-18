@@ -1,0 +1,37 @@
+advisory_id: pypi/opentelemetry-instrumentation/GMS-2023-2906
+datasource_id: gitlab_importer_v2/pypi/opentelemetry-instrumentation/GMS-2023-2906
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/opentelemetry-instrumentation/GMS-2023-2906.yml
+aliases:
+  - GHSA-5rv5-6h4r-h22v
+  - GMS-2023-2906
+summary: |
+  opentelemetry-instrumentation Denial of Service vulnerability due to unbound cardinality metrics
+  ### Summary
+  Autoinstrumentation out of the box adds the label `http_method` that has unbound cardinality. It leads to the server's potential memory exhaustion when many malicious requests are sent.
+
+  ### Details
+  HTTP method for requests can be easily set by an attacker to be random and long.
+
+  ### PoC
+  Send many requests with long randomly generated HTTP methods and observe how memory consumption increases during it.
+impacted_packages:
+  - purl: pkg:pypi/opentelemetry-instrumentation
+    affected_versions: vers:pypi/<0.41b0
+    fixed_versions: vers:pypi/0.41b0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/open-telemetry/opentelemetry-python-contrib/commit/6007e0c013071e7f8b9612d3bc68aeb9d600d74e
+    reference_type:
+    reference_id:
+  - url: https://github.com/open-telemetry/opentelemetry-python-contrib/releases/tag/v0.41b0
+    reference_type:
+    reference_id:
+  - url: https://github.com/open-telemetry/opentelemetry-python-contrib/security/advisories/GHSA-5rv5-6h4r-h22v
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5rv5-6h4r-h22v
+    reference_type:
+    reference_id: GHSA-5rv5-6h4r-h22v

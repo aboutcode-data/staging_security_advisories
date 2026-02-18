@@ -1,0 +1,41 @@
+advisory_id: pypi/picklescan/GHSA-r8g5-cgf2-4m4m
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-r8g5-cgf2-4m4m
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-r8g5-cgf2-4m4m.yml
+aliases:
+  - GHSA-r8g5-cgf2-4m4m
+summary: |
+  Picklescan missing detection when calling numpy.f2py.crackfortran.getlincoef
+  An unsafe deserialization vulnerability allows an attacker to execute arbitrary code on the host when loading a malicious pickle payload from an untrusted source.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.33
+    fixed_versions: vers:pypi/0.0.33
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-r8g5-cgf2-4m4m.yml
+weaknesses:
+  - CWE-502
+  - CWE-937
+  - CWE-1035
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/70c1c6c31beb6baaf52c8db1b6c3c0e84a6f9dab
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/pull/53
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/releases/tag/v0.0.33
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-r8g5-cgf2-4m4m
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-r8g5-cgf2-4m4m
+    reference_type:
+    reference_id: GHSA-r8g5-cgf2-4m4m

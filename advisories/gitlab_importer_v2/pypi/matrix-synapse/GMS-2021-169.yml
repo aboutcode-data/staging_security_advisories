@@ -1,0 +1,40 @@
+advisory_id: pypi/matrix-synapse/GMS-2021-169
+datasource_id: gitlab_importer_v2/pypi/matrix-synapse/GMS-2021-169
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/matrix-synapse/GMS-2021-169.yml
+aliases:
+  - GHSA-7h5v-85w9-pq6c
+  - GMS-2021-169
+summary: |
+  Denial of service  due to improper input validation in third-party identifier endpoint
+  ### Impact
+  Missing input validation of some parameters on the endpoints used to confirm third-party identifiers could cause excessive use of disk space and memory leading to resource exhaustion.
+
+  ### Patches
+  The issue is fixed by https://github.com/matrix-org/synapse/pull/9855.
+
+  ### Workarounds
+  There are no known workarounds.
+
+  ### References
+  n/a
+
+  ### For more information
+  If you have any questions or comments about this advisory, email us at security@matrix.org.
+impacted_packages:
+  - purl: pkg:pypi/matrix-synapse
+    affected_versions: vers:pypi/<1.33.0
+    fixed_versions: vers:pypi/1.33.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/matrix-org/synapse/pull/9855
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/security/advisories/GHSA-7h5v-85w9-pq6c
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-7h5v-85w9-pq6c
+    reference_type:
+    reference_id: GHSA-7h5v-85w9-pq6c

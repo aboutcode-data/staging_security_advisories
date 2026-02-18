@@ -1,0 +1,29 @@
+advisory_id: pypi/picklescan/GHSA-4whj-rm5r-c2v8
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-4whj-rm5r-c2v8
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-4whj-rm5r-c2v8.yml
+aliases:
+  - GHSA-4whj-rm5r-c2v8
+summary: |
+  Picklescan is missing detection when calling pytorch function torch.utils.bottleneck.__main__.run_autograd_prof
+  Using torch.utils.bottleneck.\_\_main\_\_.run_autograd_prof function, which is a pytorch library function to execute remote pickle file.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.30
+    fixed_versions: vers:pypi/0.0.30
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/1931c2d04eaca8d20597705ff39cab78ba364e4b
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-4whj-rm5r-c2v8
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-4whj-rm5r-c2v8
+    reference_type:
+    reference_id: GHSA-4whj-rm5r-c2v8

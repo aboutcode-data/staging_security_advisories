@@ -1,0 +1,30 @@
+advisory_id: pypi/pycares/GHSA-5qpg-rh4j-qp35
+datasource_id: gitlab_importer_v2/pypi/pycares/GHSA-5qpg-rh4j-qp35
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/pycares/GHSA-5qpg-rh4j-qp35.yml
+aliases:
+  - GHSA-5qpg-rh4j-qp35
+summary: |
+  pycares has a Use-After-Free Vulnerability
+  pycares is vulnerable to a use-after-free condition that occurs when a Channel object is garbage collected while DNS queries are still pending. This results in a fatal Python error and interpreter crash.
+impacted_packages:
+  - purl: pkg:pypi/pycares
+    affected_versions: vers:pypi/<4.9.0
+    fixed_versions: vers:pypi/4.9.0
+severities: []
+weaknesses:
+  - CWE-416
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/saghul/pycares
+    reference_type:
+    reference_id:
+  - url: https://github.com/saghul/pycares/commit/ebfd7d71eb8e74bc1057a361ea79a5906db510d4
+    reference_type:
+    reference_id:
+  - url: https://github.com/saghul/pycares/security/advisories/GHSA-5qpg-rh4j-qp35
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5qpg-rh4j-qp35
+    reference_type:
+    reference_id: GHSA-5qpg-rh4j-qp35

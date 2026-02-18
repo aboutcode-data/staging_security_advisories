@@ -1,0 +1,24 @@
+advisory_id: pypi/inventree/GMS-2022-2345
+datasource_id: gitlab_importer_v2/pypi/inventree/GMS-2022-2345
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/inventree/GMS-2022-2345.yml
+aliases:
+  - GHSA-rm89-9g65-4ffr
+  - GMS-2022-2345
+summary: |
+  Insufficient HTML Sanitization
+  Affected versions can have malicious javascript code injected into the users browser by other authenticated users, as data fields retrieved from the database are not properly sanitized before displaying in various front-end views.
+impacted_packages:
+  - purl: pkg:pypi/inventree
+    affected_versions: vers:pypi/<0.7.2
+    fixed_versions: vers:pypi/0.7.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/inventree/InvenTree/security/advisories/GHSA-rm89-9g65-4ffr
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-rm89-9g65-4ffr
+    reference_type:
+    reference_id: GHSA-rm89-9g65-4ffr

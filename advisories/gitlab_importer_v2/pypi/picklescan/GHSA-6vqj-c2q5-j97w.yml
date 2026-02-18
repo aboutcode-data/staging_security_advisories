@@ -1,0 +1,29 @@
+advisory_id: pypi/picklescan/GHSA-6vqj-c2q5-j97w
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-6vqj-c2q5-j97w
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-6vqj-c2q5-j97w.yml
+aliases:
+  - GHSA-6vqj-c2q5-j97w
+summary: |
+  Picklescan has a missing detection when calling built-in python profile.Profile.runctx
+  Using profile.Profile.runctx, which is a built-in python library function to execute remote pickle file.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.29
+    fixed_versions: vers:pypi/0.0.29
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/aecd11be98702caa9ba9b12189d91ad596a36114
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-6vqj-c2q5-j97w
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-6vqj-c2q5-j97w
+    reference_type:
+    reference_id: GHSA-6vqj-c2q5-j97w

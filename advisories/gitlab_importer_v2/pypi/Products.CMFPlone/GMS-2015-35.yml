@@ -1,0 +1,20 @@
+advisory_id: pypi/Products.CMFPlone/GMS-2015-35
+datasource_id: gitlab_importer_v2/pypi/Products.CMFPlone/GMS-2015-35
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/Products.CMFPlone/GMS-2015-35.yml
+aliases:
+  - GMS-2015-35
+summary: |
+  Multiple CSRF vulnerabilities in Management Interface
+  There are multiple CSRF (cross-site request forgery) vulnerabilities in the ZMI (Zope Management Interface).
+impacted_packages:
+  - purl: pkg:pypi/products.cmfplone
+    affected_versions: vers:pypi/<5.0a0
+    fixed_versions: vers:pypi/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://plone.org/products/plone/security/advisories/security-vulnerability-20151006-csrf
+    reference_type: exploit
+    reference_id: CVE-2015-7293;OSVDB-128533;OSVDB-128532

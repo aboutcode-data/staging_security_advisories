@@ -1,0 +1,41 @@
+advisory_id: pypi/picklescan/GHSA-hgrh-qx5j-jfwx
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-hgrh-qx5j-jfwx
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-hgrh-qx5j-jfwx.yml
+aliases:
+  - GHSA-hgrh-qx5j-jfwx
+summary: |
+  Picklescan Bypasses Unsafe Globals Check using pty.spawn
+  The vulnerability allows malicious actors to bypass PickleScan's unsafe globals check, leading to potential arbitrary code execution. The issue stems from the absence of the `pty` library (more specifically, of  the `pty.spawn` function) from PickleScan's list of unsafe globals. This vulnerability allows attackers to disguise malicious pickle payloads within files that would otherwise be scanned for pickle-based threats.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.33
+    fixed_versions: vers:pypi/0.0.33
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-hgrh-qx5j-jfwx.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-693
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/70c1c6c31beb6baaf52c8db1b6c3c0e84a6f9dab
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/pull/53
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/releases/tag/v0.0.33
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-hgrh-qx5j-jfwx
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-hgrh-qx5j-jfwx
+    reference_type:
+    reference_id: GHSA-hgrh-qx5j-jfwx

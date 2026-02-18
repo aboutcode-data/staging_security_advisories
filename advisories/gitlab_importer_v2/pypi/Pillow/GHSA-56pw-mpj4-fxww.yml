@@ -1,0 +1,39 @@
+advisory_id: pypi/Pillow/GHSA-56pw-mpj4-fxww
+datasource_id: gitlab_importer_v2/pypi/Pillow/GHSA-56pw-mpj4-fxww
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/Pillow/GHSA-56pw-mpj4-fxww.yml
+aliases:
+  - GHSA-56pw-mpj4-fxww
+summary: |
+  Duplicate Advisory: Bundled libwebp in Pillow vulnerable
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-56pw-mpj4-fxww. This link is maintained to preserve external references.
+
+  ## Original Description
+  Pillow versions before v10.0.1 bundled libwebp binaries in wheels that are vulnerable to CVE-2023-5129 (previously CVE-2023-4863). Pillow v10.0.1 upgrades the bundled libwebp binary to v1.3.2.
+impacted_packages:
+  - purl: pkg:pypi/pillow
+    affected_versions: vers:pypi/<10.0.1
+    fixed_versions: vers:pypi/10.0.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2023-175.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/python-pillow/Pillow
+    reference_type:
+    reference_id:
+  - url: https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst#1001-2023-09-15
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-4863
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5129
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-56pw-mpj4-fxww
+    reference_type:
+    reference_id: GHSA-56pw-mpj4-fxww

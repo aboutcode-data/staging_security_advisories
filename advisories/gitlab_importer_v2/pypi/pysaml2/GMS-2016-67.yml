@@ -1,0 +1,23 @@
+advisory_id: pypi/pysaml2/GMS-2016-67
+datasource_id: gitlab_importer_v2/pypi/pysaml2/GMS-2016-67
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/pysaml2/GMS-2016-67.yml
+aliases:
+  - GMS-2016-67
+summary: |
+  XEE vulnerability
+  PySAML2 is vulnerable to XML External Entity attacks (XEE attacks) via SAML XML requests.
+impacted_packages:
+  - purl: pkg:pypi/pysaml2
+    affected_versions: vers:pypi/>=0.0.0
+    fixed_versions: vers:pypi/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/rohe/pysaml2/issues/366
+    reference_type:
+    reference_id:
+  - url: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
+    reference_type:
+    reference_id:

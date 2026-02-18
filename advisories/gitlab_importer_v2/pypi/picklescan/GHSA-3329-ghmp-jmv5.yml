@@ -1,0 +1,38 @@
+advisory_id: pypi/picklescan/GHSA-3329-ghmp-jmv5
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-3329-ghmp-jmv5
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-3329-ghmp-jmv5.yml
+aliases:
+  - GHSA-3329-ghmp-jmv5
+summary: |
+  Picklescan is vulnerable to RCE through missing detection when calling numpy.f2py.crackfortran.myeval
+  Picklescan uses numpy.f2py.crackfortran.myeval, which is a function in numpy to execute remote pickle files.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.33
+    fixed_versions: vers:pypi/0.0.33
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-3329-ghmp-jmv5.yml
+weaknesses:
+  - CWE-94
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/70c1c6c31beb6baaf52c8db1b6c3c0e84a6f9dab
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/pull/53
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-3329-ghmp-jmv5
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3329-ghmp-jmv5
+    reference_type:
+    reference_id: GHSA-3329-ghmp-jmv5

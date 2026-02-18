@@ -1,0 +1,48 @@
+advisory_id: pypi/langflow/GHSA-c995-4fw3-j39m
+datasource_id: gitlab_importer_v2/pypi/langflow/GHSA-c995-4fw3-j39m
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/langflow/GHSA-c995-4fw3-j39m.yml
+aliases:
+  - GHSA-c995-4fw3-j39m
+summary: |
+  Duplicate Advisory: Langflow Vulnerable to Code Injection via the `/api/v1/validate/code` endpoint
+  ### Duplicate Advisory
+
+  This advisory has been withdrawn because it is a duplicate of GHSA-rvqx-wpfh-mfx7. This link is maintained to preserve external references.
+
+  ### Original Description
+
+  Langflow versions prior to 1.3.0 are susceptible to code injection in the `/api/v1/validate/code` endpoint. A remote and unauthenticated attacker can send crafted HTTP requests to execute arbitrary code.
+impacted_packages:
+  - purl: pkg:pypi/langflow
+    affected_versions: vers:pypi/<1.3.0
+    fixed_versions: vers:pypi/1.3.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/langflow/GHSA-c995-4fw3-j39m.yml
+weaknesses:
+  - CWE-94
+  - CWE-1035
+  - CWE-937
+  - CWE-306
+references:
+  - url: https://github.com/langflow-ai/langflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/langflow-ai/langflow/pull/6911
+    reference_type:
+    reference_id:
+  - url: https://github.com/langflow-ai/langflow/releases/tag/1.3.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-3248
+    reference_type:
+    reference_id:
+  - url: https://www.horizon3.ai/attack-research/disclosures/unsafe-at-any-speed-abusing-python-exec-for-unauth-rce-in-langflow-ai
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c995-4fw3-j39m
+    reference_type:
+    reference_id: GHSA-c995-4fw3-j39m

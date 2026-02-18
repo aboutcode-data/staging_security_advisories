@@ -1,0 +1,24 @@
+advisory_id: pypi/inventree/GMS-2022-2254
+datasource_id: gitlab_importer_v2/pypi/inventree/GMS-2022-2254
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/inventree/GMS-2022-2254.yml
+aliases:
+  - GHSA-7rq4-qcpw-74gq
+  - GMS-2022-2254
+summary: |
+  Formula Injection in Exported Data
+  Datasets exported to file (e.g. CSV / XLS) are not sufficiently sanitized, to neutralize potential formula injection.
+impacted_packages:
+  - purl: pkg:pypi/inventree
+    affected_versions: vers:pypi/<0.7.2
+    fixed_versions: vers:pypi/0.7.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/inventree/InvenTree/security/advisories/GHSA-7rq4-qcpw-74gq
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-7rq4-qcpw-74gq
+    reference_type:
+    reference_id: GHSA-7rq4-qcpw-74gq

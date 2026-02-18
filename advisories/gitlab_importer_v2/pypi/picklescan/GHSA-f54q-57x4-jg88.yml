@@ -1,0 +1,29 @@
+advisory_id: pypi/picklescan/GHSA-f54q-57x4-jg88
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-f54q-57x4-jg88
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-f54q-57x4-jg88.yml
+aliases:
+  - GHSA-f54q-57x4-jg88
+summary: |
+  Picklescan has a missing detection when calling built-in python lib2to3.pgen2.grammar.Grammar.loads
+  Using lib2to3.pgen2.grammar.Grammar.loads, which is a built-in python library function to execute remote pickle file.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.29
+    fixed_versions: vers:pypi/0.0.29
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/aecd11be98702caa9ba9b12189d91ad596a36114
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-f54q-57x4-jg88
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-f54q-57x4-jg88
+    reference_type:
+    reference_id: GHSA-f54q-57x4-jg88

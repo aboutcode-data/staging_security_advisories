@@ -1,0 +1,29 @@
+advisory_id: pypi/picklescan/GHSA-q77w-mwjj-7mqx
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-q77w-mwjj-7mqx
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-q77w-mwjj-7mqx.yml
+aliases:
+  - GHSA-q77w-mwjj-7mqx
+summary: |
+  Picklescan is missing detection when calling built-in python library asyncio.unix_events._UnixSubprocessTransport._start
+  Using asyncio.unix_events._UnixSubprocessTransport._start function, which is a built-in python library function to execute remote pickle file.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.30
+    fixed_versions: vers:pypi/0.0.30
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/1931c2d04eaca8d20597705ff39cab78ba364e4b
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-q77w-mwjj-7mqx
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-q77w-mwjj-7mqx
+    reference_type:
+    reference_id: GHSA-q77w-mwjj-7mqx

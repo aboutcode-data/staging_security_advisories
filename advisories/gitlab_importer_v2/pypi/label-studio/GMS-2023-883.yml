@@ -1,0 +1,26 @@
+advisory_id: pypi/label-studio/GMS-2023-883
+datasource_id: gitlab_importer_v2/pypi/label-studio/GMS-2023-883
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/label-studio/GMS-2023-883.yml
+aliases:
+  - GHSA-cpmr-mw4j-99r7
+  - GMS-2023-883
+summary: Relative Path Traversal in label-studio.
+impacted_packages:
+  - purl: pkg:pypi/label-studio
+    affected_versions: vers:pypi/<=1.7.1
+    fixed_versions: vers:pypi/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-352
+references:
+  - url: https://github.com/heartexlabs/label-studio/blob/53944e6bcede75ca5c102d655013f2e5238e85e6/deploy/default.conf#L119
+    reference_type:
+    reference_id:
+  - url: https://github.com/heartexlabs/label-studio/security/advisories/GHSA-cpmr-mw4j-99r7
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cpmr-mw4j-99r7
+    reference_type:
+    reference_id: GHSA-cpmr-mw4j-99r7

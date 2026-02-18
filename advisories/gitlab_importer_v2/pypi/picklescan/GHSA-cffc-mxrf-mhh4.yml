@@ -1,0 +1,37 @@
+advisory_id: pypi/picklescan/GHSA-cffc-mxrf-mhh4
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-cffc-mxrf-mhh4
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-cffc-mxrf-mhh4.yml
+aliases:
+  - GHSA-cffc-mxrf-mhh4
+summary: |
+  Picklescan is vulnerable to RCE via missing detection when calling numpy.f2py.crackfortran.param_eval
+  Picklescan uses numpy.f2py.crackfortran.param_eval, which is a function in numpy to execute remote pickle files.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.33
+    fixed_versions: vers:pypi/0.0.33
+severities: []
+weaknesses:
+  - CWE-94
+  - CWE-502
+  - CWE-937
+  - CWE-1035
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/70c1c6c31beb6baaf52c8db1b6c3c0e84a6f9dab
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/pull/53
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/releases/tag/v0.0.33
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-cffc-mxrf-mhh4
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cffc-mxrf-mhh4
+    reference_type:
+    reference_id: GHSA-cffc-mxrf-mhh4

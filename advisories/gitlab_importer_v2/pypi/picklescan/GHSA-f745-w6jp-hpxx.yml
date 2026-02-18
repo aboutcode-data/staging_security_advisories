@@ -1,0 +1,36 @@
+advisory_id: pypi/picklescan/GHSA-f745-w6jp-hpxx
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-f745-w6jp-hpxx
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-f745-w6jp-hpxx.yml
+aliases:
+  - GHSA-f745-w6jp-hpxx
+summary: |
+  Picklescan missing detection when calling pytorch function torch.utils.collect_env.run
+  Using torch.utils.collect_env.run function, which is a pytorch library function to execute remote pickle file.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.28
+    fixed_versions: vers:pypi/0.0.28
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-345
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/7f994d62084fe43f1cffdef2f9bae6923344ef53
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/pull/47
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/releases/tag/v0.0.28
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-f745-w6jp-hpxx
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-f745-w6jp-hpxx
+    reference_type:
+    reference_id: GHSA-f745-w6jp-hpxx

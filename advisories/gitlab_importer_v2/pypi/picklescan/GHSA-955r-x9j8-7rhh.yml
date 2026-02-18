@@ -1,0 +1,39 @@
+advisory_id: pypi/picklescan/GHSA-955r-x9j8-7rhh
+datasource_id: gitlab_importer_v2/pypi/picklescan/GHSA-955r-x9j8-7rhh
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-955r-x9j8-7rhh.yml
+aliases:
+  - GHSA-955r-x9j8-7rhh
+summary: |
+  Picklescan is vulnerable to RCE via missing detection when calling built-in python _operator.methodcaller
+  Picklescan uses  _operator.methodcaller, which is a built-in python library function to execute remote pickle files.
+impacted_packages:
+  - purl: pkg:pypi/picklescan
+    affected_versions: vers:pypi/<0.0.34
+    fixed_versions: vers:pypi/0.0.34
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/picklescan/GHSA-955r-x9j8-7rhh.yml
+weaknesses:
+  - CWE-94
+  - CWE-502
+  - CWE-937
+  - CWE-1035
+references:
+  - url: https://github.com/mmaitre314/picklescan
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/commit/f2dea43e0c838e09ace1e62994143254b51de927
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/releases/tag/v0.0.34
+    reference_type:
+    reference_id:
+  - url: https://github.com/mmaitre314/picklescan/security/advisories/GHSA-955r-x9j8-7rhh
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-955r-x9j8-7rhh
+    reference_type:
+    reference_id: GHSA-955r-x9j8-7rhh

@@ -1,0 +1,25 @@
+advisory_id: pypi/pollbot/GMS-2022-78
+datasource_id: gitlab_importer_v2/pypi/pollbot/GMS-2022-78
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/pollbot/GMS-2022-78.yml
+aliases:
+  - CVE-2022-0637
+  - GHSA-vg27-hr3v-3cqv
+  - GMS-2022-78
+summary: |
+  Open Redirect in pollbot
+  There was an open redirection vulnerability in the path of https://pollbot.services.mozilla.com/ and https://pollbot.stage.mozaws.net/. Attackers can serve malicious websites that steal passwords or download ransomware to their victims machine due to a redirect and there are a heap of other attack vectors.
+impacted_packages:
+  - purl: pkg:pypi/pollbot
+    affected_versions: vers:pypi/<1.4.6
+    fixed_versions: vers:pypi/1.4.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mozilla/PollBot/security/advisories/GHSA-vg27-hr3v-3cqv
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-vg27-hr3v-3cqv
+    reference_type:
+    reference_id: GHSA-vg27-hr3v-3cqv
