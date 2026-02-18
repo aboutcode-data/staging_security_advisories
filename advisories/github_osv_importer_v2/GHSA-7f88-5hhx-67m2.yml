@@ -1,0 +1,68 @@
+advisory_id: GHSA-7f88-5hhx-67m2
+datasource_id: github_osv_importer_v2/GHSA-7f88-5hhx-67m2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-7f88-5hhx-67m2/GHSA-7f88-5hhx-67m2.json
+aliases:
+  - CVE-2023-5685
+summary: |
+  XNIO denial of service vulnerability
+  A flaw was found in XNIO. The XNIO NotifierState that can cause a Stack Overflow Exception when the chain of notifier states becomes problematically large can lead to uncontrolled resource management and a possible denial of service (DoS). Version 3.8.14.Final is expected to contain a fix.
+impacted_packages:
+  - purl: pkg:maven/org.jboss.xnio/xnio-api
+    affected_versions: vers:maven/<=3.8.13.Final
+    fixed_versions: vers:maven/3.8.14.Final
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-7f88-5hhx-67m2/GHSA-7f88-5hhx-67m2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://access.redhat.com/errata/RHSA-2023:7637
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:7638
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:7639
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:7641
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:10207
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:10208
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:2707
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-5685
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2241822
+    reference_type:
+    reference_id:
+  - url: https://github.com/xnio/xnio
+    reference_type:
+    reference_id:
+  - url: https://github.com/xnio/xnio/blob/3.8.13.Final/api/src/main/java/org/xnio/AbstractIoFuture.java#L249
+    reference_type:
+    reference_id:
+  - url: https://github.com/xnio/xnio/commit/ffabdcdda508ef87aeadad5ca3f854e274d60ec1
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/XNIO-423
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5685
+    reference_type:
+    reference_id:

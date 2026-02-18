@@ -1,0 +1,48 @@
+advisory_id: GHSA-72hg-5wr5-rmfc
+datasource_id: github_osv_importer_v2/GHSA-72hg-5wr5-rmfc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-72hg-5wr5-rmfc/GHSA-72hg-5wr5-rmfc.json
+aliases:
+  - CVE-2023-47129
+summary: |
+  Statamic CMS remote code execution via front-end form uploads
+  ### Impact
+  On front-end forms with an asset upload field, PHP files crafted to look like images may be uploaded regardless of mime validation rules. This only affects forms using the "Forms" feature and not just _any_ arbitrary form. This does not affect the control panel.
+
+  ### Patches
+  It has been patched in 3.4.13 and 4.33.0.
+impacted_packages:
+  - purl: pkg:composer/statamic/cms
+    affected_versions: vers:composer/>=4.0.0|<4.33.0
+    fixed_versions: vers:composer/4.33.0
+  - purl: pkg:composer/statamic/cms
+    affected_versions: vers:composer/<3.4.13
+    fixed_versions: vers:composer/3.4.13
+severities:
+  - score: '8.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-72hg-5wr5-rmfc/GHSA-72hg-5wr5-rmfc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/statamic/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/commit/098ef8024d97286ca501273c18ae75b646262d75
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/commit/f6c688154f6bdbd0b67039f8f11dcd98ba061e77
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/security/advisories/GHSA-72hg-5wr5-rmfc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-47129
+    reference_type:
+    reference_id:

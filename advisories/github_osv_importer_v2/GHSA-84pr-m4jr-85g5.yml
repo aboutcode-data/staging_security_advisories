@@ -1,0 +1,41 @@
+advisory_id: GHSA-84pr-m4jr-85g5
+datasource_id: github_osv_importer_v2/GHSA-84pr-m4jr-85g5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-84pr-m4jr-85g5/GHSA-84pr-m4jr-85g5.json
+aliases:
+  - CVE-2024-1681
+summary: |
+  flask-cors vulnerable to log injection when the log level is set to debug
+  corydolphin/flask-cors is vulnerable to log injection when the log level is set to debug. An attacker can inject fake log entries into the log file by sending a specially crafted GET request containing a CRLF sequence in the request path. This vulnerability allows attackers to corrupt log files, potentially covering tracks of other attacks, confusing log post-processing tools, and forging log entries. The issue is due to improper output neutralization for logs.
+impacted_packages:
+  - purl: pkg:pypi/flask-cors
+    affected_versions: vers:pypi/<=4.0.0
+    fixed_versions: vers:pypi/4.0.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-84pr-m4jr-85g5/GHSA-84pr-m4jr-85g5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-117
+references:
+  - url: https://github.com/corydolphin/flask-cors
+    reference_type:
+    reference_id:
+  - url: https://github.com/corydolphin/flask-cors/blob/40acc8092332dfed4bb54d7a4f89a6d479466de7/flask_cors/extension.py#L194
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/25a7a0ba-9fa2-4777-acb6-03e5539bb644
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/05/msg00049.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-1681
+    reference_type:
+    reference_id:

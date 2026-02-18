@@ -1,0 +1,41 @@
+advisory_id: GHSA-6xw3-cpqj-8mxr
+datasource_id: github_osv_importer_v2/GHSA-6xw3-cpqj-8mxr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-6xw3-cpqj-8mxr/GHSA-6xw3-cpqj-8mxr.json
+aliases:
+  - CVE-2022-40489
+summary: |
+  ThinkCMF Cross Site Request Forgery (CSRF) vulnerability
+  ThinkCMF version 6.0.7 is affected by a Cross Site Request Forgery (CSRF) vulnerability that allows a Super Administrator user to be injected into administrative users.
+impacted_packages:
+  - purl: pkg:composer/thinkcmf/thinkcmf
+    affected_versions: vers:composer/<6.0.8
+    fixed_versions: vers:composer/6.0.8
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-6xw3-cpqj-8mxr/GHSA-6xw3-cpqj-8mxr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/thinkcmf/thinkcmf
+    reference_type:
+    reference_id:
+  - url: https://github.com/thinkcmf/thinkcmf/commit/321faa20865e74540e5f0a63e4c3f4ea75093d59
+    reference_type:
+    reference_id:
+  - url: https://github.com/thinkcmf/thinkcmf/commit/b61636134aa57d4693967f35772200c779099740
+    reference_type:
+    reference_id:
+  - url: https://github.com/thinkcmf/thinkcmf/issues/736
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-40489
+    reference_type:
+    reference_id:

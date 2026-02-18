@@ -1,0 +1,54 @@
+advisory_id: GHSA-73gx-x7r9-77x2
+datasource_id: github_osv_importer_v2/GHSA-73gx-x7r9-77x2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-73gx-x7r9-77x2/GHSA-73gx-x7r9-77x2.json
+aliases:
+  - CVE-2024-47051
+summary: "Mautic allows Remote Code Execution and File Deletion in Asset Uploads\n### Summary\n\
+  This advisory addresses two critical security vulnerabilities present in Mautic versions before\
+  \ 5.2.3.  These vulnerabilities could be exploited by authenticated users.\n\n* **Remote Code\
+  \ Execution (RCE) via Asset Upload:**  A Remote Code Execution vulnerability has been identified\
+  \ in the asset upload functionality. Insufficient enforcement of allowed file extensions allows\
+  \ an attacker to bypass restrictions and upload executable files, such as PHP scripts.\n\n\
+  * **Path Traversal File Deletion:** A Path Traversal vulnerability exists in the upload validation\
+  \ process.  Due to improper handling of path components, an authenticated user can manipulate\
+  \ the file deletion process to delete arbitrary files on the host system. \n  \n### Mitigation\n\
+  Please update to 5.2.3 or later.\n\n### Workarounds\nNone\n\n### References\nhttps://owasp.org/www-community/attacks/Code_Injection\n\
+  https://owasp.org/www-community/attacks/Path_Traversal\n\nIf you have any questions or comments\
+  \ about this advisory:\n\nEmail us at [security@mautic.org](mailto:security@mautic.org)"
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/<5.2.3
+    fixed_versions: vers:composer/5.2.3
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-73gx-x7r9-77x2/GHSA-73gx-x7r9-77x2.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-23
+references:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/commit/75bc488ce98b9c8ec01114984049fc1c42c0cae5
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-73gx-x7r9-77x2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47051
+    reference_type:
+    reference_id:
+  - url: https://owasp.org/www-community/attacks/Code_Injection
+    reference_type:
+    reference_id:
+  - url: https://owasp.org/www-community/attacks/Path_Traversal
+    reference_type:
+    reference_id:

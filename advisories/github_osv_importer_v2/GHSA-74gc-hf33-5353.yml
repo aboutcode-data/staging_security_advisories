@@ -1,0 +1,38 @@
+advisory_id: GHSA-74gc-hf33-5353
+datasource_id: github_osv_importer_v2/GHSA-74gc-hf33-5353
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-74gc-hf33-5353/GHSA-74gc-hf33-5353.json
+aliases:
+  - CVE-2020-13633
+summary: |
+  Fork CMS Cross-site Scripting Vulnerability
+  Fork before 5.8.3 allows XSS via navigation_title or title.
+impacted_packages:
+  - purl: pkg:composer/forkcms/forkcms
+    affected_versions: vers:composer/<5.8.3
+    fixed_versions: vers:composer/5.8.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-74gc-hf33-5353/GHSA-74gc-hf33-5353.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/forkcms/forkcms
+    reference_type:
+    reference_id:
+  - url: https://github.com/forkcms/forkcms/commit/b88f8a2033a4b9b4cbfce96c85691aafb021819d
+    reference_type:
+    reference_id:
+  - url: https://github.com/forkcms/forkcms/pull/3093
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13633
+    reference_type:
+    reference_id:

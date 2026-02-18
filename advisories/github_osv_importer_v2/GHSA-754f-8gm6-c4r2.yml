@@ -1,0 +1,88 @@
+advisory_id: GHSA-754f-8gm6-c4r2
+datasource_id: github_osv_importer_v2/GHSA-754f-8gm6-c4r2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-754f-8gm6-c4r2/GHSA-754f-8gm6-c4r2.json
+aliases:
+  - CVE-2025-25292
+summary: |
+  Ruby SAML allows a SAML authentication bypass due to namespace handling (parser differential)
+  ### Summary
+  An authentication bypass vulnerability was found in ruby-saml due to a parser differential.
+  ReXML and Nokogiri parse XML differently, the parsers can generate entirely different document structures from the same XML input. That allows an attacker to be able to execute a Signature Wrapping attack.
+
+  ### Impact
+  This issue may lead to authentication bypass.
+impacted_packages:
+  - purl: pkg:gem/ruby-saml
+    affected_versions: vers:gem/>=1.13.0|<1.18.0
+    fixed_versions: vers:gem/1.18.0
+  - purl: pkg:gem/ruby-saml
+    affected_versions: vers:gem/<1.12.4
+    fixed_versions: vers:gem/1.12.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-754f-8gm6-c4r2/GHSA-754f-8gm6-c4r2.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-754f-8gm6-c4r2/GHSA-754f-8gm6-c4r2.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-347
+  - CWE-436
+references:
+  - url: https://about.gitlab.com/releases/2025/03/12/patch-release-gitlab-17-9-2-released
+    reference_type:
+    reference_id:
+  - url: https://github.blog/security/sign-in-as-anyone-bypassing-saml-sso-authentication-with-parser-differentials
+    reference_type:
+    reference_id:
+  - url: https://github.com/omniauth/omniauth-saml/security/advisories/GHSA-hw46-3hmr-x9xv
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/ruby-saml/CVE-2025-25292.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAML-Toolkits/ruby-saml
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAML-Toolkits/ruby-saml/commit/e76c5b36bac40aedbf1ba7ffaaf495be63328cd9
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAML-Toolkits/ruby-saml/commit/e9c1cdbd0f9afa467b585de279db0cbd0fb8ae97
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAML-Toolkits/ruby-saml/releases/tag/v1.12.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAML-Toolkits/ruby-saml/releases/tag/v1.18.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/SAML-Toolkits/ruby-saml/security/advisories/GHSA-754f-8gm6-c4r2
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/04/msg00011.html
+    reference_type:
+    reference_id:
+  - url: https://news.ycombinator.com/item?id=43374519
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-25292
+    reference_type:
+    reference_id:
+  - url: https://portswigger.net/research/saml-roulette-the-hacker-always-wins
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2024-329_GHSL-2024-330_ruby-saml
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20250314-0009
+    reference_type:
+    reference_id:

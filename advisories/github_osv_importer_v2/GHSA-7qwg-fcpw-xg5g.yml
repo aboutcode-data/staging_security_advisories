@@ -1,0 +1,37 @@
+advisory_id: GHSA-7qwg-fcpw-xg5g
+datasource_id: github_osv_importer_v2/GHSA-7qwg-fcpw-xg5g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-7qwg-fcpw-xg5g/GHSA-7qwg-fcpw-xg5g.json
+aliases: []
+summary: |
+  Privilege Escalation & SQL Injection in TYPO3 CMS
+  Failing to properly dissociate system related configuration from user generated configuration, the Form Framework (system extension "form") is vulnerable to SQL injection and Privilege Escalation. Basically instructions can be persisted to a form definition file that were not configured to be modified - this applies to definitions managed using the form editor module as well as direct file upload using the regular file list module. A valid backend user account as well as having system extension form activated are needed in order to exploit this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.5.0|<8.7.17
+    fixed_versions: vers:composer/8.7.17
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=9.0.0|<9.3.2
+    fixed_versions: vers:composer/9.3.2
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-7qwg-fcpw-xg5g/GHSA-7qwg-fcpw-xg5g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2018-07-12-3.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2018-003
+    reference_type:
+    reference_id:

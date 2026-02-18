@@ -1,0 +1,51 @@
+advisory_id: GHSA-7hfx-h3j3-rwq4
+datasource_id: github_osv_importer_v2/GHSA-7hfx-h3j3-rwq4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-7hfx-h3j3-rwq4/GHSA-7hfx-h3j3-rwq4.json
+aliases:
+  - CVE-2024-21642
+summary: |
+  D-Tale server-side request forgery through Web uploads
+  ### Impact
+  Users hosting D-Tale publicly can be vulnerable to server-side request forgery (SSRF) allowing attackers to access files on the server.
+
+  ### Patches
+  Users should upgrade to version 3.9.0 where the "Load From the Web" input is turned off by default. You can find out more information on how to turn it back on [here](https://github.com/man-group/dtale?tab=readme-ov-file#load-data--sample-datasets)
+
+  ### Workarounds
+  The only workaround for versions earlier than 3.9.0 is to only host D-Tale to trusted users.
+
+  ### References
+  See "Load Data & Sample Datasets" [documentation](https://github.com/man-group/dtale?tab=readme-ov-file#load-data--sample-datasets)
+impacted_packages:
+  - purl: pkg:pypi/dtale
+    affected_versions: vers:pypi/<3.9.0
+    fixed_versions: vers:pypi/3.9.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-7hfx-h3j3-rwq4/GHSA-7hfx-h3j3-rwq4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/man-group/dtale
+    reference_type:
+    reference_id:
+  - url: https://github.com/man-group/dtale/commit/954f6be1a06ff8629ead2c85c6e3f8e2196b3df2
+    reference_type:
+    reference_id:
+  - url: https://github.com/man-group/dtale/security/advisories/GHSA-7hfx-h3j3-rwq4
+    reference_type:
+    reference_id:
+  - url: https://github.com/man-group/dtale?tab=readme-ov-file#load-data--sample-datasets
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21642
+    reference_type:
+    reference_id:

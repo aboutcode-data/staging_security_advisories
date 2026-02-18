@@ -1,0 +1,38 @@
+advisory_id: GHSA-735v-wx75-xmmm
+datasource_id: github_osv_importer_v2/GHSA-735v-wx75-xmmm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-735v-wx75-xmmm/GHSA-735v-wx75-xmmm.json
+aliases:
+  - CVE-2022-0268
+summary: |
+  Cross-site Scripting in grav
+  In grav prior to version 1.7.28, a low privilege user can create a page with arbitrary javascript by bypassing insufficent XSS filtering.
+impacted_packages:
+  - purl: pkg:composer/getgrav/grav
+    affected_versions: vers:composer/<1.7.28
+    fixed_versions: vers:composer/1.7.28
+severities:
+  - score: '5.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-735v-wx75-xmmm/GHSA-735v-wx75-xmmm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/getgrav/grav
+    reference_type:
+    reference_id:
+  - url: https://github.com/getgrav/grav/commit/6f2fa9311afb9ecd34030dec2aff7b39e9e7e735
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/67085545-331e-4469-90f3-a1a46a078d39
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0268
+    reference_type:
+    reference_id:

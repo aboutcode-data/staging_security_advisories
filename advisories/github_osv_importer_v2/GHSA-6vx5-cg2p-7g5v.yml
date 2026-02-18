@@ -1,0 +1,38 @@
+advisory_id: GHSA-6vx5-cg2p-7g5v
+datasource_id: github_osv_importer_v2/GHSA-6vx5-cg2p-7g5v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-6vx5-cg2p-7g5v/GHSA-6vx5-cg2p-7g5v.json
+aliases:
+  - CVE-2022-0912
+summary: |
+  Unrestricted Upload of File with Dangerous Type in microweber
+  Unrestricted Upload of File with Dangerous Type in GitHub repository microweber/microweber prior to 1.2.12.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.2.12
+    fixed_versions: vers:composer/1.2.12
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-6vx5-cg2p-7g5v/GHSA-6vx5-cg2p-7g5v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/24245297231f5dc88bb3a2b20d0e4e25b0ebc789
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/ae5bb359-7e53-498b-848e-540c05b44c54
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0912
+    reference_type:
+    reference_id:

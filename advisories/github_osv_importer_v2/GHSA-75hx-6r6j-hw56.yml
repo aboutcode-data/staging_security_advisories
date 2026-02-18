@@ -1,0 +1,53 @@
+advisory_id: GHSA-75hx-6r6j-hw56
+datasource_id: github_osv_importer_v2/GHSA-75hx-6r6j-hw56
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-75hx-6r6j-hw56/GHSA-75hx-6r6j-hw56.json
+aliases:
+  - CVE-2021-4472
+summary: |
+  OpenStack's Mistral Client has a local file inclusion vulnerability
+  The mistral-dashboard plugin for openstack has a local file inclusion vulnerability through the 'Create Workbook' feature that may result in disclosure of arbitrary local files content.
+impacted_packages:
+  - purl: pkg:pypi/python-mistralclient
+    affected_versions: vers:pypi/<4.3.0
+    fixed_versions: vers:pypi/4.3.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-75hx-6r6j-hw56/GHSA-75hx-6r6j-hw56.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-73
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2021-4472
+    reference_type:
+    reference_id:
+  - url: https://bugs.launchpad.net/horizon/+bug/1931558
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2417321
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/12/msg00002.html
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/12/msg00003.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-4472
+    reference_type:
+    reference_id:
+  - url: https://opendev.org/openstack/mistral-dashboard
+    reference_type:
+    reference_id:
+  - url: https://review.opendev.org/c/openstack/mistral-dashboard/+/800952
+    reference_type:
+    reference_id:
+  - url: https://review.opendev.org/c/openstack/python-mistralclient/+/800950
+    reference_type:
+    reference_id:

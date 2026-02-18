@@ -1,0 +1,34 @@
+advisory_id: GHSA-746v-hfh2-xphm
+datasource_id: github_osv_importer_v2/GHSA-746v-hfh2-xphm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-746v-hfh2-xphm/GHSA-746v-hfh2-xphm.json
+aliases:
+  - CVE-2022-38362
+summary: |
+  Remote code execution in Apache Airflow Docker's Provider
+  Apache Airflow Docker's Provider prior to 3.0.0 shipped with an example DAG that was vulnerable to (authenticated) remote code exploit of code on the Airflow worker host. Disable loading of example DAGs or upgrade apache-airflow-providers-docker to 3.0.0 or above.
+impacted_packages:
+  - purl: pkg:pypi/apache-airflow-providers-docker
+    affected_versions: vers:pypi/<3.0.0
+    fixed_versions: vers:pypi/3.0.0
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-746v-hfh2-xphm/GHSA-746v-hfh2-xphm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://lists.apache.org/thread/614p38nf4gbk8xhvnskj9b1sqo2dknkb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-38362
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/08/16/1
+    reference_type:
+    reference_id:

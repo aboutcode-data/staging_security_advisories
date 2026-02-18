@@ -1,0 +1,41 @@
+advisory_id: GHSA-727h-hrw8-jg8q
+datasource_id: github_osv_importer_v2/GHSA-727h-hrw8-jg8q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-727h-hrw8-jg8q/GHSA-727h-hrw8-jg8q.json
+aliases:
+  - CVE-2022-26520
+summary: |
+  Path traversal in org.postgresql:postgresql
+  In pgjdbc before 42.3.3, an attacker (who controls the jdbc URL or properties) can call java.util.logging.FileHandler to write to arbitrary files through the loggerFile and loggerLevel connection properties. An example situation is that an attacker could create an executable JSP file under a Tomcat web root. NOTE: the vendor's position is that there is no pgjdbc vulnerability; instead, it is a vulnerability for any application to use the pgjdbc driver with untrusted connection properties.
+impacted_packages:
+  - purl: pkg:maven/org.postgresql/postgresql
+    affected_versions: vers:maven/>=42.1.0|<42.3.3
+    fixed_versions: vers:maven/42.3.3
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/pgjdbc/pgjdbc
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgjdbc/pgjdbc/pull/2454/commits/017b929977b4f85795f9ad2fa5de6e80978b8ccc
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-673j-qm5f-xpv8
+    reference_type:
+    reference_id:
+  - url: https://jdbc.postgresql.org/documentation/changelog.html#version_42.3.3
+    reference_type:
+    reference_id:
+  - url: https://jdbc.postgresql.org/documentation/head/tomcat.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-26520
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2022/dsa-5196
+    reference_type:
+    reference_id:

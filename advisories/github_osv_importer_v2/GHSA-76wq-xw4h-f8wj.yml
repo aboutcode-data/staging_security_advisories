@@ -1,0 +1,63 @@
+advisory_id: GHSA-76wq-xw4h-f8wj
+datasource_id: github_osv_importer_v2/GHSA-76wq-xw4h-f8wj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-76wq-xw4h-f8wj/GHSA-76wq-xw4h-f8wj.json
+aliases:
+  - CVE-2012-2695
+summary: |
+  activerecord vulnerable to SQL Injection
+  The Active Record component in Ruby on Rails efore 2.3.15, 3.0.x before 3.0.14, 3.1.x before 3.1.6, and 3.2.x before 3.2.6 does not properly implement the passing of request data to a where method in an ActiveRecord class, which allows remote attackers to conduct certain SQL injection attacks via nested query parameters that leverage improper handling of nested hashes, a related issue to CVE-2012-2661.
+impacted_packages:
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/>=3.0.0.beta|<3.0.14
+    fixed_versions: vers:gem/3.0.14
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/>=3.1.0|<3.1.6
+    fixed_versions: vers:gem/3.1.6
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/>=3.2.0|<3.2.6
+    fixed_versions: vers:gem/3.2.6
+  - purl: pkg:gem/activerecord
+    affected_versions: vers:gem/<2.3.15
+    fixed_versions: vers:gem/2.3.15
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2012-08/msg00002.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2012-08/msg00014.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2012-08/msg00016.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2012-08/msg00046.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2013-0154.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/commit/62f81f4d6b3ee40e9887ffd92ab14714bad93f18
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/activerecord/CVE-2012-2695.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/group/rubyonrails-security/msg/aee3413fb038bf56?dmode=source&output=gplain
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/g/rubyonrails-security/c/l4L0TEVAz1k/m/Vr84sD9B464J
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2012-2695
+    reference_type:
+    reference_id:

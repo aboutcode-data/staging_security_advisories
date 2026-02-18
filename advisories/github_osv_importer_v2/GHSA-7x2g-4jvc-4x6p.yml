@@ -1,0 +1,35 @@
+advisory_id: GHSA-7x2g-4jvc-4x6p
+datasource_id: github_osv_importer_v2/GHSA-7x2g-4jvc-4x6p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-7x2g-4jvc-4x6p/GHSA-7x2g-4jvc-4x6p.json
+aliases:
+  - CVE-2023-50449
+summary: |
+  Directory Traversal in JFinalCMS
+  JFinalCMS 5.0.0 could allow a remote attacker to read files via ../ Directory Traversal in the /common/down/file fileKey parameter.
+impacted_packages:
+  - purl: pkg:maven/com.jfinal/jfinal
+    affected_versions: vers:maven/<=5.0.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-7x2g-4jvc-4x6p/GHSA-7x2g-4jvc-4x6p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://gitee.com/heyewei/JFinalcms/issues/I7WGC6
+    reference_type:
+    reference_id:
+  - url: https://github.com/jfinal/jfinal
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-50449
+    reference_type:
+    reference_id:

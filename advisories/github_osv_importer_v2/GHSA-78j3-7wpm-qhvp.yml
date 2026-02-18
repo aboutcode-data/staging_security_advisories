@@ -1,0 +1,39 @@
+advisory_id: GHSA-78j3-7wpm-qhvp
+datasource_id: github_osv_importer_v2/GHSA-78j3-7wpm-qhvp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-78j3-7wpm-qhvp/GHSA-78j3-7wpm-qhvp.json
+aliases:
+  - CVE-2013-1947
+summary: |
+  Shell Metacharacter Injection in kelredd-pruview
+  kelredd-pruview gem 0.3.8 for Ruby allows context-dependent attackers to execute arbitrary commands via shell metacharacters in a filename argument to document.rb, video.rb, or video_image.rb.
+impacted_packages:
+  - purl: pkg:gem/kelredd-pruview
+    affected_versions: vers:gem/<=0.5.0
+    fixed_versions:
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/advisories/GHSA-78j3-7wpm-qhvp
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/kelredd-pruview/CVE-2013-1947.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-1947
+    reference_type:
+    reference_id:
+  - url: http://vapid.dhs.org/advisories/kelredd-pruview-cmd-inject.html
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2013/04/10/3
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2013/04/12/2
+    reference_type:
+    reference_id:

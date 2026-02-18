@@ -1,0 +1,44 @@
+advisory_id: GHSA-7px7-7xjx-hxm8
+datasource_id: github_osv_importer_v2/GHSA-7px7-7xjx-hxm8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/01/GHSA-7px7-7xjx-hxm8/GHSA-7px7-7xjx-hxm8.json
+aliases:
+  - CVE-2017-1000427
+summary: |
+  Marked vulnerable to XSS from data URIs
+  marked version 0.3.6 and earlier is vulnerable to an XSS attack in the data: URI parser.
+impacted_packages:
+  - purl: pkg:npm/marked
+    affected_versions: vers:npm/<0.3.7
+    fixed_versions: vers:npm/0.3.7
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/01/GHSA-7px7-7xjx-hxm8/GHSA-7px7-7xjx-hxm8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/advisories/GHSA-7px7-7xjx-hxm8
+    reference_type:
+    reference_id:
+  - url: https://github.com/markedjs/marked
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BO2RMVVZVV6NFTU46B5RYRK7ZCXYARZS
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M6BJG6RGDH7ZWVVAUFBFI5L32RSMQN2S
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000427
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/npm:marked:20170112
+    reference_type:
+    reference_id:

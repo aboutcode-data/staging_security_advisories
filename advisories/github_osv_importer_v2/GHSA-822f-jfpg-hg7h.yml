@@ -1,0 +1,56 @@
+advisory_id: GHSA-822f-jfpg-hg7h
+datasource_id: github_osv_importer_v2/GHSA-822f-jfpg-hg7h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-822f-jfpg-hg7h/GHSA-822f-jfpg-hg7h.json
+aliases:
+  - CVE-2022-26595
+summary: |
+  Liferay Portal and Liferay DXP fails to check permissions to view sites/groups
+  Liferay Portal 7.3.7, 7.4.0, and 7.4.1, and Liferay DXP 7.2 fix pack 13, and 7.3 fix pack 2 does not properly check user permission when accessing a list of sites/groups, which allows remote authenticated users to view sites/groups via the user's site membership assignment UI.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/7.3.7
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.4.0|<7.4.2-ga3
+    fixed_versions: vers:maven/7.4.2-ga3
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.2.0|<7.2.10.fp13
+    fixed_versions: vers:maven/7.2.10.fp13
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.3.0|<7.3.10.fp2
+    fixed_versions: vers:maven/7.3.10.fp2
+  - purl: pkg:maven/com.liferay/com.liferay.site.browser.web
+    affected_versions: vers:maven/<6.0.5
+    fixed_versions: vers:maven/6.0.5
+  - purl: pkg:maven/com.liferay.portal/com.liferay.portal.impl
+    affected_versions: vers:maven/<7.7.9
+    fixed_versions: vers:maven/7.7.9
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-822f-jfpg-hg7h/GHSA-822f-jfpg-hg7h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-276
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/5b958de42d93f1ba5879a0a20054b14ad7f145c4
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/issues/LPE-17367
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2022-26595-unauthorized-access-to-site-group-list?p_r_p_assetEntryId=121612195&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt_redirect=https%3A%2F%2Fliferay.dev%3A443%2Fportal%2Fsecurity%2Fknown-vulnerabilities%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_r_p_assetEntryId%3D121612195%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_jekt_cur%3D0%26p_r_p_resetCur%3Dfalse
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-26595
+    reference_type:
+    reference_id:

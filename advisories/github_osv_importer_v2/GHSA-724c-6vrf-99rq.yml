@@ -1,0 +1,41 @@
+advisory_id: GHSA-724c-6vrf-99rq
+datasource_id: github_osv_importer_v2/GHSA-724c-6vrf-99rq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-724c-6vrf-99rq/GHSA-724c-6vrf-99rq.json
+aliases: []
+summary: |
+  Sensitive Data Exposure in loopback
+  Versions of `loopback` prior to 3.26.0 (3.x) and 2.42.0 (2.x) are vulnerable to Sensitive Data Exposure. Invalid API requests to the login endpoint may return information about the first user in the database. This can be used alongside other attacks for credential theft.
+
+
+  ## Recommendation
+
+  If you're using `loopback` 3.x upgrade to version 3.26.0 or later.
+  If you're using `loopback` 2.x upgrade to version 2.42.0 or later.
+impacted_packages:
+  - purl: pkg:npm/loopback
+    affected_versions: vers:npm/<=2.41.0
+    fixed_versions: vers:npm/2.42.0
+  - purl: pkg:npm/loopback
+    affected_versions: vers:npm/<=3.25.0
+    fixed_versions: vers:npm/3.26.0
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/strongloop/loopback
+    reference_type:
+    reference_id:
+  - url: https://github.com/strongloop/loopback/issues/4195
+    reference_type:
+    reference_id:
+  - url: https://loopback.io/doc/en/sec/Security-advisory-06-17-2019.html
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/915
+    reference_type:
+    reference_id:

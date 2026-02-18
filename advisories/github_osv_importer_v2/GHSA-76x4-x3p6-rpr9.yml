@@ -1,0 +1,115 @@
+advisory_id: GHSA-76x4-x3p6-rpr9
+datasource_id: github_osv_importer_v2/GHSA-76x4-x3p6-rpr9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-76x4-x3p6-rpr9/GHSA-76x4-x3p6-rpr9.json
+aliases:
+  - CVE-2021-25282
+summary: |
+  SaltStack Salt Directory Traversal vulnerability
+  An issue was discovered in through SaltStack Salt before 3002.5. The `salt.wheel.pillar_roots.write` method is vulnerable to directory traversal.
+impacted_packages:
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/<2015.8.13
+    fixed_versions: vers:pypi/2015.8.13
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2016.3.0|<2016.11.5
+    fixed_versions: vers:pypi/2016.11.5
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2016.11.7|<2016.11.10
+    fixed_versions: vers:pypi/2016.11.10
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2017.5.0|<2017.7.8
+    fixed_versions: vers:pypi/2017.7.8
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2018.2.0|<=2018.3.5
+    fixed_versions:
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=2019.2.0|<2019.2.8
+    fixed_versions: vers:pypi/2019.2.8
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=3000|<3000.7
+    fixed_versions: vers:pypi/3000.7
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=3001|<3001.5
+    fixed_versions: vers:pypi/3001.5
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/>=3002|<3002.3
+    fixed_versions: vers:pypi/3002.3
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-76x4-x3p6-rpr9/GHSA-76x4-x3p6-rpr9.json
+  - score: '8.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-76x4-x3p6-rpr9/GHSA-76x4-x3p6-rpr9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://packetstormsecurity.com/files/162058/SaltStack-Salt-API-Unauthenticated-Remote-Command-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/salt/PYSEC-2021-51.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/blob/8f9405cf8e6f7d7776d5000841c886dec6d96250/doc/topics/releases/3000.7.rst#L31
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/blob/8f9405cf8e6f7d7776d5000841c886dec6d96250/doc/topics/releases/3001.5.rst#L31
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/blob/8f9405cf8e6f7d7776d5000841c886dec6d96250/doc/topics/releases/3002.3.rst#L31
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt/releases
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/11/msg00009.html
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/01/msg00000.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/7GRVZ5WAEI3XFN2BDTL6DDXFS5HYSDVB
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FUGLOJ6NXLCIFRD2JTXBYQEMAEF2B6XH
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YOGNT2XWPOYV7YT75DN7PS4GIYWFKOK5
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7GRVZ5WAEI3XFN2BDTL6DDXFS5HYSDVB
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FUGLOJ6NXLCIFRD2JTXBYQEMAEF2B6XH
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YOGNT2XWPOYV7YT75DN7PS4GIYWFKOK5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-25282
+    reference_type:
+    reference_id:
+  - url: https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202103-01
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202310-22
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2021/dsa-5011
+    reference_type:
+    reference_id:

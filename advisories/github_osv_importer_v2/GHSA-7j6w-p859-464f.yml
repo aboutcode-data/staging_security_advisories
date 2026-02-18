@@ -1,0 +1,46 @@
+advisory_id: GHSA-7j6w-p859-464f
+datasource_id: github_osv_importer_v2/GHSA-7j6w-p859-464f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-7j6w-p859-464f/GHSA-7j6w-p859-464f.json
+aliases:
+  - CVE-2025-29773
+summary: |
+  Froxlor allows Multiple Accounts to Share the Same Email Address Leading to Potential Privilege Escalation or Account Takeover
+  ### Summary
+  the vulnerability is that users (such as resellers or customers) are able to create accounts with the same email address as an existing account (e.g., if the admin has [admin@froxlor.com](mailto:admin@froxlor.com), others can also create an account using the same email). This creates potential issues with account identification and security.
+
+  ### Impact
+  Local/Authenticated: This vulnerability can be exploited by authenticated users (e.g., reseller, customer) who can create accounts with the same email address that has already been used by another account, such as the admin.
+  Email-based: The attack vector is email-based, as the system does not prevent multiple accounts from registering the same email address, leading to possible conflicts and security issues.
+impacted_packages:
+  - purl: pkg:composer/froxlor/froxlor
+    affected_versions: vers:composer/<=2.2.5
+    fixed_versions: vers:composer/2.2.6
+severities:
+  - score: '5.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-7j6w-p859-464f/GHSA-7j6w-p859-464f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/froxlor/Froxlor
+    reference_type:
+    reference_id:
+  - url: https://github.com/froxlor/Froxlor/commit/a43d53d54034805e3e404702a01312fa0c40b623
+    reference_type:
+    reference_id:
+  - url: https://github.com/froxlor/Froxlor/security/advisories/GHSA-7j6w-p859-464f
+    reference_type:
+    reference_id:
+  - url: https://mega.nz/file/h8oFHQrL#I4V02_BWee4CCx7OoBl_2Ufkd5Wc7fvs5aCatGApkoQ
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-29773
+    reference_type:
+    reference_id:

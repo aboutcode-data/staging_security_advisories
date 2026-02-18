@@ -1,0 +1,42 @@
+advisory_id: GHSA-7gj6-22m4-qfhx
+datasource_id: github_osv_importer_v2/GHSA-7gj6-22m4-qfhx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-7gj6-22m4-qfhx/GHSA-7gj6-22m4-qfhx.json
+aliases:
+  - CVE-2024-10901
+summary: |
+  DB-GPT Arbitrary File Write vulnerability
+  In eosphoros-ai/db-gpt version v0.6.3 and earlier, the web API `POST /api/v1/editor/chart/run` allows execution of arbitrary SQL queries without any access control. This vulnerability can be exploited by attackers to perform Arbitrary File Write, enabling them to write arbitrary files to the victim's file system. This can potentially lead to Remote Code Execution (RCE) by writing malicious files such as `__init__.py` in the Python's `/site-packages/` directory.
+impacted_packages:
+  - purl: pkg:pypi/dbgpt
+    affected_versions: vers:pypi/<=0.6.3
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-7gj6-22m4-qfhx/GHSA-7gj6-22m4-qfhx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+  - CWE-89
+references:
+  - url: https://github.com/eosphoros-ai/DB-GPT
+    reference_type:
+    reference_id:
+  - url: https://github.com/eosphoros-ai/DB-GPT/commit/295cdb8723663d5b0954d5d1dfb4f02b7223b8ff
+    reference_type:
+    reference_id:
+  - url: https://github.com/eosphoros-ai/DB-GPT/pull/2269
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/db2c1d59-6e3a-4553-a1f6-94c8df162a18
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-10901
+    reference_type:
+    reference_id:

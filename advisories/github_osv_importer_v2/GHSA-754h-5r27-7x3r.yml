@@ -1,0 +1,83 @@
+advisory_id: GHSA-754h-5r27-7x3r
+datasource_id: github_osv_importer_v2/GHSA-754h-5r27-7x3r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-754h-5r27-7x3r/GHSA-754h-5r27-7x3r.json
+aliases:
+  - CVE-2020-15094
+summary: |
+  RCE in Symfony
+  Description
+  -----------
+
+  The `CachingHttpClient` class from the HttpClient Symfony component relies on the `HttpCache` class to handle requests. `HttpCache` uses internal headers like `X-Body-Eval` and `X-Body-File` to control the restoration of cached responses. The class was initially written with surrogate caching and ESI support in mind (all HTTP calls come from a trusted backend in that scenario). But when used by `CachingHttpClient` and if an attacker can control the response for a request being made by the `CachingHttpClient`, remote code execution is possible.
+
+  Resolution
+  ----------
+
+  HTTP headers designed for internal use in `HttpCache` are now stripped from remote responses before being passed to `HttpCache`.
+
+  The patch for this issue is available [here](https://github.com/symfony/symfony/commit/d9910e0b33a2e0f993abff41c6fbc86951b66d78) for the 4.4 branch.
+
+  Credits
+  -------
+
+  I would like to thank Matthias Pigulla (webfactory GmbH) for reporting and fixing the issue.
+impacted_packages:
+  - purl: pkg:composer/symfony/http-kernel
+    affected_versions: vers:composer/>=4.3.0|<4.4.13
+    fixed_versions: vers:composer/4.4.13
+  - purl: pkg:composer/symfony/http-kernel
+    affected_versions: vers:composer/>=5.0.0|<5.1.5
+    fixed_versions: vers:composer/5.1.5
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.3.0|<4.4.13
+    fixed_versions: vers:composer/4.4.13
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=5.0.0|<5.1.5
+    fixed_versions: vers:composer/5.1.5
+severities:
+  - score: '8.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-754h-5r27-7x3r/GHSA-754h-5r27-7x3r.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-212
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/http-kernel/CVE-2020-15094.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2020-15094.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/d9910e0b33a2e0f993abff41c6fbc86951b66d78
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/security/advisories/GHSA-754h-5r27-7x3r
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HNGUWOEETOFVH4PN3I3YO4QZHQ4AUKF3
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VAQJXAKWPMWB7OL6QPG2ZSEQZYYPU5RC
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15094
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/symfony/http-kernel
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/symfony/symfony
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2020-15094
+    reference_type:
+    reference_id:

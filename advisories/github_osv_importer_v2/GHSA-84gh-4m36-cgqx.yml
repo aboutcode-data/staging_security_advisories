@@ -1,0 +1,35 @@
+advisory_id: GHSA-84gh-4m36-cgqx
+datasource_id: github_osv_importer_v2/GHSA-84gh-4m36-cgqx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-84gh-4m36-cgqx/GHSA-84gh-4m36-cgqx.json
+aliases:
+  - CVE-2017-9839
+summary: |
+  Dolibarr SQL injection via type parameter in product/stats/card.php
+  Dolibarr ERP/CRM is affected by SQL injection in versions before 5.0.4 via product/stats/card.php (type parameter).
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<5.0.4
+    fixed_versions: vers:composer/5.0.4
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-84gh-4m36-cgqx/GHSA-84gh-4m36-cgqx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-9839
+    reference_type:
+    reference_id:
+  - url: https://www.wizlynxgroup.com/security-research-advisories/vuln/WLX-2017-010
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-7qwj-gcjf-828f
+datasource_id: github_osv_importer_v2/GHSA-7qwj-gcjf-828f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-7qwj-gcjf-828f/GHSA-7qwj-gcjf-828f.json
+aliases:
+  - CVE-2024-34460
+summary: |
+  Zenario's Tree Explorer tool from Organizer affected by Cross-site Scripting
+  The Tree Explorer tool from Organizer in Zenario before 9.5.60602 is affected by XSS. (This component was removed in 9.5.60602.)
+impacted_packages:
+  - purl: pkg:composer/tribalsystems/zenario
+    affected_versions: vers:composer/<9.5.60602
+    fixed_versions: vers:composer/9.5.60602
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-7qwj-gcjf-828f/GHSA-7qwj-gcjf-828f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/TribalSystems/Zenario
+    reference_type:
+    reference_id:
+  - url: https://github.com/TribalSystems/Zenario/commit/121ff6dc6c1c13e8281f078ecde47455b383ee78
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34460
+    reference_type:
+    reference_id:
+  - url: https://zenar.io/zenario-9/blog/zenario-9560602-patch-released
+    reference_type:
+    reference_id:

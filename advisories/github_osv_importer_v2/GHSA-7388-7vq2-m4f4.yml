@@ -1,0 +1,38 @@
+advisory_id: GHSA-7388-7vq2-m4f4
+datasource_id: github_osv_importer_v2/GHSA-7388-7vq2-m4f4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7388-7vq2-m4f4/GHSA-7388-7vq2-m4f4.json
+aliases:
+  - CVE-2021-28145
+summary: |
+  Concrete CMS Cross-site Scripting via Survey Blocks
+  Concrete CMS (formerly concrete5) before 8.5.5 allows remote authenticated users to conduct Cross-site Scripting (XSS) attacks via a crafted survey block. This requires at least Editor privileges.
+impacted_packages:
+  - purl: pkg:composer/concrete5/concrete5
+    affected_versions: vers:composer/<8.5.5
+    fixed_versions: vers:composer/8.5.5
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7388-7vq2-m4f4/GHSA-7388-7vq2-m4f4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://documentation.concrete5.org/developers/introduction/version-history/855-release-notes
+    reference_type:
+    reference_id:
+  - url: https://github.com/S1lkys/CVE-2021-40101
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-28145
+    reference_type:
+    reference_id:
+  - url: https://www.concrete5.org/developers/security
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-6wpv-cj6x-v3jw
+datasource_id: github_osv_importer_v2/GHSA-6wpv-cj6x-v3jw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/03/GHSA-6wpv-cj6x-v3jw/GHSA-6wpv-cj6x-v3jw.json
+aliases:
+  - CVE-2015-1828
+summary: |
+  http vulnerable to Exposure of Sensitive Information to an Unauthorized Actor
+  The Ruby http gem before 0.7.3 does not verify hostnames in SSL connections, which might allow remote attackers to obtain sensitive information via a man-in-the-middle-attack.
+impacted_packages:
+  - purl: pkg:gem/http
+    affected_versions: vers:gem/<0.7.3
+    fixed_versions: vers:gem/0.7.3
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/03/GHSA-6wpv-cj6x-v3jw/GHSA-6wpv-cj6x-v3jw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/ruby/openssl/issues/8
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/http/CVE-2015-1828.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#!topic/httprb/jkb4oxwZjkU
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-1828
+    reference_type:
+    reference_id:
+  - url: https://rubysec.com/advisories/http-CVE-2015-1828
+    reference_type:
+    reference_id:

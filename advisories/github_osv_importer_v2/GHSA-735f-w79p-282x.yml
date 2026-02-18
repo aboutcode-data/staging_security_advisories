@@ -1,0 +1,55 @@
+advisory_id: GHSA-735f-w79p-282x
+datasource_id: github_osv_importer_v2/GHSA-735f-w79p-282x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-735f-w79p-282x/GHSA-735f-w79p-282x.json
+aliases:
+  - CVE-2023-4145
+summary: |
+  pimcore/customer-management-framework-bundle Cross-site Scripting vulnerability in Segment name
+  ### Impact
+  As HTML injection works in email an attacker can trick a victim to click on such hyperlinks to redirect him to any malicious site and also can host a XSS page. All this will surely cause some damage to the victim. This could lead to users being tricked into giving logins away to malicious attackers.
+
+  ### Patches
+  Update to version 3.4.2 or apply this patch manually https://github.com/pimcore/customer-data-framework/commit/72f45dd537a706954e7a71c99fbe318640e846a2.patch
+
+  ### Workarounds
+  Apply https://github.com/pimcore/customer-data-framework/commit/72f45dd537a706954e7a71c99fbe318640e846a2.patch manually.
+
+  ### References
+  https://huntr.dev/bounties/ce852777-2994-40b4-bb4e-c4d10023eeb0/
+impacted_packages:
+  - purl: pkg:composer/pimcore/customer-management-framework-bundle
+    affected_versions: vers:composer/<3.4.2
+    fixed_versions: vers:composer/3.4.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-735f-w79p-282x/GHSA-735f-w79p-282x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-87
+references:
+  - url: https://github.com/pimcore/customer-data-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/commit/72f45dd537a706954e7a71c99fbe318640e846a2
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/commit/72f45dd537a706954e7a71c99fbe318640e846a2.patch
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/security/advisories/GHSA-735f-w79p-282x
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/ce852777-2994-40b4-bb4e-c4d10023eeb0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-4145
+    reference_type:
+    reference_id:

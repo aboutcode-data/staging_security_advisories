@@ -1,0 +1,44 @@
+advisory_id: GHSA-72pf-cvwq-vgqg
+datasource_id: github_osv_importer_v2/GHSA-72pf-cvwq-vgqg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-72pf-cvwq-vgqg/GHSA-72pf-cvwq-vgqg.json
+aliases:
+  - CVE-2018-20418
+summary: |
+  Craft CMS Cross-site Scripting (XSS) Vulnerability
+  `index.php?p=admin/actions/entries/save-entry` in Craft CMS 3.0.25 allows XSS by saving a new title from the console tab.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=3.0.25
+    fixed_versions:
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-72pf-cvwq-vgqg/GHSA-72pf-cvwq-vgqg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/rdincel1/Craft-CMS-3.0.25---Cross-Site-Scripting
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-20418
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20201208014852/https://www.raifberkaydincel.com/craft-cms-3-0-25-cross-site-scripting-vulnerability.html
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/46054
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/46054.txt
+    reference_type: exploit
+    reference_id: CVE-2018-20418

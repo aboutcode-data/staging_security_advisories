@@ -1,0 +1,38 @@
+advisory_id: GHSA-7fpw-cfc4-3p2c
+datasource_id: github_osv_importer_v2/GHSA-7fpw-cfc4-3p2c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/12/GHSA-7fpw-cfc4-3p2c/GHSA-7fpw-cfc4-3p2c.json
+aliases: []
+summary: |
+  Duplicate advisory: High severity vulnerability that affects passport-wsfed-saml2
+  ## Duplicate advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-77fw-rf4v-vfp9. This link is maintained to preserve external references.
+
+  ## Original Description
+  A vulnerability has been discovered in the Auth0 passport-wsfed-saml2 library affecting versions < 3.0.5. This vulnerability allows an attacker to impersonate another user and potentially elevate their privileges if the SAML identity provider does not sign the full SAML response (e.g., only signs the assertion within the response).
+impacted_packages:
+  - purl: pkg:npm/passport-wsfed-saml2
+    affected_versions: vers:npm/<3.0.5
+    fixed_versions: vers:npm/3.0.5
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/12/GHSA-7fpw-cfc4-3p2c/GHSA-7fpw-cfc4-3p2c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-290
+references:
+  - url: https://auth0.com/docs/security/bulletins/cve-2017-16897
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-7fpw-cfc4-3p2c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16897
+    reference_type:
+    reference_id:

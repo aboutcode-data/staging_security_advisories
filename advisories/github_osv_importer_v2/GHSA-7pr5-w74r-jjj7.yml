@@ -1,0 +1,44 @@
+advisory_id: GHSA-7pr5-w74r-jjj7
+datasource_id: github_osv_importer_v2/GHSA-7pr5-w74r-jjj7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-7pr5-w74r-jjj7/GHSA-7pr5-w74r-jjj7.json
+aliases:
+  - CVE-2025-6050
+summary: |
+  Mezzanine CMS has a Stored Cross-Site Scripting (XSS) vulnerability in the displayable_links_js function
+  Mezzanine CMS, in versions prior to 6.1.1, contains a Stored Cross-Site Scripting (XSS) vulnerability in the admin interface. The vulnerability exists in the "displayable_links_js" function, which fails to properly sanitize blog post titles before including them in JSON responses served via "/admin/displayable_links.js". An authenticated admin user can create a blog post with a malicious JavaScript payload in the title field, then trick another admin user into clicking a direct link to the "/admin/displayable_links.js" endpoint, causing the malicious script to execute in their browser.
+impacted_packages:
+  - purl: pkg:pypi/mezzanine
+    affected_versions: vers:pypi/<6.1.1
+    fixed_versions: vers:pypi/6.1.1
+severities:
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:L/VI:L/VA:N/SC:L/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-7pr5-w74r-jjj7/GHSA-7pr5-w74r-jjj7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://advisory.checkmarx.net/advisory/CVE-2025-6050
+    reference_type:
+    reference_id:
+  - url: https://github.com/stephenmcd/mezzanine
+    reference_type:
+    reference_id:
+  - url: https://github.com/stephenmcd/mezzanine/commit/898630d8df48cf3ddb8b9942f59168b93216e3f8
+    reference_type:
+    reference_id:
+  - url: https://github.com/stephenmcd/mezzanine/discussions/2080
+    reference_type:
+    reference_id:
+  - url: https://https://github.com/stephenmcd/mezzanine/commit/898630d8df48cf3ddb8b9942f59168b93216e3f8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-6050
+    reference_type:
+    reference_id:

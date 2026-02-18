@@ -1,0 +1,59 @@
+advisory_id: GHSA-7m9h-v68w-pfw3
+datasource_id: github_osv_importer_v2/GHSA-7m9h-v68w-pfw3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-7m9h-v68w-pfw3/GHSA-7m9h-v68w-pfw3.json
+aliases:
+  - CVE-2022-30429
+summary: |
+  Neos CMS vulnerable to XSS in various backend modules
+  Multiple cross-site scripting (XSS) vulnerabilities in Neos CMS allow attackers with the editor role or higher to inject arbitrary script or HTML code using the editor function, the deletion of assets, or a workspace title. The vulnerabilities were found in versions 3.3.29 and 8.0.1 and could also be present in all intermediate versions.
+impacted_packages:
+  - purl: pkg:composer/neos/neos
+    affected_versions: vers:composer/>=3.3.0|<4.4.0
+    fixed_versions: vers:composer/4.4.0
+  - purl: pkg:composer/neos/neos
+    affected_versions: vers:composer/>=5.3.0|<5.3.10
+    fixed_versions: vers:composer/5.3.10
+  - purl: pkg:composer/neos/neos
+    affected_versions: vers:composer/>=7.0.0|<7.0.9
+    fixed_versions: vers:composer/7.0.9
+  - purl: pkg:composer/neos/neos
+    affected_versions: vers:composer/>=7.1.0|<7.1.7
+    fixed_versions: vers:composer/7.1.7
+  - purl: pkg:composer/neos/neos
+    affected_versions: vers:composer/>=7.2.0|<7.2.6
+    fixed_versions: vers:composer/7.2.6
+  - purl: pkg:composer/neos/neos
+    affected_versions: vers:composer/>=7.3.0|<7.3.4
+    fixed_versions: vers:composer/7.3.4
+  - purl: pkg:composer/neos/neos
+    affected_versions: vers:composer/>=8.0.0|<8.0.2
+    fixed_versions: vers:composer/8.0.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-7m9h-v68w-pfw3/GHSA-7m9h-v68w-pfw3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/neos/neos/CVE-2022-30429.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/neos/neos
+    reference_type:
+    reference_id:
+  - url: https://it-sec.de/unbekannte-schwachstellen-in-neos-cms
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-30429
+    reference_type:
+    reference_id:
+  - url: https://www.neos.io/blog/xss-in-various-backend-modules.html
+    reference_type:
+    reference_id:

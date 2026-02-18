@@ -1,0 +1,35 @@
+advisory_id: GHSA-75px-35p4-qq6h
+datasource_id: github_osv_importer_v2/GHSA-75px-35p4-qq6h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-75px-35p4-qq6h/GHSA-75px-35p4-qq6h.json
+aliases:
+  - CVE-2024-6829
+summary: |
+  Aim External Control of File Name or Path vulnerability
+  A vulnerability in aimhubio/aim version 3.19.3 allows an attacker to exploit the `tarfile.extractall()` function to extract the contents of a maliciously crafted tarfile to arbitrary locations on the host server. The attacker can control `repo.path` and `run_hash` to bypass directory existence checks and extract files to unintended locations, potentially overwriting critical files. This can lead to arbitrary data being written to arbitrary locations on the remote tracking server, which could be used for further attacks such as writing a new SSH key to the target server.
+impacted_packages:
+  - purl: pkg:pypi/aim
+    affected_versions: vers:pypi/<=3.19.3
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-75px-35p4-qq6h/GHSA-75px-35p4-qq6h.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-73
+references:
+  - url: https://github.com/aimhubio/aim
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/7c97065c-1b63-4982-82c1-8038be0ed570
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-6829
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-7vrp-3pff-c3j4
+datasource_id: github_osv_importer_v2/GHSA-7vrp-3pff-c3j4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7vrp-3pff-c3j4/GHSA-7vrp-3pff-c3j4.json
+aliases:
+  - CVE-2020-29471
+summary: |
+  OpenCart Stored Cross-Site Scripting
+  OpenCart 3.0.3.6 is affected by cross-site scripting (XSS) in the Profile Image. An admin can upload a profile image as a malicious code using JavaScript. Whenever anyone will see the profile picture, the code will execute and XSS will trigger.
+impacted_packages:
+  - purl: pkg:composer/opencart/opencart
+    affected_versions: vers:composer/3.0.3+6
+    fixed_versions:
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7vrp-3pff-c3j4/GHSA-7vrp-3pff-c3j4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-29471
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/49098
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/49098.txt
+    reference_type: exploit
+    reference_id: CVE-2020-29471

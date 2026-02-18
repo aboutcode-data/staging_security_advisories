@@ -1,0 +1,40 @@
+advisory_id: GHSA-6wj5-5pgr-jwq8
+datasource_id: github_osv_importer_v2/GHSA-6wj5-5pgr-jwq8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-6wj5-5pgr-jwq8/GHSA-6wj5-5pgr-jwq8.json
+aliases: []
+summary: |
+  Open WebUI Unauthenticated Multipart Boundary Denial of Service (DoS) Vulnerability in api/chat/file
+  A vulnerability in open-webui/open-webui version 79778fa allows an attacker to cause a Denial of Service (DoS) by uploading a file with a malformed multipart boundary. By appending a large number of characters to the end of the multipart boundary, the server continuously processes each character, rendering the application inaccessible. This issue can prevent all users from accessing the application until the server recovers.
+impacted_packages:
+  - purl: pkg:pypi/open-webui
+    affected_versions: vers:pypi/<0.4.7
+    fixed_versions: vers:pypi/0.4.7
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-6wj5-5pgr-jwq8/GHSA-6wj5-5pgr-jwq8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/Kludex/python-multipart/security/advisories/GHSA-59g5-xgcq-4qw3
+    reference_type:
+    reference_id:
+  - url: https://github.com/open-webui/open-webui
+    reference_type:
+    reference_id:
+  - url: https://github.com/open-webui/open-webui/commit/f311c03a21dc09e279a0cad7482a68b273517baf
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/15eb4fbe-70d4-420e-806a-ec6f4ecb7202
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-53981
+    reference_type:
+    reference_id:

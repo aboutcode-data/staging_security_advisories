@@ -1,0 +1,56 @@
+advisory_id: GHSA-7fj2-rrq6-rphq
+datasource_id: github_osv_importer_v2/GHSA-7fj2-rrq6-rphq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-7fj2-rrq6-rphq/GHSA-7fj2-rrq6-rphq.json
+aliases:
+  - CVE-2022-39296
+summary: |
+  melisplatform/melis-asset-manager vulnerable to Path Traversal
+  ### Impact
+
+  Attackers can read arbitrary files on affected versions of `melisplatform/melis-asset-manager`, leading to the disclosure of sensitive information. Conducting this attack does not require authentication.
+
+  Users should immediately upgrade to `melisplatform/melis-asset-manager` >= 5.0.1.
+
+  ### Patches
+
+  This issue was addressed by restricting access to files to intended directories only.
+
+  ### References
+
+  - https://github.com/melisplatform/melis-asset-manager/commit/a0f75918c049aff78953a0bc91c585153595d1bd
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, you can contact:
+  - The original reporters, by sending an email to vulnerability.research [at] sonarsource.com;
+  - The maintainers, by opening an issue on this repository.
+impacted_packages:
+  - purl: pkg:composer/melisplatform/melis-asset-manager
+    affected_versions: vers:composer/<5.0.1
+    fixed_versions: vers:composer/5.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-7fj2-rrq6-rphq/GHSA-7fj2-rrq6-rphq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/melisplatform/melis-asset-manager
+    reference_type:
+    reference_id:
+  - url: https://github.com/melisplatform/melis-asset-manager/commit/a0f75918c049aff78953a0bc91c585153595d1bd
+    reference_type:
+    reference_id:
+  - url: https://github.com/melisplatform/melis-asset-manager/security/advisories/GHSA-7fj2-rrq6-rphq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-39296
+    reference_type:
+    reference_id:

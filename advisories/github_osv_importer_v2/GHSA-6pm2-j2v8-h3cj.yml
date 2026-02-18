@@ -1,0 +1,61 @@
+advisory_id: GHSA-6pm2-j2v8-h3cj
+datasource_id: github_osv_importer_v2/GHSA-6pm2-j2v8-h3cj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-6pm2-j2v8-h3cj/GHSA-6pm2-j2v8-h3cj.json
+aliases:
+  - CVE-2023-0669
+summary: |
+  Withdrawn: Fortra GoAnywhere MFT Deserialization of Untrusted Data vulnerability affects metasploit-framework
+  ## Withdrawn
+  This advisory has been withdrawn because it was incorrectly associated with the metasploit-framework package, which is not affected by this CVE, and the actual vulnerable component does not fit within our supported ecosystems. This link is maintained to preserve external references.
+
+  ## Original Description
+
+  Fortra (formerly, HelpSystems) GoAnywhere MFT suffers from a pre-authentication command injection vulnerability in the License Response Servlet due to deserializing an arbitrary attacker-controlled object.
+impacted_packages:
+  - purl: pkg:gem/metasploit-framework
+    affected_versions: vers:gem/<=6.0.33
+    fixed_versions:
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-6pm2-j2v8-h3cj/GHSA-6pm2-j2v8-h3cj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: http://packetstormsecurity.com/files/171789/Goanywhere-Encryption-Helper-7.1.1-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://attackerkb.com/topics/mg883Nbeva/cve-2023-0669/rapid7-analysis
+    reference_type:
+    reference_id:
+  - url: https://duo.com/decipher/fortra-patches-actively-exploited-zero-day-in-goanywhere-mft
+    reference_type:
+    reference_id:
+  - url: https://frycos.github.io/vulns4free/2023/02/06/goanywhere-forgotten.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/rapid7/metasploit-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/rapid7/metasploit-framework/pull/17607
+    reference_type:
+    reference_id:
+  - url: https://infosec.exchange/@briankrebs/109795710941843934
+    reference_type:
+    reference_id:
+  - url: https://my.goanywhere.com/webclient/ViewSecurityAdvisories.xhtml#zerodayfeb1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0669
+    reference_type:
+    reference_id:
+  - url: https://www.rapid7.com/blog/post/2023/02/03/exploitation-of-goanywhere-mft-zero-day-vulnerability
+    reference_type:
+    reference_id:

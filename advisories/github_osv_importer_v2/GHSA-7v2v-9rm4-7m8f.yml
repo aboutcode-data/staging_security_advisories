@@ -1,0 +1,58 @@
+advisory_id: GHSA-7v2v-9rm4-7m8f
+datasource_id: github_osv_importer_v2/GHSA-7v2v-9rm4-7m8f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-7v2v-9rm4-7m8f/GHSA-7v2v-9rm4-7m8f.json
+aliases:
+  - CVE-2023-2017
+summary: |
+  Shopware Has Improper Control of Generation of Code in Twig rendered views
+  ### Impact
+  We fixed with [CVE-2023-22731](https://github.com/shopware/platform/security/advisories/GHSA-93cw-f5jj-x85w) Twig filters to only be executed with allowed functions. It is possible to pass PHP Closures as string or an array and array crafted PHP Closures was not checked against allow list
+
+  ### Patches
+  The problem has been fixed with 6.4.20.1 with an improved override.
+
+  ### Workarounds
+  For older versions of 6.1, 6.2, and 6.3, corresponding security measures are also available via a plugin. For the full range of functions, we recommend updating to the latest Shopware version.
+impacted_packages:
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.4.20+0
+    fixed_versions: vers:composer/6.4.20+1
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.4.20+0
+    fixed_versions: vers:composer/6.4.20+1
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-7v2v-9rm4-7m8f/GHSA-7v2v-9rm4-7m8f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-1336
+references:
+  - url: https://docs.shopware.com/en/shopware-6-en/security-updates/security-update-04-2023
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/releases/tag/v6.4.20.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/security/advisories/GHSA-7v2v-9rm4-7m8f
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-7v2v-9rm4-7m8f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2017
+    reference_type:
+    reference_id:
+  - url: https://starlabs.sg/advisories/23/23-2017
+    reference_type:
+    reference_id:

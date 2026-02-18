@@ -1,0 +1,74 @@
+advisory_id: GHSA-7gpw-8wmc-pm8g
+datasource_id: github_osv_importer_v2/GHSA-7gpw-8wmc-pm8g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-7gpw-8wmc-pm8g/GHSA-7gpw-8wmc-pm8g.json
+aliases:
+  - CVE-2024-27306
+summary: |
+  aiohttp Cross-site Scripting vulnerability on index pages for static file handling
+  ### Summary
+
+  A XSS vulnerability exists on index pages for static file handling.
+
+  ### Details
+
+  When using `web.static(..., show_index=True)`, the resulting index pages do not escape file names.
+
+  If users can upload files with arbitrary filenames to the static directory, the server is vulnerable to XSS attacks.
+
+  ### Workaround
+
+  We have always recommended using a reverse proxy server (e.g. nginx) for serving static files. Users following the recommendation are unaffected.
+
+  Other users can disable `show_index` if unable to upgrade.
+
+  -----
+
+  Patch: https://github.com/aio-libs/aiohttp/pull/8319/files
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<3.9.4
+    fixed_versions: vers:pypi/3.9.4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-7gpw-8wmc-pm8g/GHSA-7gpw-8wmc-pm8g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/aio-libs/aiohttp
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/commit/28335525d1eac015a7e7584137678cbb6ff19397
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/pull/8319
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/pull/8319/files
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/security/advisories/GHSA-7gpw-8wmc-pm8g
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/02/msg00002.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2EXRGTN2WG7VZLUZ7WOXU5GQJKCPPHKP
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NWEI6NIHZ3G7DURDZVMRK7ZEFC2BTD3U
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZIVBMPEY7WWOFMC3CWXFBRQPFECV4SW3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-27306
+    reference_type:
+    reference_id:

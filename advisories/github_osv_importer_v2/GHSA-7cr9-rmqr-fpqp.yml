@@ -1,0 +1,35 @@
+advisory_id: GHSA-7cr9-rmqr-fpqp
+datasource_id: github_osv_importer_v2/GHSA-7cr9-rmqr-fpqp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7cr9-rmqr-fpqp/GHSA-7cr9-rmqr-fpqp.json
+aliases:
+  - CVE-2022-25511
+summary: |
+  Path traversal in FreeTAKServer-UI
+  An issue in the ?filename= argument of the route /DataPackageTable in FreeTAKServer-UI v1.9.8 allows attackers to place arbitrary files anywhere on the system.
+impacted_packages:
+  - purl: pkg:pypi/freetakserver-ui
+    affected_versions: vers:pypi/<=1.9.8
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7cr9-rmqr-fpqp/GHSA-7cr9-rmqr-fpqp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/FreeTAKTeam/UI
+    reference_type:
+    reference_id:
+  - url: https://github.com/FreeTAKTeam/UI/issues/29
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25511
+    reference_type:
+    reference_id:

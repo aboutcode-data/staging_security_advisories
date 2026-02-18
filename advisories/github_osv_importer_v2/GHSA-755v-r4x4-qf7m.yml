@@ -1,0 +1,31 @@
+advisory_id: GHSA-755v-r4x4-qf7m
+datasource_id: github_osv_importer_v2/GHSA-755v-r4x4-qf7m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-755v-r4x4-qf7m/GHSA-755v-r4x4-qf7m.json
+aliases: []
+summary: "Stored Cross-Site Scripting (XSS) in Keycloak via groups dropdown\n### Summary\n\n\
+  A Stored XSS vulnerability was reported in the Keycloak Security mailing list, affecting all\
+  \ the versions of Keycloak, including the latest release (16.0.1). The vulnerability allows\
+  \ a privileged attacker to execute malicious scripts in the admin console, abusing of the\
+  \ groups' dropdown functionality. \n\n### Impact\n\nSuccessful attacks of this vulnerability\
+  \ can result a privileged attacker to load a XSS script, and steal data from other users.\
+  \ The impact can be considered moderate to low, considering privileged credentials are required.\n\
+  \n### References\n- Please refer to the Keycloak Security mailing list for more information."
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<20.0.0
+    fixed_versions: vers:maven/20.0.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-80
+references:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-755v-r4x4-qf7m
+    reference_type:
+    reference_id:

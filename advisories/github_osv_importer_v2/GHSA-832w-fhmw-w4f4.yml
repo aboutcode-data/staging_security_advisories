@@ -1,0 +1,51 @@
+advisory_id: GHSA-832w-fhmw-w4f4
+datasource_id: github_osv_importer_v2/GHSA-832w-fhmw-w4f4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-832w-fhmw-w4f4/GHSA-832w-fhmw-w4f4.json
+aliases:
+  - CVE-2024-55890
+summary: |
+  D-Tale allows Remote Code Execution through the Custom Filter Input
+  ### Impact
+  Users hosting D-Tale publicly can be vulnerable to remote code execution allowing attackers to run malicious code on the server.
+
+  ### Patches
+  Users should upgrade to version 3.16.1 where the `update-settings` endpoint blocks the ability for users to update the `enable_custom_filters` flag. You can find out more information on how to turn that flag on [here](https://github.com/man-group/dtale#custom-filter)
+
+  ### Workarounds
+  The only workaround for versions earlier than 3.16.1 is to only host D-Tale to trusted users.
+
+  ### References
+  See "Custom Filter" [documentation](https://github.com/man-group/dtale#custom-filter)
+impacted_packages:
+  - purl: pkg:pypi/dtale
+    affected_versions: vers:pypi/<3.16.1
+    fixed_versions: vers:pypi/3.16.1
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-832w-fhmw-w4f4/GHSA-832w-fhmw-w4f4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/man-group/dtale
+    reference_type:
+    reference_id:
+  - url: https://github.com/man-group/dtale/commit/1e26ed3ca12fe83812b90f12a2b3e5fb0b740f7a
+    reference_type:
+    reference_id:
+  - url: https://github.com/man-group/dtale#custom-filter
+    reference_type:
+    reference_id:
+  - url: https://github.com/man-group/dtale/security/advisories/GHSA-832w-fhmw-w4f4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-55890
+    reference_type:
+    reference_id:

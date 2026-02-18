@@ -1,0 +1,38 @@
+advisory_id: GHSA-7pvx-4585-hqww
+datasource_id: github_osv_importer_v2/GHSA-7pvx-4585-hqww
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-7pvx-4585-hqww/GHSA-7pvx-4585-hqww.json
+aliases:
+  - CVE-2023-6293
+summary: |
+  sequelize-typescript Prototype Pollution vulnerability
+  Prototype Pollution in GitHub repository robinbuschmann/sequelize-typescript prior to 2.1.6.
+impacted_packages:
+  - purl: pkg:npm/sequelize-typescript
+    affected_versions: vers:npm/<2.1.6
+    fixed_versions: vers:npm/2.1.6
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-7pvx-4585-hqww/GHSA-7pvx-4585-hqww.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/robinbuschmann/sequelize-typescript
+    reference_type:
+    reference_id:
+  - url: https://github.com/robinbuschmann/sequelize-typescript/commit/5ce8afdd1671b08c774ce106b000605ba8fccf78
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/36a7ecbf-4d3d-462e-86a3-cda7b1ec64e2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-6293
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-7xj5-fwqr-5378
+datasource_id: github_osv_importer_v2/GHSA-7xj5-fwqr-5378
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-7xj5-fwqr-5378/GHSA-7xj5-fwqr-5378.json
+aliases:
+  - CVE-2022-28378
+summary: |
+  Cross-site Scripting in craftcms/cms
+  Craft CMS before 3.7.29 allows cross-site scripting.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<3.7.29
+    fixed_versions: vers:composer/3.7.29
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-7xj5-fwqr-5378/GHSA-7xj5-fwqr-5378.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/blob/develop/CHANGELOG.md#3729---2022-01-18
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/7ca2b2d2ccecfb524525afc8ceac6f6e44f84b88
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-28378
+    reference_type:
+    reference_id:

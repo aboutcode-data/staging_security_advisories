@@ -1,0 +1,47 @@
+advisory_id: GHSA-6q8m-42qq-64r7
+datasource_id: github_osv_importer_v2/GHSA-6q8m-42qq-64r7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-6q8m-42qq-64r7/GHSA-6q8m-42qq-64r7.json
+aliases:
+  - CVE-2021-4326
+summary: |
+  Imperative CLI vulnerable to Command Injection
+  A vulnerability in Imperative framework which allows already-privileged local actors to execute arbitrary shell commands via plugin install/update commands, or maliciously formed environment variables. Impacts Zowe CLI.
+impacted_packages:
+  - purl: pkg:npm/%40zowe/imperative
+    affected_versions: vers:npm/>=5.0.0|<5.7.1
+    fixed_versions: vers:npm/5.7.1
+  - purl: pkg:npm/%40zowe/imperative
+    affected_versions: vers:npm/<4.18.10
+    fixed_versions: vers:npm/4.18.10
+severities:
+  - score: '3.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-6q8m-42qq-64r7/GHSA-6q8m-42qq-64r7.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/zowe/imperative
+    reference_type:
+    reference_id:
+  - url: https://github.com/zowe/imperative/commits/v4.18.10
+    reference_type:
+    reference_id:
+  - url: https://github.com/zowe/imperative/commits/v5.7.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/zowe/imperative/pull/900
+    reference_type:
+    reference_id:
+  - url: https://github.com/zowe/imperative/pull/902
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-4326
+    reference_type:
+    reference_id:

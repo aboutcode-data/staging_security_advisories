@@ -1,0 +1,31 @@
+advisory_id: GHSA-7fjv-25q9-2w88
+datasource_id: github_osv_importer_v2/GHSA-7fjv-25q9-2w88
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-7fjv-25q9-2w88/GHSA-7fjv-25q9-2w88.json
+aliases: []
+summary: |
+  State Guessing Vulnerability in laravel/socialite
+  laravel/socialite versions prior to 2.0.10 are susceptible to a security vulnerability related to state guessing during OAuth authentication. This vulnerability could potentially lead to session hijacking, allowing attackers to compromise user sessions. The issue has been addressed and fixed in version 2.0.10.
+impacted_packages:
+  - purl: pkg:composer/laravel/socialite
+    affected_versions: vers:composer/>=1.0.0|<2.0.10
+    fixed_versions: vers:composer/2.0.10
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/socialite/2015-08-03.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/socialite
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/socialite/commit/3d9ed9f4703de82a89541e2458f64de348a60a99
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/socialite/pull/93
+    reference_type:
+    reference_id:

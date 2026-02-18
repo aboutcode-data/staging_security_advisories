@@ -1,0 +1,64 @@
+advisory_id: GHSA-7w54-gp8x-f33m
+datasource_id: github_osv_importer_v2/GHSA-7w54-gp8x-f33m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-7w54-gp8x-f33m/GHSA-7w54-gp8x-f33m.json
+aliases:
+  - CVE-2022-21671
+summary: |
+  Potential exposure of tokens to an Unauthorized Actor
+  ### Impact
+
+  When using this library as a way to programmatically communicate with Replit in a standalone fashion, if there are multiple failed attempts to contact Replit through a WebSocket, the library will attempt to communicate using a fallback poll-based proxy. The URL of the proxy has changed, so any communication done to the previous URL could potentially reach a server that is outside of Replit's control and the token used to connect to the Repl could be obtained by an attacker, leading to full compromise of that Repl (not of the account).
+
+  ### Patches
+
+  This was patched in 7.3.1, by updating the address of the fallback WebSocket polling proxy to the new one.
+
+  ### Workarounds
+
+  Specify the new address for the polling host (`gp-v2.replit.com`) in the `ConnectArgs`:
+
+  ```typescript
+  const connectOptions: ConnectArgs = {
+    // ...
+    pollingHost: 'gp-v2.replit.com',
+  };
+  client.connect(connectOptions);
+  ```
+
+  ### For more information
+
+  Thanks to https://hackerone.com/orlserg for disclosing this.
+
+  If you have any questions or comments about this advisory:
+  * Open an issue in [replit/crosis](https://github.com/replit/crosis)
+  * Email us at [security@replit.com](mailto:security@replit.com)
+impacted_packages:
+  - purl: pkg:npm/%40replit/crosis
+    affected_versions: vers:npm/<7.3.1
+    fixed_versions: vers:npm/7.3.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-7w54-gp8x-f33m/GHSA-7w54-gp8x-f33m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/replit/crosis
+    reference_type:
+    reference_id:
+  - url: https://github.com/replit/crosis/commit/e44b6a8f5fa28cb2872e3c19bb8a205bb5bfc281
+    reference_type:
+    reference_id:
+  - url: https://github.com/replit/crosis/security/advisories/GHSA-7w54-gp8x-f33m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21671
+    reference_type:
+    reference_id:

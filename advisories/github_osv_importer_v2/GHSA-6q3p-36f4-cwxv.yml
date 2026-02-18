@@ -1,0 +1,30 @@
+advisory_id: GHSA-6q3p-36f4-cwxv
+datasource_id: github_osv_importer_v2/GHSA-6q3p-36f4-cwxv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-6q3p-36f4-cwxv/GHSA-6q3p-36f4-cwxv.json
+aliases:
+  - CVE-2020-21122
+summary: |
+  Server-Side Request Forgery in UReport
+  UReport v2.2.9 contains a Server-Side Request Forgery (SSRF) in the designer page which allows attackers to detect intranet device ports.
+impacted_packages:
+  - purl: pkg:maven/com.bstek.ureport/ureport2-console
+    affected_versions: vers:maven/<=2.2.9
+    fixed_versions:
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/youseries/ureport
+    reference_type:
+    reference_id:
+  - url: https://github.com/youseries/ureport/issues/483
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-21122
+    reference_type:
+    reference_id:

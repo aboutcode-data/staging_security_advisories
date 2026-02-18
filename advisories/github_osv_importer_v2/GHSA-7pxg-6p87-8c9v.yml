@@ -1,0 +1,38 @@
+advisory_id: GHSA-7pxg-6p87-8c9v
+datasource_id: github_osv_importer_v2/GHSA-7pxg-6p87-8c9v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7pxg-6p87-8c9v/GHSA-7pxg-6p87-8c9v.json
+aliases:
+  - CVE-2020-24407
+summary: |
+  Magento 2 Community Edition RCE via Unsafe File Upload
+  Magento versions 2.4.0 and 2.3.5p1 (and earlier) are affected by an unsafe file upload vulnerability that could result in arbitrary code execution. This vulnerability could be abused by authenticated users with administrative permissions to the System/Data and Transfer/Import components.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<=2.4.0
+    fixed_versions: vers:composer/2.4.1
+  - purl: pkg:composer/magento/project-community-edition
+    affected_versions: vers:composer/<=2.0.2
+    fixed_versions:
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7pxg-6p87-8c9v/GHSA-7pxg-6p87-8c9v.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb20-59.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-24407
+    reference_type:
+    reference_id:

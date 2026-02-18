@@ -1,0 +1,72 @@
+advisory_id: GHSA-7gcp-2gmq-w3xh
+datasource_id: github_osv_importer_v2/GHSA-7gcp-2gmq-w3xh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7gcp-2gmq-w3xh/GHSA-7gcp-2gmq-w3xh.json
+aliases:
+  - CVE-2017-0899
+summary: |
+  RubyGems Code Injection vulnerability
+  RubyGems prior to 2.6.13 is vulnerable to maliciously crafted gem specifications that include terminal escape characters. Printing the gem specification would execute terminal escape sequences.
+impacted_packages:
+  - purl: pkg:gem/rubygems-update
+    affected_versions: vers:gem/<2.6.13
+    fixed_versions: vers:gem/2.6.13
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7gcp-2gmq-w3xh/GHSA-7gcp-2gmq-w3xh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-150
+references:
+  - url: http://blog.rubygems.org/2017/08/27/2.6.13-released.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:3485
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0378
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0583
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0585
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubygems/rubygems
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubygems/rubygems/commit/1bcbc7fe637b03145401ec9c094066285934a7f1
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubygems/rubygems/commit/ef0aa611effb5f54d40c7fba6e8235eb43c5a491
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/226335
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2018/07/msg00012.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-0899
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/201710-01
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20170907215801/http://www.securitytracker.com/id/1039249
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20170915000000*/http://www.securityfocus.com/bid/100576#:~:text=1%20snapshot-,11%3A49%3A33,-Note
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2017/dsa-3966
+    reference_type:
+    reference_id:

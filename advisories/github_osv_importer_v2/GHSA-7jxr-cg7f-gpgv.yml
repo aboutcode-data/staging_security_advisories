@@ -1,0 +1,56 @@
+advisory_id: GHSA-7jxr-cg7f-gpgv
+datasource_id: github_osv_importer_v2/GHSA-7jxr-cg7f-gpgv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-7jxr-cg7f-gpgv/GHSA-7jxr-cg7f-gpgv.json
+aliases:
+  - CVE-2023-29017
+summary: |
+  vm2 vulnerable to sandbox escape
+  vm2 was not properly handling host objects passed to `Error.prepareStackTrace` in case of unhandled async errors.
+
+  - vm2 version: ~3.9.14
+  - Node version: 18.15.0, 19.8.1, 17.9.1
+
+  ### Impact
+  A threat actor can bypass the sandbox protections to gain remote code execution rights on the host running the sandbox.
+
+  ### Patches
+  This vulnerability was patched in the release of version `3.9.15` of `vm2`.
+
+  ### Workarounds
+  None.
+impacted_packages:
+  - purl: pkg:npm/vm2
+    affected_versions: vers:npm/<3.9.15
+    fixed_versions: vers:npm/3.9.15
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-7jxr-cg7f-gpgv/GHSA-7jxr-cg7f-gpgv.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-913
+references:
+  - url: https://gist.github.com/seongil-wi/2a44e082001b959bfe304b62121fb76d
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/commit/d534e5785f38307b70d3aac1945260a261a94d50
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/issues/515
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/security/advisories/GHSA-7jxr-cg7f-gpgv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-29017
+    reference_type:
+    reference_id:

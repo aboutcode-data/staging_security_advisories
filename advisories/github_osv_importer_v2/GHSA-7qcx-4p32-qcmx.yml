@@ -1,0 +1,53 @@
+advisory_id: GHSA-7qcx-4p32-qcmx
+datasource_id: github_osv_importer_v2/GHSA-7qcx-4p32-qcmx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7qcx-4p32-qcmx/GHSA-7qcx-4p32-qcmx.json
+aliases:
+  - CVE-2022-29229
+summary: |
+  Missing Cryptographic Step in cassproject
+  ### Impact
+  CaSS Library, (npm:cassproject) has a missing cryptographic step when storing cryptographic keys that can allow a server administrator access to an account’s cryptographic keys. This affects CaSS servers using standalone username/password authentication, which uses a method that expects e2e cryptographic security of authorization credentials.
+
+  ### Patches
+  The issue has been patched in 1.5.8, however, the vulnerable accounts are only resecured when the user next logs in using standalone authentication, as the data required to resecure the account is not available to the server.
+
+  ### Workarounds
+  The issue may be mitigated by using SSO or client side certificates to log in. Please note that SSO and client side certificate authentication does not have this expectation of no-knowledge credential access, and cryptographic keys are available to the server administrator.
+
+  ### References
+  There are no references at this time.
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [the CaSS Project Github](https://github.com/cassproject/CASS/issues)
+  * Email us at [the CaSS Project](mailto:cass@eduworks.com)
+impacted_packages:
+  - purl: pkg:npm/cassproject
+    affected_versions: vers:npm/<1.5.8
+    fixed_versions: vers:npm/1.5.8
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7qcx-4p32-qcmx/GHSA-7qcx-4p32-qcmx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-325
+references:
+  - url: https://github.com/cassproject/CASS
+    reference_type:
+    reference_id:
+  - url: https://github.com/cassproject/CASS/releases/tag/1.5.8
+    reference_type:
+    reference_id:
+  - url: https://github.com/cassproject/CASS/security/advisories/GHSA-7qcx-4p32-qcmx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29229
+    reference_type:
+    reference_id:

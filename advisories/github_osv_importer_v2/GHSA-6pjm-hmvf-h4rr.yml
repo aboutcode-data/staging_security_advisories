@@ -1,0 +1,49 @@
+advisory_id: GHSA-6pjm-hmvf-h4rr
+datasource_id: github_osv_importer_v2/GHSA-6pjm-hmvf-h4rr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-6pjm-hmvf-h4rr/GHSA-6pjm-hmvf-h4rr.json
+aliases:
+  - CVE-2024-34515
+summary: |
+  image-optimizer allows PHAR deserialization
+  image-optimizer before 1.7.3 allows PHAR deserialization, e.g., the `phar://` protocol in arguments to `file_exists()`.
+impacted_packages:
+  - purl: pkg:composer/spatie/image-optimizer
+    affected_versions: vers:composer/<1.7.3
+    fixed_versions: vers:composer/1.7.3
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-6pjm-hmvf-h4rr/GHSA-6pjm-hmvf-h4rr.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-6pjm-hmvf-h4rr/GHSA-6pjm-hmvf-h4rr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/spatie/image-optimizer
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/image-optimizer/commit/89847b55fbb44b3bcde0283bff8cc5abb5e51b82
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/image-optimizer/compare/1.7.2...1.7.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/image-optimizer/issues/210
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/image-optimizer/pull/211
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34515
+    reference_type:
+    reference_id:

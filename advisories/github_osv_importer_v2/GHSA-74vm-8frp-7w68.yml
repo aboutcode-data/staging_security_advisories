@@ -1,0 +1,51 @@
+advisory_id: GHSA-74vm-8frp-7w68
+datasource_id: github_osv_importer_v2/GHSA-74vm-8frp-7w68
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-74vm-8frp-7w68/GHSA-74vm-8frp-7w68.json
+aliases:
+  - CVE-2026-25632
+summary: |
+  EPyT-Flow vulnerable to unsafe JSON deserialization (__type__)
+  ### Impact
+  EPyT-Flow’s REST API parses attacker-controlled JSON request bodies using a custom deserializer (my_load_from_json) that supports a __type__ field. When __type__ is present, the deserializer dynamically imports an attacker-specified module/class and instantiates it with attacker-supplied arguments. This allows invoking dangerous classes such as subprocess.Popen, which can lead to OS command execution during JSON parsing. This also affects the loading of JSON files.
+
+  ### Patches
+  EPyT-Flow  has been patched in 0.16.1 -- affects all versions <= 0.16.0
+
+  ### Workarounds
+  Do not load any JSON from untrusted sources and do not expose the REST API.
+
+  ### Credits
+  EPyT-Flow  thanks Jarrett Chan (@syphonetic) for detecting and reporting the bug.
+impacted_packages:
+  - purl: pkg:pypi/epyt-flow
+    affected_versions: vers:pypi/<0.16.1
+    fixed_versions: vers:pypi/0.16.1
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-74vm-8frp-7w68/GHSA-74vm-8frp-7w68.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/WaterFutures/EPyT-Flow
+    reference_type:
+    reference_id:
+  - url: https://github.com/WaterFutures/EPyT-Flow/commit/3fff9151494c7dbc72073830b734f0a7e550e385
+    reference_type:
+    reference_id:
+  - url: https://github.com/WaterFutures/EPyT-Flow/releases/tag/v0.16.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/WaterFutures/EPyT-Flow/security/advisories/GHSA-74vm-8frp-7w68
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25632
+    reference_type:
+    reference_id:

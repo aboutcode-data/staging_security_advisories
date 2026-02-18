@@ -1,0 +1,31 @@
+advisory_id: GHSA-73cw-jxmm-qpgh
+datasource_id: github_osv_importer_v2/GHSA-73cw-jxmm-qpgh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-73cw-jxmm-qpgh/GHSA-73cw-jxmm-qpgh.json
+aliases: []
+summary: "Path Traversal in localhost-now\nAll versions of `localhost-now` are vulnerable to\
+  \ path traversal. This vulnerability is a bypass to the path traversal fix introduced in version\
+  \ 1.0.2\n\nProof of concept:\n\n```\n$ curl -v --path-as-is \"http://IP:5432/..././..././..././..././..././..././..././..././..././..././etc/passwd\"\
+  \ \n```\n\n\n## Recommendation\n\nNo fix is currently available for this vulnerability. It\
+  \ is our recommendation to not install or use this module until a fix is available."
+impacted_packages:
+  - purl: pkg:npm/localhost-now
+    affected_versions: vers:npm/<=1.0.2
+    fixed_versions:
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/DCKT/localhost-now/blob/master/lib/app.js#L17
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/329837
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/655
+    reference_type:
+    reference_id:

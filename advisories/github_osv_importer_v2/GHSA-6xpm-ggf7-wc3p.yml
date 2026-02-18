@@ -1,0 +1,41 @@
+advisory_id: GHSA-6xpm-ggf7-wc3p
+datasource_id: github_osv_importer_v2/GHSA-6xpm-ggf7-wc3p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-6xpm-ggf7-wc3p/GHSA-6xpm-ggf7-wc3p.json
+aliases:
+  - CVE-2025-6514
+summary: |
+  mcp-remote exposed to OS command injection via untrusted MCP server connections
+  mcp-remote is exposed to OS command injection when connecting to untrusted MCP servers due to crafted input from the authorization_endpoint response URL
+impacted_packages:
+  - purl: pkg:npm/mcp-remote
+    affected_versions: vers:npm/>=0.0.5|<0.1.16
+    fixed_versions: vers:npm/0.1.16
+severities:
+  - score: '9.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-6xpm-ggf7-wc3p/GHSA-6xpm-ggf7-wc3p.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/geelen/mcp-remote
+    reference_type:
+    reference_id:
+  - url: https://github.com/geelen/mcp-remote/commit/607b226a356cb61a239ffaba2fb3db1c9dea4bac
+    reference_type:
+    reference_id:
+  - url: https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-6514
+    reference_type:
+    reference_id:
+  - url: https://research.jfrog.com/vulnerabilities/mcp-remote-command-injection-rce-jfsa-2025-001290844
+    reference_type:
+    reference_id:

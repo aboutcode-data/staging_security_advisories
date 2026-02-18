@@ -1,0 +1,44 @@
+advisory_id: GHSA-824x-jcxf-hpfg
+datasource_id: github_osv_importer_v2/GHSA-824x-jcxf-hpfg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-824x-jcxf-hpfg/GHSA-824x-jcxf-hpfg.json
+aliases:
+  - CVE-2022-3457
+summary: |
+  Origin Validation Error in rdiffweb
+  ikus060/rdiffweb prior to 2.5.0a5 did not enforce origin validation in web traffic. Users are advised to upgrade to version 2.5.0a5.
+impacted_packages:
+  - purl: pkg:pypi/rdiffweb
+    affected_versions: vers:pypi/<2.5.0a5
+    fixed_versions: vers:pypi/2.5.0a5
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-824x-jcxf-hpfg/GHSA-824x-jcxf-hpfg.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-346
+references:
+  - url: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin
+    reference_type:
+    reference_id:
+  - url: https://github.com/ikus060/rdiffweb
+    reference_type:
+    reference_id:
+  - url: https://github.com/ikus060/rdiffweb/commit/afc1bdfab5161c74012ff2590a6ec49cc0d8fde0
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/rdiffweb/PYSEC-2022-43161.yaml
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/cfcab02e-d6ad-4dcf-b1b0-da90434bc55b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3457
+    reference_type:
+    reference_id:

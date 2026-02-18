@@ -1,0 +1,61 @@
+advisory_id: GHSA-7q94-qpjr-xpgm
+datasource_id: github_osv_importer_v2/GHSA-7q94-qpjr-xpgm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-7q94-qpjr-xpgm/GHSA-7q94-qpjr-xpgm.json
+aliases:
+  - CVE-2023-36189
+summary: |
+  langchain SQL Injection vulnerability
+  SQL injection vulnerability in langchain allows a remote attacker to obtain sensitive information via the SQLDatabaseChain component.
+impacted_packages:
+  - purl: pkg:pypi/langchain
+    affected_versions: vers:pypi/<0.0.247
+    fixed_versions: vers:pypi/0.0.247
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-7q94-qpjr-xpgm/GHSA-7q94-qpjr-xpgm.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-7q94-qpjr-xpgm/GHSA-7q94-qpjr-xpgm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://gist.github.com/rharang/9c58d39db8c01db5b7c888e467c0533f
+    reference_type:
+    reference_id:
+  - url: https://github.com/hwchase17/langchain/issues/5923
+    reference_type:
+    reference_id:
+  - url: https://github.com/hwchase17/langchain/pull/6051
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/commit/fab24457bcf8ede882abd11419769c92bc4e7751
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/issues/5923
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/issues/5923#issuecomment-1696053841
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/pull/8425
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/langchain/PYSEC-2023-110.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-36189
+    reference_type:
+    reference_id:

@@ -1,0 +1,61 @@
+advisory_id: GHSA-77xc-hjv8-ww97
+datasource_id: github_osv_importer_v2/GHSA-77xc-hjv8-ww97
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-77xc-hjv8-ww97/GHSA-77xc-hjv8-ww97.json
+aliases:
+  - CVE-2022-29257
+summary: |
+  AutoUpdater module fails to validate certain nested components of the bundle
+  ### Impact
+  This vulnerability allows attackers who have control over a given apps update server / update storage to serve maliciously crafted update packages that pass the code signing validation check but contain malicious code in some components.
+
+  Please note that this kind of attack would require **significant** privileges in your own auto updating infrastructure and the ease of that attack entirely depends on your infrastructure security.
+
+  ### Patches
+  This has been patched and the following Electron versions contain the fix:
+
+  * `18.0.0-beta.6`
+  * `17.2.0`
+  * `16.2.0`
+  * `15.5.0`
+
+  ### Workarounds
+  There are no workarounds for this issue, please update to a patched version of Electron.
+
+  ### For more information
+  If you have any questions or comments about this advisory, email us at [security@electronjs.org](mailto:security@electronjs.org)
+impacted_packages:
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/<15.5.0
+    fixed_versions: vers:npm/15.5.0
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=16.0.0|<16.2.0
+    fixed_versions: vers:npm/16.2.0
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=17.0.0|<17.2.0
+    fixed_versions: vers:npm/17.2.0
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/<=18.0.0-beta.5
+    fixed_versions: vers:npm/18.0.0-beta.6
+severities:
+  - score: '6.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-77xc-hjv8-ww97/GHSA-77xc-hjv8-ww97.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/electron/electron
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/security/advisories/GHSA-77xc-hjv8-ww97
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29257
+    reference_type:
+    reference_id:

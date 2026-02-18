@@ -1,0 +1,45 @@
+advisory_id: GHSA-7cwq-p8cr-h9qg
+datasource_id: github_osv_importer_v2/GHSA-7cwq-p8cr-h9qg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-7cwq-p8cr-h9qg/GHSA-7cwq-p8cr-h9qg.json
+aliases:
+  - CVE-2023-41646
+summary: |
+  Buttercup allows attackers to obtain the hash of the master password for the password manager via accessing the file /vaults.json/.
+
+  This affects the Buttercup app up to version 2.20.3.
+impacted_packages:
+  - purl: pkg:npm/buttercup
+    affected_versions: vers:npm/>=2.20.3|<7.4.0
+    fixed_versions: vers:npm/7.4.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-7cwq-p8cr-h9qg/GHSA-7cwq-p8cr-h9qg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-916
+references:
+  - url: https://buttercup.pw
+    reference_type:
+    reference_id:
+  - url: https://github.com/buttercup/buttercup-core
+    reference_type:
+    reference_id:
+  - url: https://github.com/buttercup/buttercup-core/commit/77fbcdfe4caf57486a3c83c07fc6d36bb0e1d3e1
+    reference_type:
+    reference_id:
+  - url: https://github.com/buttercup/buttercup-core/issues/336
+    reference_type:
+    reference_id:
+  - url: https://github.com/tristao-marinho/CVE-2023-41646
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-41646
+    reference_type:
+    reference_id:

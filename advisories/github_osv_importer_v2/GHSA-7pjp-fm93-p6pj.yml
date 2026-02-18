@@ -1,0 +1,53 @@
+advisory_id: GHSA-7pjp-fm93-p6pj
+datasource_id: github_osv_importer_v2/GHSA-7pjp-fm93-p6pj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-7pjp-fm93-p6pj/GHSA-7pjp-fm93-p6pj.json
+aliases:
+  - CVE-2024-25982
+summary: |
+  Cross-Site Request Forgery in moodle
+  The link to update all installed language packs did not include the necessary token to prevent a CSRF risk.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0|<4.3.3
+    fixed_versions: vers:composer/4.3.3
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0|<4.2.6
+    fixed_versions: vers:composer/4.2.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.9
+    fixed_versions: vers:composer/4.1.9
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-7pjp-fm93-p6pj/GHSA-7pjp-fm93-p6pj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-54749
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2264098
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/bac703c534d05d4502580fbe32447d5c777869bf
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KXGBYJ43BUEBUAQZU3DT5I5A3YLF47CB
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=455638
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-25982
+    reference_type:
+    reference_id:

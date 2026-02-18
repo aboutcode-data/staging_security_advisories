@@ -1,0 +1,41 @@
+advisory_id: GHSA-73xj-v6gc-g5p5
+datasource_id: github_osv_importer_v2/GHSA-73xj-v6gc-g5p5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-73xj-v6gc-g5p5/GHSA-73xj-v6gc-g5p5.json
+aliases:
+  - CVE-2018-19422
+summary: |
+  Subrion CMS RCE Vulnerability
+  `/panel/uploads` in Subrion CMS 4.2.1 allows remote attackers to execute arbitrary PHP code via a .pht or .phar file, because the .htaccess file omits these.
+impacted_packages:
+  - purl: pkg:composer/intelliants/subrion
+    affected_versions: vers:composer/<=4.2.1
+    fixed_versions: vers:composer/4.2.2
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-73xj-v6gc-g5p5/GHSA-73xj-v6gc-g5p5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: http://packetstormsecurity.com/files/162591/Subrion-CMS-4.2.1-Shell-Upload.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/173998/Intelliants-Subrion-CMS-4.2.1-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/intelliants/subrion/commit/74359bcfaea424edda6d782a8ac25397c55972ab
+    reference_type:
+    reference_id:
+  - url: https://github.com/intelliants/subrion/issues/801
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-19422
+    reference_type:
+    reference_id:

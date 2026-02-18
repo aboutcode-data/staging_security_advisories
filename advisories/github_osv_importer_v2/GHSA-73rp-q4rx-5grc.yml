@@ -1,0 +1,39 @@
+advisory_id: GHSA-73rp-q4rx-5grc
+datasource_id: github_osv_importer_v2/GHSA-73rp-q4rx-5grc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-73rp-q4rx-5grc/GHSA-73rp-q4rx-5grc.json
+aliases:
+  - CVE-2022-1631
+summary: |
+  Incorrect Authorization in microweber
+  Users Account Pre-Takeover or Users Account Takeover. in GitHub repository microweber/microweber prior to 1.2.15. Victim Account Take Over. Since, there is no email confirmation, an attacker can easily create an account in the application using the Victim’s Email. This allows an attacker to gain pre-authentication to the victim’s account. Further, due to the lack of proper validation of email coming from Social Login and failing to check if an account already exists, the victim will not identify if an account is already existing. Hence, the attacker’s persistence will remain. An attacker would be able to see all the activities performed by the victim user impacting the confidentiality and attempt to modify/corrupt the data impacting the integrity and availability factor. This attack becomes more interesting when an attacker can register an account from an employee’s email address. Assuming the organization uses G-Suite, it is much more impactful to hijack into an employee’s account.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.2.15
+    fixed_versions: vers:composer/1.2.15
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-73rp-q4rx-5grc/GHSA-73rp-q4rx-5grc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-284
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/c162dfffb9bfd264d232aaaf5bb3daee16a3cb38
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/5494e258-5c7b-44b4-b443-85cff7ae0ba4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1631
+    reference_type:
+    reference_id:

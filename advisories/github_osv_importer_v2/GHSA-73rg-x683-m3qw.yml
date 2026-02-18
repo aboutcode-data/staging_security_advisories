@@ -1,0 +1,38 @@
+advisory_id: GHSA-73rg-x683-m3qw
+datasource_id: github_osv_importer_v2/GHSA-73rg-x683-m3qw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-73rg-x683-m3qw/GHSA-73rg-x683-m3qw.json
+aliases:
+  - CVE-2020-8215
+summary: |
+  Buffer overflow  in canvas
+  A buffer overflow is present in canvas versions before 1.6.11, which could lead to a Denial of Service or execution of arbitrary code when it processes a user-provided image.
+impacted_packages:
+  - purl: pkg:npm/canvas
+    affected_versions: vers:npm/<1.6.11
+    fixed_versions: vers:npm/1.6.11
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-73rg-x683-m3qw/GHSA-73rg-x683-m3qw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-120
+references:
+  - url: https://github.com/Automattic/node-canvas/commit/c3e4ccb1c404da01e83fe5eb3626bf55f7f55957
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/315037
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8215
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/canvas
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-7422-7rq6-j4qv
+datasource_id: github_osv_importer_v2/GHSA-7422-7rq6-j4qv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-7422-7rq6-j4qv/GHSA-7422-7rq6-j4qv.json
+aliases:
+  - CVE-2023-38970
+summary: |
+  Badaso vulnerable to cross-site scripting
+  Cross Site Scripting vulnerabiltiy in Badaso v.0.0.1 thru v.2.9.7 allows a remote attacker to execute arbitrary code via a crafted payload to the Name of member parameter in the add new member function.
+impacted_packages:
+  - purl: pkg:composer/uasoft-indonesia/badaso
+    affected_versions: vers:composer/<=2.9.7
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-7422-7rq6-j4qv/GHSA-7422-7rq6-j4qv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/anh91/uasoft-indonesia--badaso/blob/main/XSS3.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/uasoft-indonesia/badaso
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-38970
+    reference_type:
+    reference_id:
+  - url: https://panda002.hashnode.dev/badaso-version-297-has-an-xss-vulnerability-in-new-member
+    reference_type:
+    reference_id:

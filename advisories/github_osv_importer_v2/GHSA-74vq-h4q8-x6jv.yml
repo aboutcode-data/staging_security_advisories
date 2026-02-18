@@ -1,0 +1,85 @@
+advisory_id: GHSA-74vq-h4q8-x6jv
+datasource_id: github_osv_importer_v2/GHSA-74vq-h4q8-x6jv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-74vq-h4q8-x6jv/GHSA-74vq-h4q8-x6jv.json
+aliases:
+  - CVE-2019-3828
+summary: |
+  Ansible Path Traversal vulnerability
+  Ansible fetch module before versions 2.5.15, 2.6.14, 2.7.8 has a path traversal vulnerability which allows copying and overwriting files outside of the specified destination in the local ansible controller host, by not restricting an absolute path.
+impacted_packages:
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/<2.5.15
+    fixed_versions: vers:pypi/2.5.15
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/>=2.6.0a1|<2.6.14
+    fixed_versions: vers:pypi/2.6.14
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/>=2.7.0a1|<2.7.8
+    fixed_versions: vers:pypi/2.7.8
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-74vq-h4q8-x6jv/GHSA-74vq-h4q8-x6jv.json
+  - score: '2.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-74vq-h4q8-x6jv/GHSA-74vq-h4q8-x6jv.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00021.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00077.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00020.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/172837/Ansible-Fetch-Path-Traversal.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:3744
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:3789
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3828
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-74vq-h4q8-x6jv
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/396a2f74717477d80600450e2b7e45349d7b5110
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/4be3215d2f9f84ca283895879f0c6ce1ed7dd333
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/commit/f3edc091523fbe301926b7a0db25fbbd96940d93
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible/pull/52133
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/ansible/PYSEC-2019-5.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-3828
+    reference_type:
+    reference_id:
+  - url: https://usn.ubuntu.com/4072-1
+    reference_type:
+    reference_id:

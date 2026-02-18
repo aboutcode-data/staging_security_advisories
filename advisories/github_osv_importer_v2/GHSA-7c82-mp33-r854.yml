@@ -1,0 +1,52 @@
+advisory_id: GHSA-7c82-mp33-r854
+datasource_id: github_osv_importer_v2/GHSA-7c82-mp33-r854
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-7c82-mp33-r854/GHSA-7c82-mp33-r854.json
+aliases:
+  - CVE-2019-20921
+summary: |
+  Cross-site scripting in bootstrap-select
+  bootstrap-select before 1.13.6 allows Cross-Site Scripting (XSS). It does not escape title values in OPTION elements. This may allow attackers to execute arbitrary JavaScript in a victim's browser.
+impacted_packages:
+  - purl: pkg:npm/bootstrap-select
+    affected_versions: vers:npm/<1.13.6
+    fixed_versions: vers:npm/1.13.6
+  - purl: pkg:nuget/bootstrap-select
+    affected_versions: vers:nuget/<1.13.6
+    fixed_versions: vers:nuget/1.13.6
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-7c82-mp33-r854/GHSA-7c82-mp33-r854.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-7c82-mp33-r854/GHSA-7c82-mp33-r854.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/snapappointments/bootstrap-select
+    reference_type:
+    reference_id:
+  - url: https://github.com/snapappointments/bootstrap-select/commit/ab6e068748040cf3cda5859f6349b382402b8767
+    reference_type:
+    reference_id:
+  - url: https://github.com/snapappointments/bootstrap-select/issues/2199
+    reference_type:
+    reference_id:
+  - url: https://issues.jtl-software.de/issues/SHOP-7964
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-20921
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-BOOTSTRAPSELECT-570457
+    reference_type:
+    reference_id:

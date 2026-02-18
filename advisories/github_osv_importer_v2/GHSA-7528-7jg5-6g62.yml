@@ -1,0 +1,62 @@
+advisory_id: GHSA-7528-7jg5-6g62
+datasource_id: github_osv_importer_v2/GHSA-7528-7jg5-6g62
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-7528-7jg5-6g62/GHSA-7528-7jg5-6g62.json
+aliases:
+  - CVE-2022-21715
+summary: |
+  Cross-site Scripting Vulnerability in CodeIgniter4
+  ### Impact
+  Cross-Site Scripting (XSS) vulnerability was found in `API\ResponseTrait` in Codeigniter4.
+  Attackers can do XSS attacks if you are using `API\ResponseTrait`.
+
+  ### Patches
+  Upgrade to v4.1.8 or later.
+
+  ### Workarounds
+  Do one of the following:
+  1. Do not use `API\ResponseTrait` nor `ResourceController`
+  2. Disable Auto Route and [Use Defined Routes Only](https://codeigniter4.github.io/userguide/incoming/routing.html#use-defined-routes-only)
+
+  ### References
+  - [Cross Site Scripting (XSS) Software Attack | OWASP Foundation](https://owasp.org/www-community/attacks/xss/)
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [codeigniter4/CodeIgniter4](https://github.com/codeigniter4/CodeIgniter4/issues)
+  * Email us at [SECURITY.md](https://github.com/codeigniter4/CodeIgniter4/blob/develop/SECURITY.md)
+impacted_packages:
+  - purl: pkg:composer/codeigniter4/framework
+    affected_versions: vers:composer/<4.1.8
+    fixed_versions: vers:composer/4.1.8
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-7528-7jg5-6g62/GHSA-7528-7jg5-6g62.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://codeigniter4.github.io/userguide/incoming/routing.html#use-defined-routes-only
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/CodeIgniter4/commit/70d881cf5322b7c32e69516aebd2273ac6a1e8dd
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/CodeIgniter4/security/advisories/GHSA-7528-7jg5-6g62
+    reference_type:
+    reference_id:
+  - url: https://github.com/codeigniter4/framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/codeigniter4/framework/CVE-2022-21715.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21715
+    reference_type:
+    reference_id:

@@ -1,0 +1,57 @@
+advisory_id: GHSA-77xq-6g77-h274
+datasource_id: github_osv_importer_v2/GHSA-77xq-6g77-h274
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-77xq-6g77-h274/GHSA-77xq-6g77-h274.json
+aliases:
+  - CVE-2024-47164
+summary: |
+  Gradio's `is_in_or_equal` function may be bypassed
+  ### Impact
+  **What kind of vulnerability is it? Who is impacted?**
+
+  This vulnerability relates to the **bypass of directory traversal checks** within the `is_in_or_equal` function. This function, intended to check if a file resides within a given directory, can be bypassed with certain payloads that manipulate file paths using `..` (parent directory) sequences. Attackers could potentially access restricted files if they are able to exploit this flaw, although the difficulty is high. This primarily impacts users relying on Gradio’s blocklist or directory access validation, particularly when handling file uploads.
+
+  ### Patches
+  Yes, please upgrade to `gradio>=5.0` to address this issue.
+
+  ### Workarounds
+  **Is there a way for users to fix or remediate the vulnerability without upgrading?**
+
+  As a workaround, users can manually sanitize and normalize file paths in their Gradio deployment before passing them to the `is_in_or_equal` function. Ensuring that all file paths are properly resolved and absolute can help mitigate the bypass vulnerabilities caused by the improper handling of `..` sequences or malformed paths.
+impacted_packages:
+  - purl: pkg:pypi/gradio
+    affected_versions: vers:pypi/<5.0.0
+    fixed_versions: vers:pypi/5.0.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-77xq-6g77-h274/GHSA-77xq-6g77-h274.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-77xq-6g77-h274/GHSA-77xq-6g77-h274.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/gradio-app/gradio
+    reference_type:
+    reference_id:
+  - url: https://github.com/gradio-app/gradio/commit/08b51590163b306fd874f543f6fcaf23ac7d2646
+    reference_type:
+    reference_id:
+  - url: https://github.com/gradio-app/gradio/security/advisories/GHSA-77xq-6g77-h274
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/gradio/PYSEC-2024-213.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47164
+    reference_type:
+    reference_id:

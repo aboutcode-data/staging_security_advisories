@@ -1,0 +1,52 @@
+advisory_id: GHSA-7x6q-3v3m-cwjg
+datasource_id: github_osv_importer_v2/GHSA-7x6q-3v3m-cwjg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-7x6q-3v3m-cwjg/GHSA-7x6q-3v3m-cwjg.json
+aliases:
+  - CVE-2023-30544
+summary: |
+  kiwi TCMS has possibility for user to update email address to unverified one
+  ### Impact
+  In previous versions of Kiwi TCMS users were able to update their email addresses via the "My profile" admin page. This page allowed them to change the email address registered with their account without the ownership verification performed during account registration.
+
+  ### Patches
+  With Kiwi TCMS v12.2 or later it is not possible to edit the email field associated with a user account!
+
+  ### Workarounds
+  No workaround exists.
+
+  ### References
+  Disclosed by [@novemberdad](https://huntr.dev/bounties/1714df73-e639-4d64-ab25-ced82dad9f85/).
+impacted_packages:
+  - purl: pkg:pypi/kiwitcms
+    affected_versions: vers:pypi/<12.2
+    fixed_versions: vers:pypi/12.2
+severities:
+  - score: '0.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-7x6q-3v3m-cwjg/GHSA-7x6q-3v3m-cwjg.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-283
+  - CWE-863
+references:
+  - url: https://github.com/kiwitcms/Kiwi
+    reference_type:
+    reference_id:
+  - url: https://github.com/kiwitcms/Kiwi/security/advisories/GHSA-7x6q-3v3m-cwjg
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/1714df73-e639-4d64-ab25-ced82dad9f85
+    reference_type:
+    reference_id:
+  - url: https://kiwitcms.org/blog/kiwi-tcms-team/2023/04/23/kiwi-tcms-122
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-30544
+    reference_type:
+    reference_id:

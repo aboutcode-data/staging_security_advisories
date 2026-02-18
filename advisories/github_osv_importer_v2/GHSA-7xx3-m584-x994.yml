@@ -1,0 +1,63 @@
+advisory_id: GHSA-7xx3-m584-x994
+datasource_id: github_osv_importer_v2/GHSA-7xx3-m584-x994
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-7xx3-m584-x994/GHSA-7xx3-m584-x994.json
+aliases:
+  - CVE-2019-16770
+summary: |
+  ## Keepalive thread overload/DoS
+
+  ### Impact
+
+  A poorly-behaved client could use keepalive requests to monopolize Puma's reactor and create a denial of service attack.
+
+  If more keepalive connections to Puma are opened than there are threads available, additional connections will wait permanently if the attacker sends requests frequently enough.
+
+  ### Patches
+
+  This vulnerability is patched in Puma 4.3.1 and 3.12.2.
+
+  ### Workarounds
+
+  Reverse proxies in front of Puma could be configured to always allow less than X keepalive connections to a Puma cluster or process, where X is the number of threads configured in Puma's thread pool.
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+
+  * Open an issue at [puma](github.com/puma/puma).
+impacted_packages:
+  - purl: pkg:gem/puma
+    affected_versions: vers:gem/<3.12.2
+    fixed_versions: vers:gem/3.12.2
+  - purl: pkg:gem/puma
+    affected_versions: vers:gem/>=4.0.0|<4.3.1
+    fixed_versions: vers:gem/4.3.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-7xx3-m584-x994/GHSA-7xx3-m584-x994.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/advisories/GHSA-7xx3-m584-x994
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/security/advisories/GHSA-7xx3-m584-x994
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/puma/CVE-2019-16770.yml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/05/msg00034.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16770
+    reference_type:
+    reference_id:

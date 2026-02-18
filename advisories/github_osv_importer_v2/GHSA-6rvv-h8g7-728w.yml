@@ -1,0 +1,35 @@
+advisory_id: GHSA-6rvv-h8g7-728w
+datasource_id: github_osv_importer_v2/GHSA-6rvv-h8g7-728w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-6rvv-h8g7-728w/GHSA-6rvv-h8g7-728w.json
+aliases:
+  - CVE-2022-4640
+summary: |
+  Mingsoft MCMS Cross-site Scripting vulnerability
+  A vulnerability has been found in Mingsoft MCMS 5.2.9 and classified as problematic. Affected by this vulnerability is the function save of the component Article Handler. The manipulation leads to cross site scripting. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. It is recommended to upgrade the affected component. The associated identifier of this vulnerability is VDB-216499.
+impacted_packages:
+  - purl: pkg:maven/net.mingsoft/ms-mcms
+    affected_versions: vers:maven/<=5.2.9
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-6rvv-h8g7-728w/GHSA-6rvv-h8g7-728w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://gitee.com/mingSoft/MCMS/issues/I65KI5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-4640
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.216499
+    reference_type:
+    reference_id:

@@ -1,0 +1,54 @@
+advisory_id: GHSA-7fpj-9hr8-28vh
+datasource_id: github_osv_importer_v2/GHSA-7fpj-9hr8-28vh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-7fpj-9hr8-28vh/GHSA-7fpj-9hr8-28vh.json
+aliases:
+  - CVE-2023-0657
+summary: |
+  Keycloak vulnerable to impersonation via logout token exchange
+  Keycloak was found to not properly enforce token types when validating signatures locally. An authenticated attacker could use this flaw to exchange a logout token for an access token and possibly gain access to data outside of enforced permissions.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<22.0.10
+    fixed_versions: vers:maven/22.0.10
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/>=23.0.0|<24.0.3
+    fixed_versions: vers:maven/24.0.3
+severities:
+  - score: '3.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:A/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-7fpj-9hr8-28vh/GHSA-7fpj-9hr8-28vh.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-273
+  - CWE-287
+  - CWE-347
+  - CWE-290
+  - CWE-284
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:1867
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:1868
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2023-0657
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2166728
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/security/advisories/GHSA-7fpj-9hr8-28vh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0657
+    reference_type:
+    reference_id:

@@ -1,0 +1,50 @@
+advisory_id: GHSA-72jf-5fg5-3cw3
+datasource_id: github_osv_importer_v2/GHSA-72jf-5fg5-3cw3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-72jf-5fg5-3cw3/GHSA-72jf-5fg5-3cw3.json
+aliases:
+  - CVE-2025-59013
+summary: |
+  TYPO3 CMS has an open‑redirect vulnerability
+  An open‑redirect vulnerability in GeneralUtility::sanitizeLocalUrl of TYPO3 CMS 9.0.0–9.5.54, 10.0.0–10.4.53, 11.0.0–11.5.47, 12.0.0–12.4.36, and 13.0.0–13.4.17 allows an attacker to redirect users to arbitrary external sites, enabling phishing attacks by supplying a manipulated, sanitized URL.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<9.5.55
+    fixed_versions: vers:composer/12.4.37
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<10.4.54
+    fixed_versions: vers:composer/12.4.37
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/<11.5.48
+    fixed_versions: vers:composer/12.4.37
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=12.0.0|<12.4.37
+    fixed_versions: vers:composer/12.4.37
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=13.0.0|<13.4.18
+    fixed_versions: vers:composer/13.4.18
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-72jf-5fg5-3cw3/GHSA-72jf-5fg5-3cw3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/TYPO3-CMS/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/862b9da870815132c31119cd85bc454a5010793c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-59013
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2025-017
+    reference_type:
+    reference_id:

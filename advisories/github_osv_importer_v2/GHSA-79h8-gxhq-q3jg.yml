@@ -1,0 +1,36 @@
+advisory_id: GHSA-79h8-gxhq-q3jg
+datasource_id: github_osv_importer_v2/GHSA-79h8-gxhq-q3jg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-79h8-gxhq-q3jg/GHSA-79h8-gxhq-q3jg.json
+aliases:
+  - CVE-2024-3121
+summary: |
+  Remote Code Execution in create_conda_env function in lollms
+  A remote code execution vulnerability exists in the create_conda_env function of the parisneo/lollms repository. The vulnerability arises from the use of shell=True in the subprocess.Popen function, which allows an attacker to inject arbitrary commands by manipulating the env_name and python_version parameters. This issue could lead to a serious security breach as demonstrated by the ability to execute the 'whoami' command among potentially other harmful commands.
+impacted_packages:
+  - purl: pkg:pypi/lollms
+    affected_versions: vers:pypi/<=9.5.1
+    fixed_versions:
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-79h8-gxhq-q3jg/GHSA-79h8-gxhq-q3jg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-78
+references:
+  - url: https://github.com/ParisNeo/lollms
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/db57c343-9b80-4c1c-9ab0-9eef92c9b27b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-3121
+    reference_type:
+    reference_id:

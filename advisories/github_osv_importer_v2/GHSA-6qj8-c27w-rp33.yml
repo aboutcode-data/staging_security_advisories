@@ -1,0 +1,35 @@
+advisory_id: GHSA-6qj8-c27w-rp33
+datasource_id: github_osv_importer_v2/GHSA-6qj8-c27w-rp33
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-6qj8-c27w-rp33/GHSA-6qj8-c27w-rp33.json
+aliases:
+  - CVE-2019-17557
+summary: |
+  Cross-site scripting in Apache Syncome EndUser
+  It was found that the Apache Syncope EndUser UI login page prio to 2.0.15 and 2.1.6 reflects the successMessage parameters. By this mean, a user accessing the Enduser UI could execute javascript code from URL query string.
+impacted_packages:
+  - purl: pkg:maven/org.apache.syncope.client/syncope-client-enduser
+    affected_versions: vers:maven/<2.0.15
+    fixed_versions: vers:maven/2.0.15
+  - purl: pkg:maven/org.apache.syncope.client/syncope-client-enduser
+    affected_versions: vers:maven/>=2.1.0|<2.1.6
+    fixed_versions: vers:maven/2.1.6
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-6qj8-c27w-rp33/GHSA-6qj8-c27w-rp33.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-17557
+    reference_type:
+    reference_id:
+  - url: http://syncope.apache.org/security
+    reference_type:
+    reference_id:

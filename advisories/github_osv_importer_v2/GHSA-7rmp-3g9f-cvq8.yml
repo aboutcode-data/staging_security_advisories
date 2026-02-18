@@ -1,0 +1,58 @@
+advisory_id: GHSA-7rmp-3g9f-cvq8
+datasource_id: github_osv_importer_v2/GHSA-7rmp-3g9f-cvq8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-7rmp-3g9f-cvq8/GHSA-7rmp-3g9f-cvq8.json
+aliases:
+  - CVE-2025-31119
+summary: |
+  generator-jhipster-entity-audit vulnerable to Unsafe Reflection when having Javers selected as Entity Audit Framework
+  ### Summary
+  CWE-470 (Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') when having Javers selected as Entity Audit Framework
+
+  ### Details
+  In the following two occurences, user input directly leads to class loading without checking against e.g. a whitelist of allowed classes. This is also known as CWE-470
+  https://github.com/jhipster/generator-jhipster-entity-audit/blob/e21e83135d10c77d92203c89cb0b0063914e8fe0/generators/spring-boot-javers/templates/src/main/java/_package_/web/rest/JaversEntityAuditResource.java.ejs#L88
+  https://github.com/jhipster/generator-jhipster-entity-audit/blob/e21e83135d10c77d92203c89cb0b0063914e8fe0/generators/spring-boot-javers/templates/src/main/java/_package_/web/rest/JaversEntityAuditResource.java.ejs#L124
+
+  So, if an attacker manages to place some malicious classes into the classpath and also has access to these REST interface for calling the mentioned REST endpoints, using these lines of code can lead to unintended remote code execution.
+
+  ### PoC
+
+  1. Place an arbitrary class with the right package name (starting with JHIpster applications path name) and make it available in class path
+  2. Gain access to view entity's audit changelogs (Role: ADMIN)
+  3. pass in the malicious class name part as `entityType` (first mentioned part) // `qualifiedName` (second mentioned occurence)
+  4. class gets loaded and static code blocks in there get executed
+
+  --> Should be limited to the already existing whitelist of classes (see first method in that mentioned class)
+
+  ### Impact
+  Remote Code execution. You need to have some access to place malicious classes into the class path and you need to have a user with ADMIN role on the system.
+impacted_packages:
+  - purl: pkg:npm/generator-jhipster-entity-audit
+    affected_versions: vers:npm/<5.9.1
+    fixed_versions: vers:npm/5.9.1
+severities:
+  - score: '7.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-7rmp-3g9f-cvq8/GHSA-7rmp-3g9f-cvq8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-470
+references:
+  - url: https://github.com/jhipster/generator-jhipster-entity-audit
+    reference_type:
+    reference_id:
+  - url: https://github.com/jhipster/generator-jhipster-entity-audit/blob/e21e83135d10c77d92203c89cb0b0063914e8fe0/generators/spring-boot-javers/templates/src/main/java/_package_/web/rest/JaversEntityAuditResource.java.ejs#L88
+    reference_type:
+    reference_id:
+  - url: https://github.com/jhipster/generator-jhipster-entity-audit/security/advisories/GHSA-7rmp-3g9f-cvq8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-31119
+    reference_type:
+    reference_id:

@@ -1,0 +1,31 @@
+advisory_id: GHSA-6qqf-vvcr-7qrv
+datasource_id: github_osv_importer_v2/GHSA-6qqf-vvcr-7qrv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/05/GHSA-6qqf-vvcr-7qrv/GHSA-6qqf-vvcr-7qrv.json
+aliases: []
+summary: |
+  Cryptographically Weak PRNG in generate-password
+  Affected versions of generate-password generate random values that are biased towards certain characters depending on the chosen character sets. This may result in guessable passwords.
+
+
+  ## Recommendation
+
+  Update to version 1.4.1 or later.
+impacted_packages:
+  - purl: pkg:npm/generate-password
+    affected_versions: vers:npm/<1.4.1
+    fixed_versions: vers:npm/1.4.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-338
+references:
+  - url: https://github.com/brendanashworth/generate-password/pull/26
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/762
+    reference_type:
+    reference_id:

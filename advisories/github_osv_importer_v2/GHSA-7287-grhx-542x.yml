@@ -1,0 +1,44 @@
+advisory_id: GHSA-7287-grhx-542x
+datasource_id: github_osv_importer_v2/GHSA-7287-grhx-542x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-7287-grhx-542x/GHSA-7287-grhx-542x.json
+aliases:
+  - CVE-2025-30741
+summary: |
+  Pixelfed may allow unauthorized actor to view private posts and private users
+  Pixelfed before 0.12.5 allows anyone to follow private accounts and see private posts on other Fediverse servers. This affects users elsewhere in the Fediverse, if they otherwise have any followers from a Pixelfed instance.
+impacted_packages:
+  - purl: pkg:composer/pixelfed/pixelfed
+    affected_versions: vers:composer/<0.12.5
+    fixed_versions: vers:composer/0.12.5
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-7287-grhx-542x/GHSA-7287-grhx-542x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://fokus.cool/2025/03/25/pixelfed-vulnerability.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/pixelfed/pixelfed
+    reference_type:
+    reference_id:
+  - url: https://github.com/pixelfed/pixelfed/releases/tag/v0.12.5
+    reference_type:
+    reference_id:
+  - url: https://mastodon.social/@pixelfed/114215925957179498
+    reference_type:
+    reference_id:
+  - url: https://news.ycombinator.com/item?id=43474425
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-30741
+    reference_type:
+    reference_id:

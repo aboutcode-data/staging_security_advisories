@@ -1,0 +1,56 @@
+advisory_id: GHSA-6pw3-h7xf-x4gp
+datasource_id: github_osv_importer_v2/GHSA-6pw3-h7xf-x4gp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6pw3-h7xf-x4gp/GHSA-6pw3-h7xf-x4gp.json
+aliases:
+  - CVE-2026-22779
+summary: |
+  BlackSheep's ClientSession is vulnerable to CRLF injection
+  ### Impact
+  The HTTP Client implementation in BlackSheep is vulnerable to CRLF injection. Missing headers validation makes it possible for an attacker to modify the HTTP requests (e.g. insert a new header) or even create a new HTTP request.
+  Exploitation requires developers to pass unsanitized user input directly into headers.
+  The server part is not affected because BlackSheep delegates to an underlying ASGI server handling of response headers.
+
+  **Attack vector:** Applications using user input in HTTP client requests (method, URL, headers).
+
+  ### Patches
+  Users who use the HTTP Client in BlackSheep should upgrade to `2.4.6`.
+
+  ### Workarounds
+  If users handle headers from untrusted parties, they might reject values for header names and values that contain carriage returns.
+
+  ### References
+  https://owasp.org/www-community/vulnerabilities/CRLF_Injection
+impacted_packages:
+  - purl: pkg:pypi/blacksheep
+    affected_versions: vers:pypi/<2.4.6
+    fixed_versions: vers:pypi/2.4.6
+severities:
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6pw3-h7xf-x4gp/GHSA-6pw3-h7xf-x4gp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-113
+  - CWE-93
+references:
+  - url: https://github.com/Neoteroi/BlackSheep
+    reference_type:
+    reference_id:
+  - url: https://github.com/Neoteroi/BlackSheep/commit/bd4ecb9542b5d52442276b5a6907931b90f38d12
+    reference_type:
+    reference_id:
+  - url: https://github.com/Neoteroi/BlackSheep/releases/tag/v2.4.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/Neoteroi/BlackSheep/security/advisories/GHSA-6pw3-h7xf-x4gp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-22779
+    reference_type:
+    reference_id:

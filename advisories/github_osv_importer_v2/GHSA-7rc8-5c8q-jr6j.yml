@@ -1,0 +1,45 @@
+advisory_id: GHSA-7rc8-5c8q-jr6j
+datasource_id: github_osv_importer_v2/GHSA-7rc8-5c8q-jr6j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-7rc8-5c8q-jr6j/GHSA-7rc8-5c8q-jr6j.json
+aliases:
+  - CVE-2025-62527
+summary: |
+  Taguette password reset link poisoning
+  ### Impact
+  An issue has been discovered in Taguette versions prior to 1.5.0. It was possible for an attacker to request password reset email containing a malicious link, allowing the attacker to set the email if clicked by the victim.
+
+  ### Patches
+  Users should upgrade to Taguette 1.5.0.
+
+  ### References
+  - https://gitlab.com/remram44/taguette/-/issues/331
+impacted_packages:
+  - purl: pkg:pypi/taguette
+    affected_versions: vers:pypi/<1.5.0
+    fixed_versions: vers:pypi/1.5.0
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-7rc8-5c8q-jr6j/GHSA-7rc8-5c8q-jr6j.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-15
+references:
+  - url: https://github.com/remram44/taguette
+    reference_type:
+    reference_id:
+  - url: https://github.com/remram44/taguette/security/advisories/GHSA-7rc8-5c8q-jr6j
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/remram44/taguette/-/issues/331
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62527
+    reference_type:
+    reference_id:

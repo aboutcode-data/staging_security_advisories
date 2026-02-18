@@ -1,0 +1,41 @@
+advisory_id: GHSA-6qpr-9mc5-7gch
+datasource_id: github_osv_importer_v2/GHSA-6qpr-9mc5-7gch
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-6qpr-9mc5-7gch/GHSA-6qpr-9mc5-7gch.json
+aliases:
+  - CVE-2020-28490
+summary: |
+  Command Injection in async-git
+  The package async-git before 1.13.2 are vulnerable to Command Injection via shell meta-characters (back-ticks). For example: `git.reset('atouch HACKEDb')`
+impacted_packages:
+  - purl: pkg:npm/async-git
+    affected_versions: vers:npm/<1.13.2
+    fixed_versions: vers:npm/1.13.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-6qpr-9mc5-7gch/GHSA-6qpr-9mc5-7gch.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/omrilotan/async-git/commit/d1950a5021f4e19d92f347614be0d85ce991510d
+    reference_type:
+    reference_id:
+  - url: https://github.com/omrilotan/async-git/pull/14
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28490
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-ASYNCGIT-1064877
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/async-git
+    reference_type:
+    reference_id:

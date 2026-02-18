@@ -1,0 +1,70 @@
+advisory_id: GHSA-7q62-r88r-j5gw
+datasource_id: github_osv_importer_v2/GHSA-7q62-r88r-j5gw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-7q62-r88r-j5gw/GHSA-7q62-r88r-j5gw.json
+aliases:
+  - CVE-2025-57815
+summary: |
+  Fides has a Lack of Brute-Force Protections on Authentication Endpoints
+  ### Summary
+
+  The Fides Admin UI login endpoint relies on a general IP-based rate limit for all API traffic and lacks specific anti-automation controls designed to protect against brute-force attacks. This could allow attackers to conduct credential testing attacks, such as credential stuffing or password spraying, which poses a risk to accounts with weak or previously compromised passwords.
+
+  ### Details
+
+  Fides uses a configurable, system-wide rate limit to control traffic from any single IP address. Because this single limit must be set high enough to accommodate endpoints that receive a large volume of legitimate traffic, it offers only weak protection for the login endpoint. The system is not equipped with more advanced protections tailored specifically for authentication
+
+  ### Impact
+
+  Although password complexity requirements and the global rate limit make a traditional brute-force attack against a single account  difficult, the lack of authentication-specific protections exposes Fides to more targeted attacks. An attacker could use automated tools to test credentials obtained from data breaches or guess common passwords across multiple user accounts. If an attacker successfully compromises an account, they would gain full access to that user's privileges within the Fides Admin UI.
+
+  ### Patches
+
+  The vulnerability has been patched in Fides version `2.69.1`. Users are advised to upgrade to this version or later to secure their systems against this threat.
+
+  ### Workarounds
+
+  For organizations with commercial Fides Enterprise licenses, configuring Single Sign-On (SSO) through an OIDC provider (like Azure, Google, or Okta) is an effective workaround. When OIDC SSO is enabled, username/password authentication can be disabled entirely, which eliminates this attack vector. This functionality is not available for Fides Open Source users.
+
+  ### Risk Level
+
+  This vulnerability has been assigned a severity of **LOW**.
+
+  This is fundamentally a security hardening issue. While the lack of authentication-specific rate limiting could enable credential stuffing attacks, several factors limit the risk: existing global rate limits provide baseline protection, password complexity requirements prevent trivial brute-force attacks, and successful exploitation requires attackers to already possess valid credentials from external breaches.
+impacted_packages:
+  - purl: pkg:pypi/ethyca-fides
+    affected_versions: vers:pypi/<2.69.1
+    fixed_versions: vers:pypi/2.69.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-7q62-r88r-j5gw/GHSA-7q62-r88r-j5gw.json
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-7q62-r88r-j5gw/GHSA-7q62-r88r-j5gw.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-307
+references:
+  - url: https://github.com/ethyca/fides
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/commit/59903c195e2f9f8915a1db94950aefd557033a5c
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/releases/tag/2.69.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/security/advisories/GHSA-7q62-r88r-j5gw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-57815
+    reference_type:
+    reference_id:

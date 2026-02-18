@@ -1,0 +1,43 @@
+advisory_id: GHSA-6w5w-jx4x-vjvw
+datasource_id: github_osv_importer_v2/GHSA-6w5w-jx4x-vjvw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-6w5w-jx4x-vjvw/GHSA-6w5w-jx4x-vjvw.json
+aliases:
+  - CVE-2025-70792
+summary: |
+  Microweber Cross-site Scripting vulnerability
+  There is a Cross-site Scripting vulnerability in the "/admin/category/create" endpoint of Microweber 2.0.19. An attacker can manipulate the "rel_id" parameter in a crafted URL and lure a user with admin privileges into visiting it, achieving JavaScript code execution in the victim's browser. The issue was reported to the developers and fixed in version 2.0.20.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<2.0.20
+    fixed_versions: vers:composer/2.0.20
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-6w5w-jx4x-vjvw/GHSA-6w5w-jx4x-vjvw.json
+  - score: '2.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-6w5w-jx4x-vjvw/GHSA-6w5w-jx4x-vjvw.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://gist.github.com/TimRecktenwald/f4b0d1edbb87e75c17c639ca0bacba57
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/aa0791fc286d785ccd33ccc706f7bb3ed05b1d7f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-70792
+    reference_type:
+    reference_id:

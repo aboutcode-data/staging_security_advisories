@@ -1,0 +1,38 @@
+advisory_id: GHSA-6pgr-x867-h7jx
+datasource_id: github_osv_importer_v2/GHSA-6pgr-x867-h7jx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6pgr-x867-h7jx/GHSA-6pgr-x867-h7jx.json
+aliases:
+  - CVE-2019-9826
+summary: |
+  phpBB Denial of Service
+  The fulltext search component in phpBB before 3.2.6 allows Denial of Service.
+impacted_packages:
+  - purl: pkg:composer/phpbb/phpbb
+    affected_versions: vers:composer/<3.2.6
+    fixed_versions: vers:composer/3.2.6
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6pgr-x867-h7jx/GHSA-6pgr-x867-h7jx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/phpbb/phpbb-app
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-9826
+    reference_type:
+    reference_id:
+  - url: https://www.phpbb.com/community/viewtopic.php?f=14&t=2509941
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/04/29/3
+    reference_type:
+    reference_id:

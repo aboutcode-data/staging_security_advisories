@@ -1,0 +1,41 @@
+advisory_id: GHSA-75p2-hgw4-g7f7
+datasource_id: github_osv_importer_v2/GHSA-75p2-hgw4-g7f7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-75p2-hgw4-g7f7/GHSA-75p2-hgw4-g7f7.json
+aliases:
+  - CVE-2019-20627
+summary: |
+  AutoUpdater.NET allows XXE
+  AutoUpdater.cs in AutoUpdater.NET before 1.5.8 allows XXE.
+impacted_packages:
+  - purl: pkg:nuget/Autoupdater.NET.Official
+    affected_versions: vers:nuget/<1.5.8
+    fixed_versions: vers:nuget/1.5.8
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-75p2-hgw4-g7f7/GHSA-75p2-hgw4-g7f7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/ravibpatel/AutoUpdater.NET
+    reference_type:
+    reference_id:
+  - url: https://github.com/ravibpatel/AutoUpdater.NET/commit/1dc25f2bea6ea522dbac1512b5563c4746d539c3
+    reference_type:
+    reference_id:
+  - url: https://github.com/ravibpatel/AutoUpdater.NET/releases/tag/v1.5.8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-20627
+    reference_type:
+    reference_id:
+  - url: https://www.doyler.net/security-not-included/autoupdater-net-vulnerability
+    reference_type:
+    reference_id:

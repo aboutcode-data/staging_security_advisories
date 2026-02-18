@@ -1,0 +1,40 @@
+advisory_id: GHSA-7pp4-388x-2xqj
+datasource_id: github_osv_importer_v2/GHSA-7pp4-388x-2xqj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-7pp4-388x-2xqj/GHSA-7pp4-388x-2xqj.json
+aliases:
+  - CVE-2024-48231
+summary: |
+  SQL injection in funadmin
+  Funadmin 5.0.2 is vulnerable to SQL Injection via the selectFields parameter in the index method of \app\backend\controller\auth\Auth.php.
+impacted_packages:
+  - purl: pkg:composer/funadmin/funadmin
+    affected_versions: vers:composer/<=5.0.2
+    fixed_versions:
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-7pp4-388x-2xqj/GHSA-7pp4-388x-2xqj.json
+  - score: '8.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-7pp4-388x-2xqj/GHSA-7pp4-388x-2xqj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/funadmin/funadmin
+    reference_type:
+    reference_id:
+  - url: https://github.com/funadmin/funadmin/issues/29
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-48231
+    reference_type:
+    reference_id:

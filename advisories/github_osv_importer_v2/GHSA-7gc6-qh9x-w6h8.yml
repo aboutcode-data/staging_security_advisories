@@ -1,0 +1,50 @@
+advisory_id: GHSA-7gc6-qh9x-w6h8
+datasource_id: github_osv_importer_v2/GHSA-7gc6-qh9x-w6h8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-7gc6-qh9x-w6h8/GHSA-7gc6-qh9x-w6h8.json
+aliases:
+  - CVE-2022-1365
+summary: |
+  Withdrawn Advisory: Incorrect Authorization in cross-fetch
+  ## Withdrawn Advisory
+  This advisory has been withdrawn because the vulnerability originates from a dependency. For more information, see the `Maintainer` comments in https://huntr.com/bounties/ab55dfdd-2a60-437a-a832-e3efe3d264ac.
+
+  ## Original Description
+  When fetching a remote url with Cookie if it get Location response header then it will follow that url and try to fetch that url with provided cookie . So cookie is leaked here to thirdparty.
+  Ex: you try to fetch example.com with cookie and if it get redirect url to attacker.com then it fetch that redirect url with provided cookie .
+impacted_packages:
+  - purl: pkg:npm/cross-fetch
+    affected_versions: vers:npm/>=3.0.0|<3.1.5
+    fixed_versions: vers:npm/3.1.5
+  - purl: pkg:npm/cross-fetch
+    affected_versions: vers:npm/<2.2.6
+    fixed_versions: vers:npm/2.2.6
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-7gc6-qh9x-w6h8/GHSA-7gc6-qh9x-w6h8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-359
+references:
+  - url: https://github.com/lquixada/cross-fetch
+    reference_type:
+    reference_id:
+  - url: https://github.com/lquixada/cross-fetch/commit/a3b3a9481091ddd06b8f83784ba9c4e034dc912a
+    reference_type:
+    reference_id:
+  - url: https://github.com/lquixada/cross-fetch/pull/135
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/ab55dfdd-2a60-437a-a832-e3efe3d264ac
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1365
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-7222-r37x-8q3m
+datasource_id: github_osv_importer_v2/GHSA-7222-r37x-8q3m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-7222-r37x-8q3m/GHSA-7222-r37x-8q3m.json
+aliases:
+  - CVE-2022-43719
+summary: |
+  Apache Superset vulnerable to Cross-Site Request Forgery via legacy REST API endpoints
+  Two legacy REST API endpoints for approval and request access are vulnerable to cross site request forgery. This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.
+impacted_packages:
+  - purl: pkg:pypi/apache-superset
+    affected_versions: vers:pypi/<=1.5.2
+    fixed_versions:
+  - purl: pkg:pypi/apache-superset
+    affected_versions: vers:pypi/2.0.0
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-7222-r37x-8q3m/GHSA-7222-r37x-8q3m.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/apache/superset
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/xc309h2dphrkg33154djf3nqlh2xc1c0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-43719
+    reference_type:
+    reference_id:

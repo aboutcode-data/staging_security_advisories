@@ -1,0 +1,33 @@
+advisory_id: GHSA-7p6w-x2gr-rrf8
+datasource_id: github_osv_importer_v2/GHSA-7p6w-x2gr-rrf8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-7p6w-x2gr-rrf8/GHSA-7p6w-x2gr-rrf8.json
+aliases: []
+summary: "ag-grid Cross-Site Scripting vulnerability\nVersions of `ag-grid` prior to 14.0.0\
+  \ are vulnerable to Cross-Site Scripting (XSS). Grid contents are not properly sanitized and\
+  \ may allow attackers to execute arbitrary JavaScript if user input is rendered in the grid.\
+  \ \n\n\n## Recommendation\n\nUpgrade to version 14.0.0 or later."
+impacted_packages:
+  - purl: pkg:npm/ag-grid
+    affected_versions: vers:npm/<14.0.0
+    fixed_versions: vers:npm/14.0.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/ag-grid/ag-grid
+    reference_type:
+    reference_id:
+  - url: https://github.com/ag-grid/ag-grid/commit/b66b1ddf73056714f6574e054d6e05d6ba531ce8
+    reference_type:
+    reference_id:
+  - url: https://github.com/ag-grid/ag-grid/issues/1961
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/issues/5799
+    reference_type:
+    reference_id:

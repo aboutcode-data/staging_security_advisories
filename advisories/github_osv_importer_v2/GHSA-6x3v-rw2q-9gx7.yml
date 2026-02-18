@@ -1,0 +1,53 @@
+advisory_id: GHSA-6x3v-rw2q-9gx7
+datasource_id: github_osv_importer_v2/GHSA-6x3v-rw2q-9gx7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-6x3v-rw2q-9gx7/GHSA-6x3v-rw2q-9gx7.json
+aliases:
+  - CVE-2019-10158
+summary: |
+  Improper implementation of the session fixation protection in Infinispan
+  A flaw was found in Infinispan through version 9.4.14.Final. An improper implementation of the session fixation protection in the Spring Session integration can result in incorrect session handling.
+impacted_packages:
+  - purl: pkg:maven/org.infinispan/infinispan-core
+    affected_versions: vers:maven/<9.4.15.Final
+    fixed_versions: vers:maven/9.4.15.Final
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-6x3v-rw2q-9gx7/GHSA-6x3v-rw2q-9gx7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-384
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10158
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan/commit/4b381c5910265972ccaabefbdbd16a2b929f6b72
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan/commits/9.4.15.Final
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan/pull/6960
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan/pull/7025
+    reference_type:
+    reference_id:
+  - url: https://github.com/infinispan/infinispan/pull/7043
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10158
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20231227-0009
+    reference_type:
+    reference_id:

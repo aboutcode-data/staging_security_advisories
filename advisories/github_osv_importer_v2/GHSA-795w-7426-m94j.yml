@@ -1,0 +1,38 @@
+advisory_id: GHSA-795w-7426-m94j
+datasource_id: github_osv_importer_v2/GHSA-795w-7426-m94j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-795w-7426-m94j/GHSA-795w-7426-m94j.json
+aliases:
+  - CVE-2021-33360
+summary: |
+  stoqey/gnuplot is vulnerable to command injection
+  An issue found in Stoqey gnuplot v.0.0.3 and earlier allows attackers to execute arbitrary code via the src/index.ts, plotCallack, child_process, and/or filePath parameter(s).
+impacted_packages:
+  - purl: pkg:npm/%40stoqey/gnuplot
+    affected_versions: vers:npm/<=0.0.3
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-795w-7426-m94j/GHSA-795w-7426-m94j.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://advisory.checkmarx.net/advisory/CX-2021-4811
+    reference_type:
+    reference_id:
+  - url: https://github.com/stoqey/gnuplot
+    reference_type:
+    reference_id:
+  - url: https://github.com/stoqey/gnuplot/blob/cd76060a15f58348baeef1c5fd867ce856515949/src/index.ts#L211-L217
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-33360
+    reference_type:
+    reference_id:

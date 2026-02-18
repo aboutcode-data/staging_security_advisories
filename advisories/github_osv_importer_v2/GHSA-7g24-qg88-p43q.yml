@@ -1,0 +1,42 @@
+advisory_id: GHSA-7g24-qg88-p43q
+datasource_id: github_osv_importer_v2/GHSA-7g24-qg88-p43q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-7g24-qg88-p43q/GHSA-7g24-qg88-p43q.json
+aliases:
+  - CVE-2023-31582
+summary: |
+  jose4j uses weak cryptographic algorithm
+  jose4j before v0.9.3 allows attackers to set a low PBES2 iteration count of 1000 or less.
+impacted_packages:
+  - purl: pkg:maven/org.bitbucket.b_c/jose4j
+    affected_versions: vers:maven/<0.9.3
+    fixed_versions: vers:maven/0.9.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-7g24-qg88-p43q/GHSA-7g24-qg88-p43q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-327
+  - CWE-331
+references:
+  - url: https://bitbucket.org/b_c/jose4j
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/b_c/jose4j/commits/1929fe3
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/b_c/jose4j/issues/203/insecure-support-of-setting-pbe-less-then
+    reference_type:
+    reference_id:
+  - url: https://github.com/KANIXB/JWTIssues/blob/main/jose4j%20issue.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-31582
+    reference_type:
+    reference_id:

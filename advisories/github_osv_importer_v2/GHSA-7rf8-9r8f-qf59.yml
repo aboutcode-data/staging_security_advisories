@@ -1,0 +1,44 @@
+advisory_id: GHSA-7rf8-9r8f-qf59
+datasource_id: github_osv_importer_v2/GHSA-7rf8-9r8f-qf59
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7rf8-9r8f-qf59/GHSA-7rf8-9r8f-qf59.json
+aliases:
+  - CVE-2016-2559
+summary: |
+  phpMyAdmin Cross-site scripting (XSS) vulnerability in SQL parser
+  Cross-site scripting (XSS) vulnerability in the format function in libraries/sql-parser/src/Utils/Error.php in the SQL parser in phpMyAdmin 4.5.x before 4.5.5.1 allows remote authenticated users to inject arbitrary web script or HTML via a crafted query.
+impacted_packages:
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=4.5.0|<4.5.5+1
+    fixed_versions: vers:composer/4.5.5+1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7rf8-9r8f-qf59/GHSA-7rf8-9r8f-qf59.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://lists.fedoraproject.org/pipermail/package-announce/2016-March/178562.html
+    reference_type:
+    reference_id:
+  - url: http://lists.fedoraproject.org/pipermail/package-announce/2016-March/178869.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpmyadmin/composer
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpmyadmin/phpmyadmin/commit/3a6a9a807d99371ee126635e1a505fc1fe0df32c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-2559
+    reference_type:
+    reference_id:
+  - url: https://www.phpmyadmin.net/security/PMASA-2016-10
+    reference_type:
+    reference_id:

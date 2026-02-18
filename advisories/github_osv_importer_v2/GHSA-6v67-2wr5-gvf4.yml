@@ -1,0 +1,45 @@
+advisory_id: GHSA-6v67-2wr5-gvf4
+datasource_id: github_osv_importer_v2/GHSA-6v67-2wr5-gvf4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-6v67-2wr5-gvf4/GHSA-6v67-2wr5-gvf4.json
+aliases:
+  - CVE-2024-12801
+summary: "QOS.CH logback-core Server-Side Request Forgery vulnerability\nServer-Side Request\
+  \ Forgery (SSRF) in SaxEventRecorder by QOS.CH logback version 1.5.12 on the Java platform,\
+  \ allows an attacker to forge requests by compromising logback configuration files in XML.\n\
+  \ \nThe attacks involves the modification of DOCTYPE declaration in  XML configuration files."
+impacted_packages:
+  - purl: pkg:maven/ch.qos.logback/logback-core
+    affected_versions: vers:maven/>=1.4.0|<1.5.13
+    fixed_versions: vers:maven/1.5.13
+  - purl: pkg:maven/ch.qos.logback/logback-core
+    affected_versions: vers:maven/<1.3.15
+    fixed_versions: vers:maven/1.3.15
+severities:
+  - score: '2.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:P/VC:L/VI:N/VA:L/SC:H/SI:H/SA:H/V:D/U:Clear
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-6v67-2wr5-gvf4/GHSA-6v67-2wr5-gvf4.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/qos-ch/logback
+    reference_type:
+    reference_id:
+  - url: https://github.com/qos-ch/logback/commit/5f05041cba4c4ac0a62748c5c527a2da48999f2d
+    reference_type:
+    reference_id:
+  - url: https://logback.qos.ch/news.html#1.3.15
+    reference_type:
+    reference_id:
+  - url: https://logback.qos.ch/news.html#1.5.13
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-12801
+    reference_type:
+    reference_id:

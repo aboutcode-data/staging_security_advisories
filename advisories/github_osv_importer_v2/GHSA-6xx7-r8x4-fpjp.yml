@@ -1,0 +1,47 @@
+advisory_id: GHSA-6xx7-r8x4-fpjp
+datasource_id: github_osv_importer_v2/GHSA-6xx7-r8x4-fpjp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-6xx7-r8x4-fpjp/GHSA-6xx7-r8x4-fpjp.json
+aliases:
+  - CVE-2023-44765
+summary: |
+  ConcreteCMS Cross-site Scripting vulnerability
+  A Cross Site Scripting (XSS) vulnerability in Concrete CMS v.9.2.1 allows an attacker to execute arbitrary code via a crafted script to Plural Handle of the Data Objects from System & Settings.
+impacted_packages:
+  - purl: pkg:composer/concrete5/concrete5
+    affected_versions: vers:composer/<=9.2.1
+    fixed_versions: vers:composer/9.2.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-6xx7-r8x4-fpjp/GHSA-6xx7-r8x4-fpjp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/concretecms/concretecms
+    reference_type:
+    reference_id:
+  - url: https://github.com/concretecms/concretecms/pull/11746
+    reference_type:
+    reference_id:
+  - url: https://github.com/concretecms/concretecms/pull/11746/commits/0f0564232e0a49719d0bdff6223539b624f116ee
+    reference_type:
+    reference_id:
+  - url: https://github.com/concretecms/concretecms/pull/11746/commits/92bcc208078571f4beda38cb0952f8e99887737a
+    reference_type:
+    reference_id:
+  - url: https://github.com/sromanhu/ConcreteCMS-Stored-XSS---Associations
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-44765
+    reference_type:
+    reference_id:
+  - url: https://www.concretecms.org/about/project-news/security/2023-11-09-security-blog-about-updated-cves-and-new-release
+    reference_type:
+    reference_id:

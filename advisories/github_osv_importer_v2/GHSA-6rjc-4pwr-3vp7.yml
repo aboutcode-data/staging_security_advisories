@@ -1,0 +1,40 @@
+advisory_id: GHSA-6rjc-4pwr-3vp7
+datasource_id: github_osv_importer_v2/GHSA-6rjc-4pwr-3vp7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-6rjc-4pwr-3vp7/GHSA-6rjc-4pwr-3vp7.json
+aliases:
+  - CVE-2019-10771
+summary: |
+  Cross-Site Scripting in iobroker.web
+  Versions of `iobroker.web` prior to 2.4.10 are vulnerable to Cross-Site Scripting. The package fails to escape URL parameters that may be reflected in the server response. This can be used by attackers to execute arbitrary JavaScript in the victim's browser.
+
+
+  ## Recommendation
+
+  Upgrade to version 2.4.10 or later.
+impacted_packages:
+  - purl: pkg:npm/iobroker.web
+    affected_versions: vers:npm/<2.4.10
+    fixed_versions: vers:npm/2.4.10
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-6rjc-4pwr-3vp7/GHSA-6rjc-4pwr-3vp7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10771
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-IOBROKERWEB-534971
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1345
+    reference_type:
+    reference_id:

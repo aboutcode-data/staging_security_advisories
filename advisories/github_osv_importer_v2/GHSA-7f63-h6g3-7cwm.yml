@@ -1,0 +1,49 @@
+advisory_id: GHSA-7f63-h6g3-7cwm
+datasource_id: github_osv_importer_v2/GHSA-7f63-h6g3-7cwm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7f63-h6g3-7cwm/GHSA-7f63-h6g3-7cwm.json
+aliases:
+  - CVE-2022-24717
+summary: |
+  Cross Site Scripting (XSS) in @finastra/ssr-pages
+  A cross site scripting (XSS) issue can occur when providing untrusted input to the `redirect.link` property as an argument to the `build(MessagePageOptions)` function.
+
+  ### References
+  - https://github.com/Finastra/ssr-pages/pull/2
+  - https://github.com/Finastra/ssr-pages/pull/2/commits/133606ffaec2edd9918d9fba5771ed21da7876a5
+  - https://github.com/Finastra/ssr-pages/commit/98abc59e28fec48246be0d59ac144675d6361073
+impacted_packages:
+  - purl: pkg:npm/%40finastra/ssr-pages
+    affected_versions: vers:npm/<0.1.5
+    fixed_versions: vers:npm/0.1.5
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7f63-h6g3-7cwm/GHSA-7f63-h6g3-7cwm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Finastra/ssr-pages
+    reference_type:
+    reference_id:
+  - url: https://github.com/Finastra/ssr-pages/commit/98abc59e28fec48246be0d59ac144675d6361073
+    reference_type:
+    reference_id:
+  - url: https://github.com/Finastra/ssr-pages/pull/2
+    reference_type:
+    reference_id:
+  - url: https://github.com/Finastra/ssr-pages/pull/2/commits/133606ffaec2edd9918d9fba5771ed21da7876a5
+    reference_type:
+    reference_id:
+  - url: https://github.com/Finastra/ssr-pages/security/advisories/GHSA-7f63-h6g3-7cwm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24717
+    reference_type:
+    reference_id:

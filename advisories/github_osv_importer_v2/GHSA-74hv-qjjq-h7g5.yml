@@ -1,0 +1,41 @@
+advisory_id: GHSA-74hv-qjjq-h7g5
+datasource_id: github_osv_importer_v2/GHSA-74hv-qjjq-h7g5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-74hv-qjjq-h7g5/GHSA-74hv-qjjq-h7g5.json
+aliases: []
+summary: |
+  datasette-graphql leaks details of the schema of private database files
+  ### Impact
+
+  When running against a Datasette instance with private databases, `datasette-graphql` would expose the schema of those database tables - but not the table contents.
+
+  ### Patches
+
+  Patched in version 1.2.
+
+  ### Workarounds
+
+  This issue is only present if a Datasette instance that includes private databases and has the `datasette-graphql` plugin installed is available on the public internet. Uninstalling the `datasette-graphql` plugin or preventing public access to the instance can workaround this issue.
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [datasette-graphql](https://github.com/simonw/datasette-graphql)
+  * Contact [@simonw](https://twitter.com/simonw) by Twitter direct message
+impacted_packages:
+  - purl: pkg:pypi/datasette-graphql
+    affected_versions: vers:pypi/<1.2
+    fixed_versions: vers:pypi/1.2
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/simonw/datasette-graphql/security/advisories/GHSA-74hv-qjjq-h7g5
+    reference_type:
+    reference_id:
+  - url: https://pypi.org/project/datasette-graphql
+    reference_type:
+    reference_id:

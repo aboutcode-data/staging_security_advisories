@@ -1,0 +1,53 @@
+advisory_id: GHSA-8222-6fc8-mhvf
+datasource_id: github_osv_importer_v2/GHSA-8222-6fc8-mhvf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/01/GHSA-8222-6fc8-mhvf/GHSA-8222-6fc8-mhvf.json
+aliases:
+  - CVE-2019-3773
+summary: |
+  Vulnerability that affects org.springframework.ws:spring-ws and org.springframework.ws:spring-xml
+  Spring Web Services, versions 2.4.3, 3.0.4, and older unsupported versions of all three projects, were susceptible to XML External Entity Injection (XXE) when receiving XML data from untrusted sources.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.ws/spring-ws
+    affected_versions: vers:maven/<2.4.4
+    fixed_versions: vers:maven/2.4.4
+  - purl: pkg:maven/org.springframework.ws/spring-ws
+    affected_versions: vers:maven/<=3.0.4
+    fixed_versions: vers:maven/3.0.6
+  - purl: pkg:maven/org.springframework.ws/spring-xml
+    affected_versions: vers:maven/<2.4.4
+    fixed_versions: vers:maven/2.4.4
+  - purl: pkg:maven/org.springframework.ws/spring-xml
+    affected_versions: vers:maven/<=3.0.4
+    fixed_versions: vers:maven/3.0.6
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/01/GHSA-8222-6fc8-mhvf/GHSA-8222-6fc8-mhvf.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/advisories/GHSA-8222-6fc8-mhvf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-3773
+    reference_type:
+    reference_id:
+  - url: https://pivotal.io/security/cve-2019-3773
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2021.html
+    reference_type:
+    reference_id:

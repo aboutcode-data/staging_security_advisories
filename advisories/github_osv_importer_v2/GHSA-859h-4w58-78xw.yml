@@ -1,0 +1,32 @@
+advisory_id: GHSA-859h-4w58-78xw
+datasource_id: github_osv_importer_v2/GHSA-859h-4w58-78xw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-859h-4w58-78xw/GHSA-859h-4w58-78xw.json
+aliases:
+  - CVE-2024-22492
+summary: |
+  Cross-site Scripting in JFinal
+  A stored XSS vulnerability exists in JFinalcms 5.0.0 via the /gusetbook/save contact parameter, which allows remote attackers to inject arbitrary web script or HTML.
+impacted_packages:
+  - purl: pkg:maven/com.jfinal/jfinal
+    affected_versions: vers:maven/<=5.0.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-859h-4w58-78xw/GHSA-859h-4w58-78xw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/cui2shark/security/blob/main/%28JFinalcms%20contact%20para%29A%20stored%20cross-site%20scripting%20%28XSS%29%20vulnerability%20was%20discovered%20in%20Jfinalcms%20contact%20para.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-22492
+    reference_type:
+    reference_id:

@@ -1,0 +1,51 @@
+advisory_id: GHSA-7ww6-75fj-jcj7
+datasource_id: github_osv_importer_v2/GHSA-7ww6-75fj-jcj7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7ww6-75fj-jcj7/GHSA-7ww6-75fj-jcj7.json
+aliases:
+  - CVE-2022-29172
+summary: |
+  Cross-site Scripting in Auth0 Lock
+  ### Overview
+
+  In versions before and including `11.32.2`, when the “additional signup fields” feature [is configured](https://github.com/auth0/lock#additional-sign-up-fields), a malicious actor can inject invalidated HTML code into these additional fields, which is then stored in the service `user_metdata` payload (using the `name` property).
+
+  Verification emails, when applicable, are generated using this metadata. It is therefor possible for an actor to craft a malicious link by injecting HTML, which is then rendered as the recipient's name within the delivered email template.
+
+  ### Am I affected?
+  You are impacted by this vulnerability if you are using `auth0-lock` version `11.32.2` or lower and are using the “additional signup fields” feature in your application.
+
+  ### How to fix that?
+  Upgrade to version `11.33.0`.
+
+  ### Will this update impact my users?
+  Additional signup fields that have been added to the signup tab on Lock will have HTML tags stripped from user input from version `11.33.0` onwards. The user will not receive any validation warning or feedback, but backend data will no longer include HTML.
+impacted_packages:
+  - purl: pkg:npm/auth0-lock
+    affected_versions: vers:npm/<11.33.0
+    fixed_versions: vers:npm/11.33.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7ww6-75fj-jcj7/GHSA-7ww6-75fj-jcj7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/auth0/lock
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/lock/commit/79ae557d331274b114848150f19832ae341771b1
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/lock/security/advisories/GHSA-7ww6-75fj-jcj7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29172
+    reference_type:
+    reference_id:

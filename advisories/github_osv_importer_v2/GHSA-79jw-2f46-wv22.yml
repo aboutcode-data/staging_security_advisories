@@ -1,0 +1,67 @@
+advisory_id: GHSA-79jw-2f46-wv22
+datasource_id: github_osv_importer_v2/GHSA-79jw-2f46-wv22
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-79jw-2f46-wv22/GHSA-79jw-2f46-wv22.json
+aliases:
+  - CVE-2022-21705
+summary: |
+  Authenticated remote code execution in October CMS
+  ### Impact
+
+  An authenticated user with the permissions to create, modify and delete website pages can exploit this vulnerability to bypass  `cms.safe_mode` / `cms.enableSafeMode` in order to execute arbitrary code.
+
+  - This issue only affects admin panels that rely on safe mode and restricted permissions.
+  - To exploit this vulnerability, an attacker must first have access to the backend area.
+
+  ### Patches
+
+  The issue has been patched in Build 474 (v1.0.474) and v1.1.10.
+
+  ### Workarounds
+
+  Apply https://github.com/octobercms/library/commit/c393c5ce9ca2c5acc3ed6c9bb0dab5ffd61965fe to your installation manually if unable to upgrade to Build 474 or v1.1.10.
+
+  ### References
+
+  Credits to:
+  - David Miller
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+  - Email us at [hello@octobercms.com](mailto:hello@octobercms.com)
+impacted_packages:
+  - purl: pkg:composer/october/system
+    affected_versions: vers:composer/>=1.1.0|<1.1.10
+    fixed_versions: vers:composer/1.1.10
+  - purl: pkg:composer/october/system
+    affected_versions: vers:composer/>=2.0.0|<2.1.27
+    fixed_versions: vers:composer/2.1.27
+  - purl: pkg:composer/october/system
+    affected_versions: vers:composer/<1.0.474
+    fixed_versions: vers:composer/1.0.474
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-79jw-2f46-wv22/GHSA-79jw-2f46-wv22.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/octobercms/library/commit/c393c5ce9ca2c5acc3ed6c9bb0dab5ffd61965fe
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october/security/advisories/GHSA-79jw-2f46-wv22
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21705
+    reference_type:
+    reference_id:

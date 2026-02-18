@@ -1,0 +1,57 @@
+advisory_id: GHSA-7x48-7466-3g33
+datasource_id: github_osv_importer_v2/GHSA-7x48-7466-3g33
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7x48-7466-3g33/GHSA-7x48-7466-3g33.json
+aliases:
+  - CVE-2021-23556
+summary: |
+  Command injection in guake
+  Guake is a drop-down terminal for GNOME. The package guake before 3.8.5 is vulnerable to Exposed Dangerous Method or Function due to the exposure of execute_command and execute_command_by_uuid methods via the d-bus interface, which makes it possible for a malicious user to run an arbitrary command via the d-bus method. **Note:** Exploitation requires the user to have installed another malicious program that will be able to send dbus signals or run terminal commands.
+impacted_packages:
+  - purl: pkg:pypi/guake
+    affected_versions: vers:pypi/<3.8.5
+    fixed_versions: vers:pypi/3.8.5
+severities:
+  - score: '6.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7x48-7466-3g33/GHSA-7x48-7466-3g33.json
+  - score: '6.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7x48-7466-3g33/GHSA-7x48-7466-3g33.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-7x48-7466-3g33
+    reference_type:
+    reference_id:
+  - url: https://github.com/Guake/guake
+    reference_type:
+    reference_id:
+  - url: https://github.com/Guake/guake/commit/b769b3a5fd71a107c58679d217cccc971b4196b4
+    reference_type:
+    reference_id:
+  - url: https://github.com/Guake/guake/issues/1796
+    reference_type:
+    reference_id:
+  - url: https://github.com/Guake/guake/pull/2017
+    reference_type:
+    reference_id:
+  - url: https://github.com/Guake/guake/releases
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/guake/PYSEC-2022-165.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23556
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-PYTHON-GUAKE-2386334
+    reference_type:
+    reference_id:

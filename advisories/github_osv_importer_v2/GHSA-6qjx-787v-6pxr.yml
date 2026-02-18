@@ -1,0 +1,61 @@
+advisory_id: GHSA-6qjx-787v-6pxr
+datasource_id: github_osv_importer_v2/GHSA-6qjx-787v-6pxr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-6qjx-787v-6pxr/GHSA-6qjx-787v-6pxr.json
+aliases:
+  - CVE-2023-33197
+summary: |
+  Craft CMS stored XSS in indexedVolumes
+  ### Summary
+  XSS can be triggered via the Update Asset Index utility
+
+  ### PoC
+  1. Access setting tab
+  2. Create new assets
+  3. In assets name inject payload: "<script>alert(26)</script>
+  4. Click Utilities tab
+  5. Choose all volumes, or volume trigger xss
+  7. Click Update asset indexes.
+
+  XSS will be triggered
+
+  Json response volumes name makes triggers the payload
+
+      "session":{"id":1,"indexedVolumes":{"1":"\"<script>alert(26)</script>"},
+
+  It’s run on every POST request in the utility.
+
+  Resolved in https://github.com/craftcms/cms/commit/8c2ad0bd313015b8ee42326af2848ee748f1d766
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=4.4.5
+    fixed_versions: vers:composer/4.4.6
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-6qjx-787v-6pxr/GHSA-6qjx-787v-6pxr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-80
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/8c2ad0bd313015b8ee42326af2848ee748f1d766
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/releases/tag/4.4.6
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/security/advisories/GHSA-6qjx-787v-6pxr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-33197
+    reference_type:
+    reference_id:

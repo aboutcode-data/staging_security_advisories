@@ -1,0 +1,34 @@
+advisory_id: GHSA-7m2v-x7rg-5hm5
+datasource_id: github_osv_importer_v2/GHSA-7m2v-x7rg-5hm5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-7m2v-x7rg-5hm5/GHSA-7m2v-x7rg-5hm5.json
+aliases: []
+summary: |
+  silverstripe/framework vulnerable to user enumeration via timing attack on login and password reset forms
+  User enumeration is possible by performing a timing attack on the login or password reset pages with user credentials.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.5.0-rc1|<3.5.5
+    fixed_versions: vers:composer/3.5.5
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.6.0-rc1|<3.6.2
+    fixed_versions: vers:composer/3.6.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/SS-2017-005-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/f0262a8fd9ab5fb51b178ace3c3487351217f5a0
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2017-005
+    reference_type:
+    reference_id:

@@ -1,0 +1,54 @@
+advisory_id: GHSA-7gfc-8cq8-jh5f
+datasource_id: github_osv_importer_v2/GHSA-7gfc-8cq8-jh5f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-7gfc-8cq8-jh5f/GHSA-7gfc-8cq8-jh5f.json
+aliases:
+  - CVE-2024-51479
+summary: |
+  Next.js authorization bypass vulnerability
+  ### Impact
+  If a Next.js application is performing authorization in middleware based on pathname, it was possible for this authorization to be bypassed.
+
+  ### Patches
+  This issue was patched in Next.js `14.2.15` and later.
+
+  If your Next.js application is hosted on Vercel, this vulnerability has been automatically mitigated, regardless of Next.js version.
+
+  ### Workarounds
+  There are no official workarounds for this vulnerability.
+
+  #### Credits
+  We'd like to thank [tyage](http://github.com/tyage) (GMO CyberSecurity by IERAE) for responsible disclosure of this issue.
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=9.5.5|<14.2.15
+    fixed_versions: vers:npm/14.2.15
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-7gfc-8cq8-jh5f/GHSA-7gfc-8cq8-jh5f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/commit/1c8234eb20bc8afd396b89999a00f06b61d72d7b
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/releases/tag/v14.2.15
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-7gfc-8cq8-jh5f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-51479
+    reference_type:
+    reference_id:

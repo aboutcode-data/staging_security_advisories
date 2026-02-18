@@ -1,0 +1,93 @@
+advisory_id: GHSA-8489-44mv-ggj8
+datasource_id: github_osv_importer_v2/GHSA-8489-44mv-ggj8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-8489-44mv-ggj8/GHSA-8489-44mv-ggj8.json
+aliases:
+  - CVE-2021-44832
+summary: |
+  Improper Input Validation and Injection in Apache Log4j2
+  Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases 2.3.2 and 2.12.4) are vulnerable to an attack where an attacker with permission to modify the logging configuration file can construct a malicious configuration using a JDBC Appender with a data source referencing a JNDI URI which can execute remote code. This issue is fixed by limiting JNDI data source names to the java protocol in Log4j2 versions 2.17.1, 2.12.4, and 2.3.2.
+
+
+  # Affected packages
+  Only the `org.apache.logging.log4j:log4j-core` package is directly affected by this vulnerability. The `org.apache.logging.log4j:log4j-api` should be kept at the same version as the `org.apache.logging.log4j:log4j-core` package to ensure compatability if in use.
+
+  This issue does not impact default configurations of Log4j2 and requires an attacker to have control over the Log4j2 configuration, which reduces the likelihood of being exploited.
+impacted_packages:
+  - purl: pkg:maven/org.apache.logging.log4j/log4j-core
+    affected_versions: vers:maven/>=2.0-beta7|<2.3.2
+    fixed_versions: vers:maven/2.3.2
+  - purl: pkg:maven/org.apache.logging.log4j/log4j-core
+    affected_versions: vers:maven/>=2.4|<2.12.4
+    fixed_versions: vers:maven/2.12.4
+  - purl: pkg:maven/org.apache.logging.log4j/log4j-core
+    affected_versions: vers:maven/>=2.13.0|<2.17.1
+    fixed_versions: vers:maven/2.17.1
+  - purl: pkg:maven/org.ops4j.pax.logging/pax-logging-log4j2
+    affected_versions: vers:maven/>=1.8.0|<1.9.2
+    fixed_versions: vers:maven/1.9.2
+  - purl: pkg:maven/org.ops4j.pax.logging/pax-logging-log4j2
+    affected_versions: vers:maven/>=1.10.0|<1.10.9
+    fixed_versions: vers:maven/1.10.9
+  - purl: pkg:maven/org.ops4j.pax.logging/pax-logging-log4j2
+    affected_versions: vers:maven/>=1.11.0|<1.11.13
+    fixed_versions: vers:maven/1.11.13
+  - purl: pkg:maven/org.ops4j.pax.logging/pax-logging-log4j2
+    affected_versions: vers:maven/>=2.0.0|<2.0.14
+    fixed_versions: vers:maven/2.0.14
+severities:
+  - score: '6.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-8489-44mv-ggj8/GHSA-8489-44mv-ggj8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-20
+references:
+  - url: https://cert-portal.siemens.com/productcert/pdf/ssa-784507.pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/logging-log4j2
+    reference_type:
+    reference_id:
+  - url: https://issues.apache.org/jira/browse/LOG4J2-3293
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/s1o5vlo78ypqxnzn6p8zf6t9shtq5143
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/12/msg00036.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EVV25FXL4FU5X6X5BSL7RLQ7T6F65MRA
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T57MPJUW3MA6QGWZRTMCHHMMPQNVKGFC
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-44832
+    reference_type:
+    reference_id:
+  - url: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220104-0001
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2021/12/28/1
+    reference_type:
+    reference_id:

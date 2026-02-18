@@ -1,0 +1,43 @@
+advisory_id: GHSA-6x49-w35h-wqrj
+datasource_id: github_osv_importer_v2/GHSA-6x49-w35h-wqrj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-6x49-w35h-wqrj/GHSA-6x49-w35h-wqrj.json
+aliases:
+  - CVE-2023-29234
+summary: |
+  Bypass serialize checks in Apache Dubbo
+  A deserialization vulnerability existed when decode a malicious package.This issue affects Apache Dubbo: from 3.1.0 through 3.1.10, from 3.2.0 through 3.2.4.
+
+  Users are recommended to upgrade to the latest version, which fixes the issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.dubbo/dubbo
+    affected_versions: vers:maven/>=3.1.0|<3.1.11
+    fixed_versions: vers:maven/3.1.11
+  - purl: pkg:maven/org.apache.dubbo/dubbo
+    affected_versions: vers:maven/>=3.2.0|<3.2.5
+    fixed_versions: vers:maven/3.2.5
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-6x49-w35h-wqrj/GHSA-6x49-w35h-wqrj.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/apache/dubbo
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/wb2df2whkdnbgp54nnqn0m94rllx8f77
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-29234
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/12/15/2
+    reference_type:
+    reference_id:

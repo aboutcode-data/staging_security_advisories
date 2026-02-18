@@ -1,0 +1,32 @@
+advisory_id: GHSA-82xf-8h9p-c6qj
+datasource_id: github_osv_importer_v2/GHSA-82xf-8h9p-c6qj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-82xf-8h9p-c6qj/GHSA-82xf-8h9p-c6qj.json
+aliases:
+  - CVE-2020-23264
+summary: |
+  Cross-Site Request Forgery in forkcms
+  Cross-site request forgery (CSRF) in Fork-CMS before 5.8.2 allow remote attackers to hijack the authentication of logged administrators.
+impacted_packages:
+  - purl: pkg:composer/forkcms/forkcms
+    affected_versions: vers:composer/<5.8.2
+    fixed_versions: vers:composer/5.8.2
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-82xf-8h9p-c6qj/GHSA-82xf-8h9p-c6qj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/forkcms/forkcms/pull/3123
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-23264
+    reference_type:
+    reference_id:

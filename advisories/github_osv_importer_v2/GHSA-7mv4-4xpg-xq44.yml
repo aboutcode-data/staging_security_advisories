@@ -1,0 +1,41 @@
+advisory_id: GHSA-7mv4-4xpg-xq44
+datasource_id: github_osv_importer_v2/GHSA-7mv4-4xpg-xq44
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7mv4-4xpg-xq44/GHSA-7mv4-4xpg-xq44.json
+aliases:
+  - CVE-2020-26138
+summary: |
+  FormField with square brackets in field name skips validation
+  FileField with array notation skips validation
+
+  The FileField class is commonly used for file upload in custom code on a Silverstripe website. This field is designed to be used with a single file upload.
+
+  PHP allows for submitting multiple values by adding square brackets to the field name. When this is done to a FileField, it will be coerced into allowing multiple files by using this notation. This is not a supported feature, though nothing is done to prevent this.
+
+  In this scenario, validation such as limiting allowed extensions is not applied, and the FileField->saveInto() behaviour is not triggered. If custom controller logic is used to process the file uploads, it might implicitly rely on validation to be provided by the Form system, which is not the case.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.0.0|<4.7.4
+    fixed_versions: vers:composer/4.7.4
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-7mv4-4xpg-xq44/GHSA-7mv4-4xpg-xq44.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/CVE-2020-26138.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-26138
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2020-26138
+    reference_type:
+    reference_id:

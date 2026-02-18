@@ -1,0 +1,48 @@
+advisory_id: GHSA-77qv-gh6f-pgh4
+datasource_id: github_osv_importer_v2/GHSA-77qv-gh6f-pgh4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-77qv-gh6f-pgh4/GHSA-77qv-gh6f-pgh4.json
+aliases:
+  - CVE-2020-4066
+summary: |
+  Command Injection in Limdu
+  ### Impact
+  The `trainBatch` function has a command injection vulnerability. Clients of the Limdu library are unlikely to be aware of this, so they might unwittingly write code that contains a vulnerability.
+
+  ### Patches
+  Patched in version 0.9.5.
+
+  ### Workarounds
+  Do not use trainBatch with classifiers that rely on shell execution, such as SVM Perf, SVM Linear or Adaboost
+
+  ### References
+  No
+impacted_packages:
+  - purl: pkg:npm/limdu
+    affected_versions: vers:npm/<=0.9.4
+    fixed_versions: vers:npm/0.9.5
+severities:
+  - score: '3.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-77qv-gh6f-pgh4/GHSA-77qv-gh6f-pgh4.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/erelsgl/limdu
+    reference_type:
+    reference_id:
+  - url: https://github.com/erelsgl/limdu/commit/03475a6a6bb253de6fad8f7f39cfb3504f11438d
+    reference_type:
+    reference_id:
+  - url: https://github.com/erelsgl/limdu/security/advisories/GHSA-77qv-gh6f-pgh4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-4066
+    reference_type:
+    reference_id:

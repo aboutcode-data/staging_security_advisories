@@ -1,0 +1,38 @@
+advisory_id: GHSA-7x94-jx75-3gh6
+datasource_id: github_osv_importer_v2/GHSA-7x94-jx75-3gh6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-7x94-jx75-3gh6/GHSA-7x94-jx75-3gh6.json
+aliases:
+  - CVE-2023-2817
+summary: |
+  Stored cross site scripting in Craft CMS
+  A post-authentication stored cross-site scripting vulnerability exists in Craft CMS versions <= 4.4.11. HTML, including script tags can be injected into field names which, when the field is added to a category or section, will trigger when users visit the Categories or Entries pages respectively. This issue was patched in version 4.4.12.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/>=4.0.0-RC1|<4.4.12
+    fixed_versions: vers:composer/4.4.12
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-7x94-jx75-3gh6/GHSA-7x94-jx75-3gh6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/7655e1009ba6cdbfb230e6bb138b775b69fc7bcb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2817
+    reference_type:
+    reference_id:
+  - url: https://www.tenable.com/security/research/tra-2023-20
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-773f-f929-qgjj
+datasource_id: github_osv_importer_v2/GHSA-773f-f929-qgjj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-773f-f929-qgjj/GHSA-773f-f929-qgjj.json
+aliases:
+  - CVE-2020-15841
+summary: |
+  Liferay Portal and Liferay DXP Potentially Reveal LDAP Server Password via Unsafe Connection
+  Liferay Portal before 7.3.0, and Liferay DXP 7.0 before fix pack 89, 7.1 before fix pack 17, and 7.2 before fix pack 4, does not safely test a connection to a LDAP server, which allows remote attackers to obtain the LDAP server's password via the Test LDAP Connection feature.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/<7.3.0
+    fixed_versions: vers:maven/7.3.0
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.0.0|<7.0.10.fp89
+    fixed_versions: vers:maven/7.0.10.fp89
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.1.0|<7.1.10.fp17
+    fixed_versions: vers:maven/7.1.10.fp17
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.2.0|<7.2.10.fp4
+    fixed_versions: vers:maven/7.2.10.fp4
+severities:
+  - score: '8.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-773f-f929-qgjj/GHSA-773f-f929-qgjj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-522
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://issues.liferay.com/browse/LPE-16928
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15841
+    reference_type:
+    reference_id:
+  - url: https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/119317439
+    reference_type:
+    reference_id:

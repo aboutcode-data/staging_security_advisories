@@ -1,0 +1,47 @@
+advisory_id: GHSA-864j-6qpp-cmrr
+datasource_id: github_osv_importer_v2/GHSA-864j-6qpp-cmrr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-864j-6qpp-cmrr/GHSA-864j-6qpp-cmrr.json
+aliases:
+  - CVE-2020-7981
+summary: |
+  SQL Injection in Geocoder
+  sql.rb in Geocoder before 1.6.1 allows Boolean-based SQL injection when `within_bounding_box` is used in conjunction with untrusted `sw_lat`, `sw_lng`, `ne_lat`, or `ne_lng` data.
+impacted_packages:
+  - purl: pkg:gem/geocoder
+    affected_versions: vers:gem/<1.6.1
+    fixed_versions: vers:gem/1.6.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-864j-6qpp-cmrr/GHSA-864j-6qpp-cmrr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7981
+    reference_type:
+    reference_id:
+  - url: https://github.com/alexreisner/geocoder
+    reference_type:
+    reference_id:
+  - url: https://github.com/alexreisner/geocoder/blob/master/CHANGELOG.md#161-2020-jan-23
+    reference_type:
+    reference_id:
+  - url: https://github.com/alexreisner/geocoder/commit/dcdc3d8675411edce3965941a2ca7c441ca48613
+    reference_type:
+    reference_id:
+  - url: https://github.com/alexreisner/geocoder/compare/v1.6.0...v1.6.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/geocoder/CVE-2020-7981.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7981
+    reference_type:
+    reference_id:

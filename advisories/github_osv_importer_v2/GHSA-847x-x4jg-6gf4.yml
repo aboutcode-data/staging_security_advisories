@@ -1,0 +1,39 @@
+advisory_id: GHSA-847x-x4jg-6gf4
+datasource_id: github_osv_importer_v2/GHSA-847x-x4jg-6gf4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-847x-x4jg-6gf4/GHSA-847x-x4jg-6gf4.json
+aliases:
+  - CVE-2024-29643
+summary: |
+  croogo Host header injection
+  An issue in croogo v.3.0.2 allows an attacker to perform Host header injection via the feed.rss component.
+impacted_packages:
+  - purl: pkg:composer/croogo/croogo
+    affected_versions: vers:composer/<=3.0.2
+    fixed_versions:
+severities:
+  - score: '5.5'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-847x-x4jg-6gf4/GHSA-847x-x4jg-6gf4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-444
+references:
+  - url: https://github.com/croogo/croogo
+    reference_type:
+    reference_id:
+  - url: https://github.com/croogo/croogo/issues/1005
+    reference_type:
+    reference_id:
+  - url: https://medium.com/@christbowel6/cve-2024-29643-host-header-injection-in-croogo-v3-0-2-0aded525f574
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29643
+    reference_type:
+    reference_id:

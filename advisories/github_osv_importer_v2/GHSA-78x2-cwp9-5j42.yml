@@ -1,0 +1,71 @@
+advisory_id: GHSA-78x2-cwp9-5j42
+datasource_id: github_osv_importer_v2/GHSA-78x2-cwp9-5j42
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-78x2-cwp9-5j42/GHSA-78x2-cwp9-5j42.json
+aliases:
+  - CVE-2024-43409
+summary: |
+  Ghost's improper authentication allows access to member information and actions
+  ### Impact
+
+  Improper authentication on some endpoints used for member actions would allow an attacker to perform member-only actions, and read member information.
+
+  ### Vulnerable versions
+
+  This security vulnerability is present in Ghost v4.46.0-v5.89.5.
+
+  Ghost(Pro) customers are automatically updated to fixed versions ahead of disclosure.
+
+  If you're a self-hoster, please follow our [update instructions](https://ghost.org/docs/update).
+
+  ### Patches
+
+  v5.89.5 contains a fix for this issue.
+
+  ### Workarounds
+
+  Disable site membership in Ghost settings.
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+
+  * Email us at [security@ghost.org](mailto:security@ghost.org)
+impacted_packages:
+  - purl: pkg:npm/ghost
+    affected_versions: vers:npm/>=4.46.0|<5.89.5
+    fixed_versions: vers:npm/5.89.5
+  - purl: pkg:npm/%40tryghost/portal
+    affected_versions: vers:npm/>=1.22.2|<2.39.0
+    fixed_versions: vers:npm/2.39.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-78x2-cwp9-5j42/GHSA-78x2-cwp9-5j42.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-78x2-cwp9-5j42/GHSA-78x2-cwp9-5j42.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-284
+references:
+  - url: https://github.com/TryGhost/Ghost
+    reference_type:
+    reference_id:
+  - url: https://github.com/TryGhost/Ghost/commit/dac25612520b571f58679764ecc27109e641d1db
+    reference_type:
+    reference_id:
+  - url: https://github.com/TryGhost/Ghost/security/advisories/GHSA-78x2-cwp9-5j42
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-43409
+    reference_type:
+    reference_id:

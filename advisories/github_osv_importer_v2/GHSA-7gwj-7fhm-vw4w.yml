@@ -1,0 +1,41 @@
+advisory_id: GHSA-7gwj-7fhm-vw4w
+datasource_id: github_osv_importer_v2/GHSA-7gwj-7fhm-vw4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-7gwj-7fhm-vw4w/GHSA-7gwj-7fhm-vw4w.json
+aliases: []
+summary: |
+  Drupal core unrestricted file upload
+  Drupal 8 core's file_save_upload() function does not strip the leading and trailing dot ('.') from filenames, like Drupal 7 did.
+
+  Users with the ability to upload files with any extension in conjunction with contributed modules may be able to use this to upload system files such as .htaccess in order to bypass protections afforded by Drupal's default .htaccess file.
+
+  After this fix, file_save_upload() now trims leading and trailing dots from filenames.
+impacted_packages:
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.0.0|<8.7.11
+    fixed_versions: vers:composer/8.7.11
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.8.0|<8.8.1
+    fixed_versions: vers:composer/8.8.1
+severities:
+  - score: '6.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-7gwj-7fhm-vw4w/GHSA-7gwj-7fhm-vw4w.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/drupal/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/core/2019-12-18-2.yaml
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/sa-core-2019-010
+    reference_type:
+    reference_id:

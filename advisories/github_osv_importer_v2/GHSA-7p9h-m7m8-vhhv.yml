@@ -1,0 +1,61 @@
+advisory_id: GHSA-7p9h-m7m8-vhhv
+datasource_id: github_osv_importer_v2/GHSA-7p9h-m7m8-vhhv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-7p9h-m7m8-vhhv/GHSA-7p9h-m7m8-vhhv.json
+aliases:
+  - CVE-2026-24420
+summary: |
+  phpMyFAQ: Attachment download allowed without dlattachment right (broken access control)
+  ### Summary
+  A logged‑in user without the dlattachment right can download FAQ attachments. This is due to a permissive permission check in attachment.php that treats the mere presence of a right key as authorization and a flawed group/user logic expression.
+
+  ### Details
+  In attachment.php, the access decision uses:
+  ```($groupPermission || ($groupPermission && $userPermission)) && isset($permission['dlattachment'])```
+  isset() returns true even when the right value is false, and the logic simplifies to $groupPermission for some permission modes. As a result, a user without dlattachment can still access the attachment.
+
+  ### PoC
+  Precondition: A non‑admin user exists; an attachment is associated to a FAQ record; records.allowDownloadsForGuests = false.
+  Log in as a non‑admin user without dlattachment.
+  Request the attachment download endpoint.
+  ```
+  curl -c /tmp/pmf_api_cookies.txt \
+    -H 'Content-Type: application/json' \
+    -d '{"username":"tester","password":"Test1234!"}' \
+    http://192.168.40.16/phpmyfaq/api/v3.0/login
+
+  curl -i -b /tmp/pmf_api_cookies.txt \
+    "http://192.168.40.16/phpmyfaq/index.php?action=attachment&id=1"
+  ```
+
+  ### Impact
+  Unauthorized users can download attachments (confidentiality breach). Depending on content, this may expose sensitive documents.
+impacted_packages:
+  - purl: pkg:composer/phpmyfaq/phpmyfaq
+    affected_versions: vers:composer/<=4.0.16
+    fixed_versions: vers:composer/4.0.17
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<=4.0.16
+    fixed_versions: vers:composer/4.0.17
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-7p9h-m7m8-vhhv/GHSA-7p9h-m7m8-vhhv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-7p9h-m7m8-vhhv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24420
+    reference_type:
+    reference_id:

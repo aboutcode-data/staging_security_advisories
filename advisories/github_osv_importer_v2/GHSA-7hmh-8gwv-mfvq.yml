@@ -1,0 +1,50 @@
+advisory_id: GHSA-7hmh-8gwv-mfvq
+datasource_id: github_osv_importer_v2/GHSA-7hmh-8gwv-mfvq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-7hmh-8gwv-mfvq/GHSA-7hmh-8gwv-mfvq.json
+aliases:
+  - CVE-2020-1937
+summary: |
+  SQL Injection in Kylin
+  Kylin has some restful apis which will concatenate SQLs with the user input string, a user is likely to be able to run malicious database queries.
+impacted_packages:
+  - purl: pkg:maven/org.apache.kylin/kylin-server-base
+    affected_versions: vers:maven/<2.6.5
+    fixed_versions: vers:maven/2.6.5
+  - purl: pkg:maven/org.apache.kylin/kylin-server-base
+    affected_versions: vers:maven/3.0.0
+    fixed_versions: vers:maven/3.0.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-7hmh-8gwv-mfvq/GHSA-7hmh-8gwv-mfvq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/apache/kylin
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/kylin/commit/e373c64c96a54a7abfe4bccb82e8feb60db04749
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r021baf9d8d4ae41e8c8332c167c4fa96c91b5086563d9be55d2d7acf@%3Ccommits.kylin.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r61666760d8a4e8764b2d5fe158d8a48b569414480fbfadede574cdc0@%3Ccommits.kylin.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/rc574fef23740522f62ab3bbda4f6171be98aa7a25f3f54be143a80a8%40%3Cuser.kylin.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-1937
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHEKYLIN-552148
+    reference_type:
+    reference_id:

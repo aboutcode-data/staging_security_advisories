@@ -1,0 +1,48 @@
+advisory_id: GHSA-7pr3-p5fm-8r9x
+datasource_id: github_osv_importer_v2/GHSA-7pr3-p5fm-8r9x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-7pr3-p5fm-8r9x/GHSA-7pr3-p5fm-8r9x.json
+aliases:
+  - CVE-2021-41109
+summary: |
+  LiveQuery publishes user session tokens in parse-server
+  ### Impact
+  For regular (non-LiveQuery) queries, the session token is removed from the response, but for LiveQuery payloads it is currently not. If a user has a LiveQuery subscription on the `Parse.User` class, all session tokens created during user sign-ups will be broadcast as part of the LiveQuery payload.
+
+  ### Patches
+  Remove session token from LiveQuery payload.
+
+  ### Workaround
+  Set `user.acl(new Parse.ACL())` in a beforeSave trigger to make the user private already on sign-up.
+impacted_packages:
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/<4.10.4
+    fixed_versions: vers:npm/4.10.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-7pr3-p5fm-8r9x/GHSA-7pr3-p5fm-8r9x.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/parse-community/parse-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/commit/4ac4b7f71002ed4fbedbb901db1f6ed1e9ac5559
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/releases/tag/4.10.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/security/advisories/GHSA-7pr3-p5fm-8r9x
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41109
+    reference_type:
+    reference_id:

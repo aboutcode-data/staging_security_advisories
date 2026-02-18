@@ -1,0 +1,35 @@
+advisory_id: GHSA-7c6q-jqwc-4423
+datasource_id: github_osv_importer_v2/GHSA-7c6q-jqwc-4423
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-7c6q-jqwc-4423/GHSA-7c6q-jqwc-4423.json
+aliases:
+  - CVE-2017-15681
+summary: |
+  Path Traversal in Crafter CMS Crafter Studio
+  In Crafter CMS Crafter Studio 3.0.1 a directory traversal vulnerability exists which allows unauthenticated attackers to overwrite files from the operating system which can lead to RCE.
+impacted_packages:
+  - purl: pkg:maven/org.craftercms/crafter-studio
+    affected_versions: vers:maven/<=3.0.1
+    fixed_versions: vers:maven/3.0.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-7c6q-jqwc-4423/GHSA-7c6q-jqwc-4423.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://crafter.com
+    reference_type:
+    reference_id:
+  - url: https://docs.craftercms.org/en/3.0/security/advisory.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-15681
+    reference_type:
+    reference_id:

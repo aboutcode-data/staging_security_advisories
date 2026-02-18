@@ -1,0 +1,46 @@
+advisory_id: GHSA-7f8r-222p-6f5g
+datasource_id: github_osv_importer_v2/GHSA-7f8r-222p-6f5g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-7f8r-222p-6f5g/GHSA-7f8r-222p-6f5g.json
+aliases:
+  - CVE-2025-49596
+summary: |
+  MCP Inspector proxy server lacks authentication between the Inspector client and proxy
+  Versions of MCP Inspector below 0.14.1 are vulnerable to remote code execution due to lack of authentication between the Inspector client and proxy, allowing unauthenticated requests to launch MCP commands over stdio. Users should immediately upgrade to version 0.14.1 or later to address these vulnerabilities.
+
+  Credit: Rémy Marot <bughunters@tenable.com>
+impacted_packages:
+  - purl: pkg:npm/%40modelcontextprotocol/inspector
+    affected_versions: vers:npm/<0.14.1
+    fixed_versions: vers:npm/0.14.1
+severities:
+  - score: '9.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-7f8r-222p-6f5g/GHSA-7f8r-222p-6f5g.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-306
+references:
+  - url: https://github.com/modelcontextprotocol/inspector
+    reference_type:
+    reference_id:
+  - url: https://github.com/modelcontextprotocol/inspector/commit/50df0e1ec488f3983740b4d28d2a968f12eb8979
+    reference_type:
+    reference_id:
+  - url: https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-7f8r-222p-6f5g
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-49596
+    reference_type:
+    reference_id:
+  - url: https://thenewstack.io/mcp-vulnerability-exposes-the-ai-untrusted-code-crisis
+    reference_type:
+    reference_id:
+  - url: https://www.oligo.security/blog/critical-rce-vulnerability-in-anthropic-mcp-inspector-cve-2025-49596
+    reference_type:
+    reference_id:

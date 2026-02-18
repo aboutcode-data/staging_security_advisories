@@ -1,0 +1,38 @@
+advisory_id: GHSA-72p5-2r6g-fm6v
+datasource_id: github_osv_importer_v2/GHSA-72p5-2r6g-fm6v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-72p5-2r6g-fm6v/GHSA-72p5-2r6g-fm6v.json
+aliases:
+  - CVE-2019-10260
+summary: |
+  Moderate severity vulnerability that affects total.js
+  Total.js CMS 12.0.0 has XSS related to themes/admin/views/index.html (item.message) and themes/admin/public/ui.js (column.format).
+impacted_packages:
+  - purl: pkg:npm/total.js
+    affected_versions: vers:npm/<=3.3.0-12
+    fixed_versions: vers:npm/3.3.0-13
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-72p5-2r6g-fm6v/GHSA-72p5-2r6g-fm6v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/advisories/GHSA-72p5-2r6g-fm6v
+    reference_type:
+    reference_id:
+  - url: https://github.com/totaljs/cms/commit/75205f93009db3cf8c0b0f4f1fc8ab82d70da8ad
+    reference_type:
+    reference_id:
+  - url: https://github.com/totaljs/cms/commit/8b9d7dada998c08d172481d9f0fc0397c4b3c78d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10260
+    reference_type:
+    reference_id:

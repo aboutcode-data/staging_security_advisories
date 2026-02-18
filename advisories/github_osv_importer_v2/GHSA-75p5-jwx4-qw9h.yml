@@ -1,0 +1,51 @@
+advisory_id: GHSA-75p5-jwx4-qw9h
+datasource_id: github_osv_importer_v2/GHSA-75p5-jwx4-qw9h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-75p5-jwx4-qw9h/GHSA-75p5-jwx4-qw9h.json
+aliases:
+  - CVE-2023-39524
+summary: |
+  PrestaShop boolean SQL injection
+  ### Impact
+  SQL injection possible in product search field, in BO's product page
+
+  ### Patches
+  8.1.1
+
+  ### Found by
+  Aleksey Solovev (Positive Technologies)
+
+  ### Workarounds
+  none
+
+  ### References
+  none
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<=8.1.0
+    fixed_versions: vers:composer/8.1.1
+severities:
+  - score: '6.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-75p5-jwx4-qw9h/GHSA-75p5-jwx4-qw9h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/2047d4c053043102bc46a37d383b392704bf14d7
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-75p5-jwx4-qw9h
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39524
+    reference_type:
+    reference_id:

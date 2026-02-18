@@ -1,0 +1,58 @@
+advisory_id: GHSA-7xp8-7wqx-5hqx
+datasource_id: github_osv_importer_v2/GHSA-7xp8-7wqx-5hqx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7xp8-7wqx-5hqx/GHSA-7xp8-7wqx-5hqx.json
+aliases:
+  - CVE-2020-2105
+summary: |
+  Jenkins REST APIs vulnerable to clickjacking
+  Jenkins 2.218 and earlier, LTS 2.204.1 and earlier does not serve the `X-Frame-Options: deny` HTTP header on REST API responses to protect against clickjacking attacks. An attacker could exploit this by routing the victim through a specially crafted web page that embeds a REST API endpoint in an iframe and tricking the user into performing an action which would allow for the attacker to learn the content of that REST API endpoint.
+
+  Jenkins 2.219, LTS 2.204.2 now adds the `X-Frame-Options: deny` HTTP header to REST API responses, which prevents these types of clickjacking attacks.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.204.1
+    fixed_versions: vers:maven/2.204.2
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.218
+    fixed_versions: vers:maven/2.219
+severities:
+  - score: '3.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-7xp8-7wqx-5hqx/GHSA-7xp8-7wqx-5hqx.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1021
+references:
+  - url: https://access.redhat.com/errata/RHBA-2020:0402
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHBA-2020:0675
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2020:0681
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2020:0683
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins/commit/639ade55caa05324c60d15b2fa8df27ee0111b76
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2020-01-29/#SECURITY-1704
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-2105
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2020/01/29/1
+    reference_type:
+    reference_id:

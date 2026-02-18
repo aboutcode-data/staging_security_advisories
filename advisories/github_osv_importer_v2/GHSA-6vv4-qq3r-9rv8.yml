@@ -1,0 +1,38 @@
+advisory_id: GHSA-6vv4-qq3r-9rv8
+datasource_id: github_osv_importer_v2/GHSA-6vv4-qq3r-9rv8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-6vv4-qq3r-9rv8/GHSA-6vv4-qq3r-9rv8.json
+aliases:
+  - CVE-2023-0790
+summary: |
+  Uncaught Exception in thorsten/phpmyfaq
+  Uncaught Exception in GitHub repository thorsten/phpmyfaq prior to 3.1.11.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.1.11
+    fixed_versions: vers:composer/3.1.11
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-6vv4-qq3r-9rv8/GHSA-6vv4-qq3r-9rv8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-248
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/f34d84dfe551ecdd675916e45cc0606e04a0734e
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/06af150b-b481-4248-9a48-56ded2814156
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0790
+    reference_type:
+    reference_id:

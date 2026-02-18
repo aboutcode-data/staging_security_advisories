@@ -1,0 +1,39 @@
+advisory_id: GHSA-6x33-pw7p-hmpq
+datasource_id: github_osv_importer_v2/GHSA-6x33-pw7p-hmpq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-6x33-pw7p-hmpq/GHSA-6x33-pw7p-hmpq.json
+aliases: []
+summary: "Denial of Service in http-proxy\nVersions of `http-proxy` prior to 1.18.1 are vulnerable\
+  \ to Denial of Service. An HTTP request with a long body triggers an `ERR_HTTP_HEADERS_SENT`\
+  \ unhandled exception that crashes the proxy server. This is only possible when the proxy\
+  \ server sets headers in the proxy request using the `proxyReq.setHeader` function.   \n\n\
+  For a proxy server running on `http://localhost:3000`, the following curl request triggers\
+  \ the unhandled exception:  \n```curl -XPOST http://localhost:3000 -d \"$(python -c 'print(\"\
+  x\"*1025)')\"```\n\n\n## Recommendation\n\nUpgrade to version 1.18.1 or later"
+impacted_packages:
+  - purl: pkg:npm/http-proxy
+    affected_versions: vers:npm/<1.18.1
+    fixed_versions: vers:npm/1.18.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-6x33-pw7p-hmpq/GHSA-6x33-pw7p-hmpq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-184
+  - CWE-693
+references:
+  - url: https://github.com/http-party/node-http-proxy/pull/1447/commits/4718119ffbe895aecd9be0d6430357d44b4c7fd3
+    reference_type:
+    reference_id:
+  - url: https://github.com/http-party/node-http-proxy/pull/1447/files
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1486
+    reference_type:
+    reference_id:

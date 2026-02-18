@@ -1,0 +1,68 @@
+advisory_id: GHSA-7ggw-h8pp-r95r
+datasource_id: github_osv_importer_v2/GHSA-7ggw-h8pp-r95r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-7ggw-h8pp-r95r/GHSA-7ggw-h8pp-r95r.json
+aliases:
+  - CVE-2021-3311
+summary: |
+  October CMS Session ID not invalidated after logout
+  ### Impact
+  When logging out, the session ID was not invalidated. This is not a problem while the user is logged out, but as soon as the user logs back in the old session ID would be valid again; which means that anyone that gained access to the old session cookie would be able to act as the logged in user. This is not a major concern for the majority of cases, since it requires a malicious party gaining access to the session cookie in the first place, but nevertheless has been fixed.
+
+  ### Patches
+  Issue has been patched in Build 472 (v1.0.472) and v1.1.2.
+
+  ### Workarounds
+  Apply https://github.com/octobercms/library/commit/642f597489e6f644d4bd9a0c267e864cabead024 to your installation manually if unable to upgrade to Build 472 or v1.1.2.
+
+  ### References
+  - Reported by Anisio (Brazilian Information Security Analyst)
+  - http://cve.circl.lu/cve/CVE-2021-3311
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at [hello@octobercms.com](mailto:hello@octobercms.com)
+
+  ### Threat assessment:
+  <img width="699" alt="Screen Shot 2021-02-07 at 11 50 35 PM" src="https://user-images.githubusercontent.com/7253840/107180881-51eaf000-699f-11eb-8828-333128faf2a6.png">
+impacted_packages:
+  - purl: pkg:composer/october/rain
+    affected_versions: vers:composer/<1.0.472
+    fixed_versions: vers:composer/1.0.472
+  - purl: pkg:composer/october/rain
+    affected_versions: vers:composer/>=1.1.0|<1.1.2
+    fixed_versions: vers:composer/1.1.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-7ggw-h8pp-r95r/GHSA-7ggw-h8pp-r95r.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-613
+references:
+  - url: http://cve.circl.lu/cve/CVE-2021-3311
+    reference_type:
+    reference_id:
+  - url: https://anisiosantos.me/october-cms-token-reactivation
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/library/commit/642f597489e6f644d4bd9a0c267e864cabead024
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october/security/advisories/GHSA-7ggw-h8pp-r95r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3311
+    reference_type:
+    reference_id:
+  - url: https://octobercms.com/forum/chan/announcements
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/october/rain
+    reference_type:
+    reference_id:

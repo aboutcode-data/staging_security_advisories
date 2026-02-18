@@ -1,0 +1,104 @@
+advisory_id: GHSA-7r94-xv9v-63jw
+datasource_id: github_osv_importer_v2/GHSA-7r94-xv9v-63jw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-7r94-xv9v-63jw/GHSA-7r94-xv9v-63jw.json
+aliases:
+  - CVE-2021-41225
+summary: |
+  A use of uninitialized value vulnerability in Tensorflow
+  ### Impact
+  TensorFlow's Grappler optimizer has a [use of unitialized variable](https://github.com/tensorflow/tensorflow/blob/3457a2b122e50b4d44ceaaed5a663d635e5c22df/tensorflow/core/grappler/optimizers/auto_parallel.cc#L155-L164):
+
+  ```cc
+    const NodeDef* dequeue_node;
+    for (const auto& train_node : train_nodes) {
+      if (IsDequeueOp(*train_node)) {
+        dequeue_node = train_node;
+        break;
+      }
+    }
+
+    if (dequeue_node) {
+      ...
+    }
+  ```
+
+  If the `train_nodes` vector (obtained from the saved model that gets optimized) does not contain a `Dequeue` node, then `dequeue_node` is left unitialized.
+
+  ### Patches
+  We have patched the issue in GitHub commit [68867bf01239d9e1048f98cbad185bf4761bedd3](https://github.com/tensorflow/tensorflow/commit/68867bf01239d9e1048f98cbad185bf4761bedd3).
+
+  The fix will be included in TensorFlow 2.7.0. We will also cherrypick this commit on TensorFlow 2.6.1, TensorFlow 2.5.2, and TensorFlow 2.4.4, as these are also affected and still in supported range.
+
+  ### For more information
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.
+
+  ### Attribution
+  This vulnerability has been reported by Qian Feng from Baidu Security Team.
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.6.0|<2.6.1
+    fixed_versions: vers:pypi/2.6.1
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.5.0|<2.5.2
+    fixed_versions: vers:pypi/2.5.2
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.4.4
+    fixed_versions: vers:pypi/2.4.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.1
+    fixed_versions: vers:pypi/2.6.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.5.0|<2.5.2
+    fixed_versions: vers:pypi/2.5.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.4.4
+    fixed_versions: vers:pypi/2.4.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.1
+    fixed_versions: vers:pypi/2.6.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.5.0|<2.5.2
+    fixed_versions: vers:pypi/2.5.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.4.4
+    fixed_versions: vers:pypi/2.4.4
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-7r94-xv9v-63jw/GHSA-7r94-xv9v-63jw.json
+  - score: '6.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-7r94-xv9v-63jw/GHSA-7r94-xv9v-63jw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-908
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-cpu/PYSEC-2021-634.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-gpu/PYSEC-2021-832.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow/PYSEC-2021-417.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/68867bf01239d9e1048f98cbad185bf4761bedd3
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-7r94-xv9v-63jw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41225
+    reference_type:
+    reference_id:

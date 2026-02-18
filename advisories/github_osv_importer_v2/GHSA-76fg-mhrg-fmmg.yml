@@ -1,0 +1,44 @@
+advisory_id: GHSA-76fg-mhrg-fmmg
+datasource_id: github_osv_importer_v2/GHSA-76fg-mhrg-fmmg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-76fg-mhrg-fmmg/GHSA-76fg-mhrg-fmmg.json
+aliases:
+  - CVE-2022-0084
+summary: |
+  XNIO `notifyReadClosed` method logging message to unexpected end
+  A flaw was found in XNIO, specifically in the `notifyReadClosed` method. The issue revealed this method was logging a message to another expected end. This flaw allows an attacker to send flawed requests to a server, possibly causing log contention-related performance concerns or an unwanted disk fill-up. A fix for this issue is available on the `3.x` branch of the repository.
+impacted_packages:
+  - purl: pkg:maven/org.jboss.xnio/xnio-all
+    affected_versions: vers:maven/<=3.8.7.Final
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-76fg-mhrg-fmmg/GHSA-76fg-mhrg-fmmg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2022-0084
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2064226
+    reference_type:
+    reference_id:
+  - url: https://github.com/xnio/xnio
+    reference_type:
+    reference_id:
+  - url: https://github.com/xnio/xnio/commit/fdefb3b8b715d33387cadc4d48991fb1989b0c12
+    reference_type:
+    reference_id:
+  - url: https://github.com/xnio/xnio/pull/291
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0084
+    reference_type:
+    reference_id:

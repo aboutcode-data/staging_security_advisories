@@ -1,0 +1,49 @@
+advisory_id: GHSA-7vhm-fmph-7wxw
+datasource_id: github_osv_importer_v2/GHSA-7vhm-fmph-7wxw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-7vhm-fmph-7wxw/GHSA-7vhm-fmph-7wxw.json
+aliases:
+  - CVE-2024-21522
+summary: |
+  audify vulnerable to Improper Validation of Array Index
+  All versions of the package audify are vulnerable to Improper Validation of Array Index when frameSize is provided to the new OpusDecoder().decode or new OpusDecoder().decodeFloat functions it is not checked for negative values. This can lead to a process crash.
+impacted_packages:
+  - purl: pkg:npm/audify
+    affected_versions: vers:npm/<=1.9.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-7vhm-fmph-7wxw/GHSA-7vhm-fmph-7wxw.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-7vhm-fmph-7wxw/GHSA-7vhm-fmph-7wxw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-129
+references:
+  - url: https://gist.github.com/dellalibera/6bb866ae5d1cc2adaabe27bbd6d2d21e
+    reference_type:
+    reference_id:
+  - url: https://github.com/almoghamdani/audify
+    reference_type:
+    reference_id:
+  - url: https://github.com/almoghamdani/audify/blob/94b2fe79dc528fda2c7d59c7a0fd0e9de07dc3dc/src/opus_decoder.cpp%23L79
+    reference_type:
+    reference_id:
+  - url: https://github.com/almoghamdani/audify/blob/94b2fe79dc528fda2c7d59c7a0fd0e9de07dc3dc/src/opus_decoder.cpp#L53
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21522
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-AUDIFY-6370700
+    reference_type:
+    reference_id:

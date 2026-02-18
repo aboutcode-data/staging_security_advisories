@@ -1,0 +1,52 @@
+advisory_id: GHSA-6qh6-v99h-vh4c
+datasource_id: github_osv_importer_v2/GHSA-6qh6-v99h-vh4c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6qh6-v99h-vh4c/GHSA-6qh6-v99h-vh4c.json
+aliases:
+  - CVE-2019-7876
+summary: |
+  Magento 2 Community Edition RCE Vulnerability
+  A remote code execution vulnerability exists in Magento 2.1 prior to 2.1.18, Magento 2.2 prior to 2.2.9, Magento 2.3 prior to 2.3.2. An authenticated user with privileges to manipulate layouts can insert a malicious payload into the layout.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.1.0|<2.1.18
+    fixed_versions: vers:composer/2.1.18
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.2.0|<2.2.9
+    fixed_versions: vers:composer/2.2.9
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.3.0|<2.3.2
+    fixed_versions: vers:composer/2.3.2
+  - purl: pkg:composer/magento/product-community-edition
+    affected_versions: vers:composer/>=2.1.0|<2.1.18
+    fixed_versions: vers:composer/2.1.18
+  - purl: pkg:composer/magento/product-community-edition
+    affected_versions: vers:composer/>=2.2.0|<2.2.9
+    fixed_versions: vers:composer/2.2.9
+  - purl: pkg:composer/magento/product-community-edition
+    affected_versions: vers:composer/>=2.3.0|<2.3.2
+    fixed_versions: vers:composer/2.3.2
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-6qh6-v99h-vh4c/GHSA-6qh6-v99h-vh4c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/magento/product-community-edition/CVE-2019-7876.yaml
+    reference_type:
+    reference_id:
+  - url: https://magento.com/security/patches/magento-2.3.2-2.2.9-and-2.1.18-security-update-13
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-7876
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20211206084839/https://magento.com/security/patches/magento-2.3.2-2.2.9-and-2.1.18-security-update-13
+    reference_type:
+    reference_id:

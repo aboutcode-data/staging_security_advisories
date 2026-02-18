@@ -1,0 +1,59 @@
+advisory_id: GHSA-7r99-8wqp-h7pc
+datasource_id: github_osv_importer_v2/GHSA-7r99-8wqp-h7pc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-7r99-8wqp-h7pc/GHSA-7r99-8wqp-h7pc.json
+aliases:
+  - CVE-2024-39399
+summary: |
+  Magento Path Traversal vulnerability
+  Magento versions 2.4.7-p1, 2.4.6-p6, 2.4.5-p8, 2.4.4-p9 and earlier are affected by an Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability that could lead to arbitrary file system read. A low-privileged attacker could exploit this vulnerability to gain access to files and directories that are outside the restricted directory. Exploitation of this issue does not require user interaction and scope is changed.
+impacted_packages:
+  - purl: pkg:composer/magento/project-community-edition
+    affected_versions: vers:composer/<=2.0.2
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.7-beta1|<2.4.7-p2
+    fixed_versions: vers:composer/2.4.7-p2
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.6-p1|<2.4.6-p7
+    fixed_versions: vers:composer/2.4.6-p7
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.5-p1|<2.4.5-p9
+    fixed_versions: vers:composer/2.4.5-p9
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.4-p1|<2.4.4-p10
+    fixed_versions: vers:composer/2.4.4-p10
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.7
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.6
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.5
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.4
+    fixed_versions:
+severities:
+  - score: '7.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-7r99-8wqp-h7pc/GHSA-7r99-8wqp-h7pc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb24-61.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-39399
+    reference_type:
+    reference_id:

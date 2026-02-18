@@ -1,0 +1,36 @@
+advisory_id: GHSA-75vw-3m5v-fprh
+datasource_id: github_osv_importer_v2/GHSA-75vw-3m5v-fprh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-75vw-3m5v-fprh/GHSA-75vw-3m5v-fprh.json
+aliases:
+  - CVE-2022-0239
+summary: corenlp is vulnerable to Improper Restriction of XML External Entity Reference
+impacted_packages:
+  - purl: pkg:maven/edu.stanford.nlp/stanford-corenlp
+    affected_versions: vers:maven/<=4.3.2
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-75vw-3m5v-fprh/GHSA-75vw-3m5v-fprh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/stanfordnlp/corenlp
+    reference_type:
+    reference_id:
+  - url: https://github.com/stanfordnlp/corenlp/commit/1940ffb938dc4f3f5bc5f2a2fd8b35aabbbae3dd
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/a717aec2-5646-4a5f-ade0-dadc25736ae3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0239
+    reference_type:
+    reference_id:
