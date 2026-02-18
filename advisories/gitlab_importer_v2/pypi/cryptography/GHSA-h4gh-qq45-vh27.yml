@@ -1,0 +1,32 @@
+advisory_id: pypi/cryptography/GHSA-h4gh-qq45-vh27
+datasource_id: gitlab_importer_v2/pypi/cryptography/GHSA-h4gh-qq45-vh27
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/cryptography/GHSA-h4gh-qq45-vh27.yml
+aliases:
+  - GHSA-h4gh-qq45-vh27
+summary: |
+  pyca/cryptography has a vulnerable OpenSSL included in cryptography wheels
+  pyca/cryptography's wheels include a statically linked copy of OpenSSL. The versions of OpenSSL included in cryptography 37.0.0-43.0.0 are vulnerable to a security issue. More details about the vulnerability itself can be found in https://openssl-library.org/news/secadv/20240903.txt.
+
+  If you are building cryptography source ("sdist") then you are responsible for upgrading your copy of OpenSSL. Only users installing from wheels built by the cryptography project (i.e., those distributed on PyPI) need to update their cryptography versions.
+impacted_packages:
+  - purl: pkg:pypi/cryptography
+    affected_versions: vers:pypi/>=37.0.0|<43.0.1
+    fixed_versions: vers:pypi/43.0.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-1395
+references:
+  - url: https://github.com/pyca/cryptography
+    reference_type:
+    reference_id:
+  - url: https://github.com/pyca/cryptography/security/advisories/GHSA-h4gh-qq45-vh27
+    reference_type:
+    reference_id:
+  - url: https://openssl-library.org/news/secadv/20240903.txt
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-h4gh-qq45-vh27
+    reference_type:
+    reference_id: GHSA-h4gh-qq45-vh27

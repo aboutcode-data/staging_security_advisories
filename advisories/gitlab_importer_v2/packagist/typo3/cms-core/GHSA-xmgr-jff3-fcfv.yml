@@ -1,0 +1,41 @@
+advisory_id: packagist/typo3/cms-core/GHSA-xmgr-jff3-fcfv
+datasource_id: gitlab_importer_v2/packagist/typo3/cms-core/GHSA-xmgr-jff3-fcfv
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms-core/GHSA-xmgr-jff3-fcfv.yml
+aliases:
+  - GHSA-xmgr-jff3-fcfv
+summary: |
+  TYPO3 Security Misconfiguration in User Session Handling
+  When users change their password existing sessions for that particular user account are not revoked. A valid backend or frontend user account is required in order to make use of this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.0.0|<8.7.25|>=9.0.0|<9.5.6
+    fixed_versions: vers:composer/8.7.25|9.5.6
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms-core/GHSA-xmgr-jff3-fcfv.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-384
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/2019-05-07-2.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/437bf78c0ef64a059c7feaa5164f6f028507b425
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/e21f0e5d29b68a7e64448762b3f86ac24d36627f
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2019-011
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-xmgr-jff3-fcfv
+    reference_type:
+    reference_id: GHSA-xmgr-jff3-fcfv

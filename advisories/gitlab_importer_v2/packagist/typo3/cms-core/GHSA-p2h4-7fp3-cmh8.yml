@@ -1,0 +1,38 @@
+advisory_id: packagist/typo3/cms-core/GHSA-p2h4-7fp3-cmh8
+datasource_id: gitlab_importer_v2/packagist/typo3/cms-core/GHSA-p2h4-7fp3-cmh8
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms-core/GHSA-p2h4-7fp3-cmh8.yml
+aliases:
+  - GHSA-p2h4-7fp3-cmh8
+summary: |
+  TYPO3 Disclosure of Information about Installed Extensions
+  It has been discovered that mechanisms used for configuration of RequireJS package loading are susceptible to information disclosure. This way a potential attack can retrieve additional information about installed system and third party extensions.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.0.0|<8.7.23|>=9.0.0|<9.5.4
+    fixed_versions: vers:composer/8.7.23|9.5.4
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms-core/GHSA-p2h4-7fp3-cmh8.yml
+weaknesses:
+  - CWE-200
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/2019-01-22-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/7960334bba1223a681283158f67a999334e88cf1
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/9453d8a8763fffa76deb6a16f6b99c0ab6f3d8f1
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2019-001
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-p2h4-7fp3-cmh8
+    reference_type:
+    reference_id: GHSA-p2h4-7fp3-cmh8

@@ -1,0 +1,44 @@
+advisory_id: packagist/typo3/cms/GHSA-f3wf-q4fj-3gxf
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-f3wf-q4fj-3gxf
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-f3wf-q4fj-3gxf.yml
+aliases:
+  - GHSA-f3wf-q4fj-3gxf
+summary: |
+  TYPO3 Denial of Service in Online Media Asset Handling
+  Online Media Asset Handling (*`.youtube` and *`.vimeo` files) in the TYPO3 backend is vulnerable to denial of service. Putting large files with according file extensions results in high consumption of system resources. This can lead to exceeding limits of the current PHP process which results in a dysfunctional backend component. A valid backend user account or write access on the server system (e.g. SFTP) is needed in order to exploit this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.0.0|<7.6.32|>=8.0.0|<8.7.21|>=9.0.0|<9.5.2
+    fixed_versions: vers:composer/7.6.32|8.7.21|9.5.2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-f3wf-q4fj-3gxf.yml
+weaknesses:
+  - CWE-1035
+  - CWE-770
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2018-12-11-6.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/054799caf53b28ff92e00aff957fab88c45a7509
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/16567366e2a25c0cbed7208c3be9eda962e28c9b
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/7a5155e0137d01db7e5723849f0493ad5b0c98ac
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2018-011
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-f3wf-q4fj-3gxf
+    reference_type:
+    reference_id: GHSA-f3wf-q4fj-3gxf

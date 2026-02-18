@@ -1,0 +1,41 @@
+advisory_id: packagist/typo3/cms-core/GHSA-wg8h-gxf4-g4gh
+datasource_id: gitlab_importer_v2/packagist/typo3/cms-core/GHSA-wg8h-gxf4-g4gh
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms-core/GHSA-wg8h-gxf4-g4gh.yml
+aliases:
+  - GHSA-wg8h-gxf4-g4gh
+summary: |
+  TYPO3 Cross-Site Scripting in Online Media Asset Rendering
+  Failing to properly encode user input, online media asset rendering (*.youtube and *.vimeo files) is vulnerable to cross-site scripting. A valid backend user account or write access on the server system (e.g. SFTP) is needed in order to exploit this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.0.0|<8.7.21|>=9.0.0|<9.5.2
+    fixed_versions: vers:composer/8.7.21|9.5.2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms-core/GHSA-wg8h-gxf4-g4gh.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/2018-12-11-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/23800859368e2af60604ff27f3eed9971ccd9fbd
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/f9e5e255f41c248e115b2a755b797ce48d10d72a
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2018-006
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wg8h-gxf4-g4gh
+    reference_type:
+    reference_id: GHSA-wg8h-gxf4-g4gh

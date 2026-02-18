@@ -1,0 +1,20 @@
+advisory_id: packagist/zendframework/zendframework/GMS-2015-48
+datasource_id: gitlab_importer_v2/packagist/zendframework/zendframework/GMS-2015-48
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/zendframework/zendframework/GMS-2015-48.yml
+aliases:
+  - GMS-2015-48
+summary: |
+  Potential Information Disclosure and Insufficient Entropy in Zend\Captcha\Word
+  Zend generates a "word" for a CAPTCHA challenge by selecting a sequence of random letters from a character set. The selection is performed using PHP's internal `array_rand()` function. This function does not generate sufficient entropy due to its usage of `rand()` instead of more cryptographically secure methods such as `openssl_pseudo_random_bytes()`. This can potentially lead to information disclosure should an attacker be able to brute force the random number generation.
+impacted_packages:
+  - purl: pkg:composer/zendframework/zendframework
+    affected_versions: vers:composer/<2.4.9|>=2.5.0|<2.5.2
+    fixed_versions: vers:composer/2.4.9|2.5.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: http://framework.zend.com/security/advisory/ZF2015-09
+    reference_type:
+    reference_id:

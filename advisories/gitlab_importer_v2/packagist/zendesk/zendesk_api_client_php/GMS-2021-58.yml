@@ -1,0 +1,37 @@
+advisory_id: packagist/zendesk/zendesk_api_client_php/GMS-2021-58
+datasource_id: gitlab_importer_v2/packagist/zendesk/zendesk_api_client_php/GMS-2021-58
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/zendesk/zendesk_api_client_php/GMS-2021-58.yml
+aliases:
+  - CVE-2021-30492
+  - GHSA-q348-f93x-9gx4
+  - GMS-2021-58
+summary: |
+  Lack of Input Validation in zendesk_api_client_php for Zendesk Subdomain
+  ### Impact
+  Lack of input validation of the Zendesk subdomain could expose users of the library to Server Side Request Forgery (SSRF).
+
+  ### Resolution
+  Validate the provided Zendesk subdomain to be a valid subdomain in:
+  * getAuthUrl
+  * getAccessToken
+impacted_packages:
+  - purl: pkg:composer/zendesk/zendesk_api_client_php
+    affected_versions: vers:composer/<2.2.11
+    fixed_versions: vers:composer/2.2.11
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/zendesk/zendesk_api_client_php/commit/b451b743d9d6d81a9abf7cb86e70ec9c5332123e
+    reference_type:
+    reference_id:
+  - url: https://github.com/zendesk/zendesk_api_client_php/pull/466
+    reference_type:
+    reference_id:
+  - url: https://github.com/zendesk/zendesk_api_client_php/security/advisories/GHSA-q348-f93x-9gx4
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-q348-f93x-9gx4
+    reference_type:
+    reference_id: GHSA-q348-f93x-9gx4

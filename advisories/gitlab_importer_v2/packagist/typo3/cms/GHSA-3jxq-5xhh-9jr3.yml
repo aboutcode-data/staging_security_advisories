@@ -1,0 +1,29 @@
+advisory_id: packagist/typo3/cms/GHSA-3jxq-5xhh-9jr3
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-3jxq-5xhh-9jr3
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-3jxq-5xhh-9jr3.yml
+aliases:
+  - GHSA-3jxq-5xhh-9jr3
+summary: |
+  Cross-Site Scripting (XSS) in TYPO3 component Backend
+  Failing to properly encode incoming data, the bookmark toolbar is susceptible to Cross-Site Scripting.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.19
+    fixed_versions: vers:composer/6.2.19
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2016-02-23-2.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2016-006
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3jxq-5xhh-9jr3
+    reference_type:
+    reference_id: GHSA-3jxq-5xhh-9jr3

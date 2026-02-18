@@ -1,0 +1,34 @@
+advisory_id: packagist/typo3/cms/GHSA-c7p6-3c9c-f88q
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-c7p6-3c9c-f88q
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-c7p6-3c9c-f88q.yml
+aliases:
+  - GHSA-c7p6-3c9c-f88q
+summary: |
+  Information Disclosure in TYPO3 CMS
+  HTTP requests being performed using the TYPO3 API expose the specific TYPO3 version to the called endpoint.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.6.0|<7.6.22|>=8.0.0|<8.7.5
+    fixed_versions: vers:composer/7.6.22|8.7.5
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-c7p6-3c9c-f88q.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2017-09-05-3.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2017-006
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c7p6-3c9c-f88q
+    reference_type:
+    reference_id: GHSA-c7p6-3c9c-f88q

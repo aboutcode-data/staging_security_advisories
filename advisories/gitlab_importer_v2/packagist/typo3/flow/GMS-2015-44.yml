@@ -1,0 +1,20 @@
+advisory_id: packagist/typo3/flow/GMS-2015-44
+datasource_id: gitlab_importer_v2/packagist/typo3/flow/GMS-2015-44
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/flow/GMS-2015-44.yml
+aliases:
+  - GMS-2015-44
+summary: |
+  Arbitrary File Upload
+  There's a flaw that allows arbitrary file uploads, including server-side scripts, posing the risk of attacks.
+impacted_packages:
+  - purl: pkg:composer/typo3/flow
+    affected_versions: vers:composer/>=3.0.0-beta1|<3.0.1
+    fixed_versions: vers:composer/3.0.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.neos.io/news/flow-sa-2015-001.html
+    reference_type:
+    reference_id:

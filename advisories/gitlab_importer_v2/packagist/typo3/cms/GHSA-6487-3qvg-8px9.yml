@@ -1,0 +1,44 @@
+advisory_id: packagist/typo3/cms/GHSA-6487-3qvg-8px9
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-6487-3qvg-8px9
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-6487-3qvg-8px9.yml
+aliases:
+  - GHSA-6487-3qvg-8px9
+summary: |
+  TYPO3 Information Disclosure in Install Tool
+  The Install Tool exposes the current TYPO3 version number to non-authenticated users.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.0.0|<7.6.32|>=8.0.0|<8.7.21|>=9.0.0|<9.5.2
+    fixed_versions: vers:composer/7.6.32|8.7.21|9.5.2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-6487-3qvg-8px9.yml
+weaknesses:
+  - CWE-200
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2018-12-11-5.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/232d0a64282382229c205904173a16a581555fe3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/b4dd20f31d483f6399e8bcbffcac3e16a2df0d92
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/fab0cbc970b709ed65fc4622a2cbd52a197480c4
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2018-010
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-6487-3qvg-8px9
+    reference_type:
+    reference_id: GHSA-6487-3qvg-8px9

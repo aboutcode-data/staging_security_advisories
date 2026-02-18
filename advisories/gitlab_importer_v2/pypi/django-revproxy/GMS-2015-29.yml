@@ -1,0 +1,23 @@
+advisory_id: pypi/django-revproxy/GMS-2015-29
+datasource_id: gitlab_importer_v2/pypi/django-revproxy/GMS-2015-29
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/django-revproxy/GMS-2015-29.yml
+aliases:
+  - GMS-2015-29
+summary: Shis package are vulnerable to Open Redirect attacks. When a colon is present in the
+  URL path, the `urljoin` method ignores the upstream request and redirects it to a path cntrolled
+  by an attacker, possibly causing content injection.
+impacted_packages:
+  - purl: pkg:pypi/django-revproxy
+    affected_versions: vers:pypi/<0.9.7
+    fixed_versions: vers:pypi/0.9.7
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/TracyWebTech/django-revproxy/blob/master/CHANGELOG.rst#097-2015-09-17
+    reference_type:
+    reference_id:
+  - url: https://github.com/TracyWebTech/django-revproxy/commit/e9b4dfd162c73adbad6077355c9420d0c40d4f3f
+    reference_type:
+    reference_id:

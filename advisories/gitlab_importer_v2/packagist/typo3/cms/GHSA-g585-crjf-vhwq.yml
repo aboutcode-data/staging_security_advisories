@@ -1,0 +1,41 @@
+advisory_id: packagist/typo3/cms/GHSA-g585-crjf-vhwq
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-g585-crjf-vhwq
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-g585-crjf-vhwq.yml
+aliases:
+  - GHSA-g585-crjf-vhwq
+summary: |
+  TYPO3 Denial of Service in Frontend Record Registration
+  TYPO3’s built-in record registration functionality (aka `basic shopping cart`) using recs URL parameters is vulnerable to denial of service. Failing to properly ensure that anonymous user sessions are valid, attackers can use this vulnerability in order to create  an arbitrary amount of individual session-data records in the database.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.0.0|<7.6.32|>=8.0.0|<8.7.21
+    fixed_versions: vers:composer/7.6.32|8.7.21
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-g585-crjf-vhwq.yml
+weaknesses:
+  - CWE-1035
+  - CWE-770
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2018-12-11-7.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/05011d1248c54d00960e344fd920a6246da92415
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/fc2b4b9fb978088267f83e73cd401d4371dd40e3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2018-012
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-g585-crjf-vhwq
+    reference_type:
+    reference_id: GHSA-g585-crjf-vhwq

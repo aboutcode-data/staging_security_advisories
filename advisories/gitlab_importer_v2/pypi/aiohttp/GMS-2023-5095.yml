@@ -1,0 +1,33 @@
+advisory_id: pypi/aiohttp/GMS-2023-5095
+datasource_id: gitlab_importer_v2/pypi/aiohttp/GMS-2023-5095
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/aiohttp/GMS-2023-5095.yml
+aliases:
+  - GHSA-pjjw-qhg8-p2p9
+  - GMS-2023-5095
+summary: |
+  aiohttp has vulnerable dependency that is vulnerable to request smuggling
+  ### Summary
+  llhttp 8.1.1 is vulnerable to two request smuggling vulnerabilities.
+  Details have not been disclosed yet, so refer to llhttp for future information.
+  The issue is resolved by using llhttp 9+ (which is included in aiohttp 3.8.6+).
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<3.8.6
+    fixed_versions: vers:pypi/3.8.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/aio-libs/aiohttp/commit/996de2629ef6b4c2934a7c04dfd49d0950d4c43b
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/commit/bcc416e533796d04fb8124ef1e7686b1f338767a
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/security/advisories/GHSA-pjjw-qhg8-p2p9
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-pjjw-qhg8-p2p9
+    reference_type:
+    reference_id: GHSA-pjjw-qhg8-p2p9

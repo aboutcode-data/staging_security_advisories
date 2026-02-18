@@ -1,0 +1,30 @@
+advisory_id: packagist/typo3/cms/GHSA-p5c5-gmj4-g48f
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-p5c5-gmj4-g48f
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-p5c5-gmj4-g48f.yml
+aliases:
+  - GHSA-p5c5-gmj4-g48f
+summary: |
+  Cross-Site Scripting (XSS) vulnerability in typolinks
+  All link fields within the TYPO3 installation are vulnerable to Cross-Site Scripting as authorized editors can insert data commands by using the url scheme "data:".
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.26|>=7.6.0|<7.6.10|>=8.0.0|<8.2.1
+    fixed_versions: vers:composer/6.2.26|7.6.10|8.2.1
+severities: []
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2016-07-19-5.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2016-018
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-p5c5-gmj4-g48f
+    reference_type:
+    reference_id: GHSA-p5c5-gmj4-g48f

@@ -1,0 +1,30 @@
+advisory_id: pypi/fief-server/GMS-2023-1901
+datasource_id: gitlab_importer_v2/pypi/fief-server/GMS-2023-1901
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/fief-server/GMS-2023-1901.yml
+aliases:
+  - GHSA-hj8m-9fhf-v7jp
+  - GMS-2023-1901
+summary: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+  in fief-server.
+impacted_packages:
+  - purl: pkg:pypi/fief-server
+    affected_versions: vers:pypi/>=0.19.0|<0.25.3
+    fixed_versions: vers:pypi/0.25.3
+severities: []
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/fief-dev/fief/commit/91e56625b641fa419e2985772266774bae18382b
+    reference_type:
+    reference_id:
+  - url: https://github.com/fief-dev/fief/releases/tag/v0.25.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/fief-dev/fief/security/advisories/GHSA-hj8m-9fhf-v7jp
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-hj8m-9fhf-v7jp
+    reference_type:
+    reference_id: GHSA-hj8m-9fhf-v7jp

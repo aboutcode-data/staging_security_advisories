@@ -1,0 +1,23 @@
+advisory_id: pypi/Flask/GMS-2017-180
+datasource_id: gitlab_importer_v2/pypi/Flask/GMS-2017-180
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/Flask/GMS-2017-180.yml
+aliases:
+  - GMS-2017-180
+summary: 'This package is vulnerable to Arbitrary File Download. A client can use backslashes
+  to escape the directory the files where exposed from. Note: Only if the host server is a windows-based
+  operating system.'
+impacted_packages:
+  - purl: pkg:pypi/flask
+    affected_versions: vers:pypi/<0.6.1
+    fixed_versions: vers:pypi/0.6.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/pallets/flask/blob/master/CHANGES
+    reference_type:
+    reference_id:
+  - url: https://github.com/pallets/flask/commit/aeed530e3221c1b445c13269dcd2fb67548bcefc
+    reference_type:
+    reference_id:

@@ -1,0 +1,29 @@
+advisory_id: packagist/typo3/cms/GHSA-5cxf-xx9j-54jc
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-5cxf-xx9j-54jc
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-5cxf-xx9j-54jc.yml
+aliases:
+  - GHSA-5cxf-xx9j-54jc
+summary: |
+  Multiple Cross-Site Scripting vulnerabilities in TYPO3 backend
+  Failing to properly encode user input, several backend components are susceptible to Cross-Site Scripting, allowing authenticated editors to inject arbitrary HTML or JavaScript.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.16|>=7.0.0|<7.6.1
+    fixed_versions: vers:composer/6.2.16|7.6.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2015-12-15-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2015-011
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-011
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5cxf-xx9j-54jc
+    reference_type:
+    reference_id: GHSA-5cxf-xx9j-54jc

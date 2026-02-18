@@ -1,0 +1,34 @@
+advisory_id: packagist/typo3/cms/GHSA-g46h-v2cc-6c94
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-g46h-v2cc-6c94
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-g46h-v2cc-6c94.yml
+aliases:
+  - GHSA-g46h-v2cc-6c94
+summary: |
+  Information Disclosure in TYPO3 CMS
+  Failing to properly check user permission on file storages, editors could gain knowledge of protected storages and its folders as well as using them in a file collection being rendered in the frontend. A valid backend user account is needed to exploit this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.6.0|<7.6.22|>=8.0.0|<8.7.5
+    fixed_versions: vers:composer/7.6.22|8.7.5
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-g46h-v2cc-6c94.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2017-09-05-2.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2017-005
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-g46h-v2cc-6c94
+    reference_type:
+    reference_id: GHSA-g46h-v2cc-6c94

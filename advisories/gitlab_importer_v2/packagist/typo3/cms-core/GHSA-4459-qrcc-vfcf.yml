@@ -1,0 +1,41 @@
+advisory_id: packagist/typo3/cms-core/GHSA-4459-qrcc-vfcf
+datasource_id: gitlab_importer_v2/packagist/typo3/cms-core/GHSA-4459-qrcc-vfcf
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms-core/GHSA-4459-qrcc-vfcf.yml
+aliases:
+  - GHSA-4459-qrcc-vfcf
+summary: |
+  TYPO3 Cross-Site Scripting in Form Framework
+  Failing to properly encode user input, frontend forms handled by the form framework (system extension “form”) are vulnerable to cross-site scripting.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.5.0|<8.7.23|>=9.0.0|<9.5.4
+    fixed_versions: vers:composer/8.7.23|9.5.4
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms-core/GHSA-4459-qrcc-vfcf.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/2019-01-22-6.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/3b8b8b4416b921df4ccc7c5b4a8e9a069562be35
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3-CMS/core/commit/a0e917008320e24c26780ba385fbfe738fcd45b9
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2019-007
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-4459-qrcc-vfcf
+    reference_type:
+    reference_id: GHSA-4459-qrcc-vfcf

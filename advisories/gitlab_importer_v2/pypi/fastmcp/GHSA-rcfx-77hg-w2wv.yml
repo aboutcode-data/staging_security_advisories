@@ -1,0 +1,34 @@
+advisory_id: pypi/fastmcp/GHSA-rcfx-77hg-w2wv
+datasource_id: gitlab_importer_v2/pypi/fastmcp/GHSA-rcfx-77hg-w2wv
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/fastmcp/GHSA-rcfx-77hg-w2wv.yml
+aliases:
+  - GHSA-rcfx-77hg-w2wv
+summary: |
+  FastMCP updated to MCP 1.23+ due to CVE-2025-66416
+  There was a recent CVE report on MCP: https://nvd.nist.gov/vuln/detail/CVE-2025-66416.
+
+  FastMCP does not use any of the affected components of the MCP SDK directly. However, FastMCP versions prior to 2.14.0 did allow MCP SDK versions <1.23 that were vulnerable to CVE-2025-66416. Users should upgrade to FastMCP 2.14.0 or later.
+impacted_packages:
+  - purl: pkg:pypi/fastmcp
+    affected_versions: vers:pypi/<2.14.0
+    fixed_versions: vers:pypi/2.14.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/jlowin/fastmcp
+    reference_type:
+    reference_id:
+  - url: https://github.com/jlowin/fastmcp/security/advisories/GHSA-rcfx-77hg-w2wv
+    reference_type:
+    reference_id:
+  - url: https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-9h52-p55h-vw2f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-66416
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-rcfx-77hg-w2wv
+    reference_type:
+    reference_id: GHSA-rcfx-77hg-w2wv

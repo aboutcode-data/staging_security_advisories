@@ -1,0 +1,29 @@
+advisory_id: packagist/typo3/cms/GHSA-qr5f-6fcv-w69q
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-qr5f-6fcv-w69q
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-qr5f-6fcv-w69q.yml
+aliases:
+  - GHSA-qr5f-6fcv-w69q
+summary: |
+  Typo3 Security Misconfiguration in Frontend Session Handling
+  It has been discovered session data of properly authenticated and logged in frontend users is kept and transformed into an anonymous user session during the logout process. This way the next user using the same client application gains access to previous session data.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.7.27|>=9.0.0|<9.5.8
+    fixed_versions: vers:composer/8.7.27|9.5.8
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2019-06-25-3.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2019-018
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-qr5f-6fcv-w69q
+    reference_type:
+    reference_id: GHSA-qr5f-6fcv-w69q

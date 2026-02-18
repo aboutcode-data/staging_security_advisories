@@ -1,0 +1,18 @@
+advisory_id: packagist/zendframework/zendframework/ZF2016-04
+datasource_id: gitlab_importer_v2/packagist/zendframework/zendframework/ZF2016-04
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/zendframework/zendframework/ZF2016-04.yml
+aliases:
+  - ZF2016-04
+summary: |
+  Remote code execution in zend-mail via Sendmail adapter
+  A malicious user may be able to inject arbitrary parameters to the system Sendmail program. The attack is performed by providing additional quote characters within an address; when unsanitized, they can be interpreted as additional command line arguments, leading to the vulnerability.
+impacted_packages:
+  - purl: pkg:composer/zendframework/zendframework
+    affected_versions: vers:composer/<2.4.11
+    fixed_versions: vers:composer/2.4.11
+severities: []
+weaknesses: []
+references:
+  - url: https://framework.zend.com/security/advisory/ZF2016-04
+    reference_type:
+    reference_id:

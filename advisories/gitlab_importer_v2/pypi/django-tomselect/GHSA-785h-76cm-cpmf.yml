@@ -1,0 +1,36 @@
+advisory_id: pypi/django-tomselect/GHSA-785h-76cm-cpmf
+datasource_id: gitlab_importer_v2/pypi/django-tomselect/GHSA-785h-76cm-cpmf
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/django-tomselect/GHSA-785h-76cm-cpmf.yml
+aliases:
+  - GHSA-785h-76cm-cpmf
+summary: |
+  Django TomSelect incomplete escaping of dangerous characters in widget attributes
+  User supplied values passed through to certain attributes in form widgets are not fully escaped for potentially dangerous tokens, and in some cases are rendered in browser as valid html tags.
+impacted_packages:
+  - purl: pkg:pypi/django-tomselect
+    affected_versions: vers:pypi/<2025.3.3
+    fixed_versions: vers:pypi/2025.3.3
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/pypi/django-tomselect/GHSA-785h-76cm-cpmf.yml
+weaknesses:
+  - CWE-79
+  - CWE-116
+  - CWE-937
+  - CWE-1035
+references:
+  - url: https://github.com/OmenApps/django-tomselect
+    reference_type:
+    reference_id:
+  - url: https://github.com/OmenApps/django-tomselect/commit/0990ed36c8874f9d42fa9deff7734bf8dcd46d40
+    reference_type:
+    reference_id:
+  - url: https://github.com/OmenApps/django-tomselect/security/advisories/GHSA-785h-76cm-cpmf
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-785h-76cm-cpmf
+    reference_type:
+    reference_id: GHSA-785h-76cm-cpmf

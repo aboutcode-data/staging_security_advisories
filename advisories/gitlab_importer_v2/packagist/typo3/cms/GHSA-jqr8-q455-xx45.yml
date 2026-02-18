@@ -1,0 +1,44 @@
+advisory_id: packagist/typo3/cms/GHSA-jqr8-q455-xx45
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GHSA-jqr8-q455-xx45
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-jqr8-q455-xx45.yml
+aliases:
+  - GHSA-jqr8-q455-xx45
+summary: |
+  TYPO3 Brute Force Protection Bypass in backend login
+  The backend login has a basic brute force protection implementation which pauses for 5 seconds if wrong credentials are given. This pause however could be bypassed by forging a special request, making brute force attacks on backend editor credentials more feasible.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.14|>=7.0.0|<7.3.1
+    fixed_versions: vers:composer/6.2.14|7.3.1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GHSA-jqr8-q455-xx45.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-20
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2015-07-01-5.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/0b67290bbd941c07b0101bbfd6c7aadcbb93c75c
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/0f3fb37674688aba5a44ca6f5df7f8a327a5b5f6
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2015-006
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-006
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jqr8-q455-xx45
+    reference_type:
+    reference_id: GHSA-jqr8-q455-xx45

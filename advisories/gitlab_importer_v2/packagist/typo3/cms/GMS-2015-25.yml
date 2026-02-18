@@ -1,0 +1,23 @@
+advisory_id: packagist/typo3/cms/GMS-2015-25
+datasource_id: gitlab_importer_v2/packagist/typo3/cms/GMS-2015-25
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/packagist/typo3/cms/GMS-2015-25.yml
+aliases:
+  - GMS-2015-25
+summary: |
+  Unauthenticated Path Disclosure
+  It has been discovered, that calling a PHP script which is delivered with TYPO3 for testing purposes, discloses the absolute server path to the TYPO3 installation.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.15|>=7.0.0|<7.4.0
+    fixed_versions: vers:composer/6.2.15|7.4.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://review.typo3.org/#/c/43120/
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-008/
+    reference_type:
+    reference_id:
