@@ -1,0 +1,26 @@
+advisory_id: npm/nunjucks/GMS-2016-71
+datasource_id: gitlab_importer_v2/npm/nunjucks/GMS-2016-71
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/nunjucks/GMS-2016-71.yml
+aliases:
+  - GMS-2016-71
+summary: |
+  XSS in autoescape mode
+  Nunjucks has a cross site scripting (XSS) vulnerability in autoescape mode: all template vars should automatically be escaped. By using an array for the keys, it is possible to bypass autoescaping and inject content into the DOM.
+impacted_packages:
+  - purl: pkg:npm/nunjucks
+    affected_versions: vers:npm/<=2.4.2
+    fixed_versions: vers:npm/2.4.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/matt-/nunjucks_test
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/nunjucks/commit/038ba1e29990ca0eeafcf77125f4d9f960723f60
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/nunjucks/issues/835
+    reference_type:
+    reference_id:

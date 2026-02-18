@@ -1,0 +1,46 @@
+advisory_id: npm/next-auth/GHSA-5jpx-9hw9-2fx4
+datasource_id: gitlab_importer_v2/npm/next-auth/GHSA-5jpx-9hw9-2fx4
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/next-auth/GHSA-5jpx-9hw9-2fx4.yml
+aliases:
+  - GHSA-5jpx-9hw9-2fx4
+summary: |
+  NextAuthjs Email misdelivery Vulnerability
+  NextAuth.js's email sign-in can be forced to deliver authentication emails to an attacker-controlled mailbox due to a bug in `nodemailer`'s address parser used by the project (fixed in `nodemailer` **v7.0.7**). A crafted input such as:
+
+  ```
+  "e@attacker.com"@victim.com
+  ```
+
+  is parsed incorrectly and results in the message being delivered to `e@attacker.com` (attacker) instead of `"<e@attacker.com>@victim.com"` (the intended recipient at `victim.com`) in violation of RFC 5321/5322 semantics. This allows an attacker to receive login/verification links or other sensitive emails intended for the victim.
+
+  <h2>Affected NextAuthjs Version</h2>
+
+  ≤ Version | Afftected
+  -- | --
+  4.24.11 | Yes
+  5.0.0-beta.29 | Yes
+impacted_packages:
+  - purl: pkg:npm/next-auth
+    affected_versions: vers:npm/<4.24.12|>=5.0.0-beta.0|<5.0.0-beta.30
+    fixed_versions: vers:npm/4.24.12|5.0.0-beta.30
+severities: []
+weaknesses:
+  - CWE-200
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/nextauthjs/next-auth
+    reference_type:
+    reference_id:
+  - url: https://github.com/nextauthjs/next-auth/commit/82efcf81f218aae43683f8dd2f7c260ef69b3ece
+    reference_type:
+    reference_id:
+  - url: https://github.com/nextauthjs/next-auth/commit/8f3b2c7af0fe08973a12f616517c3ec85a5cd172
+    reference_type:
+    reference_id:
+  - url: https://github.com/nextauthjs/next-auth/security/advisories/GHSA-5jpx-9hw9-2fx4
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5jpx-9hw9-2fx4
+    reference_type:
+    reference_id: GHSA-5jpx-9hw9-2fx4

@@ -1,0 +1,17 @@
+advisory_id: npm/macaca-chromedriver/GMS-2016-118
+datasource_id: gitlab_importer_v2/npm/macaca-chromedriver/GMS-2016-118
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/macaca-chromedriver/GMS-2016-118.yml
+aliases:
+  - GMS-2016-118
+summary: |
+  Downloads Resources over HTTP
+  macaca-chromedriver downloads binary resources over HTTP, which leaves it vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested binary with an attacker controlled binary if the attacker is on the network or positioned in between the user and the remote server.
+impacted_packages:
+  - purl: pkg:npm/macaca-chromedriver
+    affected_versions: vers:npm/<1.0.29
+    fixed_versions: vers:npm/1.0.29
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

@@ -1,0 +1,27 @@
+advisory_id: npm/markdown-to-jsx/GMS-2020-369
+datasource_id: gitlab_importer_v2/npm/markdown-to-jsx/GMS-2020-369
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/markdown-to-jsx/GMS-2020-369.yml
+aliases:
+  - GHSA-ccrp-c664-8p4j
+  - GMS-2020-369
+summary: |
+  Cross-Site Scripting in markdown-to-jsx
+  Versions of `markdown-to-jsx` are vulnerable to Cross-Site Scripting. Due to insufficient input sanitization the package may render output containing malicious JavaScript. This vulnerability can be exploited through input of links containing `data` or VBScript URIs and a base64-encoded payload. Upgrade to or later.
+impacted_packages:
+  - purl: pkg:npm/markdown-to-jsx
+    affected_versions: vers:npm/<6.11.4
+    fixed_versions: vers:npm/6.11.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/probablyup/markdown-to-jsx/pull/307
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1219
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-ccrp-c664-8p4j
+    reference_type:
+    reference_id: GHSA-ccrp-c664-8p4j

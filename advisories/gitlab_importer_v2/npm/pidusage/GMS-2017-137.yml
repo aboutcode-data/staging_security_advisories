@@ -1,0 +1,17 @@
+advisory_id: npm/pidusage/GMS-2017-137
+datasource_id: gitlab_importer_v2/npm/pidusage/GMS-2017-137
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/pidusage/GMS-2017-137.yml
+aliases:
+  - GMS-2017-137
+summary: |
+  Command Injection
+  The pidusage module passes unsanitized input to child_process.exec, resulting in command injection in the ps method, as the pid is never cast to an integer as the comment expects. This module is vulnerable to this PoC on Darwin, SunOS, FreeBSD, and AIX. Windows and Linux are not vulnerable.
+impacted_packages:
+  - purl: pkg:npm/pidusage
+    affected_versions: vers:npm/<=1.1.4
+    fixed_versions: vers:npm/1.1.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

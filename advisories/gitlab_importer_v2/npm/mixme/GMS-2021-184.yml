@@ -1,0 +1,40 @@
+advisory_id: npm/mixme/GMS-2021-184
+datasource_id: gitlab_importer_v2/npm/mixme/GMS-2021-184
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/mixme/GMS-2021-184.yml
+aliases:
+  - GHSA-84p7-fh9c-6g8h
+  - GMS-2021-184
+summary: |
+  Prototype Pollution in mixme
+  ### Impact
+  When copying properties from a source object to a target object, the target object can gain access to certain properties of the source object and modify their content.
+
+  ### Patches
+  The problem was patch with a more agressive discovery of secured properties to filter out.
+impacted_packages:
+  - purl: pkg:npm/mixme
+    affected_versions: vers:npm/<0.5.2
+    fixed_versions: vers:npm/0.5.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/adaltas/node-mixme/commit/db70fe9bcbba451e9f8bd794a9fa7cdfa00125ad
+    reference_type:
+    reference_id:
+  - url: https://github.com/adaltas/node-mixme/issues/1
+    reference_type:
+    reference_id:
+  - url: https://github.com/adaltas/node-mixme/issues/2
+    reference_type:
+    reference_id:
+  - url: https://github.com/adaltas/node-mixme/security/advisories/GHSA-84p7-fh9c-6g8h
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-79jw-6wg7-r9g4
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-84p7-fh9c-6g8h
+    reference_type:
+    reference_id: GHSA-84p7-fh9c-6g8h

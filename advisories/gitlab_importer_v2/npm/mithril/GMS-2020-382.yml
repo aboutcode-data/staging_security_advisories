@@ -1,0 +1,27 @@
+advisory_id: npm/mithril/GMS-2020-382
+datasource_id: gitlab_importer_v2/npm/mithril/GMS-2020-382
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/mithril/GMS-2020-382.yml
+aliases:
+  - GHSA-c3px-v9c7-m734
+  - GMS-2020-382
+summary: "Prototype Pollution in mithril\nAffected versions of `mithril`are vulnerable to prototype\
+  \ pollution. The function `parseQueryString` may allow a malicious user to modify the prototype\
+  \ of `Object`, causing the addition or modification of an existing property that will exist\
+  \ on all objects. A payload such as `__proto__%5BtoString%5D=123` in the query string would\
+  \ change the `toString()` function to `123`. \nIf you are using mithril, upgrade to or later.\n\
+  If you are using mithril, upgrade to or later."
+impacted_packages:
+  - purl: pkg:npm/mithril
+    affected_versions: vers:npm/<1.1.7|>=2.0.0|<2.0.2
+    fixed_versions: vers:npm/1.1.7|2.0.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1094
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c3px-v9c7-m734
+    reference_type:
+    reference_id: GHSA-c3px-v9c7-m734

@@ -1,0 +1,32 @@
+advisory_id: npm/marky-markdown/GMS-2020-370
+datasource_id: gitlab_importer_v2/npm/marky-markdown/GMS-2020-370
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/marky-markdown/GMS-2020-370.yml
+aliases:
+  - GHSA-mg69-6j3m-jvgw
+  - GMS-2020-370
+summary: |
+  HTML Injection in marky-markdown
+  All versions of `marky-markdown` are vulnerable to HTML Injection. The package fails to sanitize `style` attributes in `img` tags of the markdown input. This may allow attackers to affect the size of images in the rendered HTML. ## Recommendation
+
+  This package is no longer maintained. Please upgrade to `@npmcorp/marky-markdown`
+impacted_packages:
+  - purl: pkg:npm/marky-markdown
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/npm/marky-markdown
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-MARKYMARKDOWN-548871
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1470
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mg69-6j3m-jvgw
+    reference_type:
+    reference_id: GHSA-mg69-6j3m-jvgw

@@ -1,0 +1,38 @@
+advisory_id: npm/@saltcorn/server/GHSA-cfqx-f43m-vfh7
+datasource_id: gitlab_importer_v2/npm/@saltcorn/server/GHSA-cfqx-f43m-vfh7
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@saltcorn/server/GHSA-cfqx-f43m-vfh7.yml
+aliases:
+  - GHSA-cfqx-f43m-vfh7
+summary: |
+  @saltcorn/server arbitrary file and directory listing when accessing build mobile app results
+  A user with admin permission can read arbitrary file and directory names on the filesystem by calling the `admin/build-mobile-app/result?build_dir_name=` endpoint.  The `build_dir_name` parameter is not properly validated and it's then used to construct the `buildDir` that is read. The file/directory names under the `buildDir` will be returned.
+impacted_packages:
+  - purl: pkg:npm/%40saltcorn/server
+    affected_versions: vers:npm/<1.0.0-beta.14
+    fixed_versions: vers:npm/1.0.0-beta.14
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@saltcorn/server/GHSA-cfqx-f43m-vfh7.yml
+weaknesses:
+  - CWE-548
+  - CWE-937
+  - CWE-1035
+references:
+  - url: https://github.com/saltcorn/saltcorn
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/server/routes/admin.js#L2884-L2893
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/commit/81adaf78430a9b59804894574d67d2a0c7bb3dc5
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/security/advisories/GHSA-cfqx-f43m-vfh7
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cfqx-f43m-vfh7
+    reference_type:
+    reference_id: GHSA-cfqx-f43m-vfh7

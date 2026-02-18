@@ -1,0 +1,20 @@
+advisory_id: npm/pouchdb/GMS-2016-70
+datasource_id: gitlab_importer_v2/npm/pouchdb/GMS-2016-70
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/pouchdb/GMS-2016-70.yml
+aliases:
+  - GMS-2016-70
+summary: |
+  Arbitrary Code Injection
+  An arbitrary code injection vector was found via the map/reduce functions used in PouchDB temporary views and design documents. The code execution engine is not properly sandboxed and may be used to run arbitrary JavaScript as well as system commands.
+impacted_packages:
+  - purl: pkg:npm/pouchdb
+    affected_versions: vers:npm/<=6.0.4
+    fixed_versions: vers:npm/6.0.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/pouchdb/pouchdb/issues/5612
+    reference_type:
+    reference_id:

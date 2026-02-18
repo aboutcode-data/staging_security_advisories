@@ -1,0 +1,26 @@
+advisory_id: npm/maybemaliciouspackage/GMS-2020-374
+datasource_id: gitlab_importer_v2/npm/maybemaliciouspackage/GMS-2020-374
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/maybemaliciouspackage/GMS-2020-374.yml
+aliases:
+  - GHSA-m9r7-q9fc-qwx5
+  - GMS-2020-374
+summary: |
+  Malicious Package
+  All versions of `maybemaliciouspackage` contain malicious code. The package prints the system's SSH keys to the console as a postinstall script. ## Recommendation
+
+  Remove the package from your environment. There are no further signs of compromise.
+impacted_packages:
+  - purl: pkg:npm/maybemaliciouspackage
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1042
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-m9r7-q9fc-qwx5
+    reference_type:
+    reference_id: GHSA-m9r7-q9fc-qwx5

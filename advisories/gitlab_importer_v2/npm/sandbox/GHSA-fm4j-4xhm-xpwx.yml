@@ -1,0 +1,26 @@
+advisory_id: npm/sandbox/GHSA-fm4j-4xhm-xpwx
+datasource_id: gitlab_importer_v2/npm/sandbox/GHSA-fm4j-4xhm-xpwx
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sandbox/GHSA-fm4j-4xhm-xpwx.yml
+aliases:
+  - GHSA-fm4j-4xhm-xpwx
+summary: |
+  Sandbox Breakout / Arbitrary Code Execution in sandbox
+  All versions of `sandbox` through 0.8.2 are vulnerable to Sandbox Escape leading to Remote Code Execution. Due to insufficient input sanitization it is possible to escape the sandbox using constructors.
+impacted_packages:
+  - purl: pkg:npm/sandbox
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/gf3/sandbox/issues/50
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/766
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-fm4j-4xhm-xpwx
+    reference_type:
+    reference_id: GHSA-fm4j-4xhm-xpwx

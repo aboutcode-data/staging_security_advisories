@@ -1,0 +1,23 @@
+advisory_id: npm/marked/GMS-2016-24
+datasource_id: gitlab_importer_v2/npm/marked/GMS-2016-24
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/marked/GMS-2016-24.yml
+aliases:
+  - GMS-2016-24
+summary: |
+  Sanitization bypass using HTML Entities
+  Due to the way that marked parses input, specifically HTML entities, it's possible to bypass marked's content injection protection (`sanitize: true`) to inject a `javascript:` URL. This flaw exists because `&#xNNanything;` gets parsed to what it could and leaves the rest behind, resulting in just `anything;` being left.
+impacted_packages:
+  - purl: pkg:npm/marked
+    affected_versions: vers:npm/<0.3.6
+    fixed_versions: vers:npm/0.3.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/chjj/marked/pull/592
+    reference_type:
+    reference_id:
+  - url: https://github.com/chjj/marked/pull/592/commits/2cff85979be8e7a026a9aca35542c470cf5da523
+    reference_type:
+    reference_id:

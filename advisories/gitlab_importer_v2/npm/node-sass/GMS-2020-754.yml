@@ -1,0 +1,32 @@
+advisory_id: npm/node-sass/GMS-2020-754
+datasource_id: gitlab_importer_v2/npm/node-sass/GMS-2020-754
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/node-sass/GMS-2020-754.yml
+aliases:
+  - GHSA-9v62-24cr-58cx
+  - GMS-2020-754
+summary: |
+  Denial of Service in node-sass
+  Affected versions of `node-sass` are vulnerable to Denial of Service (DoS). Crafted objects passed to the `renderSync` function may trigger C++ assertions in `CustomImporterBridge::get_importer_entry` and `CustomImporterBridge::post_process_return_value` that crash the Node process. This may allow attackers to crash the system's running Node process and lead to Denial of Service.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.13.1 or later
+impacted_packages:
+  - purl: pkg:npm/node-sass
+    affected_versions: vers:npm/>=3.3.0|<4.13.1
+    fixed_versions: vers:npm/4.13.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sass/node-sass/commit/338fd7a14d3b8bd374a382336df16f9c6792b884
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/961
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-9v62-24cr-58cx
+    reference_type:
+    reference_id: GHSA-9v62-24cr-58cx

@@ -1,0 +1,24 @@
+advisory_id: npm/parsel/GMS-2020-425
+datasource_id: gitlab_importer_v2/npm/parsel/GMS-2020-425
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/parsel/GMS-2020-425.yml
+aliases:
+  - GHSA-wqgx-4q47-j2w5
+  - GMS-2020-425
+summary: |
+  Insecure Cryptography Algorithm in parsel
+  All versions of `parsel` use an insecure cryptography algorithm. The package uses `aes-256-cbc` without integrity checks, which renders the ciphertext vulnerable to bit-flipping attacks. The package is deprecated and will not be updated. Consider using an alternative package.
+impacted_packages:
+  - purl: pkg:npm/parsel
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1461
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wqgx-4q47-j2w5
+    reference_type:
+    reference_id: GHSA-wqgx-4q47-j2w5

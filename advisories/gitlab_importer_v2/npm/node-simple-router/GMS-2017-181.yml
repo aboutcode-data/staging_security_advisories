@@ -1,0 +1,17 @@
+advisory_id: npm/node-simple-router/GMS-2017-181
+datasource_id: gitlab_importer_v2/npm/node-simple-router/GMS-2017-181
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/node-simple-router/GMS-2017-181.yml
+aliases:
+  - GMS-2017-181
+summary: |
+  Directory Traversal
+  node-simple-router is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing "../" in the URL.
+impacted_packages:
+  - purl: pkg:npm/node-simple-router
+    affected_versions: vers:npm/<=0.10.0
+    fixed_versions: vers:npm/0.10.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

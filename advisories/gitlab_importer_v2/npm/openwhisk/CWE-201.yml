@@ -1,0 +1,21 @@
+advisory_id: npm/openwhisk/CWE-201
+datasource_id: gitlab_importer_v2/npm/openwhisk/CWE-201
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/openwhisk/CWE-201.yml
+aliases:
+  - CWE-201
+summary: |
+  Error clearly exposes the database credentials
+  When access is denied, `mysql_pconnect()` raises a warning that exposes the user credentials.
+impacted_packages:
+  - purl: pkg:npm/openwhisk
+    affected_versions: vers:npm/<3.2.1
+    fixed_versions: vers:npm/3.2.1
+severities: []
+weaknesses: []
+references:
+  - url: https://cwe.mitre.org/data/definitions/201.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/incubator-openwhisk-client-js/commit/0e40671e75d2ec7e88fa39ef787526d4304f2aaa
+    reference_type:
+    reference_id:

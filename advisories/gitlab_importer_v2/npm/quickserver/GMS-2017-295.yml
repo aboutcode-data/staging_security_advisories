@@ -1,0 +1,20 @@
+advisory_id: npm/quickserver/GMS-2017-295
+datasource_id: gitlab_importer_v2/npm/quickserver/GMS-2017-295
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/quickserver/GMS-2017-295.yml
+aliases:
+  - GMS-2017-295
+summary: |
+  Directory Traversal
+  `quickserver` is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing "../" in the url./n
+impacted_packages:
+  - purl: pkg:npm/quickserver
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/JacksonGL/NPM-Vuln-PoC/blob/master/directory-traversal/quickserver
+    reference_type:
+    reference_id:

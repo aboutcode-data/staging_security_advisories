@@ -1,0 +1,32 @@
+advisory_id: npm/renovate/GHSA-36j9-mx87-2cff
+datasource_id: gitlab_importer_v2/npm/renovate/GHSA-36j9-mx87-2cff
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/renovate/GHSA-36j9-mx87-2cff.yml
+aliases:
+  - GHSA-36j9-mx87-2cff
+summary: |
+  Renovate vulnerable to arbitrary command injection via hermit manager and maliciously named dependencies
+  The user-provided string `depName` in the `hermit` manager is appended to the `./hermit install` and `./hermit uninstall` commands without proper sanitization.
+impacted_packages:
+  - purl: pkg:npm/renovate
+    affected_versions: vers:npm/>=32.135.0|<40.33.0
+    fixed_versions: vers:npm/40.33.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/renovate/GHSA-36j9-mx87-2cff.yml
+weaknesses:
+  - CWE-77
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/renovatebot/renovate
+    reference_type:
+    reference_id:
+  - url: https://github.com/renovatebot/renovate/security/advisories/GHSA-36j9-mx87-2cff
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-36j9-mx87-2cff
+    reference_type:
+    reference_id: GHSA-36j9-mx87-2cff

@@ -1,0 +1,23 @@
+advisory_id: npm/rendr/GMS-2016-53
+datasource_id: gitlab_importer_v2/npm/rendr/GMS-2016-53
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/rendr/GMS-2016-53.yml
+aliases:
+  - GMS-2016-53
+summary: |
+  XSS in client rendered block templates
+  There's a cross site scripting (XSS) issue when rendered inside a `_block` during client side rendering. Server side rendering is not affected and is properly escaped.
+impacted_packages:
+  - purl: pkg:npm/rendr
+    affected_versions: vers:npm/<=1.1.3
+    fixed_versions: vers:npm/1.1.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/rendrjs/rendr-handlebars/pull/61
+    reference_type:
+    reference_id:
+  - url: https://github.com/rendrjs/rendr/pull/513
+    reference_type:
+    reference_id:

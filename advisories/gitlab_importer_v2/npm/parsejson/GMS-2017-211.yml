@@ -1,0 +1,20 @@
+advisory_id: npm/parsejson/GMS-2017-211
+datasource_id: gitlab_importer_v2/npm/parsejson/GMS-2017-211
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/parsejson/GMS-2017-211.yml
+aliases:
+  - GMS-2017-211
+summary: |
+  Regular Expression Denial of Service
+  The parsejson module is vulnerable to regular expression denial of service when untrusted user input is passed into it to be parsed.
+impacted_packages:
+  - purl: pkg:npm/parsejson
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/get/parsejson/issues/4
+    reference_type:
+    reference_id:

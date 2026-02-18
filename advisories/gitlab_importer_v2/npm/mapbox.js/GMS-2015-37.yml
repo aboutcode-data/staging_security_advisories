@@ -1,0 +1,20 @@
+advisory_id: npm/mapbox.js/GMS-2015-37
+datasource_id: gitlab_importer_v2/npm/mapbox.js/GMS-2015-37
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/mapbox.js/GMS-2015-37.yml
+aliases:
+  - GMS-2015-37
+summary: |
+  Content Injection via TileJSON attribute
+  Mapbox.js is vulnerable to a cross-site-scripting attack in certain uncommon usage scenarios.
+impacted_packages:
+  - purl: pkg:npm/mapbox.js
+    affected_versions: vers:npm/<1.6.5|>=2.0.0-beta0|<2.1.7
+    fixed_versions: vers:npm/1.6.5|2.1.7
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://hackerone.com/reports/54327
+    reference_type:
+    reference_id:

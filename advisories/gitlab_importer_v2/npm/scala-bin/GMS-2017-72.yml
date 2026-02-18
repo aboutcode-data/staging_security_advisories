@@ -1,0 +1,17 @@
+advisory_id: npm/scala-bin/GMS-2017-72
+datasource_id: gitlab_importer_v2/npm/scala-bin/GMS-2017-72
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/scala-bin/GMS-2017-72.yml
+aliases:
+  - GMS-2017-72
+summary: |
+  Downloads Resources over HTTP
+  scala-bin downloads binary resources over HTTP, which leaves it vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested binary with an attacker controlled binary if the attacker is on the network or positioned in between the user and the remote server.
+impacted_packages:
+  - purl: pkg:npm/scala-bin
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

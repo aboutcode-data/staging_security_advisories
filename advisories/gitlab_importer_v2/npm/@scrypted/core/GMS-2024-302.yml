@@ -1,0 +1,45 @@
+advisory_id: npm/@scrypted/core/GMS-2024-302
+datasource_id: gitlab_importer_v2/npm/@scrypted/core/GMS-2024-302
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@scrypted/core/GMS-2024-302.yml
+aliases:
+  - GHSA-w4hv-vmv9-hgcr
+  - GMS-2024-302
+summary: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+  in @scrypted/core.
+impacted_packages:
+  - purl: pkg:npm/%40scrypted/core
+    affected_versions: vers:npm/<=0.1.142
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/koush/scrypted/blob/71cbe83a2a20f743342df695ca7b98482b73e60f/server/package.json
+    reference_type:
+    reference_id:
+  - url: https://github.com/koush/scrypted/blob/71cbe83a2a20f743342df695ca7b98482b73e60f/server/src/plugin/plugin-http.ts#L45
+    reference_type:
+    reference_id:
+  - url: https://github.com/koush/scrypted/blob/v0.55.0/plugins/core/package.json
+    reference_type:
+    reference_id:
+  - url: https://github.com/koush/scrypted/blob/v0.55.0/plugins/core/ui/src/Login.vue#L79
+    reference_type:
+    reference_id:
+  - url: https://github.com/koush/scrypted/releases/tag/v0.55.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/koush/scrypted/security/advisories/GHSA-w4hv-vmv9-hgcr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-47620
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-47623
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-w4hv-vmv9-hgcr
+    reference_type:
+    reference_id: GHSA-w4hv-vmv9-hgcr

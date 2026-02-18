@@ -1,0 +1,20 @@
+advisory_id: npm/mqtt/GMS-2016-63
+datasource_id: gitlab_importer_v2/npm/mqtt/GMS-2016-63
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/mqtt/GMS-2016-63.yml
+aliases:
+  - GMS-2016-63
+summary: |
+  Denial of Service
+  Specifically crafted MQTT packets can crash the application, making a DoS attack feasible with very little bandwidth.
+impacted_packages:
+  - purl: pkg:npm/mqtt
+    affected_versions: vers:npm/<=0.3.13
+    fixed_versions: vers:npm/1.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/mqttjs/MQTT.js/blob/388a084d7803934b18b43c1146c817deaa1396b1/lib/parse.js#L230
+    reference_type:
+    reference_id:

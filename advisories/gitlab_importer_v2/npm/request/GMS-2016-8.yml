@@ -1,0 +1,20 @@
+advisory_id: npm/request/GMS-2016-8
+datasource_id: gitlab_importer_v2/npm/request/GMS-2016-8
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/request/GMS-2016-8.yml
+aliases:
+  - GMS-2016-8
+summary: |
+  Remote Memory Exposure
+  If a request is made using `multipart`, and the body type is a `number`, then the specified number of non-zero memory is passed in the body.
+impacted_packages:
+  - purl: pkg:npm/request
+    affected_versions: vers:npm/>=2.2.6|<2.47.0|>2.51.0|<=2.67.0
+    fixed_versions: vers:npm/2.68.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/request/request/pull/2018
+    reference_type:
+    reference_id:

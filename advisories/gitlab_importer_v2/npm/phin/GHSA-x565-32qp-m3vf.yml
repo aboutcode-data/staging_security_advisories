@@ -1,0 +1,35 @@
+advisory_id: npm/phin/GHSA-x565-32qp-m3vf
+datasource_id: gitlab_importer_v2/npm/phin/GHSA-x565-32qp-m3vf
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/phin/GHSA-x565-32qp-m3vf.yml
+aliases:
+  - GHSA-x565-32qp-m3vf
+summary: |
+  phin may include sensitive headers in subsequent requests after redirect
+  Users may be impacted if sending requests including sensitive data in specific headers with `followRedirects` enabled.
+impacted_packages:
+  - purl: pkg:npm/phin
+    affected_versions: vers:npm/<3.7.1
+    fixed_versions: vers:npm/3.7.1
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/phin/GHSA-x565-32qp-m3vf.yml
+weaknesses:
+  - CWE-200
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/ethanent/phin
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethanent/phin/commit/c071f95336a987dad9332fd388adeb249925cc57
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethanent/phin/security/advisories/GHSA-x565-32qp-m3vf
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-x565-32qp-m3vf
+    reference_type:
+    reference_id: GHSA-x565-32qp-m3vf

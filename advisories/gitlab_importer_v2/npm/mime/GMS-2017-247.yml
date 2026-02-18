@@ -1,0 +1,20 @@
+advisory_id: npm/mime/GMS-2017-247
+datasource_id: gitlab_importer_v2/npm/mime/GMS-2017-247
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/mime/GMS-2017-247.yml
+aliases:
+  - GMS-2017-247
+summary: |
+  Regular Expression Denial of Service
+  The mime module is vulnerable to regular expression denial of service when a mime lookup is performed on untrusted user input.
+impacted_packages:
+  - purl: pkg:npm/mime
+    affected_versions: vers:npm/<1.4.1|>=2.0.0|<2.0.3
+    fixed_versions: vers:npm/1.4.1|2.0.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/broofa/node-mime/issues/167
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: npm/@saltcorn/server/GHSA-pf56-h9qf-rxq4
+datasource_id: gitlab_importer_v2/npm/@saltcorn/server/GHSA-pf56-h9qf-rxq4
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@saltcorn/server/GHSA-pf56-h9qf-rxq4.yml
+aliases:
+  - GHSA-pf56-h9qf-rxq4
+summary: |
+  Saltcorn Server Stored Cross-Site Scripting (XSS) in event logs page
+  Event log data is not properly sanitized leading to stored Cross-Site Scripting (XSS) vulnerability.
+impacted_packages:
+  - purl: pkg:npm/%40saltcorn/server
+    affected_versions: vers:npm/<1.0.0-beta.16
+    fixed_versions: vers:npm/1.0.0-beta.16
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@saltcorn/server/GHSA-pf56-h9qf-rxq4.yml
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/saltcorn/saltcorn
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/server/routes/eventlog.js#L445
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/commit/3c551261d0e230635774798009951fa83a07cc3a
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/security/advisories/GHSA-pf56-h9qf-rxq4
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-pf56-h9qf-rxq4
+    reference_type:
+    reference_id: GHSA-pf56-h9qf-rxq4

@@ -1,0 +1,23 @@
+advisory_id: npm/sanitize-html/GMS-2016-57
+datasource_id: gitlab_importer_v2/npm/sanitize-html/GMS-2016-57
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sanitize-html/GMS-2016-57.yml
+aliases:
+  - GMS-2016-57
+summary: |
+  XSS - Sanitization not applied recursively
+  Sanitization of HTML strings is not applied recursively to input, allowing an attacker to potentially inject script and other markup.
+impacted_packages:
+  - purl: pkg:npm/sanitize-html
+    affected_versions: vers:npm/<=1.4.2
+    fixed_versions: vers:npm/1.4.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/punkave/sanitize-html/commit/762fbc7bba389f3f789cc291c1eb2b64f60f2caf
+    reference_type:
+    reference_id:
+  - url: https://github.com/punkave/sanitize-html/issues/29
+    reference_type:
+    reference_id:

@@ -1,0 +1,30 @@
+advisory_id: npm/sails-mysql/GMS-2020-492
+datasource_id: gitlab_importer_v2/npm/sails-mysql/GMS-2020-492
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sails-mysql/GMS-2020-492.yml
+aliases:
+  - GHSA-hx5x-49mm-vmhw
+  - GMS-2020-492
+summary: |
+  SQL Injection in sails-mysql
+  Versions of `sails-mysql` are vulnerable to SQL Injection. The `sort` keyword is not properly sanitized and may allow attackers to inject SQL statements and execute arbitrary SQL queries
+impacted_packages:
+  - purl: pkg:npm/sails-mysql
+    affected_versions: vers:npm/<0.10.8
+    fixed_versions: vers:npm/0.10.8
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/balderdashy/sails/issues/6679
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SAILSMYSQL-174916
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/950
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-hx5x-49mm-vmhw
+    reference_type:
+    reference_id: GHSA-hx5x-49mm-vmhw

@@ -1,0 +1,36 @@
+advisory_id: npm/@redwoodjs/api/GMS-2022-6726
+datasource_id: gitlab_importer_v2/npm/@redwoodjs/api/GMS-2022-6726
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@redwoodjs/api/GMS-2022-6726.yml
+aliases:
+  - GHSA-3qmc-2r76-4rqp
+  - GMS-2022-6726
+summary: |
+  Redwood is vulnerable to account takeover via dbAuth "forgot-password"
+  This is an API vulnerability in Redwood's [dbAuth], specifically the dbAuth forgot password feature: - only projects with the dbAuth "forgot password" feature are affected - this vulnerability was introduced in v0.38.0
+impacted_packages:
+  - purl: pkg:npm/%40redwoodjs/api
+    affected_versions: vers:npm/>=0.38.0|<2.2.5|>=3.0.0|<3.3.1
+    fixed_versions: vers:npm/2.2.5|3.3.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/redwoodjs/redwood/issues/6343
+    reference_type:
+    reference_id:
+  - url: https://github.com/redwoodjs/redwood/pull/6778
+    reference_type:
+    reference_id:
+  - url: https://github.com/redwoodjs/redwood/releases/tag/v2.2.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/redwoodjs/redwood/releases/tag/v3.3.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/redwoodjs/redwood/security/advisories/GHSA-3qmc-2r76-4rqp
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3qmc-2r76-4rqp
+    reference_type:
+    reference_id: GHSA-3qmc-2r76-4rqp

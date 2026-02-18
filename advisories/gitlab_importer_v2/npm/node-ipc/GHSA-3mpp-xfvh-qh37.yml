@@ -1,0 +1,32 @@
+advisory_id: npm/node-ipc/GHSA-3mpp-xfvh-qh37
+datasource_id: gitlab_importer_v2/npm/node-ipc/GHSA-3mpp-xfvh-qh37
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/node-ipc/GHSA-3mpp-xfvh-qh37.yml
+aliases:
+  - GHSA-3mpp-xfvh-qh37
+summary: |
+  node-ipc behavior change
+  node-ipc starting in version 11.0.0 and prior to version 12.0.0 includes a message from the maintainer that is written to the user’s desktop. Please review the version changes before proceeding.
+impacted_packages:
+  - purl: pkg:npm/node-ipc
+    affected_versions: vers:npm/>=11.0.0|<12.0.0
+    fixed_versions: vers:npm/12.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/RIAEvangelist/node-ipc
+    reference_type:
+    reference_id:
+  - url: https://github.com/RIAEvangelist/node-ipc/commit/a98efaedbf090d7bf4d6bdf07761301c531608af
+    reference_type:
+    reference_id:
+  - url: https://github.com/RIAEvangelist/node-ipc/compare/10.1.0...12.0.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/RIAEvangelist/node-ipc/releases/tag/v11.0.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3mpp-xfvh-qh37
+    reference_type:
+    reference_id: GHSA-3mpp-xfvh-qh37

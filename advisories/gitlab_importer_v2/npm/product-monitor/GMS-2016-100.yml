@@ -1,0 +1,17 @@
+advisory_id: npm/product-monitor/GMS-2016-100
+datasource_id: gitlab_importer_v2/npm/product-monitor/GMS-2016-100
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/product-monitor/GMS-2016-100.yml
+aliases:
+  - GMS-2016-100
+summary: |
+  Downloads Resources over HTTP
+  product-monitor downloads JavaScript resources over HTTP, which leaves the module vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested JavaScript file with an attacker controlled JavaScript file if the attacker is on the network or positioned in between the user and the remote server.
+impacted_packages:
+  - purl: pkg:npm/product-monitor
+    affected_versions: vers:npm/<2.2.5
+    fixed_versions: vers:npm/2.2.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

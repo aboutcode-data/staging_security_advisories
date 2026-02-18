@@ -1,0 +1,39 @@
+advisory_id: npm/mavon-editor/GMS-2020-373
+datasource_id: gitlab_importer_v2/npm/mavon-editor/GMS-2020-373
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/mavon-editor/GMS-2020-373.yml
+aliases:
+  - GHSA-jfcc-rm7f-xgf8
+  - GMS-2020-373
+summary: |
+  Cross-Site Scripting in mavon-editor
+  All versions of `mavon-editor` are vulnerable to Cross-Site Scripting. The package fails to sanitize entered input, allowing attackers to execute arbitrary JavaScript in a victim's browser. No fix is currently available. Consider using an alternative package until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/mavon-editor
+    affected_versions: vers:npm/<2.8.2
+    fixed_versions: vers:npm/2.8.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/hinesboy/mavonEditor/commit/5592ec3761bd3b5a12ba6f99ce3c4057c6e33f72
+    reference_type:
+    reference_id:
+  - url: https://github.com/hinesboy/mavonEditor/issues/472
+    reference_type:
+    reference_id:
+  - url: https://github.com/hinesboy/mavonEditor/pull/548
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-MAVONEDITOR-459108
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1169
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/mavon-editor
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jfcc-rm7f-xgf8
+    reference_type:
+    reference_id: GHSA-jfcc-rm7f-xgf8

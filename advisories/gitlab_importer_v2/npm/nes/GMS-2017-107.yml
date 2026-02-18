@@ -1,0 +1,23 @@
+advisory_id: npm/nes/GMS-2017-107
+datasource_id: gitlab_importer_v2/npm/nes/GMS-2017-107
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/nes/GMS-2017-107.yml
+aliases:
+  - GMS-2017-107
+summary: |
+  Denial of Service
+  nes has a denial of service vulnerability via an invalid Cookie header. This is only present when websocket authentication is set to `cookie`. Submitting an invalid cookie on the websocket upgrade request will cause the node process to error out.
+impacted_packages:
+  - purl: pkg:npm/nes
+    affected_versions: vers:npm/<=6.4.0
+    fixed_versions: vers:npm/6.4.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/hapijs/nes/commit/249ba1755ed6977fbc208463c87364bf884ad655
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/nes/issues/171
+    reference_type:
+    reference_id:

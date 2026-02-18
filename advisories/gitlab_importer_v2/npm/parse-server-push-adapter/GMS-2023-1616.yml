@@ -1,0 +1,35 @@
+advisory_id: npm/parse-server-push-adapter/GMS-2023-1616
+datasource_id: gitlab_importer_v2/npm/parse-server-push-adapter/GMS-2023-1616
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/parse-server-push-adapter/GMS-2023-1616.yml
+aliases:
+  - GHSA-mxhg-rvwx-x993
+  - GMS-2023-1616
+summary: |
+  Invalid push request payload crashes Parse Server
+  ### Impact
+
+  The Parse Server Push Adapter can crash Parse Server due to an invalid push notification payload.
+impacted_packages:
+  - purl: pkg:npm/parse-server-push-adapter
+    affected_versions: vers:npm/<4.1.3
+    fixed_versions: vers:npm/4.1.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/parse-community/parse-server-push-adapter/commit/598cb84d0866b7c5850ca96af920e8cb5ba243ec
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server-push-adapter/pull/217
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server-push-adapter/releases/tag/4.1.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server-push-adapter/security/advisories/GHSA-mxhg-rvwx-x993
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mxhg-rvwx-x993
+    reference_type:
+    reference_id: GHSA-mxhg-rvwx-x993

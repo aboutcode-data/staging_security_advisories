@@ -1,0 +1,20 @@
+advisory_id: npm/mysql/GMS-2015-56
+datasource_id: gitlab_importer_v2/npm/mysql/GMS-2015-56
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/mysql/GMS-2015-56.yml
+aliases:
+  - GMS-2015-56
+summary: |
+  SQL Injection due to unescaped object keys
+  Keys of objects are not escaped with `mysql.escape()` which could lead to SQL Injection.
+impacted_packages:
+  - purl: pkg:npm/mysql
+    affected_versions: vers:npm/<=2.0.0-alpha7
+    fixed_versions: vers:npm/2.0.0-alpha8
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/felixge/node-mysql/issues/342
+    reference_type:
+    reference_id:

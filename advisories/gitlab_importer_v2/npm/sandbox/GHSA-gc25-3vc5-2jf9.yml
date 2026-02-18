@@ -1,0 +1,23 @@
+advisory_id: npm/sandbox/GHSA-gc25-3vc5-2jf9
+datasource_id: gitlab_importer_v2/npm/sandbox/GHSA-gc25-3vc5-2jf9
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sandbox/GHSA-gc25-3vc5-2jf9.yml
+aliases:
+  - GHSA-gc25-3vc5-2jf9
+summary: |
+  Sandbox Breakout / Arbitrary Code Execution in sandbox
+  All versions of `sandbox` are vulnerable to Sandbox Escape leading to Remote Code Execution. The package fails to restrict access to the main context through `this.constructor.constructor` . This may allow attackers to execute arbitrary code in the system. Evaluating the payload `this.constructor.constructor('return process.env')()` prints the contents of `process.env`.
+impacted_packages:
+  - purl: pkg:npm/sandbox
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1318
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-gc25-3vc5-2jf9
+    reference_type:
+    reference_id: GHSA-gc25-3vc5-2jf9

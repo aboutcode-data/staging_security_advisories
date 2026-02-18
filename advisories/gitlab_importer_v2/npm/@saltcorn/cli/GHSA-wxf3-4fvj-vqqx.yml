@@ -1,0 +1,40 @@
+advisory_id: npm/@saltcorn/cli/GHSA-wxf3-4fvj-vqqx
+datasource_id: gitlab_importer_v2/npm/@saltcorn/cli/GHSA-wxf3-4fvj-vqqx
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@saltcorn/cli/GHSA-wxf3-4fvj-vqqx.yml
+aliases:
+  - GHSA-wxf3-4fvj-vqqx
+summary: |
+  Unsafe plugins can be installed via pack import by tenant admins
+  Unsafe plugins (for instance `sql-list`) can be installed in subdomain tenants via pack import even if unsafe plugin installation for tenants is disables
+impacted_packages:
+  - purl: pkg:npm/%40saltcorn/cli
+    affected_versions: vers:npm/<0.8.8-beta.2
+    fixed_versions: vers:npm/0.8.8-beta.2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@saltcorn/cli/GHSA-wxf3-4fvj-vqqx.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/saltcorn/saltcorn
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/99fe277e497fd193bb070acd8c663aa254a9907c/packages/server/load_plugins.js#L191
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/commit/0f32a51277a635c814a634bda9b6d358fb8c04ab
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/pull/1973
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/security/advisories/GHSA-wxf3-4fvj-vqqx
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wxf3-4fvj-vqqx
+    reference_type:
+    reference_id: GHSA-wxf3-4fvj-vqqx

@@ -1,0 +1,20 @@
+advisory_id: npm/marked/GMS-2015-1
+datasource_id: gitlab_importer_v2/npm/marked/GMS-2015-1
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/marked/GMS-2015-1.yml
+aliases:
+  - GMS-2015-1
+summary: |
+  Regular expression denial of service
+  Marked is vulnerable to regular expression denial of service (ReDoS) when certain types of input are passed in to be parsed.
+impacted_packages:
+  - purl: pkg:npm/marked
+    affected_versions: vers:npm/<0.3.4
+    fixed_versions: vers:npm/0.3.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/chjj/marked/issues/497
+    reference_type:
+    reference_id:

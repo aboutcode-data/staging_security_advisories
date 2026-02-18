@@ -1,0 +1,23 @@
+advisory_id: npm/public/GMS-2018-18
+datasource_id: gitlab_importer_v2/npm/public/GMS-2018-18
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/public/GMS-2018-18.yml
+aliases:
+  - GMS-2018-18
+summary: |
+  Path Traversal
+  Public has a path traversal vulnerability. It allows an attacker to read content of arbitrary files on the server.
+impacted_packages:
+  - purl: pkg:npm/public
+    affected_versions: vers:npm/<0.1.3
+    fixed_versions: vers:npm/0.1.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/tnantoka/public/commit/eae8ad8017b260f8667ded5e12801bd72b877af2
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/312918
+    reference_type:
+    reference_id:

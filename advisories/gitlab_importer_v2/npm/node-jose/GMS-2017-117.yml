@@ -1,0 +1,23 @@
+advisory_id: npm/node-jose/GMS-2017-117
+datasource_id: gitlab_importer_v2/npm/node-jose/GMS-2017-117
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/node-jose/GMS-2017-117.yml
+aliases:
+  - GMS-2017-117
+summary: |
+  Invalid Curve Attack
+  node-jose is vulnerable to an invalid curve attack. This allows an attacker to recover the private secret key when JWE with Key Agreement with Elliptic Curve Diffie-Hellman Ephemeral Static (ECDH-ES) is used.
+impacted_packages:
+  - purl: pkg:npm/node-jose
+    affected_versions: vers:npm/<0.9.3
+    fixed_versions: vers:npm/0.9.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: http://blog.intothesymmetry.com/2017/03/critical-vulnerability-in-json-web.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/cisco/node-jose
+    reference_type:
+    reference_id:

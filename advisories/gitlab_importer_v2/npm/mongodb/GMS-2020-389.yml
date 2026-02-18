@@ -1,0 +1,24 @@
+advisory_id: npm/mongodb/GMS-2020-389
+datasource_id: gitlab_importer_v2/npm/mongodb/GMS-2020-389
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/mongodb/GMS-2020-389.yml
+aliases:
+  - GHSA-mh5c-679w-hh4r
+  - GMS-2020-389
+summary: |
+  Denial of Service in mongodb
+  Versions of `mongodb` are vulnerable to Denial of Service. The package fails to properly catch an exception when a collection name is invalid and the DB does not exist, crashing the application. Upgrade to or later.
+impacted_packages:
+  - purl: pkg:npm/mongodb
+    affected_versions: vers:npm/<3.1.13
+    fixed_versions: vers:npm/3.1.13
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1203
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mh5c-679w-hh4r
+    reference_type:
+    reference_id: GHSA-mh5c-679w-hh4r

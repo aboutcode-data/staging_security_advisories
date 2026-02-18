@@ -1,0 +1,24 @@
+advisory_id: npm/nwmatcher/GMS-2019-43
+datasource_id: gitlab_importer_v2/npm/nwmatcher/GMS-2019-43
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/nwmatcher/GMS-2019-43.yml
+aliases:
+  - GHSA-6394-6h9h-cfjg
+  - GMS-2019-43
+summary: |
+  Regular Expression Denial of Service
+  A Regular Expression vulnerability was found in nwmatcher The fix replacing multiple repeated instances of the "\s*" pattern.
+impacted_packages:
+  - purl: pkg:npm/nwmatcher
+    affected_versions: vers:npm/<1.4.4
+    fixed_versions: vers:npm/1.4.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/dperini/nwmatcher/commit/9dcc2b039beeabd18327a5ebaa537625872e16f0
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-6394-6h9h-cfjg
+    reference_type:
+    reference_id: GHSA-6394-6h9h-cfjg

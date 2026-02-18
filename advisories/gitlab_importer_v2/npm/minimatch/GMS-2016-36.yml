@@ -1,0 +1,17 @@
+advisory_id: npm/minimatch/GMS-2016-36
+datasource_id: gitlab_importer_v2/npm/minimatch/GMS-2016-36
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/minimatch/GMS-2016-36.yml
+aliases:
+  - GMS-2016-36
+summary: |
+  Regular Expression Denial of Service
+  The primary function, `minimatch(path, pattern)` is vulnerable to ReDoS in the `pattern` parameter. This is because of the regular expression on line of minimatch.js: `/((?:\\{2})*)(\\?)\|/g,`. The problematic portion of the regex is `((?:\\{2})*)` which matches against `//`.
+impacted_packages:
+  - purl: pkg:npm/minimatch
+    affected_versions: vers:npm/<=3.0.1
+    fixed_versions: vers:npm/3.0.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

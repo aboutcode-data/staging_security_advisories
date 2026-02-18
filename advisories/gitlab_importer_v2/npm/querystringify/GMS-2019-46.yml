@@ -1,0 +1,27 @@
+advisory_id: npm/querystringify/GMS-2019-46
+datasource_id: gitlab_importer_v2/npm/querystringify/GMS-2019-46
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/querystringify/GMS-2019-46.yml
+aliases:
+  - GHSA-hxcm-v35h-mg2x
+  - GMS-2019-46
+summary: |
+  Prototype Pollution
+  A vulnerability was found in querystringify It's possible to override built-in properties of the resulting query string object if a malicious string is inserted in the query string.
+impacted_packages:
+  - purl: pkg:npm/querystringify
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/unshiftio/querystringify/commit/422eb4f6c7c28ee5f100dcc64177d3b68bb2b080
+    reference_type:
+    reference_id:
+  - url: https://github.com/unshiftio/querystringify/pull/19
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-hxcm-v35h-mg2x
+    reference_type:
+    reference_id: GHSA-hxcm-v35h-mg2x

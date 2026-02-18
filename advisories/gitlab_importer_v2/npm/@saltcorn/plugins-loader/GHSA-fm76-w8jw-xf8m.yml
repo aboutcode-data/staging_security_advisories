@@ -1,0 +1,50 @@
+advisory_id: npm/@saltcorn/plugins-loader/GHSA-fm76-w8jw-xf8m
+datasource_id: gitlab_importer_v2/npm/@saltcorn/plugins-loader/GHSA-fm76-w8jw-xf8m
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@saltcorn/plugins-loader/GHSA-fm76-w8jw-xf8m.yml
+aliases:
+  - GHSA-fm76-w8jw-xf8m
+summary: |
+  @saltcorn/plugins-loader unsanitized plugin name leads to a remote code execution (RCE) vulnerability when creating plugins using git source
+  When creating a new plugin using the `git` source, the user-controlled value `req.body.name` is used to build the plugin directory where the location will be cloned. The API used to execute the `git clone` command with the user-controlled data is `child_process.execSync`. Since the user-controlled data is not validated, a user with admin permission can add escaping characters and execute arbitrary commands, leading to a command injection vulnerability.
+impacted_packages:
+  - purl: pkg:npm/%40saltcorn/plugins-loader
+    affected_versions: vers:npm/<1.0.0-beta.14
+    fixed_versions: vers:npm/1.0.0-beta.14
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@saltcorn/plugins-loader/GHSA-fm76-w8jw-xf8m.yml
+weaknesses:
+  - CWE-1035
+  - CWE-78
+  - CWE-937
+references:
+  - url: https://github.com/saltcorn/saltcorn
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/plugins-loader/download_utils.js#L112
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/plugins-loader/plugin_installer.js#L41-L61
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/saltcorn-data/models/plugin.ts#L44
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/server/load_plugins.js#L64-L65
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/blob/v1.0.0-beta.13/packages/server/routes/plugins.js#L1400
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/commit/024f19a7e079913f62f4a2335ab04116ddb68192
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltcorn/saltcorn/security/advisories/GHSA-fm76-w8jw-xf8m
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-fm76-w8jw-xf8m
+    reference_type:
+    reference_id: GHSA-fm76-w8jw-xf8m

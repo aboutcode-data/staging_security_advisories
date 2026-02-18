@@ -1,0 +1,20 @@
+advisory_id: npm/pivottable/GMS-2016-62
+datasource_id: gitlab_importer_v2/npm/pivottable/GMS-2016-62
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/pivottable/GMS-2016-62.yml
+aliases:
+  - GMS-2016-62
+summary: |
+  XSS vulnerability
+  A cross site scripting (XSS) vulnerability was introduced due to a change from text to html functions in how JSON elements are rendered.
+impacted_packages:
+  - purl: pkg:npm/pivottable
+    affected_versions: vers:npm/>=1.4.0-alpha|<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/nicolaskruchten/pivottable/pull/401
+    reference_type:
+    reference_id:

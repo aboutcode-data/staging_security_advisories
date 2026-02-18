@@ -1,0 +1,32 @@
+advisory_id: npm/m-server/GMS-2019-133
+datasource_id: gitlab_importer_v2/npm/m-server/GMS-2019-133
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/m-server/GMS-2019-133.yml
+aliases:
+  - GHSA-vc6r-4x6g-mmqc
+  - GMS-2019-133
+summary: Relative Path Traversal in m-server.
+impacted_packages:
+  - purl: pkg:npm/m-server
+    affected_versions: vers:npm/<1.4.2
+    fixed_versions: vers:npm/1.4.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-352
+references:
+  - url: https://github.com/nodejs/security-wg/blob/master/vuln/npm/468.json
+    reference_type:
+    reference_id:
+  - url: https://github.com/nunnly/m-server/commit/01f13f040d1961ca3146dce7e2db990156e65e9a
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/319795
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/731
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-vc6r-4x6g-mmqc
+    reference_type:
+    reference_id: GHSA-vc6r-4x6g-mmqc

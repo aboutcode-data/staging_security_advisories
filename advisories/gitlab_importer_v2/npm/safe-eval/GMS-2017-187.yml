@@ -1,0 +1,20 @@
+advisory_id: npm/safe-eval/GMS-2017-187
+datasource_id: gitlab_importer_v2/npm/safe-eval/GMS-2017-187
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/safe-eval/GMS-2017-187.yml
+aliases:
+  - GMS-2017-187
+summary: |
+  Sandbox Breakout
+  By accessing the object constructors, un-sanitized user input can access the entire standard library and effectively break out of the sandbox.
+impacted_packages:
+  - purl: pkg:npm/safe-eval
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/hacksparrow/safe-eval/issues/5
+    reference_type:
+    reference_id:
