@@ -1,0 +1,28 @@
+advisory_id: npm-138
+datasource_id: nodejs_security_wg/npm-138
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/138.json
+aliases:
+  - CVE-2016-1000240
+summary: |
+  XSS via tooltips
+  c3 is a D3-based reusable chart library that enables deeper integration of charts into web applications.
+
+  Versions 0.4.10 and lower of c3 contain a cross site scripting (XSS) vulnerability through improper html sanitization on rendered tooltips.
+impacted_packages:
+  - purl: pkg:npm/c3
+    affected_versions: vers:npm/<=0.4.10
+    fixed_versions: vers:npm/>=0.4.11
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/138.json
+weaknesses: []
+references:
+  - url: https://github.com/c3js/c3/issues/1536
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/138.json
+    reference_type:
+    reference_id: 138

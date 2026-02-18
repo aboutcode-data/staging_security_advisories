@@ -1,0 +1,37 @@
+advisory_id: npm-155
+datasource_id: nodejs_security_wg/npm-155
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/155.json
+aliases: []
+summary: |
+  Cross Site Scripting
+  sanitize-html is a library for scrubbing html input for malicious values
+  Versions 1.2.2 and below have a cross site scripting vulnerability under certain scenarios:
+
+  Entering the following:
+
+  `<IMG SRC= onmouseover="alert('XSS');">`
+  produces the following:
+
+  `<img src="onmouseover="alert('XSS');"" />`
+  This is definitely invalid HTML, but would suggest that it's being interpreted incorrectly by the parser.
+impacted_packages:
+  - purl: pkg:npm/sanitize-html
+    affected_versions: vers:npm/<=1.2.2
+    fixed_versions: vers:npm/>=1.2.3
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/155.json
+weaknesses: []
+references:
+  - url: https://github.com/punkave/sanitize-html/issues/19
+    reference_type:
+    reference_id:
+  - url: https://github.com/punkave/sanitize-html/pull/20
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/155.json
+    reference_type:
+    reference_id: 155

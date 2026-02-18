@@ -1,0 +1,25 @@
+advisory_id: npm-356
+datasource_id: nodejs_security_wg/npm-356
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/356.json
+aliases: []
+summary: "Command Injection\npidusage is a module for cross-platform process cpu % and memory\
+  \ usage of a PID.\n\nThe pidusage module passes unsanitized input to child_process.exec, resulting\
+  \ in command injection in the ps method, as the pid is never cast to an integer as the comment\
+  \ expects. This module is vulnerable to this PoC on Darwin, SunOS, FreeBSD, and AIX. Windows\
+  \ and Linux are not vulnerable. \n\nProof of Concept:\n```\nvar pid = require('pidusage');\n\
+  pid.stat('1 && /usr/local/bin/python');\n```"
+impacted_packages:
+  - purl: pkg:npm/pidusage
+    affected_versions: vers:npm/<=1.1.4
+    fixed_versions: vers:npm/>=1.1.5
+severities:
+  - score: '8.4'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/356.json
+weaknesses: []
+references:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/356.json
+    reference_type:
+    reference_id: 356

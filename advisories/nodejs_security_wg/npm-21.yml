@@ -1,0 +1,29 @@
+advisory_id: npm-21
+datasource_id: nodejs_security_wg/npm-21
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/21.json
+aliases:
+  - CVE-2013-6393
+summary: |
+  Heap Based Buffer Overflow
+  LibYAML, the library that libyaml provides bindings for is vulnerable to a heap-based buffer overflow when parsing YAML tags.
+impacted_packages:
+  - purl: pkg:npm/libyaml
+    affected_versions: vers:npm/<0.2.3
+    fixed_versions: vers:npm/>=0.2.3
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/21.json
+weaknesses: []
+references:
+  - url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=2013-6393)
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/xi/libyaml/pull-request/1/fix-cve-2013-6393/diff
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/21.json
+    reference_type:
+    reference_id: 21

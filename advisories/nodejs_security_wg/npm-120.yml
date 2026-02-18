@@ -1,0 +1,27 @@
+advisory_id: npm-120
+datasource_id: nodejs_security_wg/npm-120
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/120.json
+aliases: []
+summary: |
+  DoS due to excessively large websocket message
+  ws is a "simple to use, blazing fast and thoroughly tested websocket client, server and console for node.js, up-to-date against RFC-6455"
+
+  By sending an overly long websocket payload to a `ws` server, it is possible to crash the node process.
+impacted_packages:
+  - purl: pkg:npm/ws
+    affected_versions: vers:npm/<=1.1.0
+    fixed_versions: vers:npm/>=1.1.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/120.json
+weaknesses: []
+references:
+  - url: https://github.com/nodejs/node/issues/7388
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/120.json
+    reference_type:
+    reference_id: 120

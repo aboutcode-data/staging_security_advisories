@@ -1,0 +1,31 @@
+advisory_id: npm-17
+datasource_id: nodejs_security_wg/npm-17
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/17.json
+aliases: []
+summary: |
+  Verification Bypass
+  It is possible for an attacker to bypass verification when "a token digitally signed with an asymetric key (RS/ES family) of algorithms but instead the attacker send a token digitally signed with a symmetric algorithm (HS* family)" [1]
+impacted_packages:
+  - purl: pkg:npm/jsonwebtoken
+    affected_versions: vers:npm/<4.2.2
+    fixed_versions: vers:npm/>=4.2.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/17.json
+weaknesses: []
+references:
+  - url: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/node-jsonwebtoken/commit/1bb584bc382295eeb7ee8c4452a673a77a68b687
+    reference_type:
+    reference_id:
+  - url: https://www.timmclean.net/2015/02/25/jwt-alg-none.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/17.json
+    reference_type:
+    reference_id: 17

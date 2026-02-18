@@ -1,0 +1,48 @@
+advisory_id: npm-3
+datasource_id: nodejs_security_wg/npm-3
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/3.json
+aliases:
+  - CVE-2013-7370
+  - CVE-2013-7371
+summary: |
+  methodOverride Middleware Reflected Cross-Site Scripting
+  Connect is a stack of middleware that is executed in order in each request.
+
+  The "methodOverride" middleware allows the http post to override the method of the request with the value of the "_method" post key or with the header "x-http-method-override".
+
+  Because the user post input was not checked, req.method could contain any kind of value. Because the req.method did not match any common method VERB, connect answered with a 404 page containing the "Cannot [method] [url]" content. The method was not properly encoded for output in the browser.
+
+
+  ###Example:
+  ```
+  ~ curl "localhost:3000" -d "_method=<script src=http://nodesecurity.io/xss.js></script>"
+  Cannot <SCRIPT SRC=HTTP://NODESECURITY.IO/XSS.JS></SCRIPT> /
+  ```
+
+  ###Credit:
+  [Sergio Arcos](https://twitter.com/martes_trece)
+
+  ###History
+  (2013-06-27) Bug reported:
+  https://github.com/senchalabs/connect/issues/831
+
+  (2013-06-27) First fix: escape req.method output
+  https://github.com/senchalabs/connect/commit/277e5aad6a95d00f55571a9a0e11f2fa190d8135
+
+  (2013-06-27) Second fix: whitelist
+  https://github.com/senchalabs/connect/commit/126187c4e12162e231b87350740045e5bb06e93a
+impacted_packages:
+  - purl: pkg:npm/connect
+    affected_versions: vers:npm/<=2.8.0
+    fixed_versions: vers:npm/>=2.8.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/3.json
+weaknesses: []
+references:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/3.json
+    reference_type:
+    reference_id: 3

@@ -1,0 +1,26 @@
+advisory_id: npm-158
+datasource_id: nodejs_security_wg/npm-158
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/158.json
+aliases: []
+summary: |
+  Lack of HTML Escaping
+  Forms is a library for easily creating HTML forms.
+  Versions before 1.3.0 did not have proper html escaping.  This means that if the application did not sanitize html on behalf of forms, use of forms may be vulnerable to cross site scripting
+impacted_packages:
+  - purl: pkg:npm/forms
+    affected_versions: vers:npm/<1.3.0
+    fixed_versions: vers:npm/>=1.3.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/158.json
+weaknesses: []
+references:
+  - url: https://github.com/caolan/forms/commit/bc01e534a0ff863dedb2026a50bd03153bbc6a5d
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/158.json
+    reference_type:
+    reference_id: 158

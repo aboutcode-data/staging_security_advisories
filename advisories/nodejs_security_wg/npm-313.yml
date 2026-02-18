@@ -1,0 +1,29 @@
+advisory_id: npm-313
+datasource_id: nodejs_security_wg/npm-313
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/313.json
+aliases:
+  - CVE-2017-5954
+summary: "Code Execution Through IIFE\nSerialize-to-js can \"serialize objects into a require-able\
+  \ module while checking circular structures and respecting references.\"\n\nPassing untrusted\
+  \ data to the `.deserialize` function can cause arbitrary code execution through an Immediately\
+  \ Invoked Function Expression (IIFE). \n\nExample:\n```\nvar payload = \"{e: (function(){\
+  \ eval('console.log(`exploited`)') })() }\"\nvar serialize = require('serialize-to-js');\n\
+  serialize.deserialize(payload);\n```"
+impacted_packages:
+  - purl: pkg:npm/serialize-to-js
+    affected_versions: vers:npm/<=0.5.0
+    fixed_versions: vers:npm/>=1.0.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/313.json
+weaknesses: []
+references:
+  - url: https://www.npmjs.com/package/serialize-to-js#deserialize
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/313.json
+    reference_type:
+    reference_id: 313

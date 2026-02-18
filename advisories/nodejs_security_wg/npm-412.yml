@@ -1,0 +1,26 @@
+advisory_id: npm-412
+datasource_id: nodejs_security_wg/npm-412
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/412.json
+aliases:
+  - CVE-2018-3746
+summary: |
+  pdfinfojs command injection
+  The pdfinfojs NPM module has a command injection vulnerability that allows an attacker execute arbitrary commands on the victim's machine.
+impacted_packages:
+  - purl: pkg:npm/pdfinfojs
+    affected_versions: vers:npm/<=0.3.6
+    fixed_versions: vers:npm/>=0.4.1
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/412.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/330957
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/412.json
+    reference_type:
+    reference_id: 412

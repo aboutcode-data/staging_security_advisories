@@ -1,0 +1,33 @@
+advisory_id: npm-22
+datasource_id: nodejs_security_wg/npm-22
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/22.json
+aliases:
+  - CVE-2014-1850
+  - CVE-2014-3743
+summary: |
+  Multiple Content Injection Vulnerabilities
+  Marked comes with an option to sanitize user output to help protect against content injection attacks.
+
+  ```sanitize: true```
+
+  Even if this option is set, marked is vulnerable to content injection in multiple locations if untrusted user input is allowed to be provided into marked and that output is passed to the browser.
+
+  Injection is possible in two locations
+
+  - gfm codeblocks (language)
+  - javascript url's
+impacted_packages:
+  - purl: pkg:npm/marked
+    affected_versions: vers:npm/<=0.3.0
+    fixed_versions: vers:npm/>=0.3.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/22.json
+weaknesses: []
+references:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/22.json
+    reference_type:
+    reference_id: 22

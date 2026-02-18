@@ -1,0 +1,26 @@
+advisory_id: npm-40
+datasource_id: nodejs_security_wg/npm-40
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/40.json
+aliases:
+  - CVE-2015-4130
+summary: |
+  Command Injection
+  Due to the use of `child_process.exec` when executing git commands, ungit allows for commands to be injection from user input fields that end up in an executed git command.
+impacted_packages:
+  - purl: pkg:npm/ungit
+    affected_versions: vers:npm/<=0.8.4
+    fixed_versions: vers:npm/>=0.9.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/40.json
+weaknesses: []
+references:
+  - url: https://github.com/FredrikNoren/ungit/issues/486
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/40.json
+    reference_type:
+    reference_id: 40

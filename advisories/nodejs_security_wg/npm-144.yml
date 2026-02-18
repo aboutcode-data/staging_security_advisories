@@ -1,0 +1,25 @@
+advisory_id: npm-144
+datasource_id: nodejs_security_wg/npm-144
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/144.json
+aliases: []
+summary: |
+  Arbitrary Code Injection
+  Arbitrary code execution is possible through crafted css.  This makes cross sites scripting (XSS) possible on the client and arbitrary code injection possible on the server and user input is passed to the `calc` function.
+impacted_packages:
+  - purl: pkg:npm/reduce-css-calc
+    affected_versions: vers:npm/<=1.2.4
+    fixed_versions: vers:npm/>=1.2.5
+severities:
+  - score: 10
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/144.json
+weaknesses: []
+references:
+  - url: https://gist.github.com/ChALkeR/415a41b561ebea9b341efbb40b802fc9
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/144.json
+    reference_type:
+    reference_id: 144

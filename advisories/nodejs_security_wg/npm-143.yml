@@ -1,0 +1,22 @@
+advisory_id: npm-143
+datasource_id: nodejs_security_wg/npm-143
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/143.json
+aliases: []
+summary: |
+  Arbitrary Code Injection
+  An arbitrary code injection vector was found in PouchDB 5.4.5 and lesser via the map/reduce functions used in PouchDB temporary views and design documents. The code execution engine for this branch is not properly sandboxed and may be used to run arbitrary JavaScript as well as system commands.
+impacted_packages:
+  - purl: pkg:npm/pouchdb
+    affected_versions: vers:npm/<=6.0.4
+    fixed_versions: vers:npm/>=6.0.5
+severities:
+  - score: 10
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/143.json
+weaknesses: []
+references:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/143.json
+    reference_type:
+    reference_id: 143

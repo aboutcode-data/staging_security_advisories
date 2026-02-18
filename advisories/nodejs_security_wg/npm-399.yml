@@ -1,0 +1,29 @@
+advisory_id: npm-399
+datasource_id: nodejs_security_wg/npm-399
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/399.json
+aliases:
+  - CVE-2018-3772
+summary: |
+  Command Injection - Generic
+  `whereis` concatenates unsanitized input into exec() command
+impacted_packages:
+  - purl: pkg:npm/whereis
+    affected_versions: vers:npm/<=0.4.0
+    fixed_versions: vers:npm/>=0.4.1
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/399.json
+weaknesses: []
+references:
+  - url: https://github.com/vvo/node-whereis/commit/0f64e3780235004fb6e43bfd153ea3e0e210ee2b
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/319476
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/399.json
+    reference_type:
+    reference_id: 399

@@ -1,0 +1,25 @@
+advisory_id: npm-381
+datasource_id: nodejs_security_wg/npm-381
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/381.json
+aliases:
+  - CVE-2018-3725
+summary: hekto suffers from Path Traversal vulnerability which allows to read content of arbitrary
+  files
+impacted_packages:
+  - purl: pkg:npm/hekto
+    affected_versions: vers:npm/<0.2.3
+    fixed_versions: vers:npm/>=0.2.3
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/381.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/311218
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/381.json
+    reference_type:
+    reference_id: 381

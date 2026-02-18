@@ -1,0 +1,28 @@
+advisory_id: npm-417
+datasource_id: nodejs_security_wg/npm-417
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/417.json
+aliases: []
+summary: |
+  Denial of Service
+  `foreman` is vulnerable to ReDoS in path
+impacted_packages:
+  - purl: pkg:npm/foreman
+    affected_versions: vers:npm/<=2.0.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/417.json
+weaknesses: []
+references:
+  - url: https://github.com/strongloop/node-foreman/blob/v2.0.0/forward.js#L30
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/320586
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/417.json
+    reference_type:
+    reference_id: 417

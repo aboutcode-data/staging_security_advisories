@@ -1,0 +1,30 @@
+advisory_id: npm-148
+datasource_id: nodejs_security_wg/npm-148
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/148.json
+aliases: []
+summary: |
+  Broken CORS
+  Sails is an MVC style framework for building realtime web applications.
+
+  Version 0.12.6 and lower have an issue with the CORS configuration where the value of the origin header is reflected as the value for the Access-Control-Allow-Origin header.  This would allow an attacker to make AJAX requests to vulnerable hosts through cross site scripting or a malicious HTML Document, effectively bypassing the Same Origin Policy. Note that this is only an issue when `allRoutes` is set to `true` and `origin` is set to `*` or left commented out in the sails CORS config file.  The problem can be compounded when the cors `credentials` setting is not provided.  At that point authenticated cross domain requests are possible.
+impacted_packages:
+  - purl: pkg:npm/sails
+    affected_versions: vers:npm/<=0.12.7
+    fixed_versions: vers:npm/>0.12.7
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/148.json
+weaknesses: []
+references:
+  - url: http://sailsjs.org/documentation/concepts/security/cors
+    reference_type:
+    reference_id:
+  - url: http://sailsjs.org/documentation/reference/configuration/sails-config-cors
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/148.json
+    reference_type:
+    reference_id: 148

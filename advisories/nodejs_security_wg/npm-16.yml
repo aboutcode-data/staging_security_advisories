@@ -1,0 +1,58 @@
+advisory_id: npm-16
+datasource_id: nodejs_security_wg/npm-16
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/16.json
+aliases:
+  - CVE-2013-4660
+summary: |
+  Deserialization Code Execution
+  The JS-YAML module for Node.js contained a code execution vulnerability prior to version 2.0.5. The maintainers of JS-YAML have patched this vulnerability and, beginning in version 2.1.0, have provided a safeLoad method for parsing YAML. Developers that use this module should make sure they have upgraded and should strongly consider porting their code to use the new safeLoad method.
+
+  ### Details
+  The module allowed code execution due to a custom data-type that it defined and parsed called !!js/function. The way it would parse the data was to create a new Function object in JavaScript based on the input, which is equivalent to calling eval on the input:
+
+  ```
+  function resolveJavascriptFunction(object /*, explicit*/) {
+    /*jslint evil:true*/
+    var func;
+
+    try {
+      func = new Function('return ' + object);
+      return func();
+    } catch (error) {
+      return NIL;
+    }
+  }
+  ```
+  That meant the code snippet below, when run, would execute code instead of simply defining a function:
+
+  ```
+  var yaml = require('js-yaml');
+
+  x = "test: !!js/function > \n  \
+  function f() { \n    \
+  console.log(1); \n  \
+  }();"
+
+  yaml.load(x);
+  ```
+impacted_packages:
+  - purl: pkg:npm/js-yaml
+    affected_versions: vers:npm/<2.0.5
+    fixed_versions: vers:npm/>=2.0.5
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/16.json
+weaknesses: []
+references:
+  - url: https://nealpoole.com/blog/2013/06/code-execution-via-yaml-in-js-yaml-nodejs-module/)
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/16.json
+    reference_type:
+    reference_id: 16
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/local/28655.rb
+    reference_type: exploit
+    reference_id: CVE-2013-4660;OSVDB-94656

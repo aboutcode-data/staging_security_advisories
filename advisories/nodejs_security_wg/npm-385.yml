@@ -1,0 +1,29 @@
+advisory_id: npm-385
+datasource_id: nodejs_security_wg/npm-385
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/385.json
+aliases:
+  - CVE-2018-3715
+summary: |
+  Path Traversal
+  path traversal in glance static file server allows to read content of arbitrary file
+impacted_packages:
+  - purl: pkg:npm/glance
+    affected_versions: vers:npm/<3.0.4
+    fixed_versions: vers:npm/>=3.0.4
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/385.json
+weaknesses: []
+references:
+  - url: https://github.com/jarofghosts/glance/commit/8cfd88e44ebd3f07e3a2eaf376a3e758b6c4ca19
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/310106
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/385.json
+    reference_type:
+    reference_id: 385

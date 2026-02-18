@@ -1,0 +1,30 @@
+advisory_id: npm-18
+datasource_id: nodejs_security_wg/npm-18
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/18.json
+aliases:
+  - CVE-2015-7294
+summary: "LDAP Injection\nldapauth-fork is a module forked from node-ldapauth and is used for\
+  \ ldap authentication  \nThe username parameter is not filtered as per [LDAP Escape Specifications](https://tools.ietf.org/search/rfc4515#section-3)\
+  \  \nA malicious user is able to change their name to certain LDAP commands and run anything\
+  \ that they want."
+impacted_packages:
+  - purl: pkg:npm/ldapauth-fork
+    affected_versions: vers:npm/<2.3.3
+    fixed_versions: vers:npm/>=2.3.3
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/18.json
+weaknesses: []
+references:
+  - url: https://github.com/vesse/node-ldapauth-fork/commit/3feea43e243698bcaeffa904a7324f4d96df60e4
+    reference_type:
+    reference_id:
+  - url: https://github.com/vesse/node-ldapauth-fork/issues/21
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/18.json
+    reference_type:
+    reference_id: 18

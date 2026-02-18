@@ -1,0 +1,20 @@
+advisory_id: npm-360
+datasource_id: nodejs_security_wg/npm-360
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/360.json
+aliases: []
+summary: |
+  Directory Traversal
+  A crafted GET request can be leveraged to traverse the directory structure of a host using the augustine web server package, and request arbitrary files outside of the specified web root.
+impacted_packages:
+  - purl: pkg:npm/augustine
+    affected_versions: vers:npm/<=0.2.3
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/296282
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/360.json
+    reference_type:
+    reference_id: 360

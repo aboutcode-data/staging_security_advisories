@@ -1,0 +1,28 @@
+advisory_id: npm-139
+datasource_id: nodejs_security_wg/npm-139
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/139.json
+aliases:
+  - CVE-2016-1000241
+summary: |
+  Cross-Site Scripting (XSS)
+  PivotTable.js is a Javascript Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI.
+
+  Due to a change from text to html functions in how JSON elements are rendered, a cross site scripting (XSS) vulnerability was introduced in version 1.4.0.  This vulnerability remained in place until version 2.0.0.
+impacted_packages:
+  - purl: pkg:npm/pivottable
+    affected_versions: vers:npm/>=1.4.0|<2.0.0
+    fixed_versions: vers:npm/>=2.0.0
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/139.json
+weaknesses: []
+references:
+  - url: https://github.com/nicolaskruchten/pivottable/pull/401
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/139.json
+    reference_type:
+    reference_id: 139

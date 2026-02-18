@@ -1,0 +1,25 @@
+advisory_id: npm-391
+datasource_id: nodejs_security_wg/npm-391
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/391.json
+aliases: []
+summary: |
+  Memory Exposure
+  bl.append(number) in the affected `bl` versions passes a number to Buffer constructor, appending a chunk of uninitialized memory
+impacted_packages:
+  - purl: pkg:npm/bl
+    affected_versions: vers:npm/<=0.9.4|1.0.0
+    fixed_versions: vers:npm/>=0.9.5|<1.0.0|>=1.0.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/391.json
+weaknesses: []
+references:
+  - url: https://github.com/rvagg/bl/pull/22
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/391.json
+    reference_type:
+    reference_id: 391

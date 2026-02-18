@@ -1,0 +1,29 @@
+advisory_id: npm-325
+datasource_id: nodejs_security_wg/npm-325
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/325.json
+aliases: []
+summary: "Cross-Site Scripting\ni18next is a language translation framework.\n\nBecause of how\
+  \ the interpolation is implemented, making replacements from the dictionary one at a time,\
+  \ untrusted user input can use the name of one of the dictionary keys to inject script into\
+  \ the browser.\n\nExample: \n```\nvar init = i18n.init({debug: true}, function(){\n  var test\
+  \ = i18n.t('__firstName__ __lastName__', {\n        escapeInterpolation: true,\n        firstName:\
+  \ '__lastNameHTML__',\n        lastName: '<script>',\n  });\n  console.log(test);\n});\n//\
+  \ equals \"<script> &lt;script&gt;\"\n```"
+impacted_packages:
+  - purl: pkg:npm/i18next
+    affected_versions: vers:npm/<=1.10.2
+    fixed_versions: vers:npm/>=1.10.3
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/325.json
+weaknesses: []
+references:
+  - url: https://github.com/i18next/i18next/pull/443)
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/325.json
+    reference_type:
+    reference_id: 325

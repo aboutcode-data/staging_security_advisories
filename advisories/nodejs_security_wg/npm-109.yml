@@ -1,0 +1,32 @@
+advisory_id: npm-109
+datasource_id: nodejs_security_wg/npm-109
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/109.json
+aliases: []
+summary: |
+  Potential SQL Injection
+  sequalize is an Object-relational mapping, or a middleman to convert things from Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server into usable data for NodeJS
+
+  A fix was pushed out that fixed potential SQL injection.
+
+  The two fixes were
+
+  - [REMOVED/SECURITY] findOne no longer takes a string / integer / binary argument to represent a primaryKey. Use findById instead
+  - [REMOVED/SECURITY] where: "raw query" is no longer legal, you must now explicitly use where: ["raw query", [replacements]]
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<=2.1.3
+    fixed_versions: vers:npm/>=3.0.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/109.json
+weaknesses: []
+references:
+  - url: https://github.com/sequelize/sequelize/blob/master/changelog.md#300
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/109.json
+    reference_type:
+    reference_id: 109

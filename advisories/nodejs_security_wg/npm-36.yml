@@ -1,0 +1,28 @@
+advisory_id: npm-36
+datasource_id: nodejs_security_wg/npm-36
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/36.json
+aliases:
+  - CVE-2014-3744
+summary: |
+  Directory Traversal
+  Versions prior to 0.2.5 did not properly prevent folder traversal. Literal dots in a path were resolved out, but url encoded dots were not. Thus, a request like ``` /%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd ``` would leak sensitive data from the server.
+
+  As of version 0.2.5, any ```'/../'``` in the request path, urlencoded or not, will be replaced with ```'/'```. If your application depends on url traversal, then you are encouraged to please refactor so that you do not depend on having ```..``` in url paths, as this tends to expose data that you may be surprised to be exposing.
+impacted_packages:
+  - purl: pkg:npm/st
+    affected_versions: vers:npm/<0.2.5
+    fixed_versions: vers:npm/>=0.2.5
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/36.json
+weaknesses: []
+references:
+  - url: https://github.com/isaacs/st#security-status
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/36.json
+    reference_type:
+    reference_id: 36

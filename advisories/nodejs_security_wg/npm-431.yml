@@ -1,0 +1,25 @@
+advisory_id: npm-431
+datasource_id: nodejs_security_wg/npm-431
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/431.json
+aliases: []
+summary: |
+  Out-of-bounds Read
+  `npmconf` (and `npm` js api) allocate and write to disk uninitialized memory content when a typed number is passed as input on Node.js 4.x
+impacted_packages:
+  - purl: pkg:npm/npmconf
+    affected_versions: vers:npm/<=2.1.2
+    fixed_versions: vers:npm/>=2.1.3
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/431.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/320269
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/431.json
+    reference_type:
+    reference_id: 431

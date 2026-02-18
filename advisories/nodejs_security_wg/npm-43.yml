@@ -1,0 +1,33 @@
+advisory_id: npm-43
+datasource_id: nodejs_security_wg/npm-43
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/43.json
+aliases:
+  - CVE-2014-9772
+summary: |
+  XSS Filter Bypass via Encoded URL
+  The validator module for Node.js contains functionality meant to filter potential XSS attacks (a filter called xss). A method of
+  bypassing the filter via an encoded URL has been publicly disclosed. In general, because the function’s filtering is blacklist-based it is likely that other bypasses will be discovered in the future. Developers are encouraged not to use the xss filter function in this package.
+
+  ### Details:
+  The xss() function removes the word "javascript" when contained inside an attribute. However, it does not properly handle cases where
+  characters have been hex-encoded. As a result, it is possible to build an input that bypasses the filter but which the browser will accept as valid JavaScript.
+
+  For example, browsers interpret `<a href="jav&#x61;script:...">abc</a>` as `<a href="javascript:...">abc</a>`.
+impacted_packages:
+  - purl: pkg:npm/validator
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/>=2.0.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/43.json
+weaknesses: []
+references:
+  - url: https://github.com/chriso/validator.js/issues/181
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/43.json
+    reference_type:
+    reference_id: 43

@@ -1,0 +1,26 @@
+advisory_id: npm-363
+datasource_id: nodejs_security_wg/npm-363
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/363.json
+aliases:
+  - CVE-2018-3712
+summary: |
+  Directory Traversal
+  serve handles directory listing on its own and does not protect against listing of any directory on the remote server.
+impacted_packages:
+  - purl: pkg:npm/serve
+    affected_versions: vers:npm/<=6.4.8
+    fixed_versions: vers:npm/>=6.4.9
+severities:
+  - score: '9.3'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/363.json
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/307666
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/363.json
+    reference_type:
+    reference_id: 363

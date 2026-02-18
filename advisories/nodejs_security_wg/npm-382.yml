@@ -1,0 +1,25 @@
+advisory_id: npm-382
+datasource_id: nodejs_security_wg/npm-382
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/382.json
+aliases: []
+summary: |
+  XSS in links
+  mrk.js suffered from a XSS vulnerability when markdown was converted to HTML.
+impacted_packages:
+  - purl: pkg:npm/mrk.js
+    affected_versions: vers:npm/<2.0.1
+    fixed_versions: vers:npm/>=2.0.1
+severities:
+  - score: '8.9'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/382.json
+weaknesses: []
+references:
+  - url: https://github.com/heyitsmeuralex/mrk/pull/3
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/382.json
+    reference_type:
+    reference_id: 382

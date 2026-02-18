@@ -1,0 +1,34 @@
+advisory_id: npm-24
+datasource_id: nodejs_security_wg/npm-24
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/24.json
+aliases:
+  - CVE-2015-1370
+summary: |
+  VBScript Content Injection
+  Marked 0.3.2 and earlier is vulnerable to content injection even when `sanitize: true` is enabled.
+
+  `[xss link](vbscript:alert(1&#41;)`
+
+  will get a link
+
+  `<a href="vbscript:alert(1)">xss link</a>`
+
+  this script does not work in IE 11 edge mode, but works in IE 10 compatibility view.
+impacted_packages:
+  - purl: pkg:npm/marked
+    affected_versions: vers:npm/<=0.3.2
+    fixed_versions: vers:npm/>=0.3.3
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/24.json
+weaknesses: []
+references:
+  - url: https://github.com/chjj/marked/issues/492
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/24.json
+    reference_type:
+    reference_id: 24

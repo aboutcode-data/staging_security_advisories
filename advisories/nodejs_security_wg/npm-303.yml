@@ -1,0 +1,26 @@
+advisory_id: npm-303
+datasource_id: nodejs_security_wg/npm-303
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/303.json
+aliases: []
+summary: "Directory Traversal\nhostr is a simple web server that serves up the contents of the\
+  \ current directory.  \nThere is a directory traversal vulnerability in hostr that allows\
+  \ an attacker to read files outside the current directory by sending `../` in the url path\
+  \ for GET requests."
+impacted_packages:
+  - purl: pkg:npm/hostr
+    affected_versions: vers:npm/<=2.3.5
+    fixed_versions: vers:npm/>=2.3.6
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/303.json
+weaknesses: []
+references:
+  - url: https://github.com/henrytseng/hostr/issues/8)
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/303.json
+    reference_type:
+    reference_id: 303

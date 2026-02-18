@@ -1,0 +1,20 @@
+advisory_id: npm-358
+datasource_id: nodejs_security_wg/npm-358
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/358.json
+aliases: []
+summary: |
+  Directory Traversal
+  A crafted request can be used to traverse the directory structure of a host using the featurebook package, and request arbitrary files outside of the specified web root.
+impacted_packages:
+  - purl: pkg:npm/featurebook
+    affected_versions: vers:npm/<=0.0.32
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/296305
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/358.json
+    reference_type:
+    reference_id: 358

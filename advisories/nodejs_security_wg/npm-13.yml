@@ -1,0 +1,26 @@
+advisory_id: npm-13
+datasource_id: nodejs_security_wg/npm-13
+datasource_url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/13.json
+aliases:
+  - CVE-2013-7378
+summary: |
+  Potential Command Injection
+  Untrusted input passed in to the hubot-scripts/package/src/scripts/email.coffee module can allow for command injection. This may be unexpected behavior for the caller.
+
+  ### Mitigating Factors
+  The email script is not enabled by default, it has to be manually added to hubot's list of loaded scripts.
+impacted_packages:
+  - purl: pkg:npm/hubot-scripts
+    affected_versions: vers:npm/<=2.4.3
+    fixed_versions: vers:npm/>2.4.3
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/13.json
+weaknesses: []
+references:
+  - url: https://github.com/nodejs/security-wg/blob/main/vuln/npm/13.json
+    reference_type:
+    reference_id: 13
