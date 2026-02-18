@@ -1,0 +1,24 @@
+advisory_id: maven/com.hazelcast.jet/hazelcast-jet/GMS-2022-12
+datasource_id: gitlab_importer_v2/maven/com.hazelcast.jet/hazelcast-jet/GMS-2022-12
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/com.hazelcast.jet/hazelcast-jet/GMS-2022-12.yml
+aliases:
+  - GHSA-v57x-gxfj-484q
+  - GMS-2022-12
+summary: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+  in com.hazelcast.jet:hazelcast-jet.
+impacted_packages:
+  - purl: pkg:maven/com.hazelcast.jet/hazelcast-jet
+    affected_versions: vers:maven/>=4.1|<4.5.3
+    fixed_versions: vers:maven/4.5.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-78
+  - CWE-937
+references:
+  - url: https://github.com/hazelcast/hazelcast/security/advisories/GHSA-v57x-gxfj-484q
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-v57x-gxfj-484q
+    reference_type:
+    reference_id: GHSA-v57x-gxfj-484q

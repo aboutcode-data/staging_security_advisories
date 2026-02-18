@@ -1,0 +1,45 @@
+advisory_id: maven/com.vaadin/vaadin-upload-flow/GHSA-94g8-xv23-7656
+datasource_id: gitlab_importer_v2/maven/com.vaadin/vaadin-upload-flow/GHSA-94g8-xv23-7656
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/com.vaadin/vaadin-upload-flow/GHSA-94g8-xv23-7656.yml
+aliases:
+  - GHSA-94g8-xv23-7656
+summary: |
+  Vaadin Flow Components possible file bypass via upload validation on the server-side
+  When the Vaadin Upload's start listener is used to validate metadata about an incoming upload, it is possible to bypass the upload validation. Users of affected versions should apply the upgrade to a more recent Vaadin version.
+impacted_packages:
+  - purl: pkg:maven/com.vaadin/vaadin-upload-flow
+    affected_versions: vers:maven/>=2.0.0|<14.13.1|>=23.0.0|<23.6.2|>=24.0.0|<24.7.7
+    fixed_versions: vers:maven/14.13.1|23.6.2|24.7.7
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/com.vaadin/vaadin-upload-flow/GHSA-94g8-xv23-7656.yml
+weaknesses:
+  - CWE-434
+  - CWE-1035
+  - CWE-937
+  - CWE-20
+references:
+  - url: https://github.com/vaadin/flow-components
+    reference_type:
+    reference_id:
+  - url: https://github.com/vaadin/flow-components/commit/bfe9e507cdcc5d90a2312c8f0162f798a29ba635
+    reference_type:
+    reference_id:
+  - url: https://github.com/vaadin/flow-components/pull/7616
+    reference_type:
+    reference_id:
+  - url: https://github.com/vaadin/flow-components/security/advisories/GHSA-94g8-xv23-7656
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-9467
+    reference_type:
+    reference_id:
+  - url: https://vaadin.com/security/cve-2025-9467
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-94g8-xv23-7656
+    reference_type:
+    reference_id: GHSA-94g8-xv23-7656

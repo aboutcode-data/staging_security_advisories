@@ -1,0 +1,51 @@
+advisory_id: maven/io.github.openfeign.querydsl/querydsl-apt/GHSA-wpvf-5mc3-hv6m
+datasource_id: gitlab_importer_v2/maven/io.github.openfeign.querydsl/querydsl-apt/GHSA-wpvf-5mc3-hv6m
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/io.github.openfeign.querydsl/querydsl-apt/GHSA-wpvf-5mc3-hv6m.yml
+aliases:
+  - GHSA-wpvf-5mc3-hv6m
+summary: |
+  Duplicate Advisory: Querydsl SQL/HQL injection
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-6q3q-6v5j-h6vg. This link is maintained to preserve external references.
+
+  ## Original Description
+  Querydsl 5.1.0 allows SQL/HQL injection in orderBy in JPAQuery.
+impacted_packages:
+  - purl: pkg:maven/io.github.openfeign.querydsl/querydsl-apt
+    affected_versions:
+    fixed_versions: vers:maven/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/io.github.openfeign.querydsl/querydsl-apt/GHSA-wpvf-5mc3-hv6m.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-89
+references:
+  - url: https://github.com/CSIRTTrizna/CVE-2024-49203
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenFeign/querydsl
+    reference_type:
+    reference_id:
+  - url: https://github.com/querydsl/querydsl
+    reference_type:
+    reference_id:
+  - url: https://github.com/querydsl/querydsl/issues/3757
+    reference_type:
+    reference_id:
+  - url: https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_5_1_0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-49203
+    reference_type:
+    reference_id:
+  - url: https://www.csirt.sk/querydsl-java-library-vulnerability-permits-sql-hql-injection.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wpvf-5mc3-hv6m
+    reference_type:
+    reference_id: GHSA-wpvf-5mc3-hv6m

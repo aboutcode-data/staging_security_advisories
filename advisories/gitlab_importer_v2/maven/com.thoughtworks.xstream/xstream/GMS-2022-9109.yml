@@ -1,0 +1,33 @@
+advisory_id: maven/com.thoughtworks.xstream/xstream/GMS-2022-9109
+datasource_id: gitlab_importer_v2/maven/com.thoughtworks.xstream/xstream/GMS-2022-9109
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/com.thoughtworks.xstream/xstream/GMS-2022-9109.yml
+aliases:
+  - GHSA-3mq5-fq9h-gj7j
+  - GMS-2022-9109
+summary: |
+  Denial of Service due to parser crash
+  Those using Xstream to seralize XML data may be vulnerable to Denial of Service attacks (DOS). If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stackoverflow. This effect may support a denial of service attack.
+impacted_packages:
+  - purl: pkg:maven/com.thoughtworks.xstream/xstream
+    affected_versions: vers:maven/<=1.4.19
+    fixed_versions: vers:maven/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47367
+    reference_type:
+    reference_id:
+  - url: https://github.com/x-stream/xstream/issues/304
+    reference_type:
+    reference_id:
+  - url: https://github.com/x-stream/xstream/issues/314
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-40151
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-3mq5-fq9h-gj7j
+    reference_type:
+    reference_id: GHSA-3mq5-fq9h-gj7j

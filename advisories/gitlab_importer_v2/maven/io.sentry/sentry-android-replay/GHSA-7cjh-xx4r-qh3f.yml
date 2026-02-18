@@ -1,0 +1,49 @@
+advisory_id: maven/io.sentry/sentry-android-replay/GHSA-7cjh-xx4r-qh3f
+datasource_id: gitlab_importer_v2/maven/io.sentry/sentry-android-replay/GHSA-7cjh-xx4r-qh3f
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/io.sentry/sentry-android-replay/GHSA-7cjh-xx4r-qh3f.yml
+aliases:
+  - GHSA-7cjh-xx4r-qh3f
+summary: |
+  sentry-android unmasked sensitive data in Android Session Replays for users of Jetpack Compose 1.8+
+  Under specific circumstances, text composables may contain unmasked sensitive data in Android session replays.  You may be impacted if you meet the following conditions:
+  - Using any `sentry-android` with versions < 8.14.0
+  - Using Jetpack Compose >= [1.8.0-alpha08](https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.0-alpha08)
+  - Have configured Sentry Session Replays for Android
+
+  If you do not use Jetpack Compose or have never used a version >= 1.8.0-alpha08 you are not impacted. If you have not configured [Session Replays for Mobile](https://docs.sentry.io/product/explore/session-replay/mobile/) you are not impacted.
+impacted_packages:
+  - purl: pkg:maven/io.sentry/sentry-android-replay
+    affected_versions: vers:maven/<8.14.0
+    fixed_versions: vers:maven/8.14.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/io.sentry/sentry-android-replay/GHSA-7cjh-xx4r-qh3f.yml
+weaknesses:
+  - CWE-532
+  - CWE-937
+  - CWE-1035
+references:
+  - url: https://github.com/getsentry/sentry-java
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-java/commit/8bfa9cceab402e58f6723a0694158d27e8a41a56
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-java/issues/4467
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-java/pull/4485
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-java/releases/tag/8.14.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-java/security/advisories/GHSA-7cjh-xx4r-qh3f
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-7cjh-xx4r-qh3f
+    reference_type:
+    reference_id: GHSA-7cjh-xx4r-qh3f

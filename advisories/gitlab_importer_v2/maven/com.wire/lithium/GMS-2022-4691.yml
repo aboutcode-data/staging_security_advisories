@@ -1,0 +1,28 @@
+advisory_id: maven/com.wire/lithium/GMS-2022-4691
+datasource_id: gitlab_importer_v2/maven/com.wire/lithium/GMS-2022-4691
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/com.wire/lithium/GMS-2022-4691.yml
+aliases:
+  - GHSA-f36p-42jv-8rh2
+  - GMS-2022-4691
+summary: |
+  Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+  An XSS vulnerability in the provided (outdated) Swagger-UI is exploitable in applications using lithium with Swagger-UI enabled. This allows an attacker gain Remote Code Execution (RCE) and potentially exfiltrate secrets in the context of this swagger session.
+impacted_packages:
+  - purl: pkg:maven/com.wire/lithium
+    affected_versions: vers:maven/<3.4.2
+    fixed_versions: vers:maven/3.4.2
+severities: []
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/wireapp/lithium/commit/8b9b406d608fe482ec0e7adf8705834bca92d7df
+    reference_type:
+    reference_id:
+  - url: https://github.com/wireapp/lithium/security/advisories/GHSA-f36p-42jv-8rh2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-f36p-42jv-8rh2
+    reference_type:
+    reference_id: GHSA-f36p-42jv-8rh2

@@ -1,0 +1,26 @@
+advisory_id: maven/com.vaadin/flow-server/GMS-2021-141
+datasource_id: gitlab_importer_v2/maven/com.vaadin/flow-server/GMS-2021-141
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/com.vaadin/flow-server/GMS-2021-141.yml
+aliases:
+  - GHSA-c57f-4vp2-jqhm
+  - GMS-2021-141
+summary: |
+  Insecure temporary directory usage in frontend build functionality of Vaadin 14 and 15-19
+  Insecure temporary directory usage in frontend build functionality of `com.vaadin:flow-server` versions 2.0.9 through 2.5.2 (Vaadin 14.0.3 through Vaadin 14.5.2), 3.0 prior to 6.0 (Vaadin 15 prior to 19), and 6.0.0 through 6.0.5 (Vaadin 19.0.0 through 19.0.4) allows local users to inject malicious code into frontend resources during application rebuilds.
+
+  - https://vaadin.com/security/cve-2021-31411
+impacted_packages:
+  - purl: pkg:maven/com.vaadin/flow-server
+    affected_versions: vers:maven/>=2.0.9|<=2.5.2|>=3.0.0|<=6.0.5
+    fixed_versions: vers:maven/2.5.3|6.0.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/vaadin/flow/security/advisories/GHSA-c57f-4vp2-jqhm
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c57f-4vp2-jqhm
+    reference_type:
+    reference_id: GHSA-c57f-4vp2-jqhm

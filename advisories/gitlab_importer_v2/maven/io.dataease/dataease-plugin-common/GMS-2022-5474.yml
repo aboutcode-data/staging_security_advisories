@@ -1,0 +1,27 @@
+advisory_id: maven/io.dataease/dataease-plugin-common/GMS-2022-5474
+datasource_id: gitlab_importer_v2/maven/io.dataease/dataease-plugin-common/GMS-2022-5474
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/io.dataease/dataease-plugin-common/GMS-2022-5474.yml
+aliases:
+  - CVE-2022-39312
+  - GHSA-q4qq-jhjv-7rh2
+  - GMS-2022-5474
+summary: Improper Neutralization in io.dataease:dataease-plugin-common. If an attacker can add
+  some parameters in JDBC url, and connect to evil mysql server, they can trigger the mysql
+  jdbc deserialization vulnerability, and eventually the attacker can execute through the deserialization
+  vulnerability system commands and obtain server privileges.
+impacted_packages:
+  - purl: pkg:maven/io.dataease/dataease-plugin-common
+    affected_versions: vers:maven/<1.15.2
+    fixed_versions: vers:maven/1.15.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-707
+references:
+  - url: https://github.com/dataease/dataease/security/advisories/GHSA-q4qq-jhjv-7rh2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-q4qq-jhjv-7rh2
+    reference_type:
+    reference_id: GHSA-q4qq-jhjv-7rh2
