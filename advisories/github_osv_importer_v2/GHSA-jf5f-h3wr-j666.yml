@@ -1,0 +1,32 @@
+advisory_id: GHSA-jf5f-h3wr-j666
+datasource_id: github_osv_importer_v2/GHSA-jf5f-h3wr-j666
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jf5f-h3wr-j666/GHSA-jf5f-h3wr-j666.json
+aliases:
+  - CVE-2018-5960
+summary: |
+  SQL Injection in Zenario 7.1-7.6
+  Zenario v7.1 - v7.6 has SQL injection via the `Name` input field of organizer.php or admin_boxes.ajax.php in the `Categories - Edit` module.
+impacted_packages:
+  - purl: pkg:composer/tribalsystems/zenario
+    affected_versions: vers:composer/>=7.1.0|<=7.6.0
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jf5f-h3wr-j666/GHSA-jf5f-h3wr-j666.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-5960
+    reference_type:
+    reference_id:
+  - url: https://www.vulnerability-lab.com/get_content.php?id=2043
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-mjr5-v9c9-mm7g
+datasource_id: github_osv_importer_v2/GHSA-mjr5-v9c9-mm7g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-mjr5-v9c9-mm7g/GHSA-mjr5-v9c9-mm7g.json
+aliases:
+  - CVE-2022-40277
+summary: |
+  Joplin Remote Code Execution
+  Joplin version 2.8.8 allows an external attacker to execute arbitrary commands remotely on any client that opens a link in a malicious markdown file, via Joplin. This is possible because the application does not properly validate the schema/protocol of existing links in the markdown file before passing them to the `shell.openExternal` function.
+impacted_packages:
+  - purl: pkg:npm/joplin
+    affected_versions: vers:npm/<=2.8.8
+    fixed_versions:
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-mjr5-v9c9-mm7g/GHSA-mjr5-v9c9-mm7g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://fluidattacks.com/advisories/skrillex
+    reference_type:
+    reference_id:
+  - url: https://github.com/laurent22/joplin
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-40277
+    reference_type:
+    reference_id:

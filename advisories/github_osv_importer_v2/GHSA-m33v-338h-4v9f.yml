@@ -1,0 +1,58 @@
+advisory_id: GHSA-m33v-338h-4v9f
+datasource_id: github_osv_importer_v2/GHSA-m33v-338h-4v9f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-m33v-338h-4v9f/GHSA-m33v-338h-4v9f.json
+aliases:
+  - CVE-2021-21298
+summary: |
+  Path traversal in Node-Red
+  ### Impact
+
+  This vulnerability allows arbitrary path traversal via the Projects API.
+
+  If the Projects feature is enabled, a user with `projects.read` permission is able to access any file via the Projects API.
+
+  ### Patches
+
+  The issue has been patched in Node-RED 1.2.8
+
+  ### Workarounds
+
+  The vulnerability applies only to the Projects feature which is not enabled by default in Node-RED.
+
+  The primary workaround is not give untrusted users read access to the Node-RED editor.
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at [team@nodered.org](mailto:team@nodered.org)
+
+  ### Acknowledgements
+
+  Thanks to the Tencent Woodpecker Security Team for disclosing this vulnerability.
+impacted_packages:
+  - purl: pkg:npm/%40node-red/runtime
+    affected_versions: vers:npm/<1.2.8
+    fixed_versions: vers:npm/1.2.8
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/node-red/node-red/commit/74db3e17d075f23d9c95d7871586cf461524c456
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-red/node-red/releases/tag/1.2.8
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-red/node-red/security/advisories/GHSA-m33v-338h-4v9f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-21298
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/@node-red/runtime
+    reference_type:
+    reference_id:

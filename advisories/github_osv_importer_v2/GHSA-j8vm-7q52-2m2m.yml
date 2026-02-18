@@ -1,0 +1,41 @@
+advisory_id: GHSA-j8vm-7q52-2m2m
+datasource_id: github_osv_importer_v2/GHSA-j8vm-7q52-2m2m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-j8vm-7q52-2m2m/GHSA-j8vm-7q52-2m2m.json
+aliases:
+  - CVE-2025-59019
+summary: |
+  TYPO3 CSV download feature information disclosure
+  Missing authorization checks in the CSV download feature of TYPO3 CMS versions 11.0.0‑11.5.47, 12.0.0‑12.4.36, and 13.0.0‑13.4.17 allow backend users to disclose information from arbitrary database tables stored within the users' web mounts without having access to them.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-backend
+    affected_versions: vers:composer/>=12.0.0|<12.4.37
+    fixed_versions: vers:composer/12.4.37
+  - purl: pkg:composer/typo3/cms-backend
+    affected_versions: vers:composer/>=13.0.0|<13.4.18
+    fixed_versions: vers:composer/13.4.18
+  - purl: pkg:composer/typo3/cms-recordlist
+    affected_versions: vers:composer/<11.5.48
+    fixed_versions: vers:composer/12.4.37
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-j8vm-7q52-2m2m/GHSA-j8vm-7q52-2m2m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/TYPO3-CMS/backend/commit/c983415f062c32f8edbb78544a0ff3219bc35d17
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-59019
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2025-023
+    reference_type:
+    reference_id:

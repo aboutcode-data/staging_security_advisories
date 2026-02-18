@@ -1,0 +1,63 @@
+advisory_id: GHSA-mh2x-fcqh-fmqv
+datasource_id: github_osv_importer_v2/GHSA-mh2x-fcqh-fmqv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-mh2x-fcqh-fmqv/GHSA-mh2x-fcqh-fmqv.json
+aliases:
+  - CVE-2024-53262
+summary: "@sveltejs/kit has unescaped error message included on error page\n### Summary\n\n\
+  The static error.html template for errors contains placeholders that are replaced without\
+  \ escaping the content first.\n\n### Details\n\nFrom https://kit.svelte.dev/docs/errors:\n\
+  \n> error.html is the page that is rendered when everything else fails. It can contain the\
+  \ following placeholders:\n%sveltekit.status% — the HTTP status\n%sveltekit.error.message%\
+  \ — the error message\n\nThis leads to possible injection if an app explicitly creates an\
+  \ error with a message that contains user controlled content that ends up being something\
+  \ like this inside a server handle function: \n```js\nerror(500, '<script>alert(\"boom\")</script>');\n\
+  ```\nUncaught errors cannot be exploited like this, as they always render the message \"Internal\
+  \ error\".\n\nEscaping the message string in the function that creates the html output can\
+  \ be done to improve safety for applications that are using custom errors on the server.\n\
+  \n### PoC\n\nNone provided\n\n### Impact\n\nOnly applications where user provided input is\
+  \ used in the `Error` message will be vulnerable, so the vast majority of applications will\
+  \ not be vulnerable"
+impacted_packages:
+  - purl: pkg:npm/%40sveltejs/kit
+    affected_versions: vers:npm/<2.8.3
+    fixed_versions: vers:npm/2.8.3
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-mh2x-fcqh-fmqv/GHSA-mh2x-fcqh-fmqv.json
+  - score: '1.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-mh2x-fcqh-fmqv/GHSA-mh2x-fcqh-fmqv.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/sveltejs/kit
+    reference_type:
+    reference_id:
+  - url: https://github.com/sveltejs/kit/commit/134e36343ef57ed7e6e2b3bb9e7f05ad37865794
+    reference_type:
+    reference_id:
+  - url: https://github.com/sveltejs/kit/pull/13050
+    reference_type:
+    reference_id:
+  - url: https://github.com/sveltejs/kit/releases/tag/%40sveltejs%2Fkit%402.8.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/sveltejs/kit/security/advisories/GHSA-mh2x-fcqh-fmqv
+    reference_type:
+    reference_id:
+  - url: https://kit.svelte.dev/docs/errors
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-53262
+    reference_type:
+    reference_id:

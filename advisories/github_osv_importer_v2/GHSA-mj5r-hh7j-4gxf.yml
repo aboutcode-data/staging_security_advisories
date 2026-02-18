@@ -1,0 +1,65 @@
+advisory_id: GHSA-mj5r-hh7j-4gxf
+datasource_id: github_osv_importer_v2/GHSA-mj5r-hh7j-4gxf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-mj5r-hh7j-4gxf/GHSA-mj5r-hh7j-4gxf.json
+aliases: []
+summary: |
+  OpenClaw Telegram allowlist authorization accepted mutable usernames
+  ## Summary
+  Telegram allowlist authorization could match on `@username` (mutable/recyclable) instead of immutable numeric sender IDs.
+
+  ## Impact
+  Operators who treat Telegram allowlists as strict identity controls could unintentionally grant access if a username changes hands (identity rebinding/spoof risk). This can allow an unauthorized sender to interact with the bot in allowlist mode.
+
+  ## Affected Packages / Versions
+  - npm `openclaw`: <= 2026.2.13
+  - npm `clawdbot`: <= 2026.1.24-3
+
+  ## Fix
+  Telegram allowlist authorization now requires numeric Telegram sender IDs only. `@username` allowlist principals are rejected.
+
+  A security audit warning was added to flag legacy configs that still contain non-numeric Telegram allowlist entries.
+
+  `openclaw doctor --fix` now attempts to resolve `@username` allowFrom entries to numeric IDs (best-effort; requires a Telegram bot token).
+
+  ## Fix Commit(s)
+  - e3b432e481a96b8fd41b91273818e514074e05c3
+  - 9e147f00b48e63e7be6964e0e2a97f2980854128
+
+  Thanks @vincentkoc for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.14
+    fixed_versions: vers:npm/2026.2.14
+  - purl: pkg:npm/clawdbot
+    affected_versions: vers:npm/<=2026.1.24-3
+    fixed_versions:
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-mj5r-hh7j-4gxf/GHSA-mj5r-hh7j-4gxf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-290
+  - CWE-284
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/9e147f00b48e63e7be6964e0e2a97f2980854128
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/e3b432e481a96b8fd41b91273818e514074e05c3
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.14
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-mj5r-hh7j-4gxf
+    reference_type:
+    reference_id:

@@ -1,0 +1,53 @@
+advisory_id: GHSA-m3q7-rj8g-m457
+datasource_id: github_osv_importer_v2/GHSA-m3q7-rj8g-m457
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/08/GHSA-m3q7-rj8g-m457/GHSA-m3q7-rj8g-m457.json
+aliases:
+  - CVE-2015-7565
+summary: |
+  ember-source Cross-site Scripting vulnerability
+  Cross-site scripting (XSS) vulnerability in Ember.js 1.8.x through 1.10.x, 1.11.x before 1.11.4, 1.12.x before 1.12.2, 1.13.x before 1.13.12, 2.0.x before 2.0.3, 2.1.x before 2.1.2, and 2.2.x before 2.2.1 allows remote attackers to inject arbitrary web script or HTML.
+impacted_packages:
+  - purl: pkg:gem/ember-source
+    affected_versions: vers:gem/>=1.8.0|<1.11.4
+    fixed_versions: vers:gem/1.11.4
+  - purl: pkg:gem/ember-source
+    affected_versions: vers:gem/>=1.12.0|<1.12.2
+    fixed_versions: vers:gem/1.12.2
+  - purl: pkg:gem/ember-source
+    affected_versions: vers:gem/>=1.13.0|<1.13.12
+    fixed_versions: vers:gem/1.13.12
+  - purl: pkg:gem/ember-source
+    affected_versions: vers:gem/>=2.0.0|<2.0.3
+    fixed_versions: vers:gem/2.0.3
+  - purl: pkg:gem/ember-source
+    affected_versions: vers:gem/>=2.1.0|<2.1.2
+    fixed_versions: vers:gem/2.1.2
+  - purl: pkg:gem/ember-source
+    affected_versions: vers:gem/2.2.0
+    fixed_versions: vers:gem/2.2.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/08/GHSA-m3q7-rj8g-m457/GHSA-m3q7-rj8g-m457.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://emberjs.com/blog/2016/01/14/security-releases-ember-1-11-4-1-12-2-1-13-12-2-0-3-2-1-2-2-2-1.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/ember-source/CVE-2015-7565.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#!topic/ember-security/OfyQkoSuppY
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-7565
+    reference_type:
+    reference_id:

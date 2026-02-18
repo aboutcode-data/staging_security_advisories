@@ -1,0 +1,70 @@
+advisory_id: GHSA-mr3q-g2mv-mr4q
+datasource_id: github_osv_importer_v2/GHSA-mr3q-g2mv-mr4q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-mr3q-g2mv-mr4q/GHSA-mr3q-g2mv-mr4q.json
+aliases:
+  - CVE-2025-61921
+summary: |
+  Sinatra is vulnerable to ReDoS through ETag header value generation
+  ### Summary
+
+  There is a denial of service vulnerability in the `If-Match` and `If-None-Match` header parsing component of Sinatra, if the `etag` method is used when constructing the response and you are using Ruby < 3.2.
+
+  ### Details
+
+  Carefully crafted input can cause `If-Match` and `If-None-Match` header parsing in Sinatra to take an unexpected amount of time, possibly resulting in a denial of service attack vector. This header is typically involved in generating the `ETag` header value. Any applications that use the `etag` method when generating a response are impacted if they are using Ruby below version 3.2.
+
+  ### Resources
+
+  * https://github.com/sinatra/sinatra/issues/2120 (report)
+  * https://github.com/sinatra/sinatra/pull/2121 (fix)
+  * https://github.com/sinatra/sinatra/pull/1823 (older ReDoS vulnerability)
+  * https://bugs.ruby-lang.org/issues/19104 (fix in Ruby >= 3.2)
+impacted_packages:
+  - purl: pkg:gem/sinatra
+    affected_versions: vers:gem/<4.2.0
+    fixed_versions: vers:gem/4.2.0
+severities:
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-mr3q-g2mv-mr4q/GHSA-mr3q-g2mv-mr4q.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-1333
+references:
+  - url: https://bugs.ruby-lang.org/issues/19104
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/sinatra/CVE-2025-61921.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/sinatra/sinatra
+    reference_type:
+    reference_id:
+  - url: https://github.com/sinatra/sinatra/commit/3fe8c38dc405586f7ad8f2ac748aa53e9c3615bd
+    reference_type:
+    reference_id:
+  - url: https://github.com/sinatra/sinatra/commit/8ff496bd4877520599e1479d6efead39304edceb
+    reference_type:
+    reference_id:
+  - url: https://github.com/sinatra/sinatra/issues/2120
+    reference_type:
+    reference_id:
+  - url: https://github.com/sinatra/sinatra/pull/1823
+    reference_type:
+    reference_id:
+  - url: https://github.com/sinatra/sinatra/pull/2121
+    reference_type:
+    reference_id:
+  - url: https://github.com/sinatra/sinatra/security/advisories/GHSA-mr3q-g2mv-mr4q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-61921
+    reference_type:
+    reference_id:

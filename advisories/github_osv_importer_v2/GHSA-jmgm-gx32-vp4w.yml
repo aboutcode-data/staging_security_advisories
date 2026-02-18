@@ -1,0 +1,39 @@
+advisory_id: GHSA-jmgm-gx32-vp4w
+datasource_id: github_osv_importer_v2/GHSA-jmgm-gx32-vp4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-jmgm-gx32-vp4w/GHSA-jmgm-gx32-vp4w.json
+aliases:
+  - CVE-2024-12911
+summary: |
+  LlamaIndex vulnerable to Creation of Temporary File in Directory with Insecure Permissions
+  A vulnerability in the `default_jsonalyzer` function of the `JSONalyzeQueryEngine` in the run-llama/llama_index repository allows for SQL injection via prompt injection. This can lead to arbitrary file creation and Denial-of-Service (DoS) attacks. The vulnerability affects the latest version and is fixed in version 0.12.3.
+impacted_packages:
+  - purl: pkg:pypi/llama-index
+    affected_versions: vers:pypi/<0.12.3
+    fixed_versions: vers:pypi/0.12.3
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-jmgm-gx32-vp4w/GHSA-jmgm-gx32-vp4w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-379
+  - CWE-89
+references:
+  - url: https://github.com/run-llama/llama_index
+    reference_type:
+    reference_id:
+  - url: https://github.com/run-llama/llama_index/commit/bf282074e20e7dafd5e2066137dcd4cd17c3fb9e
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/095f9e67-311d-494c-99c5-5e61a0adb8f3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-12911
+    reference_type:
+    reference_id:

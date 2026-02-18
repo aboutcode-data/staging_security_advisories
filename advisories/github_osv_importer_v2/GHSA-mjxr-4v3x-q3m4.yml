@@ -1,0 +1,38 @@
+advisory_id: GHSA-mjxr-4v3x-q3m4
+datasource_id: github_osv_importer_v2/GHSA-mjxr-4v3x-q3m4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-mjxr-4v3x-q3m4/GHSA-mjxr-4v3x-q3m4.json
+aliases:
+  - CVE-2021-26540
+summary: |
+  Improper Input Validation in sanitize-html
+  Apostrophe Technologies sanitize-html before 2.3.2 does not properly validate the hostnames set by the "allowedIframeHostnames" option when the "allowIframeRelativeUrls" is set to true, which allows attackers to bypass hostname whitelist for iframe element, related using an src value that starts with "/\\example.com".
+impacted_packages:
+  - purl: pkg:npm/sanitize-html
+    affected_versions: vers:npm/<2.3.2
+    fixed_versions: vers:npm/2.3.2
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-mjxr-4v3x-q3m4/GHSA-mjxr-4v3x-q3m4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://advisory.checkmarx.net/advisory/CX-2021-4309
+    reference_type:
+    reference_id:
+  - url: https://github.com/apostrophecms/sanitize-html/blob/main/CHANGELOG.md#232-2021-01-26
+    reference_type:
+    reference_id:
+  - url: https://github.com/apostrophecms/sanitize-html/pull/460
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-26540
+    reference_type:
+    reference_id:

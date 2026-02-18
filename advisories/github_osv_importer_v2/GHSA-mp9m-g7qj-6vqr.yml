@@ -1,0 +1,64 @@
+advisory_id: GHSA-mp9m-g7qj-6vqr
+datasource_id: github_osv_importer_v2/GHSA-mp9m-g7qj-6vqr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-mp9m-g7qj-6vqr/GHSA-mp9m-g7qj-6vqr.json
+aliases:
+  - CVE-2020-15278
+summary: |
+  Unauthorized privilege escalation in Mod module
+  ### Impact
+  An unauthorized privilege escalation exploit has been discovered in the Mod module: this exploit allows Discord users with a high privilege level within the guild to bypass hierarchy checks when the application is in a specific condition that is beyond that user's control. By abusing this exploit, it's possible to perform destructive actions within the guild the user has high privileges in.
+
+  ### Patches
+  This exploit has been fixed on version & ``3.4.1``.
+
+  ### Workarounds
+  Unloading the Mod module with ``unload mod`` __or__, disabling the ``massban`` command with ``command disable global massban`` can render this exploit not accessible. We still highly recommend updating to ``3.4.1`` to completely patch this issue.
+
+  ### References
+  * https://github.com/Cog-Creators/Red-DiscordBot/commit/726bfd38adfdfaef760412a68e01447b470f438b
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [Cog-Creators/Red-DiscordBot](https://github.com/Cog-Creators/Red-DiscordBot)
+  * Over on our [Discord server](https://discord.gg/red)
+impacted_packages:
+  - purl: pkg:pypi/red-discordbot
+    affected_versions: vers:pypi/<3.4.1
+    fixed_versions: vers:pypi/3.4.1
+severities:
+  - score: '7.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-mp9m-g7qj-6vqr/GHSA-mp9m-g7qj-6vqr.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/10/GHSA-mp9m-g7qj-6vqr/GHSA-mp9m-g7qj-6vqr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://github.com/Cog-Creators/Red-DiscordBot
+    reference_type:
+    reference_id:
+  - url: https://github.com/Cog-Creators/Red-DiscordBot/commit/726bfd38adfdfaef760412a68e01447b470f438b
+    reference_type:
+    reference_id:
+  - url: https://github.com/Cog-Creators/Red-DiscordBot/releases/tag/3.4.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/Cog-Creators/Red-DiscordBot/security/advisories/GHSA-mp9m-g7qj-6vqr
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/red-discordbot/PYSEC-2020-267.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15278
+    reference_type:
+    reference_id:

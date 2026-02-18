@@ -1,0 +1,73 @@
+advisory_id: GHSA-jf85-cpcp-j695
+datasource_id: github_osv_importer_v2/GHSA-jf85-cpcp-j695
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-jf85-cpcp-j695/GHSA-jf85-cpcp-j695.json
+aliases:
+  - CVE-2019-10744
+summary: |
+  Prototype Pollution in lodash
+  Versions of `lodash` before 4.17.12 are vulnerable to Prototype Pollution.  The function `defaultsDeep` allows a malicious user to modify the prototype of `Object` via `{constructor: {prototype: {...}}}` causing the addition or modification of an existing property that will exist on all objects.
+
+  ## Recommendation
+
+  Update to version 4.17.12 or later.
+impacted_packages:
+  - purl: pkg:npm/lodash
+    affected_versions: vers:npm/<4.17.12
+    fixed_versions: vers:npm/4.17.12
+  - purl: pkg:npm/lodash-es
+    affected_versions: vers:npm/<4.17.14
+    fixed_versions: vers:npm/4.17.14
+  - purl: pkg:npm/lodash-amd
+    affected_versions: vers:npm/<4.17.13
+    fixed_versions: vers:npm/4.17.13
+  - purl: pkg:npm/lodash.defaultsdeep
+    affected_versions: vers:npm/<4.6.1
+    fixed_versions: vers:npm/4.6.1
+  - purl: pkg:gem/lodash-rails
+    affected_versions: vers:gem/<4.17.12
+    fixed_versions: vers:gem/4.17.12
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-jf85-cpcp-j695/GHSA-jf85-cpcp-j695.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+  - CWE-20
+references:
+  - url: https://access.redhat.com/errata/RHSA-2019:3024
+    reference_type:
+    reference_id:
+  - url: https://github.com/lodash/lodash/pull/4336
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/lodash-rails/CVE-2019-10744.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10744
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20191004-0005
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-LODASH-450202
+    reference_type:
+    reference_id:
+  - url: https://support.f5.com/csp/article/K47105354?utm_source=f5support&amp%3Butm_medium=RSS
+    reference_type:
+    reference_id:
+  - url: https://support.f5.com/csp/article/K47105354?utm_source=f5support&amp;utm_medium=RSS
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2020.html
+    reference_type:
+    reference_id:

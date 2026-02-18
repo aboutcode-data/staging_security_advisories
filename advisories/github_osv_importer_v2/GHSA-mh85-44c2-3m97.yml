@@ -1,0 +1,35 @@
+advisory_id: GHSA-mh85-44c2-3m97
+datasource_id: github_osv_importer_v2/GHSA-mh85-44c2-3m97
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-mh85-44c2-3m97/GHSA-mh85-44c2-3m97.json
+aliases:
+  - CVE-2025-66843
+summary: |
+  Grav is vulnerable to Stored XSS through authenticated user-edited content
+  grav before v1.7.49.5 has a Stored Cross-Site Scripting (Stored XSS) vulnerability in the page editing functionality. An authenticated low-privileged user with permission to edit content can inject malicious JavaScript payloads into editable fields. The payload is stored on the server and later executed when any other user views or edits the affected page.
+impacted_packages:
+  - purl: pkg:composer/getgrav/grav
+    affected_versions: vers:composer/<=1.7.49+5
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-mh85-44c2-3m97/GHSA-mh85-44c2-3m97.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/getgrav/grav
+    reference_type:
+    reference_id:
+  - url: https://github.com/Yohane-Mashiro/grav_cve/issues/1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-66843
+    reference_type:
+    reference_id:

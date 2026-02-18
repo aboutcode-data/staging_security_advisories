@@ -1,0 +1,32 @@
+advisory_id: GHSA-m2q4-qghh-p9cq
+datasource_id: github_osv_importer_v2/GHSA-m2q4-qghh-p9cq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-m2q4-qghh-p9cq/GHSA-m2q4-qghh-p9cq.json
+aliases:
+  - CVE-2021-31779
+summary: |
+  Server-Side Request Forgery in yoast_seo
+  The yoast_seo (aka Yoast SEO) extension before 7.2.1 for TYPO3 allows SSRF via a backend user account.
+impacted_packages:
+  - purl: pkg:composer/yoast-seo-for-typo3/yoast_seo
+    affected_versions: vers:composer/<7.2.1
+    fixed_versions: vers:composer/7.2.1
+severities:
+  - score: '6.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-m2q4-qghh-p9cq/GHSA-m2q4-qghh-p9cq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-31779
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2021-006
+    reference_type:
+    reference_id:

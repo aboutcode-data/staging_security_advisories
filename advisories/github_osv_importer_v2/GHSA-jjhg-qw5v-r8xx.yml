@@ -1,0 +1,33 @@
+advisory_id: GHSA-jjhg-qw5v-r8xx
+datasource_id: github_osv_importer_v2/GHSA-jjhg-qw5v-r8xx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-jjhg-qw5v-r8xx/GHSA-jjhg-qw5v-r8xx.json
+aliases: []
+summary: |
+  Malicious Package in anarchy
+  All versions of `anarchy` contain malicious code. The package ran `rm - rf /` as an install script.
+
+
+  ## Recommendation
+
+  Remove the package from your environment.
+impacted_packages:
+  - purl: pkg:npm/anarchy
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-jjhg-qw5v-r8xx/GHSA-jjhg-qw5v-r8xx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-506
+references:
+  - url: https://www.npmjs.com/advisories/1089
+    reference_type:
+    reference_id:

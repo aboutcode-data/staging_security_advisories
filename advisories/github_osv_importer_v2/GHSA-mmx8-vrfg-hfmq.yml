@@ -1,0 +1,35 @@
+advisory_id: GHSA-mmx8-vrfg-hfmq
+datasource_id: github_osv_importer_v2/GHSA-mmx8-vrfg-hfmq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-mmx8-vrfg-hfmq/GHSA-mmx8-vrfg-hfmq.json
+aliases:
+  - CVE-2024-55341
+summary: |
+  Piranha CMS Cross-site Scripting vulnerability
+  A stored cross-site scripting (XSS) vulnerability in Piranha CMS 11.1 allows remote attackers to execute arbitrary JavaScript in the web browser of a user, by creating a page via the /manager/pages and then adding a markdown content with the XSS payload.
+impacted_packages:
+  - purl: pkg:nuget/Piranha
+    affected_versions: vers:nuget/<=11.1.0
+    fixed_versions:
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-mmx8-vrfg-hfmq/GHSA-mmx8-vrfg-hfmq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/PiranhaCMS/piranha.core
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-55341
+    reference_type:
+    reference_id:
+  - url: https://sec-fortress.github.io/posts/articles/posts/CVE-2024-55341.html
+    reference_type:
+    reference_id:

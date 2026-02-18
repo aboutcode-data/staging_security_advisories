@@ -1,0 +1,67 @@
+advisory_id: GHSA-j92c-7v7g-gj3f
+datasource_id: github_osv_importer_v2/GHSA-j92c-7v7g-gj3f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-j92c-7v7g-gj3f/GHSA-j92c-7v7g-gj3f.json
+aliases:
+  - CVE-2026-25543
+summary: "HtmlSanitizer has a bypass via template tag\n### Impact\n\nIf the `template` tag is\
+  \ allowed, its contents are not sanitized. The `template` tag is a special tag that does not\
+  \ usually render its contents, unless the `shadowrootmode` attribute is set to `open` or `closed`.\
+  \ \n\nThe lack of sanitization of the template tag brings up two bypasses:\n\n1. it is still\
+  \ possible to forcibly render the contents of a `<template>` tag through mutation XSS. The\
+  \ DOM parsers in browsers such as Chromium have a node depth limit of 512 and tags which are\
+  \ beyond that depth are flattened. This in turn allows elements within `<template>` (which\
+  \ are not sanitized) to be effectively 'popped out'. An example would look like this: `<div>[...]<template><script>alert('xss')</script>`\
+  \ where `[...]` denotes at least another 509 opening `<div>` tags.\n2. If in addition to the\
+  \ template tag, the `shadowrootmode` attribute is allowed through `sanitizer.AllowedAttributes.Add(\"\
+  shadowrootmode\");`, the simple payload of `<div><template shadowrootmode=\"open\"><script>alert('xss')</script>`\
+  \ would bypass the sanitizer. This is because such usage of `<template>` attaches a shadow\
+  \ root to its parent: `<div>`, and its contents will be rendered. \n\nNote that the default\
+  \ configuration is not affected because the `template` tag is disallowed by default.\n\n###\
+  \ Patches\n\nThe problem has been patched in versions [9.0.892](https://www.nuget.org/packages/HtmlSanitizer/9.0.892)\
+  \ and [9.1.893-beta](https://www.nuget.org/packages/HtmlSanitizer/9.1.893-beta).\n\n### Workarounds\n\
+  \nDisallow the `template` tag. It is disallowed by default.\n\n### Resources\n\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template"
+impacted_packages:
+  - purl: pkg:nuget/HtmlSanitizer
+    affected_versions: vers:nuget/<9.0.892
+    fixed_versions: vers:nuget/9.0.892
+  - purl: pkg:nuget/HtmlSanitizer
+    affected_versions: vers:nuget/>=9.1.878-beta|<9.1.893-beta
+    fixed_versions: vers:nuget/9.1.893-beta
+severities:
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-j92c-7v7g-gj3f/GHSA-j92c-7v7g-gj3f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-116
+references:
+  - url: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template
+    reference_type:
+    reference_id:
+  - url: https://github.com/mganss/HtmlSanitizer
+    reference_type:
+    reference_id:
+  - url: https://github.com/mganss/HtmlSanitizer/commit/0ac53dca30ddad963f2b243669a5066933d82b81
+    reference_type:
+    reference_id:
+  - url: https://github.com/mganss/HtmlSanitizer/releases/tag/v9.0.892
+    reference_type:
+    reference_id:
+  - url: https://github.com/mganss/HtmlSanitizer/security/advisories/GHSA-j92c-7v7g-gj3f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25543
+    reference_type:
+    reference_id:
+  - url: https://www.nuget.org/packages/HtmlSanitizer/9.0.892
+    reference_type:
+    reference_id:
+  - url: https://www.nuget.org/packages/HtmlSanitizer/9.1.893-beta
+    reference_type:
+    reference_id:

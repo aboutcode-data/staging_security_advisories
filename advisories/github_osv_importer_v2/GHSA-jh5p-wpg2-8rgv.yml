@@ -1,0 +1,44 @@
+advisory_id: GHSA-jh5p-wpg2-8rgv
+datasource_id: github_osv_importer_v2/GHSA-jh5p-wpg2-8rgv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jh5p-wpg2-8rgv/GHSA-jh5p-wpg2-8rgv.json
+aliases:
+  - CVE-2016-1912
+summary: |
+  Dolibarr ERP and CRM contain XSS Vulnerabilities
+  Multiple cross-site scripting (XSS) vulnerabilities in Dolibarr ERP/CRM 3.8.3 allow remote authenticated users to inject arbitrary web script or HTML via the (1) lastname, (2) firstname, (3) email, (4) job, or (5) signature parameter to htdocs/user/card.php.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<=3.8.3
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jh5p-wpg2-8rgv/GHSA-jh5p-wpg2-8rgv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/135201/Dolibarr-3.8.3-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/issues/4341
+    reference_type:
+    reference_id:
+  - url: https://github.com/GPCsolutions/dolibarr/commit/0d3181324c816bdf664ca5e1548dfe8eb05c54f8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-1912
+    reference_type:
+    reference_id:
+  - url: https://twitter.com/MickaelDorigny/status/684456187870457857
+    reference_type:
+    reference_id:
+  - url: http://www.information-security.fr/xss-dolibarr-version-3-8-3
+    reference_type:
+    reference_id:

@@ -1,0 +1,57 @@
+advisory_id: GHSA-mp7w-mhcv-673j
+datasource_id: github_osv_importer_v2/GHSA-mp7w-mhcv-673j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-mp7w-mhcv-673j/GHSA-mp7w-mhcv-673j.json
+aliases:
+  - CVE-2025-25304
+summary: |
+  Vega allows Cross-site Scripting via the vlSelectionTuples function
+  ### Summary
+  The `vlSelectionTuples` function can be used to call JavaScript functions, leading to XSS.
+
+  ### Details
+  [`vlSelectionTuples`](https://github.com/vega/vega/blob/b45cf431cd6c0d0c0e1567f087f9b3b55bc236fa/packages/vega-selections/src/selectionTuples.js#L14) calls multiple functions that can be controlled by an attacker, including one call with an attacker-controlled argument.
+
+  Example call: `vlSelectionTuples([{datum:<argument>}], {fields:[{getter:<function>}]})`
+
+  This can be used to call `Function()` with arbitrary JavaScript and the resulting function can be called with `vlSelectionTuples` or using a type coercion to call `toString` or `valueOf`.
+
+  ### PoC
+  ```
+  {"$schema":"https://vega.github.io/schema/vega/v5.json","signals":[{"name":"a","init":"+{valueOf:vlSelectionTuples([{datum:'alert(1)'}],{fields:[{getter:[].at.constructor}]})[0].values[0]}"}]}
+  ```
+impacted_packages:
+  - purl: pkg:npm/vega
+    affected_versions: vers:npm/<5.26.0
+    fixed_versions: vers:npm/5.26.0
+  - purl: pkg:npm/vega-selections
+    affected_versions: vers:npm/<5.4.2
+    fixed_versions: vers:npm/5.4.2
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-mp7w-mhcv-673j/GHSA-mp7w-mhcv-673j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/vega/vega
+    reference_type:
+    reference_id:
+  - url: https://github.com/vega/vega/blob/b45cf431cd6c0d0c0e1567f087f9b3b55bc236fa/packages/vega-selections/src/selectionTuples.js#L14
+    reference_type:
+    reference_id:
+  - url: https://github.com/vega/vega/commit/9fb9ea07e27984394e463d286eb73944fa61411e
+    reference_type:
+    reference_id:
+  - url: https://github.com/vega/vega/security/advisories/GHSA-mp7w-mhcv-673j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-25304
+    reference_type:
+    reference_id:

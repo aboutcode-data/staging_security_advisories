@@ -1,0 +1,38 @@
+advisory_id: GHSA-m8gv-gvhf-7rhp
+datasource_id: github_osv_importer_v2/GHSA-m8gv-gvhf-7rhp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m8gv-gvhf-7rhp/GHSA-m8gv-gvhf-7rhp.json
+aliases:
+  - CVE-2022-1571
+summary: |
+  Cross-site Scripting in FacturaScripts
+  FacturaScripts versions 2022.06 and prior are vulnerable to reflected cross-site scripting attacks. This vulnerability can use arbitrarily executed javascript code to steal users' cookies, perform HTTP request, get content of `same origin` page, etc. A fix is available on the `master` branch of the GitHub repository and anticipated to be part of version 2022.07.
+impacted_packages:
+  - purl: pkg:composer/facturascripts/facturascripts
+    affected_versions: vers:composer/<=2022.6.0
+    fixed_versions: vers:composer/2022.7.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m8gv-gvhf-7rhp/GHSA-m8gv-gvhf-7rhp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/neorazorx/facturascripts
+    reference_type:
+    reference_id:
+  - url: https://github.com/neorazorx/facturascripts/commit/482c5a82b4d79e7a19614f5a67dc24593046cefd
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/4578a690-73e5-4313-840c-ee15e5329741
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1571
+    reference_type:
+    reference_id:

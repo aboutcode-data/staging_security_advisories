@@ -1,0 +1,44 @@
+advisory_id: GHSA-jv8x-mm3v-75r7
+datasource_id: github_osv_importer_v2/GHSA-jv8x-mm3v-75r7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jv8x-mm3v-75r7/GHSA-jv8x-mm3v-75r7.json
+aliases:
+  - CVE-2025-43812
+summary: |
+  Liferay Portal vulnerable to cross-site scripting in the web content template
+  Cross-site scripting (XSS) vulnerability in web content template in Liferay Portal 7.4.3.4 through 7.4.3.111, and Liferay DXP 2023.Q4.0 through 2023.Q4.4, 2023.Q3.1 through 2023.Q3.8, and 7.4 GA through update 92 allows remote authenticated users to inject arbitrary web script or HTML via a crafted payload injected into a web content structure's Name text field
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/<=7.4.3.111-ga111
+    fixed_versions: vers:maven/7.4.3.112-ga112
+  - purl: pkg:maven/com.liferay/com.liferay.journal.web
+    affected_versions: vers:maven/>=5.0.34|<5.0.161
+    fixed_versions: vers:maven/5.0.161
+severities:
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jv8x-mm3v-75r7/GHSA-jv8x-mm3v-75r7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/7466c9ba0126a4a93c85913cbec9b11c687deb36
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-17942
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43812
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43812
+    reference_type:
+    reference_id:

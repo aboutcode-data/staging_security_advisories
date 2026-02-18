@@ -1,0 +1,52 @@
+advisory_id: GHSA-m8xw-9x5x-6vh3
+datasource_id: github_osv_importer_v2/GHSA-m8xw-9x5x-6vh3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-m8xw-9x5x-6vh3/GHSA-m8xw-9x5x-6vh3.json
+aliases:
+  - CVE-2022-44900
+summary: |
+  py7zr directory traversal vulnerability
+  A directory traversal vulnerability in the SevenZipFile.extractall() function of the python library py7zr v0.20.0 and earlier allows attackers to write arbitrary files via extracting a crafted 7z file.
+impacted_packages:
+  - purl: pkg:pypi/py7zr
+    affected_versions: vers:pypi/<=0.20.0
+    fixed_versions: vers:pypi/0.20.1
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-m8xw-9x5x-6vh3/GHSA-m8xw-9x5x-6vh3.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-m8xw-9x5x-6vh3/GHSA-m8xw-9x5x-6vh3.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://packetstormsecurity.com/files/170127/py7zr-0.20.0-Directory-Traversal.html
+    reference_type:
+    reference_id:
+  - url: https://advisory-inbox.githubapp.com/advisory_reviews/GHSA-m8xw-9x5x-6vh3
+    reference_type:
+    reference_id:
+  - url: https://github.com/miurahr/py7zr
+    reference_type:
+    reference_id:
+  - url: https://github.com/miurahr/py7zr/commit/1bb43f17515c7f69673a1c88ab9cc72a7bbef406
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/py7zr/PYSEC-2022-42998.yaml
+    reference_type:
+    reference_id:
+  - url: https://lessonsec.com/cve/cve-2022-44900
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-44900
+    reference_type:
+    reference_id:

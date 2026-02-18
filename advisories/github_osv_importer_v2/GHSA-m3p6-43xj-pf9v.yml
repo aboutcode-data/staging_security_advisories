@@ -1,0 +1,35 @@
+advisory_id: GHSA-m3p6-43xj-pf9v
+datasource_id: github_osv_importer_v2/GHSA-m3p6-43xj-pf9v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-m3p6-43xj-pf9v/GHSA-m3p6-43xj-pf9v.json
+aliases:
+  - CVE-2023-50101
+summary: |
+  Cross-site Scripting in JFinalcms
+  JFinalcms 5.0.0 is vulnerable to Cross Site Scripting (XSS) via Label management editing.
+impacted_packages:
+  - purl: pkg:maven/com.jfinal/jfinal
+    affected_versions: vers:maven/<=5.0.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-m3p6-43xj-pf9v/GHSA-m3p6-43xj-pf9v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Jarvis-616/cms/blob/master/Label%20management%20editing%20with%20stored%20XSS.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/jfinal/jfinal
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-50101
+    reference_type:
+    reference_id:

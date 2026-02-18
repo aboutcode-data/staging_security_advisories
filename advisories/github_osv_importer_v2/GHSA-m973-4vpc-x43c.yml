@@ -1,0 +1,44 @@
+advisory_id: GHSA-m973-4vpc-x43c
+datasource_id: github_osv_importer_v2/GHSA-m973-4vpc-x43c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-m973-4vpc-x43c/GHSA-m973-4vpc-x43c.json
+aliases:
+  - CVE-2022-4730
+summary: |
+  Graphite Web Cross-site Scripting vulnerability
+  A vulnerability was found in Graphite Web. It has been classified as problematic. Affected is an unknown function of the component Absolute Time Range Handler. The manipulation leads to cross site scripting. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The name of the patch is 2f178f490e10efc03cd1d27c72f64ecab224eb23. It is recommended to apply a patch to fix this issue. The identifier of this vulnerability is VDB-216744.
+impacted_packages:
+  - purl: pkg:pypi/graphite-web
+    affected_versions: vers:pypi/<=1.1.10
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-m973-4vpc-x43c/GHSA-m973-4vpc-x43c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/graphite-project/graphite-web
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphite-project/graphite-web/commit/2f178f490e10efc03cd1d27c72f64ecab224eb23
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphite-project/graphite-web/issues/2746
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphite-project/graphite-web/pull/2785
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-4730
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.216744
+    reference_type:
+    reference_id:

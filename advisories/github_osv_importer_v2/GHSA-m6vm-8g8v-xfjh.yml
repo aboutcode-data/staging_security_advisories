@@ -1,0 +1,56 @@
+advisory_id: GHSA-m6vm-8g8v-xfjh
+datasource_id: github_osv_importer_v2/GHSA-m6vm-8g8v-xfjh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-m6vm-8g8v-xfjh/GHSA-m6vm-8g8v-xfjh.json
+aliases:
+  - CVE-2019-5063
+summary: |
+  Out-of-bounds Write in OpenCV
+  An exploitable heap buffer overflow vulnerability exists in the data structure persistence functionality of OpenCV 4.1.0 (corresponds with OpenCV-Python 4.1.0.25). A specially crafted XML file can cause a buffer overflow, resulting in multiple heap corruptions and potential code execution. An attacker can provide a specially crafted file to trigger this vulnerability.
+impacted_packages:
+  - purl: pkg:pypi/opencv-python
+    affected_versions: vers:pypi/<=4.1.0.25
+    fixed_versions:
+  - purl: pkg:pypi/opencv-python-headless
+    affected_versions: vers:pypi/<=4.1.0.25
+    fixed_versions:
+  - purl: pkg:pypi/opencv-contrib-python
+    affected_versions: vers:pypi/<=4.1.0.25
+    fixed_versions:
+  - purl: pkg:pypi/opencv-contrib-python-headless
+    affected_versions: vers:pypi/<=4.1.0.25
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-m6vm-8g8v-xfjh/GHSA-m6vm-8g8v-xfjh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://github.com/opencv/opencv/issues/16951
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencv/opencv-python
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencv/opencv-python/releases/tag/25
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-5063
+    reference_type:
+    reference_id:
+  - url: https://talosintelligence.com/vulnerability_reports/TALOS-2019-0852
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com//security-alerts/cpujul2021.html
+    reference_type:
+    reference_id:

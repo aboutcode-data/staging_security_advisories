@@ -1,0 +1,44 @@
+advisory_id: GHSA-m929-rg27-gj99
+datasource_id: github_osv_importer_v2/GHSA-m929-rg27-gj99
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-m929-rg27-gj99/GHSA-m929-rg27-gj99.json
+aliases: []
+summary: |
+  Duplicate Advisory: rollbar vulnerable to prototype pollution
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-r8c2-2qwq-94p6. This link is maintained to preserve external references.
+
+  ### Original Description
+  rollbar is a package designed to effortlessly track and debug errors in JavaScript applications. This package includes advanced error tracking features and an intuitive interface to help you identify and fix issues more quickly. A Prototype Pollution vulnerability in the utility.set function of rollbar v2.26.4 and before allows attackers to inject properties on Object.prototype via supplying a crafted payload, causing denial of service (DoS) as the minimum consequence.
+impacted_packages:
+  - purl: pkg:npm/rollbar
+    affected_versions: vers:npm/<=2.26.4
+    fixed_versions:
+severities:
+  - score: '2.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-m929-rg27-gj99/GHSA-m929-rg27-gj99.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/rollbar/rollbar.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/rollbar/rollbar.js/issues/1333
+    reference_type:
+    reference_id:
+  - url: https://github.com/VulnSageAgent/PoCs/blob/main/JavaScript/prototype-pollution/rollbar%402.26.4/index.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/VulnSageAgent/PoCs/tree/main/JavaScript/prototype-pollution/CVE-2025-57325
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-57325
+    reference_type:
+    reference_id:

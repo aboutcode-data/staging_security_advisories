@@ -1,0 +1,38 @@
+advisory_id: GHSA-jrcc-7jf5-3pxg
+datasource_id: github_osv_importer_v2/GHSA-jrcc-7jf5-3pxg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jrcc-7jf5-3pxg/GHSA-jrcc-7jf5-3pxg.json
+aliases:
+  - CVE-2017-5636
+summary: |
+  Injection in Apache NiFi
+  In Apache NiFi before 0.7.2 and 1.x before 1.1.2 in a cluster environment, the proxy chain serialization/deserialization is vulnerable to an injection attack where a carefully crafted username could impersonate another user and gain their permissions on a replicated request to another node.
+impacted_packages:
+  - purl: pkg:maven/org.apache.nifi/nifi
+    affected_versions: vers:maven/<0.7.2
+    fixed_versions: vers:maven/0.7.2
+  - purl: pkg:maven/org.apache.nifi/nifi
+    affected_versions: vers:maven/>=1.0.0|<1.1.2
+    fixed_versions: vers:maven/1.1.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jrcc-7jf5-3pxg/GHSA-jrcc-7jf5-3pxg.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://nifi.apache.org/security.html#CVE-2017-5636
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-5636
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/96731
+    reference_type:
+    reference_id:

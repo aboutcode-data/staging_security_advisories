@@ -1,0 +1,38 @@
+advisory_id: GHSA-mr95-9rr4-668f
+datasource_id: github_osv_importer_v2/GHSA-mr95-9rr4-668f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-mr95-9rr4-668f/GHSA-mr95-9rr4-668f.json
+aliases:
+  - CVE-2018-16115
+summary: |
+  Cryptographically Weak Pseudo-Random Number Generator (PRNG) in akka-actor
+  Lightbend Akka 2.5.x before 2.5.16 allows message disclosure and modification because of an RNG error. A random number generator is used in Akka Remoting for TLS (both classic and Artery Remoting). Akka allows configuration of custom random number generators. For historical reasons, Akka included the AES128CounterSecureRNG and AES256CounterSecureRNG random number generators. The implementations had a bug that caused the generated numbers to be repeated after only a few bytes. The custom RNG implementations were not configured by default but examples in the documentation showed (and therefore implicitly recommended) using the custom ones. This can be used by an attacker to compromise the communication if these random number generators are enabled in configuration. It would be possible to eavesdrop, replay, or modify the messages sent with Akka Remoting/Cluster.
+impacted_packages:
+  - purl: pkg:maven/com.typesafe.akka/akka-actor_2.11
+    affected_versions: vers:maven/>=2.5.0|<2.5.16
+    fixed_versions: vers:maven/2.5.16
+  - purl: pkg:maven/com.typesafe.akka/akka-actor_2.12
+    affected_versions: vers:maven/>=2.5.0|<2.5.16
+    fixed_versions: vers:maven/2.5.16
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-mr95-9rr4-668f/GHSA-mr95-9rr4-668f.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-338
+references:
+  - url: https://doc.akka.io/docs/akka/current/security/2018-08-29-aes-rng.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mr95-9rr4-668f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-16115
+    reference_type:
+    reference_id:

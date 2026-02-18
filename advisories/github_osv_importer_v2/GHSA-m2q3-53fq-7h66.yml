@@ -1,0 +1,42 @@
+advisory_id: GHSA-m2q3-53fq-7h66
+datasource_id: github_osv_importer_v2/GHSA-m2q3-53fq-7h66
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/08/GHSA-m2q3-53fq-7h66/GHSA-m2q3-53fq-7h66.json
+aliases:
+  - CVE-2015-7314
+summary: |
+  Gollum Exposure of Sensitive Information
+  The Precious module in gollum before 4.0.1 allows remote attackers to read arbitrary files by leveraging the lack of a certain temporary-file check.
+impacted_packages:
+  - purl: pkg:gem/gollum
+    affected_versions: vers:gem/<4.0.1
+    fixed_versions: vers:gem/4.0.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: http://jvndb.jvn.jp/jvndb/JVNDB-2015-000149
+    reference_type:
+    reference_id:
+  - url: http://jvn.jp/en/jp/JVN27548431/index.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/gollum/gollum
+    reference_type:
+    reference_id:
+  - url: https://github.com/gollum/gollum/commit/ce68a88293ce3b18c261312392ad33a88bb69ea1
+    reference_type:
+    reference_id:
+  - url: https://github.com/gollum/gollum/issues/1070
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-7314
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2015/09/22/12
+    reference_type:
+    reference_id:

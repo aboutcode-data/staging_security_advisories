@@ -1,0 +1,44 @@
+advisory_id: GHSA-jvfv-hrrc-6q72
+datasource_id: github_osv_importer_v2/GHSA-jvfv-hrrc-6q72
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-jvfv-hrrc-6q72/GHSA-jvfv-hrrc-6q72.json
+aliases:
+  - CVE-2022-0839
+summary: |
+  Improper Restriction of XML External Entity Reference in Liquibase
+  The XMLChangeLogSAXParser() function in Liquibase prior to version 4.8.0 contains an issue that may lead to to Improper Restriction of XML External Entity Reference.
+impacted_packages:
+  - purl: pkg:maven/org.liquibase/liquibase-core
+    affected_versions: vers:maven/<4.8.0
+    fixed_versions: vers:maven/4.8.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-jvfv-hrrc-6q72/GHSA-jvfv-hrrc-6q72.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: http://seclists.org/fulldisclosure/2025/Apr/14
+    reference_type:
+    reference_id:
+  - url: https://github.com/liquibase/liquibase
+    reference_type:
+    reference_id:
+  - url: https://github.com/liquibase/liquibase/commit/33d9d925082097fb1a3d2fc8e44423d964cd9381
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/f1ae5779-b406-4594-a8a3-d089c68d6e70
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0839
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

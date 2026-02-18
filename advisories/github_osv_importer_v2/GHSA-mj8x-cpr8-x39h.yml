@@ -1,0 +1,40 @@
+advisory_id: GHSA-mj8x-cpr8-x39h
+datasource_id: github_osv_importer_v2/GHSA-mj8x-cpr8-x39h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-mj8x-cpr8-x39h/GHSA-mj8x-cpr8-x39h.json
+aliases:
+  - CVE-2021-27850
+summary: |
+  Remote code execution in Apache Tapestry
+  A critical unauthenticated remote code execution vulnerability was found all recent versions of Apache Tapestry. The affected versions include 5.4.5, 5.5.0, 5.6.2 and 5.7.0. The vulnerability I have found is a bypass of the fix for CVE-2019-0195. Recap: Before the fix of CVE-2019-0195 it was possible to download arbitrary class files from the classpath by providing a crafted asset file URL. An attacker was able to download the file `AppModule.class` by requesting the URL `http://localhost:8080/assets/something/services/AppModule.class` which contains a HMAC secret key. The fix for that bug was a blacklist filter that checks if the URL ends with `.class`, `.properties` or `.xml`. Bypass: Unfortunately, the blacklist solution can simply be bypassed by appending a `/` at the end of the URL: `http://localhost:8080/assets/something/services/AppModule.class/` The slash is stripped after the blacklist check and the file `AppModule.class` is loaded into the response. This class usually contains the HMAC secret key which is used to sign serialized Java objects. With the knowledge of that key an attacker can sign a Java gadget chain that leads to RCE (e.g. CommonsBeanUtils1 from ysoserial). Solution for this vulnerability: * For Apache Tapestry 5.4.0 to 5.6.2, upgrade to 5.6.3 or later. * For Apache Tapestry 5.7.0, upgrade to 5.7.1 or later.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tapestry/tapestry-core
+    affected_versions: vers:maven/>=5.4.0|<5.6.3
+    fixed_versions: vers:maven/5.6.3
+  - purl: pkg:maven/org.apache.tapestry/tapestry-core
+    affected_versions: vers:maven/>=5.7.0|<5.7.1
+    fixed_versions: vers:maven/5.7.1
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+  - CWE-922
+references:
+  - url: https://issues.apache.org/jira/browse/TAP5-2663
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r237ff7f286bda31682c254550c1ebf92b0ec61329b32fbeb2d1c8751%40%3Cusers.tapestry.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-27850
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210528-0002
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2021/04/15/1
+    reference_type:
+    reference_id:

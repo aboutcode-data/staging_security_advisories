@@ -1,0 +1,38 @@
+advisory_id: GHSA-jf5h-xfw4-p8gp
+datasource_id: github_osv_importer_v2/GHSA-jf5h-xfw4-p8gp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-jf5h-xfw4-p8gp/GHSA-jf5h-xfw4-p8gp.json
+aliases:
+  - CVE-2025-13352
+summary: |
+  Mattermost GitHub Plugin Bot Identity Validation Bypass Allows Arbitrary GitHub Reaction Injection
+  Mattermost versions 10.11.x <= 10.11.6 and Mattermost GitHub plugin versions <=2.4.0 fail to validate plugin bot identity in reaction forwarding which allows attackers to hijack the GitHub reaction feature to make users add reactions to arbitrary GitHub objects via crafted notification posts.
+impacted_packages: []
+severities:
+  - score: '3.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-jf5h-xfw4-p8gp/GHSA-jf5h-xfw4-p8gp.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1287
+references:
+  - url: https://github.com/mattermost/mattermost
+    reference_type:
+    reference_id:
+  - url: https://github.com/mattermost/mattermost/commit/3b05384dd0146c1be3caa620a42e00e46027055d
+    reference_type:
+    reference_id:
+  - url: https://github.com/mattermost/mattermost-plugin-github/commit/0deffcfc6bee7eaf01f7c99100e3d12e8d9df68c
+    reference_type:
+    reference_id:
+  - url: https://mattermost.com/security-updates
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-13352
+    reference_type:
+    reference_id:

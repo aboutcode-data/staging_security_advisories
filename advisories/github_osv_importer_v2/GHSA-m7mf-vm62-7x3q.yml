@@ -1,0 +1,35 @@
+advisory_id: GHSA-m7mf-vm62-7x3q
+datasource_id: github_osv_importer_v2/GHSA-m7mf-vm62-7x3q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-m7mf-vm62-7x3q/GHSA-m7mf-vm62-7x3q.json
+aliases:
+  - CVE-2021-32818
+summary: |
+  Insecure template handling in haml-coffee
+  haml-coffee is a JavaScript templating solution. haml-coffee mixes pure template data with engine configuration options through the Express render API. More specifically, haml-coffee supports overriding a series of HTML helper functions through its configuration options. A vulnerable application that passes user controlled request objects to the haml-coffee template engine may introduce RCE vulnerabilities. Additionally control over the escapeHtml parameter through template configuration pollution ensures that haml-coffee would not sanitize template inputs that may result in reflected Cross Site Scripting attacks against downstream applications. There is currently no fix for these issues as of the publication of this CVE. The latest version of haml-coffee is currently 1.14.1. For complete details refer to the referenced GHSL-2021-025.
+impacted_packages:
+  - purl: pkg:npm/haml-coffee
+    affected_versions: vers:npm/<=1.14.1
+    fixed_versions:
+severities:
+  - score: '7.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-m7mf-vm62-7x3q/GHSA-m7mf-vm62-7x3q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32818
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2021-025-haml-coffee
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/haml-coffee
+    reference_type:
+    reference_id:

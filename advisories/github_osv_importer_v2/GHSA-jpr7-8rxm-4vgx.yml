@@ -1,0 +1,64 @@
+advisory_id: GHSA-jpr7-8rxm-4vgx
+datasource_id: github_osv_importer_v2/GHSA-jpr7-8rxm-4vgx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jpr7-8rxm-4vgx/GHSA-jpr7-8rxm-4vgx.json
+aliases:
+  - CVE-2016-1242
+summary: |
+  Tryton allow authenticated users with certain permissions to read arbitrary files via the name parameter
+  `file_open` in Tryton before 3.2.17, 3.4.x before 3.4.14, 3.6.x before 3.6.12, 3.8.x before 3.8.8, and 4.x before 4.0.4 allows remote authenticated users with certain permissions to read arbitrary files via the name parameter or unspecified other vectors.
+impacted_packages:
+  - purl: pkg:pypi/trytond
+    affected_versions: vers:pypi/<3.2.17
+    fixed_versions: vers:pypi/3.2.17
+  - purl: pkg:pypi/trytond
+    affected_versions: vers:pypi/>=3.4|<3.4.14
+    fixed_versions: vers:pypi/3.4.14
+  - purl: pkg:pypi/trytond
+    affected_versions: vers:pypi/>=3.6|<3.6.12
+    fixed_versions: vers:pypi/3.6.12
+  - purl: pkg:pypi/trytond
+    affected_versions: vers:pypi/>=3.8|<3.8.8
+    fixed_versions: vers:pypi/3.8.8
+  - purl: pkg:pypi/trytond
+    affected_versions: vers:pypi/>=4.0|<4.0.4
+    fixed_versions: vers:pypi/4.0.4
+severities:
+  - score: '4.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jpr7-8rxm-4vgx/GHSA-jpr7-8rxm-4vgx.json
+  - score: '5.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jpr7-8rxm-4vgx/GHSA-jpr7-8rxm-4vgx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://bugs.tryton.org/issue5808
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/trytond/PYSEC-2016-13.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tryton/PYSEC-2016-41.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tryton/trytond
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-1242
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2016/dsa-3656
+    reference_type:
+    reference_id:
+  - url: http://www.tryton.org/posts/security-release-for-issue5795-and-issue5808.html
+    reference_type:
+    reference_id:

@@ -1,0 +1,32 @@
+advisory_id: GHSA-mq7g-6rv4-pj95
+datasource_id: github_osv_importer_v2/GHSA-mq7g-6rv4-pj95
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-mq7g-6rv4-pj95/GHSA-mq7g-6rv4-pj95.json
+aliases:
+  - CVE-2016-10569
+summary: "Downloads Resources over HTTP in embedza\nAffected versions of `embedza` insecurely\
+  \ download an executable over an unencrypted HTTP connection. \n\nIn scenarios where an attacker\
+  \ has a privileged network position, it is possible to intercept the response and replace\
+  \ the executable with a malicious one, resulting in code execution on the system running `embedza`.\n\
+  \n\n## Recommendation\n\nUpdate to version 1.2.4 or later."
+impacted_packages:
+  - purl: pkg:npm/embedza
+    affected_versions: vers:npm/<1.2.4
+    fixed_versions: vers:npm/1.2.4
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+references:
+  - url: https://github.com/advisories/GHSA-mq7g-6rv4-pj95
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10569
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/187
+    reference_type:
+    reference_id:

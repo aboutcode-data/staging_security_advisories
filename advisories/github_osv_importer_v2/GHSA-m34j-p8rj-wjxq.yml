@@ -1,0 +1,130 @@
+advisory_id: GHSA-m34j-p8rj-wjxq
+datasource_id: github_osv_importer_v2/GHSA-m34j-p8rj-wjxq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-m34j-p8rj-wjxq/GHSA-m34j-p8rj-wjxq.json
+aliases:
+  - CVE-2021-29546
+summary: |
+  Division by 0 in `QuantizedBiasAdd`
+  ### Impact
+  An attacker can trigger an integer division by zero undefined behavior in `tf.raw_ops.QuantizedBiasAdd`:
+
+  ```python
+  import tensorflow as tf
+
+  input_tensor = tf.constant([], shape=[0, 0, 0, 0], dtype=tf.quint8)
+  bias = tf.constant([], shape=[0], dtype=tf.quint8)
+  min_input = tf.constant(-10.0, dtype=tf.float32)
+  max_input = tf.constant(-10.0, dtype=tf.float32)
+  min_bias = tf.constant(-10.0, dtype=tf.float32)
+  max_bias = tf.constant(-10.0, dtype=tf.float32)
+
+  tf.raw_ops.QuantizedBiasAdd(input=input_tensor, bias=bias, min_input=min_input,
+                              max_input=max_input, min_bias=min_bias,
+                              max_bias=max_bias, out_type=tf.qint32)
+  ```
+
+  This is because the [implementation of the Eigen kernel](https://github.com/tensorflow/tensorflow/blob/61bca8bd5ba8a68b2d97435ddfafcdf2b85672cd/tensorflow/core/kernels/quantization_utils.h#L812-L849) does a division by the number of elements of the smaller input (based on shape) without checking that this is not zero:
+
+  ```cc
+  template <typename T1, typename T2, typename T3>
+  void QuantizedAddUsingEigen(const Eigen::ThreadPoolDevice& device,
+                              const Tensor& input, float input_min,
+                              float input_max, const Tensor& smaller_input,
+                              float smaller_input_min, float smaller_input_max,
+                              Tensor* output, float* output_min,
+                              float* output_max) {
+    ...
+    const int64 input_element_count = input.NumElements();
+    const int64 smaller_input_element_count = smaller_input.NumElements();
+    ...
+    bcast[0] = input_element_count / smaller_input_element_count;
+    ...
+  }
+  ```
+
+  This integral division by 0 is undefined behavior.
+
+  ### Patches
+  We have patched the issue in GitHub commit [67784700869470d65d5f2ef20aeb5e97c31673cb](https://github.com/tensorflow/tensorflow/commit/67784700869470d65d5f2ef20aeb5e97c31673cb).
+
+  The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.
+
+  ### For more information
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.
+
+  ### Attribution
+  This vulnerability has been reported by Yakun Zhang and Ying Wang of Baidu X-Team.
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+severities:
+  - score: '2.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-m34j-p8rj-wjxq/GHSA-m34j-p8rj-wjxq.json
+  - score: '2.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-m34j-p8rj-wjxq/GHSA-m34j-p8rj-wjxq.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-369
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-cpu/PYSEC-2021-474.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-gpu/PYSEC-2021-672.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow/PYSEC-2021-183.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/67784700869470d65d5f2ef20aeb5e97c31673cb
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-m34j-p8rj-wjxq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29546
+    reference_type:
+    reference_id:

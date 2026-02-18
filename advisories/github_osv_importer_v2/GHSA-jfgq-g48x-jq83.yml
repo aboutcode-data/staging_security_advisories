@@ -1,0 +1,32 @@
+advisory_id: GHSA-jfgq-g48x-jq83
+datasource_id: github_osv_importer_v2/GHSA-jfgq-g48x-jq83
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-jfgq-g48x-jq83/GHSA-jfgq-g48x-jq83.json
+aliases:
+  - CVE-2016-10562
+summary: "Downloads Resources over HTTP in iedriver\nAffected versions of `iedriver` insecurely\
+  \ download an executable over an unencrypted HTTP connection. \n\nIn scenarios where an attacker\
+  \ has a privileged network position, it is possible to intercept the response and replace\
+  \ the executable with a malicious one, resulting in code execution on the system running `iedriver`.\n\
+  \n\n## Recommendation\n\nUpdate to iedriver version 3.0.0 or greater."
+impacted_packages:
+  - purl: pkg:npm/iedriver
+    affected_versions: vers:npm/<3.0.0
+    fixed_versions: vers:npm/3.0.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+references:
+  - url: https://github.com/advisories/GHSA-jfgq-g48x-jq83
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10562
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/174
+    reference_type:
+    reference_id:

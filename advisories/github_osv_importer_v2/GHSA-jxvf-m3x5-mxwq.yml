@@ -1,0 +1,44 @@
+advisory_id: GHSA-jxvf-m3x5-mxwq
+datasource_id: github_osv_importer_v2/GHSA-jxvf-m3x5-mxwq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-jxvf-m3x5-mxwq/GHSA-jxvf-m3x5-mxwq.json
+aliases:
+  - CVE-2020-28471
+summary: |
+  Properties-Reader before v2.2.0 vulnerable to prototype pollution
+  Properties-Reader prior to version 2.2.0 is vulnerable to prototype pollution. Version 2.2.0 contains a patch for this issue.
+impacted_packages:
+  - purl: pkg:npm/properties-reader
+    affected_versions: vers:npm/<2.2.0
+    fixed_versions: vers:npm/2.2.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-jxvf-m3x5-mxwq/GHSA-jxvf-m3x5-mxwq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/steveukx/properties
+    reference_type:
+    reference_id:
+  - url: https://github.com/steveukx/properties/commit/0877cc871db9865f58dd9389ce99e61be05380a5
+    reference_type:
+    reference_id:
+  - url: https://github.com/steveukx/properties/commit/4e4bc392ecfd0a128f48c1d69f64a0d7194fcaab
+    reference_type:
+    reference_id:
+  - url: https://github.com/steveukx/properties/issues/40
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28471
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-PROPERTIESREADER-1048968
+    reference_type:
+    reference_id:

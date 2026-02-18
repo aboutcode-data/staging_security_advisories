@@ -1,0 +1,59 @@
+advisory_id: GHSA-jr22-8qgm-4q87
+datasource_id: github_osv_importer_v2/GHSA-jr22-8qgm-4q87
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-jr22-8qgm-4q87/GHSA-jr22-8qgm-4q87.json
+aliases:
+  - CVE-2024-27355
+summary: |
+  phpseclib does not properly limit the ASN1 OID length
+  An issue was discovered in phpseclib 1.x before 1.0.23, 2.x before 2.0.47, and 3.x before 3.0.36. When processing the ASN.1 object identifier of a certificate, a sub identifier may be provided that leads to a denial of service (CPU consumption for decodeOID).
+impacted_packages:
+  - purl: pkg:composer/phpseclib/phpseclib
+    affected_versions: vers:composer/>=3.0.0|<3.0.36
+    fixed_versions: vers:composer/3.0.36
+  - purl: pkg:composer/phpseclib/phpseclib
+    affected_versions: vers:composer/>=2.0.0|<2.0.47
+    fixed_versions: vers:composer/2.0.47
+  - purl: pkg:composer/phpseclib/phpseclib
+    affected_versions: vers:composer/>=1.0.0|<1.0.23
+    fixed_versions: vers:composer/1.0.23
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-jr22-8qgm-4q87/GHSA-jr22-8qgm-4q87.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://gist.github.com/katzj/ee72f3c2a00590812b2ea3c0c8890e0b
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jr22-8qgm-4q87
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/phpseclib/phpseclib/CVE-2024-27355.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpseclib/phpseclib
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpseclib/phpseclib/blob/978d081fe50ff92879c50ff143c62a143edb0117/phpseclib/File/ASN1.php#L1129
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpseclib/phpseclib/commit/e32531001b4d62c66c3d824ccef54ffad835eb59
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/03/msg00002.html
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/03/msg00003.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-27355
+    reference_type:
+    reference_id:

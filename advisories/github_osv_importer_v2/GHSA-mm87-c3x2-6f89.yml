@@ -1,0 +1,35 @@
+advisory_id: GHSA-mm87-c3x2-6f89
+datasource_id: github_osv_importer_v2/GHSA-mm87-c3x2-6f89
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-mm87-c3x2-6f89/GHSA-mm87-c3x2-6f89.json
+aliases:
+  - CVE-2023-22886
+summary: |
+  Apache Airflow JDBC Provider Improper Input Validation vulnerability
+  Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow JDBC Provider. Airflow JDBC Provider Connection’s [Connection URL] parameters had no restrictions, which made it possible to implement RCE attacks via different type JDBC drivers, obtain airflow server permission. This issue affects Apache Airflow JDBC Provider: before 4.0.0.
+impacted_packages:
+  - purl: pkg:pypi/apache-airflow-providers-jdbc
+    affected_versions: vers:pypi/<4.0.0
+    fixed_versions: vers:pypi/4.0.0
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-mm87-c3x2-6f89/GHSA-mm87-c3x2-6f89.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/apache/airflow
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/ynbjwp4n0vzql0xzhog1gkp1ovncf8j3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-22886
+    reference_type:
+    reference_id:

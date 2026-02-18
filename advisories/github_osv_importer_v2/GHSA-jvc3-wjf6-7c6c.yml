@@ -1,0 +1,38 @@
+advisory_id: GHSA-jvc3-wjf6-7c6c
+datasource_id: github_osv_importer_v2/GHSA-jvc3-wjf6-7c6c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-jvc3-wjf6-7c6c/GHSA-jvc3-wjf6-7c6c.json
+aliases:
+  - CVE-2022-26885
+summary: |
+  Apache Dolphin Scheduler has insufficiently protected credentials
+  When using tasks to read config files, there is a risk of database password disclosure. We recommend you upgrade to version 2.0.6 or higher.
+impacted_packages:
+  - purl: pkg:maven/org.apache.dolphinscheduler/dolphinscheduler-common
+    affected_versions: vers:maven/<2.0.6
+    fixed_versions: vers:maven/2.0.6
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-jvc3-wjf6-7c6c/GHSA-jvc3-wjf6-7c6c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-522
+references:
+  - url: https://github.com/apache/dolphinscheduler
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/dolphinscheduler/releases/tag/2.0.6
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/z7084r9cs2r26cszkkgjqpb5bhnxqssp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-26885
+    reference_type:
+    reference_id:

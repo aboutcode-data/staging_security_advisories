@@ -1,0 +1,41 @@
+advisory_id: GHSA-m2w5-7xhv-w6fh
+datasource_id: github_osv_importer_v2/GHSA-m2w5-7xhv-w6fh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-m2w5-7xhv-w6fh/GHSA-m2w5-7xhv-w6fh.json
+aliases:
+  - CVE-2026-1035
+summary: |
+  Keycloak does not validate and update refresh token usage atomically
+  A flaw was found in the Keycloak server during refresh token processing, specifically in the TokenManager class responsible for enforcing refresh token reuse policies. When strict refresh token rotation is enabled, the validation and update of refresh token usage are not performed atomically. This allows concurrent refresh requests to bypass single-use enforcement and issue multiple access tokens from the same refresh token. As a result, Keycloak’s refresh token rotation hardening can be undermined.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<=26.2.5
+    fixed_versions:
+severities:
+  - score: '3.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-m2w5-7xhv-w6fh/GHSA-m2w5-7xhv-w6fh.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-367
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2026-1035
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2430314
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/issues/45647
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-1035
+    reference_type:
+    reference_id:

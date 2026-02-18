@@ -1,0 +1,66 @@
+advisory_id: GHSA-jq6g-4v5m-wm9r
+datasource_id: github_osv_importer_v2/GHSA-jq6g-4v5m-wm9r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-jq6g-4v5m-wm9r/GHSA-jq6g-4v5m-wm9r.json
+aliases:
+  - CVE-2023-38499
+summary: |
+  Information Disclosure due to Out-of-scope Site Resolution
+  > ### CVSS: `CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:F/RL:O/RC:C` (3.5)
+
+  ### Problem
+  In multi-site scenarios, enumerating the HTTP query parameters `id` and `L` allowed out-of-scope access to rendered content in the website frontend. For instance, this allowed visitors to access content of an internal site by adding handcrafted query parameters to the URL of a site that was publicly available.
+
+  ### Solution
+  Update to TYPO3 versions 9.5.42 ELTS, 10.4.39 ELTS, 11.5.30, 12.4.4 that fix the problem described above.
+
+  > ℹ️ **Strong security defaults - Manual actions required**
+  > Resolving sites by the `id` and `L` HTTP query parameters is now denied per default. However, it is still allowed to resolve a particular page by e.g. `https://example.org/?id=123&L=0` - as long as the `page-id 123` is in the scope of the site configured for the `base-url example.org`.
+  > The new feature flag `security.frontend.allowInsecureSiteResolutionByQueryParameters` - which is disabled per default - can be used to reactivate the previous behavior.
+
+  ### Credits
+  Thanks to Garvin Hicking who reported this issue, and to TYPO3 core & security team members Oliver Hader and Benjamin Franzke who fixed the issue.
+
+  ### References
+  * [TYPO3-CORE-SA-2023-003](https://typo3.org/security/advisory/typo3-core-sa-2023-003)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=9.4.0|<9.5.42
+    fixed_versions: vers:composer/9.5.42
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.0.0|<10.4.39
+    fixed_versions: vers:composer/10.4.39
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=11.0.0|<11.5.30
+    fixed_versions: vers:composer/11.5.30
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=12.0.0|<12.4.4
+    fixed_versions: vers:composer/12.4.4
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-jq6g-4v5m-wm9r/GHSA-jq6g-4v5m-wm9r.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/702e2debd4b28f9cdb540544565fe6a8627ccb6a
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-jq6g-4v5m-wm9r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-38499
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2023-003
+    reference_type:
+    reference_id:

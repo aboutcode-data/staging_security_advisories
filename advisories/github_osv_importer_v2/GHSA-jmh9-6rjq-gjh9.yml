@@ -1,0 +1,33 @@
+advisory_id: GHSA-jmh9-6rjq-gjh9
+datasource_id: github_osv_importer_v2/GHSA-jmh9-6rjq-gjh9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-jmh9-6rjq-gjh9/GHSA-jmh9-6rjq-gjh9.json
+aliases: []
+summary: |
+  Vulnerable embedded jQuery Version
+  ### Summary
+  PIMCore uses the JavaScript library jQuery in version 3.4.1. This version is vulnerable to cross-site-scripting (XSS).
+
+  ### Details
+  In jQuery versions greater than or equal to 1.0.3 and before 3.5.0, passing HTML containing elements from untrusted sources - even after sanitizing it to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.
+
+  Publish Date: 2020-04-29
+
+  URL:= https://security.snyk.io/package/npm/jquery/3.4.1
+impacted_packages:
+  - purl: pkg:composer/pimcore/admin-ui-classic-bundle
+    affected_versions: vers:composer/<=1.4.2
+    fixed_versions: vers:composer/1.4.3
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/pimcore/admin-ui-classic-bundle
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/admin-ui-classic-bundle/security/advisories/GHSA-jmh9-6rjq-gjh9
+    reference_type:
+    reference_id:

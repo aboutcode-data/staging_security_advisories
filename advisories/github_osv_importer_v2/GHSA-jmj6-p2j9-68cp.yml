@@ -1,0 +1,42 @@
+advisory_id: GHSA-jmj6-p2j9-68cp
+datasource_id: github_osv_importer_v2/GHSA-jmj6-p2j9-68cp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-jmj6-p2j9-68cp/GHSA-jmj6-p2j9-68cp.json
+aliases:
+  - CVE-2022-3143
+summary: |
+  Wildfly-elytron possibly vulnerable to timing attacks via use of unsafe comparator
+  wildfly-elytron: possible timing attacks via use of unsafe comparator. A flaw was found in Wildfly-elytron. Wildfly-elytron uses `java.util.Arrays.equals` in several places, which is unsafe and vulnerable to timing attacks. To compare values securely, use `java.security.MessageDigest.isEqual` instead. This flaw allows an attacker to access secure information or impersonate an authed user.
+impacted_packages:
+  - purl: pkg:maven/org.wildfly.security/wildfly-elytron
+    affected_versions: vers:maven/<1.15.15.Final
+    fixed_versions: vers:maven/1.15.15.Final
+  - purl: pkg:maven/org.wildfly.security/wildfly-elytron
+    affected_versions: vers:maven/>=1.16.0.CR1|<1.20.3.Final
+    fixed_versions: vers:maven/1.20.3.Final
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-jmj6-p2j9-68cp/GHSA-jmj6-p2j9-68cp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+  - CWE-208
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2022-3143
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2124682
+    reference_type:
+    reference_id:
+  - url: https://github.com/wildfly-security/wildfly-elytron
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3143
+    reference_type:
+    reference_id:

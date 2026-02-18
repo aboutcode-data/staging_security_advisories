@@ -1,0 +1,47 @@
+advisory_id: GHSA-jjf5-wx3j-3fv7
+datasource_id: github_osv_importer_v2/GHSA-jjf5-wx3j-3fv7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jjf5-wx3j-3fv7/GHSA-jjf5-wx3j-3fv7.json
+aliases:
+  - CVE-2022-21190
+summary: |
+  Prototype Pollution in convict
+  This affects the package convict before 6.2.3. This is a bypass of [CVE-2022-22143](https://security.snyk.io/vuln/SNYK-JS-CONVICT-2340604). The [fix](https://github.com/mozilla/node-convict/commit/3b86be087d8f14681a9c889d45da7fe3ad9cd880) introduced, relies on the startsWith method and does not prevent the vulnerability: before splitting the path, it checks if it starts with __proto__ or this.constructor.prototype. To bypass this check it's possible to prepend the dangerous paths with any string value followed by a dot, like for example foo.__proto__ or foo.this.constructor.prototype.
+impacted_packages:
+  - purl: pkg:npm/convict
+    affected_versions: vers:npm/<6.2.3
+    fixed_versions: vers:npm/6.2.3
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jjf5-wx3j-3fv7/GHSA-jjf5-wx3j-3fv7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://gist.github.com/dellalibera/cebce20e51410acebff1f46afdc89808
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/node-convict
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/node-convict/blob/3b86be087d8f14681a9c889d45da7fe3ad9cd880/packages/convict/src/main.js%23L571
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/node-convict/blob/master/CHANGELOG.md%23623---2022-05-07
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/node-convict/commit/1ea0ab19c5208f66509e1c43b0d0f21c1fd29b75
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21190
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-CONVICT-2774757
+    reference_type:
+    reference_id:

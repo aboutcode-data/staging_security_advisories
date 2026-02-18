@@ -1,0 +1,36 @@
+advisory_id: GHSA-mqvp-7rrg-9jxc
+datasource_id: github_osv_importer_v2/GHSA-mqvp-7rrg-9jxc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-mqvp-7rrg-9jxc/GHSA-mqvp-7rrg-9jxc.json
+aliases:
+  - CVE-2022-26336
+summary: |
+  Improper Input Validation and Allocation of Resources Without Limits or Throttling in poi-scratchpad
+  A shortcoming in the HMEF package of poi-scratchpad (Apache POI) allows an attacker to cause an Out of Memory exception. This package is used to read TNEF files (Microsoft Outlook and Microsoft Exchange Server). If an application uses poi-scratchpad to parse TNEF files and the application allows untrusted users to supply them, then a carefully crafted file can cause an Out of Memory exception. This issue affects poi-scratchpad version 5.2.0 and prior versions. Users are recommended to upgrade to poi-scratchpad 5.2.1.
+impacted_packages:
+  - purl: pkg:maven/org.apache.poi/poi-scratchpad
+    affected_versions: vers:maven/>=3.8-beta1|<5.2.1
+    fixed_versions: vers:maven/5.2.1
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-mqvp-7rrg-9jxc/GHSA-mqvp-7rrg-9jxc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+  - CWE-20
+references:
+  - url: https://lists.apache.org/thread/sprg0kq986pc2271dc3v2oxb1f9qx09j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-26336
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20221028-0006
+    reference_type:
+    reference_id:

@@ -1,0 +1,54 @@
+advisory_id: GHSA-j9xp-92vc-559j
+datasource_id: github_osv_importer_v2/GHSA-j9xp-92vc-559j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-j9xp-92vc-559j/GHSA-j9xp-92vc-559j.json
+aliases:
+  - CVE-2019-10748
+summary: |
+  SQL Injection in sequelize
+  Affected versions of `sequelize` are vulnerable to SQL Injection. The package fails to sanitize JSON path keys in the MariaDB and MySQL dialects,  which may allow attackers to inject SQL statements and execute arbitrary SQL queries.
+
+
+  ## Recommendation
+
+  If you are using `sequelize` 5.x, upgrade to version 5.8.11 or later.
+  If you are using `sequelize` 4.x, upgrade to version 4.44.3 or later.
+  If you are using `sequelize` 3.x, upgrade to version 3.35.1 or later.
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<3.35.1
+    fixed_versions: vers:npm/3.35.1
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/>=4.0.0|<4.44.3
+    fixed_versions: vers:npm/4.44.3
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/>=5.0.0|<5.8.11
+    fixed_versions: vers:npm/5.8.11
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-j9xp-92vc-559j/GHSA-j9xp-92vc-559j.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/sequelize/sequelize/commit/a72a3f5,
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/pull/11089,
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10748
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SEQUELIZE-450221
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1018
+    reference_type:
+    reference_id:

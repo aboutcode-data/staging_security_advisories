@@ -1,0 +1,48 @@
+advisory_id: GHSA-m988-7375-7g2c
+datasource_id: github_osv_importer_v2/GHSA-m988-7375-7g2c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-m988-7375-7g2c/GHSA-m988-7375-7g2c.json
+aliases:
+  - CVE-2023-42817
+summary: |
+  pimcore/admin-ui-classic-bundle Cross-site Scripting vulnerability in Translations
+  ### Impact
+  The translation value with text including “%s” (from “%suggest%) is parsed by sprintf() even though it’s supposed to be output literally to the user.
+
+  The translations may be accessible by a user with comparatively lower overall access (as the translation permission cannot be scoped to certain “modules”) and a skilled attacker might be able to exploit the parsing of the translation string in the dialog box.
+
+  ### Patches
+  https://github.com/pimcore/admin-ui-classic-bundle/commit/abd7739298f974319e3cac3fd4fcd7f995b63e4c.patch
+
+  ### Workarounds
+  Update to version 1.1.2 or apply this patches manually
+  https://github.com/pimcore/admin-ui-classic-bundle/commit/abd7739298f974319e3cac3fd4fcd7f995b63e4c.patch
+impacted_packages:
+  - purl: pkg:composer/pimcore/admin-ui-classic-bundle
+    affected_versions: vers:composer/<1.1.2
+    fixed_versions: vers:composer/1.1.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-m988-7375-7g2c/GHSA-m988-7375-7g2c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pimcore/admin-ui-classic-bundle
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/admin-ui-classic-bundle/commit/abd7739298f974319e3cac3fd4fcd7f995b63e4c
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/admin-ui-classic-bundle/security/advisories/GHSA-m988-7375-7g2c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-42817
+    reference_type:
+    reference_id:

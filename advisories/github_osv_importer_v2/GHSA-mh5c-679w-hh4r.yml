@@ -1,0 +1,27 @@
+advisory_id: GHSA-mh5c-679w-hh4r
+datasource_id: github_osv_importer_v2/GHSA-mh5c-679w-hh4r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-mh5c-679w-hh4r/GHSA-mh5c-679w-hh4r.json
+aliases: []
+summary: |
+  Denial of Service in mongodb
+  Versions of `mongodb` prior to 3.1.13 are vulnerable to Denial of Service. The package fails to properly catch an exception when a collection name is invalid and the DB does not exist, crashing the application.
+
+
+  ## Recommendation
+
+  Upgrade to version 3.1.13 or later.
+impacted_packages:
+  - purl: pkg:npm/mongodb
+    affected_versions: vers:npm/<3.1.13
+    fixed_versions: vers:npm/3.1.13
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://www.npmjs.com/advisories/1203
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-mmhr-3jr7-qj2p
+datasource_id: github_osv_importer_v2/GHSA-mmhr-3jr7-qj2p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mmhr-3jr7-qj2p/GHSA-mmhr-3jr7-qj2p.json
+aliases:
+  - CVE-2018-15121
+summary: |
+  Auth0-ASPNET and Auth0-ASPNET-Owin vulnerable to Cross-Site Request Forgery
+  An issue was discovered in Auth0 auth0-aspnet and auth0-aspnet-owin. Affected packages do not use or validate the state parameter of the OAuth 2.0 and OpenID Connect protocols. This leaves applications vulnerable to CSRF attacks during authentication and authorization operations.
+impacted_packages:
+  - purl: pkg:nuget/Auth0-ASPNET-Owin
+    affected_versions: vers:nuget/<=2.3.2
+    fixed_versions:
+  - purl: pkg:nuget/auth0-aspnet
+    affected_versions: vers:nuget/<=2.1.1
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mmhr-3jr7-qj2p/GHSA-mmhr-3jr7-qj2p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://auth0.com/docs/security/bulletins/cve-2018-15121
+    reference_type:
+    reference_id:
+  - url: https://github.com/auth0/auth0-aspnet-owin
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-15121
+    reference_type:
+    reference_id:
+  - url: https://www.nuget.org/packages/Auth0-ASPNET-Owin
+    reference_type:
+    reference_id:

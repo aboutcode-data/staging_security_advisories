@@ -1,0 +1,74 @@
+advisory_id: GHSA-m974-647v-whv7
+datasource_id: github_osv_importer_v2/GHSA-m974-647v-whv7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-m974-647v-whv7/GHSA-m974-647v-whv7.json
+aliases:
+  - CVE-2022-39299
+summary: |
+  Signature bypass via multiple root elements
+  ### Impact
+
+  A remote attacker may be able to bypass SAML authentication on a website using passport-saml. A successful attack requires that the attacker is in possession of an arbitrary IDP signed XML element. Depending on the IDP used, fully unauthenticated attacks (e.g without access to a valid user) might also be feasible if generation of a signed message can be triggered.
+
+  ### Patches
+
+  Users should upgrade to passport-saml 3.2.2 or newer. The issue was also present in the beta releases of `node-saml` before v4.0.0-beta.5.
+
+  ### Workarounds
+
+  Disable SAML authentication.
+
+  ### References
+  _Are there any links users can visit to find out more?_
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open a discussion in the [node-saml repo](https://github.com/node-saml/node-saml/discussions)
+
+  ### Credits
+
+  * Felix Wilhelm of Google Project Zero
+impacted_packages:
+  - purl: pkg:npm/passport-saml
+    affected_versions: vers:npm/<3.2.2
+    fixed_versions: vers:npm/3.2.2
+  - purl: pkg:npm/node-saml
+    affected_versions: vers:npm/<4.0.0-beta.5
+    fixed_versions: vers:npm/4.0.0-beta.5
+  - purl: pkg:npm/%40node-saml/node-saml
+    affected_versions: vers:npm/<4.0.0-beta.5
+    fixed_versions: vers:npm/4.0.0-beta.5
+  - purl: pkg:npm/%40node-saml/passport-saml
+    affected_versions: vers:npm/<4.0.0-beta.3
+    fixed_versions: vers:npm/4.0.0-beta.3
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-m974-647v-whv7/GHSA-m974-647v-whv7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-347
+references:
+  - url: http://packetstormsecurity.com/files/169826/Node-saml-Root-Element-Signature-Bypass.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-saml/passport-saml
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-saml/passport-saml/commit/8b7e3f5a91c8e5ac7e890a0c90bc7491ce33155e
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-saml/passport-saml/releases/tag/v3.2.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/node-saml/passport-saml/security/advisories/GHSA-m974-647v-whv7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-39299
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-jjcx-999m-35hc
+datasource_id: github_osv_importer_v2/GHSA-jjcx-999m-35hc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-jjcx-999m-35hc/GHSA-jjcx-999m-35hc.json
+aliases:
+  - CVE-2019-14671
+summary: |
+  Improper Input Validation in Firefly III
+  Firefly III 4.7.17.3 is vulnerable to local file enumeration. An attacker can enumerate local files due to the lack of protocol scheme sanitization, such as for file:/// URLs. This is related to fints_url to import/job/configuration, and import/create/fints.
+impacted_packages:
+  - purl: pkg:composer/grumpydictator/firefly-iii
+    affected_versions: vers:composer/<=4.7.17+3
+    fixed_versions: vers:composer/4.7.17+4
+severities:
+  - score: '3.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-jjcx-999m-35hc/GHSA-jjcx-999m-35hc.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/firefly-iii/firefly-iii/commit/e80d616ef4397e6e764f6b7b7a5b30121244933c
+    reference_type:
+    reference_id:
+  - url: https://github.com/firefly-iii/firefly-iii/issues/2367
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-14671
+    reference_type:
+    reference_id:

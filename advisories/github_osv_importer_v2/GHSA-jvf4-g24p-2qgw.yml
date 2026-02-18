@@ -1,0 +1,35 @@
+advisory_id: GHSA-jvf4-g24p-2qgw
+datasource_id: github_osv_importer_v2/GHSA-jvf4-g24p-2qgw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-jvf4-g24p-2qgw/GHSA-jvf4-g24p-2qgw.json
+aliases:
+  - CVE-2020-7738
+summary: |
+  Arbitrary Code Execution in shiba
+  All versions of package shiba are vulnerable to Arbitrary Code Execution due to the default usage of the function `load()` of the package js-yaml instead of its secure replacement , `safeLoad()`.
+impacted_packages:
+  - purl: pkg:npm/shiba
+    affected_versions: vers:npm/<=1.2.1
+    fixed_versions:
+severities:
+  - score: '8.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-jvf4-g24p-2qgw/GHSA-jvf4-g24p-2qgw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7738
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SHIBA-596466
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/shiba
+    reference_type:
+    reference_id:

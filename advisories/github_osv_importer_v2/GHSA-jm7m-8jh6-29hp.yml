@@ -1,0 +1,45 @@
+advisory_id: GHSA-jm7m-8jh6-29hp
+datasource_id: github_osv_importer_v2/GHSA-jm7m-8jh6-29hp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-jm7m-8jh6-29hp/GHSA-jm7m-8jh6-29hp.json
+aliases:
+  - CVE-2023-42794
+summary: |
+  Apache Tomcat Incomplete Cleanup vulnerability
+  Incomplete Cleanup vulnerability in Apache Tomcat.
+
+  The internal fork of Commons FileUpload packaged with Apache Tomcat 9.0.70 through 9.0.80 and 8.5.85 through 8.5.93 included an unreleased, in progress refactoring that exposed a potential denial of service on Windows if a web application opened a stream for an uploaded file but failed to close the stream. The file would never be deleted from disk creating the possibility of an eventual denial of service due to the disk being full.
+
+  Users are recommended to upgrade to version 9.0.81 onwards or 8.5.94 onwards, which fixes the issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tomcat/tomcat-coyote
+    affected_versions: vers:maven/>=9.0.70|<9.0.81
+    fixed_versions: vers:maven/9.0.81
+  - purl: pkg:maven/org.apache.tomcat/tomcat-coyote
+    affected_versions: vers:maven/>=8.5.85|<8.5.94
+    fixed_versions: vers:maven/8.5.94
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-jm7m-8jh6-29hp/GHSA-jm7m-8jh6-29hp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-459
+references:
+  - url: https://github.com/apache/tomcat
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/vvbr2ms7lockj1hlhz5q3wmxb2mwcw82
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-42794
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/10/10/8
+    reference_type:
+    reference_id:

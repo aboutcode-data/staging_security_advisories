@@ -1,0 +1,42 @@
+advisory_id: GHSA-jjq8-vfjq-j6v4
+datasource_id: github_osv_importer_v2/GHSA-jjq8-vfjq-j6v4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jjq8-vfjq-j6v4/GHSA-jjq8-vfjq-j6v4.json
+aliases:
+  - CVE-2015-5531
+summary: |
+  Improper Limitation of a Pathname to a Restricted Directory in Elasticsearch
+  Directory traversal vulnerability in Elasticsearch before 1.6.1 allows remote attackers to read arbitrary files via unspecified vectors related to snapshot API calls.
+impacted_packages:
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/<=1.6.0
+    fixed_versions: vers:maven/1.6.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://packetstormsecurity.com/files/132721/Elasticsearch-Directory-Traversal.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/133797/ElasticSearch-Path-Traversal-Arbitrary-File-Download.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/133964/ElasticSearch-Snapshot-API-Directory-Traversal.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-5531
+    reference_type:
+    reference_id:
+  - url: https://www.elastic.co/community/security
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/38383
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/webapps/38383.py
+    reference_type: exploit
+    reference_id: CVE-2015-5531;OSVDB-124882

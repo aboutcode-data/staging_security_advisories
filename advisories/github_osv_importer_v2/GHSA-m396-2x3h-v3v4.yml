@@ -1,0 +1,35 @@
+advisory_id: GHSA-m396-2x3h-v3v4
+datasource_id: github_osv_importer_v2/GHSA-m396-2x3h-v3v4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m396-2x3h-v3v4/GHSA-m396-2x3h-v3v4.json
+aliases:
+  - CVE-2020-14475
+summary: |
+  Dolibarr reflected cross-site scripting (XSS) vulnerability
+  A reflected cross-site scripting (XSS) vulnerability in Dolibarr 11.0.4 and below allows remote attackers to inject arbitrary web script or HTML into public/notice.php (related to transphrase and transkey).
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<11.0.5
+    fixed_versions: vers:composer/11.0.5
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m396-2x3h-v3v4/GHSA-m396-2x3h-v3v4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/22ca5e067189bffe8066df26df923a386f044c08
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-14475
+    reference_type:
+    reference_id:

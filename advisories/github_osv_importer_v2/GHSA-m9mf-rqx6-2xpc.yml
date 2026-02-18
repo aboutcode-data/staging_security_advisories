@@ -1,0 +1,41 @@
+advisory_id: GHSA-m9mf-rqx6-2xpc
+datasource_id: github_osv_importer_v2/GHSA-m9mf-rqx6-2xpc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-m9mf-rqx6-2xpc/GHSA-m9mf-rqx6-2xpc.json
+aliases:
+  - CVE-2022-40849
+summary: |
+  ThinkCMF Stored Cross-Site Scripting (XSS)
+  ThinkCMF version 6.0.7 is affected by Stored Cross-Site Scripting (XSS). An attacker who successfully exploited this vulnerability could inject a Persistent XSS payload in the Slideshow Management section that execute arbitrary JavaScript code on the client side, e.g., to steal the administrator's PHP session token (PHPSESSID).
+impacted_packages:
+  - purl: pkg:composer/thinkcmf/thinkcmf
+    affected_versions: vers:composer/<6.0.8
+    fixed_versions: vers:composer/6.0.8
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-m9mf-rqx6-2xpc/GHSA-m9mf-rqx6-2xpc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/thinkcmf/thinkcmf
+    reference_type:
+    reference_id:
+  - url: https://github.com/thinkcmf/thinkcmf/commit/aba1f52bbf6c9515c545e046cec8416cbaefa496
+    reference_type:
+    reference_id:
+  - url: https://github.com/thinkcmf/thinkcmf/commit/b61636134aa57d4693967f35772200c779099740
+    reference_type:
+    reference_id:
+  - url: https://github.com/thinkcmf/thinkcmf/issues/737
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-40849
+    reference_type:
+    reference_id:

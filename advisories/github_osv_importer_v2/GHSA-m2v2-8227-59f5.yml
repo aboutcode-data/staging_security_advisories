@@ -1,0 +1,31 @@
+advisory_id: GHSA-m2v2-8227-59f5
+datasource_id: github_osv_importer_v2/GHSA-m2v2-8227-59f5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-m2v2-8227-59f5/GHSA-m2v2-8227-59f5.json
+aliases:
+  - CVE-2021-22967
+summary: |
+  Exposure of sensitive information in concrete5/core
+  In Concrete CMS (formerly concrete 5) below 8.5.7, IDOR Allows Unauthenticated User to Access Restricted Files If Allowed to Add Message to a Conversation.To remediate this, a check was added to verify a user has permissions to view files before attaching the files to a message in "add / edit message”.
+impacted_packages:
+  - purl: pkg:composer/concrete5/core
+    affected_versions: vers:composer/<8.5.7
+    fixed_versions: vers:composer/8.5.7
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-639
+references:
+  - url: https://documentation.concretecms.org/developers/introduction/version-history/857-release-notes
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/869612
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-22967
+    reference_type:
+    reference_id:

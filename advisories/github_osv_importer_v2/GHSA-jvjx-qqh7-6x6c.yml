@@ -1,0 +1,38 @@
+advisory_id: GHSA-jvjx-qqh7-6x6c
+datasource_id: github_osv_importer_v2/GHSA-jvjx-qqh7-6x6c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-jvjx-qqh7-6x6c/GHSA-jvjx-qqh7-6x6c.json
+aliases:
+  - CVE-2023-1757
+summary: |
+  thorsten/phpmyfaq vulnerable to stored cross-site scripting (XSS) via FAQ News link parameter
+  thorsten/phpmyfaq prior to 3.1.12 is vulnerable to stored cross-site scripting (XSS) because it fails to sanitize user input in the FAQ News link parameter. This has been fixed in 3.1.12.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.1.12
+    fixed_versions: vers:composer/3.1.12
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-jvjx-qqh7-6x6c/GHSA-jvjx-qqh7-6x6c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/5061e5841be6c218ebb0de0cbf7b7f195dc46d19
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/584a200a-6ff8-4d53-a3c0-e7893edff60c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-1757
+    reference_type:
+    reference_id:

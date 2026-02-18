@@ -1,0 +1,28 @@
+advisory_id: GHSA-mhfv-8rc9-w38c
+datasource_id: github_osv_importer_v2/GHSA-mhfv-8rc9-w38c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-mhfv-8rc9-w38c/GHSA-mhfv-8rc9-w38c.json
+aliases: []
+summary: |
+  Arbitrary shell execution
+  Uses of shell_exec() and exec() were not escaping filenames and configuration settings in most cases
+impacted_packages:
+  - purl: pkg:composer/squizlabs/php_codesniffer
+    affected_versions: vers:composer/>=1.0.0|<2.8.1
+    fixed_versions: vers:composer/2.8.1
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/squizlabs/php_codesniffer/2017-03-01.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/squizlabs/PHP_CodeSniffer
+    reference_type:
+    reference_id:
+  - url: https://github.com/squizlabs/PHP_CodeSniffer/releases/tag/2.8.1
+    reference_type:
+    reference_id:

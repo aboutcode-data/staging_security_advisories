@@ -1,0 +1,32 @@
+advisory_id: GHSA-mm7r-265w-jv6f
+datasource_id: github_osv_importer_v2/GHSA-mm7r-265w-jv6f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-mm7r-265w-jv6f/GHSA-mm7r-265w-jv6f.json
+aliases:
+  - CVE-2020-8135
+summary: "Server-Side Request Forgery in @uppy/companion\nVersions of `@uppy/companion` prior\
+  \ to 1.9.3 are vulnerable to Server-Side Request Forgery (SSRF). The `get` route passes the\
+  \ user-controlled variable `req.body.url` to a GET request without sanitizing the value. This\
+  \ allows attackers to inject arbitrary URLs and make GET requests on behalf of the server.\
+  \ \n\n\n## Recommendation\n\nUpgrade to version 1.9.3 or later."
+impacted_packages:
+  - purl: pkg:npm/%40uppy/companion
+    affected_versions: vers:npm/<1.9.3
+    fixed_versions: vers:npm/1.9.3
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://hackerone.com/reports/786956
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8135
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1501
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-mjq8-gg9x-87gr
+datasource_id: github_osv_importer_v2/GHSA-mjq8-gg9x-87gr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-mjq8-gg9x-87gr/GHSA-mjq8-gg9x-87gr.json
+aliases:
+  - CVE-2024-28128
+summary: |
+  FitNesse Cross-site Scripting vulnerability
+  Cross-site scripting vulnerability exists in FitNesse releases prior to 20220319, which may allow a remote unauthenticated attacker to execute an arbitrary script on the web browser of the user who is using the product and accessing a link with a specially crafted certain parameter.
+impacted_packages:
+  - purl: pkg:maven/org.fitnesse/fitnesse
+    affected_versions: vers:maven/<20220319
+    fixed_versions: vers:maven/20220319
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-mjq8-gg9x-87gr/GHSA-mjq8-gg9x-87gr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://fitnesse.org/FitNesseDownload
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclebob/fitnesse
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclebob/fitnesse/blob/master/SECURITY.md
+    reference_type:
+    reference_id:
+  - url: https://jvn.jp/en/jp/JVN94521208
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-28128
+    reference_type:
+    reference_id:

@@ -1,0 +1,39 @@
+advisory_id: GHSA-jc7h-c423-mpjc
+datasource_id: github_osv_importer_v2/GHSA-jc7h-c423-mpjc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-jc7h-c423-mpjc/GHSA-jc7h-c423-mpjc.json
+aliases:
+  - CVE-2023-46749
+summary: "Apache Shiro vulnerable to path traversal\nApache Shiro before 1.130 or 2.0.0-alpha-4,\
+  \ may be susceptible to a path traversal attack that results in an authentication bypass when\
+  \ used together with path rewriting \n\nMitigation: Update to Apache Shiro 1.13.0+ or 2.0.0-alpha-4+,\
+  \ or ensure `blockSemicolon` is enabled (this is the default)."
+impacted_packages:
+  - purl: pkg:maven/org.apache.shiro/shiro-core
+    affected_versions: vers:maven/<1.13.0
+    fixed_versions: vers:maven/1.13.0
+  - purl: pkg:maven/org.apache.shiro/shiro-core
+    affected_versions: vers:maven/<2.0.0alpha4
+    fixed_versions: vers:maven/2.0.0-alpha4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-jc7h-c423-mpjc/GHSA-jc7h-c423-mpjc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://lists.apache.org/thread/mdv7ftz7k4488rzloxo2fb0p9shnp9wm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46749
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20241108-0002
+    reference_type:
+    reference_id:

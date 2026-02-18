@@ -1,0 +1,35 @@
+advisory_id: GHSA-jr2m-29wj-w9qc
+datasource_id: github_osv_importer_v2/GHSA-jr2m-29wj-w9qc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-jr2m-29wj-w9qc/GHSA-jr2m-29wj-w9qc.json
+aliases:
+  - CVE-2022-25506
+summary: |
+  SQL Injection in FreeTAKServer-UI
+  FreeTAKServer-UI v1.9.8 was discovered to contain a SQL injection vulnerability via the API endpoint /AuthenticateUser.
+impacted_packages:
+  - purl: pkg:pypi/freetakserver-ui
+    affected_versions: vers:pypi/<=1.9.8
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-jr2m-29wj-w9qc/GHSA-jr2m-29wj-w9qc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/FreeTAKTeam/UI
+    reference_type:
+    reference_id:
+  - url: https://github.com/FreeTAKTeam/UI/issues/27
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25506
+    reference_type:
+    reference_id:

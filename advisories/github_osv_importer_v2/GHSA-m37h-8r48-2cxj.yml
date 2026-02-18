@@ -1,0 +1,41 @@
+advisory_id: GHSA-m37h-8r48-2cxj
+datasource_id: github_osv_importer_v2/GHSA-m37h-8r48-2cxj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-m37h-8r48-2cxj/GHSA-m37h-8r48-2cxj.json
+aliases:
+  - CVE-2024-6863
+summary: |
+  H2O Vulnerable to Execution of Arbitrary Files
+  In h2oai/h2o-3 version 3.46.0, an endpoint exposing a custom EncryptionTool allows an attacker to encrypt any files on the target server with a key of their choosing. The chosen key can also be overwritten, resulting in ransomware-like behavior. This vulnerability makes it possible for an attacker to encrypt arbitrary files with keys of their choice, making it exceedingly difficult for the target to recover the keys needed for decryption.
+impacted_packages:
+  - purl: pkg:pypi/h2o
+    affected_versions: vers:pypi/>=3.32.1.2|<=3.46.0
+    fixed_versions:
+  - purl: pkg:maven/ai.h2o/h2o-core
+    affected_versions: vers:maven/>=3.32.1.2|<=3.46.0
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-m37h-8r48-2cxj/GHSA-m37h-8r48-2cxj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-749
+references:
+  - url: https://github.com/h2oai/h2o-3
+    reference_type:
+    reference_id:
+  - url: https://github.com/h2oai/h2o-3/blob/a20b5b19b769866ee24b217ee78b820e64c1cd6a/h2o-core/src/main/java/water/tools/EncryptionTool.java#L49
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/10f55937-0cba-4530-897f-2abf30ed5270
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-6863
+    reference_type:
+    reference_id:

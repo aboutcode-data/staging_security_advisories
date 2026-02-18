@@ -1,0 +1,44 @@
+advisory_id: GHSA-mpg7-2rx9-h5qp
+datasource_id: github_osv_importer_v2/GHSA-mpg7-2rx9-h5qp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-mpg7-2rx9-h5qp/GHSA-mpg7-2rx9-h5qp.json
+aliases:
+  - CVE-2018-5478
+summary: |
+  Contao Cross-site Scripting vulnerabililty
+  Contao 3.x before 3.5.32 allows Cross-site Scripting (XSS) via the unsubscribe module in the frontend newsletter extension.
+impacted_packages:
+  - purl: pkg:composer/contao/core
+    affected_versions: vers:composer/>=3.0.0|<3.5.32
+    fixed_versions: vers:composer/3.5.32
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-mpg7-2rx9-h5qp/GHSA-mpg7-2rx9-h5qp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://contao.org/en/news/contao-3_5_32.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/core/commit/3123d6527ae6c46087b0ad8061eb8651cb645b8d
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/core/CVE-2018-5478.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-5478
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-PHP-CONTAOCORE-70397
+    reference_type:
+    reference_id:

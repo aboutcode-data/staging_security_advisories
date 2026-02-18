@@ -1,0 +1,35 @@
+advisory_id: GHSA-jjgq-jq8g-24w4
+datasource_id: github_osv_importer_v2/GHSA-jjgq-jq8g-24w4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jjgq-jq8g-24w4/GHSA-jjgq-jq8g-24w4.json
+aliases:
+  - CVE-2017-14242
+summary: |
+  Dolibarr SQL injection vulnerability in don/list.php
+  SQL injection vulnerability in don/list.php in Dolibarr version 6.0.0 allows remote attackers to execute arbitrary SQL commands via the statut parameter.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<6.0.1
+    fixed_versions: vers:composer/6.0.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jjgq-jq8g-24w4/GHSA-jjgq-jq8g-24w4.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/33e2179b65331d9d9179b59d746817c5be1fecdb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-14242
+    reference_type:
+    reference_id:

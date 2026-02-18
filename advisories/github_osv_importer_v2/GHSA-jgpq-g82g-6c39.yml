@@ -1,0 +1,36 @@
+advisory_id: GHSA-jgpq-g82g-6c39
+datasource_id: github_osv_importer_v2/GHSA-jgpq-g82g-6c39
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/04/GHSA-jgpq-g82g-6c39/GHSA-jgpq-g82g-6c39.json
+aliases:
+  - CVE-2020-7638
+summary: |
+  confinit vulnerable to prototype pollution
+  confinit through 0.3.0 is vulnerable to Prototype Pollution.The 'setDeepProperty' function could be tricked into adding or modifying properties of 'Object.prototype' using a '__proto__' payload.
+impacted_packages:
+  - purl: pkg:npm/confinit
+    affected_versions: vers:npm/<0.4.0
+    fixed_versions: vers:npm/0.4.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/04/GHSA-jgpq-g82g-6c39/GHSA-jgpq-g82g-6c39.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+  - CWE-1321
+references:
+  - url: https://github.com/davideicardi/confinit/commit/a34e06ca5c1c8b047ef112ef188b2fe30d2a1eab
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7638
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-CONFINIT-564433
+    reference_type:
+    reference_id:

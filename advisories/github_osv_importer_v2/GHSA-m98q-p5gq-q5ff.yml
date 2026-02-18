@@ -1,0 +1,44 @@
+advisory_id: GHSA-m98q-p5gq-q5ff
+datasource_id: github_osv_importer_v2/GHSA-m98q-p5gq-q5ff
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m98q-p5gq-q5ff/GHSA-m98q-p5gq-q5ff.json
+aliases:
+  - CVE-2017-1000431
+summary: |
+  eZ Publish Cross-site Scripting (XSS) vulnerability
+  eZ Systems eZ Publish version 5.4.0 to 5.4.9, and 5.3.12.0 and older, is vulnerable to an XSS issue in the search module, resulting in a risk of attackers injecting scripts which may e.g. steal authentication credentials.
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/>=5.4.0|<5.4.10
+    fixed_versions: vers:composer/5.4.10
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/>=5.3.0|<5.3.12+1
+    fixed_versions: vers:composer/5.3.12+1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m98q-p5gq-q5ff/GHSA-m98q-p5gq-q5ff.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/ezsystems/ezpublish-legacy/commit/c7174295fa0b9bd81bd4af908082464b0b80f278
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/ezsystems/ezpublish-legacy/CVE-2017-1000431.yaml
+    reference_type:
+    reference_id:
+  - url: http://share.ez.no/community-project/security-advisories/ezsa-2017-005-xss-issue-in-search
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000431
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210408035246/http://share.ez.no/community-project/security-advisories/ezsa-2017-005-xss-issue-in-search
+    reference_type:
+    reference_id:

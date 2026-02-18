@@ -1,0 +1,57 @@
+advisory_id: GHSA-mc68-q9jw-2h3v
+datasource_id: github_osv_importer_v2/GHSA-mc68-q9jw-2h3v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-mc68-q9jw-2h3v/GHSA-mc68-q9jw-2h3v.json
+aliases:
+  - CVE-2026-24763
+summary: |
+  OpenClaw/Clawdbot Docker Execution has Authenticated Command Injection via PATH Environment Variable
+  ### Summary
+  A Command Injection vulnerability existed in Clawdbot’s Docker sandbox execution mechanism due to unsafe handling of the PATH environment variable when constructing shell commands.
+
+  An authenticated user able to control environment variables could influence command execution within the container context.
+  This issue has been fixed and regression tests have been added to prevent reintroduction.
+
+  ### Impact
+  In environments where Docker sandbox mode was enabled, authenticated users capable of supplying environment variables could affect the behavior of commands executed inside the container.
+
+  This could lead to:
+  1. Execution of unintended commands inside the container
+  2. Access to the container filesystem and environment variables
+  3. Exposure of sensitive data
+  4. Increased risk in misconfigured or privileged container environments
+impacted_packages:
+  - purl: pkg:npm/clawdbot
+    affected_versions: vers:npm/<=2026.1.24
+    fixed_versions: vers:npm/2026.1.29
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-mc68-q9jw-2h3v/GHSA-mc68-q9jw-2h3v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/clawdbot/clawdbot/security/advisories/GHSA-mc68-q9jw-2h3v
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/771f23d36b95ec2204cc9a0054045f5d8439ea75
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.1.29
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-mc68-q9jw-2h3v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-24763
+    reference_type:
+    reference_id:

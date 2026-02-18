@@ -1,0 +1,38 @@
+advisory_id: GHSA-jjp3-m93h-5jm4
+datasource_id: github_osv_importer_v2/GHSA-jjp3-m93h-5jm4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-jjp3-m93h-5jm4/GHSA-jjp3-m93h-5jm4.json
+aliases:
+  - CVE-2022-0928
+summary: |
+  Cross-site Scripting in microweber
+  Microweber drag and drop website builder and CMS with e-commerce. Cross-site Scripting (XSS) discovered in microweber prior to 1.2.12. There is currently no known workaround, users are recommended to update to version 1.2.12.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.2.12
+    fixed_versions: vers:composer/1.2.12
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-jjp3-m93h-5jm4/GHSA-jjp3-m93h-5jm4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/fc9137c031f7edec5f50d73b300919fb519c924a
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/085aafdd-ba50-44c7-9650-fa573da29bcd
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0928
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-jv64-2m3x-6v4q
+datasource_id: github_osv_importer_v2/GHSA-jv64-2m3x-6v4q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-jv64-2m3x-6v4q/GHSA-jv64-2m3x-6v4q.json
+aliases:
+  - CVE-2021-41948
+summary: |
+  Subrion CMS Cross-site Scripting (XSS) vulnerability in the `contact us` plugin
+  A cross-site scripting (XSS) vulnerability exists in the `contact us` plugin for Subrion CMS <= 4.2.1 version via `List of subjects`. This can be exploited by someone with administrative privileges when they log in to the admin panel.
+impacted_packages:
+  - purl: pkg:composer/intelliants/subrion
+    affected_versions: vers:composer/<=4.2.1
+    fixed_versions:
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-jv64-2m3x-6v4q/GHSA-jv64-2m3x-6v4q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/intelliants/subrion-plugin-contact_us
+    reference_type:
+    reference_id:
+  - url: https://github.com/intelliants/subrion-plugin-contact_us/issues/8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41948
+    reference_type:
+    reference_id:

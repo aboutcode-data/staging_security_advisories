@@ -1,0 +1,60 @@
+advisory_id: GHSA-mg83-c7gq-rv5c
+datasource_id: github_osv_importer_v2/GHSA-mg83-c7gq-rv5c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-mg83-c7gq-rv5c/GHSA-mg83-c7gq-rv5c.json
+aliases:
+  - CVE-2025-22228
+summary: |
+  Spring Security Does Not Enforce Password Length
+  BCryptPasswordEncoder.matches(CharSequence,String) will incorrectly return true for passwords larger than 72 characters as long as the first 72 characters are the same.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.security/spring-security-crypto
+    affected_versions: vers:maven/>=6.3.0|<6.3.8
+    fixed_versions: vers:maven/6.3.8
+  - purl: pkg:maven/org.springframework.security/spring-security-crypto
+    affected_versions: vers:maven/>=6.4.0|<6.4.4
+    fixed_versions: vers:maven/6.4.4
+  - purl: pkg:maven/org.springframework.security/spring-security-crypto
+    affected_versions: vers:maven/<=6.2.9
+    fixed_versions: vers:maven/6.2.10
+  - purl: pkg:maven/org.springframework.security/spring-security-crypto
+    affected_versions: vers:maven/<=6.1.13
+    fixed_versions: vers:maven/6.1.14
+  - purl: pkg:maven/org.springframework.security/spring-security-crypto
+    affected_versions: vers:maven/<=6.0.15
+    fixed_versions: vers:maven/6.0.16
+  - purl: pkg:maven/org.springframework.security/spring-security-crypto
+    affected_versions: vers:maven/<=5.8.17
+    fixed_versions: vers:maven/5.8.18
+  - purl: pkg:maven/org.springframework.security/spring-security-crypto
+    affected_versions: vers:maven/<=5.7.15
+    fixed_versions: vers:maven/5.7.16
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-mg83-c7gq-rv5c/GHSA-mg83-c7gq-rv5c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-521
+references:
+  - url: https://github.com/spring-projects/spring-security
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-security/commit/46f0dc6dfc8402cd556c598fdf2d31f9d46cdbf3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-22228
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20250425-0009
+    reference_type:
+    reference_id:
+  - url: https://spring.io/security/cve-2025-22228
+    reference_type:
+    reference_id:

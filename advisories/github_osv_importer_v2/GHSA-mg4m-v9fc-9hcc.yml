@@ -1,0 +1,38 @@
+advisory_id: GHSA-mg4m-v9fc-9hcc
+datasource_id: github_osv_importer_v2/GHSA-mg4m-v9fc-9hcc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mg4m-v9fc-9hcc/GHSA-mg4m-v9fc-9hcc.json
+aliases:
+  - CVE-2018-5365
+summary: |
+  WPGlobus plugin Stored XSS & CSRF security vulnerability
+  The WPGlobus plugin 1.9.6 for WordPress has XSS via the `wpglobus_option[selector_wp_list_pages][show_selector]` parameter to `wp-admin/options.php`.
+impacted_packages:
+  - purl: pkg:composer/wpglobus/wpglobus
+    affected_versions: vers:composer/<=1.9.6
+    fixed_versions: vers:composer/1.9.7
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mg4m-v9fc-9hcc/GHSA-mg4m-v9fc-9hcc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/d4wner/Vulnerabilities-Report/blob/master/wpglobus.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/WPGlobus/WPGlobus
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-5365
+    reference_type:
+    reference_id:
+  - url: https://wpvulndb.com/vulnerabilities/9003
+    reference_type:
+    reference_id:

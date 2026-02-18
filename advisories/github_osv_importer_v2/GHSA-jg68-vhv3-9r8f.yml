@@ -1,0 +1,58 @@
+advisory_id: GHSA-jg68-vhv3-9r8f
+datasource_id: github_osv_importer_v2/GHSA-jg68-vhv3-9r8f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-jg68-vhv3-9r8f/GHSA-jg68-vhv3-9r8f.json
+aliases:
+  - CVE-2026-25523
+summary: |
+  Magento's X-Original-Url header can expose admin url
+  ### Impact
+
+  The admin url can be discovered without prior knowledge of it's location by exploiting the X-Original-Url header on some configurations.
+
+  ### Patches
+
+  The bug comes from the Zend library and is patche by unsetting the header in the bootstrap process.
+
+  ### Workarounds
+
+  Unset the `X-Original-Url` header in the web server configuration.
+
+  ### References
+
+  The activation of these headers is coming from the Zend_Controller module. It appears this has been known to some degree since 2016 -
+  https://peterocallaghan.co.uk/2016/12/magento-poisoning-cache/ (dead link now..)
+
+  ### Credit
+
+  Anees Hyder ( @anees0xdev ) via HackerOne
+  https://hackerone.com/anees0x_dev/hacktivity
+impacted_packages:
+  - purl: pkg:composer/openmage/magento-lts
+    affected_versions: vers:composer/<20.16.1
+    fixed_versions: vers:composer/20.16.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-jg68-vhv3-9r8f/GHSA-jg68-vhv3-9r8f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/OpenMage/magento-lts
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenMage/magento-lts/security/advisories/GHSA-jg68-vhv3-9r8f
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/bugs?subject=openmage&report_id=3416312
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25523
+    reference_type:
+    reference_id:

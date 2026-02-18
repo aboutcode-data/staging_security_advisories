@@ -1,0 +1,53 @@
+advisory_id: GHSA-jgxc-8mwq-9xqw
+datasource_id: github_osv_importer_v2/GHSA-jgxc-8mwq-9xqw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-jgxc-8mwq-9xqw/GHSA-jgxc-8mwq-9xqw.json
+aliases:
+  - CVE-2017-20189
+summary: |
+  Clojure classes can be used to craft a serialized object that runs arbitrary code on deserialization
+  In Clojure before 1.9.0, classes can be used to construct a serialized object that executes arbitrary code upon deserialization. This is relevant if a server deserializes untrusted objects.
+impacted_packages:
+  - purl: pkg:maven/org.clojure/clojure
+    affected_versions: vers:maven/<1.9.0
+    fixed_versions: vers:maven/1.9.0
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-jgxc-8mwq-9xqw/GHSA-jgxc-8mwq-9xqw.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://clojure.atlassian.net/browse/CLJ-2204
+    reference_type:
+    reference_id:
+  - url: https://github.com/clojure/clojure
+    reference_type:
+    reference_id:
+  - url: https://github.com/clojure/clojure/commit/271674c9b484d798484d134a5ac40a6df15d3ac3
+    reference_type:
+    reference_id:
+  - url: https://github.com/frohoff/ysoserial/pull/68/files
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/d/msg/clojure/WaL3hHzsevI/7zHU-L7LBQAJ
+    reference_type:
+    reference_id:
+  - url: https://hackmd.io/%40fe1w0/HyefvRQKp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-20189
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20241108-0002
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-ORGCLOJURE-5740378
+    reference_type:
+    reference_id:

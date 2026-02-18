@@ -1,0 +1,60 @@
+advisory_id: GHSA-jhgf-2h8h-ggxv
+datasource_id: github_osv_importer_v2/GHSA-jhgf-2h8h-ggxv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-jhgf-2h8h-ggxv/GHSA-jhgf-2h8h-ggxv.json
+aliases:
+  - CVE-2025-68115
+summary: |
+  Parse Server has a Cross-Site Scripting (XSS) vulnerability via Unescaped Mustache Template Variables
+  ## Impact
+
+  A Reflected Cross-Site Scripting (XSS) vulnerability exists in Parse Server's password reset and email verification HTML pages.
+
+  ## Patches
+
+  The patch escapes user controlled values that are inserted into the HTML pages.
+
+  ## Workarounds
+
+  None.
+
+  ## Resources
+
+  - https://github.com/parse-community/parse-server/security/advisories/GHSA-jhgf-2h8h-ggxv
+  - https://github.com/parse-community/parse-server/pull/9985
+  - https://github.com/parse-community/parse-server/pull/9986
+impacted_packages:
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/<8.6.1
+    fixed_versions: vers:npm/8.6.1
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/>=9.0.0|<9.1.0-alpha.3
+    fixed_versions: vers:npm/9.1.0-alpha.3
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/12/GHSA-jhgf-2h8h-ggxv/GHSA-jhgf-2h8h-ggxv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/parse-community/parse-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/9985
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/pull/9986
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/security/advisories/GHSA-jhgf-2h8h-ggxv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-68115
+    reference_type:
+    reference_id:

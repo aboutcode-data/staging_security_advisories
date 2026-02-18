@@ -1,0 +1,72 @@
+advisory_id: GHSA-mp2g-9vg9-f4cg
+datasource_id: github_osv_importer_v2/GHSA-mp2g-9vg9-f4cg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-mp2g-9vg9-f4cg/GHSA-mp2g-9vg9-f4cg.json
+aliases:
+  - CVE-2026-23527
+summary: |
+  h3 v1 has Request Smuggling (TE.TE) issue
+  I was digging into h3 v1 (specifically v1.15.4) and found a critical HTTP Request Smuggling vulnerability.
+
+  Basically, `readRawBody` is doing a strict case-sensitive check for the Transfer-Encoding header. It explicitly looks for "chunked", but per the RFC, this header should be case-insensitive.
+
+  **The Bug**: If I send a request with Transfer-Encoding: ChuNked (mixed case), h3 misses it. Since it doesn't see "chunked" and there's no Content-Length, it assumes the body is empty and processes the request immediately.
+
+  This leaves the actual body sitting on the socket, which triggers a classic TE.TE Desync (Request Smuggling) if the app is running behind a Layer 4 proxy or anything that doesn't normalize headers (like AWS NLB or Node proxies).
+
+  **Vulnerable Code** (`src/utils/body.ts`):
+
+  ```js
+  if (
+      !Number.parseInt(event.node.req.headers["content-length"] || "") &&
+      !String(event.node.req.headers["transfer-encoding"] ?? "")
+        .split(",")
+        .map((e) => e.trim())
+        .filter(Boolean)
+        .includes("chunked") // <--- This is the issue. "ChuNkEd" returns false here.
+    ) {
+      return Promise.resolve(undefined);
+    }
+  ```
+
+  I verified this locally:
+
+  - Sent a `Transfer-Encoding: ChunKed` request without a closing 0 chunk.
+  - Express hangs (correctly waiting for data).
+  - h3 responds immediately (vulnerable, thinks body is length 0).
+
+  **Impact**: Since H3/Nuxt/Nitro is often used in containerized setups behind TCP load balancers, an attacker can use this to smuggle requests past WAFs or desynchronize the socket to poison other users' connections.
+
+  **Fix**: Just need to normalize the header value before checking: ` .map((e) => e.trim().toLowerCase())`
+impacted_packages:
+  - purl: pkg:npm/h3
+    affected_versions: vers:npm/<=1.15.4
+    fixed_versions: vers:npm/1.15.5
+severities:
+  - score: '8.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-mp2g-9vg9-f4cg/GHSA-mp2g-9vg9-f4cg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/h3js/h3
+    reference_type:
+    reference_id:
+  - url: https://github.com/h3js/h3/commit/618ccf4f37b8b6148bea7f36040471af45bfb097
+    reference_type:
+    reference_id:
+  - url: https://github.com/h3js/h3/releases/tag/v1.15.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/h3js/h3/security/advisories/GHSA-mp2g-9vg9-f4cg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-23527
+    reference_type:
+    reference_id:

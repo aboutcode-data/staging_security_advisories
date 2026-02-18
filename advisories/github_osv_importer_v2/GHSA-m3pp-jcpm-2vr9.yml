@@ -1,0 +1,38 @@
+advisory_id: GHSA-m3pp-jcpm-2vr9
+datasource_id: github_osv_importer_v2/GHSA-m3pp-jcpm-2vr9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m3pp-jcpm-2vr9/GHSA-m3pp-jcpm-2vr9.json
+aliases:
+  - CVE-2019-12950
+summary: |
+  TeamPass Cross-site Scripting (XSS)
+  An issue was discovered in TeamPass 2.1.27.35. From the sources/items.queries.php "Import items" feature, it is possible to load a crafted CSV file with an XSS payload.
+impacted_packages:
+  - purl: pkg:composer/nilsteampassnet/teampass
+    affected_versions: vers:composer/<=2.1.27+35
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m3pp-jcpm-2vr9/GHSA-m3pp-jcpm-2vr9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/nilsteampassnet/TeamPass
+    reference_type:
+    reference_id:
+  - url: https://github.com/nilsteampassnet/TeamPass/issues/2638
+    reference_type:
+    reference_id:
+  - url: https://github.com/nilsteampassnet/TeamPass/releases
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-12950
+    reference_type:
+    reference_id:

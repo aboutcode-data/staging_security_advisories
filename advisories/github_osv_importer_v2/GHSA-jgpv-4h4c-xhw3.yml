@@ -1,0 +1,43 @@
+advisory_id: GHSA-jgpv-4h4c-xhw3
+datasource_id: github_osv_importer_v2/GHSA-jgpv-4h4c-xhw3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-jgpv-4h4c-xhw3/GHSA-jgpv-4h4c-xhw3.json
+aliases: []
+summary: |
+  Uncontrolled Resource Consumption in pillow
+  ### Impact
+  _Pillow before 8.1.1 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for a BLP container, and thus an attempted memory allocation can be very large._
+
+  ### Patches
+  _An issue was discovered in Pillow before 6.2.0. When reading specially crafted invalid image files, the library can either allocate very large amounts of memory or take an extremely long period of time to process the image._
+
+  ### Workarounds
+  _An issue was discovered in Pillow before 6.2.0. When reading specially crafted invalid image files, the library can either allocate very large amounts of memory or take an extremely long period of time to process the image._
+
+  ### References
+  https://nvd.nist.gov/vuln/detail/CVE-2021-27921
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [example link to repo](http://example.com)
+  * Email us at [example email address](mailto:example@example.com)
+impacted_packages:
+  - purl: pkg:pypi/pillow
+    affected_versions: vers:pypi/<8.1.1
+    fixed_versions: vers:pypi/8.1.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-jgpv-4h4c-xhw3/GHSA-jgpv-4h4c-xhw3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/calix2/pyVulApp/security/advisories/GHSA-jgpv-4h4c-xhw3
+    reference_type:
+    reference_id:

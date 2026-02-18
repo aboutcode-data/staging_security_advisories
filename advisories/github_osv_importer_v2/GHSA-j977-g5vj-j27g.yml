@@ -1,0 +1,38 @@
+advisory_id: GHSA-j977-g5vj-j27g
+datasource_id: github_osv_importer_v2/GHSA-j977-g5vj-j27g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-j977-g5vj-j27g/GHSA-j977-g5vj-j27g.json
+aliases:
+  - CVE-2020-7750
+summary: |
+  Cross-Site Scripting in scratch-svg-renderer
+  This affects the package scratch-svg-renderer before 0.2.0-prerelease.20201019174008. The loadString function does not escape SVG properly, which can be used to inject arbitrary elements into the DOM via the _transformMeasurements function.
+impacted_packages:
+  - purl: pkg:npm/scratch-svg-renderer
+    affected_versions: vers:npm/<=0.2.0-prerelease.20201016121710
+    fixed_versions: vers:npm/0.2.0-prerelease.20201019174008
+severities:
+  - score: '9.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-j977-g5vj-j27g/GHSA-j977-g5vj-j27g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/LLK/scratch-svg-renderer/commit/9ebf57588aa596c4fa3bb64209e10ade395aee90
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7750
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SCRATCHSVGRENDERER-1020497
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/webapps/50079.txt
+    reference_type: exploit
+    reference_id: CVE-2020-7750

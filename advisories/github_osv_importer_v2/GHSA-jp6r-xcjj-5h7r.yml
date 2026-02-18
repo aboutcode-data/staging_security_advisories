@@ -1,0 +1,52 @@
+advisory_id: GHSA-jp6r-xcjj-5h7r
+datasource_id: github_osv_importer_v2/GHSA-jp6r-xcjj-5h7r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-jp6r-xcjj-5h7r/GHSA-jp6r-xcjj-5h7r.json
+aliases:
+  - CVE-2019-15532
+summary: |
+  Cross-Site Scripting in cyberchef
+  Versions of `cyberchef` prior to 8.31.3 are vulnerable to Cross-Site Scripting. In `Text Encoding Brute Force` the table rows are created by concatenating the `value` variable unsanitized in the HTML code. If this variable is controlled by user input it allows attackers to execute arbitrary JavaScript in a victim's browser.
+
+
+  ## Recommendation
+
+  Upgrade to version 8.31.3 or later.
+impacted_packages:
+  - purl: pkg:npm/cyberchef
+    affected_versions: vers:npm/<8.31.3
+    fixed_versions: vers:npm/8.31.3
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-jp6r-xcjj-5h7r/GHSA-jp6r-xcjj-5h7r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/gchq/CyberChef/commit/01f0625d6a177f9c5df9281f12a27c814c2d8bcf
+    reference_type:
+    reference_id:
+  - url: https://github.com/gchq/CyberChef/compare/v8.31.1...v8.31.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/gchq/CyberChef/issues/539
+    reference_type:
+    reference_id:
+  - url: https://github.com/gchq/CyberChef/issues/544
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-15532
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-CYBERCHEF-460296
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1149
+    reference_type:
+    reference_id:

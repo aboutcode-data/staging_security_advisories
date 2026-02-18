@@ -1,0 +1,48 @@
+advisory_id: GHSA-jx8f-cpx7-fv47
+datasource_id: github_osv_importer_v2/GHSA-jx8f-cpx7-fv47
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-jx8f-cpx7-fv47/GHSA-jx8f-cpx7-fv47.json
+aliases:
+  - CVE-2022-21822
+summary: |
+  Allocation of Resources Without Limits or Throttling in nvflare
+  ### Impact
+  NVIDIA FLARE contains a vulnerability in Admin Interface, where an un-authorized attacker can cause Allocation of Resources Without Limits or Throttling, which may lead to cause system unavailable
+
+  All versions before 2.0.16 are affected.
+
+  ### Patches
+  The patch will be included in nvflare==2.0.16.
+
+  ### Workarounds
+  The changes in commits https://github.com/NVIDIA/NVFlare/commit/93588b3a0dff9bd4568983071b74d8b420de3a6e and https://github.com/NVIDIA/NVFlare/commit/93588b3a0dff9bd4568983071b74d8b420de3a6e  can be applied to any version of the NVIDIA FLARE without any adverse effect.
+
+  ### Additional information
+  Issue Found on: 2022.3.3
+  Issue Found by: Oliver Sellwood (@Nintorac)
+impacted_packages:
+  - purl: pkg:pypi/nvflare
+    affected_versions: vers:pypi/<2.0.16
+    fixed_versions: vers:pypi/2.0.16
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-jx8f-cpx7-fv47/GHSA-jx8f-cpx7-fv47.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/NVIDIA/NVFlare
+    reference_type:
+    reference_id:
+  - url: https://github.com/NVIDIA/NVFlare/security/advisories/GHSA-jx8f-cpx7-fv47
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21822
+    reference_type:
+    reference_id:

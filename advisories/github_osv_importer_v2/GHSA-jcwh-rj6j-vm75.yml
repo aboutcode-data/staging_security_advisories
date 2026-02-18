@@ -1,0 +1,44 @@
+advisory_id: GHSA-jcwh-rj6j-vm75
+datasource_id: github_osv_importer_v2/GHSA-jcwh-rj6j-vm75
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jcwh-rj6j-vm75/GHSA-jcwh-rj6j-vm75.json
+aliases:
+  - CVE-2006-1711
+summary: |
+  Plone allows remote users to modify arbitrary portraits
+  Plone 2.0.5, 2.1.2, and 2.5-beta1 does not restrict access to the (1) changeMemberPortrait, (2) deletePersonalPortrait, and (3) testCurrentPassword methods, which allows remote attackers to modify portraits.
+impacted_packages:
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/<=2.0.5
+    fixed_versions: vers:pypi/2.0.6
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/>=2.1.0|<=2.1.2
+    fixed_versions:
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/2.5b1
+    fixed_versions:
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://exchange.xforce.ibmcloud.com/vulnerabilities/25781
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/Plone
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2006-1711
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20060412111111/https://dev.plone.org/plone/ticket/5432
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20060422195724/http://www.securityfocus.com/bid/17484
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2006/dsa-1032
+    reference_type:
+    reference_id:

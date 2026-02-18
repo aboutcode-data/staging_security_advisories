@@ -1,0 +1,66 @@
+advisory_id: GHSA-m82q-59gv-mcr9
+datasource_id: github_osv_importer_v2/GHSA-m82q-59gv-mcr9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-m82q-59gv-mcr9/GHSA-m82q-59gv-mcr9.json
+aliases:
+  - CVE-2026-25055
+summary: |
+  n8n Vulnerable to Arbitrary File Write on Remote Systems via SSH Node
+  ## Impact
+  When workflows process uploaded files and transfer them to remote servers via the SSH node without validating their metadata the vulnerability can lead to files being written to unintended locations on those remote systems potentially leading to remote code execution on those systems.
+
+  As a prerequisites an unauthenticated attacker needs knowledge of such workflows existing and the endpoints for file uploads need to be unauthenticated.
+
+  ## Patches
+  The issue has been fixed in n8n version 2.4.0 and 1.123.12. Users should upgrade to this version or later to remediate the vulnerability.
+
+  ## Workarounds
+  If upgrading is not immediately possible, administrators should consider the following temporary mitigations:
+  - Disable or restrict access to workflows that accept file uploads via webhooks and transfer them via SSH.
+  - Enable webhook authentication on all endpoints that handle file uploads.
+  - Review usage of SSH credentials and consider rotating SSH credentials if in doubt.
+  These workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.
+
+  ## Resources
+  - [n8n Documentation — Blocking nodes](https://docs.n8n.io/hosting/securing/blocking-nodes/) — how to globally disable specific nodes
+
+  ---
+
+  n8n has adopted CVSS 4.0 as primary score for all security advisories. CVSS 3.1 vector strings are provided for backwards compatibility.
+
+  CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+impacted_packages:
+  - purl: pkg:npm/n8n
+    affected_versions: vers:npm/>=2.0.0|<2.4.0
+    fixed_versions: vers:npm/2.4.0
+  - purl: pkg:npm/n8n
+    affected_versions: vers:npm/<1.123.12
+    fixed_versions: vers:npm/1.123.12
+severities:
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-m82q-59gv-mcr9/GHSA-m82q-59gv-mcr9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/n8n-io/n8n
+    reference_type:
+    reference_id:
+  - url: https://github.com/n8n-io/n8n/commit/528ad6b982d0519ec170e172f57b7fdbbe175230
+    reference_type:
+    reference_id:
+  - url: https://github.com/n8n-io/n8n/commit/e0baf48c6a54808f6dbca8cb352bfa306092c223
+    reference_type:
+    reference_id:
+  - url: https://github.com/n8n-io/n8n/security/advisories/GHSA-m82q-59gv-mcr9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25055
+    reference_type:
+    reference_id:

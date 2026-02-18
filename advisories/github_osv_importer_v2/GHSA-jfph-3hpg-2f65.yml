@@ -1,0 +1,35 @@
+advisory_id: GHSA-jfph-3hpg-2f65
+datasource_id: github_osv_importer_v2/GHSA-jfph-3hpg-2f65
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jfph-3hpg-2f65/GHSA-jfph-3hpg-2f65.json
+aliases:
+  - CVE-2022-28056
+summary: |
+  Incorrect Permission Assignment for Critical Resource in ShopXO
+  ShopXO v2.2.5 and below was discovered to contain a system re-install vulnerability via the Add function in app/install/controller/Index.php.
+impacted_packages:
+  - purl: pkg:composer/shopxo/shopxo
+    affected_versions: vers:composer/<2.2.6
+    fixed_versions: vers:composer/2.2.6
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jfph-3hpg-2f65/GHSA-jfph-3hpg-2f65.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-732
+references:
+  - url: https://github.com/gongfuxiang/shopxo
+    reference_type:
+    reference_id:
+  - url: https://github.com/gongfuxiang/shopxo/issues/66
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-28056
+    reference_type:
+    reference_id:

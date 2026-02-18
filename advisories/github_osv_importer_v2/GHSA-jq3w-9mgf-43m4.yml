@@ -1,0 +1,50 @@
+advisory_id: GHSA-jq3w-9mgf-43m4
+datasource_id: github_osv_importer_v2/GHSA-jq3w-9mgf-43m4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-jq3w-9mgf-43m4/GHSA-jq3w-9mgf-43m4.json
+aliases:
+  - CVE-2023-46124
+summary: "Fides Server-Side Request Forgery Vulnerability in Custom Integration Upload\n###\
+  \ Impact\n\nThe Fides web application allows a custom integration to be uploaded as a ZIP\
+  \ file containing configuration and dataset definitions in YAML format. \n\nIt was discovered\
+  \ that specially crafted YAML dataset and config files allow a malicious user to perform arbitrary\
+  \ requests to internal systems and exfiltrate data outside the environment (also known as\
+  \ a Server-Side Request Forgery). The application does not perform proper validation to block\
+  \ attempts to connect to internal (including localhost) resources.\n\nExploitation is limited\
+  \ to API clients with the `CONNECTOR_TEMPLATE_REGISTER` authorization scope. In the Fides\
+  \ Admin UI this scope is restricted to highly privileged users, specifically root users and\
+  \ users with the owner role.\n\n### Patches\nThe vulnerability has been patched in Fides version\
+  \ `2.22.1`. Users are advised to upgrade to this version or later to secure their systems\
+  \ against this threat.\n\n### Workarounds\nThere are no workarounds."
+impacted_packages:
+  - purl: pkg:pypi/ethyca-fides
+    affected_versions: vers:pypi/<2.22.1
+    fixed_versions: vers:pypi/2.22.1
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-jq3w-9mgf-43m4/GHSA-jq3w-9mgf-43m4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/ethyca/fides
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/commit/cd344d016b1441662a61d0759e7913e8228ed1ee
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/releases/tag/2.22.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/ethyca/fides/security/advisories/GHSA-jq3w-9mgf-43m4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46124
+    reference_type:
+    reference_id:

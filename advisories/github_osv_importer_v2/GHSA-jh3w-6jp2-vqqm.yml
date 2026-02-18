@@ -1,0 +1,46 @@
+advisory_id: GHSA-jh3w-6jp2-vqqm
+datasource_id: github_osv_importer_v2/GHSA-jh3w-6jp2-vqqm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-jh3w-6jp2-vqqm/GHSA-jh3w-6jp2-vqqm.json
+aliases:
+  - CVE-2023-22728
+summary: "Missing permission check of canView in GridFieldPrintButton\nThe GridField print view\
+  \ incorrectly validates the permission of DataObjects potentially allowing a content author\
+  \ to view records they are not authorised to access. \n\nUpgrade to `silverstripe/framework`\
+  \ 4.12.5 or above to address the issue.\n\nReported by Stephan Bauer from [relaxt Webdienstleistungsagentur\
+  \ GmbH](https://www.relaxt.at/)"
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<4.12.5
+    fixed_versions: vers:composer/4.12.5
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-jh3w-6jp2-vqqm/GHSA-jh3w-6jp2-vqqm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/CVE-2023-22728.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/fd5d8217e83768d7bf841e94b2d4d82642d5bc58
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/security/advisories/GHSA-jh3w-6jp2-vqqm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-22728
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2023-22728
+    reference_type:
+    reference_id:

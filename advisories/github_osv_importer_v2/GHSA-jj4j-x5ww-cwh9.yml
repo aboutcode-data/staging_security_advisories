@@ -1,0 +1,64 @@
+advisory_id: GHSA-jj4j-x5ww-cwh9
+datasource_id: github_osv_importer_v2/GHSA-jj4j-x5ww-cwh9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jj4j-x5ww-cwh9/GHSA-jj4j-x5ww-cwh9.json
+aliases:
+  - CVE-2025-48042
+summary: "Before action, Ash's hooks may execute in certain scenarios despite a request being\
+  \ forbidden\n### Summary\nCertain bulk action calls with a `before_transaction` hook and no\
+  \ `after_transaction` hook, will call the `before_transaction` hook before authorization is\
+  \ checked and a Forbidden error is returned, when called as a bulk action.\n\nThe impact is\
+  \ that a malicious user could cause a `before_transaction` to run even though they are not\
+  \ authorized to perform the whole action. The `before_action` could run a sensitive/expensive\
+  \ operation.\n\n### Impact\nA malicious user could cause a `before_action` to run even though\
+  \ they are not authorized to perform the whole action.\n\nYou are affected if you have an\
+  \ create, update or destroy action that:\n\n- has a before_transaction hook on it, and no\
+  \ after_transaction hook on it.\n- is being used via an `Ash.bulk_*` callback (which AshJsonApi\
+  \ and AshGraphql do for update/destroy actions)\n\nWhether or not or how much it matters depends\
+  \ on the nature of those before_transaction callbacks. If those before_transaction callbacks\
+  \ are side-effectful, or just doing something like looking up some external data. If your\
+  \ API endpoints are behind authentication and what kind. \n\n### Severity\n\nThe severity\
+  \ for this was hard to gauge. `before_transaction` hooks are not that commonly used. Additionally,\
+  \ any attacker must know which of these things are available to them, be authenticated to\
+  \ make such a request (i.e you very rarely have policies preventing the running of anonymous\
+  \ queries), so privileges and inside knowledge are required. Additionally, the action will\
+  \ always return a `forbidden` error, so no information is revealed. We will evaluate and adjust\
+  \ the severity in the next few days as needed.\n\nIt is currently marked as High, given that\
+  \ we really don't know what logic folks are putting in their before_transaction hooks and\
+  \ it could theoretically be very bad.\n\n### Workarounds\n\nYou should update ASAP, but if\
+  \ for whatever reason you cannot update, you can add logic to those before_transaction hooks\
+  \ to prevent them from doing their logic before they should."
+impacted_packages:
+  - purl: pkg:hex/ash
+    affected_versions: vers:hex/<=3.5.38
+    fixed_versions: vers:hex/3.5.39
+severities:
+  - score: '5.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jj4j-x5ww-cwh9/GHSA-jj4j-x5ww-cwh9.json
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:H/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jj4j-x5ww-cwh9/GHSA-jj4j-x5ww-cwh9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://github.com/ash-project/ash
+    reference_type:
+    reference_id:
+  - url: https://github.com/ash-project/ash/commit/5d1b6a5d00771fd468a509778637527b5218be9a
+    reference_type:
+    reference_id:
+  - url: https://github.com/ash-project/ash/security/advisories/GHSA-jj4j-x5ww-cwh9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48042
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-mgg3-v948-2vgr
+datasource_id: github_osv_importer_v2/GHSA-mgg3-v948-2vgr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mgg3-v948-2vgr/GHSA-mgg3-v948-2vgr.json
+aliases:
+  - CVE-2020-3715
+summary: |
+  Magento stored cross-site scripting vulnerability
+  Magento versions 2.3.3 and earlier, 2.2.10 and earlier, 1.14.4.3 and earlier, and 1.9.4.3 and earlier have a stored cross-site scripting vulnerability. Successful exploitation could lead to sensitive information disclosure.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<=2.3.3
+    fixed_versions: vers:composer/2.3.4
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<=2.2.10
+    fixed_versions: vers:composer/2.2.11
+  - purl: pkg:composer/magento/core
+    affected_versions: vers:composer/<1.9.4+4
+    fixed_versions: vers:composer/1.9.4+4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mgg3-v948-2vgr/GHSA-mgg3-v948-2vgr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb20-02.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-3715
+    reference_type:
+    reference_id:

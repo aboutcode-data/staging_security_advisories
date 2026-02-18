@@ -1,0 +1,41 @@
+advisory_id: GHSA-jh9h-8xf2-25wj
+datasource_id: github_osv_importer_v2/GHSA-jh9h-8xf2-25wj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jh9h-8xf2-25wj/GHSA-jh9h-8xf2-25wj.json
+aliases:
+  - CVE-2025-43807
+summary: |
+  Liferay has a stored cross-site scripting (XSS) vulnerability via a a publication’s “Name” text field
+  Stored cross-site scripting (XSS) vulnerability in the notifications widget in Liferay Portal 7.4.0 through 7.4.3.112, and Liferay DXP 2023.Q4.0 through 2023.Q4.8, 2023.Q3.1 through 2023.Q3.10, and 7.4 GA through update 92 allows remote attackers to inject arbitrary web scripts or HTML via a crafted payload injected into a publication’s “Name” text field.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.change.tracking.service
+    affected_versions: vers:maven/<3.0.91
+    fixed_versions: vers:maven/3.0.91
+severities:
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-jh9h-8xf2-25wj/GHSA-jh9h-8xf2-25wj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/aaf32ff25affc0d63adc79abaedc9f565f033789
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-17923
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43807
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43807
+    reference_type:
+    reference_id:

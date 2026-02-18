@@ -1,0 +1,52 @@
+advisory_id: GHSA-mfjm-vh54-3f96
+datasource_id: github_osv_importer_v2/GHSA-mfjm-vh54-3f96
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-mfjm-vh54-3f96/GHSA-mfjm-vh54-3f96.json
+aliases: []
+summary: |
+  Scrapy cookie-setting is not restricted based on the public suffix list
+  ### Impact
+
+  Responses from domain names whose public domain name suffix contains 1 or more periods (e.g. responses from `example.co.uk`, given its public domain name suffix is `co.uk`) are able to set cookies that are included in requests to any other domain sharing the same domain name suffix.
+
+  ### Patches
+
+  Upgrade to Scrapy 2.6.0, which restricts cookies with their domain set to any of those in the [public suffix list](https://publicsuffix.org/).
+
+  If you are using Scrapy 1.8 or a lower version, and upgrading to Scrapy 2.6.0 is not an option, you may upgrade to Scrapy 1.8.2 instead.
+
+  ### Workarounds
+
+  The only workaround for unpatched versions of Scrapy is to [disable cookies altogether](https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#std-setting-COOKIES_ENABLED), or [limit target domains](https://docs.scrapy.org/en/latest/topics/spiders.html#scrapy.spiders.Spider.allowed_domains) to a subset that does not include domain names with one of the public domain suffixes affected (those with 1 or more periods).
+
+  ### References
+  * https://publicsuffix.org/
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+  * [Open an issue](https://github.com/scrapy/scrapy/issues)
+  * [Email us](mailto:opensource@zyte.com)
+impacted_packages:
+  - purl: pkg:pypi/scrapy
+    affected_versions: vers:pypi/<1.8.2
+    fixed_versions: vers:pypi/1.8.2
+  - purl: pkg:pypi/scrapy
+    affected_versions: vers:pypi/>=2.0.0|<2.6.0
+    fixed_versions: vers:pypi/2.6.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/scrapy/scrapy
+    reference_type:
+    reference_id:
+  - url: https://github.com/scrapy/scrapy/commit/e865c4430e58a4faa0e0766b23830f8423d6167a
+    reference_type:
+    reference_id:
+  - url: https://github.com/scrapy/scrapy/security/advisories/GHSA-mfjm-vh54-3f96
+    reference_type:
+    reference_id:

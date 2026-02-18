@@ -1,0 +1,48 @@
+advisory_id: GHSA-jrfj-98qg-qjgv
+datasource_id: github_osv_importer_v2/GHSA-jrfj-98qg-qjgv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-jrfj-98qg-qjgv/GHSA-jrfj-98qg-qjgv.json
+aliases:
+  - CVE-2022-23837
+summary: |
+  Denial of service in sidekiq
+  In `api.rb` in Sidekiq before 6.4.0 and 5.2.10, there is no limit on the number of days when requesting stats for the graph. This overloads the system, affecting the Web UI, and makes it unavailable to users.
+impacted_packages:
+  - purl: pkg:gem/sidekiq
+    affected_versions: vers:gem/>=6.0.0|<6.4.0
+    fixed_versions: vers:gem/6.4.0
+  - purl: pkg:gem/sidekiq
+    affected_versions: vers:gem/<5.2.10
+    fixed_versions: vers:gem/5.2.10
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-jrfj-98qg-qjgv/GHSA-jrfj-98qg-qjgv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-770
+references:
+  - url: https://github.com/mperham/sidekiq
+    reference_type:
+    reference_id:
+  - url: https://github.com/mperham/sidekiq/commit/7785ac1399f1b28992adb56055f6acd88fd1d956
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/pull/495
+    reference_type:
+    reference_id:
+  - url: https://github.com/TUTUMSPACE/exploits/blob/main/sidekiq.md
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/03/msg00015.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23837
+    reference_type:
+    reference_id:

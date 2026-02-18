@@ -1,0 +1,42 @@
+advisory_id: GHSA-m8wh-mqgf-rr8g
+datasource_id: github_osv_importer_v2/GHSA-m8wh-mqgf-rr8g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-m8wh-mqgf-rr8g/GHSA-m8wh-mqgf-rr8g.json
+aliases:
+  - CVE-2021-25738
+summary: |
+  Code injection in Kubernetes Java Client
+  Loading specially-crafted yaml with the Kubernetes Java Client library can lead to code execution.
+impacted_packages:
+  - purl: pkg:maven/io.kubernetes/client-java
+    affected_versions: vers:maven/<11.0.1
+    fixed_versions: vers:maven/11.0.1
+severities:
+  - score: '6.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-m8wh-mqgf-rr8g/GHSA-m8wh-mqgf-rr8g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+  - CWE-20
+references:
+  - url: https://github.com/kubernetes-client/java
+    reference_type:
+    reference_id:
+  - url: https://github.com/kubernetes-client/java/issues/1698
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/g/kubernetes-security-announce/c/K_pOK2WbAJk
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-25738
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/08/23/2
+    reference_type:
+    reference_id:

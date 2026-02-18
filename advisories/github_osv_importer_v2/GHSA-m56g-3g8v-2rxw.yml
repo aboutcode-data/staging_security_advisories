@@ -1,0 +1,40 @@
+advisory_id: GHSA-m56g-3g8v-2rxw
+datasource_id: github_osv_importer_v2/GHSA-m56g-3g8v-2rxw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-m56g-3g8v-2rxw/GHSA-m56g-3g8v-2rxw.json
+aliases: []
+summary: |
+  XSS in Adminer
+  **Withdrawn:** Duplicate of GHSA-9pgx-gcph-mpqr.
+
+  Adminer before 4.7.9 allows XSS via the history parameter to the default URI.
+impacted_packages:
+  - purl: pkg:composer/vrana/adminer
+    affected_versions: vers:composer/<4.7.9
+    fixed_versions: vers:composer/4.7.9
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/vrana/adminer
+    reference_type:
+    reference_id:
+  - url: https://github.com/vrana/adminer/commit/5c395afc098e501be3417017c6421968aac477bd
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-35572
+    reference_type:
+    reference_id:
+  - url: https://sourceforge.net/p/adminer/bugs-and-features/775
+    reference_type:
+    reference_id:
+  - url: https://sourceforge.net/p/adminer/news
+    reference_type:
+    reference_id:
+  - url: https://sourceforge.net/p/adminer/news/2021/02/adminer-479-released
+    reference_type:
+    reference_id:

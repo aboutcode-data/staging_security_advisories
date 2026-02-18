@@ -1,0 +1,39 @@
+advisory_id: GHSA-mqf5-275h-gf6r
+datasource_id: github_osv_importer_v2/GHSA-mqf5-275h-gf6r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-mqf5-275h-gf6r/GHSA-mqf5-275h-gf6r.json
+aliases: []
+summary: |
+  Silverstripe framework is vulnerable to XSS in install.php
+  During installation, certain parameters (admin_username and admin_password) are not escaped in the setup form.
+
+  This issue is resolved in 3.1.14 stable, although existing users are advised to remove this file prior to deploying to a production server.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.1.0|<3.1.14
+    fixed_versions: vers:composer/3.1.14
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-mqf5-275h-gf6r/GHSA-mqf5-275h-gf6r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/SS-2015-016-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/4c73721bab0d543eee6137e3c00aa8ec727e95d1
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/software/download/security-releases/ss-2015-016
+    reference_type:
+    reference_id:

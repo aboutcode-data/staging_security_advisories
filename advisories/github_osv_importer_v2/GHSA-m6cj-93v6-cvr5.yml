@@ -1,0 +1,45 @@
+advisory_id: GHSA-m6cj-93v6-cvr5
+datasource_id: github_osv_importer_v2/GHSA-m6cj-93v6-cvr5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-m6cj-93v6-cvr5/GHSA-m6cj-93v6-cvr5.json
+aliases:
+  - CVE-2022-23596
+summary: "Junrar vulnerable to infinite loop via extracting carefully crafted RAR archive\n\
+  ### Impact\nA carefully crafted RAR archive can trigger an infinite loop while extracting\
+  \ said archive. The impact depends solely on how the application uses the library, and whether\
+  \ files can be provided by malignant users. \n\n### Patches\nThe problem is partially patched\
+  \ in 7.4.1\n\n### Workarounds\nNone\n\n### References\n\nhttps://github.com/junrar/junrar/issues/73\n\
+  \nhttps://github.com/junrar/junrar/issues/81"
+impacted_packages:
+  - purl: pkg:maven/com.github.junrar/junrar
+    affected_versions: vers:maven/<7.4.1
+    fixed_versions: vers:maven/7.4.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-m6cj-93v6-cvr5/GHSA-m6cj-93v6-cvr5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-835
+references:
+  - url: https://github.com/junrar/junrar
+    reference_type:
+    reference_id:
+  - url: https://github.com/junrar/junrar/commit/7b16b3d90b91445fd6af0adfed22c07413d4fab7
+    reference_type:
+    reference_id:
+  - url: https://github.com/junrar/junrar/issues/73
+    reference_type:
+    reference_id:
+  - url: https://github.com/junrar/junrar/security/advisories/GHSA-m6cj-93v6-cvr5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23596
+    reference_type:
+    reference_id:

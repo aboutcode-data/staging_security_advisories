@@ -1,0 +1,48 @@
+advisory_id: GHSA-m5v7-pr32-mjx2
+datasource_id: github_osv_importer_v2/GHSA-m5v7-pr32-mjx2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-m5v7-pr32-mjx2/GHSA-m5v7-pr32-mjx2.json
+aliases:
+  - CVE-2020-13909
+summary: |
+  Critical severity vulnerability in Ignition
+  The Ignition page before version 2.0.5 for Laravel mishandles globals, _get, _post, _cookie, and _env.
+
+  NOTE: in the 1.x series, versions 1.16.15 and later are unaffected as a consequence of the CVE-2021-43996 fix.
+impacted_packages:
+  - purl: pkg:composer/facade/ignition
+    affected_versions: vers:composer/>=2.0.0|<2.0.5
+    fixed_versions: vers:composer/2.0.5
+  - purl: pkg:composer/facade/ignition
+    affected_versions: vers:composer/<1.16.15
+    fixed_versions: vers:composer/1.16.15
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-m5v7-pr32-mjx2/GHSA-m5v7-pr32-mjx2.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/facade/ignition
+    reference_type:
+    reference_id:
+  - url: https://github.com/facade/ignition/compare/2.0.4...2.0.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/facade/ignition/releases/tag/2.0.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/issues/2316
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13909
+    reference_type:
+    reference_id:
+  - url: https://www.cve.org/CVERecord?id=CVE-2020-13909
+    reference_type:
+    reference_id:

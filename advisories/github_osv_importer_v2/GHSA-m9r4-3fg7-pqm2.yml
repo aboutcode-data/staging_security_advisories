@@ -1,0 +1,51 @@
+advisory_id: GHSA-m9r4-3fg7-pqm2
+datasource_id: github_osv_importer_v2/GHSA-m9r4-3fg7-pqm2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-m9r4-3fg7-pqm2/GHSA-m9r4-3fg7-pqm2.json
+aliases:
+  - CVE-2023-39525
+summary: |
+  PrestaShop path traversal
+  ### Impact
+  In the back office, files can be compromised using path traversal by replaying the import file deletion query with a specified file path, using traversal path.
+
+  ### Patches
+  8.1.1
+
+  ### Found by
+  Aleksey Solovev (Positive Technologies)
+
+  ### Workarounds
+  none
+
+  ### References
+  none
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<=8.1.0
+    fixed_versions: vers:composer/8.1.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-m9r4-3fg7-pqm2/GHSA-m9r4-3fg7-pqm2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/c7c9a5110421bb2856f4d312ecce192d079b5ec7
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-m9r4-3fg7-pqm2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39525
+    reference_type:
+    reference_id:

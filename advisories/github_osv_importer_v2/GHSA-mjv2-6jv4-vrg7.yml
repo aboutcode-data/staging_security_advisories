@@ -1,0 +1,41 @@
+advisory_id: GHSA-mjv2-6jv4-vrg7
+datasource_id: github_osv_importer_v2/GHSA-mjv2-6jv4-vrg7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-mjv2-6jv4-vrg7/GHSA-mjv2-6jv4-vrg7.json
+aliases:
+  - CVE-2023-0867
+summary: |
+  OpenNMS Meridian and Horizon vulnerable to Cross-site Scripting
+  Multiple stored and reflected cross-site scripting vulnerabilities in webapp jsp pages in multiple versions of OpenNMS Meridian and Horizon could allow an attacker access to confidential session information.
+impacted_packages:
+  - purl: pkg:maven/org.opennms/opennms
+    affected_versions: vers:maven/<31.0.4
+    fixed_versions: vers:maven/31.0.4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-mjv2-6jv4-vrg7/GHSA-mjv2-6jv4-vrg7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://docs.opennms.com/meridian/2022/releasenotes/changelog.html#releasenotes-changelog-Meridian-2022.1.13
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenNMS/opennms
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenNMS/opennms/commit/9a366e6822479579e642b58058568af37658baba
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenNMS/opennms/pull/5765
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0867
+    reference_type:
+    reference_id:

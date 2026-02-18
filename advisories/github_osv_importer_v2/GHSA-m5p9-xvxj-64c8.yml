@@ -1,0 +1,55 @@
+advisory_id: GHSA-m5p9-xvxj-64c8
+datasource_id: github_osv_importer_v2/GHSA-m5p9-xvxj-64c8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-m5p9-xvxj-64c8/GHSA-m5p9-xvxj-64c8.json
+aliases:
+  - CVE-2024-9148
+summary: |
+  Flowise and Flowise Chat Embed vulnerable to Stored Cross-site Scripting
+  Flowise < 2.1.1 suffers from a Stored Cross-Site vulnerability due to a lack of input sanitization in Flowise Chat Embed < 2.0.0.
+impacted_packages:
+  - purl: pkg:npm/flowise-embed
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+  - purl: pkg:npm/flowise
+    affected_versions: vers:npm/<2.1.1
+    fixed_versions: vers:npm/2.1.1
+severities:
+  - score: '9.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-m5p9-xvxj-64c8/GHSA-m5p9-xvxj-64c8.json
+  - score: '5.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-m5p9-xvxj-64c8/GHSA-m5p9-xvxj-64c8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FlowiseAI/FlowiseChatEmbed
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/FlowiseChatEmbed/commit/6a9645df41371cb69f251038d501ec87b1304c84
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/FlowiseChatEmbed/releases/tag/flowise-embed%402.0.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise/commit/8375ebb4ec1ebb2b1295561cc0f63486a29f3fde
+    reference_type:
+    reference_id:
+  - url: https://github.com/FlowiseAI/Flowise/releases/tag/flowise%402.1.1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-9148
+    reference_type:
+    reference_id:
+  - url: https://www.tenable.com/security/research/tra-2024-40
+    reference_type:
+    reference_id:

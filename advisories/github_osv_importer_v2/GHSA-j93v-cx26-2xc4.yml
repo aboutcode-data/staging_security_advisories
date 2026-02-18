@@ -1,0 +1,40 @@
+advisory_id: GHSA-j93v-cx26-2xc4
+datasource_id: github_osv_importer_v2/GHSA-j93v-cx26-2xc4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-j93v-cx26-2xc4/GHSA-j93v-cx26-2xc4.json
+aliases: []
+summary: |
+  Duplicate Advisory: Cross-site Scripting (XSS) in Predefined Properties delete
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-q7cc-m6jw-m262. This link is maintained to preserve external references.
+
+  ## Original DescriptionCross-site Scripting (XSS) - Reflected in GitHub repository pimcore/pimcore prior to 10.5.21.
+impacted_packages:
+  - purl: pkg:composer/pimcore/pimcore
+    affected_versions: vers:composer/<10.5.21
+    fixed_versions: vers:composer/10.5.21
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-j93v-cx26-2xc4/GHSA-j93v-cx26-2xc4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pimcore/pimcore
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/pimcore/commit/7a799399e6843cd049e85da27ceb75b78505317f
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/af9c360a-87f8-4e97-a24b-6db675ee942a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2615
+    reference_type:
+    reference_id:

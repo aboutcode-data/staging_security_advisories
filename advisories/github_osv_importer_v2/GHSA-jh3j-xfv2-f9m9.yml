@@ -1,0 +1,38 @@
+advisory_id: GHSA-jh3j-xfv2-f9m9
+datasource_id: github_osv_importer_v2/GHSA-jh3j-xfv2-f9m9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jh3j-xfv2-f9m9/GHSA-jh3j-xfv2-f9m9.json
+aliases:
+  - CVE-2019-19209
+summary: |
+  Dolibarr ERP and CRM SQLi
+  Dolibarr ERP/CRM before 10.0.3 allows SQL Injection.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<10.0.3
+    fixed_versions: vers:composer/10.0.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jh3j-xfv2-f9m9/GHSA-jh3j-xfv2-f9m9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://herolab.usd.de/security-advisories/usd-2019-0051
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19209
+    reference_type:
+    reference_id:
+  - url: https://www.dolibarr.org/forum/dolibarr-changelogs
+    reference_type:
+    reference_id:

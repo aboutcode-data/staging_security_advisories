@@ -1,0 +1,57 @@
+advisory_id: GHSA-mp92-3jfm-3575
+datasource_id: github_osv_importer_v2/GHSA-mp92-3jfm-3575
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-mp92-3jfm-3575/GHSA-mp92-3jfm-3575.json
+aliases:
+  - CVE-2023-43796
+summary: |
+  Synapse vulnerable to leak of remote user device information
+  ### Impact
+  Cached device information of remote users can be queried from Synapse. This can be used to enumerate the remote users known to a homeserver.
+
+  ### Patches
+  System administrators are encouraged to upgrade to Synapse 1.95.1 as soon as possible.
+
+  ### Workarounds
+  The `federation_domain_whitelist` can be used to limit federation traffic with a homeserver.
+impacted_packages:
+  - purl: pkg:pypi/matrix-synapse
+    affected_versions: vers:pypi/<1.95.1
+    fixed_versions: vers:pypi/1.95.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-mp92-3jfm-3575/GHSA-mp92-3jfm-3575.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/matrix-org/synapse
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/commit/daec55e1fe120c564240c5386e77941372bf458f
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/security/advisories/GHSA-mp92-3jfm-3575
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/matrix-synapse/PYSEC-2023-230.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2IDEEZMFJBDLTFHQUTZRJJNCOZGQ2ZVS
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VH3RNC5ZPQZ4OKPSL4E6BBJSZOQLGDEY
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-43796
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202401-12
+    reference_type:
+    reference_id:

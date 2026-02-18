@@ -1,0 +1,38 @@
+advisory_id: GHSA-m553-9wmx-533h
+datasource_id: github_osv_importer_v2/GHSA-m553-9wmx-533h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-m553-9wmx-533h/GHSA-m553-9wmx-533h.json
+aliases:
+  - CVE-2019-16197
+summary: |
+  Cross-site scripting in Dolibarr
+  In htdocs/societe/card.php in Dolibarr 10.0.1, the value of the User-Agent HTTP header is copied into the HTML document as plain text between tags, leading to XSS.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<10.0.2
+    fixed_versions: vers:composer/10.0.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-m553-9wmx-533h/GHSA-m553-9wmx-533h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/154481/Dolibarr-ERP-CRM-10.0.1-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/c53be23122fc6e7c3c8d65ee8ba979c566380964
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16197
+    reference_type:
+    reference_id:

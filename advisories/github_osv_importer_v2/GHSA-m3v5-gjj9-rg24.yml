@@ -1,0 +1,38 @@
+advisory_id: GHSA-m3v5-gjj9-rg24
+datasource_id: github_osv_importer_v2/GHSA-m3v5-gjj9-rg24
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-m3v5-gjj9-rg24/GHSA-m3v5-gjj9-rg24.json
+aliases:
+  - CVE-2023-33495
+summary: |
+  Craft CMS vulnerable to HTML injection
+  Craft CMS through 4.4.9 is vulnerable to HTML Injection.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=4.4.9
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-m3v5-gjj9-rg24/GHSA-m3v5-gjj9-rg24.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://medium.com/@mondalsomnath9135/html-injection-in-craft-cms-application-e2b28f746212
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-33495
+    reference_type:
+    reference_id:
+  - url: https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/03-Testing_for_HTML_Injection
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-jgrh-5m3h-9c5f
+datasource_id: github_osv_importer_v2/GHSA-jgrh-5m3h-9c5f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-jgrh-5m3h-9c5f/GHSA-jgrh-5m3h-9c5f.json
+aliases:
+  - CVE-2020-7764
+summary: |
+  Web Cache Poisoning in find-my-way
+  This affects the package find-my-way before 2.2.5, from 3.0.0 and before 3.0.5. It accepts the Accept-Version' header by default, and if versioned routes are not being used, this could lead to a denial of service. Accept-Version can be used as an unkeyed header in a cache poisoning attack.
+impacted_packages:
+  - purl: pkg:npm/find-my-way
+    affected_versions: vers:npm/<2.2.5
+    fixed_versions: vers:npm/2.2.5
+  - purl: pkg:npm/find-my-way
+    affected_versions: vers:npm/>=3.0.0|<3.0.5
+    fixed_versions: vers:npm/3.0.5
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-jgrh-5m3h-9c5f/GHSA-jgrh-5m3h-9c5f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/delvedor/find-my-way/commit/ab408354690e6b9cf3c4724befb3b3fa4bb90aac
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7764
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-FINDMYWAY-1038269
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/find-my-way
+    reference_type:
+    reference_id:

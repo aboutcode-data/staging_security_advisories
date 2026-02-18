@@ -1,0 +1,78 @@
+advisory_id: GHSA-mpxf-gcw2-pw5q
+datasource_id: github_osv_importer_v2/GHSA-mpxf-gcw2-pw5q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-mpxf-gcw2-pw5q/GHSA-mpxf-gcw2-pw5q.json
+aliases:
+  - CVE-2013-6414
+summary: |
+  actionpack Improper Input Validation vulnerability
+  `actionpack/lib/action_view/lookup_context.rb` in Action View in Ruby on Rails 3.x before 3.2.16 and 4.x before 4.0.2 allows remote attackers to cause a denial of service (memory consumption) via a header containing an invalid MIME type that leads to excessive caching.
+impacted_packages:
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=3.0.0|<3.2.16
+    fixed_versions: vers:gem/3.2.16
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=4.0.0|<4.0.2
+    fixed_versions: vers:gem/4.0.2
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-12/msg00079.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-12/msg00081.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-12/msg00082.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2014-01/msg00003.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2013-1794.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-0008.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-1863.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/actionpack/CVE-2013-6414.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/message/raw?msg=ruby-security-ann/A-ebV4WxzKg/KNPTbX8XAQUJ
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#!topic/ruby-security-ann/A-ebV4WxzKg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-6414
+    reference_type:
+    reference_id:
+  - url: https://puppet.com/security/cve/cve-2013-6414
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20160421165124/http://secunia.com/advisories/57836
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20160808161629/https://puppet.com/security/cve/cve-2013-6414
+    reference_type:
+    reference_id:
+  - url: http://weblog.rubyonrails.org/2013/12/3/Rails_3_2_16_and_4_0_2_have_been_released
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2014/dsa-2888
+    reference_type:
+    reference_id:
+  - url: http://www.getchef.com/blog/2014/04/09/enterprise-chef-11-1-3-release
+    reference_type:
+    reference_id:

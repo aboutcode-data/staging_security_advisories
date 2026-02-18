@@ -1,0 +1,42 @@
+advisory_id: GHSA-jmgf-p46x-982h
+datasource_id: github_osv_importer_v2/GHSA-jmgf-p46x-982h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-jmgf-p46x-982h/GHSA-jmgf-p46x-982h.json
+aliases:
+  - CVE-2008-5189
+summary: |
+  rails is vulnerable to CRLF injection
+  CRLF injection vulnerability in Ruby on Rails before 2.0.5 allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via a crafted URL to the redirect_to function.
+impacted_packages:
+  - purl: pkg:gem/rails
+    affected_versions: vers:gem/<2.0.5
+    fixed_versions: vers:gem/2.0.5
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: http://github.com/rails/rails
+    reference_type:
+    reference_id:
+  - url: http://github.com/rails/rails/commit/7282ed863ca7e6f928bae9162c9a63a98775a19d
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2008-12/msg00002.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/rails/CVE-2008-5189.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2008-5189
+    reference_type:
+    reference_id:
+  - url: http://weblog.rubyonrails.org/2008/10/19/rails-2-0-5-redirect_to-and-offset-limit-sanitizing
+    reference_type:
+    reference_id:
+  - url: http://weblog.rubyonrails.org/2008/10/19/response-splitting-risk
+    reference_type:
+    reference_id:

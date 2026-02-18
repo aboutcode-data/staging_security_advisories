@@ -1,0 +1,33 @@
+advisory_id: GHSA-jfmf-w293-8xr8
+datasource_id: github_osv_importer_v2/GHSA-jfmf-w293-8xr8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-jfmf-w293-8xr8/GHSA-jfmf-w293-8xr8.json
+aliases: []
+summary: |
+  Regular expression Denial of Service (ReDoS) in EmailValidator class in V7 compatibility module in Vaadin 8
+  Unsafe validation RegEx in `EmailValidator` component in `com.vaadin:vaadin-compatibility-server` versions 8.0.0 through 8.12.4 (Vaadin versions 8.0.0 through 8.12.4) allows attackers to cause uncontrolled resource consumption by submitting malicious email addresses.
+impacted_packages:
+  - purl: pkg:maven/com.vaadin/vaadin-bom
+    affected_versions: vers:maven/<=8.12.4
+    fixed_versions: vers:maven/8.13.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-jfmf-w293-8xr8/GHSA-jfmf-w293-8xr8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/vaadin/framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/vaadin/framework/security/advisories/GHSA-jfmf-w293-8xr8
+    reference_type:
+    reference_id:
+  - url: https://vaadin.com/security/cve-2021-31409
+    reference_type:
+    reference_id:

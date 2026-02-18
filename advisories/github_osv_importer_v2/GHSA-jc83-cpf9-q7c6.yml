@@ -1,0 +1,50 @@
+advisory_id: GHSA-jc83-cpf9-q7c6
+datasource_id: github_osv_importer_v2/GHSA-jc83-cpf9-q7c6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-jc83-cpf9-q7c6/GHSA-jc83-cpf9-q7c6.json
+aliases:
+  - CVE-2020-11071
+summary: |
+  False-negative validation results in MINT transactions with invalid baton
+  ### Impact
+  Users could experience false-negative validation outcomes for [MINT](https://github.com/simpleledger/slp-specifications/blob/master/slp-token-type-1.md#mint---extended-minting-transaction) transaction operations.  A poorly implemented SLP wallet could allow spending of the affected tokens which would result in the destruction of a user's minting baton.
+
+  ### Patches
+  npm package [slpjs](https://www.npmjs.com/package/slpjs) has been patched and published as version 0.27.2.
+
+
+  ### Workarounds
+  Upgrade to slpjs 0.27.2.
+
+  ### References
+  * slpjs [commit](https://github.com/simpleledger/slpjs/commit/3671be2ffb6d4cfa94c00c6dc8649d1ba1d75754)
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [slp-validate](https://github.com/simpleledger/slp-validate/issues) or [slpjs](https://github.com/simpleledger/slpjs/issues)
+impacted_packages:
+  - purl: pkg:npm/slpjs
+    affected_versions: vers:npm/<0.27.2
+    fixed_versions: vers:npm/0.27.2
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-jc83-cpf9-q7c6/GHSA-jc83-cpf9-q7c6.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-697
+references:
+  - url: https://github.com/simpleledger/slpjs/commit/3671be2ffb6d4cfa94c00c6dc8649d1ba1d75754
+    reference_type:
+    reference_id:
+  - url: https://github.com/simpleledger/slpjs/security/advisories/GHSA-jc83-cpf9-q7c6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-11071
+    reference_type:
+    reference_id:

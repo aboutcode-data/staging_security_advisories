@@ -1,0 +1,82 @@
+advisory_id: GHSA-mh33-7rrq-662w
+datasource_id: github_osv_importer_v2/GHSA-mh33-7rrq-662w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-mh33-7rrq-662w/GHSA-mh33-7rrq-662w.json
+aliases:
+  - CVE-2019-11324
+summary: |
+  Improper Certificate Validation in urllib3
+  The urllib3 library before 1.24.2 for Python mishandles certain cases where the desired set of CA certificates is different from the OS store of CA certificates, which results in SSL connections succeeding in situations where a verification failure is the correct outcome. This is related to use of the `ssl_context`, `ca_certs`, or `ca_certs_dir` argument.
+impacted_packages:
+  - purl: pkg:pypi/urllib3
+    affected_versions: vers:pypi/<1.24.2
+    fixed_versions: vers:pypi/1.24.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-mh33-7rrq-662w/GHSA-mh33-7rrq-662w.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-mh33-7rrq-662w/GHSA-mh33-7rrq-662w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00039.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00041.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:3335
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:3590
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mh33-7rrq-662w
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/urllib3/PYSEC-2019-133.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/urllib3/urllib3
+    reference_type:
+    reference_id:
+  - url: https://github.com/urllib3/urllib3/commit/1efadf43dc63317cd9eaa3e0fdb9e05ab07254b1
+    reference_type:
+    reference_id:
+  - url: https://github.com/urllib3/urllib3/compare/a6ec68a...1efadf4
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/06/msg00015.html
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/10/msg00012.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NKGPJLVLVYCL4L4B4G5TIOTVK4BKPG72
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOSA2NT4DUQDBEIWE6O7KKD24XND7TE2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-11324
+    reference_type:
+    reference_id:
+  - url: https://pypi.org/project/urllib3/1.24.2
+    reference_type:
+    reference_id:
+  - url: https://usn.ubuntu.com/3990-1
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/04/19/1
+    reference_type:
+    reference_id:

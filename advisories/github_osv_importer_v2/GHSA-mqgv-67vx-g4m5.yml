@@ -1,0 +1,38 @@
+advisory_id: GHSA-mqgv-67vx-g4m5
+datasource_id: github_osv_importer_v2/GHSA-mqgv-67vx-g4m5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-mqgv-67vx-g4m5/GHSA-mqgv-67vx-g4m5.json
+aliases:
+  - CVE-2020-28442
+summary: |
+  Prototype Pollution in js-data
+  All versions of package js-data prior to 3.0.10 are vulnerable to Prototype Pollution via the `deepFillIn` function.
+impacted_packages:
+  - purl: pkg:npm/js-data
+    affected_versions: vers:npm/<3.0.10
+    fixed_versions: vers:npm/3.0.10
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-mqgv-67vx-g4m5/GHSA-mqgv-67vx-g4m5.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/js-data/js-data/commit/2d9eed5d3e9710d7e7fecc6f6437c39fe73a4097
+    reference_type:
+    reference_id:
+  - url: https://github.com/js-data/js-data/pull/574
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28442
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-JSDATA-1023655
+    reference_type:
+    reference_id:

@@ -1,0 +1,62 @@
+advisory_id: GHSA-jc85-fpwf-qm7x
+datasource_id: github_osv_importer_v2/GHSA-jc85-fpwf-qm7x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-jc85-fpwf-qm7x/GHSA-jc85-fpwf-qm7x.json
+aliases:
+  - CVE-2025-12735
+summary: |
+  expr-eval does not restrict functions passed to the evaluate function
+  The expr-eval library is a JavaScript expression parser and evaluator designed to safely evaluate mathematical expressions with user-defined variables. However, due to insufficient input validation, an attacker can pass a crafted variables object into the evaluate() function and trigger arbitrary code execution.
+impacted_packages:
+  - purl: pkg:npm/expr-eval
+    affected_versions: vers:npm/<=2.0.2
+    fixed_versions:
+  - purl: pkg:npm/expr-eval-fork
+    affected_versions: vers:npm/<=3.0.0
+    fixed_versions: vers:npm/3.0.1
+severities:
+  - score: '8.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-jc85-fpwf-qm7x/GHSA-jc85-fpwf-qm7x.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/jorenbroekema/expr-eval
+    reference_type:
+    reference_id:
+  - url: https://github.com/jorenbroekema/expr-eval/blob/460b820ba01c5aca6c5d84a7d4f1fa5d1913c67b/test/security.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/jorenbroekema/expr-eval/commit/1d71bb2ca8f98df8de00e9cc4de8fdd468a7ad43
+    reference_type:
+    reference_id:
+  - url: https://github.com/silentmatt/expr-eval
+    reference_type:
+    reference_id:
+  - url: https://github.com/silentmatt/expr-eval/pull/288
+    reference_type:
+    reference_id:
+  - url: https://github.com/silentmatt/expr-eval/pull/289
+    reference_type:
+    reference_id:
+  - url: https://kb.cert.org/vuls/id/263614
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-12735
+    reference_type:
+    reference_id:
+  - url: https://www.kb.cert.org/vuls/id/263614
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/expr-eval
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/expr-eval-fork
+    reference_type:
+    reference_id:

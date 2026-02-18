@@ -1,0 +1,53 @@
+advisory_id: GHSA-m8qh-hx4c-h9hr
+datasource_id: github_osv_importer_v2/GHSA-m8qh-hx4c-h9hr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-m8qh-hx4c-h9hr/GHSA-m8qh-hx4c-h9hr.json
+aliases:
+  - CVE-2025-3638
+summary: |
+  Moodle has a CSRF risk in Brickfield tool's analysis request action
+  A flaw was found in Moodle. The analysis request action in the Brickfield tool did not include the necessary token to prevent a Cross-site request forgery (CSRF) risk.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.18
+    fixed_versions: vers:composer/4.1.18
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0-beta|<4.3.12
+    fixed_versions: vers:composer/4.3.12
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.8
+    fixed_versions: vers:composer/4.4.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.4
+    fixed_versions: vers:composer/4.5.4
+severities:
+  - score: '1.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-m8qh-hx4c-h9hr/GHSA-m8qh-hx4c-h9hr.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-3638
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2359732
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/91e6ad43ed2522f9c1c4094e565b5a7e5b348728
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=467600
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-3638
+    reference_type:
+    reference_id:

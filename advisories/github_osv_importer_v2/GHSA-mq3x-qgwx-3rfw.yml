@@ -1,0 +1,53 @@
+advisory_id: GHSA-mq3x-qgwx-3rfw
+datasource_id: github_osv_importer_v2/GHSA-mq3x-qgwx-3rfw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-mq3x-qgwx-3rfw/GHSA-mq3x-qgwx-3rfw.json
+aliases:
+  - CVE-2023-2629
+summary: |
+  Embedding untrusted input inside CSV files leads to Formula Injection/CSV Injection
+  ### Impact
+  The pimcore application is vulnerable to Formula Injection/CSV Injection via the Firstname, Lastname, Street, Zip & City input fields. These vulnerabilities allow unauthenticated attackers to execute arbitrary code via a crafted excel file.
+
+  Successful exploitation can lead to impacts such as client-sided command injection, code execution, or remote ex-filtration of contained confidential data.
+
+  ### Patches
+  Update to version 3.3.9 or apply this patch manually https://github.com/pimcore/customer-data-framework/commit/4e0105c3a78d20686a0c010faef27d2297b98803.patch
+
+  ### Workarounds
+  Apply patch https://github.com/pimcore/customer-data-framework/commit/4e0105c3a78d20686a0c010faef27d2297b98803.patch manually.
+
+  ### References
+  https://huntr.dev/bounties/821ff465-4754-42d1-9376-813c17f16a01/
+impacted_packages:
+  - purl: pkg:composer/pimcore/customer-management-framework-bundle
+    affected_versions: vers:composer/<3.3.9
+    fixed_versions: vers:composer/3.3.9
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-mq3x-qgwx-3rfw/GHSA-mq3x-qgwx-3rfw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1236
+references:
+  - url: https://github.com/pimcore/customer-data-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/commit/4e0105c3a78d20686a0c010faef27d2297b98803
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/security/advisories/GHSA-mq3x-qgwx-3rfw
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/821ff465-4754-42d1-9376-813c17f16a01
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2629
+    reference_type:
+    reference_id:

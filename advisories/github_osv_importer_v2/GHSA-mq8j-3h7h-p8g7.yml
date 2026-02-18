@@ -1,0 +1,64 @@
+advisory_id: GHSA-mq8j-3h7h-p8g7
+datasource_id: github_osv_importer_v2/GHSA-mq8j-3h7h-p8g7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-mq8j-3h7h-p8g7/GHSA-mq8j-3h7h-p8g7.json
+aliases:
+  - CVE-2022-29247
+summary: |
+  Compromised child renderer processes could obtain IPC access without nodeIntegrationInSubFrames being enabled
+  ### Impact
+  This vulnerability allows a renderer with JS execution to obtain access to a new renderer process with `nodeIntegrationInSubFrames` enabled which in turn allows effective access to `ipcRenderer`.
+
+  Please note the misleadingly named `nodeIntegrationInSubFrames` option does not implicitly grant Node.js access rather it depends on the existing `sandbox` setting.  If your application is sandboxed then `nodeIntegrationInSubFrames` just gives access to the sandboxed renderer APIs (which includes `ipcRenderer`).
+
+  If your application then additionally exposes IPC messages without IPC `senderFrame` validation that perform privileged actions or return confidential data this access to `ipcRenderer` can in turn compromise your application / user even with the sandbox enabled.
+
+  ### Patches
+  This has been patched and the following Electron versions contain the fix:
+
+  * `18.0.0-beta.6`
+  * `17.2.0`
+  * `16.2.6`
+  * `15.5.5`
+
+  ### Workarounds
+  Ensure that all IPC message handlers appropriately validate `senderFrame` as per our [security tutorial here](https://github.com/electron/electron/blob/main/docs/tutorial/security.md#17-validate-the-sender-of-all-ipc-messages).
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, email us at [security@electronjs.org](mailto:security@electronjs.org).
+impacted_packages:
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/<15.5.5
+    fixed_versions: vers:npm/15.5.5
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=16.0.0|<16.2.6
+    fixed_versions: vers:npm/16.2.6
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/>=17.0.0|<17.2.0
+    fixed_versions: vers:npm/17.2.0
+  - purl: pkg:npm/electron
+    affected_versions: vers:npm/<=18.0.0-beta.5
+    fixed_versions: vers:npm/18.0.0-beta.6
+severities:
+  - score: '2.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-mq8j-3h7h-p8g7/GHSA-mq8j-3h7h-p8g7.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+references:
+  - url: https://github.com/electron/electron
+    reference_type:
+    reference_id:
+  - url: https://github.com/electron/electron/security/advisories/GHSA-mq8j-3h7h-p8g7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29247
+    reference_type:
+    reference_id:

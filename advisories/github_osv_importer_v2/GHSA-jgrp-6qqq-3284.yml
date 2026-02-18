@@ -1,0 +1,32 @@
+advisory_id: GHSA-jgrp-6qqq-3284
+datasource_id: github_osv_importer_v2/GHSA-jgrp-6qqq-3284
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jgrp-6qqq-3284/GHSA-jgrp-6qqq-3284.json
+aliases:
+  - CVE-2021-42279
+summary: |
+  Chakra Scripting Engine and ChakraCore Vulnerable to Memory Corruption
+  Chakra Scripting Engine and ChakraCore are vulnerable to memory corruption due to an out-of-bounds write. The Microsoft advisory for CVE-2021-42279 was modified in August 2022 to include Microsoft.ChakraCore as an affected product.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<=1.11.24
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jgrp-6qqq-3284/GHSA-jgrp-6qqq-3284.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-42279
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-42279
+    reference_type:
+    reference_id:

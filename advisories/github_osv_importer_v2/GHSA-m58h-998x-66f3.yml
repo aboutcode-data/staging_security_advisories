@@ -1,0 +1,61 @@
+advisory_id: GHSA-m58h-998x-66f3
+datasource_id: github_osv_importer_v2/GHSA-m58h-998x-66f3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-m58h-998x-66f3/GHSA-m58h-998x-66f3.json
+aliases:
+  - CVE-2024-45129
+summary: |
+  Magento Open Source Improper Access Control vulnerability
+  Magento Open Source versions 2.4.7-p2, 2.4.6-p7, 2.4.5-p9, 2.4.4-p10 and earlier are affected by an Improper Access Control vulnerability that could result in Privilege escalation. A low-privileged attacker could leverage this vulnerability to bypass security measures and have a low impact on integrity. Exploitation of this issue does not require user interaction.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.7-beta1|<2.4.7-p3
+    fixed_versions: vers:composer/2.4.7-p3
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.6-p1|<2.4.6-p8
+    fixed_versions: vers:composer/2.4.6-p8
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.5-p1|<2.4.5-p10
+    fixed_versions: vers:composer/2.4.5-p10
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<2.4.4-p11
+    fixed_versions: vers:composer/2.4.4-p11
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.7
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.6
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.5
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.4
+    fixed_versions:
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-m58h-998x-66f3/GHSA-m58h-998x-66f3.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-m58h-998x-66f3/GHSA-m58h-998x-66f3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb24-73.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45129
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-jfm8-hwhg-r6gg
+datasource_id: github_osv_importer_v2/GHSA-jfm8-hwhg-r6gg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-jfm8-hwhg-r6gg/GHSA-jfm8-hwhg-r6gg.json
+aliases:
+  - CVE-2022-25171
+summary: |
+  p4 vulnerable to Command Injection due to improper input sanitization
+  The package p4 before 0.0.7 is vulnerable to Command Injection via the run() function due to improper input sanitization
+impacted_packages:
+  - purl: pkg:npm/p4
+    affected_versions: vers:npm/<0.0.7
+    fixed_versions: vers:npm/0.0.7
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-jfm8-hwhg-r6gg/GHSA-jfm8-hwhg-r6gg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/natelong/p4
+    reference_type:
+    reference_id:
+  - url: https://github.com/natelong/p4/blob/master/p4.js#23L12
+    reference_type:
+    reference_id:
+  - url: https://github.com/natelong/p4/commit/ae42e251beabf67c00539ec0e1d7aa149ca445fb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25171
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-P4-3167330
+    reference_type:
+    reference_id:

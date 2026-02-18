@@ -1,0 +1,57 @@
+advisory_id: GHSA-m3rf-7m4w-r66q
+datasource_id: github_osv_importer_v2/GHSA-m3rf-7m4w-r66q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-m3rf-7m4w-r66q/GHSA-m3rf-7m4w-r66q.json
+aliases:
+  - CVE-2021-41265
+summary: |
+  Improper Authentication in Flask-AppBuilder
+  ### Impact
+  Improper authentication on the REST API. Allows for a malicious actor with a carefully crafted request to successfully authenticate and gain access to existing protected REST API endpoints. Only affects non database authentication types, and new REST API endpoints.
+
+  ### Patches
+  Upgrade to Flask-AppBuilder 3.3.4
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in https://github.com/dpgaspar/Flask-AppBuilder
+impacted_packages:
+  - purl: pkg:pypi/flask-appbuilder
+    affected_versions: vers:pypi/<3.3.4
+    fixed_versions: vers:pypi/3.3.4
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-m3rf-7m4w-r66q/GHSA-m3rf-7m4w-r66q.json
+  - score: '8.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-m3rf-7m4w-r66q/GHSA-m3rf-7m4w-r66q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/commit/eba517aab121afa3f3f2edb011ec6bc4efd61fbc
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/releases/tag/v3.3.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/security/advisories/GHSA-m3rf-7m4w-r66q
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/flask-appbuilder/PYSEC-2021-851.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41265
+    reference_type:
+    reference_id:

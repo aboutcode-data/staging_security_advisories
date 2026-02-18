@@ -1,0 +1,46 @@
+advisory_id: GHSA-j857-2pwm-jjmm
+datasource_id: github_osv_importer_v2/GHSA-j857-2pwm-jjmm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-j857-2pwm-jjmm/GHSA-j857-2pwm-jjmm.json
+aliases:
+  - CVE-2024-50378
+summary: |
+  Apache Airflow vulnerable to Insertion of Sensitive Information Into Sent Data
+  Airflow versions before 2.10.3 have a vulnerability that allows authenticated users with audit log access to see sensitive values in audit logs which they should not see. When sensitive variables were set via airflow CLI, values of those variables appeared in the audit log and were stored unencrypted in the Airflow database. While this risk is limited to users with audit log access, it is recommended to upgrade to Airflow 2.10.3 or a later version, which addresses this issue. Users who previously used the CLI to set secret variables should manually delete entries with those variables from the log table.
+impacted_packages:
+  - purl: pkg:pypi/apache-airflow
+    affected_versions: vers:pypi/<2.10.3
+    fixed_versions: vers:pypi/2.10.3
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-j857-2pwm-jjmm/GHSA-j857-2pwm-jjmm.json
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-j857-2pwm-jjmm/GHSA-j857-2pwm-jjmm.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-201
+references:
+  - url: https://github.com/apache/airflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/airflow/pull/43123
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/17rxys384lzfd6nhm3fztzgvk47zy7jb
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-50378
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2024/11/08/5
+    reference_type:
+    reference_id:

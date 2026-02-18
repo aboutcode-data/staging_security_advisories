@@ -1,0 +1,39 @@
+advisory_id: GHSA-jpwx-ffjq-wr4w
+datasource_id: github_osv_importer_v2/GHSA-jpwx-ffjq-wr4w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-jpwx-ffjq-wr4w/GHSA-jpwx-ffjq-wr4w.json
+aliases: []
+summary: |
+  Content object state fetch functions open to SQL injection
+  ### Impact
+  This Security Update is about a vulnerability in eZ Publish Legacy. The content object state code could be vulnerable to SQL injection. There is no known exploit, but one might be possible. If you use Legacy in any way, we strongly recommend that you install this update as soon as possible.
+
+  ### Patches
+  The fix is distributed via Composer, see "Patched versions".
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/<=2019.3.5+1
+    fixed_versions: vers:composer/2019.3.6+1
+  - purl: pkg:composer/ezsystems/ezpublish-legacy
+    affected_versions: vers:composer/<=2017.12.7+3
+    fixed_versions: vers:composer/2017.12.7+4
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://developers.ibexa.co/security-advisories/ibexa-sa-2021-005-content-object-state-fetch-functions-open-to-sql-injection
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-legacy
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-legacy/commit/f8e3a97afd92efb9148134a4bacb35a875777a42
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-legacy/security/advisories/GHSA-jpwx-ffjq-wr4w
+    reference_type:
+    reference_id:

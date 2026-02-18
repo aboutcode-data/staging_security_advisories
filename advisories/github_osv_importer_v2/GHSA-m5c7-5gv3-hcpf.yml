@@ -1,0 +1,62 @@
+advisory_id: GHSA-m5c7-5gv3-hcpf
+datasource_id: github_osv_importer_v2/GHSA-m5c7-5gv3-hcpf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-m5c7-5gv3-hcpf/GHSA-m5c7-5gv3-hcpf.json
+aliases:
+  - CVE-2025-43734
+summary: |
+  Liferay Portal 7.4.0 and Liferay DXP have a reflected cross-site scripting (XSS) vulnerability
+  A reflected cross-site scripting (XSS) vulnerability in the Liferay Portal 7.4.0 through 7.4.3.132, and Liferay DXP 2025.Q1.0 through 2025.Q1.10, 2024.Q4.0 through 2024.Q4.7, 2024.Q3.1 through 2024.Q3.13, 2024.Q2.1 through 2024.Q2.13, 2024.Q1.1 through 2024.Q1.16 and 7.4 GA through update 92 allows a remote authenticated attacker to inject JavaScript code in the “first display label” field in the configuration of a custom sort widget. This malicious payload is then reflected and executed by clay button taglib when refreshing the page.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.4.0|<=7.4.3.132
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=2024.q4.0|<=2024.q4.7
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=2024.q3.0|<=2024.q3.13
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=2024.q2.0|<=2024.q2.13
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<=2024.q1.16
+    fixed_versions: vers:maven/2024.q1.17
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<=2025.q1.10
+    fixed_versions: vers:maven/2025.q1.11
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<=7.4.13.u92
+    fixed_versions:
+  - purl: pkg:maven/com.liferay/com.liferay.frontend.taglib.clay
+    affected_versions: vers:maven/<15.2.2
+    fixed_versions: vers:maven/15.2.2
+severities:
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-m5c7-5gv3-hcpf/GHSA-m5c7-5gv3-hcpf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/b4ca1bb0961cc1f230508e072c30815eabce062f
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-18234
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43734
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43734
+    reference_type:
+    reference_id:

@@ -1,0 +1,51 @@
+advisory_id: GHSA-jh7q-5mwf-qvhw
+datasource_id: github_osv_importer_v2/GHSA-jh7q-5mwf-qvhw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jh7q-5mwf-qvhw/GHSA-jh7q-5mwf-qvhw.json
+aliases:
+  - CVE-2020-10770
+summary: |
+  Keycloak vulnerable to Server-Side Request Forgery
+  A flaw was found in Keycloak before 13.0.0, where it is possible to force the server to call out an unverified URL using the OIDC parameter `request_uri`. This flaw allows an attacker to use this parameter to execute a Server-side request forgery (SSRF) attack.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<13.0.0
+    fixed_versions: vers:maven/13.0.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jh7q-5mwf-qvhw/GHSA-jh7q-5mwf-qvhw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+  - CWE-918
+references:
+  - url: http://packetstormsecurity.com/files/164499/Keycloak-12.0.1-Server-Side-Request-Forgery.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1846270
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak-documentation/pull/1086
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/7714
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/KEYCLOAK-14019
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/KEYCLOAK-3426
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-10770
+    reference_type:
+    reference_id:

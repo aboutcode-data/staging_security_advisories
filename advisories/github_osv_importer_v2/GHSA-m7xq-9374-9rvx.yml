@@ -1,0 +1,79 @@
+advisory_id: GHSA-m7xq-9374-9rvx
+datasource_id: github_osv_importer_v2/GHSA-m7xq-9374-9rvx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-m7xq-9374-9rvx/GHSA-m7xq-9374-9rvx.json
+aliases:
+  - CVE-2024-53900
+summary: |
+  Mongoose search injection vulnerability
+  Mongoose versions prior to 8.8.3, 7.8.3, 6.13.5, and 5.13.23 are vulnerable to improper use of the $where operator. This vulnerability arises from the ability of the $where clause to execute arbitrary JavaScript code in MongoDB queries, potentially leading to code injection attacks and unauthorized access or manipulation of database data.
+impacted_packages:
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/>=8.0.0-rc0|<8.8.3
+    fixed_versions: vers:npm/8.8.3
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/>=7.0.0-rc0|<7.8.3
+    fixed_versions: vers:npm/7.8.3
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/>=6.0.0-rc0|<6.13.5
+    fixed_versions: vers:npm/6.13.5
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/>=3.6.0-rc0|<5.13.23
+    fixed_versions: vers:npm/5.13.23
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-m7xq-9374-9rvx/GHSA-m7xq-9374-9rvx.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-m7xq-9374-9rvx/GHSA-m7xq-9374-9rvx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/Automattic/mongoose
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/blob/master/CHANGELOG.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/commit/33679bcf8ca43d74e3e8ecd4cc224826772d805b
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/commit/bbb6fa7ecb44bbaf5bea955d886378a1247bce0b
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/commit/c9e86bff7eef477da75a29af62a06d41a835a156
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/compare/6.13.4...6.13.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/compare/7.8.2...7.8.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/compare/8.8.2...8.8.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/releases
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/pull/6769
+    reference_type:
+    reference_id:
+  - url: https://github.com/github/advisory-database/pull/6776
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-53900
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/mongoose?activeTab=versions
+    reference_type:
+    reference_id:

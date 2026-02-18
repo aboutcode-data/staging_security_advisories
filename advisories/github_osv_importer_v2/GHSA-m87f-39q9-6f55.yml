@@ -1,0 +1,46 @@
+advisory_id: GHSA-m87f-39q9-6f55
+datasource_id: github_osv_importer_v2/GHSA-m87f-39q9-6f55
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-m87f-39q9-6f55/GHSA-m87f-39q9-6f55.json
+aliases:
+  - CVE-2022-24758
+summary: |
+  Sensitive Auth & Cookie data stored in Jupyter server logs
+  Anytime a 5xx error is triggered, the auth cookie and other header values are recorded in Jupyter server logs by default. Considering these logs do not require root access, an attacker can monitor these logs, steal sensitive auth/cookie information, and gain access to the Jupyter server.
+
+  Upgrade to notebook version 6.4.10
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, or vulnerabilities to report, please email our security list [security@ipython.org](mailto:security@ipython.org).
+
+  Credit: @3coins for reporting. Thank you!
+impacted_packages:
+  - purl: pkg:pypi/notebook
+    affected_versions: vers:pypi/<6.4.10
+    fixed_versions: vers:pypi/6.4.10
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-m87f-39q9-6f55/GHSA-m87f-39q9-6f55.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://github.com/jupyter/notebook
+    reference_type:
+    reference_id:
+  - url: https://github.com/jupyter/notebook/security/advisories/GHSA-m87f-39q9-6f55
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/notebook/PYSEC-2022-180.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24758
+    reference_type:
+    reference_id:

@@ -1,0 +1,59 @@
+advisory_id: GHSA-m8gw-hjpr-rjv7
+datasource_id: github_osv_importer_v2/GHSA-m8gw-hjpr-rjv7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-m8gw-hjpr-rjv7/GHSA-m8gw-hjpr-rjv7.json
+aliases:
+  - CVE-2021-23450
+summary: |
+  Prototype Pollution in dojo
+  All versions of package dojo are vulnerable to Prototype Pollution via the setObject function.
+impacted_packages:
+  - purl: pkg:npm/dojo
+    affected_versions: vers:npm/<=1.16.4
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-m8gw-hjpr-rjv7/GHSA-m8gw-hjpr-rjv7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/dojo/dojo
+    reference_type:
+    reference_id:
+  - url: https://github.com/dojo/dojo/blob/4c39c14349408fc8274e19b399ffc660512ed07c/_base/lang.js%23L172
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/01/msg00030.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23450
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-2313036
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-2313035
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBDOJO-2313034
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2313033
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-DOJO-1535223
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

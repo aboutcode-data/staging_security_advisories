@@ -1,0 +1,35 @@
+advisory_id: GHSA-m6g3-xq5q-4hg9
+datasource_id: github_osv_importer_v2/GHSA-m6g3-xq5q-4hg9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m6g3-xq5q-4hg9/GHSA-m6g3-xq5q-4hg9.json
+aliases:
+  - CVE-2014-0219
+summary: |
+  Improper Input Validation in Apache Karaf
+  Apache Karaf before 4.0.10 enables a shutdown port on the loopback interface, which allows local users to cause a denial of service (shutdown) by sending a shutdown command to all listening high ports.
+impacted_packages:
+  - purl: pkg:maven/org.apache.karaf/apache-karaf
+    affected_versions: vers:maven/<4.0.10
+    fixed_versions: vers:maven/4.0.10
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-m6g3-xq5q-4hg9/GHSA-m6g3-xq5q-4hg9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: http://karaf.apache.org/security/cve-2014-0219.txt
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1095974
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-0219
+    reference_type:
+    reference_id:

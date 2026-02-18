@@ -1,0 +1,65 @@
+advisory_id: GHSA-mhfv-9h99-jwg7
+datasource_id: github_osv_importer_v2/GHSA-mhfv-9h99-jwg7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mhfv-9h99-jwg7/GHSA-mhfv-9h99-jwg7.json
+aliases:
+  - CVE-2018-0503
+summary: |
+  Mediawiki Improper Privilege Management
+  Mediawiki 1.31 before 1.31.1, 1.30.1, 1.29.3 and 1.27.5 contains a flaw where contrary to the documentation, $wgRateLimits entry for 'user' overrides that for 'newbie'.
+impacted_packages:
+  - purl: pkg:composer/mediawiki/core
+    affected_versions: vers:composer/>=1.27.0|<1.27.5
+    fixed_versions: vers:composer/1.27.5
+  - purl: pkg:composer/mediawiki/core
+    affected_versions: vers:composer/>=1.29.0|<1.29.3
+    fixed_versions: vers:composer/1.29.3
+  - purl: pkg:composer/mediawiki/core
+    affected_versions: vers:composer/>=1.30.0|<1.30.1
+    fixed_versions: vers:composer/1.30.1
+  - purl: pkg:composer/mediawiki/core
+    affected_versions: vers:composer/>=1.31.0|<1.31.1
+    fixed_versions: vers:composer/1.31.1
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mhfv-9h99-jwg7/GHSA-mhfv-9h99-jwg7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+references:
+  - url: https://access.redhat.com/errata/RHSA-2019:3142
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:3238
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2019:3813
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/mediawiki/core/CVE-2018-0503.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/wikimedia/mediawiki
+    reference_type:
+    reference_id:
+  - url: https://lists.wikimedia.org/pipermail/wikitech-l/2018-September/090849.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-0503
+    reference_type:
+    reference_id:
+  - url: https://phabricator.wikimedia.org/T169545
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2018/dsa-4301
+    reference_type:
+    reference_id:
+  - url: http://www.securitytracker.com/id/1041695
+    reference_type:
+    reference_id:

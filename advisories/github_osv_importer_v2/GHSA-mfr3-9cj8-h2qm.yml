@@ -1,0 +1,39 @@
+advisory_id: GHSA-mfr3-9cj8-h2qm
+datasource_id: github_osv_importer_v2/GHSA-mfr3-9cj8-h2qm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mfr3-9cj8-h2qm/GHSA-mfr3-9cj8-h2qm.json
+aliases:
+  - CVE-2014-3563
+summary: |
+  SaltStack Salt Insecure Temporary File Creation
+  Multiple unspecified vulnerabilities in Salt (aka SaltStack) before 2014.1.10 allow local users to have an unspecified impact via vectors related to temporary file creation in (1) seed.py, (2) salt-ssh, or (3) salt-cloud.
+impacted_packages:
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/<2014.1.10
+    fixed_versions: vers:pypi/2014.1.10
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-59
+references:
+  - url: http://docs.saltstack.com/en/latest/topics/releases/2014.1.10.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/oss-sec/2014/q3/428
+    reference_type:
+    reference_id:
+  - url: https://exchange.xforce.ibmcloud.com/vulnerabilities/95392
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/salt/PYSEC-2014-18.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/saltstack/salt
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-3563
+    reference_type:
+    reference_id:

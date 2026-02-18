@@ -1,0 +1,41 @@
+advisory_id: GHSA-jwg3-v9xm-v6q9
+datasource_id: github_osv_importer_v2/GHSA-jwg3-v9xm-v6q9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jwg3-v9xm-v6q9/GHSA-jwg3-v9xm-v6q9.json
+aliases:
+  - CVE-2019-11201
+summary: |
+  Dolibarr ERP and CRM Code Injection
+  Dolibarr ERP/CRM 9.0.1 provides a module named website that provides for creation of public websites with a WYSIWYG editor. It was identified that the editor also allowed inclusion of dynamic code, which can lead to code execution on the host machine. An attacker has to check a setting on the same page, which specifies the inclusion of dynamic content. Thus, a lower privileged user of the application can execute code under the context and permissions of the underlying web server.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<=9.0.1
+    fixed_versions: vers:composer/9.0.3
+severities:
+  - score: '8.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-jwg3-v9xm-v6q9/GHSA-jwg3-v9xm-v6q9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/63c0ab93fb21f86c1b736061af9fa1eee90148fd
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/issues/10984#issuecomment-485841141
+    reference_type:
+    reference_id:
+  - url: https://know.bishopfox.com/advisories/dolibarr-version-9-0-1-vulnerabilities
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-11201
+    reference_type:
+    reference_id:

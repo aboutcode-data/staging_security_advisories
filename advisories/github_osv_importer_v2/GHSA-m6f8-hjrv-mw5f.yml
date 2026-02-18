@@ -1,0 +1,49 @@
+advisory_id: GHSA-m6f8-hjrv-mw5f
+datasource_id: github_osv_importer_v2/GHSA-m6f8-hjrv-mw5f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-m6f8-hjrv-mw5f/GHSA-m6f8-hjrv-mw5f.json
+aliases:
+  - CVE-2023-28640
+summary: "Apiman vulnerable to permissions bypass due to missing check on API key URL\n### Impact\n\
+  \nDue to a missing permissions check, an attacker with an authenticated Apiman Manager account\
+  \ may be able to gain access to API keys they do not have permission for if they correctly\
+  \ guess the URL. The URL includes Organisation ID, Client ID, and Client Version of the targeted\
+  \ non-permitted resource, and each of these can have arbitrary values.\n\nWhile not trivial\
+  \ to exploit, it could be achieved by brute-forcing or guessing common names.\n\nAccess to\
+  \ the non-permitted API Keys could allow use of other users' resources without their permission\
+  \ (depending on the specifics of configuration, such as whether an API key is the only form\
+  \ of security).\n\n### Patches\n\nApiman 3.1.0.Final and later resolves this issue. \n\n###\
+  \ Workarounds\n\nOnly provide Apiman Manager accounts to known users, do not allow anonymous/unknown\
+  \ users to create an Apiman Manager account.\n\nNote that this does **not** affect the Apiman\
+  \ Gateway.\n\n### References\n\n* [Blog post disclosing issue](https://www.apiman.io/blog/potential-permissions-bypass-disclosure/)"
+impacted_packages:
+  - purl: pkg:maven/io.apiman/apiman-manager-api-rest-impl
+    affected_versions: vers:maven/<3.0.0.Final
+    fixed_versions: vers:maven/3.1.0.Final
+severities:
+  - score: '6.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-m6f8-hjrv-mw5f/GHSA-m6f8-hjrv-mw5f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+  - CWE-862
+  - CWE-280
+references:
+  - url: https://github.com/apiman/apiman
+    reference_type:
+    reference_id:
+  - url: https://github.com/apiman/apiman/security/advisories/GHSA-m6f8-hjrv-mw5f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-28640
+    reference_type:
+    reference_id:
+  - url: https://www.apiman.io/blog/potential-permissions-bypass-disclosure
+    reference_type:
+    reference_id:

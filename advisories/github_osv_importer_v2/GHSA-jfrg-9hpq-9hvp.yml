@@ -1,0 +1,53 @@
+advisory_id: GHSA-jfrg-9hpq-9hvp
+datasource_id: github_osv_importer_v2/GHSA-jfrg-9hpq-9hvp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-jfrg-9hpq-9hvp/GHSA-jfrg-9hpq-9hvp.json
+aliases:
+  - CVE-2024-25981
+summary: |
+  Improper Access Control in moodle
+  Separate Groups mode restrictions were not honored when performing a forum export, which would export forum data for all groups. By default this only provided additional access to non-editing teachers.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0|<4.3.3
+    fixed_versions: vers:composer/4.3.3
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0|<4.2.6
+    fixed_versions: vers:composer/4.2.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.9
+    fixed_versions: vers:composer/4.1.9
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-jfrg-9hpq-9hvp/GHSA-jfrg-9hpq-9hvp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-80504
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2264097
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/1c059cb3fe39da46959e912dc671844dd204e83b
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KXGBYJ43BUEBUAQZU3DT5I5A3YLF47CB
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=455637
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-25981
+    reference_type:
+    reference_id:

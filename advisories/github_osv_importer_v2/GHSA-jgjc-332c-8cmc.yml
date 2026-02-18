@@ -1,0 +1,50 @@
+advisory_id: GHSA-jgjc-332c-8cmc
+datasource_id: github_osv_importer_v2/GHSA-jgjc-332c-8cmc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-jgjc-332c-8cmc/GHSA-jgjc-332c-8cmc.json
+aliases:
+  - CVE-2019-18622
+summary: |
+  SQL injection in phpMyAdmin
+  An issue was discovered in phpMyAdmin before 4.9.2. A crafted database/table name can be used to trigger a SQL injection attack through the designer feature.
+impacted_packages:
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/<4.9.2
+    fixed_versions: vers:composer/4.9.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-jgjc-332c-8cmc/GHSA-jgjc-332c-8cmc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00002.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00024.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/phpmyadmin/composer/commit/51acbf53564d9b52e78509a5688ec2b68976b5f7
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BA4DGF7KTQS6WA2DRNJSW66L43WB7LRV
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W5GW4KEMNCBQYZCIXEJYC42OEBBN2NSH
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-18622
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202003-39
+    reference_type:
+    reference_id:
+  - url: https://www.phpmyadmin.net/security/PMASA-2019-5
+    reference_type:
+    reference_id:

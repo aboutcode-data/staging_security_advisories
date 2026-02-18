@@ -1,0 +1,65 @@
+advisory_id: GHSA-m6fv-jmcg-4jfg
+datasource_id: github_osv_importer_v2/GHSA-m6fv-jmcg-4jfg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-m6fv-jmcg-4jfg/GHSA-m6fv-jmcg-4jfg.json
+aliases:
+  - CVE-2024-43799
+summary: |
+  send vulnerable to template injection that can lead to XSS
+  ### Impact
+
+  passing untrusted user input - even after sanitizing it - to `SendStream.redirect()` may execute untrusted code
+
+  ### Patches
+
+  this issue is patched in send 0.19.0
+
+  ### Workarounds
+
+  users are encouraged to upgrade to the patched version of express, but otherwise can workaround this issue by making sure any untrusted inputs are safe, ideally by validating them against an explicit allowlist
+
+  ### Details
+
+  successful exploitation of this vector requires the following:
+
+  1. The attacker MUST control the input to response.redirect()
+  1. express MUST NOT redirect before the template appears
+  1. the browser MUST NOT complete redirection before:
+  1. the user MUST click on the link in the template
+impacted_packages:
+  - purl: pkg:npm/send
+    affected_versions: vers:npm/<0.19.0
+    fixed_versions: vers:npm/0.19.0
+severities:
+  - score: '5.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-m6fv-jmcg-4jfg/GHSA-m6fv-jmcg-4jfg.json
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-m6fv-jmcg-4jfg/GHSA-m6fv-jmcg-4jfg.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pillarjs/send
+    reference_type:
+    reference_id:
+  - url: https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35
+    reference_type:
+    reference_id:
+  - url: https://github.com/pillarjs/send/security/advisories/GHSA-m6fv-jmcg-4jfg
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/06/msg00022.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-43799
+    reference_type:
+    reference_id:

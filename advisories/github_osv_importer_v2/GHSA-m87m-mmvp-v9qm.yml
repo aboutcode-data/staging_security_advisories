@@ -1,0 +1,47 @@
+advisory_id: GHSA-m87m-mmvp-v9qm
+datasource_id: github_osv_importer_v2/GHSA-m87m-mmvp-v9qm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-m87m-mmvp-v9qm/GHSA-m87m-mmvp-v9qm.json
+aliases:
+  - CVE-2024-5629
+summary: |
+  PyMongo Out-of-bounds Read in the bson module
+  Versions of the package pymongo before 4.6.3 are vulnerable to Out-of-bounds Read in the bson module. Using the crafted payload the attacker could force the parser to deserialize unmanaged memory. The parser tries to interpret bytes next to buffer and throws an exception with string. If the following bytes are not printable UTF-8 the parser throws an exception with a single byte.
+impacted_packages:
+  - purl: pkg:pypi/pymongo
+    affected_versions: vers:pypi/<4.6.3
+    fixed_versions: vers:pypi/4.6.3
+severities:
+  - score: '4.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-m87m-mmvp-v9qm/GHSA-m87m-mmvp-v9qm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-125
+references:
+  - url: https://gist.github.com/keltecc/62a7c2bf74a997d0a7b48a0ff3853a03
+    reference_type:
+    reference_id:
+  - url: https://github.com/mongodb/mongo-python-driver
+    reference_type:
+    reference_id:
+  - url: https://github.com/mongodb/mongo-python-driver/commit/56b6b6dbc267d365d97c037082369dabf37405d2
+    reference_type:
+    reference_id:
+  - url: https://jira.mongodb.org/browse/PYTHON-4305
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/06/msg00007.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-5629
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-PYTHON-PYMONGO-6370597
+    reference_type:
+    reference_id:

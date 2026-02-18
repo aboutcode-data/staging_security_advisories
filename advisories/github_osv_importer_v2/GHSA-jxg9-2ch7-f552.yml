@@ -1,0 +1,35 @@
+advisory_id: GHSA-jxg9-2ch7-f552
+datasource_id: github_osv_importer_v2/GHSA-jxg9-2ch7-f552
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-jxg9-2ch7-f552/GHSA-jxg9-2ch7-f552.json
+aliases:
+  - CVE-2022-34971
+summary: |
+  Feehi CMS arbitrary code execution via crafted PHP file
+  An arbitrary file upload vulnerability in the Advertising Management module of Feehi CMS v2.1.1 allows attackers to execute arbitrary code via a crafted PHP file.
+impacted_packages:
+  - purl: pkg:composer/feehi/cms
+    affected_versions: vers:composer/<=2.1.1
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-jxg9-2ch7-f552/GHSA-jxg9-2ch7-f552.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://github.com/liufee/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/liufee/cms/issues/62
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-34971
+    reference_type:
+    reference_id:

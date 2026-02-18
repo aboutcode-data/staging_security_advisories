@@ -1,0 +1,69 @@
+advisory_id: GHSA-mj46-r4gr-5x83
+datasource_id: github_osv_importer_v2/GHSA-mj46-r4gr-5x83
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-mj46-r4gr-5x83/GHSA-mj46-r4gr-5x83.json
+aliases:
+  - CVE-2022-25863
+summary: "Unsanitized JavaScript code injection possible in gatsby-plugin-mdx\n### Impact\n\
+  The gatsby-plugin-mdx plugin prior to versions 3.15.2 and 2.14.1 passes input through to the\
+  \ `gray-matter` npm package, which is vulnerable to JavaScript injection in its default configuration,\
+  \ unless input is sanitized.  The vulnerability is present when passing input in both webpack\
+  \ (MDX files in `src/pages` or MDX file imported as component in frontend / React code) and\
+  \ data mode (querying MDX nodes via GraphQL).  Injected JavaScript executes in the context\
+  \ of the build server.\n\nTo exploit this vulnerability untrusted/unsanitized input would\
+  \ need to be sourced or added into an MDX file.  The following MDX payload demonstrates a\
+  \ vulnerable configuration:\n```\n---js\n((require(\"child_process\")).execSync(\"id >> /tmp/rce\"\
+  ))\n--- \n```\n\n### Patches\nA patch has been introduced in `gatsby-plugin-mdx@3.15.2` and\
+  \ `gatsby-plugin-mdx@2.14.1` which mitigates the issue by disabling the `gray-matter` JavaScript\
+  \ Frontmatter engine.  The patch introduces a new option, `JSFrontmatterEngine` which is set\
+  \ to `false` by default.  When setting `JSFrontmatterEngine` to `true`, input passed to `gatsby-plugin-mdx`\
+  \ must be sanitized before processing to avoid a security risk.  Warnings are displayed when\
+  \ enabling `JSFrontmatterEngine` to `true` or if it appears that the MDX input is attempting\
+  \ to use the Frontmatter engine.\n\n### Workarounds\nIf an older version of `gatsby-plugin-mdx`\
+  \ must be used, input passed into the plugin should be sanitized ahead of processing.\n\n\
+  **We encourage projects to upgrade to the latest major release branch for all Gatsby plugins\
+  \ to ensure the latest security updates and bug fixes are received in a timely manner.**\n\
+  \n### Credits\nWe would like to thank Snyk [snyk.io] for initially bringing the issue to our\
+  \ attention, as well as Feng Xiao and Zhongfu Su, who reported the issue to Snyk.\n\n### For\
+  \ more information\nEmail us at [security@gatsbyjs.com](mailto:security@gatsbyjs.com)."
+impacted_packages:
+  - purl: pkg:npm/gatsby-plugin-mdx
+    affected_versions: vers:npm/<2.14.1
+    fixed_versions: vers:npm/2.14.1
+  - purl: pkg:npm/gatsby-plugin-mdx
+    affected_versions: vers:npm/>=3.0.0|<3.15.2
+    fixed_versions: vers:npm/3.15.2
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-mj46-r4gr-5x83/GHSA-mj46-r4gr-5x83.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://drive.google.com/file/d/1EoCzbwTWOM8-fjvwMbH3bqcZ2iKksxTW/view?usp=sharing
+    reference_type:
+    reference_id:
+  - url: https://github.com/gatsbyjs/gatsby
+    reference_type:
+    reference_id:
+  - url: https://github.com/gatsbyjs/gatsby/pull/35830
+    reference_type:
+    reference_id:
+  - url: https://github.com/gatsbyjs/gatsby/pull/35830/commits/f214eb0694c61e348b2751cecd1aace2046bc46e
+    reference_type:
+    reference_id:
+  - url: https://github.com/gatsbyjs/gatsby/security/advisories/GHSA-mj46-r4gr-5x83
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25863
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-GATSBYPLUGINMDX-2405699
+    reference_type:
+    reference_id:

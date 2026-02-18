@@ -1,0 +1,48 @@
+advisory_id: GHSA-jx5q-g37m-h5hj
+datasource_id: github_osv_importer_v2/GHSA-jx5q-g37m-h5hj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-jx5q-g37m-h5hj/GHSA-jx5q-g37m-h5hj.json
+aliases:
+  - CVE-2021-43852
+summary: |
+  Client-Side JavaScript Prototype Pollution in oro/platform
+  ### Summary
+
+  By sending a specially crafted request, an attacker could inject properties into existing JavaScript language construct prototypes, such as objects. Later this injection may lead to JS code execution by libraries that are vulnerable to Prototype Pollution.
+
+  ### Workarounds
+
+  Configure WAF to drop requests containing next strings: `__proto__` , `constructor[prototype]`, `constructor.prototype`
+impacted_packages:
+  - purl: pkg:composer/oro/platform
+    affected_versions: vers:composer/>=4.1.0|<4.1.14
+    fixed_versions: vers:composer/4.1.14
+  - purl: pkg:composer/oro/platform
+    affected_versions: vers:composer/>=4.2.0|<4.2.8
+    fixed_versions: vers:composer/4.2.8
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-jx5q-g37m-h5hj/GHSA-jx5q-g37m-h5hj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-1321
+references:
+  - url: https://github.com/oroinc/platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/oroinc/platform/commit/62c26936b3adee9c20255dcd9f8ee5c299b464a9
+    reference_type:
+    reference_id:
+  - url: https://github.com/oroinc/platform/security/advisories/GHSA-jx5q-g37m-h5hj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-43852
+    reference_type:
+    reference_id:

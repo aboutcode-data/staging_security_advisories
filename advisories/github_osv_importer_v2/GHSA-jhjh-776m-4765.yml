@@ -1,0 +1,80 @@
+advisory_id: GHSA-jhjh-776m-4765
+datasource_id: github_osv_importer_v2/GHSA-jhjh-776m-4765
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-jhjh-776m-4765/GHSA-jhjh-776m-4765.json
+aliases:
+  - CVE-2022-31152
+summary: |
+  Denial of service due to incorrect application of event authorization rules
+  ### Impact
+
+  The Matrix specification specifies a list of [event authorization rules](https://spec.matrix.org/v1.3/rooms/v10/#authorization-rules) which must be checked when determining if an event should be accepted into a room.
+
+  In versions of Synapse up to and including v1.61, some of these rules are not correctly applied. An attacker could craft events which would be accepted by Synapse but not a spec-conformant server, potentially causing divergence in the room state between servers.
+
+  ### Patches
+
+  Administrators of homeservers with federation enabled are advised to upgrade to v1.62.0 or higher.
+
+  ### Workarounds
+
+   * Federation can be disabled by setting [`federation_domain_whitelist`](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html#federation_domain_whitelist) to an empty list (`[]`).
+
+  ### References
+
+   * https://github.com/matrix-org/synapse/pull/13087
+   * https://github.com/matrix-org/synapse/pull/13088
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, e-mail us at [security@matrix.org](mailto:security@matrix.org).
+impacted_packages:
+  - purl: pkg:pypi/matrix-synapse
+    affected_versions: vers:pypi/<1.62.0rc1
+    fixed_versions: vers:pypi/1.62.0rc1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-jhjh-776m-4765/GHSA-jhjh-776m-4765.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-jhjh-776m-4765/GHSA-jhjh-776m-4765.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-703
+  - CWE-755
+references:
+  - url: https://github.com/matrix-org/synapse
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/commit/d4b1c0d800eaa83c4d56a9cf17881ad362b9194b
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/commit/e16ea87d0f8c4c30cad36f85488eb1f647e640b0
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/pull/13087
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/pull/13088
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/releases/tag/v1.62.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/synapse/security/advisories/GHSA-jhjh-776m-4765
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/matrix-synapse/PYSEC-2022-262.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31152
+    reference_type:
+    reference_id:

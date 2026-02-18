@@ -1,0 +1,35 @@
+advisory_id: GHSA-mmqv-m45h-q2hp
+datasource_id: github_osv_importer_v2/GHSA-mmqv-m45h-q2hp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-mmqv-m45h-q2hp/GHSA-mmqv-m45h-q2hp.json
+aliases: []
+summary: "Sandbox Breakout / Arbitrary Code Execution in localeval\nAll versions of `localeval`\
+  \ are vulnerable to Sandbox Escape leading to Remote Code Execution. The package fails to\
+  \ restrict access to the main context through `constructor.constructor`. This may allow attackers\
+  \ to execute arbitrary code in the system.  Evaluating the payload \n```\nconstructor.constructor(\"\
+  return process.env\")()\n``` \n\nreturns the contents of `process.env`.\n\n\n## Recommendation\n\
+  \nNo fix is currently available. Consider using an alternative package until a fix is made\
+  \ available."
+impacted_packages:
+  - purl: pkg:npm/localeval
+    affected_versions: vers:npm/<15.3.0
+    fixed_versions: vers:npm/15.3.0
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/espadrine/localeval
+    reference_type:
+    reference_id:
+  - url: https://github.com/espadrine/localeval/commit/823f112c793b8fae051eeddad61d4ed29804a56c
+    reference_type:
+    reference_id:
+  - url: https://github.com/espadrine/localeval/commit/ce985eba77a5f89a7f718727cbaa7fb14da40335
+    reference_type:
+    reference_id:
+  - url: https://github.com/espadrine/localeval/issues/9
+    reference_type:
+    reference_id:

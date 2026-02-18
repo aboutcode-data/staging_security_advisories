@@ -1,0 +1,41 @@
+advisory_id: GHSA-j9cw-5cpj-9qj5
+datasource_id: github_osv_importer_v2/GHSA-j9cw-5cpj-9qj5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-j9cw-5cpj-9qj5/GHSA-j9cw-5cpj-9qj5.json
+aliases:
+  - CVE-2021-36403
+summary: |
+  Moodle has a Hidden Functionality vulnerability
+  In Moodle, in some circumstances, email notifications of messages could have the link back to the original message hidden by HTML, which may pose a phishing risk.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.11.0-beta|<3.11.1
+    fixed_versions: vers:composer/3.11.1
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.10.0-beta|<3.10.5
+    fixed_versions: vers:composer/3.10.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<3.9.8
+    fixed_versions: vers:composer/3.9.8
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-j9cw-5cpj-9qj5/GHSA-j9cw-5cpj-9qj5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-912
+references:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=424809
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-36403
+    reference_type:
+    reference_id:

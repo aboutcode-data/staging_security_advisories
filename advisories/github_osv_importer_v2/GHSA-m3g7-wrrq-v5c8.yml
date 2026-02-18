@@ -1,0 +1,39 @@
+advisory_id: GHSA-m3g7-wrrq-v5c8
+datasource_id: github_osv_importer_v2/GHSA-m3g7-wrrq-v5c8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-m3g7-wrrq-v5c8/GHSA-m3g7-wrrq-v5c8.json
+aliases:
+  - CVE-2023-0055
+summary: |
+  Pyload contains Sensitive Cookie in HTTPS Session Without 'Secure' Attribute
+  Sensitive Cookie in HTTPS Session Without 'Secure' Attribute in GitHub repository pyload/pyload prior to 0.5.0b3.dev32. The Secure attribute for sensitive cookies in HTTPS sessions is not set, which could cause the user agent to send those cookies in plaintext over an HTTP session. This issue is patched in version 0.5.0b3.dev32.
+impacted_packages:
+  - purl: pkg:pypi/pyload-ng
+    affected_versions: vers:pypi/<0.5.0b3.dev32
+    fixed_versions: vers:pypi/0.5.0b3.dev32
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-m3g7-wrrq-v5c8/GHSA-m3g7-wrrq-v5c8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-614
+  - CWE-319
+references:
+  - url: https://github.com/pyload/pyload
+    reference_type:
+    reference_id:
+  - url: https://github.com/pyload/pyload/commit/7b53b8d43c2c072b457dcd19c8a09bcfc3721703
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/ed88e240-99ff-48a1-bf32-8e1ef5f13cce
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0055
+    reference_type:
+    reference_id:
