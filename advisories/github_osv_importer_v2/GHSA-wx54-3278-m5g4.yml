@@ -1,0 +1,50 @@
+advisory_id: GHSA-wx54-3278-m5g4
+datasource_id: github_osv_importer_v2/GHSA-wx54-3278-m5g4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wx54-3278-m5g4/GHSA-wx54-3278-m5g4.json
+aliases:
+  - CVE-2022-22976
+summary: |
+  Integer overflow in BCrypt class in Spring Security
+  Spring Security versions 5.5.x prior to 5.5.7, 5.6.x prior to 5.6.4, and earlier unsupported versions contain an integer overflow vulnerability. When using the BCrypt class with the maximum work factor (31), the encoder does not perform any salt rounds, due to an integer overflow error. The default settings are not affected by this CVE.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=5.2.0.RELEASE|<5.5.7
+    fixed_versions: vers:maven/5.5.7
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=5.6.0|<5.6.4
+    fixed_versions: vers:maven/5.6.4
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wx54-3278-m5g4/GHSA-wx54-3278-m5g4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-190
+references:
+  - url: https://github.com/spring-projects/spring-security
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-security/commit/388a7b62b906bd56deadb7ca45248fa1a63bdf12
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-security/commit/a40f73521c0dd88b879ff6165d280e78bdf8154f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-22976
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220707-0003
+    reference_type:
+    reference_id:
+  - url: https://tanzu.vmware.com/security/cve-2022-22976
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

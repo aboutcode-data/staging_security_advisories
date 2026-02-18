@@ -1,0 +1,35 @@
+advisory_id: GHSA-xfg5-vrmc-24wc
+datasource_id: github_osv_importer_v2/GHSA-xfg5-vrmc-24wc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xfg5-vrmc-24wc/GHSA-xfg5-vrmc-24wc.json
+aliases:
+  - CVE-2021-42057
+summary: |
+  Obsidian Dataview vulnerable to code injection due to unsafe eval
+  Obsidian Dataview through 0.4.12-hotfix1 allows eval injection. The `evalInContext` function in executes user input, which allows an attacker to craft malicious Markdown files that will execute arbitrary code once opened. NOTE: 0.4.13 provides a mitigation for some use cases.
+impacted_packages:
+  - purl: pkg:npm/obsidian-dataview
+    affected_versions: vers:npm/<=0.4.12-hotfix1
+    fixed_versions: vers:npm/0.4.13
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xfg5-vrmc-24wc/GHSA-xfg5-vrmc-24wc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/blacksmithgu/obsidian-dataview
+    reference_type:
+    reference_id:
+  - url: https://github.com/blacksmithgu/obsidian-dataview/issues/615
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-42057
+    reference_type:
+    reference_id:

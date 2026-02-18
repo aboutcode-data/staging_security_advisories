@@ -1,0 +1,41 @@
+advisory_id: GHSA-x3cr-x949-h5jv
+datasource_id: github_osv_importer_v2/GHSA-x3cr-x949-h5jv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-x3cr-x949-h5jv/GHSA-x3cr-x949-h5jv.json
+aliases:
+  - CVE-2018-20227
+summary: |
+  RDF4J vulnerable to zip slip
+  RDF4J prior to 2.5.0 allows Directory Traversal via ../ in an entry in a ZIP archive.
+impacted_packages:
+  - purl: pkg:maven/org.eclipse.rdf4j/rdf4j
+    affected_versions: vers:maven/<2.5.0
+    fixed_versions: vers:maven/2.5.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-x3cr-x949-h5jv/GHSA-x3cr-x949-h5jv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/eclipse/rdf4j/issues/1210
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse/rdf4j/pull/1211/commits/df15a4d7a8f2789c043b27c9eafe1b30316cfa79
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse-rdf4j/rdf4j
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse-rdf4j/rdf4j/commit/df15a4d7a8f2789c043b27c9eafe1b30316cfa79
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-20227
+    reference_type:
+    reference_id:

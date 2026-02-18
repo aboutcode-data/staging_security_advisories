@@ -1,0 +1,35 @@
+advisory_id: GHSA-xg68-chx2-253g
+datasource_id: github_osv_importer_v2/GHSA-xg68-chx2-253g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-xg68-chx2-253g/GHSA-xg68-chx2-253g.json
+aliases:
+  - CVE-2021-20087
+summary: |
+  Prototype Pollution in jquery-deparam
+  Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') in jquery-deparam allows a malicious user to inject properties into Object.prototype.
+impacted_packages:
+  - purl: pkg:npm/jquery-deparam
+    affected_versions: vers:npm/<=0.5.3
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-xg68-chx2-253g/GHSA-xg68-chx2-253g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/BlackFan/client-side-prototype-pollution/blob/master/pp/jquery-deparam.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/RetireJS/retire.js/blob/6da45fcb6a3425e55ee8181b2ac35168879bf086/repository/jsrepository-master.json#L824-L842
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-20087
+    reference_type:
+    reference_id:

@@ -1,0 +1,51 @@
+advisory_id: GHSA-wj85-w4f4-xh8h
+datasource_id: github_osv_importer_v2/GHSA-wj85-w4f4-xh8h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-wj85-w4f4-xh8h/GHSA-wj85-w4f4-xh8h.json
+aliases:
+  - CVE-2024-28865
+summary: |
+  Denial of service via regular expression
+  ### Impact
+
+  All historical installations of django-wiki are vulnerable to maliciously crafted article content, that can cause severe use of server CPU through a regular expression loop.
+
+  ### Patches
+
+
+
+  ### Workarounds
+
+  Close off access to create and edit articles by anonymous users.
+
+  ### References
+  _Are there any links users can visit to find out more?_
+impacted_packages:
+  - purl: pkg:pypi/wiki
+    affected_versions: vers:pypi/<0.10.1
+    fixed_versions: vers:pypi/0.10.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-wj85-w4f4-xh8h/GHSA-wj85-w4f4-xh8h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/django-wiki/django-wiki
+    reference_type:
+    reference_id:
+  - url: https://github.com/django-wiki/django-wiki/commit/8e280fd6c0bd27ce847c67b2d216c6cbf920f88c
+    reference_type:
+    reference_id:
+  - url: https://github.com/django-wiki/django-wiki/security/advisories/GHSA-wj85-w4f4-xh8h
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-28865
+    reference_type:
+    reference_id:

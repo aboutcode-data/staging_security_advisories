@@ -1,0 +1,71 @@
+advisory_id: GHSA-wq2m-r96q-crrf
+datasource_id: github_osv_importer_v2/GHSA-wq2m-r96q-crrf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-wq2m-r96q-crrf/GHSA-wq2m-r96q-crrf.json
+aliases:
+  - CVE-2026-25490
+summary: "Craft Commerce has Stored XSS in Inventory Location Address Leading to Potential Privilege\
+  \ Escalation\n## Summary\nA stored XSS vulnerability in Craft Commerce allows attackers to\
+  \ execute malicious JavaScript in an administrator’s browser. This occurs because the 'Address\
+  \ Line 1' field in Inventory Locations is not properly sanitized before being displayed in\
+  \ the admin panel.\n\n## Proof of Concept\n\n### Required Permissions\n- General permissions:\n\
+  \t- Access the control panel\n\t- Access Craft Commerce\n- Craft Commerce permissions:\n\t\
+  - Manage inventory locations\n- An active administrator elevated session\n\n<img width=\"\
+  887\" height=\"832\" alt=\"req-perms\" src=\"https://github.com/user-attachments/assets/7a9a5ef6-4fc3-4af1-8ded-08861ead0b7e\"\
+  \ />\n\n\n### Steps to Reproduce\n1. Log in to the Admin Panel with the attacker account with\
+  \ the permissions mentioned above.\n2. Navigate to **Commerce** -> **Inventory Locations**\
+  \ -> **Default** (`/admin/commerce/inventory-locations/1`).\n3. In the **Address Line 1**\
+  \ field, enter the following payload:\n```html\n<img src=x onerror=\"alert(document.domain)\"\
+  >\n```\n4. Click **Save** and you'll be redirected back to the **Inventory Locations** page.\n\
+  5. Notice the alert proving JavaScript execution.\n<img width=\"1814\" height=\"606\" alt=\"\
+  alert-poc\" src=\"https://github.com/user-attachments/assets/f08aed21-a676-4dee-85a8-d195bab85685\"\
+  \ />\n\n\n\n### Privilege Escalation to Administrator:\n1. Do the same steps above, but replace\
+  \ the payload with a malicious one.\n2. The following payload elevates the attacker’s account\
+  \ to Admin if there’s already an elevated session, replace the `<UserID>` with the attacker\
+  \ id:\n```html\n<img src=x onerror=\"fetch('/admin/users/<UserID>/permissions',{method:'POST',body:`CRAFT_CSRF_TOKEN=${Craft.csrfTokenValue}&userId=<UserID>&admin=1&action=users/save-permissions`,headers:{'content-type':'application/x-www-form-urlencoded'}})\"\
+  >\n```\n3. In another browser, log in as an admin & go to the vulnerable page (Inventory Location\
+  \ page).\n4. Go back to the attacker account & notice it now has admin status.\n\nThe privilege\
+  \ escalation requires an elevated session. In a real-world scenario, an attacker can automate\
+  \ the process by forcing a logout if the victim’s session is stale; upon re-authentication,\
+  \ the stored XSS payload executes within a fresh elevated session to complete the attack.\n\
+  \nOr even easier (and smarter), an attacker (using the XSS) can create a fake 'Session Expired'\
+  \ login modal overlay. Since it’s on the trusted domain, administrators will likely enter\
+  \ their credentials, sending them directly to the attacker.\n\n### Resources:\n\nhttps://github.com/craftcms/commerce/commit/fa273330807807d05b564d37c88654cd772839ee"
+impacted_packages:
+  - purl: pkg:composer/craftcms/commerce
+    affected_versions: vers:composer/<=5.5.1
+    fixed_versions: vers:composer/5.5.2
+  - purl: pkg:composer/craftcms/commerce
+    affected_versions: vers:composer/<=4.10.0
+    fixed_versions: vers:composer/4.10.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:N/VI:N/VA:N/SC:L/SI:H/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-wq2m-r96q-crrf/GHSA-wq2m-r96q-crrf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/craftcms/commerce
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/commerce/commit/fa273330807807d05b564d37c88654cd772839ee
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/commerce/releases/tag/4.10.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/commerce/releases/tag/5.5.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/commerce/security/advisories/GHSA-wq2m-r96q-crrf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25490
+    reference_type:
+    reference_id:

@@ -1,0 +1,72 @@
+advisory_id: GHSA-x92h-wmg2-6hp7
+datasource_id: github_osv_importer_v2/GHSA-x92h-wmg2-6hp7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-x92h-wmg2-6hp7/GHSA-x92h-wmg2-6hp7.json
+aliases:
+  - CVE-2019-10913
+summary: |
+  Invalid HTTP method overrides allow possible XSS or other attacks in Symfony
+  In Symfony before 2.7.51, 2.8.x before 2.8.50, 3.x before 3.4.26, 4.x before 4.1.12, and 4.2.x before 4.2.7, HTTP Methods provided as verbs or using the override header may be treated as trusted input, but they are not validated, possibly causing SQL injection or XSS. This is related to symfony/http-foundation.
+impacted_packages:
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=2.7.0|<2.7.51
+    fixed_versions: vers:composer/2.7.51
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=2.8.0|<2.8.50
+    fixed_versions: vers:composer/2.8.50
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=3.0.0|<3.4.26
+    fixed_versions: vers:composer/3.4.26
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=4.0.0|<4.1.12
+    fixed_versions: vers:composer/4.1.12
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=4.2.0|<4.2.7
+    fixed_versions: vers:composer/4.2.7
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.7.0|<2.7.51
+    fixed_versions: vers:composer/2.7.51
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.8.0|<2.8.50
+    fixed_versions: vers:composer/2.8.50
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.0.0|<3.4.26
+    fixed_versions: vers:composer/3.4.26
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.0.0|<4.1.12
+    fixed_versions: vers:composer/4.1.12
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.2.0|<4.2.7
+    fixed_versions: vers:composer/4.2.7
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-x92h-wmg2-6hp7/GHSA-x92h-wmg2-6hp7.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-89
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/http-foundation/CVE-2019-10913.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2019-10913.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/944e60f083c3bffbc6a0b5112db127a10a66a8ec
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10913
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/cve-2019-10913-reject-invalid-http-method-overrides
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2019-10913
+    reference_type:
+    reference_id:

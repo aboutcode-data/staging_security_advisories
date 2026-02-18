@@ -1,0 +1,43 @@
+advisory_id: GHSA-wxvr-vqfp-9cqw
+datasource_id: github_osv_importer_v2/GHSA-wxvr-vqfp-9cqw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wxvr-vqfp-9cqw/GHSA-wxvr-vqfp-9cqw.json
+aliases:
+  - CVE-2016-6346
+summary: |
+  Denial of service in JBoss resteasy
+  RESTEasy enables GZIPInterceptor, which allows remote attackers to cause a denial of service via unspecified vectors.
+impacted_packages:
+  - purl: pkg:maven/org.jboss.resteasy/resteasy-jaxrs
+    affected_versions: vers:maven/<3.0.20.Final
+    fixed_versions: vers:maven/3.0.20.Final
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wxvr-vqfp-9cqw/GHSA-wxvr-vqfp-9cqw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1372120
+    reference_type:
+    reference_id:
+  - url: https://github.com/resteasy/Resteasy
+    reference_type:
+    reference_id:
+  - url: https://github.com/resteasy/resteasy/pull/1303
+    reference_type:
+    reference_id:
+  - url: https://issues.jboss.org/browse/JBEAP-11180
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-6346
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/92744
+    reference_type:
+    reference_id:

@@ -1,0 +1,45 @@
+advisory_id: GHSA-x8q8-4hp5-463w
+datasource_id: github_osv_importer_v2/GHSA-x8q8-4hp5-463w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-x8q8-4hp5-463w/GHSA-x8q8-4hp5-463w.json
+aliases:
+  - CVE-2015-3337
+summary: |
+  Improper Limitation of a Pathname to a Restricted Directory in Elasticsearch
+  Directory traversal vulnerability in Elasticsearch before 1.4.5 and 1.5.x before 1.5.2, when a site plugin is enabled, allows remote attackers to read arbitrary files via unspecified vectors.
+impacted_packages:
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/<=1.4.4
+    fixed_versions: vers:maven/1.4.5
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+    affected_versions: vers:maven/<=1.5.1
+    fixed_versions: vers:maven/1.5.2
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://packetstormsecurity.com/files/131646/Elasticsearch-Directory-Traversal.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-3337
+    reference_type:
+    reference_id:
+  - url: https://www.elastic.co/community/security
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/37054
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2015/dsa-3241
+    reference_type:
+    reference_id:
+  - url: https://github.com/pandujar/elasticpwn/
+    reference_type: exploit
+    reference_id: CVE-2015-3337;OSVDB-121335
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/37054.py
+    reference_type: exploit
+    reference_id: CVE-2015-3337;OSVDB-121335

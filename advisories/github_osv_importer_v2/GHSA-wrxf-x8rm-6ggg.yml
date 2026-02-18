@@ -1,0 +1,41 @@
+advisory_id: GHSA-wrxf-x8rm-6ggg
+datasource_id: github_osv_importer_v2/GHSA-wrxf-x8rm-6ggg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-wrxf-x8rm-6ggg/GHSA-wrxf-x8rm-6ggg.json
+aliases:
+  - CVE-2020-21514
+summary: |
+  Fluent Fluentd and Fluent-ui use default password
+  An issue was discovered in Fluent-ui v.1.2.2 allows attackers to gain escalated privileges and execute arbitrary code due to a default password.
+impacted_packages:
+  - purl: pkg:gem/fluentd-ui
+    affected_versions: vers:gem/<=1.2.2
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-wrxf-x8rm-6ggg/GHSA-wrxf-x8rm-6ggg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-276
+references:
+  - url: https://github.com/fluent/fluentd/issues/2722
+    reference_type:
+    reference_id:
+  - url: https://github.com/fluent/fluentd-ui
+    reference_type:
+    reference_id:
+  - url: https://github.com/fluent/fluentd-ui/issues/295
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/fluentd-ui/CVE-2020-21514.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-21514
+    reference_type:
+    reference_id:

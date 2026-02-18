@@ -1,0 +1,52 @@
+advisory_id: GHSA-x5w2-wcr8-9q45
+datasource_id: github_osv_importer_v2/GHSA-x5w2-wcr8-9q45
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-x5w2-wcr8-9q45/GHSA-x5w2-wcr8-9q45.json
+aliases: []
+summary: |
+  Silverstripe Missing security check on dev/build/defaults
+  The buildDefaults method on DevelopmentAdmin is missing a permission check.
+
+  In live mode, if you access /dev/build, you are requested to login first. However, if you access /dev/build/defaults, then the action is performed without any login check. This should be protected in the same way that /dev/build is.
+  The buildDefaults view is requireDefaultRecords() on each DataObject class, and hence has the potential to modify database state. It also lists all modified tables, allowing attackers more insight into which modules are used, and how the database tables are structured.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<=3.1.16
+    fixed_versions: vers:composer/3.1.17
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<=3.2.1
+    fixed_versions: vers:composer/3.2.2
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=3.3.0-beta1|<3.3.0
+    fixed_versions: vers:composer/3.3.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-x5w2-wcr8-9q45/GHSA-x5w2-wcr8-9q45.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-425
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/SS-2015-028-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/15d4db3b4a7dbc9a7e089f9329a396f8408ed7d9
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/3398f670d881447f8777b567f1ead7c0d8d253f5
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/commit/5d2fc0d7cac4ce686f7ae05c1a7b1ad8c01711a8
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/ss-2015-028
+    reference_type:
+    reference_id:

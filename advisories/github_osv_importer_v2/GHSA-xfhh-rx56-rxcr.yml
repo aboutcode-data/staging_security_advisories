@@ -1,0 +1,52 @@
+advisory_id: GHSA-xfhh-rx56-rxcr
+datasource_id: github_osv_importer_v2/GHSA-xfhh-rx56-rxcr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-xfhh-rx56-rxcr/GHSA-xfhh-rx56-rxcr.json
+aliases:
+  - CVE-2019-1020001
+summary: |
+  Path Traversal vulnerability that affects yard
+  ## Possible arbitrary path traversal and file access via `yard server`
+
+  ### Impact
+
+  A path traversal vulnerability was discovered in YARD <= 0.9.19 when using `yard server` to serve documentation. This bug would allow unsanitized HTTP requests to access arbitrary files on the machine of a yard server host under certain conditions.
+
+  Thanks to CuongMX from Viettel Cyber Security for discovering this vulnerability.
+
+  ### Patches
+
+  Please upgrade to YARD v0.9.20 immediately if you are relying on yard server to host documentation in any untrusted environments.
+
+  ### Workarounds
+
+  For users who cannot upgrade, it is possible to perform path sanitization of HTTP requests at your webserver level. WEBrick, for example, can perform such sanitization by default (which you can use via `yard server -s webrick`), as can certain rules in your webserver configuration.
+impacted_packages:
+  - purl: pkg:gem/yard
+    affected_versions: vers:gem/<0.9.20
+    fixed_versions: vers:gem/0.9.20
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-xfhh-rx56-rxcr/GHSA-xfhh-rx56-rxcr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/advisories/GHSA-xfhh-rx56-rxcr
+    reference_type:
+    reference_id:
+  - url: https://github.com/lsegal/yard/security/advisories/GHSA-xfhh-rx56-rxcr
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/03/msg00006.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-1020001
+    reference_type:
+    reference_id:

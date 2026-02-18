@@ -1,0 +1,41 @@
+advisory_id: GHSA-xqcf-hj92-967m
+datasource_id: github_osv_importer_v2/GHSA-xqcf-hj92-967m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-xqcf-hj92-967m/GHSA-xqcf-hj92-967m.json
+aliases:
+  - CVE-2018-25045
+summary: |
+  Django REST framework XSS Vulnerability
+  Django REST framework (aka django-rest-framework) before 3.9.1 allows XSS because the default DRF Browsable API view templates disable autoescaping.
+impacted_packages:
+  - purl: pkg:pypi/django-rest-framework
+    affected_versions: vers:pypi/<3.9.1
+    fixed_versions: vers:pypi/3.9.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-xqcf-hj92-967m/GHSA-xqcf-hj92-967m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/encode/django-rest-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/encode/django-rest-framework/commit/4bb9a3c48427867ef1e46f7dee945a4c25a4f9b8
+    reference_type:
+    reference_id:
+  - url: https://github.com/encode/django-rest-framework/pull/6191
+    reference_type:
+    reference_id:
+  - url: https://github.com/encode/django-rest-framework/pull/6330
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-25045
+    reference_type:
+    reference_id:

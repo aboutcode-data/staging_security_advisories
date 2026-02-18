@@ -1,0 +1,59 @@
+advisory_id: GHSA-x7g6-rwhc-g7mj
+datasource_id: github_osv_importer_v2/GHSA-x7g6-rwhc-g7mj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-x7g6-rwhc-g7mj/GHSA-x7g6-rwhc-g7mj.json
+aliases:
+  - CVE-2024-4029
+summary: |
+  Wildfly vulnerable to denial of service
+  A vulnerability was found in Wildfly’s management interface. Due to the lack of limitation of sockets for the management interface, it may be possible to cause a denial of service hitting the nofile limit as there is no possibility to configure or set a maximum number of connections.
+impacted_packages:
+  - purl: pkg:maven/org.wildfly/wildfly-domain-http
+    affected_versions: vers:maven/<=24.0.0.Final
+    fixed_versions:
+severities:
+  - score: '4.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-x7g6-rwhc-g7mj/GHSA-x7g6-rwhc-g7mj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:8075
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:8076
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:8077
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:8080
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:8823
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:8824
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:8826
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-4029
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2278615
+    reference_type:
+    reference_id:
+  - url: https://github.com/wildfly/wildfly
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-4029
+    reference_type:
+    reference_id:

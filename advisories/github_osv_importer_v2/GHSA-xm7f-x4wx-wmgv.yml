@@ -1,0 +1,35 @@
+advisory_id: GHSA-xm7f-x4wx-wmgv
+datasource_id: github_osv_importer_v2/GHSA-xm7f-x4wx-wmgv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-xm7f-x4wx-wmgv/GHSA-xm7f-x4wx-wmgv.json
+aliases: []
+summary: |
+  Out-of-bounds Read in byte
+  Versions of `byte` before 1.4.1 allocate uninitialized buffers and read data from them past the initialized length
+
+
+
+  ## Recommendation
+
+  Update to version 1.4.1 or later.
+impacted_packages:
+  - purl: pkg:npm/byte
+    affected_versions: vers:npm/<1.4.1
+    fixed_versions: vers:npm/1.4.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-125
+references:
+  - url: https://github.com/node-modules/byte/pull/3
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/330351
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/657
+    reference_type:
+    reference_id:

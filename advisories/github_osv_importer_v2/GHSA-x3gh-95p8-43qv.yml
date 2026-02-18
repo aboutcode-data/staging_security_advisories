@@ -1,0 +1,30 @@
+advisory_id: GHSA-x3gh-95p8-43qv
+datasource_id: github_osv_importer_v2/GHSA-x3gh-95p8-43qv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-x3gh-95p8-43qv/GHSA-x3gh-95p8-43qv.json
+aliases:
+  - CVE-2014-8770
+summary: |
+  MAGMI plugin for Magento Unsafe File Upload
+  Unrestricted file upload vulnerability in `magmi/web/magmi.php` in the MAGMI (aka Magento Mass Importer) plugin 0.7.17a and earlier for Magento Community Edition (CE) allows remote authenticated users to execute arbitrary code by uploading a ZIP file that contains a PHP file, then accessing the PHP file via a direct request to it in `magmi/plugins/`.
+impacted_packages:
+  - purl: pkg:composer/dweeves/magmi
+    affected_versions: vers:composer/<=0.7.17-a
+    fixed_versions:
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-8770
+    reference_type:
+    reference_id:
+  - url: https://sourceforge.net/projects/magmi/files/magmi-0.7/plugins/packages
+    reference_type:
+    reference_id:
+  - url: http://www.exploit-db.com/exploits/35052
+    reference_type:
+    reference_id:

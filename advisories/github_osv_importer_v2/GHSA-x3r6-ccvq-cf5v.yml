@@ -1,0 +1,52 @@
+advisory_id: GHSA-x3r6-ccvq-cf5v
+datasource_id: github_osv_importer_v2/GHSA-x3r6-ccvq-cf5v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-x3r6-ccvq-cf5v/GHSA-x3r6-ccvq-cf5v.json
+aliases:
+  - CVE-2024-29073
+summary: |
+  Anki Latex Incomplete Blocklist Vulnerability
+  An vulnerability in the handling of Latex exists in Ankitects Anki 24.04. When Latex is sanitized to prevent unsafe commands, the verbatim package, which comes installed by default in many Latex distributions, has been overlooked. A specially crafted flashcard can lead to an arbitrary file read. An attacker can share a flashcard to trigger this vulnerability.
+impacted_packages:
+  - purl: pkg:pypi/anki
+    affected_versions: vers:pypi/<24.6
+    fixed_versions: vers:pypi/24.6
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-x3r6-ccvq-cf5v/GHSA-x3r6-ccvq-cf5v.json
+  - score: '6.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-x3r6-ccvq-cf5v/GHSA-x3r6-ccvq-cf5v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-829
+references:
+  - url: https://github.com/ankitects/anki
+    reference_type:
+    reference_id:
+  - url: https://github.com/ankitects/anki/commit/06f7aa393d21d7d5dd8039e15d543b73c3346932
+    reference_type:
+    reference_id:
+  - url: https://github.com/ankitects/anki/pull/3218
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29073
+    reference_type:
+    reference_id:
+  - url: https://skerritt.blog/anki-0day
+    reference_type:
+    reference_id:
+  - url: https://skii.dev/anki-0day
+    reference_type:
+    reference_id:
+  - url: https://talosintelligence.com/vulnerability_reports/TALOS-2024-1992
+    reference_type:
+    reference_id:

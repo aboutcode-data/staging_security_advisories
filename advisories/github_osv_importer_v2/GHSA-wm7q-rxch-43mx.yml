@@ -1,0 +1,31 @@
+advisory_id: GHSA-wm7q-rxch-43mx
+datasource_id: github_osv_importer_v2/GHSA-wm7q-rxch-43mx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-wm7q-rxch-43mx/GHSA-wm7q-rxch-43mx.json
+aliases: []
+summary: "Byass due to validation before canonicalization in serve\nVersions of `serve` before\
+  \ 6.5.2 are vulnerable to the bypass of the ignore functionality. The bypass is possible because\
+  \ validation happens before canonicalization of paths and filenames.\n\n\n\nExample:\nHere\
+  \ we have a server that ignores the file test.txt.\n```\nconst serve = require('serve')\n\
+  const server = serve(__dirname, {\n      port: 1337,\n      ignore: ['test.txt']\n})\n```\n\
+  \nUsing the URL encoded form of a letter (%65 instead of e) attacker can bypass the ignore\
+  \ control accessing the file. \n\n`curl http://localhost:1337/t%65st.txt`\n\nAdditionally\
+  \ this technique can be used to get directory listings of ignored directories.\n\n\n## Recommendation\n\
+  \nUpdate to version 6.5.2 or later."
+impacted_packages:
+  - purl: pkg:npm/serve
+    affected_versions: vers:npm/<6.5.2
+    fixed_versions: vers:npm/6.5.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://hackerone.com/reports/308721
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/594
+    reference_type:
+    reference_id:

@@ -1,0 +1,43 @@
+advisory_id: GHSA-xfhp-gmh8-r8v2
+datasource_id: github_osv_importer_v2/GHSA-xfhp-gmh8-r8v2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-xfhp-gmh8-r8v2/GHSA-xfhp-gmh8-r8v2.json
+aliases:
+  - CVE-2021-23354
+summary: "printf vulnerable to Regular Expression Denial of Service (ReDoS)\nThe package printf\
+  \ before 0.6.1 are vulnerable to Regular Expression Denial of Service (ReDoS) via the regex\
+  \ string \n```regex\n/\\%(?:\\(([\\w_.]+)\\)|([1-9]\\d*)\\$)?([0 +\\-\\]*)(\\*|\\d+)?(\\.)?(\\\
+  *|\\d+)?[hlL]?([\\%bscdeEfFgGioOuxX])/g\n```\n in `lib/printf.js`. The vulnerable regular\
+  \ expression has cubic worst-case time complexity."
+impacted_packages:
+  - purl: pkg:npm/printf
+    affected_versions: vers:npm/<0.6.1
+    fixed_versions: vers:npm/0.6.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-xfhp-gmh8-r8v2/GHSA-xfhp-gmh8-r8v2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/adaltas/node-printf/commit/a8502e7c9b0b22555696a2d8ef67722086413a68
+    reference_type:
+    reference_id:
+  - url: https://github.com/adaltas/node-printf/issues/31
+    reference_type:
+    reference_id:
+  - url: https://github.com/adaltas/node-printf/pull/32
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23354
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-PRINTF-1072096
+    reference_type:
+    reference_id:

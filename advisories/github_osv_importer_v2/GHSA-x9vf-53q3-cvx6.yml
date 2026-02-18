@@ -1,0 +1,50 @@
+advisory_id: GHSA-x9vf-53q3-cvx6
+datasource_id: github_osv_importer_v2/GHSA-x9vf-53q3-cvx6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-x9vf-53q3-cvx6/GHSA-x9vf-53q3-cvx6.json
+aliases:
+  - CVE-2026-1774
+summary: |
+  CASL Ability is Vulnerable to Prototype Pollution
+  CASL Ability, versions 2.4.0 through 6.7.4, contains a prototype pollution vulnerability.
+impacted_packages:
+  - purl: pkg:npm/%40casl/ability
+    affected_versions: vers:npm/<=6.7.4
+    fixed_versions: vers:npm/6.7.5
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-x9vf-53q3-cvx6/GHSA-x9vf-53q3-cvx6.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://cwe.mitre.org/data/definitions/1321.html
+    reference_type:
+    reference_id:
+  - url: https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/Prototype_pollution
+    reference_type:
+    reference_id:
+  - url: https://github.com/stalniy/casl
+    reference_type:
+    reference_id:
+  - url: https://github.com/stalniy/casl/commit/39da920ec1dfadf3655e28bd0389e960ac6871f4
+    reference_type:
+    reference_id:
+  - url: https://github.com/stalniy/casl/pull/1093
+    reference_type:
+    reference_id:
+  - url: https://github.com/stalniy/casl/tree/master/packages/casl-ability
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-1774
+    reference_type:
+    reference_id:
+  - url: https://www.kb.cert.org/vuls/id/458422
+    reference_type:
+    reference_id:

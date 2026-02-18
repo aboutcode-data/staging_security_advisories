@@ -1,0 +1,40 @@
+advisory_id: GHSA-wmjr-v86c-m9jj
+datasource_id: github_osv_importer_v2/GHSA-wmjr-v86c-m9jj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-wmjr-v86c-m9jj/GHSA-wmjr-v86c-m9jj.json
+aliases: []
+summary: |
+  Better Auth's multi-session sign-out hook allows forged cookies to revoke arbitrary sessions
+  ### Summary
+
+  A vulnerability was identified in the multi-session plugin for Better Auth, specifically in the /sign-out after-hook. The hook trusts raw multi-session cookies and forwards the extracted values directly to internalAdapter.deleteSessions without verifying the cookie signature. Because cookie values are not validated with getSignedCookie (or any equivalent check), an attacker can supply a forged _multi-* cookie to trigger deletion of arbitrary session tokens.
+impacted_packages:
+  - purl: pkg:npm/better-auth
+    affected_versions: vers:npm/>=1.3.34|<1.4.0
+    fixed_versions: vers:npm/1.4.0
+severities:
+  - score: '2.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:P/VC:L/VI:L/VA:L/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-wmjr-v86c-m9jj/GHSA-wmjr-v86c-m9jj.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-345
+references:
+  - url: https://github.com/better-auth/better-auth
+    reference_type:
+    reference_id:
+  - url: https://github.com/better-auth/better-auth/commit/cfc453a2a6eb02951f9a0a7c944064936e73eee8
+    reference_type:
+    reference_id:
+  - url: https://github.com/better-auth/better-auth/releases/tag/v1.4.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/better-auth/better-auth/security/advisories/GHSA-wmjr-v86c-m9jj
+    reference_type:
+    reference_id:

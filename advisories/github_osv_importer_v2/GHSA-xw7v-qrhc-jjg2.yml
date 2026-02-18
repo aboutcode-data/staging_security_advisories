@@ -1,0 +1,38 @@
+advisory_id: GHSA-xw7v-qrhc-jjg2
+datasource_id: github_osv_importer_v2/GHSA-xw7v-qrhc-jjg2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-xw7v-qrhc-jjg2/GHSA-xw7v-qrhc-jjg2.json
+aliases:
+  - CVE-2021-37517
+summary: |
+  Access Control vulnerability in Dolibarr
+  An Access Control vulnerability exists in Dolibarr ERP/CRM 13.0.2, fixed version is 14.0.1, in the forgot-password function becuase the application allows email addresses as usernames, which can cause a Denial of Service.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<14.0.1
+    fixed_versions: vers:composer/14.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-xw7v-qrhc-jjg2/GHSA-xw7v-qrhc-jjg2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/b57eb8284e830e30eefb26e3c5ede076ea24037c
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/releases/tag/14.0.1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-37517
+    reference_type:
+    reference_id:

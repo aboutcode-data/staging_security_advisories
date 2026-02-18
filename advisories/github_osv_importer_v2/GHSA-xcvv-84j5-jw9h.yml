@@ -1,0 +1,47 @@
+advisory_id: GHSA-xcvv-84j5-jw9h
+datasource_id: github_osv_importer_v2/GHSA-xcvv-84j5-jw9h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-xcvv-84j5-jw9h/GHSA-xcvv-84j5-jw9h.json
+aliases:
+  - CVE-2018-3720
+summary: |
+  Prototype Pollution in assign-deep
+  Versions of `assign-deep` before 0.4.7 are vulnerable to prototype pollution via merging functions.
+
+
+  ## Recommendation
+
+  Update to version 0.4.7 or later.
+impacted_packages:
+  - purl: pkg:npm/assign-deep
+    affected_versions: vers:npm/<0.4.7
+    fixed_versions: vers:npm/0.4.7
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-xcvv-84j5-jw9h/GHSA-xcvv-84j5-jw9h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-471
+  - CWE-1321
+references:
+  - url: https://github.com/advisories/GHSA-xcvv-84j5-jw9h
+    reference_type:
+    reference_id:
+  - url: https://github.com/jonschlinkert/assign-deep/commit/19953a8c089b0328c470acaaaf6accdfcb34da11
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/310707
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-3720
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/579
+    reference_type:
+    reference_id:

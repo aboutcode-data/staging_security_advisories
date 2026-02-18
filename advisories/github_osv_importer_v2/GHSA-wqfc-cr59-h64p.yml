@@ -1,0 +1,39 @@
+advisory_id: GHSA-wqfc-cr59-h64p
+datasource_id: github_osv_importer_v2/GHSA-wqfc-cr59-h64p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-wqfc-cr59-h64p/GHSA-wqfc-cr59-h64p.json
+aliases:
+  - CVE-2019-5448
+summary: |
+  Missing Encryption of Sensitive Data in yarn
+  Yarn before 1.17.3 is vulnerable to Missing Encryption of Sensitive Data due to HTTP URLs in lockfile causing unencrypted authentication data to be sent over the network.
+impacted_packages:
+  - purl: pkg:npm/yarn
+    affected_versions: vers:npm/<1.17.3
+    fixed_versions: vers:npm/1.17.3
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-wqfc-cr59-h64p/GHSA-wqfc-cr59-h64p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+  - CWE-319
+references:
+  - url: https://github.com/ChALkeR/notes/blob/master/Yarn-vuln.md
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/640904
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-5448
+    reference_type:
+    reference_id:
+  - url: https://yarnpkg.com/blog/2019/07/12/recommended-security-update
+    reference_type:
+    reference_id:

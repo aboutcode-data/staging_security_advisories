@@ -1,0 +1,90 @@
+advisory_id: GHSA-wq4h-7r42-5hrr
+datasource_id: github_osv_importer_v2/GHSA-wq4h-7r42-5hrr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wq4h-7r42-5hrr/GHSA-wq4h-7r42-5hrr.json
+aliases:
+  - CVE-2022-30123
+summary: |
+  Possible shell escape sequence injection vulnerability in Rack
+  There is a possible shell escape sequence injection vulnerability in the Lint
+  and CommonLogger components of Rack.  This vulnerability has been assigned the
+  CVE identifier CVE-2022-30123.
+
+  Versions Affected:  All.
+  Not affected:       None
+  Fixed Versions:     2.0.9.1, 2.1.4.1, 2.2.3.1
+
+  ## Impact
+  Carefully crafted requests can cause shell escape sequences to be written to
+  the terminal via Rack's Lint middleware and CommonLogger middleware.  These
+  escape sequences can be leveraged to possibly execute commands in the victim's
+  terminal.
+
+  Impacted applications will have either of these middleware installed, and
+  vulnerable apps may have something like this:
+
+  ```
+  use Rack::Lint
+  ```
+
+  Or
+
+  ```
+  use Rack::CommonLogger
+  ```
+
+  All users running an affected release should either upgrade or use one of the
+  workarounds immediately.
+
+  ## Workarounds
+  Remove these middleware from your application
+impacted_packages:
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/<=2.0.9.0
+    fixed_versions: vers:gem/2.0.9.1
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/<=2.1.4.0
+    fixed_versions: vers:gem/2.1.4.1
+  - purl: pkg:gem/rack
+    affected_versions: vers:gem/<=2.2.3.0
+    fixed_versions: vers:gem/2.2.3.1
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wq4h-7r42-5hrr/GHSA-wq4h-7r42-5hrr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-150
+references:
+  - url: https://discuss.rubyonrails.org/t/cve-2022-30123-possible-shell-escape-sequence-injection-vulnerability-in-rack/80728
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack
+    reference_type:
+    reference_id:
+  - url: https://github.com/rack/rack/commit/b426cc224908ec6ed6eb8729325392b048215d88
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/rack/CVE-2022-30123.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/g/ruby-security-ann/c/LWB10kWzag8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-30123
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202310-18
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20231208-0011
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2023/dsa-5530
+    reference_type:
+    reference_id:

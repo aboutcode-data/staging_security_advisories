@@ -1,0 +1,56 @@
+advisory_id: GHSA-x2mh-8fmc-rqgh
+datasource_id: github_osv_importer_v2/GHSA-x2mh-8fmc-rqgh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-x2mh-8fmc-rqgh/GHSA-x2mh-8fmc-rqgh.json
+aliases:
+  - CVE-2023-37379
+summary: |
+  Apache Airflow denial of service vulnerability
+  Apache Airflow, in versions prior to 2.7.0, contains a security vulnerability that can be exploited by an authenticated user possessing Connection edit privileges. This vulnerability allows the user to access connection information and exploit the test connection feature by sending many requests, leading to a denial of service (DoS) condition on the server. Furthermore, malicious actors can leverage this vulnerability to establish harmful connections with the server.
+
+  Users of Apache Airflow are strongly advised to upgrade to version 2.7.0 or newer to mitigate the risk associated with this vulnerability. Additionally, administrators are encouraged to review and adjust user permissions to restrict access to sensitive functionalities, reducing the attack surface.
+impacted_packages:
+  - purl: pkg:pypi/apache-airflow
+    affected_versions: vers:pypi/<2.7.0b1
+    fixed_versions: vers:pypi/2.7.0b1
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-x2mh-8fmc-rqgh/GHSA-x2mh-8fmc-rqgh.json
+  - score: '7.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-x2mh-8fmc-rqgh/GHSA-x2mh-8fmc-rqgh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-400
+  - CWE-918
+references:
+  - url: https://github.com/apache/airflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/airflow/commit/e4c3ecf8ceaefa17525b495e4bcb5b2f41309603
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/airflow/pull/32052
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/apache-airflow/PYSEC-2023-152.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/g5c9vcn27lr14go48thrjpo6f4vw571r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-37379
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/08/23/4
+    reference_type:
+    reference_id:

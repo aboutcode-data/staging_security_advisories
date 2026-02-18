@@ -1,0 +1,35 @@
+advisory_id: GHSA-x65v-g96x-c6gw
+datasource_id: github_osv_importer_v2/GHSA-x65v-g96x-c6gw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-x65v-g96x-c6gw/GHSA-x65v-g96x-c6gw.json
+aliases:
+  - CVE-2025-29315
+summary: |
+  OpenDaylight SFC Allows Unauthorized Privileged Execution via Crafted Request
+  An issue in the Shiro-based RBAC (Role-based Access Control) mechanism of OpenDaylight Service Function Chaining (SFC) Subproject SFC Sodium-SR4 and below allows attackers to execute privileged operations via a crafted request.
+impacted_packages:
+  - purl: pkg:maven/org.opendaylight.sfc/sfc-parent
+    affected_versions: vers:maven/<=0.10.4
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-x65v-g96x-c6gw/GHSA-x65v-g96x-c6gw.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://blog.csdn.net/weixin_43959580/article/details/144794289
+    reference_type:
+    reference_id:
+  - url: https://github.com/opendaylight/sfc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-29315
+    reference_type:
+    reference_id:

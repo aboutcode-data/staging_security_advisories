@@ -1,0 +1,42 @@
+advisory_id: GHSA-xrh7-m5pp-39r6
+datasource_id: github_osv_importer_v2/GHSA-xrh7-m5pp-39r6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-xrh7-m5pp-39r6/GHSA-xrh7-m5pp-39r6.json
+aliases:
+  - CVE-2023-23630
+summary: "XSS Attack with Express API\n### Impact\nXSS attack - anyone using the Express API\
+  \ is impacted\n\n### Patches\nThe problem has been resolved. Users should upgrade to version\
+  \ 2.0.0.\n\n### Workarounds\nDon't pass user supplied data directly to `res.renderFile`. \n\
+  \n### References\n_Are there any links users can visit to find out more?_\nSee https://github.com/eta-dev/eta/releases/tag/v2.0.0"
+impacted_packages:
+  - purl: pkg:npm/eta
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-xrh7-m5pp-39r6/GHSA-xrh7-m5pp-39r6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/eta-dev/eta
+    reference_type:
+    reference_id:
+  - url: https://github.com/eta-dev/eta/commit/5651392462ee0ff19d77c8481081a99e5b9138dd
+    reference_type:
+    reference_id:
+  - url: https://github.com/eta-dev/eta/releases/tag/v2.0.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/eta-dev/eta/security/advisories/GHSA-xrh7-m5pp-39r6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-23630
+    reference_type:
+    reference_id:

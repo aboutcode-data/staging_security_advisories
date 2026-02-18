@@ -1,0 +1,82 @@
+advisory_id: GHSA-xpp6-8r3j-ww43
+datasource_id: github_osv_importer_v2/GHSA-xpp6-8r3j-ww43
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-xpp6-8r3j-ww43/GHSA-xpp6-8r3j-ww43.json
+aliases:
+  - CVE-2024-5971
+summary: |
+  Undertow Denial of Service vulnerability
+  A vulnerability was found in Undertow, where the chunked response hangs after the body was flushed. The response headers and body were sent but the client would continue waiting as Undertow does not send the expected `0\r\n` termination of the chunked response. This results in uncontrolled resource consumption, leaving the server side to a denial of service attack. This happens only with Java 17 TLSv1.3 scenarios.
+impacted_packages:
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/>=2.3.0.Alpha1|<2.3.15.Final
+    fixed_versions: vers:maven/2.3.15.Final
+  - purl: pkg:maven/io.undertow/undertow-core
+    affected_versions: vers:maven/<2.2.34.Final
+    fixed_versions: vers:maven/2.2.34.Final
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-xpp6-8r3j-ww43/GHSA-xpp6-8r3j-ww43.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-xpp6-8r3j-ww43/GHSA-xpp6-8r3j-ww43.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-674
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:4392
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:4884
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:5143
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:5144
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:5145
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:5147
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:6508
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2024:6883
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2024-5971
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2292211
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/pull/1638
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/pull/1640
+    reference_type:
+    reference_id:
+  - url: https://github.com/undertow-io/undertow/pull/1641
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/UNDERTOW-2413
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-5971
+    reference_type:
+    reference_id:

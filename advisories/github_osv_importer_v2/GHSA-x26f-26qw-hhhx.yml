@@ -1,0 +1,43 @@
+advisory_id: GHSA-x26f-26qw-hhhx
+datasource_id: github_osv_importer_v2/GHSA-x26f-26qw-hhhx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-x26f-26qw-hhhx/GHSA-x26f-26qw-hhhx.json
+aliases:
+  - CVE-2018-3725
+summary: |
+  Path Traversal in hekto
+  Versions of `hekto` before 0.2.3 are vulnerable to path traversal. This allows a remote attacker to read content of arbitrary files.
+
+
+  ## Recommendation
+
+  Update to version 0.2.3 or later.
+impacted_packages:
+  - purl: pkg:npm/hekto
+    affected_versions: vers:npm/<0.2.3
+    fixed_versions: vers:npm/0.2.3
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-x26f-26qw-hhhx/GHSA-x26f-26qw-hhhx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/advisories/GHSA-x26f-26qw-hhhx
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/311218
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-3725
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/586
+    reference_type:
+    reference_id:

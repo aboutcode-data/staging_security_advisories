@@ -1,0 +1,74 @@
+advisory_id: GHSA-wjx8-cgrm-hh8p
+datasource_id: github_osv_importer_v2/GHSA-wjx8-cgrm-hh8p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-wjx8-cgrm-hh8p/GHSA-wjx8-cgrm-hh8p.json
+aliases:
+  - CVE-2019-19745
+summary: |
+  Unrestricted file uploads in Contao
+  ### Impact
+
+  A back end user with access to the form generator can upload arbitrary files and execute them on the server.
+
+  ### Patches
+
+  Update to Contao 4.4.46 or 4.8.6.
+
+  ### Workarounds
+
+  Configure your web server so it does not execute PHP files and other scripts in the Contao file upload directory.
+
+  ### References
+
+  https://contao.org/en/security-advisories/unrestricted-file-uploads
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, open an issue in [contao/contao](https://github.com/contao/contao/issues/new/choose).
+impacted_packages:
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.0.0|<4.4.46
+    fixed_versions: vers:composer/4.4.46
+  - purl: pkg:composer/contao/core-bundle
+    affected_versions: vers:composer/>=4.5.0|<4.8.6
+    fixed_versions: vers:composer/4.8.6
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.0.0|<4.4.46
+    fixed_versions: vers:composer/4.4.46
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.5.0|<4.8.6
+    fixed_versions: vers:composer/4.8.6
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-wjx8-cgrm-hh8p/GHSA-wjx8-cgrm-hh8p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+references:
+  - url: https://contao.org/en/news.html
+    reference_type:
+    reference_id:
+  - url: https://contao.org/en/security-advisories/unrestricted-file-uploads.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/security/advisories/GHSA-wjx8-cgrm-hh8p
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/contao/CVE-2019-19745.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/core-bundle/CVE-2019-19745.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19745
+    reference_type:
+    reference_id:

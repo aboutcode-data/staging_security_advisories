@@ -1,0 +1,35 @@
+advisory_id: GHSA-wxx5-w9jc-48wx
+datasource_id: github_osv_importer_v2/GHSA-wxx5-w9jc-48wx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-wxx5-w9jc-48wx/GHSA-wxx5-w9jc-48wx.json
+aliases:
+  - CVE-2022-37767
+summary: |
+  Pebble Templates protection mechanism bypass can lead to arbitrary code execution
+  Pebble Templates 3.1.5 allows attackers to bypass a protection mechanism and implement arbitrary code execution with springbok.
+impacted_packages:
+  - purl: pkg:maven/io.pebbletemplates/pebble
+    affected_versions: vers:maven/<=3.1.5
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-wxx5-w9jc-48wx/GHSA-wxx5-w9jc-48wx.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://github.com/PebbleTemplates/pebble/issues/625#issuecomment-1282138635
+    reference_type:
+    reference_id:
+  - url: https://github.com/Y4tacker/Web-Security/issues/3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37767
+    reference_type:
+    reference_id:

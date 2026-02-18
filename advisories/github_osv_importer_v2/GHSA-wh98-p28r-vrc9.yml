@@ -1,0 +1,104 @@
+advisory_id: GHSA-wh98-p28r-vrc9
+datasource_id: github_osv_importer_v2/GHSA-wh98-p28r-vrc9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-wh98-p28r-vrc9/GHSA-wh98-p28r-vrc9.json
+aliases:
+  - CVE-2022-23633
+summary: |
+  Exposure of information in Action Pack
+  ### Impact
+
+  Under certain circumstances response bodies will not be closed, for example a [bug in a webserver](https://github.com/puma/puma/pull/2812) or a bug in a Rack middleware.  In the event a response is *not* notified of a `close`, `ActionDispatch::Executor` will not know to reset thread local state for the next request.  This can lead to data being leaked to subsequent requests, especially when interacting with `ActiveSupport::CurrentAttributes`.
+
+  Upgrading to the FIXED versions of Rails will ensure mitigation of this issue even in the context of a buggy webserver or middleware implementation.
+
+  ### Patches
+
+  This has been fixed in Rails 7.0.2.2, 6.1.4.6, 6.0.4.6, and 5.2.6.2.
+
+  ### Workarounds
+
+  Upgrading is highly recommended, but to work around this problem the following middleware can be used:
+
+  ```ruby
+  class GuardedExecutor < ActionDispatch::Executor
+    def call(env)
+      ensure_completed!
+      super
+    end
+
+    private
+
+      def ensure_completed!
+        @executor.new.complete! if @executor.active?
+      end
+  end
+
+  # Ensure the guard is inserted before ActionDispatch::Executor
+  Rails.application.configure do
+    config.middleware.swap ActionDispatch::Executor, GuardedExecutor, executor
+  end
+  ```
+impacted_packages:
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<=5.2.6.1
+    fixed_versions: vers:gem/5.2.6.2
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<=6.0.4.5
+    fixed_versions: vers:gem/6.0.4.6
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<=6.1.4.5
+    fixed_versions: vers:gem/6.1.4.6
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<=7.0.2.1
+    fixed_versions: vers:gem/7.0.2.2
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-wh98-p28r-vrc9/GHSA-wh98-p28r-vrc9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-212
+references:
+  - url: https://discuss.rubyonrails.org/t/cve-2022-23633-possible-exposure-of-information-vulnerability-in-action-pack/80016
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/commit/f9a2ad03943d5c2ba54e1d45f155442b519c75da
+    reference_type:
+    reference_id:
+  - url: https://github.com/rails/rails/security/advisories/GHSA-wh98-p28r-vrc9
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/actionpack/CVE-2022-23633.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/g/ruby-security-ann/c/FkTM-_7zSNA/m/K2RiMJBlBAAJ
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/09/msg00002.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23633
+    reference_type:
+    reference_id:
+  - url: https://rubyonrails.org/2022/2/11/Rails-7-0-2-2-6-1-4-6-6-0-4-6-and-5-2-6-2-have-been-released
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240119-0013
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2023/dsa-5372
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/02/11/5
+    reference_type:
+    reference_id:

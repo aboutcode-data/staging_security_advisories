@@ -1,0 +1,47 @@
+advisory_id: GHSA-whph-446h-6m9v
+datasource_id: github_osv_importer_v2/GHSA-whph-446h-6m9v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-whph-446h-6m9v/GHSA-whph-446h-6m9v.json
+aliases:
+  - CVE-2022-26907
+summary: |
+  Azure SDK for .NET Information Disclosure Vulnerability.
+  Azure SDK for .NET Information Disclosure Vulnerability via undisclosed methods relating to lack of sanitization of exception messages.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.Rest.ClientRuntime
+    affected_versions: vers:nuget/<2.3.24
+    fixed_versions: vers:nuget/2.3.24
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-whph-446h-6m9v/GHSA-whph-446h-6m9v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-532
+references:
+  - url: https://github.com/Azure/azure-sdk-for-net
+    reference_type:
+    reference_id:
+  - url: https://github.com/Azure/azure-sdk-for-net/blob/a919c48ae294fed084a9679b6f53ac6af3fb4c3a/sdk/mgmtcommon/ClientRuntime/ClientRuntime/Microsoft.Rest.ClientRuntime.csproj#L11
+    reference_type:
+    reference_id:
+  - url: https://github.com/Azure/azure-sdk-for-net/commit/e67f2a9fc5aa1060bd465d1458c347671268f6f5
+    reference_type:
+    reference_id:
+  - url: https://github.com/Azure/azure-sdk-for-net/pull/28169
+    reference_type:
+    reference_id:
+  - url: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26907
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-26907
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2022-26907
+    reference_type:
+    reference_id:

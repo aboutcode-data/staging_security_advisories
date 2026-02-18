@@ -1,0 +1,41 @@
+advisory_id: GHSA-xj9j-gjxg-7jvq
+datasource_id: github_osv_importer_v2/GHSA-xj9j-gjxg-7jvq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-xj9j-gjxg-7jvq/GHSA-xj9j-gjxg-7jvq.json
+aliases:
+  - CVE-2025-64050
+summary: |
+  REDAXO CMS is vulnerable to RCE attack through its template management component
+  A Remote Code Execution (RCE) vulnerability in the template management component in REDAXO CMS 5.20.0 allows remote authenticated administrators to execute arbitrary operating system commands by injecting PHP code into an active template. The payload is executed when visitors access frontend pages using the compromised template.
+impacted_packages:
+  - purl: pkg:composer/redaxo/source
+    affected_versions: vers:composer/<5.20.1
+    fixed_versions: vers:composer/5.20.1
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-xj9j-gjxg-7jvq/GHSA-xj9j-gjxg-7jvq.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://drive.google.com/drive/folders/1Via4r4wn5zCcBllWmHpxYweCPgcbN0bz?usp=sharing
+    reference_type:
+    reference_id:
+  - url: https://github.com/redaxo/redaxo
+    reference_type:
+    reference_id:
+  - url: https://github.com/redaxo/redaxo/pull/6372/commits/bc96462e20f7e651b2e6c3bb59d141d5cb09af0f
+    reference_type:
+    reference_id:
+  - url: https://github.com/vettrivel007/CVE-Disclosures/blob/main/CVE-2025-64050.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-64050
+    reference_type:
+    reference_id:

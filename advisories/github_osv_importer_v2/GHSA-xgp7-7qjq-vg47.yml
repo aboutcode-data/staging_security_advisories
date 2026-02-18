@@ -1,0 +1,55 @@
+advisory_id: GHSA-xgp7-7qjq-vg47
+datasource_id: github_osv_importer_v2/GHSA-xgp7-7qjq-vg47
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-xgp7-7qjq-vg47/GHSA-xgp7-7qjq-vg47.json
+aliases:
+  - CVE-2025-62726
+summary: |
+  n8n Vulnerable to Remote Code Execution via Git Node Pre-Commit Hook
+  ### Impact
+  A remote code execution vulnerability exists in the Git Node component available in both Cloud and Self-Hosted versions of n8n. When a malicious actor clones a remote repository containing a pre-commit hook, the subsequent use of the Commit operation in the Git Node can inadvertently trigger the hook’s execution.
+
+  This allows attackers to execute arbitrary code within the n8n environment, potentially compromising the system and any connected credentials or workflows.
+
+  All users with workflows that utilize the Git Node to clone untrusted repositories are affected.
+
+  ### Patches
+  The vulnerability was addressed in v1.113.0 (n8n-io/n8n#19559), which introduces a new environment variable: `N8N_GIT_NODE_DISABLE_BARE_REPOS`. For self-hosted deployments, it is strongly recommended to set this variable to `true` to mitigate the risk of executing malicious Git hooks.
+
+  ### Workarounds
+  To reduce risk prior to upgrading:
+
+  - Avoid cloning or interacting with untrusted repositories using the Git Node.
+  - Disable or restrict the use of the Git Node in workflows where repository content cannot be fully trusted.
+impacted_packages:
+  - purl: pkg:npm/n8n
+    affected_versions: vers:npm/<1.113.0
+    fixed_versions: vers:npm/1.113.0
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-xgp7-7qjq-vg47/GHSA-xgp7-7qjq-vg47.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-829
+references:
+  - url: https://github.com/n8n-io/n8n
+    reference_type:
+    reference_id:
+  - url: https://github.com/n8n-io/n8n/commit/5bf3db5ba84d3195bbe11bbd3c62f7086e090997
+    reference_type:
+    reference_id:
+  - url: https://github.com/n8n-io/n8n/pull/19559
+    reference_type:
+    reference_id:
+  - url: https://github.com/n8n-io/n8n/security/advisories/GHSA-xgp7-7qjq-vg47
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62726
+    reference_type:
+    reference_id:

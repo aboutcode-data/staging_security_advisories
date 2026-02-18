@@ -1,0 +1,50 @@
+advisory_id: GHSA-xjrf-8x4f-43h4
+datasource_id: github_osv_importer_v2/GHSA-xjrf-8x4f-43h4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xjrf-8x4f-43h4/GHSA-xjrf-8x4f-43h4.json
+aliases:
+  - CVE-2013-6430
+summary: |
+  Improper Neutralization of Input During Web Page Generation in Spring Framework
+  The JavaScriptUtils.javaScriptEscape method in web/util/JavaScriptUtils.java in Spring MVC in Spring Framework before 3.2.2 does not properly escape certain characters, which allows remote attackers to conduct cross-site scripting (XSS) attacks via a (1) line separator or (2) paragraph separator Unicode character or (3) left or (4) right angle bracket.
+impacted_packages:
+  - purl: pkg:maven/org.springframework/spring-web
+    affected_versions: vers:maven/<=3.2.1.RELEASE
+    fixed_versions: vers:maven/3.2.2.RELEASE
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xjrf-8x4f-43h4/GHSA-xjrf-8x4f-43h4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/spring-projects/spring-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/7a7df6637478607bef0277bf52a4e0a03e20a248
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/9982b4c01a8c7be0961e58b58ed83731c40449ff
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/f5c9fe69a444607af667911bd4c5074b5b073e7b
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/issues/14617
+    reference_type:
+    reference_id:
+  - url: https://jira.spring.io/browse/SPR-9983?redirect=false
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-6430
+    reference_type:
+    reference_id:
+  - url: https://spring.io/security/cve-2013-6430
+    reference_type:
+    reference_id:

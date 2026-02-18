@@ -1,0 +1,57 @@
+advisory_id: GHSA-xw2r-f8xv-c8xp
+datasource_id: github_osv_importer_v2/GHSA-xw2r-f8xv-c8xp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-xw2r-f8xv-c8xp/GHSA-xw2r-f8xv-c8xp.json
+aliases:
+  - CVE-2023-39527
+summary: |
+  PrestaShop XSS injection through Validate::isCleanHTML method
+  ### Impact
+  xss injection through `isCleanHTML` method
+
+  ### Patches
+  1.7.8.10
+  8.0.5
+  8.1.1
+
+  ### Found by
+  Aleksey Solovev (Positive Technologies)
+
+  ### Workarounds
+
+  ### References
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/8.1.0
+    fixed_versions: vers:composer/8.1.1
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/>=8.0.0|<8.0.5
+    fixed_versions: vers:composer/8.0.5
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<1.7.8+10
+    fixed_versions: vers:composer/1.7.8+10
+severities:
+  - score: '8.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-xw2r-f8xv-c8xp/GHSA-xw2r-f8xv-c8xp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-116
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/afc14f8eaa058b3e6a20ac43e033ee2656fb88b4
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-xw2r-f8xv-c8xp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-39527
+    reference_type:
+    reference_id:

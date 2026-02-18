@@ -1,0 +1,83 @@
+advisory_id: GHSA-xc8x-vp79-p3wm
+datasource_id: github_osv_importer_v2/GHSA-xc8x-vp79-p3wm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-xc8x-vp79-p3wm/GHSA-xc8x-vp79-p3wm.json
+aliases:
+  - CVE-2023-46137
+summary: |
+  twisted.web has disordered HTTP pipeline response
+  Twisted is an event-based framework for internet applications. Prior to version 23.10.0rc1, when sending multiple HTTP requests in one TCP packet, twisted.web will process the requests asynchronously without guaranteeing the response order. If one of the endpoints is controlled by an attacker, the attacker can delay the response on purpose to manipulate the response of the second request when a victim launched two requests using HTTP pipeline. Version 23.10.0rc1 contains a patch for this issue.
+
+  ### Details
+  There's an example faulty program:
+  ```python
+  from twisted.internet import reactor, endpoints
+  from twisted.web import server
+  from twisted.web.proxy import ReverseProxyResource
+  from twisted.web.resource import Resource
+
+  class Second(Resource):
+      isLeaf = True
+      def render_GET(self, request):
+          return b'SECOND\n'
+
+  class First(Resource):
+      isLeaf = True
+      def render_GET(self, request):
+          def send_response():
+              request.write(b'FIRST DELAYED\n')
+              request.finish()
+          reactor.callLater(0.5, send_response)
+          return server.NOT_DONE_YET
+
+  root = Resource()
+
+  root.putChild(b'second', Second())
+  root.putChild(b'first', First())
+
+  endpoint = endpoints.TCP4ServerEndpoint(reactor, 8080)
+  endpoint.listen(server.Site(root))
+  reactor.run()
+  ```
+
+  When two requests for `/first` and `/second` are sent in the same order, the second request will be responded to first.
+  ```shell
+  echo -en "GET /first HTTP/1.1\r\nHost: a\r\n\r\nGET /second HTTP/1.1\r\nHost: a\r\n\r\n" | nc localhost 8080
+  ```
+impacted_packages:
+  - purl: pkg:pypi/twisted
+    affected_versions: vers:pypi/<23.10.0rc1
+    fixed_versions: vers:pypi/23.10.0rc1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-xc8x-vp79-p3wm/GHSA-xc8x-vp79-p3wm.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-xc8x-vp79-p3wm/GHSA-xc8x-vp79-p3wm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/twisted/PYSEC-2023-224.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/security/advisories/GHSA-xc8x-vp79-p3wm
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2024/11/msg00028.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46137
+    reference_type:
+    reference_id:

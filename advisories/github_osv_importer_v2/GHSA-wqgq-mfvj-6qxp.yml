@@ -1,0 +1,33 @@
+advisory_id: GHSA-wqgq-mfvj-6qxp
+datasource_id: github_osv_importer_v2/GHSA-wqgq-mfvj-6qxp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-wqgq-mfvj-6qxp/GHSA-wqgq-mfvj-6qxp.json
+aliases: []
+summary: |
+  Malicious Package in koa-body-parse
+  This package contained malicious code. The package uploaded system information such as OS and hostname to a remote server.
+
+
+  ## Recommendation
+
+  Remove the package from your environment. There are no indications of further compromise.
+impacted_packages:
+  - purl: pkg:npm/koa-body-parse
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-wqgq-mfvj-6qxp/GHSA-wqgq-mfvj-6qxp.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-506
+references:
+  - url: https://www.npmjs.com/advisories/1131
+    reference_type:
+    reference_id:

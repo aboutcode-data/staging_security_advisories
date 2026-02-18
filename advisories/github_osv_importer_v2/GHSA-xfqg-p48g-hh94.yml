@@ -1,0 +1,35 @@
+advisory_id: GHSA-xfqg-p48g-hh94
+datasource_id: github_osv_importer_v2/GHSA-xfqg-p48g-hh94
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-xfqg-p48g-hh94/GHSA-xfqg-p48g-hh94.json
+aliases: []
+summary: |
+  Login timing attack in ezsystems/ezpublish-kernel
+  Ibexa DXP is using random execution time to hinder timing attacks against user accounts, a method of discovering whether a given account exists in a system without knowing its password, thus affecting privacy. This implementation was found to not be good enough in some situations. The fix replaces this with constant time functionality, configured in the new security.yml parameter 'ibexa.security.authentication.constant_auth_time'. It will log a warning if the constant time is exceeded. If this happens the setting should be increased.
+impacted_packages:
+  - purl: pkg:composer/ezsystems/ezpublish-kernel
+    affected_versions: vers:composer/>=7.5.0|<7.5.29
+    fixed_versions: vers:composer/7.5.29
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-208
+references:
+  - url: https://developers.ibexa.co/security-advisories/ibexa-sa-2022-006-vulnerabilities-in-page-builder-login-and-commerce
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel/commit/913fe17281536a91437d94e8267181ae8b57f5d5
+    reference_type:
+    reference_id:
+  - url: https://github.com/ezsystems/ezpublish-kernel/security/advisories/GHSA-xfqg-p48g-hh94
+    reference_type:
+    reference_id:
+  - url: https://issues.ibexa.co/browse/IBX-1755
+    reference_type:
+    reference_id:

@@ -1,0 +1,56 @@
+advisory_id: GHSA-x99j-r8vv-gwwj
+datasource_id: github_osv_importer_v2/GHSA-x99j-r8vv-gwwj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-x99j-r8vv-gwwj/GHSA-x99j-r8vv-gwwj.json
+aliases:
+  - CVE-2023-32075
+summary: |
+  Pimcore vulnerable to Business Logic Errors via Customer automation rules
+  ### Impact
+  Business Logic Errors in the Conditions tab since the counter can be a negative number.
+
+  This vulnerability is capable of the unlogic in the counter value in the Conditions tab.
+
+  ### Patches
+  Update to version 3.3.9 or apply this patch manually https://github.com/pimcore/customer-data-framework/commit/e3f333391582d9309115e6b94e875367d0ea7163.patch
+
+  ### Workarounds
+  Apply https://github.com/pimcore/customer-data-framework/commit/e3f333391582d9309115e6b94e875367d0ea7163.patch manually.
+
+  ### References
+  https://huntr.dev/bounties/cecd7800-a996-4f3a-8689-e1c2a1e0248a/
+impacted_packages:
+  - purl: pkg:composer/pimcore/customer-management-framework-bundle
+    affected_versions: vers:composer/<3.3.9
+    fixed_versions: vers:composer/3.3.9
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-x99j-r8vv-gwwj/GHSA-x99j-r8vv-gwwj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/pimcore/customer-data-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/commit/e3f333391582d9309115e6b94e875367d0ea7163.patch
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/releases/tag/v3.3.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/pimcore/customer-data-framework/security/advisories/GHSA-x99j-r8vv-gwwj
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/cecd7800-a996-4f3a-8689-e1c2a1e0248a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-32075
+    reference_type:
+    reference_id:

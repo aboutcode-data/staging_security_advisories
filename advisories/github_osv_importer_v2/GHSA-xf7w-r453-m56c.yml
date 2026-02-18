@@ -1,0 +1,49 @@
+advisory_id: GHSA-xf7w-r453-m56c
+datasource_id: github_osv_importer_v2/GHSA-xf7w-r453-m56c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/05/GHSA-xf7w-r453-m56c/GHSA-xf7w-r453-m56c.json
+aliases:
+  - CVE-2019-13173
+summary: |
+  Arbitrary File Overwrite in fstream
+  Versions of `fstream` prior to 1.0.12 are vulnerable to Arbitrary File Overwrite. Extracting tarballs containing a hardlink to a file that already exists in the system and a file that matches the hardlink will overwrite the system's file with the contents of the extracted file. The `fstream.DirWriter()` function is vulnerable.
+
+
+  ## Recommendation
+
+  Upgrade to version 1.0.12 or later.
+impacted_packages:
+  - purl: pkg:npm/fstream
+    affected_versions: vers:npm/<1.0.12
+    fixed_versions: vers:npm/1.0.12
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/05/GHSA-xf7w-r453-m56c/GHSA-xf7w-r453-m56c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-59
+references:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00010.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00052.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/npm/fstream/commit/6a77d2fa6e1462693cf8e46f930da96ec1b0bb22
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-13173
+    reference_type:
+    reference_id:
+  - url: https://usn.ubuntu.com/4123-1
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/886
+    reference_type:
+    reference_id:

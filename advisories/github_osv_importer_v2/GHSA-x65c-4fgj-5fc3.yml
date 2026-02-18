@@ -1,0 +1,32 @@
+advisory_id: GHSA-x65c-4fgj-5fc3
+datasource_id: github_osv_importer_v2/GHSA-x65c-4fgj-5fc3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-x65c-4fgj-5fc3/GHSA-x65c-4fgj-5fc3.json
+aliases:
+  - CVE-2019-14653
+summary: |
+  Cross-site Scripting in pandao
+  pandao Editor.md 1.5.0 allows XSS via an attribute of an ABBR or SUP element.
+impacted_packages:
+  - purl: pkg:npm/editor.md
+    affected_versions: vers:npm/1.5.0
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-x65c-4fgj-5fc3/GHSA-x65c-4fgj-5fc3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pandao/editor.md/issues/715
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-14653
+    reference_type:
+    reference_id:

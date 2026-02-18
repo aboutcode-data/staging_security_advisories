@@ -1,0 +1,76 @@
+advisory_id: GHSA-x8gm-j36p-fppf
+datasource_id: github_osv_importer_v2/GHSA-x8gm-j36p-fppf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-x8gm-j36p-fppf/GHSA-x8gm-j36p-fppf.json
+aliases:
+  - CVE-2024-47528
+summary: |
+  LibreNMS vulnerable to Stored Cross-site Scripting via File Upload
+  ### Summary
+  Stored Cross-Site Scripting (XSS) can archive via Uploading a new Background for a Custom Map.
+
+  ### Details
+  Users with "admin" role can set background for a custom map, this allow the upload of SVG file that can contain XSS payload which will trigger onload. This led to Stored Cross-Site Scripting (XSS).
+
+  ### PoC
+  1. Login using an Admin role account.
+
+  2. Go over to "$URL/maps/custom", the Manage Custom Maps.
+  ![image](https://github.com/user-attachments/assets/9d621532-7880-4010-b12d-efd377f0cfdd)
+
+  3. Create a new map then choose to edit it.
+  4. Choose the "Set Background" option.
+  ![image](https://github.com/user-attachments/assets/dc2e9453-ef3e-4649-a42f-60b7a2ad8189)
+
+  5. Choose to upload a SVG file that have this content.
+  ```svg
+  <svg xmlns="http://www.w3.org/2000/svg" onload="alert(document.domain)">
+    <circle cx="50" cy="50" r="40" />
+  </svg>
+  ```
+
+  6. Once uploaded, there should be a link to the SVG return in the POST request to the API "$URL/maps/custom/1/background".
+  ![image](https://github.com/user-attachments/assets/dc224960-0bd3-42c9-ad49-2ec85b065939)
+
+  7. Go over to that link on browser, should see a pop-up.
+  ![image](https://github.com/user-attachments/assets/47a7db14-bd89-48fe-885a-fd80a052115e)
+
+  ### Impact
+  Attacker can use this to perform malicious java script code for malicious intent.
+  This would impact other Admin role users and the Global Read role users. Normal users does not have permission to read the file, so they are not affected.
+impacted_packages:
+  - purl: pkg:composer/librenms/librenms
+    affected_versions: vers:composer/<24.9.0
+    fixed_versions: vers:composer/24.9.0
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-x8gm-j36p-fppf/GHSA-x8gm-j36p-fppf.json
+  - score: '1.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-x8gm-j36p-fppf/GHSA-x8gm-j36p-fppf.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+  - CWE-79
+  - CWE-116
+references:
+  - url: https://github.com/librenms/librenms
+    reference_type:
+    reference_id:
+  - url: https://github.com/librenms/librenms/commit/d959bf1b366319eda16e3cd6dfda8a22beb203be
+    reference_type:
+    reference_id:
+  - url: https://github.com/librenms/librenms/security/advisories/GHSA-x8gm-j36p-fppf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-47528
+    reference_type:
+    reference_id:

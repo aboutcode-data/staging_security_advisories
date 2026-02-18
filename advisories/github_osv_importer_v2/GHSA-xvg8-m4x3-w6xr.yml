@@ -1,0 +1,60 @@
+advisory_id: GHSA-xvg8-m4x3-w6xr
+datasource_id: github_osv_importer_v2/GHSA-xvg8-m4x3-w6xr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-xvg8-m4x3-w6xr/GHSA-xvg8-m4x3-w6xr.json
+aliases:
+  - CVE-2024-50336
+summary: |
+  matrix-js-sdk has insufficient MXC URI validation which allows client-side path traversal
+  ### Summary
+
+  matrix-js-sdk before 34.11.0 is vulnerable to client-side path traversal via crafted MXC URIs. A malicious room member can trigger clients based on the matrix-js-sdk to issue arbitrary authenticated GET requests to the client's homeserver.
+
+  ### Details
+
+  The Matrix specification demands homeservers to [perform validation](https://spec.matrix.org/v1.12/client-server-api/#security-considerations-5) of the `server-name` and `media-id` components of MXC URIs with the intent to prevent path traversal. However, it is not mentioned that a similar check must also be performed on the client to prevent *client-side* path traversal. matrix-js-sdk fails to perform this validation.
+
+  ### Patches
+
+  Fixed in matrix-js-sdk 34.11.1.
+
+  ### Workarounds
+
+  None.
+
+  ### References
+
+  - https://spec.matrix.org/v1.12/client-server-api/#security-considerations-5
+  - https://blog.doyensec.com/2024/07/02/cspt2csrf.html
+impacted_packages:
+  - purl: pkg:npm/matrix-js-sdk
+    affected_versions: vers:npm/<34.11.1
+    fixed_versions: vers:npm/34.11.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-xvg8-m4x3-w6xr/GHSA-xvg8-m4x3-w6xr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/matrix-org/matrix-js-sdk
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-xvg8-m4x3-w6xr
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/01/msg00004.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-50336
+    reference_type:
+    reference_id:
+  - url: https://spec.matrix.org/v1.12/client-server-api/#security-considerations-5
+    reference_type:
+    reference_id:

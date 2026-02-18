@@ -1,0 +1,35 @@
+advisory_id: GHSA-xp4g-5xj6-6vpr
+datasource_id: github_osv_importer_v2/GHSA-xp4g-5xj6-6vpr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xp4g-5xj6-6vpr/GHSA-xp4g-5xj6-6vpr.json
+aliases:
+  - CVE-2017-12630
+summary: |
+  Apache Drill vulnerable to Cross-site Scripting
+  In Apache Drill 1.11.0 and earlier, when submitting form from Query page, users are able to pass arbitrary script or HTML which will take effect on Profile page afterwards. Example: after submitting special script that returns cookie information from Query page, malicious user may obtain this information from Profile page afterwards.
+impacted_packages:
+  - purl: pkg:maven/org.apache.drill/drill-common
+    affected_versions: vers:maven/<1.12.0
+    fixed_versions: vers:maven/1.12.0
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xp4g-5xj6-6vpr/GHSA-xp4g-5xj6-6vpr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/apache/drill
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/608658a55d09e16542db41121a0a972c97448214cdc04071fd4db923@%3Cdev.drill.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-12630
+    reference_type:
+    reference_id:

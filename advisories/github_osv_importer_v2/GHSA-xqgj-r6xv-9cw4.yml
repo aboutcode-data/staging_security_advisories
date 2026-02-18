@@ -1,0 +1,40 @@
+advisory_id: GHSA-xqgj-r6xv-9cw4
+datasource_id: github_osv_importer_v2/GHSA-xqgj-r6xv-9cw4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-xqgj-r6xv-9cw4/GHSA-xqgj-r6xv-9cw4.json
+aliases:
+  - CVE-2024-10096
+summary: |
+  Withdrawn Advisory: Dask Vulnerable to Command Injection
+  # Withdrawn Advisory
+  This advisory has been withdrawn because it describes [intended functionality](https://distributed.dask.org/en/stable/limitations.html?highlight=host#security). This link is maintained to preserve external references.
+
+  # Original Description
+
+  Dask versions <=2024.8.2 contain a vulnerability in the Dask Distributed Server where the use of pickle serialization allows attackers to craft malicious objects. These objects can be serialized on the client side and sent to the server for deserialization, leading to remote command execution and potentially granting full control over the Dask server.
+impacted_packages:
+  - purl: pkg:pypi/dask
+    affected_versions: vers:pypi/<=2024.8.2
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-xqgj-r6xv-9cw4/GHSA-xqgj-r6xv-9cw4.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/dask/dask
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/a4be847b-a52d-42cc-9e78-3299e2d30ab2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-10096
+    reference_type:
+    reference_id:

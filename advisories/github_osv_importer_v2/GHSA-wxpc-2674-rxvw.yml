@@ -1,0 +1,35 @@
+advisory_id: GHSA-wxpc-2674-rxvw
+datasource_id: github_osv_importer_v2/GHSA-wxpc-2674-rxvw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-wxpc-2674-rxvw/GHSA-wxpc-2674-rxvw.json
+aliases:
+  - CVE-2024-11602
+summary: |
+  Feast Cross-Origin Resource Sharing vulnerability
+  A Cross-Origin Resource Sharing (CORS) vulnerability exists in feast-dev/feast version 0.40.0. The CORS configuration on the agentscope server does not properly restrict access to only trusted origins, allowing any external domain to make requests to the API. This can bypass intended security controls and potentially expose sensitive information.
+impacted_packages:
+  - purl: pkg:pypi/feast
+    affected_versions: vers:pypi/<=0.40.0
+    fixed_versions:
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-wxpc-2674-rxvw/GHSA-wxpc-2674-rxvw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-346
+references:
+  - url: https://github.com/feast-dev/feast
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/7b24ecbe-0af7-4125-ab56-bce09786042e
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-11602
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-wvpv-8524-wg6x
+datasource_id: github_osv_importer_v2/GHSA-wvpv-8524-wg6x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wvpv-8524-wg6x/GHSA-wvpv-8524-wg6x.json
+aliases:
+  - CVE-2017-18197
+summary: |
+  mxGraph vulnerable to XXE attacks
+  In `mxGraphViewImageReader.java` in mxGraph before 3.7.6, the `SAXParserFactory` instance in `convert()` is missing flags to prevent XML External Entity (XXE) attacks, as demonstrated by `/ServerView`.
+impacted_packages:
+  - purl: pkg:npm/mxgraph
+    affected_versions: vers:npm/<3.7.6
+    fixed_versions: vers:npm/3.7.6
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wvpv-8524-wg6x/GHSA-wvpv-8524-wg6x.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/jgraph/mxgraph
+    reference_type:
+    reference_id:
+  - url: https://github.com/jgraph/mxgraph/commit/97b3718db64a6ca9afb3382de2926eb8da660052
+    reference_type:
+    reference_id:
+  - url: https://github.com/jgraph/mxgraph/issues/124
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2018/03/msg00002.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-18197
+    reference_type:
+    reference_id:

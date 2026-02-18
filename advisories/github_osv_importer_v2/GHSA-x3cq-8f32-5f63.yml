@@ -1,0 +1,72 @@
+advisory_id: GHSA-x3cq-8f32-5f63
+datasource_id: github_osv_importer_v2/GHSA-x3cq-8f32-5f63
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-x3cq-8f32-5f63/GHSA-x3cq-8f32-5f63.json
+aliases:
+  - CVE-2023-33246
+summary: |
+  Apache RocketMQ may have remote code execution vulnerability when using update configuration function
+  For RocketMQ versions 5.1.0 and below, under certain conditions, there is a risk of remote command execution. 
+
+  Several components of RocketMQ, including NameServer, Broker, and Controller, are leaked on the extranet and lack permission verification, an attacker can exploit this vulnerability by using the update configuration function to execute commands as the system users that RocketMQ is running as. Additionally, an attacker can achieve the same effect by forging the RocketMQ protocol content. 
+
+  To prevent these attacks, users are recommended to upgrade to version 5.1.1 or above for using RocketMQ 5.x or 4.9.6 or above for using RocketMQ 4.x .
+impacted_packages:
+  - purl: pkg:maven/org.apache.rocketmq/rocketmq-broker
+    affected_versions: vers:maven/>=5.0.0|<5.1.1
+    fixed_versions: vers:maven/5.1.1
+  - purl: pkg:maven/org.apache.rocketmq/rocketmq-namesrv
+    affected_versions: vers:maven/>=4.0.0|<4.9.6
+    fixed_versions: vers:maven/4.9.6
+  - purl: pkg:maven/org.apache.rocketmq/rocketmq-controller
+    affected_versions: vers:maven/>=5.0.0|<5.1.1
+    fixed_versions: vers:maven/5.1.1
+  - purl: pkg:maven/org.apache.rocketmq/rocketmq-namesrv
+    affected_versions: vers:maven/>=5.0.0|<5.1.1
+    fixed_versions: vers:maven/5.1.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-x3cq-8f32-5f63/GHSA-x3cq-8f32-5f63.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: http://packetstormsecurity.com/files/173339/Apache-RocketMQ-5.1.0-Arbitrary-Code-Injection.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/rocketmq
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/rocketmq/commit/9d411cf04a695e7a3f41036e8377b0aa544d754d
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/rocketmq/commit/c3ada731405c5990c36bf58d50b3e61965300703
+    reference_type:
+    reference_id:
+  - url: https://github.com/jakabakos/CVE-2023-33246_Apache_RocketMQ_RCE
+    reference_type:
+    reference_id:
+  - url: https://github.com/Malayke/CVE-2023-33246_RocketMQ_RCE_EXPLOIT
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/1s8j2c8kogthtpv3060yddk03zq0pxyp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-33246
+    reference_type:
+    reference_id:
+  - url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-33246
+    reference_type:
+    reference_id:
+  - url: https://www.vicarius.io/vsociety/posts/rocketmq-rce-cve-2023-33246-33247
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/07/12/1
+    reference_type:
+    reference_id:

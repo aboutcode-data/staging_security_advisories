@@ -1,0 +1,50 @@
+advisory_id: GHSA-x3x9-349x-2485
+datasource_id: github_osv_importer_v2/GHSA-x3x9-349x-2485
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-x3x9-349x-2485/GHSA-x3x9-349x-2485.json
+aliases:
+  - CVE-2024-48897
+summary: |
+  moodle: IDOR in edit/delete RSS feed
+  A vulnerability was found in Moodle. Additional checks are required to ensure users can only edit or delete RSS feeds that they have permission to modify.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.14
+    fixed_versions: vers:composer/4.1.14
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0|<4.2.11
+    fixed_versions: vers:composer/4.2.11
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0|<4.3.8
+    fixed_versions: vers:composer/4.3.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0|<4.4.4
+    fixed_versions: vers:composer/4.4.4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-x3x9-349x-2485/GHSA-x3x9-349x-2485.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-x3x9-349x-2485/GHSA-x3x9-349x-2485.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+  - CWE-285
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2318821
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-48897
+    reference_type:
+    reference_id:

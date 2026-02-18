@@ -1,0 +1,52 @@
+advisory_id: GHSA-wmjh-cpqj-4v6x
+datasource_id: github_osv_importer_v2/GHSA-wmjh-cpqj-4v6x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-wmjh-cpqj-4v6x/GHSA-wmjh-cpqj-4v6x.json
+aliases:
+  - CVE-2025-5320
+summary: |
+  Gradio CORS Origin Validation Bypass Vulnerability
+  A vulnerability classified as problematic has been found in gradio-app gradio up to 5.29.1. This affects the function is_valid_origin of the component CORS Handler. The manipulation of the argument localhost_aliases leads to origin validation error. It is possible to initiate the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.
+impacted_packages:
+  - purl: pkg:pypi/gradio
+    affected_versions: vers:pypi/>=5.0.0|<=5.29.1
+    fixed_versions:
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-wmjh-cpqj-4v6x/GHSA-wmjh-cpqj-4v6x.json
+  - score: '2.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-wmjh-cpqj-4v6x/GHSA-wmjh-cpqj-4v6x.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-345
+references:
+  - url: https://gist.github.com/superboy-zjc/aa3dfa161d7b19d8a53ab4605792f2fe
+    reference_type:
+    reference_id:
+  - url: https://gist.github.com/superboy-zjc/aa3dfa161d7b19d8a53ab4605792f2fe#proof-of-concept-poc
+    reference_type:
+    reference_id:
+  - url: https://github.com/gradio-app/gradio
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-5320
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.310491
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.310491
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?submit.580250
+    reference_type:
+    reference_id:

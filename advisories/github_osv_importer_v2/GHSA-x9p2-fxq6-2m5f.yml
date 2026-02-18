@@ -1,0 +1,45 @@
+advisory_id: GHSA-x9p2-fxq6-2m5f
+datasource_id: github_osv_importer_v2/GHSA-x9p2-fxq6-2m5f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-x9p2-fxq6-2m5f/GHSA-x9p2-fxq6-2m5f.json
+aliases: []
+summary: |
+  Reverse Tabnapping in swagger-ui
+  Versions of `swagger-ui` prior to 3.18.0 are vulnerable to [Reverse Tabnapping](https://www.owasp.org/index.php/Reverse_Tabnabbing). The package uses `target='_blank'` in anchor tags, allowing attackers to access `window.opener` for the original page. This is commonly used for phishing attacks.
+
+
+  ## Recommendation
+
+  Upgrade to version 3.18.0 or later.
+impacted_packages:
+  - purl: pkg:npm/swagger-ui
+    affected_versions: vers:npm/<3.18.0
+    fixed_versions: vers:npm/3.18.0
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-x9p2-fxq6-2m5f/GHSA-x9p2-fxq6-2m5f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1022
+references:
+  - url: https://github.com/swagger-api/swagger-ui/commit/3f4cae3334fdd492a373f4453bd03a9ebd87becf
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/pull/4789
+    reference_type:
+    reference_id:
+  - url: https://github.com/swagger-api/swagger-ui/releases/tag/v3.18.0
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SWAGGERUI-449808
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/975
+    reference_type:
+    reference_id:

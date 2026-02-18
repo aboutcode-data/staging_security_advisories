@@ -1,0 +1,64 @@
+advisory_id: GHSA-whpj-8f3w-67p5
+datasource_id: github_osv_importer_v2/GHSA-whpj-8f3w-67p5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-whpj-8f3w-67p5/GHSA-whpj-8f3w-67p5.json
+aliases:
+  - CVE-2023-32314
+summary: |
+  vm2 Sandbox Escape vulnerability
+  A sandbox escape vulnerability exists in vm2 for versions up to 3.9.17. It abuses an unexpected creation of a host object based on the specification of `Proxy`.
+
+  ### Impact
+  A threat actor can bypass the sandbox protections to gain remote code execution rights on the host running the sandbox.
+
+  ### Patches
+  This vulnerability was patched in the release of version `3.9.18` of `vm2`.
+
+  ### Workarounds
+  None.
+
+  ### References
+  PoC - https://gist.github.com/arkark/e9f5cf5782dec8321095be3e52acf5ac
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+
+  - Open an issue in [VM2](https://github.com/patriksimek/vm2)
+
+  Thanks to @arkark (Takeshi Kaneko) of GMO Cybersecurity by Ierae, Inc. for disclosing this vulnerability.
+impacted_packages:
+  - purl: pkg:npm/vm2
+    affected_versions: vers:npm/<3.9.18
+    fixed_versions: vers:npm/3.9.18
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-whpj-8f3w-67p5/GHSA-whpj-8f3w-67p5.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://gist.github.com/arkark/e9f5cf5782dec8321095be3e52acf5ac
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/commit/d88105f99752305c5b8a77b63ddee3ec86912daf
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/releases/tag/3.9.18
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/security/advisories/GHSA-whpj-8f3w-67p5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-32314
+    reference_type:
+    reference_id:

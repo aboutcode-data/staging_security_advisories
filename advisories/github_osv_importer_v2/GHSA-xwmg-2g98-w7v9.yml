@@ -1,0 +1,50 @@
+advisory_id: GHSA-xwmg-2g98-w7v9
+datasource_id: github_osv_importer_v2/GHSA-xwmg-2g98-w7v9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-xwmg-2g98-w7v9/GHSA-xwmg-2g98-w7v9.json
+aliases:
+  - CVE-2025-53864
+summary: |
+  Nimbus JOSE + JWT is vulnerable to DoS attacks when processing deeply nested JSON
+  Connect2id Nimbus JOSE + JWT before 10.0.2 allows a remote attacker to cause a denial of service via a deeply nested JSON object supplied in a JWT claim set, because of uncontrolled recursion. NOTE: this is independent of the Gson 2.11.0 issue because the Connect2id product could have checked the JSON object nesting depth, regardless of what limits (if any) were imposed by Gson.
+impacted_packages:
+  - purl: pkg:maven/com.nimbusds/nimbus-jose-jwt
+    affected_versions: vers:maven/>=9.38-rc1|<10.0.2
+    fixed_versions: vers:maven/10.0.2
+  - purl: pkg:maven/com.nimbusds/nimbus-jose-jwt
+    affected_versions: vers:maven/<9.37.4
+    fixed_versions: vers:maven/9.37.4
+severities:
+  - score: '5.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-xwmg-2g98-w7v9/GHSA-xwmg-2g98-w7v9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-674
+references:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt/commits/f7fb882cc08f027c9ceb874acec3b51c6222861c
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt/issues/583/stackoverflowerror-due-to-deeply-nested
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt/issues/593/back-port-cve-2025-53864-fix-to-9x-branch
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/gson/commit/1039427ff0100293dd3cf967a53a55282c0fef6b
+    reference_type:
+    reference_id:
+  - url: https://github.com/google/gson/compare/gson-parent-2.11.0...gson-parent-2.12.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-53864
+    reference_type:
+    reference_id:

@@ -1,0 +1,57 @@
+advisory_id: GHSA-xr8x-pxm6-prjg
+datasource_id: github_osv_importer_v2/GHSA-xr8x-pxm6-prjg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-xr8x-pxm6-prjg/GHSA-xr8x-pxm6-prjg.json
+aliases: []
+summary: |
+  MITM based Zip Slip in `org.hl7.fhir.publisher:org.hl7.fhir.publisher`
+  ### Impact
+  MITM can enable Zip-Slip.
+
+  ### Vulnerability
+
+  #### Vulnerability 1: `Publisher.java`
+
+  There is no validation that the zip file being unpacked has entries that are not maliciously writing outside of the intended destination directory.
+
+  https://github.com/HL7/fhir-ig-publisher/blob/87313e92de6dd6cea816449e0edd225e054a7891/org.hl7.fhir.publisher.core/src/main/java/org/hl7/fhir/igtools/publisher/Publisher.java#L3598-L3610
+
+  #### Vulnerability 2: `WebSourceProvider.java`
+
+  There is a check for malicious zip entries here, but it is not covered by test cases and could potentially be reverted in future changes.
+
+  https://github.com/HL7/fhir-ig-publisher/blob/87313e92de6dd6cea816449e0edd225e054a7891/org.hl7.fhir.publisher.core/src/main/java/org/hl7/fhir/igtools/web/WebSourceProvider.java#L104-L112
+
+  #### Vulnerability 3: `ZipFetcher.java`
+
+  This retains the path for Zip files in FetchedFile entries, which could later be used to output malicious entries to another compressed file or file system.
+
+  https://github.com/HL7/fhir-ig-publisher/blob/87313e92de6dd6cea816449e0edd225e054a7891/org.hl7.fhir.publisher.core/src/main/java/org/hl7/fhir/igtools/publisher/ZipFetcher.java#L57-L106
+
+  #### Vulnerability 4: `IGPack2NpmConvertor.java`
+
+  The loadZip method retains the path for entries in the zip file, which could later be used to output malicious entries to another compressed file or file system.
+
+  https://github.com/HL7/fhir-ig-publisher/blob/87313e92de6dd6cea816449e0edd225e054a7891/org.hl7.fhir.publisher.core/src/main/java/org/hl7/fhir/igtools/publisher/IGPack2NpmConvertor.java#L442-L463
+impacted_packages:
+  - purl: pkg:maven/org.hl7.fhir.publisher/org.hl7.fhir.publisher
+    affected_versions: vers:maven/<1.2.30
+    fixed_versions: vers:maven/1.2.30
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-xr8x-pxm6-prjg/GHSA-xr8x-pxm6-prjg.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/HL7/fhir-ig-publisher
+    reference_type:
+    reference_id:
+  - url: https://github.com/HL7/fhir-ig-publisher/security/advisories/GHSA-xr8x-pxm6-prjg
+    reference_type:
+    reference_id:

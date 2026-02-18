@@ -1,0 +1,38 @@
+advisory_id: GHSA-wxgw-qj99-44c2
+datasource_id: github_osv_importer_v2/GHSA-wxgw-qj99-44c2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-wxgw-qj99-44c2/GHSA-wxgw-qj99-44c2.json
+aliases: []
+summary: |
+  Prototype Pollution in node-forge util.setPath API
+  ### Impact
+  `forge.util.setPath` had a potential prototype pollution issue if called with untrusted keys. This API was not used by forge itself.
+
+  ### Patches
+  The `forge.util.setPath` API and related functions were removed in 0.10.0.
+
+  ### Workarounds
+  Don't call `forge.util.setPath` directly or indirectly with untrusted keys.
+
+  ### References
+  - https://security.snyk.io/vuln/SNYK-JS-NODEFORGE-598677
+  - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7720
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [forge](https://github.com/digitalbazaar/forge).
+  * Email us at support@digitalbazaar.com.
+impacted_packages:
+  - purl: pkg:npm/node-forge
+    affected_versions: vers:npm/<0.10.0
+    fixed_versions: vers:npm/0.10.0
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/digitalbazaar/forge/security/advisories/GHSA-wxgw-qj99-44c2
+    reference_type:
+    reference_id:

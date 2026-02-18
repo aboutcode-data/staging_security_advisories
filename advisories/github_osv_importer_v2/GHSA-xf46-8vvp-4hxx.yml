@@ -1,0 +1,32 @@
+advisory_id: GHSA-xf46-8vvp-4hxx
+datasource_id: github_osv_importer_v2/GHSA-xf46-8vvp-4hxx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-xf46-8vvp-4hxx/GHSA-xf46-8vvp-4hxx.json
+aliases:
+  - CVE-2021-20262
+summary: |
+  Keycloak Missing authentication for critical function
+  A flaw was found in Keycloak 12.0.0 where re-authentication does not occur while updating the password. This flaw allows an attacker to take over an account if they can obtain temporary, physical access to a user’s browser. The highest threat from this vulnerability is to confidentiality, integrity, as well as system availability.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<=12.0.4
+    fixed_versions:
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/03/GHSA-xf46-8vvp-4hxx/GHSA-xf46-8vvp-4hxx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-306
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1933639
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-20262
+    reference_type:
+    reference_id:

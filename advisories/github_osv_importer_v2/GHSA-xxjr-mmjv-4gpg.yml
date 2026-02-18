@@ -1,0 +1,55 @@
+advisory_id: GHSA-xxjr-mmjv-4gpg
+datasource_id: github_osv_importer_v2/GHSA-xxjr-mmjv-4gpg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-xxjr-mmjv-4gpg/GHSA-xxjr-mmjv-4gpg.json
+aliases:
+  - CVE-2025-13465
+summary: "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions\n\
+  ### Impact\n\nLodash versions 4.0.0 through 4.17.22 are vulnerable to prototype pollution\
+  \ in the `_.unset` and `_.omit` functions. An attacker can pass crafted paths which cause\
+  \ Lodash to delete methods from global prototypes. \n\nThe issue permits deletion of properties\
+  \ but does not allow overwriting their original behavior.  \n\n### Patches\n\nThis issue is\
+  \ patched on 4.17.23."
+impacted_packages:
+  - purl: pkg:npm/lodash
+    affected_versions: vers:npm/<=4.17.22
+    fixed_versions: vers:npm/4.17.23
+  - purl: pkg:npm/lodash.unset
+    affected_versions: vers:npm/>=4.0.0|<=4.5.2
+    fixed_versions:
+  - purl: pkg:npm/lodash-es
+    affected_versions: vers:npm/<=4.17.22
+    fixed_versions: vers:npm/4.17.23
+  - purl: pkg:npm/lodash-amd
+    affected_versions: vers:npm/<=4.17.22
+    fixed_versions: vers:npm/4.17.23
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-xxjr-mmjv-4gpg/GHSA-xxjr-mmjv-4gpg.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:H/SI:H/SA:H/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-xxjr-mmjv-4gpg/GHSA-xxjr-mmjv-4gpg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/lodash/lodash
+    reference_type:
+    reference_id:
+  - url: https://github.com/lodash/lodash/commit/edadd452146f7e4bad4ea684e955708931d84d81
+    reference_type:
+    reference_id:
+  - url: https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-13465
+    reference_type:
+    reference_id:

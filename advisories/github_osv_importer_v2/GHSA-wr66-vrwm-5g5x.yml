@@ -1,0 +1,65 @@
+advisory_id: GHSA-wr66-vrwm-5g5x
+datasource_id: github_osv_importer_v2/GHSA-wr66-vrwm-5g5x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-wr66-vrwm-5g5x/GHSA-wr66-vrwm-5g5x.json
+aliases:
+  - CVE-2022-21721
+summary: |
+  Denial of Service Vulnerability in next.js
+  ### Impact
+
+  Vulnerable code could allow a bad actor to trigger a denial of service attack for anyone running a Next.js app at version >= 12.0.0, and using i18n functionality.
+
+  - **Affected:** All of the following must be true to be affected by this CVE
+    - Next.js versions above v12.0.0
+    - Using next start or a custom server
+    - Using the built-in i18n support
+  - **Not affected:**
+    - Deployments on Vercel (vercel.com) are not affected along with similar environments where invalid requests are filtered before reaching Next.js.
+
+  ### Patches
+
+  A patch has been released, `next@12.0.9`, that mitigates this issue. We recommend all affected users upgrade as soon as possible.
+
+  ### Workarounds
+
+  We recommend upgrading whether you can reproduce or not although you can ensure `/${locale}/_next/` is blocked from reaching the Next.js instance until you upgrade.
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+  * Open an issue in [next](https://github.com/vercel/next.js)
+  * Email us at [security@vercel.com](mailto:security@vercel.com)
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=12.0.0|<12.0.9
+    fixed_versions: vers:npm/12.0.9
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-wr66-vrwm-5g5x/GHSA-wr66-vrwm-5g5x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-20
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/pull/33503
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/releases/tag/v12.0.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-wr66-vrwm-5g5x
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21721
+    reference_type:
+    reference_id:

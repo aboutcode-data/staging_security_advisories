@@ -1,0 +1,73 @@
+advisory_id: GHSA-wqq4-5wpv-mx2g
+datasource_id: github_osv_importer_v2/GHSA-wqq4-5wpv-mx2g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-wqq4-5wpv-mx2g/GHSA-wqq4-5wpv-mx2g.json
+aliases:
+  - CVE-2023-45143
+summary: |
+  Undici's cookie header not cleared on cross-origin redirect in fetch
+  ### Impact
+
+  Undici clears Authorization headers on cross-origin redirects, but does not clear `Cookie` headers. By design, `cookie` headers are [forbidden request headers](https://fetch.spec.whatwg.org/#forbidden-request-header), disallowing them to be set in `RequestInit.headers` in browser environments. Since Undici handles headers more liberally than the specification, there was a disconnect from the assumptions the spec made, and Undici's implementation of fetch.
+
+  As such this may lead to accidental leakage of cookie to a 3rd-party site or a malicious attacker who can control the redirection target (ie. an open redirector) to leak the cookie to the 3rd party site.
+
+  ### Patches
+
+  This was patched in [e041de359221ebeae04c469e8aff4145764e6d76](https://github.com/nodejs/undici/commit/e041de359221ebeae04c469e8aff4145764e6d76), which is included in version 5.26.2.
+impacted_packages:
+  - purl: pkg:npm/undici
+    affected_versions: vers:npm/<5.26.2
+    fixed_versions: vers:npm/5.26.2
+severities:
+  - score: '3.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-wqq4-5wpv-mx2g/GHSA-wqq4-5wpv-mx2g.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/nodejs/undici
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/commit/e041de359221ebeae04c469e8aff4145764e6d76
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/releases/tag/v5.26.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/security/advisories/GHSA-q768-x9m6-m9qp
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/security/advisories/GHSA-wqq4-5wpv-mx2g
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/2166948
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3N4NJ7FR4X4FPZUGNTQAPSTVB2HB2Y4A
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E72T67UPDRXHIDLO3OROR25YAMN4GGW5
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FNA62Q767CFAFHBCDKYNPBMZWB7TWYVU
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HT7T2R4MQKLIF4ODV4BDLPARWFPCJ5CZ
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LKYHSZQFDNR7RSA7LHVLLIAQMVYCUGBG
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X6QXN4ORIVF6XBW4WWFE7VNPVC74S45Y
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-45143
+    reference_type:
+    reference_id:

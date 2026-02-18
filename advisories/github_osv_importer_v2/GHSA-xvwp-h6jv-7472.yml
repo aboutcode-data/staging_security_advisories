@@ -1,0 +1,73 @@
+advisory_id: GHSA-xvwp-h6jv-7472
+datasource_id: github_osv_importer_v2/GHSA-xvwp-h6jv-7472
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-xvwp-h6jv-7472/GHSA-xvwp-h6jv-7472.json
+aliases:
+  - CVE-2022-41900
+summary: |
+  FractionalMaxPool and FractionalAVGPool heap out-of-bounds acess
+  ### Impact
+  An input `pooling_ratio` that is smaller than 1 will trigger a heap OOB in [`tf.raw_ops.FractionalMaxPool`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/fractional_max_pool_op.cc) and [`tf.raw_ops.FractionalAvgPool`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/fractional_avg_pool_op.cc).
+
+  ### Patches
+  We have patched the issue in GitHub commit [216525144ee7c910296f5b05d214ca1327c9ce48](https://github.com/tensorflow/tensorflow/commit/216525144ee7c910296f5b05d214ca1327c9ce48).
+
+  The fix will be included in TensorFlow 2.11.0. We will also cherry pick this commit on TensorFlow 2.10.1.
+
+
+  ### For more information
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-xvwp-h6jv-7472/GHSA-xvwp-h6jv-7472.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+  - CWE-125
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/216525144ee7c910296f5b05d214ca1327c9ce48
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xvwp-h6jv-7472
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-41900
+    reference_type:
+    reference_id:

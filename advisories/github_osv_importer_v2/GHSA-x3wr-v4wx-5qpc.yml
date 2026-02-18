@@ -1,0 +1,39 @@
+advisory_id: GHSA-x3wr-v4wx-5qpc
+datasource_id: github_osv_importer_v2/GHSA-x3wr-v4wx-5qpc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-x3wr-v4wx-5qpc/GHSA-x3wr-v4wx-5qpc.json
+aliases:
+  - CVE-2021-25948
+summary: |
+  Prototype Pollution
+  Prototype pollution vulnerability in ‘expand-hash’ versions 0.1.0 through 1.0.1 allows an attacker to cause a denial of service and may lead to remote code execution.
+impacted_packages:
+  - purl: pkg:npm/expand-hash
+    affected_versions: vers:npm/<=1.0.1
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-x3wr-v4wx-5qpc/GHSA-x3wr-v4wx-5qpc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+  - CWE-1321
+references:
+  - url: https://github.com/doowb/expand-hash
+    reference_type:
+    reference_id:
+  - url: https://github.com/doowb/expand-hash/blob/556913f6c2f05848110b5b8261cfc78e5ce3dc77/index.js#L19
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-25948
+    reference_type:
+    reference_id:
+  - url: https://www.whitesourcesoftware.com/vulnerability-database/CVE-2021-25948
+    reference_type:
+    reference_id:

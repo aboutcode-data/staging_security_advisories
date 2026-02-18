@@ -1,0 +1,39 @@
+advisory_id: GHSA-x7p2-x2j6-mwhr
+datasource_id: github_osv_importer_v2/GHSA-x7p2-x2j6-mwhr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/11/GHSA-x7p2-x2j6-mwhr/GHSA-x7p2-x2j6-mwhr.json
+aliases:
+  - CVE-2017-16833
+summary: |
+  Gemirro Stored XSS in Gemspec "homepage" value
+  Stored cross-site scripting (XSS) vulnerability in Gemirro before 0.16.0 allows attackers to inject arbitrary web script via a crafted javascript: URL in the "homepage" value of a ".gemspec" file.
+  A ".gemspec" file must be created with a JavaScript URL in the homepage  value. This can be used to build a gem for upload to the Gemirro server, in order to achieve stored XSS via the author name hyperlink.
+impacted_packages:
+  - purl: pkg:gem/gemirro
+    affected_versions: vers:gem/<0.16.0
+    fixed_versions: vers:gem/0.16.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/11/GHSA-x7p2-x2j6-mwhr/GHSA-x7p2-x2j6-mwhr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/PierreRambaud/gemirro
+    reference_type:
+    reference_id:
+  - url: https://github.com/PierreRambaud/gemirro/commit/9659f9b7ce15a723da8e361bd41b9203b19c97de
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/gemirro/CVE-2017-16833.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16833
+    reference_type:
+    reference_id:

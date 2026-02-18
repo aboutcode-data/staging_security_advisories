@@ -1,0 +1,58 @@
+advisory_id: GHSA-x4w5-r546-x9qh
+datasource_id: github_osv_importer_v2/GHSA-x4w5-r546-x9qh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/10/GHSA-x4w5-r546-x9qh/GHSA-x4w5-r546-x9qh.json
+aliases:
+  - CVE-2019-15138
+summary: |
+  Arbitrary File Read in html-pdf
+  All versions of `html-pdf` are vulnerable to Arbitrary File Read. The package fails to sanitize the HTML input, allowing attackers to exfiltrate server files by supplying malicious HTML code. XHR requests in the HTML code are executed by the server. Input with an XHR request such as `request.open("GET","file:///etc/passwd")` will result in a PDF document with the contents of `/etc/passwd`.
+
+
+  ## Recommendation
+
+  No fix is currently available. There is a mitigation available in the provided reference.
+impacted_packages:
+  - purl: pkg:npm/html-pdf
+    affected_versions: vers:npm/<3.0.1
+    fixed_versions: vers:npm/3.0.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/10/GHSA-x4w5-r546-x9qh/GHSA-x4w5-r546-x9qh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-79
+  - CWE-668
+  - CWE-73
+references:
+  - url: https://github.com/marcbachmann/node-html-pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/marcbachmann/node-html-pdf/commit/c12d6977778014139183c9f8da7579fd7ac65362
+    reference_type:
+    reference_id:
+  - url: https://github.com/marcbachmann/node-html-pdf/issues/530
+    reference_type:
+    reference_id:
+  - url: https://github.com/marcbachmann/node-html-pdf/issues/530#issuecomment-535045123
+    reference_type:
+    reference_id:
+  - url: https://github.com/marcbachmann/node-html-pdf/releases/tag/v3.0.1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-15138
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20191017-0005
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1095
+    reference_type:
+    reference_id:

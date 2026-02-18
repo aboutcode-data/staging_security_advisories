@@ -1,0 +1,50 @@
+advisory_id: GHSA-wxj7-3fx5-pp9m
+datasource_id: github_osv_importer_v2/GHSA-wxj7-3fx5-pp9m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-wxj7-3fx5-pp9m/GHSA-wxj7-3fx5-pp9m.json
+aliases:
+  - CVE-2025-52967
+summary: |
+  MLFlow SSRF via gateway_proxy_handler
+  gateway_proxy_handler in MLflow before 3.1.0 lacks gateway_path validation.
+impacted_packages:
+  - purl: pkg:pypi/mlflow
+    affected_versions: vers:pypi/>=3.0.0rc0|<3.1.0
+    fixed_versions: vers:pypi/3.1.0
+  - purl: pkg:pypi/mlflow
+    affected_versions: vers:pypi/<2.22.2
+    fixed_versions: vers:pypi/2.22.2
+severities:
+  - score: '5.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-wxj7-3fx5-pp9m/GHSA-wxj7-3fx5-pp9m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://github.com/mlflow/mlflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/mlflow/mlflow/issues/15944
+    reference_type:
+    reference_id:
+  - url: https://github.com/mlflow/mlflow/pull/15970
+    reference_type:
+    reference_id:
+  - url: https://github.com/mlflow/mlflow/releases/tag/v2.22.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/mlflow/mlflow/releases/tag/v3.1.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/mlflow/PYSEC-2025-52.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-52967
+    reference_type:
+    reference_id:

@@ -1,0 +1,62 @@
+advisory_id: GHSA-x5rq-j2xg-h7qm
+datasource_id: github_osv_importer_v2/GHSA-x5rq-j2xg-h7qm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-x5rq-j2xg-h7qm/GHSA-x5rq-j2xg-h7qm.json
+aliases:
+  - CVE-2019-1010266
+summary: |
+  Regular Expression Denial of Service (ReDoS) in lodash
+  lodash prior to 4.7.11 is affected by: CWE-400: Uncontrolled Resource Consumption. The impact is: Denial of service. The component is: Date handler. The attack vector is: Attacker provides very long strings, which the library attempts to match using a regular expression. The fixed version is: 4.7.11.
+impacted_packages:
+  - purl: pkg:npm/lodash
+    affected_versions: vers:npm/>=4.7.0|<4.17.11
+    fixed_versions: vers:npm/4.17.11
+  - purl: pkg:npm/lodash-es
+    affected_versions: vers:npm/>=4.7.0|<4.17.11
+    fixed_versions: vers:npm/4.17.11
+  - purl: pkg:npm/lodash-amd
+    affected_versions: vers:npm/>=4.7.0|<4.17.11
+    fixed_versions: vers:npm/4.17.11
+  - purl: pkg:gem/lodash-rails
+    affected_versions: vers:gem/>=4.7.0|<4.17.11
+    fixed_versions: vers:gem/4.17.11
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-x5rq-j2xg-h7qm/GHSA-x5rq-j2xg-h7qm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/github/advisory-database/pull/6138
+    reference_type:
+    reference_id:
+  - url: https://github.com/lodash/lodash
+    reference_type:
+    reference_id:
+  - url: https://github.com/lodash/lodash/commit/5c08f18d365b64063bfbfa686cbb97cdd6267347
+    reference_type:
+    reference_id:
+  - url: https://github.com/lodash/lodash/issues/3359
+    reference_type:
+    reference_id:
+  - url: https://github.com/lodash/lodash/wiki/Changelog
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/lodash-rails/CVE-2019-1010266.yml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-1010266
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20190919-0004
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-LODASH-73639
+    reference_type:
+    reference_id:

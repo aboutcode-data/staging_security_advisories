@@ -1,0 +1,91 @@
+advisory_id: GHSA-xp8p-9rq5-4wgv
+datasource_id: github_osv_importer_v2/GHSA-xp8p-9rq5-4wgv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xp8p-9rq5-4wgv/GHSA-xp8p-9rq5-4wgv.json
+aliases:
+  - CVE-2015-5161
+summary: |
+  ZendXml and Zend Framework contain XXE and XEE Vulnerabilities
+  The `Zend_Xml_Security::scan` in ZendXml before 1.0.1 and Zend Framework before 1.12.14, 2.x before 2.4.6, and 2.5.x before 2.5.2, when running under PHP-FPM in a threaded environment, allows remote attackers to bypass security checks and conduct XML external entity (XXE) and XML entity expansion (XEE) attacks via multibyte encoded characters.
+impacted_packages:
+  - purl: pkg:composer/zendframework/zendframework
+    affected_versions: vers:composer/>=2.0.0|<2.4.6
+    fixed_versions: vers:composer/2.4.6
+  - purl: pkg:composer/zendframework/zendframework
+    affected_versions: vers:composer/>=2.5.0|<2.5.2
+    fixed_versions: vers:composer/2.5.2
+  - purl: pkg:composer/zendframework/zendframework1
+    affected_versions: vers:composer/>=1.12.0|<1.12.14
+    fixed_versions: vers:composer/1.12.14
+  - purl: pkg:composer/zendframework/zendxml
+    affected_versions: vers:composer/>=1.0.0|<1.0.1
+    fixed_versions: vers:composer/1.0.1
+  - purl: pkg:composer/zendframework/zendframework
+    affected_versions: vers:composer/>=1.12.0|<1.12.14
+    fixed_versions: vers:composer/1.12.14
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+  - CWE-776
+references:
+  - url: http://legalhackers.com/advisories/zend-framework-XXE-vuln.txt
+    reference_type:
+    reference_id:
+  - url: http://lists.fedoraproject.org/pipermail/package-announce/2015-August/164409.html
+    reference_type:
+    reference_id:
+  - url: http://lists.fedoraproject.org/pipermail/package-announce/2015-August/165147.html
+    reference_type:
+    reference_id:
+  - url: http://lists.fedoraproject.org/pipermail/package-announce/2015-August/165173.html
+    reference_type:
+    reference_id:
+  - url: http://packetstormsecurity.com/files/133068/Zend-Framework-2.4.2-1.12.13-XXE-Injection.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2015/Aug/46
+    reference_type:
+    reference_id:
+  - url: https://framework.zend.com/security/advisory/ZF2015-06
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/zendframework/zendframework1/CVE-2015-5161.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/zendframework/zendframework/CVE-2015-5161.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/zendframework/zendxml/CVE-2015-5161.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/zendframework/ZendXml/commit/79f478fa2af85ce1fc18ac132dee5aa714c3b532
+    reference_type:
+    reference_id:
+  - url: https://github.com/zendframework/zf1/commit/ff7edddf1410b44b5ead857c02698aad9f748d1b
+    reference_type:
+    reference_id:
+  - url: https://github.com/zendframework/zf1/issues/393
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-5161
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200228055156/http://www.securityfocus.com/bid/76177
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/37765
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2015/dsa-3340
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/76177
+    reference_type:
+    reference_id:
+  - url: http://framework.zend.com/security/advisory/ZF2015-06
+    reference_type: exploit
+    reference_id: CVE-2015-5161;OSVDB-125783

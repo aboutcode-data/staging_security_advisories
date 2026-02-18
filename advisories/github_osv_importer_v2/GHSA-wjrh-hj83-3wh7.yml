@@ -1,0 +1,71 @@
+advisory_id: GHSA-wjrh-hj83-3wh7
+datasource_id: github_osv_importer_v2/GHSA-wjrh-hj83-3wh7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-wjrh-hj83-3wh7/GHSA-wjrh-hj83-3wh7.json
+aliases:
+  - CVE-2025-48383
+summary: |
+  Django-Select2 Vulnerable to Widget Instance Secret Cache Key Leaking
+  ### Impact
+
+  Instances of `HeavySelect2Mixin` subclasses like the `ModelSelect2MultipleWidget` and `ModelSelect2Widget` can secret access tokens across requests. This can allow users to access restricted querysets and restricted data.
+
+  ### Patches
+
+  The problem has been patched in version 8.4.1 and all following versions.
+
+  ### Workarounds
+
+  This vulnerability is limited use cases where instances of widget classes are created during app loading (not during a request).
+
+  Example of affected code:
+  ```python
+  class MyForm(forms.ModelForm):
+      class Meta:
+          widgets = {"my_select_field": Select2ModelWidget()}
+  ```
+
+  Django allows you to pass just the widget class (not the instance). This can be used to mitigate the session request leak.
+
+  Example of affected code:
+  ```python
+  class MyForm(forms.ModelForm):
+      class Meta:
+          widgets = {"my_select_field": Select2ModelWidget}
+  ```
+
+
+
+  ### References
+
+  Thanks to @neartik for reporting this issue. I will address it later. I had to delete your issue, to avoid exploitation of this security issue.
+impacted_packages:
+  - purl: pkg:pypi/django-select2
+    affected_versions: vers:pypi/<8.4.1
+    fixed_versions: vers:pypi/8.4.1
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-wjrh-hj83-3wh7/GHSA-wjrh-hj83-3wh7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-402
+  - CWE-918
+references:
+  - url: https://github.com/codingjoe/django-select2
+    reference_type:
+    reference_id:
+  - url: https://github.com/codingjoe/django-select2/commit/e5f41e6edba004d35f94915ff5e2559f44853412
+    reference_type:
+    reference_id:
+  - url: https://github.com/codingjoe/django-select2/security/advisories/GHSA-wjrh-hj83-3wh7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48383
+    reference_type:
+    reference_id:

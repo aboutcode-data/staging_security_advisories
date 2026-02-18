@@ -1,0 +1,73 @@
+advisory_id: GHSA-xpfp-f569-q3p2
+datasource_id: github_osv_importer_v2/GHSA-xpfp-f569-q3p2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-xpfp-f569-q3p2/GHSA-xpfp-f569-q3p2.json
+aliases:
+  - CVE-2021-35042
+summary: |
+  SQL Injection in Django
+  Django 3.1.x before 3.1.13 and 3.2.x before 3.2.5 allows QuerySet.order_by SQL injection if order_by is untrusted input from a client of a web application.
+impacted_packages:
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=3.2a1|<3.2.5
+    fixed_versions: vers:pypi/3.2.5
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=3.0a1|<3.1.13
+    fixed_versions: vers:pypi/3.1.13
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-xpfp-f569-q3p2/GHSA-xpfp-f569-q3p2.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-xpfp-f569-q3p2/GHSA-xpfp-f569-q3p2.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://docs.djangoproject.com/en/3.2/releases/security
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-xpfp-f569-q3p2
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/0bd57a879a0d54920bb9038a732645fb917040e9
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/a34a5f724c5d5adb2109374ba3989ebb7b11f81f
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/dae83a24519d6f284c74414e0b81d64d9b5a0db4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2021-109.yaml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#!forum/django-announce
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SS6NJTBYWOX6J7G4U3LUOILARJKWPQ5Y
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-35042
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210805-0008
+    reference_type:
+    reference_id:
+  - url: https://www.djangoproject.com/weblog/2021/jul/01/security-releases
+    reference_type:
+    reference_id:
+  - url: https://www.openwall.com/lists/oss-security/2021/07/02/2
+    reference_type:
+    reference_id:

@@ -1,0 +1,70 @@
+advisory_id: GHSA-xpc5-rr39-v8v2
+datasource_id: github_osv_importer_v2/GHSA-xpc5-rr39-v8v2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-xpc5-rr39-v8v2/GHSA-xpc5-rr39-v8v2.json
+aliases:
+  - CVE-2021-27917
+summary: |
+  Mautic has an XSS in contact tracking and page hits report
+  ### Summary
+  Prior to this patch, a stored XSS vulnerability existed in the contact tracking and page hits report.
+
+  ### Patches
+  Please update to 4.4.13 or 5.1.1 or later.
+
+  ### Workarounds
+  None
+
+  ### References
+  https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)
+  https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/02-Testing_for_Stored_Cross_Site_Scripting
+
+  If you have any questions or comments about this advisory:
+
+  Email us at [security@mautic.org](mailto:security@mautic.org)
+impacted_packages:
+  - purl: pkg:composer/mautic/core-lib
+    affected_versions: vers:composer/>=1.0.0-beta4|<4.4.13
+    fixed_versions: vers:composer/4.4.13
+  - purl: pkg:composer/mautic/core-lib
+    affected_versions: vers:composer/>=5.0.0-alpha|<5.1.1
+    fixed_versions: vers:composer/5.1.1
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=1.0.0-beta4|<4.4.13
+    fixed_versions: vers:composer/4.4.13
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=5.0.0-alpha|<5.1.1
+    fixed_versions: vers:composer/5.1.1
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-xpc5-rr39-v8v2/GHSA-xpc5-rr39-v8v2.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-xpc5-rr39-v8v2/GHSA-xpc5-rr39-v8v2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/commit/550e33562d03363f7592fa9354259787a23a1d98
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/commit/629165ac905c53bbb44feb5a6dbadb1dfd6d5564
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-xpc5-rr39-v8v2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-27917
+    reference_type:
+    reference_id:

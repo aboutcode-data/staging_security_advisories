@@ -1,0 +1,53 @@
+advisory_id: GHSA-xv83-x443-7rmw
+datasource_id: github_osv_importer_v2/GHSA-xv83-x443-7rmw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-xv83-x443-7rmw/GHSA-xv83-x443-7rmw.json
+aliases:
+  - CVE-2023-30609
+summary: |
+  HTML injection in search results via plaintext message highlighting
+  ### Impact
+  Plain text messages containing HTML tags are rendered as HTML in the search results. To exploit this, an attacker needs to trick a user into searching for a specific message containing an HTML injection payload.
+
+  Cross-site scripting is possible by including resources from `recaptcha.net` and `gstatic.com` which are included in the default CSP.
+
+  Thanks to [Cadence Ember](https://cadence.moe/) for finding the injection and to [S1m](https://github.com/p1gp1g/) for finding possible XSS vectors.
+
+  ### Patches
+  Version 3.71.0 of the SDK fixes the issue.
+
+  ### Workarounds
+  Restarting the client will clear the injection.
+impacted_packages:
+  - purl: pkg:npm/matrix-react-sdk
+    affected_versions: vers:npm/<3.71.0
+    fixed_versions: vers:npm/3.71.0
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-xv83-x443-7rmw/GHSA-xv83-x443-7rmw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+  - CWE-74
+references:
+  - url: https://github.com/matrix-org/matrix-react-sdk
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-react-sdk/commit/bf182bc94556849d7acdfa0e5fdea2aa129ea826
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-react-sdk/releases/tag/v3.71.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-react-sdk/security/advisories/GHSA-xv83-x443-7rmw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-30609
+    reference_type:
+    reference_id:

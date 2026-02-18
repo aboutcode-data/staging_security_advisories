@@ -1,0 +1,35 @@
+advisory_id: GHSA-x3x3-qwjq-8gj4
+datasource_id: github_osv_importer_v2/GHSA-x3x3-qwjq-8gj4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-x3x3-qwjq-8gj4/GHSA-x3x3-qwjq-8gj4.json
+aliases:
+  - CVE-2022-46364
+summary: |
+  Apache CXF Server-Side Request Forgery vulnerability
+  A SSRF vulnerability in parsing the href attribute of XOP:Include in MTOM requests in versions of Apache CXF before 3.5.5 and 3.4.10 allows an attacker to perform SSRF style attacks on webservices that take at least one parameter of any type.
+impacted_packages:
+  - purl: pkg:maven/org.apache.cxf/cxf-core
+    affected_versions: vers:maven/<3.4.10
+    fixed_versions: vers:maven/3.4.10
+  - purl: pkg:maven/org.apache.cxf/cxf-core
+    affected_versions: vers:maven/>=3.5.0|<3.5.5
+    fixed_versions: vers:maven/3.5.5
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-x3x3-qwjq-8gj4/GHSA-x3x3-qwjq-8gj4.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://cxf.apache.org/security-advisories.data/CVE-2022-46364.txt?version=1&modificationDate=1670944472739&api=v2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-46364
+    reference_type:
+    reference_id:

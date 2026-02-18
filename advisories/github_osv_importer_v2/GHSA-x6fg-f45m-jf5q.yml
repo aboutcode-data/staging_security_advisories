@@ -1,0 +1,50 @@
+advisory_id: GHSA-x6fg-f45m-jf5q
+datasource_id: github_osv_importer_v2/GHSA-x6fg-f45m-jf5q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-x6fg-f45m-jf5q/GHSA-x6fg-f45m-jf5q.json
+aliases:
+  - CVE-2015-8855
+summary: |
+  Regular Expression Denial of Service in semver
+  Versions 4.3.1 and earlier of `semver` are affected by a regular expression denial of service vulnerability when extremely long version strings are parsed.
+
+
+
+  ## Recommendation
+
+  Update to version 4.3.2 or later
+impacted_packages:
+  - purl: pkg:npm/semver
+    affected_versions: vers:npm/<4.3.2
+    fixed_versions: vers:npm/4.3.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-x6fg-f45m-jf5q/GHSA-x6fg-f45m-jf5q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/advisories/GHSA-x6fg-f45m-jf5q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-8855
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/31
+    reference_type:
+    reference_id:
+  - url: https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2016/04/20/11
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/86957
+    reference_type:
+    reference_id:

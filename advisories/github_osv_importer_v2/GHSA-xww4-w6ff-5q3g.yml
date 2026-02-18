@@ -1,0 +1,38 @@
+advisory_id: GHSA-xww4-w6ff-5q3g
+datasource_id: github_osv_importer_v2/GHSA-xww4-w6ff-5q3g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-xww4-w6ff-5q3g/GHSA-xww4-w6ff-5q3g.json
+aliases:
+  - CVE-2023-1762
+summary: |
+  thorsten/phpmyfaq vulnerable privilege escalation from improper privilege management
+  thorsten/phpmyfaq prior to 3.1.12 is vulnerable to privilege escalation from improper privilege management. Any user with the ability to add a new user can create a user with super admin rights. This has been fixed in 3.1.12.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.1.12
+    fixed_versions: vers:composer/3.1.12
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-xww4-w6ff-5q3g/GHSA-xww4-w6ff-5q3g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+references:
+  - url: https://github.com/thorsten/phpmyfaq
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/ae6c1d8c3eab05d6e2227c7a9998707f4f891514
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/3c2374cc-7082-44b7-a6a6-ccff7a650a3a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-1762
+    reference_type:
+    reference_id:

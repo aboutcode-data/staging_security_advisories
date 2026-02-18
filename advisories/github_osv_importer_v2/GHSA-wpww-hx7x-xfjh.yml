@@ -1,0 +1,50 @@
+advisory_id: GHSA-wpww-hx7x-xfjh
+datasource_id: github_osv_importer_v2/GHSA-wpww-hx7x-xfjh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wpww-hx7x-xfjh/GHSA-wpww-hx7x-xfjh.json
+aliases:
+  - CVE-2016-6609
+summary: |
+  phpMyAdmin PHP code injection
+  An issue was discovered in phpMyAdmin. A specially crafted database name could be used to run arbitrary PHP commands through the array export feature. All 4.6.x versions (prior to 4.6.4), 4.4.x versions (prior to 4.4.15.8), and 4.0.x versions (prior to 4.0.10.17) are affected.
+impacted_packages:
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=4.6.0|<4.6.4
+    fixed_versions: vers:composer/4.6.4
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=4.4.0|<4.4.15+8
+    fixed_versions: vers:composer/4.4.15+8
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=4.0.0|<4.0.10+17
+    fixed_versions: vers:composer/4.0.10+17
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-wpww-hx7x-xfjh/GHSA-wpww-hx7x-xfjh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/phpmyadmin/composer
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2018/07/msg00006.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-6609
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/201701-32
+    reference_type:
+    reference_id:
+  - url: https://www.phpmyadmin.net/security/PMASA-2016-32
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/94112
+    reference_type:
+    reference_id:

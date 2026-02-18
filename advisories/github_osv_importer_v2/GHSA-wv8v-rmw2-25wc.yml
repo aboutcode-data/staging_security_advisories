@@ -1,0 +1,54 @@
+advisory_id: GHSA-wv8v-rmw2-25wc
+datasource_id: github_osv_importer_v2/GHSA-wv8v-rmw2-25wc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-wv8v-rmw2-25wc/GHSA-wv8v-rmw2-25wc.json
+aliases:
+  - CVE-2025-24012
+summary: |
+  XSS/HTML Injection Vulnerability in Umbraco Backoffice Components
+  ### Impact
+  Authenticated users are able to exploit an XSS vulnerability when viewing certain localized backoffice components.
+
+  ### Patches
+  Will be patched in 14.3.2 and 15.1.2.
+
+  Note:
+  This issue was reported by Pratik Patil from NetSPI @Nexusss-ppatil
+impacted_packages:
+  - purl: pkg:nuget/Umbraco.Cms.StaticAssets
+    affected_versions: vers:nuget/>=14.0.0|<14.3.2
+    fixed_versions: vers:nuget/14.3.2
+  - purl: pkg:nuget/Umbraco.Cms.StaticAssets
+    affected_versions: vers:nuget/>=15.0.0|<15.1.2
+    fixed_versions: vers:nuget/15.1.2
+  - purl: pkg:npm/%40umbraco-cms/backoffice
+    affected_versions: vers:npm/>=14.0.0|<14.3.2
+    fixed_versions: vers:npm/14.3.2
+  - purl: pkg:npm/%40umbraco-cms/backoffice
+    affected_versions: vers:npm/>=15.0.0|<15.1.2
+    fixed_versions: vers:npm/15.1.2
+severities:
+  - score: '4.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-wv8v-rmw2-25wc/GHSA-wv8v-rmw2-25wc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/umbraco/Umbraco-CMS
+    reference_type:
+    reference_id:
+  - url: https://github.com/umbraco/Umbraco-CMS/commit/d4f8754f933895b3a329296e25ddea6f84a0aea2
+    reference_type:
+    reference_id:
+  - url: https://github.com/umbraco/Umbraco-CMS/security/advisories/GHSA-wv8v-rmw2-25wc
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-24012
+    reference_type:
+    reference_id:

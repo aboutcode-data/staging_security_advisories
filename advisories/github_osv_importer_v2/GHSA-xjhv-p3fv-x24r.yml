@@ -1,0 +1,43 @@
+advisory_id: GHSA-xjhv-p3fv-x24r
+datasource_id: github_osv_importer_v2/GHSA-xjhv-p3fv-x24r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-xjhv-p3fv-x24r/GHSA-xjhv-p3fv-x24r.json
+aliases:
+  - CVE-2023-34062
+summary: |
+  In Reactor Netty HTTP Server a malicious user can send a request using a specially crafted URL that can lead to a directory traversal attack
+  In Reactor Netty HTTP Server, versions 1.1.x prior to 1.1.13 and versions 1.0.x prior to 1.0.39, a malicious user can send a request using a specially crafted URL that can lead to a directory traversal attack.
+
+  Specifically, an application is vulnerable if Reactor Netty HTTP Server is configured to serve static resources.
+impacted_packages:
+  - purl: pkg:maven/io.projectreactor.netty/reactor-netty-http
+    affected_versions: vers:maven/>=1.1.0|<1.1.13
+    fixed_versions: vers:maven/1.1.13
+  - purl: pkg:maven/io.projectreactor.netty/reactor-netty-http
+    affected_versions: vers:maven/>=1.0.0|<1.0.39
+    fixed_versions: vers:maven/1.0.39
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-xjhv-p3fv-x24r/GHSA-xjhv-p3fv-x24r.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/reactor/reactor-netty
+    reference_type:
+    reference_id:
+  - url: https://github.com/reactor/reactor-netty/commit/b1dd46b9a424ca27f7f770be6561faa84d812e5b
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-34062
+    reference_type:
+    reference_id:
+  - url: https://spring.io/security/cve-2023-34062
+    reference_type:
+    reference_id:

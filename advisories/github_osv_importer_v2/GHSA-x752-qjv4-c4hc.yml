@@ -1,0 +1,62 @@
+advisory_id: GHSA-x752-qjv4-c4hc
+datasource_id: github_osv_importer_v2/GHSA-x752-qjv4-c4hc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-x752-qjv4-c4hc/GHSA-x752-qjv4-c4hc.json
+aliases:
+  - CVE-2022-28368
+summary: |
+  Remote code injection in dompdf/dompdf
+  Dompdf is an HTML to PDF converter. Dompdf before 1.2.1 allows remote code execution via a .php file in the src:url field of an @font-face Cascading Style Sheets (CSS) statement (within an HTML input file).
+impacted_packages:
+  - purl: pkg:composer/dompdf/dompdf
+    affected_versions: vers:composer/<1.2.1
+    fixed_versions: vers:composer/1.2.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-x752-qjv4-c4hc/GHSA-x752-qjv4-c4hc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/171738/Dompdf-1.2.1-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-x752-qjv4-c4hc
+    reference_type:
+    reference_id:
+  - url: https://github.com/dompdf/dompdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/dompdf/dompdf/commit/4c70e1025bcd9b7694b95dd552499bd83cd6141d
+    reference_type:
+    reference_id:
+  - url: https://github.com/dompdf/dompdf/issues/2598
+    reference_type:
+    reference_id:
+  - url: https://github.com/dompdf/dompdf/pull/2808
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/dompdf/dompdf/CVE-2022-28368.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/snyk-labs/php-goof
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-28368
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/dompdf/dompdf#v1.2.1
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/blog/security-alert-php-pdf-library-dompdf-rce
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/51270.py
+    reference_type: exploit
+    reference_id: CVE-2022-28368

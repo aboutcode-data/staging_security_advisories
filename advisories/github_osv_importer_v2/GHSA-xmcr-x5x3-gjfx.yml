@@ -1,0 +1,41 @@
+advisory_id: GHSA-xmcr-x5x3-gjfx
+datasource_id: github_osv_importer_v2/GHSA-xmcr-x5x3-gjfx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xmcr-x5x3-gjfx/GHSA-xmcr-x5x3-gjfx.json
+aliases:
+  - CVE-2018-1000826
+summary: |
+  Microweber XSS Vulnerability
+  Microweber version <= 1.0.7 contains a Cross Site Scripting (XSS) vulnerability in Admin login form template that can result in Execution of JavaScript code.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.1.0
+    fixed_versions: vers:composer/1.1.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xmcr-x5x3-gjfx/GHSA-xmcr-x5x3-gjfx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://0dd.zone/2018/10/28/microweber-XSS
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/5b29bc854bcfbfc5d4df1523ee221c900e7598a9
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/issues/489
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000826
+    reference_type:
+    reference_id:

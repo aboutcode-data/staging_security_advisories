@@ -1,0 +1,60 @@
+advisory_id: GHSA-xxx9-3xcr-gjj3
+datasource_id: github_osv_importer_v2/GHSA-xxx9-3xcr-gjj3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-xxx9-3xcr-gjj3/GHSA-xxx9-3xcr-gjj3.json
+aliases: []
+summary: |
+  XML Injection in Xerces Java affects Nokogiri
+  ## Summary
+
+  Nokogiri v1.13.4 updates the vendored `xerces:xercesImpl` from 2.12.0 to 2.12.2, which addresses [CVE-2022-23437](https://nvd.nist.gov/vuln/detail/CVE-2022-23437). That CVE is scored as CVSS 6.5 "Medium" on the NVD record.
+
+  Please note that this advisory only applies to the **JRuby** implementation of Nokogiri `< 1.13.4`.
+
+  ## Mitigation
+
+  Upgrade to Nokogiri `>= v1.13.4`.
+
+  ## Impact
+
+  ### [CVE-2022-23437](https://nvd.nist.gov/vuln/detail/CVE-2022-23437) in xerces-J
+
+  - **Severity**: Medium
+  - **Type**: [CWE-91](https://cwe.mitre.org/data/definitions/91.html) XML Injection (aka Blind XPath Injection)
+  - **Description**: There's a vulnerability within the Apache Xerces Java (XercesJ) XML parser when handling specially crafted XML document payloads. This causes, the XercesJ XML parser to wait in an infinite loop, which may sometimes consume system resources for prolonged duration. This vulnerability is present within XercesJ version 2.12.1 and the previous versions.
+  - **See also**: https://github.com/advisories/GHSA-h65f-jvqw-m9fj
+impacted_packages:
+  - purl: pkg:gem/nokogiri
+    affected_versions: vers:gem/<1.13.4
+    fixed_versions: vers:gem/1.13.4
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-xxx9-3xcr-gjj3/GHSA-xxx9-3xcr-gjj3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-91
+references:
+  - url: https://github.com/advisories/GHSA-h65f-jvqw-m9fj
+    reference_type:
+    reference_id:
+  - url: https://github.com/sparklemotion/nokogiri
+    reference_type:
+    reference_id:
+  - url: https://github.com/sparklemotion/nokogiri/releases/tag/v1.13.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-xxx9-3xcr-gjj3
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/g/ruby-security-ann/c/vX7qSjsvWis/m/TJWN4oOKBwAJ?utm_medium=email&utm_source=footer
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23437
+    reference_type:
+    reference_id:

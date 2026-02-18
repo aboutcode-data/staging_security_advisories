@@ -1,0 +1,38 @@
+advisory_id: GHSA-wwrg-2w5j-grvx
+datasource_id: github_osv_importer_v2/GHSA-wwrg-2w5j-grvx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-wwrg-2w5j-grvx/GHSA-wwrg-2w5j-grvx.json
+aliases:
+  - CVE-2023-4138
+summary: |
+  RDiffWeb vulnerable to Allocation of Resources Without Limits or Throttling
+  Allocation of Resources Without Limits or Throttling in GitHub repository ikus060/rdiffweb prior to 2.8.0.
+impacted_packages:
+  - purl: pkg:pypi/rdiffweb
+    affected_versions: vers:pypi/<2.8.1
+    fixed_versions: vers:pypi/2.8.1
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-wwrg-2w5j-grvx/GHSA-wwrg-2w5j-grvx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/ikus060/rdiffweb
+    reference_type:
+    reference_id:
+  - url: https://github.com/ikus060/rdiffweb/commit/feef0d7b11d86aed29bf98c21526088117964d85
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/1b1fa915-d588-4bb1-9e82-6a6be79befed
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-4138
+    reference_type:
+    reference_id:

@@ -1,0 +1,51 @@
+advisory_id: GHSA-xv57-4mr9-wg8v
+datasource_id: github_osv_importer_v2/GHSA-xv57-4mr9-wg8v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-xv57-4mr9-wg8v/GHSA-xv57-4mr9-wg8v.json
+aliases:
+  - CVE-2025-55173
+summary: |
+  Next.js Content Injection Vulnerability for Image Optimization
+  A vulnerability in **Next.js Image Optimization** has been fixed in **v15.4.5** and **v14.2.31**. The issue allowed attacker-controlled external image sources to trigger file downloads with arbitrary content and filenames under specific configurations. This behavior could be abused for phishing or malicious file delivery.
+
+  All users relying on `images.domains` or `images.remotePatterns` are encouraged to upgrade and verify that external image sources are strictly validated.
+
+  More details at [Vercel Changelog](https://vercel.com/changelog/cve-2025-55173)
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=0.9.9|<14.2.31
+    fixed_versions: vers:npm/14.2.31
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/<=15.4.4
+    fixed_versions: vers:npm/15.4.5
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-xv57-4mr9-wg8v/GHSA-xv57-4mr9-wg8v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/commit/6b12c60c61ee80cb0443ccd20de82ca9b4422ddd
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-xv57-4mr9-wg8v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-55173
+    reference_type:
+    reference_id:
+  - url: https://vercel.com/changelog/cve-2025-55173
+    reference_type:
+    reference_id:
+  - url: http://vercel.com/changelog/cve-2025-55173
+    reference_type:
+    reference_id:

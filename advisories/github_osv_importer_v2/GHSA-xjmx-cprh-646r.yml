@@ -1,0 +1,41 @@
+advisory_id: GHSA-xjmx-cprh-646r
+datasource_id: github_osv_importer_v2/GHSA-xjmx-cprh-646r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xjmx-cprh-646r/GHSA-xjmx-cprh-646r.json
+aliases:
+  - CVE-2020-25781
+summary: |
+  MantisBT unauthorized users able to access private files
+  An issue was discovered in file_download.php in MantisBT before 2.24.3. Users without access to view private issue notes are able to download the (supposedly private) attachments linked to these notes by accessing the corresponding file download URL directly.
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/<2.24.3
+    fixed_versions: vers:composer/2.24.3
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xjmx-cprh-646r/GHSA-xjmx-cprh-646r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: http://github.com/mantisbt/mantisbt/commit/5595c90f11c48164331a20bb9c66098980516e93
+    reference_type:
+    reference_id:
+  - url: http://github.com/mantisbt/mantisbt/commit/9de20c09e5a557e57159a61657ce62f1a4f578fe
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=27039
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-25781
+    reference_type:
+    reference_id:

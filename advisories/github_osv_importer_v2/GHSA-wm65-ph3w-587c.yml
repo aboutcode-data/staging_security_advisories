@@ -1,0 +1,38 @@
+advisory_id: GHSA-wm65-ph3w-587c
+datasource_id: github_osv_importer_v2/GHSA-wm65-ph3w-587c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-wm65-ph3w-587c/GHSA-wm65-ph3w-587c.json
+aliases:
+  - CVE-2025-43954
+summary: |
+  QMarkdown Cross-Site Scripting (XSS) vulnerability
+  QMarkdown (aka quasar-ui-qmarkdown) before 2.0.5 allows XSS via headers even when when no-html is set.
+impacted_packages:
+  - purl: pkg:npm/%40quasar/quasar-ui-qmarkdown
+    affected_versions: vers:npm/<2.0.5
+    fixed_versions: vers:npm/2.0.5
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-wm65-ph3w-587c/GHSA-wm65-ph3w-587c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/quasarframework/quasar-ui-qmarkdown
+    reference_type:
+    reference_id:
+  - url: https://github.com/quasarframework/quasar-ui-qmarkdown/commit/b61dff84851c45369cf931db5bd93db177c657f6
+    reference_type:
+    reference_id:
+  - url: https://github.com/quasarframework/quasar-ui-qmarkdown/compare/v2.0.4...v2.0.5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43954
+    reference_type:
+    reference_id:

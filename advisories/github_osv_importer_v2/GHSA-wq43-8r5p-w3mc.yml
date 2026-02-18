@@ -1,0 +1,37 @@
+advisory_id: GHSA-wq43-8r5p-w3mc
+datasource_id: github_osv_importer_v2/GHSA-wq43-8r5p-w3mc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-wq43-8r5p-w3mc/GHSA-wq43-8r5p-w3mc.json
+aliases: []
+summary: |
+  contao/core PHP object injection vulnerability allows for arbitrary code execution
+  PHP object injection vulnerability was identified in contao/core due to untrusted data being passed to `deserialize()` function.
+impacted_packages:
+  - purl: pkg:composer/contao/core
+    affected_versions: vers:composer/>=2.0.0|<2.11.14
+    fixed_versions: vers:composer/2.11.14
+  - purl: pkg:composer/contao/core
+    affected_versions: vers:composer/>=3.0.0|<3.2.5
+    fixed_versions: vers:composer/3.2.5
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://contao.org/en/news/major-security-hole-found-in-contao.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/core/commit/d67c46c1f1283134e3050244cfdda0ef26fa5cd4
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/core/commit/f939b5be8a0048ef779def3289e2072febef1b37
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/core/issues/6695
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/contao/core/2014-02-13.yaml
+    reference_type:
+    reference_id:

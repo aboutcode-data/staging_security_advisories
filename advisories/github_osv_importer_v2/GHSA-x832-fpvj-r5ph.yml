@@ -1,0 +1,47 @@
+advisory_id: GHSA-x832-fpvj-r5ph
+datasource_id: github_osv_importer_v2/GHSA-x832-fpvj-r5ph
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-x832-fpvj-r5ph/GHSA-x832-fpvj-r5ph.json
+aliases:
+  - CVE-2025-66372
+summary: |
+  Mustangproject allows exfiltrating files via XXE attacks
+  Mustang before 2.16.3 allows exfiltrating files via XXE attacks.
+impacted_packages:
+  - purl: pkg:maven/org.mustangproject/library
+    affected_versions: vers:maven/<2.16.3
+    fixed_versions: vers:maven/2.16.3
+  - purl: pkg:maven/org.mustangproject/validator
+    affected_versions: vers:maven/<2.16.3
+    fixed_versions: vers:maven/2.16.3
+severities:
+  - score: '2.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-x832-fpvj-r5ph/GHSA-x832-fpvj-r5ph.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/ZUGFeRD/mustangproject
+    reference_type:
+    reference_id:
+  - url: https://github.com/ZUGFeRD/mustangproject/commit/6461dad8d3d7876547155dacbd28b458f1eb2e0b
+    reference_type:
+    reference_id:
+  - url: https://github.com/ZUGFeRD/mustangproject/issues/685
+    reference_type:
+    reference_id:
+  - url: https://github.com/ZUGFeRD/mustangproject/pull/725
+    reference_type:
+    reference_id:
+  - url: https://github.com/ZUGFeRD/mustangproject/releases/tag/core-2.16.3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-66372
+    reference_type:
+    reference_id:

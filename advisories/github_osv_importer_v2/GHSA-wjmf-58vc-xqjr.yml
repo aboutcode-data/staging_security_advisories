@@ -1,0 +1,25 @@
+advisory_id: GHSA-wjmf-58vc-xqjr
+datasource_id: github_osv_importer_v2/GHSA-wjmf-58vc-xqjr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-wjmf-58vc-xqjr/GHSA-wjmf-58vc-xqjr.json
+aliases: []
+summary: |
+  Content injection in marked
+  Versions 0.3.7 and earlier of marked When mangling is disabled via option mangle don't escape target href. This allow attacker to inject arbitrary html-event into resulting a tag.
+impacted_packages:
+  - purl: pkg:npm/marked
+    affected_versions: vers:npm/<0.3.9
+    fixed_versions: vers:npm/0.3.9
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/markedjs/marked/commit/cb72584c5d9d32ebfdbb99e35fb9b81af2b79686
+    reference_type:
+    reference_id:
+  - url: https://github.com/markedjs/marked/issues/926
+    reference_type:
+    reference_id:

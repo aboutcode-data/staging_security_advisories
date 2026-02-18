@@ -1,0 +1,73 @@
+advisory_id: GHSA-x77j-w7wf-fjmw
+datasource_id: github_osv_importer_v2/GHSA-x77j-w7wf-fjmw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-x77j-w7wf-fjmw/GHSA-x77j-w7wf-fjmw.json
+aliases:
+  - CVE-2023-2142
+summary: |
+  Nunjucks autoescape bypass leads to cross site scripting
+  ### Impact
+  In Nunjucks versions prior to version 3.2.4, it was possible to bypass the restrictions which are provided by the autoescape functionality. If there are two user-controlled parameters on the same line used in the views, it was possible to inject cross site scripting payloads using the backslash `\` character.
+
+  #### Example
+  If the user-controlled parameters were used in the views similar to the following:
+  ```
+  <script>
+  let testObject = { lang: '{{ lang }}', place: '{{ place }}' };
+  </script>
+  ```
+
+  It is possible to inject XSS payload using the below parameters:
+  ```
+  https://<application-url>/?lang=jp\&place=};alert(document.domain)//
+  ```
+
+  ### Patches
+  The issue was patched in version 3.2.4.
+
+  ### References
+
+  - https://bugzilla.mozilla.org/show_bug.cgi?id=1825980
+impacted_packages:
+  - purl: pkg:npm/nunjucks
+    affected_versions: vers:npm/<3.2.4
+    fixed_versions: vers:npm/3.2.4
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-x77j-w7wf-fjmw/GHSA-x77j-w7wf-fjmw.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-x77j-w7wf-fjmw/GHSA-x77j-w7wf-fjmw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://bugzilla.mozilla.org/show_bug.cgi?id=1825980
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/nunjucks
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/nunjucks/commit/ec16d210e7e13f862eccdb0bc9af9f60ff6749d6
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/nunjucks/pull/1437
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/nunjucks/releases/tag/v3.2.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/nunjucks/security/advisories/GHSA-x77j-w7wf-fjmw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-2142
+    reference_type:
+    reference_id:

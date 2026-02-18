@@ -1,0 +1,41 @@
+advisory_id: GHSA-x2rg-fmcv-crq5
+datasource_id: github_osv_importer_v2/GHSA-x2rg-fmcv-crq5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-x2rg-fmcv-crq5/GHSA-x2rg-fmcv-crq5.json
+aliases:
+  - CVE-2017-9822
+summary: |
+  DNN (aka DotNetNuke) has Remote Code Execution via a cookie
+  DNN (aka DotNetNuke) before 9.1.1 has Remote Code Execution via a cookie, aka "2017-08 (Critical) Possible remote code execution on DNN sites."
+impacted_packages:
+  - purl: pkg:nuget/DotNetNuke.Core
+    affected_versions: vers:nuget/<9.1.1
+    fixed_versions: vers:nuget/9.1.1
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-x2rg-fmcv-crq5/GHSA-x2rg-fmcv-crq5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: http://packetstormsecurity.com/files/157080/DotNetNuke-Cookie-Deserialization-Remote-Code-Execution.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-x2rg-fmcv-crq5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-9822
+    reference_type:
+    reference_id:
+  - url: http://www.dnnsoftware.com/community/security/security-center
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/102213
+    reference_type:
+    reference_id:

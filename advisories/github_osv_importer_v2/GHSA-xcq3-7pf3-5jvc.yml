@@ -1,0 +1,38 @@
+advisory_id: GHSA-xcq3-7pf3-5jvc
+datasource_id: github_osv_importer_v2/GHSA-xcq3-7pf3-5jvc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-xcq3-7pf3-5jvc/GHSA-xcq3-7pf3-5jvc.json
+aliases:
+  - CVE-2023-4195
+summary: |
+  Cockpit PHP Remote File Inclusion vulnerability
+  PHP Remote File Inclusion in GitHub repository cockpit-hq/cockpit prior to 2.6.3. Users may upload php files through the system file upload utility to obtain remote code execution.
+impacted_packages:
+  - purl: pkg:composer/cockpit-hq/cockpit
+    affected_versions: vers:composer/<2.6.3
+    fixed_versions: vers:composer/2.6.3
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-xcq3-7pf3-5jvc/GHSA-xcq3-7pf3-5jvc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-98
+references:
+  - url: https://github.com/cockpit-hq/cockpit
+    reference_type:
+    reference_id:
+  - url: https://github.com/cockpit-hq/cockpit/commit/800c05f1984db291769ffa5fdfb1d3e50968e95b
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/0bd5da2f-0e29-47ce-90f3-06518656bfd6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-4195
+    reference_type:
+    reference_id:

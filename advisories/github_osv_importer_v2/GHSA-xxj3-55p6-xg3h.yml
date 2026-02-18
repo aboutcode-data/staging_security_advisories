@@ -1,0 +1,41 @@
+advisory_id: GHSA-xxj3-55p6-xg3h
+datasource_id: github_osv_importer_v2/GHSA-xxj3-55p6-xg3h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-xxj3-55p6-xg3h/GHSA-xxj3-55p6-xg3h.json
+aliases:
+  - CVE-2022-24294
+summary: |
+  Apache MXNet vulnerable to potential denial-of-service by excessive resource consumption
+  A regular expression used in Apache MXNet (incubating) is vulnerable to a potential denial-of-service by excessive resource consumption. The bug could be exploited when loading a model in Apache MXNet that has a specially crafted operator name that would cause the regular expression evaluation to use excessive resources to attempt a match. This issue affects Apache MXNet versions prior to 1.9.1.
+impacted_packages:
+  - purl: pkg:pypi/mxnet
+    affected_versions: vers:pypi/<1.9.1
+    fixed_versions: vers:pypi/1.9.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-xxj3-55p6-xg3h/GHSA-xxj3-55p6-xg3h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/apache/mxnet
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/mxnet/releases/tag/1.9.1
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/b1fbfmvzlr2bbp95lqoh3mtovclfcl3o
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24294
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/07/24/2
+    reference_type:
+    reference_id:

@@ -1,0 +1,53 @@
+advisory_id: GHSA-xhq3-455r-xv44
+datasource_id: github_osv_importer_v2/GHSA-xhq3-455r-xv44
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xhq3-455r-xv44/GHSA-xhq3-455r-xv44.json
+aliases:
+  - CVE-2017-2641
+summary: |
+  Moodle SQL injection via user preferences
+  In Moodle 2.x and 3.x, SQL injection can occur via user preferences.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=2.7.0|<2.7.19
+    fixed_versions: vers:composer/2.7.19
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.0.0|<3.0.9
+    fixed_versions: vers:composer/3.0.9
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.1.0|<3.1.5
+    fixed_versions: vers:composer/3.1.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.2.0|<3.2.2
+    fixed_versions: vers:composer/3.2.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-xhq3-455r-xv44/GHSA-xhq3-455r-xv44.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=349419
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-2641
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/41828
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/96977
+    reference_type:
+    reference_id:
+  - url: http://www.securitytracker.com/id/1038174
+    reference_type:
+    reference_id:

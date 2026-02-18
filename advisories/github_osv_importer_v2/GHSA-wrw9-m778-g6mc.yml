@@ -1,0 +1,36 @@
+advisory_id: GHSA-wrw9-m778-g6mc
+datasource_id: github_osv_importer_v2/GHSA-wrw9-m778-g6mc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-wrw9-m778-g6mc/GHSA-wrw9-m778-g6mc.json
+aliases: []
+summary: |
+  Memory Exposure in bl
+  Versions of `bl` before 0.9.5 and 1.0.1 are vulnerable to memory exposure.
+
+  `bl.append(number)` in the affected `bl` versions passes a number to Buffer constructor, appending a chunk of uninitialized memory
+
+
+  ## Recommendation
+
+  Update to version 0.9.5, 1.0.1 or later.
+impacted_packages:
+  - purl: pkg:npm/bl
+    affected_versions: vers:npm/<0.9.5
+    fixed_versions: vers:npm/0.9.5
+  - purl: pkg:npm/bl
+    affected_versions: vers:npm/1.0.0
+    fixed_versions: vers:npm/1.0.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/rvagg/bl/pull/22
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/596
+    reference_type:
+    reference_id:

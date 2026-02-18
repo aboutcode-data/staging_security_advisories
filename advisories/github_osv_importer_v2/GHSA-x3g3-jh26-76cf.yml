@@ -1,0 +1,38 @@
+advisory_id: GHSA-x3g3-jh26-76cf
+datasource_id: github_osv_importer_v2/GHSA-x3g3-jh26-76cf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-x3g3-jh26-76cf/GHSA-x3g3-jh26-76cf.json
+aliases:
+  - CVE-2022-0375
+summary: |
+  Cross-site Scripting in livehelperchat
+  LiveHelperChat is vulnerable to Stored XSS at the Name field in the Admin themes of System configuration.
+impacted_packages:
+  - purl: pkg:composer/remdex/livehelperchat
+    affected_versions: vers:composer/<3.93.0
+    fixed_versions: vers:composer/3.93.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-x3g3-jh26-76cf/GHSA-x3g3-jh26-76cf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/livehelperchat/livehelperchat
+    reference_type:
+    reference_id:
+  - url: https://github.com/livehelperchat/livehelperchat/commit/bbfaa26ce54a2a86ce1a42a16496038f5bdfc102
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/28e1c356-6eaa-4d93-af56-938e3b4d40a7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0375
+    reference_type:
+    reference_id:

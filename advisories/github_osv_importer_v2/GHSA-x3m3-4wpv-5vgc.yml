@@ -1,0 +1,52 @@
+advisory_id: GHSA-x3m3-4wpv-5vgc
+datasource_id: github_osv_importer_v2/GHSA-x3m3-4wpv-5vgc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-x3m3-4wpv-5vgc/GHSA-x3m3-4wpv-5vgc.json
+aliases:
+  - CVE-2024-38999
+summary: |
+  jrburke requirejs vulnerable to prototype pollution
+  jrburke requirejs v2.3.6 was discovered to contain a prototype pollution via the function `s.contexts._.configure`. This vulnerability allows attackers to execute arbitrary code or cause a Denial of Service (DoS) via injecting arbitrary properties.
+impacted_packages:
+  - purl: pkg:npm/requirejs
+    affected_versions: vers:npm/<=2.3.6
+    fixed_versions: vers:npm/2.3.7
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-x3m3-4wpv-5vgc/GHSA-x3m3-4wpv-5vgc.json
+  - score: '8.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-x3m3-4wpv-5vgc/GHSA-x3m3-4wpv-5vgc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://gist.github.com/mestrtee/9acae342285bd2998fa09ebcb1e6d30a
+    reference_type:
+    reference_id:
+  - url: https://github.com/requirejs/requirejs/issues/1854
+    reference_type:
+    reference_id:
+  - url: https://github.com/requirejs/requirejs/pull/1856/commits/ebd7a2ff71473542fa132d0d15c10fb4ed1539e1
+    reference_type:
+    reference_id:
+  - url: https://github.com/requirejs/r.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/requirejs/r.js/issues/1015
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-38999
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-REQUIREJS-5416713
+    reference_type:
+    reference_id:

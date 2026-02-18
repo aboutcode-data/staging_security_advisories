@@ -1,0 +1,67 @@
+advisory_id: GHSA-x29x-qwvx-fxr2
+datasource_id: github_osv_importer_v2/GHSA-x29x-qwvx-fxr2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-x29x-qwvx-fxr2/GHSA-x29x-qwvx-fxr2.json
+aliases:
+  - CVE-2024-38273
+summary: |
+  Moodle BigBlueButton web service leaks meeting joining information
+  Insufficient capability checks meant it was possible for users to gain access to BigBlueButton join URLs they did not have permission to access.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.1
+    fixed_versions: vers:composer/4.4.1
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0-beta|<4.3.5
+    fixed_versions: vers:composer/4.3.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0-beta|<4.2.8
+    fixed_versions: vers:composer/4.2.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.11
+    fixed_versions: vers:composer/4.1.11
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-x29x-qwvx-fxr2/GHSA-x29x-qwvx-fxr2.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-x29x-qwvx-fxr2/GHSA-x29x-qwvx-fxr2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/500cec575731fd8575569dcb5811535751dddae1
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/647b9dc06409211018c9f28581504d096ce9e3a8
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/6c0645ca29b195b5caaffc27d80f2ff715c33a48
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/a10506b8d70609478fef156d489e0c7d727b6098
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F7AZYR7EXV6E5SQE2GYTNQE3NOENJCQ6
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GHTIX55J4Q4LEOMLNEA4OZSWVEENQX7E
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=459498
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-38273
+    reference_type:
+    reference_id:

@@ -1,0 +1,77 @@
+advisory_id: GHSA-xjhf-7833-3pm5
+datasource_id: github_osv_importer_v2/GHSA-xjhf-7833-3pm5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-xjhf-7833-3pm5/GHSA-xjhf-7833-3pm5.json
+aliases:
+  - CVE-2025-58047
+summary: |
+  Volto affected by possible DoS by invoking specific URL by anonymous user
+  ### Impact
+  When visiting a specific URL, an anonymous user could cause the NodeJS server part of Volto to quit with an error.
+
+  ### Patches
+  The problem has been patched and the patch has been backported to Volto major versions down until 16. It is advised to upgrade to the latest patch release of your respective current major version:
+
+  - Volto 16: [16.34.0](https://github.com/plone/volto/releases/tag/16.34.0)
+  - Volto 17: [17.22.1](https://github.com/plone/volto/releases/tag/17.22.1)
+  - Volto 18: [18.24.0](https://github.com/plone/volto/releases/tag/18.24.0)
+  - Volto 19: [19.0.0-alpha4](https://github.com/plone/volto/releases/tag/19.0.0-alpha.4)
+
+  ### Workarounds
+  Make sure your setup automatically restarts processes that quit with an error. This won't prevent a crash, but it minimises downtime.
+
+  ### Report
+  The problem was discovered by FHNW, a client of Plone provider kitconcept, who shared it with the Plone Zope Security Team (security@plone.org).
+impacted_packages:
+  - purl: pkg:npm/%40plone/volto
+    affected_versions: vers:npm/<16.34.0
+    fixed_versions: vers:npm/16.34.0
+  - purl: pkg:npm/%40plone/volto
+    affected_versions: vers:npm/>=17.0.0|<17.22.1
+    fixed_versions: vers:npm/17.22.1
+  - purl: pkg:npm/%40plone/volto
+    affected_versions: vers:npm/>=18.0.0|<18.24.0
+    fixed_versions: vers:npm/18.24.0
+  - purl: pkg:npm/%40plone/volto
+    affected_versions: vers:npm/>=19.0.0-alpha.1|<19.0.0-alpha.4
+    fixed_versions: vers:npm/19.0.0-alpha.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-xjhf-7833-3pm5/GHSA-xjhf-7833-3pm5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-755
+references:
+  - url: https://github.com/plone/volto
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/volto/commit/2789a287ac45ad9039fb9161d465ba13241fff0a
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/volto/releases/tag/16.34.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/volto/releases/tag/17.22.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/volto/releases/tag/18.24.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/volto/releases/tag/19.0.0-alpha.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/volto/security/advisories/GHSA-xjhf-7833-3pm5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-58047
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2025/08/28/3
+    reference_type:
+    reference_id:

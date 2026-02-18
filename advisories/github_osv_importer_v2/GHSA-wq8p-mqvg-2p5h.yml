@@ -1,0 +1,42 @@
+advisory_id: GHSA-wq8p-mqvg-2p5h
+datasource_id: github_osv_importer_v2/GHSA-wq8p-mqvg-2p5h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-wq8p-mqvg-2p5h/GHSA-wq8p-mqvg-2p5h.json
+aliases: []
+summary: |
+  laravel framework SQL Injection via limit and offset functions
+  ### Impact
+  Those using SQL Server with Laravel and allowing user input to be passed directly to the limit and offset functions are vulnerable to SQL injection. Other database drivers such as MySQL and Postgres are not affected by this vulnerability.
+
+  ### Patches
+  This problem has been patched on Laravel versions 6.20.26, 7.30.5, and 8.40.0.
+
+  ### Workarounds
+  You may workaround this vulnerability by ensuring that only integers are passed to the limit and offset functions, as well as the skip and take functions.
+impacted_packages:
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=6.0.0|<6.20.26
+    fixed_versions: vers:composer/6.20.26
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=7.0.0|<7.30.5
+    fixed_versions: vers:composer/7.30.5
+  - purl: pkg:composer/laravel/framework
+    affected_versions: vers:composer/>=8.0.0|<8.40.0
+    fixed_versions: vers:composer/8.40.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/2021-04-28.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/laravel/framework/security/advisories/GHSA-4mg9-vhxq-vm7j
+    reference_type:
+    reference_id:
