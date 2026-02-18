@@ -1,0 +1,67 @@
+advisory_id: GHSA-q3v6-hm2v-pw99
+datasource_id: github_osv_importer_v2/GHSA-q3v6-hm2v-pw99
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-q3v6-hm2v-pw99/GHSA-q3v6-hm2v-pw99.json
+aliases:
+  - CVE-2024-38827
+summary: |
+  Spring Framework has Authorization Bypass for Case Sensitive Comparisons
+  The usage of String.toLowerCase() and String.toUpperCase() has some Locale dependent exceptions that could potentially result in authorization rules not working properly.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/<5.7.14
+    fixed_versions: vers:maven/5.7.14
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=5.8.0|<5.8.16
+    fixed_versions: vers:maven/5.8.16
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=6.0.0|<6.0.14
+    fixed_versions: vers:maven/6.0.14
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=6.1.0|<6.1.12
+    fixed_versions: vers:maven/6.1.12
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=6.2.0|<6.2.8
+    fixed_versions: vers:maven/6.2.8
+  - purl: pkg:maven/org.springframework.security/spring-security-core
+    affected_versions: vers:maven/>=6.3.0|<6.3.5
+    fixed_versions: vers:maven/6.3.5
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-q3v6-hm2v-pw99/GHSA-q3v6-hm2v-pw99.json
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-q3v6-hm2v-pw99/GHSA-q3v6-hm2v-pw99.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: https://github.com/spring-projects/spring-framework/commit/11d4272ff48b4a4dabc4b28dfbff0364a4204bc9
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/issues/33708
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/issues/34232
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-security
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-38827
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20250124-0007
+    reference_type:
+    reference_id:
+  - url: https://spring.io/security/cve-2024-38827
+    reference_type:
+    reference_id:

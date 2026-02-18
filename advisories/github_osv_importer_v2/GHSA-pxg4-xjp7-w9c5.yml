@@ -1,0 +1,47 @@
+advisory_id: GHSA-pxg4-xjp7-w9c5
+datasource_id: github_osv_importer_v2/GHSA-pxg4-xjp7-w9c5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-pxg4-xjp7-w9c5/GHSA-pxg4-xjp7-w9c5.json
+aliases:
+  - CVE-2025-26526
+summary: "Moodle's feedback response viewing and deletions did not respect Separate Groups mode\n\
+  Separate Groups mode restrictions were not factored into permission checks before allowing\
+  \ viewing or deletion of responses in Feedback \nactivities."
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.2
+    fixed_versions: vers:composer/4.5.2
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.6
+    fixed_versions: vers:composer/4.4.6
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0-beta|<4.3.10
+    fixed_versions: vers:composer/4.3.10
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.16
+    fixed_versions: vers:composer/4.1.16
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-pxg4-xjp7-w9c5/GHSA-pxg4-xjp7-w9c5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-79976
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=466142
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-26526
+    reference_type:
+    reference_id:

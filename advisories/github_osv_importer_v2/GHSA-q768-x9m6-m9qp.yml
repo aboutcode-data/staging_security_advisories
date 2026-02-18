@@ -1,0 +1,70 @@
+advisory_id: GHSA-q768-x9m6-m9qp
+datasource_id: github_osv_importer_v2/GHSA-q768-x9m6-m9qp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-q768-x9m6-m9qp/GHSA-q768-x9m6-m9qp.json
+aliases:
+  - CVE-2022-31151
+summary: "undici before v5.8.0 vulnerable to uncleared cookies on cross-host / cross-origin\
+  \ redirect\n### Impact\n\nAuthorization headers are already cleared on cross-origin redirect\
+  \ in\nhttps://github.com/nodejs/undici/blob/main/lib/handler/redirect.js#L189, based on https://github.com/nodejs/undici/issues/872.\n\
+  \nHowever, cookie headers which are sensitive headers and are official headers found in the\
+  \ spec, remain uncleared. There also has been active discussion of implementing a cookie store\
+  \ https://github.com/nodejs/undici/pull/1441, which suggests that there are active users using\
+  \ cookie headers in undici.\nAs such this may lead to accidental leakage of cookie to a 3rd-party\
+  \ site or a malicious attacker who can control the redirection target (ie. an open redirector)\
+  \ to leak the cookie to the 3rd party site.\n\n### Patches\n\nThis was patched in v5.8.0.\n\
+  \n### Workarounds\n\nBy default, this vulnerability is not exploitable.\nDo not enable redirections,\
+  \ i.e. `maxRedirections: 0` (the default). \n\n### References\n\nhttps://hackerone.com/reports/1635514\n\
+  https://curl.se/docs/CVE-2018-1000007.html\nhttps://curl.se/docs/CVE-2022-27776.html\n\n###\
+  \ For more information\nIf you have any questions or comments about this advisory:\n* Open\
+  \ an issue in [undici repository](https://github.com/nodejs/undici/issues)\n* To make a report,\
+  \ follow the [SECURITY](https://github.com/nodejs/node/blob/HEAD/SECURITY.md) document"
+impacted_packages:
+  - purl: pkg:npm/undici
+    affected_versions: vers:npm/<5.8.0
+    fixed_versions: vers:npm/5.8.0
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-q768-x9m6-m9qp/GHSA-q768-x9m6-m9qp.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-346
+  - CWE-601
+  - CWE-93
+references:
+  - url: https://github.com/nodejs/undici
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/blob/main/lib/handler/redirect.js#L189
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/commit/0a5bee9465e627be36bac88edf7d9bbc9626126d
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/issues/872
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/pull/1441
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/releases/tag/v5.8.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/security/advisories/GHSA-q768-x9m6-m9qp
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/1635514
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-31151
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220909-0006
+    reference_type:
+    reference_id:

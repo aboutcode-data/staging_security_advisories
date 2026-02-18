@@ -1,0 +1,41 @@
+advisory_id: GHSA-pm57-926c-28mr
+datasource_id: github_osv_importer_v2/GHSA-pm57-926c-28mr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pm57-926c-28mr/GHSA-pm57-926c-28mr.json
+aliases:
+  - CVE-2019-19212
+summary: |
+  Dolibarr Cross-site Scripting via the qty parameter in product/fournisseurs.php
+  Dolibarr ERP/CRM 3.0 through 10.0.3 allows XSS via the qty parameter to product/fournisseurs.php (product price screen).
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/>=3.0.0|<=10.0.3
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pm57-926c-28mr/GHSA-pm57-926c-28mr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://herolab.usd.de/en/security-advisories
+    reference_type:
+    reference_id:
+  - url: https://herolab.usd.de/security-advisories/usd-2019-0054
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19212
+    reference_type:
+    reference_id:
+  - url: https://www.dolibarr.org/forum/dolibarr-changelogs
+    reference_type:
+    reference_id:

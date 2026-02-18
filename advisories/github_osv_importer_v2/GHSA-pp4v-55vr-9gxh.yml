@@ -1,0 +1,43 @@
+advisory_id: GHSA-pp4v-55vr-9gxh
+datasource_id: github_osv_importer_v2/GHSA-pp4v-55vr-9gxh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-pp4v-55vr-9gxh/GHSA-pp4v-55vr-9gxh.json
+aliases:
+  - CVE-2016-10527
+summary: |
+  Regular Expression Denial of Service in riot-compiler
+  Affected versions of `riot-compiler` are susceptible to a regular expression denial of service vulnerability.
+
+
+  ## Recommendation
+
+  Update to version 2.3.22 or later.
+impacted_packages:
+  - purl: pkg:npm/riot-compiler
+    affected_versions: vers:npm/<2.3.22
+    fixed_versions: vers:npm/2.3.22
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-pp4v-55vr-9gxh/GHSA-pp4v-55vr-9gxh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/advisories/GHSA-pp4v-55vr-9gxh
+    reference_type:
+    reference_id:
+  - url: https://github.com/riot/compiler/issues/46
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10527
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/86
+    reference_type:
+    reference_id:

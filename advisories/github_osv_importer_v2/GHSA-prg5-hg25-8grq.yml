@@ -1,0 +1,54 @@
+advisory_id: GHSA-prg5-hg25-8grq
+datasource_id: github_osv_importer_v2/GHSA-prg5-hg25-8grq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-prg5-hg25-8grq/GHSA-prg5-hg25-8grq.json
+aliases:
+  - CVE-2020-5218
+summary: "Ability to switch channels via GET parameter enabled in production environments\n\
+  ### Impact\n\nThis vulnerability gives the ability to switch channels via the `_channel_code`\
+  \ GET parameter in production environments. This was meant to be enabled only when `%kernel.debug%`\
+  \ is set to true. \n\nHowever, if no `sylius_channel.debug` is set explicitly in the configuration,\
+  \ the default value which is `%kernel.debug%` will be not resolved and cast to boolean, enabling\
+  \ this debug feature even if that parameter is set to false.\n\n### Patches\n\nPatch has been\
+  \ provided for Sylius 1.3.x and newer - **1.3.16, 1.4.12, 1.5.9, 1.6.5**. Versions older than\
+  \ 1.3 are not covered by our security support anymore.\n\n### Workarounds\n\nUnsupported versions\
+  \ could be patched by adding the following configuration to run in production:\n\n```yaml\n\
+  sylius_channel:\n    debug: false\n```"
+impacted_packages:
+  - purl: pkg:composer/sylius/sylius
+    affected_versions: vers:composer/<1.3.16
+    fixed_versions: vers:composer/1.3.16
+  - purl: pkg:composer/sylius/sylius
+    affected_versions: vers:composer/>=1.4.0|<1.4.12
+    fixed_versions: vers:composer/1.4.12
+  - purl: pkg:composer/sylius/sylius
+    affected_versions: vers:composer/>=1.5.0|<1.5.9
+    fixed_versions: vers:composer/1.5.9
+  - purl: pkg:composer/sylius/sylius
+    affected_versions: vers:composer/>=1.6.0|<1.6.5
+    fixed_versions: vers:composer/1.6.5
+severities:
+  - score: '4.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/01/GHSA-prg5-hg25-8grq/GHSA-prg5-hg25-8grq.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/sylius/resource-bundle/CVE-2020-5220.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/Sylius/SyliusResourceBundle/security/advisories/GHSA-8vp7-j5cj-vvm2
+    reference_type:
+    reference_id:
+  - url: https://github.com/Sylius/Sylius/security/advisories/GHSA-prg5-hg25-8grq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-5218
+    reference_type:
+    reference_id:

@@ -1,0 +1,39 @@
+advisory_id: GHSA-q6cw-2553-7837
+datasource_id: github_osv_importer_v2/GHSA-q6cw-2553-7837
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-q6cw-2553-7837/GHSA-q6cw-2553-7837.json
+aliases:
+  - CVE-2013-0284
+summary: |
+  newrelic_rpm Gem Discloses Sensitive Information
+  Ruby agent 3.2.0 through 3.5.3.23 serializes sensitive data when communicating with servers operated by New Relic, which allows remote attackers to obtain sensitive information (database credentials and SQL statements) by sniffing the network and deserializing the data.
+impacted_packages:
+  - purl: pkg:gem/newrelic_rpm
+    affected_versions: vers:gem/<=3.5.3.23
+    fixed_versions: vers:gem/3.5.3.24
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: http://seclists.org/oss-sec/2013/q1/304
+    reference_type:
+    reference_id:
+  - url: https://github.com/newrelic/newrelic-ruby-agent
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/newrelic_rpm/CVE-2013-0284.yml
+    reference_type:
+    reference_id:
+  - url: https://newrelic.com/docs/ruby/ruby-agent-security-notification
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-0284
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20130117025417/https://newrelic.com/docs/ruby/ruby-agent-security-notification
+    reference_type:
+    reference_id:

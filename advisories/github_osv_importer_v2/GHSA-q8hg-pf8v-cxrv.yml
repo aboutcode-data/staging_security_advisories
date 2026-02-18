@@ -1,0 +1,86 @@
+advisory_id: GHSA-q8hg-pf8v-cxrv
+datasource_id: github_osv_importer_v2/GHSA-q8hg-pf8v-cxrv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-q8hg-pf8v-cxrv/GHSA-q8hg-pf8v-cxrv.json
+aliases:
+  - CVE-2019-18887
+summary: |
+  Symfony Http-Kernel has non-constant time comparison in UriSigner
+  When checking the signature of an URI (an ESI fragment URL for instance), the URISigner did not used a constant time string comparison function, resulting in a potential remote timing attack vulnerability.
+impacted_packages:
+  - purl: pkg:composer/symfony/http-kernel
+    affected_versions: vers:composer/>=2.2.0|<2.8.52
+    fixed_versions: vers:composer/2.8.52
+  - purl: pkg:composer/symfony/http-kernel
+    affected_versions: vers:composer/>=3.0.0|<3.4.35
+    fixed_versions: vers:composer/3.4.35
+  - purl: pkg:composer/symfony/http-kernel
+    affected_versions: vers:composer/>=4.0.0|<4.2.12
+    fixed_versions: vers:composer/4.2.12
+  - purl: pkg:composer/symfony/http-kernel
+    affected_versions: vers:composer/>=4.3.0|<4.3.8
+    fixed_versions: vers:composer/4.3.8
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.2.0|<2.8.52
+    fixed_versions: vers:composer/2.8.52
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.0.0|<3.4.35
+    fixed_versions: vers:composer/3.4.35
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.0.0|<4.2.12
+    fixed_versions: vers:composer/4.2.12
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=4.3.0|<4.3.8
+    fixed_versions: vers:composer/4.3.8
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-q8hg-pf8v-cxrv/GHSA-q8hg-pf8v-cxrv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/http-kernel/CVE-2019-18887.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2019-18887.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/releases/tag/v4.3.8
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/DZNXRVHDQBNZQUCNRVZICPPBFRAUWUJX
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/UED22BOXTL2SSFMGYKA64ZFHGLLJG3EA
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VXEAOEANNIVYANTMOJ42NKSU6BGNBULZ
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DZNXRVHDQBNZQUCNRVZICPPBFRAUWUJX
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UED22BOXTL2SSFMGYKA64ZFHGLLJG3EA
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VXEAOEANNIVYANTMOJ42NKSU6BGNBULZ
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-18887
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/cve-2019-18887-use-constant-time-comparison-in-urisigner
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/symfony-4-3-8-released
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2019-18887
+    reference_type:
+    reference_id:

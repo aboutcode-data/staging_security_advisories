@@ -1,0 +1,36 @@
+advisory_id: GHSA-pqcv-qw2r-r859
+datasource_id: github_osv_importer_v2/GHSA-pqcv-qw2r-r859
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-pqcv-qw2r-r859/GHSA-pqcv-qw2r-r859.json
+aliases:
+  - CVE-2024-37061
+summary: |
+  MLFlow improper input validation
+  Remote Code Execution can occur in versions of the MLflow platform running version 1.11.0 or newer, enabling a maliciously crafted MLproject to execute arbitrary code on an end user’s system when run due to unfiltered input.
+impacted_packages:
+  - purl: pkg:pypi/mlflow
+    affected_versions: vers:pypi/>=1.11.0|<=2.13.1
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-pqcv-qw2r-r859/GHSA-pqcv-qw2r-r859.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-20
+references:
+  - url: https://github.com/mlflow/mlflow
+    reference_type:
+    reference_id:
+  - url: https://hiddenlayer.com/sai-security-advisory/mlflow-june2024
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-37061
+    reference_type:
+    reference_id:

@@ -1,0 +1,35 @@
+advisory_id: GHSA-p5c5-gmj4-g48f
+datasource_id: github_osv_importer_v2/GHSA-p5c5-gmj4-g48f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p5c5-gmj4-g48f/GHSA-p5c5-gmj4-g48f.json
+aliases: []
+summary: |
+  Cross-Site Scripting (XSS) vulnerability in typolinks
+  All link fields within the TYPO3 installation are vulnerable to Cross-Site Scripting as authorized editors can insert data commands by using the url scheme "data:".
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.26
+    fixed_versions: vers:composer/6.2.26
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.6.0|<7.6.10
+    fixed_versions: vers:composer/7.6.10
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.2.1
+    fixed_versions: vers:composer/8.2.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2016-07-19-5.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2016-018
+    reference_type:
+    reference_id:

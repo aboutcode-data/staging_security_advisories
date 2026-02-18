@@ -1,0 +1,41 @@
+advisory_id: GHSA-mv4h-qm24-x4gh
+datasource_id: github_osv_importer_v2/GHSA-mv4h-qm24-x4gh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mv4h-qm24-x4gh/GHSA-mv4h-qm24-x4gh.json
+aliases:
+  - CVE-2018-6591
+summary: |
+  Converse.js Exposure of Sensitive Information
+  Converse.js and Inverse.js through 3.3 allow remote attackers to obtain sensitive information because it is too difficult to determine whether safe publication of private data was configured or even intended. For example, users might have an expectation that chatroom bookmarks are private, but the various interacting software components do not necessarily make that happen.
+impacted_packages:
+  - purl: pkg:composer/jcbrand/converse.js
+    affected_versions: vers:composer/<3.3.3
+    fixed_versions: vers:composer/3.3.3
+  - purl: pkg:npm/converse.js
+    affected_versions: vers:npm/<3.3.3
+    fixed_versions: vers:npm/3.3.3
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mv4h-qm24-x4gh/GHSA-mv4h-qm24-x4gh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/conversejs/converse.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/conversejs/converse.js/commit/ba09996998df38a5eb76903457fbb1077caabe25
+    reference_type:
+    reference_id:
+  - url: https://gultsch.de/converse_bookmarks.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-6591
+    reference_type:
+    reference_id:

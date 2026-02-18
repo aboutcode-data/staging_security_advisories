@@ -1,0 +1,41 @@
+advisory_id: GHSA-pmw4-pwvc-3hx2
+datasource_id: github_osv_importer_v2/GHSA-pmw4-pwvc-3hx2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-pmw4-pwvc-3hx2/GHSA-pmw4-pwvc-3hx2.json
+aliases:
+  - CVE-2025-54794
+summary: "Claude Code Research Preview has a Path Restriction Bypass which could allow unauthorized\
+  \ file access\nDue to a path validation flaw using prefix matching instead of canonical path\
+  \ comparison, it was possible to bypass directory restrictions and access files outside the\
+  \ CWD. Successful exploitation depends on the presence of (or ability to create) a directory\
+  \ with the same prefix as the CWD and the ability to add untrusted content into a Claude Code\
+  \ context window. \n\nUsers on standard Claude Code auto-update received this fix automatically\
+  \ after release. Current users of Claude Code are unaffected, as versions prior to 1.0.24\
+  \ are deprecated and have been forced to update.\n\nThank you to Elad Beber (Cymulate) for\
+  \ reporting this issue!"
+impacted_packages:
+  - purl: pkg:npm/%40anthropic-ai/claude-code
+    affected_versions: vers:npm/<0.2.111
+    fixed_versions: vers:npm/0.2.111
+severities:
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-pmw4-pwvc-3hx2/GHSA-pmw4-pwvc-3hx2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/anthropics/claude-code
+    reference_type:
+    reference_id:
+  - url: https://github.com/anthropics/claude-code/security/advisories/GHSA-pmw4-pwvc-3hx2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-54794
+    reference_type:
+    reference_id:

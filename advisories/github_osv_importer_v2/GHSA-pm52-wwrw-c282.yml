@@ -1,0 +1,39 @@
+advisory_id: GHSA-pm52-wwrw-c282
+datasource_id: github_osv_importer_v2/GHSA-pm52-wwrw-c282
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-pm52-wwrw-c282/GHSA-pm52-wwrw-c282.json
+aliases: []
+summary: |
+  Command Injection in wiki-plugin-datalog
+  Versions of `wiki-plugin-datalog` prior to 0.1.6 are vulnerable to Command Injection. The package failed to sanitize URLs on the curl endpoint, allowing attackers to inject commands and possibly achieving Remote Code Execution on the system.
+
+
+  ## Recommendation
+
+  Upgrade to version 0.1.6 or later.
+impacted_packages:
+  - purl: pkg:npm/wiki-plugin-datalog
+    affected_versions: vers:npm/<0.1.6
+    fixed_versions: vers:npm/0.1.6
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-pm52-wwrw-c282/GHSA-pm52-wwrw-c282.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/WardCunningham/wiki-plugin-datalog/commit/020aa6201319e5b76301a61b65268c94dc242fa7
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-WIKIPLUGINDATALOG-449540
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/926
+    reference_type:
+    reference_id:

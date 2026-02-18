@@ -1,0 +1,47 @@
+advisory_id: GHSA-p3j6-f45h-hw5f
+datasource_id: github_osv_importer_v2/GHSA-p3j6-f45h-hw5f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-p3j6-f45h-hw5f/GHSA-p3j6-f45h-hw5f.json
+aliases:
+  - CVE-2024-30850
+summary: |
+  tiagorlampert CHAOS vulnerable to command injections
+  An issue in tiagorlampert CHAOS v5.0.1 allows a remote attacker to execute arbitrary code via the BuildClient function within client_service.go
+impacted_packages: []
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-p3j6-f45h-hw5f/GHSA-p3j6-f45h-hw5f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://blog.chebuya.com/posts/remote-code-execution-on-chaos-rat-via-spoofed-agents
+    reference_type:
+    reference_id:
+  - url: https://gist.github.com/slimwang/d1ec6645ba9012a551ea436679244496
+    reference_type:
+    reference_id:
+  - url: https://github.com/tiagorlampert/CHAOS
+    reference_type:
+    reference_id:
+  - url: https://github.com/tiagorlampert/CHAOS/commit/1b451cf62582295b7225caf5a7b506f0bad56f6b
+    reference_type:
+    reference_id:
+  - url: https://github.com/tiagorlampert/CHAOS/commit/24c9e109b5be34df7b2bce8368eae669c481ed5e
+    reference_type:
+    reference_id:
+  - url: https://github.com/tiagorlampert/CHAOS/pull/95
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-30850
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-33434
+    reference_type:
+    reference_id:

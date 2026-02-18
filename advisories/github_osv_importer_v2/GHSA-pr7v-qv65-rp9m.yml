@@ -1,0 +1,41 @@
+advisory_id: GHSA-pr7v-qv65-rp9m
+datasource_id: github_osv_importer_v2/GHSA-pr7v-qv65-rp9m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pr7v-qv65-rp9m/GHSA-pr7v-qv65-rp9m.json
+aliases:
+  - CVE-2021-29052
+summary: |
+  Liferay Portal and Liferay DXP Fails to Check Permissions
+  The Data Engine module in Liferay Portal 7.3.0 through 7.3.5, and Liferay DXP 7.3 before fix pack 1 does not check permissions in DataDefinitionResourceImpl.getSiteDataDefinitionByContentTypeByDataDefinitionKey, which allows remote authenticated users to view DDMStructures via GET API calls.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.3.0|<=7.3.5
+    fixed_versions:
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<7.3.10.fp1
+    fixed_versions: vers:maven/7.3.10.fp1
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pr7v-qv65-rp9m/GHSA-pr7v-qv65-rp9m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-276
+references:
+  - url: http://liferay.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29052
+    reference_type:
+    reference_id:
+  - url: https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743159
+    reference_type:
+    reference_id:

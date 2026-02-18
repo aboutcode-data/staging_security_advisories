@@ -1,0 +1,76 @@
+advisory_id: GHSA-p6w9-r443-r752
+datasource_id: github_osv_importer_v2/GHSA-p6w9-r443-r752
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-p6w9-r443-r752/GHSA-p6w9-r443-r752.json
+aliases:
+  - CVE-2024-42357
+summary: |
+  Shopware vulnerable to blind SQL-injection in DAL aggregations
+  ### Impact
+
+  The Shopware application API contains a search functionality which enables users to search through information stored within their Shopware instance. The searches performed by this function can be aggregated using the parameters in the “aggregations”
+  object. The ‘name’ field in this “aggregations” object is vulnerable SQL-injection and can be exploited using SQL parameters.
+
+  ### Patches
+
+  Update to Shopware 6.6.5.1 or 6.5.8.13
+
+  ### Workarounds
+
+  For older versions of 6.1, 6.2, 6.3 and 6.4 corresponding security measures are also available via a plugin. For the full range of functions, we recommend updating to the latest Shopware version.
+
+  ### Credit
+
+  [LogicalTrust](https://logicaltrust.net)
+impacted_packages:
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.5.8+12
+    fixed_versions: vers:composer/6.5.8+13
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.5.8+12
+    fixed_versions: vers:composer/6.5.8+13
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.6.5+0
+    fixed_versions: vers:composer/6.6.5+1
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.6.5+0
+    fixed_versions: vers:composer/6.6.5+1
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-p6w9-r443-r752/GHSA-p6w9-r443-r752.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-p6w9-r443-r752/GHSA-p6w9-r443-r752.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/shopware/core/commit/63c05615694790f5790a04ef889f42b764fa53c9
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/core/commit/a784aa1cec0624e36e0ee4d41aeebaed40e0442f
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/57ea2f3c59483cf7c0f853e7a0d68c23ded1fe5b
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/8504ba7e56e53add6a1d5b9d45015e3d899cd0ac
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-p6w9-r443-r752
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-42357
+    reference_type:
+    reference_id:

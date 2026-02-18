@@ -1,0 +1,35 @@
+advisory_id: GHSA-p6m5-x83r-hqmr
+datasource_id: github_osv_importer_v2/GHSA-p6m5-x83r-hqmr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-p6m5-x83r-hqmr/GHSA-p6m5-x83r-hqmr.json
+aliases:
+  - CVE-2018-19133
+summary: |
+  Flarum Core Leaks PII
+  In Flarum Core 0.1.0-beta.7.1, a serious leak can get everyone's email address.
+impacted_packages:
+  - purl: pkg:composer/flarum/framework
+    affected_versions: vers:composer/<=0.1.0-beta.7.1
+    fixed_versions:
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-p6m5-x83r-hqmr/GHSA-p6m5-x83r-hqmr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/flarum/core/issues/1628
+    reference_type:
+    reference_id:
+  - url: https://github.com/flarum/framework/commit/e99f7fcdace74211bec5627e6adf20ddf7dad2a7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-19133
+    reference_type:
+    reference_id:

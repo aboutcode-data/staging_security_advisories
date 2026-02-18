@@ -1,0 +1,42 @@
+advisory_id: GHSA-p6rp-mx85-m459
+datasource_id: github_osv_importer_v2/GHSA-p6rp-mx85-m459
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-p6rp-mx85-m459/GHSA-p6rp-mx85-m459.json
+aliases:
+  - CVE-2024-22236
+summary: |
+  Spring Cloud Contract vulnerable to local information disclosure
+  In Spring Cloud Contract, versions 4.1.x prior to 4.1.1, versions 4.0.x prior to 4.0.5, and versions 3.1.x prior to 3.1.10, test execution is vulnerable to local information disclosure via temporary directory created with unsafe permissions through the shaded com.google.guava:guava dependency in the org.springframework.cloud:spring-cloud-contract-shade dependency.
+impacted_packages:
+  - purl: pkg:maven/org.springframework.cloud/spring-cloud-contract-shade
+    affected_versions: vers:maven/4.1.0
+    fixed_versions: vers:maven/4.1.1
+  - purl: pkg:maven/org.springframework.cloud/spring-cloud-contract-shade
+    affected_versions: vers:maven/>=4.0.0|<4.0.5
+    fixed_versions: vers:maven/4.0.5
+  - purl: pkg:maven/org.springframework.cloud/spring-cloud-contract-shade
+    affected_versions: vers:maven/>=3.1.0|<3.1.10
+    fixed_versions: vers:maven/3.1.10
+severities:
+  - score: '3.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-p6rp-mx85-m459/GHSA-p6rp-mx85-m459.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-732
+  - CWE-377
+references:
+  - url: https://github.com/spring-cloud/spring-cloud-contract
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-22236
+    reference_type:
+    reference_id:
+  - url: https://spring.io/security/cve-2024-22236
+    reference_type:
+    reference_id:

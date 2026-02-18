@@ -1,0 +1,69 @@
+advisory_id: GHSA-p52w-7rhw-9m67
+datasource_id: github_osv_importer_v2/GHSA-p52w-7rhw-9m67
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-p52w-7rhw-9m67/GHSA-p52w-7rhw-9m67.json
+aliases:
+  - CVE-2025-59022
+summary: |
+  TYPO3 CMS Allows Broken Access Control in Recycler Module
+  ### Problem
+  Backend users who had access to the recycler module could delete arbitrary data from any database table defined in the TCA - regardless of whether they had permission to that particular table. This allowed attackers to purge and destroy critical site data, effectively rendering the website unavailable.
+
+  ### Solution
+  Update to TYPO3 versions 10.4.55 ELTS, 11.5.49 ELTS, 12.4.41 LTS, 13.4.23 LTS, 14.0.2 that fix the problem described.
+
+  ### Credits
+  Thanks to Sven Jürgens and Daniel Windloff for reporting this issue, and to TYPO3 security team member Elias Häußler for fixing it.
+
+  ### References
+  * [TYPO3-CORE-SA-2026-003](https://typo3.org/security/advisory/typo3-core-sa-2026-003)
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-recycler
+    affected_versions: vers:composer/<=14.0.1
+    fixed_versions: vers:composer/14.0.2
+  - purl: pkg:composer/typo3/cms-recycler
+    affected_versions: vers:composer/<=13.4.22
+    fixed_versions: vers:composer/13.4.23
+  - purl: pkg:composer/typo3/cms-recycler
+    affected_versions: vers:composer/<=12.4.40
+    fixed_versions: vers:composer/12.4.41
+  - purl: pkg:composer/typo3/cms-recycler
+    affected_versions: vers:composer/<=11.5.48
+    fixed_versions: vers:composer/11.5.49
+  - purl: pkg:composer/typo3/cms-recycler
+    affected_versions: vers:composer/<=10.4.54
+    fixed_versions: vers:composer/10.4.55
+severities:
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-p52w-7rhw-9m67/GHSA-p52w-7rhw-9m67.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-862
+references:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/336d6f165458a0ce32d8330999ab9ab6a5983d20
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/a6604db66499710f72ae6e7006beb14ad0913aae
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/efb9528f9882ac924c40598ebd8508479e9950a3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-p52w-7rhw-9m67
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-59022
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2026-003
+    reference_type:
+    reference_id:

@@ -1,0 +1,54 @@
+advisory_id: GHSA-q6w5-jg5q-47vg
+datasource_id: github_osv_importer_v2/GHSA-q6w5-jg5q-47vg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-q6w5-jg5q-47vg/GHSA-q6w5-jg5q-47vg.json
+aliases:
+  - CVE-2024-22206
+summary: |
+  @clerk/nextjs auth() and getAuth() methods vulnerable to insecure direct object reference (IDOR)
+  ### Impact
+  Unauthorized access or privilege escalation due to a logic flaw in `auth()` in the App Router or `getAuth()` in the Pages Router.
+
+  ### Affected Versions
+  All applications that that use `@clerk/nextjs` versions in the range of `>= 4.7.0`,`< 4.29.3` in a Next.js backend to authenticate API Routes, App Router, or Route handlers. Specifically, those that call `auth()` in the App Router or `getAuth()` in the Pages Router. Only the `@clerk/nextjs` SDK is impacted. Other SDKs, including other Javascript-based SDKs, are not impacted.
+
+  ### Patches
+  Fix included in `@clerk/nextjs@4.29.3`.
+
+  ### References
+  - https://clerk.com/changelog/2024-01-12
+  - https://github.com/clerk/javascript/releases/tag/%40clerk%2Fnextjs%404.29.3
+impacted_packages:
+  - purl: pkg:npm/%40clerk/nextjs
+    affected_versions: vers:npm/>=4.7.0|<4.29.3
+    fixed_versions: vers:npm/4.29.3
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-q6w5-jg5q-47vg/GHSA-q6w5-jg5q-47vg.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-284
+  - CWE-639
+references:
+  - url: https://clerk.com/changelog/2024-01-12
+    reference_type:
+    reference_id:
+  - url: https://github.com/clerk/javascript
+    reference_type:
+    reference_id:
+  - url: https://github.com/clerk/javascript/releases/tag/%40clerk%2Fnextjs%404.29.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/clerk/javascript/security/advisories/GHSA-q6w5-jg5q-47vg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-22206
+    reference_type:
+    reference_id:

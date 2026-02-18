@@ -1,0 +1,35 @@
+advisory_id: GHSA-q854-j362-cfq9
+datasource_id: github_osv_importer_v2/GHSA-q854-j362-cfq9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-q854-j362-cfq9/GHSA-q854-j362-cfq9.json
+aliases:
+  - CVE-2020-23849
+summary: |
+  Cross-site Scripting in jsoneditor
+  Stored XSS was discovered in the tree mode of jsoneditor before 9.0.2 through injecting and executing JavaScript.
+impacted_packages:
+  - purl: pkg:npm/jsoneditor
+    affected_versions: vers:npm/<9.0.2
+    fixed_versions: vers:npm/9.0.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-q854-j362-cfq9/GHSA-q854-j362-cfq9.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/josdejong/jsoneditor
+    reference_type:
+    reference_id:
+  - url: https://github.com/josdejong/jsoneditor/issues/1029
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-23849
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-phjr-p9c5-hprx
+datasource_id: github_osv_importer_v2/GHSA-phjr-p9c5-hprx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-phjr-p9c5-hprx/GHSA-phjr-p9c5-hprx.json
+aliases:
+  - CVE-2025-62248
+summary: |
+  Liferay Portal and Liferay DXP vulnerable to reflected cross-site scripting (XSS)
+  A  reflected cross-site scripting (XSS) vulnerability, resulting from a regression, has been identified in Liferay Portal 7.4.0 through 7.4.3.132, and Liferay DXP 2025.Q2.0 through 2025.Q2.9, 2025.Q1.0 through 2025.Q1.16, 2024.Q4.0 through 2024.Q4.7, 2024.Q3.1 through 2024.Q3.13, 2024.Q2.1 through 2024.Q2.13, 2024.Q1.1 through 2024.Q1.19 allows a remote, authenticated attacker to inject and execute JavaScript code via the _com_liferay_dynamic_data_mapping_web_portlet_DDMPortlet_definition parameter. The malicious payload is executed within the victim's browser when they access a URL that includes the crafted parameter.
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.dynamic.data.mapping.web
+    affected_versions: vers:maven/<=5.0.122
+    fixed_versions:
+severities:
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-phjr-p9c5-hprx/GHSA-phjr-p9c5-hprx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/a659c94bcfb218e5e5bb3e2cf7efa20a5abc10ed
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-18304
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-62248
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-62248
+    reference_type:
+    reference_id:

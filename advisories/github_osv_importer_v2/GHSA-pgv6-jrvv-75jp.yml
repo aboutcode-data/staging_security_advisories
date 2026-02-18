@@ -1,0 +1,27 @@
+advisory_id: GHSA-pgv6-jrvv-75jp
+datasource_id: github_osv_importer_v2/GHSA-pgv6-jrvv-75jp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-pgv6-jrvv-75jp/GHSA-pgv6-jrvv-75jp.json
+aliases: []
+summary: |
+  Moderate severity vulnerability that affects send
+  Withdrawn, accidental duplicate publish.
+
+  visionmedia send before 0.8.4 for Node.js uses a partial comparison for verifying whether a directory is within the document root, which allows remote attackers to access restricted directories, as demonstrated using "public-restricted" under a "public" directory.
+impacted_packages:
+  - purl: pkg:npm/send
+    affected_versions: vers:npm/<0.8.4
+    fixed_versions: vers:npm/0.8.4
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-pgv6-jrvv-75jp
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-6394
+    reference_type:
+    reference_id:

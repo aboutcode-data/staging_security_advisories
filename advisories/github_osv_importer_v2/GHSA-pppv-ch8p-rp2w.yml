@@ -1,0 +1,41 @@
+advisory_id: GHSA-pppv-ch8p-rp2w
+datasource_id: github_osv_importer_v2/GHSA-pppv-ch8p-rp2w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-pppv-ch8p-rp2w/GHSA-pppv-ch8p-rp2w.json
+aliases:
+  - CVE-2022-25895
+summary: |
+  lite-dev-server vulnerable to Directory Traversal
+  All versions of package lite-dev-server are vulnerable to Directory Traversal due to missing input sanitization and sandboxes being employed to the `req.url` user input that is passed to the server code.
+impacted_packages:
+  - purl: pkg:npm/lite-dev-server
+    affected_versions: vers:npm/<=3.2.7
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-pppv-ch8p-rp2w/GHSA-pppv-ch8p-rp2w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://gist.github.com/lirantal/0f8a48c3f5ac581ce73123abe9f7f120
+    reference_type:
+    reference_id:
+  - url: https://github.com/shadowwzw/lite-dev-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/shadowwzw/lite-dev-server/blob/master/src/server.js#23L134
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25895
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-LITEDEVSERVER-3153718
+    reference_type:
+    reference_id:

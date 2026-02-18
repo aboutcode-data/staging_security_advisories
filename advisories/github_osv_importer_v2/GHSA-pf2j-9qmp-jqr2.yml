@@ -1,0 +1,33 @@
+advisory_id: GHSA-pf2j-9qmp-jqr2
+datasource_id: github_osv_importer_v2/GHSA-pf2j-9qmp-jqr2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-pf2j-9qmp-jqr2/GHSA-pf2j-9qmp-jqr2.json
+aliases:
+  - CVE-2020-8158
+summary: |
+  TypeORM vulnerable to MAID and Prototype Pollution
+  Prototype pollution vulnerability in the TypeORM package < 0.2.25 may allow attackers to add or modify Object properties leading to further denial of service or SQL injection attacks.
+impacted_packages:
+  - purl: pkg:npm/typeorm
+    affected_versions: vers:npm/<0.2.25
+    fixed_versions: vers:npm/0.2.25
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-pf2j-9qmp-jqr2/GHSA-pf2j-9qmp-jqr2.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-471
+  - CWE-1321
+references:
+  - url: https://hackerone.com/reports/869574
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8158
+    reference_type:
+    reference_id:

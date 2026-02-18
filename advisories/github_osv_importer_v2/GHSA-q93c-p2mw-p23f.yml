@@ -1,0 +1,43 @@
+advisory_id: GHSA-q93c-p2mw-p23f
+datasource_id: github_osv_importer_v2/GHSA-q93c-p2mw-p23f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-q93c-p2mw-p23f/GHSA-q93c-p2mw-p23f.json
+aliases:
+  - CVE-2023-51232
+summary: |
+  Dagster vulnerable to Path Traversal attack through its /logs endpoint
+  Directory Traversal vulnerability in dagster-webserver Dagster thru 1.5.10 allows remote attackers to obtain sensitive information via crafted request to the /logs endpoint. This may be restricted to certain file names that start with a dot ('.').
+impacted_packages:
+  - purl: pkg:pypi/dagster
+    affected_versions: vers:pypi/<1.5.11
+    fixed_versions: vers:pypi/1.5.11
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-q93c-p2mw-p23f/GHSA-q93c-p2mw-p23f.json
+  - score: '4.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-q93c-p2mw-p23f/GHSA-q93c-p2mw-p23f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/dagster-io/dagster
+    reference_type:
+    reference_id:
+  - url: https://github.com/dagster-io/dagster/commit/dbb064c2ddda74265b8174edd9775e1302ca6ba0
+    reference_type:
+    reference_id:
+  - url: https://github.com/dagster-io/dagster/pull/18462
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-51232
+    reference_type:
+    reference_id:

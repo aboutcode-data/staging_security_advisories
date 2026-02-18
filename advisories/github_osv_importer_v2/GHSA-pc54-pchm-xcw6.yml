@@ -1,0 +1,49 @@
+advisory_id: GHSA-pc54-pchm-xcw6
+datasource_id: github_osv_importer_v2/GHSA-pc54-pchm-xcw6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pc54-pchm-xcw6/GHSA-pc54-pchm-xcw6.json
+aliases:
+  - CVE-2014-7839
+summary: |
+  XML External Entity Reference in RESTEasy
+  DocumentProvider in RESTEasy 2.3.7 and 3.0.9 does not configure the (1) external-general-entities or (2) external-parameter-entities features, which allows remote attackers to conduct XML external entity (XXE) attacks via unspecified vectors.
+impacted_packages:
+  - purl: pkg:maven/org.jboss.resteasy/resteasy-jaxrs
+    affected_versions: vers:maven/<=3.0.10.Final
+    fixed_versions: vers:maven/3.0.11.Final
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+  - CWE-20
+references:
+  - url: http://rhn.redhat.com/errata/RHSA-2015-0675.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2015-0773.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2015-0850.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2015-0851.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/resteasy/Resteasy
+    reference_type:
+    reference_id:
+  - url: https://github.com/resteasy/resteasy/pull/611/commits/3ab999c899c455a0b0a00bf5e455ed3e8d9ae347
+    reference_type:
+    reference_id:
+  - url: https://github.com/resteasy/resteasy/pull/611/commits/8b5d8cfc963794a74636d9a840e899408ec8fdc6
+    reference_type:
+    reference_id:
+  - url: https://issues.jboss.org/browse/RESTEASY-1130
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-7839
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-p9j6-4pjr-gp48
+datasource_id: github_osv_importer_v2/GHSA-p9j6-4pjr-gp48
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/12/GHSA-p9j6-4pjr-gp48/GHSA-p9j6-4pjr-gp48.json
+aliases:
+  - CVE-2020-35460
+summary: |
+  MPXJ path Traversal vulnerability
+  common/InputStreamHelper.java in Packwood MPXJ before 8.3.5 allows directory traversal in the zip stream handler flow, leading to the writing of files to arbitrary locations.
+impacted_packages:
+  - purl: pkg:maven/net.sf.mpxj/mpxj
+    affected_versions: vers:maven/<8.3.5
+    fixed_versions: vers:maven/8.3.5
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/12/GHSA-p9j6-4pjr-gp48/GHSA-p9j6-4pjr-gp48.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/joniles/mpxj/commit/8eaf4225048ea5ba7e59ef4556dab2098fcc4a1d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-35460
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_type:
+    reference_id:
+  - url: http://www.mpxj.org/changes-report.html#a8.3.5
+    reference_type:
+    reference_id:

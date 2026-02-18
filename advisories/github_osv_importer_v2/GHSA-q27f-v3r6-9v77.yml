@@ -1,0 +1,53 @@
+advisory_id: GHSA-q27f-v3r6-9v77
+datasource_id: github_osv_importer_v2/GHSA-q27f-v3r6-9v77
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-q27f-v3r6-9v77/GHSA-q27f-v3r6-9v77.json
+aliases:
+  - CVE-2020-13482
+summary: |
+  Improper Certificate Validation in EM-HTTP-Request
+  EM-HTTP-Request 1.1.5 uses the library eventmachine in an insecure way that allows an attacker to perform a man-in-the-middle attack against users of the library. The hostname in a TLS server certificate is not verified.
+impacted_packages:
+  - purl: pkg:gem/em-http-request
+    affected_versions: vers:gem/<=1.1.5
+    fixed_versions: vers:gem/1.1.6
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-q27f-v3r6-9v77/GHSA-q27f-v3r6-9v77.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://github.com/advisories/GHSA-q27f-v3r6-9v77
+    reference_type:
+    reference_id:
+  - url: https://github.com/igrigorik/em-http-request
+    reference_type:
+    reference_id:
+  - url: https://github.com/igrigorik/em-http-request/commit/e5fa144f8d21050dd1fc15a4dc8aa34ac6f30602
+    reference_type:
+    reference_id:
+  - url: https://github.com/igrigorik/em-http-request/issues/339
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/em-http-request/CVE-2020-13482.yml
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MKYP5TR5NTVVDX5R4HCNNH2OQR7M4X3J
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z32PUJA6RGBZ3TKSOTGUXZ45662S3MVF
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13482
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2020-094-igrigorik-em-http-request
+    reference_type:
+    reference_id:

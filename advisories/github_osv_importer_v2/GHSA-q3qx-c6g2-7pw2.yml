@@ -1,0 +1,81 @@
+advisory_id: GHSA-q3qx-c6g2-7pw2
+datasource_id: github_osv_importer_v2/GHSA-q3qx-c6g2-7pw2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-q3qx-c6g2-7pw2/GHSA-q3qx-c6g2-7pw2.json
+aliases:
+  - CVE-2023-49081
+summary: |
+  aiohttp's ClientSession is vulnerable to CRLF injection via version
+  ### Summary
+  Improper validation make it possible for an attacker to modify the HTTP request (e.g. to insert a new header) or even create a new HTTP request if the attacker controls the HTTP version.
+
+  ### Details
+  The vulnerability only occurs if the attacker can control the HTTP version of the request (including its type).
+  For example if an unvalidated JSON value is used as a version and the attacker is then able to pass an array as the `version` parameter.
+  Furthermore, the vulnerability only occurs when the `Connection` header is passed to the `headers` parameter.
+
+  At this point, the library will use the parsed value to create the request. If a list is passed, then it bypasses validation and it is possible to perform CRLF injection.
+
+  ### PoC
+  The POC below shows an example of providing an unvalidated array as a version:
+  https://gist.github.com/jnovikov/184afb593d9c2114d77f508e0ccd508e
+
+  ### Impact
+  CRLF injection leading to Request Smuggling.
+
+  ### Workaround
+  If these specific conditions are met and you are unable to upgrade, then validate the user input to the `version` parameter to ensure it is a `str`.
+
+  Patch: https://github.com/aio-libs/aiohttp/pull/7835/files
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<3.9.0
+    fixed_versions: vers:pypi/3.9.0
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-q3qx-c6g2-7pw2/GHSA-q3qx-c6g2-7pw2.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/11/GHSA-q3qx-c6g2-7pw2/GHSA-q3qx-c6g2-7pw2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://gist.github.com/jnovikov/184afb593d9c2114d77f508e0ccd508e
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/commit/1e86b777e61cf4eefc7d92fa57fa19dcc676013b
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/pull/7835/files
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/security/advisories/GHSA-q3qx-c6g2-7pw2
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/aiohttp/PYSEC-2023-250.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/02/msg00002.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TY5SI6NK5243DEEDQUFKQKW5GQNKQUMA
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WSYWMP64ZFCTC3VO6RY6EC6VSSMV6I3A
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-49081
+    reference_type:
+    reference_id:

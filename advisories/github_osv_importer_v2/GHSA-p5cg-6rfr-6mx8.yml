@@ -1,0 +1,55 @@
+advisory_id: GHSA-p5cg-6rfr-6mx8
+datasource_id: github_osv_importer_v2/GHSA-p5cg-6rfr-6mx8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p5cg-6rfr-6mx8/GHSA-p5cg-6rfr-6mx8.json
+aliases:
+  - CVE-2024-38274
+summary: |
+  Moodle stored XSS via calendar's event title when deleting the event
+  Insufficient escaping of calendar event titles resulted in a stored XSS risk in the event deletion prompt.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.1
+    fixed_versions: vers:composer/4.4.1
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0-beta|<4.3.5
+    fixed_versions: vers:composer/4.3.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0-beta|<4.2.8
+    fixed_versions: vers:composer/4.2.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.11
+    fixed_versions: vers:composer/4.1.11
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p5cg-6rfr-6mx8/GHSA-p5cg-6rfr-6mx8.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p5cg-6rfr-6mx8/GHSA-p5cg-6rfr-6mx8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F7AZYR7EXV6E5SQE2GYTNQE3NOENJCQ6
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GHTIX55J4Q4LEOMLNEA4OZSWVEENQX7E
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=459499
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-38274
+    reference_type:
+    reference_id:

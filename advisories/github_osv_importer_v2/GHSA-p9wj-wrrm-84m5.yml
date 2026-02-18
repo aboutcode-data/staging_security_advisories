@@ -1,0 +1,35 @@
+advisory_id: GHSA-p9wj-wrrm-84m5
+datasource_id: github_osv_importer_v2/GHSA-p9wj-wrrm-84m5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-p9wj-wrrm-84m5/GHSA-p9wj-wrrm-84m5.json
+aliases:
+  - CVE-2018-6464
+summary: |
+  Simditor XSS Vulnerability
+  Simditor v2.3.11 allows XSS via crafted use of `svg/onload=alert` in a TEXTAREA element, as demonstrated by Firefox 54.0.1.
+impacted_packages:
+  - purl: pkg:npm/simditor
+    affected_versions: vers:npm/<=2.3.11
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-p9wj-wrrm-84m5/GHSA-p9wj-wrrm-84m5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Heartway/simditor
+    reference_type:
+    reference_id:
+  - url: https://github.com/Heartway/simditor/blob/master/simditor.docx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-6464
+    reference_type:
+    reference_id:

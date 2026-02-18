@@ -1,0 +1,55 @@
+advisory_id: GHSA-p7f6-8mcm-fwv3
+datasource_id: github_osv_importer_v2/GHSA-p7f6-8mcm-fwv3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-p7f6-8mcm-fwv3/GHSA-p7f6-8mcm-fwv3.json
+aliases:
+  - CVE-2024-52600
+summary: |
+  Statamic CMS has a Path Traversal in Asset Upload
+  Assets uploaded with appropriately crafted filenames may result in them being placed in a location different than what was configured.
+
+  ### Impact
+
+  - Affects front-end forms with `assets` fields.
+  - Affects other places where assets can be uploaded, although users would need upload permissions anyway.
+  - Files can be uploaded so they would be located on the server in a different location, and potentially override existing files.
+  - Traversal _outside_ an asset container was not possible.
+
+  ### Patches
+
+  This has been fixed in 5.17.0.
+impacted_packages:
+  - purl: pkg:composer/statamic/cms
+    affected_versions: vers:composer/<=5.16.0
+    fixed_versions: vers:composer/5.17.0
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-p7f6-8mcm-fwv3/GHSA-p7f6-8mcm-fwv3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/statamic/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/commit/0c07c10009a2439c8ee56c8faefd1319dc6e388d
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/commit/400875b20f40e1343699d536a432a6fc284346da
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/commit/4cc2c9bd0f39a93b3fc7e9ef0f12792576fd380d
+    reference_type:
+    reference_id:
+  - url: https://github.com/statamic/cms/security/advisories/GHSA-p7f6-8mcm-fwv3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-52600
+    reference_type:
+    reference_id:

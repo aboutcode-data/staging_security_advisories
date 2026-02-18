@@ -1,0 +1,38 @@
+advisory_id: GHSA-pqwh-44jj-p5rm
+datasource_id: github_osv_importer_v2/GHSA-pqwh-44jj-p5rm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pqwh-44jj-p5rm/GHSA-pqwh-44jj-p5rm.json
+aliases:
+  - CVE-2013-4366
+summary: |
+  Hostname verification in Apache HttpClient 4.3 was disabled by default
+  http/impl/client/HttpClientBuilder.java in Apache HttpClient 4.3.x before 4.3.1 does not ensure that X509HostnameVerifier is not null, which allows attackers to have unspecified impact via vectors involving hostname verification.
+impacted_packages:
+  - purl: pkg:maven/org.apache.httpcomponents/httpclient
+    affected_versions: vers:maven/>=4.3|<4.3.1
+    fixed_versions: vers:maven/4.3.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pqwh-44jj-p5rm/GHSA-pqwh-44jj-p5rm.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/apache/httpcomponents-client/commit/08140864e3e4c0994e094c4cf0507932baf6a66
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-4366
+    reference_type:
+    reference_id:
+  - url: http://svn.apache.org/r1528614
+    reference_type:
+    reference_id:
+  - url: http://www.apache.org/dist/httpcomponents/httpclient/RELEASE_NOTES-4.3.x.txt
+    reference_type:
+    reference_id:

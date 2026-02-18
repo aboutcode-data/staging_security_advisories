@@ -1,0 +1,47 @@
+advisory_id: GHSA-q8cr-xphm-7gfv
+datasource_id: github_osv_importer_v2/GHSA-q8cr-xphm-7gfv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q8cr-xphm-7gfv/GHSA-q8cr-xphm-7gfv.json
+aliases:
+  - CVE-2017-1000009
+summary: |
+  Akeneo PIM vulnerable to shell injection in the mass edition
+  Akeneo PIM CE and EE <1.6.6, <1.5.15, <1.4.28 are vulnerable to shell injection in the mass edition, resulting in remote execution.
+impacted_packages:
+  - purl: pkg:composer/akeneo/pim-community-dev
+    affected_versions: vers:composer/>=1.4.0|<1.4.28
+    fixed_versions: vers:composer/1.4.28
+  - purl: pkg:composer/akeneo/pim-community-dev
+    affected_versions: vers:composer/>=1.5.0|<1.5.15
+    fixed_versions: vers:composer/1.5.15
+  - purl: pkg:composer/akeneo/pim-community-dev
+    affected_versions: vers:composer/>=1.6.0|<1.6.6
+    fixed_versions: vers:composer/1.6.6
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q8cr-xphm-7gfv/GHSA-q8cr-xphm-7gfv.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/akeneo/pim-community-dev
+    reference_type:
+    reference_id:
+  - url: https://github.com/akeneo/pim-community-dev/blob/1.5/CHANGELOG-1.5.md#bug-fixes-2
+    reference_type:
+    reference_id:
+  - url: https://github.com/akeneo/pim-community-dev/blob/master/CHANGELOG-1.4.md#bug-fixes
+    reference_type:
+    reference_id:
+  - url: https://github.com/akeneo/pim-community-dev/blob/master/CHANGELOG-1.6.md#bug-fixes-2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000009
+    reference_type:
+    reference_id:

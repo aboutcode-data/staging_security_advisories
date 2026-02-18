@@ -1,0 +1,55 @@
+advisory_id: GHSA-mv48-hcvh-8jj8
+datasource_id: github_osv_importer_v2/GHSA-mv48-hcvh-8jj8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-mv48-hcvh-8jj8/GHSA-mv48-hcvh-8jj8.json
+aliases:
+  - CVE-2022-35204
+summary: |
+  Vite before v2.9.13 vulnerable to directory traversal via crafted URL to victim's service
+  Vite before v2.9.13 was discovered to allow attackers to perform a directory traversal via a crafted URL to the victim's service.
+impacted_packages:
+  - purl: pkg:npm/vite
+    affected_versions: vers:npm/<2.9.13
+    fixed_versions: vers:npm/2.9.13
+  - purl: pkg:npm/vite
+    affected_versions: vers:npm/>=3.0.0-alpha.0|<3.0.0-beta.4
+    fixed_versions: vers:npm/3.0.0-beta.4
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-mv48-hcvh-8jj8/GHSA-mv48-hcvh-8jj8.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-mv48-hcvh-8jj8/GHSA-mv48-hcvh-8jj8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/vitejs/vite
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/commit/6851009e6725b17608113a5a63474280075cae1c
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/commit/e109d64331d9fa57753832762c3573c3532a6947
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/issues/8498
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/releases/tag/v2.9.13
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite/releases/tag/v3.0.0-beta.4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-35204
+    reference_type:
+    reference_id:

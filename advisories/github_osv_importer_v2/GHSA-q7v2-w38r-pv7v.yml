@@ -1,0 +1,27 @@
+advisory_id: GHSA-q7v2-w38r-pv7v
+datasource_id: github_osv_importer_v2/GHSA-q7v2-w38r-pv7v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q7v2-w38r-pv7v/GHSA-q7v2-w38r-pv7v.json
+aliases:
+  - CVE-2012-4579
+summary: |
+  phpMyAdmin Multiple XSS Vulnerabilities
+  Multiple cross-site scripting (XSS) vulnerabilities in phpMyAdmin 3.5.x before 3.5.2.2 allow remote authenticated users to inject arbitrary web script or HTML via a Table Operations (1) TRUNCATE or (2) DROP link for a crafted table name, (3) the Add Trigger popup within a Triggers page that references crafted table names, (4) an invalid trigger-creation attempt for a crafted table name, (5) crafted data in a table, or (6) a crafted tooltip label name during GIS data visualization, a different issue than CVE-2012-4345.
+impacted_packages:
+  - purl: pkg:composer/phpmyadmin/phpmyadmin
+    affected_versions: vers:composer/>=3.5.0|<3.5.2+2
+    fixed_versions: vers:composer/3.5.2+2
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2012-4579
+    reference_type:
+    reference_id:
+  - url: http://www.phpmyadmin.net/home_page/security/PMASA-2012-4.php
+    reference_type:
+    reference_id:

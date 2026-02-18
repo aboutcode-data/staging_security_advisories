@@ -1,0 +1,65 @@
+advisory_id: GHSA-mv9j-6xhh-g383
+datasource_id: github_osv_importer_v2/GHSA-mv9j-6xhh-g383
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-mv9j-6xhh-g383/GHSA-mv9j-6xhh-g383.json
+aliases: []
+summary: |
+  OpenClaw's unauthenticated Nostr profile HTTP endpoints allow remote profile/config tampering
+  ## Summary
+  The OpenClaw Nostr channel plugin (optional, disabled by default, installed separately) exposes profile management HTTP endpoints under `/api/channels/nostr/:accountId/profile` (GET/PUT) and `/api/channels/nostr/:accountId/profile/import` (POST). In affected versions, these routes were dispatched via the gateway plugin HTTP layer without requiring gateway authentication, allowing unauthenticated remote callers to read or mutate the Nostr profile and persist changes to the gateway config. Profile updates are also published as a signed Nostr kind:0 event using the bot's private key.
+
+  Deployments that do not have the Nostr plugin installed and enabled are not impacted.
+
+  ## Affected Packages / Versions
+  - Package: `openclaw` (npm)
+  - Affected versions: `<= 2026.2.9`
+  - Fixed versions: `>= 2026.2.12`
+  - Scope note: only affects deployments with the optional `@openclaw/nostr` plugin installed and enabled
+
+  ## Details
+  This is exploitable when the gateway HTTP port is reachable beyond localhost (for example: bound to `0.0.0.0`, exposed on a LAN, behind a reverse proxy, or via Tailscale Funnel/Serve).
+
+  Unauthenticated callers could update the Nostr profile and persist the new profile in the gateway config.
+
+  ## Mitigation
+  Upgrade to `openclaw` `2026.2.12` or later.
+
+  As a temporary mitigation, restrict gateway HTTP exposure (bind loopback-only and/or enforce network-layer access controls) until upgraded.
+
+  ## Fix
+  Gateway now requires gateway authentication for plugin HTTP requests under `/api/channels/*` before dispatching to plugin handlers.
+
+  Fix commit(s):
+  - 647d929c9d0fd114249230d939a5cb3b36dc70e7
+
+  Thanks @simecek for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.12
+    fixed_versions: vers:npm/2026.2.12
+severities:
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-mv9j-6xhh-g383/GHSA-mv9j-6xhh-g383.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-306
+  - CWE-285
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/647d929c9d0fd114249230d939a5cb3b36dc70e7
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.12
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-mv9j-6xhh-g383
+    reference_type:
+    reference_id:

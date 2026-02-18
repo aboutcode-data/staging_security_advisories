@@ -1,0 +1,32 @@
+advisory_id: GHSA-p6j8-hgv5-m35g
+datasource_id: github_osv_importer_v2/GHSA-p6j8-hgv5-m35g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-p6j8-hgv5-m35g/GHSA-p6j8-hgv5-m35g.json
+aliases:
+  - CVE-2020-35510
+summary: |
+  Uncontrolled Resource Consumption in jboss-remoting
+  A flaw was found in jboss-remoting in versions before 5.0.20.SP1-redhat-00001. A malicious attacker could cause threads to hold up forever in the EJB server by writing a sequence of bytes corresponding to the expected messages of a successful EJB client request, but omitting the ACK messages, or just tamper with jboss-remoting code, deleting the lines that send the ACK message from the EJB client code resulting in a denial of service. The highest threat from this vulnerability is to system availability.
+impacted_packages:
+  - purl: pkg:maven/org.jboss.remoting/jboss-remoting
+    affected_versions: vers:maven/<=5.0.19.Final
+    fixed_versions: vers:maven/5.0.20.Final
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-p6j8-hgv5-m35g/GHSA-p6j8-hgv5-m35g.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1905796
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-35510
+    reference_type:
+    reference_id:

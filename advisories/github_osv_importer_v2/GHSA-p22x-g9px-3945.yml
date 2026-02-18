@@ -1,0 +1,78 @@
+advisory_id: GHSA-p22x-g9px-3945
+datasource_id: github_osv_importer_v2/GHSA-p22x-g9px-3945
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-p22x-g9px-3945/GHSA-p22x-g9px-3945.json
+aliases:
+  - CVE-2022-42252
+summary: |
+  Apache Tomcat may reject request containing invalid Content-Length header
+  If Apache Tomcat 8.5.0 to 8.5.82, 9.0.0-M1 to 9.0.67, 10.0.0-M1 to 10.0.26 or 10.1.0-M1 to 10.1.0 was configured to ignore invalid HTTP headers via setting rejectIllegalHeader to false (the default for 8.5.x only), Tomcat did not reject a request containing an invalid Content-Length header making a request smuggling attack possible if Tomcat was located behind a reverse proxy that also failed to reject the request with the invalid header.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-core
+    affected_versions: vers:maven/>=8.5.0|<8.5.83
+    fixed_versions: vers:maven/8.5.83
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-core
+    affected_versions: vers:maven/>=9.0.0-M1|<9.0.68
+    fixed_versions: vers:maven/9.0.68
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-core
+    affected_versions: vers:maven/>=10.0.0-M1|<10.0.27
+    fixed_versions: vers:maven/10.0.27
+  - purl: pkg:maven/org.apache.tomcat.embed/tomcat-embed-core
+    affected_versions: vers:maven/>=10.1.0-M1|<10.1.1
+    fixed_versions: vers:maven/10.1.1
+  - purl: pkg:maven/org.apache.tomcat/tomcat-coyote
+    affected_versions: vers:maven/>=9.0.0-M1|<9.0.68
+    fixed_versions: vers:maven/9.0.68
+  - purl: pkg:maven/org.apache.tomcat/tomcat-coyote
+    affected_versions: vers:maven/>=10.0.0-M1|<10.0.27
+    fixed_versions: vers:maven/10.0.27
+  - purl: pkg:maven/org.apache.tomcat/tomcat-coyote
+    affected_versions: vers:maven/>=10.1.0-M1|<10.1.1
+    fixed_versions: vers:maven/10.1.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-p22x-g9px-3945/GHSA-p22x-g9px-3945.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+  - CWE-20
+references:
+  - url: https://github.com/apache/tomcat
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/0d089a15047faf9cb3c82f80f4d28febd4798920
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/4c7f4fd09d2cc1692112ef70b8ee23a7a037ae77
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/a1c07906d8dcaf7957e5cc97f5cdbac7d18a205a
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tomcat/commit/c9fe754e5d17e262dfbd3eab2a03ca96ff372dc3
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-42252
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202305-37
+    reference_type:
+    reference_id:
+  - url: https://tomcat.apache.org/security-10.html
+    reference_type:
+    reference_id:
+  - url: https://tomcat.apache.org/security-8.html
+    reference_type:
+    reference_id:
+  - url: https://tomcat.apache.org/security-9.html
+    reference_type:
+    reference_id:

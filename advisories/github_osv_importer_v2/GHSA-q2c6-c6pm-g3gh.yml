@@ -1,0 +1,30 @@
+advisory_id: GHSA-q2c6-c6pm-g3gh
+datasource_id: github_osv_importer_v2/GHSA-q2c6-c6pm-g3gh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-q2c6-c6pm-g3gh/GHSA-q2c6-c6pm-g3gh.json
+aliases: []
+summary: |
+  Arbitrary Code Execution in handlebars
+  Versions of `handlebars` prior to 3.0.8 or 4.5.3 are vulnerable to Arbitrary Code Execution. The package's lookup helper fails to properly validate templates, allowing attackers to submit templates that execute arbitrary JavaScript in the system. It is due to an incomplete fix for a [previous issue](https://www.npmjs.com/advisories/1316). This vulnerability can be used to run arbitrary code in a server processing Handlebars templates or on a victim's browser (effectively serving as Cross-Site Scripting).
+
+
+  ## Recommendation
+
+  Upgrade to version 3.0.8, 4.5.3 or later.
+impacted_packages:
+  - purl: pkg:npm/handlebars
+    affected_versions: vers:npm/<3.0.8
+    fixed_versions: vers:npm/3.0.8
+  - purl: pkg:npm/handlebars
+    affected_versions: vers:npm/>=4.0.0|<4.5.3
+    fixed_versions: vers:npm/4.5.3
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://www.npmjs.com/advisories/1324
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-pvc3-wvxr-7cmf
+datasource_id: github_osv_importer_v2/GHSA-pvc3-wvxr-7cmf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-pvc3-wvxr-7cmf/GHSA-pvc3-wvxr-7cmf.json
+aliases:
+  - CVE-2021-3914
+summary: |
+  SmallRye Health UI Cross-site Scripting vulnerability
+  It was found that the smallrye health metrics UI component did not properly sanitize some user inputs. An attacker could use this flaw to conduct cross-site scripting attacks.
+impacted_packages:
+  - purl: pkg:maven/io.smallrye/smallrye-health-ui
+    affected_versions: vers:maven/<3.1.2
+    fixed_versions: vers:maven/3.1.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-pvc3-wvxr-7cmf/GHSA-pvc3-wvxr-7cmf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2021-3914
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2018015
+    reference_type:
+    reference_id:
+  - url: https://github.com/smallrye/smallrye-health
+    reference_type:
+    reference_id:
+  - url: https://github.com/smallrye/smallrye-health/commit/01b25a038824887363cd413d8cd14052f5fc3541
+    reference_type:
+    reference_id:
+  - url: https://github.com/smallrye/smallrye-health/commit/47a33f19f5bb1e4216a15f3aee6ca3b1e2ccba59
+    reference_type:
+    reference_id:
+  - url: https://github.com/smallrye/smallrye-health/pull/333
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3914
+    reference_type:
+    reference_id:

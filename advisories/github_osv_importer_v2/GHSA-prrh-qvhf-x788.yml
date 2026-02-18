@@ -1,0 +1,45 @@
+advisory_id: GHSA-prrh-qvhf-x788
+datasource_id: github_osv_importer_v2/GHSA-prrh-qvhf-x788
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-prrh-qvhf-x788/GHSA-prrh-qvhf-x788.json
+aliases:
+  - CVE-2022-35933
+summary: |
+  PrestaShop Product Comments Cross-site Scripting vulnerability
+  ### Impact
+  An attacker could steal an admin's cookie
+
+  ### Patches
+  The issue is fixed in 5.0.2
+
+  ### References
+  [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')](https://cwe.mitre.org/data/definitions/79.html)
+impacted_packages:
+  - purl: pkg:composer/prestashop/productcomments
+    affected_versions: vers:composer/<5.0.2
+    fixed_versions: vers:composer/5.0.2
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-prrh-qvhf-x788/GHSA-prrh-qvhf-x788.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/PrestaShop/productcomments
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/productcomments/commit/314456d739155aa71f0b235827e8e0f24b97c26b
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/productcomments/security/advisories/GHSA-prrh-qvhf-x788
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-35933
+    reference_type:
+    reference_id:

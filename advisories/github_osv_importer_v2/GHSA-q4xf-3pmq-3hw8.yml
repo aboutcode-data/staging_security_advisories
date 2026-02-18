@@ -1,0 +1,35 @@
+advisory_id: GHSA-q4xf-3pmq-3hw8
+datasource_id: github_osv_importer_v2/GHSA-q4xf-3pmq-3hw8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-q4xf-3pmq-3hw8/GHSA-q4xf-3pmq-3hw8.json
+aliases:
+  - CVE-2020-13940
+summary: |
+  Improper Restriction of XML External Entity Reference in Apache NiFi
+  In Apache NiFi 1.0.0 to 1.11.4, the notification service manager and various policy authorizer and user group provider objects allowed trusted administrators to inadvertently configure a potentially malicious XML file. The XML file has the ability to make external calls to services (via XXE).
+impacted_packages:
+  - purl: pkg:maven/org.apache.nifi/nifi
+    affected_versions: vers:maven/<=1.11.4
+    fixed_versions: vers:maven/1.12.0-RC1
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-q4xf-3pmq-3hw8/GHSA-q4xf-3pmq-3hw8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/apache/nifi/commit/7f0416ee8bdcee95e28409cc6fae9c1394c2a798
+    reference_type:
+    reference_id:
+  - url: https://nifi.apache.org/security#CVE-2020-13940
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-13940
+    reference_type:
+    reference_id:

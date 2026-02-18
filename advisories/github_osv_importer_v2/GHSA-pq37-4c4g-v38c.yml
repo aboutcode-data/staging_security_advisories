@@ -1,0 +1,41 @@
+advisory_id: GHSA-pq37-4c4g-v38c
+datasource_id: github_osv_importer_v2/GHSA-pq37-4c4g-v38c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-pq37-4c4g-v38c/GHSA-pq37-4c4g-v38c.json
+aliases:
+  - CVE-2022-0341
+summary: |
+  Cross-site Scripting in vditor
+  vditor prior to version 3.8.11 is vulnerable to cross-site scripting.
+impacted_packages:
+  - purl: pkg:npm/vditor
+    affected_versions: vers:npm/<3.8.11
+    fixed_versions: vers:npm/3.8.11
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-pq37-4c4g-v38c/GHSA-pq37-4c4g-v38c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/vanessa219/vditor
+    reference_type:
+    reference_id:
+  - url: https://github.com/vanessa219/vditor/commit/219f8a9e272aba3cbc0096a82cac776532dbb9e5
+    reference_type:
+    reference_id:
+  - url: https://github.com/Vanessa219/vditor/issues/1102
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/fa546b57-bc15-4705-824e-9474b616f628
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0341
+    reference_type:
+    reference_id:

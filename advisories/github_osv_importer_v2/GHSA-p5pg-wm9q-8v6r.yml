@@ -1,0 +1,35 @@
+advisory_id: GHSA-p5pg-wm9q-8v6r
+datasource_id: github_osv_importer_v2/GHSA-p5pg-wm9q-8v6r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-p5pg-wm9q-8v6r/GHSA-p5pg-wm9q-8v6r.json
+aliases:
+  - CVE-2022-24613
+summary: |
+  Improper Handling of Exceptional Conditions inn metadata-extractor
+  metadata-extractor up to 2.16.0 can throw various uncaught exceptions while parsing a specially crafted JPEG file, which could result in an application crash. This could be used to mount a denial of service attack against services that use metadata-extractor library.
+impacted_packages:
+  - purl: pkg:maven/com.drewnoakes/metadata-extractor
+    affected_versions: vers:maven/<2.18.0
+    fixed_versions: vers:maven/2.18.0
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-p5pg-wm9q-8v6r/GHSA-p5pg-wm9q-8v6r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-755
+references:
+  - url: https://github.com/drewnoakes/metadata-extractor
+    reference_type:
+    reference_id:
+  - url: https://github.com/drewnoakes/metadata-extractor/issues/561
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24613
+    reference_type:
+    reference_id:

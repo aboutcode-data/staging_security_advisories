@@ -1,0 +1,36 @@
+advisory_id: GHSA-pgg9-mmcg-8mxp
+datasource_id: github_osv_importer_v2/GHSA-pgg9-mmcg-8mxp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pgg9-mmcg-8mxp/GHSA-pgg9-mmcg-8mxp.json
+aliases:
+  - CVE-2020-29605
+summary: |
+  MantisBT Incorrect Authorization in bug_actiongroup_page.php
+  An issue was discovered in MantisBT before 2.24.4. Due to insufficient access-level checks, any logged-in user allowed to perform Group Actions can get access to the Summary fields of private Issues via bug_arr[]= in a crafted bug_actiongroup_page.php URL. (The target Issues can have Private view status, or belong to a private Project.)
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/<2.24.4
+    fixed_versions: vers:composer/2.24.4
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/commit/9322c8c9f57fb72f3b8b033889a6a09c441d5be0
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=27357
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=27727
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-29605
+    reference_type:
+    reference_id:

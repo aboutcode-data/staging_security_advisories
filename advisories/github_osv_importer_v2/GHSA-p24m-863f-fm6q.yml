@@ -1,0 +1,73 @@
+advisory_id: GHSA-p24m-863f-fm6q
+datasource_id: github_osv_importer_v2/GHSA-p24m-863f-fm6q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-p24m-863f-fm6q/GHSA-p24m-863f-fm6q.json
+aliases:
+  - CVE-2023-25578
+summary: |
+  Denial of service vulnerability when parsing multipart request body
+  ### Summary
+
+  The request body parsing in `starlite` allows a potentially unauthenticated
+   attacker to consume a large amount of CPU time and RAM.
+
+  ### Details
+
+  The multipart body parser processes an unlimited number of file parts.
+  The multipart body parser processes an unlimited number of field parts.
+
+  ### Impact
+
+  This is a remote, potentially unauthenticated Denial of Service vulnerability.
+
+  This vulnerability affects applications with a request handler that accepts
+   a `Body(media_type=RequestEncodingType.MULTI_PART)`.
+
+  The large amount of CPU time required for processing requests can block all
+   available worker processes and significantly delay or slow down the processing
+   of legitimate user requests.
+  The large amount of RAM accumulated while processing requests can lead to
+   Out-Of-Memory kills.
+  Complete DoS is achievable by sending many concurrent multipart requests in a
+   loop.
+impacted_packages:
+  - purl: pkg:pypi/starlite
+    affected_versions: vers:pypi/<1.51.2
+    fixed_versions: vers:pypi/1.51.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-p24m-863f-fm6q/GHSA-p24m-863f-fm6q.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-p24m-863f-fm6q/GHSA-p24m-863f-fm6q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+  - CWE-770
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/starlite/PYSEC-2023-49.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/starlite-api/starlite
+    reference_type:
+    reference_id:
+  - url: https://github.com/starlite-api/starlite/commit/9674fe803628f986c03fe60769048cbc55b5bf83
+    reference_type:
+    reference_id:
+  - url: https://github.com/starlite-api/starlite/releases/tag/v1.51.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/starlite-api/starlite/security/advisories/GHSA-p24m-863f-fm6q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-25578
+    reference_type:
+    reference_id:

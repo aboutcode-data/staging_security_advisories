@@ -1,0 +1,44 @@
+advisory_id: GHSA-pfv2-37f7-9m6w
+datasource_id: github_osv_importer_v2/GHSA-pfv2-37f7-9m6w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pfv2-37f7-9m6w/GHSA-pfv2-37f7-9m6w.json
+aliases:
+  - CVE-2017-12974
+summary: |
+  Improper Verification of Cryptographic Signature in Nimbus JOSE+JWT
+  Nimbus JOSE+JWT before 4.36 proceeds with ECKey construction without ensuring that the public x and y coordinates are on the specified curve, which allows attackers to conduct an Invalid Curve Attack in environments where the JCE provider lacks the applicable curve validation.
+impacted_packages:
+  - purl: pkg:maven/com.nimbusds/nimbus-jose-jwt
+    affected_versions: vers:maven/<4.36
+    fixed_versions: vers:maven/4.36
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pfv2-37f7-9m6w/GHSA-pfv2-37f7-9m6w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-347
+references:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt/commits/f3a7a801f0c6b078899fed9226368eb7b44e2b2f
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt/issues/217/explicit-check-for-ec-public-key-on-curve
+    reference_type:
+    reference_id:
+  - url: https://bitbucket.org/connect2id/nimbus-jose-jwt/src/master/CHANGELOG.txt
+    reference_type:
+    reference_id:
+  - url: https://github.com/felx/nimbus-jose-jwt
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/9317fd092b257a0815434b116a8af8daea6e920b6673f4fd5583d5fe@%3Ccommits.druid.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-12974
+    reference_type:
+    reference_id:

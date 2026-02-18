@@ -1,0 +1,68 @@
+advisory_id: GHSA-p7f2-rr42-m9xm
+datasource_id: github_osv_importer_v2/GHSA-p7f2-rr42-m9xm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-p7f2-rr42-m9xm/GHSA-p7f2-rr42-m9xm.json
+aliases:
+  - CVE-2017-0900
+summary: |
+  RubyGems Improper Input Validation vulnerability
+  RubyGems versions 2.6.12 and earlier are vulnerable to maliciously crafted gem specifications that cause a denial of service attack against RubyGems clients who have issued a `query` command.
+impacted_packages:
+  - purl: pkg:gem/rubygems-update
+    affected_versions: vers:gem/<2.6.13
+    fixed_versions: vers:gem/2.6.13
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-p7f2-rr42-m9xm/GHSA-p7f2-rr42-m9xm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: http://blog.rubygems.org/2017/08/27/2.6.13-released.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:3485
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0378
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0583
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0585
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubygems/rubygems
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubygems/rubygems/commit/8a38a4fc24c6591e6c8f43d1fadab6efeb4d6251
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/243003
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2018/07/msg00012.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-0900
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/201710-01
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20190212090616/http://www.securitytracker.com/id/1039249
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200227143907/http://www.securityfocus.com/bid/100579
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2017/dsa-3966
+    reference_type:
+    reference_id:

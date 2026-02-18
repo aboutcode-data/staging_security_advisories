@@ -1,0 +1,35 @@
+advisory_id: GHSA-qc22-qwm9-j8rx
+datasource_id: github_osv_importer_v2/GHSA-qc22-qwm9-j8rx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-qc22-qwm9-j8rx/GHSA-qc22-qwm9-j8rx.json
+aliases: []
+summary: |
+  Remote Code Execution in npm-groovy-lint
+  Versions of npm-groovy-lint prior to 9.1.0 bundle vulnerable versions of the Log4j library which are subject to remote code execution via jndi rendering. As a result npm-groovy-lint prior to 9.1.0 is also vulnerable.
+impacted_packages:
+  - purl: pkg:npm/npm-groovy-lint
+    affected_versions: vers:npm/<9.1.0
+    fixed_versions: vers:npm/9.1.0
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/advisories/GHSA-jfh8-c2jp-5v3q
+    reference_type:
+    reference_id:
+  - url: https://github.com/nvuillam/npm-groovy-lint
+    reference_type:
+    reference_id:
+  - url: https://github.com/nvuillam/npm-groovy-lint/commit/0b664519019442052e0190170c2b1c5aff7d72e7
+    reference_type:
+    reference_id:
+  - url: https://github.com/nvuillam/npm-groovy-lint/issues/194
+    reference_type:
+    reference_id:
+  - url: https://github.com/nvuillam/npm-groovy-lint/pull/195
+    reference_type:
+    reference_id:

@@ -1,0 +1,69 @@
+advisory_id: GHSA-p72g-pv48-7w9x
+datasource_id: github_osv_importer_v2/GHSA-p72g-pv48-7w9x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-p72g-pv48-7w9x/GHSA-p72g-pv48-7w9x.json
+aliases:
+  - CVE-2025-54988
+summary: |
+  Apache Tika XXE Vulnerability via Crafted XFA File Inside a PDF
+  Critical XXE in Apache Tika (tika-parser-pdf-module) in Apache Tika 1.13 through and including 3.2.1 on all platforms allows an attacker to carry out XML External Entity injection via a crafted XFA file inside of a PDF. An attacker may be able to read sensitive data or trigger malicious requests to internal resources or third-party servers. Note that the tika-parser-pdf-module is used as a dependency in several Tika packages including at least: tika-parsers-standard-modules, tika-parsers-standard-package, tika-app, tika-grpc and tika-server-standard.
+
+  Users are recommended to upgrade to version 3.2.2, which fixes this issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tika/tika-parser-pdf-module
+    affected_versions: vers:maven/>=1.13|<3.2.2
+    fixed_versions: vers:maven/3.2.2
+  - purl: pkg:maven/org.apache.tika/tika-parsers
+    affected_versions: vers:maven/>=1.13|<2.0.0-ALPHA
+    fixed_versions: vers:maven/2.0.0-ALPHA
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-p72g-pv48-7w9x/GHSA-p72g-pv48-7w9x.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-p72g-pv48-7w9x/GHSA-p72g-pv48-7w9x.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://archive.apache.org/dist/tika/3.2.2/CHANGES-3.2.2.txt
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika/commit/2b52257304f4d3cde2b8463657380bdb936d9ef2
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika/pull/2291
+    reference_type:
+    reference_id:
+  - url: https://issues.apache.org/jira/browse/TIKA-4459
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/8xn3rqy6kz5b3l1t83kcofkw0w4mmj1w
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/stn9oh7rfn9yv76n1srxr9w56oy04p72
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/10/msg00030.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-54988
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2025/08/20/2
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2025/08/20/3
+    reference_type:
+    reference_id:

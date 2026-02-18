@@ -1,0 +1,38 @@
+advisory_id: GHSA-ppq7-88c7-q879
+datasource_id: github_osv_importer_v2/GHSA-ppq7-88c7-q879
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-ppq7-88c7-q879/GHSA-ppq7-88c7-q879.json
+aliases:
+  - CVE-2021-25976
+summary: |
+  Cross-Site Request Forgery in PiranhaCMS
+  In PiranhaCMS, versions 4.0.0-alpha1 to 9.2.0 are vulnerable to cross-site request forgery (CSRF) when performing various actions supported by the management system, such as deleting a user, deleting a role, editing a post, deleting a media folder etc., when an ID is known.
+impacted_packages:
+  - purl: pkg:nuget/Piranha
+    affected_versions: vers:nuget/<=9.2.0
+    fixed_versions: vers:nuget/10.0.0-alpha1
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-ppq7-88c7-q879/GHSA-ppq7-88c7-q879.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/PiranhaCMS/piranha.core
+    reference_type:
+    reference_id:
+  - url: https://github.com/PiranhaCMS/piranha.core/commit/e42abacdd0dd880ce9cf6607efcc24646ac82eda
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-25976
+    reference_type:
+    reference_id:
+  - url: https://www.whitesourcesoftware.com/vulnerability-database/CVE-2021-25976
+    reference_type:
+    reference_id:

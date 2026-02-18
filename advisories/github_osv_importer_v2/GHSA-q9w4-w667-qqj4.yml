@@ -1,0 +1,58 @@
+advisory_id: GHSA-q9w4-w667-qqj4
+datasource_id: github_osv_importer_v2/GHSA-q9w4-w667-qqj4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-q9w4-w667-qqj4/GHSA-q9w4-w667-qqj4.json
+aliases:
+  - CVE-2023-37905
+summary: |
+  ckeditor-wordcount-plugin vulnerable to Cross-site Scripting in Source Mode of Editor
+  ### Problem
+
+  It has been discovered that the `ckeditor-wordcount-plugin` plugin for CKEditor4 is susceptible to cross-site scripting when switching to the source code mode.
+
+  ### Solution
+
+  Update to version 1.17.12 of the `ckeditor-wordcount-plugin` plugin.
+
+  ### Credits
+
+  * @sypets for reporting this finding to the TYPO3 Security Team
+  * @ohader for fixing the issue on behalf of the TYPO3 Security Team
+impacted_packages:
+  - purl: pkg:npm/ckeditor-wordcount-plugin
+    affected_versions: vers:npm/<=1.17.11
+    fixed_versions: vers:npm/1.17.12
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-q9w4-w667-qqj4/GHSA-q9w4-w667-qqj4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/TYPO3/typo3/security/advisories/GHSA-m8fw-p3cr-6jqc
+    reference_type:
+    reference_id:
+  - url: https://github.com/w8tcha/CKEditor-WordCount-Plugin
+    reference_type:
+    reference_id:
+  - url: https://github.com/w8tcha/CKEditor-WordCount-Plugin/commit/0f03b3e5b7c1409998a13aba3a95396e6fa349d8
+    reference_type:
+    reference_id:
+  - url: https://github.com/w8tcha/CKEditor-WordCount-Plugin/commit/a4b154bdf35b3465320136fcb078f196b437c2f1
+    reference_type:
+    reference_id:
+  - url: https://github.com/w8tcha/CKEditor-WordCount-Plugin/security/advisories/GHSA-q9w4-w667-qqj4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-37905
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2023-004
+    reference_type:
+    reference_id:

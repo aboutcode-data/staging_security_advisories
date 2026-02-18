@@ -1,0 +1,53 @@
+advisory_id: GHSA-pv7h-hx5h-mgfj
+datasource_id: github_osv_importer_v2/GHSA-pv7h-hx5h-mgfj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-pv7h-hx5h-mgfj/GHSA-pv7h-hx5h-mgfj.json
+aliases:
+  - CVE-2022-25845
+summary: |
+  Unsafe deserialization in com.alibaba:fastjson
+  The package com.alibaba:fastjson before 1.2.83 is vulnerable to Deserialization of Untrusted Data by bypassing the default autoType shutdown restrictions, which is possible under certain conditions. Exploiting this vulnerability allows attacking remote servers. Workaround: If upgrading is not possible, you can enable [safeMode](https://github.com/alibaba/fastjson/wiki/fastjson_safemode).
+impacted_packages:
+  - purl: pkg:maven/com.alibaba/fastjson
+    affected_versions: vers:maven/>=1.2.25|<1.2.83
+    fixed_versions: vers:maven/1.2.83
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-pv7h-hx5h-mgfj/GHSA-pv7h-hx5h-mgfj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/alibaba/fastjson
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/fastjson/commit/35db4adad70c32089542f23c272def1ad920a60d
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/fastjson/commit/8f3410f81cbd437f7c459f8868445d50ad301f15
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/fastjson/releases/tag/1.2.83
+    reference_type:
+    reference_id:
+  - url: https://github.com/alibaba/fastjson/wiki/security_update_20220523
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25845
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-COMALIBABA-2859222
+    reference_type:
+    reference_id:
+  - url: https://www.ddosi.org/fastjson-poc
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

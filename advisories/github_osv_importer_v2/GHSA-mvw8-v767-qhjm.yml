@@ -1,0 +1,35 @@
+advisory_id: GHSA-mvw8-v767-qhjm
+datasource_id: github_osv_importer_v2/GHSA-mvw8-v767-qhjm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/01/GHSA-mvw8-v767-qhjm/GHSA-mvw8-v767-qhjm.json
+aliases:
+  - CVE-2018-5216
+summary: |
+  Radiant CMS vulnerable to Cross-site Scripting
+  Radiant CMS 1.1.4 has XSS via crafted Markdown input in the `part_body_content` parameter to an `admin/pages/*/edit `resource.
+impacted_packages:
+  - purl: pkg:gem/radiant
+    affected_versions: vers:gem/<=1.1.4
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/01/GHSA-mvw8-v767-qhjm/GHSA-mvw8-v767-qhjm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/imsebao/404team
+    reference_type:
+    reference_id:
+  - url: https://github.com/imsebao/404team/blob/master/radiantcms.md
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-5216
+    reference_type:
+    reference_id:

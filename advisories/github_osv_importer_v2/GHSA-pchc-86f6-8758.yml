@@ -1,0 +1,67 @@
+advisory_id: GHSA-pchc-86f6-8758
+datasource_id: github_osv_importer_v2/GHSA-pchc-86f6-8758
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-pchc-86f6-8758/GHSA-pchc-86f6-8758.json
+aliases:
+  - CVE-2026-26316
+summary: |
+  OpenClaw BlueBubbles webhook auth bypass via loopback proxy trust
+  ### Summary
+
+  In affected versions, the optional BlueBubbles iMessage channel plugin could accept webhook requests as authenticated based only on the TCP peer address being loopback (`127.0.0.1`, `::1`, `::ffff:127.0.0.1`) even when the configured webhook secret was missing or incorrect. This does not affect the default iMessage integration unless BlueBubbles is installed and enabled.
+
+  ### Affected Packages / Versions
+
+  - npm: `openclaw` `< 2026.2.13`
+  - npm: `@openclaw/bluebubbles` `< 2026.2.13`
+
+  ### Details
+
+  If a deployment exposes the BlueBubbles webhook endpoint through a same-host reverse proxy (or an attacker can reach loopback via SSRF), an unauthenticated party may be able to inject inbound webhook events into the agent pipeline.
+
+  ### Fix Commit(s)
+
+  - f836c385ffc746cb954e8ee409f99d079bfdcd2f
+  - 743f4b28495cdeb0d5bf76f6ebf4af01f6a02e5a (defense-in-depth)
+
+  ### Mitigations
+
+  - Set a non-empty BlueBubbles webhook password.
+  - Avoid deployments where a public-facing reverse proxy forwards to a loopback-bound Gateway without strong upstream authentication.
+
+  Thanks @MegaManSec (https://joshua.hu) of [AISLE Research Team](https://aisle.com/) for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.13
+    fixed_versions: vers:npm/2026.2.13
+  - purl: pkg:npm/%40openclaw/bluebubbles
+    affected_versions: vers:npm/<2026.2.13
+    fixed_versions: vers:npm/2026.2.13
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-pchc-86f6-8758/GHSA-pchc-86f6-8758.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-863
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/743f4b28495cdeb0d5bf76f6ebf4af01f6a02e5a
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/f836c385ffc746cb954e8ee409f99d079bfdcd2f
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.12
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-pchc-86f6-8758
+    reference_type:
+    reference_id:

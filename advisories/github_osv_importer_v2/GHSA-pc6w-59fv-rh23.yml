@@ -1,0 +1,42 @@
+advisory_id: GHSA-pc6w-59fv-rh23
+datasource_id: github_osv_importer_v2/GHSA-pc6w-59fv-rh23
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-pc6w-59fv-rh23/GHSA-pc6w-59fv-rh23.json
+aliases:
+  - CVE-2025-6984
+summary: |
+  Langchain Community Vulnerable to XML External Entity (XXE) Attacks
+  The langchain-ai/langchain project, specifically the EverNoteLoader component, is vulnerable to XML External Entity (XXE) attacks due to insecure XML parsing. The vulnerability arises from the use of etree.iterparse() without disabling external entity references, which can lead to sensitive information disclosure. An attacker could exploit this by crafting a malicious XML payload that references local files, potentially exposing sensitive data such as /etc/passwd. This issue has been fixed in 0.3.27 of langchain-community.
+impacted_packages:
+  - purl: pkg:pypi/langchain-community
+    affected_versions: vers:pypi/<0.3.27
+    fixed_versions: vers:pypi/0.3.27
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-pc6w-59fv-rh23/GHSA-pc6w-59fv-rh23.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-611
+references:
+  - url: https://github.com/langchain-ai/langchain/blob/d79b5813a0b3b243c612b77013768995e46c4337/libs/langchain/langchain/document_loaders/evernote.py#L1-L23
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain-community
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain-community/commit/e842452108089524e22c3a2ced851c021884556f
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/a6b521cf-258c-41c0-9edb-d8ef976abb2a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-6984
+    reference_type:
+    reference_id:

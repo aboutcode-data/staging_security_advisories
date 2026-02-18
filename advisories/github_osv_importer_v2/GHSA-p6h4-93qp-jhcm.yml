@@ -1,0 +1,88 @@
+advisory_id: GHSA-p6h4-93qp-jhcm
+datasource_id: github_osv_importer_v2/GHSA-p6h4-93qp-jhcm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-p6h4-93qp-jhcm/GHSA-p6h4-93qp-jhcm.json
+aliases:
+  - CVE-2022-24760
+summary: |
+  Command injection in Parse Server through prototype pollution
+  ### Impact
+  This is a Remote Code Execution (RCE) vulnerability in Parse Server. This vulnerability affects Parse Server in the default configuration with MongoDB. The main weakness that leads to RCE is the Prototype Pollution vulnerable code in the file `DatabaseController.js`, so it is likely to affect Postgres and any other database backend as well. This vulnerability has been confirmed on Linux (Ubuntu) and Windows.
+
+  ### Patches
+  Upgrade to Parse Server >=4.10.7. If you are using a prerelease version of Parse Server 5.0 (alpha, beta) we will publish a timely fix for these. However, as a general reminder we do not consider prerelease versions to be suitable for production deployment.
+
+  Note that as part of the fix a new security feature scans for sensitive keywords in request data to prevent JavaScript prototype pollution. If such a keyword is found, the request is rejected with HTTP response code `400` and Parse Error `105` (`INVALID_KEY_NAME`). By default these keywords are: `{_bsontype: "Code"}`, `constructor`, `__proto__`. If you are using any of these keywords in your request data, you can override the default keywords by setting the new Parse Server option `requestKeywordDenylist` to `[]` and specify your own keywords as needed.
+
+  ### Workarounds
+  Although the fix is more broad and includes several aspects of the vulnerability, a quick and targeted fix can be achieved by patching the MongoDB Node.js driver and disable BSON code execution. To apply the patch, add the following code to be executed before starting Parse Server, for example in `index.js`.
+
+  ```
+  const BSON = require('bson');
+   const internalDeserialize = BSON.prototype.deserialize;
+   BSON.prototype.deserialize = (buffer, options = Object.create(null), ...others) => {
+     if (options.constructor) {
+       options = Object.assign(Object.create(null), options);
+     }
+     return internalDeserialize(buffer, options, ...others);
+   };
+   const internalDeserializeStream = BSON.prototype.deserializeStream;
+   BSON.prototype.deserializeStream = (
+     data,
+     startIndex,
+     numberOfDocuments,
+     documents,
+     docStartIndex,
+     options = Object.create(null),
+     ...others
+   ) => {
+     if (options.constructor) {
+       options = Object.assign(Object.create(null), options);
+     }
+     return internalDeserializeStream(
+       data,
+       startIndex,
+       numberOfDocuments,
+       documents,
+       docStartIndex,
+       options,
+       ...others
+     );
+   };
+  ```
+
+  ### References
+  - Original report on [huntr.dev](https://www.huntr.dev/bounties/ac24b343-e7da-4bc7-ab38-4f4f5cc9d099/)
+impacted_packages:
+  - purl: pkg:npm/parse-server
+    affected_versions: vers:npm/<4.10.7
+    fixed_versions: vers:npm/4.10.7
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-p6h4-93qp-jhcm/GHSA-p6h4-93qp-jhcm.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+  - CWE-1321
+references:
+  - url: https://github.com/parse-community/parse-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/commit/886bfd7cac69496e3f73d4bb536f0eec3cba0e4d
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server/security/advisories/GHSA-p6h4-93qp-jhcm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-24760
+    reference_type:
+    reference_id:
+  - url: https://www.huntr.dev/bounties/ac24b343-e7da-4bc7-ab38-4f4f5cc9d099
+    reference_type:
+    reference_id:

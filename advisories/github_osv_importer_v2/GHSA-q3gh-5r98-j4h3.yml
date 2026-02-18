@@ -1,0 +1,76 @@
+advisory_id: GHSA-q3gh-5r98-j4h3
+datasource_id: github_osv_importer_v2/GHSA-q3gh-5r98-j4h3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-q3gh-5r98-j4h3/GHSA-q3gh-5r98-j4h3.json
+aliases:
+  - CVE-2020-14968
+summary: "RSA-PSS signature validation vulnerability by prepending zeros in jsrsasign\n### Impact\n\
+  Jsrsasign can verify RSA-PSS signature which value can expressed as BigInteger. When there\
+  \ is a valid RSA-PSS signature value, this vulnerability is also accept value with prepending\
+  \ zeros as a valid signature.\n\n- If you are not use RSA-PSS signature validation, this vulnerability\
+  \ is not affected. \n- Risk to accept a forged or crafted message to be signed is low.\n-\
+  \ Risk to raise memory corruption is low since jsrsasign uses BigInteger class.\n\n### Patches\n\
+  Users using RSA-PSS signature validation should upgrade to 8.0.17.\n\n### Workarounds\nReject\
+  \ RSA-PSS signatures with unnecessary prepending zeros.\n\n### References\nhttps://github.com/kjur/jsrsasign/security/advisories/GHSA-q3gh-5r98-j4h3\n\
+  [https://github.com/kjur/jsrsasign/issues/438](https://github.com/kjur/jsrsasign/issues/438)\n\
+  https://nvd.nist.gov/vuln/detail/CVE-2020-14968\nhttps://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14968\n\
+  https://vuldb.com/?id.157125\nhttps://kjur.github.io/jsrsasign/api/symbols/RSAKey.html#.verifyWithMessageHashPSS"
+impacted_packages:
+  - purl: pkg:npm/jsrsasign
+    affected_versions: vers:npm/<8.0.16
+    fixed_versions: vers:npm/8.0.17
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-q3gh-5r98-j4h3/GHSA-q3gh-5r98-j4h3.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-119
+references:
+  - url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14968
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/commit/3bcc088c727658d7235854cd2a409a904cc2ce99
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/issues/438
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/releases/tag/8.0.17
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/releases/tag/8.0.18
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/security/advisories/GHSA-q3gh-5r98-j4h3
+    reference_type:
+    reference_id:
+  - url: https://kjur.github.io/jsrsasign
+    reference_type:
+    reference_id:
+  - url: https://kjur.github.io/jsrsasign/api/symbols/RSAKey.html#.verifyWithMessageHashPSS
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-14968
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20200724-0001
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.157125
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1541
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/jsrsasign
+    reference_type:
+    reference_id:

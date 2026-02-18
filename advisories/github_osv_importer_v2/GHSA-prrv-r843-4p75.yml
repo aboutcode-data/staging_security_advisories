@@ -1,0 +1,38 @@
+advisory_id: GHSA-prrv-r843-4p75
+datasource_id: github_osv_importer_v2/GHSA-prrv-r843-4p75
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-prrv-r843-4p75/GHSA-prrv-r843-4p75.json
+aliases:
+  - CVE-2023-5867
+summary: |
+  Cross-site Scripting (XSS) in thorsten/phpmyfaq
+  Cross-site Scripting (XSS) - Stored in GitHub repository thorsten/phpmyfaq prior to 3.2.2.
+impacted_packages:
+  - purl: pkg:composer/thorsten/phpmyfaq
+    affected_versions: vers:composer/<3.2.2
+    fixed_versions: vers:composer/3.2.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-prrv-r843-4p75/GHSA-prrv-r843-4p75.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/thorsten/phpMyFAQ
+    reference_type:
+    reference_id:
+  - url: https://github.com/thorsten/phpmyfaq/commit/5310cb8c37dc3a5c5aead0898690b14705c433d3
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/5c09b32e-a041-4a1e-a277-eb3e80967df0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-5867
+    reference_type:
+    reference_id:

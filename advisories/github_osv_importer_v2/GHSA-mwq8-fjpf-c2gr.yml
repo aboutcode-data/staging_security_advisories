@@ -1,0 +1,68 @@
+advisory_id: GHSA-mwq8-fjpf-c2gr
+datasource_id: github_osv_importer_v2/GHSA-mwq8-fjpf-c2gr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-mwq8-fjpf-c2gr/GHSA-mwq8-fjpf-c2gr.json
+aliases:
+  - CVE-2023-28427
+summary: |
+  Prototype pollution in matrix-js-sdk (part 2)
+  ### Impact
+
+  In certain configurations, data sent by remote servers containing special strings in key locations could cause modifications of the `Object.prototype`, disrupting matrix-js-sdk functionality, causing denial of service and potentially affecting program logic.
+
+  (This is part 2, where [CVE-2022-36059](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-36059) / [GHSA-rfv9-x7hh-xc32](https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-rfv9-x7hh-xc32) is part 1. Part 2 covers remaining vectors not covered by part 1, found in a codebase audit scheduled after part 1.)
+
+  ### Patches
+  The issue has been patched in matrix-js-sdk 24.0.0.
+
+  ### Workarounds
+  None.
+
+  ### References
+
+  - [Release blog post](https://matrix.org/blog/2023/03/28/security-releases-matrix-js-sdk-24-0-0-and-matrix-react-sdk-3-69-0)
+  - The advisory [GHSA-rfv9-x7hh-xc32](https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-rfv9-x7hh-xc32) ([CVE-2022-36059](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-36059)) refers to an initial set of vulnerable locations discovered and patched in matrix-js-sdk 19.4.0. We opted not to disclose that advisory while we performed an audit of the codebase and are now disclosing it jointly with this one.
+
+  ### For more information
+  If you have any questions or comments about this advisory please email us at [security at matrix.org](mailto:security@matrix.org).
+impacted_packages:
+  - purl: pkg:npm/matrix-js-sdk
+    affected_versions: vers:npm/<24.0.0
+    fixed_versions: vers:npm/24.0.0
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-mwq8-fjpf-c2gr/GHSA-mwq8-fjpf-c2gr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/matrix-org/matrix-js-sdk
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-mwq8-fjpf-c2gr
+    reference_type:
+    reference_id:
+  - url: https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-rfv9-x7hh-xc32
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/04/msg00027.html
+    reference_type:
+    reference_id:
+  - url: https://matrix.org/blog/2023/03/28/security-releases-matrix-js-sdk-24-0-0-and-matrix-react-sdk-3-69-0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-28427
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202305-36
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2023/dsa-5392
+    reference_type:
+    reference_id:

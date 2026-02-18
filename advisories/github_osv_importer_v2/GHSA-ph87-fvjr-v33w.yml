@@ -1,0 +1,95 @@
+advisory_id: GHSA-ph87-fvjr-v33w
+datasource_id: github_osv_importer_v2/GHSA-ph87-fvjr-v33w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-ph87-fvjr-v33w/GHSA-ph87-fvjr-v33w.json
+aliases:
+  - CVE-2021-29563
+summary: "CHECK-fail in `tf.raw_ops.RFFT`\n### Impact\nAn attacker can cause a denial of service\
+  \ by exploiting a `CHECK`-failure coming from the implementation of `tf.raw_ops.RFFT`:\n \
+  \   \n```python\nimport tensorflow as tf\n\ninputs = tf.constant([1], shape=[1], dtype=tf.float32)\n\
+  fft_length = tf.constant([0], shape=[1], dtype=tf.int32)\n\ntf.raw_ops.RFFT(input=inputs,\
+  \ fft_length=fft_length)\n```\n\nThe above example causes Eigen code to operate on an empty\
+  \ matrix. This triggers on an assertion and causes program termination.\n    \n### Patches\n\
+  We have patched the issue in GitHub commit [31bd5026304677faa8a0b77602c6154171b9aec1](https://github.com/tensorflow/tensorflow/commit/31bd5026304677faa8a0b77602c6154171b9aec1).\n\
+  \nThe fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow\
+  \ 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected\
+  \ and still in supported range.\n\n### For more information\nPlease consult [our security\
+  \ guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information\
+  \ regarding the security model and how to contact us with issues and questions. \n\n### Attribution\n\
+  This vulnerability has been reported by Yakun Zhang and Ying Wang of Baidu X-Team."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.1.4
+    fixed_versions: vers:pypi/2.1.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.2.0|<2.2.3
+    fixed_versions: vers:pypi/2.2.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.3.0|<2.3.3
+    fixed_versions: vers:pypi/2.3.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.4.0|<2.4.2
+    fixed_versions: vers:pypi/2.4.2
+severities:
+  - score: '2.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-ph87-fvjr-v33w/GHSA-ph87-fvjr-v33w.json
+  - score: '2.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-ph87-fvjr-v33w/GHSA-ph87-fvjr-v33w.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-617
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-cpu/PYSEC-2021-491.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-gpu/PYSEC-2021-689.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow/PYSEC-2021-200.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/31bd5026304677faa8a0b77602c6154171b9aec1
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-ph87-fvjr-v33w
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29563
+    reference_type:
+    reference_id:

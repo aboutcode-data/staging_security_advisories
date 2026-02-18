@@ -1,0 +1,53 @@
+advisory_id: GHSA-q2x7-8rv6-6q7h
+datasource_id: github_osv_importer_v2/GHSA-q2x7-8rv6-6q7h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-q2x7-8rv6-6q7h/GHSA-q2x7-8rv6-6q7h.json
+aliases:
+  - CVE-2024-56326
+summary: |
+  Jinja has a sandbox breakout through indirect reference to format method
+  An oversight in how the Jinja sandboxed environment detects calls to `str.format` allows an attacker that controls the content of a template to execute arbitrary Python code.
+
+  To exploit the vulnerability, an attacker needs to control the content of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates.
+
+  Jinja's sandbox does catch calls to `str.format` and ensures they don't escape the sandbox. However, it's possible to store a reference to a malicious string's `format` method, then pass that to a filter that calls it. No such filters are built-in to Jinja, but could be present through custom filters in an application. After the fix, such indirect calls are also handled by the sandbox.
+impacted_packages:
+  - purl: pkg:pypi/jinja2
+    affected_versions: vers:pypi/<=3.1.4
+    fixed_versions: vers:pypi/3.1.5
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-q2x7-8rv6-6q7h/GHSA-q2x7-8rv6-6q7h.json
+  - score: '5.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-q2x7-8rv6-6q7h/GHSA-q2x7-8rv6-6q7h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-693
+references:
+  - url: https://github.com/pallets/jinja
+    reference_type:
+    reference_id:
+  - url: https://github.com/pallets/jinja/commit/48b0687e05a5466a91cd5812d604fa37ad0943b4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pallets/jinja/releases/tag/3.1.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/pallets/jinja/security/advisories/GHSA-q2x7-8rv6-6q7h
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/04/msg00022.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-56326
+    reference_type:
+    reference_id:

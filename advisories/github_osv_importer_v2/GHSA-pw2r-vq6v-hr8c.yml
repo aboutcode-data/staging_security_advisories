@@ -1,0 +1,39 @@
+advisory_id: GHSA-pw2r-vq6v-hr8c
+datasource_id: github_osv_importer_v2/GHSA-pw2r-vq6v-hr8c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-pw2r-vq6v-hr8c/GHSA-pw2r-vq6v-hr8c.json
+aliases:
+  - CVE-2022-0536
+summary: |
+  Exposure of Sensitive Information to an Unauthorized Actor in follow-redirects
+  Exposure of Sensitive Information to an Unauthorized Actor in NPM follow-redirects prior to 1.14.8.
+impacted_packages:
+  - purl: pkg:npm/follow-redirects
+    affected_versions: vers:npm/<1.14.8
+    fixed_versions: vers:npm/1.14.8
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-pw2r-vq6v-hr8c/GHSA-pw2r-vq6v-hr8c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-212
+references:
+  - url: https://github.com/follow-redirects/follow-redirects
+    reference_type:
+    reference_id:
+  - url: https://github.com/follow-redirects/follow-redirects/commit/62e546a99c07c3ee5e4e0718c84a6ca127c5c445
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/7cf2bf90-52da-4d59-8028-a73b132de0db
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0536
+    reference_type:
+    reference_id:

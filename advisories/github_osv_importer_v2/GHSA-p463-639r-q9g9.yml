@@ -1,0 +1,42 @@
+advisory_id: GHSA-p463-639r-q9g9
+datasource_id: github_osv_importer_v2/GHSA-p463-639r-q9g9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-p463-639r-q9g9/GHSA-p463-639r-q9g9.json
+aliases:
+  - CVE-2013-1756
+summary: |
+  Dragonfly Code Injection vulnerability
+  The Dragonfly gem 0.7 before 0.8.6 and 0.9.x before 0.9.13 for Ruby, when used with Ruby on Rails, allows remote attackers to execute arbitrary code via a crafted request.
+impacted_packages:
+  - purl: pkg:gem/dragonfly
+    affected_versions: vers:gem/>=0.7|<0.8.6
+    fixed_versions: vers:gem/0.8.6
+  - purl: pkg:gem/dragonfly
+    affected_versions: vers:gem/>=0.9|<0.9.13
+    fixed_versions: vers:gem/0.9.13
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://exchange.xforce.ibmcloud.com/vulnerabilities/82476
+    reference_type:
+    reference_id:
+  - url: https://github.com/markevans/dragonfly
+    reference_type:
+    reference_id:
+  - url: https://github.com/markevans/dragonfly/commit/a8775aacf9e5c81cf11bec34b7afa7f27ddfe277
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/?fromgroups=#!topic/dragonfly-users/3c3WIU3VQTo
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-1756
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20200229103538/http://www.securityfocus.com/bid/58225
+    reference_type:
+    reference_id:

@@ -1,0 +1,45 @@
+advisory_id: GHSA-pp74-g2q5-j4jf
+datasource_id: github_osv_importer_v2/GHSA-pp74-g2q5-j4jf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-pp74-g2q5-j4jf/GHSA-pp74-g2q5-j4jf.json
+aliases:
+  - CVE-2022-37421
+summary: |
+  Silverstipe CMS Stored XSS in custom meta tags
+  A malicious content author could create a custom meta tag and execute an arbitrary JavaScript payload. This would require convincing a legitimate user to access a page and enter a custom keyboard shortcut.
+  This requires CMS access to exploit.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/cms
+    affected_versions: vers:composer/>=4.0.0|<4.11.3
+    fixed_versions: vers:composer/4.11.3
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-pp74-g2q5-j4jf/GHSA-pp74-g2q5-j4jf.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://forum.silverstripe.org/c/releases
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/cms/CVE-2022-37421.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37421
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/blog/tag/release
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2022-37421
+    reference_type:
+    reference_id:

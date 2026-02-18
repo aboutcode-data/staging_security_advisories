@@ -1,0 +1,58 @@
+advisory_id: GHSA-phj8-4cq3-794g
+datasource_id: github_osv_importer_v2/GHSA-phj8-4cq3-794g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-phj8-4cq3-794g/GHSA-phj8-4cq3-794g.json
+aliases:
+  - CVE-2021-29481
+summary: |
+  Unencrypted storage of client side sessions
+  ### Impact
+
+  The default configuration of client side sessions results in unencrypted, but signed, data being set as cookie values. This means that if something sensitive goes into the session, it could be read by something with access to the cookies.
+
+  Note: the documentation does point this out and encourage users to add an encryption key, but it is not mandatory.
+
+  For this to be a vulnerability, some kind of sensitive data would need to be stored in the session and the session cookie would have to leak. For example, the cookies are not configured with httpOnly and an adjacent XSS vulnerability within the site allowed capture of the cookies.
+
+  The proposed change is to change the default behaviour to use a randomly generated encryption key. This would mean that sessions do not survive app restarts, but this is already the behaviour given the random signing key.
+
+  ### Patches
+
+  As of version 1.9.0, a securely randomly generated signing key is used.
+
+  ### Workarounds
+
+  Supply an encryption key, as per the documentation recommendation.
+
+  ### References
+
+  - https://github.com/ratpack/ratpack/pull/1590
+impacted_packages:
+  - purl: pkg:maven/io.ratpack/ratpack-session
+    affected_versions: vers:maven/<1.9.0
+    fixed_versions: vers:maven/1.9.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-phj8-4cq3-794g/GHSA-phj8-4cq3-794g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-312
+references:
+  - url: https://github.com/ratpack/ratpack
+    reference_type:
+    reference_id:
+  - url: https://github.com/ratpack/ratpack/pull/1590
+    reference_type:
+    reference_id:
+  - url: https://github.com/ratpack/ratpack/security/advisories/GHSA-phj8-4cq3-794g
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29481
+    reference_type:
+    reference_id:

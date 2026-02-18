@@ -1,0 +1,41 @@
+advisory_id: GHSA-ph34-pc88-72gc
+datasource_id: github_osv_importer_v2/GHSA-ph34-pc88-72gc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-ph34-pc88-72gc/GHSA-ph34-pc88-72gc.json
+aliases:
+  - CVE-2018-7408
+summary: |
+  Incorrect Permission Assignment for Critical Resource in NPM
+  An issue was discovered in an npm 5.7.0 2018-02-21 pre-release (marked as "next: 5.7.0" and therefore automatically installed by an "npm upgrade -g npm" command, and also announced in the vendor's blog without mention of pre-release status). It might allow local users to bypass intended filesystem access restrictions because ownerships of /etc and /usr directories are being changed unexpectedly, related to a "correctMkdir" issue.
+impacted_packages:
+  - purl: pkg:npm/npm
+    affected_versions: vers:npm/<5.7.1
+    fixed_versions: vers:npm/5.7.1
+severities:
+  - score: '7.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-ph34-pc88-72gc/GHSA-ph34-pc88-72gc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-732
+references:
+  - url: github.com/npm/cli
+    reference_type:
+    reference_id:
+  - url: http://blog.npmjs.org/post/171169301000/v571
+    reference_type:
+    reference_id:
+  - url: https://github.com/npm/npm/commit/74e149da6efe6ed89477faa81fef08eee7999ad0
+    reference_type:
+    reference_id:
+  - url: https://github.com/npm/npm/issues/19883
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-7408
+    reference_type:
+    reference_id:

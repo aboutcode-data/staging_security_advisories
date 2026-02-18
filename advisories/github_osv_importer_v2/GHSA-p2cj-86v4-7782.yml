@@ -1,0 +1,62 @@
+advisory_id: GHSA-p2cj-86v4-7782
+datasource_id: github_osv_importer_v2/GHSA-p2cj-86v4-7782
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p2cj-86v4-7782/GHSA-p2cj-86v4-7782.json
+aliases:
+  - CVE-2024-38275
+summary: |
+  Moodle HTTP authorization header is preserved between "emulated redirects"
+  The cURL wrapper in Moodle retained the original request headers when following redirects, so HTTP authorization header information could be unintentionally sent in requests to redirect URLs.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.1
+    fixed_versions: vers:composer/4.4.1
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.3.0-beta|<4.3.5
+    fixed_versions: vers:composer/4.3.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.2.0-beta|<4.2.8
+    fixed_versions: vers:composer/4.2.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.11
+    fixed_versions: vers:composer/4.1.11
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p2cj-86v4-7782/GHSA-p2cj-86v4-7782.json
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p2cj-86v4-7782/GHSA-p2cj-86v4-7782.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-459
+  - CWE-226
+references:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/0df3c5837a592e6663c4d531ff6a1f776bc2f785
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/3e38c84315a7991ce5ef5f241f5e873b5ca24f01
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/836b2c23a210317d130017d77bb64e3b510869a9
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/f7988538b2208c55f2c40ce4f0815901dc88049b
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=459500
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-38275
+    reference_type:
+    reference_id:

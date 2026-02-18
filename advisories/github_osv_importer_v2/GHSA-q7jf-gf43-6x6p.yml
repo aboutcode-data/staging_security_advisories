@@ -1,0 +1,43 @@
+advisory_id: GHSA-q7jf-gf43-6x6p
+datasource_id: github_osv_importer_v2/GHSA-q7jf-gf43-6x6p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-q7jf-gf43-6x6p/GHSA-q7jf-gf43-6x6p.json
+aliases: []
+summary: "Hono vulnerable to Vary Header Injection leading to potential CORS Bypass\n### Summary\
+  \  \nA flaw in the CORS middleware allowed request `Vary` headers to be reflected into the\
+  \ response, enabling attacker-controlled `Vary` values and potentially affecting cache behavior.\n\
+  \n### Details  \nThe middleware previously copied the `Vary` header from the request when\
+  \ `origin` was not set to `\"*\"`.  Since `Vary` is a response header that should only be\
+  \ managed by the server, this could allow an attacker to influence caching behavior or cause\
+  \ inconsistent CORS handling.\n\nMost environments will see impact only when shared caches\
+  \ or proxies rely on the `Vary` header. The practical effect varies by configuration.\n\n\
+  ### Impact  \nMay cause cache key pollution and inconsistent CORS enforcement in certain setups.\
+  \ No direct confidentiality, integrity, or availability impact in default configurations.\
+  \  \n\n### Resolution  \nUpdate to the latest patched release. The CORS middleware has been\
+  \ corrected to handle `Vary` exclusively as a response header."
+impacted_packages:
+  - purl: pkg:npm/hono
+    affected_versions: vers:npm/<4.10.3
+    fixed_versions: vers:npm/4.10.3
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-q7jf-gf43-6x6p/GHSA-q7jf-gf43-6x6p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/honojs/hono
+    reference_type:
+    reference_id:
+  - url: https://github.com/honojs/hono/commit/d9b8b4b73b4f997994f2764013207365fe711282
+    reference_type:
+    reference_id:
+  - url: https://github.com/honojs/hono/security/advisories/GHSA-q7jf-gf43-6x6p
+    reference_type:
+    reference_id:

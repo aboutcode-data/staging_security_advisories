@@ -1,0 +1,38 @@
+advisory_id: GHSA-q72p-4w56-hx7h
+datasource_id: github_osv_importer_v2/GHSA-q72p-4w56-hx7h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-q72p-4w56-hx7h/GHSA-q72p-4w56-hx7h.json
+aliases:
+  - CVE-2022-32430
+summary: |
+  Hardcoded JWT Token in Lin CMS Spring Boot
+  An access control issue in Lin CMS Spring Boot v0.2.1 allows attackers to access the backend information and functions within the application.
+impacted_packages:
+  - purl: pkg:maven/io.github.talelin/lin-cms-core
+    affected_versions: vers:maven/<=0.2.1
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-q72p-4w56-hx7h/GHSA-q72p-4w56-hx7h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+references:
+  - url: https://github.com/TaleLin/lin-cms-spring-boot
+    reference_type:
+    reference_id:
+  - url: https://github.com/TaleLin/lin-cms-spring-boot/blob/3fc25bd8c10c73db2e7230809b322127eac554e3/src/main/resources/application.yml#L43
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-32430
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20220721190946/https://www.mesec.cn/archives/277
+    reference_type:
+    reference_id:

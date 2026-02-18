@@ -1,0 +1,41 @@
+advisory_id: GHSA-q99w-j4mj-7hj8
+datasource_id: github_osv_importer_v2/GHSA-q99w-j4mj-7hj8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q99w-j4mj-7hj8/GHSA-q99w-j4mj-7hj8.json
+aliases:
+  - CVE-2018-20028
+summary: |
+  Contao Information Disclosure via Access Control Flaws
+  Contao 3.x before 3.5.37, 4.4.x before 4.4.31 and 4.6.x before 4.6.11 has Incorrect Access Control.
+impacted_packages:
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=3.0.0|<3.5.37
+    fixed_versions: vers:composer/3.5.37
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.6.0|<4.6.11
+    fixed_versions: vers:composer/4.6.11
+  - purl: pkg:composer/contao/contao
+    affected_versions: vers:composer/>=4.4.0|<4.4.31
+    fixed_versions: vers:composer/4.4.31
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q99w-j4mj-7hj8/GHSA-q99w-j4mj-7hj8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://contao.org/en/news/security-vulnerability-cve-2018-20028.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/contao/contao/commit/bbe5fe1d385cd1195670e2d6b972272133443c59
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-20028
+    reference_type:
+    reference_id:

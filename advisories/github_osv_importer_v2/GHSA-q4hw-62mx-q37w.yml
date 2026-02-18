@@ -1,0 +1,41 @@
+advisory_id: GHSA-q4hw-62mx-q37w
+datasource_id: github_osv_importer_v2/GHSA-q4hw-62mx-q37w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q4hw-62mx-q37w/GHSA-q4hw-62mx-q37w.json
+aliases:
+  - CVE-2015-3933
+summary: |
+  MetalGenix GeniXCMS vulnerable to SQL Injection
+  Multiple SQL injection vulnerabilities in inc/lib/User.class.php in MetalGenix GeniXCMS before 0.0.3-patch allow remote attackers to execute arbitrary SQL commands via the (1) email parameter or (2) userid parameter to register.php.
+impacted_packages:
+  - purl: pkg:composer/genix/cms
+    affected_versions: vers:composer/<=0.0.3
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q4hw-62mx-q37w/GHSA-q4hw-62mx-q37w.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/GeniXCMS/GeniXCMS
+    reference_type:
+    reference_id:
+  - url: https://github.com/semplon/GeniXCMS/releases/tag/v0.0.3-patch
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2015-3933
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/37363
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/37363.txt
+    reference_type: exploit
+    reference_id: CVE-2015-3933;OSVDB-123638

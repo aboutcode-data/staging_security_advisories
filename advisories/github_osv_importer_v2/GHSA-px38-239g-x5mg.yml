@@ -1,0 +1,41 @@
+advisory_id: GHSA-px38-239g-x5mg
+datasource_id: github_osv_importer_v2/GHSA-px38-239g-x5mg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-px38-239g-x5mg/GHSA-px38-239g-x5mg.json
+aliases:
+  - CVE-2023-37940
+summary: |
+  Liferay Portal and Liferay DXP have Cross-site Scripting vulnerability in edit Service Access Policy page
+  Cross-site scripting (XSS) vulnerability in the edit Service Access Policy page in Liferay Portal 7.0.0 through 7.4.3.87, and Liferay DXP 7.4 GA through update 87, 7.3 GA through update 29, and older unsupported versions allows remote attackers to inject arbitrary web script or HTML via a crafted payload injected into a service access policy's `Service Class` text field.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.0.0|<7.4.3.88
+    fixed_versions: vers:maven/7.4.3.88
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.0|<7.3.10.u30
+    fixed_versions: vers:maven/7.3.10.u30
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.4|<7.4.13.u88
+    fixed_versions: vers:maven/7.4.13.u88
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-px38-239g-x5mg/GHSA-px38-239g-x5mg.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2023-37940
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-37940
+    reference_type:
+    reference_id:

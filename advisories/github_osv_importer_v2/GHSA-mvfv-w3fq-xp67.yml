@@ -1,0 +1,35 @@
+advisory_id: GHSA-mvfv-w3fq-xp67
+datasource_id: github_osv_importer_v2/GHSA-mvfv-w3fq-xp67
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-mvfv-w3fq-xp67/GHSA-mvfv-w3fq-xp67.json
+aliases:
+  - CVE-2023-33941
+summary: |
+  Cross-site scripting in Liferay Portal
+  Multiple cross-site scripting (XSS) vulnerabilities in the Plugin for OAuth 2.0 module's OAuth2ProviderApplicationRedirect class in Liferay Portal 7.4.3.41 through 7.4.3.52, and Liferay DXP 7.4 update 41 through 52 allow remote attackers to inject arbitrary web script or HTML via the (1) code, or (2) error parameter.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.4.3.41|<7.4.3.53
+    fixed_versions: vers:maven/7.4.3.53
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-mvfv-w3fq-xp67/GHSA-mvfv-w3fq-xp67.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2023-33941
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-33941
+    reference_type:
+    reference_id:

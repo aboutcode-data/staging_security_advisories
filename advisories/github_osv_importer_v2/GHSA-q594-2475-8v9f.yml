@@ -1,0 +1,22 @@
+advisory_id: GHSA-q594-2475-8v9f
+datasource_id: github_osv_importer_v2/GHSA-q594-2475-8v9f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/02/GHSA-q594-2475-8v9f/GHSA-q594-2475-8v9f.json
+aliases: []
+summary: |
+  Unencrypted passwords
+  A vulnerability found in Apache NIFI before v0.4.0-RC2. Passwords of InvokeHTTP weren?t encrypted.
+impacted_packages:
+  - purl: pkg:maven/org.apache.nifi/nifi-standard-processors
+    affected_versions: vers:maven/<0.4.0
+    fixed_versions: vers:maven/0.4.0
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/apache/nifi/commit/b4bfcc1f21fed3209bf4a8f187616cdbb3d1a5c9
+    reference_type:
+    reference_id:

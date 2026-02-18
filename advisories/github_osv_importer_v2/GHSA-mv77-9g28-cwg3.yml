@@ -1,0 +1,89 @@
+advisory_id: GHSA-mv77-9g28-cwg3
+datasource_id: github_osv_importer_v2/GHSA-mv77-9g28-cwg3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-mv77-9g28-cwg3/GHSA-mv77-9g28-cwg3.json
+aliases:
+  - CVE-2022-41908
+summary: |
+  `CHECK` fail via inputs in `PyFunc`
+  ### Impact
+  An input `token` that is not a UTF-8 bytestring will trigger a `CHECK` fail in [`tf.raw_ops.PyFunc`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/lib/core/py_func.cc).
+
+  ```python
+  import tensorflow as tf
+
+  value = tf.constant(value=[1,2])
+  token = b'\xb0'
+  dataType = [tf.int32]
+
+  tf.raw_ops.PyFunc(input=value,token=token,Tout=dataType)
+  ```
+
+  ### Patches
+  We have patched the issue in GitHub commit [9f03a9d3bafe902c1e6beb105b2f24172f238645](https://github.com/tensorflow/tensorflow/commit/9f03a9d3bafe902c1e6beb105b2f24172f238645).
+
+  The fix will be included in TensorFlow 2.11. We will also cherrypick this commit on TensorFlow 2.10.1, 2.9.3, and TensorFlow 2.8.4, as these are also affected and still in supported range.
+
+
+  ### For more information
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.
+
+
+  ### Attribution
+  This vulnerability has been reported by pattarakritr@smu.edu.sg
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.8.4
+    fixed_versions: vers:pypi/2.8.4
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.9.0|<2.9.3
+    fixed_versions: vers:pypi/2.9.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.10.0|<2.10.1
+    fixed_versions: vers:pypi/2.10.1
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-mv77-9g28-cwg3/GHSA-mv77-9g28-cwg3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/lib/core/py_func.cc
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/9f03a9d3bafe902c1e6beb105b2f24172f238645
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-mv77-9g28-cwg3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-41908
+    reference_type:
+    reference_id:

@@ -1,0 +1,61 @@
+advisory_id: GHSA-q5hq-fp76-qmrc
+datasource_id: github_osv_importer_v2/GHSA-q5hq-fp76-qmrc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-q5hq-fp76-qmrc/GHSA-q5hq-fp76-qmrc.json
+aliases:
+  - CVE-2021-28677
+summary: |
+  Uncontrolled Resource Consumption in Pillow
+  An issue was discovered in Pillow before 8.2.0. For EPS data, the readline implementation used in EPSImageFile has to deal with any combination of \r and \n as line endings. It used an accidentally quadratic method of accumulating lines while looking for a line ending. A malicious EPS file could use this to perform a DoS of Pillow in the open phase, before an image was accepted for opening.
+impacted_packages:
+  - purl: pkg:pypi/pillow
+    affected_versions: vers:pypi/<8.2.0
+    fixed_versions: vers:pypi/8.2.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-q5hq-fp76-qmrc/GHSA-q5hq-fp76-qmrc.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-q5hq-fp76-qmrc/GHSA-q5hq-fp76-qmrc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/advisories/GHSA-q5hq-fp76-qmrc
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/pillow/PYSEC-2021-93.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/python-pillow/Pillow
+    reference_type:
+    reference_id:
+  - url: https://github.com/python-pillow/Pillow/commit/5a5e6db0abf4e7a638fb1b3408c4e495a096cb92
+    reference_type:
+    reference_id:
+  - url: https://github.com/python-pillow/Pillow/pull/5377
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/07/msg00018.html
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-28677
+    reference_type:
+    reference_id:
+  - url: https://pillow.readthedocs.io/en/stable/releasenotes/8.2.0.html#cve-2021-28677-fix-eps-dos-on-open
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202107-33
+    reference_type:
+    reference_id:

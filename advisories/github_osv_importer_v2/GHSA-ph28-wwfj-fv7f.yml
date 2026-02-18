@@ -1,0 +1,41 @@
+advisory_id: GHSA-ph28-wwfj-fv7f
+datasource_id: github_osv_importer_v2/GHSA-ph28-wwfj-fv7f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-ph28-wwfj-fv7f/GHSA-ph28-wwfj-fv7f.json
+aliases:
+  - CVE-2022-25862
+summary: |
+  Prototype Pollution in sds
+  This affects the package sds from 0.0.0. The library could be tricked into adding or modifying properties of the Object.prototype by abusing the set function located in js/set.js. **Note:** This vulnerability derives from an incomplete fix to CVE-2020-7618
+impacted_packages:
+  - purl: pkg:npm/sds
+    affected_versions: vers:npm/<=4.4.0
+    fixed_versions:
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-ph28-wwfj-fv7f/GHSA-ph28-wwfj-fv7f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/monsterkodi/sds
+    reference_type:
+    reference_id:
+  - url: https://github.com/monsterkodi/sds/blob/master/js/set.js
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7618
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25862
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SDS-2385944
+    reference_type:
+    reference_id:

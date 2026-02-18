@@ -1,0 +1,59 @@
+advisory_id: GHSA-p4qx-6w5p-4rj2
+datasource_id: github_osv_importer_v2/GHSA-p4qx-6w5p-4rj2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-p4qx-6w5p-4rj2/GHSA-p4qx-6w5p-4rj2.json
+aliases:
+  - CVE-2023-28867
+summary: |
+  GraphQL Java vulnerable to stack consumption
+  In GraphQL Java (aka graphql-java) before 20.1, an attacker can send a crafted GraphQL query that causes stack consumption. The fixed versions are 20.1, 19.4, 18.4, 17.5, and 0.0.0-2023-03-20T01-49-44-80e3135.
+impacted_packages:
+  - purl: pkg:maven/com.graphql-java/graphql-java
+    affected_versions: vers:maven/<0.0.0-2023-03-20T01-49-44-80e3135
+    fixed_versions: vers:maven/0.0.0-2023-03-20T01-49-44-80e3135
+  - purl: pkg:maven/com.graphql-java/graphql-java
+    affected_versions: vers:maven/>=1.2|<17.5
+    fixed_versions: vers:maven/17.5
+  - purl: pkg:maven/com.graphql-java/graphql-java
+    affected_versions: vers:maven/>=18.0|<18.4
+    fixed_versions: vers:maven/18.4
+  - purl: pkg:maven/com.graphql-java/graphql-java
+    affected_versions: vers:maven/>=19.0|<19.4
+    fixed_versions: vers:maven/19.4
+  - purl: pkg:maven/com.graphql-java/graphql-java
+    affected_versions: vers:maven/20.0
+    fixed_versions: vers:maven/20.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-p4qx-6w5p-4rj2/GHSA-p4qx-6w5p-4rj2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/graphql-java/graphql-java
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/pull/3112
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/releases/tag/v17.5
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/releases/tag/v18.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/releases/tag/v19.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/graphql-java/graphql-java/releases/tag/v20.1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-28867
+    reference_type:
+    reference_id:

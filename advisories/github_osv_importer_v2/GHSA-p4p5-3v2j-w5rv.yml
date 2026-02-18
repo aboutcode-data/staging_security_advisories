@@ -1,0 +1,41 @@
+advisory_id: GHSA-p4p5-3v2j-w5rv
+datasource_id: github_osv_importer_v2/GHSA-p4p5-3v2j-w5rv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-p4p5-3v2j-w5rv/GHSA-p4p5-3v2j-w5rv.json
+aliases:
+  - CVE-2018-1000865
+summary: |
+  Improper Privilege Management in Jenkins
+  A sandbox bypass vulnerability exists in Script Security Plugin 1.47 and earlier in groovy-sandbox/src/main/java/org/kohsuke/groovy/sandbox/SandboxTransformer.java that allows attackers with Job/Configure permission to execute arbitrary code on the Jenkins master JVM, if plugins using the Groovy sandbox are installed.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.plugins/script-security
+    affected_versions: vers:maven/<=1.47
+    fixed_versions: vers:maven/1.48
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-p4p5-3v2j-w5rv/GHSA-p4p5-3v2j-w5rv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+references:
+  - url: https://access.redhat.com/errata/RHBA-2019:0326
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHBA-2019:0327
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/script-security-plugin/commit/16c862ae9d4038a3edbd8bdfb0fd1401a509d56b
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2018-10-29/#SECURITY-1186
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000865
+    reference_type:
+    reference_id:

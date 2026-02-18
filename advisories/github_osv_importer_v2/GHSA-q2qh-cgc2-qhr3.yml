@@ -1,0 +1,49 @@
+advisory_id: GHSA-q2qh-cgc2-qhr3
+datasource_id: github_osv_importer_v2/GHSA-q2qh-cgc2-qhr3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-q2qh-cgc2-qhr3/GHSA-q2qh-cgc2-qhr3.json
+aliases:
+  - CVE-2018-3712
+summary: |
+  Directory Traversal in serve
+  Affected versions of `serve` do not properly handle `%2e` (.) and `%2f` (/) characters, and allow the, characters to be used in paths. This can be used to traverse the directory tree and list content of any directory the user running the process has access to.
+
+  Mitigating factors:
+  This vulnerability only allows listing of directory contents and does not allow reading of arbitrary files.
+
+
+  ## Recommendation
+
+  Update to version 6.4.9 later.
+impacted_packages:
+  - purl: pkg:npm/serve
+    affected_versions: vers:npm/<=6.4.8
+    fixed_versions: vers:npm/6.4.9
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/07/GHSA-q2qh-cgc2-qhr3/GHSA-q2qh-cgc2-qhr3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/vercel/serve
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/serve/commit/6adad6881c61991da61ebc857857c53409544575
+    reference_type:
+    reference_id:
+  - url: https://github.com/zeit/serve/pull/316
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/307666
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-3712
+    reference_type:
+    reference_id:

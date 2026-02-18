@@ -1,0 +1,35 @@
+advisory_id: GHSA-q979-9m39-23mq
+datasource_id: github_osv_importer_v2/GHSA-q979-9m39-23mq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-q979-9m39-23mq/GHSA-q979-9m39-23mq.json
+aliases:
+  - CVE-2022-23463
+summary: |
+  Nepxion Discovery vulnerable to SpEL Injection leading to Remote Code Execution
+  Nepxion Discovery is a solution for Spring Cloud. Discovery is vulnerable to SpEL Injection in discovery-commons. DiscoveryExpressionResolver’s eval method is evaluating expression with a StandardEvaluationContext, allowing the expression to reach and interact with Java classes such as java.lang.Runtime, leading to Remote Code Execution. There is no patch available for this issue at time of publication. There are no known workarounds.
+impacted_packages:
+  - purl: pkg:maven/com.nepxion/discovery
+    affected_versions: vers:maven/<=6.16.2
+    fixed_versions:
+severities:
+  - score: '9.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-q979-9m39-23mq/GHSA-q979-9m39-23mq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-917
+references:
+  - url: https://github.com/Nepxion/Discovery
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23463
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2022-033_GHSL-2022-034_Discovery
+    reference_type:
+    reference_id:

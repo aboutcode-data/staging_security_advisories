@@ -1,0 +1,38 @@
+advisory_id: GHSA-q9ww-gjpw-p9g6
+datasource_id: github_osv_importer_v2/GHSA-q9ww-gjpw-p9g6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-q9ww-gjpw-p9g6/GHSA-q9ww-gjpw-p9g6.json
+aliases:
+  - CVE-2023-0860
+summary: |
+  Improper Restriction of Excessive Authentication Attempts in modoboa
+  Improper Restriction of Excessive Authentication Attempts in GitHub repository modoboa/modoboa-installer prior to 2.0.4.
+impacted_packages:
+  - purl: pkg:pypi/modoboa
+    affected_versions: vers:pypi/<2.0.4
+    fixed_versions: vers:pypi/2.0.4
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-q9ww-gjpw-p9g6/GHSA-q9ww-gjpw-p9g6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-307
+references:
+  - url: https://github.com/modoboa/modoboa
+    reference_type:
+    reference_id:
+  - url: https://github.com/modoboa/modoboa-installer/commit/63d92b73f3da6971ae4e13d033d625773ac91085
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/64f3ab93-1357-4468-8ff4-52bbcec18cca
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-0860
+    reference_type:
+    reference_id:

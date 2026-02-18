@@ -1,0 +1,38 @@
+advisory_id: GHSA-pcv5-m2wh-66j3
+datasource_id: github_osv_importer_v2/GHSA-pcv5-m2wh-66j3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pcv5-m2wh-66j3/GHSA-pcv5-m2wh-66j3.json
+aliases:
+  - CVE-2020-27838
+summary: |
+  Keycloak discloses information without authentication
+  A flaw was found in keycloak in versions prior to 13.0.0. The client registration endpoint allows fetching information about PUBLIC clients (like client secret) without authentication which could be an issue if the same PUBLIC client changed to CONFIDENTIAL later. The highest threat from this vulnerability is to data confidentiality.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<13.0.0
+    fixed_versions: vers:maven/13.0.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pcv5-m2wh-66j3/GHSA-pcv5-m2wh-66j3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1906797
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/9356843c6c3d7097d010b3bb6f91e25fcaba378c
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/7790
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-27838
+    reference_type:
+    reference_id:

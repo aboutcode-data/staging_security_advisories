@@ -1,0 +1,43 @@
+advisory_id: GHSA-pc95-3wgm-x28p
+datasource_id: github_osv_importer_v2/GHSA-pc95-3wgm-x28p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-pc95-3wgm-x28p/GHSA-pc95-3wgm-x28p.json
+aliases:
+  - CVE-2024-29271
+summary: |
+  VvvebJs Reflected Cross-Site Scripting (XSS) vulnerability
+  A reflected Cross-Site Scripting (XSS) vulnerability in VvvebJs before version 1.7.5 allows remote attackers to execute arbitrary code and obtain sensitive information via the `action` parameter in `save.php`.
+impacted_packages:
+  - purl: pkg:npm/vvvebjs
+    affected_versions: vers:npm/<1.7.5
+    fixed_versions: vers:npm/1.7.5
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-pc95-3wgm-x28p/GHSA-pc95-3wgm-x28p.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-pc95-3wgm-x28p/GHSA-pc95-3wgm-x28p.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/givanz/VvvebJs
+    reference_type:
+    reference_id:
+  - url: https://github.com/givanz/VvvebJs/commit/c0c0545b44b23acc288ef907fb498ce15b9b576e
+    reference_type:
+    reference_id:
+  - url: https://github.com/givanz/VvvebJs/issues/342
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29271
+    reference_type:
+    reference_id:

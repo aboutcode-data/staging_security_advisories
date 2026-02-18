@@ -1,0 +1,41 @@
+advisory_id: GHSA-pg82-9w35-3w3r
+datasource_id: github_osv_importer_v2/GHSA-pg82-9w35-3w3r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-pg82-9w35-3w3r/GHSA-pg82-9w35-3w3r.json
+aliases:
+  - CVE-2024-39610
+summary: |
+  FitNesse Cross-site scripting
+  Cross-site scripting vulnerability exists in FitNesse releases prior to 20241026. If this vulnerability is exploited, an arbitrary script may be executed on the web browser of the user who is using the product.
+impacted_packages:
+  - purl: pkg:maven/org.fitnesse/fitnesse
+    affected_versions: vers:maven/<20241026
+    fixed_versions: vers:maven/20241026
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-pg82-9w35-3w3r/GHSA-pg82-9w35-3w3r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://fitnesse.org/FitNesseDownload
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclebob/fitnesse
+    reference_type:
+    reference_id:
+  - url: https://github.com/unclebob/fitnesse/releases/tag/20241026
+    reference_type:
+    reference_id:
+  - url: https://jvn.jp/en/jp/JVN36791327
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-39610
+    reference_type:
+    reference_id:

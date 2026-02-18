@@ -1,0 +1,38 @@
+advisory_id: GHSA-q63q-hwf6-3mw6
+datasource_id: github_osv_importer_v2/GHSA-q63q-hwf6-3mw6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-q63q-hwf6-3mw6/GHSA-q63q-hwf6-3mw6.json
+aliases:
+  - CVE-2023-30093
+summary: |
+  ONOS vulnerable to Cross-site Scripting
+  A cross-site scripting (XSS) vulnerability in Open Network Operating System (ONOS) from version v1.9.0 to v2.7.0 allows attackers to execute arbitrary web scripts or HTML via a crafted payload injected into the authorizationURL parameter of the API documentation dashboard under securityDefinitions > OAuth2 > authorizationURL.
+impacted_packages:
+  - purl: pkg:maven/org.onosproject/onos-archetypes
+    affected_versions: vers:maven/>=1.9.0|<=2.7.0
+    fixed_versions:
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-q63q-hwf6-3mw6/GHSA-q63q-hwf6-3mw6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/opennetworkinglab/onos
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-30093
+    reference_type:
+    reference_id:
+  - url: https://www.edoardoottavianelli.it/CVE-2023-30093
+    reference_type:
+    reference_id:
+  - url: https://www.youtube.com/watch?v=jZr2JhDd_S8
+    reference_type:
+    reference_id:

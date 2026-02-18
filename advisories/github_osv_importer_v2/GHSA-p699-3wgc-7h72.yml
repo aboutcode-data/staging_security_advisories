@@ -1,0 +1,41 @@
+advisory_id: GHSA-p699-3wgc-7h72
+datasource_id: github_osv_importer_v2/GHSA-p699-3wgc-7h72
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-p699-3wgc-7h72/GHSA-p699-3wgc-7h72.json
+aliases:
+  - CVE-2018-1339
+summary: |
+  org.apache.tika:tika-parsers has an Infinite Loop vulnerability
+  Versions of the package `org.apache.tika:tika-parsers` before version 1.18 are vulnerable to Denial of Service (DoS) via a carefully crafted (or fuzzed) file that can trigger an infinite loop via the ChmParser.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tika/tika-parsers
+    affected_versions: vers:maven/<1.18
+    fixed_versions: vers:maven/1.18
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-p699-3wgc-7h72/GHSA-p699-3wgc-7h72.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-835
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:2669
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika/commit/1b6ca3685c196cfd89f5f95c19cc919ce10c5aff#diff-43f8cbe58aaab159ce88bd95fafc46dd
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/4d2cb5c819401bb075e2a1130e0d14f0404a136541a6f91da0225828@%3Cdev.tika.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1339
+    reference_type:
+    reference_id:

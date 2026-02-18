@@ -1,0 +1,69 @@
+advisory_id: GHSA-q56h-jjj6-52mf
+datasource_id: github_osv_importer_v2/GHSA-q56h-jjj6-52mf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q56h-jjj6-52mf/GHSA-q56h-jjj6-52mf.json
+aliases:
+  - CVE-2014-3529
+summary: |
+  Improper Restriction of XML External Entity Reference in Apache POI
+  The OPC SAX setup in Apache POI before 3.10.1 allows remote attackers to read arbitrary files via an OpenXML file containing an XML external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.poi/poi
+    affected_versions: vers:maven/<3.10.1
+    fixed_versions: vers:maven/3.10.1
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: http://poi.apache.org/changes.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-1370.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-1398.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-1399.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-1400.html
+    reference_type:
+    reference_id:
+  - url: https://exchange.xforce.ibmcloud.com/vulnerabilities/95770
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/poi
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/poi/commit/103b45073c7b504236588b3acc146530205af53c
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/poi/commit/236c3c52a9b90688b2e57ec503559409e29f33ed
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/poi/commit/6050a68d5adfb4ffef1edb778add09bcee32d1c3
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/poi/commit/d72bd78c19dfb7b57395a66ae8d9269d59a87bd2
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/poi/commit/eabb6a924be24abb879372d0bc967e0d316b2cf8
+    reference_type:
+    reference_id:
+  - url: https://lucene.apache.org/solr/solrnews.html#18-august-2014-recommendation-to-update-apache-poi-in-apache-solr-480-481-and-490-installations
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-3529
+    reference_type:
+    reference_id:
+  - url: http://www-01.ibm.com/support/docview.wss?uid=swg21996759
+    reference_type:
+    reference_id:
+  - url: http://www.apache.org/dist/poi/release/RELEASE-NOTES.txt
+    reference_type:
+    reference_id:

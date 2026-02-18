@@ -1,0 +1,53 @@
+advisory_id: GHSA-mw37-wx8p-gp45
+datasource_id: github_osv_importer_v2/GHSA-mw37-wx8p-gp45
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-mw37-wx8p-gp45/GHSA-mw37-wx8p-gp45.json
+aliases:
+  - CVE-2022-37251
+summary: |
+  Craft CMS vulnerable to Cross-site Scripting via entry revisions and drafts
+  Craft CMS `3.70-RC1`–`3.7.55.1` and `4.0.0-RC1`–`4.2.0.1` are vulnerable to Cross Site Scripting (XSS) via entry revisions and drafts. Versions `3.7.55.2` and `4.2.1` contain patches for this issue.
+impacted_packages:
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/>=3.7.0-beta.1|<3.7.55+2
+    fixed_versions: vers:composer/3.7.55+2
+  - purl: pkg:composer/craftcms/cms
+    affected_versions: vers:composer/>=4.0.0-RC1|<4.2.1
+    fixed_versions: vers:composer/4.2.1
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-mw37-wx8p-gp45/GHSA-mw37-wx8p-gp45.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://craft.com
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/blob/develop/CHANGELOG.md#421---2022-08-09
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/7139213dbd9e177a3528aac8e2db8de91830f118
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/919c9074ff8596bf30a629b0888c529793e9a903
+    reference_type:
+    reference_id:
+  - url: https://github.com/craftcms/cms/commit/f0d9b8a1e3ac005a2418f7d3d9059b49a96e73ea
+    reference_type:
+    reference_id:
+  - url: https://labs.integrity.pt/advisories/cve-2022-37251
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37251
+    reference_type:
+    reference_id:

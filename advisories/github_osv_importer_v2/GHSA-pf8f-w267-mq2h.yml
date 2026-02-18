@@ -1,0 +1,50 @@
+advisory_id: GHSA-pf8f-w267-mq2h
+datasource_id: github_osv_importer_v2/GHSA-pf8f-w267-mq2h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-pf8f-w267-mq2h/GHSA-pf8f-w267-mq2h.json
+aliases:
+  - CVE-2019-18978
+summary: |
+  The rack-cors rubygem may allow directory traveral
+  An issue was discovered in the rack-cors (aka Rack CORS Middleware) gem before 1.0.4 for Ruby. It allows ../ directory traversal to access private resources because resource matching does not ensure that pathnames are in a canonical format.
+impacted_packages:
+  - purl: pkg:gem/rack-cors
+    affected_versions: vers:gem/<1.0.4
+    fixed_versions: vers:gem/1.0.4
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/11/GHSA-pf8f-w267-mq2h/GHSA-pf8f-w267-mq2h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/cyu/rack-cors
+    reference_type:
+    reference_id:
+  - url: https://github.com/cyu/rack-cors/commit/e4d4fc362a4315808927011cbe5afcfe5486f17d
+    reference_type:
+    reference_id:
+  - url: https://github.com/cyu/rack-cors/compare/v1.0.3...v1.0.4
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2020/02/msg00004.html
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2020/10/msg00000.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-18978
+    reference_type:
+    reference_id:
+  - url: https://usn.ubuntu.com/4571-1
+    reference_type:
+    reference_id:
+  - url: https://www.debian.org/security/2021/dsa-4918
+    reference_type:
+    reference_id:

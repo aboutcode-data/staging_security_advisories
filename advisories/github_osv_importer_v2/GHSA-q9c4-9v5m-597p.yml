@@ -1,0 +1,31 @@
+advisory_id: GHSA-q9c4-9v5m-597p
+datasource_id: github_osv_importer_v2/GHSA-q9c4-9v5m-597p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-q9c4-9v5m-597p/GHSA-q9c4-9v5m-597p.json
+aliases: []
+summary: |
+  Typo3 Information Disclosure in Backend User Interface
+  The element information component used to display properties of a certain record is susceptible to information disclosure. The list of references from or to the record is not properly checked for the backend user’s permissions. A valid backend user account is needed in order to exploit this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.7.27
+    fixed_versions: vers:composer/8.7.27
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=9.0.0|<9.5.8
+    fixed_versions: vers:composer/9.5.8
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2019-06-25-1.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2019-014
+    reference_type:
+    reference_id:

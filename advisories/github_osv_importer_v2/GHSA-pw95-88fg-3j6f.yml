@@ -1,0 +1,51 @@
+advisory_id: GHSA-pw95-88fg-3j6f
+datasource_id: github_osv_importer_v2/GHSA-pw95-88fg-3j6f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-pw95-88fg-3j6f/GHSA-pw95-88fg-3j6f.json
+aliases:
+  - CVE-2025-46726
+summary: "Langroid Allows XXE Injection via XMLToolMessage\n### Summary\nA LLM application leveraging\
+  \ `XMLToolMessage` class may be exposed to untrusted XML input that could result in DoS and/or\
+  \ exposing local files with sensitive information.\n\n### Details\n`XMLToolMessage` uses `lxml`\
+  \ without safeguards:\nhttps://github.com/langroid/langroid/blob/df6227e6c079ec22bb2768498423148d6685acff/langroid/agent/xml_tool_message.py#L51-L52\n\
+  `lxml` is vulnerable to quadratic blowup attacks and processes external entity declarations\
+  \ for local files by default. \nCheck here: https://pypi.org/project/defusedxml/#python-xml-libraries\n\
+  \n### PoC\nA typical Quadratic blowup XML payload looks like this:\n```xml\n<!DOCTYPE bomb\
+  \ [\n<!ENTITY a \"aaaaaaaaaa\">\n<!ENTITY b \"&a;&a;&a;&a;&a;&a;&a;&a;&a;&a;\">\n<!ENTITY\
+  \ c \"&b;&b;&b;&b;&b;&b;&b;&b;&b;&b;\">\n]>\n<bomb>&c;</bomb>\n```\nHere, &a; expands to 10\
+  \ characters, &b; expands to 100, and &c; expands to 1000, causing exponential memory usage\
+  \ and potentially crashing the application.\n \n### Fix\nLangroid 0.53.4 initializes `XMLParser`\
+  \ with flags to prevent XML External Entity (XXE), billion laughs, and external DTD attacks\
+  \ by disabling entity resolution, DTD loading, and network access.\nhttps://github.com/langroid/langroid/commit/36e7e7db4dd1636de225c2c66c84052b1e9ac3c3"
+impacted_packages:
+  - purl: pkg:pypi/langroid
+    affected_versions: vers:pypi/<0.53.4
+    fixed_versions: vers:pypi/0.53.4
+severities:
+  - score: '7.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-pw95-88fg-3j6f/GHSA-pw95-88fg-3j6f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/langroid/langroid
+    reference_type:
+    reference_id:
+  - url: https://github.com/langroid/langroid/blob/df6227e6c079ec22bb2768498423148d6685acff/langroid/agent/xml_tool_message.py#L51-L52
+    reference_type:
+    reference_id:
+  - url: https://github.com/langroid/langroid/commit/36e7e7db4dd1636de225c2c66c84052b1e9ac3c3
+    reference_type:
+    reference_id:
+  - url: https://github.com/langroid/langroid/security/advisories/GHSA-pw95-88fg-3j6f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-46726
+    reference_type:
+    reference_id:

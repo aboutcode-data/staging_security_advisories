@@ -1,0 +1,76 @@
+advisory_id: GHSA-mrqx-rp3w-jpjp
+datasource_id: github_osv_importer_v2/GHSA-mrqx-rp3w-jpjp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-mrqx-rp3w-jpjp/GHSA-mrqx-rp3w-jpjp.json
+aliases:
+  - CVE-2024-50345
+summary: |
+  Symfony vulnerable to open redirect via browser-sanitized URLs
+  ### Description
+
+  The `Request` class, does not parse URI with special characters the same way browsers do. As a result, an attacker can trick a validator relying on the `Request` class to redirect users to another domain.
+
+  ### Resolution
+
+  The `Request::create` methods now assert the URI does not contain invalid characters as defined by https://url.spec.whatwg.org/
+
+  The patch for this issue is available [here](https://github.com/symfony/symfony/commit/5a9b08e5740af795854b1b639b7d45b9cbfe8819) for branch 5.4.
+
+  ### Credits
+
+  We would like to thank Sam Mush - IPASSLab && ZGC Lab for reporting the issue and Nicolas Grekas for providing the fix.
+impacted_packages:
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/<5.4.46
+    fixed_versions: vers:composer/5.4.46
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=6.0.0|<6.4.14
+    fixed_versions: vers:composer/6.4.14
+  - purl: pkg:composer/symfony/http-foundation
+    affected_versions: vers:composer/>=7.0.0|<7.1.7
+    fixed_versions: vers:composer/7.1.7
+severities:
+  - score: '3.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-mrqx-rp3w-jpjp/GHSA-mrqx-rp3w-jpjp.json
+  - score: '2.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-mrqx-rp3w-jpjp/GHSA-mrqx-rp3w-jpjp.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-601
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/http-foundation/CVE-2024-50345.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2024-50345.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/5a9b08e5740af795854b1b639b7d45b9cbfe8819
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/security/advisories/GHSA-mrqx-rp3w-jpjp
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2025/05/msg00051.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-50345
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2024-50345
+    reference_type:
+    reference_id:
+  - url: https://url.spec.whatwg.org
+    reference_type:
+    reference_id:

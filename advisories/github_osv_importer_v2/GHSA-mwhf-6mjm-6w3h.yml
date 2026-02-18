@@ -1,0 +1,53 @@
+advisory_id: GHSA-mwhf-6mjm-6w3h
+datasource_id: github_osv_importer_v2/GHSA-mwhf-6mjm-6w3h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-mwhf-6mjm-6w3h/GHSA-mwhf-6mjm-6w3h.json
+aliases:
+  - CVE-2021-29038
+summary: |
+  Liferay Portal and Liferay DXP Does Not Obfuscate Password Reminder Answers
+  In Liferay Impl before 5.18.4, Liferay Users Admin Web before 5.0.33, Liferay Login Web before 5.0.18, and Liferay Commerce Account Web before 3.0.7 from Liferay Portal (7.2.0 through 7.3.5), and older unsupported versions, and Liferay DXP 7.3 before fix pack 1, 7.2 before fix pack 17, and older unsupported versions does not obfuscate password reminder answers on the page, which allows attackers to use man-in-the-middle or shoulder surfing attacks to steal user's password reminder answers.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/portal-impl
+    affected_versions: vers:maven/<5.18.4
+    fixed_versions: vers:maven/5.18.4
+  - purl: pkg:maven/com.liferay/com.liferay.users.admin.web
+    affected_versions: vers:maven/<5.0.33
+    fixed_versions: vers:maven/5.0.33
+  - purl: pkg:maven/com.liferay/com.liferay.login.web
+    affected_versions: vers:maven/<5.0.18
+    fixed_versions: vers:maven/5.0.18
+  - purl: pkg:maven/com.liferay.commerce/com.liferay.commerce.account.web
+    affected_versions: vers:maven/<3.0.7
+    fixed_versions: vers:maven/3.0.7
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<7.2.10.fp17
+    fixed_versions: vers:maven/7.2.10.fp17
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.3.0|<7.3.10.fp1
+    fixed_versions: vers:maven/7.3.10.fp1
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-mwhf-6mjm-6w3h/GHSA-mwhf-6mjm-6w3h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-640
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/5e2da784aeefce64107abd0411590db2b55faf0b
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2021-29038
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29038
+    reference_type:
+    reference_id:

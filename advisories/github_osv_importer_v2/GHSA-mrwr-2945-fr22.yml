@@ -1,0 +1,32 @@
+advisory_id: GHSA-mrwr-2945-fr22
+datasource_id: github_osv_importer_v2/GHSA-mrwr-2945-fr22
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-mrwr-2945-fr22/GHSA-mrwr-2945-fr22.json
+aliases:
+  - CVE-2021-32245
+summary: |
+  Cross-site scripting in PageKit
+  In PageKit v1.0.18, a user can upload SVG files in the file upload portion of the CMS. These SVG files can contain malicious scripts. This file will be uploaded to the system and it will not be stripped or filtered. The user can create a link on the website pointing to "/storage/exp.svg" that will point to http://localhost/pagekit/storage/exp.svg. When a user comes along to click that link, it will trigger a XSS attack.
+impacted_packages:
+  - purl: pkg:composer/pagekit/pagekit
+    affected_versions: vers:composer/<=1.0.18
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-mrwr-2945-fr22/GHSA-mrwr-2945-fr22.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/pagekit/pagekit/issues/963
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32245
+    reference_type:
+    reference_id:

@@ -1,0 +1,54 @@
+advisory_id: GHSA-pp7m-6j83-m7r6
+datasource_id: github_osv_importer_v2/GHSA-pp7m-6j83-m7r6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-pp7m-6j83-m7r6/GHSA-pp7m-6j83-m7r6.json
+aliases:
+  - CVE-2021-23414
+summary: |
+  Cross-site Scripting in video.js
+  This affects the package video.js before 7.14.3.
+   The src attribute of track tag allows to bypass HTML escaping and execute arbitrary code.
+impacted_packages:
+  - purl: pkg:npm/video.js
+    affected_versions: vers:npm/<7.14.3
+    fixed_versions: vers:npm/7.14.3
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/08/GHSA-pp7m-6j83-m7r6/GHSA-pp7m-6j83-m7r6.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/videojs/video.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/videojs/video.js/commit/b3acf663641fca0f7a966525a72845af7ec5fab2
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2DHYIIAUXUBHMBEDYU7TYNZXEN2W2SA2
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/74SXNGA5RIWM7QNX7H3G7SYIQLP4UUGV
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NLRJB5JNKK3VVBLV3NH3RI7COEDAXSAB
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23414
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1533588
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1533587
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-VIDEOJS-1533429
+    reference_type:
+    reference_id:

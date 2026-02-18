@@ -1,0 +1,73 @@
+advisory_id: GHSA-q28m-8xjw-8vr5
+datasource_id: github_osv_importer_v2/GHSA-q28m-8xjw-8vr5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-q28m-8xjw-8vr5/GHSA-q28m-8xjw-8vr5.json
+aliases:
+  - CVE-2021-29509
+summary: "Puma's Keepalive Connections Causing Denial Of Service\nThis vulnerability is related\
+  \ to [CVE-2019-16770](https://github.com/puma/puma/security/advisories/GHSA-7xx3-m584-x994).\n\
+  \n### Impact\n\nThe fix for CVE-2019-16770 was incomplete. The original fix only protected\
+  \ existing connections that had already been accepted from having their requests starved by\
+  \ greedy persistent-connections saturating all threads in the same process. However, new connections\
+  \ may still be starved by greedy persistent-connections saturating all threads in all processes\
+  \ in the cluster.\n\nA `puma` server which received more concurrent `keep-alive` connections\
+  \ than the server had threads in its threadpool would service only a subset of connections,\
+  \ denying service to the unserved connections.\n\n### Patches\n\nThis problem has been fixed\
+  \ in `puma` 4.3.8 and 5.3.1.\n\n### Workarounds\n\nSetting `queue_requests false` also fixes\
+  \ the issue. This is not advised when using `puma` without a reverse proxy, such as `nginx`\
+  \ or `apache`, because you will open yourself to slow client attacks (e.g. [slowloris](https://en.wikipedia.org/wiki/Slowloris_(computer_security))).\n\
+  \nThe fix is very small. [A git patch is available here](https://gist.github.com/nateberkopec/4b3ea5676c0d70cbb37c82d54be25837)\
+  \ for those using [unsupported versions](https://github.com/puma/puma/security/policy#supported-versions)\
+  \ of Puma.\n\n### For more information\n\nIf you have any questions or comments about this\
+  \ advisory:\n\n* Open an issue in [Puma](https://github.com/puma/puma).\n* To report problems\
+  \ with this fix or to report another vulnerability, see [our security policy.](https://github.com/puma/puma/security/policy)\n\
+  \n### Acknowledgements\n\nThank you to @MSP-Greg, @wjordan and @evanphx for their review on\
+  \ this issue. \n\nThank you to @ioquatix for providing a modified fork of `wrk` which made\
+  \ debugging this issue much easier."
+impacted_packages:
+  - purl: pkg:gem/puma
+    affected_versions: vers:gem/<=5.3.0
+    fixed_versions: vers:gem/5.3.1
+  - purl: pkg:gem/puma
+    affected_versions: vers:gem/<=4.3.7
+    fixed_versions: vers:gem/4.3.8
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-q28m-8xjw-8vr5/GHSA-q28m-8xjw-8vr5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://gist.github.com/nateberkopec/4b3ea5676c0d70cbb37c82d54be25837
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/security/advisories/GHSA-q28m-8xjw-8vr5
+    reference_type:
+    reference_id:
+  - url: https://github.com/puma/puma/security/policy
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/puma/CVE-2021-29509.yml
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2022/08/msg00015.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-29509
+    reference_type:
+    reference_id:
+  - url: https://rubygems.org/gems/puma
+    reference_type:
+    reference_id:
+  - url: https://security.gentoo.org/glsa/202208-28
+    reference_type:
+    reference_id:

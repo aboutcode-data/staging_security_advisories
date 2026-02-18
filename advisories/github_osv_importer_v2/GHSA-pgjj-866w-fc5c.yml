@@ -1,0 +1,54 @@
+advisory_id: GHSA-pgjj-866w-fc5c
+datasource_id: github_osv_importer_v2/GHSA-pgjj-866w-fc5c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-pgjj-866w-fc5c/GHSA-pgjj-866w-fc5c.json
+aliases:
+  - CVE-2021-21278
+summary: |
+  Risk of code injection
+  ### Impact
+  Some routes use `eval` or `Function constructor`, which may be injected by the target site with unsafe code, causing server-side security issues
+
+  ### Patches
+  Temporarily removed the problematic route and added a `no-new-func` rule to eslint
+  Self-built users should upgrade to 7f1c430 and later as soon as possible
+
+  ### Credits
+  Tencent Woodpecker Security Team
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [https://github.com/DIYgod/RSSHub/issues](https://github.com/DIYgod/RSSHub/issues)
+  * Email us at [i@diygod.me](mailto:i@diygod.me)
+impacted_packages:
+  - purl: pkg:npm/rsshub
+    affected_versions: vers:npm/<=1.0.0
+    fixed_versions:
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-pgjj-866w-fc5c/GHSA-pgjj-866w-fc5c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/DIYgod/RSSHub
+    reference_type:
+    reference_id:
+  - url: https://github.com/DIYgod/RSSHub/commit/7f1c43094e8a82e4d8f036ff7d42568fed00699d
+    reference_type:
+    reference_id:
+  - url: https://github.com/DIYgod/RSSHub/security/advisories/GHSA-pgjj-866w-fc5c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-21278
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/rsshub
+    reference_type:
+    reference_id:

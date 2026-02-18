@@ -1,0 +1,41 @@
+advisory_id: GHSA-mrq4-7ch7-2465
+datasource_id: github_osv_importer_v2/GHSA-mrq4-7ch7-2465
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-mrq4-7ch7-2465/GHSA-mrq4-7ch7-2465.json
+aliases:
+  - CVE-2022-21686
+summary: |
+  Server Side Twig Template Injection
+  PrestaShop is an Open Source e-commerce platform. Starting with version 1.7.0.0 and ending with version 1.7.8.3, an attacker is able to inject twig code inside the back office when using the legacy layout. The problem is fixed in version 1.7.8.3. There are no known workarounds.
+impacted_packages:
+  - purl: pkg:composer/prestashop/prestashop
+    affected_versions: vers:composer/<=1.7.8+2
+    fixed_versions: vers:composer/1.7.8+3
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-mrq4-7ch7-2465/GHSA-mrq4-7ch7-2465.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/PrestaShop/PrestaShop
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/commit/d02b469ec365822e6a9f017e57f588966248bf21
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/releases/tag/1.7.8.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-mrq4-7ch7-2465
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-21686
+    reference_type:
+    reference_id:

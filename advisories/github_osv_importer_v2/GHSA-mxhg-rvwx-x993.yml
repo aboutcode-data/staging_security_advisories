@@ -1,0 +1,57 @@
+advisory_id: GHSA-mxhg-rvwx-x993
+datasource_id: github_osv_importer_v2/GHSA-mxhg-rvwx-x993
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-mxhg-rvwx-x993/GHSA-mxhg-rvwx-x993.json
+aliases:
+  - CVE-2023-32688
+summary: |
+  Invalid push request payload crashes Parse Server
+  ### Impact
+
+  The Parse Server Push Adapter can crash Parse Server due to an invalid push notification payload.
+
+  ### Patches
+
+  Invalid push notification payload is caught and an logged.
+
+  ### Workarounds
+  n/a
+
+  ### References
+  - https://github.com/parse-community/parse-server-push-adapter/security/advisories/GHSA-mxhg-rvwx-x993
+  - https://github.com/parse-community/parse-server-push-adapter/pull/217
+impacted_packages:
+  - purl: pkg:npm/parse-server-push-adapter
+    affected_versions: vers:npm/<4.1.3
+    fixed_versions: vers:npm/4.1.3
+severities:
+  - score: '4.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/05/GHSA-mxhg-rvwx-x993/GHSA-mxhg-rvwx-x993.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/parse-community/parse-server-push-adapter
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server-push-adapter/commit/598cb84d0866b7c5850ca96af920e8cb5ba243ec
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server-push-adapter/pull/217
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server-push-adapter/releases/tag/4.1.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/parse-community/parse-server-push-adapter/security/advisories/GHSA-mxhg-rvwx-x993
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-32688
+    reference_type:
+    reference_id:

@@ -1,0 +1,56 @@
+advisory_id: GHSA-p72w-r6fv-6g5h
+datasource_id: github_osv_importer_v2/GHSA-p72w-r6fv-6g5h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-p72w-r6fv-6g5h/GHSA-p72w-r6fv-6g5h.json
+aliases:
+  - CVE-2024-45384
+summary: |
+  druid-pac4j, Apache Druid extension, has Padding Oracle vulnerability
+  Padding Oracle vulnerability in Apache Druid extension, druid-pac4j.
+  This could allow an attacker to manipulate a pac4j session cookie.
+
+  This issue affects Apache Druid versions 0.18.0 through 30.0.0.
+  Since the druid-pac4j extension is optional and disabled by default, Druid installations not using the druid-pac4j extension are not affected by this vulnerability.
+
+  While we are not aware of a way to meaningfully exploit this flaw, we nevertheless recommend upgrading to version 30.0.1 or higher which fixes the issue and ensuring you have a strong druid.auth.pac4j.cookiePassphrase as a precaution.
+impacted_packages:
+  - purl: pkg:maven/org.apache.druid.extensions/druid-pac4j
+    affected_versions: vers:maven/>=0.18.0|<30.0.1
+    fixed_versions: vers:maven/30.0.1
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-p72w-r6fv-6g5h/GHSA-p72w-r6fv-6g5h.json
+  - score: '1.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-p72w-r6fv-6g5h/GHSA-p72w-r6fv-6g5h.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-209
+  - CWE-347
+references:
+  - url: https://github.com/apache/druid
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/druid/commit/74cab7a76c99da457c3a883939cc0b03301b8771
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/druid/releases/tag/druid-30.0.1
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/gr94fnp574plb50lsp8jw4smvgv1lbz1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45384
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2024/09/17/1
+    reference_type:
+    reference_id:

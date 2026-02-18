@@ -1,0 +1,35 @@
+advisory_id: GHSA-p3ph-6245-4wfc
+datasource_id: github_osv_importer_v2/GHSA-p3ph-6245-4wfc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-p3ph-6245-4wfc/GHSA-p3ph-6245-4wfc.json
+aliases:
+  - CVE-2023-50102
+summary: |
+  Cross-site Scripting in JFinalcms
+  JFinalcms 5.0.0 is vulnerable to Cross Site Scripting (XSS).
+impacted_packages:
+  - purl: pkg:maven/com.jfinal/jfinal
+    affected_versions: vers:maven/<=5.0.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-p3ph-6245-4wfc/GHSA-p3ph-6245-4wfc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Jarvis-616/cms/blob/master/Content%20data%20exists%20in%20storage%20XSS%20for%20editing.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/jfinal/jfinal
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-50102
+    reference_type:
+    reference_id:

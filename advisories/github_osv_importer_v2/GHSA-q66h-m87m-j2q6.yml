@@ -1,0 +1,67 @@
+advisory_id: GHSA-q66h-m87m-j2q6
+datasource_id: github_osv_importer_v2/GHSA-q66h-m87m-j2q6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-q66h-m87m-j2q6/GHSA-q66h-m87m-j2q6.json
+aliases: []
+summary: "Bitcoinrb Vulnerable to Command injection via RPC\n### Summary: Remote Code Execution\n\
+  Unsafe handling of request parameters in the RPC HTTP server results in command injection\n\
+  \n### Details\nIn lib/bitcoin/rpc/http_server.rb line 30-39, the JSON body of a POST request\
+  \ is parsed into `command` and `args` variables. These values are then passed to `send`, which\
+  \ is used to call an arbitrary class method. However, there is no validation that the provided\
+  \ `command` value is one of the expected RPC methods. \nThis means that an attacker could\
+  \ supply a `command` value such as `system`, and then pass arbitrary system commands into\
+  \ the `args` parameter and achieve remote code execution. \n\n### PoC\n1. Start the RPC server\n\
+  2. Send a request to the RPC server as so:\n ```\ncurl -X POST http://127.0.0.1:18443 -H 'Content-Type:\
+  \ application/json' \\\n    -d '{\"method\":\"eval\",\"params\":[\"File.write(\\\"/tmp/pwned\\\
+  \",\\\"owned\\\")\"]}'\n```\n3. Check the /tmp folder on the machine where the RPC server\
+  \ is being run. If a folder /pwned now exists, the vulnerability is confirmed.\n### Impact\n\
+  This vulnerability would impact anyone running the RPC server. The impact is higher for those\
+  \ who are running it publicly exposed to the internet.\n\n### Remediation                \
+  \                                \n                                                      \
+  \                                                                                        \
+  \                                                                                 \n  **Mitigating\
+  \ Factors:**                                                                             \
+  \                                                                                        \
+  \                                 \n  - The RPC server is part of the experimental SPV node\
+  \ feature, which is not documented and has very few users.                               \
+  \                                                                                \n  - The\
+  \ SPV-related features may be removed in future releases.                                \
+  \                                                                                        \
+  \                                        \n                                              \
+  \                                                                                        \
+  \                                                                                        \
+  \ \n  **Resolution:**                                                                    \
+  \                                                                                        \
+  \                                                  \n  - Added whitelist validation to allow\
+  \ only RPC methods defined in `RequestHandler`.                                          \
+  \                                                                                        \
+  \        \n  - Fixed in version 1.12.0."
+impacted_packages:
+  - purl: pkg:gem/bitcoinrb
+    affected_versions: vers:gem/<1.12.0
+    fixed_versions: vers:gem/1.12.0
+severities:
+  - score: '2.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-q66h-m87m-j2q6/GHSA-q66h-m87m-j2q6.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/chaintope/bitcoinrb
+    reference_type:
+    reference_id:
+  - url: https://github.com/chaintope/bitcoinrb/commit/070327133a2a3e5a6d265b2d82f06f9414c01e74
+    reference_type:
+    reference_id:
+  - url: https://github.com/chaintope/bitcoinrb/releases/tag/v1.12.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/chaintope/bitcoinrb/security/advisories/GHSA-q66h-m87m-j2q6
+    reference_type:
+    reference_id:

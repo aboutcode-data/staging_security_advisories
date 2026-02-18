@@ -1,0 +1,41 @@
+advisory_id: GHSA-p9hh-mh5x-wvx3
+datasource_id: github_osv_importer_v2/GHSA-p9hh-mh5x-wvx3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-p9hh-mh5x-wvx3/GHSA-p9hh-mh5x-wvx3.json
+aliases:
+  - CVE-2025-32427
+summary: |
+  Formie has XSS vulnerability for importing forms
+  ### Impact
+  When importing a form from JSON, if the field label or handle contained malicious content, the output wasn't correctly escaped when viewing a preview of what was to be imported.
+
+  As imports are undertaking primarily by users who have themselves exported the form from one environment to another, and would require direct manipulation of the JSON export, this is marked as moderate. This vulnerability will not occur unless someone deliberately tampers with the export.
+
+  ### Patches
+  This has been fixed in Formie 2.1.44. Users should ensure they are running at least this version.
+impacted_packages:
+  - purl: pkg:composer/verbb/formie
+    affected_versions: vers:composer/<=2.1.43
+    fixed_versions: vers:composer/2.1.44
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-p9hh-mh5x-wvx3/GHSA-p9hh-mh5x-wvx3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/verbb/formie
+    reference_type:
+    reference_id:
+  - url: https://github.com/verbb/formie/security/advisories/GHSA-p9hh-mh5x-wvx3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-32427
+    reference_type:
+    reference_id:

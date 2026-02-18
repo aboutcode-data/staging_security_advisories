@@ -1,0 +1,35 @@
+advisory_id: GHSA-mrq8-53r4-3j5m
+datasource_id: github_osv_importer_v2/GHSA-mrq8-53r4-3j5m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-mrq8-53r4-3j5m/GHSA-mrq8-53r4-3j5m.json
+aliases:
+  - CVE-2018-20301
+summary: |
+  Permissive parameters and privilege escalation
+  An issue was discovered in Steve Pallen Coherence before 0.5.2 that is similar to a Mass Assignment vulnerability. In particular, "registration" endpoints (e.g., creating, editing, updating) allow users to update any coherence_fields data. For example, users can automatically confirm their accounts by sending the confirmed_at parameter with their registration request.
+impacted_packages:
+  - purl: pkg:hex/coherence
+    affected_versions: vers:hex/<0.5.2
+    fixed_versions: vers:hex/0.5.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-mrq8-53r4-3j5m/GHSA-mrq8-53r4-3j5m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/smpallen99/coherence
+    reference_type:
+    reference_id:
+  - url: https://github.com/smpallen99/coherence/issues/270
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-20301
+    reference_type:
+    reference_id:

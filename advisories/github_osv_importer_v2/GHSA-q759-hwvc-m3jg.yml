@@ -1,0 +1,75 @@
+advisory_id: GHSA-q759-hwvc-m3jg
+datasource_id: github_osv_importer_v2/GHSA-q759-hwvc-m3jg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-q759-hwvc-m3jg/GHSA-q759-hwvc-m3jg.json
+aliases:
+  - CVE-2013-1855
+summary: |
+  actionpack Cross-site Scripting vulnerability
+  The `sanitize_css` method in `lib/action_controller/vendor/html-scanner/html/sanitizer.rb` in the Action Pack component in Ruby on Rails before 2.3.18, 3.0.x and 3.1.x before 3.1.12, and 3.2.x before 3.2.13 does not properly handle `\n` (newline) characters, which makes it easier for remote attackers to conduct cross-site scripting (XSS) attacks via crafted Cascading Style Sheets (CSS) token sequences.
+impacted_packages:
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/<2.3.18
+    fixed_versions: vers:gem/2.3.18
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=3.0.0|<3.1.12
+    fixed_versions: vers:gem/3.1.12
+  - purl: pkg:gem/actionpack
+    affected_versions: vers:gem/>=3.2.0|<3.2.13
+    fixed_versions: vers:gem/3.2.13
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-04/msg00072.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2013-04/msg00073.html
+    reference_type:
+    reference_id:
+  - url: http://lists.opensuse.org/opensuse-updates/2014-01/msg00013.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2013-0698.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-1863.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2013:0698
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2014:1863
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2013-1855
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=921331
+    reference_type:
+    reference_id:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/actionpack/CVE-2013-1855.yml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/group/rubyonrails-security/msg/8ed835a97cdd1afd?dmode=source&output=gplain
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-1855
+    reference_type:
+    reference_id:
+  - url: http://support.apple.com/kb/HT5784
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20130609174600/http://lists.apple.com/archives/security-announce/2013/Jun/msg00000.html
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20131109010518/http://lists.apple.com/archives/security-announce/2013/Oct/msg00006.html
+    reference_type:
+    reference_id:
+  - url: http://weblog.rubyonrails.org/2013/3/18/SEC-ANN-Rails-3-2-13-3-1-12-and-2-3-18-have-been-released
+    reference_type:
+    reference_id:

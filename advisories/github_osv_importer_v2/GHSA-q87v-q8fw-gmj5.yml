@@ -1,0 +1,86 @@
+advisory_id: GHSA-q87v-q8fw-gmj5
+datasource_id: github_osv_importer_v2/GHSA-q87v-q8fw-gmj5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q87v-q8fw-gmj5/GHSA-q87v-q8fw-gmj5.json
+aliases:
+  - CVE-2017-11365
+summary: |
+  Symfony Incorrect Access Control
+  Certain Symfony products are affected by: Incorrect Access Control. This affects Symfony 2.7.30 and Symfony 2.8.23 and Symfony 3.2.10 and Symfony 3.3.3. The type of exploitation is: remote. The component is: Password validator.
+impacted_packages:
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=3.2.10|<3.2.12
+    fixed_versions: vers:composer/3.2.12
+  - purl: pkg:composer/symfony/security-core
+    affected_versions: vers:composer/>=2.7.30|<2.7.32
+    fixed_versions: vers:composer/2.7.32
+  - purl: pkg:composer/symfony/security-core
+    affected_versions: vers:composer/>=2.8.23|<2.8.25
+    fixed_versions: vers:composer/2.8.25
+  - purl: pkg:composer/symfony/security-core
+    affected_versions: vers:composer/>=3.2.10|<3.2.12
+    fixed_versions: vers:composer/3.2.12
+  - purl: pkg:composer/symfony/security-core
+    affected_versions: vers:composer/>=3.3.3|<3.3.5
+    fixed_versions: vers:composer/3.3.5
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=2.7.30|<2.7.32
+    fixed_versions: vers:composer/2.7.32
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=2.8.23|<2.8.25
+    fixed_versions: vers:composer/2.8.25
+  - purl: pkg:composer/symfony/security
+    affected_versions: vers:composer/>=3.3.3|<3.3.5
+    fixed_versions: vers:composer/3.3.5
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.7.30|<2.7.32
+    fixed_versions: vers:composer/2.7.32
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=2.8.23|<2.8.25
+    fixed_versions: vers:composer/2.8.25
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.2.10|<3.2.12
+    fixed_versions: vers:composer/3.2.12
+  - purl: pkg:composer/symfony/symfony
+    affected_versions: vers:composer/>=3.3.3|<3.3.5
+    fixed_versions: vers:composer/3.3.5
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q87v-q8fw-gmj5/GHSA-q87v-q8fw-gmj5.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security-core/CVE-2017-11365.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/security/CVE-2017-11365.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2017-11365.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/commit/878198cefae028386c6dc800ccbf18f2b9cbff3f
+    reference_type:
+    reference_id:
+  - url: https://github.com/symfony/symfony/pull/23507
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-11365
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/blog/cve-2017-11365-empty-passwords-validation-issue
+    reference_type:
+    reference_id:
+  - url: https://symfony.com/cve-2017-11365
+    reference_type:
+    reference_id:

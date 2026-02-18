@@ -1,0 +1,63 @@
+advisory_id: GHSA-pqrv-8r2f-7278
+datasource_id: github_osv_importer_v2/GHSA-pqrv-8r2f-7278
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-pqrv-8r2f-7278/GHSA-pqrv-8r2f-7278.json
+aliases:
+  - CVE-2022-23590
+summary: "Crash due to erroneous `StatusOr` in TensorFlow\n### Impact\nA `GraphDef` from a TensorFlow\
+  \ `SavedModel` can be maliciously altered to cause a TensorFlow process to crash due to encountering\
+  \ [a `StatusOr` value that is an error and forcibly extracting the value from it](https://github.com/tensorflow/tensorflow/blob/274df9b02330b790aa8de1cee164b70f72b9b244/tensorflow/core/graph/graph.cc#L560-L567):\n\
+  \n```cc\n  if (op_reg_data->type_ctor != nullptr) {\n    VLOG(3) << \"AddNode: found type\
+  \ constructor for \" << node_def.name();\n    const auto ctor_type =\n        full_type::SpecializeType(AttrSlice(node_def),\
+  \ op_reg_data->op_def);\n    const FullTypeDef ctor_typedef = ctor_type.ValueOrDie();\n  \
+  \  if (ctor_typedef.type_id() != TFT_UNSET) {\n      *(node_def.mutable_experimental_type())\
+  \ = ctor_typedef;\n    }\n  }\n```   \n      \nIf `ctor_type` is an error status, `ValueOrDie`\
+  \ results in a crash.\n        \n### Patches\nWe have patched the issue in GitHub commit [955059813cc325dc1db5e2daa6221271406d4439](https://github.com/tensorflow/tensorflow/commit/955059813cc325dc1db5e2daa6221271406d4439).\n\
+  \  \nWe have patched the issue in multiple GitHub commits and these will be included in TensorFlow\
+  \ 2.8.0 and TensorFlow 2.7.1, as both are affected.\n\n### For more information\nPlease consult\
+  \ [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for\
+  \ more information regarding the security model and how to contact us with issues and questions."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.7.1
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.7.1
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.7.1
+    fixed_versions: vers:pypi/2.7.1
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-pqrv-8r2f-7278/GHSA-pqrv-8r2f-7278.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-754
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-cpu/PYSEC-2022-99.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-gpu/PYSEC-2022-154.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/blob/274df9b02330b790aa8de1cee164b70f72b9b244/tensorflow/core/graph/graph.cc#L560-L567
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/955059813cc325dc1db5e2daa6221271406d4439
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-pqrv-8r2f-7278
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23590
+    reference_type:
+    reference_id:

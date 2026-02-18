@@ -1,0 +1,49 @@
+advisory_id: GHSA-p8q5-cvwx-wvwp
+datasource_id: github_osv_importer_v2/GHSA-p8q5-cvwx-wvwp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-p8q5-cvwx-wvwp/GHSA-p8q5-cvwx-wvwp.json
+aliases:
+  - CVE-2025-24023
+summary: |
+  Flask-AppBuilder Observable Response Discrepancy
+  ### Impact
+  User enumeration in database authentication in Flask-AppBuilder <= 4.5.3 and werkzeug >= 3.0.0. Allows for a non authenticated user to enumerate existing usernames by timing the response time from the server when brute forcing requests to login.
+
+  ### Patches
+
+  Upgrade to flask-appbuilder>=4.5.3
+
+  ### Workarounds
+  Downgrade werkzeug to <3.0.0
+
+  ### References
+  _Are there any links users can visit to find out more?_
+impacted_packages:
+  - purl: pkg:pypi/flask-appbuilder
+    affected_versions: vers:pypi/<4.5.3
+    fixed_versions: vers:pypi/4.5.3
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-p8q5-cvwx-wvwp/GHSA-p8q5-cvwx-wvwp.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-204
+references:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder
+    reference_type:
+    reference_id:
+  - url: https://github.com/dpgaspar/Flask-AppBuilder/security/advisories/GHSA-p8q5-cvwx-wvwp
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/flask-appbuilder/PYSEC-2025-15.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-24023
+    reference_type:
+    reference_id:

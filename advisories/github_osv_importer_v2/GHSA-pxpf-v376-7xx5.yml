@@ -1,0 +1,47 @@
+advisory_id: GHSA-pxpf-v376-7xx5
+datasource_id: github_osv_importer_v2/GHSA-pxpf-v376-7xx5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-pxpf-v376-7xx5/GHSA-pxpf-v376-7xx5.json
+aliases:
+  - CVE-2022-25854
+summary: |
+  tagify can pass a malicious placeholder to initiate the cross-site scripting (XSS) payload
+  This affects the package @yaireo/tagify before 4.9.8. The package is used for rendering UI components inside the input or text fields, and an attacker can pass a malicious placeholder value to it to fire the cross-site scripting (XSS) payload.
+impacted_packages:
+  - purl: pkg:npm/%40yaireo/tagify
+    affected_versions: vers:npm/<4.9.8
+    fixed_versions: vers:npm/4.9.8
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-pxpf-v376-7xx5/GHSA-pxpf-v376-7xx5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://bsg.tech/blog/cve-2022-25854-stored-xss-in-yaireo-tagify-npm-module
+    reference_type:
+    reference_id:
+  - url: https://github.com/yairEO/tagify
+    reference_type:
+    reference_id:
+  - url: https://github.com/yairEO/tagify/commit/198c0451fad188390390395ccfc84ab371def4c7
+    reference_type:
+    reference_id:
+  - url: https://github.com/yairEO/tagify/issues/988
+    reference_type:
+    reference_id:
+  - url: https://github.com/yairEO/tagify/releases/tag/v4.9.8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-25854
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-YAIREOTAGIFY-2404358
+    reference_type:
+    reference_id:

@@ -1,0 +1,49 @@
+advisory_id: GHSA-pj45-hp8h-289r
+datasource_id: github_osv_importer_v2/GHSA-pj45-hp8h-289r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pj45-hp8h-289r/GHSA-pj45-hp8h-289r.json
+aliases:
+  - CVE-2019-3851
+summary: |
+  Moodle Secure layout contained an insecure link in Boost theme
+  A vulnerability was found in moodle before versions 3.6.3 and 3.5.5. There was a link to site home within the the Boost theme's secure layout, meaning students could navigate out of the page.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.5.0|<3.5.5
+    fixed_versions: vers:composer/3.5.5
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.6.0|<3.6.3
+    fixed_versions: vers:composer/3.6.3
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-pj45-hp8h-289r/GHSA-pj45-hp8h-289r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3851
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/7f22b14efb3408645cede026ad11126f17e3f59a
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/911f7488068a56b05b0ad87be8f9e132075ab0a6
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/c430bed525c4c7e6e5a1c0f7222bc323cf9b6245
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=384014#p1547746
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-3851
+    reference_type:
+    reference_id:

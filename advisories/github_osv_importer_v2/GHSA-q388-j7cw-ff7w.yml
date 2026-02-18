@@ -1,0 +1,33 @@
+advisory_id: GHSA-q388-j7cw-ff7w
+datasource_id: github_osv_importer_v2/GHSA-q388-j7cw-ff7w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-q388-j7cw-ff7w/GHSA-q388-j7cw-ff7w.json
+aliases:
+  - CVE-2013-3827
+summary: |
+  Path Traversal in Eclipse Mojarra
+  Multiple path traversal flaws where found in Mojarra JSF2 implementation for identifying resources by name or from libraries. An unauthenticated remote attacker can use these flaws to gather otherwise undisclosed information from within an application's root.
+impacted_packages:
+  - purl: pkg:maven/org.glassfish/javax.faces
+    affected_versions: vers:maven/>=2.0.0|<2.1.19
+    fixed_versions: vers:maven/2.1.19
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: http://rhn.redhat.com/errata/RHSA-2014-0029.html
+    reference_type:
+    reference_id:
+  - url: https://bugs.gentoo.org/show_bug.cgi?id=CVE-2013-3827
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-3827
+    reference_type:
+    reference_id:
+  - url: http://www.kb.cert.org/vuls/id/526012
+    reference_type:
+    reference_id:

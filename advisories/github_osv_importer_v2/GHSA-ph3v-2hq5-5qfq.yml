@@ -1,0 +1,35 @@
+advisory_id: GHSA-ph3v-2hq5-5qfq
+datasource_id: github_osv_importer_v2/GHSA-ph3v-2hq5-5qfq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-ph3v-2hq5-5qfq/GHSA-ph3v-2hq5-5qfq.json
+aliases:
+  - CVE-2021-46703
+summary: |
+  Code injection in RazorEngine
+  In the IsolatedRazorEngine component of Antaris RazorEngine through 4.5.1-alpha001, an attacker can execute arbitrary .NET code in a sandboxed environment (if users can externally control template contents). NOTE: This vulnerability only affects products that are no longer supported by the maintainer.
+impacted_packages:
+  - purl: pkg:nuget/RazorEngine
+    affected_versions: vers:nuget/<=4.5.1-alpha001
+    fixed_versions:
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-ph3v-2hq5-5qfq/GHSA-ph3v-2hq5-5qfq.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1336
+references:
+  - url: https://github.com/Antaris/RazorEngine
+    reference_type:
+    reference_id:
+  - url: https://github.com/Antaris/RazorEngine/issues/585
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-46703
+    reference_type:
+    reference_id:

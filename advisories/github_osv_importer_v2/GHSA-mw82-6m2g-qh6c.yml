@@ -1,0 +1,38 @@
+advisory_id: GHSA-mw82-6m2g-qh6c
+datasource_id: github_osv_importer_v2/GHSA-mw82-6m2g-qh6c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-mw82-6m2g-qh6c/GHSA-mw82-6m2g-qh6c.json
+aliases: []
+summary: |
+  Duplicate Advisory: Sylius Cross Site Scripting (XSS) vulnerability
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-7prj-9ccr-hr3q. This link is maintained to preserve external references.
+
+  ## Original Description
+  Sylius 1.12.13 is vulnerable to Cross Site Scripting (XSS) via the "Province" field in Address Book.
+impacted_packages:
+  - purl: pkg:composer/sylius/sylius
+    affected_versions: vers:composer/<=1.12.13
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-mw82-6m2g-qh6c/GHSA-mw82-6m2g-qh6c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/r2tunes/Reports/blob/main/Sylius.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/Sylius/Sylius
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-29376
+    reference_type:
+    reference_id:

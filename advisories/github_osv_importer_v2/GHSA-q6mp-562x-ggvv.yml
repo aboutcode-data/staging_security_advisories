@@ -1,0 +1,38 @@
+advisory_id: GHSA-q6mp-562x-ggvv
+datasource_id: github_osv_importer_v2/GHSA-q6mp-562x-ggvv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-q6mp-562x-ggvv/GHSA-q6mp-562x-ggvv.json
+aliases:
+  - CVE-2022-2300
+summary: |
+  Cross-site Scripting in microweber
+  Cross-site Scripting (XSS) - Stored in GitHub repository microweber/microweber prior to 1.2.19.
+impacted_packages:
+  - purl: pkg:composer/microweber/microweber
+    affected_versions: vers:composer/<1.2.19
+    fixed_versions: vers:composer/1.2.19
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-q6mp-562x-ggvv/GHSA-q6mp-562x-ggvv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/microweber/microweber
+    reference_type:
+    reference_id:
+  - url: https://github.com/microweber/microweber/commit/70b46e231e7b2c113666745a0ab6de9a8b7ef08e
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/882d6cf9-64f5-4614-a873-a3030473c817
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-2300
+    reference_type:
+    reference_id:

@@ -1,0 +1,57 @@
+advisory_id: GHSA-q747-c74m-69pr
+datasource_id: github_osv_importer_v2/GHSA-q747-c74m-69pr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-q747-c74m-69pr/GHSA-q747-c74m-69pr.json
+aliases:
+  - CVE-2025-55155
+summary: |
+  MantisBT lacks verification when changing a user's email address
+  When a user edits their profile to change their e-mail address, the system saves it without validating that it actually belongs to the user.
+
+  ### Impact
+  This could result in storing an invalid email address, preventing the user from receiving system notifications.
+
+  Notifications sent to another person's email address could lead to information disclosure.
+
+  ### Patches
+  Fixed in 2.27.2.
+
+  ### Workarounds
+  None
+
+  ### Credits
+
+  Thanks to @ncrcs for discovering and reporting the issue.
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/<2.27.2
+    fixed_versions: vers:composer/2.27.2
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-q747-c74m-69pr/GHSA-q747-c74m-69pr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-201
+  - CWE-345
+references:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/commit/21e9fbedde8553c29c0d3156e84f78157fc4f22e
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/security/advisories/GHSA-q747-c74m-69pr
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=36005
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-55155
+    reference_type:
+    reference_id:

@@ -1,0 +1,41 @@
+advisory_id: GHSA-mxfv-c8p8-qw5h
+datasource_id: github_osv_importer_v2/GHSA-mxfv-c8p8-qw5h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mxfv-c8p8-qw5h/GHSA-mxfv-c8p8-qw5h.json
+aliases:
+  - CVE-2016-4880
+summary: |
+  baserCMS Cross-site Scripting vulnerability
+  Cross-site scripting vulnerability in baserCMS plugin Blog version 3.0.10 and earlier allows remote authenticated attackers to inject arbitrary web script or HTML via unspecified vectors.
+impacted_packages:
+  - purl: pkg:composer/baserproject/basercms
+    affected_versions: vers:composer/<=3.0.10
+    fixed_versions: vers:composer/3.0.11
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-mxfv-c8p8-qw5h/GHSA-mxfv-c8p8-qw5h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://basercms.net/security/JVN92765814
+    reference_type:
+    reference_id:
+  - url: https://github.com/baserproject/basercms
+    reference_type:
+    reference_id:
+  - url: https://jvn.jp/en/jp/JVN92765814/index.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-4880
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210308130052/http://www.securityfocus.com/bid/93217
+    reference_type:
+    reference_id:

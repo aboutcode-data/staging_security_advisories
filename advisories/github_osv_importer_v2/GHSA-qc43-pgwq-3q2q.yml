@@ -1,0 +1,56 @@
+advisory_id: GHSA-qc43-pgwq-3q2q
+datasource_id: github_osv_importer_v2/GHSA-qc43-pgwq-3q2q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-qc43-pgwq-3q2q/GHSA-qc43-pgwq-3q2q.json
+aliases:
+  - CVE-2022-36102
+summary: |
+  Shopware access control list bypassed via crafted specific URLs
+  ### Impact
+  If backend admin controllers are called with a certain notation, the ACL could be bypassed. Users could execute actions, which they are normally not able to do.
+
+  ### Patches
+  We recommend updating to the current version 5.7.15. You can get the update to 5.7.15 regularly via the Auto-Updater or directly via the download overview.
+  https://www.shopware.com/en/changelog-sw5/#5-7-15
+
+  For older versions you can use the Security Plugin:
+  https://store.shopware.com/en/swag575294366635f/shopware-security-plugin.html
+
+
+  ### References
+  https://docs.shopware.com/en/shopware-5-en/security-updates/security-update-09-2022
+impacted_packages:
+  - purl: pkg:composer/shopware/shopware
+    affected_versions: vers:composer/<=5.7.14
+    fixed_versions: vers:composer/5.7.15
+severities:
+  - score: '6.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-qc43-pgwq-3q2q/GHSA-qc43-pgwq-3q2q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-281
+references:
+  - url: https://docs.shopware.com/en/shopware-5-en/security-updates/security-update-09-2022
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/commit/de92d3a78279119a5bbe203054f8fa1d25126af6
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/shopware/security/advisories/GHSA-qc43-pgwq-3q2q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-36102
+    reference_type:
+    reference_id:
+  - url: https://packagist.org/packages/shopware/shopware
+    reference_type:
+    reference_id:

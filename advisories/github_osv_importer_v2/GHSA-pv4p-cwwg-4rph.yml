@@ -1,0 +1,61 @@
+advisory_id: GHSA-pv4p-cwwg-4rph
+datasource_id: github_osv_importer_v2/GHSA-pv4p-cwwg-4rph
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-pv4p-cwwg-4rph/GHSA-pv4p-cwwg-4rph.json
+aliases:
+  - CVE-2024-42005
+summary: |
+  Django SQL injection vulnerability
+  An issue was discovered in Django 5.0 before 5.0.8 and 4.2 before 4.2.15. QuerySet.values() and values_list() methods on models with a JSONField are subject to SQL injection in column aliases via a crafted JSON object key as a passed *arg.
+impacted_packages:
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=5.0|<5.0.8
+    fixed_versions: vers:pypi/5.0.8
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=4.2|<4.2.15
+    fixed_versions: vers:pypi/4.2.15
+severities:
+  - score: '9.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-pv4p-cwwg-4rph/GHSA-pv4p-cwwg-4rph.json
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-pv4p-cwwg-4rph/GHSA-pv4p-cwwg-4rph.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://docs.djangoproject.com/en/dev/releases/security
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/32ebcbf2e1fe3e5ba79a6554a167efce81f7422d
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/f4af67b9b41e0f4c117a8741da3abbd1c869ab28
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2024-70.yaml
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#%21forum/django-announce
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-42005
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20240905-0007
+    reference_type:
+    reference_id:
+  - url: https://www.djangoproject.com/weblog/2024/aug/06/security-releases
+    reference_type:
+    reference_id:

@@ -1,0 +1,64 @@
+advisory_id: GHSA-px8v-hxxx-2rgh
+datasource_id: github_osv_importer_v2/GHSA-px8v-hxxx-2rgh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-px8v-hxxx-2rgh/GHSA-px8v-hxxx-2rgh.json
+aliases:
+  - CVE-2020-11056
+summary: |
+  Potential Code Injection in Sprout Forms
+  ### Impact
+
+  A potential Server-Side Template Injection vulnerability exists in Sprout Forms which could lead to the execution of Twig code.
+
+  ### Patches
+
+  The problem is fixed in`barrelstrength/sprout-forms:v3.9.0` which upgrades to `barrelstrength/sprout-base-email:v1.2.7`
+
+  ### Workarounds
+
+  Users unable to upgrade should update any Notification Emails to use the "Basic Notification (Sprout Email)" template and avoid using the "Basic Notification (Sprout Forms)" template or any custom templates that display Form Fields.
+
+  ### References
+
+  - See the release notes in the [CHANGELOG](https://github.com/barrelstrength/craft-sprout-forms/blob/v3/CHANGELOG.md#390---2020-04-09-critical)
+  - Credits to Paweł Hałdrzyński, Daniel Kalinowski from [ISEC.PL](https://isec.pl/) for discovery and responsible disclosure
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+
+  * Open an issue in the [Sprout Forms repo](https://github.com/barrelstrength/craft-sprout-forms/issues)
+  * Email us at [sprout@barrelstrengthdesign.com](mailto:sprout@barrelstrengthdesign.com)
+impacted_packages:
+  - purl: pkg:composer/barrelstrength/sprout-base-email
+    affected_versions: vers:composer/<1.2.7
+    fixed_versions: vers:composer/1.2.7
+  - purl: pkg:composer/barrelstrength/sprout-forms
+    affected_versions: vers:composer/<3.9.0
+    fixed_versions: vers:composer/3.9.0
+severities:
+  - score: '7.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-px8v-hxxx-2rgh/GHSA-px8v-hxxx-2rgh.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-74
+references:
+  - url: https://github.com/barrelstrength/craft-sprout-base-email/commit/5ef759f4713ede6dbf77c9d9df9f992876e43a49
+    reference_type:
+    reference_id:
+  - url: https://github.com/barrelstrength/craft-sprout-forms/blob/v3/CHANGELOG.md#390---2020-04-09-critical
+    reference_type:
+    reference_id:
+  - url: https://github.com/barrelstrength/craft-sprout-forms/security/advisories/GHSA-px8v-hxxx-2rgh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-11056
+    reference_type:
+    reference_id:

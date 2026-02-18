@@ -1,0 +1,60 @@
+advisory_id: GHSA-p36r-qxgx-jq2v
+datasource_id: github_osv_importer_v2/GHSA-p36r-qxgx-jq2v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p36r-qxgx-jq2v/GHSA-p36r-qxgx-jq2v.json
+aliases:
+  - CVE-2024-37895
+summary: |
+  Lobe Chat API Key Leak
+  ### Summary
+
+  If an attacker can successfully authenticate through SSO/Access Code, they can obtain the real backend API Key by modifying the base URL to their own attack URL on the frontend and setting up a server-side request.
+
+  ### Details
+
+  The attack process is described above.
+
+  ![image](https://github.com/lobehub/lobe-chat/assets/36695271/df5e0c3c-af28-45c3-959f-182cc9d06680)
+
+  ### PoC
+
+  Frontend:
+  1. Pass basic authentication (SSO/Access Code).
+  2. Set the Base URL to a private attack address.
+  3. Configure the request method to be a server-side request.
+  4. At the self-set attack address, retrieve the API Key information from the request headers.
+
+  Backend:
+  1. The LobeChat version allows setting the Base URL.
+  2. There is no outbound traffic whitelist.
+
+  ### Impact
+
+  All community version LobeChat users using SSO/Access Code authentication, tested on version 0.162.13.
+impacted_packages:
+  - purl: pkg:npm/%40lobehub/chat
+    affected_versions: vers:npm/<0.162.25
+    fixed_versions: vers:npm/0.162.25
+severities:
+  - score: '5.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-p36r-qxgx-jq2v/GHSA-p36r-qxgx-jq2v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-918
+references:
+  - url: https://github.com/lobehub/lobe-chat
+    reference_type:
+    reference_id:
+  - url: https://github.com/lobehub/lobe-chat/security/advisories/GHSA-p36r-qxgx-jq2v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-37895
+    reference_type:
+    reference_id:
