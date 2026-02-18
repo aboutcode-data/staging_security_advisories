@@ -1,0 +1,34 @@
+advisory_id: npm/bl/GMS-2019-116
+datasource_id: gitlab_importer_v2/npm/bl/GMS-2019-116
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/bl/GMS-2019-116.yml
+aliases:
+  - GHSA-wrw9-m778-g6mc
+  - GMS-2019-116
+summary: |
+  Memory Exposure in bl
+  Versions of `bl` before 0.9.5 and 1.0.1 are vulnerable to memory exposure.
+
+  `bl.append(number)` in the affected `bl` versions passes a number to Buffer constructor, appending a chunk of uninitialized memory
+
+
+  ## Recommendation
+
+  Update to version 0.9.5, 1.0.1 or later.
+impacted_packages:
+  - purl: pkg:npm/bl
+    affected_versions: vers:npm/<0.9.5|1.0.0
+    fixed_versions: vers:npm/0.9.5|1.0.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/rvagg/bl/pull/22
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/596
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wrw9-m778-g6mc
+    reference_type:
+    reference_id: GHSA-wrw9-m778-g6mc

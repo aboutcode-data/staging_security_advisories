@@ -1,0 +1,29 @@
+advisory_id: npm/apollo-server/GMS-2022-5387
+datasource_id: gitlab_importer_v2/npm/apollo-server/GMS-2022-5387
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/apollo-server/GMS-2022-5387.yml
+aliases:
+  - GHSA-2p3c-p3qw-69r4
+  - GMS-2022-5387
+summary: Cross-Site Request Forgery (CSRF) in apollo-server.
+impacted_packages:
+  - purl: pkg:npm/apollo-server
+    affected_versions: vers:npm/>=2.0.0|<2.25.4
+    fixed_versions: vers:npm/2.25.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-352
+references:
+  - url: https://github.com/apollographql/apollo-server/commit/82d44985ddca8e61557957d67f41e9c1a705a5ca
+    reference_type:
+    reference_id:
+  - url: https://github.com/apollographql/apollo-server/security/advisories/GHSA-2p3c-p3qw-69r4
+    reference_type:
+    reference_id:
+  - url: https://github.com/jaydenseric/graphql-multipart-request-spec/pull/64
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-2p3c-p3qw-69r4
+    reference_type:
+    reference_id: GHSA-2p3c-p3qw-69r4

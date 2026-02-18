@@ -1,0 +1,28 @@
+advisory_id: maven/org.xwiki.commons/xwiki-commons-velocity/GMS-2022-1102
+datasource_id: gitlab_importer_v2/maven/org.xwiki.commons/xwiki-commons-velocity/GMS-2022-1102
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/maven/org.xwiki.commons/xwiki-commons-velocity/GMS-2022-1102.yml
+aliases:
+  - CVE-2022-24897
+  - GHSA-cvx5-m8vg-vxgc
+  - GMS-2022-1102
+summary: |
+  Arbitrary filesystem write access from velocity.
+  The velocity scripts is not properly sandboxed against using the Java File API to perform read or write operations on the filesystem. Now writing an attacking script in velocity requires the Script rights in XWiki so not all users can use it, and it also requires finding an XWiki API which returns a File.
+impacted_packages:
+  - purl: pkg:maven/org.xwiki.commons/xwiki-commons-velocity
+    affected_versions: vers:maven/>=2.3.0|<12.6.7|>=12.7.0|<12.10.3
+    fixed_versions: vers:maven/12.6.7|12.10.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/xwiki/xwiki-commons/security/advisories/GHSA-cvx5-m8vg-vxgc
+    reference_type:
+    reference_id:
+  - url: https://jira.xwiki.org/browse/XWIKI-5168
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cvx5-m8vg-vxgc
+    reference_type:
+    reference_id: GHSA-cvx5-m8vg-vxgc

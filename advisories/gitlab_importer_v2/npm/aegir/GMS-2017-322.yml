@@ -1,0 +1,17 @@
+advisory_id: npm/aegir/GMS-2017-322
+datasource_id: gitlab_importer_v2/npm/aegir/GMS-2017-322
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/aegir/GMS-2017-322.yml
+aliases:
+  - GMS-2017-322
+summary: |
+  Github Token Leak
+  The module publishes to npm the user (that peformed a aegir-release) GitHub token.
+impacted_packages:
+  - purl: pkg:npm/aegir
+    affected_versions: vers:npm/>=12.0.0|<=12.0.7
+    fixed_versions: vers:npm/12.0.8
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

@@ -1,0 +1,23 @@
+advisory_id: npm/debug/GMS-2017-248
+datasource_id: gitlab_importer_v2/npm/debug/GMS-2017-248
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/debug/GMS-2017-248.yml
+aliases:
+  - GMS-2017-248
+summary: |
+  Regular Expression Denial of Service
+  The debug module is vulnerable to regular expression denial of service when untrusted user input is passed into the `o` formatter. It takes around k characters to block for 2 seconds making this a low severity issue.
+impacted_packages:
+  - purl: pkg:npm/debug
+    affected_versions: vers:npm/<2.6.9|>=3.0.0|<3.1.0
+    fixed_versions: vers:npm/2.6.9|3.1.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/visionmedia/debug/issues/501
+    reference_type:
+    reference_id:
+  - url: https://github.com/visionmedia/debug/pull/504
+    reference_type:
+    reference_id:

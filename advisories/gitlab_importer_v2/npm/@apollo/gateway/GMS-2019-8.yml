@@ -1,0 +1,33 @@
+advisory_id: npm/@apollo/gateway/GMS-2019-8
+datasource_id: gitlab_importer_v2/npm/@apollo/gateway/GMS-2019-8
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@apollo/gateway/GMS-2019-8.yml
+aliases:
+  - GHSA-74cr-77xc-8g6r
+  - GMS-2019-8
+summary: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+  in @apollo/gateway.
+impacted_packages:
+  - purl: pkg:npm/%40apollo/gateway
+    affected_versions: vers:npm/<0.6.2
+    fixed_versions: vers:npm/0.6.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-78
+  - CWE-937
+references:
+  - url: https://github.com/apollographql/apollo-server/commit/cea7397582a293af6a5f60947da34b95e669c6c1
+    reference_type:
+    reference_id:
+  - url: https://github.com/apollographql/apollo-server/pull/2779
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-APOLLOGATEWAY-174915
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/917
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-74cr-77xc-8g6r
+    reference_type:
+    reference_id: GHSA-74cr-77xc-8g6r

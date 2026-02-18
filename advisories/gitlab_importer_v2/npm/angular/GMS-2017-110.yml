@@ -1,0 +1,26 @@
+advisory_id: npm/angular/GMS-2017-110
+datasource_id: gitlab_importer_v2/npm/angular/GMS-2017-110
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/angular/GMS-2017-110.yml
+aliases:
+  - GMS-2017-110
+summary: |
+  Bypass CSP protection
+  , AngularJS allows bootstrapping of invalid/bad svg and currentScript if it was clobbered.
+impacted_packages:
+  - purl: pkg:npm/angular
+    affected_versions: vers:npm/<1.6.3
+    fixed_versions: vers:npm/1.6.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/angular/angular.js/blob/master/CHANGELOG.md#bug-fixes-5
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular.js/commit/95f964b827b6f5b5aab10af54f7831316c7a9935
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular.js/commit/c8f78a8ca9debc33a6deaf951f344b8d372bf210
+    reference_type:
+    reference_id:

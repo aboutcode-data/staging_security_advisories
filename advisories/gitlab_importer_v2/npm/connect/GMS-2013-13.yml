@@ -1,0 +1,20 @@
+advisory_id: npm/connect/GMS-2013-13
+datasource_id: gitlab_importer_v2/npm/connect/GMS-2013-13
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/connect/GMS-2013-13.yml
+aliases:
+  - GMS-2013-13
+summary: |
+  Cross-Site Scripting with connect.methodOverride()
+  The middleware overwrites req.method with the req.body['_method'] value. When you don't catch the error it responds with a default error msg: "Cannot [METHOD] [URL]" . Because this is not enough sanitized, you can force a Cross-Site Scripting in the response.
+impacted_packages:
+  - purl: pkg:npm/connect
+    affected_versions: vers:npm/<=2.8.0
+    fixed_versions: vers:npm/2.8.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/senchalabs/connect/issues/831
+    reference_type:
+    reference_id:

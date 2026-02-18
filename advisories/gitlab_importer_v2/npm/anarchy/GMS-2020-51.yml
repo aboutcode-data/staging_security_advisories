@@ -1,0 +1,24 @@
+advisory_id: npm/anarchy/GMS-2020-51
+datasource_id: gitlab_importer_v2/npm/anarchy/GMS-2020-51
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/anarchy/GMS-2020-51.yml
+aliases:
+  - GHSA-jjhg-qw5v-r8xx
+  - GMS-2020-51
+summary: |
+  Malicious Package
+  All versions of `anarchy` contain malicious code. The package ran `rm - rf /` as an install script. Remove the package from your environment.
+impacted_packages:
+  - purl: pkg:npm/anarchy
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1089
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jjhg-qw5v-r8xx
+    reference_type:
+    reference_id: GHSA-jjhg-qw5v-r8xx

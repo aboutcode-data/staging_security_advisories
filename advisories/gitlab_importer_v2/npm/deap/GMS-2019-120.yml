@@ -1,0 +1,38 @@
+advisory_id: npm/deap/GMS-2019-120
+datasource_id: gitlab_importer_v2/npm/deap/GMS-2019-120
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/deap/GMS-2019-120.yml
+aliases:
+  - GHSA-xrmp-99wj-p6jc
+  - GMS-2019-120
+summary: |
+  Prototype Pollution in deap
+  Versions of `deap` before 1.0.1 are vulnerable to prototype pollution.
+
+
+  ## Recommendation
+
+  Update to version 1.0.1 or later.
+impacted_packages:
+  - purl: pkg:npm/deap
+    affected_versions: vers:npm/<1.0.1
+    fixed_versions: vers:npm/1.0.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://hackerone.com/reports/310446
+    reference_type:
+    reference_id:
+  - url: https://nodesecurity.io/advisories/611
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/npm:deap:20180415
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/611
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-xrmp-99wj-p6jc
+    reference_type:
+    reference_id: GHSA-xrmp-99wj-p6jc

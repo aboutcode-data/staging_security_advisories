@@ -1,0 +1,17 @@
+advisory_id: npm/angular/GMS-2017-115
+datasource_id: gitlab_importer_v2/npm/angular/GMS-2017-115
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/angular/GMS-2017-115.yml
+aliases:
+  - GMS-2017-115
+summary: |
+  Denial of service in $sanitize
+  Running $sanitize on bad HTML can freeze the browser. The problem occurs with clobbered data; typically the "nextSibling" property on an element is changed to one of it's child node, this makes it impossible to walk the HTML tree and leads to an infinite loop which freezes the browser.
+impacted_packages:
+  - purl: pkg:npm/angular
+    affected_versions: vers:npm/<1.6.3
+    fixed_versions: vers:npm/1.6.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references: []

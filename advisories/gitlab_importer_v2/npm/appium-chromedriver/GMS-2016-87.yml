@@ -1,0 +1,20 @@
+advisory_id: npm/appium-chromedriver/GMS-2016-87
+datasource_id: gitlab_importer_v2/npm/appium-chromedriver/GMS-2016-87
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/appium-chromedriver/GMS-2016-87.yml
+aliases:
+  - GMS-2016-87
+summary: |
+  Downloads Resources over HTTP
+  The library downloads binary resources over HTTP, which leaves the module vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested binary with an attacker controlled binary if the attacker is on the network or positioned in between the user and the remote server.
+impacted_packages:
+  - purl: pkg:npm/appium-chromedriver
+    affected_versions: vers:npm/<2.9.4
+    fixed_versions: vers:npm/2.9.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/appium/appium-chromedriver/commit/c7e384afcddf009636b8e5bb23b1f06150eda293
+    reference_type:
+    reference_id:

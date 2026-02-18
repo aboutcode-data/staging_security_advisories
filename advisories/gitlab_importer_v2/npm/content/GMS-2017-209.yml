@@ -1,0 +1,20 @@
+advisory_id: npm/content/GMS-2017-209
+datasource_id: gitlab_importer_v2/npm/content/GMS-2017-209
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/content/GMS-2017-209.yml
+aliases:
+  - GMS-2017-209
+summary: |
+  Regular Expression Denial of Service
+  The module is vulnerable to regular expression denial of service when passed a specifically crafted Content-Type or Content-Disposition header.
+impacted_packages:
+  - purl: pkg:npm/content
+    affected_versions: vers:npm/<=3.0.5
+    fixed_versions: vers:npm/3.0.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/hapijs/content/commit/3a8a6cbaf111955ec514019c2122cb278cc36a23
+    reference_type:
+    reference_id:

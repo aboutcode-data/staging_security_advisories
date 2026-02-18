@@ -1,0 +1,27 @@
+advisory_id: npm/csrf-csrf/GMS-2022-5273
+datasource_id: gitlab_importer_v2/npm/csrf-csrf/GMS-2022-5273
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/csrf-csrf/GMS-2022-5273.yml
+aliases:
+  - GHSA-jjmg-x456-w976
+  - GMS-2022-5273
+summary: |
+  Incorrect default cookie name and recommendation
+  The default cookie name (and documentation recommendation) was prefixed with Host__ instead of __Host-.
+impacted_packages:
+  - purl: pkg:npm/csrf-csrf
+    affected_versions: vers:npm/<2.2.1
+    fixed_versions: vers:npm/2.2.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/Psifi-Solutions/csrf-csrf/commit/8f1ce8db97d945a4bb7f39f0b43c6041fa83d675
+    reference_type:
+    reference_id:
+  - url: https://github.com/Psifi-Solutions/csrf-csrf/security/advisories/GHSA-jjmg-x456-w976
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jjmg-x456-w976
+    reference_type:
+    reference_id: GHSA-jjmg-x456-w976

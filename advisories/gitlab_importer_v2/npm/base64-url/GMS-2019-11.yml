@@ -1,0 +1,30 @@
+advisory_id: npm/base64-url/GMS-2019-11
+datasource_id: gitlab_importer_v2/npm/base64-url/GMS-2019-11
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/base64-url/GMS-2019-11.yml
+aliases:
+  - GHSA-j4mr-9xw3-c9jx
+  - GMS-2019-11
+summary: |
+  Out-of-bounds Read in base64-url
+  Versions of `base64-url` are vulnerable to out-of-bounds read as it allocates uninitialized Buffers when number is passed in input. Update to or later.
+impacted_packages:
+  - purl: pkg:npm/base64-url
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://hackerone.com/reports/321692
+    reference_type:
+    reference_id:
+  - url: https://nodesecurity.io/advisories/660
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/660
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-j4mr-9xw3-c9jx
+    reference_type:
+    reference_id: GHSA-j4mr-9xw3-c9jx

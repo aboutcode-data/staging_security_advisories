@@ -1,0 +1,24 @@
+advisory_id: npm/buffer-xop/GMS-2020-163
+datasource_id: gitlab_importer_v2/npm/buffer-xop/GMS-2020-163
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/buffer-xop/GMS-2020-163.yml
+aliases:
+  - GHSA-jqjg-v355-hr9q
+  - GMS-2020-163
+summary: |
+  Malicious Package
+  contained malicious code. The package targeted the Ethereum cryptocurrency and performed transactions to wallets not controlled by the user. Remove the package from your environment. Ensure no Ethereum funds were compromised.
+impacted_packages:
+  - purl: pkg:npm/buffer-xop
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1250
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jqjg-v355-hr9q
+    reference_type:
+    reference_id: GHSA-jqjg-v355-hr9q

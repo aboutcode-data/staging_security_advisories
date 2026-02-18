@@ -1,0 +1,24 @@
+advisory_id: npm/airtable/GMS-2020-45
+datasource_id: gitlab_importer_v2/npm/airtable/GMS-2020-45
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/airtable/GMS-2020-45.yml
+aliases:
+  - GHSA-jrj9-5qp6-2v8q
+  - GMS-2020-45
+summary: |
+  Machine-In-The-Middle in airtable
+  Affected versions of `airtable` are vulnerable to Machine-In-The-Middle. The package has SSL certificate validation disabled by default unintentionally. This may allow attackers in a privileged network position to decrypt intercepted traffic.
+impacted_packages:
+  - purl: pkg:npm/airtable
+    affected_versions: vers:npm/>=0.1.19|<0.7.2
+    fixed_versions: vers:npm/0.7.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1305
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-jrj9-5qp6-2v8q
+    reference_type:
+    reference_id: GHSA-jrj9-5qp6-2v8q

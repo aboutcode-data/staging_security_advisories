@@ -1,0 +1,27 @@
+advisory_id: npm/angular/GMS-2019-114
+datasource_id: gitlab_importer_v2/npm/angular/GMS-2019-114
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/angular/GMS-2019-114.yml
+aliases:
+  - GHSA-28hp-fgcr-2r4h
+  - GMS-2019-114
+summary: |
+  Cross-Site Scripting via JSONP
+  JSONP allows untrusted resource URLs, which provides a vector for attack by malicious actors.
+impacted_packages:
+  - purl: pkg:npm/angular
+    affected_versions: vers:npm/<1.6.0
+    fixed_versions: vers:npm/1.6.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/angular/angular.js/commit/6476af83cd0418c84e034a955b12a842794385c4
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1630
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-28hp-fgcr-2r4h
+    reference_type:
+    reference_id: GHSA-28hp-fgcr-2r4h

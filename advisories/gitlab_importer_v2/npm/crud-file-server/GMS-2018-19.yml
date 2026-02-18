@@ -1,0 +1,23 @@
+advisory_id: npm/crud-file-server/GMS-2018-19
+datasource_id: gitlab_importer_v2/npm/crud-file-server/GMS-2018-19
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/crud-file-server/GMS-2018-19.yml
+aliases:
+  - GMS-2018-19
+summary: |
+  Stored XSS in filenames
+  crud-file-server allows embeding HTML in file names, which in certain conditions might lead to malicious JavaScript execution.
+impacted_packages:
+  - purl: pkg:npm/crud-file-server
+    affected_versions: vers:npm/<0.8.0
+    fixed_versions: vers:npm/0.8.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/omphalos/crud-file-server/commit/4155bfe068bf211b49a0b3ffd06e78cbaf1b40fa
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/311101
+    reference_type:
+    reference_id:

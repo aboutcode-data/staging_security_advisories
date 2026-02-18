@@ -1,0 +1,40 @@
+advisory_id: npm/better-auth/GHSA-vp58-j275-797x
+datasource_id: gitlab_importer_v2/npm/better-auth/GHSA-vp58-j275-797x
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/better-auth/GHSA-vp58-j275-797x.yml
+aliases:
+  - GHSA-vp58-j275-797x
+summary: |
+  Better Auth allows bypassing the trustedOrigins Protection which leads to ATO
+  A bypass was discovered in the trustedOrigins validation logic—affecting both absolute URL entries and wildcard domain patterns. This flaw allows an attacker to construct a malicious callbackURL that passes origin checks and triggers an open redirect.
+
+  Because redirect endpoints include sensitive tokens (such as password-reset tokens), this vulnerability can enable one-click account takeover if a victim clicks a crafted link.
+impacted_packages:
+  - purl: pkg:npm/better-auth
+    affected_versions: vers:npm/<1.1.21
+    fixed_versions: vers:npm/1.1.21
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/better-auth/GHSA-vp58-j275-797x.yml
+weaknesses:
+  - CWE-1035
+  - CWE-601
+  - CWE-937
+references:
+  - url: https://github.com/better-auth/better-auth
+    reference_type:
+    reference_id:
+  - url: https://github.com/better-auth/better-auth/blob/ddebd0358d74376ea64541512d0167dd4377f182/packages/better-auth/src/api/middlewares/origin-check.ts#L53
+    reference_type:
+    reference_id:
+  - url: https://github.com/better-auth/better-auth/commit/b381cac7aafd6aa53ef78b6ab771ebfa24643c80
+    reference_type:
+    reference_id:
+  - url: https://github.com/better-auth/better-auth/security/advisories/GHSA-vp58-j275-797x
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-vp58-j275-797x
+    reference_type:
+    reference_id: GHSA-vp58-j275-797x

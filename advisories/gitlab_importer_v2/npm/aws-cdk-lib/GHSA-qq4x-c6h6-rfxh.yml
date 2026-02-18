@@ -1,0 +1,34 @@
+advisory_id: npm/aws-cdk-lib/GHSA-qq4x-c6h6-rfxh
+datasource_id: gitlab_importer_v2/npm/aws-cdk-lib/GHSA-qq4x-c6h6-rfxh
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/aws-cdk-lib/GHSA-qq4x-c6h6-rfxh.yml
+aliases:
+  - GHSA-qq4x-c6h6-rfxh
+summary: |
+  aws-cdk-lib has Insertion of Sensitive Information into Log File vulnerability when using Cognito UserPoolClient Construct
+  The [AWS Cloud Development Kit (CDK)](https://aws.amazon.com/cdk/) is an open-source framework for defining cloud infrastructure using code. Customers use it to create their own applications which are converted to AWS CloudFormation templates during deployment to a customer’s AWS account. CDK contains pre-built components called "[constructs](https://docs.aws.amazon.com/cdk/v2/guide/constructs.html)" that are higher-level abstractions providing defaults and best practices. This approach enables developers to use familiar programming languages to define complex cloud infrastructure more efficiently than writing raw CloudFormation templates.
+impacted_packages:
+  - purl: pkg:npm/aws-cdk-lib
+    affected_versions: vers:npm/>=2.37.0|<2.187.0
+    fixed_versions: vers:npm/2.187.0
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/aws-cdk-lib/GHSA-qq4x-c6h6-rfxh.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/aws/aws-cdk
+    reference_type:
+    reference_id:
+  - url: https://github.com/aws/aws-cdk/commit/d02e64aac18a72195ddcdb973defea7f32382c33
+    reference_type:
+    reference_id:
+  - url: https://github.com/aws/aws-cdk/security/advisories/GHSA-qq4x-c6h6-rfxh
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-qq4x-c6h6-rfxh
+    reference_type:
+    reference_id: GHSA-qq4x-c6h6-rfxh

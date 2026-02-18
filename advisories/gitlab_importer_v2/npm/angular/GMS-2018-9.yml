@@ -1,0 +1,20 @@
+advisory_id: npm/angular/GMS-2018-9
+datasource_id: gitlab_importer_v2/npm/angular/GMS-2018-9
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/angular/GMS-2018-9.yml
+aliases:
+  - GMS-2018-9
+summary: |
+  Cross Site Scripting
+  On Firefox there is a XSS vulnerability if a malicious attacker can write into the `xml:base` attribute on an SVG anchor.
+impacted_packages:
+  - purl: pkg:npm/angular
+    affected_versions: vers:npm/<1.6.9
+    fixed_versions: vers:npm/1.6.9
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/RetireJS/retire.js/commit/ed3512729af76583b28611a4a1b6a8797d7f074c#diff-8b52b7156debed9dd797400ff51e3e15
+    reference_type:
+    reference_id:

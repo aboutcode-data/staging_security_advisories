@@ -1,0 +1,32 @@
+advisory_id: npm/angular/GMS-2016-73
+datasource_id: gitlab_importer_v2/npm/angular/GMS-2016-73
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/angular/GMS-2016-73.yml
+aliases:
+  - GMS-2016-73
+summary: |
+  Bypass CSP protection
+  Extension URIs (`resource://...`) bypass ````Content-Security-Policy```` in Chrome and Firefox and can always be loaded. Now if a site already has a XSS bug, and uses CSP to protect itself, but the user has an extension installed that uses Angular, an attacked can load Angular from the extension, and Angular's auto-bootstrapping can be used to bypass the victim site's CSP protection.
+impacted_packages:
+  - purl: pkg:npm/angular
+    affected_versions: vers:npm/<1.5.9
+    fixed_versions: vers:npm/1.5.9|1.6.0-rc.1|1.6.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/angular/angular.js/commit/0ff10e1b56c6b7c4ac465e35c96a5886e294bac5
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular.js/commit/6ce2913d99bb0dade6027ba9733295d0aa13b242
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular.js/commit/a649758655843275cc477fb638f8e55f72a4eaa6
+    reference_type:
+    reference_id:
+  - url: https://github.com/angular/angular.js/commit/ebe90051eda8a3328e5993cca1663e28d03113d0
+    reference_type:
+    reference_id:
+  - url: https://github.com/mozilla/addons-linter/issues/1000
+    reference_type:
+    reference_id:
