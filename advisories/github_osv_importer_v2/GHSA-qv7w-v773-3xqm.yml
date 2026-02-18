@@ -1,0 +1,43 @@
+advisory_id: GHSA-qv7w-v773-3xqm
+datasource_id: github_osv_importer_v2/GHSA-qv7w-v773-3xqm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-qv7w-v773-3xqm/GHSA-qv7w-v773-3xqm.json
+aliases:
+  - CVE-2026-23967
+summary: |
+  sm-crypto Affected by Signature Malleability in SM2-DSA
+  ### Summary
+
+  A signature malleability vulnerability exists in the SM2 signature verification logic of the sm-crypto library. An attacker can derive a new valid signature for a previously signed message from an existing signature.
+
+  ### Credit
+
+  This vulnerability was discovered by:
+  - XlabAI Team of Tencent Xuanwu Lab
+  - Atuin Automated Vulnerability Discovery Engine
+impacted_packages:
+  - purl: pkg:npm/sm-crypto
+    affected_versions: vers:npm/<0.3.14
+    fixed_versions: vers:npm/0.3.14
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-qv7w-v773-3xqm/GHSA-qv7w-v773-3xqm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-347
+references:
+  - url: https://github.com/JuneAndGreen/sm-crypto
+    reference_type:
+    reference_id:
+  - url: https://github.com/JuneAndGreen/sm-crypto/security/advisories/GHSA-qv7w-v773-3xqm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-23967
+    reference_type:
+    reference_id:

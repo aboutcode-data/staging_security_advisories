@@ -1,0 +1,56 @@
+advisory_id: GHSA-r487-9vv5-75gg
+datasource_id: github_osv_importer_v2/GHSA-r487-9vv5-75gg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-r487-9vv5-75gg/GHSA-r487-9vv5-75gg.json
+aliases:
+  - CVE-2025-43585
+summary: |
+  Magento Improper Authorization leading to security feature bypass
+  Magento versions 2.4.8, 2.4.7-p5, 2.4.6-p10, 2.4.5-p12, 2.4.4-p13 and earlier are affected by an Improper Authorization vulnerability that could result in a Security feature bypass. An attacker could leverage this vulnerability to bypass security measures and gain unauthorized access leading to a limited impact to confidentiality and a high impact to integrity. Exploitation of this issue does not require user interaction.
+impacted_packages:
+  - purl: pkg:composer/magento/project-community-edition
+    affected_versions: vers:composer/<=2.0.2
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.7-beta1|<2.4.7-p6
+    fixed_versions: vers:composer/2.4.7-p6
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.6-p1|<2.4.6-p11
+    fixed_versions: vers:composer/2.4.6-p11
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<2.4.5-p13
+    fixed_versions: vers:composer/2.4.5-p13
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.5
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.6
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.7
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.8
+    fixed_versions:
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-r487-9vv5-75gg/GHSA-r487-9vv5-75gg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb25-50.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43585
+    reference_type:
+    reference_id:

@@ -1,0 +1,50 @@
+advisory_id: GHSA-rgfx-7p65-3ff4
+datasource_id: github_osv_importer_v2/GHSA-rgfx-7p65-3ff4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-rgfx-7p65-3ff4/GHSA-rgfx-7p65-3ff4.json
+aliases:
+  - CVE-2024-27137
+summary: |
+  Apache Cassandra: unrestricted deserialization of JMX authentication credentials
+  In Apache Cassandra it is possible for a local attacker without access to the Apache Cassandra process or configuration files to manipulate the RMI registry to perform a man-in-the-middle attack and capture user names and passwords used to access the JMX interface. The attacker can then use these credentials to access the JMX interface and perform unauthorized operations.
+
+  This is same vulnerability that CVE-2020-13946 was issued for, but the Java option was changed in JDK10.
+
+  This issue affects Apache Cassandra from 4.0.2 through 5.0.2 running Java 11.
+
+  Operators are recommended to upgrade to a release equal to or later than 4.0.15, 4.1.8, or 5.0.3 which fixes the issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.cassandra/cassandra-all
+    affected_versions: vers:maven/>=5.0-beta1|<5.0.3
+    fixed_versions: vers:maven/5.0.3
+  - purl: pkg:maven/org.apache.cassandra/cassandra-all
+    affected_versions: vers:maven/>=4.1.0|<4.1.8
+    fixed_versions: vers:maven/4.1.8
+  - purl: pkg:maven/org.apache.cassandra/cassandra-all
+    affected_versions: vers:maven/>=4.0.2|<4.0.15
+    fixed_versions: vers:maven/4.0.15
+severities:
+  - score: '5.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-rgfx-7p65-3ff4/GHSA-rgfx-7p65-3ff4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+references:
+  - url: https://github.com/apache/cassandra
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/jsk87d9yv8r204mgqpz1qxtp5wcrpysm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-27137
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20250214-0004
+    reference_type:
+    reference_id:

@@ -1,0 +1,46 @@
+advisory_id: GHSA-rmpj-7c96-mrg8
+datasource_id: github_osv_importer_v2/GHSA-rmpj-7c96-mrg8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-rmpj-7c96-mrg8/GHSA-rmpj-7c96-mrg8.json
+aliases:
+  - CVE-2021-37404
+summary: |
+  Apache Hadoop heap overflow before v2.10.2, v3.2.3, v3.3.2
+  There is a potential heap buffer overflow in Apache Hadoop libhdfs native code. Opening a file path provided by user without validation may result in a denial of service or arbitrary code execution. Users should upgrade to Apache Hadoop 2.10.2, 3.2.3, 3.3.2 or higher.
+impacted_packages:
+  - purl: pkg:maven/org.apache.hadoop/hadoop-common
+    affected_versions: vers:maven/>=3.3.0|<3.3.2
+    fixed_versions: vers:maven/3.3.2
+  - purl: pkg:maven/org.apache.hadoop/hadoop-common
+    affected_versions: vers:maven/>=3.0.0|<3.2.3
+    fixed_versions: vers:maven/3.2.3
+  - purl: pkg:maven/org.apache.hadoop/hadoop-common
+    affected_versions: vers:maven/<2.10.2
+    fixed_versions: vers:maven/2.10.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-rmpj-7c96-mrg8/GHSA-rmpj-7c96-mrg8.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-120
+  - CWE-131
+  - CWE-787
+references:
+  - url: https://github.com/apache/hadoop
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/2h56ztcj3ojc66qzf1nno88vjw9vd4wo
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-37404
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220715-0007
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-rpxg-hg79-h8q9
+datasource_id: github_osv_importer_v2/GHSA-rpxg-hg79-h8q9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-rpxg-hg79-h8q9/GHSA-rpxg-hg79-h8q9.json
+aliases:
+  - CVE-2022-35628
+summary: |
+  SQL Injection in typo3 extension "LUX - TYPO3 Marketing Automation"
+  A SQL injection issue was discovered in the lux extension before 17.6.1, and 18.x through 24.x before 24.0.2, for TYPO3.
+impacted_packages:
+  - purl: pkg:composer/in2code/lux
+    affected_versions: vers:composer/<17.6.1
+    fixed_versions: vers:composer/17.6.1
+  - purl: pkg:composer/in2code/lux
+    affected_versions: vers:composer/>=18.0.0|<24.0.2
+    fixed_versions: vers:composer/24.0.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-rpxg-hg79-h8q9/GHSA-rpxg-hg79-h8q9.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/in2code/lux/CVE-2022-35628.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-35628
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2022-014
+    reference_type:
+    reference_id:

@@ -1,0 +1,42 @@
+advisory_id: GHSA-rhhj-5436-95vf
+datasource_id: github_osv_importer_v2/GHSA-rhhj-5436-95vf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-rhhj-5436-95vf/GHSA-rhhj-5436-95vf.json
+aliases:
+  - CVE-2024-23731
+summary: |
+  Code execution in Embedchain
+  The OpenAPI loader in Embedchain before 0.1.57 allows attackers to execute arbitrary code, related to the openapi.py yaml.load function argument.
+impacted_packages:
+  - purl: pkg:pypi/embedchain
+    affected_versions: vers:pypi/<0.1.57
+    fixed_versions: vers:pypi/0.1.57
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-rhhj-5436-95vf/GHSA-rhhj-5436-95vf.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+  - CWE-88
+references:
+  - url: https://github.com/embedchain/embedchain
+    reference_type:
+    reference_id:
+  - url: https://github.com/embedchain/embedchain/compare/0.1.56...0.1.57
+    reference_type:
+    reference_id:
+  - url: https://github.com/embedchain/embedchain/pull/1122
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/embedchain/PYSEC-2024-7.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23731
+    reference_type:
+    reference_id:

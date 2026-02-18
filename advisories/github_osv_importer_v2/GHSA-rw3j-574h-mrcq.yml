@@ -1,0 +1,83 @@
+advisory_id: GHSA-rw3j-574h-mrcq
+datasource_id: github_osv_importer_v2/GHSA-rw3j-574h-mrcq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-rw3j-574h-mrcq/GHSA-rw3j-574h-mrcq.json
+aliases:
+  - CVE-2024-39319
+summary: |
+  IDOR vulnerability in account profile page
+  ### Impact
+  Insecure direct object reference allowing an attacker to disable subscriptions and reviews of another customer
+impacted_packages:
+  - purl: pkg:composer/aimeos/ai-controller-frontend
+    affected_versions: vers:composer/2024.4.1
+    fixed_versions: vers:composer/2024.4.2
+  - purl: pkg:composer/aimeos/ai-controller-frontend
+    affected_versions: vers:composer/>=2023.4.1|<2023.10.9
+    fixed_versions: vers:composer/2023.10.9
+  - purl: pkg:composer/aimeos/ai-controller-frontend
+    affected_versions: vers:composer/>=2022.4.1|<2022.10.8
+    fixed_versions: vers:composer/2022.10.8
+  - purl: pkg:composer/aimeos/ai-controller-frontend
+    affected_versions: vers:composer/>=2021.4.1|<2021.10.8
+    fixed_versions: vers:composer/2021.10.8
+  - purl: pkg:composer/aimeos/ai-controller-frontend
+    affected_versions: vers:composer/<2020.10.15
+    fixed_versions: vers:composer/2020.10.15
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-rw3j-574h-mrcq/GHSA-rw3j-574h-mrcq.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-rw3j-574h-mrcq/GHSA-rw3j-574h-mrcq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: https://github.com/aimeos/ai-controller-frontend
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/2ad5c062a629af374da470a319914c321c9bfee2
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/53eebdc51fae34440dfd768a7811c169c7779aa9
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/5833db6d18a889b94dc036dfb84b6f5cca73fbac
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/6ea6b82f5a1fc18c574cb6f97225930d139b14a5
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/700da5ea2b622724b68c8684346bf74ac3bbca9b
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/7c93139f86eff9ec26b117a8918e06ce6cc0000f
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/ae7baa3f2fbf594c2c1e4b1aae83364a84b241a6
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/cd8c95aa4663f54bd66a69c5952f2e42405426f3
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/d4eac06f3a25330c089d8be4397f2ab1936dd9bb
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/commit/f7c6a9ce2a6f5a9ad4af31313508870a78398f85
+    reference_type:
+    reference_id:
+  - url: https://github.com/aimeos/ai-controller-frontend/security/advisories/GHSA-rw3j-574h-mrcq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-39319
+    reference_type:
+    reference_id:

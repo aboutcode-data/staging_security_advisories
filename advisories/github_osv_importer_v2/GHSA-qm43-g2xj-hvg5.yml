@@ -1,0 +1,50 @@
+advisory_id: GHSA-qm43-g2xj-hvg5
+datasource_id: github_osv_importer_v2/GHSA-qm43-g2xj-hvg5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-qm43-g2xj-hvg5/GHSA-qm43-g2xj-hvg5.json
+aliases:
+  - CVE-2024-26268
+summary: |
+  Liferay Portal and Liferay DXP User Enumeration Vulnerability
+  User enumeration vulnerability in Liferay Portal 7.2.0 through 7.4.3.26, and older unsupported versions, and Liferay DXP 7.4 before update 27, 7.3 before update 8, 7.2 before fix pack 20, and older unsupported versions allows remote attackers to determine if an account exist in the application by comparing the request's response time.
+impacted_packages:
+  - purl: pkg:maven/com.liferay.portal/release.portal.bom
+    affected_versions: vers:maven/>=7.2.0|<7.4.3.27-ga27
+    fixed_versions: vers:maven/7.4.3.27-ga27
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/<7.2.10.fp20
+    fixed_versions: vers:maven/7.2.10.fp20
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.3.0|<7.3.10.u8
+    fixed_versions: vers:maven/7.3.10.u8
+  - purl: pkg:maven/com.liferay.portal/release.dxp.bom
+    affected_versions: vers:maven/>=7.4.0|<7.4.13.u27
+    fixed_versions: vers:maven/7.4.13.u27
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-qm43-g2xj-hvg5/GHSA-qm43-g2xj-hvg5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/46db55ec21103fa39542e2cba080c4f98e3c5f93
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/d8d0ae0178a2d902b541c80a230a2c7a5ab246e8
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/cve-2024-26268
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-26268
+    reference_type:
+    reference_id:

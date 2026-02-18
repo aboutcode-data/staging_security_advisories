@@ -1,0 +1,38 @@
+advisory_id: GHSA-qfg7-wc25-r3j2
+datasource_id: github_osv_importer_v2/GHSA-qfg7-wc25-r3j2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qfg7-wc25-r3j2/GHSA-qfg7-wc25-r3j2.json
+aliases:
+  - CVE-2017-14920
+summary: |
+  eGroupware Community Edition Stored XSS vulnerability
+  Stored XSS vulnerability in eGroupware Community Edition before 16.1.20170922 allows an unauthenticated remote attacker to inject JavaScript via the User-Agent HTTP header, which is mishandled during rendering by the application administrator.
+impacted_packages:
+  - purl: pkg:composer/egroupware/egroupware
+    affected_versions: vers:composer/<16.1.20170922
+    fixed_versions: vers:composer/16.1.20170922
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qfg7-wc25-r3j2/GHSA-qfg7-wc25-r3j2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://openwall.com/lists/oss-security/2017/09/28/12
+    reference_type:
+    reference_id:
+  - url: https://github.com/EGroupware/egroupware
+    reference_type:
+    reference_id:
+  - url: https://github.com/EGroupware/egroupware/commit/0ececf8c78f1c3f9ba15465f53a682dd7d89529f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-14920
+    reference_type:
+    reference_id:

@@ -1,0 +1,62 @@
+advisory_id: GHSA-qfh6-h7j6-fvjv
+datasource_id: github_osv_importer_v2/GHSA-qfh6-h7j6-fvjv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-qfh6-h7j6-fvjv/GHSA-qfh6-h7j6-fvjv.json
+aliases:
+  - CVE-2025-67851
+summary: |
+  Moodle formula injection vulnerability
+  A flaw was found in Moodle. This formula injection vulnerability occurs when data fields are exported without proper escaping. A remote attacker could exploit this by providing malicious data that, when exported and opened in a spreadsheet, allows arbitrary formulas to execute. This can lead to compromised data integrity and unintended operations within the spreadsheet.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<4.1.22
+    fixed_versions: vers:composer/4.1.22
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.4.0-beta|<4.4.12
+    fixed_versions: vers:composer/4.4.12
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=4.5.0-beta|<4.5.8
+    fixed_versions: vers:composer/4.5.8
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.0.0-beta|<5.0.4
+    fixed_versions: vers:composer/5.0.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=5.1.0-beta|<5.1.1
+    fixed_versions: vers:composer/5.1.1
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-qfh6-h7j6-fvjv/GHSA-qfh6-h7j6-fvjv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1236
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2025-67851
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2423841
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/29820c5ff4ef381c7a743091ec5c68ac82903b22
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/aa66bacd0783cbc33528fba9c2adca1f685a59bd
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/dc57ccc491a2a04032445a3ee92fd0d335ebd746
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=471301
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-67851
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-rq9r-qvwg-829q
+datasource_id: github_osv_importer_v2/GHSA-rq9r-qvwg-829q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-rq9r-qvwg-829q/GHSA-rq9r-qvwg-829q.json
+aliases:
+  - CVE-2024-57186
+summary: |
+  Erxes Path Traversal vulnerability
+  In Erxes <1.6.2, an unauthenticated attacker can read arbitrary files from the system using a Path Traversal vulnerability in the /read-file endpoint handler.
+impacted_packages:
+  - purl: pkg:npm/erxes
+    affected_versions: vers:npm/<1.6.2
+    fixed_versions: vers:npm/1.6.2
+severities:
+  - score: '7.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-rq9r-qvwg-829q/GHSA-rq9r-qvwg-829q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/erxes/erxes
+    reference_type:
+    reference_id:
+  - url: https://github.com/erxes/erxes/commit/d626070a0fcd435ae29e689aca051ccfb440c2f3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-57186
+    reference_type:
+    reference_id:
+  - url: https://www.sonarsource.com/blog/micro-services-major-headaches-detecting-vulnerabilities-in-erxes-microservices
+    reference_type:
+    reference_id:

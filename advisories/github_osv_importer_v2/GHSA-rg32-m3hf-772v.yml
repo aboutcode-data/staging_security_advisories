@@ -1,0 +1,41 @@
+advisory_id: GHSA-rg32-m3hf-772v
+datasource_id: github_osv_importer_v2/GHSA-rg32-m3hf-772v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-rg32-m3hf-772v/GHSA-rg32-m3hf-772v.json
+aliases:
+  - CVE-2019-1010306
+summary: |
+  Slanger Arbitrary command execution
+  Slanger 0.6.0 is affected by Remote Code Execution (RCE). The impact is A remote attacker can execute arbitrary commands by sending a crafted request to the server. The component is Message handler & request validator. The attack vector is Remote unauthenticated. The fixed version is after commit 5267b455caeb2e055cccf0d2b6a22727c111f5c3.
+impacted_packages:
+  - purl: pkg:gem/slanger
+    affected_versions: vers:gem/<0.6.1
+    fixed_versions: vers:gem/0.6.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/07/GHSA-rg32-m3hf-772v/GHSA-rg32-m3hf-772v.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/slanger/CVE-2019-1010306.yml
+    reference_type:
+    reference_id:
+  - url: https://github.com/stevegraham/slanger
+    reference_type:
+    reference_id:
+  - url: https://github.com/stevegraham/slanger/pull/238
+    reference_type:
+    reference_id:
+  - url: https://github.com/stevegraham/slanger/pull/238/commits/5267b455caeb2e055cccf0d2b6a22727c111f5c3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-1010306
+    reference_type:
+    reference_id:

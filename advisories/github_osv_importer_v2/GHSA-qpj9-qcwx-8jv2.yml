@@ -1,0 +1,55 @@
+advisory_id: GHSA-qpj9-qcwx-8jv2
+datasource_id: github_osv_importer_v2/GHSA-qpj9-qcwx-8jv2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-qpj9-qcwx-8jv2/GHSA-qpj9-qcwx-8jv2.json
+aliases:
+  - CVE-2025-47293
+summary: |
+  PowSyBl Core XML Reader allows XXE and SSRF
+  ### Impact
+  _What kind of vulnerability is it? Who is impacted?_
+  In certain places, powsybl-core XML parsing is vulnerable to an XXE attack and in on place also to an SSRF attack.
+  This allows an attacker to elevate their privileges to read files that they do not have permissions to, including sensitive files on the system.
+  The vulnerable class is `com.powsybl.commons.xml.XmlReader` which is considered to be untrusted in use cases where untrusted users can submit their XML to the vulnerable methods. This can be a multi-tenant application that hosts many different users perhaps with different privilege levels.
+
+  #### Am I impacted?
+  You are vulnerable if you allow untrusted users to import untrusted CGMES or XIIDM network files.
+
+  ### Patches
+  com.powsybl:powsybl-commons:6.7.2 and higher
+
+  ### References
+  [powsybl-core v6.7.2](https://github.com/powsybl/powsybl-core/releases/tag/v6.7.2)
+impacted_packages:
+  - purl: pkg:maven/com.powsybl/powsybl-commons
+    affected_versions: vers:maven/<=6.7.1
+    fixed_versions: vers:maven/6.7.2
+severities:
+  - score: '2.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:U
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-qpj9-qcwx-8jv2/GHSA-qpj9-qcwx-8jv2.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+  - CWE-918
+references:
+  - url: https://github.com/powsybl/powsybl-core
+    reference_type:
+    reference_id:
+  - url: https://github.com/powsybl/powsybl-core/commit/e6c7c4997ae8758b54a2f23ce1a499e25113acdc
+    reference_type:
+    reference_id:
+  - url: https://github.com/powsybl/powsybl-core/releases/tag/v6.7.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/powsybl/powsybl-core/security/advisories/GHSA-qpj9-qcwx-8jv2
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-47293
+    reference_type:
+    reference_id:

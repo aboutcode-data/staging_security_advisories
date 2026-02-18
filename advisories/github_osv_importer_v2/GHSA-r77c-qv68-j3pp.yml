@@ -1,0 +1,53 @@
+advisory_id: GHSA-r77c-qv68-j3pp
+datasource_id: github_osv_importer_v2/GHSA-r77c-qv68-j3pp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-r77c-qv68-j3pp/GHSA-r77c-qv68-j3pp.json
+aliases:
+  - CVE-2018-25080
+summary: |
+  Cross-site Scripting in MobileDetect
+  A vulnerability, which was classified as problematic, has been found in MobileDetect 2.8.31. This issue affects the function initLayoutType of the file examples/session_example.php of the component Example. The manipulation of the argument $_SERVER['PHP_SELF'] leads to cross site scripting. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. Upgrading to version 2.8.32 is able to address this issue. The name of the patch is 31818a441b095bdc4838602dbb17b8377d1e5cce. It is recommended to upgrade the affected component. The identifier VDB-220061 was assigned to this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/mobiledetect/mobiledetectlib
+    affected_versions: vers:composer/<2.8.32
+    fixed_versions: vers:composer/2.8.32
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-r77c-qv68-j3pp/GHSA-r77c-qv68-j3pp.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/MarkLee131/awesome-web-pocs/blob/main/CVE-2018-25080.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/serbanghita/Mobile-Detect
+    reference_type:
+    reference_id:
+  - url: https://github.com/serbanghita/Mobile-Detect/commit/31818a441b095bdc4838602dbb17b8377d1e5cce
+    reference_type:
+    reference_id:
+  - url: https://github.com/serbanghita/Mobile-Detect/pull/741
+    reference_type:
+    reference_id:
+  - url: https://github.com/serbanghita/Mobile-Detect/releases/tag/2.8.32
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-25080
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.220061
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.220061
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/52454.txt
+    reference_type: exploit
+    reference_id: CVE-2018-25080

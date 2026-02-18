@@ -1,0 +1,38 @@
+advisory_id: GHSA-r2v5-5vcr-h3vq
+datasource_id: github_osv_importer_v2/GHSA-r2v5-5vcr-h3vq
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-r2v5-5vcr-h3vq/GHSA-r2v5-5vcr-h3vq.json
+aliases:
+  - CVE-2018-1328
+summary: |
+  Cross-site Scripting in Apache Zeppelin
+  Apache Zeppelin prior to 0.8.0 had a stored XSS issue via Note permissions. Issue reported by "Josna Joseph".
+impacted_packages:
+  - purl: pkg:maven/org.apache.zeppelin/zeppelin
+    affected_versions: vers:maven/<0.8.0
+    fixed_versions: vers:maven/0.8.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-r2v5-5vcr-h3vq/GHSA-r2v5-5vcr-h3vq.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://lists.apache.org/thread.html/ff6b995a5a3ba8db4d6b14b4d9dd487e7bf2e3bdd5b375b64a25fd06@%3Cusers.zeppelin.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1328
+    reference_type:
+    reference_id:
+  - url: https://zeppelin.apache.org/releases/zeppelin-release-0.8.0.html
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/04/23/1
+    reference_type:
+    reference_id:

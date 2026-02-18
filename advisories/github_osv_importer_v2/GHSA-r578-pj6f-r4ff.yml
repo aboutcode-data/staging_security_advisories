@@ -1,0 +1,69 @@
+advisory_id: GHSA-r578-pj6f-r4ff
+datasource_id: github_osv_importer_v2/GHSA-r578-pj6f-r4ff
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-r578-pj6f-r4ff/GHSA-r578-pj6f-r4ff.json
+aliases:
+  - CVE-2021-32691
+summary: |
+  Auto-merging Person Records Compromised
+  ### Impact
+
+  New user registrations are able to access anyone's account by only knowing their basic profile information (name, birthday, gender, etc). This includes all app functionality within the app, as well as any authenticated links to Rock-based webpages (such as giving and events).
+
+  ### Patches
+
+  We have released a security patch on v2.20.0. The solution was to create a duplicate person and then patch the new person with their profile details.
+
+  ### Workarounds
+
+  If you do not wish to upgrade your app to the new version, you can patch your server by overriding the `create` data source method on the `People` class.
+
+  ```js
+    create = async (profile) => {
+      const rockUpdateFields = this.mapApollosFieldsToRock(profile);
+      // auto-merge functionality is compromised
+      // we are creating a new user and patching them with profile details
+      const id = await this.post('/People', {
+        Gender: 0, // required by Rock. Listed first so it can be overridden.
+        IsSystem: false, // required by rock
+      });
+      await this.patch(`/People/${id}`, {
+        ...rockUpdateFields,
+      });
+      return id;
+    };
+  ```
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at [support@apollos.app](mailto:support@apollos.app)
+impacted_packages:
+  - purl: pkg:npm/%40apollosproject/data-connector-rock
+    affected_versions: vers:npm/<2.20.0
+    fixed_versions: vers:npm/2.20.0
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-r578-pj6f-r4ff/GHSA-r578-pj6f-r4ff.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+  - CWE-303
+references:
+  - url: https://github.com/ApollosProject/apollos-apps/commit/cb5f8f1c0b24f1b215b2bb5eb6f9a8e16d728ce2
+    reference_type:
+    reference_id:
+  - url: https://github.com/ApollosProject/apollos-apps/releases/tag/v2.20.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/ApollosProject/apollos-apps/security/advisories/GHSA-r578-pj6f-r4ff
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32691
+    reference_type:
+    reference_id:

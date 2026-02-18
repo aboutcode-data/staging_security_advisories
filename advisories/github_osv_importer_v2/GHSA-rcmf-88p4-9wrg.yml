@@ -1,0 +1,41 @@
+advisory_id: GHSA-rcmf-88p4-9wrg
+datasource_id: github_osv_importer_v2/GHSA-rcmf-88p4-9wrg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rcmf-88p4-9wrg/GHSA-rcmf-88p4-9wrg.json
+aliases:
+  - CVE-2019-20891
+summary: |
+  WooCommerce Cross-Site Request Forgery (CSRF)
+  WooCommerce before 3.6.5, when it handles CSV imports of products, has a cross-site request forgery (CSRF) issue with resultant stored cross-site scripting (XSS) via `includes/admin/importers/class-wc-product-csv-importer-controller.php`.
+impacted_packages:
+  - purl: pkg:composer/woocommerce/woocommerce
+    affected_versions: vers:composer/<3.6.5
+    fixed_versions: vers:composer/3.6.5
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rcmf-88p4-9wrg/GHSA-rcmf-88p4-9wrg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://blog.ripstech.com/2019/woocommerce-csrf-to-stored-xss
+    reference_type:
+    reference_id:
+  - url: https://github.com/woocommerce/woocommerce
+    reference_type:
+    reference_id:
+  - url: https://github.com/woocommerce/woocommerce/commit/fd7feb778eb45a2eb92b45eb2b4ee96ea3ac6fe7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-20891
+    reference_type:
+    reference_id:
+  - url: https://raw.githubusercontent.com/woocommerce/woocommerce/master/CHANGELOG.txt
+    reference_type:
+    reference_id:

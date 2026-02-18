@@ -1,0 +1,57 @@
+advisory_id: GHSA-qmv4-jgp7-mf68
+datasource_id: github_osv_importer_v2/GHSA-qmv4-jgp7-mf68
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-qmv4-jgp7-mf68/GHSA-qmv4-jgp7-mf68.json
+aliases:
+  - CVE-2016-10549
+summary: "Sails before 0.12.7 vulnerable to Broken CORS\nAffected versions of `sails` have an\
+  \ issue with the CORS configuration where the value of the origin header is reflected as the\
+  \ value for the `Access-Control-Allow-Origin` header. This may allow an attacker to make AJAX\
+  \ requests to vulnerable hosts through cross-site scripting or a malicious HTML Document,\
+  \ effectively bypassing the Same Origin Policy. \n\n## Mitigating Factors\n\nThis is only\
+  \ an issue when `allRoutes` is set to `true` and `origin` is set to `*` or left commented\
+  \ out in the sails CORS config file. \n\nThe problem can be compounded when the cors `credentials`\
+  \ setting is not provided, because at that point authenticated cross domain requests are possible.\n\
+  \n\n## Recommendation\n\nUpdate to version 0.12.7 or later.\n\nAs this vulnerability is primarily\
+  \ a user error, the patch for the vulnerability will simply cause the application to write\
+  \ an error message to the console when a vulnerable configuration is used in a production\
+  \ environment.\n\nWriting a proper CORS configuration is still the responsibility of the user,\
+  \ so it is necessary to check for the error message after installing the patch. Be sure you\
+  \ are not using `allRoutes: true` with `origin:'*'`, and that you uncomment `origin` and set\
+  \ it to a reasonable value. Ensure that if `origin` is set to `*` that you truly mean for\
+  \ all other websites to be able to make cross-domain requests to your API.\n\nLikewise, ensure\
+  \ `credentials` is uncommented out and set to the appropriate value. Make sure to explicitly\
+  \ set which origins may request resources via CORS."
+impacted_packages:
+  - purl: pkg:npm/sails
+    affected_versions: vers:npm/<0.12.7
+    fixed_versions: vers:npm/0.12.7
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: http://sailsjs.org/documentation/concepts/security/cors
+    reference_type:
+    reference_id:
+  - url: http://sailsjs.org/documentation/reference/configuration/sails-config-cors
+    reference_type:
+    reference_id:
+  - url: https://github.com/balderdashy/sails
+    reference_type:
+    reference_id:
+  - url: https://github.com/balderdashy/sails/commit/0057123a0321be6758845abbeb4290bf418ce542
+    reference_type:
+    reference_id:
+  - url: https://github.com/balderdashy/sails/releases/tag/v0.12.7
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10549
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/148
+    reference_type:
+    reference_id:

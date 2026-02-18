@@ -1,0 +1,50 @@
+advisory_id: GHSA-qqjv-mc2v-p7mc
+datasource_id: github_osv_importer_v2/GHSA-qqjv-mc2v-p7mc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qqjv-mc2v-p7mc/GHSA-qqjv-mc2v-p7mc.json
+aliases:
+  - CVE-2018-1042
+summary: |
+  Moodle SSRF Vulnerability
+  Moodle 3.x has Server Side Request Forgery in the filepicker.
+impacted_packages:
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/>=3.4.0|<3.4.1
+    fixed_versions: vers:composer/3.4.1
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.3.3
+    fixed_versions: vers:composer/3.3.4
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.2.6
+    fixed_versions: vers:composer/3.2.7
+  - purl: pkg:composer/moodle/moodle
+    affected_versions: vers:composer/<=3.1.9
+    fixed_versions: vers:composer/3.1.10
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qqjv-mc2v-p7mc/GHSA-qqjv-mc2v-p7mc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: http://packetstormsecurity.com/files/153766/Moodle-Filepicker-3.5.2-Server-Side-Request-Forgery.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/moodle/moodle/commit/f1d1a60e0ac8549c08e66062f3cd0110e4a92e24
+    reference_type:
+    reference_id:
+  - url: https://moodle.org/mod/forum/discuss.php?d=364381
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1042
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124134113/http://www.securityfocus.com/bid/102752
+    reference_type:
+    reference_id:

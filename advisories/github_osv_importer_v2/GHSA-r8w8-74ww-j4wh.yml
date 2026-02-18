@@ -1,0 +1,80 @@
+advisory_id: GHSA-r8w8-74ww-j4wh
+datasource_id: github_osv_importer_v2/GHSA-r8w8-74ww-j4wh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-r8w8-74ww-j4wh/GHSA-r8w8-74ww-j4wh.json
+aliases:
+  - CVE-2024-45292
+summary: |
+  PhpSpreadsheet HTML writer is vulnerable to Cross-Site Scripting via JavaScript hyperlinks
+  ### Summary
+  `\PhpOffice\PhpSpreadsheet\Writer\Html` does not sanitize "javascript:" URLs from hyperlink `href` attributes, resulting in a Cross-Site Scripting vulnerability.
+
+  ### PoC
+
+  Example target script:
+
+  ```
+  <?php
+
+  require 'vendor/autoload.php';
+
+  $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader("Xlsx");
+  $spreadsheet = $reader->load(__DIR__ . '/book.xlsx');
+
+  $writer = new \PhpOffice\PhpSpreadsheet\Writer\Html($spreadsheet);
+  print($writer->generateHTMLAll());
+  ```
+
+  Save this file in the same directory:
+  [book.xlsx](https://github.com/PHPOffice/PhpSpreadsheet/files/15099763/book.xlsx)
+
+  Open index.php in a web browser and click on both links. The first demonstrates the vulnerability in a regular hyperlink and the second in a HYPERLINK() formula.
+impacted_packages:
+  - purl: pkg:composer/phpoffice/phpspreadsheet
+    affected_versions: vers:composer/>=2.2.0|<2.3.0
+    fixed_versions: vers:composer/2.3.0
+  - purl: pkg:composer/phpoffice/phpspreadsheet
+    affected_versions: vers:composer/<1.29.2
+    fixed_versions: vers:composer/1.29.2
+  - purl: pkg:composer/phpoffice/phpspreadsheet
+    affected_versions: vers:composer/>=2.0.0|<2.1.1
+    fixed_versions: vers:composer/2.1.1
+  - purl: pkg:composer/phpoffice/phpexcel
+    affected_versions: vers:composer/<=1.8.2
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-r8w8-74ww-j4wh/GHSA-r8w8-74ww-j4wh.json
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-r8w8-74ww-j4wh/GHSA-r8w8-74ww-j4wh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet/commit/392dd08c5569b623060784e1333454d64df1f03d
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet/commit/8b9b378ecdc603234a34aab3b293d2cdc8e9210e
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet/commit/f0b70ed1086348904b27772b264e1605ba6c1d6d
+    reference_type:
+    reference_id:
+  - url: https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-r8w8-74ww-j4wh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45292
+    reference_type:
+    reference_id:

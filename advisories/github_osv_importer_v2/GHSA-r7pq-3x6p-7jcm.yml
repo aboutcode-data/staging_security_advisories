@@ -1,0 +1,38 @@
+advisory_id: GHSA-r7pq-3x6p-7jcm
+datasource_id: github_osv_importer_v2/GHSA-r7pq-3x6p-7jcm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-r7pq-3x6p-7jcm/GHSA-r7pq-3x6p-7jcm.json
+aliases:
+  - CVE-2022-29863
+summary: |
+  Memory Allocation with Excessive Size Value in OPCFoundation.NetStandard.Opc.Ua.Core
+  A vulnerability was discovered in the OPC UA .NET Standard Stack that allows a malicious client to cause a server to trigger an out of memory exception with a carefully crafted message.
+impacted_packages:
+  - purl: pkg:nuget/OPCFoundation.NetStandard.Opc.Ua.Core
+    affected_versions: vers:nuget/<=1.4.368.53
+    fixed_versions: vers:nuget/1.4.368.58
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-r7pq-3x6p-7jcm/GHSA-r7pq-3x6p-7jcm.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-789
+references:
+  - url: https://files.opcfoundation.org/SecurityBulletins/OPC%20Foundation%20Security%20Bulletin%20CVE-2022-29863.pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/OPCFoundation/UA-.NETStandard
+    reference_type:
+    reference_id:
+  - url: https://github.com/OPCFoundation/UA-.NETStandard/security/advisories/GHSA-r7pq-3x6p-7jcm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29863
+    reference_type:
+    reference_id:

@@ -1,0 +1,50 @@
+advisory_id: GHSA-rg3q-jxmp-pvjj
+datasource_id: github_osv_importer_v2/GHSA-rg3q-jxmp-pvjj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-rg3q-jxmp-pvjj/GHSA-rg3q-jxmp-pvjj.json
+aliases:
+  - CVE-2019-11004
+summary: |
+  Materialize-css vulnerable to Improper Neutralization of Input During Web Page Generation
+  In Materialize through 1.0.0, XSS is possible via the Toast feature.
+impacted_packages:
+  - purl: pkg:npm/materialize-css
+    affected_versions: vers:npm/<=1.0.0
+    fixed_versions:
+  - purl: pkg:npm/%40materializecss/materialize
+    affected_versions: vers:npm/<1.1.0-alpha
+    fixed_versions: vers:npm/1.1.0-alpha
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-rg3q-jxmp-pvjj/GHSA-rg3q-jxmp-pvjj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/advisories/GHSA-rg3q-jxmp-pvjj
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dogfalo/materialize
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dogfalo/materialize/issues/6286
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dogfalo/materialize/issues/6331#issuecomment-549080183
+    reference_type:
+    reference_id:
+  - url: https://github.com/materializecss/materialize/pull/49
+    reference_type:
+    reference_id:
+  - url: https://github.com/samschurter/materialize/commit/3aae4cc9bb2b58c337bf25d2f04f129a2a0fa78f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-11004
+    reference_type:
+    reference_id:

@@ -1,0 +1,56 @@
+advisory_id: GHSA-r2fc-ccr8-96c4
+datasource_id: github_osv_importer_v2/GHSA-r2fc-ccr8-96c4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-r2fc-ccr8-96c4/GHSA-r2fc-ccr8-96c4.json
+aliases:
+  - CVE-2025-49005
+summary: |
+  Next.js has a Cache poisoning vulnerability due to omission of the Vary header
+  ### Summary
+
+  A cache poisoning issue in **Next.js App Router >=15.3.0 and < 15.3.3** may have allowed RSC payloads to be cached and served in place of HTML, under specific conditions involving middleware and redirects. This issue has been fixed in **Next.js 15.3.3**.
+
+  Users on affected versions should **upgrade immediately** and **redeploy** to ensure proper caching behavior.
+
+  More details: [CVE-2025-49005](https://vercel.com/changelog/cve-2025-49005)
+impacted_packages:
+  - purl: pkg:npm/next
+    affected_versions: vers:npm/>=15.3.0|<15.3.3
+    fixed_versions: vers:npm/15.3.3
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-r2fc-ccr8-96c4/GHSA-r2fc-ccr8-96c4.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/vercel/next.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/commit/ec202eccf05820b60c6126d6411fe16766ecc066
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/issues/79346
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/pull/79939
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/releases/tag/v15.3.3
+    reference_type:
+    reference_id:
+  - url: https://github.com/vercel/next.js/security/advisories/GHSA-r2fc-ccr8-96c4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-49005
+    reference_type:
+    reference_id:
+  - url: https://vercel.com/changelog/cve-2025-49005
+    reference_type:
+    reference_id:

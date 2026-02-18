@@ -1,0 +1,47 @@
+advisory_id: GHSA-r5f2-4wf4-cv66
+datasource_id: github_osv_importer_v2/GHSA-r5f2-4wf4-cv66
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-r5f2-4wf4-cv66/GHSA-r5f2-4wf4-cv66.json
+aliases:
+  - CVE-2019-16173
+summary: |
+  Cross-site Scripting in LimeSurvey
+  LimeSurvey before v3.17.14 allows reflected XSS for escalating privileges from a low-privileged account to, for example, SuperAdmin. This occurs in application/core/Survey_Common_Action.php,
+impacted_packages:
+  - purl: pkg:composer/limesurvey/limesurvey
+    affected_versions: vers:composer/<3.17.14
+    fixed_versions: vers:composer/3.17.14
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-r5f2-4wf4-cv66/GHSA-r5f2-4wf4-cv66.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: http://packetstormsecurity.com/files/154479/LimeSurvey-3.17.13-Cross-Site-Scripting.html
+    reference_type:
+    reference_id:
+  - url: http://seclists.org/fulldisclosure/2019/Sep/22
+    reference_type:
+    reference_id:
+  - url: https://github.com/LimeSurvey/LimeSurvey/commit/f1c1ad2d24eb262363511fcca2e96ce737064006
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-16173
+    reference_type:
+    reference_id:
+  - url: https://seclists.org/bugtraq/2019/Sep/27
+    reference_type:
+    reference_id:
+  - url: https://www.limesurvey.org/limesurvey-updates/2188-limesurvey-3-17-14-build-190902-released
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/47386.txt
+    reference_type: exploit
+    reference_id: CVE-2019-16173;CVE-2019-16172

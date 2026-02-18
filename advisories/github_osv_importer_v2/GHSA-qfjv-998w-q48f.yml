@@ -1,0 +1,41 @@
+advisory_id: GHSA-qfjv-998w-q48f
+datasource_id: github_osv_importer_v2/GHSA-qfjv-998w-q48f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-qfjv-998w-q48f/GHSA-qfjv-998w-q48f.json
+aliases:
+  - CVE-2018-17186
+summary: |
+  Improper Restriction of XML External Entity Reference in org.apache.syncope:syncope-core
+  An administrator with workflow definition entitlements can use DTD to perform malicious operations, including but not limited to file read, file write, and code execution.
+impacted_packages:
+  - purl: pkg:maven/org.apache.syncope/syncope-core
+    affected_versions: vers:maven/<2.0.11
+    fixed_versions: vers:maven/2.0.11
+  - purl: pkg:maven/org.apache.syncope/syncope-core
+    affected_versions: vers:maven/>=2.1.0|<2.1.2
+    fixed_versions: vers:maven/2.1.2
+severities:
+  - score: '7.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-qfjv-998w-q48f/GHSA-qfjv-998w-q48f.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-611
+references:
+  - url: https://github.com/advisories/GHSA-qfjv-998w-q48f
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/syncope/commit/a0f35f45f8ca5c98853ae8477fb2db81a84709a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-17186
+    reference_type:
+    reference_id:
+  - url: https://syncope.apache.org/security#CVE-2018-17186:_XXE_on_BPMN_definitions
+    reference_type:
+    reference_id:

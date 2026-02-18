@@ -1,0 +1,50 @@
+advisory_id: GHSA-qf38-f2fr-q4x9
+datasource_id: github_osv_importer_v2/GHSA-qf38-f2fr-q4x9
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qf38-f2fr-q4x9/GHSA-qf38-f2fr-q4x9.json
+aliases:
+  - CVE-2018-1999002
+summary: |
+  Improper Input Validation in Jenkins
+  A arbitrary file read vulnerability exists in Jenkins 2.132 and earlier, 2.121.1 and earlier in the Stapler web framework's org/kohsuke/stapler/Stapler.java that allows attackers to send crafted HTTP requests returning the contents of any file on the Jenkins master file system that the Jenkins master has access to.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<2.121.2
+    fixed_versions: vers:maven/2.121.2
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/>=2.122|<2.132
+    fixed_versions: vers:maven/2.132
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qf38-f2fr-q4x9/GHSA-qf38-f2fr-q4x9.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/jenkinsci/jenkins
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins/commit/29ca81dd59c255ad633f1bd86cf1be40a5f02c64
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/stapler/commit/8e9679b08c36a2f0cf2a81855d5e04e2ed2ac2b3
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2018-07-18/#SECURITY-914
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1999002
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/46453
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:

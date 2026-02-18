@@ -1,0 +1,39 @@
+advisory_id: GHSA-qv5f-57gw-vx3h
+datasource_id: github_osv_importer_v2/GHSA-qv5f-57gw-vx3h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-qv5f-57gw-vx3h/GHSA-qv5f-57gw-vx3h.json
+aliases: []
+summary: |
+  Duplicate Advisory: Authorization Bypass in OPC UA .NET Standard Stack
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-h958-fxgg-g7w3. This link is maintained to preserve external references.
+
+  ## Original Description
+  Vulnerability in the OPC UA .NET Standard Stack before 1.5.374.158 allows an unauthorized attacker to bypass application authentication when the deprecated Basic128Rsa15 security policy is enabled.
+impacted_packages:
+  - purl: pkg:nuget/OPCFoundation.NetStandard.Opc.Ua
+    affected_versions: vers:nuget/<1.5.374.158
+    fixed_versions: vers:nuget/1.5.374.158
+severities:
+  - score: '8.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-qv5f-57gw-vx3h/GHSA-qv5f-57gw-vx3h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-208
+  - CWE-639
+references:
+  - url: https://files.opcfoundation.org/SecurityBulletins/OPC%20Foundation%20Security%20Bulletin%20CVE-2024-42512.pdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/OPCFoundation/UA-.NETStandard
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-42512
+    reference_type:
+    reference_id:

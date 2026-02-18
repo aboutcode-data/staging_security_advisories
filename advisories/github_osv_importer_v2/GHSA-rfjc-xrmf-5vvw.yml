@@ -1,0 +1,51 @@
+advisory_id: GHSA-rfjc-xrmf-5vvw
+datasource_id: github_osv_importer_v2/GHSA-rfjc-xrmf-5vvw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-rfjc-xrmf-5vvw/GHSA-rfjc-xrmf-5vvw.json
+aliases:
+  - CVE-2020-15248
+summary: "Privilege escalation by backend users assigned to the default \"Publisher\" system\
+  \ role\n### Impact\nBackend users with the default \"Publisher\" system role have access to\
+  \ create & manage users where they can choose which role the new user has. This means that\
+  \ a user with \"Publisher\" access has the ability to escalate their access to \"Developer\"\
+  \ access. \n\n### Patches\nIssue has been patched in Build 470 (v1.0.470) & v1.1.1.\n\n###\
+  \ Workarounds\nApply https://github.com/octobercms/october/commit/78a37298a4ed4602b383522344a31e311402d829\
+  \ to your installation manually if unable to upgrade to Build 470 or v1.1.1.\n\n### References\n\
+  Reported by [Hoan Hoang](https://github.com/hoanhp)\n\n### For more information\nIf you have\
+  \ any questions or comments about this advisory:\n* Email us at [hello@octobercms.com](mailto:hello@octobercms.com)\n\
+  \n### Threat assessment:\n<img width=\"1098\" alt=\"Screen Shot 2020-10-10 at 1 37 25 PM\"\
+  \ src=\"https://user-images.githubusercontent.com/7253840/95663611-e6326c80-0afd-11eb-8a1e-8b767a7202fb.png\"\
+  >"
+impacted_packages:
+  - purl: pkg:composer/october/backend
+    affected_versions: vers:composer/>=1.0.319|<1.0.470
+    fixed_versions: vers:composer/1.0.470
+severities:
+  - score: '4.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-rfjc-xrmf-5vvw/GHSA-rfjc-xrmf-5vvw.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-269
+  - CWE-863
+references:
+  - url: https://github.com/octobercms/october
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october/commit/4c650bb775ab849e48202a4923bac93bd74f9982
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october/commit/78a37298a4ed4602b383522344a31e311402d829
+    reference_type:
+    reference_id:
+  - url: https://github.com/octobercms/october/security/advisories/GHSA-rfjc-xrmf-5vvw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-15248
+    reference_type:
+    reference_id:

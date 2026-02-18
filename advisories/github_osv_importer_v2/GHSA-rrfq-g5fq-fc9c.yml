@@ -1,0 +1,40 @@
+advisory_id: GHSA-rrfq-g5fq-fc9c
+datasource_id: github_osv_importer_v2/GHSA-rrfq-g5fq-fc9c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-rrfq-g5fq-fc9c/GHSA-rrfq-g5fq-fc9c.json
+aliases:
+  - CVE-2018-11777
+summary: |
+  Improper Authentication in hive:hive-exec
+  In Apache Hive 2.3.3, 3.1.0 and earlier, local resources on HiveServer2 machines are not properly protected against malicious user if ranger, sentry or sql standard authorizer is not in use.
+impacted_packages:
+  - purl: pkg:maven/org.apache.hive/hive-exec
+    affected_versions: vers:maven/>=3.0.0|<3.1.1
+    fixed_versions: vers:maven/3.1.1
+  - purl: pkg:maven/org.apache.hive/hive-exec
+    affected_versions: vers:maven/<2.3.4
+    fixed_versions: vers:maven/2.3.4
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-rrfq-g5fq-fc9c/GHSA-rrfq-g5fq-fc9c.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-rrfq-g5fq-fc9c
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/963c8e2516405c9b532b4add16c03b2c5db621e0c83e80f45049cbbb@%3Cdev.hive.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-11777
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/105886
+    reference_type:
+    reference_id:

@@ -1,0 +1,60 @@
+advisory_id: GHSA-rfq8-j7rh-8hf2
+datasource_id: github_osv_importer_v2/GHSA-rfq8-j7rh-8hf2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-rfq8-j7rh-8hf2/GHSA-rfq8-j7rh-8hf2.json
+aliases:
+  - CVE-2024-52805
+summary: |
+  Synapse allows unsupported content types to lead to memory exhaustion
+  ### Impact
+
+  In Synapse before 1.120.1, `multipart/form-data` requests can in certain configurations transiently increase memory consumption beyond expected levels while processing the request, which can be used to amplify denial of service attacks.
+
+  ### Patches
+
+  Synapse 1.120.1 resolves the issue by denying requests with unsupported `multipart/form-data` content type.
+
+  ### Workarounds
+
+  Limiting request sizes or blocking the `multipart/form-data` content type before the requests reach Synapse, for example in a reverse proxy, alleviates the issue. Another approach that mitigates the attack is to use a low `max_upload_size` in Synapse.
+
+  ### References
+
+  - https://github.com/twisted/twisted/issues/4688#issuecomment-1167705518
+  - https://github.com/twisted/twisted/issues/4688#issuecomment-2385711609
+
+  ### For more information
+
+  If you have any questions or comments about this advisory, please email us at [security at element.io](mailto:security@element.io).
+impacted_packages:
+  - purl: pkg:pypi/matrix-synapse
+    affected_versions: vers:pypi/<1.120.1
+    fixed_versions: vers:pypi/1.120.1
+severities:
+  - score: '8.2'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/12/GHSA-rfq8-j7rh-8hf2/GHSA-rfq8-j7rh-8hf2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/element-hq/synapse
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-hq/synapse/security/advisories/GHSA-rfq8-j7rh-8hf2
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/issues/4688#issuecomment-1167705518
+    reference_type:
+    reference_id:
+  - url: https://github.com/twisted/twisted/issues/4688#issuecomment-2385711609
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-52805
+    reference_type:
+    reference_id:

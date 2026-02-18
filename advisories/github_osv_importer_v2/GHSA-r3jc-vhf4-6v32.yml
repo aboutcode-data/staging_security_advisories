@@ -1,0 +1,56 @@
+advisory_id: GHSA-r3jc-vhf4-6v32
+datasource_id: github_osv_importer_v2/GHSA-r3jc-vhf4-6v32
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-r3jc-vhf4-6v32/GHSA-r3jc-vhf4-6v32.json
+aliases:
+  - CVE-2024-41675
+summary: |
+  CKAN has Cross-site Scripting vector in the Datatables view plugin
+  The [Datatables view plugin](https://docs.ckan.org/en/2.10/maintaining/data-viewer.html#datatables-view) did not properly escape record data coming from the DataStore, leading to a potential XSS vector.
+
+
+  ### Impact
+  Sites running CKAN >= 2.7.0 with the `datatables_view` plugin activated. This is a plugin included in CKAN core, that not activated by default but it is widely used to preview tabular data.
+
+  ### Patches
+  This vulnerability has been fixed in CKAN 2.10.5 and 2.11.0
+
+  ### Workarounds
+  Prevent importing of tabular files to the DataStore via DataPusher, XLoader,etc, at least those published from untrusted sources.
+impacted_packages:
+  - purl: pkg:pypi/ckan
+    affected_versions: vers:pypi/>=2.7.0|<2.10.5
+    fixed_versions: vers:pypi/2.10.5
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-r3jc-vhf4-6v32/GHSA-r3jc-vhf4-6v32.json
+  - score: '6.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-r3jc-vhf4-6v32/GHSA-r3jc-vhf4-6v32.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/ckan/ckan
+    reference_type:
+    reference_id:
+  - url: https://github.com/ckan/ckan/commit/9e89ce8220ab1445e0bd85a67994a51d9d3d2688
+    reference_type:
+    reference_id:
+  - url: https://github.com/ckan/ckan/commit/d7dfe8c427b1c63c75d788a609f3b7d7620a25a1
+    reference_type:
+    reference_id:
+  - url: https://github.com/ckan/ckan/security/advisories/GHSA-r3jc-vhf4-6v32
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-41675
+    reference_type:
+    reference_id:

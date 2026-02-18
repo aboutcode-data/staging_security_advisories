@@ -1,0 +1,71 @@
+advisory_id: GHSA-qjw2-hr98-qgfh
+datasource_id: github_osv_importer_v2/GHSA-qjw2-hr98-qgfh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-qjw2-hr98-qgfh/GHSA-qjw2-hr98-qgfh.json
+aliases:
+  - CVE-2020-24750
+summary: |
+  Unsafe Deserialization in jackson-databind
+  FasterXML jackson-databind 2.x before 2.6.7.5 and from 2.7.x before 2.9.10.6 mishandles the interaction between serialization gadgets and typing, related to com.pastdev.httpcomponents.configuration.JndiConfiguration.
+impacted_packages:
+  - purl: pkg:maven/com.fasterxml.jackson.core/jackson-databind
+    affected_versions: vers:maven/<=2.6.7.4
+    fixed_versions: vers:maven/2.6.7.5
+  - purl: pkg:maven/com.fasterxml.jackson.core/jackson-databind
+    affected_versions: vers:maven/<=2.9.10.5
+    fixed_versions: vers:maven/2.9.10.6
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/12/GHSA-qjw2-hr98-qgfh/GHSA-qjw2-hr98-qgfh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/FasterXML/jackson-databind
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/2118e71325486c68f089a9761c9d8a11b4ddd1cb
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/6cc9f1a1af323cd156f5668a47e43bab324ae16f
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/ad5a630174f08d279504bc51ebba8772fd71b86b
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/issues/2798
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2021/04/msg00025.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-24750
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20201009-0003
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2022.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com//security-alerts/cpujul2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_type:
+    reference_id:

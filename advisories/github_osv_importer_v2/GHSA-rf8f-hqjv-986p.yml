@@ -1,0 +1,41 @@
+advisory_id: GHSA-rf8f-hqjv-986p
+datasource_id: github_osv_importer_v2/GHSA-rf8f-hqjv-986p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rf8f-hqjv-986p/GHSA-rf8f-hqjv-986p.json
+aliases:
+  - CVE-2019-12799
+summary: |
+  Shopware Insecure Deserialization Vulnerability
+  In createInstanceFromNamedArguments in Shopware through 5.6.x, a crafted web request can trigger a PHP object instantiation vulnerability, which can result in an arbitrary deserialization if the right class is instantiated. An attacker can leverage this deserialization to achieve remote code execution. NOTE: this issue is a bypass for a CVE-2017-18357 whitelist patch.
+impacted_packages:
+  - purl: pkg:composer/shopware/shopware
+    affected_versions: vers:composer/>=5.3.0|<=5.6.0
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rf8f-hqjv-986p/GHSA-rf8f-hqjv-986p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/advisories/GHSA-6m27-7cqj-2mxw
+    reference_type:
+    reference_id:
+  - url: https://github.com/rapid7/metasploit-framework/pull/11828
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware5/shopware
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-12799
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20171112153855/https://blog.ripstech.com/2017/shopware-php-object-instantiation-to-blind-xxe
+    reference_type:
+    reference_id:

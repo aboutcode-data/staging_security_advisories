@@ -1,0 +1,41 @@
+advisory_id: GHSA-rf66-hmqf-q3fc
+datasource_id: github_osv_importer_v2/GHSA-rf66-hmqf-q3fc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rf66-hmqf-q3fc/GHSA-rf66-hmqf-q3fc.json
+aliases:
+  - CVE-2016-10744
+summary: |
+  Improper Neutralization of Input During Web Page Generation in Select2
+  In Select2 through 4.0.5, as used in Snipe-IT and other products, rich selectlists allow XSS. This affects use cases with Ajax remote data loading when HTML templates are used to display listbox data.
+impacted_packages:
+  - purl: pkg:npm/select2
+    affected_versions: vers:npm/<4.0.6
+    fixed_versions: vers:npm/4.0.6
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rf66-hmqf-q3fc/GHSA-rf66-hmqf-q3fc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/select2/select2
+    reference_type:
+    reference_id:
+  - url: https://github.com/select2/select2/issues/4587
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it/pull/6831
+    reference_type:
+    reference_id:
+  - url: https://github.com/snipe/snipe-it/pull/6831/commits/5848d9a10c7d62c73ff6a3858edfae96a429402a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10744
+    reference_type:
+    reference_id:

@@ -1,0 +1,38 @@
+advisory_id: GHSA-rr8m-29g8-8cgc
+datasource_id: github_osv_importer_v2/GHSA-rr8m-29g8-8cgc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-rr8m-29g8-8cgc/GHSA-rr8m-29g8-8cgc.json
+aliases:
+  - CVE-2022-1064
+summary: |
+  SQL Injection in Fork CMS
+  Fork CMS is vulnerable to SQL injection through marking blog comments on bulk as spam in versions prior to 5.11.1.
+impacted_packages:
+  - purl: pkg:composer/forkcms/forkcms
+    affected_versions: vers:composer/<5.11.1
+    fixed_versions: vers:composer/5.11.1
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-rr8m-29g8-8cgc/GHSA-rr8m-29g8-8cgc.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/forkcms/forkcms
+    reference_type:
+    reference_id:
+  - url: https://github.com/forkcms/forkcms/commit/6aca30e10b4181534f73f96d6e2ebeb45ec15069
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/2f664985-c5fc-485b-b4fc-4c401be2cf40
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-1064
+    reference_type:
+    reference_id:

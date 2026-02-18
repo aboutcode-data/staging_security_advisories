@@ -1,0 +1,50 @@
+advisory_id: GHSA-rhx9-3qf7-r3j7
+datasource_id: github_osv_importer_v2/GHSA-rhx9-3qf7-r3j7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rhx9-3qf7-r3j7/GHSA-rhx9-3qf7-r3j7.json
+aliases:
+  - CVE-2017-6381
+summary: |
+  Drupal Remote code execution
+  A 3rd party development library including with Drupal 8 development dependencies is vulnerable to remote code execution. This is mitigated by the default .htaccess protection against PHP execution, and the fact that Composer development dependencies aren't normal installed. You might be vulnerable to this if you are running a version of Drupal before 8.2.2. To be sure you aren't vulnerable, you can remove the <siteroot>/vendor/phpunit directory from your production deployments
+impacted_packages:
+  - purl: pkg:composer/drupal/core
+    affected_versions: vers:composer/>=8.0.0|<8.2.7
+    fixed_versions: vers:composer/8.2.7
+  - purl: pkg:composer/drupal/drupal
+    affected_versions: vers:composer/>=8.0.0|<8.2.7
+    fixed_versions: vers:composer/8.2.7
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rhx9-3qf7-r3j7/GHSA-rhx9-3qf7-r3j7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-829
+references:
+  - url: https://github.com/drupal/core
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/core/CVE-2017-6381.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/drupal/drupal/CVE-2017-6381.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-6381
+    reference_type:
+    reference_id:
+  - url: https://www.drupal.org/SA-2017-001
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/96919
+    reference_type:
+    reference_id:
+  - url: http://www.securitytracker.com/id/1038058
+    reference_type:
+    reference_id:

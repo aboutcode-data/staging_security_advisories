@@ -1,0 +1,35 @@
+advisory_id: GHSA-qpvx-gpqm-g98j
+datasource_id: github_osv_importer_v2/GHSA-qpvx-gpqm-g98j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-qpvx-gpqm-g98j/GHSA-qpvx-gpqm-g98j.json
+aliases:
+  - CVE-2019-7644
+summary: |
+  Critical severity vulnerability that affects Auth0-WCF-Service-JWT
+  Auth0 Auth0-WCF-Service-JWT before 1.0.4 leaks the expected JWT signature in an error message when it cannot successfully validate the JWT signature. If this error message is presented to an attacker, they can forge an arbitrary JWT token that will be accepted by the vulnerable application.
+impacted_packages:
+  - purl: pkg:nuget/Auth0-WCF-Service-JWT
+    affected_versions: vers:nuget/<1.0.4
+    fixed_versions: vers:nuget/1.0.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/04/GHSA-qpvx-gpqm-g98j/GHSA-qpvx-gpqm-g98j.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-209
+references:
+  - url: https://auth0.com/docs/security/bulletins/cve-2019-7644
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-qpvx-gpqm-g98j
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-7644
+    reference_type:
+    reference_id:

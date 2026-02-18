@@ -1,0 +1,39 @@
+advisory_id: GHSA-rphc-h572-2x9f
+datasource_id: github_osv_importer_v2/GHSA-rphc-h572-2x9f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-rphc-h572-2x9f/GHSA-rphc-h572-2x9f.json
+aliases:
+  - CVE-2022-0960
+summary: |
+  Cross-site Scripting in showdoc/showdoc
+  ShowDoc is a tool greatly applicable for an IT team to share documents online. showdoc/showdoc allows .properties files to upload which lead to stored XSS in versions prior to 2.10.4. This allows attackers to execute malicious scripts in the user's browser. This issue was patched in version 2.10.4. There is currently no known workaround.
+impacted_packages:
+  - purl: pkg:composer/showdoc/showdoc
+    affected_versions: vers:composer/<2.10.4
+    fixed_versions: vers:composer/2.10.4
+severities:
+  - score: '9.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/03/GHSA-rphc-h572-2x9f/GHSA-rphc-h572-2x9f.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-434
+  - CWE-79
+references:
+  - url: https://github.com/star7th/showdoc
+    reference_type:
+    reference_id:
+  - url: https://github.com/star7th/showdoc/commit/92bc6a83a3a60e01a0d2effb98ab47d8d7eab28f
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/462cd8a7-b1a9-4e93-af71-b56ba1d7ad4e
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0960
+    reference_type:
+    reference_id:

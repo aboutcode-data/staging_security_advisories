@@ -1,0 +1,47 @@
+advisory_id: GHSA-rjvg-8v36-xv9r
+datasource_id: github_osv_importer_v2/GHSA-rjvg-8v36-xv9r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-rjvg-8v36-xv9r/GHSA-rjvg-8v36-xv9r.json
+aliases:
+  - CVE-2022-27103
+summary: |
+  element-plus vulnerable to cross-site scripting (XSS) via el-table-column
+  element-plus below 2.0.5 is vulnerable to Cross Site Scripting (XSS) when attribute `show-tooltips-overflow` of `el-table-column` is true. The mouseover action will make the text of this column render as html.
+impacted_packages:
+  - purl: pkg:npm/element-plus
+    affected_versions: vers:npm/<2.0.6
+    fixed_versions: vers:npm/2.0.6
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/04/GHSA-rjvg-8v36-xv9r/GHSA-rjvg-8v36-xv9r.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/asjdf/element-table-xss-test
+    reference_type:
+    reference_id:
+  - url: https://github.com/asjdf/element-table-xss-test/issues/1
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-plus/element-plus
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-plus/element-plus/commit/063c56446135176971f532bd0eb2e88a0b137d43
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-plus/element-plus/issues/6514
+    reference_type:
+    reference_id:
+  - url: https://github.com/element-plus/element-plus/pull/6520
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-27103
+    reference_type:
+    reference_id:

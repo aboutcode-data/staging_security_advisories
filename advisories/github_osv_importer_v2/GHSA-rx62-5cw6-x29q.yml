@@ -1,0 +1,44 @@
+advisory_id: GHSA-rx62-5cw6-x29q
+datasource_id: github_osv_importer_v2/GHSA-rx62-5cw6-x29q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-rx62-5cw6-x29q/GHSA-rx62-5cw6-x29q.json
+aliases:
+  - CVE-2023-3308
+summary: |
+  Whaleal IceFrog is vulnerable to deserialization
+  Whaleal IceFrog v1.1.8 component Aviator Template Engine is vulnerable to deserialization of untrusted data. The application deserializes untrusted data without sufficiently verifying that the resulting data will be valid.
+impacted_packages:
+  - purl: pkg:maven/com.whaleal.icefrog/icefrog-all
+    affected_versions: vers:maven/<=1.1.8
+    fixed_versions:
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-rx62-5cw6-x29q/GHSA-rx62-5cw6-x29q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/NanKeXXX/selfVuln_poc/blob/main/whaleal%3Aicefrog/icefrog_1.1.8_RCE.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/NanKeXXX/selfVuln_poc/blob/main/whaleal:icefrog/icefrog_1.1.8_RCE.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/whaleal/icefrog
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-3308
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?ctiid.231804
+    reference_type:
+    reference_id:
+  - url: https://vuldb.com/?id.231804
+    reference_type:
+    reference_id:

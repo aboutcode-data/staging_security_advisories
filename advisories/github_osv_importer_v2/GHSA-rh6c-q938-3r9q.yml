@@ -1,0 +1,32 @@
+advisory_id: GHSA-rh6c-q938-3r9q
+datasource_id: github_osv_importer_v2/GHSA-rh6c-q938-3r9q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-rh6c-q938-3r9q/GHSA-rh6c-q938-3r9q.json
+aliases:
+  - CVE-2013-7452
+summary: |
+  Moderate severity vulnerability that affects validator
+  The validator module before 1.1.0 for Node.js allows remote attackers to bypass the cross-site scripting (XSS) filter via a crafted javascript URI.
+impacted_packages:
+  - purl: pkg:npm/validator
+    affected_versions: vers:npm/<1.1.0
+    fixed_versions: vers:npm/1.1.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2017/10/GHSA-rh6c-q938-3r9q/GHSA-rh6c-q938-3r9q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/advisories/GHSA-rh6c-q938-3r9q
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2013-7452
+    reference_type:
+    reference_id:

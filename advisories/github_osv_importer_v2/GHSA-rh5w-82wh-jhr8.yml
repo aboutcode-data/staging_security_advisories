@@ -1,0 +1,45 @@
+advisory_id: GHSA-rh5w-82wh-jhr8
+datasource_id: github_osv_importer_v2/GHSA-rh5w-82wh-jhr8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-rh5w-82wh-jhr8/GHSA-rh5w-82wh-jhr8.json
+aliases:
+  - CVE-2021-27912
+summary: "XSS vulnerability on asset view\n### Impact\nMautic versions before 3.3.4 / 4.0.0\
+  \ are vulnerable to an inline JS XSS attack when viewing Mautic assets by utilizing inline\
+  \ JS in the title and adding a broken image URL as a remote asset. This can only be leveraged\
+  \ by an authenticated user with permission to create or edit assets. \n\n### Patches\nUpgrade\
+  \ to 3.3.4 or 4.0.0\n\n### Workarounds\nNo\n\n### References\nhttps://github.com/mautic/mautic/releases/tag/3.3.4\n\
+  https://github.com/mautic/mautic/releases/tag/4.0.0\n\n### For more information\nIf you have\
+  \ any questions or comments about this advisory:\n* Email us at [security@mautic.org](mailto:security@mautic.org)"
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/<3.3.4
+    fixed_versions: vers:composer/3.3.4
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=4.0.0-alpha1|<4.0.0
+    fixed_versions: vers:composer/4.0.0
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-rh5w-82wh-jhr8/GHSA-rh5w-82wh-jhr8.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/mautic/core/CVE-2021-27912.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-rh5w-82wh-jhr8
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-27912
+    reference_type:
+    reference_id:

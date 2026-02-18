@@ -1,0 +1,52 @@
+advisory_id: GHSA-qv2v-m59f-v5fw
+datasource_id: github_osv_importer_v2/GHSA-qv2v-m59f-v5fw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-qv2v-m59f-v5fw/GHSA-qv2v-m59f-v5fw.json
+aliases:
+  - CVE-2017-16031
+summary: |
+  Insecure randomness in socket.io
+  Affected versions of `socket.io` depend on `Math.random()` to create socket IDs, and therefore the IDs are predictable. With enough information on prior IDs, an attacker may be able to guess the socket ID and gain access to socket.io servers without authorization.
+
+
+  ## Recommendation
+
+  Update to v0.9.7 or later.
+impacted_packages:
+  - purl: pkg:npm/socket.io
+    affected_versions: vers:npm/<=0.9.6
+    fixed_versions: vers:npm/0.9.7
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/11/GHSA-qv2v-m59f-v5fw/GHSA-qv2v-m59f-v5fw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-330
+references:
+  - url: https://github.com/advisories/GHSA-qv2v-m59f-v5fw
+    reference_type:
+    reference_id:
+  - url: https://github.com/socketio/socket.io
+    reference_type:
+    reference_id:
+  - url: https://github.com/socketio/socket.io/commit/67b4eb9abdf111dfa9be4176d1709374a2b4ded8
+    reference_type:
+    reference_id:
+  - url: https://github.com/socketio/socket.io/issues/856
+    reference_type:
+    reference_id:
+  - url: https://github.com/socketio/socket.io/pull/857
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16031
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/321
+    reference_type:
+    reference_id:

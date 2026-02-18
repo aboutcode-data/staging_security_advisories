@@ -1,0 +1,41 @@
+advisory_id: GHSA-rcrv-228c-gprj
+datasource_id: github_osv_importer_v2/GHSA-rcrv-228c-gprj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-rcrv-228c-gprj/GHSA-rcrv-228c-gprj.json
+aliases: []
+summary: |
+  Invalid URL generation in bitlyshortener
+  ### Impact
+  Due to a sudden upstream breaking change by Bitly, versions of `bitlyshortener` <0.6.0 generate invalid short URLs. All users are affected and must update immediately.
+
+  ### Patches
+  Upgrading `bitlyshortener` to 0.6.0 or newer will prevent the generation such invalid short URLs.
+
+  ### Workarounds
+  A workaround is to replace "https://j.mp/" in each generated short URL with "https://bit.ly/".
+
+  ### References
+  * [Release notes](https://github.com/impredicative/bitlyshortener/releases)
+impacted_packages:
+  - purl: pkg:pypi/bitlyshortener
+    affected_versions: vers:pypi/<0.6.0
+    fixed_versions: vers:pypi/0.6.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/impredicative/bitlyshortener
+    reference_type:
+    reference_id:
+  - url: https://github.com/impredicative/bitlyshortener/commit/b307d70bedf745305fa0dd3c5c600d8cb88d09b5
+    reference_type:
+    reference_id:
+  - url: https://github.com/impredicative/bitlyshortener/releases/tag/0.6.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/impredicative/bitlyshortener/security/advisories/GHSA-rcrv-228c-gprj
+    reference_type:
+    reference_id:

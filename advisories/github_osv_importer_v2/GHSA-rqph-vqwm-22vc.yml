@@ -1,0 +1,50 @@
+advisory_id: GHSA-rqph-vqwm-22vc
+datasource_id: github_osv_importer_v2/GHSA-rqph-vqwm-22vc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rqph-vqwm-22vc/GHSA-rqph-vqwm-22vc.json
+aliases:
+  - CVE-2022-22971
+summary: |
+  Allocation of Resources Without Limits or Throttling in Spring Framework
+  In spring framework versions prior to 5.3.20+ , 5.2.22+ and old unsupported versions, application with a STOMP over WebSocket endpoint is vulnerable to a denial of service attack by an authenticated user.
+impacted_packages:
+  - purl: pkg:maven/org.springframework/spring-messaging
+    affected_versions: vers:maven/>=5.3.0|<5.3.20
+    fixed_versions: vers:maven/5.3.20
+  - purl: pkg:maven/org.springframework/spring-messaging
+    affected_versions: vers:maven/<=5.2.21.RELEASE
+    fixed_versions: vers:maven/5.2.22.RELEASE
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rqph-vqwm-22vc/GHSA-rqph-vqwm-22vc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/spring-projects/spring-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/159a99bbafdd6c01871228113d7042c3f83f360f
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/dc2947c52df18d5e99cad03383f7d6ba13d031fd
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-22971
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220616-0003
+    reference_type:
+    reference_id:
+  - url: https://tanzu.vmware.com/security/cve-2022-22971
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:

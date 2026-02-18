@@ -1,0 +1,38 @@
+advisory_id: GHSA-rm79-x4g6-hvg5
+datasource_id: github_osv_importer_v2/GHSA-rm79-x4g6-hvg5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-rm79-x4g6-hvg5/GHSA-rm79-x4g6-hvg5.json
+aliases:
+  - CVE-2025-12763
+summary: |
+  pgAdmin 4 has command injection vulnerability on Windows systems
+  pgAdmin 4 versions up to 9.9 are affected by a command injection vulnerability on Windows systems. This issue is caused by the use of shell=True during backup and restore operations, enabling attackers to execute arbitrary system commands by providing specially crafted file path input.
+impacted_packages:
+  - purl: pkg:pypi/pgadmin4
+    affected_versions: vers:pypi/<=9.9
+    fixed_versions: vers:pypi/9.10
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-rm79-x4g6-hvg5/GHSA-rm79-x4g6-hvg5.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/pgadmin-org/pgadmin4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/commit/e374edc69239b3e02ecde895e27d9f9e488b87ee
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/issues/9323
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-12763
+    reference_type:
+    reference_id:

@@ -1,0 +1,45 @@
+advisory_id: GHSA-rwxp-hwwf-653v
+datasource_id: github_osv_importer_v2/GHSA-rwxp-hwwf-653v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-rwxp-hwwf-653v/GHSA-rwxp-hwwf-653v.json
+aliases:
+  - CVE-2021-32817
+summary: |
+  Insecure template handling in express-hbs
+  express-hbs is an Express handlebars template engine. express-hbs mixes pure template data with engine configuration options through the Express render API. More specifically, the layout parameter may trigger file disclosure vulnerabilities in downstream applications. This potential vulnerability is somewhat restricted in that only files with existing extentions (i.e. file.extension) can be included, files that lack an extension will have .hbs appended to them. For complete details refer to the referenced GHSL-2021-019 report. Notes in documentation have been added to help users of express-hbs avoid this potential information exposure vulnerability.
+impacted_packages:
+  - purl: pkg:npm/express-hbs
+    affected_versions: vers:npm/<=2.4.0
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-rwxp-hwwf-653v/GHSA-rwxp-hwwf-653v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-94
+references:
+  - url: https://github.com/TryGhost/express-hbs
+    reference_type:
+    reference_id:
+  - url: https://github.com/TryGhost/express-hbs/commit/ff6fad6e357699412d4e916273314e5e7af1500e
+    reference_type:
+    reference_id:
+  - url: https://github.com/TryGhost/express-hbs#%EF%B8%8F-this-creates-a-potential-security-vulnerability
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32817
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2021-019-express-hbs
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/express-hbs
+    reference_type:
+    reference_id:

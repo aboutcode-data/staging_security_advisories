@@ -1,0 +1,32 @@
+advisory_id: GHSA-rwr8-xrpw-9qf5
+datasource_id: github_osv_importer_v2/GHSA-rwr8-xrpw-9qf5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-rwr8-xrpw-9qf5/GHSA-rwr8-xrpw-9qf5.json
+aliases: []
+summary: |
+  solspace/craft-freeform Exposed to Known Axios Vulnerabilities via Precompiled Assets
+  ### Summary
+  The latest versions of both 4.x and 5.x are using Axios versions < 1.7.5 and as such are subject to known vulnerabilities as per: https://security.snyk.io/package/npm/axios
+
+  ### Details
+  We've had this flagged up in a pen test, which indicates the issue stems from this script: /freeform/plugin.js. I couldn't see any reference to vulnerable axios versions in your package.json files, but noticed some precompiled files in packages/plugin so I'm assuming those are where the issue lies.
+impacted_packages:
+  - purl: pkg:composer/solspace/craft-freeform
+    affected_versions: vers:composer/<4.1.22
+    fixed_versions: vers:composer/4.1.22
+  - purl: pkg:composer/solspace/craft-freeform
+    affected_versions: vers:composer/>=5.0.0-beta.1|<5.5.9
+    fixed_versions: vers:composer/5.5.9
+severities:
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/solspace/craft-freeform
+    reference_type:
+    reference_id:
+  - url: https://github.com/solspace/craft-freeform/security/advisories/GHSA-rwr8-xrpw-9qf5
+    reference_type:
+    reference_id:

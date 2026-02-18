@@ -1,0 +1,62 @@
+advisory_id: GHSA-rrqc-c2jx-6jgv
+datasource_id: github_osv_importer_v2/GHSA-rrqc-c2jx-6jgv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-rrqc-c2jx-6jgv/GHSA-rrqc-c2jx-6jgv.json
+aliases:
+  - CVE-2024-45231
+summary: |
+  Django allows enumeration of user e-mail addresses
+  An issue was discovered in Django v5.1.1, v5.0.9, and v4.2.16. The django.contrib.auth.forms.PasswordResetForm class, when used in a view implementing password reset flows, allows remote attackers to enumerate user e-mail addresses by sending password reset requests and observing the outcome (only when e-mail sending is consistently failing).
+impacted_packages:
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=5.1|<5.1.1
+    fixed_versions: vers:pypi/5.1.1
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/>=5.0|<5.0.9
+    fixed_versions: vers:pypi/5.0.9
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/<4.2.16
+    fixed_versions: vers:pypi/4.2.16
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-rrqc-c2jx-6jgv/GHSA-rrqc-c2jx-6jgv.json
+  - score: '6.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-rrqc-c2jx-6jgv/GHSA-rrqc-c2jx-6jgv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+  - CWE-204
+references:
+  - url: https://docs.djangoproject.com/en/dev/releases/security
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/3c733c78d6f8e50296d6e248968b6516c92a53ca
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/96d84047715ea1715b4bd1594e46122b8a77b9e2
+    reference_type:
+    reference_id:
+  - url: https://github.com/django/django/commit/bf4888d317ba4506d091eeac6e8b4f1fcc731199
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#%21forum/django-announce
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-45231
+    reference_type:
+    reference_id:
+  - url: https://www.djangoproject.com/weblog/2024/sep/03/security-releases
+    reference_type:
+    reference_id:

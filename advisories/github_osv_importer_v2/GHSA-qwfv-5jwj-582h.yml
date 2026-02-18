@@ -1,0 +1,41 @@
+advisory_id: GHSA-qwfv-5jwj-582h
+datasource_id: github_osv_importer_v2/GHSA-qwfv-5jwj-582h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qwfv-5jwj-582h/GHSA-qwfv-5jwj-582h.json
+aliases:
+  - CVE-2017-1000217
+summary: |
+  Opencast RCE Vulnerability
+  Opencast 2.3.2 and older versions are vulnerable to script injections through media and metadata in the player and media module resulting in arbitrary code execution, fixed in 2.3.3 and 3.0.
+impacted_packages:
+  - purl: pkg:maven/org.opencastproject/base
+    affected_versions: vers:maven/<=2.3.2
+    fixed_versions: vers:maven/2.3.3
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qwfv-5jwj-582h/GHSA-qwfv-5jwj-582h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/opencast/opencast
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast/commit/2d42e42f3cfcff3a775a2538f735fca8542ce1fc
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast/commit/fba2f35df24ce2aeaff627200065cbade9b3a0cd
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/a/opencast.org/forum/#!topic/security-notices/sCpt0pIPEFg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000217
+    reference_type:
+    reference_id:

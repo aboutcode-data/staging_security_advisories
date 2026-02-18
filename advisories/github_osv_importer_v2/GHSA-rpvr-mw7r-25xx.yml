@@ -1,0 +1,35 @@
+advisory_id: GHSA-rpvr-mw7r-25xx
+datasource_id: github_osv_importer_v2/GHSA-rpvr-mw7r-25xx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-rpvr-mw7r-25xx/GHSA-rpvr-mw7r-25xx.json
+aliases:
+  - CVE-2021-46062
+summary: |
+  MCMS Arbitrary File Deletion vulnerability
+  `net.mingsoft:ms-basic` is used for plugin management for applications built with Maven for the [Mingfei Content Management System (MCMS)](https://gitee.com/mingSoft/MCMS). ms-basic before 2.1.16 is vulnerable to arbitrary file deletion using POST requests to `/template/writeFileContent` via the `oldFileName` parameter. MCMS before 5.2.11 is also vulnerable since it bundles vulnerable versions of ms-basic.
+impacted_packages:
+  - purl: pkg:maven/net.mingsoft/ms-basic
+    affected_versions: vers:maven/<2.1.16
+    fixed_versions: vers:maven/2.1.16
+  - purl: pkg:maven/net.mingsoft/ms-mcms
+    affected_versions: vers:maven/<5.2.11
+    fixed_versions: vers:maven/5.2.11
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-rpvr-mw7r-25xx/GHSA-rpvr-mw7r-25xx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/ming-soft/MCMS/issues/59
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-46062
+    reference_type:
+    reference_id:

@@ -1,0 +1,61 @@
+advisory_id: GHSA-rq8g-5pc5-wrhr
+datasource_id: github_osv_importer_v2/GHSA-rq8g-5pc5-wrhr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-rq8g-5pc5-wrhr/GHSA-rq8g-5pc5-wrhr.json
+aliases:
+  - CVE-2018-1000620
+summary: |
+  Insufficient Entropy in cryptiles
+  Versions of `cryptiles` prior to 4.1.2 are vulnerable to Insufficient Entropy. The `randomDigits()` method does not provide sufficient entropy and its generates digits that are not evenly distributed.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.1.2. The package is deprecated and has been moved to `@hapi/cryptiles` and it is strongly recommended to use the maintained package.
+impacted_packages:
+  - purl: pkg:npm/cryptiles
+    affected_versions: vers:npm/>=3.1.0|<4.1.2
+    fixed_versions: vers:npm/4.1.2
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/09/GHSA-rq8g-5pc5-wrhr/GHSA-rq8g-5pc5-wrhr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-331
+references:
+  - url: https://github.com/advisories/GHSA-rq8g-5pc5-wrhr
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/cryptiles
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/cryptiles/commit/6bdcd0f6ee8ade96e7b30350bad39ee0c2ef0f9b
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/cryptiles/commit/9332d4263a32b84e76bf538d7470d01ea63fa047
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/cryptiles/issues/34
+    reference_type:
+    reference_id:
+  - url: https://github.com/hapijs/cryptiles/issues/35
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/security-wg/blob/master/vuln/npm/476.json
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000620
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1464
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/720
+    reference_type:
+    reference_id:

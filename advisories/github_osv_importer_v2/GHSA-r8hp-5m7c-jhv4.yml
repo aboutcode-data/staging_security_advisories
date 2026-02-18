@@ -1,0 +1,38 @@
+advisory_id: GHSA-r8hp-5m7c-jhv4
+datasource_id: github_osv_importer_v2/GHSA-r8hp-5m7c-jhv4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-r8hp-5m7c-jhv4/GHSA-r8hp-5m7c-jhv4.json
+aliases:
+  - CVE-2022-0274
+summary: |
+  Cross-site Scripting OrchardCore.Application.Cms.Targets
+  Cross-site Scripting (XSS) - Stored in NuGet OrchardCore.Application.Cms.Targets prior to 1.2.2.
+impacted_packages:
+  - purl: pkg:nuget/OrchardCore.Application.Cms.Targets
+    affected_versions: vers:nuget/<1.2.2
+    fixed_versions: vers:nuget/1.2.2
+severities:
+  - score: '6.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-r8hp-5m7c-jhv4/GHSA-r8hp-5m7c-jhv4.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/orchardcms/orchardcore
+    reference_type:
+    reference_id:
+  - url: https://github.com/orchardcms/orchardcore/commit/218f25ddfadb66a54de7a82dffe3ab2e4ab7c4b4
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/a82a714a-9b71-475e-bfc3-43326fcaf764
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-0274
+    reference_type:
+    reference_id:

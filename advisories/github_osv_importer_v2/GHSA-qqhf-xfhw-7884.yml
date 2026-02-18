@@ -1,0 +1,35 @@
+advisory_id: GHSA-qqhf-xfhw-7884
+datasource_id: github_osv_importer_v2/GHSA-qqhf-xfhw-7884
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-qqhf-xfhw-7884/GHSA-qqhf-xfhw-7884.json
+aliases:
+  - CVE-2022-41710
+summary: |
+  Markdownify has Files or Directories Accessible to External Parties
+  Markdownify version 1.4.1 allows an external attacker to remotely obtain arbitrary local files on any client that attempts to view a malicious markdown file through Markdownify. This is possible because the application does not have a CSP policy (or at least not strict enough) and/or does not properly validate the contents of markdown files before rendering them.
+impacted_packages:
+  - purl: pkg:npm/electron-markdownify
+    affected_versions: vers:npm/<=1.4.1
+    fixed_versions:
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-qqhf-xfhw-7884/GHSA-qqhf-xfhw-7884.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-552
+references:
+  - url: https://fluidattacks.com/advisories/noisestorm
+    reference_type:
+    reference_id:
+  - url: https://github.com/amitmerchant1990/electron-markdownify
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-41710
+    reference_type:
+    reference_id:

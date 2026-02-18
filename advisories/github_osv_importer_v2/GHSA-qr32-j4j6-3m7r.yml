@@ -1,0 +1,42 @@
+advisory_id: GHSA-qr32-j4j6-3m7r
+datasource_id: github_osv_importer_v2/GHSA-qr32-j4j6-3m7r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/05/GHSA-qr32-j4j6-3m7r/GHSA-qr32-j4j6-3m7r.json
+aliases:
+  - CVE-2017-16087
+summary: |
+  Duplicate Advisory: Command Injection in fs-git
+  ## Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-wp3j-gv53-4pg8. This link is maintained to preserve external references.
+
+  ## Original Description
+  Affected versions of `fs-git` do not sanitize strings passed into the `buildCommand` method, resulting in arbitrary code execution.
+
+
+  ## Recommendation
+
+  Update to version 1.0.2 or later.
+impacted_packages:
+  - purl: pkg:npm/fs-git
+    affected_versions: vers:npm/<1.0.2
+    fixed_versions: vers:npm/1.0.2
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-77
+references:
+  - url: https://github.com/vvakame/fs-git/commit/eb5f70efa5cfbff1ab299fa7daaa5de549243998
+    reference_type:
+    reference_id:
+  - url: https://github.com/vvakame/fs-git/commit/eb5f70efa5cfbff1ab299fa7daaa5de549243998#diff-13b5b151431c7e7a17f273559ed212d5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-16087
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/360
+    reference_type:
+    reference_id:

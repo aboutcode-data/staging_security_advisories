@@ -1,0 +1,35 @@
+advisory_id: GHSA-rhvc-x32h-5526
+datasource_id: github_osv_importer_v2/GHSA-rhvc-x32h-5526
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-rhvc-x32h-5526/GHSA-rhvc-x32h-5526.json
+aliases:
+  - CVE-2016-10529
+summary: |
+  No CSRF Validation in droppy
+  Affected versions of `droppy`  are vulnerable to cross-site socket forgery. The package does not perform verification for cross-domain websocket requests, and as a result, an attacker can create a web page that opens up a websocket connection on behalf of the user visiting the page. The attacker can then perform any action that the target user could, including adding a new admin account under their control, or deleting others.
+
+
+  ## Recommendation
+
+  Update to version 3.5.0 or later.
+impacted_packages:
+  - purl: pkg:npm/droppy
+    affected_versions: vers:npm/<3.5.0
+    fixed_versions: vers:npm/3.5.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/advisories/GHSA-rhvc-x32h-5526
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10529
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/91
+    reference_type:
+    reference_id:

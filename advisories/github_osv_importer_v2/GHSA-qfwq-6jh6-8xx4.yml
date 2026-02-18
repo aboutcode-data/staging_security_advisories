@@ -1,0 +1,46 @@
+advisory_id: GHSA-qfwq-6jh6-8xx4
+datasource_id: github_osv_importer_v2/GHSA-qfwq-6jh6-8xx4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-qfwq-6jh6-8xx4/GHSA-qfwq-6jh6-8xx4.json
+aliases:
+  - CVE-2024-49760
+summary: |
+  OpenRefine has a path traversal in LoadLanguageCommand
+  The load-language command expects a `lang` parameter from which it constructs the path of the localization file to load, of the form `translations-$LANG.json`.
+  When doing so, it does not check that the resulting path is in the expected directory, which means that this command could be exploited to read other JSON files on the file system.
+
+  The command should be patched by checking that the normalized path is in the expected directory.
+impacted_packages:
+  - purl: pkg:maven/org.openrefine/openrefine
+    affected_versions: vers:maven/<3.8.3
+    fixed_versions: vers:maven/3.8.3
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-qfwq-6jh6-8xx4/GHSA-qfwq-6jh6-8xx4.json
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-qfwq-6jh6-8xx4/GHSA-qfwq-6jh6-8xx4.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/OpenRefine/OpenRefine
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenRefine/OpenRefine/commit/24d084052dc55426fe460f2a17524fd18d28b20c
+    reference_type:
+    reference_id:
+  - url: https://github.com/OpenRefine/OpenRefine/security/advisories/GHSA-qfwq-6jh6-8xx4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-49760
+    reference_type:
+    reference_id:

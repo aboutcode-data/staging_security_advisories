@@ -1,0 +1,49 @@
+advisory_id: GHSA-rmpv-rcp6-v8wc
+datasource_id: github_osv_importer_v2/GHSA-rmpv-rcp6-v8wc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-rmpv-rcp6-v8wc/GHSA-rmpv-rcp6-v8wc.json
+aliases:
+  - CVE-2021-33508
+summary: |
+  Cross-site scripting in Plone
+  Plone through 5.2.4 allows XSS via a full name that is mishandled during rendering of the ownership tab of a content item.
+impacted_packages:
+  - purl: pkg:pypi/plone
+    affected_versions: vers:pypi/<=5.2.4
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-rmpv-rcp6-v8wc/GHSA-rmpv-rcp6-v8wc.json
+  - score: '5.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-rmpv-rcp6-v8wc/GHSA-rmpv-rcp6-v8wc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/advisories/GHSA-rmpv-rcp6-v8wc
+    reference_type:
+    reference_id:
+  - url: https://github.com/plone/Plone
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/plone/PYSEC-2021-80.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-33508
+    reference_type:
+    reference_id:
+  - url: https://plone.org/security/hotfix/20210518/stored-xss-from-user-fullname
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2021/05/22/1
+    reference_type:
+    reference_id:

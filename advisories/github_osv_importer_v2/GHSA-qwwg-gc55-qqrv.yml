@@ -1,0 +1,38 @@
+advisory_id: GHSA-qwwg-gc55-qqrv
+datasource_id: github_osv_importer_v2/GHSA-qwwg-gc55-qqrv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-qwwg-gc55-qqrv/GHSA-qwwg-gc55-qqrv.json
+aliases:
+  - CVE-2020-17131
+summary: |
+  Out-of-bounds Write in Chakra
+  Chakra Scripting Engine Memory Corruption Vulnerability
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.11.24
+    fixed_versions: vers:nuget/1.11.24
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/04/GHSA-qwwg-gc55-qqrv/GHSA-qwwg-gc55-qqrv.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-787
+references:
+  - url: https://github.com/chakra-core/ChakraCore/pull/6531
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/wiki/Roadmap#v11124
+    reference_type:
+    reference_id:
+  - url: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-17131
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-17131
+    reference_type:
+    reference_id:

@@ -1,0 +1,33 @@
+advisory_id: GHSA-r67w-f99w-mgxj
+datasource_id: github_osv_importer_v2/GHSA-r67w-f99w-mgxj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-r67w-f99w-mgxj/GHSA-r67w-f99w-mgxj.json
+aliases:
+  - CVE-2024-23732
+summary: |
+  ReDoS in Embedchain
+  The JSON loader in Embedchain before 0.1.57 allows a ReDoS (regular expression denial of service) via a long string to json.py.
+impacted_packages:
+  - purl: pkg:pypi/embedchain
+    affected_versions: vers:pypi/<0.1.57
+    fixed_versions: vers:pypi/0.1.57
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/embedchain/embedchain/compare/0.1.56...0.1.57
+    reference_type:
+    reference_id:
+  - url: https://github.com/embedchain/embedchain/pull/1122
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/embedchain/PYSEC-2024-8.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-23732
+    reference_type:
+    reference_id:

@@ -1,0 +1,44 @@
+advisory_id: GHSA-qrqm-574x-q7f2
+datasource_id: github_osv_importer_v2/GHSA-qrqm-574x-q7f2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-qrqm-574x-q7f2/GHSA-qrqm-574x-q7f2.json
+aliases:
+  - CVE-2022-38073
+summary: |
+  Awesome Support vulnerable to persistent cross-site scripting
+  Multiple Authenticated (custom specific plugin role) Persistent Cross-Site Scripting (XSS) vulnerability in Awesome Support plugin <= 6.0.7 at WordPress.
+impacted_packages:
+  - purl: pkg:composer/awesome-support/awesome-support
+    affected_versions: vers:composer/<=6.0.7
+    fixed_versions: vers:composer/6.0.8
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-qrqm-574x-q7f2/GHSA-qrqm-574x-q7f2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/Awesome-Support/Awesome-Support
+    reference_type:
+    reference_id:
+  - url: https://github.com/Awesome-Support/Awesome-Support/commit/85f460be88b81fbdd9a990f474a1252297902faf
+    reference_type:
+    reference_id:
+  - url: https://github.com/Awesome-Support/Awesome-Support/commit/b2e831d7f831a3869cfd83eb79a398a5b5c0ec63
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-38073
+    reference_type:
+    reference_id:
+  - url: https://patchstack.com/database/vulnerability/awesome-support/wordpress-awesome-support-plugin-6-0-7-multiple-authenticated-stored-cross-site-scripting-xss-vulnerabilities
+    reference_type:
+    reference_id:
+  - url: https://wordpress.org/plugins/awesome-support/#developers
+    reference_type:
+    reference_id:

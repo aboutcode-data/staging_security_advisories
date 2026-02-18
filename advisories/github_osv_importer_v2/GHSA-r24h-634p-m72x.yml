@@ -1,0 +1,38 @@
+advisory_id: GHSA-r24h-634p-m72x
+datasource_id: github_osv_importer_v2/GHSA-r24h-634p-m72x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-r24h-634p-m72x/GHSA-r24h-634p-m72x.json
+aliases:
+  - CVE-2019-10781
+summary: |
+  Validation Bypass in schema-inspector
+  In schema-inspector before 1.6.9, a maliciously crafted JavaScript object can bypass the `sanitize()` and the `validate()` function used within schema-inspector.
+impacted_packages:
+  - purl: pkg:npm/schema-inspector
+    affected_versions: vers:npm/<1.6.9
+    fixed_versions: vers:npm/1.6.9
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/06/GHSA-r24h-634p-m72x/GHSA-r24h-634p-m72x.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-668
+references:
+  - url: https://github.com/Atinux/schema-inspector
+    reference_type:
+    reference_id:
+  - url: https://github.com/Atinux/schema-inspector/commit/345a7b2eed11bb6128421150d65f4f83fdbb737d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10781
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SCHEMAINSPECTOR-536970
+    reference_type:
+    reference_id:

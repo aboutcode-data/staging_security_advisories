@@ -1,0 +1,38 @@
+advisory_id: GHSA-qfm8-78qf-p75j
+datasource_id: github_osv_importer_v2/GHSA-qfm8-78qf-p75j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-qfm8-78qf-p75j/GHSA-qfm8-78qf-p75j.json
+aliases:
+  - CVE-2025-48200
+summary: |
+  The Front End User Registration extension for TYPO3 (sr_feuser_register) Remote Code Execution
+  The sr_feuser_register extension through 12.4.8 for TYPO3 allows Remote Code Execution via unsafe deserialization.
+impacted_packages:
+  - purl: pkg:composer/sjbr/sr-feuser-register
+    affected_versions: vers:composer/>=5.1.0|<12.5.0
+    fixed_versions: vers:composer/12.5.0
+severities:
+  - score: '10.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-qfm8-78qf-p75j/GHSA-qfm8-78qf-p75j.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://codeberg.org/sjbr/sr-feuser-register/commit/be44f61a475371c36b2035cbb523b56f5e34267d
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/sjbr/sr-feuser-register/CVE-2025-48200.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-48200
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2025-008
+    reference_type:
+    reference_id:

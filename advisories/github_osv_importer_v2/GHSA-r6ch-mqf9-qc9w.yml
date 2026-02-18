@@ -1,0 +1,60 @@
+advisory_id: GHSA-r6ch-mqf9-qc9w
+datasource_id: github_osv_importer_v2/GHSA-r6ch-mqf9-qc9w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-r6ch-mqf9-qc9w/GHSA-r6ch-mqf9-qc9w.json
+aliases:
+  - CVE-2023-24807
+summary: |
+  Regular Expression Denial of Service in Headers
+  ### Impact
+  The `Headers.set()` and `Headers.append()` methods are vulnerable to Regular Expression Denial of Service (ReDoS) attacks when untrusted values are passed into the functions. This is due to the inefficient regular expression used to normalize the values in the `headerValueNormalize()` utility function.
+
+  ### Patches
+
+  This vulnerability was patched in v5.19.1.
+
+  ### Workarounds
+  There is no workaround. Please update to an unaffected version.
+
+  ### References
+
+  * https://hackerone.com/bugs?report_id=1784449
+
+  ### Credits
+
+  Carter Snook reported this vulnerability.
+impacted_packages:
+  - purl: pkg:npm/undici
+    affected_versions: vers:npm/<5.19.1
+    fixed_versions: vers:npm/5.19.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-r6ch-mqf9-qc9w/GHSA-r6ch-mqf9-qc9w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/nodejs/undici
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/commit/f2324e549943f0b0937b09fb1c0c16cc7c93abdf
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/releases/tag/v5.19.1
+    reference_type:
+    reference_id:
+  - url: https://github.com/nodejs/undici/security/advisories/GHSA-r6ch-mqf9-qc9w
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/bugs?report_id=1784449
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-24807
+    reference_type:
+    reference_id:

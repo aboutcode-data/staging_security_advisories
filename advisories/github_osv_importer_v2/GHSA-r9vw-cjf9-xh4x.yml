@@ -1,0 +1,40 @@
+advisory_id: GHSA-r9vw-cjf9-xh4x
+datasource_id: github_osv_importer_v2/GHSA-r9vw-cjf9-xh4x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-r9vw-cjf9-xh4x/GHSA-r9vw-cjf9-xh4x.json
+aliases:
+  - CVE-2024-41597
+summary: |
+  ProcessWire Cross Site Request Forgery vulnerability
+  Cross Site Request Forgery vulnerability in ProcessWire v.3.0.229 allows a remote attacker to execute arbitrary code via a crafted HTML file to the comments functionality.
+impacted_packages:
+  - purl: pkg:composer/processwire/processwire
+    affected_versions: vers:composer/<=3.0.229
+    fixed_versions:
+severities:
+  - score: '4.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-r9vw-cjf9-xh4x/GHSA-r9vw-cjf9-xh4x.json
+  - score: '2.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-r9vw-cjf9-xh4x/GHSA-r9vw-cjf9-xh4x.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://gist.github.com/DefensiumDevelopers/608be4d10b016dce0566925368a8b08c#file-cve-2024-41597-md
+    reference_type:
+    reference_id:
+  - url: https://github.com/processwire/processwire
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-41597
+    reference_type:
+    reference_id:

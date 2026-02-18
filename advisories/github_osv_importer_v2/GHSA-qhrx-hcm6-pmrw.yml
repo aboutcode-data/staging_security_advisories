@@ -1,0 +1,62 @@
+advisory_id: GHSA-qhrx-hcm6-pmrw
+datasource_id: github_osv_importer_v2/GHSA-qhrx-hcm6-pmrw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-qhrx-hcm6-pmrw/GHSA-qhrx-hcm6-pmrw.json
+aliases:
+  - CVE-2019-11458
+summary: |
+  Unsafe deserialization in SmtpTransport in CakePHP
+  An issue was discovered in SmtpTransport in CakePHP 3.7.6. An unserialized object with modified internal properties can trigger arbitrary file overwriting upon destruction.
+impacted_packages:
+  - purl: pkg:composer/cakephp/cakephp
+    affected_versions: vers:composer/>=3.0.0|<3.5.18
+    fixed_versions: vers:composer/3.5.18
+  - purl: pkg:composer/cakephp/cakephp
+    affected_versions: vers:composer/>=3.6.0|<3.6.15
+    fixed_versions: vers:composer/3.6.15
+  - purl: pkg:composer/cakephp/cakephp
+    affected_versions: vers:composer/>=3.7.0|<3.7.7
+    fixed_versions: vers:composer/3.7.7
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/12/GHSA-qhrx-hcm6-pmrw/GHSA-qhrx-hcm6-pmrw.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://bakery.cakephp.org/2019/04/23/cakephp_377_3615_3518_released.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/cakephp/cakephp
+    reference_type:
+    reference_id:
+  - url: https://github.com/cakephp/cakephp/commit/1a74e798309192a9895c9cedabd714ceee345f4e
+    reference_type:
+    reference_id:
+  - url: https://github.com/cakephp/cakephp/commit/81412fbe2cb88a304dbeeece1955bc0aec98edb1
+    reference_type:
+    reference_id:
+  - url: https://github.com/cakephp/cakephp/commit/c25b91bf7c72db43c01b47a634fd02112ff9f1cd
+    reference_type:
+    reference_id:
+  - url: https://github.com/cakephp/cakephp/commits/master
+    reference_type:
+    reference_id:
+  - url: https://github.com/cakephp/cakephp/compare/3.7.6...3.7.7
+    reference_type:
+    reference_id:
+  - url: https://github.com/cakephp/cakephp/releases
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/cakephp/cakephp/CVE-2019-11458.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-11458
+    reference_type:
+    reference_id:

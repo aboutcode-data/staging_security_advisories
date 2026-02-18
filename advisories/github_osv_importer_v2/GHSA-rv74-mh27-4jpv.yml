@@ -1,0 +1,41 @@
+advisory_id: GHSA-rv74-mh27-4jpv
+datasource_id: github_osv_importer_v2/GHSA-rv74-mh27-4jpv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rv74-mh27-4jpv/GHSA-rv74-mh27-4jpv.json
+aliases:
+  - CVE-2020-7790
+summary: |
+  browsershot local file inclusion vulnerability
+  This affects the package spatie/browsershot from 0.0.0. By specifying a URL in the file:// protocol an attacker is able to include arbitrary files in the resultant PDF.
+impacted_packages:
+  - purl: pkg:composer/spatie/browsershot
+    affected_versions: vers:composer/<3.40.1
+    fixed_versions: vers:composer/3.40.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rv74-mh27-4jpv/GHSA-rv74-mh27-4jpv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/spatie/browsershot/commit/8d4bcfb1ff609921007f3fc11d80fcdad35598ac
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/browsershot/issues/441%23issue-735049731
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/browsershot/pull/440
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7790
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-PHP-SPATIEBROWSERSHOT-1037064
+    reference_type:
+    reference_id:

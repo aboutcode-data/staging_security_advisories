@@ -1,0 +1,59 @@
+advisory_id: GHSA-rpr3-cw39-3pxh
+datasource_id: github_osv_importer_v2/GHSA-rpr3-cw39-3pxh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-rpr3-cw39-3pxh/GHSA-rpr3-cw39-3pxh.json
+aliases:
+  - CVE-2020-10650
+summary: |
+  jackson-databind vulnerable to unsafe deserialization
+  The com.fasterxml.jackson.core:jackson-databind library before version 2.9.10.4 is vulnerable to an Unsafe Deserialization vulnerability when handling interactions related to the class `ignite-jta`.
+impacted_packages:
+  - purl: pkg:maven/com.fasterxml.jackson.core/jackson-databind
+    affected_versions: vers:maven/<=2.9.10.3
+    fixed_versions: vers:maven/2.9.10.4
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-rpr3-cw39-3pxh/GHSA-rpr3-cw39-3pxh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/FasterXML/jackson-databind
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/commit/a424c038ba0c0d65e579e22001dec925902ac0ef
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/issues/2658
+    reference_type:
+    reference_id:
+  - url: https://github.com/FasterXML/jackson-databind/pull/2864
+    reference_type:
+    reference_id:
+  - url: https://github.com/luisgarciacheckmarx/LGV_onefile/issues/19
+    reference_type:
+    reference_id:
+  - url: https://lists.debian.org/debian-lts-announce/2023/04/msg00032.html
+    reference_type:
+    reference_id:
+  - url: https://medium.com/@cowtowncoder/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-10650
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20230818-0007
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2022.html
+    reference_type:
+    reference_id:

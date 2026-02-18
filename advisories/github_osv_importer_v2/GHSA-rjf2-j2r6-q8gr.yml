@@ -1,0 +1,48 @@
+advisory_id: GHSA-rjf2-j2r6-q8gr
+datasource_id: github_osv_importer_v2/GHSA-rjf2-j2r6-q8gr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-rjf2-j2r6-q8gr/GHSA-rjf2-j2r6-q8gr.json
+aliases:
+  - CVE-2021-23449
+summary: |
+  Prototype Pollution in vm2
+  This affects the package vm2 before 3.9.4. Prototype Pollution attack vector can lead to sandbox escape and execution of arbitrary code on the host machine.
+impacted_packages:
+  - purl: pkg:npm/vm2
+    affected_versions: vers:npm/<3.9.4
+    fixed_versions: vers:npm/3.9.4
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/10/GHSA-rjf2-j2r6-q8gr/GHSA-rjf2-j2r6-q8gr.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-915
+  - CWE-1321
+references:
+  - url: https://github.com/patriksimek/vm2
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/commit/b4f6e2bd2c4a1ef52fc4483d8e35f28bc4481886
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/issues/363
+    reference_type:
+    reference_id:
+  - url: https://github.com/patriksimek/vm2/releases/tag/3.9.4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-23449
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20211029-0010
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-VM2-1585918
+    reference_type:
+    reference_id:

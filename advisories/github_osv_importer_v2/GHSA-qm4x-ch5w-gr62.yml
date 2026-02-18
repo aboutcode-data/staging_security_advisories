@@ -1,0 +1,38 @@
+advisory_id: GHSA-qm4x-ch5w-gr62
+datasource_id: github_osv_importer_v2/GHSA-qm4x-ch5w-gr62
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qm4x-ch5w-gr62/GHSA-qm4x-ch5w-gr62.json
+aliases:
+  - CVE-2014-2055
+summary: |
+  XXE in SabreDAV
+  SabreDAV before 1.7.11, as used in ownCloud Server before 5.0.15 and 6.0.x before 6.0.2, allows remote attackers to read arbitrary files, cause a denial of service, or possibly have other impact via an XML External Entity (XXE) attack.
+impacted_packages:
+  - purl: pkg:composer/sabre/dav
+    affected_versions: vers:composer/>=1.6.0|<1.7.11
+    fixed_versions: vers:composer/1.7.11
+  - purl: pkg:composer/sabre/dav
+    affected_versions: vers:composer/>=1.8.0|<1.8.9
+    fixed_versions: vers:composer/1.8.9
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/sabre/dav/CVE-2014-2055.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/fruux/sabre-dav/releases/tag/1.7.11
+    reference_type:
+    reference_id:
+  - url: https://github.com/sabre-io/dav/commit/e3f46e0ecf83cf1d2ebf54908cde7b5ec170aa2c
+    reference_type:
+    reference_id:
+  - url: https://github.com/sabre-io/dav/issues/414
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-2055
+    reference_type:
+    reference_id:

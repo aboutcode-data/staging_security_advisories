@@ -1,0 +1,43 @@
+advisory_id: GHSA-qw64-6vcc-8ghx
+datasource_id: github_osv_importer_v2/GHSA-qw64-6vcc-8ghx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-qw64-6vcc-8ghx/GHSA-qw64-6vcc-8ghx.json
+aliases:
+  - CVE-2025-3192
+summary: |
+  Browsershot Server-Side Request Forgery (SSRF) via setURL() Function
+  Versions of the package spatie/browsershot from 0.0.0 to 5.0.3 are vulnerable to Server-side Request Forgery (SSRF) in the setUrl() function due to a missing restriction on user input, enabling attackers to access localhost and list all of its directories.
+impacted_packages:
+  - purl: pkg:composer/spatie/browsershot
+    affected_versions: vers:composer/<=5.0.3
+    fixed_versions:
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-qw64-6vcc-8ghx/GHSA-qw64-6vcc-8ghx.json
+  - score: '7.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/04/GHSA-qw64-6vcc-8ghx/GHSA-qw64-6vcc-8ghx.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-918
+references:
+  - url: https://gist.github.com/JunMing27/651998a34d57fbf71ff9d25386f1da0f
+    reference_type:
+    reference_id:
+  - url: https://github.com/spatie/browsershot
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-3192
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-PHP-SPATIEBROWSERSHOT-8548015
+    reference_type:
+    reference_id:

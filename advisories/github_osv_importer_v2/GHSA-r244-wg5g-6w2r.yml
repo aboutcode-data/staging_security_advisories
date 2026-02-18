@@ -1,0 +1,59 @@
+advisory_id: GHSA-r244-wg5g-6w2r
+datasource_id: github_osv_importer_v2/GHSA-r244-wg5g-6w2r
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-r244-wg5g-6w2r/GHSA-r244-wg5g-6w2r.json
+aliases:
+  - CVE-2025-5279
+summary: "Issue with Amazon Redshift Python Connector and the BrowserAzureOAuth2CredentialsProvider\
+  \ plugin\n### Summary\n[Amazon Redshift Python Connector](https://docs.aws.amazon.com/redshift/latest/mgmt/python-redshift-driver.html)\
+  \ is a pure Python connector to Redshift (i.e., driver) that implements the [Python Database\
+  \ API Specification 2.0](https://www.python.org/dev/peps/pep-0249/).\n\nWhen the Amazon Redshift\
+  \ Python Connector is configured with the BrowserAzureOAuth2CredentialsProvider plugin, the\
+  \ driver skips the SSL certificate validation step for the Identity Provider. \n\n### Impact\n\
+  \nAn insecure connection could allow an actor to intercept the token exchange process and\
+  \ retrieve an access token.\n\n**Impacted versions:** >=2.0.872;<=2.1.6\n\n### Patches\n\n\
+  Upgrade Amazon Redshift Python Connector to version 2.1.7 and ensure any forked or derivative\
+  \ code is patched to incorporate the new fixes.\n\n### Workarounds\n\nNone\n\n### References\n\
+  \nIf you have any questions or comments about this advisory we ask that you contact AWS/Amazon\
+  \ Security via our vulnerability reporting page [1] or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com).\
+  \ Please do not create a public GitHub issue.\n\n[1] Vulnerability reporting page: https://aws.amazon.com/security/vulnerability-reporting"
+impacted_packages:
+  - purl: pkg:pypi/redshift-connector
+    affected_versions: vers:pypi/<=2.1.6
+    fixed_versions: vers:pypi/2.1.7
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-r244-wg5g-6w2r/GHSA-r244-wg5g-6w2r.json
+  - score: '7.0'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-r244-wg5g-6w2r/GHSA-r244-wg5g-6w2r.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-295
+references:
+  - url: https://aws.amazon.com/security/security-bulletins
+    reference_type:
+    reference_id:
+  - url: https://aws.amazon.com/security/security-bulletins/AWS-2025-011
+    reference_type:
+    reference_id:
+  - url: https://github.com/aws/amazon-redshift-python-driver
+    reference_type:
+    reference_id:
+  - url: https://github.com/aws/amazon-redshift-python-driver/releases/tag/v2.1.7
+    reference_type:
+    reference_id:
+  - url: https://github.com/aws/amazon-redshift-python-driver/security/advisories/GHSA-r244-wg5g-6w2r
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-5279
+    reference_type:
+    reference_id:

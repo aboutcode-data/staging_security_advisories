@@ -1,0 +1,44 @@
+advisory_id: GHSA-rrqv-vjrw-hrcr
+datasource_id: github_osv_importer_v2/GHSA-rrqv-vjrw-hrcr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-rrqv-vjrw-hrcr/GHSA-rrqv-vjrw-hrcr.json
+aliases: []
+summary: |
+  Arbitrary Code Execution in json-ptr
+  There is a security vulnerability in `json-ptr` versions prior to v2.1.0 in which an unscrupulous actor may execute arbitrary code. If your code sends un-sanitized user input to json-ptr's .get() method, your project is vulnerable to this injection-style vulnerability.
+impacted_packages:
+  - purl: pkg:npm/json-ptr
+    affected_versions: vers:npm/<2.1.0
+    fixed_versions: vers:npm/2.1.0
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://github.com/418sec/json-ptr/pull/3
+    reference_type:
+    reference_id:
+  - url: https://github.com/flitbit/json-ptr/blob/456a1728b45c8663bb1ac20a249c5fb17495ec6b/README.md#security-vulnerability-prior-to-v210
+    reference_type:
+    reference_id:
+  - url: https://github.com/flitbit/json-ptr/blob/master/src/util.ts%23L174
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1038396
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-JSONPTR-1016939
+    reference_type:
+    reference_id:
+  - url: https://www.huntr.dev/bounties/2-npm-json-ptr
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1706
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/json-ptr
+    reference_type:
+    reference_id:

@@ -1,0 +1,70 @@
+advisory_id: GHSA-r7cm-g469-wm4g
+datasource_id: github_osv_importer_v2/GHSA-r7cm-g469-wm4g
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-r7cm-g469-wm4g/GHSA-r7cm-g469-wm4g.json
+aliases:
+  - CVE-2024-34107
+summary: |
+  Magento Open Source Improper Access Control vulnerability
+  Adobe Commerce versions 2.4.7, 2.4.6-p5, 2.4.5-p7, 2.4.4-p8 and earlier are affected by an Improper Access Control vulnerability that could result in a Security feature bypass. An attacker could leverage this vulnerability to bypass security measures and gain unauthorized access. Exploitation of this issue does not require user interaction.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.7
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.6
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.5
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.4
+    fixed_versions:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.6-p1|<2.4.6-p6
+    fixed_versions: vers:composer/2.4.6-p6
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/>=2.4.5-p1|<2.4.5-p8
+    fixed_versions: vers:composer/2.4.5-p8
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<2.4.4-p9
+    fixed_versions: vers:composer/2.4.4-p9
+severities:
+  - score: '5.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-r7cm-g469-wm4g/GHSA-r7cm-g469-wm4g.json
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/06/GHSA-r7cm-g469-wm4g/GHSA-r7cm-g469-wm4g.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://github.com/magento/magento2/commit/30877fce83b793f71421c47347885cf076e81799
+    reference_type:
+    reference_id:
+  - url: https://github.com/magento/magento2/commit/a3c6d6e5e95e63031e4df26cfcf76feace7549c2
+    reference_type:
+    reference_id:
+  - url: https://github.com/magento/magento2/commit/c5c538810b87449886f4669cb8abbe8e5593c83c
+    reference_type:
+    reference_id:
+  - url: https://github.com/magento/magento2/commit/d10435b11ada4e502dca7539f8fd31d059d3c482
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb24-40.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-34107
+    reference_type:
+    reference_id:

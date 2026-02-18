@@ -1,0 +1,47 @@
+advisory_id: GHSA-qvhv-pwww-53jj
+datasource_id: github_osv_importer_v2/GHSA-qvhv-pwww-53jj
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qvhv-pwww-53jj/GHSA-qvhv-pwww-53jj.json
+aliases:
+  - CVE-2020-8091
+summary: |
+  Typo3 Cross-Site Scripting in Flash component (ELTS)
+  TYPO3 6.2.0 to 6.2.38 ELTS and 7.0.0 to 7.1.0 included a vulnerable external component, which could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack on a targeted system.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/<=7.1.0
+    fixed_versions: vers:composer/7.2.0
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/<=6.2.38
+    fixed_versions: vers:composer/6.2.39
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qvhv-pwww-53jj/GHSA-qvhv-pwww-53jj.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/blob/4cb53e828bd5138d180cdf9cac1ccf7fd31086d2/typo3/sysext/core/Documentation/Changelog/7.2/Breaking-65962-WebSVGLibraryAndAPIRemoved.rst
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/482e2e992f80f5e38cb48fcaea40fd9812a5252c
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-8091
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-psa-2019-003
+    reference_type:
+    reference_id:
+  - url: https://www.purplemet.com/blog/typo3-xss-vulnerability
+    reference_type:
+    reference_id:

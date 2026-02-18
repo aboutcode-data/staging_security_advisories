@@ -1,0 +1,76 @@
+advisory_id: GHSA-rcpf-vj53-7h2m
+datasource_id: github_osv_importer_v2/GHSA-rcpf-vj53-7h2m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-rcpf-vj53-7h2m/GHSA-rcpf-vj53-7h2m.json
+aliases:
+  - CVE-2018-1257
+summary: |
+  Denial of Service in org.springframework:spring-core
+  Spring Framework, versions 5.0.x prior to 5.0.6, versions 4.3.x prior to 4.3.17, and older unsupported versions allows applications to expose STOMP over WebSocket endpoints with a simple, in-memory STOMP broker through the spring-messaging module. A malicious user (or attacker) can craft a message to the broker that can lead to a regular expression, denial of service attack.
+impacted_packages:
+  - purl: pkg:maven/org.springframework/spring-core
+    affected_versions: vers:maven/>=5.0.0|<5.0.6
+    fixed_versions: vers:maven/5.0.6
+  - purl: pkg:maven/org.springframework/spring-core
+    affected_versions: vers:maven/<4.3.17
+    fixed_versions: vers:maven/4.3.17
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-rcpf-vj53-7h2m/GHSA-rcpf-vj53-7h2m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:1809
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:3768
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-rcpf-vj53-7h2m
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/246a6db1cad205ca9b6fca00c544ab7443ba202
+    reference_type:
+    reference_id:
+  - url: https://github.com/spring-projects/spring-framework/commit/ff2228fdaf131d57b5c8c5918ee8d07c6dd9bba
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1257
+    reference_type:
+    reference_id:
+  - url: https://pivotal.io/security/cve-2018-1257
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujan2020.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2020.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/104260
+    reference_type:
+    reference_id:

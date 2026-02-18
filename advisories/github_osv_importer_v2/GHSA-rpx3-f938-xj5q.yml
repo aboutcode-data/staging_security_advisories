@@ -1,0 +1,54 @@
+advisory_id: GHSA-rpx3-f938-xj5q
+datasource_id: github_osv_importer_v2/GHSA-rpx3-f938-xj5q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-rpx3-f938-xj5q/GHSA-rpx3-f938-xj5q.json
+aliases:
+  - CVE-2025-43819
+summary: "Liferay Portal and DXP does not properly expire sessions\n### Summary\n\nLiferay Portal/DXP\
+  \ contains an Insufficient Session Expiration issue where the Single Logout (SLO) API may\
+  \ fail to invalidate a user’s previous session. An attacker can reuse a stale session via\
+  \ the SLO endpoint to gain an authenticated context.\n\n### Affected Versions\n\nThe following\
+  \ platform versions are affected:\n\n*   **Liferay Portal:**  \n    *   `7.3.3.131` through\
+  \ `7.4.3.121`\n*   **Liferay DXP:**\n    *   `2024.Q4.0`–`2024.Q4.3`\n    *   `2024.Q3.1`–`2024.Q3.13`\n\
+  \    *   `2024.Q2.0`–`2024.Q2.13`\n    *   `2024.Q1.1`–`2024.Q1.12`\n\n### Remediation\n\n\
+  Update to the fixed builds and, for Maven consumers of the SAML module, upgrade `com.liferay:com.liferay.saml.impl`\
+  \ to **5.0.51** or later. After upgrading, ensure session invalidation policies are enforced\
+  \ and verify SLO behavior end-to-end."
+impacted_packages:
+  - purl: pkg:maven/com.liferay/com.liferay.saml.impl
+    affected_versions: vers:maven/<5.0.51
+    fixed_versions: vers:maven/5.0.51
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-rpx3-f938-xj5q/GHSA-rpx3-f938-xj5q.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-613
+references:
+  - url: https://github.com/liferay/liferay-portal
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/433dff5edae4414fdc436b49a9edb62d721c84b5
+    reference_type:
+    reference_id:
+  - url: https://github.com/liferay/liferay-portal/commit/da9105a61d788801797797a32583a4b76c902cdc
+    reference_type:
+    reference_id:
+  - url: https://liferay.atlassian.net/browse/LPE-18159
+    reference_type:
+    reference_id:
+  - url: https://liferay.dev/portal/security/known-vulnerabilities/-/asset_publisher/jekt/content/CVE-2025-43819
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-43819
+    reference_type:
+    reference_id:
+  - url: https://osv.dev/vulnerability/GHSA-rpx3-f938-xj5q
+    reference_type:
+    reference_id:

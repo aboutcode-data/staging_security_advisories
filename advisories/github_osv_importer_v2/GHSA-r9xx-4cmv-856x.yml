@@ -1,0 +1,32 @@
+advisory_id: GHSA-r9xx-4cmv-856x
+datasource_id: github_osv_importer_v2/GHSA-r9xx-4cmv-856x
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-r9xx-4cmv-856x/GHSA-r9xx-4cmv-856x.json
+aliases:
+  - CVE-2022-44069
+summary: |
+  Cross-site Scripting in Zenario
+  Zenario CMS 9.3.57186 is vulnerable to Cross Site Scripting (XSS) via the Nest library module.
+impacted_packages:
+  - purl: pkg:composer/tribalsystems/zenario
+    affected_versions: vers:composer/<=9.3.57186
+    fixed_versions:
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-r9xx-4cmv-856x/GHSA-r9xx-4cmv-856x.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/hieuminhnv/Zenario-CMS-last-version/issues/4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-44069
+    reference_type:
+    reference_id:

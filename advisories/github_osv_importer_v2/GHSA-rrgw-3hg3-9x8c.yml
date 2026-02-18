@@ -1,0 +1,37 @@
+advisory_id: GHSA-rrgw-3hg3-9x8c
+datasource_id: github_osv_importer_v2/GHSA-rrgw-3hg3-9x8c
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-rrgw-3hg3-9x8c/GHSA-rrgw-3hg3-9x8c.json
+aliases: []
+summary: "XSS vulnerability in translations\n### Summary\n\nAn attacker with admin privileges\
+  \ and access to Translations management functionality may add JS payload to translation values\
+  \ via: \n - Translation management UI.\n - Translations downloaded via the Crowdin service\
+  \ may also contain JS strings used for XSS attacks, for a successful attack poisoned translation\
+  \ should be enabled, downloaded, and installed.\n - Translations uploaded via Upload translation\
+  \ file on the All Languages grid\n\n### Workarounds\n\nThere are no workarounds that address\
+  \ this vulnerability."
+impacted_packages:
+  - purl: pkg:composer/oro/platform
+    affected_versions: vers:composer/>=3.1.0|<3.1.29
+    fixed_versions: vers:composer/3.1.29
+  - purl: pkg:composer/oro/platform
+    affected_versions: vers:composer/>=4.1.0|<4.1.17
+    fixed_versions: vers:composer/4.1.17
+  - purl: pkg:composer/oro/platform
+    affected_versions: vers:composer/>=4.2.0|<4.2.8
+    fixed_versions: vers:composer/4.2.8
+severities:
+  - score: '6.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/01/GHSA-rrgw-3hg3-9x8c/GHSA-rrgw-3hg3-9x8c.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/oroinc/platform-er/security/advisories/GHSA-rrgw-3hg3-9x8c
+    reference_type:
+    reference_id:

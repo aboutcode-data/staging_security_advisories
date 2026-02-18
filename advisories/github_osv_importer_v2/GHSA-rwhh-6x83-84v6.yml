@@ -1,0 +1,63 @@
+advisory_id: GHSA-rwhh-6x83-84v6
+datasource_id: github_osv_importer_v2/GHSA-rwhh-6x83-84v6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-rwhh-6x83-84v6/GHSA-rwhh-6x83-84v6.json
+aliases:
+  - CVE-2023-49657
+summary: |
+  Cross-site Scripting in Apache superset
+  A stored cross-site scripting (XSS) vulnerability exists in Apache Superset before 3.0.3. An authenticated attacker with create/update permissions on charts or dashboards could store a script or add a specific HTML snippet that would act as a stored XSS.
+
+  For 2.X versions, users should change their config to include:
+
+  TALISMAN_CONFIG = {
+      "content_security_policy": {
+          "base-uri": ["'self'"],
+          "default-src": ["'self'"],
+          "img-src": ["'self'", "blob:", "data:"],
+          "worker-src": ["'self'", "blob:"],
+          "connect-src": [
+              "'self'",
+              " https://api.mapbox.com" https://api.mapbox.com" ;,
+              " https://events.mapbox.com" https://events.mapbox.com" ;,
+          ],
+          "object-src": "'none'",
+          "style-src": [
+              "'self'",
+              "'unsafe-inline'",
+          ],
+          "script-src": ["'self'", "'strict-dynamic'"],
+      },
+      "content_security_policy_nonce_in": ["script-src"],
+      "force_https": False,
+      "session_cookie_secure": False,
+  }
+impacted_packages:
+  - purl: pkg:pypi/apache-superset
+    affected_versions: vers:pypi/<3.0.3
+    fixed_versions: vers:pypi/3.0.3
+severities:
+  - score: '9.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-rwhh-6x83-84v6/GHSA-rwhh-6x83-84v6.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/apache/superset
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/wjyvz8om9nwd396lh0bt156mtwjxpsvx
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-49657
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2024/01/23/5
+    reference_type:
+    reference_id:

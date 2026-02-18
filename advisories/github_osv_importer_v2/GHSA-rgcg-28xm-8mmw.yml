@@ -1,0 +1,66 @@
+advisory_id: GHSA-rgcg-28xm-8mmw
+datasource_id: github_osv_importer_v2/GHSA-rgcg-28xm-8mmw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-rgcg-28xm-8mmw/GHSA-rgcg-28xm-8mmw.json
+aliases:
+  - CVE-2021-32669
+summary: |
+  Cross-Site Scripting in Backend Grid View
+  ### Problem
+  Failing to properly encode settings for _backend layouts_, the corresponding grid view is vulnerable to persistent cross-site scripting. A valid backend user account is needed to exploit this vulnerability.
+
+  ### Solution
+  Update to TYPO3 versions 8.7.41 ELTS, 9.5.28, 10.4.18, 11.3.1 that fix the problem described.
+
+  ### Credits
+  Thanks to TYPO3 core merger Oliver Bartsch who reported and fixed the issue.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.0.0|<8.7.41
+    fixed_versions: vers:composer/8.7.41
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=9.0.0|<9.5.28
+    fixed_versions: vers:composer/9.5.28
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.0.0|<10.4.18
+    fixed_versions: vers:composer/10.4.18
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=11.0.0|<11.3.1
+    fixed_versions: vers:composer/11.3.1
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.0.0|<10.4.18
+    fixed_versions: vers:composer/10.4.18
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=11.0.0|<11.3.1
+    fixed_versions: vers:composer/11.3.1
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=9.0.0|<9.5.28
+    fixed_versions: vers:composer/9.5.28
+severities:
+  - score: '6.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-rgcg-28xm-8mmw/GHSA-rgcg-28xm-8mmw.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2021-32669.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2021-32669.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/TYPO3.CMS/security/advisories/GHSA-rgcg-28xm-8mmw
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-32669
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2021-011
+    reference_type:
+    reference_id:

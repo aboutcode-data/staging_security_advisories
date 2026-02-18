@@ -1,0 +1,35 @@
+advisory_id: GHSA-qm8m-7626-762h
+datasource_id: github_osv_importer_v2/GHSA-qm8m-7626-762h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qm8m-7626-762h/GHSA-qm8m-7626-762h.json
+aliases:
+  - CVE-2017-14238
+summary: |
+  Dolibarr SQL injection vulnerability in admin/menus/edit.php
+  SQL injection vulnerability in admin/menus/edit.php in Dolibarr ERP/CRM version 6.0.0 allows remote attackers to execute arbitrary SQL commands via the menuId parameter.
+impacted_packages:
+  - purl: pkg:composer/dolibarr/dolibarr
+    affected_versions: vers:composer/<6.0.1
+    fixed_versions: vers:composer/6.0.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qm8m-7626-762h/GHSA-qm8m-7626-762h.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/Dolibarr/dolibarr
+    reference_type:
+    reference_id:
+  - url: https://github.com/Dolibarr/dolibarr/commit/d26b2a694de30f95e46ea54ea72cc54f0d38e548
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-14238
+    reference_type:
+    reference_id:

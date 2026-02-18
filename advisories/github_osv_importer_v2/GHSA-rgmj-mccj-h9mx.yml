@@ -1,0 +1,44 @@
+advisory_id: GHSA-rgmj-mccj-h9mx
+datasource_id: github_osv_importer_v2/GHSA-rgmj-mccj-h9mx
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rgmj-mccj-h9mx/GHSA-rgmj-mccj-h9mx.json
+aliases:
+  - CVE-2018-1000195
+summary: |
+  Cross-Site Request Forgery in Jenkins
+  A server-side request forgery vulnerability exists in Jenkins 2.120 and older, LTS 2.107.2 and older in ZipExtractionInstaller.java that allows users with Overall/Read permission to have Jenkins submit a HTTP GET request to an arbitrary URL and learn whether the response is successful (200) or not.
+impacted_packages:
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.107.2
+    fixed_versions: vers:maven/2.107.3
+  - purl: pkg:maven/org.jenkins-ci.main/jenkins-core
+    affected_versions: vers:maven/<=2.120
+    fixed_versions: vers:maven/2.121
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rgmj-mccj-h9mx/GHSA-rgmj-mccj-h9mx.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-352
+references:
+  - url: https://github.com/jenkinsci/jenkins
+    reference_type:
+    reference_id:
+  - url: https://github.com/jenkinsci/jenkins/commit/6eea1e97840b5623829b2c1fd2e363c045bdc230
+    reference_type:
+    reference_id:
+  - url: https://jenkins.io/security/advisory/2018-05-09/#SECURITY-794
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000195
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_type:
+    reference_id:

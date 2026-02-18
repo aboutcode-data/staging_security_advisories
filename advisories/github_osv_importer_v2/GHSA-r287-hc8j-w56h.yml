@@ -1,0 +1,43 @@
+advisory_id: GHSA-r287-hc8j-w56h
+datasource_id: github_osv_importer_v2/GHSA-r287-hc8j-w56h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-r287-hc8j-w56h/GHSA-r287-hc8j-w56h.json
+aliases: []
+summary: |
+  TYPO3 Information Disclosure Vulnerability Exploitable by Editors
+  It has been discovered, that editors with access to the file list module could list all files names and folder names in the root directory of a TYPO3 installation. Modification of files, listing further nested directories or retrieving file contents was not possible. A valid backend user account is needed to exploit this vulnerability.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=6.2.0|<6.2.14
+    fixed_versions: vers:composer/6.2.14
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=7.0.0|<7.3.1
+    fixed_versions: vers:composer/7.3.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/05/GHSA-r287-hc8j-w56h/GHSA-r287-hc8j-w56h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/2015-07-01-4.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3
+    reference_type:
+    reference_id:
+  - url: https://github.com/TYPO3/typo3/commit/d9caccb26c954834e7d43fbbe84a3130cc95524a
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2015-005
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-005
+    reference_type:
+    reference_id:

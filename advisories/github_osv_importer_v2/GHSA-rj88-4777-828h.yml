@@ -1,0 +1,33 @@
+advisory_id: GHSA-rj88-4777-828h
+datasource_id: github_osv_importer_v2/GHSA-rj88-4777-828h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-rj88-4777-828h/GHSA-rj88-4777-828h.json
+aliases:
+  - CVE-2021-34079
+summary: |
+  Command injection in docker-tester
+  OS Command injection vulnerability in Mintzo Docker-Tester through 1.2.1 allows attackers to execute arbitrary commands via shell metacharacters in the 'ports' entry of a crafted docker-compose.yml file.
+impacted_packages:
+  - purl: pkg:npm/docker-tester
+    affected_versions: vers:npm/<=1.2.1
+    fixed_versions:
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-74
+references:
+  - url: https://advisory.checkmarx.net/advisory/CX-2021-4786
+    reference_type:
+    reference_id:
+  - url: https://github.com/mintzo/docker-testing
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-34079
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/docker-tester
+    reference_type:
+    reference_id:

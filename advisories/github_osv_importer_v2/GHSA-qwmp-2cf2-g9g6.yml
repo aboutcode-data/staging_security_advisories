@@ -1,0 +1,47 @@
+advisory_id: GHSA-qwmp-2cf2-g9g6
+datasource_id: github_osv_importer_v2/GHSA-qwmp-2cf2-g9g6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-qwmp-2cf2-g9g6/GHSA-qwmp-2cf2-g9g6.json
+aliases:
+  - CVE-2022-40898
+summary: |
+  pypa/wheel vulnerable to Regular Expression denial of service (ReDoS)
+  Python Packaging Authority (PyPA) Wheel is a reference implementation of the Python wheel packaging standard. Wheel 0.37.1 and earlier are vulnerable to a Regular Expression denial of service via attacker controlled input to the wheel cli. The vulnerable regex is used to verify the validity of Wheel file names. This has been patched in version 0.38.1.
+impacted_packages:
+  - purl: pkg:pypi/wheel
+    affected_versions: vers:pypi/<0.38.1
+    fixed_versions: vers:pypi/0.38.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-qwmp-2cf2-g9g6/GHSA-qwmp-2cf2-g9g6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/wheel/PYSEC-2022-43017.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/wheel
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/wheel/blob/main/src/wheel/wheelfile.py#L18
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-40898
+    reference_type:
+    reference_id:
+  - url: https://pypi.org/project/wheel
+    reference_type:
+    reference_id:
+  - url: https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages
+    reference_type:
+    reference_id:
+  - url: https://pyup.io/vulnerabilities/CVE-2022-40898/51499
+    reference_type:
+    reference_id:

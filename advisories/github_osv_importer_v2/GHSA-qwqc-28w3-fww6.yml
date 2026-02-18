@@ -1,0 +1,59 @@
+advisory_id: GHSA-qwqc-28w3-fww6
+datasource_id: github_osv_importer_v2/GHSA-qwqc-28w3-fww6
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-qwqc-28w3-fww6/GHSA-qwqc-28w3-fww6.json
+aliases:
+  - CVE-2019-9153
+summary: |
+  Message Signature Bypass in openpgp
+  Versions of `openpgp` prior to 4.2.0 are vulnerable to Message Signature Bypass. The package fails to verify that a message signature is of type `text`. This allows an attacker to to construct a message with a signature type that only verifies subpackets without additional input (such as `standalone` or `timestamp`). For example, an attacker that captures a `standalone` signature packet from a victim can construct arbitrary signed messages that would be verified correctly.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.2.0 or later.
+  If you are upgrading from a version <4.0.0 it is highly recommended to read the `High-Level API Changes` section of the `openpgp` 4.0.0 release: https://github.com/openpgpjs/openpgpjs/releases/tag/v4.0.0
+impacted_packages:
+  - purl: pkg:npm/openpgp
+    affected_versions: vers:npm/<=4.1.2
+    fixed_versions: vers:npm/4.2.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/08/GHSA-qwqc-28w3-fww6/GHSA-qwqc-28w3-fww6.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-347
+references:
+  - url: http://packetstormsecurity.com/files/154191/OpenPGP.js-4.2.0-Signature-Bypass-Invalid-Curve-Attack.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/openpgpjs/openpgpjs/pull/797/commits/327d3e5392a6f59a4270569d200c7f7a2bfc4cbc
+    reference_type:
+    reference_id:
+  - url: https://github.com/openpgpjs/openpgpjs/pull/816
+    reference_type:
+    reference_id:
+  - url: https://github.com/openpgpjs/openpgpjs/releases/tag/v4.2.0
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-9153
+    reference_type:
+    reference_id:
+  - url: https://sec-consult.com/en/blog/advisories/multiple-vulnerabilities-in-openpgp-js
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-OPENPGP-460248
+    reference_type:
+    reference_id:
+  - url: https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/Studies/Mailvelope_Extensions/Mailvelope_Extensions_pdf.html#download=1
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1160
+    reference_type:
+    reference_id:

@@ -1,0 +1,43 @@
+advisory_id: GHSA-r64m-qchj-hrjp
+datasource_id: github_osv_importer_v2/GHSA-r64m-qchj-hrjp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-r64m-qchj-hrjp/GHSA-r64m-qchj-hrjp.json
+aliases: []
+summary: |
+  Webcache Poisoning in shopware/platform and shopware/core
+  ### Impact
+  Webcache Poisoning via X-Forwarded-Prefix and sub-request
+
+  ### Patches
+  We recommend updating to the current version 6.4.6.1. You can get the update to 6.4.6.1 regularly via the Auto-Updater or directly via the download overview.
+
+  https://www.shopware.com/en/download/#shopware-6
+
+  Workarounds
+  For older versions of 6.1, 6.2, and 6.3, corresponding security measures are also available via a plugin. For the full range of functions, we recommend updating to the latest Shopware version.
+
+  https://store.shopware.com/en/detail/index/sArticle/518463/number/Swag136939272659
+impacted_packages:
+  - purl: pkg:composer/shopware/core
+    affected_versions: vers:composer/<=6.4.6+0
+    fixed_versions: vers:composer/6.4.6+1
+  - purl: pkg:composer/shopware/platform
+    affected_versions: vers:composer/<=6.4.6+0
+    fixed_versions: vers:composer/6.4.6+1
+severities:
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-444
+references:
+  - url: https://github.com/shopware/platform
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/commit/9062f15450d183f2c666664841efd4f5ef25e0f3
+    reference_type:
+    reference_id:
+  - url: https://github.com/shopware/platform/security/advisories/GHSA-r64m-qchj-hrjp
+    reference_type:
+    reference_id:

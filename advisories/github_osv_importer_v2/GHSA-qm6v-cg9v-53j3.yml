@@ -1,0 +1,61 @@
+advisory_id: GHSA-qm6v-cg9v-53j3
+datasource_id: github_osv_importer_v2/GHSA-qm6v-cg9v-53j3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qm6v-cg9v-53j3/GHSA-qm6v-cg9v-53j3.json
+aliases:
+  - CVE-2022-29237
+summary: |
+  Limited Authentication Bypass for Media Files
+  Prior to Opencast 10.14 and 11.7, users could pass along URLs for files belonging to organizations other than the user's own, which Opencast would then import into the current organization, bypassing organizational barriers.
+
+  ### Impact
+
+  The vulnerability allows attackers to bypass organizational barriers. Attackers must have full access to Opencast's ingest REST interface, and also know internal links to resources in another organization of the same Opencast cluster.
+
+  If you do not run a multi-tenant cluster, you are not affected by this issue.
+
+  ### Patches
+
+  This issue is fixed in Opencast 10.14 and 11.7.
+
+  ### References
+
+  - [Patch fixing the issue](https://github.com/opencast/opencast/commit/8d5ec1614eed109b812bc27b0c6d3214e456d4e7)
+
+  ### For more information
+
+  If you have any questions or comments about this advisory:
+  * Open an issue in [our issue tracker](https://github.com/opencast/opencast/issues)
+  * Email us at [security@opencast.org](mailto:security@opencast.org)
+impacted_packages:
+  - purl: pkg:maven/org.opencastproject/opencast-ingest-service-impl
+    affected_versions: vers:maven/<10.14
+    fixed_versions: vers:maven/10.14
+  - purl: pkg:maven/org.opencastproject/opencast-ingest-service-impl
+    affected_versions: vers:maven/>=11.0|<11.7
+    fixed_versions: vers:maven/11.7
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qm6v-cg9v-53j3/GHSA-qm6v-cg9v-53j3.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://github.com/opencast/opencast
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast/commit/8d5ec1614eed109b812bc27b0c6d3214e456d4e7
+    reference_type:
+    reference_id:
+  - url: https://github.com/opencast/opencast/security/advisories/GHSA-qm6v-cg9v-53j3
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-29237
+    reference_type:
+    reference_id:

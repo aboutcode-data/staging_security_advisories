@@ -1,0 +1,69 @@
+advisory_id: GHSA-rv39-79c4-7459
+datasource_id: github_osv_importer_v2/GHSA-rv39-79c4-7459
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-rv39-79c4-7459/GHSA-rv39-79c4-7459.json
+aliases: []
+summary: |
+  OpenClaw's gateway connect could skip device identity checks when auth.token was present but not yet validated
+  ### Summary
+
+  The gateway WebSocket `connect` handshake could allow skipping device identity checks when `auth.token` was present but not yet validated.
+
+  ### Details
+
+  In `src/gateway/server/ws-connection/message-handler.ts`, the device-identity requirement could be bypassed based on the *presence* of a non-empty `connectParams.auth.token` rather than a *validated* shared-secret authentication result.
+
+  ### Impact
+
+  In deployments where the gateway WebSocket is reachable and connections can be authorized via Tailscale without validating the shared secret, a client could connect without providing device identity/pairing. Depending on version and configuration, this could result in operator access.
+
+  ### Deployment Guidance
+
+  Per OpenClaw security guidance, the gateway should only be reachable from a trusted network and by trusted users (for example, restrict Tailnet users/ACLs when using Tailscale Serve).
+
+  If the gateway WebSocket is only reachable by trusted users, there is typically no untrusted party with network access to exploit this issue.
+
+  ### Affected Packages / Versions
+
+  - Package: `openclaw` (npm)
+  - Affected: `<= 2026.2.1`
+  - Fixed: `>= 2026.2.2`
+
+  ### Fix
+
+  Device-identity skipping now requires *validated* shared-secret authentication (token/password). Tailscale-authenticated connections without validated shared secret require device identity.
+
+  ### Fix Commit(s)
+
+  - fe81b1d7125a014b8280da461f34efbf5f761575
+
+  Thanks @simecek for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/<2026.2.2
+    fixed_versions: vers:npm/2026.2.2
+severities:
+  - score: '9.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-rv39-79c4-7459/GHSA-rv39-79c4-7459.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-306
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/fe81b1d7125a014b8280da461f34efbf5f761575
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-rv39-79c4-7459
+    reference_type:
+    reference_id:

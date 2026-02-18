@@ -1,0 +1,41 @@
+advisory_id: GHSA-r54g-4qq6-chxg
+datasource_id: github_osv_importer_v2/GHSA-r54g-4qq6-chxg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-r54g-4qq6-chxg/GHSA-r54g-4qq6-chxg.json
+aliases:
+  - CVE-2023-3672
+summary: |
+  webmention.js Cross-site Scripting vulnerability
+  webmention.js prior to 0.5.5 is vulnerable to cross-site scripting.
+impacted_packages:
+  - purl: pkg:npm/webmention.js
+    affected_versions: vers:npm/<0.5.5
+    fixed_versions: vers:npm/0.5.5
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/07/GHSA-r54g-4qq6-chxg/GHSA-r54g-4qq6-chxg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/plaidweb/webmention.js
+    reference_type:
+    reference_id:
+  - url: https://github.com/PlaidWeb/webmention.js/blob/9457e71433c0d2430bbe767ecc5b5837140d0ee4/static/webmention.js#L330
+    reference_type:
+    reference_id:
+  - url: https://github.com/plaidweb/webmention.js/commit/3551b66b3e40da37fee89ecf72930c5efdc53011
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/75cfb7ad-a75f-45ff-8688-32a9c55179aa
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-3672
+    reference_type:
+    reference_id:

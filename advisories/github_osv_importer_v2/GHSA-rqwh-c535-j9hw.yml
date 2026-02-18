@@ -1,0 +1,35 @@
+advisory_id: GHSA-rqwh-c535-j9hw
+datasource_id: github_osv_importer_v2/GHSA-rqwh-c535-j9hw
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/02/GHSA-rqwh-c535-j9hw/GHSA-rqwh-c535-j9hw.json
+aliases:
+  - CVE-2016-10638
+summary: "Downloads Resources over HTTP in js-given\nAffected versions of `js-given` insecurely\
+  \ download an executable over an unencrypted HTTP connection. \n\nIn scenarios where an attacker\
+  \ has a privileged network position, it is possible to intercept the response and replace\
+  \ the executable with a malicious one, resulting in code execution on the system running `js-given`.\n\
+  \n\n## Recommendation\n\nUpdate to version 0.0.18 or later."
+impacted_packages:
+  - purl: pkg:npm/js-given
+    affected_versions: vers:npm/<0.0.18
+    fixed_versions: vers:npm/0.0.18
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-311
+references:
+  - url: https://github.com/advisories/GHSA-rqwh-c535-j9hw
+    reference_type:
+    reference_id:
+  - url: https://github.com/jsGiven/jsGiven/commit/92f750739c7b9b6e704e562ad34e2ad148acad64)
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-10638
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/241
+    reference_type:
+    reference_id:

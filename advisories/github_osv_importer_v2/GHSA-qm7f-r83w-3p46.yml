@@ -1,0 +1,41 @@
+advisory_id: GHSA-qm7f-r83w-3p46
+datasource_id: github_osv_importer_v2/GHSA-qm7f-r83w-3p46
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qm7f-r83w-3p46/GHSA-qm7f-r83w-3p46.json
+aliases:
+  - CVE-2017-3161
+summary: |
+  Improper Neutralization of Input During Web Page Generation in Apache Hadoop
+  The HDFS web UI in Apache Hadoop before 2.7.0 is vulnerable to a cross-site scripting (XSS) attack through an unescaped query parameter.
+impacted_packages:
+  - purl: pkg:maven/org.apache.hadoop/hadoop-client
+    affected_versions: vers:maven/<=2.6.5
+    fixed_versions: vers:maven/2.7.0
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qm7f-r83w-3p46/GHSA-qm7f-r83w-3p46.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://lists.apache.org/thread.html/r127f75748fcabc63bc5a1bec6885753eb9b2bed803b6ed7bd46f965b@%3Cuser.hadoop.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r66de86b9a608c1da70b2d27d765c11ec88edf6e5dd6f379ab33e072a@%3Cuser.flink.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-3161
+    reference_type:
+    reference_id:
+  - url: https://s.apache.org/4MQm
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/98025
+    reference_type:
+    reference_id:

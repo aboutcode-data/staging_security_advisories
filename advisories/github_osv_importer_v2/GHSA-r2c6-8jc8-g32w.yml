@@ -1,0 +1,41 @@
+advisory_id: GHSA-r2c6-8jc8-g32w
+datasource_id: github_osv_importer_v2/GHSA-r2c6-8jc8-g32w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-r2c6-8jc8-g32w/GHSA-r2c6-8jc8-g32w.json
+aliases: []
+summary: |
+  Duplicate Advisory: 1-Click RCE via Authentication Token Exfiltration From gatewayUrl
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-g8p2-7wf7-98mq. This link is maintained to preserve external references.
+
+  ### Original Description
+  OpenClaw (aka clawdbot or Moltbot) before 2026.1.29 obtains a gatewayUrl value from a query string and automatically makes a WebSocket connection without prompting, sending a token value.
+impacted_packages:
+  - purl: pkg:npm/clawdbot
+    affected_versions: vers:npm/<2026.1.29
+    fixed_versions: vers:npm/2026.1.29
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-r2c6-8jc8-g32w/GHSA-r2c6-8jc8-g32w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-669
+references:
+  - url: https://depthfirst.com/post/1-click-rce-to-steal-your-moltbot-data-and-keys
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-g8p2-7wf7-98mq
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-25253
+    reference_type:
+    reference_id:
+  - url: https://openclaw.ai/blog
+    reference_type:
+    reference_id:

@@ -1,0 +1,75 @@
+advisory_id: GHSA-rmxw-jxxx-4cpc
+datasource_id: github_osv_importer_v2/GHSA-rmxw-jxxx-4cpc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-rmxw-jxxx-4cpc/GHSA-rmxw-jxxx-4cpc.json
+aliases: []
+summary: |
+  OpenClaw has a Matrix allowlist bypass via displayName and cross-homeserver localpart matching
+  ### Summary
+
+  OpenClaw Matrix DM allowlist matching could be bypassed in certain configurations.
+
+  Matrix support ships as an optional plugin (not bundled with the core install), so this only affects deployments that have installed and enabled the Matrix plugin.
+
+  ### Affected Packages / Versions
+
+  - Package: `openclaw` (npm)
+  - Affected: `>= 2026.1.14-1, < 2026.2.2`
+  - Patched: `>= 2026.2.2`
+
+  ### Details
+
+  In affected versions, DM allowlist decisions could be made by exact-matching `channels.matrix.dm.allowFrom` entries against multiple sender-derived candidates, including:
+
+  - The sender display name (attacker-controlled and non-unique)
+  - The sender MXID localpart with the homeserver discarded, so `@alice:evil.example` and `@alice:trusted.example` both match `alice`
+
+  If an operator configured `channels.matrix.dm.allowFrom` with display names or bare localparts (for example, `"Alice"` or `"alice"`), a remote Matrix user may be able to impersonate an allowed identity for allowlist purposes and reach the routing/agent pipeline.
+
+  ### Impact
+
+  Matrix DM allowlist identity confusion. The practical impact depends on your Matrix channel policies and what capabilities are enabled downstream.
+
+  ### Mitigation
+
+  - Upgrade to `openclaw >= 2026.2.2`.
+  - Ensure Matrix allowlists contain only full Matrix user IDs (MXIDs) like `@user:server` (or `*`). Do not use display names or bare localparts.
+
+  ### Fix Commit(s)
+
+  - `8f3bfbd1c4fb967a2ddb5b4b9a05784920814bcf`
+
+  ### Release Process Note
+
+  The patched version is already published to npm; the advisory can be published once you're ready.
+
+  Thanks @MegaManSec (https://joshua.hu) of [AISLE Research Team](https://aisle.com/) for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/>=2026.1.14-1|<2026.2.2
+    fixed_versions: vers:npm/2026.2.2
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-rmxw-jxxx-4cpc/GHSA-rmxw-jxxx-4cpc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-290
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/8f3bfbd1c4fb967a2ddb5b4b9a05784920814bcf
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-rmxw-jxxx-4cpc
+    reference_type:
+    reference_id:

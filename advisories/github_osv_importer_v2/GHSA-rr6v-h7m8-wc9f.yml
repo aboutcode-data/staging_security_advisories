@@ -1,0 +1,35 @@
+advisory_id: GHSA-rr6v-h7m8-wc9f
+datasource_id: github_osv_importer_v2/GHSA-rr6v-h7m8-wc9f
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-rr6v-h7m8-wc9f/GHSA-rr6v-h7m8-wc9f.json
+aliases:
+  - CVE-2021-28114
+summary: |
+  Cross-site Scripting in Froala WYSIWYG Editor
+  Froala WYSIWYG Editor 3.2.6-1 is affected by XSS due to a namespace confusion during parsing.
+impacted_packages:
+  - purl: pkg:composer/froala/wysiwyg-editor
+    affected_versions: vers:composer/<3.2.7
+    fixed_versions: vers:composer/3.2.7
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/07/GHSA-rr6v-h7m8-wc9f/GHSA-rr6v-h7m8-wc9f.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://froala.com/wysiwyg-editor
+    reference_type:
+    reference_id:
+  - url: https://labs.bishopfox.com/advisories/froala-editor-v3.2.6
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-28114
+    reference_type:
+    reference_id:

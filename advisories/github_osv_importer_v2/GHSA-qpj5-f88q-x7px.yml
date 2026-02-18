@@ -1,0 +1,41 @@
+advisory_id: GHSA-qpj5-f88q-x7px
+datasource_id: github_osv_importer_v2/GHSA-qpj5-f88q-x7px
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qpj5-f88q-x7px/GHSA-qpj5-f88q-x7px.json
+aliases:
+  - CVE-2020-29603
+summary: |
+  MantisBT Insecure Storage in manage_proj_edit_page.php
+  In manage_proj_edit_page.php in MantisBT before 2.24.4, any unprivileged logged-in user can retrieve Private Projects' names via the manage_proj_edit_page.php project_id parameter, without having access to them.
+impacted_packages:
+  - purl: pkg:composer/mantisbt/mantisbt
+    affected_versions: vers:composer/<2.24.4
+    fixed_versions: vers:composer/2.24.4
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qpj5-f88q-x7px/GHSA-qpj5-f88q-x7px.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-922
+references:
+  - url: https://github.com/mantisbt/mantisbt
+    reference_type:
+    reference_id:
+  - url: https://github.com/mantisbt/mantisbt/commit/cff10f266f67e2da3060ea4d0b9ecbb29c21b869
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=27357
+    reference_type:
+    reference_id:
+  - url: https://mantisbt.org/bugs/view.php?id=27726
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-29603
+    reference_type:
+    reference_id:

@@ -1,0 +1,54 @@
+advisory_id: GHSA-rp46-r563-jrc7
+datasource_id: github_osv_importer_v2/GHSA-rp46-r563-jrc7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-rp46-r563-jrc7/GHSA-rp46-r563-jrc7.json
+aliases:
+  - CVE-2025-33042
+summary: |
+  Apache Avro Java SDK is Vulnerable to Code Injection
+  Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Avro Java SDK when generating specific records from untrusted Avro schemas.
+
+  This issue affects Apache Avro Java SDK: all versions through 1.11.4 and version 1.12.0.
+
+  Users are recommended to upgrade to version 1.12.1 or 1.11.5, which fix the issue.
+impacted_packages:
+  - purl: pkg:maven/org.apache.avro/avro
+    affected_versions: vers:maven/1.12.0
+    fixed_versions: vers:maven/1.12.1
+  - purl: pkg:maven/org.apache.avro/avro
+    affected_versions: vers:maven/<1.11.5
+    fixed_versions: vers:maven/1.11.5
+severities:
+  - score: '6.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-rp46-r563-jrc7/GHSA-rp46-r563-jrc7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/apache/avro
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/avro/commit/84bc7322ca1c04ab4a8e4e708acf1e271541aac4
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/avro/pull/3150
+    reference_type:
+    reference_id:
+  - url: https://issues.apache.org/jira/browse/AVRO-4053
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/fy88wmgf1lj9479vrpt12cv8x73lroj1
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-33042
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2026/02/12/2
+    reference_type:
+    reference_id:

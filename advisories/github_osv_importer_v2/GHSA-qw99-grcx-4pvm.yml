@@ -1,0 +1,57 @@
+advisory_id: GHSA-qw99-grcx-4pvm
+datasource_id: github_osv_importer_v2/GHSA-qw99-grcx-4pvm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-qw99-grcx-4pvm/GHSA-qw99-grcx-4pvm.json
+aliases: []
+summary: |
+  OpenClaw's Chrome extension relay binds publicly due to wildcard treated as loopback
+  ## Summary
+  The Chrome extension relay (`ensureChromeExtensionRelayServer`) previously treated wildcard hosts (`0.0.0.0` / `::`) as loopback, which could make it bind the relay HTTP/WS server to all interfaces when a wildcard `cdpUrl` was passed.
+
+  ## Impact
+  If configured with a wildcard `cdpUrl`, relay HTTP endpoints could become reachable off-host, leaking service presence/port and enabling DoS/brute-force traffic against the relay token header.
+
+  ## Affected Packages / Versions
+  - Package: `openclaw` (npm)
+  - Affected: `>= 2026.1.14-1 < 2026.2.12`
+
+  ## Fixed Versions
+  - Patched: `>= 2026.2.12` (released 2026-02-13)
+
+  ## Fix Commit(s)
+  - 8d75a496bf5aaab1755c56cf48502d967c75a1d0
+
+  ## Notes
+  - Earlier hardening for `/json*` auth and `/cdp` token checks landed in:
+    - a1e89afcc19efd641c02b24d66d689f181ae2b5c
+
+  Thanks @qi-scape for reporting.
+impacted_packages:
+  - purl: pkg:npm/openclaw
+    affected_versions: vers:npm/>=2026.1.14-1|<2026.2.12
+    fixed_versions: vers:npm/2026.2.12
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-qw99-grcx-4pvm/GHSA-qw99-grcx-4pvm.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-284
+references:
+  - url: https://github.com/openclaw/openclaw
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/commit/8d75a496bf5aaab1755c56cf48502d967c75a1d0
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/releases/tag/v2026.2.12
+    reference_type:
+    reference_id:
+  - url: https://github.com/openclaw/openclaw/security/advisories/GHSA-qw99-grcx-4pvm
+    reference_type:
+    reference_id:

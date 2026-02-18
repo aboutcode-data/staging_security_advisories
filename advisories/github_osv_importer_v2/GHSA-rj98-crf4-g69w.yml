@@ -1,0 +1,51 @@
+advisory_id: GHSA-rj98-crf4-g69w
+datasource_id: github_osv_importer_v2/GHSA-rj98-crf4-g69w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-rj98-crf4-g69w/GHSA-rj98-crf4-g69w.json
+aliases:
+  - CVE-2024-2044
+summary: |
+  pgAdmin 4 vulnerable to Unsafe Deserialization and Remote Code Execution by an Authenticated user
+  pgAdmin prior to version 8.4 is affected by a path-traversal vulnerability while deserializing users’ sessions in the session handling code. If the server is running on Windows, an unauthenticated attacker can load and deserialize remote pickle objects and gain code execution. If the server is running on POSIX/Linux, an authenticated attacker can upload pickle objects, deserialize them and gain code execution.
+impacted_packages:
+  - purl: pkg:pypi/pgadmin4
+    affected_versions: vers:pypi/<8.4
+    fixed_versions: vers:pypi/8.4
+severities:
+  - score: '9.9'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-rj98-crf4-g69w/GHSA-rj98-crf4-g69w.json
+  - score: '9.4'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-rj98-crf4-g69w/GHSA-rj98-crf4-g69w.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+  - CWE-31
+  - CWE-22
+references:
+  - url: https://github.com/pgadmin-org/pgadmin4
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/commit/4e49d752fba72953acceeb7f4aa2e6e32d25853d
+    reference_type:
+    reference_id:
+  - url: https://github.com/pgadmin-org/pgadmin4/issues/7258
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LUYN2JXKKHFSVTASH344TBRGWDH64XQV
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-2044
+    reference_type:
+    reference_id:
+  - url: https://www.shielder.com/advisories/pgadmin-path-traversal_leads_to_unsafe_deserialization_and_rce
+    reference_type:
+    reference_id:

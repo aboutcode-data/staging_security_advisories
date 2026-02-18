@@ -1,0 +1,53 @@
+advisory_id: GHSA-qfcq-4vv7-9mq7
+datasource_id: github_osv_importer_v2/GHSA-qfcq-4vv7-9mq7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qfcq-4vv7-9mq7/GHSA-qfcq-4vv7-9mq7.json
+aliases:
+  - CVE-2017-11911
+summary: |
+  ChakraCore RCE Vulnerability
+  ChakraCore and Windows 10 1511, 1607, 1703, 1709, and Windows Server 2016 allows an attacker to execute arbitrary code in the context of the current user, due to how the scripting engine handles objects in memory, aka "Scripting Engine Memory Corruption Vulnerability". This CVE ID is unique from CVE-2017-11886, CVE-2017-11889, CVE-2017-11890, CVE-2017-11893, CVE-2017-11894, CVE-2017-11895, CVE-2017-11901, CVE-2017-11903, CVE-2017-11905, CVE-2017-11905, CVE-2017-11907, CVE-2017-11908, CVE-2017-11909, CVE-2017-11910, CVE-2017-11912, CVE-2017-11913, CVE-2017-11914, CVE-2017-11916, CVE-2017-11918, and CVE-2017-11930.
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.ChakraCore
+    affected_versions: vers:nuget/<1.7.5
+    fixed_versions: vers:nuget/1.7.5
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qfcq-4vv7-9mq7/GHSA-qfcq-4vv7-9mq7.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-119
+references:
+  - url: https://github.com/chakra-core/ChakraCore/commit/a5d6be626305671166f21db359c1c06a3a372b8b
+    reference_type:
+    reference_id:
+  - url: https://github.com/chakra-core/ChakraCore/pull/4411
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-11911
+    reference_type:
+    reference_id:
+  - url: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11911
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210124122722/http://www.securityfocus.com/bid/102087
+    reference_type:
+    reference_id:
+  - url: https://web.archive.org/web/20210829201729/http://www.securitytracker.com/id/1039990
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/43468
+    reference_type:
+    reference_id:
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=1385
+    reference_type: exploit
+    reference_id: CVE-2017-11911
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/dos/43468.js
+    reference_type: exploit
+    reference_id: CVE-2017-11911

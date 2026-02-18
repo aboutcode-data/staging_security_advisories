@@ -1,0 +1,59 @@
+advisory_id: GHSA-rv63-gqm8-9w8q
+datasource_id: github_osv_importer_v2/GHSA-rv63-gqm8-9w8q
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rv63-gqm8-9w8q/GHSA-rv63-gqm8-9w8q.json
+aliases:
+  - CVE-2016-4970
+summary: |
+  Loop with Unreachable Exit Condition in Netty
+  handler/ssl/OpenSslEngine.java in Netty 4.0.x before 4.0.37.Final and 4.1.x before 4.1.1.Final allows remote attackers to cause a denial of service (infinite loop).
+impacted_packages:
+  - purl: pkg:maven/io.netty/netty-handler
+    affected_versions: vers:maven/>=4.0.0.Alpha1|<4.0.37.Final
+    fixed_versions: vers:maven/4.0.37.Final
+  - purl: pkg:maven/io.netty/netty-handler
+    affected_versions: vers:maven/>=4.1.0.Beta1|<4.1.1.Final
+    fixed_versions: vers:maven/4.1.1.Final
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rv63-gqm8-9w8q/GHSA-rv63-gqm8-9w8q.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-835
+references:
+  - url: http://netty.io/news/2016/06/07/4-0-37-Final.html
+    reference_type:
+    reference_id:
+  - url: http://netty.io/news/2016/06/07/4-1-1-Final.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2017-0179.html
+    reference_type:
+    reference_id:
+  - url: http://rhn.redhat.com/errata/RHSA-2017-1097.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1343616
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty
+    reference_type:
+    reference_id:
+  - url: https://github.com/netty/netty/pull/5364
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/afaa5860e3a6d327eb96c3d82cbd2f5996de815a16854ed1ad310144@%3Ccommits.cassandra.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-4970
+    reference_type:
+    reference_id:
+  - url: https://wiki.opendaylight.org/view/Security_Advisories
+    reference_type:
+    reference_id:

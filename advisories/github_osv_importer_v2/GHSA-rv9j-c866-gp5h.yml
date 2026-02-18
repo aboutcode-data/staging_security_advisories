@@ -1,0 +1,55 @@
+advisory_id: GHSA-rv9j-c866-gp5h
+datasource_id: github_osv_importer_v2/GHSA-rv9j-c866-gp5h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-rv9j-c866-gp5h/GHSA-rv9j-c866-gp5h.json
+aliases:
+  - CVE-2024-21643
+summary: "Microsoft.IdentityModel.Protocols.SignedHttpRequest remote code execution vulnerability\n\
+  ### Impact\n_What kind of vulnerability is it? Who is impacted?_\nAnyone leveraging the `SignedHttpRequest`protocol\
+  \ or the `SignedHttpRequestValidator`is vulnerable. Microsoft.IdentityModel trusts the `jku`claim\
+  \ by default for the `SignedHttpRequest`protocol. This raises the possibility to make any\
+  \ remote or local `HTTP GET` request. \n\n### Patches\n_Has the problem been patched? What\
+  \ versions should users upgrade to?_\nThe vulnerability has been fixed in Microsoft.IdentityModel.Protocols.SignedHttpRequest.\
+  \ Users **should** update **all** their Microsoft.IdentityModel versions to 7.1.2 (for 7x)\
+  \ or higher, 6.34.0 (for 6x) or higher, if using Microsoft.IdentityModel.Protocols.SignedHttpRequest.\n\
+  \n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without\
+  \ upgrading?_\nNo, users must upgrade.\n\n### References\n_Are there any links users can visit\
+  \ to find out more?_\nhttps://aka.ms/IdentityModel/Jan2024/jku"
+impacted_packages:
+  - purl: pkg:nuget/Microsoft.IdentityModel.Protocols.SignedHttpRequest
+    affected_versions: vers:nuget/<6.34.0
+    fixed_versions: vers:nuget/6.34.0
+  - purl: pkg:nuget/Microsoft.IdentityModel.Protocols.SignedHttpRequest
+    affected_versions: vers:nuget/>=7.0.0-preview|<7.1.2
+    fixed_versions: vers:nuget/7.1.2
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-rv9j-c866-gp5h/GHSA-rv9j-c866-gp5h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet
+    reference_type:
+    reference_id:
+  - url: https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/releases/tag/6.34.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/releases/tag/7.1.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/security/advisories/GHSA-rv9j-c866-gp5h
+    reference_type:
+    reference_id:
+  - url: https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki/jkucve
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21643
+    reference_type:
+    reference_id:

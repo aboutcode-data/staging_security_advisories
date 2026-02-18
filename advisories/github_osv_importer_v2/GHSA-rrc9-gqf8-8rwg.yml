@@ -1,0 +1,50 @@
+advisory_id: GHSA-rrc9-gqf8-8rwg
+datasource_id: github_osv_importer_v2/GHSA-rrc9-gqf8-8rwg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-rrc9-gqf8-8rwg/GHSA-rrc9-gqf8-8rwg.json
+aliases:
+  - CVE-2020-28472
+summary: |
+  Prototype Pollution via file load in aws-sdk and @aws-sdk/shared-ini-file-loader
+  This affects the package @aws-sdk/shared-ini-file-loader before 1.0.0-rc.9; the package aws-sdk before 2.814.0. If an attacker submits a malicious INI file to an application that parses it with loadSharedConfigFiles , they will pollute the prototype on the application. This can be exploited further depending on the context.
+impacted_packages:
+  - purl: pkg:npm/aws-sdk
+    affected_versions: vers:npm/<2.814.0
+    fixed_versions: vers:npm/2.814.0
+  - purl: pkg:npm/%40aws-sdk/shared-ini-file-loader
+    affected_versions: vers:npm/<=1.0.0-rc.8
+    fixed_versions: vers:npm/1.0.0-rc.9
+severities:
+  - score: '7.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/11/GHSA-rrc9-gqf8-8rwg/GHSA-rrc9-gqf8-8rwg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/aws/aws-sdk-js/pull/3585/commits/7d72aff2a941173733fcb6741b104cd83d3bc611
+    reference_type:
+    reference_id:
+  - url: https://github.com/aws/aws-sdk-js-v3/commit/a209082dff913939672bb069964b33aa4c5409a9
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-28472
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1059426
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059425
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-AWSSDK-1059424
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-AWSSDKSHAREDINIFILELOADER-1049304
+    reference_type:
+    reference_id:

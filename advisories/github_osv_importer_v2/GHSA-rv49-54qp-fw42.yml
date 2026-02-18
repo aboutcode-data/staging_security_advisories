@@ -1,0 +1,29 @@
+advisory_id: GHSA-rv49-54qp-fw42
+datasource_id: github_osv_importer_v2/GHSA-rv49-54qp-fw42
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-rv49-54qp-fw42/GHSA-rv49-54qp-fw42.json
+aliases: []
+summary: "Path Traversal in servey\nVersions of `servey` prior to 3.x are vulnerable to Path\
+  \ Traversal.  Due to insufficient input sanitization, attackers can access server files by\
+  \ using relative paths. \n\n\n## Recommendation\n\nUpgrade to the latest version"
+impacted_packages:
+  - purl: pkg:npm/servey
+    affected_versions: vers:npm/<3.1.0
+    fixed_versions: vers:npm/3.1.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/typeorm/typeorm/commit/d46c8b0e6c0db56bb5976a4917e9f67a43715111
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/355501
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/802
+    reference_type:
+    reference_id:

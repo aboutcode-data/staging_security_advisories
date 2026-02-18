@@ -1,0 +1,38 @@
+advisory_id: GHSA-rg9h-vx28-xxp5
+datasource_id: github_osv_importer_v2/GHSA-rg9h-vx28-xxp5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-rg9h-vx28-xxp5/GHSA-rg9h-vx28-xxp5.json
+aliases:
+  - CVE-2025-7707
+summary: |
+  llama-index has Insecure Temporary File
+  The llama_index library version 0.12.33 sets the NLTK data directory to a subdirectory of the codebase by default, which is world-writable in multi-user environments. This configuration allows local users to overwrite, delete, or corrupt NLTK data files, leading to potential denial of service, data tampering, or privilege escalation. The vulnerability arises from the use of a shared cache directory instead of a user-specific one, making it susceptible to local data tampering and denial of service.
+impacted_packages:
+  - purl: pkg:pypi/llama-index
+    affected_versions: vers:pypi/<0.13.0
+    fixed_versions: vers:pypi/0.13.0
+severities:
+  - score: '7.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/10/GHSA-rg9h-vx28-xxp5/GHSA-rg9h-vx28-xxp5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-377
+references:
+  - url: https://github.com/run-llama/llama_index
+    reference_type:
+    reference_id:
+  - url: https://github.com/run-llama/llama_index/commit/98816394d57c7f53f847ed7b60725e69d0e7aae4
+    reference_type:
+    reference_id:
+  - url: https://huntr.com/bounties/3fe2c8ab-6727-4aef-a0ef-4d2818e48803
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-7707
+    reference_type:
+    reference_id:

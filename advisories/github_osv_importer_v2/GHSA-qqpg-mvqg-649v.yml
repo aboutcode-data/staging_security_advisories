@@ -1,0 +1,43 @@
+advisory_id: GHSA-qqpg-mvqg-649v
+datasource_id: github_osv_importer_v2/GHSA-qqpg-mvqg-649v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-qqpg-mvqg-649v/GHSA-qqpg-mvqg-649v.json
+aliases:
+  - CVE-2026-1225
+summary: |
+  Logback allows an attacker to instantiate classes already present on the class path
+  ACE vulnerability in configuration file processing  by QOS.CH logback-core up to and including version 1.5.24 in Java applications, allows an attacker to instantiate classes already present on the class path by compromising an existing logback configuration file.
+
+  The instantiation of a potentially malicious Java class requires that said class is present on the user's class-path. In addition, the attacker must  have write access to a configuration file. However, after successful instantiation, the instance is very likely to be discarded with no further ado.
+impacted_packages:
+  - purl: pkg:maven/ch.qos.logback/logback-core
+    affected_versions: vers:maven/<1.5.25
+    fixed_versions: vers:maven/1.5.25
+severities:
+  - score: '1.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:L/AC:H/AT:P/PR:H/UI:N/VC:L/VI:L/VA:L/SC:L/SI:L/SA:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/01/GHSA-qqpg-mvqg-649v/GHSA-qqpg-mvqg-649v.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-20
+references:
+  - url: https://github.com/qos-ch/logback
+    reference_type:
+    reference_id:
+  - url: https://github.com/qos-ch/logback/commit/1f97ae1844b1be8486e4e9cade98d7123d3eded5
+    reference_type:
+    reference_id:
+  - url: https://github.com/qos-ch/logback/issues/997
+    reference_type:
+    reference_id:
+  - url: https://logback.qos.ch/news.html#1.5.25
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2026-1225
+    reference_type:
+    reference_id:

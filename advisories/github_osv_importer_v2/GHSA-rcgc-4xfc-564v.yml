@@ -1,0 +1,56 @@
+advisory_id: GHSA-rcgc-4xfc-564v
+datasource_id: github_osv_importer_v2/GHSA-rcgc-4xfc-564v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rcgc-4xfc-564v/GHSA-rcgc-4xfc-564v.json
+aliases:
+  - CVE-2019-19849
+summary: |
+  TYPO3 Insecure Deserialization in Query Generator & Query View
+  An issue was discovered in TYPO3 before 8.7.30, 9.x before 9.5.12, and 10.x before 10.2.2. It has been discovered that the classes QueryGenerator and QueryView are vulnerable to insecure deserialization. One exploitable scenario requires having the system extension ext:lowlevel (Backend Module: DB Check) installed, with a valid backend user who has administrator privileges. The other exploitable scenario requires having the system extension ext:sys_action installed, with a valid backend user who has limited privileges.
+impacted_packages:
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=10.0.0|<10.2.1
+    fixed_versions: vers:composer/10.2.1
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=8.0.0|<8.7.30
+    fixed_versions: vers:composer/8.7.30
+  - purl: pkg:composer/typo3/cms-core
+    affected_versions: vers:composer/>=9.0.0|<9.5.12
+    fixed_versions: vers:composer/9.5.12
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=10.0.0|<10.2.1
+    fixed_versions: vers:composer/10.2.1
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=8.0.0|<8.7.30
+    fixed_versions: vers:composer/8.7.30
+  - purl: pkg:composer/typo3/cms
+    affected_versions: vers:composer/>=9.0.0|<9.5.12
+    fixed_versions: vers:composer/9.5.12
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rcgc-4xfc-564v/GHSA-rcgc-4xfc-564v.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms-core/CVE-2019-19849.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/typo3/cms/CVE-2019-19849.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19849
+    reference_type:
+    reference_id:
+  - url: https://review.typo3.org/q/%2522Resolves:+%252389005%2522+topic:security
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-core-sa-2019-026
+    reference_type:
+    reference_id:

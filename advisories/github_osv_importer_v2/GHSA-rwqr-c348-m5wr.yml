@@ -1,0 +1,38 @@
+advisory_id: GHSA-rwqr-c348-m5wr
+datasource_id: github_osv_importer_v2/GHSA-rwqr-c348-m5wr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-rwqr-c348-m5wr/GHSA-rwqr-c348-m5wr.json
+aliases:
+  - CVE-2022-33124
+summary: |
+  Withdrawn: Denial of Service in aiohttp
+  ## Withdrawn
+  This advisory has been withdrawn because the maintainers of aiohttp and multiple third parties disputed the validity of the issue. There is not sufficient evidence for the claims in the original report.
+
+  ## Original Description
+  aiohttp v3.8.1 was discovered to contain an invalid IPv6 URL which can lead to a Denial of Service (DoS).
+impacted_packages:
+  - purl: pkg:pypi/aiohttp
+    affected_versions: vers:pypi/<=3.8.1
+    fixed_versions:
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-rwqr-c348-m5wr/GHSA-rwqr-c348-m5wr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses: []
+references:
+  - url: https://github.com/aio-libs/aiohttp
+    reference_type:
+    reference_id:
+  - url: https://github.com/aio-libs/aiohttp/issues/6772
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-33124
+    reference_type:
+    reference_id:

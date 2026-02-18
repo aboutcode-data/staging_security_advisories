@@ -1,0 +1,26 @@
+advisory_id: GHSA-qx4v-6gc5-f2vv
+datasource_id: github_osv_importer_v2/GHSA-qx4v-6gc5-f2vv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/06/GHSA-qx4v-6gc5-f2vv/GHSA-qx4v-6gc5-f2vv.json
+aliases: []
+summary: A Regular Expression Denial of Service vulnerability was discovered in esm before 3.1.0.
+  The issue is that esm's find-indexes is using the unescaped identifiers in a regex, which,
+  in this case, causes an infinite loop.
+impacted_packages:
+  - purl: pkg:npm/esm
+    affected_versions: vers:npm/<3.1.0
+    fixed_versions: vers:npm/3.1.0
+severities:
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-400
+references:
+  - url: https://github.com/standard-things/esm/commit/c41e001d81a5a52b0d2d1722b1c2af04d997c05b
+    reference_type:
+    reference_id:
+  - url: https://github.com/standard-things/esm/issues/694
+    reference_type:
+    reference_id:

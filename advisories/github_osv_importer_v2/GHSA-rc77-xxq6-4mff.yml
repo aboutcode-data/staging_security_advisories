@@ -1,0 +1,48 @@
+advisory_id: GHSA-rc77-xxq6-4mff
+datasource_id: github_osv_importer_v2/GHSA-rc77-xxq6-4mff
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-rc77-xxq6-4mff/GHSA-rc77-xxq6-4mff.json
+aliases:
+  - CVE-2020-6836
+summary: "Command Injection in hot-formula-parser\nVersions of `hot-formula-parser` prior to\
+  \ 3.0.1 are vulnerable to Command Injection. The package fails to sanitize values passed to\
+  \ the  `parse` function and concatenates it in an `eval` call. If a value of the formula is\
+  \ supplied by user-controlled input it may allow attackers to run arbitrary commands in the\
+  \ server.  \nParsing the following formula creates a `test` file in the present directory:\
+  \  \n`\"SUM([(function(){require('child_process').execSync('touch test')})(),2])\"`\n\n\n\
+  ## Recommendation\n\nUpgrade to version 3.0.1 or later."
+impacted_packages:
+  - purl: pkg:npm/hot-formula-parser
+    affected_versions: vers:npm/<3.0.1
+    fixed_versions: vers:npm/3.0.1
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-rc77-xxq6-4mff/GHSA-rc77-xxq6-4mff.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-94
+references:
+  - url: https://blog.truesec.com/2020/01/17/reverse-shell-through-a-node-js-math-parser
+    reference_type:
+    reference_id:
+  - url: https://github.com/handsontable/formula-parser
+    reference_type:
+    reference_id:
+  - url: https://github.com/handsontable/formula-parser/commit/396b089738d4bf30eb570a4fe6a188affa95cd5e
+    reference_type:
+    reference_id:
+  - url: https://github.com/handsontable/formula-parser/pull/58
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-6836
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1439
+    reference_type:
+    reference_id:

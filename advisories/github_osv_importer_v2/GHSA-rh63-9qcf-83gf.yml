@@ -1,0 +1,69 @@
+advisory_id: GHSA-rh63-9qcf-83gf
+datasource_id: github_osv_importer_v2/GHSA-rh63-9qcf-83gf
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-rh63-9qcf-83gf/GHSA-rh63-9qcf-83gf.json
+aliases:
+  - CVE-2024-21484
+summary: |
+  Marvin Attack of RSA and RSAOAEP decryption in jsrsasign
+  ### Impact
+  RSA PKCS#1.5 or RSAOAEP ciphertexts may be decrypted by this Marvin attack vulnerability.
+
+  ### Patches
+  update to jsrsasign 11.0.0.
+
+  ### Workarounds
+  Find and replace RSA and RSAOAEP decryption with other crypto library.
+
+  ### References
+  https://people.redhat.com/~hkario/marvin/
+  https://github.com/kjur/jsrsasign/issues/598
+  https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-6070732
+  https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21484
+impacted_packages:
+  - purl: pkg:npm/jsrsasign
+    affected_versions: vers:npm/<11.0.0
+    fixed_versions: vers:npm/11.0.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-rh63-9qcf-83gf/GHSA-rh63-9qcf-83gf.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-203
+references:
+  - url: https://github.com/kjur/jsrsasign
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/issues/598
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/releases/tag/11.0.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/kjur/jsrsasign/security/advisories/GHSA-rh63-9qcf-83gf
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-21484
+    reference_type:
+    reference_id:
+  - url: https://people.redhat.com/~hkario/marvin
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-6070734
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBKJUR-6070733
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-6070732
+    reference_type:
+    reference_id:
+  - url: https://security.snyk.io/vuln/SNYK-JS-JSRSASIGN-6070731
+    reference_type:
+    reference_id:

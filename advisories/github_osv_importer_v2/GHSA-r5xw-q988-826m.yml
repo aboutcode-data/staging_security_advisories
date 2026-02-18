@@ -1,0 +1,47 @@
+advisory_id: GHSA-r5xw-q988-826m
+datasource_id: github_osv_importer_v2/GHSA-r5xw-q988-826m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-r5xw-q988-826m/GHSA-r5xw-q988-826m.json
+aliases: []
+summary: |
+  Remote Memory Exposure in mongoose
+  Versions of `mongoose` before 4.3.6, 3.8.39 are vulnerable to remote memory exposure.
+
+  Trying to save a number to a field of type Buffer on the affected mongoose versions allocates a chunk of uninitialized memory and stores it in the database.
+
+
+  ## Recommendation
+
+  Update to version 4.3.6, 3.8.39 or later.
+impacted_packages:
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/<=3.8.38
+    fixed_versions: vers:npm/3.8.39
+  - purl: pkg:npm/mongoose
+    affected_versions: vers:npm/<=4.3.5
+    fixed_versions: vers:npm/4.3.6
+severities:
+  - score: '5.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-r5xw-q988-826m/GHSA-r5xw-q988-826m.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-201
+references:
+  - url: https://gist.github.com/ChALkeR/440bc3dfcbd9b6da75c3
+    reference_type:
+    reference_id:
+  - url: https://gist.github.com/ChALkeR/d4a8055625221b6e65f0
+    reference_type:
+    reference_id:
+  - url: https://github.com/Automattic/mongoose/issues/3764
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/599
+    reference_type:
+    reference_id:

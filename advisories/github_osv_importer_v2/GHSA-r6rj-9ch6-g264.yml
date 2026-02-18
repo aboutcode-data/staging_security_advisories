@@ -1,0 +1,41 @@
+advisory_id: GHSA-r6rj-9ch6-g264
+datasource_id: github_osv_importer_v2/GHSA-r6rj-9ch6-g264
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-r6rj-9ch6-g264/GHSA-r6rj-9ch6-g264.json
+aliases:
+  - CVE-2021-26707
+summary: |
+  Prototype pollution in Merge-deep
+  The merge-deep library before 3.0.3 for Node.js can be tricked into overwriting properties of Object.prototype or adding new properties to it. These properties are then inherited by every object in the program, thus facilitating prototype-pollution attacks against applications using this library.
+impacted_packages:
+  - purl: pkg:npm/merge-deep
+    affected_versions: vers:npm/<3.0.3
+    fixed_versions: vers:npm/3.0.3
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/06/GHSA-r6rj-9ch6-g264/GHSA-r6rj-9ch6-g264.json
+  - score: CRITICAL
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1321
+references:
+  - url: https://github.com/jonschlinkert/merge-deep/commit/11e5dd56de8a6aed0b1ed022089dbce6968d82a5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-26707
+    reference_type:
+    reference_id:
+  - url: https://securitylab.github.com/advisories/GHSL-2020-160-merge-deep
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20210716-0008
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/merge-deep
+    reference_type:
+    reference_id:

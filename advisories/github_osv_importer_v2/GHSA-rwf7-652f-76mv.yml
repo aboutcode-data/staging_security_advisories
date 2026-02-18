@@ -1,0 +1,44 @@
+advisory_id: GHSA-rwf7-652f-76mv
+datasource_id: github_osv_importer_v2/GHSA-rwf7-652f-76mv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rwf7-652f-76mv/GHSA-rwf7-652f-76mv.json
+aliases:
+  - CVE-2020-24404
+summary: |
+  Magento 2 Community Edition vulnerable to Improper Authorization
+  Magento version 2.4.0 and 2.3.5p1 (and earlier) are affected by an incorrect permissions vulnerability within the Integrations component. This vulnerability could be abused by users with permissions to the Pages resource to delete cms pages via the REST API without authorization.
+impacted_packages:
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/<2.3.6
+    fixed_versions: vers:composer/2.3.6
+  - purl: pkg:composer/magento/community-edition
+    affected_versions: vers:composer/2.4.0
+    fixed_versions: vers:composer/2.4.1
+severities:
+  - score: '2.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rwf7-652f-76mv/GHSA-rwf7-652f-76mv.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-285
+references:
+  - url: https://devdocs.magento.com/guides/v2.3/release-notes/open-source-2-3-6.html
+    reference_type:
+    reference_id:
+  - url: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-1.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/magento/magento2
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/magento/apsb20-59.html
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-24404
+    reference_type:
+    reference_id:

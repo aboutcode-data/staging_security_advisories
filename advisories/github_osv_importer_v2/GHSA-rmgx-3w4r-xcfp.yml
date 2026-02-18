@@ -1,0 +1,38 @@
+advisory_id: GHSA-rmgx-3w4r-xcfp
+datasource_id: github_osv_importer_v2/GHSA-rmgx-3w4r-xcfp
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-rmgx-3w4r-xcfp/GHSA-rmgx-3w4r-xcfp.json
+aliases:
+  - CVE-2023-4432
+summary: |
+  Cockpit Cross-site Scripting vulnerability
+  Cross-site Scripting (XSS) - Reflected in GitHub repository cockpit-hq/cockpit version 2.6.3 and prior. A patch is available at commit 2a93d391fbd2dd9e730f65d43b29beb65903d195 and anticipated to be part of version 2.6.4.
+impacted_packages:
+  - purl: pkg:composer/cockpit-hq/cockpit
+    affected_versions: vers:composer/<=2.6.3
+    fixed_versions:
+severities:
+  - score: '8.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/08/GHSA-rmgx-3w4r-xcfp/GHSA-rmgx-3w4r-xcfp.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/cockpit-hq/cockpit
+    reference_type:
+    reference_id:
+  - url: https://github.com/cockpit-hq/cockpit/commit/2a93d391fbd2dd9e730f65d43b29beb65903d195
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/69684663-6822-41ff-aa05-afbdb8f5268f
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-4432
+    reference_type:
+    reference_id:

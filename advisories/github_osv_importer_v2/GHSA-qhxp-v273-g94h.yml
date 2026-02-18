@@ -1,0 +1,44 @@
+advisory_id: GHSA-qhxp-v273-g94h
+datasource_id: github_osv_importer_v2/GHSA-qhxp-v273-g94h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-qhxp-v273-g94h/GHSA-qhxp-v273-g94h.json
+aliases:
+  - CVE-2019-25225
+summary: |
+  sanitize-html is vulnerable to XSS through incomprehensive sanitization
+  `sanitize-html` prior to version 2.0.0-beta is vulnerable to Cross-site Scripting (XSS). The `sanitizeHtml()` function in `index.js` does not sanitize content when using the custom `transformTags` option, which is intended to convert attribute values into text. As a result, malicious input can be transformed into executable code.
+impacted_packages:
+  - purl: pkg:npm/sanitize-html
+    affected_versions: vers:npm/<2.0.0-beta
+    fixed_versions: vers:npm/2.0.0-beta
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/09/GHSA-qhxp-v273-g94h/GHSA-qhxp-v273-g94h.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/apostrophecms/sanitize-html
+    reference_type:
+    reference_id:
+  - url: https://github.com/apostrophecms/sanitize-html/commit/712cb6895825c8bb6ede71a16b42bade42abcaf3
+    reference_type:
+    reference_id:
+  - url: https://github.com/apostrophecms/sanitize-html/issues/293
+    reference_type:
+    reference_id:
+  - url: https://github.com/apostrophecms/sanitize-html/pull/156
+    reference_type:
+    reference_id:
+  - url: https://github.com/Checkmarx/Vulnerabilities-Proofs-of-Concept/tree/main/2019/CVE-2019-25225
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-25225
+    reference_type:
+    reference_id:

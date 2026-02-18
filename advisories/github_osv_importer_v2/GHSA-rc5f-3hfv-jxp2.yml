@@ -1,0 +1,44 @@
+advisory_id: GHSA-rc5f-3hfv-jxp2
+datasource_id: github_osv_importer_v2/GHSA-rc5f-3hfv-jxp2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-rc5f-3hfv-jxp2/GHSA-rc5f-3hfv-jxp2.json
+aliases:
+  - CVE-2025-7900
+summary: |
+  Femanager extension for TYPO3 allows Insecure Direct Object Reference
+  The femanager extension for TYPO3 allows Insecure Direct Object Reference resulting in unauthorized modification of userdata. This issue affects femanager version 6.4.1 and below, 7.0.0 to 7.5.2 and 8.0.0 to 8.3.0.
+impacted_packages:
+  - purl: pkg:composer/in2code/femanager
+    affected_versions: vers:composer/<6.4.2
+    fixed_versions: vers:composer/6.4.2
+  - purl: pkg:composer/in2code/femanager
+    affected_versions: vers:composer/>=7.0.0|<7.5.3
+    fixed_versions: vers:composer/7.5.3
+  - purl: pkg:composer/in2code/femanager
+    affected_versions: vers:composer/>=8.0.0|<8.3.1
+    fixed_versions: vers:composer/8.3.1
+severities:
+  - score: '5.3'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-rc5f-3hfv-jxp2/GHSA-rc5f-3hfv-jxp2.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-639
+references:
+  - url: https://github.com/in2code-de/femanager
+    reference_type:
+    reference_id:
+  - url: https://github.com/in2code-de/femanager/commit/9bd9fbded4cf31f69bfe03c55d406e79050f8069
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-7900
+    reference_type:
+    reference_id:
+  - url: https://typo3.org/security/advisory/typo3-ext-sa-2025-010
+    reference_type:
+    reference_id:

@@ -1,0 +1,53 @@
+advisory_id: GHSA-qj5r-2r5p-phc7
+datasource_id: github_osv_importer_v2/GHSA-qj5r-2r5p-phc7
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-qj5r-2r5p-phc7/GHSA-qj5r-2r5p-phc7.json
+aliases: []
+summary: |
+  Duplicate Advisory: Keycloak-services SMTP Inject Vulnerability
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-m4j5-5x4r-2xp9. This link is maintained to preserve external references.
+
+  ### Original Description
+  A vulnerability was found in Keycloak-services. Special characters used during e-mail registration may perform SMTP Injection and unexpectedly send short unwanted e-mails. The email is limited to 64 characters (limited local part of the email), so the attack is limited to very shorts emails (subject and little data, the example is 60 chars). This flaw's only direct consequence is an unsolicited email being sent from the Keycloak server. However, this action could be a precursor for more sophisticated attacks.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-services
+    affected_versions: vers:maven/<=26.3.2
+    fixed_versions:
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/08/GHSA-qj5r-2r5p-phc7/GHSA-qj5r-2r5p-phc7.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-93
+references:
+  - url: https://access.redhat.com/errata/RHSA-2025:15336
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:15337
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:15338
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2025:15339
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/cve/CVE-2025-8419
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2385776
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-8419
+    reference_type:
+    reference_id:

@@ -1,0 +1,52 @@
+advisory_id: GHSA-qm2j-qvq3-j29v
+datasource_id: github_osv_importer_v2/GHSA-qm2j-qvq3-j29v
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-qm2j-qvq3-j29v/GHSA-qm2j-qvq3-j29v.json
+aliases:
+  - CVE-2023-48714
+summary: |
+  Record titles for restricted records can be viewed if exposed by GridFieldAddExistingAutocompleter
+  ### Impact
+  If a user should not be able to see a record, but that record can be added to a `GridField` using the `GridFieldAddExistingAutocompleter` component, the record's title can be accessed by that user.
+
+  **Base CVSS:** [4.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N/E:F/RL:O/RC:C&version=3.1)
+  **Reported by:** Nick K - LittleMonkey, [littlemonkey.co.nz](http://littlemonkey.co.nz/)
+
+  ### References
+  - https://www.silverstripe.org/download/security-releases/CVE-2023-48714
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/<4.13.39
+    fixed_versions: vers:composer/4.13.39
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=5.0.0|<5.1.11
+    fixed_versions: vers:composer/5.1.11
+severities:
+  - score: '4.3'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/01/GHSA-qm2j-qvq3-j29v/GHSA-qm2j-qvq3-j29v.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+  - CWE-732
+references:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/CVE-2023-48714.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework
+    reference_type:
+    reference_id:
+  - url: https://github.com/silverstripe/silverstripe-framework/security/advisories/GHSA-qm2j-qvq3-j29v
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-48714
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/CVE-2023-48714
+    reference_type:
+    reference_id:

@@ -1,0 +1,47 @@
+advisory_id: GHSA-qpq9-jpv4-6gwr
+datasource_id: github_osv_importer_v2/GHSA-qpq9-jpv4-6gwr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-qpq9-jpv4-6gwr/GHSA-qpq9-jpv4-6gwr.json
+aliases:
+  - CVE-2021-3632
+summary: |
+  Keycloak allows anyone to register new security device or key for any user by using WebAuthn password-less login flow
+  A flaw was found in Keycloak. This vulnerability allows anyone to register a new security device or key when there is not a device already registered for any user by using the WebAuthn password-less login flow.
+impacted_packages:
+  - purl: pkg:maven/org.keycloak/keycloak-core
+    affected_versions: vers:maven/<15.1.0
+    fixed_versions: vers:maven/15.1.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-qpq9-jpv4-6gwr/GHSA-qpq9-jpv4-6gwr.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://access.redhat.com/security/cve/CVE-2021-3632
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1978196
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/commit/65480cb5a11630909c086f79d396004499fbd1e4
+    reference_type:
+    reference_id:
+  - url: https://github.com/keycloak/keycloak/pull/8203
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/KEYCLOAK-18500
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-3632
+    reference_type:
+    reference_id:

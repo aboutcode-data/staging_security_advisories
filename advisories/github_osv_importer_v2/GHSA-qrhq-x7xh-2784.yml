@@ -1,0 +1,35 @@
+advisory_id: GHSA-qrhq-x7xh-2784
+datasource_id: github_osv_importer_v2/GHSA-qrhq-x7xh-2784
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qrhq-x7xh-2784/GHSA-qrhq-x7xh-2784.json
+aliases:
+  - CVE-2020-26523
+summary: |
+  Froala WYSIWYG Editor XSS Vulnerability
+  Froala Editor before 3.2.2 allows XSS via pasted content.
+impacted_packages:
+  - purl: pkg:composer/froala/wysiwyg-editor
+    affected_versions: vers:composer/<3.2.2
+    fixed_versions: vers:composer/3.2.2
+severities:
+  - score: '6.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-qrhq-x7xh-2784/GHSA-qrhq-x7xh-2784.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://froala.com/wysiwyg-editor/changelog
+    reference_type:
+    reference_id:
+  - url: https://github.com/froala/wysiwyg-editor
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-26523
+    reference_type:
+    reference_id:

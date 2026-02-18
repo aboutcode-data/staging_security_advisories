@@ -1,0 +1,44 @@
+advisory_id: GHSA-qw4w-vq8v-2wcv
+datasource_id: github_osv_importer_v2/GHSA-qw4w-vq8v-2wcv
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-qw4w-vq8v-2wcv/GHSA-qw4w-vq8v-2wcv.json
+aliases:
+  - CVE-2022-37430
+summary: |
+  Stored XSS using uppercase characters in HTMLEditor
+  A malicious content author could add a Javascript payload to the href attribute of a link. A similar issue was identified and fixed via CVE-2022-28803. However, the fix didn't account for the casing of the href attribute. An attacker must have access to the CMS to exploit this issue.
+impacted_packages:
+  - purl: pkg:composer/silverstripe/framework
+    affected_versions: vers:composer/>=4.0.0|<4.11.13
+    fixed_versions: vers:composer/4.11.13
+severities:
+  - score: '5.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/11/GHSA-qw4w-vq8v-2wcv/GHSA-qw4w-vq8v-2wcv.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://forum.silverstripe.org/c/releases
+    reference_type:
+    reference_id:
+  - url: https://github.com/FriendsOfPHP/security-advisories/blob/master/silverstripe/framework/CVE-2022-37430.yaml
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-37430
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/blog/tag/release
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases
+    reference_type:
+    reference_id:
+  - url: https://www.silverstripe.org/download/security-releases/cve-2022-37430
+    reference_type:
+    reference_id:

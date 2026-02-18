@@ -1,0 +1,56 @@
+advisory_id: GHSA-r5c2-rxh2-f5h2
+datasource_id: github_osv_importer_v2/GHSA-r5c2-rxh2-f5h2
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-r5c2-rxh2-f5h2/GHSA-r5c2-rxh2-f5h2.json
+aliases:
+  - CVE-2014-9970
+summary: |
+  Exposure of Sensitive Information to an Unauthorized Actor in Apache Jasypt
+  jasypt before 1.9.2 allows a timing attack against the password hash comparison.
+impacted_packages:
+  - purl: pkg:maven/org.jasypt/jasypt
+    affected_versions: vers:maven/<1.9.2
+    fixed_versions: vers:maven/1.9.2
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-r5c2-rxh2-f5h2/GHSA-r5c2-rxh2-f5h2.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-200
+references:
+  - url: https://access.redhat.com/errata/RHSA-2017:2546
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:2547
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:2808
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:2809
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:2810
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:2811
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2017:3141
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2018:0294
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-9970
+    reference_type:
+    reference_id:
+  - url: https://sourceforge.net/p/jasypt/code/668
+    reference_type:
+    reference_id:

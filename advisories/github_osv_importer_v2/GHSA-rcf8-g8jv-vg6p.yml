@@ -1,0 +1,70 @@
+advisory_id: GHSA-rcf8-g8jv-vg6p
+datasource_id: github_osv_importer_v2/GHSA-rcf8-g8jv-vg6p
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-rcf8-g8jv-vg6p/GHSA-rcf8-g8jv-vg6p.json
+aliases:
+  - CVE-2023-25669
+summary: |
+  TensorFlow has Floating Point Exception in AvgPoolGrad with XLA
+  ### Impact
+  If the stride and window size are not positive for `tf.raw_ops.AvgPoolGrad`, it can give an FPE.
+
+  ```python
+  import tensorflow as tf
+  import numpy as np
+
+  @tf.function(jit_compile=True)
+  def test():
+     y = tf.raw_ops.AvgPoolGrad(orig_input_shape=[1,0,0,0], grad=[[[[0.39117979]]]], ksize=[1,0,0,0], strides=[1,0,0,0], padding="SAME", data_format="NCHW")
+     return y
+
+  print(test())
+  ```
+
+  ### Patches
+  We have patched the issue in GitHub commit [1295ae4dbb52fe06b19733b0257e2340d7b63b8d](https://github.com/tensorflow/tensorflow/commit/1295ae4dbb52fe06b19733b0257e2340d7b63b8d).
+
+  The fix will be included in TensorFlow 2.12. We will also cherrypick this commit on TensorFlow 2.11.1.
+
+
+  ### For more information
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.
+
+
+  ### Attribution
+  This vulnerability has been reported by r3pwnx of 360 AIVul Team
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.11.1
+    fixed_versions: vers:pypi/2.11.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.11.1
+    fixed_versions: vers:pypi/2.11.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.11.1
+    fixed_versions: vers:pypi/2.11.1
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-rcf8-g8jv-vg6p/GHSA-rcf8-g8jv-vg6p.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-697
+references:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/commit/1295ae4dbb52fe06b19733b0257e2340d7b63b8d
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-rcf8-g8jv-vg6p
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-25669
+    reference_type:
+    reference_id:

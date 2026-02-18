@@ -1,0 +1,52 @@
+advisory_id: GHSA-rjvg-q57v-mjjc
+datasource_id: github_osv_importer_v2/GHSA-rjvg-q57v-mjjc
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-rjvg-q57v-mjjc/GHSA-rjvg-q57v-mjjc.json
+aliases:
+  - CVE-2019-12398
+summary: |
+  XSS in Apache Airflow
+  In Apache Airflow before 1.10.5 when running with the "classic" UI, a malicious admin user could edit the state of objects in the Airflow metadata database to execute arbitrary javascript on certain page views. The new "RBAC" UI is unaffected.
+impacted_packages:
+  - purl: pkg:pypi/apache-airflow
+    affected_versions: vers:pypi/<1.10.5
+    fixed_versions: vers:pypi/1.10.5
+severities:
+  - score: '4.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-rjvg-q57v-mjjc/GHSA-rjvg-q57v-mjjc.json
+  - score: '4.6'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/05/GHSA-rjvg-q57v-mjjc/GHSA-rjvg-q57v-mjjc.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/apache/airflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/airflow/blob/1.10.5/CHANGELOG.txt
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/apache-airflow/PYSEC-2020-162.yaml
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r72487ad6b23d18689896962782f8c93032afe5c72a6bfd23b253352b@%3Cdev.airflow.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread.html/r72487ad6b23d18689896962782f8c93032afe5c72a6bfd23b253352b%40%3Cusers.airflow.apache.org%3E
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-12398
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2020/01/14/2
+    reference_type:
+    reference_id:

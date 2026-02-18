@@ -1,0 +1,52 @@
+advisory_id: GHSA-rrx3-2x4g-mq2h
+datasource_id: github_osv_importer_v2/GHSA-rrx3-2x4g-mq2h
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-rrx3-2x4g-mq2h/GHSA-rrx3-2x4g-mq2h.json
+aliases:
+  - CVE-2025-64509
+summary: |
+  Bugsink is vulnerable to unauthenticated remote DoS via crafted Brotli input (via CPU)
+  ### Impact
+
+  In affected versions, a specially crafted Brotli-compressed envelope can cause Bugsink to spend excessive CPU time in decompression, leading to denial of service.
+
+  This can be done if the DSN is known, which it is in many common setups (JavaScript, Mobile Apps).
+
+  ### Patches
+
+  Patched in Bugsink 2.0.6
+
+  ### References
+
+  The vulnerability in this security advisory is similar to, but distinct from, another brotli-related problem in Bugsink:
+
+  https://github.com/bugsink/bugsink/security/advisories/GHSA-fc2v-vcwj-269v
+impacted_packages:
+  - purl: pkg:pypi/bugsink
+    affected_versions: vers:pypi/<2.0.6
+    fixed_versions: vers:pypi/2.0.6
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/11/GHSA-rrx3-2x4g-mq2h/GHSA-rrx3-2x4g-mq2h.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-770
+references:
+  - url: https://github.com/bugsink/bugsink
+    reference_type:
+    reference_id:
+  - url: https://github.com/bugsink/bugsink/commit/1201f754e39265d2aac58edf49dc380bac334388
+    reference_type:
+    reference_id:
+  - url: https://github.com/bugsink/bugsink/security/advisories/GHSA-rrx3-2x4g-mq2h
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-64509
+    reference_type:
+    reference_id:

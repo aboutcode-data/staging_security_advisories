@@ -1,0 +1,42 @@
+advisory_id: GHSA-qv37-mfjf-42h8
+datasource_id: github_osv_importer_v2/GHSA-qv37-mfjf-42h8
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-qv37-mfjf-42h8/GHSA-qv37-mfjf-42h8.json
+aliases:
+  - CVE-2022-3644
+summary: |
+  Plaintext storage of tokens in pulp_ansible
+  The collection remote for pulp_ansible stores tokens in plaintext instead of using pulp's encrypted field and exposes them in read/write mode via the API () instead of marking it as write only.
+impacted_packages:
+  - purl: pkg:pypi/pulp-ansible
+    affected_versions: vers:pypi/<0.15.0
+    fixed_versions: vers:pypi/0.15.0
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/10/GHSA-qv37-mfjf-42h8/GHSA-qv37-mfjf-42h8.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-522
+  - CWE-256
+references:
+  - url: https://github.com/pulp/pulp_ansible
+    reference_type:
+    reference_id:
+  - url: https://github.com/pulp/pulp_ansible/blob/main/pulp_ansible/app/models.py#L234
+    reference_type:
+    reference_id:
+  - url: https://github.com/pulp/pulp_ansible/commit/d13c427b09482a7f598d8ee597d17a8a34888665
+    reference_type:
+    reference_id:
+  - url: https://github.com/pulp/pulp_ansible/issues/1221
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3644
+    reference_type:
+    reference_id:

@@ -1,0 +1,62 @@
+advisory_id: GHSA-qw9g-7549-7wg5
+datasource_id: github_osv_importer_v2/GHSA-qw9g-7549-7wg5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-qw9g-7549-7wg5/GHSA-qw9g-7549-7wg5.json
+aliases:
+  - CVE-2024-27295
+summary: "Directus has MySQL accent insensitive email matching\n## Password reset vulnerable\
+  \ to accent confusion\n\nThe password reset mechanism of the Directus backend is implemented\
+  \ in a way where combined with (specific, need to double check if i can work around) configuration\
+  \ in MySQL or MariaDB. As such, it allows attackers to receive a password reset email of a\
+  \ victim user, specifically having it arrive at a similar email address as the victim with\
+  \ a one or more characters changed to use accents. \n\nThis is due to the fact that by default\
+  \ MySQL/MariaDB are configured for accent-insenstive and case-insensitve comparisons.\n\n\
+  MySQL weak comparison:\n```sql\nselect 1 from directus_users where 'julian@cure53.de' = 'julian@cüre53.de';\n\
+  ```\n\nThis is exploitable due to an error in the API using the supplied email address for\
+  \ sending the reset password mail instead of using the email from the database.\n\n### Steps\
+  \ to reproduce:\n\n1. If the attacker knows the email address of the victim user, i.e., `julian@cure53.de`.\
+  \ (possibly just the domain could be enough for an educated guess)\n2. A off-by-one accented\
+  \ domain `cüre53.de` can be registered to be able to receive emails.\n3. With this email the\
+  \ attacker can request a password reset for `julian@cüre53.de`. \n```http\nPOST /auth/password/request\
+  \ HTTP/1.1\nHost: example.com\n[...]\n{\"email\":\"julian@cüre53.de\"}\n```\n4. The supplied\
+  \ email (julian@cüre53.de) gets checked against the database and will match the non-accented\
+  \ email `julian@cure53.de` and will continue to email the password reset link to the provided\
+  \ email address instead of the saved email address.\n5. With this email the attacker can log\
+  \ into the target account and use it for nefarious things\n\n### Workarounds\nShould be possible\
+  \ with collations but haven't been able to confirm this. \n\n### References\n- https://www.monolune.com/articles/what-is-the-utf8mb4_0900_ai_ci-collation/\n\
+  - https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-sets.html"
+impacted_packages:
+  - purl: pkg:npm/directus
+    affected_versions: vers:npm/<=10.8.2
+    fixed_versions: vers:npm/10.8.3
+severities:
+  - score: '8.2'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-qw9g-7549-7wg5/GHSA-qw9g-7549-7wg5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-706
+references:
+  - url: https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-sets.html
+    reference_type:
+    reference_id:
+  - url: https://github.com/directus/directus
+    reference_type:
+    reference_id:
+  - url: https://github.com/directus/directus/commit/a8ef790ea2d28b1727f9027d99bd360920d57919
+    reference_type:
+    reference_id:
+  - url: https://github.com/directus/directus/security/advisories/GHSA-qw9g-7549-7wg5
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-27295
+    reference_type:
+    reference_id:
+  - url: https://www.monolune.com/articles/what-is-the-utf8mb4_0900_ai_ci-collation
+    reference_type:
+    reference_id:

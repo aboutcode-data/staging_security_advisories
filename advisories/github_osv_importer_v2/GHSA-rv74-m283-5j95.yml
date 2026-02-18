@@ -1,0 +1,38 @@
+advisory_id: GHSA-rv74-m283-5j95
+datasource_id: github_osv_importer_v2/GHSA-rv74-m283-5j95
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-rv74-m283-5j95/GHSA-rv74-m283-5j95.json
+aliases:
+  - CVE-2023-46674
+summary: |
+  Elasticsearch-hadoop Unsafe Deserialization
+  An issue was identified that allowed the unsafe deserialization of java objects from hadoop or spark configuration properties that could have been modified by authenticated users. Elastic would like to thank Yakov Shafranovich, with Amazon Web Services for reporting this issue.
+impacted_packages:
+  - purl: pkg:maven/org.elasticsearch/elasticsearch-hadoop
+    affected_versions: vers:maven/<7.17.11
+    fixed_versions: vers:maven/7.17.11
+  - purl: pkg:maven/org.elasticsearch/elasticsearch-hadoop
+    affected_versions: vers:maven/>=8.0.0|<8.9.0
+    fixed_versions: vers:maven/8.9.0
+severities:
+  - score: '6.0'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:L/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/12/GHSA-rv74-m283-5j95/GHSA-rv74-m283-5j95.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-502
+references:
+  - url: https://discuss.elastic.co/t/elasticsearch-hadoop-7-17-11-8-9-0-security-update-esa-2023-28/348663
+    reference_type:
+    reference_id:
+  - url: https://github.com/elastic/elasticsearch-hadoop
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2023-46674
+    reference_type:
+    reference_id:

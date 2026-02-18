@@ -1,0 +1,41 @@
+advisory_id: GHSA-rfj2-4g26-7jw5
+datasource_id: github_osv_importer_v2/GHSA-rfj2-4g26-7jw5
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rfj2-4g26-7jw5/GHSA-rfj2-4g26-7jw5.json
+aliases:
+  - CVE-2019-10249
+summary: |
+  Potentially compromised builds
+  All Xtext & Xtend versions prior to 2.18.0 were built using HTTP instead of HTTPS file transfer and thus the built artifacts may have been compromised.
+impacted_packages:
+  - purl: pkg:maven/org.eclipse.xtext/org.eclipse.xtext
+    affected_versions: vers:maven/<2.18.0
+    fixed_versions: vers:maven/2.18.0
+  - purl: pkg:maven/org.eclipse.xtend/org.eclipse.xtend.core
+    affected_versions: vers:maven/<2.18.0
+    fixed_versions: vers:maven/2.18.0
+severities:
+  - score: '8.1'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rfj2-4g26-7jw5/GHSA-rfj2-4g26-7jw5.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-319
+references:
+  - url: https://bugs.eclipse.org/bugs/show_bug.cgi?id=546996
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse/xtext-xtend/commit/169de2cecc50ed9bf81c3cdc496ad8a799bdf17b
+    reference_type:
+    reference_id:
+  - url: https://github.com/eclipse/xtext-xtend/issues/759
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-10249
+    reference_type:
+    reference_id:

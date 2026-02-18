@@ -1,0 +1,67 @@
+advisory_id: GHSA-rpjm-422r-95mh
+datasource_id: github_osv_importer_v2/GHSA-rpjm-422r-95mh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rpjm-422r-95mh/GHSA-rpjm-422r-95mh.json
+aliases:
+  - CVE-2022-30126
+summary: |
+  Regular expression denial of service in apache tika
+  In Apache Tika, a regular expression in our StandardsText class, used by the StandardsExtractingContentHandler could lead to a denial of service caused by backtracking on a specially crafted file. This only affects users who are running the StandardsExtractingContentHandler, which is a non-standard handler.
+
+  This was originally fixed in 1.28.2 and 2.4.0. While the fix in version 2.4.0 was complete, the fix for the 1.x branch wasn't incorporated until version 1.28.3. Please see GHSA-qw3f-w4pf-jh5f for more information.
+impacted_packages:
+  - purl: pkg:maven/org.apache.tika/tika-core
+    affected_versions: vers:maven/>=1.17|<1.28.2
+    fixed_versions: vers:maven/1.28.2
+  - purl: pkg:maven/org.apache.tika/tika-core
+    affected_versions: vers:maven/>=2.0.0|<2.4.0
+    fixed_versions: vers:maven/2.4.0
+severities:
+  - score: '5.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/05/GHSA-rpjm-422r-95mh/GHSA-rpjm-422r-95mh.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-1333
+references:
+  - url: https://github.com/advisories/GHSA-qw3f-w4pf-jh5f
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika/commit/83b0de4d60161ebd4bc224141a959ac8c18d95f4
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika/commit/a36711610fa1f6f5ba0f594803415af795e0b265
+    reference_type:
+    reference_id:
+  - url: https://github.com/apache/tika/commit/e76302196ebcafb7b51fce37fbe8256e6c0fbc51
+    reference_type:
+    reference_id:
+  - url: https://lists.apache.org/thread/dh3syg68nxogbmlg13srd6gjn3h2z6r4
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-30126
+    reference_type:
+    reference_id:
+  - url: https://security.netapp.com/advisory/ntap-20220624-0004
+    reference_type:
+    reference_id:
+  - url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/05/16/3
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/05/31/2
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2022/06/27/5
+    reference_type:
+    reference_id:

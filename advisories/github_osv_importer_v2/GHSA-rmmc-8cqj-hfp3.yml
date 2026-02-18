@@ -1,0 +1,28 @@
+advisory_id: GHSA-rmmc-8cqj-hfp3
+datasource_id: github_osv_importer_v2/GHSA-rmmc-8cqj-hfp3
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-rmmc-8cqj-hfp3/GHSA-rmmc-8cqj-hfp3.json
+aliases: []
+summary: |
+  Authentication Bypass in otpauth
+  Versions of `otpauth` prior to 3.2.8 are vulnerable to Authentication Bypass. The package's `totp.validate()` function may return positive values for single digit tokens even if they are invalid. This may allow attackers to bypass the OTP authentication by providing single digit tokens.
+
+
+  ## Recommendation
+
+  Upgrade to version 3.2.8 or later.
+impacted_packages:
+  - purl: pkg:npm/otpauth
+    affected_versions: vers:npm/<3.2.8
+    fixed_versions: vers:npm/3.2.8
+severities:
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-287
+references:
+  - url: https://www.npmjs.com/advisories/1087
+    reference_type:
+    reference_id:

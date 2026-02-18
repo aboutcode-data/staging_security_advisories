@@ -1,0 +1,98 @@
+advisory_id: GHSA-r5w7-f542-q2j4
+datasource_id: github_osv_importer_v2/GHSA-r5w7-f542-q2j4
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-r5w7-f542-q2j4/GHSA-r5w7-f542-q2j4.json
+aliases: []
+summary: |
+  Potential DoS when using ContextLines integration
+  ### Impact
+  The [ContextLines integration](https://docs.sentry.io/platforms/javascript/guides/node/configuration/integrations/contextlines/) uses readable streams to more efficiently use memory when reading files. The ContextLines integration is used to attach source context to outgoing events.
+
+  The stream was not explicitly closed after use. This could lead to excessive amounts of file handles open on the system and potentially lead to a Denial of Service (DoS).
+
+  The ContextLines integration is enabled by default in the Node SDK (`@sentry/node`) and SDKs that run in Node.js environments (`@sentry/astro`, `@sentry/aws-serverless`, `@sentry/bun`, `@sentry/google-cloud-serverless`, `@sentry/nestjs`, `@sentry/nextjs`, `@sentry/nuxt`, `@sentry/remix`, `@sentry/solidstart`, `@sentry/sveltekit`).
+
+  ### Patches
+
+  Users should upgrade to version `8.49.0` or higher.
+
+  ### Workarounds
+
+  To remediate this issue in affected versions without upgrading to version `8.49.0` and above you can disable the ContextLines integration. See the [docs](https://docs.sentry.io/platforms/javascript/guides/node/configuration/integrations/#removing-a-default-integration) for more details.
+
+  ```js
+  Sentry.init({
+    // ...
+    integrations: function (integrations) {
+      // integrations will be all default integrations
+      return integrations.filter(function (integration) {
+        return integration.name !== "ContextLines";
+      });
+    },
+  });
+  ```
+
+  If you disable the ContextLines integration, you will lose source context on your error events.
+
+  ### References
+  - Reported issue: https://github.com/getsentry/sentry-javascript/issues/14892
+  - PR Fix: https://github.com/getsentry/sentry-javascript/pull/14997
+impacted_packages:
+  - purl: pkg:npm/%40sentry/node
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/astro
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/aws-serverless
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/bun
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/google-cloud-serverless
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/nestjs
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/nextjs
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/nuxt
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/remix
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/solidstart
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+  - purl: pkg:npm/%40sentry/sveltekit
+    affected_versions: vers:npm/>=8.10.0|<8.49.0
+    fixed_versions: vers:npm/8.49.0
+severities:
+  - score: '3.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-r5w7-f542-q2j4/GHSA-r5w7-f542-q2j4.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-774
+references:
+  - url: https://github.com/getsentry/sentry-javascript
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-javascript/issues/14892
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-javascript/pull/14997
+    reference_type:
+    reference_id:
+  - url: https://github.com/getsentry/sentry-javascript/security/advisories/GHSA-r5w7-f542-q2j4
+    reference_type:
+    reference_id:

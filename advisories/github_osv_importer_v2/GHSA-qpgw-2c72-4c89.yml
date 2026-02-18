@@ -1,0 +1,49 @@
+advisory_id: GHSA-qpgw-2c72-4c89
+datasource_id: github_osv_importer_v2/GHSA-qpgw-2c72-4c89
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-qpgw-2c72-4c89/GHSA-qpgw-2c72-4c89.json
+aliases:
+  - CVE-2017-1000490
+summary: |
+  Mautic users able to download any files from server using filemanager
+  ### Impact
+  Mautic versions 1.0.0 - 2.11.0 are vulnerable to allowing any authorized Mautic user session (must be logged into Mautic) to use the Filemanager to download any file from the server that the web user has access to.
+
+  ### Patches
+  Update to 2.12.0 or later.
+
+  ### Workarounds
+  None
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Email us at [security@mautic.org](mailto:security@mautic.org)
+impacted_packages:
+  - purl: pkg:composer/mautic/core
+    affected_versions: vers:composer/>=1.0.0|<2.12.0
+    fixed_versions: vers:composer/2.12.0
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/01/GHSA-qpgw-2c72-4c89/GHSA-qpgw-2c72-4c89.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-22
+references:
+  - url: https://github.com/mautic/mautic/commit/3b01786433ae15e9a23f1eb9b0d3dfdb065b6241
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/releases/tag/2.12.0
+    reference_type:
+    reference_id:
+  - url: https://github.com/mautic/mautic/security/advisories/GHSA-qpgw-2c72-4c89
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000490
+    reference_type:
+    reference_id:

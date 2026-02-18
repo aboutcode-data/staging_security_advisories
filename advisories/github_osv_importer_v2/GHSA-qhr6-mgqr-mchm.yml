@@ -1,0 +1,71 @@
+advisory_id: GHSA-qhr6-mgqr-mchm
+datasource_id: github_osv_importer_v2/GHSA-qhr6-mgqr-mchm
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-qhr6-mgqr-mchm/GHSA-qhr6-mgqr-mchm.json
+aliases:
+  - CVE-2025-47285
+summary: |
+  Vyper's `concat()` builtin may elide side-effects for zero-length arguments
+  ### Impact
+  `concat()` may skip evaluation of side effects when the length of an argument is zero. this is due to a fastpath in the implementation which skips evaluation of argument expressions when their length is zero:
+  https://github.com/vyperlang/vyper/blob/68b68c4b30c5ef2f312b4674676170b8a6eaa316/vyper/builtins/functions.py#L560-L562
+
+  in practice, it would be very unusual in user code to construct zero-length bytestrings using an expression with side-effects, since zero-length bytestrings are typically constructed with the empty literal `b""`; the only way to construct an empty bytestring which has side effects would be with the ternary operator introduced in v0.3.8, e.g. `b"" if self.do_some_side_effect() else b""`.
+
+  the following example demonstrates how the issue would look in user code
+  ```vyper
+  counter: public(uint256)
+
+  @external
+  def test() -> Bytes[256]:
+      a: Bytes[256] = concat(b"" if self.sideeffect() else b"", b"aaaa")
+      return a
+
+  def sideeffect() -> bool:
+      self.counter += 1
+      return True
+  ```
+
+  the severity assigned is low, since, as mentioned, this would be a very unusual pattern in user-code.
+
+  ### Patches
+
+  fix is tracked in https://github.com/vyperlang/vyper/pull/4644
+
+  ### Workarounds
+  don't have side effects in expressions which construct zero-length bytestrings.
+
+  ### References
+  _Are there any links users can visit to find out more?_
+impacted_packages:
+  - purl: pkg:pypi/vyper
+    affected_versions: vers:pypi/<=0.4.2rc1
+    fixed_versions:
+severities:
+  - score: '2.9'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-qhr6-mgqr-mchm/GHSA-qhr6-mgqr-mchm.json
+  - score: LOW
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-691
+references:
+  - url: https://github.com/vyperlang/vyper
+    reference_type:
+    reference_id:
+  - url: https://github.com/vyperlang/vyper/blob/68b68c4b30c5ef2f312b4674676170b8a6eaa316/vyper/builtins/functions.py#L560-L562
+    reference_type:
+    reference_id:
+  - url: https://github.com/vyperlang/vyper/pull/4644
+    reference_type:
+    reference_id:
+  - url: https://github.com/vyperlang/vyper/security/advisories/GHSA-qhr6-mgqr-mchm
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2025-47285
+    reference_type:
+    reference_id:

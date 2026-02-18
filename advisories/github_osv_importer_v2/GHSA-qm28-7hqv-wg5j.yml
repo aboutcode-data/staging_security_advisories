@@ -1,0 +1,38 @@
+advisory_id: GHSA-qm28-7hqv-wg5j
+datasource_id: github_osv_importer_v2/GHSA-qm28-7hqv-wg5j
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-qm28-7hqv-wg5j/GHSA-qm28-7hqv-wg5j.json
+aliases:
+  - CVE-2020-7735
+summary: |
+  OS Command Injection in ng-packagr
+  The package ng-packagr before 10.1.1 are vulnerable to Command Injection via the styleIncludePaths option.
+impacted_packages:
+  - purl: pkg:npm/ng-packagr
+    affected_versions: vers:npm/<10.1.1
+    fixed_versions: vers:npm/10.1.1
+severities:
+  - score: '6.6'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/05/GHSA-qm28-7hqv-wg5j/GHSA-qm28-7hqv-wg5j.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-78
+references:
+  - url: https://github.com/ng-packagr/ng-packagr
+    reference_type:
+    reference_id:
+  - url: https://github.com/ng-packagr/ng-packagr/commit/bda0fff3443301f252930a73fdc8fb9502de596d
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2020-7735
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-NGPACKAGR-1012427
+    reference_type:
+    reference_id:

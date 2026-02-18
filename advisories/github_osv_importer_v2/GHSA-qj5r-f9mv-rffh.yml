@@ -1,0 +1,82 @@
+advisory_id: GHSA-qj5r-f9mv-rffh
+datasource_id: github_osv_importer_v2/GHSA-qj5r-f9mv-rffh
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-qj5r-f9mv-rffh/GHSA-qj5r-f9mv-rffh.json
+aliases:
+  - CVE-2022-23569
+summary: "`CHECK`-fails when building invalid tensor shapes in Tensorflow\n### Impact \nMultiple\
+  \ operations in TensorFlow can be used to trigger a denial of service via `CHECK`-fails (i.e.,\
+  \ assertion failures). This is similar to [TFSA-2021-198](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/security/advisory/tfsa-2021-198.md)\
+  \ (CVE-2021-41197) and has similar fixes.\n\n### Patches\nWe have patched the reported issues\
+  \ in multiple GitHub commits. It is possible that other similar instances exist in TensorFlow,\
+  \ we will issue fixes as these are discovered.\n\nThe fix will be included in TensorFlow 2.8.0.\
+  \ We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3, and TensorFlow\
+  \ 2.5.3, as these are also affected and still in supported range.\n  \n### For more information\n\
+  Please consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md)\
+  \ for more information regarding the security model and how to contact us with issues and\
+  \ questions.\n  \n### Attribution\nThis vulnerability has been reported by Faysal Hossain\
+  \ Shezan from University of Virginia."
+impacted_packages:
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow-cpu
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/<2.5.3
+    fixed_versions: vers:pypi/2.5.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/>=2.6.0|<2.6.3
+    fixed_versions: vers:pypi/2.6.3
+  - purl: pkg:pypi/tensorflow-gpu
+    affected_versions: vers:pypi/2.7.0
+    fixed_versions: vers:pypi/2.7.1
+severities:
+  - score: '6.5'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-qj5r-f9mv-rffh/GHSA-qj5r-f9mv-rffh.json
+  - score: '7.1'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/02/GHSA-qj5r-f9mv-rffh/GHSA-qj5r-f9mv-rffh.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-617
+references:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-cpu/PYSEC-2022-78.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/tensorflow-gpu/PYSEC-2022-133.yaml
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/blob/master/tensorflow/security/advisory/tfsa-2021-198.md
+    reference_type:
+    reference_id:
+  - url: https://github.com/tensorflow/tensorflow/security/advisories/GHSA-qj5r-f9mv-rffh
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-23569
+    reference_type:
+    reference_id:

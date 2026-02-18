@@ -1,0 +1,51 @@
+advisory_id: GHSA-qh7x-j4v8-qw5w
+datasource_id: github_osv_importer_v2/GHSA-qh7x-j4v8-qw5w
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-qh7x-j4v8-qw5w/GHSA-qh7x-j4v8-qw5w.json
+aliases:
+  - CVE-2021-41086
+summary: |
+  Clipboard-based XSS
+  ### Impact
+  XSS against the user.
+
+  ### Details
+  jsuites is vulnerable to DOM based XSS if the user can be tricked into copying _anything_ from a malicious and pasting it into the html editor. This is because a part of the clipboard content is directly written to `innerHTML` causing XSS.
+
+  ### References
+  The Curious Case of Copy & Paste – on risks of pasting arbitrary content in browsers: https://research.securitum.com/the-curious-case-of-copy-paste/
+impacted_packages:
+  - purl: pkg:npm/jsuites
+    affected_versions: vers:npm/<4.9.11
+    fixed_versions: vers:npm/4.9.11
+severities:
+  - score: '8.7'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2021/09/GHSA-qh7x-j4v8-qw5w/GHSA-qh7x-j4v8-qw5w.json
+  - score: HIGH
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-79
+references:
+  - url: https://github.com/jsuites/jsuites
+    reference_type:
+    reference_id:
+  - url: https://github.com/jsuites/jsuites/commit/d47a6f4e143188dde2742f4cffd313e1068ad3b3
+    reference_type:
+    reference_id:
+  - url: https://github.com/jsuites/jsuites/commit/fe1d3cc5e339f2f4da8ed1f9f42271fdf9cbd8d2
+    reference_type:
+    reference_id:
+  - url: https://github.com/jsuites/jsuites/security/advisories/GHSA-qh7x-j4v8-qw5w
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2021-41086
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/jsuites
+    reference_type:
+    reference_id:

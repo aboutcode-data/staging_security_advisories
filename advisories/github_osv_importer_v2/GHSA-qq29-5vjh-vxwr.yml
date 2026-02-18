@@ -1,0 +1,46 @@
+advisory_id: GHSA-qq29-5vjh-vxwr
+datasource_id: github_osv_importer_v2/GHSA-qq29-5vjh-vxwr
+datasource_url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-qq29-5vjh-vxwr/GHSA-qq29-5vjh-vxwr.json
+aliases:
+  - CVE-2022-3301
+summary: |
+  rdiffweb vulnerable to Improper Cleanup on Thrown Exception
+  rdiffweb prior to version 2.4.8 is vulnerable to Improper Cleanup on Thrown Exception. This could allow an attacker to display a message of their choice onto a web page. Version 2.4.8 contains a fix for this issue.
+impacted_packages:
+  - purl: pkg:pypi/rdiffweb
+    affected_versions: vers:pypi/<2.4.8
+    fixed_versions: vers:pypi/2.4.8
+severities:
+  - score: '2.4'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:N/I:L/A:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-qq29-5vjh-vxwr/GHSA-qq29-5vjh-vxwr.json
+  - score: '4.8'
+    scoring_system: cvssv4
+    scoring_elements: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+    published_at: None
+    url: https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/09/GHSA-qq29-5vjh-vxwr/GHSA-qq29-5vjh-vxwr.json
+  - score: MODERATE
+    scoring_system: generic_textual
+    scoring_elements:
+    published_at: None
+    url:
+weaknesses:
+  - CWE-460
+references:
+  - url: https://github.com/ikus060/rdiffweb
+    reference_type:
+    reference_id:
+  - url: https://github.com/ikus060/rdiffweb/commit/5ac38b2a75becbab9f948bd5e37ecbcd9f0b362e
+    reference_type:
+    reference_id:
+  - url: https://github.com/pypa/advisory-database/tree/main/vulns/rdiffweb/PYSEC-2022-295.yaml
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/d3bf1e5d-055a-44b8-8d60-54ab966ed63a
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2022-3301
+    reference_type:
+    reference_id:
