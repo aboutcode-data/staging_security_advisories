@@ -1,0 +1,20 @@
+advisory_id: npm/sequelize/GMS-2016-76
+datasource_id: gitlab_importer_v2/npm/sequelize/GMS-2016-76
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sequelize/GMS-2016-76.yml
+aliases:
+  - GMS-2016-76
+summary: |
+  SQL Injection via LIMIT and ORDER
+  If user input goes into the `limit` or `order` parameters, a malicious user can put in their own SQL statements.
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<=3.16.0
+    fixed_versions: vers:npm/3.17.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sequelize/sequelize/pull/5167/commits/f282d85e60e3df5e57ecdb82adccb4eaef404f03
+    reference_type:
+    reference_id:

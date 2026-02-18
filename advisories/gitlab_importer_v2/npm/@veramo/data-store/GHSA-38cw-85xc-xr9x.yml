@@ -1,0 +1,41 @@
+advisory_id: npm/@veramo/data-store/GHSA-38cw-85xc-xr9x
+datasource_id: gitlab_importer_v2/npm/@veramo/data-store/GHSA-38cw-85xc-xr9x
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@veramo/data-store/GHSA-38cw-85xc-xr9x.yml
+aliases:
+  - GHSA-38cw-85xc-xr9x
+summary: |
+  Veramo is Vulnerable to SQL Injection in Veramo Data Store ORM
+  An SQL injection vulnerability exists in the `@veramo/data-store` package that allows any authenticated user to execute arbitrary SQL queries against the database. The vulnerability is caused by insufficient validation of the `column` parameter in the `order` array of query requests.
+impacted_packages:
+  - purl: pkg:npm/%40veramo/data-store
+    affected_versions: vers:npm/<6.0.2
+    fixed_versions: vers:npm/6.0.2
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@veramo/data-store/GHSA-38cw-85xc-xr9x.yml
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-89
+references:
+  - url: https://github.com/decentralized-identity/veramo
+    reference_type:
+    reference_id:
+  - url: https://github.com/decentralized-identity/veramo/commit/067e39dd76f11ee2d25b99c8361d4f02a4223e3b
+    reference_type:
+    reference_id:
+  - url: https://github.com/decentralized-identity/veramo/pull/1482
+    reference_type:
+    reference_id:
+  - url: https://github.com/decentralized-identity/veramo/releases/tag/v6.0.2
+    reference_type:
+    reference_id:
+  - url: https://github.com/decentralized-identity/veramo/security/advisories/GHSA-38cw-85xc-xr9x
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-38cw-85xc-xr9x
+    reference_type:
+    reference_id: GHSA-38cw-85xc-xr9x

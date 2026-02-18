@@ -1,0 +1,20 @@
+advisory_id: npm/serverxxx/GMS-2017-289
+datasource_id: gitlab_importer_v2/npm/serverxxx/GMS-2017-289
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/serverxxx/GMS-2017-289.yml
+aliases:
+  - GMS-2017-289
+summary: |
+  Directory Traversal
+  `serverxxx` is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing "../" in the url./n
+impacted_packages:
+  - purl: pkg:npm/serverxxx
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/JacksonGL/NPM-Vuln-PoC/blob/master/directory-traversal/serverxxx
+    reference_type:
+    reference_id:

@@ -1,0 +1,20 @@
+advisory_id: npm/sly07/GMS-2017-282
+datasource_id: gitlab_importer_v2/npm/sly07/GMS-2017-282
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sly07/GMS-2017-282.yml
+aliases:
+  - GMS-2017-282
+summary: |
+  Directory Traversal
+  `sly07` is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing "../" in the url./n
+impacted_packages:
+  - purl: pkg:npm/sly07
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/JacksonGL/NPM-Vuln-PoC/blob/master/directory-traversal/sly07
+    reference_type:
+    reference_id:

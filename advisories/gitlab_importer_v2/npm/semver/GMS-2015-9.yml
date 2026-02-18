@@ -1,0 +1,23 @@
+advisory_id: npm/semver/GMS-2015-9
+datasource_id: gitlab_importer_v2/npm/semver/GMS-2015-9
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/semver/GMS-2015-9.yml
+aliases:
+  - GMS-2015-9
+summary: |
+  Regular Expression Denial of Service
+  semver is vulnerable to regular expression denial of service when extremely long version strings are parsed.
+impacted_packages:
+  - purl: pkg:npm/semver
+    affected_versions: vers:npm/<4.3.2
+    fixed_versions: vers:npm/4.3.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/npm/node-semver/commit/c80180d8341a8ada0236815c29a2be59864afd70
+    reference_type:
+    reference_id:
+  - url: https://github.com/npm/npm/releases/tag/v2.7.5
+    reference_type:
+    reference_id:

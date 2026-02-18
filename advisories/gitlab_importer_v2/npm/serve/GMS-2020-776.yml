@@ -1,0 +1,33 @@
+advisory_id: npm/serve/GMS-2020-776
+datasource_id: gitlab_importer_v2/npm/serve/GMS-2020-776
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/serve/GMS-2020-776.yml
+aliases:
+  - GHSA-xw79-hhv6-578c
+  - GMS-2020-776
+summary: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+  in serve.
+impacted_packages:
+  - purl: pkg:npm/serve
+    affected_versions: vers:npm/<10.0.2
+    fixed_versions: vers:npm/10.0.2
+severities: []
+weaknesses:
+  - CWE-79
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/zeit/serve-handler/commit/65b4d4183a31a8076c78c40118acb0ca1b64f620
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/358641
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/398285
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/971
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-xw79-hhv6-578c
+    reference_type:
+    reference_id: GHSA-xw79-hhv6-578c

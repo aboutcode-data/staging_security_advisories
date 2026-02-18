@@ -1,0 +1,39 @@
+advisory_id: npm/sweetalert2/GHSA-mrr8-v49w-3333
+datasource_id: gitlab_importer_v2/npm/sweetalert2/GHSA-mrr8-v49w-3333
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sweetalert2/GHSA-mrr8-v49w-3333.yml
+aliases:
+  - GHSA-mrr8-v49w-3333
+summary: |
+  sweetalert2 contains potentially undesirable behavior
+  `sweetalert2` versions from 11.6.14 to before 11.22.4 have potentially undesirable behavior. The package outputs audio and/or video messages that do not pertain to the functionality of the package when run on specific tlds. This functionality is documented on the project's readme.
+impacted_packages:
+  - purl: pkg:npm/sweetalert2
+    affected_versions: vers:npm/>=11.6.14|<11.22.4
+    fixed_versions: vers:npm/11.22.4
+severities: []
+weaknesses:
+  - CWE-440
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sweetalert2/sweetalert2
+    reference_type:
+    reference_id:
+  - url: https://github.com/sweetalert2/sweetalert2/commit/7de85db5c76ba3ef5f0cdbc335bbc4a7c559e012
+    reference_type:
+    reference_id:
+  - url: https://github.com/sweetalert2/sweetalert2/pull/2847
+    reference_type:
+    reference_id:
+  - url: https://github.com/sweetalert2/sweetalert2/releases/tag/v11.4.9
+    reference_type:
+    reference_id:
+  - url: https://github.com/sweetalert2/sweetalert2/tree/6d02e1095e5d9db1dfa7f0708df6fa13a1b32be3#important-notice-about-usage-of-this-software-for-ru-su-and-%D1%80%D1%84-domain-zones
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/sweetalert2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-mrr8-v49w-3333
+    reference_type:
+    reference_id: GHSA-mrr8-v49w-3333

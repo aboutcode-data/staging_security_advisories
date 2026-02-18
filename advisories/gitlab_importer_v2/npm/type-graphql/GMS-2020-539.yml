@@ -1,0 +1,27 @@
+advisory_id: npm/type-graphql/GMS-2020-539
+datasource_id: gitlab_importer_v2/npm/type-graphql/GMS-2020-539
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/type-graphql/GMS-2020-539.yml
+aliases:
+  - GHSA-xf64-2f9p-6pqq
+  - GMS-2020-539
+summary: |
+  Information Exposure in type-graphql
+  Versions of `type-graphql` are vulnerable to Information Exposure. The package leaks the resolver source code in an error message. It is possible to force this error when no subscription topics are provided in the request. Upgrade to or later.
+impacted_packages:
+  - purl: pkg:npm/type-graphql
+    affected_versions: vers:npm/<0.17.6
+    fixed_versions: vers:npm/0.17.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/MichalLytek/type-graphql/issues/489
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1444
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-xf64-2f9p-6pqq
+    reference_type:
+    reference_id: GHSA-xf64-2f9p-6pqq

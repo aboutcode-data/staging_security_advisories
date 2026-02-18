@@ -1,0 +1,20 @@
+advisory_id: npm/socket.io/GMS-2013-7
+datasource_id: gitlab_importer_v2/npm/socket.io/GMS-2013-7
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/socket.io/GMS-2013-7.yml
+aliases:
+  - GMS-2013-7
+summary: |
+  Memory leak when using HTTPS
+  Socket.io will leak memory if used with HTTPS. This version seems to fix also other memory issues, even if HTTPS is not used.
+impacted_packages:
+  - purl: pkg:npm/socket.io
+    affected_versions: vers:npm/<0.9.14
+    fixed_versions: vers:npm/0.9.14
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/LearnBoost/socket.io/issues/1177
+    reference_type:
+    reference_id:

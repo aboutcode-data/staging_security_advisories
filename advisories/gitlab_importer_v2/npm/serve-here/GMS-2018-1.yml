@@ -1,0 +1,23 @@
+advisory_id: npm/serve-here/GMS-2018-1
+datasource_id: gitlab_importer_v2/npm/serve-here/GMS-2018-1
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/serve-here/GMS-2018-1.yml
+aliases:
+  - GMS-2018-1
+summary: |
+  Directory Traversal
+  serve-here is vulnerable to a directory traversal attack. This means that files on the local file system which exist outside of the web root may be disclosed to an attacker. This might include confidential files. Mitigating Factors: if the node process is run as a user with very limited filesystem permissions, there is significantly less risk of exposing confidential/private information.
+impacted_packages:
+  - purl: pkg:npm/serve-here
+    affected_versions: vers:npm/<=3.2.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/vivaxy/here/commit/298dbab41344dfb7f95f66b1fa7b5cfb436bd4a2
+    reference_type:
+    reference_id:
+  - url: https://hackerone.com/reports/296254
+    reference_type:
+    reference_id:

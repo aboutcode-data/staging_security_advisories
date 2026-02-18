@@ -1,0 +1,33 @@
+advisory_id: npm/sweetalert2/GHSA-8jh9-wqpf-q52c
+datasource_id: gitlab_importer_v2/npm/sweetalert2/GHSA-8jh9-wqpf-q52c
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sweetalert2/GHSA-8jh9-wqpf-q52c.yml
+aliases:
+  - GHSA-8jh9-wqpf-q52c
+summary: |
+  sweetalert2 v8.19.1 and above contains hidden functionality
+  `sweetalert2` versions 8.19.1 and up until 9.0.0 are vulnerable to hidden functionality that was introduced by the maintainer. The package outputs audio and/or video messages that do not pertain to the functionality of the package and is not included in versions below 8.19.1.
+impacted_packages:
+  - purl: pkg:npm/sweetalert2
+    affected_versions: vers:npm/>=8.19.1|<11.22.4
+    fixed_versions: vers:npm/11.22.4
+severities: []
+weaknesses:
+  - CWE-912
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sweetalert2/sweetalert2
+    reference_type:
+    reference_id:
+  - url: https://github.com/sweetalert2/sweetalert2/releases/tag/v11.22.4
+    reference_type:
+    reference_id:
+  - url: https://github.com/sweetalert2/sweetalert2/releases/tag/v11.4.9
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/sweetalert2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-8jh9-wqpf-q52c
+    reference_type:
+    reference_id: GHSA-8jh9-wqpf-q52c

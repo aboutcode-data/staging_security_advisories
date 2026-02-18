@@ -1,0 +1,20 @@
+advisory_id: npm/sequelize/GMS-2016-78
+datasource_id: gitlab_importer_v2/npm/sequelize/GMS-2016-78
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sequelize/GMS-2016-78.yml
+aliases:
+  - GMS-2016-78
+summary: |
+  Improper Escaping of Bound Arrays
+  In Postgres, SQLite, and Microsoft SQL Server there is an issue where arrays are treated as strings and improperly escaped.
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<=3.19.3
+    fixed_versions: vers:npm/3.20.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sequelize/sequelize/issues/5671
+    reference_type:
+    reference_id:

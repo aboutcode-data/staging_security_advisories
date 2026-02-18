@@ -1,0 +1,20 @@
+advisory_id: npm/summit/GMS-2016-21
+datasource_id: gitlab_importer_v2/npm/summit/GMS-2016-21
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/summit/GMS-2016-21.yml
+aliases:
+  - GMS-2016-21
+summary: |
+  Unsafe eval()
+  When using the PouchDB driver in the module, an attacker can execute arbitrary commands via the collection name.
+impacted_packages:
+  - purl: pkg:npm/summit
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/notduncansmith/summit/issues/23
+    reference_type:
+    reference_id:

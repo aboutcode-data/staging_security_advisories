@@ -1,0 +1,26 @@
+advisory_id: nuget/CefSharp.Wpf.NETCore/GMS-2022-148
+datasource_id: gitlab_importer_v2/nuget/CefSharp.Wpf.NETCore/GMS-2022-148
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/CefSharp.Wpf.NETCore/GMS-2022-148.yml
+aliases:
+  - CVE-2022-0609
+  - GHSA-vv6j-ww6x-54gx
+  - GMS-2022-148
+summary: |
+  Use after free in Animation. The attack may be initiated remotely. No form of authentication is needed for a successful exploitation. It demands that the victim is doing some kind of user interaction. Technical details are unknown but an exploit is available.
+
+  There is currently little other public information on the issue other than it has been flagged as `High` severity.
+impacted_packages:
+  - purl: pkg:nuget/CefSharp.Wpf.NETCore
+    affected_versions: vers:nuget/<=98.1.190
+    fixed_versions: vers:nuget/98.1.210
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/cefsharp/CefSharp/security/advisories/GHSA-vv6j-ww6x-54gx
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-vv6j-ww6x-54gx
+    reference_type:
+    reference_id: GHSA-vv6j-ww6x-54gx

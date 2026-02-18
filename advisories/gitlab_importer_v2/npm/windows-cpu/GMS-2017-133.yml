@@ -1,0 +1,20 @@
+advisory_id: npm/windows-cpu/GMS-2017-133
+datasource_id: gitlab_importer_v2/npm/windows-cpu/GMS-2017-133
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/windows-cpu/GMS-2017-133.yml
+aliases:
+  - GMS-2017-133
+summary: |
+  Command Execution
+  The `findLoad` method passes a provided string directly to the shell, allowing arbitrary command execution.
+impacted_packages:
+  - purl: pkg:npm/windows-cpu
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/KyleRoss/windows-cpu/blob/master/index.js#L81
+    reference_type:
+    reference_id:

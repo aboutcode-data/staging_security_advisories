@@ -1,0 +1,27 @@
+advisory_id: npm/shelljs/GMS-2022-11
+datasource_id: gitlab_importer_v2/npm/shelljs/GMS-2022-11
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/shelljs/GMS-2022-11.yml
+aliases:
+  - GHSA-64g7-mvw6-v9qj
+  - GMS-2022-11
+summary: |
+  Improper Privilege Management in shelljs
+  Output from the synchronous version of `shell.exec()` may be visible to other users on the same system. You may be affected if you execute `shell.exec()` in multi-user Mac, Linux, or WSL environments, or if you execute `shell.exec()` as the root user. Other shelljs functions (including the asynchronous version of `shell.exec()`) are not impacted.
+impacted_packages:
+  - purl: pkg:npm/shelljs
+    affected_versions: vers:npm/<0.8.5
+    fixed_versions: vers:npm/0.8.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/shelljs/shelljs/security/advisories/GHSA-64g7-mvw6-v9qj
+    reference_type:
+    reference_id:
+  - url: https://huntr.dev/bounties/50996581-c08e-4eed-a90e-c0bac082679c/
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-64g7-mvw6-v9qj
+    reference_type:
+    reference_id: GHSA-64g7-mvw6-v9qj

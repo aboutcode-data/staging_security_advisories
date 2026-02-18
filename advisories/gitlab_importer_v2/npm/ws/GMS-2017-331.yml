@@ -1,0 +1,23 @@
+advisory_id: npm/ws/GMS-2017-331
+datasource_id: gitlab_importer_v2/npm/ws/GMS-2017-331
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/ws/GMS-2017-331.yml
+aliases:
+  - GMS-2017-331
+summary: |
+  Denial of Service
+  A specially crafted value of the `Sec-WebSocket-Extensions` header that uses `Object.prototype` property names as extension or parameter names can be used to make a `ws` server crash.
+impacted_packages:
+  - purl: pkg:npm/ws
+    affected_versions: vers:npm/<3.3.1
+    fixed_versions: vers:npm/3.3.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/websockets/ws/commit/c4fe46608acd61fbf7397eadc47378903f95b78a
+    reference_type:
+    reference_id:
+  - url: https://github.com/websockets/ws/releases/tag/3.3.1
+    reference_type:
+    reference_id:

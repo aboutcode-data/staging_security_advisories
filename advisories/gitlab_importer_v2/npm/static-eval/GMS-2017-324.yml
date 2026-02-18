@@ -1,0 +1,23 @@
+advisory_id: npm/static-eval/GMS-2017-324
+datasource_id: gitlab_importer_v2/npm/static-eval/GMS-2017-324
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/static-eval/GMS-2017-324.yml
+aliases:
+  - GMS-2017-324
+summary: |
+  Sandbox Breakout / Arbitrary Code Execution
+  In affected versions, untrusted user input is able to access the global function constructor, effectively allowing arbitrary code execution.
+impacted_packages:
+  - purl: pkg:npm/static-eval
+    affected_versions: vers:npm/<=1.1.1
+    fixed_versions: vers:npm/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/substack/static-eval/pull/18
+    reference_type:
+    reference_id:
+  - url: https://maustin.net/articles/2017-10/static_eval
+    reference_type:
+    reference_id:

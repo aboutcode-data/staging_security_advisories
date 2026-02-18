@@ -1,0 +1,29 @@
+advisory_id: npm/serialize-to-js/GMS-2020-772
+datasource_id: gitlab_importer_v2/npm/serialize-to-js/GMS-2020-772
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/serialize-to-js/GMS-2020-772.yml
+aliases:
+  - GHSA-w5q7-3pr9-x44w
+  - GMS-2020-772
+summary: |
+  Denial of Service in serialize-to-js
+  Versions of `serialize-to-js` prior to 2.0.0 are vulnerable to Denial of Service. User input is not properly validated, allowing attackers to provide inputs that lead the execution to loop indefinitely.
+
+
+  ## Recommendation
+
+  Upgrade to version 2.0.0 or later.
+impacted_packages:
+  - purl: pkg:npm/serialize-to-js
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/790
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-w5q7-3pr9-x44w
+    reference_type:
+    reference_id: GHSA-w5q7-3pr9-x44w

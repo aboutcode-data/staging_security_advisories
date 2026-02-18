@@ -1,0 +1,23 @@
+advisory_id: npm/ws/GMS-2016-38
+datasource_id: gitlab_importer_v2/npm/ws/GMS-2016-38
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/ws/GMS-2016-38.yml
+aliases:
+  - GMS-2016-38
+summary: |
+  DoS due to excessively large websocket message
+  It is possible to crash the node process by sending an overly long websocket payload to a ws server.
+impacted_packages:
+  - purl: pkg:npm/ws
+    affected_versions: vers:npm/<=1.1.0
+    fixed_versions: vers:npm/1.1.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/nodejs/node/issues/7388
+    reference_type:
+    reference_id:
+  - url: https://github.com/websockets/ws/commit/0328a8f49f004f98d2913016214e93b2fc2713bc
+    reference_type:
+    reference_id:

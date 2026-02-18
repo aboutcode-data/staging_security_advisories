@@ -1,0 +1,39 @@
+advisory_id: npm/validator/GMS-2020-793
+datasource_id: gitlab_importer_v2/npm/validator/GMS-2020-793
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/validator/GMS-2020-793.yml
+aliases:
+  - CVE-2014-8882
+  - GHSA-f5w6-r7rg-mcgq
+  - GMS-2020-793
+summary: |
+  Regular Expression Denial of Service in validator
+  Versions of `validator` prior to 3.22.1 are affected by a regular expression denial of service vulnerability in the `isURL` method.
+
+
+  ## Recommendation
+
+  Update to version 3.22.1 or later.
+impacted_packages:
+  - purl: pkg:npm/validator
+    affected_versions: vers:npm/<3.22.1
+    fixed_versions: vers:npm/3.22.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/chriso/validator.js/issues/152#issuecomment-48107184
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2014-8882
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/npm:validator:20130705
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/42
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-f5w6-r7rg-mcgq
+    reference_type:
+    reference_id: GHSA-f5w6-r7rg-mcgq

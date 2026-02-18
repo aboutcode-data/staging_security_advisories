@@ -1,0 +1,38 @@
+advisory_id: npm/sequelize/GMS-2019-139
+datasource_id: gitlab_importer_v2/npm/sequelize/GMS-2019-139
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sequelize/GMS-2019-139.yml
+aliases:
+  - GHSA-wfp9-vr4j-f49j
+  - GMS-2019-139
+summary: |
+  NoSQL Injection in sequelize
+  Versions of `sequelize` prior to 4.12.0 are vulnerable to NoSQL Injection. Query operators such as `$gt` are not properly sanitized and may allow an attacker to alter data queries, leading to NoSQL Injection.
+
+
+  ## Recommendation
+
+  Upgrade to version 4.12.0 or later
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<4.12.0
+    fixed_versions: vers:npm/4.12.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sequelize/sequelize/issues/7310
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-SEQUELIZE-174147
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/820
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/820/versions
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wfp9-vr4j-f49j
+    reference_type:
+    reference_id: GHSA-wfp9-vr4j-f49j

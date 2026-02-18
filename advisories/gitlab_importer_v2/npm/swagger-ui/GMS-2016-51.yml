@@ -1,0 +1,20 @@
+advisory_id: npm/swagger-ui/GMS-2016-51
+datasource_id: gitlab_importer_v2/npm/swagger-ui/GMS-2016-51
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/swagger-ui/GMS-2016-51.yml
+aliases:
+  - GMS-2016-51
+summary: |
+  XSS via Content-type header
+  By using a malicious server which returns script as the value of the Content-Type header, it is possible to execute arbitrary code using the demonstration capabilities of Swagger-UI.
+impacted_packages:
+  - purl: pkg:npm/swagger-ui
+    affected_versions: vers:npm/>=2.1.2-M2|<2.1.5
+    fixed_versions: vers:npm/2.1.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/swagger-api/swagger-ui/issues/1863
+    reference_type:
+    reference_id:

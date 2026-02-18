@@ -1,0 +1,19 @@
+advisory_id: npm/validator/GMS-2014-24
+datasource_id: gitlab_importer_v2/npm/validator/GMS-2014-24
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/validator/GMS-2014-24.yml
+aliases:
+  - GMS-2014-24
+summary: The validator module is vulnerable to Regular Expression Denial of Service (ReDoS)
+  in the isURL method.
+impacted_packages:
+  - purl: pkg:npm/validator
+    affected_versions: vers:npm/<3.22.1
+    fixed_versions: vers:npm/3.22.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/chriso/validator.js/issues/152#issuecomment-48107184
+    reference_type:
+    reference_id:

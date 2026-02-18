@@ -1,0 +1,20 @@
+advisory_id: npm/swagger-ui/GMS-2016-59
+datasource_id: gitlab_importer_v2/npm/swagger-ui/GMS-2016-59
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/swagger-ui/GMS-2016-59.yml
+aliases:
+  - GMS-2016-59
+summary: |
+  XSS in URL Query String Parameter
+  There's a cross site scripting (XSS) vulnerability in the `url` query string parameter.
+impacted_packages:
+  - purl: pkg:npm/swagger-ui
+    affected_versions: vers:npm/<2.1.0
+    fixed_versions: vers:npm/2.1.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/swagger-api/swagger-ui/issues/1262
+    reference_type:
+    reference_id:

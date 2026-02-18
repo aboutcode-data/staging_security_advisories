@@ -1,0 +1,30 @@
+advisory_id: npm/sweetalert2/GHSA-457r-cqc8-9vj9
+datasource_id: gitlab_importer_v2/npm/sweetalert2/GHSA-457r-cqc8-9vj9
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sweetalert2/GHSA-457r-cqc8-9vj9.yml
+aliases:
+  - GHSA-457r-cqc8-9vj9
+summary: |
+  sweetalert2 v10.16.10 and above contains hidden functionality
+  `sweetalert2` versions 10.16.10 and up until 11.0.0 are vulnerable to hidden functionality that was introduced by the maintainer. The package outputs audio and/or video messages that do not pertain to the functionality of the package and is not included in versions 10.0.0 - 10.16.9.
+impacted_packages:
+  - purl: pkg:npm/sweetalert2
+    affected_versions: vers:npm/>=10.16.10|<11.22.4
+    fixed_versions: vers:npm/11.22.4
+severities: []
+weaknesses:
+  - CWE-912
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sweetalert2/sweetalert2
+    reference_type:
+    reference_id:
+  - url: https://github.com/sweetalert2/sweetalert2/releases/tag/v11.4.9
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/package/sweetalert2
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-457r-cqc8-9vj9
+    reference_type:
+    reference_id: GHSA-457r-cqc8-9vj9

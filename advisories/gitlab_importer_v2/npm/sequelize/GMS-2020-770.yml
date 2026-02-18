@@ -1,0 +1,39 @@
+advisory_id: npm/sequelize/GMS-2020-770
+datasource_id: gitlab_importer_v2/npm/sequelize/GMS-2020-770
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sequelize/GMS-2020-770.yml
+aliases:
+  - CVE-2016-1000225
+  - GHSA-5v9h-q3gj-c32x
+  - GMS-2020-770
+summary: |
+  SQL Injection via GeoJSON in sequelize
+  Affected versions of `sequelize` are vulnerable to SQL Injection in Models that have fields with the `GEOMETRY` DataType. This vulnerability occurs because single quotes in document values are not escaped for GeoJSON documents using `ST_GeomFromGeoJSON`, and MySQL GeoJSON documents using `GeomFromText`.
+
+
+  ## Recommendation
+
+  Update to version 3.23.6 or later.
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<3.23.6
+    fixed_versions: vers:npm/3.23.6
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sequelize/sequelize/issues/6194
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2016-1000225
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/npm:sequelize:20160718
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/122
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5v9h-q3gj-c32x
+    reference_type:
+    reference_id: GHSA-5v9h-q3gj-c32x

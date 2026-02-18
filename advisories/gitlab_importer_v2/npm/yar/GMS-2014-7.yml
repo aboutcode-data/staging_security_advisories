@@ -1,0 +1,20 @@
+advisory_id: npm/yar/GMS-2014-7
+datasource_id: gitlab_importer_v2/npm/yar/GMS-2014-7
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/yar/GMS-2014-7.yml
+aliases:
+  - GMS-2014-7
+summary: |
+  Denial of Service
+  Yar uses an encrypted cookie for session support which can crash the process if it contains an invalid value.
+impacted_packages:
+  - purl: pkg:npm/yar
+    affected_versions: vers:npm/<2.2.0
+    fixed_versions: vers:npm/2.2.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/hapijs/yar/issues/34
+    reference_type:
+    reference_id:

@@ -1,0 +1,20 @@
+advisory_id: npm/shout/GMS-2015-2
+datasource_id: gitlab_importer_v2/npm/shout/GMS-2015-2
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/shout/GMS-2015-2.yml
+aliases:
+  - GMS-2015-2
+summary: |
+  HTML Injection
+  Because the `/topic` command in messages is unescaped, attackers have the ability to inject HTML scripts that will run in the victim's browser.
+impacted_packages:
+  - purl: pkg:npm/shout
+    affected_versions: vers:npm/>=0.44.0|<=0.49.3
+    fixed_versions: vers:npm/0.50.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/erming/shout/pull/344
+    reference_type:
+    reference_id:

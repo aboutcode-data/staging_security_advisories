@@ -1,0 +1,33 @@
+advisory_id: npm/vant/GMS-2019-65
+datasource_id: gitlab_importer_v2/npm/vant/GMS-2019-65
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/vant/GMS-2019-65.yml
+aliases:
+  - GHSA-9xr8-8hmc-389f
+  - GMS-2019-65
+summary: |
+  Cross-Site Scripting in vant
+  Versions of `vant` are vulnerable to Cross-Site Scripting. The text value of the `Picker` component column is not sanitized, which may allow attackers to execute arbitrary JavaScript in a victim's browser. Upgrade to or later.
+impacted_packages:
+  - purl: pkg:npm/vant
+    affected_versions: vers:npm/<2.1.8
+    fixed_versions: vers:npm/2.1.8
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/youzan/vant/issues/4270
+    reference_type:
+    reference_id:
+  - url: https://github.com/youzan/vant/pull/4278/commits/d777b78c7dc2c904f474d057ea88449cfe2ca13a
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-VANT-460461
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/1157
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-9xr8-8hmc-389f
+    reference_type:
+    reference_id: GHSA-9xr8-8hmc-389f

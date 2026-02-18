@@ -1,0 +1,20 @@
+advisory_id: npm/useragent/GMS-2017-108
+datasource_id: gitlab_importer_v2/npm/useragent/GMS-2017-108
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/useragent/GMS-2017-108.yml
+aliases:
+  - GMS-2017-108
+summary: |
+  ReDoS via long UserAgent header
+  An attacker could edit their own headers, creating an arbitrarily long useragent string, causing the event loop and server to block.
+impacted_packages:
+  - purl: pkg:npm/useragent
+    affected_versions: vers:npm/<2.1.12
+    fixed_versions: vers:npm/2.1.12
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/3rd-Eden/useragent/commit/64b15c9446a24abd9f52ed4ceb970f1a5cf790dd
+    reference_type:
+    reference_id:

@@ -1,0 +1,36 @@
+advisory_id: npm/uptime-kuma/GHSA-23q2-5gf8-gjpp
+datasource_id: gitlab_importer_v2/npm/uptime-kuma/GHSA-23q2-5gf8-gjpp
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/uptime-kuma/GHSA-23q2-5gf8-gjpp.yml
+aliases:
+  - GHSA-23q2-5gf8-gjpp
+summary: |
+  Enabling Authentication does not close all logged in socket connections immediately
+  This is basically [GHSA-88j4-pcx8-q4q](https://github.com/louislam/uptime-kuma/security/advisories/GHSA-88j4-pcx8-q4q3) but instead of changing passwords, when enabling authentication.
+impacted_packages:
+  - purl: pkg:npm/uptime-kuma
+    affected_versions: vers:npm/<1.23.12
+    fixed_versions: vers:npm/1.23.12
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-384
+references:
+  - url: https://github.com/louislam/uptime-kuma
+    reference_type:
+    reference_id:
+  - url: https://github.com/louislam/uptime-kuma/commit/7a9e2f5de69aa0bb884ead25d1dcc833bb8c6579
+    reference_type:
+    reference_id:
+  - url: https://github.com/louislam/uptime-kuma/security/advisories/GHSA-23q2-5gf8-gjpp
+    reference_type:
+    reference_id:
+  - url: https://github.com/louislam/uptime-kuma/security/advisories/GHSA-88j4-pcx8-q4q3
+    reference_type:
+    reference_id:
+  - url: https://github.com/louislam/uptime-kuma/security/advisories/GHSA-g9v2-wqcj-j99g
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-23q2-5gf8-gjpp
+    reference_type:
+    reference_id: GHSA-23q2-5gf8-gjpp

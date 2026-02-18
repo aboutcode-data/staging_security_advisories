@@ -1,0 +1,20 @@
+advisory_id: npm/string/GMS-2017-214
+datasource_id: gitlab_importer_v2/npm/string/GMS-2017-214
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/string/GMS-2017-214.yml
+aliases:
+  - GMS-2017-214
+summary: |
+  Regular Expression Denial of Service
+  The string module is vulnerable to regular expression denial of service when specifically crafted untrusted user input is passed into the `underscore` or `unescapeHTML` methods.
+impacted_packages:
+  - purl: pkg:npm/string
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/jprichardson/string.js/issues/212
+    reference_type:
+    reference_id:

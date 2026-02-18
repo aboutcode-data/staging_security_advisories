@@ -1,0 +1,20 @@
+advisory_id: npm/slug/GMS-2017-215
+datasource_id: gitlab_importer_v2/npm/slug/GMS-2017-215
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/slug/GMS-2017-215.yml
+aliases:
+  - GMS-2017-215
+summary: |
+  Regular Expression Denial of Service
+  slug is vulnerable to regular expression denial of service is specially crafted untrusted input is passed as input. About k characters can block the event loop for 2 seconds.
+impacted_packages:
+  - purl: pkg:npm/slug
+    affected_versions: vers:npm/>=0.0.0-alpha
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/dodo/node-slug/issues/82
+    reference_type:
+    reference_id:

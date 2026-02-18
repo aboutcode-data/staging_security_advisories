@@ -1,0 +1,30 @@
+advisory_id: npm/vp-toolkit/GMS-2020-547
+datasource_id: gitlab_importer_v2/npm/vp-toolkit/GMS-2020-547
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/vp-toolkit/GMS-2020-547.yml
+aliases:
+  - GHSA-ff5x-w9wg-h275
+  - GMS-2020-547
+summary: |
+  Holder can generate proof of ownership for credentials it does not control in vp-toolkit
+  The `verifyVerifiablePresentation() method check the cryptographic integrity of the Verifiable Presentation, but it does not check if the `credentialSubject.id` DID matches the signer of the VP proof.
+impacted_packages:
+  - purl: pkg:npm/vp-toolkit
+    affected_versions: vers:npm/<0.2.2
+    fixed_versions: vers:npm/0.2.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/rabobank-blockchain/vp-toolkit/commit/18a7db84d3265c6ffa10ef63eb37ae1bd4ba192b
+    reference_type:
+    reference_id:
+  - url: https://github.com/rabobank-blockchain/vp-toolkit/issues/14
+    reference_type:
+    reference_id:
+  - url: https://github.com/rabobank-blockchain/vp-toolkit/security/advisories/GHSA-ff5x-w9wg-h275
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-ff5x-w9wg-h275
+    reference_type:
+    reference_id: GHSA-ff5x-w9wg-h275

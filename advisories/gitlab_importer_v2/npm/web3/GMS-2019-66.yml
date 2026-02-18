@@ -1,0 +1,30 @@
+advisory_id: npm/web3/GMS-2019-66
+datasource_id: gitlab_importer_v2/npm/web3/GMS-2019-66
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/web3/GMS-2019-66.yml
+aliases:
+  - GHSA-27v7-qhfv-rqq8
+  - GMS-2019-66
+summary: |
+  Insecure Credential Storage in web3
+  All versions of `web3` are vulnerable to Insecure Credential Storage. The package stores encrypted wallets in local storage and requires a password to load the wallet. Once the wallet is loaded, the private key is accessible via LocalStorage. Exploiting this vulnerability likely requires a Cross-Site Scripting vulnerability to access the private key. No fix is currently available. Consider using an alternative module until a fix is made available.
+impacted_packages:
+  - purl: pkg:npm/web3
+    affected_versions: vers:npm/<=1.5.2
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/ethereum/web3.js/issues/2739
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-WEB3-174533
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/877
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-27v7-qhfv-rqq8
+    reference_type:
+    reference_id: GHSA-27v7-qhfv-rqq8

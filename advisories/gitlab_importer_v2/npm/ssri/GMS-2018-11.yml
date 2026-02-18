@@ -1,0 +1,23 @@
+advisory_id: npm/ssri/GMS-2018-11
+datasource_id: gitlab_importer_v2/npm/ssri/GMS-2018-11
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/ssri/GMS-2018-11.yml
+aliases:
+  - GMS-2018-11
+summary: |
+  ReDoS
+  There is a Regular Expression Denial of Service vulnerability in the strict mode functionality.
+impacted_packages:
+  - purl: pkg:npm/ssri
+    affected_versions: vers:npm/<=5.2.1
+    fixed_versions: vers:npm/5.2.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/zkat/ssri/commit/d0ebcdc
+    reference_type:
+    reference_id:
+  - url: https://github.com/zkat/ssri/pull/10
+    reference_type:
+    reference_id:

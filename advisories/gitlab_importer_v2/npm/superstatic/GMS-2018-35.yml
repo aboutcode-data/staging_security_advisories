@@ -1,0 +1,32 @@
+advisory_id: npm/superstatic/GMS-2018-35
+datasource_id: gitlab_importer_v2/npm/superstatic/GMS-2018-35
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/superstatic/GMS-2018-35.yml
+aliases:
+  - GHSA-wm77-q74p-5763
+  - GMS-2018-35
+summary: Relative Path Traversal in superstatic.
+impacted_packages:
+  - purl: pkg:npm/superstatic
+    affected_versions: vers:npm/<5.0.2
+    fixed_versions: vers:npm/5.0.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+  - CWE-352
+references:
+  - url: https://github.com/firebase/superstatic/blob/v5.0.1/lib/providers/fs.js#L71
+    reference_type:
+    reference_id:
+  - url: https://github.com/firebase/superstatic/commit/e396ff62f588732989137d6c40d46b310e51ef2b
+    reference_type:
+    reference_id:
+  - url: https://github.com/firebase/superstatic/pull/255
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/652
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wm77-q74p-5763
+    reference_type:
+    reference_id: GHSA-wm77-q74p-5763

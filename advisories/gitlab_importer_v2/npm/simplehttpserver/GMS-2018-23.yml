@@ -1,0 +1,20 @@
+advisory_id: npm/simplehttpserver/GMS-2018-23
+datasource_id: gitlab_importer_v2/npm/simplehttpserver/GMS-2018-23
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/simplehttpserver/GMS-2018-23.yml
+aliases:
+  - GMS-2018-23
+summary: |
+  Cross Site Scripting
+  simplehttpserver allows embedding HTML in file names, which in certain conditions allows execution of malicious JavaScript.
+impacted_packages:
+  - purl: pkg:npm/simplehttpserver
+    affected_versions: vers:npm/>=0.0.1
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://hackerone.com/reports/309648
+    reference_type:
+    reference_id:

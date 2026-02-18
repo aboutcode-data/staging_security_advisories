@@ -1,0 +1,30 @@
+advisory_id: npm/sql/GMS-2019-57
+datasource_id: gitlab_importer_v2/npm/sql/GMS-2019-57
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sql/GMS-2019-57.yml
+aliases:
+  - GHSA-8f93-rv4p-x4jw
+  - GMS-2019-57
+summary: |
+  SQL Injection in sql
+  All versions of `sql` are vulnerable to sql injection as it does not properly escape parameters when building SQL queries. No fix is currently available for this vulnerability. It is our recommendation to not install or use this module until a fix is available.
+impacted_packages:
+  - purl: pkg:npm/sql
+    affected_versions: vers:npm/<=0.78.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://hackerone.com/reports/319465
+    reference_type:
+    reference_id:
+  - url: https://nodesecurity.io/advisories/662
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/662
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-8f93-rv4p-x4jw
+    reference_type:
+    reference_id: GHSA-8f93-rv4p-x4jw

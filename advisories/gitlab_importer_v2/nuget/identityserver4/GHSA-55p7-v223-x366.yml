@@ -1,0 +1,38 @@
+advisory_id: nuget/identityserver4/GHSA-55p7-v223-x366
+datasource_id: gitlab_importer_v2/nuget/identityserver4/GHSA-55p7-v223-x366
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/identityserver4/GHSA-55p7-v223-x366.yml
+aliases:
+  - GHSA-55p7-v223-x366
+summary: |
+  IdentityServer Open Redirect vulnerability
+  It is possible for an attacker to craft malicious Urls that certain functions in IdentityServer will incorrectly treat as local and trusted. If such a Url is returned as a redirect, some browsers will follow it to a third-party, untrusted site.
+impacted_packages:
+  - purl: pkg:nuget/identityserver4
+    affected_versions: vers:nuget/<=4.1.2
+    fixed_versions: vers:nuget/
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/nuget/identityserver4/GHSA-55p7-v223-x366.yml
+weaknesses:
+  - CWE-1035
+  - CWE-601
+  - CWE-937
+references:
+  - url: https://github.com/DuendeSoftware/IdentityServer/security/advisories/GHSA-ff4q-64jc-gx98
+    reference_type:
+    reference_id:
+  - url: https://github.com/IdentityServer/IdentityServer4
+    reference_type:
+    reference_id:
+  - url: https://github.com/IdentityServer/IdentityServer4/security/advisories/GHSA-55p7-v223-x366
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2024-39694
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-55p7-v223-x366
+    reference_type:
+    reference_id: GHSA-55p7-v223-x366

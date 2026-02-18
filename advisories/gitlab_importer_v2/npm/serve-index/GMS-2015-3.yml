@@ -1,0 +1,20 @@
+advisory_id: npm/serve-index/GMS-2015-3
+datasource_id: gitlab_importer_v2/npm/serve-index/GMS-2015-3
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/serve-index/GMS-2015-3.yml
+aliases:
+  - GMS-2015-3
+summary: |
+  XSS via file names
+  File and directory names are not escaped in HTML output. If remote users can influence file or directory names, this can trigger a persistent XSS attack.
+impacted_packages:
+  - purl: pkg:npm/serve-index
+    affected_versions: vers:npm/<1.6.3
+    fixed_versions: vers:npm/1.6.3
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/expressjs/serve-index/issues/28
+    reference_type:
+    reference_id:

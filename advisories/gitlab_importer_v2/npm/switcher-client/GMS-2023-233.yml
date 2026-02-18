@@ -1,0 +1,32 @@
+advisory_id: npm/switcher-client/GMS-2023-233
+datasource_id: gitlab_importer_v2/npm/switcher-client/GMS-2023-233
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/switcher-client/GMS-2023-233.yml
+aliases:
+  - CVE-2023-23925
+  - GHSA-wqxw-8h5g-hq56
+  - GMS-2023-233
+summary: |
+  Switcher Client contains Regular Expression Denial of Service (ReDoS)
+  ### Impact
+  Unsanitized input flows into Strategy match operation (EXIST), where it is used to build a regular expression. This may result in a Regular expression Denial of Service attack (reDOS).
+
+  ### Patches
+  Patched in 3.1.4
+
+  ### Workarounds
+  Avoid using Strategy settings that use REGEX in conjunction with EXIST and NOT_EXIST operations.
+impacted_packages:
+  - purl: pkg:npm/switcher-client
+    affected_versions: vers:npm/<3.1.4
+    fixed_versions: vers:npm/3.1.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/switcherapi/switcher-client-master/security/advisories/GHSA-wqxw-8h5g-hq56
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-wqxw-8h5g-hq56
+    reference_type:
+    reference_id: GHSA-wqxw-8h5g-hq56

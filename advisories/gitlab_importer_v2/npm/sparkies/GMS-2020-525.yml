@@ -1,0 +1,24 @@
+advisory_id: npm/sparkies/GMS-2020-525
+datasource_id: gitlab_importer_v2/npm/sparkies/GMS-2020-525
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sparkies/GMS-2020-525.yml
+aliases:
+  - GHSA-c4fm-46gm-4469
+  - GMS-2020-525
+summary: |
+  Malicious Package
+  This package contained malicious code. The package uploaded system information such as OS and hostname to a remote server. Remove the package from your environment. There are no indications of further compromise.
+impacted_packages:
+  - purl: pkg:npm/sparkies
+    affected_versions: vers:npm/>=0.0.0
+    fixed_versions: vers:npm/
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://www.npmjs.com/advisories/1141
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c4fm-46gm-4469
+    reference_type:
+    reference_id: GHSA-c4fm-46gm-4469

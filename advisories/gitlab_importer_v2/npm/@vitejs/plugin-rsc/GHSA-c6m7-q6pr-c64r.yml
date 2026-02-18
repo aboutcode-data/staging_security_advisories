@@ -1,0 +1,37 @@
+advisory_id: npm/@vitejs/plugin-rsc/GHSA-c6m7-q6pr-c64r
+datasource_id: gitlab_importer_v2/npm/@vitejs/plugin-rsc/GHSA-c6m7-q6pr-c64r
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@vitejs/plugin-rsc/GHSA-c6m7-q6pr-c64r.yml
+aliases:
+  - GHSA-c6m7-q6pr-c64r
+summary: |
+  Vite Plugin React has a Source Code Exposure Vulnerability in React Server Components
+  `@vitejs/plugin-rsc` vendors `react-server-dom-webpack`, which contained a vulnerability in versions prior to 19.2.3. See details in React repository's advisory https://github.com/facebook/react/security/advisories/GHSA-925w-6v3x-g4j4
+impacted_packages:
+  - purl: pkg:npm/%40vitejs/plugin-rsc
+    affected_versions: vers:npm/<0.5.7
+    fixed_versions: vers:npm/0.5.7
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/@vitejs/plugin-rsc/GHSA-c6m7-q6pr-c64r.yml
+weaknesses:
+  - CWE-502
+  - CWE-1395
+  - CWE-1035
+  - CWE-937
+  - CWE-497
+references:
+  - url: https://github.com/facebook/react/security/advisories/GHSA-925w-6v3x-g4j4
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite-plugin-react
+    reference_type:
+    reference_id:
+  - url: https://github.com/vitejs/vite-plugin-react/security/advisories/GHSA-c6m7-q6pr-c64r
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-c6m7-q6pr-c64r
+    reference_type:
+    reference_id: GHSA-c6m7-q6pr-c64r

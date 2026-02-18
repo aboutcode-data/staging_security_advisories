@@ -1,0 +1,33 @@
+advisory_id: npm/webpack-bundle-analyzer/GMS-2019-67
+datasource_id: gitlab_importer_v2/npm/webpack-bundle-analyzer/GMS-2019-67
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/webpack-bundle-analyzer/GMS-2019-67.yml
+aliases:
+  - GHSA-pgr8-jg6h-8gw6
+  - GMS-2019-67
+summary: |
+  Cross-Site Scripting in webpack-bundle-analyzer
+  Versions of `webpack-bundle-analyzer` are vulnerable to Cross-Site Scripting. The package uses `JSON.stringify()` without properly escaping input which may lead to Cross-Site Scripting.
+impacted_packages:
+  - purl: pkg:npm/webpack-bundle-analyzer
+    affected_versions: vers:npm/<3.3.2
+    fixed_versions: vers:npm/3.3.2
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/webpack-contrib/webpack-bundle-analyzer/issues/263
+    reference_type:
+    reference_id:
+  - url: https://github.com/webpack-contrib/webpack-bundle-analyzer/pull/264
+    reference_type:
+    reference_id:
+  - url: https://snyk.io/vuln/SNYK-JS-WEBPACKBUNDLEANALYZER-174190
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/826
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-pgr8-jg6h-8gw6
+    reference_type:
+    reference_id: GHSA-pgr8-jg6h-8gw6

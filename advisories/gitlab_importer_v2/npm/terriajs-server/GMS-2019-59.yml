@@ -1,0 +1,30 @@
+advisory_id: npm/terriajs-server/GMS-2019-59
+datasource_id: gitlab_importer_v2/npm/terriajs-server/GMS-2019-59
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/terriajs-server/GMS-2019-59.yml
+aliases:
+  - GHSA-p72p-rjr2-r439
+  - GMS-2019-59
+summary: |
+  Server-Side Request Forgery in terriajs-server
+  Versions of `terriajs-server` are vulnerable to Server-Side Request Forgery (SSRF). If an attacker has access to a server allow listed by the terriajs-server proxy or if the attacker is able to modify the DNS records of a domain allow listed by the terriajs-server proxy, the attacker can use the terriajs-server proxy to access any HTTP-accessible resources that are accessible to the server, including private resources in the hosting environment. Upgrade to or later.
+impacted_packages:
+  - purl: pkg:npm/terriajs-server
+    affected_versions: vers:npm/<2.7.4
+    fixed_versions: vers:npm/2.7.4
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/TerriaJS/terriajs-server/commit/3cbc48475f50a53962f605491d0e60648a29bdf0
+    reference_type:
+    reference_id:
+  - url: https://medium.com/terria/security-vulnerability-in-terriajs-server-82c8bf4da0a5
+    reference_type:
+    reference_id:
+  - url: https://www.npmjs.com/advisories/768
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-p72p-rjr2-r439
+    reference_type:
+    reference_id: GHSA-p72p-rjr2-r439

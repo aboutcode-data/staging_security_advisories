@@ -1,0 +1,43 @@
+advisory_id: npm/strapi/GHSA-49vv-6q7q-w5cf
+datasource_id: gitlab_importer_v2/npm/strapi/GHSA-49vv-6q7q-w5cf
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/strapi/GHSA-49vv-6q7q-w5cf.yml
+aliases:
+  - GHSA-49vv-6q7q-w5cf
+summary: |
+  Duplicate Advisory: OS Command Injection in Strapi
+  ### Duplicate Advisory
+  This advisory has been withdrawn because it is a duplicate of GHSA-9p2w-rmx4-9mw7. This link is maintained to preserve external references.
+
+  ### Original Description
+  The Strapi framework before 3.0.0-beta.17.8 is vulnerable to Remote Code Execution in the Install and Uninstall Plugin components of the Admin panel, because it does not sanitize the plugin name, and attackers can inject arbitrary shell commands to be executed by the execa function.
+impacted_packages:
+  - purl: pkg:npm/strapi
+    affected_versions: vers:npm/<3.0.0-beta.17.8
+    fixed_versions: vers:npm/3.0.0-beta.17.8
+severities:
+  - score:
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/strapi/GHSA-49vv-6q7q-w5cf.yml
+weaknesses:
+  - CWE-1035
+  - CWE-78
+  - CWE-937
+  - CWE-20
+references:
+  - url: https://bittherapy.net/post/strapi-framework-remote-code-execution
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi
+    reference_type:
+    reference_id:
+  - url: https://github.com/strapi/strapi/pull/4636
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2019-19609
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-49vv-6q7q-w5cf
+    reference_type:
+    reference_id: GHSA-49vv-6q7q-w5cf

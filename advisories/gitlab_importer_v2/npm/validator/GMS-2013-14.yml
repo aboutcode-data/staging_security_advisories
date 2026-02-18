@@ -1,0 +1,20 @@
+advisory_id: npm/validator/GMS-2013-14
+datasource_id: gitlab_importer_v2/npm/validator/GMS-2013-14
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/validator/GMS-2013-14.yml
+aliases:
+  - GMS-2013-14
+summary: |
+  XSS Filter Bypass
+  The module contains functionality meant to filter potential XSS attacks but that can be bypassed.
+impacted_packages:
+  - purl: pkg:npm/validator
+    affected_versions: vers:npm/<2.0.0
+    fixed_versions: vers:npm/2.0.0
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://nealpoole.com/blog/2013/07/xss-filter-bypass-in-validator-nodejs-module/
+    reference_type:
+    reference_id:

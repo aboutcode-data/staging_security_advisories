@@ -1,0 +1,26 @@
+advisory_id: npm/sequelize/GMS-2016-41
+datasource_id: gitlab_importer_v2/npm/sequelize/GMS-2016-41
+datasource_url: https://gitlab.com/gitlab-org/advisories-community/-/blob/main/npm/sequelize/GMS-2016-41.yml
+aliases:
+  - GMS-2016-41
+summary: |
+  SQL Injection via GeoJSON
+  SequelizeJS is vulnerable to SQL injection via GeoJSON documents containing a value with a single quote. This vulnerability affects postresql/postgis as well as MySQL.
+impacted_packages:
+  - purl: pkg:npm/sequelize
+    affected_versions: vers:npm/<3.23.5
+    fixed_versions: vers:npm/3.23.5
+severities: []
+weaknesses:
+  - CWE-1035
+  - CWE-937
+references:
+  - url: https://github.com/sequelize/sequelize/issues/6194
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/pull/6302/commits/f93af43a1d86400487f5e3d9762f1a4b7cf6b1e1
+    reference_type:
+    reference_id:
+  - url: https://github.com/sequelize/sequelize/pull/6303/commits/a81ac1f38476d553c92d522913e91c6e07acc4fa
+    reference_type:
+    reference_id:
