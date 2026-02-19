@@ -1,0 +1,66 @@
+advisory_id: RHSA-2020:2367
+datasource_id: redhat_importer_v2/RHSA-2020:2367
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2020/rhsa-2020_2367.json
+aliases:
+  - CVE-2019-14888
+  - CVE-2020-1745
+  - CVE-2020-1935
+  - CVE-2020-1938
+summary: |
+  An update is now available for Red Hat OpenShift Application Runtimes.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  [NOTE: This security advisory was unintentionally omitted at the time of the initial software release on 2020-03-23. The advisory is informational only; no files in the release have changed.]
+
+  Red Hat support for Spring Boot provides an application platform that reduces the complexity of developing and operating applications (monoliths and microservices) for OpenShift as a containerized platform.
+
+  This release of Red Hat support for Spring Boot 2.1.13 serves as a replacement for Red Hat support for Spring Boot 2.1.12, and includes security and bug fixes and enhancements. For further information, refer to the release notes linked to in the References section.
+
+  Security Fix(es):
+
+  * undertow: possible Denial Of Service (DOS) in Undertow HTTP server listening on HTTPS (CVE-2019-14888)
+
+  * undertow: AJP File Read/Inclusion Vulnerability (CVE-2020-1745)
+
+  * tomcat: Apache Tomcat AJP File Read/Inclusion Vulnerability (CVE-2020-1938)
+
+  * tomcat: Mishandling of Transfer-Encoding header allows for HTTP request smuggling (CVE-2020-1935)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages: []
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2020/rhsa-2020_2367.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/documentation/en-us/red_hat_support_for_spring_boot/2.1/html-single/release_notes_for_spring_boot_2.1/
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=catRhoar.spring.boot&downloadType=distributions&version=2.1.13
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2020/rhsa-2020_2367.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1772464
+    reference_type: bug
+    reference_id: 1772464
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1806398
+    reference_type: bug
+    reference_id: 1806398
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1806835
+    reference_type: bug
+    reference_id: 1806835
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1807305
+    reference_type: bug
+    reference_id: 1807305
+  - url: https://access.redhat.com/errata/RHSA-2020:2367
+    reference_type:
+    reference_id: RHSA-2020:2367

@@ -1,0 +1,92 @@
+advisory_id: RHSA-2018:3854
+datasource_id: redhat_importer_v2/RHSA-2018:3854
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_3854.json
+aliases:
+  - CVE-2018-12327
+summary: |
+  An update for ntp is now available for Red Hat Enterprise Linux 6.
+
+  Red Hat Product Security has rated this update as having a security impact of Low. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The Network Time Protocol (NTP) is used to synchronize a computer's time with another referenced time source. These packages include the ntpd service which continuously adjusts system time and utilities used to query and configure the ntpd service.
+
+  Security Fix(es):
+
+  * ntp: Stack-based buffer overflow in ntpq and ntpdc allows denial of service or code execution (CVE-2018-12327)
+
+  For more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/ntp-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp?arch=x86_64
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntpdate?arch=x86_64
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp-perl?arch=x86_64
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp-debuginfo?arch=i686
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp?arch=i686
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntpdate?arch=i686
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp-perl?arch=i686
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp?arch=src
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp-doc?arch=noarch
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp-perl?arch=s390x
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp?arch=s390x
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntpdate?arch=s390x
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp-perl?arch=ppc64
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntp?arch=ppc64
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+  - purl: pkg:rpm/redhat/ntpdate?arch=ppc64
+    affected_versions: vers:rpm/<4.2.6p5-15.el6_10
+    fixed_versions: vers:rpm/4.2.6p5-15.el6_10
+severities:
+  - score: Low
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_3854.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:3854
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#low
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_3854.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1593580
+    reference_type: bug
+    reference_id: 1593580

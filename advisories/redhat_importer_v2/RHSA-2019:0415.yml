@@ -1,0 +1,212 @@
+advisory_id: RHSA-2019:0415
+datasource_id: redhat_importer_v2/RHSA-2019:0415
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_0415.json
+aliases:
+  - CVE-2018-10902
+summary: |
+  An update for kernel is now available for Red Hat Enterprise Linux 6.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+  Security Fix(es):
+
+  * kernel: MIDI driver race condition leads to a double-free (CVE-2018-10902)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+  Bug Fix(es):
+
+  * Previously backported upstream patch caused a change in the behavior of page fault handler. As a consequence, applications compiled through GNU Compiler Collection (GCC) version 4.4.7 sometimes generated stack access exceeding the 64K limit. Running such applications subsequently triggered a segmentation fault. With this update, the 64k limit check in the page fault handler has been removed. As a result, running the affected applications no longer triggers the segmentation fault in the described scenario.
+
+  Note that removing the limit check does not impact the integrity of the kernel itself. (BZ#1644401)
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/perf?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-headers?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/python-perf?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-i686?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/perf?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-headers?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/python-perf?arch=i686
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-abi-whitelists?arch=noarch
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-firmware?arch=noarch
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-s390x?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/python-perf?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-kdump-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/perf?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-headers?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-kdump-devel?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-kdump?arch=s390x
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/python-perf?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-ppc64?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-bootwrapper?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/perf?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-headers?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.32-754.11.1.el6
+    fixed_versions: vers:rpm/2.6.32-754.11.1.el6
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_0415.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2019:0415
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_0415.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1590720
+    reference_type: bug
+    reference_id: 1590720

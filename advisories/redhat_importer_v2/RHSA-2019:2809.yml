@@ -1,0 +1,136 @@
+advisory_id: RHSA-2019:2809
+datasource_id: redhat_importer_v2/RHSA-2019:2809
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_2809.json
+aliases:
+  - CVE-2019-13272
+  - CVE-2019-5489
+  - CVE-2019-6974
+summary: |
+  An update for kernel-alt is now available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel-alt packages provide the Linux kernel version 4.x.
+
+  Security Fix(es):
+
+  * Kernel: page cache side channel attacks (CVE-2019-5489)
+
+  * Kernel: KVM: potential use-after-free via kvm_ioctl_create_device() (CVE-2019-6974)
+
+  * kernel: broken permission and object lifetime handling for PTRACE_TRACEME (CVE-2019-13272)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+  Bug Fix(es):
+
+  * [kernel-alt]: BUG: unable to handle kernel NULL pointer IP: crypto_remove_spawns+0x118/0x2e0 (BZ#1536967)
+
+  * [HPE Apache] update ssif max_xmit_msg_size limit for multi-part messages (BZ#1610534)
+
+  * RHEL-Alt-7.6 - powerpc/pseries: Fix unitialized timer reset on migration / powerpc/pseries/mobility: Extend start/stop topology update scope (LPM) (BZ#1673613)
+
+  * RHEL-Alt-7.6 - s390: sha3_generic module fails and triggers panic when in FIPS mode (BZ#1673979)
+
+  * RHEL-Alt-7.6 - System crashed after oom - During ICP deployment (BZ#1710304)
+
+  * kernel-alt: Race condition in hashtables [rhel-alt-7.6.z] (BZ#1712127)
+
+  * RHEL-Alt-7.6 - OP930:PM_Test:cpupower -r command set values for first 3 cores in quad and misses last core. (CORAL) (BZ#1717836)
+
+  * RHEL-Alt-7.6 - disable runtime NUMA remapping for PRRN/LPM/VPHN (BZ#1717906)
+
+  * fragmented packets timing out (BZ#1729066)
+
+  * Backport TCP follow-up for small buffers (BZ#1733617)
+
+  Enhancement(s):
+
+  * RHEL-Alt-7.6 - perfevent PMDA cannot create file descriptors for reading nest events using the perf API (pcp/kernel) (CORAL) (BZ#1723036)
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-bootwrapper?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-debug?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-headers?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-tools?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/perf?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/python-perf?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-ppc64le?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-tools-libs-devel?arch=ppc64le
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-abi-whitelists?arch=noarch
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+  - purl: pkg:rpm/redhat/kernel-alt?arch=src
+    affected_versions: vers:rpm/<4.14.0-115.12.1.el7a
+    fixed_versions: vers:rpm/4.14.0-115.12.1.el7a
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_2809.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_2809.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1664110
+    reference_type: bug
+    reference_id: 1664110
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1671913
+    reference_type: bug
+    reference_id: 1671913
+  - url: https://access.redhat.com/errata/RHSA-2019:2809
+    reference_type: advisory
+    reference_id: RHSA-2019:2809
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1730895
+    reference_type: other
+    reference_id: show_bug.cgi?id=1730895

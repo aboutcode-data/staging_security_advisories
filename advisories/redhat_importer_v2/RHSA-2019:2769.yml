@@ -1,0 +1,264 @@
+advisory_id: RHSA-2019:2769
+datasource_id: redhat_importer_v2/RHSA-2019:2769
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_2769.json
+aliases:
+  - CVE-2019-11247
+  - CVE-2019-9512
+  - CVE-2019-9514
+summary: |
+  An security update is now available for Red Hat OpenShift Container Platform 3.9.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Red Hat OpenShift Container Platform is Red Hat's cloud computing
+  Kubernetes application platform solution designed for on-premise or private cloud deployments.
+
+  This advisory contains RPM packages for Red Hat OpenShift Container
+  Platform 3.9, which have been rebuilt with an updated version of golang.
+
+  Security Fix(es):
+
+  * HTTP/2: flood using PING frames results in unbounded memory growth (CVE-2019-9512)
+
+  * HTTP/2: flood using HEADERS frames results in unbounded memory growth (CVE-2019-9514)
+
+  * kubernetes: API server allows access to cluster-scoped custom resources as if resources were namespaced (CVE-2019-11247)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/cri-o?arch=x86_64
+    affected_versions: vers:rpm/<1.9.16-3.git858756d.el7
+    fixed_versions: vers:rpm/1.9.16-3.git858756d.el7
+  - purl: pkg:rpm/redhat/cri-o-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.9.16-3.git858756d.el7
+    fixed_versions: vers:rpm/1.9.16-3.git858756d.el7
+  - purl: pkg:rpm/redhat/golang-github-openshift-oauth-proxy?arch=x86_64
+    affected_versions: vers:rpm/<2.1-3.git885c9f40.el7
+    fixed_versions: vers:rpm/2.1-3.git885c9f40.el7
+  - purl: pkg:rpm/redhat/openshift-external-storage-efs-provisioner?arch=x86_64
+    affected_versions: vers:rpm/<0.0.1-9.git78d6339.el7
+    fixed_versions: vers:rpm/0.0.1-9.git78d6339.el7
+  - purl: pkg:rpm/redhat/openshift-external-storage-local-provisioner?arch=x86_64
+    affected_versions: vers:rpm/<0.0.1-9.git78d6339.el7
+    fixed_versions: vers:rpm/0.0.1-9.git78d6339.el7
+  - purl: pkg:rpm/redhat/openshift-external-storage-snapshot-controller?arch=x86_64
+    affected_versions: vers:rpm/<0.0.1-9.git78d6339.el7
+    fixed_versions: vers:rpm/0.0.1-9.git78d6339.el7
+  - purl: pkg:rpm/redhat/openshift-external-storage-snapshot-provisioner?arch=x86_64
+    affected_versions: vers:rpm/<0.0.1-9.git78d6339.el7
+    fixed_versions: vers:rpm/0.0.1-9.git78d6339.el7
+  - purl: pkg:rpm/redhat/openshift-external-storage-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<0.0.1-9.git78d6339.el7
+    fixed_versions: vers:rpm/0.0.1-9.git78d6339.el7
+  - purl: pkg:rpm/redhat/atomic-openshift?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-clients?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-clients-redistributable?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-cluster-capacity?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-federation-services?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-master?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-node?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-pod?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-sdn-ovs?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-service-catalog?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-template-service-broker?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-tests?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-web-console?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.1.601c6d2.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.1.601c6d2.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-dockerregistry?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.1.13625cf.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.1.13625cf.el7
+  - purl: pkg:rpm/redhat/prometheus-node-exporter?arch=x86_64
+    affected_versions: vers:rpm/<3.9.101-1.git.1.8295224.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.1.8295224.el7
+  - purl: pkg:rpm/redhat/golang-github-openshift-prometheus-alert-buffer?arch=x86_64
+    affected_versions: vers:rpm/<0-3.gitceca8c1.el7
+    fixed_versions: vers:rpm/0-3.gitceca8c1.el7
+  - purl: pkg:rpm/redhat/ansible-service-broker?arch=x86_64
+    affected_versions: vers:rpm/<1.1.20-2.el7
+    fixed_versions: vers:rpm/1.1.20-2.el7
+  - purl: pkg:rpm/redhat/heapster?arch=x86_64
+    affected_versions: vers:rpm/<1.3.0-4.el7
+    fixed_versions: vers:rpm/1.3.0-4.el7
+  - purl: pkg:rpm/redhat/hawkular-openshift-agent?arch=x86_64
+    affected_versions: vers:rpm/<1.2.2-3.el7
+    fixed_versions: vers:rpm/1.2.2-3.el7
+  - purl: pkg:rpm/redhat/openshift-eventrouter?arch=x86_64
+    affected_versions: vers:rpm/<0.1-3.git5bd9251.el7
+    fixed_versions: vers:rpm/0.1-3.git5bd9251.el7
+  - purl: pkg:rpm/redhat/openshift-eventrouter-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<0.1-3.git5bd9251.el7
+    fixed_versions: vers:rpm/0.1-3.git5bd9251.el7
+  - purl: pkg:rpm/redhat/cri-tools?arch=x86_64
+    affected_versions: vers:rpm/<1.0.0-6.rhaos3.9.git8e6013a.el7
+    fixed_versions: vers:rpm/1.0.0-6.rhaos3.9.git8e6013a.el7
+  - purl: pkg:rpm/redhat/cri-tools-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.0.0-6.rhaos3.9.git8e6013a.el7
+    fixed_versions: vers:rpm/1.0.0-6.rhaos3.9.git8e6013a.el7
+  - purl: pkg:rpm/redhat/containernetworking-plugins?arch=x86_64
+    affected_versions: vers:rpm/<0.5.2-6.el7
+    fixed_versions: vers:rpm/0.5.2-6.el7
+  - purl: pkg:rpm/redhat/containernetworking-plugins-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<0.5.2-6.el7
+    fixed_versions: vers:rpm/0.5.2-6.el7
+  - purl: pkg:rpm/redhat/golang-github-prometheus-promu?arch=x86_64
+    affected_versions: vers:rpm/<0-5.git85ceabc.el7
+    fixed_versions: vers:rpm/0-5.git85ceabc.el7
+  - purl: pkg:rpm/redhat/prometheus-promu?arch=x86_64
+    affected_versions: vers:rpm/<0-5.git85ceabc.el7
+    fixed_versions: vers:rpm/0-5.git85ceabc.el7
+  - purl: pkg:rpm/redhat/image-inspector?arch=x86_64
+    affected_versions: vers:rpm/<2.1.3-2.el7
+    fixed_versions: vers:rpm/2.1.3-2.el7
+  - purl: pkg:rpm/redhat/openvswitch-ovn-kubernetes?arch=x86_64
+    affected_versions: vers:rpm/<0.1.0-3.el7
+    fixed_versions: vers:rpm/0.1.0-3.el7
+  - purl: pkg:rpm/redhat/openshift-enterprise-image-registry?arch=x86_64
+    affected_versions: vers:rpm/<3.8.0-2.git.216.b6b90bb.el7
+    fixed_versions: vers:rpm/3.8.0-2.git.216.b6b90bb.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-descheduler?arch=x86_64
+    affected_versions: vers:rpm/<3.9.13-2.git.267.bb59a3f.el7
+    fixed_versions: vers:rpm/3.9.13-2.git.267.bb59a3f.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-node-problem-detector?arch=x86_64
+    affected_versions: vers:rpm/<3.9.13-2.git.167.5d6b0d4.el7
+    fixed_versions: vers:rpm/3.9.13-2.git.167.5d6b0d4.el7
+  - purl: pkg:rpm/redhat/prometheus-alertmanager?arch=x86_64
+    affected_versions: vers:rpm/<0.14.0-2.git30af4d0.el7
+    fixed_versions: vers:rpm/0.14.0-2.git30af4d0.el7
+  - purl: pkg:rpm/redhat/prometheus?arch=x86_64
+    affected_versions: vers:rpm/<2.2.1-2.gitbc6058c.el7
+    fixed_versions: vers:rpm/2.2.1-2.gitbc6058c.el7
+  - purl: pkg:rpm/redhat/cockpit-kubernetes?arch=x86_64
+    affected_versions: vers:rpm/<195-2.rhaos.el7
+    fixed_versions: vers:rpm/195-2.rhaos.el7
+  - purl: pkg:rpm/redhat/cockpit-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<195-2.rhaos.el7
+    fixed_versions: vers:rpm/195-2.rhaos.el7
+  - purl: pkg:rpm/redhat/cri-o?arch=src
+    affected_versions: vers:rpm/<1.9.16-3.git858756d.el7
+    fixed_versions: vers:rpm/1.9.16-3.git858756d.el7
+  - purl: pkg:rpm/redhat/golang-github-openshift-oauth-proxy?arch=src
+    affected_versions: vers:rpm/<2.1-3.git885c9f40.el7
+    fixed_versions: vers:rpm/2.1-3.git885c9f40.el7
+  - purl: pkg:rpm/redhat/openshift-external-storage?arch=src
+    affected_versions: vers:rpm/<0.0.1-9.git78d6339.el7
+    fixed_versions: vers:rpm/0.0.1-9.git78d6339.el7
+  - purl: pkg:rpm/redhat/atomic-openshift?arch=src
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-web-console?arch=src
+    affected_versions: vers:rpm/<3.9.101-1.git.1.601c6d2.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.1.601c6d2.el7
+  - purl: pkg:rpm/redhat/golang-github-prometheus-node_exporter?arch=src
+    affected_versions: vers:rpm/<3.9.101-1.git.1.8295224.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.1.8295224.el7
+  - purl: pkg:rpm/redhat/golang-github-openshift-prometheus-alert-buffer?arch=src
+    affected_versions: vers:rpm/<0-3.gitceca8c1.el7
+    fixed_versions: vers:rpm/0-3.gitceca8c1.el7
+  - purl: pkg:rpm/redhat/ansible-service-broker?arch=src
+    affected_versions: vers:rpm/<1.1.20-2.el7
+    fixed_versions: vers:rpm/1.1.20-2.el7
+  - purl: pkg:rpm/redhat/heapster?arch=src
+    affected_versions: vers:rpm/<1.3.0-4.el7
+    fixed_versions: vers:rpm/1.3.0-4.el7
+  - purl: pkg:rpm/redhat/hawkular-openshift-agent?arch=src
+    affected_versions: vers:rpm/<1.2.2-3.el7
+    fixed_versions: vers:rpm/1.2.2-3.el7
+  - purl: pkg:rpm/redhat/openshift-eventrouter?arch=src
+    affected_versions: vers:rpm/<0.1-3.git5bd9251.el7
+    fixed_versions: vers:rpm/0.1-3.git5bd9251.el7
+  - purl: pkg:rpm/redhat/cri-tools?arch=src
+    affected_versions: vers:rpm/<1.0.0-6.rhaos3.9.git8e6013a.el7
+    fixed_versions: vers:rpm/1.0.0-6.rhaos3.9.git8e6013a.el7
+  - purl: pkg:rpm/redhat/containernetworking-plugins?arch=src
+    affected_versions: vers:rpm/<0.5.2-6.el7
+    fixed_versions: vers:rpm/0.5.2-6.el7
+  - purl: pkg:rpm/redhat/golang-github-prometheus-promu?arch=src
+    affected_versions: vers:rpm/<0-5.git85ceabc.el7
+    fixed_versions: vers:rpm/0-5.git85ceabc.el7
+  - purl: pkg:rpm/redhat/image-inspector?arch=src
+    affected_versions: vers:rpm/<2.1.3-2.el7
+    fixed_versions: vers:rpm/2.1.3-2.el7
+  - purl: pkg:rpm/redhat/openvswitch-ovn-kubernetes?arch=src
+    affected_versions: vers:rpm/<0.1.0-3.el7
+    fixed_versions: vers:rpm/0.1.0-3.el7
+  - purl: pkg:rpm/redhat/openshift-enterprise-image-registry?arch=src
+    affected_versions: vers:rpm/<3.8.0-2.git.216.b6b90bb.el7
+    fixed_versions: vers:rpm/3.8.0-2.git.216.b6b90bb.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-descheduler?arch=src
+    affected_versions: vers:rpm/<3.9.13-2.git.267.bb59a3f.el7
+    fixed_versions: vers:rpm/3.9.13-2.git.267.bb59a3f.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-node-problem-detector?arch=src
+    affected_versions: vers:rpm/<3.9.13-2.git.167.5d6b0d4.el7
+    fixed_versions: vers:rpm/3.9.13-2.git.167.5d6b0d4.el7
+  - purl: pkg:rpm/redhat/golang-github-prometheus-alertmanager?arch=src
+    affected_versions: vers:rpm/<0.14.0-2.git30af4d0.el7
+    fixed_versions: vers:rpm/0.14.0-2.git30af4d0.el7
+  - purl: pkg:rpm/redhat/golang-github-prometheus-prometheus?arch=src
+    affected_versions: vers:rpm/<2.2.1-2.gitbc6058c.el7
+    fixed_versions: vers:rpm/2.2.1-2.gitbc6058c.el7
+  - purl: pkg:rpm/redhat/cockpit?arch=src
+    affected_versions: vers:rpm/<195-2.rhaos.el7
+    fixed_versions: vers:rpm/195-2.rhaos.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-docker-excluder?arch=noarch
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/atomic-openshift-excluder?arch=noarch
+    affected_versions: vers:rpm/<3.9.101-1.git.0.150f595.el7
+    fixed_versions: vers:rpm/3.9.101-1.git.0.150f595.el7
+  - purl: pkg:rpm/redhat/ansible-service-broker-container-scripts?arch=noarch
+    affected_versions: vers:rpm/<1.1.20-2.el7
+    fixed_versions: vers:rpm/1.1.20-2.el7
+  - purl: pkg:rpm/redhat/ansible-service-broker-selinux?arch=noarch
+    affected_versions: vers:rpm/<1.1.20-2.el7
+    fixed_versions: vers:rpm/1.1.20-2.el7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_2769.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2019:2769
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_2769.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1732192
+    reference_type: bug
+    reference_id: 1732192
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1735645
+    reference_type: bug
+    reference_id: 1735645
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1735744
+    reference_type: bug
+    reference_id: 1735744

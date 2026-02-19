@@ -1,0 +1,86 @@
+advisory_id: RHSA-2018:2939
+datasource_id: redhat_importer_v2/RHSA-2018:2939
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_2939.json
+aliases:
+  - CVE-2017-12617
+  - CVE-2018-1260
+  - CVE-2018-1270
+  - CVE-2018-1271
+  - CVE-2018-1275
+  - CVE-2018-1304
+  - CVE-2018-1305
+  - CVE-2018-1336
+  - CVE-2018-7489
+summary: |
+  An update is now available for Red Hat Fuse Integration Services.
+
+  Red Hat Product Security has rated this update as having a security impact of Critical. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Red Hat Fuse Integration Services provides a set of tools and containerized xPaaS images that enable development, deployment, and management of integration microservices within OpenShift.
+
+  Security fix(es):
+
+  * jackson-databind: incomplete fix for CVE-2017-7525 permits unsafe serialization via c3p0 libraries (CVE-2018-7489)
+
+  * spring-framework: Address partial fix for CVE-2018-1270 (CVE-2018-1275)
+
+  * spring-framework: Directory traversal vulnerability with static resources on Windows filesystems (CVE-2018-1271)
+
+  * spring-framework: Possible RCE via spring messaging (CVE-2018-1270)
+
+  * spring-security-oauth: remote code execution in the authorization process (CVE-2018-1260)
+
+  * tomcat: A bug in the UTF-8 decoder can lead to DoS (CVE-2018-1336)
+
+  * tomcat: Incorrect handling of empty string URL in security constraints can lead to unintended exposure of resources (CVE-2018-1304)
+
+  * tomcat: Late application of security constraints can lead to resource exposure for unauthorised users (CVE-2018-1305)
+
+  * tomcat: Remote Code Execution bypass for CVE-2017-12615 (CVE-2017-12617)
+
+  For more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages: []
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_2939.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:2939
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_2939.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1494283
+    reference_type: bug
+    reference_id: 1494283
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1548282
+    reference_type: bug
+    reference_id: 1548282
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1548289
+    reference_type: bug
+    reference_id: 1548289
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1549276
+    reference_type: bug
+    reference_id: 1549276
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1564405
+    reference_type: bug
+    reference_id: 1564405
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1565307
+    reference_type: bug
+    reference_id: 1565307
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1571050
+    reference_type: bug
+    reference_id: 1571050
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1584376
+    reference_type: bug
+    reference_id: 1584376
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1607591
+    reference_type: bug
+    reference_id: 1607591

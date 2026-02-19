@@ -1,0 +1,116 @@
+advisory_id: RHSA-2019:4240
+datasource_id: redhat_importer_v2/RHSA-2019:4240
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_4240.json
+aliases:
+  - CVE-2019-5544
+summary: |
+  An update for openslp is now available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Critical. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  OpenSLP is an open source implementation of the Service Location Protocol (SLP) which is an Internet Engineering Task Force (IETF) standards track protocol and provides a framework to allow networking applications to discover the existence, location, and configuration of networked services in enterprise networks.
+
+  Security Fix(es):
+
+  * openslp: Heap-based buffer overflow in ProcessSrvRqst() in slpd_process.c leading to remote code execution (CVE-2019-5544)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/openslp?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-server?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp?arch=i686&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-debuginfo?arch=i686&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-devel?arch=i686&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp?arch=src&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-server?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-debuginfo?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-devel?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp?arch=s390&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-debuginfo?arch=s390&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-devel?arch=s390&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-server?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-debuginfo?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-devel?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-debuginfo?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-devel?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp?arch=ppc64le&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-server?arch=ppc64le&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-debuginfo?arch=ppc64le&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+  - purl: pkg:rpm/redhat/openslp-devel?arch=ppc64le&epoch=1
+    affected_versions: vers:rpm/<2.0.0-8.el7_7
+    fixed_versions: vers:rpm/2.0.0-8.el7_7
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_4240.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_4240.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1777788
+    reference_type: bug
+    reference_id: 1777788
+  - url: https://access.redhat.com/errata/RHSA-2019:4240
+    reference_type: advisory
+    reference_id: RHSA-2019:4240

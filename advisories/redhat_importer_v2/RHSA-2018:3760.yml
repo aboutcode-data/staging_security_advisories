@@ -1,0 +1,119 @@
+advisory_id: RHSA-2018:3760
+datasource_id: redhat_importer_v2/RHSA-2018:3760
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_3760.json
+aliases:
+  - CVE-2018-16509
+summary: |
+  An update for ghostscript is now available for Red Hat Enterprise Linux 6.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The Ghostscript suite contains utilities for rendering PostScript and PDF documents. Ghostscript translates PostScript code to common bitmap formats so that the code can be displayed or printed.
+
+  Security Fix(es):
+
+  * It was discovered that the ghostscript /invalidaccess checks fail under certain conditions. An attacker could possibly exploit this to bypass the -dSAFER protection and, for example, execute arbitrary shell commands via a specially crafted PostScript document. (CVE-2018-16509)
+
+  Red Hat would like to thank Tavis Ormandy (Google Project Zero) for reporting this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/ghostscript-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript?arch=x86_64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-gtk?arch=x86_64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-devel?arch=x86_64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-doc?arch=x86_64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-debuginfo?arch=i686
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript?arch=i686
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-devel?arch=i686
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-gtk?arch=i686
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-doc?arch=i686
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript?arch=src
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-gtk?arch=s390x
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-devel?arch=s390x
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-doc?arch=s390x
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript?arch=s390x
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-devel?arch=s390
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-debuginfo?arch=s390
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript?arch=s390
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-gtk?arch=ppc64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-devel?arch=ppc64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-doc?arch=ppc64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript?arch=ppc64
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-devel?arch=ppc
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+  - purl: pkg:rpm/redhat/ghostscript?arch=ppc
+    affected_versions: vers:rpm/<8.70-24.el6_10.2
+    fixed_versions: vers:rpm/8.70-24.el6_10.2
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_3760.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:3760
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_3760.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1619748
+    reference_type: bug
+    reference_id: 1619748

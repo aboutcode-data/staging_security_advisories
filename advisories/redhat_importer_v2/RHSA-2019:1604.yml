@@ -1,0 +1,79 @@
+advisory_id: RHSA-2019:1604
+datasource_id: redhat_importer_v2/RHSA-2019:1604
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_1604.json
+aliases:
+  - CVE-2019-11707
+  - CVE-2019-11708
+summary: |
+  An update for firefox is now available for Red Hat Enterprise Linux 6.
+
+  Red Hat Product Security has rated this update as having a security impact of Critical. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Mozilla Firefox is an open-source web browser, designed for standards compliance, performance, and portability.
+
+  This update upgrades Firefox to version 60.7.2 ESR.
+
+  Security Fix(es):
+
+  * Mozilla: Type confusion in Array.pop (CVE-2019-11707)
+
+  * Mozilla: Sandbox escape using Prompt:Open (CVE-2019-11708)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/firefox?arch=x86_64
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+  - purl: pkg:rpm/redhat/firefox?arch=src
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+  - purl: pkg:rpm/redhat/firefox?arch=i686
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=i686
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+  - purl: pkg:rpm/redhat/firefox?arch=s390x
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+  - purl: pkg:rpm/redhat/firefox?arch=ppc64
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<60.7.2-1.el6_10
+    fixed_versions: vers:rpm/60.7.2-1.el6_10
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_1604.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2019/rhsa-2019_1604.json
+    reference_type:
+    reference_id:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2019-18/
+    reference_type:
+    reference_id:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2019-19/
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1721789
+    reference_type: bug
+    reference_id: 1721789
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1722673
+    reference_type: bug
+    reference_id: 1722673
+  - url: https://access.redhat.com/errata/RHSA-2019:1604
+    reference_type:
+    reference_id: RHSA-2019:1604
