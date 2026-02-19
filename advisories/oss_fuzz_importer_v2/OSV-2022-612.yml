@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-612
+datasource_id: oss_fuzz_importer_v2/OSV-2022-612
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/xs/OSV-2022-612.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in fxGetNextEntity
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49357
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 1
+  Crash state:
+  fxGetNextEntity
+  fxGetNextTokenJSXChild
+  fxJSXElement
+  ```
+impacted_packages:
+  - purl: pkg:generic/xs
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49357
+    reference_type:
+    reference_id:

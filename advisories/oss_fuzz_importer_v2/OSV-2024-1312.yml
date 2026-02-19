@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1312
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1312
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/jq/OSV-2024-1312.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in jv_string_vfmt
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=378836890
+
+  ```
+  Crash type: Heap-buffer-overflow READ 13
+  Crash state:
+  jv_string_vfmt
+  jv_string_fmt
+  jv_parse_sized_custom_flags
+  ```
+impacted_packages:
+  - purl: pkg:generic/jq
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=378836890
+    reference_type:
+    reference_id:

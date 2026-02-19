@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-878
+datasource_id: oss_fuzz_importer_v2/OSV-2022-878
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fluent-bit/OSV-2022-878.yaml
+aliases: []
+summary: |
+  Heap-double-free in flb_sds_destroy
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51132
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  flb_sds_destroy
+  flb_parser_conf_file
+  config_random_fuzzer.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/fluent-bit
+    affected_versions: vers:generic/1.9.0-ci-test-1|1.9.0-rc1|1.9.0-rc2|1.9.0-rc3|1.9.0-rc4|1.9.0|1.9.1|1.9.2|1.9.3|1.9.4|1.9.5|1.9.6|1.9.7|1.9.8|1.9.9|1.9.10
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51132
+    reference_type:
+    reference_id:

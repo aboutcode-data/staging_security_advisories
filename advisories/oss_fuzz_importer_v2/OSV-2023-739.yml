@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-739
+datasource_id: oss_fuzz_importer_v2/OSV-2023-739
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2023-739.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in OT::glyph_variations_t::create_from_glyphs_var_data
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61724
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  OT::glyph_variations_t::create_from_glyphs_var_data
+  OT::gvar::decompile_glyph_variations
+  OT::gvar::instantiate
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61724
+    reference_type:
+    reference_id:

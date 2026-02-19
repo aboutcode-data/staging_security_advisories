@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-847
+datasource_id: oss_fuzz_importer_v2/OSV-2022-847
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/c-blosc2/OSV-2022-847.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in ndlz4_decompress
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50991
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  ndlz4_decompress
+  blosc_d
+  do_job
+  ```
+impacted_packages:
+  - purl: pkg:generic/c-blosc2
+    affected_versions: vers:generic/2.0.0|2.0.1|2.0.2|2.0.3|2.0.4|2.1.0|2.1.1|2.2.0|2.3.0|2.3.1|2.4.0|2.4.1|2.4.2|2.4.3|2.5.0|2.6.0|2.6.1|2.7.0|2.7.1|2.8.0|2.9.0|2.9.1|2.9.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50991
+    reference_type:
+    reference_id:

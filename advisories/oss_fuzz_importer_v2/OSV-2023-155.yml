@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-155
+datasource_id: oss_fuzz_importer_v2/OSV-2023-155
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/croaring/OSV-2023-155.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in run_container_write
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56710
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 16
+  Crash state:
+  run_container_write
+  ra_portable_serialize
+  roaring_bitmap_serialize
+  ```
+impacted_packages:
+  - purl: pkg:generic/croaring
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56710
+    reference_type:
+    reference_id:

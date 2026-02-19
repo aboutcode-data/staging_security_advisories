@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-107
+datasource_id: oss_fuzz_importer_v2/OSV-2023-107
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wolfssl/OSV-2023-107.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in DecodeBasicOcspResponse
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56308
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  DecodeBasicOcspResponse
+  OcspResponseDecode
+  ocsp.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/wolfssl
+    affected_versions: vers:generic/5.2.1|5.6.0-stable|5.6.2-stable|5.6.3-stable|5.6.4-stable|5.6.6-stable|5.7.0-stable|5.7.2-stable|5.7.4-stable|5.7.6-stable|5.8.0-stable|5.8.2-stable|5.8.4-stable
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56308
+    reference_type:
+    reference_id:

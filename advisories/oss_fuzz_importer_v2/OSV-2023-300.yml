@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-300
+datasource_id: oss_fuzz_importer_v2/OSV-2023-300
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/systemd/OSV-2023-300.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in sd_event_new
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57913
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  sd_event_new
+  fuzz-lldp-rx.c
+  centipede::RunOneInput
+  ```
+impacted_packages:
+  - purl: pkg:generic/systemd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57913
+    reference_type:
+    reference_id:

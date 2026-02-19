@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1163
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1163
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2023-1163.yaml
+aliases: []
+summary: |
+  Invalid-free in sc_file_clear_acl_entries
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64181
+
+  ```
+  Crash type: Invalid-free
+  Crash state:
+  sc_file_clear_acl_entries
+  sc_file_free
+  setcos_create_key
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions: vers:generic/0.24.0-rc1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64181
+    reference_type:
+    reference_id:

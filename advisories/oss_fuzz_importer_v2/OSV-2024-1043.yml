@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1043
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1043
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/simdutf/OSV-2024-1043.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in simdutf::haswell::implementation::convert_utf8_to_latin1
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=71307
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  simdutf::haswell::implementation::convert_utf8_to_latin1
+  Conversion<
+  Conversion<
+  ```
+impacted_packages:
+  - purl: pkg:generic/simdutf
+    affected_versions: vers:generic/5.3.5|5.3.6|5.3.7|5.3.8|5.3.9
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=71307
+    reference_type:
+    reference_id:

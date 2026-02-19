@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-221
+datasource_id: oss_fuzz_importer_v2/OSV-2023-221
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/flac/OSV-2023-221.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in flac__analyze_frame
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57354
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  flac__analyze_frame
+  write_callback
+  write_audio_frame_to_client_
+  ```
+impacted_packages:
+  - purl: pkg:generic/flac
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57354
+    reference_type:
+    reference_id:

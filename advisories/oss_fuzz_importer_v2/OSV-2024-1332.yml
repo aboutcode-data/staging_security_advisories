@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1332
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1332
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/readstat/OSV-2024-1332.yaml
+aliases: []
+summary: |
+  Negative-size-param in extract_mr_data
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=379768247
+
+  ```
+  Crash type: Negative-size-param
+  Crash state:
+  extract_mr_data
+  parse_mr_string
+  readstat_parse_sav
+  ```
+impacted_packages:
+  - purl: pkg:generic/readstat
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=379768247
+    reference_type:
+    reference_id:

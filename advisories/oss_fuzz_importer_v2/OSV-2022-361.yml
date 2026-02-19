@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-361
+datasource_id: oss_fuzz_importer_v2/OSV-2022-361
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-361.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in sc_pkcs15_decode_pubkey_ec
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46852
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  sc_pkcs15_decode_pubkey_ec
+  sc_pkcs15_decode_pubkey
+  fuzz_pkcs15_decode.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46852
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1234
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1234
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/gpac/OSV-2022-1234.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in gf_odf_vvc_cfg_read_bs
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53971
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  gf_odf_vvc_cfg_read_bs
+  vvcc_box_read
+  gf_isom_box_read
+  ```
+impacted_packages:
+  - purl: pkg:generic/gpac
+    affected_versions: vers:generic/2.2.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53971
+    reference_type:
+    reference_id:

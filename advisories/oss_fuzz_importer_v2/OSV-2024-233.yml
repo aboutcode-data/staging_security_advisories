@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-233
+datasource_id: oss_fuzz_importer_v2/OSV-2024-233
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/openh264/OSV-2024-233.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in WelsDec::CWelsDecoder::ReorderPicturesInDisplay
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66003
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  WelsDec::CWelsDecoder::ReorderPicturesInDisplay
+  WelsDec::CWelsDecoder::DecodeFrame2WithCtx
+  WelsDec::CWelsDecoder::DecodeFrame2
+  ```
+impacted_packages:
+  - purl: pkg:generic/openh264
+    affected_versions: vers:generic/2.4.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66003
+    reference_type:
+    reference_id:

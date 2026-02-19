@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-993
+datasource_id: oss_fuzz_importer_v2/OSV-2022-993
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/radare2/OSV-2022-993.yaml
+aliases: []
+summary: |
+  Stack-use-after-return in check_buffer
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51910
+
+  ```
+  Crash type: Stack-use-after-return READ 1
+  Crash state:
+  check_buffer
+  r_bin_get_binplugin_by_buffer
+  r_bin_file_new_from_buffer
+  ```
+impacted_packages:
+  - purl: pkg:generic/radare2
+    affected_versions: vers:generic/5.8.0|5.8.2|5.8.4|5.8.6|5.8.8|5.9.0|5.9.2|5.9.4|5.9.6|5.9.8|6.0.0|6.0.2|6.0.4|6.0.6|6.0.7|6.0.8|6.1.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51910
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-420
+datasource_id: oss_fuzz_importer_v2/OSV-2023-420
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2023-420.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in fragment_addresses_equal
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59173
+
+  ```
+  Crash type: Heap-use-after-free READ 6
+  Crash state:
+  fragment_addresses_equal
+  g_hash_table_lookup_extended
+  fragment_add_seq_single_work
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59173
+    reference_type:
+    reference_id:

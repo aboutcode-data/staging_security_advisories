@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1239
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1239
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libultrahdr/OSV-2024-1239.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in convsamp
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=371659888
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  convsamp
+  forward_DCT
+  compress_data
+  ```
+impacted_packages:
+  - purl: pkg:generic/libultrahdr
+    affected_versions: vers:generic/1.0.0|1.1.0|1.1.1|1.2.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=371659888
+    reference_type:
+    reference_id:

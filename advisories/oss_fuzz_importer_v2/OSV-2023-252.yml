@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-252
+datasource_id: oss_fuzz_importer_v2/OSV-2023-252
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mruby/OSV-2023-252.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in iv_put
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57495
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  iv_put
+  mrb_obj_iv_set_force
+  mrb_vm_const_set
+  ```
+impacted_packages:
+  - purl: pkg:generic/mruby
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57495
+    reference_type:
+    reference_id:

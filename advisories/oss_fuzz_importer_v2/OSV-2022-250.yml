@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-250
+datasource_id: oss_fuzz_importer_v2/OSV-2022-250
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/freeradius/OSV-2022-250.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in __covrec_1D46B478ANUMBER
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45603
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  __covrec_1D46B478ANUMBER
+  __covrec_F49D057CNUMBER
+  __covrec_5D82FD3F85773DBDu
+  ```
+impacted_packages:
+  - purl: pkg:generic/freeradius
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45603
+    reference_type:
+    reference_id:

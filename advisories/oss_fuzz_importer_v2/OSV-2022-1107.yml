@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1107
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1107
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libraw/OSV-2022-1107.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in LibRaw::kodak_rgb_load_raw
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52802
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 2
+  Crash state:
+  LibRaw::kodak_rgb_load_raw
+  LibRaw::kodak_thumb_loader
+  LibRaw::unpack_thumb
+  ```
+impacted_packages:
+  - purl: pkg:generic/libraw
+    affected_versions: vers:generic/0.20.0-RC2|0.20.0|0.20.1|0.20.2|0.21.0-Beta1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52802
+    reference_type:
+    reference_id:

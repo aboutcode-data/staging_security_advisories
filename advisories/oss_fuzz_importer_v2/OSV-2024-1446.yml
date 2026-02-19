@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1446
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1446
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/google/shaderc/OSV-2024-1446.yaml
+aliases: []
+summary: |
+  Segv on unknown address in glslang::TIntermediate::addSymbol
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=422517700
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  glslang::TIntermediate::addSymbol
+  glslang::HlslParseContext::handleFunctionCall
+  glslang::HlslParseContext::transformEntryPoint
+  ```
+impacted_packages:
+  - purl: pkg:generic/shaderc
+    affected_versions: vers:generic/2024.4.0|2025.1.0|2025.2.0|2025.3.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=422517700
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-795
+datasource_id: oss_fuzz_importer_v2/OSV-2023-795
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-poi/OSV-2023-795.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.poi.hwpf.converter.AbstractWordConverter.processNoteAnchor
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62068
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.poi.hwpf.converter.AbstractWordConverter.processNoteAnchor
+  org.apache.poi.hwpf.converter.AbstractWordConverter.processCharacters
+  org.apache.poi.hwpf.converter.WordToTextConverter.processNote
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-poi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62068
+    reference_type:
+    reference_id:

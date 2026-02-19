@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-763
+datasource_id: oss_fuzz_importer_v2/OSV-2022-763
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/osquery/OSV-2022-763.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in sqlite3VdbeExec
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50466
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  sqlite3VdbeExec
+  sqlite3_step
+  osquery::readRows
+  ```
+impacted_packages:
+  - purl: pkg:generic/osquery
+    affected_versions: vers:generic/5.5.1|5.6.0|5.7.0|5.8.0|5.8.1|5.8.2|5.9.0|5.9.0+a|5.9.1|5.10.0|5.10.1|5.10.2|5.11.0|5.12.0|5.12.1|5.12.2|5.13.0|5.13.1|5.14.0|5.14.1|5.15.0|5.16.0|5.17.0|5.18.0|5.18.1-test|5.18.1|5.19.0|5.20.0|5.21.0|5.37.0|5.38.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50466
+    reference_type:
+    reference_id:

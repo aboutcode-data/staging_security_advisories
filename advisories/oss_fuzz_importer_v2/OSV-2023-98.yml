@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-98
+datasource_id: oss_fuzz_importer_v2/OSV-2023-98
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2023-98.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in sc_hsm_write_ef
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56213
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  sc_hsm_write_ef
+  sc_hsm_update_binary
+  sc_update_binary
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56213
+    reference_type:
+    reference_id:

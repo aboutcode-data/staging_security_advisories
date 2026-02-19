@@ -1,0 +1,24 @@
+advisory_id: OSV-2024-521
+datasource_id: oss_fuzz_importer_v2/OSV-2024-521
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/icu/OSV-2024-521.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ubidi_writeReordered_76
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68624
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  ubidi_writeReordered_76
+  ubidi_fuzzer.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/icu
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68624
+    reference_type:
+    reference_id:

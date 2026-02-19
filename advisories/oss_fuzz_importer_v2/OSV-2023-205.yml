@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-205
+datasource_id: oss_fuzz_importer_v2/OSV-2023-205
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/p11-kit/OSV-2023-205.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in base_C_MessageSignFinal
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57202
+
+  ```
+  Crash type: Global-buffer-overflow READ 8
+  Crash state:
+  base_C_MessageSignFinal
+  rpc_C_MessageSignFinal
+  p11_rpc_server_handle
+  ```
+impacted_packages:
+  - purl: pkg:generic/p11-kit
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57202
+    reference_type:
+    reference_id:

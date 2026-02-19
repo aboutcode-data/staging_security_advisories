@@ -1,0 +1,24 @@
+advisory_id: OSV-2022-360
+datasource_id: oss_fuzz_importer_v2/OSV-2022-360
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libigl/OSV-2022-360.yaml
+aliases: []
+summary: |
+  Invalid-free in igl::MshLoader::~MshLoader
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46818
+
+  ```
+  Crash type: Invalid-free
+  Crash state:
+  igl::MshLoader::~MshLoader
+  igl_fuzzer.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/libigl
+    affected_versions: vers:generic/2.4.0|2.5.0|2.6.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46818
+    reference_type:
+    reference_id:

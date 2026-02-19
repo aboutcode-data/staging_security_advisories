@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-670
+datasource_id: oss_fuzz_importer_v2/OSV-2022-670
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2022-670.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in dissect_softether_ip_port
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49736
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  dissect_softether_ip_port
+  ndpi_search_softether
+  check_ndpi_detection_func
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49736
+    reference_type:
+    reference_id:

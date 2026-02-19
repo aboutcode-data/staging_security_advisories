@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1355
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1355
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/shaderc/OSV-2024-1355.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in glslang::TInfoSinkBase::location
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=382922237
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  glslang::TInfoSinkBase::location
+  glslang::TParseContextBase::outputMessage
+  glslang::TParseContextBase::error
+  ```
+impacted_packages:
+  - purl: pkg:generic/shaderc
+    affected_versions: vers:generic/2024.4.0|2025.1.0|2025.2.0|2025.3.0|2025.4.0|2025.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=382922237
+    reference_type:
+    reference_id:

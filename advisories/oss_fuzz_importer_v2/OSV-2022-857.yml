@@ -1,0 +1,24 @@
+advisory_id: OSV-2022-857
+datasource_id: oss_fuzz_importer_v2/OSV-2022-857
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/bluez/OSV-2022-857.yaml
+aliases: []
+summary: |
+  Heap-double-free in fuzz_textfile.c
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51072
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  fuzz_textfile.c
+  fuzz_textfile.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/bluez
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51072
+    reference_type:
+    reference_id:

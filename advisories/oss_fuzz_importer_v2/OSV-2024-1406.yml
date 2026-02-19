@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1406
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1406
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libvips/OSV-2024-1406.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in _TIFFVSetField
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=385406655
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  _TIFFVSetField
+  TIFFSetField
+  TIFFFetchNormalTag
+  ```
+impacted_packages:
+  - purl: pkg:generic/libvips
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=385406655
+    reference_type:
+    reference_id:

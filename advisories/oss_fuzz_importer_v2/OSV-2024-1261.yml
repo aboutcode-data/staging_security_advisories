@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1261
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1261
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcre2/OSV-2024-1261.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in _pcre2_compile_class_not_nested_16
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=376515526
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE 2
+  Crash state:
+  _pcre2_compile_class_not_nested_16
+  compile_class_operand
+  _pcre2_compile_class_nested_16
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcre2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=376515526
+    reference_type:
+    reference_id:

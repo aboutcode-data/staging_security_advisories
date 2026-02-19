@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-262
+datasource_id: oss_fuzz_importer_v2/OSV-2022-262
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fluent-bit/OSV-2022-262.yaml
+aliases: []
+summary: |
+  Heap-double-free in flb_pack_state_reset
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45810
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  flb_pack_state_reset
+  in_lib_collect
+  flb_input_collector_fd
+  ```
+impacted_packages:
+  - purl: pkg:generic/fluent-bit
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45810
+    reference_type:
+    reference_id:

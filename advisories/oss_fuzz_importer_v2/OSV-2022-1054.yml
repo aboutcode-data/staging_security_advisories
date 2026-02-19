@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1054
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1054
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hunspell/OSV-2022-1054.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in AffixMgr::cpdpat_check
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52430
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  AffixMgr::cpdpat_check
+  AffixMgr::compound_check
+  SuggestMgr::checkword
+  ```
+impacted_packages:
+  - purl: pkg:generic/hunspell
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52430
+    reference_type:
+    reference_id:

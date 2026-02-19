@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1160
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1160
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mruby/OSV-2022-1160.yaml
+aliases: []
+summary: |
+  Index-out-of-bounds in str_init_embed
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53173
+
+  ```
+  Crash type: Index-out-of-bounds
+  Crash state:
+  str_init_embed
+  str_new
+  mrb_str_new
+  ```
+impacted_packages:
+  - purl: pkg:generic/mruby
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53173
+    reference_type:
+    reference_id:

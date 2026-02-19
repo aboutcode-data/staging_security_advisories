@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-51
+datasource_id: oss_fuzz_importer_v2/OSV-2023-51
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/c-blosc2/OSV-2023-51.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in ZSTD_freeDDict
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55673
+
+  ```
+  Crash type: Heap-use-after-free READ {*}
+  Crash state:
+  ZSTD_freeDDict
+  blosc2_free_ctx
+  blosc2_schunk_free
+  ```
+impacted_packages:
+  - purl: pkg:generic/c-blosc2
+    affected_versions: vers:generic/2.0.0-rc2|2.0.0|2.0.0+rc1|2.0.1|2.0.2|2.0.3|2.0.4|2.1.0|2.1.1|2.2.0|2.3.0|2.3.1|2.4.0|2.4.1|2.4.2|2.4.3|2.5.0|2.6.0|2.6.1|2.7.0|2.7.1|2.8.0|2.9.0|2.9.1|2.9.2|2.9.3|2.10.0|2.10.1|2.10.2|2.10.3|2.10.4|2.10.5|2.11.0|2.11.1|2.11.2|2.11.3|2.12.0|2.13.0|2.13.1|2.13.2|2.14.0|2.14.1|2.14.2|2.14.3|2.14.4|2.15.0|2.15.1|2.15.2|2.16.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55673
+    reference_type:
+    reference_id:

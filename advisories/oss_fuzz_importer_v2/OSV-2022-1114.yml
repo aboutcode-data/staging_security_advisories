@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1114
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1114
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2022-1114.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in g_strchug
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52798
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  g_strchug
+  dissect_dcm_main
+  call_dissector_work
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52798
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-140
+datasource_id: oss_fuzz_importer_v2/OSV-2024-140
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wasmedge/OSV-2024-140.yaml
+aliases: []
+summary: |
+  Container-overflow in WasmEdge::LLVM::Compiler::compile
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67006
+
+  ```
+  Crash type: Container-overflow READ 8
+  Crash state:
+  WasmEdge::LLVM::Compiler::compile
+  WasmEdge::LLVM::Compiler::compile
+  WasmEdge::Driver::FuzzTool
+  ```
+impacted_packages:
+  - purl: pkg:generic/wasmedge
+    affected_versions: vers:generic/0.14.0-alpha.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67006
+    reference_type:
+    reference_id:

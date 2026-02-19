@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-395
+datasource_id: oss_fuzz_importer_v2/OSV-2023-395
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2023-395.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in sc_path_print
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58932
+
+  ```
+  Crash type: Stack-buffer-overflow READ 1
+  Crash state:
+  sc_path_print
+  sc_select_file
+  cflex_delete_file
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions: vers:generic/0.23.0-rc1|0.23.0-rc2|0.23.0|0.24.0-rc1|0.24.0-rc2|0.24.0|0.25.0-rc1|0.25.0|0.25.1|0.26.0-rc1|0.26.0|0.26.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58932
+    reference_type:
+    reference_id:

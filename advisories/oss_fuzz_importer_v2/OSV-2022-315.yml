@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-315
+datasource_id: oss_fuzz_importer_v2/OSV-2022-315
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libvips/OSV-2022-315.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in start_output_pass
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46396
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  start_output_pass
+  prepare_for_output_pass
+  output_pass_setup
+  ```
+impacted_packages:
+  - purl: pkg:generic/libvips
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46396
+    reference_type:
+    reference_id:

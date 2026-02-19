@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-246
+datasource_id: oss_fuzz_importer_v2/OSV-2023-246
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libdwarf/OSV-2023-246.yaml
+aliases: []
+summary: |
+  Heap-double-free in _dwarf_read_line_table_header
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57437
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  _dwarf_read_line_table_header
+  dwarf_srcfiles
+  fuzz_srcfiles.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/libdwarf
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57437
+    reference_type:
+    reference_id:

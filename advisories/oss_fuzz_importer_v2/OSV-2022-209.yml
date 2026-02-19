@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-209
+datasource_id: oss_fuzz_importer_v2/OSV-2022-209
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/yara/OSV-2022-209.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in dotnet_parse_tilde_2
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45161
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  dotnet_parse_tilde_2
+  dotnet_parse_tilde
+  dotnet_parse_com
+  ```
+impacted_packages:
+  - purl: pkg:generic/yara
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45161
+    reference_type:
+    reference_id:

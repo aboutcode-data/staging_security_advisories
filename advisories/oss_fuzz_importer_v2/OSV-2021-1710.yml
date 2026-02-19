@@ -1,0 +1,25 @@
+advisory_id: OSV-2021-1710
+datasource_id: oss_fuzz_importer_v2/OSV-2021-1710
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/c-blosc2/OSV-2021-1710.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ndlz4_decompress
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42472
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  ndlz4_decompress
+  ndlz_decompress
+  blosc_d
+  ```
+impacted_packages:
+  - purl: pkg:generic/c-blosc2
+    affected_versions: vers:generic/2.0.0|2.0.1|2.0.2|2.0.3|2.0.4
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42472
+    reference_type:
+    reference_id:

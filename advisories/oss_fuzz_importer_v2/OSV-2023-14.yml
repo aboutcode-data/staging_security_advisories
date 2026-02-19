@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-14
+datasource_id: oss_fuzz_importer_v2/OSV-2023-14
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hunspell/OSV-2023-14.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in AffixMgr::compound_check
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55191
+
+  ```
+  Crash type: Stack-buffer-overflow READ 1
+  Crash state:
+  AffixMgr::compound_check
+  SuggestMgr::checkword
+  SuggestMgr::testsug
+  ```
+impacted_packages:
+  - purl: pkg:generic/hunspell
+    affected_versions: vers:generic/1.7.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55191
+    reference_type:
+    reference_id:

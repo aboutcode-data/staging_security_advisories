@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-865
+datasource_id: oss_fuzz_importer_v2/OSV-2023-865
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wasmedge/OSV-2023-865.yaml
+aliases: []
+summary: |
+  UNKNOWN in WasmEdge::Loader::SharedLibrary::load
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62387
+
+  ```
+  Crash type: UNKNOWN
+  Crash state:
+  WasmEdge::Loader::SharedLibrary::load
+  WasmEdge::Loader::Loader::loadModule
+  WasmEdge::Loader::Loader::parseModule
+  ```
+impacted_packages:
+  - purl: pkg:generic/wasmedge
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62387
+    reference_type:
+    reference_id:

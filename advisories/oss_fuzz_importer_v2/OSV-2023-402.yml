@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-402
+datasource_id: oss_fuzz_importer_v2/OSV-2023-402
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/assimp/OSV-2023-402.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in Assimp::FBXExporter::WriteObjects
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59036
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  Assimp::FBXExporter::WriteObjects
+  Assimp::FBXExporter::ExportBinary
+  Assimp::ExportSceneFBX
+  ```
+impacted_packages:
+  - purl: pkg:generic/assimp
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59036
+    reference_type:
+    reference_id:

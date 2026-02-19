@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-663
+datasource_id: oss_fuzz_importer_v2/OSV-2023-663
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/jq/OSV-2023-663.yaml
+aliases: []
+summary: |
+  Segv on unknown address in decUnitCompare
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61235
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  decUnitCompare
+  decCompare
+  decCompareOp
+  ```
+impacted_packages:
+  - purl: pkg:generic/jq
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61235
+    reference_type:
+    reference_id:

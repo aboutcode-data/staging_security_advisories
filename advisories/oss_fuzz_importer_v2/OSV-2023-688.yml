@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-688
+datasource_id: oss_fuzz_importer_v2/OSV-2023-688
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ntopng/OSV-2023-688.yaml
+aliases: []
+summary: |
+  Invalid-free in Flow::~Flow
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61361
+
+  ```
+  Crash type: Invalid-free
+  Crash state:
+  Flow::~Flow
+  Flow::~Flow
+  GenericHash::cleanup
+  ```
+impacted_packages:
+  - purl: pkg:generic/ntopng
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61361
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1381
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1381
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ntopng/OSV-2023-1381.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in NetworkInterface::processPacket
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65428
+
+  ```
+  Crash type: Heap-buffer-overflow READ 10
+  Crash state:
+  NetworkInterface::processPacket
+  NetworkInterface::dissectPacket
+  fuzz_dissect_packet.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/ntopng
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65428
+    reference_type:
+    reference_id:

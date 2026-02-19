@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1259
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1259
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2023-1259.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in std::__1::__stdoutbuf<char>::xsputn
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64693
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  std::__1::__stdoutbuf<char>::xsputn
+  std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pa
+  std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_cha
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0-beta|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64693
+    reference_type:
+    reference_id:

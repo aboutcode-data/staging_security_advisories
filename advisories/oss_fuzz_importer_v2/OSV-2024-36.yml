@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-36
+datasource_id: oss_fuzz_importer_v2/OSV-2024-36
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libavif/OSV-2024-36.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in LLVMFuzzerRunDriver
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65647
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  LLVMFuzzerRunDriver
+  absl::lts_NUMBER::random_internal::InitDiscreteDistribution
+  absl::lts_NUMBER::discrete_distribution<int>::param_type::init
+  ```
+impacted_packages:
+  - purl: pkg:generic/libavif
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65647
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-106
+datasource_id: oss_fuzz_importer_v2/OSV-2023-106
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/sudoers/OSV-2023-106.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in sudo_lbuf_append_quoted_v1
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56278
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  sudo_lbuf_append_quoted_v1
+  sudoers_format_member_int
+  sudoers_format_member_int
+  ```
+impacted_packages:
+  - purl: pkg:generic/sudoers
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56278
+    reference_type:
+    reference_id:

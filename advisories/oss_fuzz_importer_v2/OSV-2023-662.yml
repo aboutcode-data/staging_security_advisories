@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-662
+datasource_id: oss_fuzz_importer_v2/OSV-2023-662
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-poi/OSV-2023-662.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.commons.io.IOUtils.byteArray
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61254
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.commons.io.IOUtils.byteArray
+  org.apache.commons.io.output.AbstractByteArrayOutputStream.needNewBuffer
+  org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream.<init>
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-poi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61254
+    reference_type:
+    reference_id:

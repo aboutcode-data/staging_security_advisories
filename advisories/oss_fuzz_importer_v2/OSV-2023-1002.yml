@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1002
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1002
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2023-1002.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in iasecc_parse_get_tlv
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63163
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  iasecc_parse_get_tlv
+  iasecc_parse_docp
+  iasecc_sdo_parse_data
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63163
+    reference_type:
+    reference_id:

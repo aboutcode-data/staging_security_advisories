@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-326
+datasource_id: oss_fuzz_importer_v2/OSV-2023-326
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mosquitto/OSV-2023-326.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in dynsec_clients__find
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58108
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  dynsec_clients__find
+  client__free_item
+  dynsec_clients__cleanup
+  ```
+impacted_packages:
+  - purl: pkg:generic/mosquitto
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58108
+    reference_type:
+    reference_id:

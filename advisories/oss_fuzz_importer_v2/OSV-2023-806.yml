@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-806
+datasource_id: oss_fuzz_importer_v2/OSV-2023-806
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hdf5/OSV-2023-806.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in H5F__accum_free
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62135
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  H5F__accum_free
+  H5MF_xfree
+  H5MF_free_aggrs
+  ```
+impacted_packages:
+  - purl: pkg:generic/hdf5
+    affected_versions: vers:generic/1.14.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62135
+    reference_type:
+    reference_id:

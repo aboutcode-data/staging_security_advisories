@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1161
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1161
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mruby/OSV-2022-1161.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in pack_unpack
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53161
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  pack_unpack
+  mrb_pack_unpack
+  mrb_vm_exec
+  ```
+impacted_packages:
+  - purl: pkg:generic/mruby
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53161
+    reference_type:
+    reference_id:

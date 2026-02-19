@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-276
+datasource_id: oss_fuzz_importer_v2/OSV-2023-276
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/assimp/OSV-2023-276.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in aiScene::~aiScene
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57656
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  aiScene::~aiScene
+  Assimp::BatchLoader::~BatchLoader
+  Assimp::LWSImporter::InternReadFile
+  ```
+impacted_packages:
+  - purl: pkg:generic/assimp
+    affected_versions: vers:generic/5.1.6|5.2.0|5.2.0|5.2.1|5.2.2|5.2.3|5.2.4|5.2.5|5.3.0|5.3.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57656
+    reference_type:
+    reference_id:

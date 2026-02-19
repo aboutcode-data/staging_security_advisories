@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1209
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1209
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2022-1209.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in OT::hb_ot_apply_context_t::skipping_iterator_t::next
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53714
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  OT::hb_ot_apply_context_t::skipping_iterator_t::next
+  OT::Layout::GSUB_impl::Ligature<OT::Layout::SmallTypes>::apply
+  bool OT::hb_accelerate_subtables_context_t::apply_to<OT::Layout::GSUB_impl::Liga
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53714
+    reference_type:
+    reference_id:

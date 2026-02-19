@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-504
+datasource_id: oss_fuzz_importer_v2/OSV-2024-504
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libultrahdr/OSV-2024-504.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ultrahdr::getYuv420Pixel
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69101
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  ultrahdr::getYuv420Pixel
+  std::__1::__function::__func<ultrahdr::JpegR::applyGainMap
+  ultrahdr::JpegR::applyGainMap
+  ```
+impacted_packages:
+  - purl: pkg:generic/libultrahdr
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69101
+    reference_type:
+    reference_id:

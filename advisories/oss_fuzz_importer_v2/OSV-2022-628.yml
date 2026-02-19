@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-628
+datasource_id: oss_fuzz_importer_v2/OSV-2022-628
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mruby/OSV-2022-628.yaml
+aliases: []
+summary: |
+  Segv on unknown address in mpz_add
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49453
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  mpz_add
+  mpz_sub
+  mrb_bint_sub
+  ```
+impacted_packages:
+  - purl: pkg:generic/mruby
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49453
+    reference_type:
+    reference_id:

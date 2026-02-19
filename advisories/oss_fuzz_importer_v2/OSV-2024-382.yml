@@ -1,0 +1,24 @@
+advisory_id: OSV-2024-382
+datasource_id: oss_fuzz_importer_v2/OSV-2024-382
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2024-382.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in pcpp::Packet::destructPacketData
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67193
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  pcpp::Packet::destructPacketData
+  Packet.h
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0-beta|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67193
+    reference_type:
+    reference_id:

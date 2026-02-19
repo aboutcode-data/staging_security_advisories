@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-952
+datasource_id: oss_fuzz_importer_v2/OSV-2023-952
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/liblouis/OSV-2023-952.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in back_passDoAction
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62875
+
+  ```
+  Crash type: Heap-buffer-overflow READ 10
+  Crash state:
+  back_passDoAction
+  _lou_backTranslate
+  lou_backTranslateString
+  ```
+impacted_packages:
+  - purl: pkg:generic/liblouis
+    affected_versions: vers:generic/3.26.0|3.27.0|3.28.0|3.29.0|3.30.0|3.31.0|3.32.0|3.33.0|3.34.0|3.35.0|3.36.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62875
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-16
+datasource_id: oss_fuzz_importer_v2/OSV-2022-16
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wolfmqtt/OSV-2022-16.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in MqttProps_Free
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=43370
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  MqttProps_Free
+  MqttClient_DecodePacket
+  MqttClient_WaitType
+  ```
+impacted_packages:
+  - purl: pkg:generic/wolfmqtt
+    affected_versions: vers:generic/1.11.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=43370
+    reference_type:
+    reference_id:

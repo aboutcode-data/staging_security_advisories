@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1052
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1052
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mapserver/OSV-2022-1052.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in loadSymbol
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52410
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  loadSymbol
+  loadMapInternal
+  msLoadMap
+  ```
+impacted_packages:
+  - purl: pkg:generic/mapserver
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52410
+    reference_type:
+    reference_id:

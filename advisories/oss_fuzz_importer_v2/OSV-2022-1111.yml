@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1111
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1111
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2022-1111.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in expert_set_info_vformat
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52814
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  expert_set_info_vformat
+  expert_add_info_format
+  dissect_rpcap
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52814
+    reference_type:
+    reference_id:

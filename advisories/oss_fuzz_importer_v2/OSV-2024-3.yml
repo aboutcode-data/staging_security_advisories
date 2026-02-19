@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-3
+datasource_id: oss_fuzz_importer_v2/OSV-2024-3
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/icu/OSV-2024-3.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in icu_75::TZDBTimeZoneNames::getMetaZoneNames
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65486
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE 1
+  Crash state:
+  icu_75::TZDBTimeZoneNames::getMetaZoneNames
+  icu_75::TZDBTimeZoneNames::getMetaZoneDisplayName
+  TestNames
+  ```
+impacted_packages:
+  - purl: pkg:generic/icu
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65486
+    reference_type:
+    reference_id:

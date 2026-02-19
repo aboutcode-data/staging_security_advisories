@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1266
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1266
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-poi/OSV-2023-1266.yaml
+aliases: []
+summary: |
+  Security exception in java.base/javax.crypto.spec.SecretKeySpec.<init>
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64768
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  java.base/javax.crypto.spec.SecretKeySpec.<init>
+  org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor.initCipherForBlock
+  org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor.initCipherForBlock
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-poi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64768
+    reference_type:
+    reference_id:

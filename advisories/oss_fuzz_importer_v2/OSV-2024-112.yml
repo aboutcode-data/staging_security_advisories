@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-112
+datasource_id: oss_fuzz_importer_v2/OSV-2024-112
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/boost/OSV-2024-112.yaml
+aliases: []
+summary: |
+  Stack-overflow in boost::read_graphviz_detail::parser::parse_subgraph
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66719
+
+  ```
+  Crash type: Stack-overflow
+  Crash state:
+  boost::read_graphviz_detail::parser::parse_subgraph
+  boost::read_graphviz_detail::parser::parse_endpoint_rest
+  boost::read_graphviz_detail::parser::parse_stmt
+  ```
+impacted_packages:
+  - purl: pkg:generic/boost
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66719
+    reference_type:
+    reference_id:

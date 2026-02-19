@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-114
+datasource_id: oss_fuzz_importer_v2/OSV-2024-114
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/tarantool/OSV-2024-114.yaml
+aliases: []
+summary: |
+  Segv on unknown address in lj_BC_RET1
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66384
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  lj_BC_RET1
+  lua_pcall
+  luaL_loadbuffer_fuzzer.cc
+  ```
+impacted_packages:
+  - purl: pkg:generic/tarantool
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66384
+    reference_type:
+    reference_id:

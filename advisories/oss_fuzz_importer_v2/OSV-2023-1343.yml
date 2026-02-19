@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1343
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1343
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libssh2/OSV-2023-1343.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in _libssh2_kex_agree_instr
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65212
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  _libssh2_kex_agree_instr
+  _libssh2_packet_add
+  fullpacket
+  ```
+impacted_packages:
+  - purl: pkg:generic/libssh2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65212
+    reference_type:
+    reference_id:

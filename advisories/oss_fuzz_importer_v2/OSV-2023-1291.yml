@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1291
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1291
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-poi/OSV-2023-1291.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor.initCipherForBlock
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64979
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor.initCipherForBlock
+  org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor.initCipherForBlock
+  org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor$BinaryRC4CipherInputStre
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-poi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64979
+    reference_type:
+    reference_id:

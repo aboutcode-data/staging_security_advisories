@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-547
+datasource_id: oss_fuzz_importer_v2/OSV-2023-547
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/radare2/OSV-2023-547.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in r_str_ncpy
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60407
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  r_str_ncpy
+  Elf32__r_bin_elf_load_symbols_and_imports
+  Elf32_load_symbols
+  ```
+impacted_packages:
+  - purl: pkg:generic/radare2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60407
+    reference_type:
+    reference_id:

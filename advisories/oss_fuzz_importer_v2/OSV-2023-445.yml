@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-445
+datasource_id: oss_fuzz_importer_v2/OSV-2023-445
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/openexr/OSV-2023-445.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in LossyDctDecoder_execute
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59457
+
+  ```
+  Crash type: Heap-buffer-overflow READ 2
+  Crash state:
+  LossyDctDecoder_execute
+  DwaCompressor_uncompress
+  internal_exr_undo_dwaa
+  ```
+impacted_packages:
+  - purl: pkg:generic/openexr
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59457
+    reference_type:
+    reference_id:

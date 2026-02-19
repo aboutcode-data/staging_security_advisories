@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1128
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1128
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/librawspeed/OSV-2022-1128.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in void rawspeed::DngOpcodes::PixelOpcode::applyOP<unsigned short, rawspeed::DngOpc
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52944
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  void rawspeed::DngOpcodes::PixelOpcode::applyOP<unsigned short, rawspeed::DngOpc
+  rawspeed::DngOpcodes::applyOpCodes
+  rawspeed::DngDecoder::handleMetadata
+  ```
+impacted_packages:
+  - purl: pkg:generic/librawspeed
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52944
+    reference_type:
+    reference_id:

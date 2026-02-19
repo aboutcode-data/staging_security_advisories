@@ -1,0 +1,24 @@
+advisory_id: OSV-2022-133
+datasource_id: oss_fuzz_importer_v2/OSV-2022-133
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libcoap/OSV-2022-133.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in coap_split_uri_sub
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44503
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  coap_split_uri_sub
+  coap_get_uri_path
+  ```
+impacted_packages:
+  - purl: pkg:generic/libcoap
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44503
+    reference_type:
+    reference_id:

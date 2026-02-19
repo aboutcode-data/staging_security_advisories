@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-178
+datasource_id: oss_fuzz_importer_v2/OSV-2024-178
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2024-178.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in dissect_dns_answer
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67265
+
+  ```
+  Crash type: Global-buffer-overflow WRITE 4
+  Crash state:
+  dissect_dns_answer
+  dissect_dns_common
+  dissect_dns
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67265
+    reference_type:
+    reference_id:

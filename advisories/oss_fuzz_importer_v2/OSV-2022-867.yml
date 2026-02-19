@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-867
+datasource_id: oss_fuzz_importer_v2/OSV-2022-867
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2022-867.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in get_utf_8_string
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51090
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  get_utf_8_string
+  dissect_form_urlencoded
+  call_dissector_work
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions: vers:generic/4.1.0|4.1.1-rc0|4.2.0-rc0|4.2.0-rc1|4.2.0-rc2|4.2.0-rc3|4.2.0|4.2.1-rc0|4.2.1|4.2.2-rc0|4.2.2|4.2.3-rc0|4.2.3|4.2.4-rc0|4.2.4|4.2.5-rc0|4.2.5|4.2.6-rc0|4.2.6|4.2.7-rc0|4.2.7|4.2.8-rc0|4.2.8|4.2.9-rc0|4.2.9|4.2.10-rc0|4.2.10|4.2.11-rc0|4.2.11|4.2.12-rc0|4.2.12|4.2.13-rc0|4.2.13|4.2.14-rc0|4.2.14|4.2.15-rc0|4.3.0-rc0|4.3.0-rc1|4.3.0|4.3.1-rc0|4.3.1|4.3.2-rc0|4.4.0-rc0|4.4.0-rc1|4.4.0|4.4.1-rc0|4.4.1|4.4.2-rc0|4.4.2|4.4.3-rc0|4.4.3|4.4.4-rc0|4.4.4|4.4.5-rc0|4.4.5|4.4.6-rc0|4.4.6|4.4.7-rc0|4.4.7|4.4.8-rc0|4.4.8|4.4.9-rc0|4.4.9|4.4.10-rc0|4.4.10|4.4.11-rc0|4.4.11|4.4.12-rc0|4.4.12|4.4.13-rc0|4.4.13|4.4.14-rc0|4.5.0-rc0|4.6.0-rc0|4.6.0-rc1|4.6.0|4.6.1-rc0|4.6.1|4.6.2-rc0|4.6.2|4.6.3-rc0|4.6.3|4.6.4-rc0|4.6.7-rc0|4.7.0-rc0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51090
+    reference_type:
+    reference_id:

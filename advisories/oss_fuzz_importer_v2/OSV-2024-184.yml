@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-184
+datasource_id: oss_fuzz_importer_v2/OSV-2024-184
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/threetenbp/OSV-2024-184.yaml
+aliases: []
+summary: |
+  Security exception in org.threeten.bp.format.DateTimeFormatterBuilder$CompositePrinterParser.parse
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67437
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.threeten.bp.format.DateTimeFormatterBuilder$CompositePrinterParser.parse
+  java.base/sun.util.locale.provider.LocaleProviderAdapter.getAdapter
+  java.base/java.text.DateFormatSymbols.getProviderInstance
+  ```
+impacted_packages:
+  - purl: pkg:generic/threetenbp
+    affected_versions: vers:generic/1.6.9|1.7.0|1.7.1|1.7.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67437
+    reference_type:
+    reference_id:

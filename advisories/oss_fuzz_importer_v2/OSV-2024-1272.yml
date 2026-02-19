@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1272
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1272
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/poco/OSV-2024-1272.yaml
+aliases: []
+summary: |
+  Segv on unknown address in std::__1::ios_base::~ios_base
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=371292576
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  std::__1::ios_base::~ios_base
+  Poco::Net::MultipartReader::nextPart
+  Poco::Net::MailMessage::readMultipart
+  ```
+impacted_packages:
+  - purl: pkg:generic/poco
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=371292576
+    reference_type:
+    reference_id:

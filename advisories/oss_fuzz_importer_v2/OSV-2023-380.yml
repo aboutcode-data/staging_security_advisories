@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-380
+datasource_id: oss_fuzz_importer_v2/OSV-2023-380
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2023-380.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in bool OT::Layout::Common::Coverage::serialize<hb_map_iter_t<hb_map_iter_t<hb_filt
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58663
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  bool OT::Layout::Common::Coverage::serialize<hb_map_iter_t<hb_map_iter_t<hb_filt
+  OT::Layout::GSUB_impl::SingleSubstFormat2_4<OT::Layout::SmallTypes>::subset
+  hb_subset_context_t::return_t OT::Layout::GSUB_impl::SubstLookupSubTable::dispat
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58663
+    reference_type:
+    reference_id:

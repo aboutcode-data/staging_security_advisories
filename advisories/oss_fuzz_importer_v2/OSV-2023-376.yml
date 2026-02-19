@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-376
+datasource_id: oss_fuzz_importer_v2/OSV-2023-376
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2023-376.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in OT::Layout::GPOS_impl::CursivePosFormat1::subset
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58660
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  OT::Layout::GPOS_impl::CursivePosFormat1::subset
+  hb_subset_context_t::return_t OT::Layout::GPOS_impl::PosLookupSubTable::dispatch
+  bool OT::subset_offset_array_arg_t<OT::ArrayOf<OT::OffsetTo<OT::Layout::GPOS_imp
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58660
+    reference_type:
+    reference_id:

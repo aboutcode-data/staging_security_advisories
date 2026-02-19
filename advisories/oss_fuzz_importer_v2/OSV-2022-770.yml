@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-770
+datasource_id: oss_fuzz_importer_v2/OSV-2022-770
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2022-770.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in get_transaction
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50477
+
+  ```
+  Crash type: Stack-buffer-overflow READ 2
+  Crash state:
+  get_transaction
+  dissect_asp
+  call_dissector_work_error
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions: vers:generic/3.7.2|3.7.3-rc0|4.0.0-rc0|4.0.0-rc1|4.1.0-rc0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50477
+    reference_type:
+    reference_id:

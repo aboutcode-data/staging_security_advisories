@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-768
+datasource_id: oss_fuzz_importer_v2/OSV-2022-768
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-commons-jxpath/OSV-2022-768.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.commons.jxpath.ri.axes.UnionContext.setPosition
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50506
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.commons.jxpath.ri.axes.UnionContext.setPosition
+  org.apache.commons.jxpath.ri.axes.NodeSetContext.nextNode
+  org.apache.commons.jxpath.ri.axes.PredicateContext.nextNode
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-commons-jxpath
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50506
+    reference_type:
+    reference_id:

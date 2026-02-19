@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-223
+datasource_id: oss_fuzz_importer_v2/OSV-2022-223
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/exiv2/OSV-2022-223.yaml
+aliases: []
+summary: |
+  Container-overflow in Exiv2::Photoshop::locateIrb
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45302
+
+  ```
+  Crash type: Container-overflow READ 4
+  Crash state:
+  Exiv2::Photoshop::locateIrb
+  Exiv2::Photoshop::setIptcIrb
+  Exiv2::JpegBase::doWriteMetadata
+  ```
+impacted_packages:
+  - purl: pkg:generic/exiv2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45302
+    reference_type:
+    reference_id:

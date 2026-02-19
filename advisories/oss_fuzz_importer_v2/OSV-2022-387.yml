@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-387
+datasource_id: oss_fuzz_importer_v2/OSV-2022-387
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libredwg/OSV-2022-387.yaml
+aliases: []
+summary: |
+  Segv on unknown address in bit_write_TV
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47126
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  bit_write_TV
+  bit_write_T
+  dwg_encode_BLOCK
+  ```
+impacted_packages:
+  - purl: pkg:generic/libredwg
+    affected_versions: vers:generic/0.12.4+4542|0.12.4+4544|0.12.4+4545|0.12.4+4548|0.12.4+4550|0.12.4+4553|0.12.4+4566|0.12.4+4567|0.12.4+4572|0.12.4+4583|0.12.4+4590|0.12.4+4598|0.12.4+4601|0.12.4+4606|0.12.4+4607|0.12.4+4608|0.12.4+4613|0.12.4+4615
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47126
+    reference_type:
+    reference_id:

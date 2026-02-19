@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-509
+datasource_id: oss_fuzz_importer_v2/OSV-2023-509
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2023-509.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ndpi_search_thrift_tcp_udp
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60070
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  ndpi_search_thrift_tcp_udp
+  check_ndpi_detection_func
+  ndpi_check_flow_func
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60070
+    reference_type:
+    reference_id:

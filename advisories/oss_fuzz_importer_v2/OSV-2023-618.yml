@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-618
+datasource_id: oss_fuzz_importer_v2/OSV-2023-618
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-commons-io/OSV-2023-618.yaml
+aliases: []
+summary: |
+  Security exception in java.base/java.util.regex.Pattern$Loop.match
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60845
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  java.base/java.util.regex.Pattern$Loop.match
+  java.base/java.util.regex.Pattern$GroupTail.match
+  java.base/java.util.regex.Pattern$BranchConn.match
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-commons-io
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60845
+    reference_type:
+    reference_id:

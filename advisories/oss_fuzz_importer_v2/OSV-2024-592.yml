@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-592
+datasource_id: oss_fuzz_importer_v2/OSV-2024-592
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/spirv-tools/OSV-2024-592.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in spvtools::disassemble::InstructionDisassembler::EmitInstruction
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69804
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  spvtools::disassemble::InstructionDisassembler::EmitInstruction
+  spvtools::DisassembleInstruction
+  Parser::parseInstruction
+  ```
+impacted_packages:
+  - purl: pkg:generic/spirv-tools
+    affected_versions: vers:generic/2024.3.0|2024.3.0+rc1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69804
+    reference_type:
+    reference_id:

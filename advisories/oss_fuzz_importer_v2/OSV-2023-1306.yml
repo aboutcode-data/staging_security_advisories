@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1306
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1306
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2023-1306.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in pcpp::TLVRecordReader<pcpp::DhcpOption>::getTLVRecord
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65051
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  pcpp::TLVRecordReader<pcpp::DhcpOption>::getTLVRecord
+  pcpp::DhcpLayer::toString
+  pcpp::Packet::toStringList
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65051
+    reference_type:
+    reference_id:

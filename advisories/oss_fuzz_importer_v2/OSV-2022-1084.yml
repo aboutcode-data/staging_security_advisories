@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1084
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1084
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-1084.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in authentic_parse_size
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52662
+
+  ```
+  Crash type: Stack-buffer-overflow READ 1
+  Crash state:
+  authentic_parse_size
+  authentic_get_tagged_data
+  authentic_parse_credential_data
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions: vers:generic/0.23.0-rc1|0.23.0-rc2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52662
+    reference_type:
+    reference_id:

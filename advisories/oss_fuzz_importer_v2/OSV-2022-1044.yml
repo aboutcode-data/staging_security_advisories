@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1044
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1044
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensips/OSV-2022-1044.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in parse_via
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52326
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  parse_via
+  get_hdr_field
+  parse_headers
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensips
+    affected_versions: vers:generic/3.1.10|3.1.11|3.1.12|3.2.7|3.2.8|3.2.9|3.3.0-beta|3.3.0-rc1|3.3.0|3.3.1|3.3.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52326
+    reference_type:
+    reference_id:

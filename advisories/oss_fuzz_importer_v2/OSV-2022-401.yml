@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-401
+datasource_id: oss_fuzz_importer_v2/OSV-2022-401
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2022-401.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in OT::gvar::subset
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47281
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  OT::gvar::subset
+  bool _try_subset<OT::gvar>
+  hb_subset_plan_execute_or_fail
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47281
+    reference_type:
+    reference_id:

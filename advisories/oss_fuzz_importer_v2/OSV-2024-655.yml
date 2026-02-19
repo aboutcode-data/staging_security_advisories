@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-655
+datasource_id: oss_fuzz_importer_v2/OSV-2024-655
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/lcms/OSV-2024-655.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in UnrollChunkyBytes
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=70395
+
+  ```
+  Crash type: Stack-buffer-overflow READ 1
+  Crash state:
+  UnrollChunkyBytes
+  CachedXFORM
+  cmsDoTransform
+  ```
+impacted_packages:
+  - purl: pkg:generic/lcms
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=70395
+    reference_type:
+    reference_id:

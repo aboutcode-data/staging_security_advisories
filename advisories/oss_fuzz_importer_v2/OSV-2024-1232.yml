@@ -1,0 +1,24 @@
+advisory_id: OSV-2024-1232
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1232
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wasmtime/OSV-2024-1232.yaml
+aliases: []
+summary: |
+  Segv on unknown address in cranelift_filetests::function_runner::Trampoline::call::hb2e77cf3a13ebaf4
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=373522467
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  cranelift_filetests::function_runner::Trampoline::call::hb2e77cf3a13ebaf4
+  cranelift_fuzzgen::_::run::hdb2f75e19950661f
+  ```
+impacted_packages:
+  - purl: pkg:generic/wasmtime
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=373522467
+    reference_type:
+    reference_id:

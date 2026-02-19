@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-170
+datasource_id: oss_fuzz_importer_v2/OSV-2023-170
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2023-170.yaml
+aliases: []
+summary: |
+  Invalid-free in hb_free_impl
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56952
+
+  ```
+  Crash type: Invalid-free
+  Crash state:
+  hb_free_impl
+  OT::glyf::_free_compiled_subset_glyphs
+  OT::glyf::_populate_subset_glyphs
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions: vers:generic/7.1.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56952
+    reference_type:
+    reference_id:

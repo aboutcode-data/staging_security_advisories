@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-142
+datasource_id: oss_fuzz_importer_v2/OSV-2022-142
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libarchive/OSV-2022-142.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in archive_read_format_rar_read_data
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44547
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  archive_read_format_rar_read_data
+  archive_read_data
+  libarchive_fuzzer.cc
+  ```
+impacted_packages:
+  - purl: pkg:generic/libarchive
+    affected_versions: vers:generic/3.6.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44547
+    reference_type:
+    reference_id:

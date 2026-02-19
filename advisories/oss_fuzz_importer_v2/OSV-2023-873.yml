@@ -1,0 +1,24 @@
+advisory_id: OSV-2023-873
+datasource_id: oss_fuzz_importer_v2/OSV-2023-873
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/icu/OSV-2023-873.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in icu_74::Calendar::set
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62425
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  icu_74::Calendar::set
+  calendar_fuzzer.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/icu
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62425
+    reference_type:
+    reference_id:

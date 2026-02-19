@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-819
+datasource_id: oss_fuzz_importer_v2/OSV-2022-819
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libraw/OSV-2022-819.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in init_main_qtable
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50835
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  init_main_qtable
+  LibRaw::fuji_decode_strip
+  LibRaw::fuji_decode_loop
+  ```
+impacted_packages:
+  - purl: pkg:generic/libraw
+    affected_versions: vers:generic/0.21.0-Beta1|0.21.0|0.21.1|0.21.2|0.21.3|0.21.4
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50835
+    reference_type:
+    reference_id:

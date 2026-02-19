@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-375
+datasource_id: oss_fuzz_importer_v2/OSV-2022-375
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/grok/OSV-2022-375.yaml
+aliases: []
+summary: |
+  Stack-use-after-return in std::__1::__function::__func<bool grk::WaveletReverse::decompress_partial_tile<i
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46986
+
+  ```
+  Crash type: Stack-use-after-return READ 1
+  Crash state:
+  std::__1::__function::__func<bool grk::WaveletReverse::decompress_partial_tile<i
+  tf::Executor::_invoke
+  tf::Executor::_spawn
+  ```
+impacted_packages:
+  - purl: pkg:generic/grok
+    affected_versions: vers:generic/9.7.5+debian|9.7.6
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46986
+    reference_type:
+    reference_id:

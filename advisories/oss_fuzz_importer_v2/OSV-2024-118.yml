@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-118
+datasource_id: oss_fuzz_importer_v2/OSV-2024-118
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/readstat/OSV-2024-118.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in sav_process_row
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66805
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 1
+  Crash state:
+  sav_process_row
+  sav_read_data
+  readstat_parse_sav
+  ```
+impacted_packages:
+  - purl: pkg:generic/readstat
+    affected_versions: vers:generic/1.1.9
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66805
+    reference_type:
+    reference_id:

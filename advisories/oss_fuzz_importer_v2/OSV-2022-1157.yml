@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1157
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1157
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/util-linux/OSV-2022-1157.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in merge_utf16be_ascii
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53149
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE 1
+  Crash state:
+  merge_utf16be_ascii
+  probe_isoNUMBER
+  superblocks_probe
+  ```
+impacted_packages:
+  - purl: pkg:generic/util-linux
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53149
+    reference_type:
+    reference_id:

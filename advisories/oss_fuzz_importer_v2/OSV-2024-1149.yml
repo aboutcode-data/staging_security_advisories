@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1149
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1149
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libultrahdr/OSV-2024-1149.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in ultrahdr::uhdr_gainmap_metadata_frac::encodeGainmapMetadata
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=369652657
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  ultrahdr::uhdr_gainmap_metadata_frac::encodeGainmapMetadata
+  ultrahdr::JpegR::appendGainMap
+  ultrahdr::JpegR::encodeJPEGR
+  ```
+impacted_packages:
+  - purl: pkg:generic/libultrahdr
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=369652657
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1216
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1216
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/poco/OSV-2024-1216.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in Poco::Net::NTLMCredentials::parseChallengeMessage
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=372764172
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  Poco::Net::NTLMCredentials::parseChallengeMessage
+  Poco::Net::HTTPNTLMCredentials::createNTLMMessage
+  Poco::Net::HTTPNTLMCredentials::authenticate
+  ```
+impacted_packages:
+  - purl: pkg:generic/poco
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=372764172
+    reference_type:
+    reference_id:

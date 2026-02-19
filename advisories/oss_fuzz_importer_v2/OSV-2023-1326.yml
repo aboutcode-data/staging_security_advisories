@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1326
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1326
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-commons-lang/OSV-2023-1326.yaml
+aliases: []
+summary: |
+  Security exception in java.base/java.lang.reflect.Array.newArray
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65139
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  java.base/java.lang.reflect.Array.newArray
+  java.base/java.lang.reflect.Array.newInstance
+  java.base/java.io.ObjectInputStream.readArray
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-commons-lang
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65139
+    reference_type:
+    reference_id:

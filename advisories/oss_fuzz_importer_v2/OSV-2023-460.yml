@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-460
+datasource_id: oss_fuzz_importer_v2/OSV-2023-460
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mosquitto/OSV-2023-460.yaml
+aliases: []
+summary: |
+  Segv on unknown address in config__bridge_cleanup
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59604
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  config__bridge_cleanup
+  config__cleanup
+  mosquitto_fuzz_main
+  ```
+impacted_packages:
+  - purl: pkg:generic/mosquitto
+    affected_versions: vers:generic/2.0.16|2.0.17|2.0.18
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59604
+    reference_type:
+    reference_id:

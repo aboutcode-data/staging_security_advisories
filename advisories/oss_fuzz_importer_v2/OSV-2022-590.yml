@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-590
+datasource_id: oss_fuzz_importer_v2/OSV-2022-590
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wasmtime/OSV-2022-590.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in .tmpoLlNv4
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49166
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  .tmpoLlNv4
+  .tmpoLlNv4
+  wasmtime_setjmp
+  ```
+impacted_packages:
+  - purl: pkg:generic/wasmtime
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49166
+    reference_type:
+    reference_id:

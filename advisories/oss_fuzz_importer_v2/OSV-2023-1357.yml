@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1357
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1357
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2023-1357.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in processClientServerHello
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65307
+
+  ```
+  Crash type: Heap-buffer-overflow READ 2
+  Crash state:
+  processClientServerHello
+  process_tls
+  fuzz_quic_get_crypto_data.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65307
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-647
+datasource_id: oss_fuzz_importer_v2/OSV-2022-647
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/lcms/OSV-2022-647.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in cmsFreeNamedColorList
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49546
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  cmsFreeNamedColorList
+  Type_NamedColor_Free
+  cmsCloseProfile
+  ```
+impacted_packages:
+  - purl: pkg:generic/lcms
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49546
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-750
+datasource_id: oss_fuzz_importer_v2/OSV-2023-750
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/checkstyle/OSV-2023-750.yaml
+aliases: []
+summary: |
+  Security exception in org.antlr.v4.runtime.atn.PredictionContext.fromRuleContext
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61786
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.antlr.v4.runtime.atn.PredictionContext.fromRuleContext
+  java.base/jdk.internal.misc.Unsafe.weakCompareAndSetInt
+  java.base/jdk.internal.misc.Unsafe.getAndAddInt
+  ```
+impacted_packages:
+  - purl: pkg:generic/checkstyle
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61786
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1160
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1160
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ntopng/OSV-2023-1160.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in IEC104Stats::processPacket
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64147
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  IEC104Stats::processPacket
+  Flow::processIEC60870Packet
+  NetworkInterface::processPacket
+  ```
+impacted_packages:
+  - purl: pkg:generic/ntopng
+    affected_versions: vers:generic/6.0.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64147
+    reference_type:
+    reference_id:

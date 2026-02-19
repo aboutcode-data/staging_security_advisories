@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-137
+datasource_id: oss_fuzz_importer_v2/OSV-2024-137
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/igraph/OSV-2024-137.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in igraph_dl_yylex
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66992
+
+  ```
+  Crash type: Global-buffer-overflow READ 2
+  Crash state:
+  igraph_dl_yylex
+  igraph_dl_yyparse
+  igraph_read_graph_dl
+  ```
+impacted_packages:
+  - purl: pkg:generic/igraph
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66992
+    reference_type:
+    reference_id:

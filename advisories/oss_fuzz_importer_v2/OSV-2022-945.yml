@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-945
+datasource_id: oss_fuzz_importer_v2/OSV-2022-945
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/exiv2/OSV-2022-945.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in Exiv2::MemIo::read
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51707
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  Exiv2::MemIo::read
+  Exiv2::BasicIo::readOrThrow
+  Exiv2::QuickTimeVideo::userDataDecoder
+  ```
+impacted_packages:
+  - purl: pkg:generic/exiv2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51707
+    reference_type:
+    reference_id:

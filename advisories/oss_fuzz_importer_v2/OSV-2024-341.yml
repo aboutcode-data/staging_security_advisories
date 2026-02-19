@@ -1,0 +1,23 @@
+advisory_id: OSV-2024-341
+datasource_id: oss_fuzz_importer_v2/OSV-2024-341
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2024-341.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in PointerVector.h
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67287
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  PointerVector.h
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0-beta|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67287
+    reference_type:
+    reference_id:

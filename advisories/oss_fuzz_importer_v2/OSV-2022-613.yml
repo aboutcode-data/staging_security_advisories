@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-613
+datasource_id: oss_fuzz_importer_v2/OSV-2022-613
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2022-613.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in OT::avar::map_coords
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49407
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  OT::avar::map_coords
+  hb_ot_var_normalize_variations
+  test-ot-face.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49407
+    reference_type:
+    reference_id:

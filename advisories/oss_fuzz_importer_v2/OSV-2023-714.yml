@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-714
+datasource_id: oss_fuzz_importer_v2/OSV-2023-714
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-poi/OSV-2023-714.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.poi.ddf.EscherContainerRecord.fillFields
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61562
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.poi.ddf.EscherContainerRecord.fillFields
+  java.base/java.util.HashMap.getNode
+  java.base/java.util.HashMap.get
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-poi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61562
+    reference_type:
+    reference_id:

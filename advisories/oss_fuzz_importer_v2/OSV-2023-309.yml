@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-309
+datasource_id: oss_fuzz_importer_v2/OSV-2023-309
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/systemd/OSV-2023-309.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in fmemopen_unlocked
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57936
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  fmemopen_unlocked
+  fuzz.h
+  centipede::RunOneInput
+  ```
+impacted_packages:
+  - purl: pkg:generic/systemd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57936
+    reference_type:
+    reference_id:

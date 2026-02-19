@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1231
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1231
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/relic/OSV-2022-1231.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in dv_copy
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53919
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  dv_copy
+  bn_lsh
+  cryptofuzz::module::relic_bignum::LShift1::Run
+  ```
+impacted_packages:
+  - purl: pkg:generic/relic
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53919
+    reference_type:
+    reference_id:

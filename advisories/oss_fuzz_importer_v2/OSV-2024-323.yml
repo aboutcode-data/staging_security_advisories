@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-323
+datasource_id: oss_fuzz_importer_v2/OSV-2024-323
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/checkstyle/OSV-2024-323.yaml
+aliases: []
+summary: |
+  Security exception in com.puppycrawl.tools.checkstyle.JavaAstVisitor.getInnerBopAst
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68346
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  com.puppycrawl.tools.checkstyle.JavaAstVisitor.getInnerBopAst
+  java.base/java.util.stream.ReferencePipeline$3$1.accept
+  java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining
+  ```
+impacted_packages:
+  - purl: pkg:generic/checkstyle
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68346
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-311
+datasource_id: oss_fuzz_importer_v2/OSV-2022-311
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libvips/OSV-2022-311.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in decode_mcu
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46354
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  decode_mcu
+  decompress_onepass
+  process_data_simple_main
+  ```
+impacted_packages:
+  - purl: pkg:generic/libvips
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46354
+    reference_type:
+    reference_id:

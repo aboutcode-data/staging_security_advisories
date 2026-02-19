@@ -1,0 +1,24 @@
+advisory_id: OSV-2022-1193
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1193
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libarchive/OSV-2022-1193.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in archive_read_has_encrypted_entries
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53594
+
+  ```
+  Crash type: Heap-buffer-overflow READ 8
+  Crash state:
+  archive_read_has_encrypted_entries
+  libarchive_fuzzer.cc
+  ```
+impacted_packages:
+  - purl: pkg:generic/libarchive
+    affected_versions: vers:generic/3.6.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53594
+    reference_type:
+    reference_id:

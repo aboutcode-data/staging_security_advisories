@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-308
+datasource_id: oss_fuzz_importer_v2/OSV-2023-308
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/systemd/OSV-2023-308.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in memdup
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57933
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  memdup
+  fuzz-bcd.c
+  centipede::RunOneInput
+  ```
+impacted_packages:
+  - purl: pkg:generic/systemd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57933
+    reference_type:
+    reference_id:

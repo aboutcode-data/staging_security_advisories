@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-322
+datasource_id: oss_fuzz_importer_v2/OSV-2023-322
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ruby/OSV-2023-322.yaml
+aliases: []
+summary: |
+  Use-after-poison in str_new_frozen_buffer
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58079
+
+  ```
+  Crash type: Use-after-poison READ 8
+  Crash state:
+  str_new_frozen_buffer
+  fstr_update_callback
+  rb_st_update
+  ```
+impacted_packages:
+  - purl: pkg:generic/ruby
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58079
+    reference_type:
+    reference_id:

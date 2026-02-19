@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-310
+datasource_id: oss_fuzz_importer_v2/OSV-2023-310
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/systemd/OSV-2023-310.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in memdup_suffix0
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57937
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  memdup_suffix0
+  fuzz-efi-string.c
+  centipede::RunOneInput
+  ```
+impacted_packages:
+  - purl: pkg:generic/systemd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57937
+    reference_type:
+    reference_id:

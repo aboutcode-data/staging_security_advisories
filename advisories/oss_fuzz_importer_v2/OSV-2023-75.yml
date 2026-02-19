@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-75
+datasource_id: oss_fuzz_importer_v2/OSV-2023-75
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libavc/OSV-2023-75.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in isvcd_interlyr_motion_mode_pred_dyadic
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56050
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  isvcd_interlyr_motion_mode_pred_dyadic
+  isvcd_mv_pred_ref_tfr_nby2_epmb
+  isvcd_parse_inter_slice_data_cabac_enh_lyr
+  ```
+impacted_packages:
+  - purl: pkg:generic/libavc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56050
+    reference_type:
+    reference_id:

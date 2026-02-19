@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1051
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1051
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libredwg/OSV-2023-1051.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in dwg_json_VPORT_private
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63483
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  dwg_json_VPORT_private
+  json_objects_write
+  dwg_write_json
+  ```
+impacted_packages:
+  - purl: pkg:generic/libredwg
+    affected_versions: vers:generic/0.12.5+6430|0.12.5+6432|0.12.5+6434|0.12.5+6437|0.12.5+6439|0.12.5+6444|0.12.5+6456|0.12.5+6459|0.12.5+6461|0.12.5+6465|0.12.5+6468|0.12.5+6479|0.12.5+6483
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63483
+    reference_type:
+    reference_id:

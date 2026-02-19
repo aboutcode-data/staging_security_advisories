@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1129
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1129
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libheif/OSV-2023-1129.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in HeifPixelImage::overlay
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63990
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  HeifPixelImage::overlay
+  HeifContext::decode_overlay_image
+  HeifContext::decode_image_planar
+  ```
+impacted_packages:
+  - purl: pkg:generic/libheif
+    affected_versions: vers:generic/1.16.2|1.17.0|1.17.1|1.17.2|1.17.3|1.17.4|1.17.5|1.17.6|1.18.0-rc1|1.18.0|1.18.1|1.18.2|1.19.0|1.19.1|1.19.2|1.19.3|1.19.4|1.19.5|1.19.6|1.19.7|1.19.8|1.20.0|1.20.1|1.20.2|1.21.0|1.21.1|1.21.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63990
+    reference_type:
+    reference_id:

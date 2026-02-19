@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-619
+datasource_id: oss_fuzz_importer_v2/OSV-2023-619
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/feign/OSV-2023-619.yaml
+aliases: []
+summary: |
+  Security exception in java.base/java.util.regex.Pattern$GroupTail.match
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60846
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  java.base/java.util.regex.Pattern$GroupTail.match
+  java.base/java.io.BufferedWriter.ensureOpen
+  java.base/java.io.BufferedWriter.write
+  ```
+impacted_packages:
+  - purl: pkg:generic/feign
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60846
+    reference_type:
+    reference_id:

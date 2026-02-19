@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-815
+datasource_id: oss_fuzz_importer_v2/OSV-2022-815
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/lcms/OSV-2022-815.yaml
+aliases: []
+summary: |
+  Negative-size-param in PackChunkyBytes
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50832
+
+  ```
+  Crash type: Negative-size-param
+  Crash state:
+  PackChunkyBytes
+  PrecalculatedXFORM
+  cmsDoTransform
+  ```
+impacted_packages:
+  - purl: pkg:generic/lcms
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50832
+    reference_type:
+    reference_id:

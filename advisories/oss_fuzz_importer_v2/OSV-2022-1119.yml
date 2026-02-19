@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1119
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1119
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/spirv-tools/OSV-2022-1119.yaml
+aliases: []
+summary: |
+  Container-overflow in spvtools::opt::blockmergeutil::CanMergeWithSuccessor
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52863
+
+  ```
+  Crash type: Container-overflow READ 8
+  Crash state:
+  spvtools::opt::blockmergeutil::CanMergeWithSuccessor
+  std::__1::__function::__func<spvtools::opt::BlockMergePass::Process
+  spvtools::opt::IRContext::ProcessCallTreeFromRoots
+  ```
+impacted_packages:
+  - purl: pkg:generic/spirv-tools
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52863
+    reference_type:
+    reference_id:

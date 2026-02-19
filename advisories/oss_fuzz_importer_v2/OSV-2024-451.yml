@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-451
+datasource_id: oss_fuzz_importer_v2/OSV-2024-451
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/trafficserver/OSV-2024-451.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in XpackDynamicTable::_make_space
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66347
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  XpackDynamicTable::_make_space
+  XpackDynamicTable::insert_entry
+  XpackDynamicTable::insert_entry
+  ```
+impacted_packages:
+  - purl: pkg:generic/trafficserver
+    affected_versions: vers:generic/10.0.0-rc0|10.0.0|10.0.1-rc0|10.0.1-rc1|10.0.1|10.0.2-rc0|10.0.2|10.0.3-rc0|10.0.3-rc1|10.0.3|10.0.4-rc0|10.0.4|10.0.5-rc0|10.0.5|10.0.6-rc0|10.0.6|10.1.0-rc0|10.1.0-rc1|10.1.0|10.1.1-rc0|10.1.1-rc1|10.1.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66347
+    reference_type:
+    reference_id:

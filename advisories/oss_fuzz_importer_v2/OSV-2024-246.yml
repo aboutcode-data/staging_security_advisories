@@ -1,0 +1,24 @@
+advisory_id: OSV-2024-246
+datasource_id: oss_fuzz_importer_v2/OSV-2024-246
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2024-246.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in ndpi_detection_process_packet
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67881
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  ndpi_detection_process_packet
+  fuzz_process_packet.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67881
+    reference_type:
+    reference_id:

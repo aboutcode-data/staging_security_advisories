@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-90
+datasource_id: oss_fuzz_importer_v2/OSV-2023-90
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libraw/OSV-2023-90.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in LibRaw_buffer_datastream::scanf_one
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56160
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  LibRaw_buffer_datastream::scanf_one
+  LibRaw::parse_mos
+  LibRaw::parse_tiff_ifd
+  ```
+impacted_packages:
+  - purl: pkg:generic/libraw
+    affected_versions: vers:generic/0.21.0-Beta1|0.21.0|0.21.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56160
+    reference_type:
+    reference_id:

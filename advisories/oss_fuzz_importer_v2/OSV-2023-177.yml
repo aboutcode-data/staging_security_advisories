@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-177
+datasource_id: oss_fuzz_importer_v2/OSV-2023-177
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mosquitto/OSV-2023-177.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in mosquitto__strdup
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57002
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  mosquitto__strdup
+  config__read_file_core
+  config__read_file
+  ```
+impacted_packages:
+  - purl: pkg:generic/mosquitto
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57002
+    reference_type:
+    reference_id:

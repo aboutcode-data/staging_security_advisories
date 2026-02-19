@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-791
+datasource_id: oss_fuzz_importer_v2/OSV-2022-791
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/tomcat/OSV-2022-791.yaml
+aliases: []
+summary: |
+  Security exception in java.base/java.util.Arrays.copyOf
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50631
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  java.base/java.util.Arrays.copyOf
+  java.base/java.lang.AbstractStringBuilder.ensureCapacityInternal
+  java.base/java.lang.AbstractStringBuilder.append
+  ```
+impacted_packages:
+  - purl: pkg:generic/tomcat
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50631
+    reference_type:
+    reference_id:

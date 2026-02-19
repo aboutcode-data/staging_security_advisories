@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-138
+datasource_id: oss_fuzz_importer_v2/OSV-2024-138
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/javaparser/OSV-2024-138.yaml
+aliases: []
+summary: |
+  Security exception in com.github.javaparser.GeneratedJavaParser.Expression
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67005
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  com.github.javaparser.GeneratedJavaParser.Expression
+  java.base/java.util.concurrent.ConcurrentHashMap.putVal
+  java.base/java.util.concurrent.ConcurrentHashMap.putIfAbsent
+  ```
+impacted_packages:
+  - purl: pkg:generic/javaparser
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67005
+    reference_type:
+    reference_id:

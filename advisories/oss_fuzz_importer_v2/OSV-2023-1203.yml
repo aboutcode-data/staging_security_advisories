@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1203
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1203
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2023-1203.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in dissect_zcl_read_attr_struct
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64363
+
+  ```
+  Crash type: Global-buffer-overflow READ 4
+  Crash state:
+  dissect_zcl_read_attr_struct
+  dissect_zbee_zcl
+  call_dissector_work
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64363
+    reference_type:
+    reference_id:

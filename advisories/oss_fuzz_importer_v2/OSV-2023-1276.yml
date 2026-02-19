@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1276
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1276
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2023-1276.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in authentic_emu_update_tokeninfo
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64898
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  authentic_emu_update_tokeninfo
+  sc_pkcs15init_update_tokeninfo
+  sc_pkcs15init_update_lastupdate
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions: vers:generic/0.24.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64898
+    reference_type: other
+    reference_id: detail?id=64898

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-376
+datasource_id: oss_fuzz_importer_v2/OSV-2022-376
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2022-376.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ndpi_search_raknet
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47000
+
+  ```
+  Crash type: Heap-buffer-overflow READ 2
+  Crash state:
+  ndpi_search_raknet
+  check_ndpi_detection_func
+  ndpi_check_flow_func
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47000
+    reference_type:
+    reference_id:

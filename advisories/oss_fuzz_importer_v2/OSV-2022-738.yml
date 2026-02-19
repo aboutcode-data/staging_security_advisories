@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-738
+datasource_id: oss_fuzz_importer_v2/OSV-2022-738
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/jackson-modules-java8/OSV-2022-738.yaml
+aliases: []
+summary: |
+  Security exception in DatatypeFuzzer.fuzzerTestOneInput
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50379
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  DatatypeFuzzer.fuzzerTestOneInput
+  com.code_intelligence.jazzer.driver.FuzzTargetRunner.runOne
+  com.code_intelligence.jazzer.driver.FuzzTargetRunner.startLibFuzzer
+  ```
+impacted_packages:
+  - purl: pkg:generic/jackson-modules-java8
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50379
+    reference_type:
+    reference_id:

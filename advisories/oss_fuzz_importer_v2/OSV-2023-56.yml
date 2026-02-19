@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-56
+datasource_id: oss_fuzz_importer_v2/OSV-2023-56
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libgit2/OSV-2023-56.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in git_oid_raw_cmp
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55724
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  git_oid_raw_cmp
+  commit_graph_parse_oid_lookup
+  git_commit_graph_file_parse
+  ```
+impacted_packages:
+  - purl: pkg:generic/libgit2
+    affected_versions: vers:generic/1.6.1|1.6.2|1.6.3|1.6.4
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55724
+    reference_type:
+    reference_id:

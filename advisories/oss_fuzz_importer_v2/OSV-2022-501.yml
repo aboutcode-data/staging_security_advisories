@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-501
+datasource_id: oss_fuzz_importer_v2/OSV-2022-501
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/grok/OSV-2022-501.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in grk::TileLengthMarkers::seek
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48224
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  grk::TileLengthMarkers::seek
+  grk::CodeStreamDecompress::skipNonScheduledTLM
+  grk::CodeStreamDecompress::parseTileParts
+  ```
+impacted_packages:
+  - purl: pkg:generic/grok
+    affected_versions: vers:generic/9.7.8
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48224
+    reference_type:
+    reference_id:

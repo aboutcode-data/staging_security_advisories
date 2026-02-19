@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1046
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1046
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/curl/OSV-2022-1046.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in Curl_output_aws_sigv4
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52349
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE {*}
+  Crash state:
+  Curl_output_aws_sigv4
+  output_auth_headers
+  Curl_http_output_auth
+  ```
+impacted_packages:
+  - purl: pkg:generic/curl
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52349
+    reference_type:
+    reference_id:

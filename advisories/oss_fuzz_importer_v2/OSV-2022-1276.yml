@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1276
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1276
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/openvpn/OSV-2022-1276.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in ntlm_phase_3
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59818
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE 1
+  Crash state:
+  ntlm_phase_3
+  establish_http_proxy_passthru
+  fuzz_proxy.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/openvpn
+    affected_versions: vers:generic/2.6.0-beta1|2.6.0-beta2|2.6.0-branched|2.6.0-rc1|2.6.0-rc2|2.6.0|2.6.1|2.6.2|2.6.3|2.6.4|2.6.5|2.6.6|2.6.7|2.6.8|2.6.9|2.6.10|2.6.11|2.6.12|2.6.13|2.6.14|2.7.0-alpha1|2.7.0-alpha2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59818
+    reference_type:
+    reference_id:

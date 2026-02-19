@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-405
+datasource_id: oss_fuzz_importer_v2/OSV-2023-405
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/liblouis/OSV-2023-405.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in _lou_stringHash
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59057
+
+  ```
+  Crash type: Heap-buffer-overflow READ 2
+  Crash state:
+  _lou_stringHash
+  _lou_translate
+  lou_translateString
+  ```
+impacted_packages:
+  - purl: pkg:generic/liblouis
+    affected_versions: vers:generic/3.26.0|3.27.0|3.28.0|3.29.0|3.30.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59057
+    reference_type:
+    reference_id:

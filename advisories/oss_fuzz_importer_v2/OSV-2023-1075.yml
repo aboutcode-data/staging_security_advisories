@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1075
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1075
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/php/OSV-2023-1075.yaml
+aliases: []
+summary: |
+  Segv on unknown address in cleanup_live_vars
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63601
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  cleanup_live_vars
+  zend_dispatch_try_catch_finally_helper_SPEC
+  ZEND_HANDLE_EXCEPTION_SPEC_HANDLER
+  ```
+impacted_packages:
+  - purl: pkg:generic/php
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63601
+    reference_type:
+    reference_id:

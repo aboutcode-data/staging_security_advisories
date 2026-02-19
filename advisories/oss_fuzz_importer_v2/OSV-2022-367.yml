@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-367
+datasource_id: oss_fuzz_importer_v2/OSV-2022-367
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libjxl/OSV-2022-367.yaml
+aliases: []
+summary: |
+  Segv on unknown address in jxl::N_SSE4::WriteToU8Stage::ProcessRow
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46915
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  jxl::N_SSE4::WriteToU8Stage::ProcessRow
+  jxl::LowMemoryRenderPipeline::RenderRect
+  jxl::LowMemoryRenderPipeline::ProcessBuffers
+  ```
+impacted_packages:
+  - purl: pkg:generic/libjxl
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46915
+    reference_type:
+    reference_id:

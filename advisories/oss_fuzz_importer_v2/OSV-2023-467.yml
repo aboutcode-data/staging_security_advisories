@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-467
+datasource_id: oss_fuzz_importer_v2/OSV-2023-467
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/espeak-ng/OSV-2023-467.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in SetPitchGradient
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59636
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE 1
+  Crash state:
+  SetPitchGradient
+  calc_pitches
+  CalcPitches
+  ```
+impacted_packages:
+  - purl: pkg:generic/espeak-ng
+    affected_versions: vers:generic/1.51.0|1.52.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59636
+    reference_type:
+    reference_id:

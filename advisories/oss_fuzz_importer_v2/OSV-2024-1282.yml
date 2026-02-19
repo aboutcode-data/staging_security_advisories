@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1282
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1282
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mruby/OSV-2024-1282.yaml
+aliases: []
+summary: |
+  Segv on unknown address in udiv
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=368729572
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  udiv
+  mpz_mdiv
+  mrb_bint_div
+  ```
+impacted_packages:
+  - purl: pkg:generic/mruby
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=368729572
+    reference_type:
+    reference_id:

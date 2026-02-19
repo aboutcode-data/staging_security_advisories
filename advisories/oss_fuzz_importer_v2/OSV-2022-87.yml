@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-87
+datasource_id: oss_fuzz_importer_v2/OSV-2022-87
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/php/OSV-2022-87.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in zend_std_get_property_ptr_ptr
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=43988
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  zend_std_get_property_ptr_ptr
+  zend_fetch_property_address
+  ZEND_FETCH_OBJ_W_SPEC_CV_CONST_HANDLER
+  ```
+impacted_packages:
+  - purl: pkg:generic/php
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=43988
+    reference_type:
+    reference_id:

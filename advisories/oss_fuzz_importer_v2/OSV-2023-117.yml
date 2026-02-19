@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-117
+datasource_id: oss_fuzz_importer_v2/OSV-2023-117
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libavc/OSV-2023-117.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in isvcd_nal_byte_swap_emulation
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56386
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 4
+  Crash state:
+  isvcd_nal_byte_swap_emulation
+  isvcd_nal_parse_non_vcl_nal
+  isvcd_pre_parse_refine_au
+  ```
+impacted_packages:
+  - purl: pkg:generic/libavc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56386
+    reference_type:
+    reference_id:

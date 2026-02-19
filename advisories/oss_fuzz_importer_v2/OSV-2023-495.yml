@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-495
+datasource_id: oss_fuzz_importer_v2/OSV-2023-495
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/poppler/OSV-2023-495.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in utf8ToUtf16
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59884
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 2
+  Crash state:
+  utf8ToUtf16
+  utf8ToUtf16WithBom
+  Lexer::getObj
+  ```
+impacted_packages: []
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59884
+    reference_type:
+    reference_id:
+  - url: https://gitlab.freedesktop.org/poppler/poppler.git
+    reference_type: commit
+    reference_id: fceaba5461e276121e50d858169a53f7434b1e05

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1228
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1228
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2023-1228.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in asn1_decode_entry
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64522
+
+  ```
+  Crash type: Stack-buffer-overflow READ 8
+  Crash state:
+  asn1_decode_entry
+  asn1_decode
+  _sc_asn1_decode
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions: vers:generic/0.24.0-rc1|0.24.0-rc2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64522
+    reference_type:
+    reference_id:

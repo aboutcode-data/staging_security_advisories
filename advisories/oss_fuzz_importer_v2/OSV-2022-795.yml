@@ -1,0 +1,24 @@
+advisory_id: OSV-2022-795
+datasource_id: oss_fuzz_importer_v2/OSV-2022-795
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcl/OSV-2022-795.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in pcl::PLYReader::read
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50663
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  pcl::PLYReader::read
+  ply_io.h
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcl
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50663
+    reference_type:
+    reference_id:

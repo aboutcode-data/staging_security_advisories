@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-542
+datasource_id: oss_fuzz_importer_v2/OSV-2023-542
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/jsign/OSV-2023-542.yaml
+aliases: []
+summary: |
+  Security exception in net.jsign.appx.Zip64EndOfCentralDirectoryRecord.read
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60308
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  net.jsign.appx.Zip64EndOfCentralDirectoryRecord.read
+  net.jsign.appx.CentralDirectory.read
+  net.jsign.appx.ZipFile.<init>
+  ```
+impacted_packages:
+  - purl: pkg:generic/jsign
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60308
+    reference_type:
+    reference_id:

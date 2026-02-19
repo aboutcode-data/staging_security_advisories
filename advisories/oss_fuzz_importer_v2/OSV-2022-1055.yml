@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1055
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1055
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2022-1055.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in ndpi_search_irc_tcp
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52435
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  ndpi_search_irc_tcp
+  check_ndpi_detection_func
+  ndpi_detection_process_packet
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52435
+    reference_type:
+    reference_id:

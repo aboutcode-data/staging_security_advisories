@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-640
+datasource_id: oss_fuzz_importer_v2/OSV-2023-640
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/clamav/OSV-2023-640.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in initialize_encryption_key
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61039
+
+  ```
+  Crash type: Stack-buffer-overflow READ {*}
+  Crash state:
+  initialize_encryption_key
+  cli_ole2_extract
+  cli_scanole2
+  ```
+impacted_packages:
+  - purl: pkg:generic/clamav
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61039
+    reference_type:
+    reference_id:

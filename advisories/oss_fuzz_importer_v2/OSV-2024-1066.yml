@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1066
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1066
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/edk2/OSV-2024-1066.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in StrLen
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=71496
+
+  ```
+  Crash type: Heap-buffer-overflow READ 2
+  Crash state:
+  StrLen
+  MangleFileName
+  ToolChainHarnessLib.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/edk2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=71496
+    reference_type:
+    reference_id:

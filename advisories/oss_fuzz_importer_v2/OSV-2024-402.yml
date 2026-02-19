@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-402
+datasource_id: oss_fuzz_importer_v2/OSV-2024-402
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/swift-protobuf/OSV-2024-402.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in SwiftProtobuf.TextFormatScanner.
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68485
+
+  ```
+  Crash type: Stack-buffer-overflow READ 1
+  Crash state:
+  SwiftProtobuf.TextFormatScanner.
+  SwiftProtobuf.TextFormatScanner.
+  function signature specialization <Arg
+  ```
+impacted_packages:
+  - purl: pkg:generic/swift-protobuf
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68485
+    reference_type:
+    reference_id:

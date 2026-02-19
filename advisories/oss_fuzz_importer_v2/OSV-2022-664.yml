@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-664
+datasource_id: oss_fuzz_importer_v2/OSV-2022-664
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libredwg/OSV-2022-664.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in decode_preR13_section_hdr
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49675
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 4
+  Crash state:
+  decode_preR13_section_hdr
+  decode_preR13
+  dwg_decode
+  ```
+impacted_packages:
+  - purl: pkg:generic/libredwg
+    affected_versions: vers:generic/0.12.4+4635|0.12.4+4637|0.12.4+4641|0.12.4+4643|0.12.4+4647|0.12.4+4652|0.12.4+4654
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49675
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-364
+datasource_id: oss_fuzz_importer_v2/OSV-2023-364
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hunspell/OSV-2023-364.yaml
+aliases: []
+summary: |
+  Heap-double-free in HashMgr::~HashMgr
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58553
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  HashMgr::~HashMgr
+  HunspellImpl::~HunspellImpl
+  Hunspell::~Hunspell
+  ```
+impacted_packages:
+  - purl: pkg:generic/hunspell
+    affected_versions: vers:generic/1.7.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58553
+    reference_type:
+    reference_id:

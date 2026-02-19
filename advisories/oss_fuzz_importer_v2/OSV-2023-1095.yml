@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1095
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1095
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/php/OSV-2023-1095.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in zend_jit_trace_execute
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63725
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  zend_jit_trace_execute
+  zend_jit_trace_hot_side
+  zend_jit_trace_exit
+  ```
+impacted_packages:
+  - purl: pkg:generic/php
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63725
+    reference_type:
+    reference_id:

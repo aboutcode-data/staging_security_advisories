@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-421
+datasource_id: oss_fuzz_importer_v2/OSV-2023-421
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/faad2/OSV-2023-421.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in hf_adjustment
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59185
+
+  ```
+  Crash type: Global-buffer-overflow READ 4
+  Crash state:
+  hf_adjustment
+  sbr_process_channel
+  sbrDecodeCoupleFrame
+  ```
+impacted_packages:
+  - purl: pkg:generic/faad2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59185
+    reference_type:
+    reference_id:

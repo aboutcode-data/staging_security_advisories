@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-896
+datasource_id: oss_fuzz_importer_v2/OSV-2023-896
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mongoose/OSV-2023-896.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in deliver_chunked_chunks
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62609
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  deliver_chunked_chunks
+  http_cb
+  fuzz.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/mongoose
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62609
+    reference_type:
+    reference_id:

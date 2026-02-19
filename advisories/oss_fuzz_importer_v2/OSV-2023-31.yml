@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-31
+datasource_id: oss_fuzz_importer_v2/OSV-2023-31
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libzip/OSV-2023-31.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in zip_source_open
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55365
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  zip_source_open
+  zip_source_open
+  _zip_open
+  ```
+impacted_packages:
+  - purl: pkg:generic/libzip
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55365
+    reference_type:
+    reference_id:

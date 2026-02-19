@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-773
+datasource_id: oss_fuzz_importer_v2/OSV-2022-773
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-773.yaml
+aliases: []
+summary: |
+  Heap-double-free in sc_pkcs15_encode_df
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50536
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  sc_pkcs15_encode_df
+  sc_pkcs15init_update_any_df
+  sc_pkcs15init_add_object
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50536
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-844
+datasource_id: oss_fuzz_importer_v2/OSV-2023-844
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/serenity/OSV-2023-844.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in Video::VP9::Decoder::create_video_frame
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62307
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  Video::VP9::Decoder::create_video_frame
+  Video::VP9::Decoder::decode_frame
+  Video::VP9::Decoder::receive_sample
+  ```
+impacted_packages:
+  - purl: pkg:generic/serenity
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62307
+    reference_type:
+    reference_id:

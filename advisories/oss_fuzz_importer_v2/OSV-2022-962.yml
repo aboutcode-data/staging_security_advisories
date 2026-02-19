@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-962
+datasource_id: oss_fuzz_importer_v2/OSV-2022-962
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/xstream/OSV-2022-962.yaml
+aliases: []
+summary: |
+  Security exception in com.ctc.wstx.dtd.FullDTDReader.readContentSpec
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51840
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  com.ctc.wstx.dtd.FullDTDReader.readContentSpec
+  java.base/sun.nio.cs.CESU_8.updatePositions
+  java.base/sun.nio.cs.CESU_8$Encoder.encodeArrayLoop
+  ```
+impacted_packages:
+  - purl: pkg:generic/xstream
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51840
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-89
+datasource_id: oss_fuzz_importer_v2/OSV-2023-89
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hdf5/OSV-2023-89.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in H5O__mtime_new_encode
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56143
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 1
+  Crash state:
+  H5O__mtime_new_encode
+  H5O_msg_flush
+  H5O__chunk_serialize
+  ```
+impacted_packages:
+  - purl: pkg:generic/hdf5
+    affected_versions: vers:generic/1.14.1|2.0.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56143
+    reference_type:
+    reference_id:

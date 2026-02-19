@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-112
+datasource_id: oss_fuzz_importer_v2/OSV-2022-112
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2022-112.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in hb_bit_set_invertible_t::next
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44263
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  hb_bit_set_invertible_t::next
+  hb_bit_set_invertible_t::intersects
+  hb_sparseset_t<hb_bit_set_invertible_t>::intersects
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions: vers:generic/3.3.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44263
+    reference_type:
+    reference_id:

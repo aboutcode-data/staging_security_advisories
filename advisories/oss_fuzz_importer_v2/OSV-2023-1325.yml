@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1325
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1325
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/php/OSV-2023-1325.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in zero
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65135
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  zero
+  zend_execute
+  fuzzer_do_request_from_buffer
+  ```
+impacted_packages:
+  - purl: pkg:generic/php
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65135
+    reference_type:
+    reference_id:

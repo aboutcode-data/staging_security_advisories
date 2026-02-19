@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-151
+datasource_id: oss_fuzz_importer_v2/OSV-2023-151
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mruby/OSV-2023-151.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in mrb_vm_find_method
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56687
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  mrb_vm_find_method
+  mrb_vm_exec
+  mrb_vm_run
+  ```
+impacted_packages:
+  - purl: pkg:generic/mruby
+    affected_versions: vers:generic/3.2.0-rc|3.2.0-rc2|3.2.0-rc3|3.2.0-rc4|3.2.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56687
+    reference_type:
+    reference_id:

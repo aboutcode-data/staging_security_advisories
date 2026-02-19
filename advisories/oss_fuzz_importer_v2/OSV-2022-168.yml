@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-168
+datasource_id: oss_fuzz_importer_v2/OSV-2022-168
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fmt/OSV-2022-168.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in fmt::v8::detail::big_decimal_fp fmt::v8::detail::write_padded<
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44791
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 1
+  Crash state:
+  fmt::v8::detail::big_decimal_fp fmt::v8::detail::write_padded<
+  std::__1::back_insert_iterator<fmt::v8::basic_memory_buffer<char, 500ul, std::__
+  std::__1::back_insert_iterator<fmt::v8::basic_memory_buffer<char, 500ul, std::__
+  ```
+impacted_packages:
+  - purl: pkg:generic/fmt
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44791
+    reference_type:
+    reference_id:

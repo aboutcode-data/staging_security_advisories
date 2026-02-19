@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-304
+datasource_id: oss_fuzz_importer_v2/OSV-2023-304
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/systemd/OSV-2023-304.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in _hashmap_free
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57928
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  _hashmap_free
+  journal_remote_server_destroy
+  fuzz-journal-remote.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/systemd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57928
+    reference_type:
+    reference_id:

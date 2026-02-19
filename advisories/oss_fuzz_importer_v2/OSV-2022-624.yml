@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-624
+datasource_id: oss_fuzz_importer_v2/OSV-2022-624
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/assimp/OSV-2022-624.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in Assimp::MD5::MD5Parser::ParseHeader
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49422
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  Assimp::MD5::MD5Parser::ParseHeader
+  Assimp::MD5::MD5Parser::MD5Parser
+  Assimp::MD5Importer::LoadMD5MeshFile
+  ```
+impacted_packages:
+  - purl: pkg:generic/assimp
+    affected_versions: vers:generic/5.1.0|5.1.0+rc1|5.1.1|5.1.2|5.1.3|5.1.4|5.1.5|5.1.6|5.2.0|5.2.0|5.2.1|5.2.2|5.2.3|5.2.4|5.2.5
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49422
+    reference_type:
+    reference_id:

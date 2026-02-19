@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-16
+datasource_id: oss_fuzz_importer_v2/OSV-2023-16
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wolfssl/OSV-2023-16.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in wc_AesFeedbackEncrypt
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55174
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 1
+  Crash state:
+  wc_AesFeedbackEncrypt
+  wc_AesOfbEncrypt
+  evpCipherBlock
+  ```
+impacted_packages:
+  - purl: pkg:generic/wolfssl
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55174
+    reference_type:
+    reference_id:

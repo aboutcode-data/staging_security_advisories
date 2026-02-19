@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-181
+datasource_id: oss_fuzz_importer_v2/OSV-2024-181
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/checkstyle/OSV-2024-181.yaml
+aliases: []
+summary: |
+  Security exception in org.antlr.v4.runtime.atn.PredictionContext.fromRuleContext
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67461
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.antlr.v4.runtime.atn.PredictionContext.fromRuleContext
+  org.antlr.v4.runtime.misc.MurmurHash.update
+  org.antlr.v4.runtime.misc.MurmurHash.update
+  ```
+impacted_packages:
+  - purl: pkg:generic/checkstyle
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67461
+    reference_type:
+    reference_id:

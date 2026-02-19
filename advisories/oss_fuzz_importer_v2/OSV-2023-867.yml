@@ -1,0 +1,24 @@
+advisory_id: OSV-2023-867
+datasource_id: oss_fuzz_importer_v2/OSV-2023-867
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mongoose/OSV-2023-867.yaml
+aliases: []
+summary: |
+  Negative-size-param in http_cb
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62389
+
+  ```
+  Crash type: Negative-size-param
+  Crash state:
+  http_cb
+  fuzz.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/mongoose
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62389
+    reference_type:
+    reference_id:

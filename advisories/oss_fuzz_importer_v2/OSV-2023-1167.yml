@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1167
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1167
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/php/OSV-2023-1167.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in php_strip_url_passwd
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64209
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  php_strip_url_passwd
+  php_message_handler_for_zend
+  zend_message_dispatcher
+  ```
+impacted_packages:
+  - purl: pkg:generic/php
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64209
+    reference_type:
+    reference_id:

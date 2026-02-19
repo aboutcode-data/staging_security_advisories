@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-343
+datasource_id: oss_fuzz_importer_v2/OSV-2022-343
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fastjson2/OSV-2022-343.yaml
+aliases: []
+summary: |
+  Uncaught exception in com.alibaba.fastjson.JSONPath.getPropertyValue
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46696
+
+  ```
+  Crash type: Uncaught exception
+  Crash state:
+  com.alibaba.fastjson.JSONPath.getPropertyValue
+  java.base/jdk.internal.math.FDBigInteger.multByPow52
+  java.base/jdk.internal.math.FloatingDecimal$ASCIIToBinaryBuffer.floatValue
+  ```
+impacted_packages:
+  - purl: pkg:generic/fastjson2
+    affected_versions: vers:generic/1.2.80
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46696
+    reference_type:
+    reference_id:

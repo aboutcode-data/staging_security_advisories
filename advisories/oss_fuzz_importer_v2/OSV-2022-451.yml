@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-451
+datasource_id: oss_fuzz_importer_v2/OSV-2022-451
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-451.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in myeid_create_key
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47769
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  myeid_create_key
+  sc_pkcs15init_store_secret_key
+  do_store_secret_key
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47769
+    reference_type:
+    reference_id:

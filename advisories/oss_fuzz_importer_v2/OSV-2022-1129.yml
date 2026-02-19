@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1129
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1129
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/assimp/OSV-2022-1129.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in Assimp::ObjFileMtlImporter::getFloatValue
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52935
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  Assimp::ObjFileMtlImporter::getFloatValue
+  Assimp::ObjFileMtlImporter::load
+  Assimp::ObjFileMtlImporter::ObjFileMtlImporter
+  ```
+impacted_packages:
+  - purl: pkg:generic/assimp
+    affected_versions: vers:generic/5.2.3|5.2.4|5.2.5
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52935
+    reference_type:
+    reference_id:

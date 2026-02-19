@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-239
+datasource_id: oss_fuzz_importer_v2/OSV-2024-239
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/matio/OSV-2024-239.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in H5G__ent_to_link
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67794
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  H5G__ent_to_link
+  H5G__node_iterate
+  H5B__iterate_helper
+  ```
+impacted_packages:
+  - purl: pkg:generic/matio
+    affected_versions: vers:generic/1.5.27|1.5.28|1.5.29|1.5.30
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67794
+    reference_type:
+    reference_id:

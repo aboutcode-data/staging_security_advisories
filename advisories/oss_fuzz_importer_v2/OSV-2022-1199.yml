@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1199
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1199
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/librawspeed/OSV-2022-1199.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in rawspeed::RawImageData::checkRowIsInitialized
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53618
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  rawspeed::RawImageData::checkRowIsInitialized
+  rawspeed::RawImageData::checkMemIsInitialized
+  rawspeed::RawDecoder::decodeRaw
+  ```
+impacted_packages:
+  - purl: pkg:generic/librawspeed
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53618
+    reference_type:
+    reference_id:

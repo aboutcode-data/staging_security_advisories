@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-380
+datasource_id: oss_fuzz_importer_v2/OSV-2024-380
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hdf5/OSV-2024-380.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in H5FL__blk_gc_list
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67830
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  H5FL__blk_gc_list
+  H5FL_blk_free
+  H5O__free
+  ```
+impacted_packages:
+  - purl: pkg:generic/hdf5
+    affected_versions: vers:generic/1.14.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67830
+    reference_type:
+    reference_id:

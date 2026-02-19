@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-189
+datasource_id: oss_fuzz_importer_v2/OSV-2024-189
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/htslib/OSV-2024-189.yaml
+aliases: []
+summary: |
+  Negative-size-param in vcf_parse_format
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67431
+
+  ```
+  Crash type: Negative-size-param
+  Crash state:
+  vcf_parse_format
+  vcf_parse
+  bcf_read
+  ```
+impacted_packages:
+  - purl: pkg:generic/htslib
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67431
+    reference_type:
+    reference_id:

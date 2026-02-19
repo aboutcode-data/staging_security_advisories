@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-391
+datasource_id: oss_fuzz_importer_v2/OSV-2023-391
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2023-391.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in wmem_tree_lookup32_array_le
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58832
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  wmem_tree_lookup32_array_le
+  dissect_btl2cap
+  call_dissector_work
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58832
+    reference_type:
+    reference_id:

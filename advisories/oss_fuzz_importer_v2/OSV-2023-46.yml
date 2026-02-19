@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-46
+datasource_id: oss_fuzz_importer_v2/OSV-2023-46
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libredwg/OSV-2023-46.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in json_cquote
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55607
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 1
+  Crash state:
+  json_cquote
+  json_preR13_header_write_private
+  dwg_write_json
+  ```
+impacted_packages:
+  - purl: pkg:generic/libredwg
+    affected_versions: vers:generic/0.12.5+4760|0.12.5+4763|0.12.5+4765|0.12.5+4772|0.12.5+4776|0.12.5+4780|0.12.5+4784|0.12.5+4787|0.12.5+4797|0.12.5+4803|0.12.5+4805|0.12.5+4815|0.12.5+4820|0.12.5+4823|0.12.5+4825|0.12.5+4831|0.12.5+4833|0.12.5+4835|0.12.5+4837|0.12.5+4838|0.12.5+4852|0.12.5+4859|0.12.5+4865|0.12.5+4873|0.12.5+4881|0.12.5+4885|0.12.5+4887|0.12.5+4890|0.12.5+4893|0.12.5+4896|0.12.5+4911|0.12.5+4913|0.12.5+4915|0.12.5+4925|0.12.5+4931|0.12.5+4934|0.12.5+4937|0.12.5+4943|0.12.5+4944|0.12.5+4945|0.12.5+4959|0.12.5+4969|0.12.5+4998|0.12.5+5001|0.12.5+5002|0.12.5+5004|0.12.5+5007|0.12.5+5010|0.12.5+5016|0.12.5+5024|0.12.5+5028|0.12.5+5030|0.12.5+5035|0.12.5+5040|0.12.5+5044|0.12.5+5046|0.12.5+5050|0.12.5+5052|0.12.5+5060|0.12.5+5061|0.12.5+5066|0.12.5+5085|0.12.5+5091|0.12.5+5092|0.12.5+5093|0.12.5+5094|0.12.5+5095|0.12.5+5097|0.12.5+5101|0.12.5+5103|0.12.5+5104|0.12.5+5111
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=55607
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-156
+datasource_id: oss_fuzz_importer_v2/OSV-2023-156
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hunspell/OSV-2023-156.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in HashMgr::add_word
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56737
+
+  ```
+  Crash type: Heap-use-after-free READ 2
+  Crash state:
+  HashMgr::add_word
+  HashMgr::load_tables
+  HashMgr::HashMgr
+  ```
+impacted_packages:
+  - purl: pkg:generic/hunspell
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56737
+    reference_type:
+    reference_id:

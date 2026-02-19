@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-197
+datasource_id: oss_fuzz_importer_v2/OSV-2023-197
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/p11-kit/OSV-2023-197.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in base_C_MessageEncryptInit
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57120
+
+  ```
+  Crash type: Global-buffer-overflow READ 8
+  Crash state:
+  base_C_MessageEncryptInit
+  rpc_C_MessageEncryptInit
+  p11_rpc_server_handle
+  ```
+impacted_packages:
+  - purl: pkg:generic/p11-kit
+    affected_versions: vers:generic/0.25.0|0.25.1|0.25.2|0.25.3|0.25.4|0.25.5|0.25.6|0.25.7|0.25.8|0.25.9|0.25.10|0.26.0|0.26.1|0.26.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57120
+    reference_type:
+    reference_id:

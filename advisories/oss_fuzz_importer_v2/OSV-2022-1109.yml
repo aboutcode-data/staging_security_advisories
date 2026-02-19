@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1109
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1109
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/tomcat/OSV-2022-1109.yaml
+aliases: []
+summary: |
+  Security exception in java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52812
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString
+  java.base/jdk.internal.math.FloatingDecimal.parseDouble
+  java.base/java.lang.Double.parseDouble
+  ```
+impacted_packages:
+  - purl: pkg:generic/tomcat
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52812
+    reference_type:
+    reference_id:

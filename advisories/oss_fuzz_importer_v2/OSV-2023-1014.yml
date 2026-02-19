@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1014
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1014
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/jsoup/OSV-2023-1014.yaml
+aliases: []
+summary: |
+  Security exception in org.jsoup.parser.HtmlTreeBuilder.process
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63242
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.jsoup.parser.HtmlTreeBuilder.process
+  org.jsoup.parser.HtmlTreeBuilderState$14.handleMissingTr
+  org.jsoup.parser.HtmlTreeBuilderState$14.process
+  ```
+impacted_packages:
+  - purl: pkg:generic/jsoup
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63242
+    reference_type:
+    reference_id:

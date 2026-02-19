@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-371
+datasource_id: oss_fuzz_importer_v2/OSV-2022-371
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libvips/OSV-2022-371.yaml
+aliases: []
+summary: |
+  Segv on unknown address in jxl::N_AVX2::WriteToU8Stage::ProcessRow
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46963
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  jxl::N_AVX2::WriteToU8Stage::ProcessRow
+  jxl::LowMemoryRenderPipeline::RenderRect
+  jxl::LowMemoryRenderPipeline::ProcessBuffers
+  ```
+impacted_packages:
+  - purl: pkg:generic/libvips
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46963
+    reference_type:
+    reference_id:

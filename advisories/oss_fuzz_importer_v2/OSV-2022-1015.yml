@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1015
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1015
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mapserver/OSV-2022-1015.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in msFreeMap
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52102
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  msFreeMap
+  msLoadMap
+  mapfuzzer.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/mapserver
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=52102
+    reference_type:
+    reference_id:

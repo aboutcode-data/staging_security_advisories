@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-416
+datasource_id: oss_fuzz_importer_v2/OSV-2023-416
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libredwg/OSV-2023-416.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in dxf_fixup_string
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59118
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  dxf_fixup_string
+  dwg_dxf_DIMENSION_ALIGNED_private
+  dwg_dxf_DIMENSION_ALIGNED
+  ```
+impacted_packages:
+  - purl: pkg:generic/libredwg
+    affected_versions: vers:generic/0.12.5+5646|0.12.5+5648|0.12.5+5654|0.12.5+5656|0.12.5+5660|0.12.5+5663|0.12.5+5666|0.12.5+5667|0.12.5+5668|0.12.5+5671|0.12.5+5688|0.12.5+5691|0.12.5+5697|0.12.5+5700|0.12.5+5708|0.12.5+5710|0.12.5+5712|0.12.5+5713|0.12.5+5716|0.12.5+5720|0.12.5+5721|0.12.5+5725|0.12.5+5731|0.12.5+5733|0.12.5+5741|0.12.5+5745|0.12.5+5746|0.12.5+5748|0.12.5+5751
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59118
+    reference_type:
+    reference_id:

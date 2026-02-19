@@ -1,0 +1,25 @@
+advisory_id: OSV-2021-1640
+datasource_id: oss_fuzz_importer_v2/OSV-2021-1640
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/draco/OSV-2021-1640.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in draco::MeshEdgebreakerDecoderImpl<draco::MeshEdgebreakerTraversalValenceDecoder>
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=41545
+
+  ```
+  Crash type: Global-buffer-overflow READ 4
+  Crash state:
+  draco::MeshEdgebreakerDecoderImpl<draco::MeshEdgebreakerTraversalValenceDecoder>
+  draco::MeshEdgebreakerDecoderImpl<draco::MeshEdgebreakerTraversalValenceDecoder>
+  draco::MeshDecoder::DecodeGeometryData
+  ```
+impacted_packages:
+  - purl: pkg:generic/draco
+    affected_versions: vers:generic/1.4.0|1.4.1|1.4.3|1.5.0|1.5.1|1.5.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=41545
+    reference_type:
+    reference_id:

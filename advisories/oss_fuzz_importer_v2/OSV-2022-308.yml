@@ -1,0 +1,23 @@
+advisory_id: OSV-2022-308
+datasource_id: oss_fuzz_importer_v2/OSV-2022-308
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libvips/OSV-2022-308.yaml
+aliases: []
+summary: |
+  Null-dereference READ in ubsan_GetStackTrace
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46341
+
+  ```
+  Crash type: Null-dereference READ
+  Crash state:
+  ubsan_GetStackTrace
+  ```
+impacted_packages:
+  - purl: pkg:generic/libvips
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46341
+    reference_type:
+    reference_id:

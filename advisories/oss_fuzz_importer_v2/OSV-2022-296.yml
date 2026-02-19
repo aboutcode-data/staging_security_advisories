@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-296
+datasource_id: oss_fuzz_importer_v2/OSV-2022-296
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libjxl/OSV-2022-296.yaml
+aliases: []
+summary: |
+  Negative-size-param in jxl::N_SSE4::BlendingStage::ProcessPaddingRow
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46243
+
+  ```
+  Crash type: Negative-size-param
+  Crash state:
+  jxl::N_SSE4::BlendingStage::ProcessPaddingRow
+  jxl::LowMemoryRenderPipeline::RenderPadding
+  jxl::LowMemoryRenderPipeline::ProcessBuffers
+  ```
+impacted_packages:
+  - purl: pkg:generic/libjxl
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46243
+    reference_type:
+    reference_id:

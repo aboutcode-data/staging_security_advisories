@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-144
+datasource_id: oss_fuzz_importer_v2/OSV-2024-144
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/spirv-tools/OSV-2024-144.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in spvtools::val::ValidateAccessChain
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66956
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  spvtools::val::ValidateAccessChain
+  spvtools::val::MemoryPass
+  spvtools::val::ValidateBinaryUsingContextAndValidationState
+  ```
+impacted_packages:
+  - purl: pkg:generic/spirv-tools
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66956
+    reference_type:
+    reference_id:

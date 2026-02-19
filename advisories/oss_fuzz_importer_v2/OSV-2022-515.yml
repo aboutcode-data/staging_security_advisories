@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-515
+datasource_id: oss_fuzz_importer_v2/OSV-2022-515
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/javaparser/OSV-2022-515.yaml
+aliases: []
+summary: |
+  Uncaught exception in com.github.javaparser.CommentsInserter.insertComments
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48408
+
+  ```
+  Crash type: Uncaught exception
+  Crash state:
+  com.github.javaparser.CommentsInserter.insertComments
+  java.base/java.util.TreeMap.compare
+  java.base/java.util.TreeMap.addEntryToEmptyMap
+  ```
+impacted_packages:
+  - purl: pkg:generic/javaparser
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48408
+    reference_type:
+    reference_id:

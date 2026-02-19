@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-241
+datasource_id: oss_fuzz_importer_v2/OSV-2022-241
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/selinux/OSV-2022-241.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in write_cond_nodes_to_conf
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45523
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  write_cond_nodes_to_conf
+  sepol_kernel_policydb_to_conf
+  binpolicy-fuzzer.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/selinux
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45523
+    reference_type:
+    reference_id:

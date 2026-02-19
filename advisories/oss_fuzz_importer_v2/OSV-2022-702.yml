@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-702
+datasource_id: oss_fuzz_importer_v2/OSV-2022-702
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/net-snmp/OSV-2022-702.yaml
+aliases: []
+summary: |
+  Heap-double-free in ada_fuzz_header.h
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50042
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  ada_fuzz_header.h
+  snmp_free_pdu
+  snmp_api_fuzzer.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/net-snmp
+    affected_versions: vers:generic/5.9.3|5.9.3+rc1|5.9.4+pre1|5.9.4+pre2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50042
+    reference_type:
+    reference_id:

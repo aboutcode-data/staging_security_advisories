@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-953
+datasource_id: oss_fuzz_importer_v2/OSV-2022-953
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mongoose/OSV-2022-953.yaml
+aliases: []
+summary: |
+  Dynamic-stack-buffer-overflow in rx_icmp
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51757
+
+  ```
+  Crash type: Dynamic-stack-buffer-overflow WRITE {*}
+  Crash state:
+  rx_icmp
+  rx_ip
+  mip_rx
+  ```
+impacted_packages:
+  - purl: pkg:generic/mongoose
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51757
+    reference_type:
+    reference_id:

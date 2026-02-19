@@ -1,0 +1,23 @@
+advisory_id: OSV-2022-194
+datasource_id: oss_fuzz_importer_v2/OSV-2022-194
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/assimp/OSV-2022-194.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in SuperFastHash
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44964
+
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  SuperFastHash
+  Assimp::SceneCombiner::AddNodePrefixesChecked
+  Assimp::SceneCombiner::AddNodePrefixesChecked
+impacted_packages:
+  - purl: pkg:generic/assimp
+    affected_versions: vers:generic/5.1.6|5.2.0|5.2.0|5.2.1|5.2.2|5.2.3|5.2.4
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44964
+    reference_type:
+    reference_id:

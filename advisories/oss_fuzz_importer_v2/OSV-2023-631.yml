@@ -1,0 +1,24 @@
+advisory_id: OSV-2023-631
+datasource_id: oss_fuzz_importer_v2/OSV-2023-631
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2023-631.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in test_verify
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60971
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  test_verify
+  fuzz_pkcs11.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60971
+    reference_type:
+    reference_id:

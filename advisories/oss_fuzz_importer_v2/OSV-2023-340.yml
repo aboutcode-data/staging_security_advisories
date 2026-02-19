@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-340
+datasource_id: oss_fuzz_importer_v2/OSV-2023-340
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/grok/OSV-2023-340.yaml
+aliases: []
+summary: |
+  Heap-double-free in grk::DecompressCodeblock::release
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58285
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  grk::DecompressCodeblock::release
+  grk::t1_part1::T1Part1::decompress
+  std::__1::__function::__func<grk::DecompressScheduler::scheduleBlocks
+  ```
+impacted_packages:
+  - purl: pkg:generic/grok
+    affected_versions: vers:generic/9.7.8|10.0.0|10.0.1|10.0.2|10.0.3|10.0.4|10.0.5|10.0.5+debian|10.0.6
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58285
+    reference_type:
+    reference_id:

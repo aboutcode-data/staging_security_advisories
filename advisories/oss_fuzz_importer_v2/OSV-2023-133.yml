@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-133
+datasource_id: oss_fuzz_importer_v2/OSV-2023-133
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hdf5/OSV-2023-133.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in H5L__extern_traverse
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56501
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  H5L__extern_traverse
+  H5G__traverse_special
+  H5G__traverse_real
+  ```
+impacted_packages:
+  - purl: pkg:generic/hdf5
+    affected_versions: vers:generic/1.14.1|2.0.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=56501
+    reference_type:
+    reference_id:

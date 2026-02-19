@@ -1,0 +1,28 @@
+advisory_id: OSV-2022-145
+datasource_id: oss_fuzz_importer_v2/OSV-2022-145
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/dnsmasq/OSV-2022-145.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in print_mac
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44581
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 4
+  Crash state:
+  print_mac
+  log_packet
+  dhcp_reply
+  ```
+impacted_packages:
+  - purl: pkg:generic/dnsmasq
+    affected_versions: vers:generic/2.87.0-test8
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44581
+    reference_type:
+    reference_id:
+  - url: git://thekelleys.org.uk/dnsmasq.git
+    reference_type: commit
+    reference_id: 03345ecefeb0d82e3c3a4c28f27c3554f0611b39

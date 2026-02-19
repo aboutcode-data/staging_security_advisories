@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-439
+datasource_id: oss_fuzz_importer_v2/OSV-2022-439
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-439.yaml
+aliases: []
+summary: |
+  Stack-use-after-return in test_update
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47676
+
+  ```
+  Crash type: Stack-use-after-return READ 1
+  Crash state:
+  test_update
+  _main
+  fuzz_pkcs15_tool.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47676
+    reference_type:
+    reference_id:

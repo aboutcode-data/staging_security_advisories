@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1093
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1093
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2023-1093.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in ndpi_handle_rule
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63746
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE {*}
+  Crash state:
+  ndpi_handle_rule
+  ndpi_load_protocols_file_fd
+  fuzz_filecfg_protocols.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63746
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-485
+datasource_id: oss_fuzz_importer_v2/OSV-2022-485
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/duckdb/OSV-2022-485.yaml
+aliases: []
+summary: |
+  Segv on unknown address in duckdb::ExpressionBinder::BindExpression
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48047
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  duckdb::ExpressionBinder::BindExpression
+  duckdb::ExpressionBinder::BindExpression
+  duckdb::SelectBinder::BindExpression
+  ```
+impacted_packages:
+  - purl: pkg:generic/duckdb
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48047
+    reference_type:
+    reference_id:

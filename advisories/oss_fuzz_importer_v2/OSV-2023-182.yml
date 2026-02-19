@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-182
+datasource_id: oss_fuzz_importer_v2/OSV-2023-182
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/flac/OSV-2023-182.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in FLAC__bitwriter_write_rice_signed_block
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57071
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 4
+  Crash state:
+  FLAC__bitwriter_write_rice_signed_block
+  add_residual_partitioned_rice_
+  FLAC__subframe_add_fixed
+  ```
+impacted_packages:
+  - purl: pkg:generic/flac
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57071
+    reference_type:
+    reference_id:

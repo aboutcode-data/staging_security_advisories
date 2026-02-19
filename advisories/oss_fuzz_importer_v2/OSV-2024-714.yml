@@ -1,0 +1,24 @@
+advisory_id: OSV-2024-714
+datasource_id: oss_fuzz_importer_v2/OSV-2024-714
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/lwan/OSV-2024-714.yaml
+aliases: []
+summary: |
+  Segv on unknown address in lwan_request_get_cookie
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69572
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  lwan_request_get_cookie
+  fuzz_parse_http_request
+  ```
+impacted_packages:
+  - purl: pkg:generic/lwan
+    affected_versions: vers:generic/0.6.0|0.7.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69572
+    reference_type:
+    reference_id:

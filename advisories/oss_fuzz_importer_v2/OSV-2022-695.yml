@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-695
+datasource_id: oss_fuzz_importer_v2/OSV-2022-695
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2022-695.yaml
+aliases: []
+summary: |
+  Segv on unknown address in ndpi_free_flow_data
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49906
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  ndpi_free_flow_data
+  ndpi_flow_free
+  process_ndpi_collected_info
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49906
+    reference_type:
+    reference_id:

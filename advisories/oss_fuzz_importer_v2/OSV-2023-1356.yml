@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1356
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1356
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/librawspeed/OSV-2023-1356.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in rawspeed::DngDecoder::parseWhiteBalance
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65309
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  rawspeed::DngDecoder::parseWhiteBalance
+  rawspeed::DngDecoder::decodeMetaDataInternal
+  rawspeed::RawDecoder::decodeMetaData
+  ```
+impacted_packages:
+  - purl: pkg:generic/librawspeed
+    affected_versions: vers:generic/3.6.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65309
+    reference_type:
+    reference_id:

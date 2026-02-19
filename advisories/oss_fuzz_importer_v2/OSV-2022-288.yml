@@ -1,0 +1,22 @@
+advisory_id: OSV-2022-288
+datasource_id: oss_fuzz_importer_v2/OSV-2022-288
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fluent-bit/OSV-2022-288.yaml
+aliases: []
+summary: |
+  Segv on unknown address in flb_ra_translate
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46082
+
+  Crash type: Segv on unknown address
+  Crash state:
+  flb_ra_translate
+  record_ac_fuzzer.c
+impacted_packages:
+  - purl: pkg:generic/fluent-bit
+    affected_versions: vers:generic/1.9.1|1.9.2|1.9.3|1.9.4|1.9.5|1.9.6|1.9.7|1.9.8
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46082
+    reference_type:
+    reference_id:

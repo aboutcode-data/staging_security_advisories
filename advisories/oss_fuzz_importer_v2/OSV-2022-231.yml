@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-231
+datasource_id: oss_fuzz_importer_v2/OSV-2022-231
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-231.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in do_fileid
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45430
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 2
+  Crash state:
+  do_fileid
+  process_command
+  process_block
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45430
+    reference_type:
+    reference_id:

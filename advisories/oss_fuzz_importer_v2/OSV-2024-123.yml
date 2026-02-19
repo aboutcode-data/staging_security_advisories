@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-123
+datasource_id: oss_fuzz_importer_v2/OSV-2024-123
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libredwg/OSV-2024-123.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in dxf_tables_read
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66835
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  dxf_tables_read
+  dwg_read_dxf
+  llvmfuzz.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/libredwg
+    affected_versions: vers:generic/0.13.0|0.13.1|0.13.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66835
+    reference_type:
+    reference_id:

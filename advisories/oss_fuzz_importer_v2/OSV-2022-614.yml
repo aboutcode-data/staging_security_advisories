@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-614
+datasource_id: oss_fuzz_importer_v2/OSV-2022-614
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcl/OSV-2022-614.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in std::__1::basic_filebuf<char, std::__1::char_traits<char> >::underflow
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49381
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  std::__1::basic_filebuf<char, std::__1::char_traits<char> >::underflow
+  std::__1::basic_streambuf<char, std::__1::char_traits<char> >::uflow
+  std::__1::basic_streambuf<char, std::__1::char_traits<char> >::xsgetn
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcl
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49381
+    reference_type:
+    reference_id:

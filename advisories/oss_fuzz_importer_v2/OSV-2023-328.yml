@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-328
+datasource_id: oss_fuzz_importer_v2/OSV-2023-328
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libvips/OSV-2023-328.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in RegionItem::parse
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58152
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  RegionItem::parse
+  heif::HeifContext::interpret_heif_file
+  heif::HeifContext::read
+  ```
+impacted_packages:
+  - purl: pkg:generic/libvips
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58152
+    reference_type:
+    reference_id:

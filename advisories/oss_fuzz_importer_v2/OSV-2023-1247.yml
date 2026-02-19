@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1247
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1247
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/radare2/OSV-2023-1247.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in r_bin_coff_new_buf
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64638
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  r_bin_coff_new_buf
+  load
+  r_bin_object_new
+  ```
+impacted_packages:
+  - purl: pkg:generic/radare2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64638
+    reference_type:
+    reference_id:

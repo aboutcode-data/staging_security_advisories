@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-743
+datasource_id: oss_fuzz_importer_v2/OSV-2022-743
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-commons-jxpath/OSV-2022-743.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.commons.jxpath.ri.parser.XPathParser.MultiplicativeExpr
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50363
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.commons.jxpath.ri.parser.XPathParser.MultiplicativeExpr
+  org.apache.commons.jxpath.ri.parser.XPathParser.SubtractiveExpr
+  org.apache.commons.jxpath.ri.parser.XPathParser.AdditiveExpr
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-commons-jxpath
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50363
+    reference_type:
+    reference_id:

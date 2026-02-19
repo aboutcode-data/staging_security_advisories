@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-468
+datasource_id: oss_fuzz_importer_v2/OSV-2022-468
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/file/OSV-2022-468.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in json_parse
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47961
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  json_parse
+  file_is_json
+  file_buffer
+  ```
+impacted_packages:
+  - purl: pkg:generic/file
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47961
+    reference_type:
+    reference_id:

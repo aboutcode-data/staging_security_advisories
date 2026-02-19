@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-422
+datasource_id: oss_fuzz_importer_v2/OSV-2023-422
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wireshark/OSV-2023-422.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in wmem_memdup
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59167
+
+  ```
+  Crash type: Heap-use-after-free READ 6
+  Crash state:
+  wmem_memdup
+  copy_address
+  fragment_addresses_persistent_key
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59167
+    reference_type:
+    reference_id:

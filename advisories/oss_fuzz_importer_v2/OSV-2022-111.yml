@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-111
+datasource_id: oss_fuzz_importer_v2/OSV-2022-111
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2022-111.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in OT::CoverageFormat1::intersected_coverage_glyphs
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44257
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  OT::CoverageFormat1::intersected_coverage_glyphs
+  OT::ChainContextFormat3::closure
+  OT::hb_closure_context_t::return_t OT::SubstLookupSubTable::dispatch<OT::hb_clos
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions: vers:generic/3.3.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44257
+    reference_type:
+    reference_id:

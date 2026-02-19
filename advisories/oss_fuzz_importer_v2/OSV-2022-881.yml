@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-881
+datasource_id: oss_fuzz_importer_v2/OSV-2022-881
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wasm3/OSV-2022-881.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in AcquireCodePageWithCapacity
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51182
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  AcquireCodePageWithCapacity
+  CompileElseBlock
+  Compile_If
+  ```
+impacted_packages:
+  - purl: pkg:generic/wasm3
+    affected_versions: vers:generic/0.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51182
+    reference_type:
+    reference_id:

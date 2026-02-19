@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-955
+datasource_id: oss_fuzz_importer_v2/OSV-2023-955
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-poi/OSV-2023-955.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.poi.ddf.EscherPropertyFactory$$Lambda$285/ADDRESS.apply
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62924
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.poi.ddf.EscherPropertyFactory$$Lambda$285/ADDRESS.apply
+  org.apache.poi.ddf.EscherPropertyFactory.createProperties
+  org.apache.poi.ddf.AbstractEscherOptRecord.fillFields
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-poi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62924
+    reference_type:
+    reference_id:

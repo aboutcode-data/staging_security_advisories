@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-404
+datasource_id: oss_fuzz_importer_v2/OSV-2023-404
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/assimp/OSV-2023-404.yaml
+aliases: []
+summary: |
+  Invalid-free in Assimp::FBX::Scope::Scope
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59056
+
+  ```
+  Crash type: Invalid-free
+  Crash state:
+  Assimp::FBX::Scope::Scope
+  Assimp::FBX::Element::Element
+  Assimp::FBX::Scope::Scope
+  ```
+impacted_packages:
+  - purl: pkg:generic/assimp
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59056
+    reference_type:
+    reference_id:

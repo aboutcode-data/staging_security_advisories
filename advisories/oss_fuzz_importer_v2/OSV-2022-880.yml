@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-880
+datasource_id: oss_fuzz_importer_v2/OSV-2022-880
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/h3/OSV-2022-880.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in _getBaseCellNeighbor
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51208
+
+  ```
+  Crash type: Global-buffer-overflow READ 4
+  Crash state:
+  _getBaseCellNeighbor
+  localIjkToCell
+  localIjToCell
+  ```
+impacted_packages:
+  - purl: pkg:generic/h3
+    affected_versions: vers:generic/4.0.0-rc2|4.0.0-rc3|4.0.0-rc4|4.0.0-rc5|4.0.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51208
+    reference_type:
+    reference_id:

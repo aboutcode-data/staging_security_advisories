@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-188
+datasource_id: oss_fuzz_importer_v2/OSV-2022-188
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opencv/OSV-2022-188.yaml
+aliases: []
+summary: |
+  Incorrect-function-pointer-type in cv::split
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44937
+
+  ```
+  Crash type: Incorrect-function-pointer-type
+  Crash state:
+  cv::split
+  cv::split
+  TestSplitAndMerge
+  ```
+impacted_packages:
+  - purl: pkg:generic/opencv
+    affected_versions: vers:generic/3.4.12|3.4.13|3.4.14|3.4.15|3.4.16|3.4.17|4.5.0|4.5.1|4.5.2|4.5.3|4.5.4|4.5.5
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44937
+    reference_type:
+    reference_id:

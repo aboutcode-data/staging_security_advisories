@@ -1,0 +1,25 @@
+advisory_id: OSV-2021-1568
+datasource_id: oss_fuzz_importer_v2/OSV-2021-1568
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wolfmqtt/OSV-2021-1568.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in MqttDecode_Props
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=40904
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  MqttDecode_Props
+  MqttDecode_Disconnect
+  MqttClient_DecodePacket
+  ```
+impacted_packages:
+  - purl: pkg:generic/wolfmqtt
+    affected_versions: vers:generic/1.10.0|1.11.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=40904
+    reference_type:
+    reference_id:

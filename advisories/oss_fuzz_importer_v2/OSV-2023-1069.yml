@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1069
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1069
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/igraph/OSV-2023-1069.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in igraph_pajek_yyparse
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63590
+
+  ```
+  Crash type: Heap-use-after-free READ 3
+  Crash state:
+  igraph_pajek_yyparse
+  igraph_read_graph_pajek
+  read_pajek.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/igraph
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63590
+    reference_type:
+    reference_id:

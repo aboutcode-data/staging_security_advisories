@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1217
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1217
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hamcrest/OSV-2022-1217.yaml
+aliases: []
+summary: |
+  Security exception in com.code_intelligence.jazzer.sanitizers.RegexInjection.hookInternal
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53767
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  com.code_intelligence.jazzer.sanitizers.RegexInjection.hookInternal
+  com.code_intelligence.jazzer.sanitizers.RegexInjection.patternHook
+  org.hamcrest.text.MatchesPattern.matchesPattern
+  ```
+impacted_packages:
+  - purl: pkg:generic/hamcrest
+    affected_versions: vers:generic/3.0.0-rc1|3.0.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53767
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-237
+datasource_id: oss_fuzz_importer_v2/OSV-2022-237
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-237.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in sc_format_oid
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45459
+
+  ```
+  Crash type: Stack-buffer-overflow READ {*}
+  Crash state:
+  sc_format_oid
+  do_store_data_object
+  fuzz_pkcs15init.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45459
+    reference_type:
+    reference_id:

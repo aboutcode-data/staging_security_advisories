@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1205
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1205
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libavc/OSV-2023-1205.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in isvcd_populate_res_prms
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64431
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 1
+  Crash state:
+  isvcd_populate_res_prms
+  isvcd_parse_interlayer_resamp_func_init
+  isvcd_mark_err_slice_skip
+  ```
+impacted_packages:
+  - purl: pkg:generic/libavc
+    affected_versions: vers:generic/1.1.1|1.2.0|1.3.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=64431
+    reference_type:
+    reference_id:

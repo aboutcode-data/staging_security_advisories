@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-657
+datasource_id: oss_fuzz_importer_v2/OSV-2022-657
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libredwg/OSV-2022-657.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in dynapi_set_helper
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49613
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  dynapi_set_helper
+  dwg_dynapi_entity_set_value
+  dxf_blocks_read
+  ```
+impacted_packages:
+  - purl: pkg:generic/libredwg
+    affected_versions: vers:generic/0.12.4+4635|0.12.4+4637|0.12.4+4641|0.12.4+4643|0.12.4+4647|0.12.4+4652|0.12.4+4654|0.12.4+4658|0.12.4+4660|0.12.4+4668|0.12.5+4669|0.12.5+4678|0.12.5+4685|0.12.5+4690|0.12.5+4693|0.12.5+4695|0.12.5+4697|0.12.5+4700|0.12.5+4709|0.12.5+4712|0.12.5+4715|0.12.5+4722
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49613
+    reference_type:
+    reference_id:

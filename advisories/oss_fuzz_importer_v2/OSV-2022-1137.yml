@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1137
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1137
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/radare2/OSV-2022-1137.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in io_memory_read
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53019
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  io_memory_read
+  r_io_plugin_read
+  r_io_desc_read
+  ```
+impacted_packages:
+  - purl: pkg:generic/radare2
+    affected_versions: vers:generic/5.8.0|5.8.2|5.8.4|5.8.6|5.8.8|5.9.0|5.9.2|5.9.4|5.9.6|5.9.8|6.0.0|6.0.2|6.0.4|6.0.6|6.0.7|6.0.8|6.1.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53019
+    reference_type:
+    reference_id:

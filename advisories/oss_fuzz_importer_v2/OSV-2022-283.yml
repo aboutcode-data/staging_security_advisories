@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-283
+datasource_id: oss_fuzz_importer_v2/OSV-2022-283
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-283.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in epassNUMBER_hook_path
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46006
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  epassNUMBER_hook_path
+  epassNUMBER_hook_file
+  epassNUMBER_create_file
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=46006
+    reference_type:
+    reference_id:

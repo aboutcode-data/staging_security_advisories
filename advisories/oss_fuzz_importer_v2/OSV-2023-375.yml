@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-375
+datasource_id: oss_fuzz_importer_v2/OSV-2023-375
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/hdf5/OSV-2023-375.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in H5MM_memcpy
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58658
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  H5MM_memcpy
+  H5O__alloc_chunk
+  H5O__alloc
+  ```
+impacted_packages:
+  - purl: pkg:generic/hdf5
+    affected_versions: vers:generic/1.14.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=58658
+    reference_type:
+    reference_id:

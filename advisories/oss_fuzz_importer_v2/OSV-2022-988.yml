@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-988
+datasource_id: oss_fuzz_importer_v2/OSV-2022-988
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fluent-bit/OSV-2022-988.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in onig_vsnprintf_with_pattern
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51934
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  onig_vsnprintf_with_pattern
+  onig_syntax_warn
+  fetch_token
+  ```
+impacted_packages:
+  - purl: pkg:generic/fluent-bit
+    affected_versions: vers:generic/2.0.0-pre|2.0.0-rc1|2.0.0-rc2|2.0.0-rc3|2.0.0|2.0.1|2.0.2|2.0.3|2.0.4|2.0.5|2.0.6|2.0.7|2.0.8
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51934
+    reference_type:
+    reference_id:

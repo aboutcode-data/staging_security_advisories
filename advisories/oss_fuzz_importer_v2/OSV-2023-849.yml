@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-849
+datasource_id: oss_fuzz_importer_v2/OSV-2023-849
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/icu/OSV-2023-849.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in ulocimp_toLanguageTag_74
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62348
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE 1
+  Crash state:
+  ulocimp_toLanguageTag_74
+  icu_74::Locale::toLanguageTag
+  locale_morph_fuzzer.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/icu
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62348
+    reference_type:
+    reference_id:

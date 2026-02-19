@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-761
+datasource_id: oss_fuzz_importer_v2/OSV-2023-761
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ntopng/OSV-2023-761.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ICMPinfo::dissectICMP
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61836
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  ICMPinfo::dissectICMP
+  NetworkInterface::processPacket
+  NetworkInterface::dissectPacket
+  ```
+impacted_packages:
+  - purl: pkg:generic/ntopng
+    affected_versions: vers:generic/6.0.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61836
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-681
+datasource_id: oss_fuzz_importer_v2/OSV-2022-681
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/xstream/OSV-2022-681.yaml
+aliases: []
+summary: |
+  Uncaught exception in com.ctc.wstx.dtd.FullDTDReader.readContentSpec
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49858
+
+  ```
+  Crash type: Uncaught exception
+  Crash state:
+  com.ctc.wstx.dtd.FullDTDReader.readContentSpec
+  java.base/java.io.StringReader.ensureOpen
+  java.base/java.io.StringReader.read
+  ```
+impacted_packages:
+  - purl: pkg:generic/xstream
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49858
+    reference_type:
+    reference_id:

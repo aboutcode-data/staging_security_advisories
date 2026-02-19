@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-245
+datasource_id: oss_fuzz_importer_v2/OSV-2024-245
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/jackson-databind/OSV-2024-245.yaml
+aliases: []
+summary: |
+  Security exception in com.github.javaparser.ast.validator.TreeVisitorValidator.accept
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67672
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  com.github.javaparser.ast.validator.TreeVisitorValidator.accept
+  com.github.javaparser.ast.expr.FieldAccessExpr.getMetaModel
+  com.github.javaparser.ast.expr.FieldAccessExpr.getMetaModel
+  ```
+impacted_packages:
+  - purl: pkg:generic/jackson-databind
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67672
+    reference_type:
+    reference_id:

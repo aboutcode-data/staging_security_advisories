@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-525
+datasource_id: oss_fuzz_importer_v2/OSV-2023-525
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/xmlpull/OSV-2023-525.yaml
+aliases: []
+summary: |
+  Security exception in jaz.Zer.reportFinding
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60167
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  jaz.Zer.reportFinding
+  jaz.Zer.reportFindingIfEnabled
+  jaz.Zer.<init>
+  ```
+impacted_packages:
+  - purl: pkg:generic/xmlpull
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=60167
+    reference_type:
+    reference_id:

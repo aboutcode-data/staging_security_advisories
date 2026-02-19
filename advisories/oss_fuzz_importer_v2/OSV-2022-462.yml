@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-462
+datasource_id: oss_fuzz_importer_v2/OSV-2022-462
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/espeak-ng/OSV-2022-462.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in strcat
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47841
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE 5
+  Crash state:
+  strcat
+  TranslateNumber
+  TranslateWord3
+  ```
+impacted_packages:
+  - purl: pkg:generic/espeak-ng
+    affected_versions: vers:generic/1.51.0|1.52.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47841
+    reference_type:
+    reference_id:

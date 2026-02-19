@@ -1,0 +1,25 @@
+advisory_id: OSV-2021-1791
+datasource_id: oss_fuzz_importer_v2/OSV-2021-1791
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/c-blosc2/OSV-2021-1791.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ZSTD_createDDict
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=43110
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  ZSTD_createDDict
+  blosc_run_decompression_with_context
+  blosc2_decompress_ctx
+  ```
+impacted_packages:
+  - purl: pkg:generic/c-blosc2
+    affected_versions: vers:generic/2.0.0-rc2|2.0.0|2.0.0+rc1|2.0.1|2.0.2|2.0.3|2.0.4|2.1.0|2.1.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=43110
+    reference_type:
+    reference_id:

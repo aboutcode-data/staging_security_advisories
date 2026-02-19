@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1062
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1062
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/matio/OSV-2023-1062.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in H5MM_xstrdup
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63566
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  H5MM_xstrdup
+  H5G__ent_to_link
+  H5G__node_iterate
+  ```
+impacted_packages:
+  - purl: pkg:generic/matio
+    affected_versions: vers:generic/1.5.24|1.5.25|1.5.26
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63566
+    reference_type:
+    reference_id:

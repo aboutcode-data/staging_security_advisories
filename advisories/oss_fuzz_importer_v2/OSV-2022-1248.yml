@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1248
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1248
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wabt/OSV-2022-1248.yaml
+aliases: []
+summary: |
+  Object-size in wabt::BinaryReaderIR::OnCodeMetadataCount
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=54092
+
+  ```
+  Crash type: Object-size
+  Crash state:
+  wabt::BinaryReaderIR::OnCodeMetadataCount
+  wabt::BinaryReader::ReadCodeMetadataSection
+  wabt::BinaryReader::ReadCustomSection
+  ```
+impacted_packages:
+  - purl: pkg:generic/wabt
+    affected_versions: vers:generic/1.0.30|1.0.31|1.0.32|1.0.33|1.0.34|1.0.35|1.0.36
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=54092
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-598
+datasource_id: oss_fuzz_importer_v2/OSV-2022-598
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/radare2/OSV-2022-598.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in get_symbols_64
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49209
+
+  ```
+  Crash type: Heap-buffer-overflow READ 8
+  Crash state:
+  get_symbols_64
+  get_main_64
+  binsym
+  ```
+impacted_packages:
+  - purl: pkg:generic/radare2
+    affected_versions: vers:generic/5.7.0|5.7.2|5.7.4
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49209
+    reference_type:
+    reference_id:

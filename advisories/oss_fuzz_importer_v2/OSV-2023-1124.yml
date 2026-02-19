@@ -1,0 +1,24 @@
+advisory_id: OSV-2023-1124
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1124
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/lcms/OSV-2023-1124.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in cmsIT8GetDataRowColDbl
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63954
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  cmsIT8GetDataRowColDbl
+  cms_cgats_fuzzer.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/lcms
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=63954
+    reference_type:
+    reference_id:

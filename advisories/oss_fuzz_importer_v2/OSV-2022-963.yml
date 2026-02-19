@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-963
+datasource_id: oss_fuzz_importer_v2/OSV-2022-963
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/janino/OSV-2022-963.yaml
+aliases: []
+summary: |
+  Security exception in org.codehaus.janino.Parser.parseConditionalExpression
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51821
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.codehaus.janino.Parser.parseConditionalExpression
+  java.base/sun.nio.cs.CESU_8$Encoder.encodeLoop
+  java.base/java.nio.charset.CharsetEncoder.encode
+  ```
+impacted_packages:
+  - purl: pkg:generic/janino
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51821
+    reference_type:
+    reference_id:

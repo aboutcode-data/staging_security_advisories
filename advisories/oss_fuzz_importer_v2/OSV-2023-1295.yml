@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-1295
+datasource_id: oss_fuzz_importer_v2/OSV-2023-1295
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libraw/OSV-2023-1295.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in libraw_tagtype_dataunit_bytes
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65027
+
+  ```
+  Crash type: Global-buffer-overflow READ 4
+  Crash state:
+  libraw_tagtype_dataunit_bytes
+  checked_buffer_t::tiff_sget
+  LibRaw::parseSonySR2
+  ```
+impacted_packages:
+  - purl: pkg:generic/libraw
+    affected_versions: vers:generic/0.21.0-Beta1|0.21.0|0.21.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65027
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-472
+datasource_id: oss_fuzz_importer_v2/OSV-2022-472
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/systemd/OSV-2022-472.yaml
+aliases: []
+summary: |
+  Heap-double-free in nft_set_context_free_many
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47963
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  nft_set_context_free_many
+  config_parse_nft_set_context
+  config_parse_dhcp_pd_nft_set_context
+  ```
+impacted_packages:
+  - purl: pkg:generic/systemd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47963
+    reference_type:
+    reference_id:

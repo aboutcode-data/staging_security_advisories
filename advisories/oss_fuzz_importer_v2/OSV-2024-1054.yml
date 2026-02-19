@@ -1,0 +1,24 @@
+advisory_id: OSV-2024-1054
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1054
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/assimp/OSV-2024-1054.yaml
+aliases: []
+summary: |
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42538150
+
+  ```
+  Crash type: Bad-cast
+  Crash state:
+  Bad-cast to Assimp::LogStream from invalid vptr
+  CallbackToLogRedirector
+  Assimp::DefaultLogger::WriteToStreams
+  ```
+impacted_packages:
+  - purl: pkg:generic/assimp
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42538150
+    reference_type:
+    reference_id:

@@ -1,0 +1,24 @@
+advisory_id: OSV-2024-180
+datasource_id: oss_fuzz_importer_v2/OSV-2024-180
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libxaac/OSV-2024-180.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ixheaace_process
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67273
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  ixheaace_process
+  xaac_enc_fuzzer.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/libxaac
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67273
+    reference_type:
+    reference_id:

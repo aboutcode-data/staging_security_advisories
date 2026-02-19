@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-1169
+datasource_id: oss_fuzz_importer_v2/OSV-2022-1169
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fluent-bit/OSV-2022-1169.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in output_thread
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53324
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  output_thread
+  step_callback
+  flb_task_destroy
+  ```
+impacted_packages:
+  - purl: pkg:generic/fluent-bit
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=53324
+    reference_type:
+    reference_id:

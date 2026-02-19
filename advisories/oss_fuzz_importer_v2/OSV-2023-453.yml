@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-453
+datasource_id: oss_fuzz_importer_v2/OSV-2023-453
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libavc/OSV-2023-453.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in ih264e_cabac_put_byte
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59543
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  ih264e_cabac_put_byte
+  ih264e_cabac_encode_bin
+  ih264e_write_pslice_mb_cabac
+  ```
+impacted_packages:
+  - purl: pkg:generic/libavc
+    affected_versions: vers:generic/1.2.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59543
+    reference_type:
+    reference_id:

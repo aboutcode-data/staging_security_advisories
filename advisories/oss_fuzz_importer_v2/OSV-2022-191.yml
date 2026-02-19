@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-191
+datasource_id: oss_fuzz_importer_v2/OSV-2022-191
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2022-191.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ndpi_handle_ipv6_extension_headers
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44942
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  ndpi_handle_ipv6_extension_headers
+  ndpi_workflow_process_packet
+  fuzz_ndpi_reader.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions: vers:generic/4.2.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44942
+    reference_type:
+    reference_id:

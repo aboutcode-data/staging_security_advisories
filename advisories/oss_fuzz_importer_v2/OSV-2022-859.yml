@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-859
+datasource_id: oss_fuzz_importer_v2/OSV-2022-859
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/bluez/OSV-2022-859.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in write_key
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51081
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  write_key
+  textfile_put
+  fuzz_textfile.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/bluez
+    affected_versions: vers:generic/5.66.0|5.67.0|5.68.0|5.69.0|5.70.0|5.71.0|5.72.0|5.73.0|5.74.0|5.75.0|5.76.0|5.77.0|5.78.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51081
+    reference_type:
+    reference_id:

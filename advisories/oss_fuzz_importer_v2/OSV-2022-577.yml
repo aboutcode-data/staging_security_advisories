@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-577
+datasource_id: oss_fuzz_importer_v2/OSV-2022-577
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fluent-bit/OSV-2022-577.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in jsmn_parse
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49033
+
+  ```
+  Crash type: Heap-use-after-free WRITE 4
+  Crash state:
+  jsmn_parse
+  flb_json_tokenise
+  flb_pack_json_state
+  ```
+impacted_packages:
+  - purl: pkg:generic/fluent-bit
+    affected_versions: vers:generic/1.9.6
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49033
+    reference_type:
+    reference_id:

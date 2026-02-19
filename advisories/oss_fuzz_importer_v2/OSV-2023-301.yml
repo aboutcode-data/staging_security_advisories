@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-301
+datasource_id: oss_fuzz_importer_v2/OSV-2023-301
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/systemd/OSV-2023-301.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in sd_event_default
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57915
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  sd_event_default
+  dummy_server_init
+  fuzz-journald-audit.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/systemd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57915
+    reference_type:
+    reference_id:

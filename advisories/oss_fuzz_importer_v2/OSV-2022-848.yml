@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-848
+datasource_id: oss_fuzz_importer_v2/OSV-2022-848
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2022-848.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in pcpp::HttpRequestFirstLine::parseVersion
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51006
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  pcpp::HttpRequestFirstLine::parseVersion
+  pcpp::HttpRequestFirstLine::HttpRequestFirstLine
+  pcpp::HttpRequestLayer::HttpRequestLayer
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/21.5.0|21.11.0|22.5.0|22.11.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51006
+    reference_type:
+    reference_id:

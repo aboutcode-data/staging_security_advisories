@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-535
+datasource_id: oss_fuzz_importer_v2/OSV-2024-535
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/spirv-tools/OSV-2024-535.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in spvTextEncodeOperand
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69388
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  spvTextEncodeOperand
+  spvTextEncodeOpcode
+  spvTextToBinaryWithOptions
+  ```
+impacted_packages:
+  - purl: pkg:generic/spirv-tools
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69388
+    reference_type:
+    reference_id:

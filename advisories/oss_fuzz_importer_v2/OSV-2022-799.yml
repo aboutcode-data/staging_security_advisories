@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-799
+datasource_id: oss_fuzz_importer_v2/OSV-2022-799
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/grok/OSV-2022-799.yaml
+aliases: []
+summary: |
+  Incorrect-function-pointer-type in grk::BufferedStream::read
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50661
+
+  ```
+  Crash type: Incorrect-function-pointer-type
+  Crash state:
+  grk::BufferedStream::read
+  grk::FileFormatDecompress::read_box_hdr
+  grk::FileFormatDecompress::readHeaderProcedureImpl
+  ```
+impacted_packages:
+  - purl: pkg:generic/grok
+    affected_versions: vers:generic/10.0.0|10.0.0+debian|10.0.1|10.0.2|10.0.3|10.0.4|10.0.5|10.0.5+debian|10.0.6|10.0.7|10.0.8
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50661
+    reference_type:
+    reference_id:

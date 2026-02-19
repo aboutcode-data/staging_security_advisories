@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-409
+datasource_id: oss_fuzz_importer_v2/OSV-2023-409
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/php/OSV-2023-409.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in zval_call_destructor
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59072
+
+  ```
+  Crash type: Heap-use-after-free READ 4
+  Crash state:
+  zval_call_destructor
+  zend_hash_reverse_apply
+  shutdown_destructors
+  ```
+impacted_packages:
+  - purl: pkg:generic/php
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59072
+    reference_type:
+    reference_id:

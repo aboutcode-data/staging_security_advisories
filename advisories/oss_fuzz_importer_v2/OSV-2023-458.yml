@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-458
+datasource_id: oss_fuzz_importer_v2/OSV-2023-458
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2023-458.yaml
+aliases: []
+summary: |
+  Invalid-free in hb_free_impl
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59592
+
+  ```
+  Crash type: Invalid-free
+  Crash state:
+  hb_free_impl
+  OT::glyf::_free_compiled_subset_glyphs
+  OT::glyf::subset
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59592
+    reference_type:
+    reference_id:

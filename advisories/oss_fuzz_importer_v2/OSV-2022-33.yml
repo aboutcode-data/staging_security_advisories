@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-33
+datasource_id: oss_fuzz_importer_v2/OSV-2022-33
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/c-blosc2/OSV-2022-33.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ndlz8_decompress
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=43519
+
+  ```
+  Crash type: Heap-buffer-overflow READ 8
+  Crash state:
+  ndlz8_decompress
+  blosc_d
+  do_job
+  ```
+impacted_packages:
+  - purl: pkg:generic/c-blosc2
+    affected_versions: vers:generic/2.0.0|2.0.1|2.0.2|2.0.3|2.0.4|2.1.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=43519
+    reference_type:
+    reference_id:

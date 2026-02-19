@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1206
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1206
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/kamailio/OSV-2024-1206.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in extract_sendrecv_mode
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=372515090
+
+  ```
+  Crash type: Heap-buffer-overflow READ 6
+  Crash state:
+  extract_sendrecv_mode
+  parse_sdp_session
+  parse_mixed_content
+  ```
+impacted_packages:
+  - purl: pkg:generic/kamailio
+    affected_versions: vers:generic/5.6.0|5.6.1|5.6.2|5.6.3|5.6.4|5.6.5|5.6.6|5.7.0|5.7.1|5.7.2|5.7.3|5.7.4|5.7.5|5.7.6|5.8.0|5.8.1|5.8.2|5.8.3
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=372515090
+    reference_type:
+    reference_id:

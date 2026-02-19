@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-165
+datasource_id: oss_fuzz_importer_v2/OSV-2022-165
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fmt/OSV-2022-165.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in fmt::v8::basic_memory_buffer<unsigned int, 32ul, std::__1::allocator<unsigned in
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44763
+
+  ```
+  Crash type: Stack-buffer-overflow READ 4
+  Crash state:
+  fmt::v8::basic_memory_buffer<unsigned int, 32ul, std::__1::allocator<unsigned in
+  fmt::v8::detail::bigint::square
+  fmt::v8::detail::bigint::assign_pow10
+  ```
+impacted_packages:
+  - purl: pkg:generic/fmt
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=44763
+    reference_type:
+    reference_id:

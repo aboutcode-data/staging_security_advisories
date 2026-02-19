@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-487
+datasource_id: oss_fuzz_importer_v2/OSV-2022-487
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/duckdb/OSV-2022-487.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in duckdb::Planner::CreatePlan
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48062
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  duckdb::Planner::CreatePlan
+  duckdb::Planner::CreatePlan
+  duckdb::ClientContext::CreatePreparedStatement
+  ```
+impacted_packages:
+  - purl: pkg:generic/duckdb
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48062
+    reference_type:
+    reference_id:

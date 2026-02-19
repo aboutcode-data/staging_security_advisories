@@ -1,0 +1,25 @@
+advisory_id: OSV-2021-1585
+datasource_id: oss_fuzz_importer_v2/OSV-2021-1585
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensips/OSV-2021-1585.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in _parse_to
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=41073
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  _parse_to
+  parse_to
+  get_hdr_field
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensips
+    affected_versions: vers:generic/3.1.7|3.1.8|3.1.9|3.1.10|3.1.11|3.2.4|3.2.5|3.2.6|3.2.7|3.2.8|3.3.0-beta|3.3.0-rc1|3.3.0|3.3.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=41073
+    reference_type:
+    reference_id:

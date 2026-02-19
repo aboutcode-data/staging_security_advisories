@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-656
+datasource_id: oss_fuzz_importer_v2/OSV-2022-656
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libredwg/OSV-2022-656.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in dwg_decode_LWPOLYLINE_private
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49630
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  dwg_decode_LWPOLYLINE_private
+  dwg_decode_LWPOLYLINE
+  dwg_decode_add_object
+  ```
+impacted_packages:
+  - purl: pkg:generic/libredwg
+    affected_versions: vers:generic/0.12.4+4635|0.12.4+4637|0.12.4+4641|0.12.4+4643|0.12.4+4647|0.12.4+4652|0.12.4+4654|0.12.4+4658|0.12.4+4660|0.12.4+4668|0.12.5+4669|0.12.5+4678
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49630
+    reference_type:
+    reference_id:

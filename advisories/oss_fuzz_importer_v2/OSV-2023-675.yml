@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-675
+datasource_id: oss_fuzz_importer_v2/OSV-2023-675
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/flac/OSV-2023-675.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in parse_options
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61292
+
+  ```
+  Crash type: Heap-use-after-free WRITE 4
+  Crash state:
+  parse_options
+  append_new_operation
+  parse_options
+  ```
+impacted_packages:
+  - purl: pkg:generic/flac
+    affected_versions: vers:generic/1.4.3
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61292
+    reference_type:
+    reference_id:

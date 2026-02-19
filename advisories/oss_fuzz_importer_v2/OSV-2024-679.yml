@@ -1,0 +1,28 @@
+advisory_id: OSV-2024-679
+datasource_id: oss_fuzz_importer_v2/OSV-2024-679
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/kimageformats/OSV-2024-679.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in readImage4v2
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=70554
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 1
+  Crash state:
+  readImage4v2
+  PCXHandler::read
+  kimgio_fuzzer.cc
+  ```
+impacted_packages:
+  - purl: pkg:generic/kimageformats
+    affected_versions: vers:generic/6.5.0-rc1|6.5.0|6.6.0-rc1|6.6.0|6.7.0-rc1|6.7.0|6.8.0-rc1|6.8.0|6.9.0-rc1|6.9.0|6.10.0-rc1|6.10.0|6.11.0-rc1|6.11.0|6.12.0-rc1|6.12.0-rc2|6.12.0|6.13.0-rc1|6.13.0|6.14.0-rc1|6.14.0|6.15.0-rc1|6.15.0|6.16.0-rc1|6.16.0|6.17.0-rc1|6.17.0|6.18.0-rc1|6.18.0|6.19.0-rc1|6.19.0|6.20.0-rc1|6.20.0|6.21.0-rc1|6.21.0|6.22.0-rc1|6.22.0|6.23.0-rc1|6.23.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=70554
+    reference_type:
+    reference_id:
+  - url: https://invent.kde.org/frameworks/kimageformats.git
+    reference_type: commit
+    reference_id: e3aefd2aa1f9be6598b24d118d7b90e9931b5172

@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-396
+datasource_id: oss_fuzz_importer_v2/OSV-2024-396
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/jq/OSV-2024-396.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in jvp_object_free
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65942
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  jvp_object_free
+  jv_free
+  jv_equal
+  ```
+impacted_packages:
+  - purl: pkg:generic/jq
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65942
+    reference_type:
+    reference_id:

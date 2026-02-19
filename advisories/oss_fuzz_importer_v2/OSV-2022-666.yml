@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-666
+datasource_id: oss_fuzz_importer_v2/OSV-2022-666
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/openexr/OSV-2022-666.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in fasthuf_decode
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49698
+
+  ```
+  Crash type: Heap-buffer-overflow READ 8
+  Crash state:
+  fasthuf_decode
+  internal_huf_decompress
+  internal_exr_undo_piz
+  ```
+impacted_packages:
+  - purl: pkg:generic/openexr
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49698
+    reference_type:
+    reference_id:

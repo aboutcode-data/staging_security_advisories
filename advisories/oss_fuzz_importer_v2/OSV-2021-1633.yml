@@ -1,0 +1,25 @@
+advisory_id: OSV-2021-1633
+datasource_id: oss_fuzz_importer_v2/OSV-2021-1633
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fluent-bit/OSV-2021-1633.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in mk_string_copy_substr
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=41448
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  mk_string_copy_substr
+  mk_rconf_read
+  mk_rconf_open
+  ```
+impacted_packages:
+  - purl: pkg:generic/fluent-bit
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=41448
+    reference_type:
+    reference_id:

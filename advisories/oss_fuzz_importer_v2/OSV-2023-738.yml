@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-738
+datasource_id: oss_fuzz_importer_v2/OSV-2023-738
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/cpython3/OSV-2023-738.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in _PyFunction_FromConstructor
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61721
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  _PyFunction_FromConstructor
+  PyEval_EvalCode
+  exec_code_in_module
+  ```
+impacted_packages:
+  - purl: pkg:generic/cpython3
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=61721
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-33
+datasource_id: oss_fuzz_importer_v2/OSV-2024-33
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/gpac/OSV-2024-33.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ctxload_probe_data
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66032
+
+  ```
+  Crash type: Heap-buffer-overflow READ {*}
+  Crash state:
+  ctxload_probe_data
+  gf_filter_pid_raw_new
+  filein_process
+  ```
+impacted_packages:
+  - purl: pkg:generic/gpac
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66032
+    reference_type:
+    reference_id:

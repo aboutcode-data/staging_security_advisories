@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-264
+datasource_id: oss_fuzz_importer_v2/OSV-2024-264
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/clamav/OSV-2024-264.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in cli_html_normalise
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67953
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  cli_html_normalise
+  html_normalise_map
+  cli_scanhtml
+  ```
+impacted_packages:
+  - purl: pkg:generic/clamav
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67953
+    reference_type:
+    reference_id:

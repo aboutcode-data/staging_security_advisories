@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-184
+datasource_id: oss_fuzz_importer_v2/OSV-2023-184
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libraw/OSV-2023-184.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in LibRaw::sget4
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57105
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  LibRaw::sget4
+  LibRaw::parseAdobeRAFMakernote
+  LibRaw::parse_tiff_ifd
+  ```
+impacted_packages:
+  - purl: pkg:generic/libraw
+    affected_versions: vers:generic/0.21.0-Beta1|0.21.0|0.21.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=57105
+    reference_type:
+    reference_id:

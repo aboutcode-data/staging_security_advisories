@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-810
+datasource_id: oss_fuzz_importer_v2/OSV-2022-810
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libressl/OSV-2022-810.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in CBS_stow
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50791
+
+  ```
+  Crash type: Stack-buffer-overflow READ {*}
+  Crash state:
+  CBS_stow
+  i2c_ASN1_INTEGER
+  asn1_ex_i2c
+  ```
+impacted_packages:
+  - purl: pkg:generic/libressl
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50791
+    reference_type:
+    reference_id:

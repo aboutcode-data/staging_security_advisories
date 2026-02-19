@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-564
+datasource_id: oss_fuzz_importer_v2/OSV-2022-564
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-564.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in sc_pkcs15_allocate_object_content
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48940
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  sc_pkcs15_allocate_object_content
+  sc_pkcs15_pincache_add
+  sc_pkcs15_verify_pin_with_session_pin
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=48940
+    reference_type:
+    reference_id:

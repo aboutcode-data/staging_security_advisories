@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-369
+datasource_id: oss_fuzz_importer_v2/OSV-2024-369
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2024-369.yaml
+aliases: []
+summary: |
+  Segv on unknown address in pcpp::IPv6Layer::~IPv6Layer
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67967
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  pcpp::IPv6Layer::~IPv6Layer
+  pcpp::IPv6Layer::~IPv6Layer
+  pcpp::Packet::destructPacketData
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=67967
+    reference_type:
+    reference_id:

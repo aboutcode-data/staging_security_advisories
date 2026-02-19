@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-276
+datasource_id: oss_fuzz_importer_v2/OSV-2022-276
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opensc/OSV-2022-276.yaml
+aliases: []
+summary: |
+  Segv on unknown address in sc_file_clear_acl_entries
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45969
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  sc_file_clear_acl_entries
+  sc_file_free
+  sc_profile_free
+  ```
+impacted_packages:
+  - purl: pkg:generic/opensc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45969
+    reference_type:
+    reference_id:

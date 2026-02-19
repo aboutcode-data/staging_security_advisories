@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-238
+datasource_id: oss_fuzz_importer_v2/OSV-2022-238
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/php/OSV-2022-238.yaml
+aliases: []
+summary: |
+  Segv on unknown address in i_zval_ptr_dtor
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45429
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  i_zval_ptr_dtor
+  zend_leave_helper_SPEC
+  zend_dispatch_try_catch_finally_helper_SPEC
+  ```
+impacted_packages:
+  - purl: pkg:generic/php
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45429
+    reference_type:
+    reference_id:

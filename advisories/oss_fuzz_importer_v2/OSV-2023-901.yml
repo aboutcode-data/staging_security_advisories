@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-901
+datasource_id: oss_fuzz_importer_v2/OSV-2023-901
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/icu/OSV-2023-901.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in icu_74::RelativeDateTimeFormatter::formatRelativeImpl
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62601
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  icu_74::RelativeDateTimeFormatter::formatRelativeImpl
+  icu_74::FormattedRelativeDateTime icu_74::RelativeDateTimeFormatter::doFormatToV
+  icu_74::RelativeDateTimeFormatter::formatToValue
+  ```
+impacted_packages:
+  - purl: pkg:generic/icu
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62601
+    reference_type:
+    reference_id:

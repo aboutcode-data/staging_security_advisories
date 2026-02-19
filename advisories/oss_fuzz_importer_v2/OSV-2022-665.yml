@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-665
+datasource_id: oss_fuzz_importer_v2/OSV-2022-665
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mruby/OSV-2022-665.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in udiv
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49676
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  udiv
+  mpz_mdiv
+  mrb_bint_div
+  ```
+impacted_packages:
+  - purl: pkg:generic/mruby
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=49676
+    reference_type:
+    reference_id:

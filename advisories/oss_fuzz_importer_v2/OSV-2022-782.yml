@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-782
+datasource_id: oss_fuzz_importer_v2/OSV-2022-782
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-commons-jxpath/OSV-2022-782.yaml
+aliases: []
+summary: |
+  Security exception in java.base/java.lang.StringBuffer.append
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50600
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  java.base/java.lang.StringBuffer.append
+  org.apache.commons.jxpath.ri.compiler.CoreFunction.toString
+  java.base/java.lang.String.valueOf
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-commons-jxpath
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50600
+    reference_type:
+    reference_id:

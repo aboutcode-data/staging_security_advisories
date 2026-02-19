@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1053
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1053
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/llamacpp/OSV-2024-1053.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in gguf_get_tensor_offset
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42538148
+
+  ```
+  Crash type: Heap-buffer-overflow READ 8
+  Crash state:
+  gguf_get_tensor_offset
+  llama_model_loader::llama_tensor_weight::llama_tensor_weight
+  void std::__1::vector<llama_model_loader::llama_tensor_weight, std::__1::allocat
+  ```
+impacted_packages:
+  - purl: pkg:generic/llamacpp
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42538148
+    reference_type:
+    reference_id:

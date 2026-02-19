@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-1090
+datasource_id: oss_fuzz_importer_v2/OSV-2024-1090
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/llamacpp/OSV-2024-1090.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in ggml_free
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42538517
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  ggml_free
+  llama_model::~llama_model
+  llama_load_model_from_file
+  ```
+impacted_packages:
+  - purl: pkg:generic/llamacpp
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42538517
+    reference_type:
+    reference_id:

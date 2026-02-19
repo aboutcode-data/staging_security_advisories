@@ -1,0 +1,25 @@
+advisory_id: OSV-2023-889
+datasource_id: oss_fuzz_importer_v2/OSV-2023-889
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/file/OSV-2023-889.yaml
+aliases: []
+summary: |
+  Heap-double-free in regcomp
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62529
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  regcomp
+  file_regcomp
+  load_1
+  ```
+impacted_packages:
+  - purl: pkg:generic/file
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=62529
+    reference_type:
+    reference_id:

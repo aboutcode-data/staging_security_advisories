@@ -1,0 +1,25 @@
+advisory_id: OSV-2022-248
+datasource_id: oss_fuzz_importer_v2/OSV-2022-248
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/arrow-java/OSV-2022-248.yaml
+aliases: []
+summary: |
+  Uncaught exception in java.base/java.nio.Bits.reserveMemory
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45563
+
+  ```
+  Crash type: Uncaught exception
+  Crash state:
+  java.base/java.nio.Bits.reserveMemory
+  java.base/java.nio.DirectByteBuffer.<init>
+  java.base/java.nio.ByteBuffer.allocateDirect
+  ```
+impacted_packages:
+  - purl: pkg:generic/arrow-java
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=45563
+    reference_type:
+    reference_id:
