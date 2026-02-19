@@ -1,0 +1,18 @@
+advisory_id: PYSEC-2021-324
+datasource_id: pysec_importer_v2/PYSEC-2021-324
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2021-32297
+  - GHSA-22x7-vwh9-5w4g
+summary: An issue was discovered in LIEF through 0.11.4. A heap-buffer-overflow exists in the
+  function main located in pe_reader.c. It allows an attacker to cause code Execution.
+impacted_packages:
+  - purl: pkg:pypi/lief
+    affected_versions: vers:pypi/0.8.0|0.8.1|0.8.2|0.8.3|0.9.0|0.10.0|0.10.1|0.11.0|0.11.1|0.11.2|0.11.3|0.11.4
+    fixed_versions: vers:pypi/0.11.5
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/lief-project/LIEF/issues/449
+    reference_type:
+    reference_id:

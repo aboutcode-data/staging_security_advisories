@@ -1,0 +1,25 @@
+advisory_id: PYSEC-2018-16
+datasource_id: pysec_importer_v2/PYSEC-2018-16
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2018-16405
+  - GHSA-fpcv-j2q9-vqhw
+  - PYSEC-2018-106
+summary: An issue was discovered in Mayan EDMS before 3.0.2. The Appearance app sets window.location
+  directly, leading to XSS.
+impacted_packages:
+  - purl: pkg:pypi/mayan-edms-ng
+    affected_versions: vers:pypi/2.8|3.0|3.0.1
+    fixed_versions: vers:pypi/3.0.2
+severities: []
+weaknesses: []
+references:
+  - url: https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/mayan-edms/mayan-edms/commit/9ebe80595afe4fdd1e2c74358d6a9421f4ce130e
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/mayan-edms/mayan-edms/issues/494
+    reference_type:
+    reference_id:

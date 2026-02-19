@@ -1,0 +1,34 @@
+advisory_id: PYSEC-2018-37
+datasource_id: pysec_importer_v2/PYSEC-2018-37
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2016-8614
+  - GHSA-cmwx-9m2h-x7v4
+summary: A flaw was found in Ansible before version 2.2.0. The apt_key module does not properly
+  verify key fingerprints, allowing remote adversary to create an OpenPGP key which matches
+  the short key ID and inject this key instead of the correct key.
+impacted_packages:
+  - purl: pkg:pypi/ansible
+    affected_versions: vers:pypi/1.0|1.1|1.2|1.2.1|1.2.2|1.2.3|1.3.0|1.3.1|1.3.2|1.3.3|1.3.4|1.4|1.4.1|1.4.2|1.4.3|1.4.4|1.4.5|1.5|1.5.1|1.5.2|1.5.3|1.5.4|1.5.5|1.6|1.6.1|1.6.2|1.6.3|1.6.4|1.6.5|1.6.6|1.6.7|1.6.8|1.6.9|1.6.10|1.7|1.7.1|1.7.2|1.8|1.8.1|1.8.2|1.8.3|1.8.4|1.9.0|1.9.0.1|1.9.1|1.9.2|1.9.3|1.9.4|1.9.5|1.9.6|2.0.0|2.0.0.0|2.0.0.1|2.0.0.2|2.0.1.0|2.0.2.0|2.1.0.0|2.1.1.0|2.1.2.0|2.1.3.0|2.1.4.0|2.1.5.0|2.1.6.0
+    fixed_versions: vers:pypi/2.2.0.0
+severities: []
+weaknesses: []
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-8614
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-cmwx-9m2h-x7v4
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible-modules-core/issues/5237
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible-modules-core/pull/5353
+    reference_type:
+    reference_id:
+  - url: https://github.com/ansible/ansible-modules-core/pull/5357
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/94108
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: PYSEC-2019-192
+datasource_id: pysec_importer_v2/PYSEC-2019-192
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2019-10138
+  - GHSA-xf8c-3cgx-fcwm
+summary: A flaw was discovered in the python-novajoin plugin, all versions up to, excluding
+  1.1.1, for Red Hat OpenStack Platform. The novajoin API lacked sufficient access control,
+  allowing any keystone authenticated user to generate FreeIPA tokens.
+impacted_packages:
+  - purl: pkg:pypi/novajoin
+    affected_versions: vers:pypi/1.0.9|1.0.10|1.0.11|1.0.12|1.0.13|1.0.14|1.0.15|1.0.16|1.0.17|1.0.18|1.0.19|1.0.20|1.0.21|1.0.22|1.1.0
+    fixed_versions: vers:pypi/1.1.1
+severities: []
+weaknesses: []
+references:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10138
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-xf8c-3cgx-fcwm
+    reference_type:
+    reference_id:
+  - url: https://review.opendev.org/#/c/631240/
+    reference_type:
+    reference_id:

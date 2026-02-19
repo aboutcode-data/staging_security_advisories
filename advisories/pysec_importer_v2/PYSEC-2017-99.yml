@@ -1,0 +1,33 @@
+advisory_id: PYSEC-2017-99
+datasource_id: pysec_importer_v2/PYSEC-2017-99
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2015-8309
+  - GHSA-q624-9634-77gh
+summary: Directory traversal vulnerability in Cherry Music before 0.36.0 allows remote authenticated
+  users to read arbitrary files via the "value" parameter to "download."
+impacted_packages:
+  - purl: pkg:pypi/cherrymusic
+    affected_versions: vers:pypi/0.30.0|0.31.0|0.31.1|0.31.2|0.32.0|0.33.0|0.34.0|0.34.1|0.35.1|0.35.2
+    fixed_versions: vers:pypi/0.36.0
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/devsnd/cherrymusic/commit/62dec34a1ea0741400dd6b6c660d303dcd651e86
+    reference_type:
+    reference_id:
+  - url: https://github.com/devsnd/cherrymusic/issues/598
+    reference_type:
+    reference_id:
+  - url: https://www.exploit-db.com/exploits/40361/
+    reference_type:
+    reference_id:
+  - url: http://www.fomori.org/cherrymusic/Changes.html
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/97149
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/40361.py
+    reference_type: exploit
+    reference_id: CVE-2015-8309
