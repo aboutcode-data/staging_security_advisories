@@ -1,0 +1,145 @@
+advisory_id: RHSA-2013:0982
+datasource_id: redhat_importer_v2/RHSA-2013:0982
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0982.json
+aliases:
+  - CVE-2013-1682
+  - CVE-2013-1684
+  - CVE-2013-1685
+  - CVE-2013-1686
+  - CVE-2013-1687
+  - CVE-2013-1690
+  - CVE-2013-1692
+  - CVE-2013-1693
+  - CVE-2013-1694
+  - CVE-2013-1697
+summary: |
+  An updated thunderbird package that fixes several security issues is now
+  available for Red Hat Enterprise Linux 5 and 6.
+
+  The Red Hat Security Response Team has rated this update as having
+  important security impact. Common Vulnerability Scoring System (CVSS) base
+  scores, which give detailed severity ratings, are available for each
+  vulnerability from the CVE links in the References section.
+
+  Mozilla Thunderbird is a standalone mail and newsgroup client.
+
+  Several flaws were found in the processing of malformed content. Malicious
+  content could cause Thunderbird to crash or, potentially, execute arbitrary
+  code with the privileges of the user running Thunderbird. (CVE-2013-1682,
+  CVE-2013-1684, CVE-2013-1685, CVE-2013-1686, CVE-2013-1687, CVE-2013-1690)
+
+  It was found that Thunderbird allowed data to be sent in the body of
+  XMLHttpRequest (XHR) HEAD requests. In some cases this could allow
+  attackers to conduct Cross-Site Request Forgery (CSRF) attacks.
+  (CVE-2013-1692)
+
+  Timing differences in the way Thunderbird processed SVG image files could
+  allow an attacker to read data across domains, potentially leading to
+  information disclosure. (CVE-2013-1693)
+
+  Two flaws were found in the way Thunderbird implemented some of its
+  internal structures (called wrappers). An attacker could use these flaws to
+  bypass some restrictions placed on them. This could lead to unexpected
+  behavior or a potentially exploitable crash. (CVE-2013-1694, CVE-2013-1697)
+
+  Red Hat would like to thank the Mozilla project for reporting these issues.
+  Upstream acknowledges Gary Kwong, Jesse Ruderman, Andrew McCreight,
+  Abhishek Arya, Mariusz Mlynski, Nils, Johnathan Kuskos, Paul Stone, Boris
+  Zbarsky, and moz_bug_r_a4 as the original reporters of these issues.
+
+  Note: All of the above issues cannot be exploited by a specially-crafted
+  HTML mail message as JavaScript is disabled by default for mail messages.
+  They could be exploited another way in Thunderbird, for example, when
+  viewing the full remote content of an RSS feed.
+
+  All Thunderbird users should upgrade to this updated package, which
+  contains Thunderbird version 17.0.7 ESR, which corrects these issues. After
+  installing the update, Thunderbird must be restarted for the changes to
+  take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/thunderbird?arch=ppc64
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird?arch=x86_64
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird?arch=x86_64
+    affected_versions: vers:rpm/<17.0.7-1.el5_9
+    fixed_versions: vers:rpm/17.0.7-1.el5_9
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<17.0.7-1.el5_9
+    fixed_versions: vers:rpm/17.0.7-1.el5_9
+  - purl: pkg:rpm/redhat/thunderbird?arch=s390x
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird?arch=src
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird?arch=src
+    affected_versions: vers:rpm/<17.0.7-1.el5_9
+    fixed_versions: vers:rpm/17.0.7-1.el5_9
+  - purl: pkg:rpm/redhat/thunderbird?arch=i686
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=i686
+    affected_versions: vers:rpm/<17.0.7-1.el6_4
+    fixed_versions: vers:rpm/17.0.7-1.el6_4
+  - purl: pkg:rpm/redhat/thunderbird?arch=i386
+    affected_versions: vers:rpm/<17.0.7-1.el5_9
+    fixed_versions: vers:rpm/17.0.7-1.el5_9
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=i386
+    affected_versions: vers:rpm/<17.0.7-1.el5_9
+    fixed_versions: vers:rpm/17.0.7-1.el5_9
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0982.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0982.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=977597
+    reference_type: bug
+    reference_id: 977597
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=977599
+    reference_type: bug
+    reference_id: 977599
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=977600
+    reference_type: bug
+    reference_id: 977600
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=977602
+    reference_type: bug
+    reference_id: 977602
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=977603
+    reference_type: bug
+    reference_id: 977603
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=977605
+    reference_type: bug
+    reference_id: 977605
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=977610
+    reference_type: bug
+    reference_id: 977610
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=977614
+    reference_type: bug
+    reference_id: 977614
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/remote/27429.rb
+    reference_type: exploit
+    reference_id: CVE-2013-1690;OSVDB-94584
+  - url: https://access.redhat.com/errata/RHSA-2013:0982
+    reference_type:
+    reference_id: RHSA-2013:0982

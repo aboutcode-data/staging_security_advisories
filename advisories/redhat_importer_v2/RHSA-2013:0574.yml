@@ -1,0 +1,64 @@
+advisory_id: RHSA-2013:0574
+datasource_id: redhat_importer_v2/RHSA-2013:0574
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0574.json
+aliases:
+  - CVE-2013-0504
+  - CVE-2013-0643
+  - CVE-2013-0648
+summary: |
+  An updated Adobe Flash Player package that fixes three security issues is
+  now available for Red Hat Enterprise Linux 5 and 6 Supplementary.
+
+  The Red Hat Security Response Team has rated this update as having critical
+  security impact. Common Vulnerability Scoring System (CVSS) base scores,
+  which give detailed severity ratings, are available for each vulnerability
+  from the CVE links in the References section.
+
+  The flash-plugin package contains a Mozilla Firefox compatible Adobe Flash
+  Player web browser plug-in.
+
+  This update fixes two vulnerabilities in Adobe Flash Player. These
+  vulnerabilities are detailed in the Adobe Security bulletin APSB13-08,
+  listed in the References section. Specially-crafted SWF content could cause
+  flash-plugin to crash or, potentially, execute arbitrary code when a victim
+  loads a page containing the malicious SWF content. (CVE-2013-0504,
+  CVE-2013-0648)
+
+  This update also fixes a permissions issue with the Adobe Flash Player
+  Firefox sandbox. (CVE-2013-0643)
+
+  All users of Adobe Flash Player should install this updated package, which
+  upgrades Flash Player to version 11.2.202.273.
+impacted_packages:
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<11.2.202.273-1.el5
+    fixed_versions: vers:rpm/11.2.202.273-1.el5
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i686
+    affected_versions: vers:rpm/<11.2.202.273-1.el6
+    fixed_versions: vers:rpm/11.2.202.273-1.el6
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0574.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0574.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=915961
+    reference_type: bug
+    reference_id: 915961
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=915964
+    reference_type: bug
+    reference_id: 915964
+  - url: http://www.adobe.com/support/security/bulletins/apsb13-08.html
+    reference_type: other
+    reference_id: apsb13-08.html
+  - url: https://access.redhat.com/errata/RHSA-2013:0574
+    reference_type:
+    reference_id: RHSA-2013:0574

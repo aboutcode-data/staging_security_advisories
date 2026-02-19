@@ -1,0 +1,55 @@
+advisory_id: RHSA-2015:1184
+datasource_id: redhat_importer_v2/RHSA-2015:1184
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1184.json
+aliases:
+  - CVE-2015-3113
+summary: |
+  An updated Adobe Flash Player package that fixes one security issue is now
+  available for Red Hat Enterprise Linux 5 and 6 Supplementary.
+
+  Red Hat Product Security has rated this update as having Critical security
+  impact. A Common Vulnerability Scoring System (CVSS) base score, which
+  gives a detailed severity rating, is available from the CVE link in the
+  References section.
+
+  The flash-plugin package contains a Mozilla Firefox compatible Adobe Flash
+  Player web browser plug-in.
+
+  A flaw was found in the way flash-plugin displayed certain SWF content. An
+  attacker could use this flaw to create a specially crafted SWF file that
+  would cause flash-plugin to crash or, potentially, execute arbitrary code
+  when the victim loaded a page containing the malicious SWF content.
+  (CVE-2015-3113)
+
+  All users of Adobe Flash Player should install this updated package, which
+  upgrades Flash Player to version 11.2.202.468.
+impacted_packages:
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i686
+    affected_versions: vers:rpm/<11.2.202.468-1.el6_6
+    fixed_versions: vers:rpm/11.2.202.468-1.el6_6
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<11.2.202.468-1.el5
+    fixed_versions: vers:rpm/11.2.202.468-1.el5
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1184.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1184.json
+    reference_type:
+    reference_id:
+  - url: https://helpx.adobe.com/security/products/flash-player/apsb15-14.html
+    reference_type: other
+    reference_id: apsb15-14.html
+  - url: https://access.redhat.com/errata/RHSA-2015:1184
+    reference_type:
+    reference_id: RHSA-2015:1184
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1235036
+    reference_type: other
+    reference_id: show_bug.cgi?id=1235036

@@ -1,0 +1,174 @@
+advisory_id: RHSA-2015:1680
+datasource_id: redhat_importer_v2/RHSA-2015:1680
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1680.json
+aliases:
+  - CVE-2015-3221
+summary: |
+  Updated openstack-neutron packages that fix one security issue are now
+  available for Red Hat Enterprise Linux OpenStack Platform 6.0
+
+  Red Hat Product Security has rated this update as having a Moderate security
+  impact. A Common Vulnerability Scoring System (CVSS) base score, which
+  gives a detailed severity rating, is available from the CVE link in the
+  References section.
+
+  OpenStack Networking (Neutron) is a pluggable, scalable, and API-driven
+  system that provisions networking services to virtual machines. Its main
+  function is to manage connectivity to and from virtual machines.
+
+  A Denial of Service flaw was found in the L2 agent when using the IPTables
+  firewall driver. By submitting an address pair that will be rejected as
+  invalid by the ipset tool, an attacker may cause the agent to crash.
+  (CVE-2015-3221)
+
+  Red Hat would like to thank the OpenStack upstream for reporting this
+  issue. Upstream acknowledges Darragh O'Reilly (HP) as the original reporter.
+
+  Additionally, the packages address the following issues:
+  * Neutron failed to load multiple configuration files. The Puppet recipe
+  hard-coded the --config-file parameter to a set list of configuration files
+  and additional files were not loaded, even if specified. This fix creates a
+  new Neutron configuration directory, /etc/neutron/conf.d, and any .conf
+  files in that directory are loaded by Puppet and applied to all services.
+  (BZ#1188480)
+
+  * When configuring load balancer as a service, the Neutron configuration
+  used no group as the default system user group. This group does not exist
+  in the default Red Hat Enterprise Linux 7 configuration, which caused the
+  virtual IP address creation to fail with the error "cannot find group id
+  for 'nogroup'." (BZ#1208002)
+
+  * Log rotation was set to one week for Neutron, but that could allow the
+  log file to grow to be very large before rotating. The default log rotation
+  policy has been updated to include a size limit of 10MB as well as a time
+  limit to rotate daily. (BZ#1212442)
+
+  * Previously, dnsmasq did not save lease information in persistent storage.
+  When it was restarted, the lease information was lost. This behavior
+  resulted from removing the '--dhcp-script' option as part of fixing
+  BZ#1202392. As a result, instances were stuck in the network boot process
+  for a long period of time. In addition, NACK messages were noted in the
+  dnsmasq log. This update removes the authoritative option, so that NAKs are
+  not sent in response to DHCPREQUESTs to other servers. This change is
+  expected to prevent dnsmasq from NAKing clients renewing leases issued
+  before it was restarted/rescheduled. DHCPNAK messages should no longer be
+  found in the log files. (BZ#1227635)
+
+  * Conflict tags were included in the python-neutron package spec that
+  resulted in Neutron unnecessarily blocking the python-oslo-db package.
+  These conflicts have been removed from the spec, so the python-oslo-db
+  package can be successfully installed. (BZ#1250056)
+
+  All openstack-neutron users are advised to upgrade to these updated
+  packages, which contain backported patches to correct these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/openstack-neutron-metaplugin?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-oneconvergence-nvsd?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-embrane?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-nec?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-ofagent?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-vpn-agent?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-vmware?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/python-neutron?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-hyperv?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-sriov-nic-agent?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-brocade?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-linuxbridge?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-bigswitch?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-plumgrid?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-ryu?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-opencontrail?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-openvswitch?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-metering-agent?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-common?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-nuage?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-ml2?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-mellanox?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-midonet?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-ibm?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron-cisco?arch=noarch
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+  - purl: pkg:rpm/redhat/openstack-neutron?arch=src
+    affected_versions: vers:rpm/<2014.2.3-9.el7ost
+    fixed_versions: vers:rpm/2014.2.3-9.el7ost
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1680.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2015:1680
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1232284
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1680.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1208002
+    reference_type: bug
+    reference_id: 1208002
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1227635
+    reference_type: bug
+    reference_id: 1227635
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1250056
+    reference_type: bug
+    reference_id: 1250056

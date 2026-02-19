@@ -1,0 +1,124 @@
+advisory_id: RHSA-2014:0474
+datasource_id: redhat_importer_v2/RHSA-2014:0474
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0474.json
+aliases:
+  - CVE-2014-0114
+summary: |
+  Updated struts packages that fix one security issue are now available for
+  Red Hat Enterprise Linux 5.
+
+  The Red Hat Security Response Team has rated this update as having
+  Important security impact. A Common Vulnerability Scoring System (CVSS)
+  base score, which gives a detailed severity rating, is available from the
+  CVE link in the References section.
+
+  Apache Struts is a framework for building web applications with Java.
+
+  It was found that the Struts 1 ActionForm object allowed access to the
+  'class' parameter, which is directly mapped to the getClass() method. A
+  remote attacker could use this flaw to manipulate the ClassLoader used by
+  an application server running Struts 1. This could lead to remote code
+  execution under certain conditions. (CVE-2014-0114)
+
+  All struts users are advised to upgrade to these updated packages, which
+  contain a backported patch to correct this issue. All running applications
+  using struts must be restarted for this update to take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/struts-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-webapps-tomcat5?arch=x86_64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-manual?arch=x86_64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-javadoc?arch=x86_64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts?arch=x86_64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-webapps-tomcat5?arch=s390x
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-manual?arch=s390x
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-javadoc?arch=s390x
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts?arch=s390x
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-webapps-tomcat5?arch=ia64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-manual?arch=ia64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-javadoc?arch=ia64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts?arch=ia64
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-debuginfo?arch=i386
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-webapps-tomcat5?arch=i386
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-manual?arch=i386
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-javadoc?arch=i386
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts?arch=i386
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-webapps-tomcat5?arch=ppc
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-manual?arch=ppc
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts-javadoc?arch=ppc
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts?arch=ppc
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+  - purl: pkg:rpm/redhat/struts?arch=src
+    affected_versions: vers:rpm/<1.2.9-4jpp.8.el5_10
+    fixed_versions: vers:rpm/1.2.9-4jpp.8.el5_10
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0474.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1091938
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0474.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2014:0474
+    reference_type:
+    reference_id: RHSA-2014:0474

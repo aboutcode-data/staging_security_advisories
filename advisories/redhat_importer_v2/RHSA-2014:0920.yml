@@ -1,0 +1,235 @@
+advisory_id: RHSA-2014:0920
+datasource_id: redhat_importer_v2/RHSA-2014:0920
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0920.json
+aliases:
+  - CVE-2014-0118
+  - CVE-2014-0226
+  - CVE-2014-0231
+summary: |
+  Updated httpd packages that fix three security issues are now available for
+  Red Hat Enterprise Linux 5 and 6.
+
+  The Red Hat Security Response Team has rated this update as having
+  Important security impact. Common Vulnerability Scoring System (CVSS) base
+  scores, which give detailed severity ratings, are available for each
+  vulnerability from the CVE links in the References section.
+
+  The httpd packages provide the Apache HTTP Server, a powerful, efficient,
+  and extensible web server.
+
+  A race condition flaw, leading to heap-based buffer overflows, was found in
+  the mod_status httpd module. A remote attacker able to access a status page
+  served by mod_status on a server using a threaded Multi-Processing Module
+  (MPM) could send a specially crafted request that would cause the httpd
+  child process to crash or, possibly, allow the attacker to execute
+  arbitrary code with the privileges of the "apache" user. (CVE-2014-0226)
+
+  A denial of service flaw was found in the way httpd's mod_deflate module
+  handled request body decompression (configured via the "DEFLATE" input
+  filter). A remote attacker able to send a request whose body would be
+  decompressed could use this flaw to consume an excessive amount of system
+  memory and CPU on the target system. (CVE-2014-0118)
+
+  A denial of service flaw was found in the way httpd's mod_cgid module
+  executed CGI scripts that did not read data from the standard input.
+  A remote attacker could submit a specially crafted request that would cause
+  the httpd child process to hang indefinitely. (CVE-2014-0231)
+
+  All httpd users are advised to upgrade to these updated packages, which
+  contain backported patches to correct these issues. After installing the
+  updated packages, the httpd daemon will be restarted automatically.
+impacted_packages:
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-manual?arch=x86_64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd?arch=x86_64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/mod_ssl?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-tools?arch=x86_64
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd?arch=x86_64
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/mod_ssl?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=i386
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-devel?arch=i386
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-manual?arch=i386
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd?arch=i386
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/mod_ssl?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd?arch=src
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd?arch=src
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd?arch=ppc
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/mod_ssl?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-manual?arch=ppc
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-devel?arch=ppc
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-devel?arch=ppc
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/mod_ssl?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-tools?arch=ppc64
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd?arch=ppc64
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd?arch=ia64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/mod_ssl?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-manual?arch=ia64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-devel?arch=ia64
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd?arch=s390x
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/mod_ssl?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-manual?arch=s390x
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-devel?arch=s390x
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/mod_ssl?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-tools?arch=s390x
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd?arch=s390x
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-devel?arch=s390x
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-devel?arch=s390
+    affected_versions: vers:rpm/<2.2.3-87.el5_10
+    fixed_versions: vers:rpm/2.2.3-87.el5_10
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-devel?arch=s390
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-devel?arch=i686
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/mod_ssl?arch=i686&epoch=1
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-tools?arch=i686
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd?arch=i686
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+  - purl: pkg:rpm/redhat/httpd-manual?arch=noarch
+    affected_versions: vers:rpm/<2.2.15-31.el6_5
+    fixed_versions: vers:rpm/2.2.15-31.el6_5
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0920.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1120596
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1120601
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1120603
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0920.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2014:0920
+    reference_type:
+    reference_id: RHSA-2014:0920

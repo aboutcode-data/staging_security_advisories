@@ -1,0 +1,147 @@
+advisory_id: RHSA-2015:0101
+datasource_id: redhat_importer_v2/RHSA-2015:0101
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0101.json
+aliases:
+  - CVE-2015-0235
+summary: |
+  Updated glibc packages that fix one security issue are now available for
+  Red Hat Enterprise Linux 4 Extended Life Cycle Support.
+
+  Red Hat Product Security has rated this update as having Critical security
+  impact. A Common Vulnerability Scoring System (CVSS) base score, which
+  gives a detailed severity rating, is available from the CVE link in the
+  References section.
+
+  The glibc packages provide the standard C libraries (libc), POSIX thread
+  libraries (libpthread), standard math libraries (libm), and the Name
+  Server Caching Daemon (nscd) used by multiple programs on the system.
+  Without these libraries, the Linux system cannot function correctly.
+
+  A heap-based buffer overflow was found in glibc's
+  __nss_hostname_digits_dots() function, which is used by the gethostbyname()
+  and gethostbyname2() glibc function calls. A remote attacker able to make
+  an application call either of these functions could use this flaw to
+  execute arbitrary code with the permissions of the user running the
+  application. (CVE-2015-0235)
+
+  Red Hat would like to thank Qualys for reporting this issue.
+
+  All glibc users are advised to upgrade to these updated packages, which
+  contain a backported patch to correct this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/glibc?arch=i686
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/nptl-devel?arch=i686
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-profile?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/nptl-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-utils?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-common?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-headers?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/nscd?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-debuginfo-common?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-devel?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-profile?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/nptl-devel?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-utils?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-common?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-headers?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/nscd?arch=i386
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc?arch=src
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-profile?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/nptl-devel?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-utils?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-common?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-headers?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/nscd?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-devel?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.3.4-2.57.el4.2
+    fixed_versions: vers:rpm/2.3.4-2.57.el4.2
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0101.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0101.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183461
+    reference_type: bug
+    reference_id: 1183461
+  - url: https://access.redhat.com/errata/RHSA-2015:0101
+    reference_type:
+    reference_id: RHSA-2015:0101

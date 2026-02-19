@@ -1,0 +1,185 @@
+advisory_id: RHSA-2014:1294
+datasource_id: redhat_importer_v2/RHSA-2014:1294
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1294.json
+aliases:
+  - CVE-2014-6271
+summary: |
+  Updated bash packages that fix one security issue are now available for Red
+  Hat Enterprise Linux 4 Extended Life Cycle Support, Red Hat Enterprise
+  Linux 5.6 Long Life, Red Hat Enterprise Linux 5.9 Extended Update Support,
+  Red Hat Enterprise Linux 6.2 Advanced Update Support, and Red Hat
+  Enterprise Linux 6.4 Extended Update Support.
+
+  Red Hat Product Security has rated this update as having Critical security
+  impact. A Common Vulnerability Scoring System (CVSS) base score, which
+  gives a detailed severity rating, is available from the CVE link in the
+  References section.
+
+  The GNU Bourne Again shell (Bash) is a shell and command language
+  interpreter compatible with the Bourne shell (sh). Bash is the default
+  shell for Red Hat Enterprise Linux.
+
+  A flaw was found in the way Bash evaluated certain specially crafted
+  environment variables. An attacker could use this flaw to override or
+  bypass environment restrictions to execute shell commands. Certain
+  services and applications allow remote unauthenticated attackers to
+  provide environment variables, allowing them to exploit this issue.
+  (CVE-2014-6271)
+
+  For additional information on the CVE-2014-6271 flaw, refer to the
+  Knowledgebase article at https://access.redhat.com/articles/1200223
+
+  Red Hat would like to thank Stephane Chazelas for reporting this issue.
+
+  All bash users are advised to upgrade to these updated packages, which
+  contain a backported patch to correct this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/bash?arch=ia64
+    affected_versions: vers:rpm/<3.2-24.el5_6.1
+    fixed_versions: vers:rpm/3.2-24.el5_6.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<3.2-24.el5_6.1
+    fixed_versions: vers:rpm/3.2-24.el5_6.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash?arch=ia64
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<3.0-27.el4.2
+    fixed_versions: vers:rpm/3.0-27.el4.2
+  - purl: pkg:rpm/redhat/bash?arch=ia64
+    affected_versions: vers:rpm/<3.0-27.el4.2
+    fixed_versions: vers:rpm/3.0-27.el4.2
+  - purl: pkg:rpm/redhat/bash?arch=i386
+    affected_versions: vers:rpm/<3.2-24.el5_6.1
+    fixed_versions: vers:rpm/3.2-24.el5_6.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=i386
+    affected_versions: vers:rpm/<3.2-24.el5_6.1
+    fixed_versions: vers:rpm/3.2-24.el5_6.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=i386
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash?arch=i386
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=i386
+    affected_versions: vers:rpm/<3.0-27.el4.2
+    fixed_versions: vers:rpm/3.0-27.el4.2
+  - purl: pkg:rpm/redhat/bash?arch=i386
+    affected_versions: vers:rpm/<3.0-27.el4.2
+    fixed_versions: vers:rpm/3.0-27.el4.2
+  - purl: pkg:rpm/redhat/bash?arch=src
+    affected_versions: vers:rpm/<3.2-24.el5_6.1
+    fixed_versions: vers:rpm/3.2-24.el5_6.1
+  - purl: pkg:rpm/redhat/bash?arch=src
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash?arch=src
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash?arch=src
+    affected_versions: vers:rpm/<4.1.2-9.el6_2.1
+    fixed_versions: vers:rpm/4.1.2-9.el6_2.1
+  - purl: pkg:rpm/redhat/bash?arch=src
+    affected_versions: vers:rpm/<3.0-27.el4.2
+    fixed_versions: vers:rpm/3.0-27.el4.2
+  - purl: pkg:rpm/redhat/bash?arch=x86_64
+    affected_versions: vers:rpm/<3.2-24.el5_6.1
+    fixed_versions: vers:rpm/3.2-24.el5_6.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.2-24.el5_6.1
+    fixed_versions: vers:rpm/3.2-24.el5_6.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash?arch=x86_64
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash-doc?arch=x86_64
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash?arch=x86_64
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.1.2-9.el6_2.1
+    fixed_versions: vers:rpm/4.1.2-9.el6_2.1
+  - purl: pkg:rpm/redhat/bash-doc?arch=x86_64
+    affected_versions: vers:rpm/<4.1.2-9.el6_2.1
+    fixed_versions: vers:rpm/4.1.2-9.el6_2.1
+  - purl: pkg:rpm/redhat/bash?arch=x86_64
+    affected_versions: vers:rpm/<4.1.2-9.el6_2.1
+    fixed_versions: vers:rpm/4.1.2-9.el6_2.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.0-27.el4.2
+    fixed_versions: vers:rpm/3.0-27.el4.2
+  - purl: pkg:rpm/redhat/bash?arch=x86_64
+    affected_versions: vers:rpm/<3.0-27.el4.2
+    fixed_versions: vers:rpm/3.0-27.el4.2
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash?arch=s390x
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash-doc?arch=s390x
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash?arch=s390x
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash?arch=ppc
+    affected_versions: vers:rpm/<3.2-32.el5_9.2
+    fixed_versions: vers:rpm/3.2-32.el5_9.2
+  - purl: pkg:rpm/redhat/bash-doc?arch=i686
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=i686
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash?arch=i686
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash-doc?arch=ppc64
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+  - purl: pkg:rpm/redhat/bash?arch=ppc64
+    affected_versions: vers:rpm/<4.1.2-15.el6_4.1
+    fixed_versions: vers:rpm/4.1.2-15.el6_4.1
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1294.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1294.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/articles/1200223
+    reference_type: other
+    reference_id: 1200223
+  - url: https://access.redhat.com/errata/RHSA-2014:1294
+    reference_type:
+    reference_id: RHSA-2014:1294
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1141597
+    reference_type: other
+    reference_id: show_bug.cgi?id=1141597

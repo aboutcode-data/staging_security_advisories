@@ -1,0 +1,177 @@
+advisory_id: RHSA-2015:1581
+datasource_id: redhat_importer_v2/RHSA-2015:1581
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1581.json
+aliases:
+  - CVE-2015-4495
+summary: |
+  Updated firefox packages that fix one security issue are now available for
+  Red Hat Enterprise Linux 5, 6, and 7.
+
+  Red Hat Product Security has rated this update as having Important security
+  impact. A Common Vulnerability Scoring System (CVSS) base score, which
+  gives a detailed severity rating, is available from the CVE link in the
+  References section.
+
+  Mozilla Firefox is an open source web browser. XULRunner provides the XUL
+  Runtime environment for Mozilla Firefox.
+
+  A flaw was discovered in Mozilla Firefox that could be used to violate the
+  same-origin policy and inject web script into a non-privileged part of the
+  built-in PDF file viewer (PDF.js). An attacker could create a malicious web
+  page that, when viewed by a victim, could steal arbitrary files (including
+  private SSH keys, the /etc/passwd file, and other potentially sensitive
+  files) from the system running Firefox. (CVE-2015-4495)
+
+  Red Hat would like to thank the Mozilla project for reporting this issue.
+  Upstream acknowledges Cody Crews as the original reporter.
+
+  All Firefox users should upgrade to these updated packages, which contain
+  Firefox version 38.1.1 ESR, which corrects this issue. After installing the
+  update, Firefox must be restarted for the changes to take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/firefox?arch=ppc64
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox?arch=x86_64
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox?arch=x86_64
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox?arch=x86_64
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox?arch=src
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox?arch=src
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox?arch=src
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox?arch=src
+    affected_versions: vers:rpm/<38.1.1-1.ael7b_1
+    fixed_versions: vers:rpm/38.1.1-1.ael7b_1
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=i686
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox?arch=i686
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox?arch=i686
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=i686
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox?arch=ppc64
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox?arch=ppc64
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox?arch=s390x
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox?arch=s390x
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox?arch=s390x
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox?arch=ppc
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox?arch=ppc
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox?arch=s390
+    affected_versions: vers:rpm/<38.1.1-1.el7_1
+    fixed_versions: vers:rpm/38.1.1-1.el7_1
+  - purl: pkg:rpm/redhat/firefox?arch=s390
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390
+    affected_versions: vers:rpm/<38.1.1-1.el6_7
+    fixed_versions: vers:rpm/38.1.1-1.el6_7
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox?arch=s390
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=i386
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox?arch=i386
+    affected_versions: vers:rpm/<38.1.1-1.el5_11
+    fixed_versions: vers:rpm/38.1.1-1.el5_11
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<38.1.1-1.ael7b_1
+    fixed_versions: vers:rpm/38.1.1-1.ael7b_1
+  - purl: pkg:rpm/redhat/firefox?arch=ppc64le
+    affected_versions: vers:rpm/<38.1.1-1.ael7b_1
+    fixed_versions: vers:rpm/38.1.1-1.ael7b_1
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1581.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/articles/1563163
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1581.json
+    reference_type:
+    reference_id:
+  - url: https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox-esr/#firefoxesr38.1.1
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1251318
+    reference_type: bug
+    reference_id: 1251318
+  - url: https://access.redhat.com/errata/RHSA-2015:1581
+    reference_type:
+    reference_id: RHSA-2015:1581

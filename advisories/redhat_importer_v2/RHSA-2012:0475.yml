@@ -1,0 +1,86 @@
+advisory_id: RHSA-2012:0475
+datasource_id: redhat_importer_v2/RHSA-2012:0475
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2012/rhsa-2012_0475.json
+aliases:
+  - CVE-2011-4858
+  - CVE-2012-0022
+summary: "Updated tomcat6 packages that fix two security issues are now available for\nRed Hat\
+  \ Enterprise Linux 6.\n\nThe Red Hat Security Response Team has rated this update as having\
+  \ moderate\nsecurity impact. Common Vulnerability Scoring System (CVSS) base scores,\nwhich\
+  \ give detailed severity ratings, are available for each vulnerability\nfrom the CVE links\
+  \ in the References section.\n\nApache Tomcat is a servlet container for the Java Servlet\
+  \ and JavaServer\nPages (JSP) technologies.\n\nIt was found that the Java hashCode() method\
+  \ implementation was susceptible\nto predictable hash collisions. A remote attacker could\
+  \ use this flaw to\ncause Tomcat to use an excessive amount of CPU time by sending an HTTP\n\
+  request with a large number of parameters whose names map to the same hash\nvalue. This update\
+  \ introduces a limit on the number of parameters processed\nper request to mitigate this issue.\
+  \ The default limit is 512 for\nparameters and 128 for headers. These defaults can be changed\
+  \ by setting\nthe org.apache.tomcat.util.http.Parameters.MAX_COUNT and\norg.apache.tomcat.util.http.MimeHeaders.MAX_COUNT\
+  \ system properties.\n(CVE-2011-4858)\n\nIt was found that Tomcat did not handle large numbers\
+  \ of parameters and\nlarge parameter values efficiently. A remote attacker could make Tomcat\n\
+  use an excessive amount of CPU time by sending an HTTP request containing a\nlarge number\
+  \ of parameters or large parameter values. This update\nintroduces limits on the number of\
+  \ parameters and headers processed per\nrequest to address this issue. Refer to the CVE-2011-4858\
+  \ description for\ninformation about the org.apache.tomcat.util.http.Parameters.MAX_COUNT\
+  \ and\norg.apache.tomcat.util.http.MimeHeaders.MAX_COUNT system properties.\n(CVE-2012-0022)\
+  \ \n\nRed Hat would like to thank oCERT for reporting CVE-2011-4858. oCERT\nacknowledges Julian\
+  \ Wälde and Alexander Klink as the original reporters of\nCVE-2011-4858.\n\nUsers of Tomcat\
+  \ should upgrade to these updated packages, which correct\nthese issues. Tomcat must be restarted\
+  \ for this update to take effect."
+impacted_packages:
+  - purl: pkg:rpm/redhat/tomcat6-servlet-2.5-api?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6-lib?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6-jsp-2.1-api?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6-el-2.1-api?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6-admin-webapps?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6-webapps?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6-javadoc?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6-docs-webapp?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+  - purl: pkg:rpm/redhat/tomcat6?arch=src
+    affected_versions: vers:rpm/<6.0.24-36.el6_2
+    fixed_versions: vers:rpm/6.0.24-36.el6_2
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2012/rhsa-2012_0475.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=750521
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2012/rhsa-2012_0475.json
+    reference_type:
+    reference_id:
+  - url: http://tomcat.apache.org/security-6.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=783359
+    reference_type: bug
+    reference_id: 783359
+  - url: https://access.redhat.com/errata/RHSA-2012:0475
+    reference_type:
+    reference_id: RHSA-2012:0475

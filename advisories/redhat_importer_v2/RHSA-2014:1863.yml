@@ -1,0 +1,192 @@
+advisory_id: RHSA-2014:1863
+datasource_id: redhat_importer_v2/RHSA-2014:1863
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1863.json
+aliases:
+  - CVE-2013-1854
+  - CVE-2013-1855
+  - CVE-2013-1857
+  - CVE-2013-4491
+  - CVE-2013-6414
+  - CVE-2013-6415
+  - CVE-2014-0130
+summary: |
+  Updated Subscription Asset Manager 1.4 packages that fix multiple security
+  issues are now available.
+
+  Red Hat Product Security has rated this update as having Important security
+  impact. Common Vulnerability Scoring System (CVSS) base scores, which give
+  detailed severity ratings, are available for each vulnerability from the
+  CVE links in the References section.
+
+  Red Hat Subscription Asset Manager acts as a proxy for handling
+  subscription information and software updates on client machines. Red Hat
+  Subscription Asset Manager is built on Ruby on Rails, a
+  model-view-controller (MVC) framework for web application development.
+  Action Pack implements the controller and the view components.
+
+  A directory traversal flaw was found in the way Ruby on Rails handled
+  wildcard segments in routes with implicit rendering. A remote attacker
+  could use this flaw to retrieve arbitrary local files accessible to a Ruby
+  on Rails application using the aforementioned routes via a specially
+  crafted request. (CVE-2014-0130)
+
+  A flaw was found in the way Ruby on Rails handled hashes in certain
+  queries. A remote attacker could use this flaw to perform a denial of
+  service (resource consumption) attack by sending specially crafted queries
+  that would result in the creation of Ruby symbols, which were never garbage
+  collected. (CVE-2013-1854)
+
+  Two cross-site scripting (XSS) flaws were found in Action Pack. A remote
+  attacker could use these flaws to conduct XSS attacks against users of an
+  application using Action Pack. (CVE-2013-1855, CVE-2013-1857)
+
+  It was discovered that the internationalization component of Ruby on Rails
+  could, under certain circumstances, return a fallback HTML string that
+  contained user input. A remote attacker could possibly use this flaw to
+  perform a reflective cross-site scripting (XSS) attack by providing a
+  specially crafted input to an application using the aforementioned
+  component. (CVE-2013-4491)
+
+  A denial of service flaw was found in the header handling component of
+  Action View. A remote attacker could send strings in specially crafted
+  headers that would be cached indefinitely, which would result in all
+  available system memory eventually being consumed. (CVE-2013-6414)
+
+  It was found that the number_to_currency Action View helper did not
+  properly escape the unit parameter. An attacker could use this flaw to
+  perform a cross-site scripting (XSS) attack on an application that uses
+  data submitted by a user in the unit parameter. (CVE-2013-6415)
+
+  Red Hat would like to thank Ruby on Rails upstream for reporting these
+  issues. Upstream acknowledges Ben Murphy as the original reporter of
+  CVE-2013-1854, Charlie Somerville as the original reporter of
+  CVE-2013-1855, Alan Jenkins as the original reporter of CVE-2013-1857,
+  Peter McLarnan as the original reporter of CVE-2013-4491, Toby Hsieh as the
+  original reporter of CVE-2013-6414, and Ankit Gupta as the original
+  reporter of CVE-2013-6415.
+
+  All Subscription Asset Manager users are advised to upgrade to these
+  updated packages, which contain backported patches to correct these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/ruby193-rubygem-activemodel?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-activeresource?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-actionmailer?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-actionpack?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.17-6.el6sam
+    fixed_versions: vers:rpm/3.2.17-6.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-rails?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-rack?arch=src&epoch=1
+    affected_versions: vers:rpm/<1.4.5-3.el6sam
+    fixed_versions: vers:rpm/1.4.5-3.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-mail?arch=src
+    affected_versions: vers:rpm/<2.5.4-1.el6sam
+    fixed_versions: vers:rpm/2.5.4-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-i18n?arch=src
+    affected_versions: vers:rpm/<0.6.9-1.el6sam
+    fixed_versions: vers:rpm/0.6.9-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-railties?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-activesupport?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.17-2.el6sam
+    fixed_versions: vers:rpm/3.2.17-2.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-activerecord?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.17-5.el6sam
+    fixed_versions: vers:rpm/3.2.17-5.el6sam
+  - purl: pkg:rpm/redhat/katello?arch=src
+    affected_versions: vers:rpm/<1.4.3.28-1.el6sam_splice
+    fixed_versions: vers:rpm/1.4.3.28-1.el6sam_splice
+  - purl: pkg:rpm/redhat/ruby193-rubygem-activemodel?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-activeresource?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-actionmailer?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-actionpack?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.17-6.el6sam
+    fixed_versions: vers:rpm/3.2.17-6.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-rails?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-rack?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<1.4.5-3.el6sam
+    fixed_versions: vers:rpm/1.4.5-3.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-mail?arch=noarch
+    affected_versions: vers:rpm/<2.5.4-1.el6sam
+    fixed_versions: vers:rpm/2.5.4-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-i18n?arch=noarch
+    affected_versions: vers:rpm/<0.6.9-1.el6sam
+    fixed_versions: vers:rpm/0.6.9-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-railties?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.17-1.el6sam
+    fixed_versions: vers:rpm/3.2.17-1.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-activesupport?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.17-2.el6sam
+    fixed_versions: vers:rpm/3.2.17-2.el6sam
+  - purl: pkg:rpm/redhat/ruby193-rubygem-activerecord?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.17-5.el6sam
+    fixed_versions: vers:rpm/3.2.17-5.el6sam
+  - purl: pkg:rpm/redhat/katello-headpin-all?arch=noarch
+    affected_versions: vers:rpm/<1.4.3.28-1.el6sam_splice
+    fixed_versions: vers:rpm/1.4.3.28-1.el6sam_splice
+  - purl: pkg:rpm/redhat/katello-common?arch=noarch
+    affected_versions: vers:rpm/<1.4.3.28-1.el6sam_splice
+    fixed_versions: vers:rpm/1.4.3.28-1.el6sam_splice
+  - purl: pkg:rpm/redhat/katello-headpin?arch=noarch
+    affected_versions: vers:rpm/<1.4.3.28-1.el6sam_splice
+    fixed_versions: vers:rpm/1.4.3.28-1.el6sam_splice
+  - purl: pkg:rpm/redhat/katello-glue-candlepin?arch=noarch
+    affected_versions: vers:rpm/<1.4.3.28-1.el6sam_splice
+    fixed_versions: vers:rpm/1.4.3.28-1.el6sam_splice
+  - purl: pkg:rpm/redhat/katello-glue-elasticsearch?arch=noarch
+    affected_versions: vers:rpm/<1.4.3.28-1.el6sam_splice
+    fixed_versions: vers:rpm/1.4.3.28-1.el6sam_splice
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1863.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2014:1863
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1095105
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=921329
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=921331
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1863.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1036483
+    reference_type: bug
+    reference_id: 1036483
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1036910
+    reference_type: bug
+    reference_id: 1036910
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1036922
+    reference_type: bug
+    reference_id: 1036922
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=921335
+    reference_type: bug
+    reference_id: 921335

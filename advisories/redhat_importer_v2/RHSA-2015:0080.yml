@@ -1,0 +1,168 @@
+advisory_id: RHSA-2015:0080
+datasource_id: redhat_importer_v2/RHSA-2015:0080
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0080.json
+aliases:
+  - CVE-2014-3566
+  - CVE-2014-6549
+  - CVE-2014-6585
+  - CVE-2014-6587
+  - CVE-2014-6591
+  - CVE-2014-6593
+  - CVE-2014-6601
+  - CVE-2015-0383
+  - CVE-2015-0395
+  - CVE-2015-0403
+  - CVE-2015-0406
+  - CVE-2015-0407
+  - CVE-2015-0408
+  - CVE-2015-0410
+  - CVE-2015-0412
+  - CVE-2015-0413
+  - CVE-2015-0421
+  - CVE-2015-0437
+summary: |
+  Updated java-1.8.0-oracle packages that fix several security issues are now
+  available for Oracle Java for Red Hat Enterprise Linux 6.
+
+  Red Hat Product Security has rated this update as having Critical security
+  impact. Common Vulnerability Scoring System (CVSS) base scores, which give
+  detailed severity ratings, are available for each vulnerability from the
+  CVE links in the References section.
+
+  Oracle Java SE version 8 includes the Oracle Java Runtime Environment and
+  the Oracle Java Software Development Kit.
+
+  This update fixes several vulnerabilities in the Oracle Java Runtime
+  Environment and the Oracle Java Software Development Kit. Further
+  information about these flaws can be found on the Oracle Java SE Critical
+  Patch Update Advisory page, listed in the References section.
+  (CVE-2014-3566, CVE-2014-6549, CVE-2014-6585, CVE-2014-6587, CVE-2014-6591,
+  CVE-2014-6593, CVE-2014-6601, CVE-2015-0383, CVE-2015-0395, CVE-2015-0403,
+  CVE-2015-0406, CVE-2015-0407, CVE-2015-0408, CVE-2015-0410, CVE-2015-0412,
+  CVE-2015-0413, CVE-2015-0421, CVE-2015-0437)
+
+  The CVE-2015-0383 issue was discovered by Red Hat.
+
+  Note: With this update, the Oracle Java SE now disables the SSL 3.0
+  protocol to address the CVE-2014-3566 issue (also known as POODLE). Refer
+  to the Red Hat Bugzilla bug linked to in the References section for
+  instructions on how to re-enable SSL 3.0 support if needed.
+
+  All users of java-1.8.0-oracle are advised to upgrade to these updated
+  packages, which provide Oracle Java 8 Update 31 and resolve these issues.
+  All running instances of Oracle Java must be restarted for the update to
+  take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-jdbc?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-src?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-plugin?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-devel?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-javafx?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-jdbc?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-src?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-plugin?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+  - purl: pkg:rpm/redhat/java-1.8.0-oracle-javafx?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.8.0.31-1jpp.1.el6
+    fixed_versions: vers:rpm/1.8.0.31-1jpp.1.el6
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0080.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1152789
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0080.json
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html#AppendixJAVA
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1123870
+    reference_type: bug
+    reference_id: 1123870
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183020
+    reference_type: bug
+    reference_id: 1183020
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183021
+    reference_type: bug
+    reference_id: 1183021
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183023
+    reference_type: bug
+    reference_id: 1183023
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183031
+    reference_type: bug
+    reference_id: 1183031
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183043
+    reference_type: bug
+    reference_id: 1183043
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183044
+    reference_type: bug
+    reference_id: 1183044
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183049
+    reference_type: bug
+    reference_id: 1183049
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183645
+    reference_type: bug
+    reference_id: 1183645
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183646
+    reference_type: bug
+    reference_id: 1183646
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183660
+    reference_type: bug
+    reference_id: 1183660
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183670
+    reference_type: bug
+    reference_id: 1183670
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1183715
+    reference_type: bug
+    reference_id: 1183715
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1184275
+    reference_type: bug
+    reference_id: 1184275
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1184276
+    reference_type: bug
+    reference_id: 1184276
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1184277
+    reference_type: bug
+    reference_id: 1184277
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1184278
+    reference_type: bug
+    reference_id: 1184278
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1152789#c82
+    reference_type: bug
+    reference_id: https://bugzilla.redhat.com/show_bug.cgi?id=1152789#c82
+  - url: https://access.redhat.com/errata/RHSA-2015:0080
+    reference_type:
+    reference_id: RHSA-2015:0080

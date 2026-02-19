@@ -1,0 +1,79 @@
+advisory_id: RHSA-2015:0140
+datasource_id: redhat_importer_v2/RHSA-2015:0140
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0140.json
+aliases:
+  - CVE-2015-0314
+  - CVE-2015-0315
+  - CVE-2015-0316
+  - CVE-2015-0317
+  - CVE-2015-0318
+  - CVE-2015-0319
+  - CVE-2015-0320
+  - CVE-2015-0321
+  - CVE-2015-0322
+  - CVE-2015-0323
+  - CVE-2015-0324
+  - CVE-2015-0325
+  - CVE-2015-0326
+  - CVE-2015-0327
+  - CVE-2015-0328
+  - CVE-2015-0329
+  - CVE-2015-0330
+  - CVE-2015-0331
+summary: |
+  An updated Adobe Flash Player package that fixes multiple security issues
+  is now available for Red Hat Enterprise Linux 5 and 6 Supplementary.
+
+  Red Hat Product Security has rated this update as having Critical security
+  impact. Common Vulnerability Scoring System (CVSS) base scores, which give
+  detailed severity ratings, are available for each vulnerability from the
+  CVE links in the References section.
+
+  The flash-plugin package contains a Mozilla Firefox compatible Adobe Flash
+  Player web browser plug-in.
+
+  This update fixes multiple vulnerabilities in Adobe Flash Player. These
+  vulnerabilities are detailed in the Adobe Security Bulletin APSB15-04
+  listed in the References section.
+
+  Multiple flaws were found in the way flash-plugin displayed certain SWF
+  content. An attacker could use these flaws to create a specially crafted
+  SWF file that would cause flash-plugin to crash or, potentially, execute
+  arbitrary code when the victim loaded a page containing the malicious SWF
+  content. (CVE-2015-0314, CVE-2015-0315, CVE-2015-0316, CVE-2015-0317,
+  CVE-2015-0318, CVE-2015-0319, CVE-2015-0320, CVE-2015-0321, CVE-2015-0322,
+  CVE-2015-0323, CVE-2015-0324, CVE-2015-0325, CVE-2015-0326, CVE-2015-0327,
+  CVE-2015-0328, CVE-2015-0329, CVE-2015-0330)
+
+  All users of Adobe Flash Player should install this updated package, which
+  upgrades Flash Player to version 11.2.202.442.
+impacted_packages:
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i686
+    affected_versions: vers:rpm/<11.2.202.442-1.el6
+    fixed_versions: vers:rpm/11.2.202.442-1.el6
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<11.2.202.442-1.el5
+    fixed_versions: vers:rpm/11.2.202.442-1.el5
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0140.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0140.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1190068
+    reference_type: bug
+    reference_id: 1190068
+  - url: https://helpx.adobe.com/security/products/flash-player/apsb15-04.html
+    reference_type: other
+    reference_id: apsb15-04.html
+  - url: https://access.redhat.com/errata/RHSA-2015:0140
+    reference_type:
+    reference_id: RHSA-2015:0140

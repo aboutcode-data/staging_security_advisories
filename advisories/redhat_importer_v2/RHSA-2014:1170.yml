@@ -1,0 +1,65 @@
+advisory_id: RHSA-2014:1170
+datasource_id: redhat_importer_v2/RHSA-2014:1170
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1170.json
+aliases:
+  - CVE-2014-3120
+summary: |
+  This advisory contains instructions on how to resolve one security issue
+  in the Elasticsearch component in Red Hat JBoss Fuse and A-MQ 6.1.0.
+
+  Red Hat Product Security has rated this security issue as having Important
+  security impact. A Common Vulnerability Scoring System (CVSS) base score,
+  which gives a detailed severity rating, is available from the CVE link in
+  the References section.
+
+  Red Hat JBoss Fuse, based on Apache ServiceMix, provides a small-footprint,
+  flexible, open source enterprise service bus and integration platform. Red
+  Hat JBoss A-MQ, based on Apache ActiveMQ, is a standards-compliant
+  messaging system that is tailored for use in mission critical applications.
+
+  Red Hat JBoss Fuse and A-MQ include the insight plug-in, which provides
+  insight into a Fuse Fabric using Elasticsearch to query data for logs,
+  metrics or historic Camel messages. This plug-in is not enabled by default,
+  and is provided as a technology preview. If it is enabled by installing the
+  feature, for example:
+
+  JBossFuse:karaf@root> features:install insight-elasticsearch
+
+  Then an Elasticsearch server will be started. It was discovered that the
+  default configuration of Elasticsearch enabled dynamic scripting, allowing
+  a remote attacker to execute arbitrary MVEL expressions and Java code via
+  the source parameter passed to _search. (CVE-2014-3120)
+
+  All users of Red Hat JBoss Fuse and A-MQ 6.1.0 as provided from the Red Hat
+  Customer Portal who have enabled Elasticsearch are advised to follow the
+  instructions provided in the Solution section of this advisory.
+impacted_packages: []
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1170.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/solutions/1189133
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/solutions/1191453
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/support/offerings/techpreview
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1170.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1124252
+    reference_type: bug
+    reference_id: 1124252
+  - url: https://access.redhat.com/errata/RHSA-2014:1170
+    reference_type:
+    reference_id: RHSA-2014:1170

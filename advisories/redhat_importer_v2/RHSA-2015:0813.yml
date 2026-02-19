@@ -1,0 +1,97 @@
+advisory_id: RHSA-2015:0813
+datasource_id: redhat_importer_v2/RHSA-2015:0813
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0813.json
+aliases:
+  - CVE-2015-0346
+  - CVE-2015-0347
+  - CVE-2015-0348
+  - CVE-2015-0349
+  - CVE-2015-0350
+  - CVE-2015-0351
+  - CVE-2015-0352
+  - CVE-2015-0353
+  - CVE-2015-0354
+  - CVE-2015-0355
+  - CVE-2015-0356
+  - CVE-2015-0357
+  - CVE-2015-0358
+  - CVE-2015-0359
+  - CVE-2015-0360
+  - CVE-2015-3038
+  - CVE-2015-3039
+  - CVE-2015-3040
+  - CVE-2015-3041
+  - CVE-2015-3042
+  - CVE-2015-3043
+  - CVE-2015-3044
+summary: |
+  An updated Adobe Flash Player package that fixes multiple security issues
+  is now available for Red Hat Enterprise Linux 5 and 6 Supplementary.
+
+  Red Hat Product Security has rated this update as having Critical security
+  impact. Common Vulnerability Scoring System (CVSS) base scores, which give
+  detailed severity ratings, are available for each vulnerability from the
+  CVE links in the References section.
+
+  The flash-plugin package contains a Mozilla Firefox compatible Adobe Flash
+  Player web browser plug-in.
+
+  This update fixes multiple vulnerabilities in Adobe Flash Player. These
+  vulnerabilities are detailed in the Adobe Security Bulletin APSB15-06
+  listed in the References section.
+
+  Multiple flaws were found in the way flash-plugin displayed certain SWF
+  content. An attacker could use these flaws to create a specially crafted
+  SWF file that would cause flash-plugin to crash or, potentially, execute
+  arbitrary code when the victim loaded a page containing the malicious SWF
+  content. (CVE-2015-0346, CVE-2015-0347, CVE-2015-0348, CVE-2015-0349,
+  CVE-2015-0350, CVE-2015-0351, CVE-2015-0352, CVE-2015-0353, CVE-2015-0354,
+  CVE-2015-0355, CVE-2015-0356, CVE-2015-0358, CVE-2015-0359, CVE-2015-0360,
+  CVE-2015-3038, CVE-2015-3039, CVE-2015-3041, CVE-2015-3042, CVE-2015-3043)
+
+  A security bypass flaw was found in flash-plugin that could lead to the
+  disclosure of sensitive information. (CVE-2015-3044)
+
+  Two memory information leak flaws were found in flash-plugin that could
+  allow an attacker to potentially bypass ASLR (Address Space Layout
+  Randomization) protection, and make it easier to exploit other flaws.
+  (CVE-2015-0357, CVE-2015-3040)
+
+  All users of Adobe Flash Player should install this updated package, which
+  upgrades Flash Player to version 11.2.202.457.
+impacted_packages:
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i686
+    affected_versions: vers:rpm/<11.2.202.457-1.el6_6
+    fixed_versions: vers:rpm/11.2.202.457-1.el6_6
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<11.2.202.457-1.el5
+    fixed_versions: vers:rpm/11.2.202.457-1.el5
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0813.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_0813.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1211869
+    reference_type: bug
+    reference_id: 1211869
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1211894
+    reference_type: bug
+    reference_id: 1211894
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1211898
+    reference_type: bug
+    reference_id: 1211898
+  - url: https://helpx.adobe.com/security/products/flash-player/apsb15-06.html
+    reference_type: other
+    reference_id: apsb15-06.html
+  - url: https://access.redhat.com/errata/RHSA-2015:0813
+    reference_type:
+    reference_id: RHSA-2015:0813

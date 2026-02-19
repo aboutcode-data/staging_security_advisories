@@ -1,0 +1,234 @@
+advisory_id: RHSA-2015:1243
+datasource_id: redhat_importer_v2/RHSA-2015:1243
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1243.json
+aliases:
+  - CVE-2015-2590
+  - CVE-2015-2601
+  - CVE-2015-2621
+  - CVE-2015-2625
+  - CVE-2015-2627
+  - CVE-2015-2628
+  - CVE-2015-2632
+  - CVE-2015-2637
+  - CVE-2015-2638
+  - CVE-2015-2664
+  - CVE-2015-2808
+  - CVE-2015-4000
+  - CVE-2015-4731
+  - CVE-2015-4732
+  - CVE-2015-4733
+  - CVE-2015-4748
+  - CVE-2015-4749
+  - CVE-2015-4760
+summary: |
+  Updated java-1.6.0-sun packages that fix several security issues are now
+  available for Oracle Java for Red Hat Enterprise Linux 5, 6, and 7.
+
+  Red Hat Product Security has rated this update as having Important security
+  impact. Common Vulnerability Scoring System (CVSS) base scores, which give
+  detailed severity ratings, are available for each vulnerability from the
+  CVE links in the References section.
+
+  Oracle Java SE version 6 includes the Oracle Java Runtime Environment and
+  the Oracle Java Software Development Kit.
+
+  This update fixes several vulnerabilities in the Oracle Java Runtime
+  Environment and the Oracle Java Software Development Kit. Further
+  information about these flaws can be found on the Oracle Java SE Critical
+  Patch Update Advisory page, listed in the References section.
+  (CVE-2015-2590, CVE-2015-2601, CVE-2015-2621, CVE-2015-2625, CVE-2015-2627,
+  CVE-2015-2628, CVE-2015-2632, CVE-2015-2637, CVE-2015-2638, CVE-2015-2664,
+  CVE-2015-2808, CVE-2015-4000, CVE-2015-4731, CVE-2015-4732, CVE-2015-4733,
+  CVE-2015-4748, CVE-2015-4749, CVE-2015-4760)
+
+  Note: With this update, Oracle JDK now disables RC4 TLS/SSL cipher suites
+  by default to address the CVE-2015-2808 issue. Refer to Red Hat Bugzilla
+  bug 1207101, linked to in the References section, for additional details
+  about this change.
+
+  Note: This update forces the TLS/SSL client implementation in Oracle JDK to
+  reject DH key sizes below 768 bits to address the CVE-2015-4000 issue.
+  Refer to Red Hat Bugzilla bug 1223211, linked to in the References section,
+  for additional details about this change.
+
+  All users of java-1.6.0-sun are advised to upgrade to these updated
+  packages, which provide Oracle Java 6 Update 101 and resolve these issues.
+  All running instances of Oracle Java must be restarted for the update to
+  take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/java-1.6.0-sun?arch=i586&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-jdbc?arch=i586&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-devel?arch=i586&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-plugin?arch=i586&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-src?arch=i586&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-demo?arch=i586&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-demo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-jdbc?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-plugin?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-src?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el5_11
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el5_11
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-src?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el7_1
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el7_1
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-jdbc?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el7_1
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el7_1
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-demo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el7_1
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el7_1
+  - purl: pkg:rpm/redhat/java-1.6.0-sun?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el7_1
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el7_1
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-plugin?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el7_1
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el7_1
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el7_1
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el7_1
+  - purl: pkg:rpm/redhat/java-1.6.0-sun?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-plugin?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-jdbc?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-src?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-demo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el7_1
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el7_1
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-devel?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el7_1
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el7_1
+  - purl: pkg:rpm/redhat/java-1.6.0-sun?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-devel?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-plugin?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-demo?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-src?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+  - purl: pkg:rpm/redhat/java-1.6.0-sun-jdbc?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.6.0.101-1jpp.1.el6_6
+    fixed_versions: vers:rpm/1.6.0.101-1jpp.1.el6_6
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1243.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1243.json
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html#AppendixJAVA
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1207101
+    reference_type: bug
+    reference_id: 1207101
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1223211
+    reference_type: bug
+    reference_id: 1223211
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1241965
+    reference_type: bug
+    reference_id: 1241965
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242019
+    reference_type: bug
+    reference_id: 1242019
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242232
+    reference_type: bug
+    reference_id: 1242232
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242234
+    reference_type: bug
+    reference_id: 1242234
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242240
+    reference_type: bug
+    reference_id: 1242240
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242275
+    reference_type: bug
+    reference_id: 1242275
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242281
+    reference_type: bug
+    reference_id: 1242281
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242372
+    reference_type: bug
+    reference_id: 1242372
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242379
+    reference_type: bug
+    reference_id: 1242379
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242394
+    reference_type: bug
+    reference_id: 1242394
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1242447
+    reference_type: bug
+    reference_id: 1242447
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1243139
+    reference_type: bug
+    reference_id: 1243139
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1243283
+    reference_type: bug
+    reference_id: 1243283
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1243287
+    reference_type: bug
+    reference_id: 1243287
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1243291
+    reference_type: bug
+    reference_id: 1243291
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1243300
+    reference_type: bug
+    reference_id: 1243300
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1207101#c11
+    reference_type: bug
+    reference_id: https://bugzilla.redhat.com/show_bug.cgi?id=1207101#c11
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1223211#c33
+    reference_type: bug
+    reference_id: https://bugzilla.redhat.com/show_bug.cgi?id=1223211#c33
+  - url: https://access.redhat.com/errata/RHSA-2015:1243
+    reference_type:
+    reference_id: RHSA-2015:1243

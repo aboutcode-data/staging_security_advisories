@@ -1,0 +1,334 @@
+advisory_id: RHSA-2015:1513
+datasource_id: redhat_importer_v2/RHSA-2015:1513
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1513.json
+aliases:
+  - CVE-2015-5477
+summary: |
+  Updated bind packages that fix one security issue are now available for Red
+  Hat Enterprise Linux 6 and 7.
+
+  Red Hat Product Security has rated this update as having Important security
+  impact. A Common Vulnerability Scoring System (CVSS) base score, which
+  gives a detailed severity rating, is available from the CVE link in the
+  References section.
+
+  The Berkeley Internet Name Domain (BIND) is an implementation of the Domain
+  Name System (DNS) protocols. BIND includes a DNS server (named); a resolver
+  library (routines for applications to use when interfacing with DNS); and
+  tools for verifying that the DNS server is operating correctly.
+
+  A flaw was found in the way BIND handled requests for TKEY DNS resource
+  records. A remote attacker could use this flaw to make named (functioning
+  as an authoritative DNS server or a DNS resolver) exit unexpectedly with an
+  assertion failure via a specially crafted DNS request packet.
+  (CVE-2015-5477)
+
+  Red Hat would like to thank ISC for reporting this issue. Upstream
+  acknowledges Jonathan Foote as the original reporter.
+
+  All bind users are advised to upgrade to these updated packages, which
+  contain a backported patch to correct this issue. After installing the
+  update, the BIND daemon (named) will be restarted automatically.
+impacted_packages:
+  - purl: pkg:rpm/redhat/bind-sdb-chroot?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-lite-devel?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-devel?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-chroot?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-sdb?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs-lite?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-utils?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-devel?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-sdb?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-chroot?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-utils?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-libs?arch=x86_64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-lite-devel?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-devel?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs-lite?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-devel?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-chroot?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-sdb?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-utils?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-libs?arch=i686&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-license?arch=noarch&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-license?arch=noarch&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind?arch=src&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind?arch=src&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind?arch=src&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-utils?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-chroot?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs-lite?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-sdb-chroot?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-lite-devel?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-devel?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-sdb?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-chroot?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-libs?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-utils?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-sdb?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-devel?arch=ppc64&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-libs?arch=ppc&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=ppc&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs-lite?arch=ppc&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-lite-devel?arch=ppc&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-devel?arch=ppc&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs?arch=ppc&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=ppc&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-devel?arch=ppc&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-chroot?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs-lite?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-utils?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-lite-devel?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-sdb?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-devel?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-sdb-chroot?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-chroot?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-libs?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-utils?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-sdb?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-devel?arch=s390x&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=s390&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs?arch=s390&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-libs-lite?arch=s390&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-lite-devel?arch=s390&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-devel?arch=s390&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.el7_1.3
+    fixed_versions: vers:rpm/9.9.4-18.el7_1.3
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=s390&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-libs?arch=s390&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-devel?arch=s390&epoch=32
+    affected_versions: vers:rpm/<9.8.2-0.37.rc1.el6_7.2
+    fixed_versions: vers:rpm/9.8.2-0.37.rc1.el6_7.2
+  - purl: pkg:rpm/redhat/bind-debuginfo?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind-sdb-chroot?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind-lite-devel?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind-sdb?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind-devel?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind-utils?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind-libs?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind-chroot?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+  - purl: pkg:rpm/redhat/bind-libs-lite?arch=ppc64le&epoch=32
+    affected_versions: vers:rpm/<9.9.4-18.ael7b_1.3
+    fixed_versions: vers:rpm/9.9.4-18.ael7b_1.3
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1513.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_1513.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1247361
+    reference_type: bug
+    reference_id: 1247361
+  - url: https://access.redhat.com/errata/RHSA-2015:1513
+    reference_type:
+    reference_id: RHSA-2015:1513

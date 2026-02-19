@@ -1,0 +1,75 @@
+advisory_id: RHSA-2014:0373
+datasource_id: redhat_importer_v2/RHSA-2014:0373
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0373.json
+aliases:
+  - CVE-2013-4286
+  - CVE-2014-0050
+summary: |
+  An update for the Apache Commons Fileupload and JBoss Web components that
+  fixes two security issues is now available from the Red Hat Customer Portal
+  for Red Hat JBoss BRMS 6.0.1 and Red Hat JBoss BPM Suite 6.0.1.
+
+  The Red Hat Security Response Team has rated this update as having Moderate
+  security impact. Common Vulnerability Scoring System (CVSS) base scores,
+  which give detailed severity ratings, are available for each vulnerability
+  from the CVE links in the References section.
+
+  JBoss Web Server is an enterprise ready web server designed for medium and
+  large applications, and is based on Tomcat. JBoss Web Server provides
+  organizations with a single deployment platform for Java Server Pages (JSP)
+  and Java Servlet technologies, PHP, and CGI. It uses a genuine high
+  performance hybrid technology that incorporates the best of the most recent
+  OS technologies for processing high volume data, while keeping all the
+  reference Java specifications.
+
+  Apache Commons FileUpload package makes it easy to add robust,
+  high-performance, file upload capability to servlets and web applications.
+
+  It was found that when JBoss Web processed a series of HTTP requests in
+  which at least one request contained either multiple content-length
+  headers, or one content-length header with a chunked transfer-encoding
+  header, JBoss Web would incorrectly handle the request. A remote attacker
+  could use this flaw to poison a web cache, perform cross-site scripting
+  (XSS) attacks, or obtain sensitive information from other requests.
+  (CVE-2013-4286)
+
+  A denial of service flaw was found in the way Apache Commons FileUpload,
+  which is embedded in the JBoss Web component of JBoss EAP bundled with
+  JBoss BRMS and BPM Suite, handled small-sized buffers used by
+  MultipartStream. A remote attacker could use this flaw to create a
+  malformed Content-Type header for a multipart request, causing JBoss Web to
+  enter an infinite loop when processing such an incoming request.
+  (CVE-2014-0050)
+
+  All users of the affected products as provided from the Red Hat Customer
+  Portal are advised to apply this update.
+impacted_packages: []
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0373.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=bpm.suite&downloadType=securityPatches&version=6.0.1
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=brms&downloadType=securityPatches&version=6.0.1
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1062337
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1069921
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_0373.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2014:0373
+    reference_type:
+    reference_id: RHSA-2014:0373

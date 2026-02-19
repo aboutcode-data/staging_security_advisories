@@ -1,0 +1,117 @@
+advisory_id: RHSA-2013:1170
+datasource_id: redhat_importer_v2/RHSA-2013:1170
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_1170.json
+aliases:
+  - CVE-2013-1892
+  - CVE-2013-2132
+summary: |
+  Updated mongodb and pymongo packages that fix two security issues and add
+  one enhancement are now available for Red Hat Enterprise MRG 2.3 for Red
+  Hat Enterprise Linux 6.
+
+  The Red Hat Security Response Team has rated this update as having
+  important security impact. Common Vulnerability Scoring System (CVSS) base
+  scores, which give detailed severity ratings, are available for each
+  vulnerability from the CVE links in the References section.
+
+  MongoDB is a NoSQL database. PyMongo provides tools for working with
+  MongoDB.
+
+  A flaw was found in the run() function implementation in MongoDB. A
+  database user permitted to send database queries to a MongoDB server could
+  use this flaw to crash the server or, possibly, execute arbitrary code with
+  the privileges of the mongodb user. (CVE-2013-1892)
+
+  A NULL pointer dereference flaw was found in PyMongo. An invalid DBRef
+  record received from a MongoDB server could cause an application using
+  PyMongo to crash. (CVE-2013-2132)
+
+  Note: In Red Hat Enterprise MRG Grid, MongoDB is not accessed by users
+  directly and is only accessed by other Grid services, such as Condor and
+  Cumin.
+
+  This update also adds the following enhancement:
+
+  * Previously, MongoDB was configured to listen for connections on all
+  network interfaces. This could allow remote users to access the database if
+  the firewall was configured to allow access to the MongoDB port (access is
+  blocked by the default firewall configuration in Red Hat Enterprise Linux).
+  This update changes the configuration to only listen on the loopback
+  interface by default. (BZ#892767)
+
+  Users of Red Hat Enterprise MRG 2.3 for Red Hat Enterprise Linux 6 are
+  advised to upgrade to these updated packages, which contain backported
+  patches to resolve these issues and add this enhancement. After installing
+  this update, MongoDB will be restarted automatically.
+impacted_packages:
+  - purl: pkg:rpm/redhat/mongodb-debuginfo?arch=i686
+    affected_versions: vers:rpm/<1.6.4-6.el6
+    fixed_versions: vers:rpm/1.6.4-6.el6
+  - purl: pkg:rpm/redhat/mongodb-server?arch=i686
+    affected_versions: vers:rpm/<1.6.4-6.el6
+    fixed_versions: vers:rpm/1.6.4-6.el6
+  - purl: pkg:rpm/redhat/mongodb?arch=i686
+    affected_versions: vers:rpm/<1.6.4-6.el6
+    fixed_versions: vers:rpm/1.6.4-6.el6
+  - purl: pkg:rpm/redhat/pymongo-debuginfo?arch=i686
+    affected_versions: vers:rpm/<1.9-11.el6
+    fixed_versions: vers:rpm/1.9-11.el6
+  - purl: pkg:rpm/redhat/pymongo?arch=i686
+    affected_versions: vers:rpm/<1.9-11.el6
+    fixed_versions: vers:rpm/1.9-11.el6
+  - purl: pkg:rpm/redhat/python-bson?arch=i686
+    affected_versions: vers:rpm/<1.9-11.el6
+    fixed_versions: vers:rpm/1.9-11.el6
+  - purl: pkg:rpm/redhat/mongodb-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.6.4-6.el6
+    fixed_versions: vers:rpm/1.6.4-6.el6
+  - purl: pkg:rpm/redhat/mongodb-server?arch=x86_64
+    affected_versions: vers:rpm/<1.6.4-6.el6
+    fixed_versions: vers:rpm/1.6.4-6.el6
+  - purl: pkg:rpm/redhat/mongodb?arch=x86_64
+    affected_versions: vers:rpm/<1.6.4-6.el6
+    fixed_versions: vers:rpm/1.6.4-6.el6
+  - purl: pkg:rpm/redhat/pymongo-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.9-11.el6
+    fixed_versions: vers:rpm/1.9-11.el6
+  - purl: pkg:rpm/redhat/pymongo?arch=x86_64
+    affected_versions: vers:rpm/<1.9-11.el6
+    fixed_versions: vers:rpm/1.9-11.el6
+  - purl: pkg:rpm/redhat/python-bson?arch=x86_64
+    affected_versions: vers:rpm/<1.9-11.el6
+    fixed_versions: vers:rpm/1.9-11.el6
+  - purl: pkg:rpm/redhat/mongodb?arch=src
+    affected_versions: vers:rpm/<1.6.4-6.el6
+    fixed_versions: vers:rpm/1.6.4-6.el6
+  - purl: pkg:rpm/redhat/pymongo?arch=src
+    affected_versions: vers:rpm/<1.9-11.el6
+    fixed_versions: vers:rpm/1.9-11.el6
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_1170.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_1170.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=927536
+    reference_type: bug
+    reference_id: 927536
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=969560
+    reference_type: bug
+    reference_id: 969560
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/24935.rb
+    reference_type: exploit
+    reference_id: CVE-2013-1892;OSVDB-91632
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/24947.txt
+    reference_type: exploit
+    reference_id: CVE-2013-1892;OSVDB-91632
+  - url: https://access.redhat.com/errata/RHSA-2013:1170
+    reference_type:
+    reference_id: RHSA-2013:1170

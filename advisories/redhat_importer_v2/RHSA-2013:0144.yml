@@ -1,0 +1,330 @@
+advisory_id: RHSA-2013:0144
+datasource_id: redhat_importer_v2/RHSA-2013:0144
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0144.json
+aliases:
+  - CVE-2013-0744
+  - CVE-2013-0746
+  - CVE-2013-0748
+  - CVE-2013-0750
+  - CVE-2013-0753
+  - CVE-2013-0754
+  - CVE-2013-0758
+  - CVE-2013-0759
+  - CVE-2013-0762
+  - CVE-2013-0766
+  - CVE-2013-0767
+  - CVE-2013-0769
+summary: |
+  Updated firefox packages that fix several security issues are now available
+  for Red Hat Enterprise Linux 5 and 6.
+
+  The Red Hat Security Response Team has rated this update as having critical
+  security impact. Common Vulnerability Scoring System (CVSS) base scores,
+  which give detailed severity ratings, are available for each vulnerability
+  from the CVE links in the References section.
+
+  Mozilla Firefox is an open source web browser. XULRunner provides the XUL
+  Runtime environment for Mozilla Firefox.
+
+  Several flaws were found in the processing of malformed web content. A web
+  page containing malicious content could cause Firefox to crash or,
+  potentially, execute arbitrary code with the privileges of the user running
+  Firefox. (CVE-2013-0744, CVE-2013-0746, CVE-2013-0750, CVE-2013-0753,
+  CVE-2013-0754, CVE-2013-0762, CVE-2013-0766, CVE-2013-0767, CVE-2013-0769)
+
+  A flaw was found in the way Chrome Object Wrappers were implemented.
+  Malicious content could be used to cause Firefox to execute arbitrary code
+  via plug-ins installed in Firefox. (CVE-2013-0758)
+
+  A flaw in the way Firefox displayed URL values in the address bar could
+  allow a malicious site or user to perform a phishing attack.
+  (CVE-2013-0759)
+
+  An information disclosure flaw was found in the way certain JavaScript
+  functions were implemented in Firefox. An attacker could use this flaw to
+  bypass Address Space Layout Randomization (ASLR) and other security
+  restrictions. (CVE-2013-0748)
+
+  For technical details regarding these flaws, refer to the Mozilla security
+  advisories for Firefox 10.0.12 ESR. You can find a link to the Mozilla
+  advisories in the References section of this erratum.
+
+  Red Hat would like to thank the Mozilla project for reporting these issues.
+  Upstream acknowledges Atte Kettunen, Boris Zbarsky, pa_kt, regenrecht,
+  Abhishek Arya, Christoph Diehl, Christian Holler, Mats Palmgren, Chiaki
+  Ishikawa, Mariusz Mlynski, Masato Kinugawa, and Jesse Ruderman as the
+  original reporters of these issues.
+
+  All Firefox users should upgrade to these updated packages, which contain
+  Firefox version 10.0.12 ESR, which corrects these issues. After installing
+  the update, Firefox must be restarted for the changes to take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=s390
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=ppc64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=ppc64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=ppc64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=ppc64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox?arch=ppc64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=ia64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=ia64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox?arch=ia64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=i386
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=i386
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=i386
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox?arch=i386
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=i386
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=src
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/firefox?arch=src
+    affected_versions: vers:rpm/<10.0.12-1.el5_9
+    fixed_versions: vers:rpm/10.0.12-1.el5_9
+  - purl: pkg:rpm/redhat/xulrunner?arch=src
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox?arch=src
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner?arch=i686
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=i686
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=i686
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox?arch=i686
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+  - purl: pkg:rpm/redhat/firefox-debuginfo?arch=i686
+    affected_versions: vers:rpm/<10.0.12-1.el6_3
+    fixed_versions: vers:rpm/10.0.12-1.el6_3
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0144.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0144.json
+    reference_type:
+    reference_id:
+  - url: http://www.mozilla.org/security/known-vulnerabilities/firefoxESR.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=891811
+    reference_type: bug
+    reference_id: 891811
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=891821
+    reference_type: bug
+    reference_id: 891821
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=891824
+    reference_type: bug
+    reference_id: 891824
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=891825
+    reference_type: bug
+    reference_id: 891825
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=892142
+    reference_type: bug
+    reference_id: 892142
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=892144
+    reference_type: bug
+    reference_id: 892144
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=892145
+    reference_type: bug
+    reference_id: 892145
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=892148
+    reference_type: bug
+    reference_id: 892148
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=892149
+    reference_type: bug
+    reference_id: 892149
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=892150
+    reference_type: bug
+    reference_id: 892150
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/remote/27940.rb
+    reference_type: exploit
+    reference_id: CVE-2013-0753;OSVDB-89021
+  - url: http://www.zerodayinitiative.com/advisories/ZDI-13-006/
+    reference_type: exploit
+    reference_id: CVE-2013-0753;OSVDB-89021
+  - url: https://github.com/rapid7/metasploit-framework/blob/1d617ae3894222cfbbf6951fcd68fd2d1c1b15c6/modules/exploits/multi/http/git_client_command_exec.rb
+    reference_type: exploit
+    reference_id: CVE-2013-0758;CVE-2013-0757
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/remote/41684.rb
+    reference_type: exploit
+    reference_id: CVE-2013-0758;CVE-2013-0757
+  - url: https://github.com/rapid7/metasploit-framework/blob/b08d1ad8d8d6c0f5cb63cc44e3ff75efb9edb7b3/modules/exploits/multi/browser/firefox_svg_plugin.rb
+    reference_type: exploit
+    reference_id: CVE-2013-0758;CVE-2013-0757;OSVDB-89020;OSVDB-89019
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/local/41683.rb
+    reference_type: exploit
+    reference_id: CVE-2013-0758;CVE-2013-0757;OSVDB-89020;OSVDB-89019
+  - url: https://access.redhat.com/errata/RHSA-2013:0144
+    reference_type:
+    reference_id: RHSA-2013:0144

@@ -1,0 +1,55 @@
+advisory_id: RHSA-2014:1186
+datasource_id: redhat_importer_v2/RHSA-2014:1186
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1186.json
+aliases:
+  - CVE-2014-3120
+summary: |
+  An updated katello-configure package that fixes one security issue is now
+  available for Red Hat Subscription Asset Manager.
+
+  Red Hat Product Security has rated this update as having Important security
+  impact. A Common Vulnerability Scoring System (CVSS) base score, which
+  gives a detailed severity rating, is available from the CVE link in the
+  References section.
+
+  The katello-configure package provides the katello-configure script, which
+  configures the Katello installation, and the katello-upgrade script, which
+  handles upgrades between versions.
+
+  It was discovered that the default configuration of Elasticsearch enabled
+  dynamic scripting, allowing a remote attacker to execute arbitrary MVEL
+  expressions and Java code via the source parameter passed to _search.
+  (CVE-2014-3120)
+
+  All Subscription Asset Manager users are advised to upgrade to this updated
+  package. The update provides a script that modifies the elasticsearch.yml
+  configuration file to disable dynamic scripting. After updating, run the
+  "katello-configure" command. This will update the elasticsearch.yml
+  configuration file and restart the elasticsearch service.
+impacted_packages:
+  - purl: pkg:rpm/redhat/katello-configure?arch=src
+    affected_versions: vers:rpm/<1.4.5.1-3.el6sam
+    fixed_versions: vers:rpm/1.4.5.1-3.el6sam
+  - purl: pkg:rpm/redhat/katello-configure?arch=noarch
+    affected_versions: vers:rpm/<1.4.5.1-3.el6sam
+    fixed_versions: vers:rpm/1.4.5.1-3.el6sam
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1186.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2014/rhsa-2014_1186.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1124252
+    reference_type: bug
+    reference_id: 1124252
+  - url: https://access.redhat.com/errata/RHSA-2014:1186
+    reference_type:
+    reference_id: RHSA-2014:1186

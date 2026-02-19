@@ -1,0 +1,716 @@
+advisory_id: RHSA-2013:0685
+datasource_id: redhat_importer_v2/RHSA-2013:0685
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0685.json
+aliases:
+  - CVE-2012-5195
+  - CVE-2012-5526
+  - CVE-2012-6329
+  - CVE-2013-1667
+summary: |
+  Updated perl packages that fix multiple security issues now available
+  for Red Hat Enterprise Linux 5 and 6.
+
+  The Red Hat Security Response Team has rated this update as having
+  moderate security impact. Common Vulnerability Scoring System (CVSS)
+  base scores, which give detailed severity ratings, are available for
+  each vulnerability from the CVE links in the References section.
+
+  Perl is a high-level programming language commonly used for system
+  administration utilities and web programming.
+
+  A heap overflow flaw was found in Perl. If a Perl application allowed
+  user input to control the count argument of the string repeat operator, an
+  attacker could cause the application to crash or, potentially, execute
+  arbitrary code with the privileges of the user running the application.
+  (CVE-2012-5195)
+
+  A denial of service flaw was found in the way Perl's rehashing code
+  implementation, responsible for recalculation of hash keys and
+  redistribution of hash content, handled certain input. If an attacker
+  supplied specially-crafted input to be used as hash keys by a Perl
+  application, it could cause excessive memory consumption. (CVE-2013-1667)
+
+  It was found that the Perl CGI module, used to handle Common Gateway
+  Interface requests and responses, incorrectly sanitized the values for
+  Set-Cookie and P3P headers. If a Perl application using the CGI module
+  reused cookies values and accepted untrusted input from web browsers, a
+  remote attacker could use this flaw to alter member items of the cookie or
+  add new items. (CVE-2012-5526)
+
+  It was found that the Perl Locale::Maketext module, used to localize Perl
+  applications, did not properly handle backslashes or fully-qualified method
+  names. An attacker could possibly use this flaw to execute arbitrary Perl
+  code with the privileges of a Perl application that uses untrusted
+  Locale::Maketext templates. (CVE-2012-6329)
+
+  Red Hat would like to thank the Perl project for reporting CVE-2012-5195
+  and CVE-2013-1667. Upstream acknowledges Tim Brown as the original
+  reporter of CVE-2012-5195 and Yves Orton as the original reporter of
+  CVE-2013-1667.
+
+  All Perl users should upgrade to these updated packages, which contain
+  backported patches to correct these issues. All running Perl programs
+  must be restarted for this update to take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/perl?arch=ppc&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=ppc&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=ppc&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-devel?arch=ppc&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-libs?arch=ppc&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=ppc&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-Test-Harness?arch=s390x
+    affected_versions: vers:rpm/<3.17-130.el6_4
+    fixed_versions: vers:rpm/3.17-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Bzip2?arch=s390x
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Object-Accessor?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.34-130.el6_4
+    fixed_versions: vers:rpm/0.34-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CPANPLUS?arch=s390x
+    affected_versions: vers:rpm/<0.88-130.el6_4
+    fixed_versions: vers:rpm/0.88-130.el6_4
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Time-HiRes?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<1.9721-130.el6_4
+    fixed_versions: vers:rpm/1.9721-130.el6_4
+  - purl: pkg:rpm/redhat/perl-core?arch=s390x
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Params-Check?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.26-130.el6_4
+    fixed_versions: vers:rpm/0.26-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-CoreList?arch=s390x
+    affected_versions: vers:rpm/<2.18-130.el6_4
+    fixed_versions: vers:rpm/2.18-130.el6_4
+  - purl: pkg:rpm/redhat/perl-devel?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-Embed?arch=s390x
+    affected_versions: vers:rpm/<1.28-130.el6_4
+    fixed_versions: vers:rpm/1.28-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IPC-Cmd?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.56-130.el6_4
+    fixed_versions: vers:rpm/0.56-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Term-UI?arch=s390x
+    affected_versions: vers:rpm/<0.20-130.el6_4
+    fixed_versions: vers:rpm/0.20-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-ParseXS?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.2003.0-130.el6_4
+    fixed_versions: vers:rpm/2.2003.0-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Archive-Tar?arch=s390x
+    affected_versions: vers:rpm/<1.58-130.el6_4
+    fixed_versions: vers:rpm/1.58-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Locale-Maketext-Simple?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.18-130.el6_4
+    fixed_versions: vers:rpm/0.18-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Zlib?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<1.09-130.el6_4
+    fixed_versions: vers:rpm/1.09-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CGI?arch=s390x
+    affected_versions: vers:rpm/<3.51-130.el6_4
+    fixed_versions: vers:rpm/3.51-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Raw-Zlib?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Pod-Simple?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.13-130.el6_4
+    fixed_versions: vers:rpm/3.13-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Pod-Escapes?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<1.04-130.el6_4
+    fixed_versions: vers:rpm/1.04-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Build?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.3500-130.el6_4
+    fixed_versions: vers:rpm/0.3500-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Zlib?arch=s390x
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Zlib?arch=s390x
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Archive-Extract?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.38-130.el6_4
+    fixed_versions: vers:rpm/0.38-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CPAN?arch=s390x
+    affected_versions: vers:rpm/<1.9402-130.el6_4
+    fixed_versions: vers:rpm/1.9402-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-MakeMaker?arch=s390x
+    affected_versions: vers:rpm/<6.55-130.el6_4
+    fixed_versions: vers:rpm/6.55-130.el6_4
+  - purl: pkg:rpm/redhat/perl-version?arch=s390x&epoch=3
+    affected_versions: vers:rpm/<0.77-130.el6_4
+    fixed_versions: vers:rpm/0.77-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Load-Conditional?arch=s390x
+    affected_versions: vers:rpm/<0.30-130.el6_4
+    fixed_versions: vers:rpm/0.30-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Test-Simple?arch=s390x
+    affected_versions: vers:rpm/<0.92-130.el6_4
+    fixed_versions: vers:rpm/0.92-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Loaded?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Digest-SHA?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<5.47-130.el6_4
+    fixed_versions: vers:rpm/5.47-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Load?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.16-130.el6_4
+    fixed_versions: vers:rpm/0.16-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Raw-Bzip2?arch=s390x
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Log-Message-Simple?arch=s390x
+    affected_versions: vers:rpm/<0.04-130.el6_4
+    fixed_versions: vers:rpm/0.04-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Package-Constants?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-libs?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-parent?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.221-130.el6_4
+    fixed_versions: vers:rpm/0.221-130.el6_4
+  - purl: pkg:rpm/redhat/perl-File-Fetch?arch=s390x
+    affected_versions: vers:rpm/<0.26-130.el6_4
+    fixed_versions: vers:rpm/0.26-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Parse-CPAN-Meta?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<1.40-130.el6_4
+    fixed_versions: vers:rpm/1.40-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-CBuilder?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.27-130.el6_4
+    fixed_versions: vers:rpm/0.27-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Base?arch=s390x
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Log-Message?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=s390x&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Time-Piece?arch=s390x
+    affected_versions: vers:rpm/<1.15-130.el6_4
+    fixed_versions: vers:rpm/1.15-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Pluggable?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.90-130.el6_4
+    fixed_versions: vers:rpm/3.90-130.el6_4
+  - purl: pkg:rpm/redhat/perl?arch=i386&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=i386&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=i386&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl?arch=src&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl?arch=src&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl?arch=ia64&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=ia64&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=ia64&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<5.8.8-40.el5_9
+    fixed_versions: vers:rpm/5.8.8-40.el5_9
+  - purl: pkg:rpm/redhat/perl-Test-Harness?arch=x86_64
+    affected_versions: vers:rpm/<3.17-130.el6_4
+    fixed_versions: vers:rpm/3.17-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Bzip2?arch=x86_64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Object-Accessor?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.34-130.el6_4
+    fixed_versions: vers:rpm/0.34-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CPANPLUS?arch=x86_64
+    affected_versions: vers:rpm/<0.88-130.el6_4
+    fixed_versions: vers:rpm/0.88-130.el6_4
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Time-HiRes?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<1.9721-130.el6_4
+    fixed_versions: vers:rpm/1.9721-130.el6_4
+  - purl: pkg:rpm/redhat/perl-core?arch=x86_64
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Params-Check?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.26-130.el6_4
+    fixed_versions: vers:rpm/0.26-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-CoreList?arch=x86_64
+    affected_versions: vers:rpm/<2.18-130.el6_4
+    fixed_versions: vers:rpm/2.18-130.el6_4
+  - purl: pkg:rpm/redhat/perl-devel?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-Embed?arch=x86_64
+    affected_versions: vers:rpm/<1.28-130.el6_4
+    fixed_versions: vers:rpm/1.28-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IPC-Cmd?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.56-130.el6_4
+    fixed_versions: vers:rpm/0.56-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Term-UI?arch=x86_64
+    affected_versions: vers:rpm/<0.20-130.el6_4
+    fixed_versions: vers:rpm/0.20-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-ParseXS?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.2003.0-130.el6_4
+    fixed_versions: vers:rpm/2.2003.0-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Archive-Tar?arch=x86_64
+    affected_versions: vers:rpm/<1.58-130.el6_4
+    fixed_versions: vers:rpm/1.58-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Locale-Maketext-Simple?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.18-130.el6_4
+    fixed_versions: vers:rpm/0.18-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Zlib?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.09-130.el6_4
+    fixed_versions: vers:rpm/1.09-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CGI?arch=x86_64
+    affected_versions: vers:rpm/<3.51-130.el6_4
+    fixed_versions: vers:rpm/3.51-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Raw-Zlib?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Pod-Simple?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.13-130.el6_4
+    fixed_versions: vers:rpm/3.13-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Pod-Escapes?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.04-130.el6_4
+    fixed_versions: vers:rpm/1.04-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Build?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.3500-130.el6_4
+    fixed_versions: vers:rpm/0.3500-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Zlib?arch=x86_64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Zlib?arch=x86_64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Archive-Extract?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.38-130.el6_4
+    fixed_versions: vers:rpm/0.38-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CPAN?arch=x86_64
+    affected_versions: vers:rpm/<1.9402-130.el6_4
+    fixed_versions: vers:rpm/1.9402-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-MakeMaker?arch=x86_64
+    affected_versions: vers:rpm/<6.55-130.el6_4
+    fixed_versions: vers:rpm/6.55-130.el6_4
+  - purl: pkg:rpm/redhat/perl-version?arch=x86_64&epoch=3
+    affected_versions: vers:rpm/<0.77-130.el6_4
+    fixed_versions: vers:rpm/0.77-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Load-Conditional?arch=x86_64
+    affected_versions: vers:rpm/<0.30-130.el6_4
+    fixed_versions: vers:rpm/0.30-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Test-Simple?arch=x86_64
+    affected_versions: vers:rpm/<0.92-130.el6_4
+    fixed_versions: vers:rpm/0.92-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Loaded?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Digest-SHA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<5.47-130.el6_4
+    fixed_versions: vers:rpm/5.47-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Load?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.16-130.el6_4
+    fixed_versions: vers:rpm/0.16-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Raw-Bzip2?arch=x86_64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Log-Message-Simple?arch=x86_64
+    affected_versions: vers:rpm/<0.04-130.el6_4
+    fixed_versions: vers:rpm/0.04-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Package-Constants?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-libs?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-parent?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.221-130.el6_4
+    fixed_versions: vers:rpm/0.221-130.el6_4
+  - purl: pkg:rpm/redhat/perl-File-Fetch?arch=x86_64
+    affected_versions: vers:rpm/<0.26-130.el6_4
+    fixed_versions: vers:rpm/0.26-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Parse-CPAN-Meta?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.40-130.el6_4
+    fixed_versions: vers:rpm/1.40-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-CBuilder?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.27-130.el6_4
+    fixed_versions: vers:rpm/0.27-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Base?arch=x86_64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Log-Message?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=x86_64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Time-Piece?arch=x86_64
+    affected_versions: vers:rpm/<1.15-130.el6_4
+    fixed_versions: vers:rpm/1.15-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Pluggable?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.90-130.el6_4
+    fixed_versions: vers:rpm/3.90-130.el6_4
+  - purl: pkg:rpm/redhat/perl-devel?arch=s390&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-libs?arch=s390&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=s390&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Test-Harness?arch=ppc64
+    affected_versions: vers:rpm/<3.17-130.el6_4
+    fixed_versions: vers:rpm/3.17-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Bzip2?arch=ppc64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Object-Accessor?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.34-130.el6_4
+    fixed_versions: vers:rpm/0.34-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CPANPLUS?arch=ppc64
+    affected_versions: vers:rpm/<0.88-130.el6_4
+    fixed_versions: vers:rpm/0.88-130.el6_4
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=ppc64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Time-HiRes?arch=ppc64&epoch=4
+    affected_versions: vers:rpm/<1.9721-130.el6_4
+    fixed_versions: vers:rpm/1.9721-130.el6_4
+  - purl: pkg:rpm/redhat/perl-core?arch=ppc64
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Params-Check?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.26-130.el6_4
+    fixed_versions: vers:rpm/0.26-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-CoreList?arch=ppc64
+    affected_versions: vers:rpm/<2.18-130.el6_4
+    fixed_versions: vers:rpm/2.18-130.el6_4
+  - purl: pkg:rpm/redhat/perl-devel?arch=ppc64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-Embed?arch=ppc64
+    affected_versions: vers:rpm/<1.28-130.el6_4
+    fixed_versions: vers:rpm/1.28-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IPC-Cmd?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.56-130.el6_4
+    fixed_versions: vers:rpm/0.56-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Term-UI?arch=ppc64
+    affected_versions: vers:rpm/<0.20-130.el6_4
+    fixed_versions: vers:rpm/0.20-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-ParseXS?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<2.2003.0-130.el6_4
+    fixed_versions: vers:rpm/2.2003.0-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Archive-Tar?arch=ppc64
+    affected_versions: vers:rpm/<1.58-130.el6_4
+    fixed_versions: vers:rpm/1.58-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Locale-Maketext-Simple?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.18-130.el6_4
+    fixed_versions: vers:rpm/0.18-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Zlib?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<1.09-130.el6_4
+    fixed_versions: vers:rpm/1.09-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CGI?arch=ppc64
+    affected_versions: vers:rpm/<3.51-130.el6_4
+    fixed_versions: vers:rpm/3.51-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Raw-Zlib?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Pod-Simple?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<3.13-130.el6_4
+    fixed_versions: vers:rpm/3.13-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Pod-Escapes?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<1.04-130.el6_4
+    fixed_versions: vers:rpm/1.04-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Build?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.3500-130.el6_4
+    fixed_versions: vers:rpm/0.3500-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Zlib?arch=ppc64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Zlib?arch=ppc64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl?arch=ppc64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Archive-Extract?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.38-130.el6_4
+    fixed_versions: vers:rpm/0.38-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CPAN?arch=ppc64
+    affected_versions: vers:rpm/<1.9402-130.el6_4
+    fixed_versions: vers:rpm/1.9402-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-MakeMaker?arch=ppc64
+    affected_versions: vers:rpm/<6.55-130.el6_4
+    fixed_versions: vers:rpm/6.55-130.el6_4
+  - purl: pkg:rpm/redhat/perl-version?arch=ppc64&epoch=3
+    affected_versions: vers:rpm/<0.77-130.el6_4
+    fixed_versions: vers:rpm/0.77-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Load-Conditional?arch=ppc64
+    affected_versions: vers:rpm/<0.30-130.el6_4
+    fixed_versions: vers:rpm/0.30-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Test-Simple?arch=ppc64
+    affected_versions: vers:rpm/<0.92-130.el6_4
+    fixed_versions: vers:rpm/0.92-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Loaded?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Digest-SHA?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<5.47-130.el6_4
+    fixed_versions: vers:rpm/5.47-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Load?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.16-130.el6_4
+    fixed_versions: vers:rpm/0.16-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Raw-Bzip2?arch=ppc64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Log-Message-Simple?arch=ppc64
+    affected_versions: vers:rpm/<0.04-130.el6_4
+    fixed_versions: vers:rpm/0.04-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Package-Constants?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-libs?arch=ppc64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-parent?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.221-130.el6_4
+    fixed_versions: vers:rpm/0.221-130.el6_4
+  - purl: pkg:rpm/redhat/perl-File-Fetch?arch=ppc64
+    affected_versions: vers:rpm/<0.26-130.el6_4
+    fixed_versions: vers:rpm/0.26-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Parse-CPAN-Meta?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<1.40-130.el6_4
+    fixed_versions: vers:rpm/1.40-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-CBuilder?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.27-130.el6_4
+    fixed_versions: vers:rpm/0.27-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Base?arch=ppc64
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Log-Message?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=ppc64&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Time-Piece?arch=ppc64
+    affected_versions: vers:rpm/<1.15-130.el6_4
+    fixed_versions: vers:rpm/1.15-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Pluggable?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<3.90-130.el6_4
+    fixed_versions: vers:rpm/3.90-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Test-Harness?arch=i686
+    affected_versions: vers:rpm/<3.17-130.el6_4
+    fixed_versions: vers:rpm/3.17-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Bzip2?arch=i686
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Object-Accessor?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.34-130.el6_4
+    fixed_versions: vers:rpm/0.34-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CPANPLUS?arch=i686
+    affected_versions: vers:rpm/<0.88-130.el6_4
+    fixed_versions: vers:rpm/0.88-130.el6_4
+  - purl: pkg:rpm/redhat/perl-suidperl?arch=i686&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Time-HiRes?arch=i686&epoch=4
+    affected_versions: vers:rpm/<1.9721-130.el6_4
+    fixed_versions: vers:rpm/1.9721-130.el6_4
+  - purl: pkg:rpm/redhat/perl-core?arch=i686
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Params-Check?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.26-130.el6_4
+    fixed_versions: vers:rpm/0.26-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-CoreList?arch=i686
+    affected_versions: vers:rpm/<2.18-130.el6_4
+    fixed_versions: vers:rpm/2.18-130.el6_4
+  - purl: pkg:rpm/redhat/perl-devel?arch=i686&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-Embed?arch=i686
+    affected_versions: vers:rpm/<1.28-130.el6_4
+    fixed_versions: vers:rpm/1.28-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IPC-Cmd?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.56-130.el6_4
+    fixed_versions: vers:rpm/0.56-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Term-UI?arch=i686
+    affected_versions: vers:rpm/<0.20-130.el6_4
+    fixed_versions: vers:rpm/0.20-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-ParseXS?arch=i686&epoch=1
+    affected_versions: vers:rpm/<2.2003.0-130.el6_4
+    fixed_versions: vers:rpm/2.2003.0-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Archive-Tar?arch=i686
+    affected_versions: vers:rpm/<1.58-130.el6_4
+    fixed_versions: vers:rpm/1.58-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Locale-Maketext-Simple?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.18-130.el6_4
+    fixed_versions: vers:rpm/0.18-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Zlib?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.09-130.el6_4
+    fixed_versions: vers:rpm/1.09-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CGI?arch=i686
+    affected_versions: vers:rpm/<3.51-130.el6_4
+    fixed_versions: vers:rpm/3.51-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Raw-Zlib?arch=i686&epoch=1
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Pod-Simple?arch=i686&epoch=1
+    affected_versions: vers:rpm/<3.13-130.el6_4
+    fixed_versions: vers:rpm/3.13-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Pod-Escapes?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.04-130.el6_4
+    fixed_versions: vers:rpm/1.04-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Build?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.3500-130.el6_4
+    fixed_versions: vers:rpm/0.3500-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Zlib?arch=i686
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Zlib?arch=i686
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl?arch=i686&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Archive-Extract?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.38-130.el6_4
+    fixed_versions: vers:rpm/0.38-130.el6_4
+  - purl: pkg:rpm/redhat/perl-CPAN?arch=i686
+    affected_versions: vers:rpm/<1.9402-130.el6_4
+    fixed_versions: vers:rpm/1.9402-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-MakeMaker?arch=i686
+    affected_versions: vers:rpm/<6.55-130.el6_4
+    fixed_versions: vers:rpm/6.55-130.el6_4
+  - purl: pkg:rpm/redhat/perl-version?arch=i686&epoch=3
+    affected_versions: vers:rpm/<0.77-130.el6_4
+    fixed_versions: vers:rpm/0.77-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Load-Conditional?arch=i686
+    affected_versions: vers:rpm/<0.30-130.el6_4
+    fixed_versions: vers:rpm/0.30-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Test-Simple?arch=i686
+    affected_versions: vers:rpm/<0.92-130.el6_4
+    fixed_versions: vers:rpm/0.92-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Loaded?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Digest-SHA?arch=i686&epoch=1
+    affected_versions: vers:rpm/<5.47-130.el6_4
+    fixed_versions: vers:rpm/5.47-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Load?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.16-130.el6_4
+    fixed_versions: vers:rpm/0.16-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Compress-Raw-Bzip2?arch=i686
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Log-Message-Simple?arch=i686
+    affected_versions: vers:rpm/<0.04-130.el6_4
+    fixed_versions: vers:rpm/0.04-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Package-Constants?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-libs?arch=i686&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-parent?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.221-130.el6_4
+    fixed_versions: vers:rpm/0.221-130.el6_4
+  - purl: pkg:rpm/redhat/perl-File-Fetch?arch=i686
+    affected_versions: vers:rpm/<0.26-130.el6_4
+    fixed_versions: vers:rpm/0.26-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Parse-CPAN-Meta?arch=i686&epoch=1
+    affected_versions: vers:rpm/<1.40-130.el6_4
+    fixed_versions: vers:rpm/1.40-130.el6_4
+  - purl: pkg:rpm/redhat/perl-ExtUtils-CBuilder?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.27-130.el6_4
+    fixed_versions: vers:rpm/0.27-130.el6_4
+  - purl: pkg:rpm/redhat/perl-IO-Compress-Base?arch=i686
+    affected_versions: vers:rpm/<2.020-130.el6_4
+    fixed_versions: vers:rpm/2.020-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Log-Message?arch=i686&epoch=1
+    affected_versions: vers:rpm/<0.02-130.el6_4
+    fixed_versions: vers:rpm/0.02-130.el6_4
+  - purl: pkg:rpm/redhat/perl-debuginfo?arch=i686&epoch=4
+    affected_versions: vers:rpm/<5.10.1-130.el6_4
+    fixed_versions: vers:rpm/5.10.1-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Time-Piece?arch=i686
+    affected_versions: vers:rpm/<1.15-130.el6_4
+    fixed_versions: vers:rpm/1.15-130.el6_4
+  - purl: pkg:rpm/redhat/perl-Module-Pluggable?arch=i686&epoch=1
+    affected_versions: vers:rpm/<3.90-130.el6_4
+    fixed_versions: vers:rpm/3.90-130.el6_4
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0685.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=884354
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=912276
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_0685.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=862413
+    reference_type: bug
+    reference_id: 862413
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=877015
+    reference_type: bug
+    reference_id: 877015
+  - url: https://access.redhat.com/errata/RHSA-2013:0685
+    reference_type:
+    reference_id: RHSA-2013:0685

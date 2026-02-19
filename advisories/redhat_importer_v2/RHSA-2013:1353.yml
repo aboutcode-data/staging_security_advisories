@@ -1,0 +1,129 @@
+advisory_id: RHSA-2013:1353
+datasource_id: redhat_importer_v2/RHSA-2013:1353
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_1353.json
+aliases:
+  - CVE-2013-1775
+  - CVE-2013-1776
+  - CVE-2013-2776
+summary: |
+  An updated sudo package that fixes multiple security issues and several
+  bugs is now available for Red Hat Enterprise Linux 5.
+
+  The Red Hat Security Response Team has rated this update as having low
+  security impact. Common Vulnerability Scoring System (CVSS) base scores,
+  which give detailed severity ratings, are available for each vulnerability
+  from the CVE links in the References section.
+
+  The sudo (superuser do) utility allows system administrators to give
+  certain users the ability to run commands as root.
+
+  A flaw was found in the way sudo handled time stamp files. An attacker able
+  to run code as a local user and with the ability to control the system
+  clock could possibly gain additional privileges by running commands that
+  the victim user was allowed to run via sudo, without knowing the victim's
+  password. (CVE-2013-1775)
+
+  It was found that sudo did not properly validate the controlling terminal
+  device when the tty_tickets option was enabled in the /etc/sudoers file. An
+  attacker able to run code as a local user could possibly gain additional
+  privileges by running commands that the victim user was allowed to run via
+  sudo, without knowing the victim's password. (CVE-2013-1776, CVE-2013-2776)
+
+  This update also fixes the following bugs:
+
+  * Due to a bug in the cycle detection algorithm of the visudo utility,
+  visudo incorrectly evaluated certain alias definitions in the /etc/sudoers
+  file as cycles. Consequently, a warning message about undefined aliases
+  appeared. This bug has been fixed, /etc/sudoers is now parsed correctly by
+  visudo and the warning message no longer appears. (BZ#849679)
+
+  * Previously, the 'sudo -l' command did not parse the /etc/sudoers file
+  correctly if it contained an Active Directory (AD) group. The file was
+  parsed only up to the first AD group information and then the parsing
+  failed with the following message:
+
+      sudo: unable to cache group ADDOM\admingroup, already exists
+
+  With this update, the underlying code has been modified and 'sudo -l' now
+  parses /etc/sudoers containing AD groups correctly. (BZ#855836)
+
+  * Previously, the sudo utility did not escape the backslash characters
+  contained in user names properly. Consequently, if a system used sudo
+  integrated with LDAP or Active Directory (AD) as the primary authentication
+  mechanism, users were not able to authenticate on that system. With this
+  update, sudo has been modified to process LDAP and AD names correctly and
+  the authentication process now works as expected. (BZ#869287)
+
+  * Prior to this update, the 'visudo -s (strict)' command incorrectly parsed
+  certain alias definitions. Consequently, an error message was issued. The
+  bug has been fixed, and parsing errors no longer occur when using 'visudo
+  -s'. (BZ#905624)
+
+  All sudo users are advised to upgrade to this updated package, which
+  contains backported patches to correct these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/sudo?arch=s390x
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo?arch=ia64
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo?arch=ppc
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo?arch=src
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo?arch=i386
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo-debuginfo?arch=i386
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo?arch=x86_64
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+  - purl: pkg:rpm/redhat/sudo-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.7.2p1-28.el5
+    fixed_versions: vers:rpm/1.7.2p1-28.el5
+severities:
+  - score: Low
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_1353.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#low
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=916365
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2013/rhsa-2013_1353.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=853203
+    reference_type: bug
+    reference_id: 853203
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=856902
+    reference_type: bug
+    reference_id: 856902
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=916363
+    reference_type: bug
+    reference_id: 916363
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=949751
+    reference_type: bug
+    reference_id: 949751
+  - url: https://access.redhat.com/errata/RHSA-2013:1353
+    reference_type:
+    reference_id: RHSA-2013:1353
