@@ -1,0 +1,192 @@
+advisory_id: RHSA-2024:5810
+datasource_id: redhat_importer_v2/RHSA-2024:5810
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_5810.json
+aliases:
+  - CVE-2023-45290
+  - CVE-2024-34064
+  - CVE-2024-34069
+summary: |
+  Red Hat OpenShift Container Platform release 4.12.64 is now available with updates to packages and images that fix several bugs and add enhancements.
+
+  This release includes a security update for Red Hat OpenShift Container Platform 4.12.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Red Hat OpenShift Container Platform is Red Hat's cloud computing Kubernetes application platform solution designed for on-premise or private cloud deployments.
+
+  This advisory contains the RPM packages for Red Hat OpenShift Container Platform 4.12.64. See the following advisory for the container images for this release:
+
+  https://access.redhat.com/errata/RHSA-2024:5808
+
+  Security Fix(es):
+
+  * python-werkzeug: user may execute code on a developer's machine
+  (CVE-2024-34069)
+  * golang: net/http: memory exhaustion in Request.ParseMultipartForm
+  (CVE-2023-45290)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+  All OpenShift Container Platform 4.12 users are advised to upgrade to these updated packages and images when they are available in the appropriate release channel. To check for available updates, use the OpenShift CLI (oc) or web console. Instructions for upgrading a cluster are available at https://docs.openshift.com/container-platform/4.12/updating/updating-cluster-cli.html
+impacted_packages:
+  - purl: pkg:rpm/redhat/openshift?arch=src
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+  - purl: pkg:rpm/redhat/cri-o?arch=src
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/kernel-rt?arch=src
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/openshift?arch=src
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+  - purl: pkg:rpm/redhat/python-werkzeug?arch=src
+    affected_versions: vers:rpm/<2.0.3-6.el9
+    fixed_versions: vers:rpm/2.0.3-6.el9
+  - purl: pkg:rpm/redhat/python-jinja2?arch=src
+    affected_versions: vers:rpm/<3.0.1-3.el9.1
+    fixed_versions: vers:rpm/3.0.1-3.el9.1
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=x86_64
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+  - purl: pkg:rpm/redhat/cri-o?arch=x86_64
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/cri-o-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/cri-o-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/kernel-rt?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-core?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debug?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debug-core?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debug-modules?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debug-modules-extra?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debug-modules-internal?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-kvm?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-modules?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-modules-extra?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-modules-internal?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-selftests-internal?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-372.119.1.rt7.279.el8_6
+    fixed_versions: vers:rpm/4.18.0-372.119.1.rt7.279.el8_6
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=x86_64
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=aarch64
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+  - purl: pkg:rpm/redhat/cri-o?arch=aarch64
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/cri-o-debugsource?arch=aarch64
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/cri-o-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=aarch64
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=ppc64le
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+  - purl: pkg:rpm/redhat/cri-o?arch=ppc64le
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/cri-o-debugsource?arch=ppc64le
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/cri-o-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=ppc64le
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=s390x
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el9
+  - purl: pkg:rpm/redhat/cri-o?arch=s390x
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/cri-o-debugsource?arch=s390x
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/cri-o-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.25.5-26.rhaos4.12.git635413a.el8
+    fixed_versions: vers:rpm/1.25.5-26.rhaos4.12.git635413a.el8
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=s390x
+    affected_versions: vers:rpm/<4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+    fixed_versions: vers:rpm/4.12.0-202408131833.p0.g1eb8682.assembly.stream.el8
+  - purl: pkg:rpm/redhat/python3-werkzeug?arch=noarch
+    affected_versions: vers:rpm/<2.0.3-6.el9
+    fixed_versions: vers:rpm/2.0.3-6.el9
+  - purl: pkg:rpm/redhat/python3-jinja2?arch=noarch
+    affected_versions: vers:rpm/<3.0.1-3.el9.1
+    fixed_versions: vers:rpm/3.0.1-3.el9.1
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_5810.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_5810.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2268017
+    reference_type: bug
+    reference_id: 2268017
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2279451
+    reference_type: bug
+    reference_id: 2279451
+  - url: https://access.redhat.com/errata/RHSA-2024:5810
+    reference_type:
+    reference_id: RHSA-2024:5810

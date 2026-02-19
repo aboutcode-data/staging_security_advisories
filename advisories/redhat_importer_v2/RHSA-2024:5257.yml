@@ -1,0 +1,465 @@
+advisory_id: RHSA-2024:5257
+datasource_id: redhat_importer_v2/RHSA-2024:5257
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_5257.json
+aliases:
+  - CVE-2021-47624
+  - CVE-2023-52639
+  - CVE-2024-21823
+  - CVE-2024-26642
+  - CVE-2024-26808
+  - CVE-2024-26993
+  - CVE-2024-27393
+  - CVE-2024-27397
+  - CVE-2024-27403
+  - CVE-2024-35897
+  - CVE-2024-35898
+  - CVE-2024-36886
+  - CVE-2024-36971
+  - CVE-2024-39502
+  - CVE-2024-40978
+  - CVE-2024-41090
+  - CVE-2024-41091
+summary: |
+  An update for kernel is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+  Security Fix(es):
+
+  * kernel: netfilter: nf_tables: disallow anonymous set with timeout flag (CVE-2024-26642)
+
+  * kernel: KVM: s390: vsie: fix race during shadow creation (CVE-2023-52639)
+
+  * kernel: netfilter: nft_chain_filter: handle NETDEV_UNREGISTER for inet/ingress basechain (CVE-2024-26808)
+
+  * kernel: TIPC message reassembly use-after-free remote code execution vulnerability (CVE-2024-36886)
+
+  * kernel: fs: sysfs: Fix reference leak in sysfs_break_active_protection() (CVE-2024-26993)
+
+  * kernel: dmaengine/idxd: hardware erratum allows potential security problem with direct access by untrusted application (CVE-2024-21823)
+
+  * kernel: netfilter: nf_tables: use timestamp to check for set element timeout (CVE-2024-27397)
+
+  * kernel: xen-netfront: Add missing skb_mark_for_recycle (CVE-2024-27393)
+
+  * kernel: netfilter: nft_flow_offload: reset dst in route object after setting up flow (CVE-2024-27403)
+
+  * kernel: netfilter: nf_tables: Fix potential data-race in __nft_flowtable_type_get() (CVE-2024-35898)
+
+  * kernel: netfilter: nf_tables: discard table flag update with pending basechain deletion (CVE-2024-35897)
+
+  * kernel: ionic: fix use after netif_napi_del() (CVE-2024-39502)
+
+  * kernel: scsi: qedi: Fix crash while reading debugfs attribute (CVE-2024-40978)
+
+  * kernel: net/sunrpc: fix reference count leaks in rpc_sysfs_xprt_state_change (CVE-2021-47624)
+
+  * kernel: virtio-net: tap: mlx5_core short frame denial of service (CVE-2024-41090)
+
+  * kernel: virtio-net: tun: mlx5_core short frame denial of service (CVE-2024-41091)
+
+  * kernel: KEV - Beaky Buzzard (CVE-2024-36971)
+
+  Bug Fix(es):
+
+  * updating nvme firmware, '# nvme list' output does not reflect the new firmware version without rebooting.  (JIRA:RHEL-46809)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/bpftool?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-modules?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-modules-extra?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-modules?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-modules-extra?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/python3-perf?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/bpftool-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-aarch64?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/python3-perf-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-devel-matched?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-devel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-devel-matched?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-headers?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/perf?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/bpftool?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-core?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-core?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-modules?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-modules-extra?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-modules?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-modules-extra?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/python3-perf?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/bpftool-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-ppc64le?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/python3-perf-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-devel-matched?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-devel-matched?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-headers?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/perf?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/bpftool?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-core?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-core?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-modules?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-abi-stablelists?arch=noarch
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-modules-extra?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-modules?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-modules-extra?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/python3-perf?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/bpftool-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/python3-perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-devel-matched?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-devel-matched?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-headers?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/perf?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/bpftool?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-core?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-core?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-modules?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-modules-extra?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-modules?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-modules-extra?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-zfcpdump?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-zfcpdump-core?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-zfcpdump-modules?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-zfcpdump-modules-extra?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/python3-perf?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/bpftool-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-s390x?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-zfcpdump-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/python3-perf-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-debug-devel-matched?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-devel-matched?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-headers?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-zfcpdump-devel?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel-zfcpdump-devel-matched?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/perf?arch=s390x
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<5.14.0-70.112.1.el9_0
+    fixed_versions: vers:rpm/5.14.0-70.112.1.el9_0
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_5257.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_5257.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2270881
+    reference_type: bug
+    reference_id: 2270881
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2273080
+    reference_type: bug
+    reference_id: 2273080
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2273405
+    reference_type: bug
+    reference_id: 2273405
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2277238
+    reference_type: bug
+    reference_id: 2277238
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2278314
+    reference_type: bug
+    reference_id: 2278314
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2278989
+    reference_type: bug
+    reference_id: 2278989
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2280434
+    reference_type: bug
+    reference_id: 2280434
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2280745
+    reference_type: bug
+    reference_id: 2280745
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2281127
+    reference_type: bug
+    reference_id: 2281127
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2281669
+    reference_type: bug
+    reference_id: 2281669
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2281672
+    reference_type: bug
+    reference_id: 2281672
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2292331
+    reference_type: bug
+    reference_id: 2292331
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2297474
+    reference_type: bug
+    reference_id: 2297474
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2297562
+    reference_type: bug
+    reference_id: 2297562
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2298108
+    reference_type: bug
+    reference_id: 2298108
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2299240
+    reference_type: bug
+    reference_id: 2299240
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2299336
+    reference_type: bug
+    reference_id: 2299336
+  - url: https://access.redhat.com/errata/RHSA-2024:5257
+    reference_type:
+    reference_id: RHSA-2024:5257

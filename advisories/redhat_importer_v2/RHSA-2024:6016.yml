@@ -1,0 +1,377 @@
+advisory_id: RHSA-2024:6016
+datasource_id: redhat_importer_v2/RHSA-2024:6016
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_6016.json
+aliases:
+  - CVE-2024-34069
+summary: |
+  Red Hat OpenShift Container Platform release 4.15.30 is now available with updates to packages and images that fix several bugs and add enhancements.
+
+  This release includes a security update for Red Hat OpenShift Container Platform 4.15.
+
+  Red Hat Product Security has rated this update as having a security impact of  Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Red Hat OpenShift Container Platform is Red Hat's cloud computing Kubernetes application platform solution designed for on-premise or private cloud deployments.
+
+  This advisory contains the RPM packages for Red Hat OpenShift Container Platform 4.15.30. See the following advisory for the container images for this release:
+
+  https://access.redhat.com/errata/RHSA-2024:6013
+
+  Security Fix(es):
+
+  * python-werkzeug: user may execute code on a developer's machine
+  (CVE-2024-34069)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+  All OpenShift Container Platform 4.15 users are advised to upgrade to these updated packages and images when they are available in the appropriate release channel. To check for available updates, use the OpenShift CLI (oc) or web console. Instructions for upgrading a cluster are available at https://docs.openshift.com/container-platform/4.15/updating/updating_a_cluster/updating-cluster-cli.html
+impacted_packages:
+  - purl: pkg:rpm/redhat/openshift?arch=src
+    affected_versions: vers:rpm/<4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+    fixed_versions: vers:rpm/4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+  - purl: pkg:rpm/redhat/openshift-ansible?arch=src
+    affected_versions: vers:rpm/<4.15.0-202408281508.p0.g330394a.assembly.stream.el8
+    fixed_versions: vers:rpm/4.15.0-202408281508.p0.g330394a.assembly.stream.el8
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/openshift?arch=src
+    affected_versions: vers:rpm/<4.15.0-202408271137.p0.g0c3c368.assembly.stream.el9
+    fixed_versions: vers:rpm/4.15.0-202408271137.p0.g0c3c368.assembly.stream.el9
+  - purl: pkg:rpm/redhat/openshift-ansible?arch=src
+    affected_versions: vers:rpm/<4.15.0-202408281508.p0.g330394a.assembly.stream.el9
+    fixed_versions: vers:rpm/4.15.0-202408281508.p0.g330394a.assembly.stream.el9
+  - purl: pkg:rpm/redhat/python-werkzeug?arch=src
+    affected_versions: vers:rpm/<2.2.3-3.el9
+    fixed_versions: vers:rpm/2.2.3-3.el9
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=x86_64
+    affected_versions: vers:rpm/<4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+    fixed_versions: vers:rpm/4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+  - purl: pkg:rpm/redhat/kernel-64k-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=aarch64
+    affected_versions: vers:rpm/<4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+    fixed_versions: vers:rpm/4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+  - purl: pkg:rpm/redhat/bpftool?arch=aarch64
+    affected_versions: vers:rpm/<7.0.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/7.0.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-devel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-devel-matched?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-modules?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-modules-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-modules-extra?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-modules-internal?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-modules-partner?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-devel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-devel-matched?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-modules?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-modules-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-modules-extra?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-modules-internal?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-modules-partner?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-cross-headers?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-devel-matched?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules-extra?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules-internal?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules-partner?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-devel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-devel-matched?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-headers?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules-core?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules-extra?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules-internal?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules-partner?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-selftests-internal?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-tools?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-tools-libs-devel?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/perf?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/python3-perf?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/rtla?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/bpftool-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<7.0.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/7.0.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-64k-debug-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-aarch64?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/python3-perf-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=aarch64
+    affected_versions: vers:rpm/<4.15.0-202408271137.p0.g0c3c368.assembly.stream.el9
+    fixed_versions: vers:rpm/4.15.0-202408271137.p0.g0c3c368.assembly.stream.el9
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=ppc64le
+    affected_versions: vers:rpm/<4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+    fixed_versions: vers:rpm/4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+  - purl: pkg:rpm/redhat/bpftool?arch=ppc64le
+    affected_versions: vers:rpm/<7.0.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/7.0.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-core?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-cross-headers?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-core?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-devel-matched?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules-core?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules-extra?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules-internal?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-modules-partner?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-devel-matched?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-headers?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-ipaclones-internal?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules-core?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules-extra?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules-internal?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-modules-partner?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-selftests-internal?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-tools?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-tools-libs-devel?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/perf?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/python3-perf?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/rtla?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/bpftool-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<7.0.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/7.0.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-ppc64le?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/python3-perf-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=ppc64le
+    affected_versions: vers:rpm/<4.15.0-202408271137.p0.g0c3c368.assembly.stream.el9
+    fixed_versions: vers:rpm/4.15.0-202408271137.p0.g0c3c368.assembly.stream.el9
+  - purl: pkg:rpm/redhat/openshift-hyperkube?arch=s390x
+    affected_versions: vers:rpm/<4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+    fixed_versions: vers:rpm/4.15.0-202408271137.p0.g0c3c368.assembly.stream.el8
+  - purl: pkg:rpm/redhat/openshift-ansible?arch=noarch
+    affected_versions: vers:rpm/<4.15.0-202408281508.p0.g330394a.assembly.stream.el8
+    fixed_versions: vers:rpm/4.15.0-202408281508.p0.g330394a.assembly.stream.el8
+  - purl: pkg:rpm/redhat/openshift-ansible-test?arch=noarch
+    affected_versions: vers:rpm/<4.15.0-202408281508.p0.g330394a.assembly.stream.el8
+    fixed_versions: vers:rpm/4.15.0-202408281508.p0.g330394a.assembly.stream.el8
+  - purl: pkg:rpm/redhat/kernel-abi-stablelists?arch=noarch
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<5.14.0-284.82.1.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.82.1.el9_2
+  - purl: pkg:rpm/redhat/openshift-ansible?arch=noarch
+    affected_versions: vers:rpm/<4.15.0-202408281508.p0.g330394a.assembly.stream.el9
+    fixed_versions: vers:rpm/4.15.0-202408281508.p0.g330394a.assembly.stream.el9
+  - purl: pkg:rpm/redhat/openshift-ansible-test?arch=noarch
+    affected_versions: vers:rpm/<4.15.0-202408281508.p0.g330394a.assembly.stream.el9
+    fixed_versions: vers:rpm/4.15.0-202408281508.p0.g330394a.assembly.stream.el9
+  - purl: pkg:rpm/redhat/python3-werkzeug?arch=noarch
+    affected_versions: vers:rpm/<2.2.3-3.el9
+    fixed_versions: vers:rpm/2.2.3-3.el9
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_6016.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_6016.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2279451
+    reference_type: bug
+    reference_id: 2279451
+  - url: https://access.redhat.com/errata/RHSA-2024:6016
+    reference_type:
+    reference_id: RHSA-2024:6016
