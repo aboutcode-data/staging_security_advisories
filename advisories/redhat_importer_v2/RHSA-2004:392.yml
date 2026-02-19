@@ -1,0 +1,204 @@
+advisory_id: RHSA-2004:392
+datasource_id: redhat_importer_v2/RHSA-2004:392
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_392.json
+aliases:
+  - CVE-2004-0594
+  - CVE-2004-0595
+summary: "Updated php packages that fix various security issues are now available.\n\nPHP is\
+  \ an HTML-embedded scripting language commonly used with the Apache\nHTTP server.\n\nStefan\
+  \ Esser discovered a flaw when memory_limit is enabled in versions of\nPHP 4 before 4.3.8.\
+  \ If a remote attacker could force the PHP interpreter to\nallocate more memory than the memory_limit\
+  \ setting before script execution\nbegins, then the attacker may be able to supply the contents\
+  \ of a PHP hash\ntable remotely. This hash table could then be used to execute arbitrary\n\
+  code as the 'apache' user. The Common Vulnerabilities and Exposures project\n(cve.mitre.org)\
+  \ has assigned the name CAN-2004-0594 to this issue.\n\nThis issue has a higher risk when\
+  \ PHP is running on an instance of Apache\nwhich is vulnerable to CAN-2004-0493.  For Red\
+  \ Hat Enterprise Linux 3, this\nApache memory exhaustion issue was fixed by a previous update,\n\
+  RHSA-2004:342.  It may also be possible to exploit this issue if using a\nnon-default PHP\
+  \ configuration with the \"register_defaults\" setting is\nchanged to \"On\". Red Hat does\
+  \ not believe that this flaw is exploitable in\nthe default configuration of Red Hat Enterprise\
+  \ Linux 3.\n\nStefan Esser discovered a flaw in the strip_tags function in versions of\nPHP\
+  \ before 4.3.8.  The strip_tags function is commonly used by PHP scripts\nto prevent Cross-Site-Scripting\
+  \ attacks by removing HTML tags from\nuser-supplied form data.  By embedding NUL bytes into\
+  \ form data, HTML tags\ncan in some cases be passed intact through the strip_tags function,\
+  \ which\nmay allow a Cross-Site-Scripting attack.  The Common Vulnerabilities and\nExposures\
+  \ project (cve.mitre.org) has assigned the name CAN-2004-0595 to\nthis issue.  \n\nAll users\
+  \ of PHP are advised to upgrade to these updated packages, which\ncontain backported patches\
+  \ that address these issues."
+impacted_packages:
+  - purl: pkg:rpm/redhat/php-odbc?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-ldap?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-ldap?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=i386
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=i386
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=i386
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-ldap?arch=i386
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php?arch=i386
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=i386
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=i386
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php?arch=src
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-ldap?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-ldap?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=s390
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=s390
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=s390
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-ldap?arch=s390
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php?arch=s390
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=s390
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=s390
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=s390
+    affected_versions: vers:rpm/<4.3.2-11.1.ent
+    fixed_versions: vers:rpm/4.3.2-11.1.ent
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_392.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_392.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=127642
+    reference_type: bug
+    reference_id: 127642
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/remote/24280.txt
+    reference_type: exploit
+    reference_id: CVE-2004-0595;OSVDB-7871
+  - url: https://www.securityfocus.com/bid/10724/info
+    reference_type: exploit
+    reference_id: CVE-2004-0595;OSVDB-7871
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/660.c
+    reference_type: exploit
+    reference_id: OSVDB-7870;CVE-2004-0594
+  - url: https://access.redhat.com/errata/RHSA-2004:392
+    reference_type:
+    reference_id: RHSA-2004:392

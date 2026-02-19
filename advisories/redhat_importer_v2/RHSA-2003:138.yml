@@ -1,0 +1,48 @@
+advisory_id: RHSA-2003:138
+datasource_id: redhat_importer_v2/RHSA-2003:138
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_138.json
+aliases:
+  - CVE-2003-0196
+  - CVE-2003-0201
+summary: |
+  Updated Samba packages that fix a security vulnerability are now available.
+
+  Samba is a suite of utilities which provides file and printer sharing
+  services to SMB/CIFS clients.
+
+  A security vulnerability has been found in versions of Samba up to and
+  including 2.2.8.   An anonymous user could exploit the vulnerability to
+  gain root access on the target machine.  Note that this is a different
+  vulnerability than the one fixed by RHSA-2003:096.
+
+  An exploit for this vulnerability is publicly available.
+
+  All users of Samba are advised to update to the packages listed in this
+  erratum, which contain a backported patch correcting this vulnerability.
+impacted_packages: []
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_138.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_138.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=86307
+    reference_type: bug
+    reference_id: 86307
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=88123
+    reference_type: bug
+    reference_id: 88123
+  - url: http://www.digitaldefense.net/labs/advisories/DDI-1013.txt
+    reference_type: exploit
+    reference_id: CVE-2003-0201;OSVDB-4469
+  - url: https://access.redhat.com/errata/RHSA-2003:138
+    reference_type:
+    reference_id: RHSA-2003:138

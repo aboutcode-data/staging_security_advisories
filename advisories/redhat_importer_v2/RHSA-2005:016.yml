@@ -1,0 +1,107 @@
+advisory_id: RHSA-2005:016
+datasource_id: redhat_importer_v2/RHSA-2005:016
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhsa-2005_016.json
+aliases:
+  - CVE-2004-0791
+  - CVE-2004-1016
+  - CVE-2004-1017
+  - CVE-2004-1057
+  - CVE-2004-1234
+  - CVE-2004-1235
+  - CVE-2004-1335
+  - CVE-2005-0001
+summary: "Updated kernel packages that fix several security issues in Red Hat\nEnterprise Linux\
+  \ 2.1 are now available.\n\nThe Linux kernel handles the basic functions of the operating\
+  \ system.\n\nThis advisory includes fixes for the following security issues:\n\niSEC Security\
+  \ Research discovered a VMA handling flaw in the uselib(2)\nsystem call of the Linux kernel.\
+  \ A local user could make use of this\nflaw to gain elevated (root) privileges. The Common\
+  \ Vulnerabilities and\nExposures project (cve.mitre.org) has assigned the name CAN-2004-1235\
+  \ to\nthis issue.\n\niSEC Security Research discovered a flaw in the page fault handler code\n\
+  that could lead to local users gaining elevated (root) privileges on\nmultiprocessor machines.\
+  \ The Common Vulnerabilities and Exposures project\n(cve.mitre.org) has assigned the name\
+  \ CAN-2005-0001 to this issue. \n\niSEC Security Research and Georgi Guninski independently\
+  \ discovered a flaw\nin the scm_send function in the auxiliary message layer.  A local user\n\
+  could create a carefully crafted auxiliary message which could cause a\ndenial of service\
+  \ (system hang).  The Common Vulnerabilities and Exposures\nproject (cve.mitre.org) has assigned\
+  \ the name CAN-2004-1016 to this issue.\n\nKirill Korotaev found a flaw in load_elf_binary\
+  \ affecting kernels prior to\n2.4.26.  A local user could create a carefully crafted binary\
+  \ in such a\nway that it would cause a denial of service (system crash).  The Common\nVulnerabilities\
+  \ and Exposures project (cve.mitre.org) has assigned the\nname CAN-2004-1234 to this issue.\n\
+  \nThese packages also fix issues in the io_edgeport driver (CAN-2004-1017), a\nmemory leak\
+  \ in ip_options_get (CAN-2004-1335), and missing VM_IO\nflags in some drivers (CAN-2004-1057).\n\
+  \nA recent Internet Draft by Fernando Gont recommended that ICMP Source\nQuench messages be\
+  \ ignored by hosts. A patch to ignore these messages is\nincluded.\n\nAll Red Hat Enterprise\
+  \ Linux 2.1 users are advised to upgrade their\nkernels to the packages associated with their\
+  \ machine architectures\nand configurations as listed in this erratum."
+impacted_packages: []
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhsa-2005_016.json
+weaknesses: []
+references:
+  - url: http://marc.theaimsgroup.com/?m=109503896031720
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhsa-2005_016.json
+    reference_type:
+    reference_id:
+  - url: http://www.isec.pl/vulnerabilities/isec-0019-scm.txt
+    reference_type:
+    reference_id:
+  - url: http://www.isec.pl/vulnerabilities/isec-0021-uselib.txt
+    reference_type:
+    reference_id:
+  - url: http://www.isec.pl/vulnerabilities/isec-0022-pagefault.txt
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=137821
+    reference_type: bug
+    reference_id: 137821
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=142594
+    reference_type: bug
+    reference_id: 142594
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=142730
+    reference_type: bug
+    reference_id: 142730
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=142734
+    reference_type: bug
+    reference_id: 142734
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=143378
+    reference_type: bug
+    reference_id: 143378
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=144137
+    reference_type: bug
+    reference_id: 144137
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=144407
+    reference_type: bug
+    reference_id: 144407
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/25387.txt
+    reference_type: exploit
+    reference_id: CVE-2004-0791;OSVDB-15618
+  - url: https://www.securityfocus.com/bid/13124/info
+    reference_type: exploit
+    reference_id: CVE-2004-0791;OSVDB-15618
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/dos/685.c
+    reference_type: exploit
+    reference_id: OSVDB-12527;CVE-2004-1016
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/744.c
+    reference_type: exploit
+    reference_id: OSVDB-12791;CVE-2004-1235
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/778.c
+    reference_type: exploit
+    reference_id: OSVDB-12791;CVE-2004-1235
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/895.c
+    reference_type: exploit
+    reference_id: OSVDB-12791;CVE-2004-1235
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/dos/692.c
+    reference_type: exploit
+    reference_id: OSVDB-13535;CVE-2004-1335
+  - url: https://access.redhat.com/errata/RHSA-2005:016
+    reference_type:
+    reference_id: RHSA-2005:016

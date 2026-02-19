@@ -1,0 +1,70 @@
+advisory_id: RHSA-2004:240
+datasource_id: redhat_importer_v2/RHSA-2004:240
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_240.json
+aliases:
+  - CVE-2004-0519
+  - CVE-2004-0520
+  - CVE-2004-0521
+summary: |
+  An updated SquirrelMail package that fixes several security vulnerabilities
+  is now available.
+
+  SquirrelMail is a webmail package written in PHP.  Multiple
+  vulnerabilities have been found which affect the version of SquirrelMail
+  shipped with Red Hat Enterprise Linux 3.
+
+  An SQL injection flaw was found in SquirrelMail version 1.4.2 and earlier.
+  If SquirrelMail is configured to store user addressbooks in the database, a
+  remote attacker could use this flaw to execute arbitrary SQL statements.
+  The Common Vulnerabilities and Exposures project has assigned the name
+  CAN-2004-0521 to this issue.
+
+  A number of cross-site scripting (XSS) flaws in SquirrelMail version 1.4.2
+  and earlier could allow remote attackers to execute script as other web
+  users.  The Common Vulnerabilities and Exposures project (cve.mitre.org)
+  has assigned the names CAN-2004-0519 and CAN-2004-0520 to these issues.
+
+  All users of SquirrelMail are advised to upgrade to the erratum package
+  containing SquirrelMail version 1.4.3a which is not vulnerable to these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/squirrelmail?arch=src
+    affected_versions: vers:rpm/<1.4.3-0.e3.1
+    fixed_versions: vers:rpm/1.4.3-0.e3.1
+  - purl: pkg:rpm/redhat/squirrelmail?arch=noarch
+    affected_versions: vers:rpm/<1.4.3-0.e3.1
+    fixed_versions: vers:rpm/1.4.3-0.e3.1
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_240.json
+weaknesses: []
+references:
+  - url: http://marc.theaimsgroup.com/?l=squirrelmail-announce&m=108595407012256
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_240.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=122512
+    reference_type: bug
+    reference_id: 122512
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/24068.txt
+    reference_type: exploit
+    reference_id: CVE-2004-0519;OSVDB-6337
+  - url: https://www.securityfocus.com/bid/10246/info
+    reference_type: exploit
+    reference_id: CVE-2004-0519;OSVDB-6337
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/24160.txt
+    reference_type: exploit
+    reference_id: CVE-2004-0520;OSVDB-6514
+  - url: https://www.securityfocus.com/bid/10439/info
+    reference_type: exploit
+    reference_id: CVE-2004-0520;OSVDB-6514
+  - url: https://access.redhat.com/errata/RHSA-2004:240
+    reference_type:
+    reference_id: RHSA-2004:240

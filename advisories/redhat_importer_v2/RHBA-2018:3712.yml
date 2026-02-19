@@ -1,0 +1,141 @@
+advisory_id: RHBA-2018:3712
+datasource_id: redhat_importer_v2/RHBA-2018:3712
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhba-2018_3712.json
+aliases:
+  - CVE-2018-10933
+summary: |
+  Updated cockpit packages that fix two bugs are now available for Red Hat Enterprise Linux 7 Extras.
+
+  Cockpit is a server administration interface that makes it easy to administer GNU/Linux servers through a web browser.
+
+  This update fixes two bugs, including this:
+
+  * The cockpit dashboard has been changed to present SHA256 fingerprints instead of MD5 fingerprints when connecting to remote machines through SSH. MD5 fingerprints are cryptographically weak now, and do not work with FIPS mode enabled. (BZ#1585191)
+
+  Users of cockpit are advised to upgrade to these updated packages, which fix these two bugs.
+impacted_packages:
+  - purl: pkg:rpm/redhat/libssh?arch=ppc64le
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/libssh-devel?arch=ppc64le
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/libssh?arch=aarch64
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/libssh-devel?arch=aarch64
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/libssh-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/cockpit-pcp?arch=aarch64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-dashboard?arch=aarch64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-machines?arch=aarch64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-packagekit?arch=aarch64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-docker?arch=aarch64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/libssh?arch=x86_64
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/libssh-devel?arch=x86_64
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/libssh-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/cockpit-pcp?arch=x86_64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-dashboard?arch=x86_64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-machines?arch=x86_64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-packagekit?arch=x86_64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-docker?arch=x86_64
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/libssh?arch=s390x
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/libssh-devel?arch=s390x
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/libssh-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/cockpit-pcp?arch=s390x
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-dashboard?arch=s390x
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-machines?arch=s390x
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-packagekit?arch=s390x
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-docker?arch=s390x
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/libssh?arch=src
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/cockpit?arch=src
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/libssh-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<0.7.1-7.el7
+    fixed_versions: vers:rpm/0.7.1-7.el7
+  - purl: pkg:rpm/redhat/cockpit-pcp?arch=ppc64le
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-dashboard?arch=ppc64le
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-machines?arch=ppc64le
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-packagekit?arch=ppc64le
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-docker?arch=ppc64le
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+  - purl: pkg:rpm/redhat/cockpit-storaged?arch=noarch
+    affected_versions: vers:rpm/<176-4.el7
+    fixed_versions: vers:rpm/176-4.el7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhba-2018_3712.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhba-2018_3712.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1585191
+    reference_type: bug
+    reference_id: 1585191
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1637182
+    reference_type: bug
+    reference_id: 1637182
+  - url: https://access.redhat.com/errata/RHBA-2018:3712
+    reference_type:
+    reference_id: RHBA-2018:3712

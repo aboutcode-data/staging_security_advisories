@@ -1,0 +1,28 @@
+advisory_id: PYSEC-2024-45
+datasource_id: pysec_importer_v2/PYSEC-2024-45
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2024-28088
+  - GHSA-h59x-p739-982c
+  - PYSEC-2024-43
+summary: LangChain through 0.1.10 allows ../ directory traversal by an actor who is able to
+  control the final part of the path parameter in a load_chain call. This bypasses the intended
+  behavior of loading configurations only from the hwchase17/langchain-hub GitHub repository.
+  The outcome can be disclosure of an API key for a large language model online service, or
+  remote code execution. (A patch is available as of release 0.1.29 of langchain-core.)
+impacted_packages:
+  - purl: pkg:pypi/langchain-core
+    affected_versions: vers:pypi/0.0.1|0.0.2|0.0.3|0.0.4|0.0.5|0.0.6|0.0.7|0.0.8|0.0.9|0.0.10|0.0.11|0.0.12|0.0.13rc1|0.0.13rc2|0.0.13|0.1.0|0.1.1|0.1.2|0.1.3|0.1.4|0.1.5|0.1.6|0.1.7|0.1.8|0.1.9|0.1.10
+    fixed_versions: vers:pypi/0.1.11
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/langchain-ai/langchain/blob/f96dd57501131840b713ed7c2e86cbf1ddc2761f/libs/core/langchain_core/utils/loading.py
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/pull/18600
+    reference_type:
+    reference_id:
+  - url: https://github.com/PinkDraconian/PoC-Langchain-RCE/blob/main/README.md
+    reference_type:
+    reference_id:

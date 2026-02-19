@@ -1,0 +1,120 @@
+advisory_id: RHSA-2004:615
+datasource_id: redhat_importer_v2/RHSA-2004:615
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_615.json
+aliases:
+  - CVE-2004-0989
+summary: "An updated libxml2 package that fixes multiple buffer overflows is now\navailable.\n\
+  \nlibxml2 is a library for manipulating XML files.\n\nMultiple buffer overflow bugs have been\
+  \ found in libxml2 versions prior to\n2.6.14.  If an attacker can trick a user into passing\
+  \ a specially crafted\nFTP URL or FTP proxy URL to an application that uses the vulnerable\n\
+  functions of libxml2, it could be possible to execute arbitrary code.  \nAdditionally, if\
+  \ an attacker can return a specially crafted DNS request to\nlibxml2, it could be possible\
+  \ to execute arbitrary code. The Common\nVulnerabilities and Exposures project (cve.mitre.org)\
+  \ has assigned the name\nCAN-2004-0989 to this issue.\n\nAll users are advised to upgrade\
+  \ to this updated package, which contains\nbackported patches and is not vulnerable to these\
+  \ issues."
+impacted_packages:
+  - purl: pkg:rpm/redhat/libxml2?arch=ia64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-devel?arch=ia64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-python?arch=ia64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2?arch=i386
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-debuginfo?arch=i386
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-devel?arch=i386
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-python?arch=i386
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2?arch=src
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2?arch=x86_64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-python?arch=x86_64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2?arch=ppc64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2?arch=ppc
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-devel?arch=ppc
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-python?arch=ppc
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2?arch=s390x
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-devel?arch=s390x
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-python?arch=s390x
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2?arch=s390
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-devel?arch=s390
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+  - purl: pkg:rpm/redhat/libxml2-python?arch=s390
+    affected_versions: vers:rpm/<2.5.10-7
+    fixed_versions: vers:rpm/2.5.10-7
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_615.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_615.json
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/archive/1/379383/2004-10-24/2004-10-30/0
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=137264
+    reference_type: bug
+    reference_id: 137264
+  - url: https://access.redhat.com/errata/RHSA-2004:615
+    reference_type:
+    reference_id: RHSA-2004:615

@@ -1,0 +1,44 @@
+advisory_id: RHBA-2005:447
+datasource_id: redhat_importer_v2/RHBA-2005:447
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhba-2005_447.json
+aliases:
+  - CVE-2004-0806
+summary: |
+  Updated cdrtools packages that fix a possible exploit are now available for
+  Red Hat Enterprise Linux 3.
+
+  Cdrecord is an application for recording audio and data CDs. Cdrecord
+  works with many different brands of CD recorders, fully supports
+  multi-sessions, and provides human-readable error messages.
+
+  The cdrecord package on Red Hat Enterprise Linux does not require setuid
+  root for use by normal users.  The permissions of the writer device are
+  changed by pam_console_apply at console login.  Setting the uid of cdrecord
+  to root opens a vulnerability to possible exploitation.
+
+  All users of cdrecord that setuid root should upgrade to these updated
+  packages, which resolve this issue.
+impacted_packages: []
+severities:
+  - score: Low
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhba-2005_447.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhba-2005_447.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=132859
+    reference_type: bug
+    reference_id: 132859
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/438.sh
+    reference_type: exploit
+    reference_id: OSVDB-9779;CVE-2004-0806
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/469.sh
+    reference_type: exploit
+    reference_id: OSVDB-9779;CVE-2004-0806
+  - url: https://access.redhat.com/errata/RHBA-2005:447
+    reference_type:
+    reference_id: RHBA-2005:447

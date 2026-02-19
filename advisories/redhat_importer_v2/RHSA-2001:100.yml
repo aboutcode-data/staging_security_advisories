@@ -1,0 +1,47 @@
+advisory_id: RHSA-2001:100
+datasource_id: redhat_importer_v2/RHSA-2001:100
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2001/rhsa-2001_100.json
+aliases:
+  - CVE-2001-0554
+summary: |
+  Updated Kerberos 5 packages are now available for Red Hat Linux 6.2, 7,
+  and 7.1. These updates close vulnerabilities due to potential buffer
+  overflows in the Kerberos-aware telnet server included in the
+  krb5-workstation package.
+
+  By exploiting buffer overflows in the telnet server included in the
+  krb5-workstation package, a remote attacker can obtain superuser privileges
+  on a vulnerable host.
+impacted_packages: []
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2001/rhsa-2001_100.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2001/rhsa-2001_100.json
+    reference_type:
+    reference_id:
+  - url: http://web.mit.edu/kerberos/www/advisories/
+    reference_type:
+    reference_id:
+  - url: http://web.mit.edu/kerberos/www/advisories/telnetd_122_patch.txt
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=42551
+    reference_type: bug
+    reference_id: 42551
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=45965
+    reference_type: bug
+    reference_id: 45965
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/unix/remote/21018.c
+    reference_type: exploit
+    reference_id: CVE-2001-0554;OSVDB-809
+  - url: https://www.securityfocus.com/bid/3064/info
+    reference_type: exploit
+    reference_id: CVE-2001-0554;OSVDB-809
+  - url: https://access.redhat.com/errata/RHSA-2001:100
+    reference_type:
+    reference_id: RHSA-2001:100

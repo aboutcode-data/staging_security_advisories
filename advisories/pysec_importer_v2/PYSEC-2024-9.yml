@@ -1,0 +1,18 @@
+advisory_id: PYSEC-2024-9
+datasource_id: pysec_importer_v2/PYSEC-2024-9
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2024-23750
+  - GHSA-g7ph-8423-pf4j
+summary: MetaGPT through 0.6.4 allows the QaEngineer role to execute arbitrary code because
+  RunCode.run_script() passes shell metacharacters to subprocess.Popen.
+impacted_packages:
+  - purl: pkg:pypi/metagpt
+    affected_versions: vers:pypi/0.1|0.3.0|0.4.0|0.5.0|0.5.1|0.5.2|0.6.0|0.6.1|0.6.2|0.6.3|0.6.4
+    fixed_versions: vers:pypi/0.6.5
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/geekan/MetaGPT/issues/731
+    reference_type:
+    reference_id:

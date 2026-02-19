@@ -1,0 +1,50 @@
+advisory_id: RHSA-2003:224
+datasource_id: redhat_importer_v2/RHSA-2003:224
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_224.json
+aliases:
+  - CVE-2003-0190
+summary: |
+  Updated OpenSSH packages are now available.  These updates close an
+  information leak caused by sshd's interaction with the PAM system.
+
+  OpenSSH is a suite of network connectivity tools that can be used to
+  establish encrypted connections between systems on a network and can
+  provide interactive login sessions and port forwarding, among other functions.
+
+  When configured to allow password-based or challenge-response
+  authentication, sshd (the OpenSSH server) uses PAM (Pluggable
+  Authentication Modules) to verify the user's password.  Under certain
+  conditions, OpenSSH versions prior to 3.6.1p1 reject an invalid
+  authentication attempt without first attempting authentication using PAM.
+
+  If PAM is configured with its default failure delay, the amount of time
+  sshd takes to reject an invalid authentication request varies widely enough
+  that the timing variations could be used to deduce whether or not an
+  account with a specified name existed on the server.  This information
+  could then be used to narrow the focus of an attack against some other
+  system component.
+
+  These updates contain backported fixes that cause sshd to always attempt
+  PAM authentication when performing password and challenge-response
+  authentication for clients.
+impacted_packages: []
+severities:
+  - score: Low
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_224.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#low
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_224.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=98594
+    reference_type: bug
+    reference_id: 98594
+  - url: https://access.redhat.com/errata/RHSA-2003:224
+    reference_type:
+    reference_id: RHSA-2003:224

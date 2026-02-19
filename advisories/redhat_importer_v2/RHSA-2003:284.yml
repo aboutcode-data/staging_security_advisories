@@ -1,0 +1,45 @@
+advisory_id: RHSA-2003:284
+datasource_id: redhat_importer_v2/RHSA-2003:284
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_284.json
+aliases:
+  - CVE-2003-0694
+summary: |
+  Updated Sendmail packages that fix a potentially-exploitable vulnerability
+  are now available.
+
+  Sendmail is a widely used Mail Transport Agent (MTA) and is included in all
+  Red Hat Enterprise Linux distributions.
+
+  There is a bug in the prescan() function of Sendmail versions prior to and
+  including 8.12.9. The sucessful exploitation of this bug can lead to heap
+  and stack structure overflows.  Although no exploit currently exists, this
+  issue is locally exploitable and may also be remotely exploitable.
+  The Common Vulnerabilities and Exposures project (cve.mitre.org) has
+  assigned the name CAN-2003-0694 to this issue.
+
+  All users are advised to update to these erratum packages containing a
+  backported patch which corrects these vulnerabilities.
+
+  Red Hat would like to thank Michal Zalewski for finding and reporting this
+  issue.
+impacted_packages: []
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_284.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_284.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=104565
+    reference_type: bug
+    reference_id: 104565
+  - url: https://access.redhat.com/errata/RHSA-2003:284
+    reference_type:
+    reference_id: RHSA-2003:284

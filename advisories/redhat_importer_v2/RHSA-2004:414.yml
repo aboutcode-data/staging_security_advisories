@@ -1,0 +1,196 @@
+advisory_id: RHSA-2004:414
+datasource_id: redhat_importer_v2/RHSA-2004:414
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_414.json
+aliases:
+  - CVE-2004-0691
+  - CVE-2004-0692
+  - CVE-2004-0693
+summary: |
+  Updated qt packages that fix security issues in several of the image
+  decoders are now available.
+
+  Qt is a software toolkit that simplifies the task of writing and
+  maintaining GUI (Graphical User Interface) applications for the X Window
+  System.
+
+  During a security audit, Chris Evans discovered a heap overflow in the BMP
+  image decoder in Qt versions prior to 3.3.3.   An attacker could create a
+  carefully crafted BMP file in such a way that it would cause an application
+  linked with Qt to crash or possibly execute arbitrary code when the file
+  was opened by a victim.  The Common Vulnerabilities and Exposures project
+  (cve.mitre.org) has assigned the name CAN-2004-0691 to this issue.
+
+  Additionally, various flaws were discovered in the GIF, XPM, and JPEG
+  decoders in Qt versions prior to 3.3.3. An attacker could create carefully
+  crafted image files in such a way that it could cause an application linked
+  against Qt to crash when the file was opened by a victim.  The Common
+  Vulnerabilities and Exposures project (cve.mitre.org) has assigned the
+  names CAN-2004-0692 and CAN-2004-0693 to these issues.
+
+  Users of Qt should update to these updated packages which contain
+  backported patches and are not vulnerable to these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/qt-designer?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-devel?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-MySQL?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-debuginfo?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-config?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-ODBC?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt?arch=i386&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-debuginfo?arch=i386&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-designer?arch=i386&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-devel?arch=i386&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-MySQL?arch=i386&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-config?arch=i386&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-ODBC?arch=i386&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-designer?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-MySQL?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-config?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-ODBC?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-designer?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-devel?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-MySQL?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-debuginfo?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-config?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-ODBC?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-debuginfo?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-designer?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-devel?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-MySQL?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-debuginfo?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-config?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-ODBC?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt?arch=s390&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-debuginfo?arch=s390&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-designer?arch=s390&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-devel?arch=s390&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-MySQL?arch=s390&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-config?arch=s390&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+  - purl: pkg:rpm/redhat/qt-ODBC?arch=s390&epoch=1
+    affected_versions: vers:rpm/<3.1.2-13.4
+    fixed_versions: vers:rpm/3.1.2-13.4
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_414.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_414.json
+    reference_type:
+    reference_id:
+  - url: http://www.trolltech.com/developer/changes/changes-3.3.3.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=128720
+    reference_type: bug
+    reference_id: 128720
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=129502
+    reference_type: bug
+    reference_id: 129502
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/408.c
+    reference_type: exploit
+    reference_id: OSVDB-9026;CVE-2004-0691
+  - url: https://access.redhat.com/errata/RHSA-2004:414
+    reference_type:
+    reference_id: RHSA-2004:414

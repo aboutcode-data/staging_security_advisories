@@ -1,0 +1,55 @@
+advisory_id: RHSA-2003:283
+datasource_id: redhat_importer_v2/RHSA-2003:283
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_283.json
+aliases:
+  - CVE-2003-0681
+  - CVE-2003-0694
+summary: |
+  Updated Sendmail packages that fix a potentially-exploitable vulnerability
+  are now available.
+
+  Sendmail is a widely used Mail Transport Agent (MTA) and is included in all
+  Red Hat Linux distributions.
+
+
+  Michal Zalewski found a bug in the prescan() function of unpatched Sendmail
+  versions prior to 8.12.10. The sucessful exploitation of this bug can lead
+  to heap and stack structure overflows.  Although no exploit currently
+  exists, this issue is locally exploitable and may also be remotely
+  exploitable. The Common Vulnerabilities and Exposures project
+  (cve.mitre.org) has assigned the name CAN-2003-0694 to this issue.
+
+  Additionally, for Red Hat Linux 8.0 and 9 we have included a fix for a
+  potential buffer overflow in ruleset parsing.  This problem is not
+  exploitable in the default sendmail configuration; it is exploitable only
+  if non-standard rulesets recipient (2), final (4), or mailer-specific
+  envelope recipients rulesets are used.  The Common Vulnerabilities and
+  Exposures project (cve.mitre.org) has assigned the name CAN-2003-0681 to
+  this issue.
+
+  All users are advised to update to these erratum packages containing a
+  backported patch which corrects these vulnerabilities.
+impacted_packages: []
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_283.json
+weaknesses: []
+references:
+  - url: http://marc.theaimsgroup.com/?l=bugtraq&m=106381604923204&w=2
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2003/rhsa-2003_283.json
+    reference_type:
+    reference_id:
+  - url: http://www.sendmail.org/8.12.10.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=104563
+    reference_type: bug
+    reference_id: 104563
+  - url: https://access.redhat.com/errata/RHSA-2003:283
+    reference_type:
+    reference_id: RHSA-2003:283

@@ -1,0 +1,26 @@
+advisory_id: PYSEC-2023-194
+datasource_id: pysec_importer_v2/PYSEC-2023-194
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2023-44467
+  - GHSA-gjjr-63x4-v8cq
+summary: langchain_experimental 0.0.14 allows an attacker to bypass the CVE-2023-36258 fix and
+  execute arbitrary code via the PALChain in the python exec method.
+impacted_packages:
+  - purl: pkg:pypi/langchain-experimental
+    affected_versions: vers:pypi/0.0.1rc1|0.0.1rc2|0.0.1rc3|0.0.1rc4|0.0.1|0.0.2|0.0.3|0.0.4|0.0.5|0.0.6|0.0.7|0.0.8|0.0.9|0.0.10|0.0.11|0.0.12|0.0.13|0.0.14
+    fixed_versions: vers:pypi/0.0.15
+severities:
+  - score: '9.8'
+    scoring_system: cvssv3.1
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    published_at: None
+    url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-gjjr-63x4-v8cq
+    reference_type:
+    reference_id:
+  - url: https://github.com/langchain-ai/langchain/commit/4c97a10bd0d9385cfee234a63b5bd826a295e483
+    reference_type:
+    reference_id:

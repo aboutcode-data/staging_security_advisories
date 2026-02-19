@@ -1,0 +1,88 @@
+advisory_id: RHSA-2004:585
+datasource_id: redhat_importer_v2/RHSA-2004:585
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_585.json
+aliases:
+  - CVE-2004-0409
+summary: |
+  An updated xchat package that fixes a stack buffer overflow in the SOCKSv5
+  proxy code.
+
+  X-Chat is a graphical IRC chat client for the X Window System.
+
+  A stack buffer overflow has been fixed in the SOCKSv5 proxy code.
+  An attacker could create a malicious SOCKSv5 proxy server in such a way
+  that X-Chat would execute arbitrary code if a victim configured X-Chat to
+  use the proxy.  The Common Vulnerabilities and Exposures project
+  (cve.mitre.org) has assigned the name CAN-2004-0409 to this issue.
+
+  Users of X-Chat should upgrade to this erratum package, which contains a
+  backported security patch, and is not vulnerable to this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/xchat-debuginfo?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat-debuginfo?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat?arch=src&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat-debuginfo?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat-debuginfo?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat-debuginfo?arch=s390&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+  - purl: pkg:rpm/redhat/xchat?arch=s390&epoch=1
+    affected_versions: vers:rpm/<2.0.4-4.EL
+    fixed_versions: vers:rpm/2.0.4-4.EL
+severities:
+  - score: Low
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_585.json
+weaknesses: []
+references:
+  - url: http://mail.nl.linux.org/xchat-announce/2004-04/msg00000.html
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#low
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2004_585.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=121333
+    reference_type: bug
+    reference_id: 121333
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=135238
+    reference_type: bug
+    reference_id: 135238
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/296.c
+    reference_type: exploit
+    reference_id: OSVDB-5490;CVE-2004-0409
+  - url: https://access.redhat.com/errata/RHSA-2004:585
+    reference_type:
+    reference_id: RHSA-2004:585

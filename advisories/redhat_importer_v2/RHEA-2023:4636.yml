@@ -1,0 +1,38 @@
+advisory_id: RHEA-2023:4636
+datasource_id: redhat_importer_v2/RHEA-2023:4636
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhea-2023_4636.json
+aliases:
+  - CVE-2022-21216
+  - CVE-2022-33196
+summary: |
+  An update for microcode_ctl is now available for Red Hat Enterprise Linux 7.
+
+  The microcode_ctl packages provide microcode updates for Intel processors.
+
+  Bug Fix(es) and Enhancement(s):
+
+  * Update Intel CPU microcode to microcode-20230214 release, which addresses CVE-2022-21216, CVE-2022-33196, CVE-2022-33972, and CVE-2022-38090. (BZ#2171238, BZ#2171263)
+impacted_packages:
+  - purl: pkg:rpm/redhat/microcode_ctl?arch=src&epoch=2
+    affected_versions: vers:rpm/<2.1-73.16.el7_9
+    fixed_versions: vers:rpm/2.1-73.16.el7_9
+  - purl: pkg:rpm/redhat/microcode_ctl?arch=x86_64&epoch=2
+    affected_versions: vers:rpm/<2.1-73.16.el7_9
+    fixed_versions: vers:rpm/2.1-73.16.el7_9
+  - purl: pkg:rpm/redhat/microcode_ctl-debuginfo?arch=x86_64&epoch=2
+    affected_versions: vers:rpm/<2.1-73.16.el7_9
+    fixed_versions: vers:rpm/2.1-73.16.el7_9
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhea-2023_4636.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhea-2023_4636.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHEA-2023:4636
+    reference_type:
+    reference_id: RHEA-2023:4636

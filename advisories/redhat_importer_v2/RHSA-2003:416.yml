@@ -1,0 +1,198 @@
+advisory_id: RHSA-2003:416
+datasource_id: redhat_importer_v2/RHSA-2003:416
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2003_416.json
+aliases:
+  - CVE-2003-0985
+summary: |
+  Updated kernel packages are now available that fix a security
+  vulnerability which may allow local users to gain root privileges.
+
+  The Linux kernel handles the basic functions of the operating system.
+
+  Paul Starzetz discovered a flaw in bounds checking in mremap() in the Linux
+  kernel versions 2.4.23 and previous which may allow a local attacker to
+  gain root privileges.  No exploit is currently available; however, it is
+  believed that this issue is exploitable (although not trivially.) The
+  Common Vulnerabilities and Exposures project (cve.mitre.org) has assigned
+  the name CAN-2003-0985 to this issue.
+
+  All users of Red Hat Enterprise Linux 3 are advised to upgrade to these
+  errata packages, which contain a backported security patch that corrects
+  this issue.
+
+  Red Hat would like to thank Paul Starzetz from ISEC for disclosing this
+  issue as well as Andrea Arcangeli and Solar Designer for working on the patch.
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-hugemem?arch=i686
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-unsupported?arch=i686
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp-unsupported?arch=i686
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=i686
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=i686
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-hugemem-unsupported?arch=i686
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-unsupported?arch=athlon
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp-unsupported?arch=athlon
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=athlon
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=athlon
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=athlon
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=i386
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-doc?arch=i386
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-BOOT?arch=i386
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-source?arch=i386
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-unsupported?arch=ia64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ia64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-doc?arch=ia64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-source?arch=ia64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-unsupported?arch=x86_64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp-unsupported?arch=x86_64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=x86_64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-doc?arch=x86_64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-source?arch=x86_64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-unsupported?arch=s390x
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=s390x
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-doc?arch=s390x
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-source?arch=s390x
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-unsupported?arch=s390
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=s390
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-doc?arch=s390
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-source?arch=s390
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-unsupported?arch=ppc64pseries
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64pseries
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64pseries
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-unsupported?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-doc?arch=ppc64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-source?arch=ppc64
+    affected_versions: vers:rpm/<2.4.21-4.0.2.EL
+    fixed_versions: vers:rpm/2.4.21-4.0.2.EL
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2003_416.json
+weaknesses: []
+references:
+  - url: http://isec.pl/vulnerabilities/isec-0013-mremap.txt
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2004/rhsa-2003_416.json
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/141.c
+    reference_type: exploit
+    reference_id: OSVDB-3315;CVE-2003-0985
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/142.c
+    reference_type: exploit
+    reference_id: OSVDB-3315;CVE-2003-0985
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/145.c
+    reference_type: exploit
+    reference_id: OSVDB-3315;CVE-2003-0985
+  - url: https://access.redhat.com/errata/RHSA-2003:416
+    reference_type:
+    reference_id: RHSA-2003:416
