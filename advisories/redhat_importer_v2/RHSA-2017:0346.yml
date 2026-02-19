@@ -1,0 +1,131 @@
+advisory_id: RHSA-2017:0346
+datasource_id: redhat_importer_v2/RHSA-2017:0346
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0346.json
+aliases:
+  - CVE-2017-2634
+  - CVE-2017-6074
+summary: |
+  An update for kernel is now available for Red Hat Enterprise Linux 5.9 Long Life.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+  Security Fix(es):
+
+  * A use-after-free flaw was found in the way the Linux kernel's Datagram Congestion Control Protocol (DCCP) implementation freed SKB (socket buffer) resources for a DCCP_PKT_REQUEST packet when the IPV6_RECVPKTINFO option is set on the socket. A local, unprivileged user could use this flaw to alter the kernel memory, allowing them to escalate their privileges on the system. (CVE-2017-6074, Important)
+
+  * It was found that the Linux kernel's Datagram Congestion Control Protocol (DCCP) implementation used the IPv4-only inet_sk_rebuild_header() function for both IPv4 and IPv6 DCCP connections, which could result in memory corruptions. A remote attacker could use this flaw to crash the system. (CVE-2017-2634, Moderate)
+
+  Important: This update disables the DCCP kernel module at load time by using the kernel module blacklist method. The module is disabled in an attempt to reduce further exposure to additional issues. (BZ#1426309)
+
+  Red Hat would like to thank Andrey Konovalov (Google) for reporting
+  CVE-2017-6074. The CVE-2017-2634 issue was discovered by Wade Mealing (Red Hat Product Security).
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-PAE-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-xen-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-PAE?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-xen?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debug?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-PAE-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-xen-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-headers?arch=i386
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-xen-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-headers?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-xen?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debug?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel-xen-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<2.6.18-348.33.1.el5
+    fixed_versions: vers:rpm/2.6.18-348.33.1.el5
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0346.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0346.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1423071
+    reference_type: bug
+    reference_id: 1423071
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1424751
+    reference_type: bug
+    reference_id: 1424751
+  - url: https://access.redhat.com/security/vulnerabilities/2706661
+    reference_type: other
+    reference_id: 2706661
+  - url: https://access.redhat.com/errata/RHSA-2017:0346
+    reference_type:
+    reference_id: RHSA-2017:0346

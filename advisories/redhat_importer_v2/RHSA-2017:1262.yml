@@ -1,0 +1,75 @@
+advisory_id: RHSA-2017:1262
+datasource_id: redhat_importer_v2/RHSA-2017:1262
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1262.json
+aliases:
+  - CVE-2017-8779
+summary: |
+  An update for rpcbind is now available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  [Updated 16 June 2017]
+  The packages distributed with this errata have a bug that can cause the rpcbind utility to terminate unexpectedly at start. RHBA-2017:1436 was released on 13 June 2017 to address this issue.
+
+  The rpcbind utility is a server that converts Remote Procedure Call (RPC) program numbers into universal addresses. It must be running on the host to be able to make RPC calls on a server on that machine.
+
+  Security Fix(es):
+
+  * It was found that due to the way rpcbind uses libtirpc (libntirpc), a memory leak can occur when parsing specially crafted XDR messages. An attacker sending thousands of messages to rpcbind could cause its memory usage to grow without bound, eventually causing it to be terminated by the OOM killer. (CVE-2017-8779)
+impacted_packages:
+  - purl: pkg:rpm/redhat/rpcbind-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind?arch=x86_64
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind?arch=src
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind?arch=s390x
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind?arch=ppc64
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind?arch=ppc64le
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+  - purl: pkg:rpm/redhat/rpcbind?arch=aarch64
+    affected_versions: vers:rpm/<0.2.0-38.el7_3
+    fixed_versions: vers:rpm/0.2.0-38.el7_3
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1262.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2017:1262
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1262.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1448124
+    reference_type: bug
+    reference_id: 1448124
+  - url: https://access.redhat.com/errata/RHBA-2017:1436
+    reference_type:
+    reference_id: RHBA-2017:1436

@@ -1,0 +1,106 @@
+advisory_id: RHSA-2016:2850
+datasource_id: redhat_importer_v2/RHSA-2016:2850
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2850.json
+aliases:
+  - CVE-2016-9079
+summary: |
+  An update for thunderbird is now available for Red Hat Enterprise Linux 5, Red Hat Enterprise Linux 6, and Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Mozilla Thunderbird is a standalone mail and newsgroup client.
+
+  This update upgrades Thunderbird to version 45.5.1.
+
+  Security Fix(es):
+
+  * A flaw was found in the processing of malformed web content. A web page containing malicious content could cause Thunderbird to crash or, potentially, execute arbitrary code with the privileges of the user running Thunderbird. (CVE-2016-9079)
+
+  Red Hat would like to thank the Mozilla project for reporting this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/thunderbird?arch=x86_64
+    affected_versions: vers:rpm/<45.5.1-1.el5_11
+    fixed_versions: vers:rpm/45.5.1-1.el5_11
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<45.5.1-1.el5_11
+    fixed_versions: vers:rpm/45.5.1-1.el5_11
+  - purl: pkg:rpm/redhat/thunderbird?arch=x86_64
+    affected_versions: vers:rpm/<45.5.1-1.el7_3
+    fixed_versions: vers:rpm/45.5.1-1.el7_3
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<45.5.1-1.el7_3
+    fixed_versions: vers:rpm/45.5.1-1.el7_3
+  - purl: pkg:rpm/redhat/thunderbird?arch=x86_64
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+  - purl: pkg:rpm/redhat/thunderbird?arch=i386
+    affected_versions: vers:rpm/<45.5.1-1.el5_11
+    fixed_versions: vers:rpm/45.5.1-1.el5_11
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=i386
+    affected_versions: vers:rpm/<45.5.1-1.el5_11
+    fixed_versions: vers:rpm/45.5.1-1.el5_11
+  - purl: pkg:rpm/redhat/thunderbird?arch=src
+    affected_versions: vers:rpm/<45.5.1-1.el5_11
+    fixed_versions: vers:rpm/45.5.1-1.el5_11
+  - purl: pkg:rpm/redhat/thunderbird?arch=src
+    affected_versions: vers:rpm/<45.5.1-1.el7_3
+    fixed_versions: vers:rpm/45.5.1-1.el7_3
+  - purl: pkg:rpm/redhat/thunderbird?arch=src
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+  - purl: pkg:rpm/redhat/thunderbird?arch=ppc64le
+    affected_versions: vers:rpm/<45.5.1-1.el7_3
+    fixed_versions: vers:rpm/45.5.1-1.el7_3
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<45.5.1-1.el7_3
+    fixed_versions: vers:rpm/45.5.1-1.el7_3
+  - purl: pkg:rpm/redhat/thunderbird?arch=aarch64
+    affected_versions: vers:rpm/<45.5.1-1.el7_3
+    fixed_versions: vers:rpm/45.5.1-1.el7_3
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<45.5.1-1.el7_3
+    fixed_versions: vers:rpm/45.5.1-1.el7_3
+  - purl: pkg:rpm/redhat/thunderbird?arch=i686
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=i686
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+  - purl: pkg:rpm/redhat/thunderbird?arch=s390x
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+  - purl: pkg:rpm/redhat/thunderbird?arch=ppc64
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<45.5.1-1.el6_8
+    fixed_versions: vers:rpm/45.5.1-1.el6_8
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2850.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2850.json
+    reference_type:
+    reference_id:
+  - url: https://www.mozilla.org/en-US/security/advisories/mfsa2016-92/#CVE-2016-9079
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1400376
+    reference_type: bug
+    reference_id: 1400376
+  - url: https://access.redhat.com/errata/RHSA-2016:2850
+    reference_type:
+    reference_id: RHSA-2016:2850

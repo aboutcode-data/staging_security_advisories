@@ -1,0 +1,54 @@
+advisory_id: RHSA-2018:1710
+datasource_id: redhat_importer_v2/RHSA-2018:1710
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1710.json
+aliases:
+  - CVE-2018-1087
+  - CVE-2018-3639
+  - CVE-2018-8897
+summary: |
+  An update for redhat-virtualization-host is now available for RHEV 3.X Hypervisor and Agents Extended Lifecycle Support for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The ovirt-node-ng packages provide the Red Hat Virtualization Host. These packages include redhat-release-virtualization-host, ovirt-node, and rhev-hypervisor. Red Hat Virtualization Hosts (RHVH) are installed using a special build of Red Hat Enterprise Linux with only the packages required to host virtual machines. RHVH features a Cockpit user interface for monitoring the host's resources and performing administrative tasks.
+
+  Security Fix(es):
+
+  * An industry-wide issue was found in the way many modern microprocessor designs have implemented speculative execution of Load & Store instructions (a commonly used performance optimization). It relies on the presence of a precisely-defined instruction sequence in the privileged code as well as the fact that memory read from address to which a recent memory write has occurred may see an older value and subsequently cause an update into the microprocessor's data cache even for speculatively executed instructions that never actually commit (retire). As a result, an unprivileged attacker could use this flaw to read privileged memory by conducting targeted cache side-channel attacks. (CVE-2018-3639)
+
+  Note: This is the redhat-virtualization-host side of the CVE-2018-3639 mitigation.
+
+  Red Hat would like to thank Ken Johnson (Microsoft Security Response Center) and Jann Horn (Google Project Zero) for reporting this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/redhat-virtualization-host-image-update?arch=noarch
+    affected_versions: vers:rpm/<3.6-20180521.0.el7_3
+    fixed_versions: vers:rpm/3.6-20180521.0.el7_3
+  - purl: pkg:rpm/redhat/redhat-virtualization-host?arch=src
+    affected_versions: vers:rpm/<3.6-20180521.0.el7_3
+    fixed_versions: vers:rpm/3.6-20180521.0.el7_3
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1710.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/ssbd
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1710.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1566890
+    reference_type: bug
+    reference_id: 1566890
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1580328
+    reference_type: bug
+    reference_id: 1580328
+  - url: https://access.redhat.com/errata/RHSA-2018:1710
+    reference_type:
+    reference_id: RHSA-2018:1710

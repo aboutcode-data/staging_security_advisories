@@ -1,0 +1,215 @@
+advisory_id: RHSA-2017:1271
+datasource_id: redhat_importer_v2/RHSA-2017:1271
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1271.json
+aliases:
+  - CVE-2017-7494
+summary: |
+  An update for samba4 is now available for Red Hat Enterprise Linux 6.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Samba is an open-source implementation of the Server Message Block (SMB) or Common Internet File System (CIFS) protocol, which allows PC-compatible machines to share files, printers, and other information.
+
+  Security Fix(es):
+
+  * A remote code execution flaw was found in Samba. A malicious authenticated samba client, having write access to the samba share, could use this flaw to execute arbitrary code as root. (CVE-2017-7494)
+
+  Red Hat would like to thank the Samba project for reporting this issue. Upstream acknowledges steelo as the original reporter.
+impacted_packages:
+  - purl: pkg:rpm/redhat/samba4-dc-libs?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind-clients?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-pidl?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-libs?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-common?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-dc?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind-krb5-locator?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-python?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-client?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-test?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-dc-libs?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind-clients?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-pidl?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-libs?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-devel?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-common?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-dc?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind-krb5-locator?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-python?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-client?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-test?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-debuginfo?arch=i686
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4?arch=src
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-dc-libs?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind-clients?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-pidl?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-libs?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-devel?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-common?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-dc?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind-krb5-locator?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-python?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-client?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-test?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-dc-libs?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind-clients?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-pidl?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-libs?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-devel?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-common?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-dc?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind-krb5-locator?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-python?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-client?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-winbind?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-test?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+  - purl: pkg:rpm/redhat/samba4-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<4.2.10-10.el6_9
+    fixed_versions: vers:rpm/4.2.10-10.el6_9
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1271.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/3034621
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1271.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1450347
+    reference_type: bug
+    reference_id: 1450347
+  - url: https://www.samba.org/samba/security/CVE-2017-7494.html
+    reference_type: other
+    reference_id: CVE-2017-7494.html
+  - url: https://access.redhat.com/errata/RHSA-2017:1271
+    reference_type: advisory
+    reference_id: RHSA-2017:1271

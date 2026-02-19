@@ -1,0 +1,61 @@
+advisory_id: RHSA-2017:1209
+datasource_id: redhat_importer_v2/RHSA-2017:1209
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1209.json
+aliases:
+  - CVE-2017-6074
+summary: |
+  An update for rhev-hypervisor7 is now available for RHEV 3.X Hypervisor and Agents for RHEL-6 and RHEV 3.X Hypervisor and Agents for RHEL-7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The rhev-hypervisor package provides a Red Hat Enterprise Virtualization
+  Hypervisor ISO disk image. The Red Hat Enterprise Virtualization Hypervisor
+  is a dedicated Kernel-based Virtual Machine (KVM) hypervisor. It includes
+  everything necessary to run and manage virtual machines: A subset of the
+  Red Hat Enterprise Linux operating environment and the Red Hat Enterprise
+  Virtualization Agent.
+
+  Security Fix(es):
+
+  * A use-after-free flaw was found in the way the Linux kernel's Datagram Congestion Control Protocol (DCCP) implementation freed SKB (socket buffer) resources for a DCCP_PKT_REQUEST packet when the IPV6_RECVPKTINFO option is set on the socket. A local, unprivileged user could use this flaw to alter the kernel memory, allowing them to escalate their privileges on the system. (CVE-2017-6074)
+
+  Red Hat would like to thank Andrey Konovalov (Google) for reporting this issue.
+
+  Note: Red Hat Enterprise Virtualization Hypervisor is only available for
+  the Intel 64 and AMD64 architectures with virtualization extensions.
+impacted_packages:
+  - purl: pkg:rpm/redhat/rhev-hypervisor7?arch=src
+    affected_versions: vers:rpm/<7.3-20170425.0.el6ev
+    fixed_versions: vers:rpm/7.3-20170425.0.el6ev
+  - purl: pkg:rpm/redhat/rhev-hypervisor7?arch=src
+    affected_versions: vers:rpm/<7.3-20170425.0.el7ev
+    fixed_versions: vers:rpm/7.3-20170425.0.el7ev
+  - purl: pkg:rpm/redhat/rhev-hypervisor7?arch=noarch
+    affected_versions: vers:rpm/<7.3-20170425.0.el6ev
+    fixed_versions: vers:rpm/7.3-20170425.0.el6ev
+  - purl: pkg:rpm/redhat/rhev-hypervisor7?arch=noarch
+    affected_versions: vers:rpm/<7.3-20170425.0.el7ev
+    fixed_versions: vers:rpm/7.3-20170425.0.el7ev
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1209.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2017:1209
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1209.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1423071
+    reference_type: bug
+    reference_id: 1423071
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1434999
+    reference_type: bug
+    reference_id: 1434999

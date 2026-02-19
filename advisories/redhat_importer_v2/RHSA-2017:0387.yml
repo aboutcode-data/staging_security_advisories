@@ -1,0 +1,117 @@
+advisory_id: RHSA-2017:0387
+datasource_id: redhat_importer_v2/RHSA-2017:0387
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0387.json
+aliases:
+  - CVE-2016-8630
+  - CVE-2016-8655
+  - CVE-2016-9083
+  - CVE-2016-9084
+summary: |
+  An update for kernel-rt is now available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.
+
+  Security Fix(es):
+
+  * Linux kernel built with the Kernel-based Virtual Machine (CONFIG_KVM) support is vulnerable to a null pointer dereference flaw. It could occur on x86 platform, when emulating an undefined instruction. An attacker could use this flaw to crash the host kernel resulting in DoS. (CVE-2016-8630, Important)
+
+  * A race condition issue leading to a use-after-free flaw was found in the way the raw packet sockets implementation in the Linux kernel networking subsystem handled synchronization while creating the TPACKET_V3 ring buffer. A local user able to open a raw packet socket (requires the CAP_NET_RAW capability) could use this flaw to elevate their privileges on the system. (CVE-2016-8655, Important)
+
+  * A flaw was discovered in the Linux kernel's implementation of VFIO. An attacker issuing an ioctl can create a situation where memory is corrupted and modify memory outside of the expected area. This may overwrite kernel memory and subvert kernel execution. (CVE-2016-9083, Important)
+
+  * The use of a kzalloc with an integer multiplication allowed an integer overflow condition to be reached in vfio_pci_intrs.c. This combined with CVE-2016-9083 may allow an attacker to craft an attack and use unallocated memory, potentially crashing the machine. (CVE-2016-9084, Moderate)
+
+  Red Hat would like to thank Philip Pettersson for reporting CVE-2016-8655.
+
+  Bug Fix(es):
+
+  * Previously, the asynchronous page fault woke code references spinlocks, which were actually sleeping locks in the RT kernel. Because of this, when the code was executed from the exception context, a bug warning appeared on the console. With this update, the regular wait queue and spinlock code in this area has been modified to use simple-wait-queue and raw-spinlocks. This code change enables the asynchronous page fault code to run in a non-preemptable state without bug warnings. (BZ#1418035)
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-rt-doc?arch=noarch
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+  - purl: pkg:rpm/redhat/kernel-rt?arch=src
+    affected_versions: vers:rpm/<3.10.0-514.10.2.rt56.435.el7
+    fixed_versions: vers:rpm/3.10.0-514.10.2.rt56.435.el7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0387.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1389258
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1389259
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1393350
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1400019
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0387.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1415172
+    reference_type: bug
+    reference_id: 1415172
+  - url: https://access.redhat.com/errata/RHSA-2017:0387
+    reference_type:
+    reference_id: RHSA-2017:0387

@@ -1,0 +1,259 @@
+advisory_id: RHSA-2018:0399
+datasource_id: redhat_importer_v2/RHSA-2018:0399
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_0399.json
+aliases:
+  - CVE-2017-8824
+summary: |
+  Updated kernel packages that fix six bugs are now available for Red Hat Enterprise Linux 7.3 Extended Update Support.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel packages contain the Linux kernel, the core of any Linux
+  operating system.
+
+  Security Fix(es):
+
+  * kernel: Use-after-free vulnerability in DCCP socket (CVE-2017-8824, Important)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+  Bug Fix(es):
+
+  * Previously, there were cases where the ethtool kernel code called the vzalloc() function, which allocates virtually contiguous memory with zero fill, with a size of zero. Consequently, running the ethtool -d command to query hardware registers led to the following dmesg error:
+
+      ethtool: vmalloc: allocation failure: 0 bytes, mode:0x24080c2(GFP_KERNEL|__GFP_HIGHMEM|__GFP_ZERO)
+
+  With this update, the kernel code has been fixed to avoid the invalid vzalloc call, and the dmesg error no longer occurs. (BZ#1530128)
+
+  * Previously, if an NFSv4 mount operation encountered an NFS client structure that has not completed initialization, the trunking detection logic waited for the operation to complete. Consequently, if a concurrent NFSv4 mount operation added another item to the list of NFS client structures, this client was not able to begin initialization, because it was waiting on the mutex held by the other process, and a deadlock occurred. This update fixes NFS to wait until the NFS client structure initialization is completed before adding a new structure to the list. As a result, the deadlock no longer occurs, and the NFS client can now initialize as expected under the described circumstances. (BZ#1530134)
+
+  * If the Extensible Firmware Interface (EFI) created a new set of page tables and mapped a segment of code at a low address, the operating system (OS) failed to boot. This update fixes the EFI code, and the OS now boots as expected under the described circumstances. (BZ#1535880)
+
+  * The Return Trampoline (Retpoline) mechanism mitigates the branch target injection, also known as the Spectre variant 2 vulnerability. With this update, Retpoline has been implemented into the Red Hat Enterprise Linux kernel. (BZ#1539648)
+
+  * This update adds a new line to the /proc/cpuinfo file to show all available facilities that are reported by the stfle instruction on IBM z systems. (BZ#1540088)
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/python-perf?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/perf?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-headers?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-libs-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-abi-whitelists?arch=noarch
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-ppc64le?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-libs-devel?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/python-perf?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-bootwrapper?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-headers?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/perf?arch=ppc64le
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-ppc64?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-libs-devel?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/python-perf?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-bootwrapper?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-headers?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/perf?arch=ppc64
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/python-perf?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-kdump-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-kdump?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-headers?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-kdump-devel?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/perf?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-s390x?arch=s390x
+    affected_versions: vers:rpm/<3.10.0-514.44.1.el7
+    fixed_versions: vers:rpm/3.10.0-514.44.1.el7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_0399.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:0399
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_0399.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1519591
+    reference_type: bug
+    reference_id: 1519591

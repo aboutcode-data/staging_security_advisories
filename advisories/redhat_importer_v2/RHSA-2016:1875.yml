@@ -1,0 +1,109 @@
+advisory_id: RHSA-2016:1875
+datasource_id: redhat_importer_v2/RHSA-2016:1875
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_1875.json
+aliases:
+  - CVE-2016-3134
+  - CVE-2016-4997
+  - CVE-2016-4998
+  - CVE-2016-6197
+  - CVE-2016-6198
+summary: |
+  An update for kernel-rt is now available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.
+
+  The kernel-rt packages have been upgraded to the kernel-3.10.0-327.36.1 source tree, which provides a number of bug fixes over the previous version. (BZ#1366538)
+
+  Security Fix(es):
+
+  * A security flaw was found in the Linux kernel in the mark_source_chains() function in "net/ipv4/netfilter/ip_tables.c". It is possible for a user-supplied "ipt_entry" structure to have a large "next_offset" field. This field is not bounds checked prior to writing to a counter value at the supplied offset. (CVE-2016-3134, Important)
+
+  * A flaw was discovered in processing setsockopt for 32 bit processes on 64 bit systems. This flaw will allow attackers to alter arbitrary kernel memory when unloading a kernel module. This action is usually restricted to root-privileged users but can also be leveraged if the kernel is compiled with CONFIG_USER_NS and CONFIG_NET_NS and the user is granted elevated privileges. (CVE-2016-4997, Important)
+
+  * An out-of-bounds heap memory access leading to a Denial of Service, heap disclosure, or further impact was found in setsockopt(). The function call is normally restricted to root, however some processes with cap_sys_admin may also be able to trigger this flaw in privileged container environments. (CVE-2016-4998, Moderate)
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-rt-debug?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt-doc?arch=noarch
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+  - purl: pkg:rpm/redhat/kernel-rt?arch=src
+    affected_versions: vers:rpm/<3.10.0-327.36.1.rt56.237.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.1.rt56.237.el7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_1875.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1317383
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1349722
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1349886
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_1875.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1366538
+    reference_type: bug
+    reference_id: 1366538
+  - url: https://access.redhat.com/errata/RHSA-2016:1875
+    reference_type:
+    reference_id: RHSA-2016:1875

@@ -1,0 +1,154 @@
+advisory_id: RHSA-2018:1524
+datasource_id: redhat_importer_v2/RHSA-2018:1524
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1524.json
+aliases:
+  - CVE-2018-1087
+  - CVE-2018-1088
+  - CVE-2018-1111
+  - CVE-2018-8897
+summary: |
+  Updated redhat-virtualization-host packages that fix several bugs and add various enhancements are now available.
+
+  The redhat-virtualization-host packages provide the Red Hat Virtualization Host. These packages include redhat-release-virtualization-host, ovirt-node, and rhev-hypervisor. Red Hat Virtualization Hosts (RHVH) are installed using a special build of Red Hat Enterprise Linux with only the packages required to host virtual machines. RHVH features a Cockpit user interface for monitoring the host's resources and performing administrative tasks.
+
+  Includes GlusterFS fixes for CVE-2018-1088, dhcp fixes for CVE-2018-1111, kernel fixes for CVE-2018-1087, and kernel fixes for CVE-2018-8897.
+
+  A list of bugs fixed in this update is available in the Technical Notes book: https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.2/html/technical_notes/
+impacted_packages:
+  - purl: pkg:rpm/redhat/ovirt-node-ng-nodectl?arch=noarch
+    affected_versions: vers:rpm/<4.2.0-0.20170814.0.el7
+    fixed_versions: vers:rpm/4.2.0-0.20170814.0.el7
+  - purl: pkg:rpm/redhat/redhat-virtualization-host-image-update-placeholder?arch=noarch
+    affected_versions: vers:rpm/<4.2-3.0.el7
+    fixed_versions: vers:rpm/4.2-3.0.el7
+  - purl: pkg:rpm/redhat/python-imgbased?arch=noarch
+    affected_versions: vers:rpm/<1.0.16-0.1.el7ev
+    fixed_versions: vers:rpm/1.0.16-0.1.el7ev
+  - purl: pkg:rpm/redhat/imgbased?arch=noarch
+    affected_versions: vers:rpm/<1.0.16-0.1.el7ev
+    fixed_versions: vers:rpm/1.0.16-0.1.el7ev
+  - purl: pkg:rpm/redhat/redhat-virtualization-host-image-update?arch=noarch
+    affected_versions: vers:rpm/<4.2-20180508.0.el7_5
+    fixed_versions: vers:rpm/4.2-20180508.0.el7_5
+  - purl: pkg:rpm/redhat/ovirt-node-ng?arch=src
+    affected_versions: vers:rpm/<4.2.0-0.20170814.0.el7
+    fixed_versions: vers:rpm/4.2.0-0.20170814.0.el7
+  - purl: pkg:rpm/redhat/redhat-release-virtualization-host?arch=src
+    affected_versions: vers:rpm/<4.2-3.0.el7
+    fixed_versions: vers:rpm/4.2-3.0.el7
+  - purl: pkg:rpm/redhat/imgbased?arch=src
+    affected_versions: vers:rpm/<1.0.16-0.1.el7ev
+    fixed_versions: vers:rpm/1.0.16-0.1.el7ev
+  - purl: pkg:rpm/redhat/redhat-virtualization-host?arch=src
+    affected_versions: vers:rpm/<4.2-20180508.0.el7_5
+    fixed_versions: vers:rpm/4.2-20180508.0.el7_5
+  - purl: pkg:rpm/redhat/redhat-release-virtualization-host?arch=x86_64
+    affected_versions: vers:rpm/<4.2-3.0.el7
+    fixed_versions: vers:rpm/4.2-3.0.el7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1524.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:1524
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1558721
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1567074
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1524.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1357247
+    reference_type: bug
+    reference_id: 1357247
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1374007
+    reference_type: bug
+    reference_id: 1374007
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1420068
+    reference_type: bug
+    reference_id: 1420068
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1422676
+    reference_type: bug
+    reference_id: 1422676
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1429485
+    reference_type: bug
+    reference_id: 1429485
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1433394
+    reference_type: bug
+    reference_id: 1433394
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1443965
+    reference_type: bug
+    reference_id: 1443965
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1454536
+    reference_type: bug
+    reference_id: 1454536
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1474268
+    reference_type: bug
+    reference_id: 1474268
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1489567
+    reference_type: bug
+    reference_id: 1489567
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1501161
+    reference_type: bug
+    reference_id: 1501161
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1502920
+    reference_type: bug
+    reference_id: 1502920
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1503148
+    reference_type: bug
+    reference_id: 1503148
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1516123
+    reference_type: bug
+    reference_id: 1516123
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1534855
+    reference_type: bug
+    reference_id: 1534855
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1535791
+    reference_type: bug
+    reference_id: 1535791
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1542833
+    reference_type: bug
+    reference_id: 1542833
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1547864
+    reference_type: bug
+    reference_id: 1547864
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1549630
+    reference_type: bug
+    reference_id: 1549630
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1554186
+    reference_type: bug
+    reference_id: 1554186
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1555243
+    reference_type: bug
+    reference_id: 1555243
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1555254
+    reference_type: bug
+    reference_id: 1555254
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1561258
+    reference_type: bug
+    reference_id: 1561258
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1563530
+    reference_type: bug
+    reference_id: 1563530
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1565497
+    reference_type: bug
+    reference_id: 1565497
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1566837
+    reference_type: bug
+    reference_id: 1566837
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1567974
+    reference_type: bug
+    reference_id: 1567974
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1571134
+    reference_type: bug
+    reference_id: 1571134

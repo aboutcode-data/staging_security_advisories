@@ -1,0 +1,50 @@
+advisory_id: RHSA-2017:1445
+datasource_id: redhat_importer_v2/RHSA-2017:1445
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1445.json
+aliases:
+  - CVE-2017-7233
+summary: |
+  An update for python-django is now available for Red Hat Enterprise Linux OpenStack Platform 6.0 (Juno) for RHEL 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Django is a high-level Python Web framework that encourages rapid development and a clean, pragmatic design. It focuses on automating as much as possible and adhering to the DRY (Don't Repeat Yourself) principle.
+
+  Security Fix(es):
+
+  * A redirect flaw, where the is_safe_url() function did not correctly sanitize numeric-URL user input, was found in python-django. A remote attacker could exploit this flaw to perform XSS attacks against the OpenStack dashboard. (CVE-2017-7233)
+
+  Red Hat would like to thank the Django project for reporting this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/python-django-bash-completion?arch=noarch
+    affected_versions: vers:rpm/<1.6.11-7.el7ost
+    fixed_versions: vers:rpm/1.6.11-7.el7ost
+  - purl: pkg:rpm/redhat/python-django-doc?arch=noarch
+    affected_versions: vers:rpm/<1.6.11-7.el7ost
+    fixed_versions: vers:rpm/1.6.11-7.el7ost
+  - purl: pkg:rpm/redhat/python-django?arch=noarch
+    affected_versions: vers:rpm/<1.6.11-7.el7ost
+    fixed_versions: vers:rpm/1.6.11-7.el7ost
+  - purl: pkg:rpm/redhat/python-django?arch=src
+    affected_versions: vers:rpm/<1.6.11-7.el7ost
+    fixed_versions: vers:rpm/1.6.11-7.el7ost
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1445.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2017:1445
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_1445.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1437234
+    reference_type: bug
+    reference_id: 1437234

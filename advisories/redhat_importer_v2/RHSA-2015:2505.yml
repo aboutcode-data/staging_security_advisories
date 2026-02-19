@@ -1,0 +1,738 @@
+advisory_id: RHSA-2015:2505
+datasource_id: redhat_importer_v2/RHSA-2015:2505
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_2505.json
+aliases:
+  - CVE-2015-5273
+  - CVE-2015-5287
+  - CVE-2015-5302
+summary: |
+  Updated abrt and libreport packages that fix three security issues are now
+  available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having Moderate security
+  impact. Common Vulnerability Scoring System (CVSS) base scores, which give
+  detailed severity ratings, are available for each vulnerability from the
+  CVE links in the References section.
+
+  ABRT (Automatic Bug Reporting Tool) is a tool to help users to detect
+  defects in applications and to create a bug report with all the information
+  needed by a maintainer to fix it. It uses a plug-in system to extend its
+  functionality. libreport provides an API for reporting different problems
+  in applications to different bug targets, such as Bugzilla, FTP, and Trac.
+
+  It was found that the ABRT debug information installer
+  (abrt-action-install-debuginfo-to-abrt-cache) did not use temporary
+  directories in a secure way. A local attacker could use the flaw to create
+  symbolic links and files at arbitrary locations as the abrt user.
+  (CVE-2015-5273)
+
+  It was discovered that the kernel-invoked coredump processor provided by
+  ABRT did not handle symbolic links correctly when writing core dumps of
+  ABRT programs to the ABRT dump directory (/var/spool/abrt). A local
+  attacker with write access to an ABRT problem directory could use this flaw
+  to escalate their privileges. (CVE-2015-5287)
+
+  It was found that ABRT may have exposed unintended information to Red Hat
+  Bugzilla during crash reporting. A bug in the libreport library caused
+  changes made by a user in files included in a crash report to be discarded.
+  As a result, Red Hat Bugzilla attachments may contain data that was not
+  intended to be made public, including host names, IP addresses, or command
+  line options. (CVE-2015-5302)
+
+  This flaw did not affect default installations of ABRT on Red Hat
+  Enterprise Linux as they do not post data to Red Hat Bugzilla. This feature
+  can however be enabled, potentially impacting modified ABRT instances.
+
+  As a precaution, Red Hat has identified bugs filed by such non-default Red
+  Hat Enterprise Linux users of ABRT and marked them private.
+
+  Red Hat would like to thank Philip Pettersson of Samsung for reporting the
+  CVE-2015-5273 and CVE-2015-5287 issues. The CVE-2015-5302 issue was
+  discovered by Bastien Nocera of Red Hat.
+
+  All users of abrt and libreport are advised to upgrade to these updated
+  packages, which contain backported patches to correct these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/abrt-dbus?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-libs?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-tui?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-pstoreoops?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-cli?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-vmcore?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-desktop?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-libs?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-ccpp?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-console-notification?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-python?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-kerneloops?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-python?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-xorg?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-retrace-client?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-upload-watch?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/libreport-python?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-reportuploader?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-bugzilla?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel-anaconda-bugzilla?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-cli?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-rhtsupport?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-mailx?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-filesystem?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-anaconda?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-ureport?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-kerneloops?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-logger?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-compat?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel-bugzilla?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-newt?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/abrt-libs?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-libs?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-devel?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-devel?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/libreport-gtk?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web-devel?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk-devel?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-devel?arch=ppc
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/abrt-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-libs?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-xorg?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-console-notification?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-kerneloops?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-python?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-dbus?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-desktop?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-ccpp?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-cli?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-tui?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-python?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-libs?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-pstoreoops?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-vmcore?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-retrace-client?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-devel?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-upload-watch?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-devel?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-mailx?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-anaconda?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-filesystem?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel-anaconda-bugzilla?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-reportuploader?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-cli?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-rhtsupport?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-python?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-ureport?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-bugzilla?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk-devel?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel-bugzilla?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-devel?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-newt?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-logger?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-compat?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-kerneloops?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web-devel?arch=ppc64le
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/abrt-desktop?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-dbus?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-libs?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-tui?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-cli?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-kerneloops?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-pstoreoops?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-xorg?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-python?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-ccpp?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-libs?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-vmcore?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-python?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-console-notification?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-retrace-client?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-upload-watch?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/libreport-cli?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-reportuploader?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-rhtsupport?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-ureport?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-filesystem?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-python?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel-anaconda-bugzilla?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-mailx?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-anaconda?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-bugzilla?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-compat?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-logger?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-kerneloops?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-newt?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel-bugzilla?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/abrt-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-libs?arch=i686
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-libs?arch=i686
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-devel?arch=i686
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-devel?arch=i686
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/libreport-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk?arch=i686
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport?arch=i686
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web?arch=i686
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-devel?arch=i686
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web-devel?arch=i686
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk-devel?arch=i686
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/abrt-addon-kerneloops?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-cli?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-python?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-desktop?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-vmcore?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-dbus?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-ccpp?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-libs?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-tui?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-libs?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-python?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-xorg?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-console-notification?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-pstoreoops?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-retrace-client?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-devel?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-devel?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-addon-upload-watch?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-reportuploader?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-cli?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-mailx?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-bugzilla?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-anaconda?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-python?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-filesystem?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-rhtsupport?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel-anaconda-bugzilla?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-ureport?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-newt?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-devel?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-compat?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-kerneloops?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk-devel?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web-devel?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-plugin-logger?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-rhel-bugzilla?arch=s390x
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/abrt-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-libs?arch=s390
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-libs?arch=s390
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-gui-devel?arch=s390
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/abrt-devel?arch=s390
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/libreport-gtk?arch=s390
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web?arch=s390
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport?arch=s390
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-web-devel?arch=s390
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-gtk-devel?arch=s390
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/libreport-devel?arch=s390
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/abrt?arch=src
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+  - purl: pkg:rpm/redhat/libreport?arch=src
+    affected_versions: vers:rpm/<2.1.11-31.el7
+    fixed_versions: vers:rpm/2.1.11-31.el7
+  - purl: pkg:rpm/redhat/abrt-python-doc?arch=noarch
+    affected_versions: vers:rpm/<2.1.11-35.el7
+    fixed_versions: vers:rpm/2.1.11-35.el7
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_2505.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1262252
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1266837
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1270903
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2015/rhsa-2015_2505.json
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/38832.py
+    reference_type: exploit
+    reference_id: CVE-2015-5287
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/47421.rb
+    reference_type: exploit
+    reference_id: CVE-2015-5287
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/exploits/linux/local/abrt_sosreport_priv_esc.rb
+    reference_type: exploit
+    reference_id: CVE-2015-5287
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/local/38835.py
+    reference_type: exploit
+    reference_id: CVE-2015-5287;CVE-2015-5273;OSVDB-130747;OSVDB-130746;OSVDB-130745;OSVDB-130609
+  - url: https://access.redhat.com/errata/RHSA-2015:2505
+    reference_type:
+    reference_id: RHSA-2015:2505

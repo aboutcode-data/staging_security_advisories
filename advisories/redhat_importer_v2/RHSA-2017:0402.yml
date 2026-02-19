@@ -1,0 +1,93 @@
+advisory_id: RHSA-2017:0402
+datasource_id: redhat_importer_v2/RHSA-2017:0402
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0402.json
+aliases:
+  - CVE-2016-8655
+summary: |
+  An update for kernel-rt is now available for Red Hat Enterprise MRG 2.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.
+
+  Security Fix(es):
+
+  * A race condition issue leading to a use-after-free flaw was found in the way the raw packet sockets implementation in the Linux kernel networking subsystem handled synchronization while creating the TPACKET_V3 ring buffer. A local user able to open a raw packet socket (requires the CAP_NET_RAW capability) could use this flaw to elevate their privileges on the system. (CVE-2016-8655, Important)
+
+  Red Hat would like to thank Philip Pettersson for reporting this issue.
+
+  Enhancement(s):
+
+  * Previously, the Broadcom bnx2x driver in the MRG kernel-rt used an incorrect PTP Hardware Clock (PHC) timer divisor value, which broke Precision Time Protocol (PTP) timestamping due to an unstable clock. This update corrects the divisor value, and the PTP timestamping is now accurate, with monotonically increasing timestamp values. (BZ#1411139)
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-rt-vanilla?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-debug?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-trace-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo-common-x86_64?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-vanilla-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-vanilla-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-trace-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-debug-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-trace?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-debug-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-firmware?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+  - purl: pkg:rpm/redhat/kernel-rt-doc?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.10.0-514.rt56.215.el6rt
+    fixed_versions: vers:rpm/3.10.0-514.rt56.215.el6rt
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0402.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1400019
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_0402.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1414055
+    reference_type: bug
+    reference_id: 1414055
+  - url: https://access.redhat.com/errata/RHSA-2017:0402
+    reference_type:
+    reference_id: RHSA-2017:0402

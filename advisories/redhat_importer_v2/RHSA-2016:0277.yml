@@ -1,0 +1,74 @@
+advisory_id: RHSA-2016:0277
+datasource_id: redhat_importer_v2/RHSA-2016:0277
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_0277.json
+aliases:
+  - CVE-2015-7547
+summary: |
+  Updated rhev-hypervisor packages that fix one security issue are now
+  available.
+
+  Red Hat Product Security has rated this update as having Critical security
+  impact. A Common Vulnerability Scoring System (CVSS) base score, which
+  gives a detailed severity rating, is available from the CVE link in the
+  References section.
+
+  The rhev-hypervisor package provides a Red Hat Enterprise Virtualization
+  Hypervisor ISO disk image. The Red Hat Enterprise Virtualization Hypervisor
+  is a dedicated Kernel-based Virtual Machine (KVM) hypervisor. It includes
+  everything necessary to run and manage virtual machines: A subset of the
+  Red Hat Enterprise Linux operating environment and the Red Hat Enterprise
+  Virtualization Agent.
+
+  Note: Red Hat Enterprise Virtualization Hypervisor is only available for
+  the Intel 64 and AMD64 architectures with virtualization extensions.
+
+  A stack-based buffer overflow was found in the way the libresolv library
+  performed dual A/AAAA DNS queries. A remote attacker could create a
+  specially crafted DNS response which could cause libresolv to crash or,
+  potentially, execute code with the permissions of the user running the
+  library. Note: this issue is only exposed when libresolv is called from the
+  nss_dns NSS service module. (CVE-2015-7547)
+
+  This issue was discovered by the Google Security Team and Red Hat.
+
+  Users of Red Hat Enterprise Virtualization Hypervisor are advised to
+  upgrade to these updated packages.
+impacted_packages:
+  - purl: pkg:rpm/redhat/rhev-hypervisor6?arch=noarch
+    affected_versions: vers:rpm/<6.7-20160104.2.el6ev
+    fixed_versions: vers:rpm/6.7-20160104.2.el6ev
+  - purl: pkg:rpm/redhat/rhev-hypervisor7?arch=noarch
+    affected_versions: vers:rpm/<7.2-20160105.2.el6ev
+    fixed_versions: vers:rpm/7.2-20160105.2.el6ev
+  - purl: pkg:rpm/redhat/rhev-hypervisor7?arch=noarch
+    affected_versions: vers:rpm/<7.2-20160105.2.el7ev
+    fixed_versions: vers:rpm/7.2-20160105.2.el7ev
+  - purl: pkg:rpm/redhat/rhev-hypervisor7?arch=src
+    affected_versions: vers:rpm/<7.2-20160105.2.el6ev
+    fixed_versions: vers:rpm/7.2-20160105.2.el6ev
+  - purl: pkg:rpm/redhat/rhev-hypervisor7?arch=src
+    affected_versions: vers:rpm/<7.2-20160105.2.el7ev
+    fixed_versions: vers:rpm/7.2-20160105.2.el7ev
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_0277.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/articles/2161461
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1293532
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_0277.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2016:0277
+    reference_type:
+    reference_id: RHSA-2016:0277

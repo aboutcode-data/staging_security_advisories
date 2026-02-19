@@ -1,0 +1,77 @@
+advisory_id: RHSA-2016:2809
+datasource_id: redhat_importer_v2/RHSA-2016:2809
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2809.json
+aliases:
+  - CVE-2016-8638
+summary: |
+  An update for ipsilon is now available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The ipsilon packages provide the Ipsilon identity provider service for federated single sign-on (SSO). Ipsilon links authentication providers and applications or utilities to allow for SSO. It includes a server and utilities to configure Apache-based service providers.
+
+  Security Fix(es):
+
+  * A vulnerability was found in ipsilon in the SAML2 provider's handling of sessions. An attacker able to hit the logout URL could determine what service providers other users are logged in to and terminate their sessions. (CVE-2016-8638)
+
+  This issue was discovered by Patrick Uiterwijk (Red Hat) and Howard Johnson.
+impacted_packages:
+  - purl: pkg:rpm/redhat/ipsilon-persona?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-filesystem?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-tools-ipa?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-infosssd?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-saml2?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-base?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-authldap?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-authgssapi?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-saml2-base?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-client?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon-authform?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+  - purl: pkg:rpm/redhat/ipsilon?arch=src
+    affected_versions: vers:rpm/<1.0.0-13.el7_3
+    fixed_versions: vers:rpm/1.0.0-13.el7_3
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2809.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2016:2809
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1392829
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2809.json
+    reference_type:
+    reference_id:

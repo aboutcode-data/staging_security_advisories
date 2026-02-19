@@ -1,0 +1,104 @@
+advisory_id: RHSA-2018:1216
+datasource_id: redhat_importer_v2/RHSA-2018:1216
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1216.json
+aliases:
+  - CVE-2017-5715
+  - CVE-2017-8824
+summary: |
+  An update for kernel is now available for Red Hat Enterprise Linux 7.2 Advanced Update Support, Red Hat Enterprise Linux 7.2 Telco Extended Update Support, and Red Hat Enterprise Linux 7.2 Update Services for SAP Solutions.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+  Security Fix(es):
+
+  * kernel: Use-after-free vulnerability in DCCP socket (CVE-2017-8824, Important)
+
+  For more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.
+
+  Red Hat would like to thank Mohamed Ghannam for reporting this issue.
+
+  Bug Fix(es):
+
+  * Previously, the XFS code included a circular dependency between the xfs-log and the xfs-cil workqueues. Consequently, an XFS deadlock occurred in some cases. This update adds a new workqueue dedicated to the log covering background task to avoid the deadlock. (BZ#1543303)
+
+  * The kernel build requirements have been updated to the GNU Compiler Collection (GCC) compiler version that has the support for Retpolines. The Retpolines mechanism is a software construct that leverages specific knowledge of the underlying hardware to mitigate the branch target injection, also known as Spectre variant 2 vulnerability described in CVE-2017-5715. (BZ#1553181)
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-libs-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/perf?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools-libs?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/python-perf?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-tools?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-debug?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-headers?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-abi-whitelists?arch=noarch
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<3.10.0-327.66.1.el7
+    fixed_versions: vers:rpm/3.10.0-327.66.1.el7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1216.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:1216
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_1216.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1519591
+    reference_type: bug
+    reference_id: 1519591

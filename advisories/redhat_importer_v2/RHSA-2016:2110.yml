@@ -1,0 +1,102 @@
+advisory_id: RHSA-2016:2110
+datasource_id: redhat_importer_v2/RHSA-2016:2110
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2110.json
+aliases:
+  - CVE-2016-5195
+  - CVE-2016-7039
+  - CVE-2016-8666
+summary: |
+  An update for kernel-rt is now available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.
+
+  Security Fix(es):
+
+  * A race condition was found in the way the Linux kernel's memory subsystem handled the copy-on-write (COW) breakage of private read-only memory mappings. An unprivileged, local user could use this flaw to gain write access to otherwise read-only memory mappings and thus increase their privileges on the system. (CVE-2016-5195, Important)
+
+  * Linux kernel built with the 802.1Q/802.1ad VLAN(CONFIG_VLAN_8021Q) OR Virtual eXtensible Local Area Network(CONFIG_VXLAN) with Transparent Ethernet Bridging(TEB) GRO support, is vulnerable to a stack overflow issue. It could occur while receiving large packets via GRO path; As an unlimited recursion could unfold in both VLAN and TEB modules, leading to a stack corruption in the kernel. (CVE-2016-7039, Important)
+
+  Red Hat would like to thank Phil Oester for reporting CVE-2016-5195.
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-rt-doc?arch=noarch
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-kvm-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-trace-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm?arch=x86_64
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+  - purl: pkg:rpm/redhat/kernel-rt?arch=src
+    affected_versions: vers:rpm/<3.10.0-327.36.3.rt56.238.el7
+    fixed_versions: vers:rpm/3.10.0-327.36.3.rt56.238.el7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2110.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1375944
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_2110.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/2706661
+    reference_type: other
+    reference_id: 2706661
+  - url: https://access.redhat.com/errata/RHSA-2016:2110
+    reference_type:
+    reference_id: RHSA-2016:2110
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1384344
+    reference_type: other
+    reference_id: show_bug.cgi?id=1384344

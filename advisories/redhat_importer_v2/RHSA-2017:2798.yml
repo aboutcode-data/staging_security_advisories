@@ -1,0 +1,89 @@
+advisory_id: RHSA-2017:2798
+datasource_id: redhat_importer_v2/RHSA-2017:2798
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_2798.json
+aliases:
+  - CVE-2017-1000253
+summary: |
+  An update for kernel is now available for Red Hat Enterprise Linux 6.5 Advanced Update Support and Red Hat Enterprise Linux 6.5 Telco Extended Update Support.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+  Security Fix(es):
+
+  * A flaw was found in the way the Linux kernel loaded ELF executables. Provided that an application was built as Position Independent Executable (PIE), the loader could allow part of that application's data segment to map over the memory area reserved for its stack, potentially resulting in memory corruption. An unprivileged local user with access to SUID (or otherwise privileged) PIE binary could use this flaw to escalate their privileges on the system. (CVE-2017-1000253, Important)
+
+  Red Hat would like to thank Qualys Research Labs for reporting this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/python-perf?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/python-perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/perf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/perf?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-headers?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-debug?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-firmware?arch=noarch
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+  - purl: pkg:rpm/redhat/kernel-abi-whitelists?arch=noarch
+    affected_versions: vers:rpm/<2.6.32-431.85.1.el6
+    fixed_versions: vers:rpm/2.6.32-431.85.1.el6
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_2798.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/3189592
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_2798.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1492212
+    reference_type: bug
+    reference_id: 1492212
+  - url: https://access.redhat.com/errata/RHSA-2017:2798
+    reference_type: advisory
+    reference_id: RHSA-2017:2798

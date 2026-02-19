@@ -1,0 +1,85 @@
+advisory_id: RHSA-2017:3080
+datasource_id: redhat_importer_v2/RHSA-2017:3080
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_3080.json
+aliases:
+  - CVE-2017-12615
+  - CVE-2017-12617
+  - CVE-2017-5647
+  - CVE-2017-5664
+summary: |
+  An update for tomcat6 is now available for Red Hat Enterprise Linux 6.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Apache Tomcat is a servlet container for the Java Servlet and JavaServer Pages (JSP) technologies.
+
+  Security Fix(es):
+
+  * A vulnerability was discovered in Tomcat's handling of pipelined requests when "Sendfile" was used. If sendfile processing completed quickly, it was possible for the Processor to be added to the processor cache twice. This could lead to invalid responses or information disclosure. (CVE-2017-5647)
+
+  * A vulnerability was discovered in the error page mechanism in Tomcat's DefaultServlet implementation. A crafted HTTP request could cause undesired side effects, possibly including the removal or replacement of the custom error page. (CVE-2017-5664)
+
+  * Two vulnerabilities were discovered in Tomcat where if a servlet context was configured with readonly=false and HTTP PUT requests were allowed, an attacker could upload a JSP file to that context and achieve code execution. (CVE-2017-12615, CVE-2017-12617)
+impacted_packages:
+  - purl: pkg:rpm/redhat/tomcat6-jsp-2.1-api?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6-javadoc?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6-servlet-2.5-api?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6-el-2.1-api?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6-webapps?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6-lib?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6-admin-webapps?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6-docs-webapp?arch=noarch
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+  - purl: pkg:rpm/redhat/tomcat6?arch=src
+    affected_versions: vers:rpm/<6.0.24-111.el6_9
+    fixed_versions: vers:rpm/6.0.24-111.el6_9
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_3080.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2017:3080
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2017/rhsa-2017_3080.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1441205
+    reference_type: bug
+    reference_id: 1441205
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1459158
+    reference_type: bug
+    reference_id: 1459158
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1461851
+    reference_type: bug
+    reference_id: 1461851
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1493220
+    reference_type: bug
+    reference_id: 1493220
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1494283
+    reference_type: bug
+    reference_id: 1494283

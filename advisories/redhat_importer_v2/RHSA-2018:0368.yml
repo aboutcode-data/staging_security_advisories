@@ -1,0 +1,162 @@
+advisory_id: RHSA-2018:0368
+datasource_id: redhat_importer_v2/RHSA-2018:0368
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_0368.json
+aliases:
+  - CVE-2017-1000385
+summary: |
+  An update for erlang is now available for Red Hat OpenStack Platform 10.0 (Newton).
+
+  Red Hat Product Security has rated this update as having a security impact of Low. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Erlang is a general-purpose programming language and runtime environment. Erlang has built-in support for concurrency, distribution and fault tolerance.
+
+  Security Fix(es):
+
+  * An erlang TLS server configured with cipher suites using RSA key exchange, may be vulnerable to an Adaptive Chosen Ciphertext attack (AKA Bleichenbacher attack) against RSA. This may result in plain-text recovery of encrypted messages and/or a man-in-the-middle (MiTM) attack, despite the attacker not having gained access to the server’s private key itself. (CVE-2017-1000385)
+impacted_packages:
+  - purl: pkg:rpm/redhat/erlang-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-cosNotification?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-parsetools?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-erts?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-compiler?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-ssl?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-tools?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-diameter?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-runtime_tools?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-syntax_tools?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-otp_mibs?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-ssh?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-orber?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-sasl?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-percept?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-cosFileTransfer?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-odbc?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-stdlib?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-cosTransactions?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-eldap?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-public_key?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-snmp?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-ic?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-os_mon?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-asn1?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-cosEvent?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-inets?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-cosEventDomain?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-cosTime?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-ose?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-erl_docgen?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-cosProperty?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-crypto?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-erl_interface?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-kernel?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-mnesia?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-edoc?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-eunit?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-xmerl?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang-hipe?arch=x86_64
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+  - purl: pkg:rpm/redhat/erlang?arch=src
+    affected_versions: vers:rpm/<18.3.4.7-1.el7ost
+    fixed_versions: vers:rpm/18.3.4.7-1.el7ost
+severities:
+  - score: Low
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_0368.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2018:0368
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#low
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2018/rhsa-2018_0368.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1520400
+    reference_type: bug
+    reference_id: 1520400

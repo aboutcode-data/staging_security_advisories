@@ -1,0 +1,128 @@
+advisory_id: RHSA-2016:1079
+datasource_id: redhat_importer_v2/RHSA-2016:1079
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_1079.json
+aliases:
+  - CVE-2016-1096
+  - CVE-2016-1097
+  - CVE-2016-1098
+  - CVE-2016-1099
+  - CVE-2016-1100
+  - CVE-2016-1101
+  - CVE-2016-1102
+  - CVE-2016-1103
+  - CVE-2016-1104
+  - CVE-2016-1105
+  - CVE-2016-1106
+  - CVE-2016-1107
+  - CVE-2016-1108
+  - CVE-2016-1109
+  - CVE-2016-1110
+  - CVE-2016-4108
+  - CVE-2016-4109
+  - CVE-2016-4110
+  - CVE-2016-4111
+  - CVE-2016-4112
+  - CVE-2016-4113
+  - CVE-2016-4114
+  - CVE-2016-4115
+  - CVE-2016-4116
+  - CVE-2016-4117
+  - CVE-2016-4120
+  - CVE-2016-4121
+  - CVE-2016-4160
+  - CVE-2016-4161
+  - CVE-2016-4162
+  - CVE-2016-4163
+summary: |
+  An update for flash-plugin is now available for Red Hat Enterprise Linux 5 Supplementary and Red Hat Enterprise Linux 6 Supplementary.
+
+  Red Hat Product Security has rated this update as having a security impact of Critical. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The flash-plugin package contains a Mozilla Firefox compatible Adobe Flash Player web browser plug-in.
+
+  This update upgrades Flash Player to version 11.2.202.621.
+
+  Security Fix(es):
+
+  * This update fixes multiple vulnerabilities in Adobe Flash Player. These vulnerabilities, detailed in the Adobe Security Bulletin listed in the References section, could allow an attacker to create a specially crafted SWF file that would cause flash-plugin to crash, execute arbitrary code, or disclose sensitive information when the victim loaded a page containing the malicious SWF content. (CVE-2016-1096, CVE-2016-1097, CVE-2016-1098, CVE-2016-1099, CVE-2016-1100, CVE-2016-1101, CVE-2016-1102, CVE-2016-1103, CVE-2016-1104, CVE-2016-1105, CVE-2016-1106, CVE-2016-1107, CVE-2016-1108, CVE-2016-1109, CVE-2016-1110, CVE-2016-4108, CVE-2016-4109, CVE-2016-4110, CVE-2016-4111, CVE-2016-4112, CVE-2016-4113, CVE-2016-4114, CVE-2016-4115, CVE-2016-4116, CVE-2016-4117)
+impacted_packages:
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i686
+    affected_versions: vers:rpm/<11.2.202.621-1.el6_8
+    fixed_versions: vers:rpm/11.2.202.621-1.el6_8
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<11.2.202.621-1.el5
+    fixed_versions: vers:rpm/11.2.202.621-1.el5
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_1079.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2016/rhsa-2016_1079.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1335058
+    reference_type: bug
+    reference_id: 1335058
+  - url: https://helpx.adobe.com/security/products/flash-player/apsa16-02.html
+    reference_type: other
+    reference_id: apsa16-02.html
+  - url: https://helpx.adobe.com/security/products/flash-player/apsb16-15.html
+    reference_type: other
+    reference_id: apsb16-15.html
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=760
+    reference_type: exploit
+    reference_id: CVE-2016-1096
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/39828.txt
+    reference_type: exploit
+    reference_id: CVE-2016-1096
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=789
+    reference_type: exploit
+    reference_id: CVE-2016-1101
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/39827.txt
+    reference_type: exploit
+    reference_id: CVE-2016-1101
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=791
+    reference_type: exploit
+    reference_id: CVE-2016-1102
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/39824.txt
+    reference_type: exploit
+    reference_id: CVE-2016-1102
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=792
+    reference_type: exploit
+    reference_id: CVE-2016-1103
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/39826.txt
+    reference_type: exploit
+    reference_id: CVE-2016-1103
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=794
+    reference_type: exploit
+    reference_id: CVE-2016-1104
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/39825.txt
+    reference_type: exploit
+    reference_id: CVE-2016-1104
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=799
+    reference_type: exploit
+    reference_id: CVE-2016-1105
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/39829.txt
+    reference_type: exploit
+    reference_id: CVE-2016-1105
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=800
+    reference_type: exploit
+    reference_id: CVE-2016-1106
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/39831.txt
+    reference_type: exploit
+    reference_id: CVE-2016-1106
+  - url: https://bugs.chromium.org/p/project-zero/issues/detail?id=801
+    reference_type: exploit
+    reference_id: CVE-2016-4108
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/39830.txt
+    reference_type: exploit
+    reference_id: CVE-2016-4108
+  - url: https://access.redhat.com/errata/RHSA-2016:1079
+    reference_type:
+    reference_id: RHSA-2016:1079
