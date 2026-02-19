@@ -1,0 +1,25 @@
+advisory_id: OSV-2026-141
+datasource_id: oss_fuzz_importer_v2/OSV-2026-141
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mpv/OSV-2026-141.yaml
+aliases: []
+summary: |
+  Segv on unknown address in yuv2rgb4_X_c
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=478212631
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  yuv2rgb4_X_c
+  packed_vscale
+  ff_swscale
+  ```
+impacted_packages:
+  - purl: pkg:generic/mpv
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=478212631
+    reference_type:
+    reference_id:

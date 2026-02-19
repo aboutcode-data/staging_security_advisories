@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-105
+datasource_id: oss_fuzz_importer_v2/OSV-2025-105
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wavpack/OSV-2025-105.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in unpack_dsd_samples
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=395207094
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  unpack_dsd_samples
+  unpack_samples_worker_thread
+  unpack_samples_worker_thread
+  ```
+impacted_packages:
+  - purl: pkg:generic/wavpack
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=395207094
+    reference_type:
+    reference_id:

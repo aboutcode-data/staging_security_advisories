@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-436
+datasource_id: oss_fuzz_importer_v2/OSV-2025-436
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/graphql-java/OSV-2025-436.yaml
+aliases: []
+summary: |
+  Security exception in graphql.parser.GraphqlAntlrToLanguage.createNonNullType
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=422217211
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  graphql.parser.GraphqlAntlrToLanguage.createNonNullType
+  graphql.parser.GraphqlAntlrToLanguage.createType
+  graphql.parser.GraphqlAntlrToLanguage.createListType
+  ```
+impacted_packages:
+  - purl: pkg:generic/graphql-java
+    affected_versions: vers:generic/22.0.0|22.1.0|22.2.0|22.3.0|22.4.0|23.0.0|23.1.0|24.0.0|24.1.0|24.2.0|25.0.0-beta-3|25.0.0+beta-1|25.0.0+beta-2|25.0.0+beta-4|25.0.0+beta-5
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=422217211
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-584
+datasource_id: oss_fuzz_importer_v2/OSV-2025-584
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/ittiam-systems/libavc.git/OSV-2025-584.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in isvcd_mark_err_slice_skip
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=434978682
+
+  ```
+  Crash type: Heap-buffer-overflow READ 2
+  Crash state:
+  isvcd_mark_err_slice_skip
+  isvcd_video_decode
+  Codec::decodeFrame
+  ```
+impacted_packages:
+  - purl: pkg:generic/libavc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=434978682
+    reference_type:
+    reference_id:

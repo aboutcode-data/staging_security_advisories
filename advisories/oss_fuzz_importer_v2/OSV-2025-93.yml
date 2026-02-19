@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-93
+datasource_id: oss_fuzz_importer_v2/OSV-2025-93
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/tarantool/OSV-2025-93.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in lj_strfmt_pushvf
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=394126186
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 8
+  Crash state:
+  lj_strfmt_pushvf
+  err_msgv
+  lj_err_msg
+  ```
+impacted_packages:
+  - purl: pkg:generic/tarantool
+    affected_versions: vers:generic/3.4.0|3.4.1-entrypoint|3.5.0-entrypoint
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=394126186
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-80
+datasource_id: oss_fuzz_importer_v2/OSV-2025-80
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2025-80.yaml
+aliases: []
+summary: |
+  Segv on unknown address in ndpi_snprintf
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=393420192
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  ndpi_snprintf
+  process_ndpi_collected_info
+  ndpi_workflow_process_packet
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=393420192
+    reference_type:
+    reference_id:

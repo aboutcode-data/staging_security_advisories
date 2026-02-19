@@ -1,0 +1,25 @@
+advisory_id: OSV-2026-112
+datasource_id: oss_fuzz_importer_v2/OSV-2026-112
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/gpsd/OSV-2026-112.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in PrintSERPacket
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=477681214
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  PrintSERPacket
+  garmin_ser_parse
+  gpsd_poll
+  ```
+impacted_packages:
+  - purl: pkg:generic/gpsd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=477681214
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-107
+datasource_id: oss_fuzz_importer_v2/OSV-2025-107
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wavpack/OSV-2025-107.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in get_words_lossless
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=394980079
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  get_words_lossless
+  unpack_samples
+  unpack_samples_worker_thread
+  ```
+impacted_packages:
+  - purl: pkg:generic/wavpack
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=394980079
+    reference_type:
+    reference_id:

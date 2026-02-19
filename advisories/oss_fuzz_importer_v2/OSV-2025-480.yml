@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-480
+datasource_id: oss_fuzz_importer_v2/OSV-2025-480
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/glaze/OSV-2025-480.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in void glz::from<10000u, std::__1::__bit_reference<std::__1::vector<bool, std::__1
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=425725152
+
+  ```
+  Crash type: Stack-buffer-overflow READ 1
+  Crash state:
+  void glz::from<10000u, std::__1::__bit_reference<std::__1::vector<bool, std::__1
+  void glz::from<10000u, std::__1::vector<bool, std::__1::allocator<bool>>>::op<gl
+  void glz::visit<4ul, void glz::from<10000u, my_struct>::op<glz::opts_csv{10000u,
+  ```
+impacted_packages:
+  - purl: pkg:generic/glaze
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=425725152
+    reference_type:
+    reference_id:

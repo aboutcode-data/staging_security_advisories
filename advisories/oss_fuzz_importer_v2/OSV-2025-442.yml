@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-442
+datasource_id: oss_fuzz_importer_v2/OSV-2025-442
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/jsoup/OSV-2025-442.yaml
+aliases: []
+summary: |
+  Security exception in org.jsoup.parser.HtmlTreeBuilder.process
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=422516687
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.jsoup.parser.HtmlTreeBuilder.process
+  org.jsoup.parser.HtmlTreeBuilderState$8.process
+  org.jsoup.parser.TreeBuilder.currentElement
+  ```
+impacted_packages:
+  - purl: pkg:generic/jsoup
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=422516687
+    reference_type:
+    reference_id:

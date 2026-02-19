@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-793
+datasource_id: oss_fuzz_importer_v2/OSV-2025-793
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/kamailio/OSV-2025-793.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in parse_from_header
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=447719691
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  parse_from_header
+  fuzz_parse_msg.c
+  parse_headers
+  ```
+impacted_packages:
+  - purl: pkg:generic/kamailio
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=447719691
+    reference_type:
+    reference_id:

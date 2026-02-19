@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-33
+datasource_id: oss_fuzz_importer_v2/OSV-2025-33
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2025-33.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in pcpp::RawPacket::insertData
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=390004170
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  pcpp::RawPacket::insertData
+  pcpp::Packet::extendLayer
+  pcpp::BgpUpdateMessageLayer::setNetworkLayerReachabilityInfo
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=390004170
+    reference_type:
+    reference_id:

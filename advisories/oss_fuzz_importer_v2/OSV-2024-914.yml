@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-914
+datasource_id: oss_fuzz_importer_v2/OSV-2024-914
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/boost/OSV-2024-914.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in boost::re_detail_500::basic_regex_formatter<std::__1::ostream_iterator<char, cha
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66851
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  boost::re_detail_500::basic_regex_formatter<std::__1::ostream_iterator<char, cha
+  boost::re_detail_500::basic_regex_formatter<std::__1::ostream_iterator<char, cha
+  std::__1::ostream_iterator<char, char, std::__1::char_traits<char> > boost::re_d
+  ```
+impacted_packages:
+  - purl: pkg:generic/boost
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=66851
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-591
+datasource_id: oss_fuzz_importer_v2/OSV-2025-591
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/mpv-player/mpv/OSV-2025-591.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in mov_read_header
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=435536867
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  mov_read_header
+  avformat_open_input
+  demux_open_lavf
+  ```
+impacted_packages:
+  - purl: pkg:generic/mpv
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=435536867
+    reference_type:
+    reference_id:

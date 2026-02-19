@@ -1,0 +1,24 @@
+advisory_id: OSV-2025-486
+datasource_id: oss_fuzz_importer_v2/OSV-2025-486
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/opencv/opencv.git/OSV-2025-486.yaml
+aliases: []
+summary: |
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=426783958
+
+  ```
+  Crash type: Bad-cast
+  Crash state:
+  Bad-cast to cv::PngDecoder from invalid vptr
+  cv::PngDecoder::readData
+  cv::imdecode_
+  ```
+impacted_packages:
+  - purl: pkg:generic/opencv
+    affected_versions: vers:generic/4.12.0|5.0.0-alpha
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=426783958
+    reference_type:
+    reference_id:

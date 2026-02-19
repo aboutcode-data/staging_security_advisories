@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-965
+datasource_id: oss_fuzz_importer_v2/OSV-2024-965
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/flac/OSV-2024-965.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in FLAC__stream_encoder_init_ogg_file
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42537419
+
+  ```
+  Crash type: Stack-buffer-overflow READ 13
+  Crash state:
+  FLAC__stream_encoder_init_ogg_file
+  EncoderSession_init_encoder
+  flac__encode_file
+  ```
+impacted_packages:
+  - purl: pkg:generic/flac
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42537419
+    reference_type:
+    reference_id:

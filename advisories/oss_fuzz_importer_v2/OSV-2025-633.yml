@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-633
+datasource_id: oss_fuzz_importer_v2/OSV-2025-633
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/liblouis/liblouis/OSV-2025-633.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in _lou_handlePassVariableAction
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=438413376
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  _lou_handlePassVariableAction
+  passDoAction
+  translateString
+  ```
+impacted_packages:
+  - purl: pkg:generic/liblouis
+    affected_versions: vers:generic/3.32.0|3.33.0|3.34.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=438413376
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-608
+datasource_id: oss_fuzz_importer_v2/OSV-2025-608
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/davea42/libdwarf-code/OSV-2025-608.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in _dwarf_memcpy_noswap_bytes
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=437060549
+
+  ```
+  Crash type: Heap-buffer-overflow READ 4
+  Crash state:
+  _dwarf_memcpy_noswap_bytes
+  _dwarf_length_of_cu_header
+  dwarf_global_name_offsets
+  ```
+impacted_packages:
+  - purl: pkg:generic/libdwarf
+    affected_versions: vers:generic/0.12.0|2.0.0|2.1.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=437060549
+    reference_type:
+    reference_id:

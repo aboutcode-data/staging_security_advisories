@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-994
+datasource_id: oss_fuzz_importer_v2/OSV-2024-994
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/gpsd/OSV-2024-994.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in packet_parse
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=71124
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  packet_parse
+  packet_get1
+  packet_get
+  ```
+impacted_packages:
+  - purl: pkg:generic/gpsd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=71124
+    reference_type:
+    reference_id:

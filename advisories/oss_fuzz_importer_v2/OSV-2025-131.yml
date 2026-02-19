@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-131
+datasource_id: oss_fuzz_importer_v2/OSV-2025-131
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libvips/OSV-2025-131.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in vips_foreign_save_heif_write_block
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=396460413
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE {*}
+  Crash state:
+  vips_foreign_save_heif_write_block
+  wbuffer_write_thread
+  vips_threadset_work
+  ```
+impacted_packages:
+  - purl: pkg:generic/libvips
+    affected_versions: vers:generic/8.16.1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=396460413
+    reference_type:
+    reference_id:

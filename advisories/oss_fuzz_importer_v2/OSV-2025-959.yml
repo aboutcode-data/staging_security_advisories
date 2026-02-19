@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-959
+datasource_id: oss_fuzz_importer_v2/OSV-2025-959
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/quickjs/OSV-2025-959.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in re_parse_term
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=464349132
+
+  ```
+  Crash type: Heap-buffer-overflow READ 2
+  Crash state:
+  re_parse_term
+  re_parse_disjunction
+  re_parse_term
+  ```
+impacted_packages:
+  - purl: pkg:generic/quickjs
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=464349132
+    reference_type:
+    reference_id:

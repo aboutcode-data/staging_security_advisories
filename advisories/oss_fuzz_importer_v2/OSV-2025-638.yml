@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-638
+datasource_id: oss_fuzz_importer_v2/OSV-2025-638
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/allegro/json-avro-converter/OSV-2025-638.yaml
+aliases: []
+summary: |
+  Security exception in com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deser
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=438873397
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deser
+  com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.mapOb
+  com.fasterxml.jackson.core.json.UTF8StreamJsonParser.findName
+  ```
+impacted_packages:
+  - purl: pkg:generic/json2avro
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=438873397
+    reference_type:
+    reference_id:

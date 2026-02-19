@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-847
+datasource_id: oss_fuzz_importer_v2/OSV-2024-847
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libssh2/OSV-2024-847.yaml
+aliases: []
+summary: |
+  Null-dereference READ in _libssh2_packet_add
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69234
+
+  ```
+  Crash type: Null-dereference READ
+  Crash state:
+  _libssh2_packet_add
+  fullpacket
+  _libssh2_transport_read
+  ```
+impacted_packages:
+  - purl: pkg:generic/libssh2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69234
+    reference_type:
+    reference_id:

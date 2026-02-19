@@ -1,0 +1,24 @@
+advisory_id: OSV-2025-767
+datasource_id: oss_fuzz_importer_v2/OSV-2025-767
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/tinyusb/OSV-2025-767.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in dcd_int_handler
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=445845231
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  dcd_int_handler
+  fuzz.cc
+  ```
+impacted_packages:
+  - purl: pkg:generic/tinyusb
+    affected_versions: vers:generic/0.19.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=445845231
+    reference_type:
+    reference_id:

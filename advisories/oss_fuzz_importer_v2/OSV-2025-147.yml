@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-147
+datasource_id: oss_fuzz_importer_v2/OSV-2025-147
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2025-147.yaml
+aliases: []
+summary: |
+  UNKNOWN WRITE in ndpi_free_flow_data
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=397731142
+
+  ```
+  Crash type: UNKNOWN WRITE
+  Crash state:
+  ndpi_free_flow_data
+  ndpi_flow_free
+  process_ndpi_collected_info
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=397731142
+    reference_type:
+    reference_id:

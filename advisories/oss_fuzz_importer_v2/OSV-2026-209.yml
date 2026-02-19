@@ -1,0 +1,24 @@
+advisory_id: OSV-2026-209
+datasource_id: oss_fuzz_importer_v2/OSV-2026-209
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/gpsd/OSV-2026-209.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in ntrip_parse_url
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=482281265
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  ntrip_parse_url
+  FuzzClient.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/gpsd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=482281265
+    reference_type:
+    reference_id:

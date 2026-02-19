@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-817
+datasource_id: oss_fuzz_importer_v2/OSV-2024-817
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libpcap/OSV-2024-817.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in pcapint_filter_with_aux_data
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68862
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  pcapint_filter_with_aux_data
+  fuzz_both.c
+  pcapint_filter_with_aux_data
+  ```
+impacted_packages:
+  - purl: pkg:generic/libpcap
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68862
+    reference_type:
+    reference_id:

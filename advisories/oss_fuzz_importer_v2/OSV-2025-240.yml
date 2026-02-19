@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-240
+datasource_id: oss_fuzz_importer_v2/OSV-2025-240
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/powsybl-java/OSV-2025-240.yaml
+aliases: []
+summary: |
+  Security exception in com.powsybl.commons.xml.XmlUtil.lambda$skipSubElements$0
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=406332767
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  com.powsybl.commons.xml.XmlUtil.lambda$skipSubElements$0
+  com.powsybl.commons.xml.XmlUtil.readSubElements
+  com.powsybl.commons.xml.XmlUtil.skipSubElements
+  ```
+impacted_packages:
+  - purl: pkg:generic/powsybl-java
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=406332767
+    reference_type:
+    reference_id:

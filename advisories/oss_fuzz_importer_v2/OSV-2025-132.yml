@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-132
+datasource_id: oss_fuzz_importer_v2/OSV-2025-132
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/net-snmp/OSV-2025-132.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in netsnmp_hex_to_binary
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=396777457
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  netsnmp_hex_to_binary
+  snmpv3_parse_arg
+  netsnmp_parse_args
+  ```
+impacted_packages:
+  - purl: pkg:generic/net-snmp
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=396777457
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-845
+datasource_id: oss_fuzz_importer_v2/OSV-2025-845
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libical/OSV-2025-845.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in icaltime_day_of_year
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=452914686
+
+  ```
+  Crash type: Global-buffer-overflow READ 4
+  Crash state:
+  icaltime_day_of_year
+  expand_year_days
+  __iterator_set_start
+  ```
+impacted_packages:
+  - purl: pkg:generic/libical
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=452914686
+    reference_type:
+    reference_id:

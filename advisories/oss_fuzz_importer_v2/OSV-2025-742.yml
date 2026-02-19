@@ -1,0 +1,23 @@
+advisory_id: OSV-2025-742
+datasource_id: oss_fuzz_importer_v2/OSV-2025-742
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/tinyusb/OSV-2025-742.yaml
+aliases: []
+summary: |
+  Null-dereference READ in ubsan_GetStackTrace
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=444622228
+
+  ```
+  Crash type: Null-dereference READ
+  Crash state:
+  ubsan_GetStackTrace
+  ```
+impacted_packages:
+  - purl: pkg:generic/tinyusb
+    affected_versions: vers:generic/0.19.0|0.20.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=444622228
+    reference_type:
+    reference_id:

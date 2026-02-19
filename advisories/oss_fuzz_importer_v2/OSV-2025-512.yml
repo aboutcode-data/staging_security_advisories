@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-512
+datasource_id: oss_fuzz_importer_v2/OSV-2025-512
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/clamav/OSV-2025-512.yaml
+aliases: []
+summary: |
+  Invalid-free in pdf_decodestream
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=428754704
+
+  ```
+  Crash type: Invalid-free
+  Crash state:
+  pdf_decodestream
+  pdf_extract_obj
+  cli_pdf
+  ```
+impacted_packages:
+  - purl: pkg:generic/clamav
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=428754704
+    reference_type:
+    reference_id:

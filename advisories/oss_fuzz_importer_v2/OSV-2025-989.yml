@@ -1,0 +1,24 @@
+advisory_id: OSV-2025-989
+datasource_id: oss_fuzz_importer_v2/OSV-2025-989
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mosquitto/OSV-2025-989.yaml
+aliases: []
+summary: |
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=468922225
+
+  ```
+  Crash type: Bad-cast
+  Crash state:
+  Bad-cast to UT_hash_bucket' (aka 'struct UT_hash_bucket')password_file__cleanup
+  mosquitto_security_cleanup_default
+  broker_fuzz_password_file.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/mosquitto
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=468922225
+    reference_type:
+    reference_id:

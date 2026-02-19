@@ -1,0 +1,24 @@
+advisory_id: OSV-2026-244
+datasource_id: oss_fuzz_importer_v2/OSV-2026-244
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libhevc/OSV-2026-244.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in ihevcd_fmt_conv
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=484466027
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  ihevcd_fmt_conv
+  ihevcd_process_thread
+  ```
+impacted_packages:
+  - purl: pkg:generic/libhevc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=484466027
+    reference_type:
+    reference_id:

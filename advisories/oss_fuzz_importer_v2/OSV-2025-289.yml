@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-289
+datasource_id: oss_fuzz_importer_v2/OSV-2025-289
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/openthread/OSV-2025-289.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in ot::Cli::Utils::OutputLine
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=411460530
+
+  ```
+  Crash type: Stack-buffer-overflow READ {*}
+  Crash state:
+  ot::Cli::Utils::OutputLine
+  ot::Cli::Dns::HandleDnsRecordResponse
+  ot::Dns::Client::FinalizeQuery
+  ```
+impacted_packages:
+  - purl: pkg:generic/openthread
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=411460530
+    reference_type:
+    reference_id:

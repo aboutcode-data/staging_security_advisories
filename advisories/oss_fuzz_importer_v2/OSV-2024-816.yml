@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-816
+datasource_id: oss_fuzz_importer_v2/OSV-2024-816
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2024-816.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in pcpp::SSLClientHelloMessage::ClientHelloTLSFingerprint::toString
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69006
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  pcpp::SSLClientHelloMessage::ClientHelloTLSFingerprint::toString
+  pcpp::SSLClientHelloMessage::ClientHelloTLSFingerprint::toStringAndMD5
+  pcpp::SSLClientHelloMessage::ClientHelloTLSFingerprint::toMD5
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=69006
+    reference_type:
+    reference_id:

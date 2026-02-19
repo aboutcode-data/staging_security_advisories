@@ -1,0 +1,25 @@
+advisory_id: OSV-2026-21
+datasource_id: oss_fuzz_importer_v2/OSV-2026-21
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2026-21.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in processTLSBlock
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=474015854
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  processTLSBlock
+  ndpi_search_dtls
+  ndpi_search_tls_wrapper
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=474015854
+    reference_type:
+    reference_id:

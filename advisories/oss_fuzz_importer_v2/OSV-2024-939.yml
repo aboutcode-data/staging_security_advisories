@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-939
+datasource_id: oss_fuzz_importer_v2/OSV-2024-939
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-poi/OSV-2024-939.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.poi.util.LZWDecompresser.decompress
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=70377
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.poi.util.LZWDecompresser.decompress
+  org.apache.poi.util.LZWDecompresser.decompress
+  org.apache.poi.hdgf.streams.CompressedStreamStore.decompress
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-poi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=70377
+    reference_type:
+    reference_id:

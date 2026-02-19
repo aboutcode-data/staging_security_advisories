@@ -1,0 +1,25 @@
+advisory_id: OSV-2026-2
+datasource_id: oss_fuzz_importer_v2/OSV-2026-2
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/fluent-bit/OSV-2026-2.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in cmt_mpack_consume_uint_tag
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=472785094
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 8
+  Crash state:
+  cmt_mpack_consume_uint_tag
+  cmt_mpack_unpack_array
+  cmt_mpack_unpack_map
+  ```
+impacted_packages:
+  - purl: pkg:generic/fluent-bit
+    affected_versions: vers:generic/4.2.1|4.2.2
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=472785094
+    reference_type:
+    reference_id:

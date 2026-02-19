@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-589
+datasource_id: oss_fuzz_importer_v2/OSV-2025-589
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/ittiam-systems/libavc.git/OSV-2025-589.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in isvcd_decode_recon_tfr_nmb_base_lyr
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=435086517
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  isvcd_decode_recon_tfr_nmb_base_lyr
+  isvcd_parse_inter_slice_data_cabac
+  isvcd_parse_pslice
+  ```
+impacted_packages:
+  - purl: pkg:generic/libavc
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=435086517
+    reference_type:
+    reference_id:

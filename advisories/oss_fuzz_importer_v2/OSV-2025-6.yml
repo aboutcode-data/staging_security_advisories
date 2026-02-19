@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-6
+datasource_id: oss_fuzz_importer_v2/OSV-2025-6
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libvips/OSV-2025-6.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in next_marker
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=387317434
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  next_marker
+  read_markers
+  consume_markers
+  ```
+impacted_packages:
+  - purl: pkg:generic/libvips
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=387317434
+    reference_type:
+    reference_id:

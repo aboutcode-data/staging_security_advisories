@@ -1,0 +1,25 @@
+advisory_id: OSV-2026-200
+datasource_id: oss_fuzz_importer_v2/OSV-2026-200
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/kmime/OSV-2026-200.yaml
+aliases: []
+summary: |
+  Global-buffer-overflow in nameMatch
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=481841731
+
+  ```
+  Crash type: Global-buffer-overflow READ 1
+  Crash state:
+  nameMatch
+  QStringConverter::QStringConverter
+  KCodecs::parseEncodedWord
+  ```
+impacted_packages: []
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=481841731
+    reference_type:
+    reference_id:
+  - url: https://invent.kde.org/pim/kmime.git
+    reference_type: commit
+    reference_id: 61d9d5dbf5013ad8b1968611fdd0a89676920444

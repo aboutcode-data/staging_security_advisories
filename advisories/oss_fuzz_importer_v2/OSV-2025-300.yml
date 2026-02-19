@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-300
+datasource_id: oss_fuzz_importer_v2/OSV-2025-300
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcre2/OSV-2025-300.yaml
+aliases: []
+summary: |
+  Negative-size-param in recurse_update_offsets
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=413078692
+
+  ```
+  Crash type: Negative-size-param
+  Crash state:
+  recurse_update_offsets
+  match
+  pcre2_match_8
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcre2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=413078692
+    reference_type:
+    reference_id:

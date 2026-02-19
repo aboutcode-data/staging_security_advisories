@@ -1,0 +1,25 @@
+advisory_id: OSV-2026-87
+datasource_id: oss_fuzz_importer_v2/OSV-2026-87
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/apache-poi/OSV-2026-87.yaml
+aliases: []
+summary: |
+  Security exception in org.apache.poi.util.IOUtils.safelyAllocate
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=476184826
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  org.apache.poi.util.IOUtils.safelyAllocate
+  org.apache.poi.ddf.EscherComplexProperty.ensureComplexData
+  org.apache.poi.ddf.EscherComplexProperty.getComplexData
+  ```
+impacted_packages:
+  - purl: pkg:generic/apache-poi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=476184826
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-162
+datasource_id: oss_fuzz_importer_v2/OSV-2025-162
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/net-snmp/OSV-2025-162.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in snmp_in_options
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=398067543
+
+  ```
+  Crash type: Heap-buffer-overflow READ 8
+  Crash state:
+  snmp_in_options
+  netsnmp_parse_args
+  snmp_parse_args_fuzzer.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/net-snmp
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=398067543
+    reference_type:
+    reference_id:

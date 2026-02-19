@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-145
+datasource_id: oss_fuzz_importer_v2/OSV-2025-145
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ndpi/OSV-2025-145.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ___interceptor_strncat
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=397731139
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  ___interceptor_strncat
+  process_ndpi_collected_info
+  node_cleanup_walker
+  ```
+impacted_packages:
+  - purl: pkg:generic/ndpi
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=397731139
+    reference_type:
+    reference_id:

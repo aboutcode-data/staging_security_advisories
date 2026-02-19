@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-901
+datasource_id: oss_fuzz_importer_v2/OSV-2025-901
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/arrow/OSV-2025-901.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TMemoryBu
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=461058054
+
+  ```
+  Crash type: Heap-use-after-free READ 1
+  Crash state:
+  apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TMemoryBu
+  unsigned int parquet::format::OffsetIndex::read<apache::thrift::protocol::TCompa
+  void parquet::ThriftDeserializer::DeserializeUnencryptedMessage<parquet::format:
+  ```
+impacted_packages:
+  - purl: pkg:generic/arrow
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=461058054
+    reference_type:
+    reference_id:

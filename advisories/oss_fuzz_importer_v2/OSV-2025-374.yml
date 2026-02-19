@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-374
+datasource_id: oss_fuzz_importer_v2/OSV-2025-374
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/seladb/PcapPlusPlus/OSV-2025-374.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in pcpp::SomeIpSdEntry::SomeIpSdEntry
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=418036603
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  pcpp::SomeIpSdEntry::SomeIpSdEntry
+  pcpp::SomeIpSdLayer::getEntries
+  readParsedPacket
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=418036603
+    reference_type:
+    reference_id:

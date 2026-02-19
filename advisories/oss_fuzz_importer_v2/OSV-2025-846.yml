@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-846
+datasource_id: oss_fuzz_importer_v2/OSV-2025-846
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/quickjs/OSV-2025-846.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in js_create_function
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=453198741
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  js_create_function
+  __JS_EvalInternal
+  JS_EvalObject
+  ```
+impacted_packages:
+  - purl: pkg:generic/quickjs
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=453198741
+    reference_type:
+    reference_id:

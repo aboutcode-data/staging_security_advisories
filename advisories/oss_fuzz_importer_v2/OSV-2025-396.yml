@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-396
+datasource_id: oss_fuzz_importer_v2/OSV-2025-396
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/checkstyle/OSV-2025-396.yaml
+aliases: []
+summary: |
+  Security exception in com.puppycrawl.tools.checkstyle.grammar.java.JavaLanguageParser.expr
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=419059436
+
+  ```
+  Crash type: Security exception
+  Crash state:
+  com.puppycrawl.tools.checkstyle.grammar.java.JavaLanguageParser.expr
+  java.base/sun.nio.cs.UTF_8$Encoder.encodeArrayLoop
+  java.base/sun.nio.cs.UTF_8$Encoder.encodeLoop
+  ```
+impacted_packages:
+  - purl: pkg:generic/checkstyle
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=419059436
+    reference_type:
+    reference_id:

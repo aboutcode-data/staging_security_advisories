@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-657
+datasource_id: oss_fuzz_importer_v2/OSV-2025-657
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/curl/OSV-2025-657.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in ftp_pp_statemachine
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=439473053
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  ftp_pp_statemachine
+  ftp_doing
+  multi_runsingle
+  ```
+impacted_packages:
+  - purl: pkg:generic/curl
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=439473053
+    reference_type:
+    reference_id:

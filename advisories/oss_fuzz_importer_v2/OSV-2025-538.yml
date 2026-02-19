@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-538
+datasource_id: oss_fuzz_importer_v2/OSV-2025-538
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/selinux/OSV-2025-538.yaml
+aliases: []
+summary: |
+  Heap-double-free in policydb_destroy
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=430091583
+
+  ```
+  Crash type: Heap-double-free
+  Crash state:
+  policydb_destroy
+  checkpolicy-fuzzer.c
+  define_genfs_context
+  ```
+impacted_packages:
+  - purl: pkg:generic/selinux
+    affected_versions: vers:generic/3.9.0-rc1|3.9.0-rc2|3.9.0-rc3|3.9.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=430091583
+    reference_type:
+    reference_id:

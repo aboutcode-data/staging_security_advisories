@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-384
+datasource_id: oss_fuzz_importer_v2/OSV-2025-384
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/rtpproxy/OSV-2025-384.yaml
+aliases: []
+summary: |
+  Segv on unknown address in rtpp_refcnt_decref
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=418437591
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  rtpp_refcnt_decref
+  hash_table_purge
+  rtpp_wref_purge
+  ```
+impacted_packages:
+  - purl: pkg:generic/rtpproxy
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=418437591
+    reference_type:
+    reference_id:

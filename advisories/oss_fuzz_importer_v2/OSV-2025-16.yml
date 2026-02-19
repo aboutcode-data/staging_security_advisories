@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-16
+datasource_id: oss_fuzz_importer_v2/OSV-2025-16
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/opencv/OSV-2025-16.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in png_free_data
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=386860184
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  png_free_data
+  png_destroy_info_struct
+  png_destroy_read_struct
+  ```
+impacted_packages:
+  - purl: pkg:generic/opencv
+    affected_versions: vers:generic/4.11.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=386860184
+    reference_type:
+    reference_id:

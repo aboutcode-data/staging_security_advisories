@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-978
+datasource_id: oss_fuzz_importer_v2/OSV-2024-978
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/tarantool/OSV-2024-978.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in narrow_conv_backprop
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42537498
+
+  ```
+  Crash type: Stack-buffer-overflow WRITE 4
+  Crash state:
+  narrow_conv_backprop
+  narrow_conv_backprop
+  narrow_conv_backprop
+  ```
+impacted_packages:
+  - purl: pkg:generic/tarantool
+    affected_versions: vers:generic/3.2.0|3.2.1-entrypoint|3.3.0-entrypoint
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=42537498
+    reference_type:
+    reference_id:

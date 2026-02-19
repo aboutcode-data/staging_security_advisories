@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-424
+datasource_id: oss_fuzz_importer_v2/OSV-2025-424
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/rdkit/rdkit.git/OSV-2025-424.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in RDKit::RDValue::destroy
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=421736524
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  RDKit::RDValue::destroy
+  RDKit::Dict::clearVal
+  RDKit::RDProps::clearProp
+  ```
+impacted_packages:
+  - purl: pkg:generic/rdkit
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=421736524
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-550
+datasource_id: oss_fuzz_importer_v2/OSV-2025-550
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2025-550.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in CFF::cff2_cs_opset_t<cff2_cs_opset_subr_subset_t, CFF::subr_subset_param_t, CFF:
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=431867896
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  CFF::cff2_cs_opset_t<cff2_cs_opset_subr_subset_t, CFF::subr_subset_param_t, CFF:
+  cff2_cs_opset_subr_subset_t::process_op
+  CFF::subr_subsetter_t<cff2_subr_subsetter_t, CFF::Subrs<OT::NumType<true, unsign
+  ```
+impacted_packages:
+  - purl: pkg:generic/harfbuzz
+    affected_versions: vers:generic/11.1.0|11.2.0|11.2.1|11.3.0|11.3.1|11.3.2|11.3.3
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=431867896
+    reference_type:
+    reference_id:

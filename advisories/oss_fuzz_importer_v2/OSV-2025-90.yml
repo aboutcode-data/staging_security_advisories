@@ -1,0 +1,23 @@
+advisory_id: OSV-2025-90
+datasource_id: oss_fuzz_importer_v2/OSV-2025-90
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libssh2/OSV-2025-90.yaml
+aliases: []
+summary: |
+  Null-dereference READ in ubsan_GetStackTrace
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=393411531
+
+  ```
+  Crash type: Null-dereference READ
+  Crash state:
+  ubsan_GetStackTrace
+  ```
+impacted_packages:
+  - purl: pkg:generic/libssh2
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=393411531
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-1049
+datasource_id: oss_fuzz_importer_v2/OSV-2025-1049
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/pcapplusplus/OSV-2025-1049.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in unsigned char* std::__1::vector<unsigned char, std::__1::allocator<unsigned char
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=472222304
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  unsigned char* std::__1::vector<unsigned char, std::__1::allocator<unsigned char
+  pcpp::TLSECPointFormatExtension::getECPointFormatList
+  pcpp::SSLClientHelloMessage::generateTLSFingerprint
+  ```
+impacted_packages:
+  - purl: pkg:generic/pcapplusplus
+    affected_versions: vers:generic/24.9.0|25.5.0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=472222304
+    reference_type:
+    reference_id:

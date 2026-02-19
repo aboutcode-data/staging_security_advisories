@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-541
+datasource_id: oss_fuzz_importer_v2/OSV-2025-541
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/bellard/quickjs/OSV-2025-541.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in js_create_function
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=430091578
+
+  ```
+  Crash type: Heap-buffer-overflow READ 2
+  Crash state:
+  js_create_function
+  __JS_EvalInternal
+  JS_EvalObject
+  ```
+impacted_packages:
+  - purl: pkg:generic/quickjs
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=430091578
+    reference_type:
+    reference_id:

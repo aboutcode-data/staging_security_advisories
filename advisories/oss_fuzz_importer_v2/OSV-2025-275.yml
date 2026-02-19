@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-275
+datasource_id: oss_fuzz_importer_v2/OSV-2025-275
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/poco/OSV-2025-275.yaml
+aliases: []
+summary: |
+  UNKNOWN READ in void std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>::__cons
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=410115359
+
+  ```
+  Crash type: UNKNOWN READ
+  Crash state:
+  void std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>::__cons
+  Poco::Net::NTLMCredentials::parseChallengeMessage
+  Poco::Net::HTTPNTLMCredentials::createNTLMMessage
+  ```
+impacted_packages:
+  - purl: pkg:generic/poco
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=410115359
+    reference_type:
+    reference_id:

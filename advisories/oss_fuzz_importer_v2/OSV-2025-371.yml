@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-371
+datasource_id: oss_fuzz_importer_v2/OSV-2025-371
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/gitlab.com/wireshark/wireshark.git/OSV-2025-371.yaml
+aliases: []
+summary: |
+  Index-out-of-bounds in tcp_analyze_sequence_number
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=417518224
+
+  ```
+  Crash type: Index-out-of-bounds
+  Crash state:
+  tcp_analyze_sequence_number
+  dissect_tcp
+  call_dissector_through_handle
+  ```
+impacted_packages:
+  - purl: pkg:generic/wireshark
+    affected_versions: vers:generic/4.4.7|4.4.8-rc0|4.4.8|4.4.9-rc0
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=417518224
+    reference_type:
+    reference_id:

@@ -1,0 +1,23 @@
+advisory_id: OSV-2025-4
+datasource_id: oss_fuzz_importer_v2/OSV-2025-4
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libavif/OSV-2025-4.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in ___interceptor_pthread_create
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=386713390
+
+  ```
+  Crash type: Heap-buffer-overflow READ 8
+  Crash state:
+  ___interceptor_pthread_create
+  ```
+impacted_packages:
+  - purl: pkg:generic/libavif
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=386713390
+    reference_type:
+    reference_id:

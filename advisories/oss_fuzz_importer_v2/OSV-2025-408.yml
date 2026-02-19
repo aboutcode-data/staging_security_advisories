@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-408
+datasource_id: oss_fuzz_importer_v2/OSV-2025-408
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/readstat/OSV-2025-408.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in sav_parse_long_variable_names_record
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=420198855
+
+  ```
+  Crash type: Heap-buffer-overflow READ 1
+  Crash state:
+  sav_parse_long_variable_names_record
+  sav_parse_records_pass2
+  readstat_parse_sav
+  ```
+impacted_packages:
+  - purl: pkg:generic/readstat
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=420198855
+    reference_type:
+    reference_id:

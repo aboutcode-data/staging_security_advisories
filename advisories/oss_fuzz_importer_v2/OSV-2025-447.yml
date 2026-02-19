@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-447
+datasource_id: oss_fuzz_importer_v2/OSV-2025-447
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/https:/github.com/KhronosGroup/SPIRV-Tools.git/OSV-2025-447.yaml
+aliases: []
+summary: |
+  Use-of-uninitialized-value in spvtools::EmitNumericLiteral
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=423059200
+
+  ```
+  Crash type: Use-of-uninitialized-value
+  Crash state:
+  spvtools::EmitNumericLiteral
+  spvtools::disassemble::InstructionDisassembler::EmitOperand
+  spvtools::disassemble::InstructionDisassembler::EmitInstructionImpl
+  ```
+impacted_packages:
+  - purl: pkg:generic/spirv-tools
+    affected_versions: vers:generic/2025.3.0+rc1|2025.4.0+rc1
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=423059200
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2024-9
+datasource_id: oss_fuzz_importer_v2/OSV-2024-9
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/icu/OSV-2024-9.yaml
+aliases: []
+summary: |
+  Stack-buffer-overflow in _canonicalize
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65635
+
+  ```
+  Crash type: Stack-buffer-overflow READ {*}
+  Crash state:
+  _canonicalize
+  ulocimp_getBaseName_75
+  ures_openWithType
+  ```
+impacted_packages:
+  - purl: pkg:generic/icu
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65635
+    reference_type:
+    reference_id:

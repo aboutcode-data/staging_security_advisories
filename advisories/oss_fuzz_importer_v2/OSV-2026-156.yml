@@ -1,0 +1,25 @@
+advisory_id: OSV-2026-156
+datasource_id: oss_fuzz_importer_v2/OSV-2026-156
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/gpsd/OSV-2026-156.yaml
+aliases: []
+summary: |
+  Segv on unknown address in aivdm_analyze
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=478021379
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  aivdm_analyze
+  gpsd_poll
+  FuzzDrivers.c
+  ```
+impacted_packages:
+  - purl: pkg:generic/gpsd
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=478021379
+    reference_type:
+    reference_id:

@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-230
+datasource_id: oss_fuzz_importer_v2/OSV-2025-230
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/wamr/OSV-2025-230.yaml
+aliases: []
+summary: |
+  Heap-buffer-overflow in wasm_loader_prepare_bytecode
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=404921047
+
+  ```
+  Crash type: Heap-buffer-overflow WRITE 8
+  Crash state:
+  wasm_loader_prepare_bytecode
+  load_from_sections
+  wasm_loader_load
+  ```
+impacted_packages:
+  - purl: pkg:generic/wamr
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=404921047
+    reference_type:
+    reference_id:

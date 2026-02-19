@@ -1,0 +1,25 @@
+advisory_id: OSV-2026-91
+datasource_id: oss_fuzz_importer_v2/OSV-2026-91
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/libjpeg-turbo/OSV-2026-91.yaml
+aliases: []
+summary: |
+  Use-after-poison in compress.cc
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=476224483
+
+  ```
+  Crash type: Use-after-poison READ 1
+  Crash state:
+  compress.cc
+  LLVMFuzzerRunDriver
+  self_destruct
+  ```
+impacted_packages:
+  - purl: pkg:generic/libjpeg-turbo
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=476224483
+    reference_type:
+    reference_id:

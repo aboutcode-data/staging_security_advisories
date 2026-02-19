@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-88
+datasource_id: oss_fuzz_importer_v2/OSV-2025-88
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/ntopng/OSV-2025-88.yaml
+aliases: []
+summary: |
+  Segv on unknown address in ___interceptor_free
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=393435814
+
+  ```
+  Crash type: Segv on unknown address
+  Crash state:
+  ___interceptor_free
+  ndpi_free_flow_data
+  ndpi_free_flow
+  ```
+impacted_packages:
+  - purl: pkg:generic/ntopng
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=393435814
+    reference_type:
+    reference_id:

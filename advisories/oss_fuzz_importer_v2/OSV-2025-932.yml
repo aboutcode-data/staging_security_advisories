@@ -1,0 +1,25 @@
+advisory_id: OSV-2025-932
+datasource_id: oss_fuzz_importer_v2/OSV-2025-932
+datasource_url: https://github.com/google/oss-fuzz-vulns/blob/main/vulns/mosquitto/OSV-2025-932.yaml
+aliases: []
+summary: |
+  Heap-use-after-free in password_file__cleanup
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=462551340
+
+  ```
+  Crash type: Heap-use-after-free READ 8
+  Crash state:
+  password_file__cleanup
+  mosquitto_security_cleanup_default
+  broker_fuzz_password_file.cpp
+  ```
+impacted_packages:
+  - purl: pkg:generic/mosquitto
+    affected_versions:
+    fixed_versions:
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=462551340
+    reference_type:
+    reference_id:
