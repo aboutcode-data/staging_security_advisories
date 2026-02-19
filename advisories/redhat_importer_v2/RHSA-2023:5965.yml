@@ -1,0 +1,104 @@
+advisory_id: RHSA-2023:5965
+datasource_id: redhat_importer_v2/RHSA-2023:5965
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_5965.json
+aliases:
+  - CVE-2023-29406
+  - CVE-2023-29409
+  - CVE-2023-39325
+  - CVE-2023-44487
+summary: |
+  An update for collectd-libpod-stats and etcd is now available for Red Hat OpenStack Platform 16.2.5 (Train).
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  A highly-available key value store for shared configuration
+
+  Security Fix(es):
+
+  * golang: net/http, x/net/http2: rapid stream resets can cause excessive work (CVE-2023-44487) (CVE-2023-39325)
+
+  * HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack) (CVE-2023-44487)
+
+  * golang: net/http: insufficient sanitization of Host header (CVE-2023-29406)
+
+  * golang: crypto/tls: slow verification of certificate chains containing large RSA keys (CVE-2023-29409)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/etcd?arch=src
+    affected_versions: vers:rpm/<3.3.23-15.el8ost
+    fixed_versions: vers:rpm/3.3.23-15.el8ost
+  - purl: pkg:rpm/redhat/python-octavia-tests-tempest?arch=src
+    affected_versions: vers:rpm/<1.4.1-2.20230111145026.f7718ef.el8ost
+    fixed_versions: vers:rpm/1.4.1-2.20230111145026.f7718ef.el8ost
+  - purl: pkg:rpm/redhat/etcd?arch=x86_64
+    affected_versions: vers:rpm/<3.3.23-15.el8ost
+    fixed_versions: vers:rpm/3.3.23-15.el8ost
+  - purl: pkg:rpm/redhat/etcd-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<3.3.23-15.el8ost
+    fixed_versions: vers:rpm/3.3.23-15.el8ost
+  - purl: pkg:rpm/redhat/etcd-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.3.23-15.el8ost
+    fixed_versions: vers:rpm/3.3.23-15.el8ost
+  - purl: pkg:rpm/redhat/python3-octavia-tests-tempest-golang?arch=x86_64
+    affected_versions: vers:rpm/<1.4.1-2.20230111145026.f7718ef.el8ost
+    fixed_versions: vers:rpm/1.4.1-2.20230111145026.f7718ef.el8ost
+  - purl: pkg:rpm/redhat/python-octavia-tests-tempest-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<1.4.1-2.20230111145026.f7718ef.el8ost
+    fixed_versions: vers:rpm/1.4.1-2.20230111145026.f7718ef.el8ost
+  - purl: pkg:rpm/redhat/python3-octavia-tests-tempest-golang-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.4.1-2.20230111145026.f7718ef.el8ost
+    fixed_versions: vers:rpm/1.4.1-2.20230111145026.f7718ef.el8ost
+  - purl: pkg:rpm/redhat/etcd?arch=ppc64le
+    affected_versions: vers:rpm/<3.3.23-15.el8ost
+    fixed_versions: vers:rpm/3.3.23-15.el8ost
+  - purl: pkg:rpm/redhat/etcd-debugsource?arch=ppc64le
+    affected_versions: vers:rpm/<3.3.23-15.el8ost
+    fixed_versions: vers:rpm/3.3.23-15.el8ost
+  - purl: pkg:rpm/redhat/etcd-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<3.3.23-15.el8ost
+    fixed_versions: vers:rpm/3.3.23-15.el8ost
+  - purl: pkg:rpm/redhat/python3-octavia-tests-tempest-golang?arch=ppc64le
+    affected_versions: vers:rpm/<1.4.1-2.20230111145026.f7718ef.el8ost
+    fixed_versions: vers:rpm/1.4.1-2.20230111145026.f7718ef.el8ost
+  - purl: pkg:rpm/redhat/python-octavia-tests-tempest-debugsource?arch=ppc64le
+    affected_versions: vers:rpm/<1.4.1-2.20230111145026.f7718ef.el8ost
+    fixed_versions: vers:rpm/1.4.1-2.20230111145026.f7718ef.el8ost
+  - purl: pkg:rpm/redhat/python3-octavia-tests-tempest-golang-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<1.4.1-2.20230111145026.f7718ef.el8ost
+    fixed_versions: vers:rpm/1.4.1-2.20230111145026.f7718ef.el8ost
+  - purl: pkg:rpm/redhat/python3-octavia-tests-tempest?arch=noarch
+    affected_versions: vers:rpm/<1.4.1-2.20230111145026.f7718ef.el8ost
+    fixed_versions: vers:rpm/1.4.1-2.20230111145026.f7718ef.el8ost
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_5965.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/RHSB-2023-003
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2242803
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_5965.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2222167
+    reference_type: bug
+    reference_id: 2222167
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2228743
+    reference_type: bug
+    reference_id: 2228743
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2243296
+    reference_type: bug
+    reference_id: 2243296
+  - url: https://access.redhat.com/errata/RHSA-2023:5965
+    reference_type:
+    reference_id: RHSA-2023:5965

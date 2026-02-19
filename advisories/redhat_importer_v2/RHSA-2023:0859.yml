@@ -1,0 +1,73 @@
+advisory_id: RHSA-2023:0859
+datasource_id: redhat_importer_v2/RHSA-2023:0859
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_0859.json
+aliases:
+  - CVE-2022-4139
+  - CVE-2022-47629
+  - CVE-2023-22809
+summary: "An update for redhat-release-virtualization-host and redhat-virtualization-host is\
+  \ now available for Red Hat Virtualization 4 for Red Hat Enterprise Linux 8.\n\nAn update\
+  \ for redhat-release-virtualization-host, redhat-virtualization-host, and redhat-virtualization-host-productimg\
+  \ is now available for Red Hat Virtualization 4 for Red Hat Enterprise Linux 8.\n\nThe redhat-virtualization-host\
+  \ packages provide the Red Hat Virtualization Host. These packages include redhat-release-virtualization-host,\
+  \ ovirt-node, and rhev-hypervisor. Red Hat Virtualization Hosts (RHVH) are installed using\
+  \ a special build of Red Hat Enterprise Linux with only the packages required to host virtual\
+  \ machines. RHVH features a Cockpit user interface for monitoring the host's resources and\
+  \ performing administrative tasks. \n\nThe ovirt-node-ng packages provide the Red Hat Virtualization\
+  \ Host. These packages include redhat-release-virtualization-host, ovirt-node, and rhev-hypervisor.\
+  \ Red Hat Virtualization Hosts (RHVH) are installed using a special build of Red Hat Enterprise\
+  \ Linux with only the packages required to host virtual machines. RHVH features a Cockpit\
+  \ user interface for monitoring the host's resources and performing administrative tasks.\n\
+  \nSecurity Fix(es):\n\n* kernel: i915: Incorrect GPU TLB flush can lead to random memory access\
+  \ (CVE-2022-4139)\n\n* libksba: integer overflow to code execution (CVE-2022-47629)\n\n* sudo:\
+  \ arbitrary file write with privileges of the RunAs user (CVE-2023-22809)\n\nFor more details\
+  \ about the security issue(s), including the impact, a CVSS score, acknowledgments, and other\
+  \ related information, refer to the CVE page(s) listed in the References section."
+impacted_packages:
+  - purl: pkg:rpm/redhat/redhat-release-virtualization-host?arch=src
+    affected_versions: vers:rpm/<4.5.3-4.el8ev
+    fixed_versions: vers:rpm/4.5.3-4.el8ev
+  - purl: pkg:rpm/redhat/redhat-virtualization-host?arch=src
+    affected_versions: vers:rpm/<4.5.3-202302150956_8.6
+    fixed_versions: vers:rpm/4.5.3-202302150956_8.6
+  - purl: pkg:rpm/redhat/redhat-release-virtualization-host?arch=x86_64
+    affected_versions: vers:rpm/<4.5.3-4.el8ev
+    fixed_versions: vers:rpm/4.5.3-4.el8ev
+  - purl: pkg:rpm/redhat/redhat-release-virtualization-host-content?arch=x86_64
+    affected_versions: vers:rpm/<4.5.3-4.el8ev
+    fixed_versions: vers:rpm/4.5.3-4.el8ev
+  - purl: pkg:rpm/redhat/redhat-virtualization-host-image-update?arch=x86_64
+    affected_versions: vers:rpm/<4.5.3-202302150956_8.6
+    fixed_versions: vers:rpm/4.5.3-202302150956_8.6
+  - purl: pkg:rpm/redhat/redhat-virtualization-host-image-update-placeholder?arch=noarch
+    affected_versions: vers:rpm/<4.5.3-4.el8ev
+    fixed_versions: vers:rpm/4.5.3-4.el8ev
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_0859.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_0859.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2161142
+    reference_type: bug
+    reference_id: 2161142
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2161571
+    reference_type: bug
+    reference_id: 2161571
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2169971
+    reference_type: bug
+    reference_id: 2169971
+  - url: https://access.redhat.com/errata/RHSA-2023:0859
+    reference_type:
+    reference_id: RHSA-2023:0859
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2147572
+    reference_type: other
+    reference_id: show_bug.cgi?id=2147572

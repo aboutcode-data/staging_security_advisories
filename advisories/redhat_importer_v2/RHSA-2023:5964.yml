@@ -1,0 +1,100 @@
+advisory_id: RHSA-2023:5964
+datasource_id: redhat_importer_v2/RHSA-2023:5964
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_5964.json
+aliases:
+  - CVE-2022-41724
+  - CVE-2022-41725
+  - CVE-2023-24534
+  - CVE-2023-24536
+  - CVE-2023-24537
+  - CVE-2023-24538
+  - CVE-2023-29409
+  - CVE-2023-39325
+  - CVE-2023-44487
+summary: |
+  An update for collectd-libpod-stats is now available for Red Hat OpenStack
+  Platform 16.2.5 (Train).
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Collectd plugin for gathering resource usage statistics from containers
+  created with the libpod library.
+
+  Security Fix(es):
+
+  * golang: net/http, x/net/http2: rapid stream resets can cause excessive work (CVE-2023-44487) (CVE-2023-39325)
+
+  * HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack) (CVE-2023-44487)
+
+  * golang: crypto/tls: large handshake records may cause panics (CVE-2022-41724)
+
+  * golang: net/http, mime/multipart: denial of service from excessive resource consumption (CVE-2022-41725)
+
+  * golang: net/http, net/textproto: denial of service from excessive memory allocation (CVE-2023-24534)
+
+  * golang: net/http, net/textproto, mime/multipart: denial of service from excessive resource consumption (CVE-2023-24536)
+
+  * golang: go/parser: Infinite loop in parsing (CVE-2023-24537)
+
+  * golang: html/template: backticks not treated as string delimiters (CVE-2023-24538)
+
+  * golang: crypto/tls: slow verification of certificate chains containing large RSA keys (CVE-2023-29409)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/collectd-libpod-stats?arch=src
+    affected_versions: vers:rpm/<1.0.4-5.el8ost
+    fixed_versions: vers:rpm/1.0.4-5.el8ost
+  - purl: pkg:rpm/redhat/collectd-libpod-stats?arch=x86_64
+    affected_versions: vers:rpm/<1.0.4-5.el8ost
+    fixed_versions: vers:rpm/1.0.4-5.el8ost
+  - purl: pkg:rpm/redhat/collectd-libpod-stats?arch=ppc64le
+    affected_versions: vers:rpm/<1.0.4-5.el8ost
+    fixed_versions: vers:rpm/1.0.4-5.el8ost
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_5964.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/RHSB-2023-003
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2242803
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_5964.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2178488
+    reference_type: bug
+    reference_id: 2178488
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2178492
+    reference_type: bug
+    reference_id: 2178492
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2184481
+    reference_type: bug
+    reference_id: 2184481
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2184482
+    reference_type: bug
+    reference_id: 2184482
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2184483
+    reference_type: bug
+    reference_id: 2184483
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2184484
+    reference_type: bug
+    reference_id: 2184484
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2228743
+    reference_type: bug
+    reference_id: 2228743
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2243296
+    reference_type: bug
+    reference_id: 2243296
+  - url: https://access.redhat.com/errata/RHSA-2023:5964
+    reference_type:
+    reference_id: RHSA-2023:5964

@@ -1,0 +1,157 @@
+advisory_id: RHSA-2023:0631
+datasource_id: redhat_importer_v2/RHSA-2023:0631
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_0631.json
+aliases:
+  - CVE-2022-27664
+  - CVE-2022-2880
+  - CVE-2022-41715
+  - CVE-2022-41717
+summary: |
+  Submariner 0.14 packages that fix various bugs and add various enhancements that are now available for Red Hat Advanced Cluster Management for Kubernetes version 2.7
+
+  Red Hat Product Security has rated this update as having a security impact
+  of Moderate. A Common Vulnerability Scoring System (CVSS) base score,
+  which gives a detailed severity rating, is available for each vulnerability
+  from the CVE links in the References section.
+
+  Submariner enables direct networking between pods and services on different Kubernetes clusters that are either on-premises or in the cloud.
+
+  For more information about Submariner, see the Submariner open source community website at: https://submariner.io/.
+
+  This advisory contains bug fixes and enhancements to the Submariner container images.
+
+  Security fixes:
+
+  * CVE-2022-27664 golang: net/http: handle server errors after sending GOAWAY
+  * CVE-2022-2880 golang: net/http/httputil: ReverseProxy should not forward unparseable query parameters
+  * CVE-2022-41715 golang: regexp/syntax: limit memory used by parsing regexps
+  * CVE-2022-41717 golang: net/http: An attacker can cause excessive memory growth in a Go server accepting HTTP/2 requests
+
+  Bugs addressed:
+
+  * subctl diagnose firewall metrics does not work on merged kubeconfig (BZ# 2013711)
+  * [Submariner] - Fails to increase gateway amount after deployment (BZ# 2097381)
+  * Submariner gateway node does not get deleted with subctl cloud cleanup command (BZ# 2108634)
+  * submariner GW pods are unable to resolve the DNS of the Broker K8s API URL (BZ# 2119362)
+  * Submariner gateway node does not get deployed after applying ManagedClusterAddOn on Openstack (BZ# 2124219)
+  * unable to run subctl benchmark latency, pods fail with ImagePullBackOff (BZ# 2130326)
+  * [IBM Z] - Submariner addon unistallation doesnt work from ACM console (BZ# 2136442)
+  * Tags on AWS security group for gateway node break cloud-controller LoadBalancer (BZ# 2139477)
+  * RHACM - Submariner: UI support for OpenStack #19297 (ACM-1242)
+  * Submariner OVN support (ACM-1358)
+  * Submariner Azure Console support (ACM-1388)
+  * ManagedClusterSet consumers migrate to v1beta2 (ACM-1614)
+  * Submariner on disconnected ACM #22000 (ACM-1678)
+  * Submariner gateway: Error creating AWS security group if already exists (ACM-2055)
+  * Submariner gateway security group in AWS not deleted when uninstalling submariner (ACM-2057)
+  * The submariner-metrics-proxy pod pulls an image with wrong naming convention (ACM-2058)
+  * The submariner-metrics-proxy pod is not part of the Agent readiness check (ACM-2067)
+  * Subctl 0.14.0 prints version "vsubctl" (ACM-2132)
+  * managedclusters "local-cluster" not found and missing Submariner Broker CRD (ACM-2145)
+  * Add support of ARO to Submariner deployment (ACM-2150)
+  * The e2e tests execution fails for "Basic TCP connectivity" tests (ACM-2204)
+  * Gateway error shown "diagnose all" tests (ACM-2206)
+  * Submariner does not support cluster "kube-proxy ipvs mode"(ACM-2211)
+  * Vsphere cluster shows Pod Security admission controller warnings (ACM-2256)
+  * Cannot use submariner with OSP and self signed certs (ACM-2274)
+  * Subctl diagnose tests spawn nettest image with wrong tag nameing convention (ACM-2387)
+  * Subctl 0.14.1 prints version "devel" (ACM-2482)
+impacted_packages: []
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_0631.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-1614
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2055
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2057
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2058
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2067
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2132
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2145
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2150
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2204
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2206
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2211
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2256
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2274
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2387
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ACM-2482
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_0631.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2013711
+    reference_type: bug
+    reference_id: 2013711
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2097381
+    reference_type: bug
+    reference_id: 2097381
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2108634
+    reference_type: bug
+    reference_id: 2108634
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2119362
+    reference_type: bug
+    reference_id: 2119362
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2124219
+    reference_type: bug
+    reference_id: 2124219
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2124669
+    reference_type: bug
+    reference_id: 2124669
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2130326
+    reference_type: bug
+    reference_id: 2130326
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2132868
+    reference_type: bug
+    reference_id: 2132868
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2132872
+    reference_type: bug
+    reference_id: 2132872
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2136442
+    reference_type: bug
+    reference_id: 2136442
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2139477
+    reference_type: bug
+    reference_id: 2139477
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2161274
+    reference_type: bug
+    reference_id: 2161274
+  - url: https://access.redhat.com/errata/RHSA-2023:0631
+    reference_type:
+    reference_id: RHSA-2023:0631

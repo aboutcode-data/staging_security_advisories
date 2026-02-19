@@ -1,0 +1,105 @@
+advisory_id: RHSA-2023:6165
+datasource_id: redhat_importer_v2/RHSA-2023:6165
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_6165.json
+aliases:
+  - CVE-2023-39325
+  - CVE-2023-44487
+summary: |
+  An update for skupper-cli and skupper-router is now available for Service Interconnect 1 for RHEL 8 and Service Interconnect 1 for RHEL 9.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Security Fix(es):
+
+  * golang: net/http, x/net/http2: rapid stream resets can cause excessive work (CVE-2023-44487) (CVE-2023-39325)
+
+  * HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack) (CVE-2023-44487)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/skupper-router-common?arch=noarch
+    affected_versions: vers:rpm/<2.4.3-1.el9
+    fixed_versions: vers:rpm/2.4.3-1.el9
+  - purl: pkg:rpm/redhat/skupper-router?arch=src
+    affected_versions: vers:rpm/<2.4.3-1.el8
+    fixed_versions: vers:rpm/2.4.3-1.el8
+  - purl: pkg:rpm/redhat/skupper-cli?arch=src
+    affected_versions: vers:rpm/<1.4.3-4.el8
+    fixed_versions: vers:rpm/1.4.3-4.el8
+  - purl: pkg:rpm/redhat/skupper-router?arch=src
+    affected_versions: vers:rpm/<2.4.3-1.el9
+    fixed_versions: vers:rpm/2.4.3-1.el9
+  - purl: pkg:rpm/redhat/skupper-cli?arch=src
+    affected_versions: vers:rpm/<1.4.3-4.el9
+    fixed_versions: vers:rpm/1.4.3-4.el9
+  - purl: pkg:rpm/redhat/skupper-router?arch=x86_64
+    affected_versions: vers:rpm/<2.4.3-1.el8
+    fixed_versions: vers:rpm/2.4.3-1.el8
+  - purl: pkg:rpm/redhat/skupper-router-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<2.4.3-1.el8
+    fixed_versions: vers:rpm/2.4.3-1.el8
+  - purl: pkg:rpm/redhat/skupper-router-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.4.3-1.el8
+    fixed_versions: vers:rpm/2.4.3-1.el8
+  - purl: pkg:rpm/redhat/skupper-cli?arch=x86_64
+    affected_versions: vers:rpm/<1.4.3-4.el8
+    fixed_versions: vers:rpm/1.4.3-4.el8
+  - purl: pkg:rpm/redhat/skupper-router?arch=x86_64
+    affected_versions: vers:rpm/<2.4.3-1.el9
+    fixed_versions: vers:rpm/2.4.3-1.el9
+  - purl: pkg:rpm/redhat/skupper-router-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<2.4.3-1.el9
+    fixed_versions: vers:rpm/2.4.3-1.el9
+  - purl: pkg:rpm/redhat/skupper-router-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.4.3-1.el9
+    fixed_versions: vers:rpm/2.4.3-1.el9
+  - purl: pkg:rpm/redhat/skupper-cli?arch=x86_64
+    affected_versions: vers:rpm/<1.4.3-4.el9
+    fixed_versions: vers:rpm/1.4.3-4.el9
+  - purl: pkg:rpm/redhat/skupper-router-common?arch=noarch
+    affected_versions: vers:rpm/<2.4.3-1.el8
+    fixed_versions: vers:rpm/2.4.3-1.el8
+  - purl: pkg:rpm/redhat/skupper-router-docs?arch=noarch
+    affected_versions: vers:rpm/<2.4.3-1.el8
+    fixed_versions: vers:rpm/2.4.3-1.el8
+  - purl: pkg:rpm/redhat/skupper-router-tools?arch=noarch
+    affected_versions: vers:rpm/<2.4.3-1.el8
+    fixed_versions: vers:rpm/2.4.3-1.el8
+  - purl: pkg:rpm/redhat/skupper-router-docs?arch=noarch
+    affected_versions: vers:rpm/<2.4.3-1.el9
+    fixed_versions: vers:rpm/2.4.3-1.el9
+  - purl: pkg:rpm/redhat/skupper-router-tools?arch=noarch
+    affected_versions: vers:rpm/<2.4.3-1.el9
+    fixed_versions: vers:rpm/2.4.3-1.el9
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_6165.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/documentation/en-us/red_hat_service_interconnect/
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/RHSB-2023-003
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2242803
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SKUPPER-1252
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_6165.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2243296
+    reference_type: bug
+    reference_id: 2243296
+  - url: https://access.redhat.com/errata/RHSA-2023:6165
+    reference_type:
+    reference_id: RHSA-2023:6165

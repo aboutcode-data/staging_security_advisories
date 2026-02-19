@@ -1,0 +1,53 @@
+advisory_id: RHSA-2023:7218
+datasource_id: redhat_importer_v2/RHSA-2023:7218
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_7218.json
+aliases:
+  - CVE-2023-44487
+summary: |
+  This is an update for the Red Hat OpenShift Kernel Module Management 1.1 operator and images to address CVE-2023-44487 which Red Hat has assessed as being Important (sees https://access.redhat.com/security/cve/CVE-2023-44487 for details)
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  It releases an updated versions of the Kernel Module Management bringing it to v1.1.2
+  As part of this it updates the following container images that constitute the Kernel Module Management Operator:
+  kernel-module-management-signing
+  kernel-module-management-operator
+  kernel-module-management-worker
+  kernel-module-management-hub-operator
+  kernel-module-management-must-gather
+  kernel-module-management-hub-operator-bundle
+  kernel-module-management-operator-bundle
+
+  kernel module management is Red Hat's operator designed to load and manage out-of-tree kernel modules and device plugins for Red Hat OpenShift Container Platform.
+
+  This advisory contains kernel module management 1.1.2 images to address CVE-2023-44487
+
+  Security Fix(es):
+
+  * HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack) (CVE-2023-44487)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages: []
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_7218.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/RHSB-2023-003
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2242803
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2023/rhsa-2023_7218.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2023:7218
+    reference_type:
+    reference_id: RHSA-2023:7218
