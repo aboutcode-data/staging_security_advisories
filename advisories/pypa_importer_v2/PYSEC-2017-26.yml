@@ -1,0 +1,21 @@
+advisory_id: PYSEC-2017-26
+datasource_id: pypa_importer_v2/PYSEC-2017-26
+datasource_url: https://github.com/pypa/advisory-database/blob/main/vulns/pysaml2/PYSEC-2017-26.yaml
+aliases:
+  - CVE-2017-1000246
+  - GHSA-cq94-qf6q-mf2h
+summary: Python package pysaml2 version 4.4.0 and earlier reuses the initialization vector across
+  encryptions in the IDP server, resulting in weak encryption of data.
+impacted_packages:
+  - purl: pkg:pypi/pysaml2
+    affected_versions: vers:pypi/0.4.3|1.0.1|1.0.2|1.0.3|1.1.0|2.0.0|2.1.0|2.2.0|2.3.0|2.4.0|3.0.0|3.0.2|4.0.0|4.0.1|4.0.2|4.0.3|4.0.4|4.0.5rc1|4.0.5|4.1.0|4.2.0|4.3.0|4.4.0|4.5.0
+    fixed_versions: vers:pypi/4.6.0
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-cq94-qf6q-mf2h
+    reference_type:
+    reference_id:
+  - url: https://github.com/rohe/pysaml2/issues/417
+    reference_type:
+    reference_id:

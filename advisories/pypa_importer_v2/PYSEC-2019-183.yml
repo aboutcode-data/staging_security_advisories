@@ -1,0 +1,31 @@
+advisory_id: PYSEC-2019-183
+datasource_id: pypa_importer_v2/PYSEC-2019-183
+datasource_url: https://github.com/pypa/advisory-database/blob/main/vulns/koji/PYSEC-2019-183.yaml
+aliases:
+  - CVE-2019-17109
+summary: Koji through 1.18.0 allows remote Directory Traversal, with resultant Privilege Escalation.
+impacted_packages:
+  - purl: pkg:pypi/koji
+    affected_versions: vers:pypi/1.15.0|1.16.0|1.16.1|1.17.0|1.18.0
+    fixed_versions: vers:pypi/1.19.0
+severities: []
+weaknesses: []
+references:
+  - url: https://docs.pagure.org/koji/CVE-2019-17109/
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4BGUXMZIAQFFNNQ7PEFDAYQCXXKJR76U/
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7PSCCFHLNVFLDPC7DB4UJGXD6ZWBSY57/
+    reference_type:
+    reference_id:
+  - url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DEQYYGWLJBQQVTAC7E7XSDGVF27NPMPB/
+    reference_type:
+    reference_id:
+  - url: https://pagure.io/koji/commits/master
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2019/10/09/5
+    reference_type:
+    reference_id:

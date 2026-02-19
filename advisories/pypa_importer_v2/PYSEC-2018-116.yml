@@ -1,0 +1,27 @@
+advisory_id: PYSEC-2018-116
+datasource_id: pypa_importer_v2/PYSEC-2018-116
+datasource_url: https://github.com/pypa/advisory-database/blob/main/vulns/knowledge-repo/PYSEC-2018-116.yaml
+aliases:
+  - CVE-2018-12104
+summary: Cross-site scripting (XSS) vulnerability in Airbnb Knowledge Repo 0.7.4 allows remote
+  attackers to inject arbitrary web scripts or HTML via the post comments functionality, as
+  demonstrated by the post/posts/new_report.kp URI.
+impacted_packages:
+  - purl: pkg:pypi/knowledge-repo
+    affected_versions: vers:pypi/0.6.1|0.6.2|0.6.3|0.6.4|0.6.5|0.6.6|0.6.7|0.6.8|0.6.9|0.6.10|0.6.11|0.7.0|0.7.1|0.7.2|0.7.3|0.7.4
+    fixed_versions: vers:pypi/0.7.5
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/airbnb/knowledge-repo/issues/431
+    reference_type:
+    reference_id:
+  - url: https://nvd.nist.gov/vuln/detail/CVE-2018-12104
+    reference_type:
+    reference_id:
+  - url: https://pypi.org/project/knowledge-repo
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/104487
+    reference_type:
+    reference_id:

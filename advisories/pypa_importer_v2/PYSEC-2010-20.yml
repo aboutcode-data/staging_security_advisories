@@ -1,0 +1,31 @@
+advisory_id: PYSEC-2010-20
+datasource_id: pypa_importer_v2/PYSEC-2010-20
+datasource_url: https://github.com/pypa/advisory-database/blob/main/vulns/pyftpdlib/PYSEC-2010-20.yaml
+aliases:
+  - CVE-2007-6736
+  - GHSA-f8wg-36r9-7f4q
+summary: Multiple directory traversal vulnerabilities in FTPServer.py in pyftpdlib before 0.2.0
+  allow remote authenticated users to access arbitrary files and directories via a .. (dot dot)
+  in a (1) LIST, (2) STOR, or (3) RETR command.
+impacted_packages:
+  - purl: pkg:pypi/pyftpdlib
+    affected_versions: vers:pypi/<0.2.0
+    fixed_versions: vers:pypi/0.2.0
+severities: []
+weaknesses: []
+references:
+  - url: http://code.google.com/p/pyftpdlib/issues/detail?id=9
+    reference_type:
+    reference_id:
+  - url: http://code.google.com/p/pyftpdlib/source/browse/trunk/HISTORY
+    reference_type:
+    reference_id:
+  - url: http://code.google.com/p/pyftpdlib/source/detail?r=16
+    reference_type:
+    reference_id:
+  - url: http://code.google.com/p/pyftpdlib/source/diff?spec=svn16&r=16&format=side&path=/trunk/pyftpdlib/FTPServer.py
+    reference_type:
+    reference_id:
+  - url: https://github.com/advisories/GHSA-f8wg-36r9-7f4q
+    reference_type:
+    reference_id:

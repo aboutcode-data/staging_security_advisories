@@ -1,0 +1,25 @@
+advisory_id: PYSEC-2017-98
+datasource_id: pypa_importer_v2/PYSEC-2017-98
+datasource_url: https://github.com/pypa/advisory-database/blob/main/vulns/urllib3/PYSEC-2017-98.yaml
+aliases:
+  - CVE-2016-9015
+summary: Versions 1.17 and 1.18 of the Python urllib3 library suffer from a vulnerability that
+  can cause them, in certain configurations, to not correctly validate TLS certificates. This
+  places users of the library with those configurations at risk of man-in-the-middle and information
+  leakage attacks. This vulnerability affects users using versions 1.17 and 1.18 of the urllib3
+  library, who are using the optional PyOpenSSL support for TLS instead of the regular standard
+  library TLS backend, and who are using OpenSSL 1.1.0 via PyOpenSSL. This is an extremely uncommon
+  configuration, so the security impact of this vulnerability is low.
+impacted_packages:
+  - purl: pkg:pypi/urllib3
+    affected_versions: vers:pypi/1.17|1.18
+    fixed_versions: vers:pypi/1.18.1
+severities: []
+weaknesses: []
+references:
+  - url: http://www.openwall.com/lists/oss-security/2016/10/27/6
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/93941
+    reference_type:
+    reference_id:
