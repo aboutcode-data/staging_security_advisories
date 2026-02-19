@@ -1,0 +1,56 @@
+advisory_id: RHSA-2022:9058
+datasource_id: redhat_importer_v2/RHSA-2022:9058
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2022/rhsa-2022_9058.json
+aliases:
+  - CVE-2022-1471
+summary: |
+  An update for prometheus-jmx-exporter is now available for Red Hat Enterprise Linux 8.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Prometheus JMX Exporter is a JMX to Prometheus exporter: a collector that can be configured to scrape and expose MBeans of a JMX target.
+
+  Security Fix(es):
+
+  * SnakeYaml: Constructor Deserialization Remote Code Execution (CVE-2022-1471)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/prometheus-jmx-exporter?arch=src
+    affected_versions: vers:rpm/<0.12.0-9.el8_7
+    fixed_versions: vers:rpm/0.12.0-9.el8_7
+  - purl: pkg:rpm/redhat/prometheus-jmx-exporter?arch=noarch
+    affected_versions: vers:rpm/<0.12.0-9.el8_7
+    fixed_versions: vers:rpm/0.12.0-9.el8_7
+  - purl: pkg:rpm/redhat/prometheus-jmx-exporter-openjdk11?arch=noarch
+    affected_versions: vers:rpm/<0.12.0-9.el8_7
+    fixed_versions: vers:rpm/0.12.0-9.el8_7
+  - purl: pkg:rpm/redhat/prometheus-jmx-exporter-openjdk17?arch=noarch
+    affected_versions: vers:rpm/<0.12.0-9.el8_7
+    fixed_versions: vers:rpm/0.12.0-9.el8_7
+  - purl: pkg:rpm/redhat/prometheus-jmx-exporter-openjdk8?arch=noarch
+    affected_versions: vers:rpm/<0.12.0-9.el8_7
+    fixed_versions: vers:rpm/0.12.0-9.el8_7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2022/rhsa-2022_9058.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2022/rhsa-2022_9058.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2150009
+    reference_type: bug
+    reference_id: 2150009
+  - url: https://access.redhat.com/security/cve/CVE-2022-1471
+    reference_type:
+    reference_id: CVE-2022-1471
+  - url: https://access.redhat.com/errata/RHSA-2022:9058
+    reference_type:
+    reference_id: RHSA-2022:9058
