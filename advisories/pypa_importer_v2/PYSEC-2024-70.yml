@@ -1,0 +1,24 @@
+advisory_id: PYSEC-2024-70
+datasource_id: pypa_importer_v2/PYSEC-2024-70
+datasource_url: https://github.com/pypa/advisory-database/blob/main/vulns/django/PYSEC-2024-70.yaml
+aliases:
+  - CVE-2024-42005
+summary: An issue was discovered in Django 5.0 before 5.0.8 and 4.2 before 4.2.15. QuerySet.values()
+  and values_list() methods on models with a JSONField are subject to SQL injection in column
+  aliases via a crafted JSON object key as a passed *arg.
+impacted_packages:
+  - purl: pkg:pypi/django
+    affected_versions: vers:pypi/4.2|4.2.1|4.2.2|4.2.3|4.2.4|4.2.5|4.2.6|4.2.7|4.2.8|4.2.9|4.2.10|4.2.11|4.2.12|4.2.13|4.2.14|5.0|5.0.1|5.0.2|5.0.3|5.0.4|5.0.5|5.0.6|5.0.7
+    fixed_versions: vers:pypi/4.2.15|5.0.8
+severities: []
+weaknesses: []
+references:
+  - url: https://docs.djangoproject.com/en/dev/releases/security/
+    reference_type:
+    reference_id:
+  - url: https://groups.google.com/forum/#%21forum/django-announce
+    reference_type:
+    reference_id:
+  - url: https://www.djangoproject.com/weblog/2024/aug/06/security-releases/
+    reference_type:
+    reference_id:

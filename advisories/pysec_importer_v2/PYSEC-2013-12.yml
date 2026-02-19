@@ -1,0 +1,22 @@
+advisory_id: PYSEC-2013-12
+datasource_id: pysec_importer_v2/PYSEC-2013-12
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2013-4435
+  - GHSA-v89f-4mc4-h6w9
+summary: Salt (aka SaltStack) 0.15.0 through 0.17.0 allows remote authenticated users who are
+  using external authentication or client ACL to execute restricted routines by embedding the
+  routine in another routine.
+impacted_packages:
+  - purl: pkg:pypi/salt
+    affected_versions: vers:pypi/0.15.0|0.15.1|0.15.2|0.15.3|0.15.90|0.16.0|0.16.1|0.16.2|0.16.3|0.16.4|0.17.0rc1|0.17.0
+    fixed_versions: vers:pypi/0.17.1
+severities: []
+weaknesses: []
+references:
+  - url: http://docs.saltstack.com/topics/releases/0.17.1.html
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2013/10/18/3
+    reference_type:
+    reference_id:

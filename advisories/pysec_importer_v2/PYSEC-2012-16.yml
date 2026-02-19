@@ -1,0 +1,58 @@
+advisory_id: PYSEC-2012-16
+datasource_id: pysec_importer_v2/PYSEC-2012-16
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2012-2417
+  - GHSA-v367-p58w-98h5
+summary: PyCrypto before 2.6 does not produce appropriate prime numbers when using an ElGamal
+  scheme to generate a key, which reduces the signature space or public key space and makes
+  it easier for attackers to conduct brute force attacks to obtain the private key.
+impacted_packages:
+  - purl: pkg:pypi/pycrypto
+    affected_versions: vers:pypi/1.9a2|1.9a5|1.9a6|2.0|2.0.1|2.1.0|2.2|2.3|2.4|2.4.1|2.5
+    fixed_versions: vers:pypi/2.6
+severities: []
+weaknesses: []
+references:
+  - url: http://lists.fedoraproject.org/pipermail/package-announce/2012-June/081713.html
+    reference_type:
+    reference_id:
+  - url: http://lists.fedoraproject.org/pipermail/package-announce/2012-June/081759.html
+    reference_type:
+    reference_id:
+  - url: http://lists.fedoraproject.org/pipermail/package-announce/2012-June/081789.html
+    reference_type:
+    reference_id:
+  - url: https://bugs.launchpad.net/pycrypto/+bug/985164
+    reference_type:
+    reference_id:
+  - url: http://secunia.com/advisories/49263
+    reference_type:
+    reference_id:
+  - url: https://exchange.xforce.ibmcloud.com/vulnerabilities/75871
+    reference_type:
+    reference_id:
+  - url: https://github.com/dlitz/pycrypto/blob/373ea760f21701b162e8c4912a66928ee30d401a/ChangeLog
+    reference_type:
+    reference_id:
+  - url: https://github.com/Legrandin/pycrypto/commit/9f912f13df99ad3421eff360d6a62d7dbec755c2
+    reference_type:
+    reference_id:
+  - url: https://hermes.opensuse.org/messages/15083589
+    reference_type:
+    reference_id:
+  - url: http://www.debian.org/security/2012/dsa-2502
+    reference_type:
+    reference_id:
+  - url: http://www.mandriva.com/security/advisories?name=MDVSA-2012:117
+    reference_type:
+    reference_id:
+  - url: http://www.openwall.com/lists/oss-security/2012/05/25/1
+    reference_type:
+    reference_id:
+  - url: http://www.osvdb.org/82279
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/53687
+    reference_type:
+    reference_id:

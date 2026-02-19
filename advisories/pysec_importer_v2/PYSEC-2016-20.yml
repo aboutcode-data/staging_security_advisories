@@ -1,0 +1,34 @@
+advisory_id: PYSEC-2016-20
+datasource_id: pysec_importer_v2/PYSEC-2016-20
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2015-7546
+  - GHSA-8c4w-v65p-jvcv
+summary: The identity service in OpenStack Identity (Keystone) before 2015.1.3 (Kilo) and 8.0.x
+  before 8.0.2 (Liberty) and keystonemiddleware (formerly python-keystoneclient) before 1.5.4
+  (Kilo) and Liberty before 2.3.3 does not properly invalidate authorization tokens when using
+  the PKI or PKIZ token providers, which allows remote authenticated users to bypass intended
+  access restrictions and gain access to cloud resources by manipulating byte fields within
+  a revoked token.
+impacted_packages:
+  - purl: pkg:pypi/keystonemiddleware
+    affected_versions: vers:pypi/0|1.0.0|1.1.0|1.1.1|1.2.0|1.3.0|1.3.1|1.3.2|1.4.0|1.5.0|1.5.1|1.5.2|1.5.3|1.6.0|1.6.1|2.0.0|2.1.0|2.2.0|2.3.0|2.3.1|2.3.2
+    fixed_versions: vers:pypi/1.5.4|2.3.3
+severities: []
+weaknesses: []
+references:
+  - url: https://bugs.launchpad.net/keystone/+bug/1490804
+    reference_type:
+    reference_id:
+  - url: https://security.openstack.org/ossa/OSSA-2016-005.html
+    reference_type:
+    reference_id:
+  - url: https://wiki.openstack.org/wiki/OSSN/OSSN-0062
+    reference_type:
+    reference_id:
+  - url: http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html
+    reference_type:
+    reference_id:
+  - url: http://www.securityfocus.com/bid/80498
+    reference_type:
+    reference_id:

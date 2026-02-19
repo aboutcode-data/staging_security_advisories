@@ -1,0 +1,21 @@
+advisory_id: PYSEC-2017-80
+datasource_id: pysec_importer_v2/PYSEC-2017-80
+datasource_url: https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip
+aliases:
+  - CVE-2017-15612
+  - GHSA-hpv5-v8g5-c864
+summary: mistune.py in Mistune 0.7.4 allows XSS via an unexpected newline (such as in java\nscript:)
+  or a crafted email address, related to the escape and autolink functions.
+impacted_packages:
+  - purl: pkg:pypi/mistune
+    affected_versions: vers:pypi/0.1.0|0.2.0|0.3.0|0.3.1|0.4|0.4.1|0.5|0.5.1|0.6|0.7|0.7.1|0.7.2|0.7.3|0.7.4
+    fixed_versions: vers:pypi/0.8
+severities: []
+weaknesses: []
+references:
+  - url: https://github.com/advisories/GHSA-hpv5-v8g5-c864
+    reference_type:
+    reference_id:
+  - url: https://github.com/lepture/mistune/pull/140
+    reference_type:
+    reference_id:
