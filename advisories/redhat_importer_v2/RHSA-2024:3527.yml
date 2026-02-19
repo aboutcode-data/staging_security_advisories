@@ -1,0 +1,137 @@
+advisory_id: RHSA-2024:3527
+datasource_id: redhat_importer_v2/RHSA-2024:3527
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_3527.json
+aliases:
+  - CVE-2021-24032
+  - CVE-2021-3520
+  - CVE-2022-3171
+  - CVE-2022-42889
+  - CVE-2022-42920
+  - CVE-2022-4899
+  - CVE-2023-1370
+  - CVE-2023-2976
+  - CVE-2023-33201
+  - CVE-2023-33202
+  - CVE-2023-43642
+  - CVE-2023-51074
+  - CVE-2024-1023
+  - CVE-2024-1300
+  - CVE-2024-25710
+  - CVE-2024-2700
+  - CVE-2024-29025
+summary: "Red Hat AMQ Streams 2.7.0 is now available from the Red Hat Customer Portal.\n\nRed\
+  \ Hat Product Security has rated this update as having a security impact of Moderate. A Common\
+  \ Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating,\
+  \ is available for each vulnerability from the CVE link(s) in the References section.\n\n\
+  Red Hat AMQ Streams, based on the Apache Kafka project, offers a distributed backbone that\
+  \ allows microservices and other applications to share data with extremely high throughput\
+  \ and extremely low latency. \n\nThis release of Red Hat AMQ Streams 2.7.0 serves as a replacement\
+  \ for Red Hat AMQ Streams 2.6.0, and includes security and bug fixes, and enhancements.\n\n\
+  Security Fix(es):\n\n* lz4: memory corruption due to an integer overflow bug caused by memmove\
+  \ argument  (CVE-2021-3520)\n* zstd: Race condition allows attacker to access world-readable\
+  \ destination file (CVE-2021-24032)\n* RocksDB: zstd: mysql: buffer overrun in util.c  (CVE-2022-4899)\n\
+  * netty-codec-http: Allocation of Resources Without Limits or Throttling  (CVE-2024-29025)\n\
+  * commons-compress: Denial of service caused by an infinite loop for a corrupted DUMP file\
+  \ (CVE-2024-25710)\n* apache-commons-text: variable interpolation RCE (CVE-2022-42889)\n*\
+  \ snappy-java: Missing upper bound check on chunk length in snappy-java can lead to Denial\
+  \ of Service (DoS) impact  (CVE-2023-43642)\n* json-smart: Uncontrolled Resource Consumption\
+  \ vulnerability in json-smart (Resource Exhaustion)  (CVE-2023-1370)\n*  protobuf-java: timeout\
+  \ in parser leads to DoS (CVE-2022-3171)\n* Apache-Commons-BCEL: arbitrary bytecode produced\
+  \ via out-of-bounds writing  (CVE-2022-42920)\n* bc-java: Out of memory while parsing ASN.1\
+  \ crafted data in org.bouncycastle.openssl.PEMParser class  (CVE-2023-33202)\n* bouncycastle:\
+  \ potential blind LDAP injection attack using a self-signed certificate  (CVE-2023-33201)\n\
+  * json-path: stack-based buffer overflow in Criteria.parse method  (CVE-2023-51074)\n* guava:\
+  \ insecure temporary directory creation  (CVE-2023-2976)\n* io.vertx:vertx-core: memory leak\
+  \ when a TCP server is configured with TLS and SNI support (CVE-2024-1300)\n* io.vertx/vertx-core:\
+  \ memory leak due to the use of Netty FastThreadLocal data structures in Vertx (CVE-2024-1023)\n\
+  * quarkus-core: Leak of local configuration properties into Quarkus applications  (CVE-2024-2700)"
+impacted_packages: []
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_3527.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2024:3527
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1954559
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2260840
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2263139
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2273281
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQST-5619
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQST-5881
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQST-5882
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQST-5883
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQST-5884
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQST-5885
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQST-5886
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_3527.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1928090
+    reference_type: bug
+    reference_id: '1928090'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2135435
+    reference_type: bug
+    reference_id: 2135435
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2137645
+    reference_type: bug
+    reference_id: 2137645
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2142707
+    reference_type: bug
+    reference_id: 2142707
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2179864
+    reference_type: bug
+    reference_id: 2179864
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2188542
+    reference_type: bug
+    reference_id: 2188542
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2215229
+    reference_type: bug
+    reference_id: 2215229
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2215465
+    reference_type: bug
+    reference_id: 2215465
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2241722
+    reference_type: bug
+    reference_id: 2241722
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2251281
+    reference_type: bug
+    reference_id: 2251281
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2256063
+    reference_type: bug
+    reference_id: 2256063
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2264988
+    reference_type: bug
+    reference_id: 2264988
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2272907
+    reference_type: bug
+    reference_id: 2272907

@@ -1,0 +1,137 @@
+advisory_id: RHSA-2024:2387
+datasource_id: redhat_importer_v2/RHSA-2024:2387
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_2387.json
+aliases:
+  - CVE-2023-41081
+  - CVE-2023-6710
+summary: |
+  An update for mod_jk and mod_proxy_cluster is now available for Red Hat Enterprise Linux 9.
+
+  Red Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The mod_jk module is a plugin for the Apache HTTP Server to connect it with the Apache Tomcat servlet engine.
+
+  The mod_proxy_cluster module is a plugin for the Apache HTTP Server that provides load-balancer functionality.
+
+  Security Fix(es):
+
+  * httpd: Apache Tomcat Connectors (mod_jk) Information Disclosure (CVE-2023-41081)
+
+  * mod_cluster/mod_proxy_cluster: Stored Cross site Scripting (CVE-2023-6710)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+  Additional Changes:
+
+  For detailed information on changes in this release, see the Red Hat Enterprise Linux 9.4 Release Notes linked from the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/mod_proxy_cluster?arch=src
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk?arch=src
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster?arch=aarch64
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster-debugsource?arch=aarch64
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk?arch=aarch64
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk-debugsource?arch=aarch64
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk-debuginfo?arch=aarch64
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster?arch=ppc64le
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster-debugsource?arch=ppc64le
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk?arch=ppc64le
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk-debugsource?arch=ppc64le
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk-debuginfo?arch=ppc64le
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster?arch=x86_64
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk?arch=x86_64
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster?arch=s390x
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster-debugsource?arch=s390x
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_proxy_cluster-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.3.20-1.el9_4
+    fixed_versions: vers:rpm/1.3.20-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk?arch=s390x
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk-debugsource?arch=s390x
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+  - purl: pkg:rpm/redhat/mod_jk-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.2.49-1.el9_4
+    fixed_versions: vers:rpm/1.2.49-1.el9_4
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_2387.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/9.4_release_notes/index
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/RHEL-27497
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/RHEL-27511
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_2387.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2238847
+    reference_type: bug
+    reference_id: 2238847
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2254128
+    reference_type: bug
+    reference_id: 2254128
+  - url: https://access.redhat.com/errata/RHSA-2024:2387
+    reference_type:
+    reference_id: RHSA-2024:2387

@@ -1,0 +1,331 @@
+advisory_id: RHSA-2024:11574
+datasource_id: redhat_importer_v2/RHSA-2024:11574
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_11574.json
+aliases:
+  - CVE-2024-52304
+summary: |
+  A new release is now available for Red Hat Satellite 6.16 for RHEL 8 and 9.
+
+  Red Hat Product Security has rated this update as having a security impact
+  of Moderate. A Common Vulnerability Scoring System (CVSS) base score,
+  which gives a detailed severity rating, is available for each vulnerability
+  from the CVE link(s) in the References section.
+
+  Red Hat Satellite is a system management solution that allows organizations
+  to configure and maintain their systems without the necessity to provide
+  public Internet access to their servers or other client systems. It
+  performs provisioning and configuration management of predefined standard
+  operating environments.
+
+  Security Fix(es):
+
+  * aiohttp: aiohttp vulnerable to request smuggling due to incorrect parsing of chunk extensions (CVE-2024-52304)
+
+  Users of Red Hat Satellite are advised to upgrade to these updated
+  packages, which fix these bugs.
+impacted_packages:
+  - purl: pkg:rpm/redhat/candlepin?arch=src
+    affected_versions: vers:rpm/<4.4.20-1.el8sat
+    fixed_versions: vers:rpm/4.4.20-1.el8sat
+  - purl: pkg:rpm/redhat/foreman-installer?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.12.0.3-1.el8sat
+    fixed_versions: vers:rpm/3.12.0.3-1.el8sat
+  - purl: pkg:rpm/redhat/python-aiohappyeyeballs?arch=src
+    affected_versions: vers:rpm/<2.4.3-1.el8pc
+    fixed_versions: vers:rpm/2.4.3-1.el8pc
+  - purl: pkg:rpm/redhat/python-psycopg?arch=src
+    affected_versions: vers:rpm/<3.2.3-1.el8pc
+    fixed_versions: vers:rpm/3.2.3-1.el8pc
+  - purl: pkg:rpm/redhat/python-psycopg_c?arch=src
+    affected_versions: vers:rpm/<3.2.3-1.el8pc
+    fixed_versions: vers:rpm/3.2.3-1.el8pc
+  - purl: pkg:rpm/redhat/python-yarl?arch=src
+    affected_versions: vers:rpm/<1.13.1-1.el8pc
+    fixed_versions: vers:rpm/1.13.1-1.el8pc
+  - purl: pkg:rpm/redhat/rubygem-foreman_leapp?arch=src
+    affected_versions: vers:rpm/<1.2.2-1.el8sat
+    fixed_versions: vers:rpm/1.2.2-1.el8sat
+  - purl: pkg:rpm/redhat/rubygem-foreman_rh_cloud?arch=src
+    affected_versions: vers:rpm/<10.0.3-1.el8sat
+    fixed_versions: vers:rpm/10.0.3-1.el8sat
+  - purl: pkg:rpm/redhat/rubygem-katello?arch=src
+    affected_versions: vers:rpm/<4.14.0.5-1.el8sat
+    fixed_versions: vers:rpm/4.14.0.5-1.el8sat
+  - purl: pkg:rpm/redhat/satellite?arch=src
+    affected_versions: vers:rpm/<6.16.1-1.el8sat
+    fixed_versions: vers:rpm/6.16.1-1.el8sat
+  - purl: pkg:rpm/redhat/satellite-lifecycle?arch=src
+    affected_versions: vers:rpm/<6.16.0-2.el8sat
+    fixed_versions: vers:rpm/6.16.0-2.el8sat
+  - purl: pkg:rpm/redhat/rubygem-foreman_maintain?arch=src&epoch=1
+    affected_versions: vers:rpm/<1.7.10-1.el8sat
+    fixed_versions: vers:rpm/1.7.10-1.el8sat
+  - purl: pkg:rpm/redhat/python-aiohttp?arch=src
+    affected_versions: vers:rpm/<3.10.11-1.el8pc
+    fixed_versions: vers:rpm/3.10.11-1.el8pc
+  - purl: pkg:rpm/redhat/python-pulpcore?arch=src
+    affected_versions: vers:rpm/<3.49.28-1.el8pc
+    fixed_versions: vers:rpm/3.49.28-1.el8pc
+  - purl: pkg:rpm/redhat/candlepin?arch=src
+    affected_versions: vers:rpm/<4.4.20-1.el9sat
+    fixed_versions: vers:rpm/4.4.20-1.el9sat
+  - purl: pkg:rpm/redhat/foreman-installer?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.12.0.3-1.el9sat
+    fixed_versions: vers:rpm/3.12.0.3-1.el9sat
+  - purl: pkg:rpm/redhat/python-aiohappyeyeballs?arch=src
+    affected_versions: vers:rpm/<2.4.3-1.el9pc
+    fixed_versions: vers:rpm/2.4.3-1.el9pc
+  - purl: pkg:rpm/redhat/python-psycopg?arch=src
+    affected_versions: vers:rpm/<3.2.3-1.el9pc
+    fixed_versions: vers:rpm/3.2.3-1.el9pc
+  - purl: pkg:rpm/redhat/python-psycopg_c?arch=src
+    affected_versions: vers:rpm/<3.2.3-1.el9pc
+    fixed_versions: vers:rpm/3.2.3-1.el9pc
+  - purl: pkg:rpm/redhat/python-yarl?arch=src
+    affected_versions: vers:rpm/<1.13.1-1.el9pc
+    fixed_versions: vers:rpm/1.13.1-1.el9pc
+  - purl: pkg:rpm/redhat/rubygem-foreman_leapp?arch=src
+    affected_versions: vers:rpm/<1.2.2-1.el9sat
+    fixed_versions: vers:rpm/1.2.2-1.el9sat
+  - purl: pkg:rpm/redhat/rubygem-foreman_rh_cloud?arch=src
+    affected_versions: vers:rpm/<10.0.3-1.el9sat
+    fixed_versions: vers:rpm/10.0.3-1.el9sat
+  - purl: pkg:rpm/redhat/rubygem-katello?arch=src
+    affected_versions: vers:rpm/<4.14.0.5-1.el9sat
+    fixed_versions: vers:rpm/4.14.0.5-1.el9sat
+  - purl: pkg:rpm/redhat/satellite?arch=src
+    affected_versions: vers:rpm/<6.16.1-1.el9sat
+    fixed_versions: vers:rpm/6.16.1-1.el9sat
+  - purl: pkg:rpm/redhat/satellite-lifecycle?arch=src
+    affected_versions: vers:rpm/<6.16.0-2.el9sat
+    fixed_versions: vers:rpm/6.16.0-2.el9sat
+  - purl: pkg:rpm/redhat/rubygem-foreman_maintain?arch=src&epoch=1
+    affected_versions: vers:rpm/<1.7.10-1.el9sat
+    fixed_versions: vers:rpm/1.7.10-1.el9sat
+  - purl: pkg:rpm/redhat/python-aiohttp?arch=src
+    affected_versions: vers:rpm/<3.10.11-1.el9pc
+    fixed_versions: vers:rpm/3.10.11-1.el9pc
+  - purl: pkg:rpm/redhat/python-pulpcore?arch=src
+    affected_versions: vers:rpm/<3.49.28-1.el9pc
+    fixed_versions: vers:rpm/3.49.28-1.el9pc
+  - purl: pkg:rpm/redhat/candlepin?arch=noarch
+    affected_versions: vers:rpm/<4.4.20-1.el8sat
+    fixed_versions: vers:rpm/4.4.20-1.el8sat
+  - purl: pkg:rpm/redhat/candlepin-selinux?arch=noarch
+    affected_versions: vers:rpm/<4.4.20-1.el8sat
+    fixed_versions: vers:rpm/4.4.20-1.el8sat
+  - purl: pkg:rpm/redhat/foreman-installer?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.12.0.3-1.el8sat
+    fixed_versions: vers:rpm/3.12.0.3-1.el8sat
+  - purl: pkg:rpm/redhat/foreman-installer-katello?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.12.0.3-1.el8sat
+    fixed_versions: vers:rpm/3.12.0.3-1.el8sat
+  - purl: pkg:rpm/redhat/python3.11-aiohappyeyeballs?arch=noarch
+    affected_versions: vers:rpm/<2.4.3-1.el8pc
+    fixed_versions: vers:rpm/2.4.3-1.el8pc
+  - purl: pkg:rpm/redhat/python3.11-psycopg?arch=noarch
+    affected_versions: vers:rpm/<3.2.3-1.el8pc
+    fixed_versions: vers:rpm/3.2.3-1.el8pc
+  - purl: pkg:rpm/redhat/rubygem-foreman_leapp?arch=noarch
+    affected_versions: vers:rpm/<1.2.2-1.el8sat
+    fixed_versions: vers:rpm/1.2.2-1.el8sat
+  - purl: pkg:rpm/redhat/rubygem-foreman_rh_cloud?arch=noarch
+    affected_versions: vers:rpm/<10.0.3-1.el8sat
+    fixed_versions: vers:rpm/10.0.3-1.el8sat
+  - purl: pkg:rpm/redhat/rubygem-katello?arch=noarch
+    affected_versions: vers:rpm/<4.14.0.5-1.el8sat
+    fixed_versions: vers:rpm/4.14.0.5-1.el8sat
+  - purl: pkg:rpm/redhat/satellite-cli?arch=noarch
+    affected_versions: vers:rpm/<6.16.1-1.el8sat
+    fixed_versions: vers:rpm/6.16.1-1.el8sat
+  - purl: pkg:rpm/redhat/satellite-capsule?arch=noarch
+    affected_versions: vers:rpm/<6.16.1-1.el8sat
+    fixed_versions: vers:rpm/6.16.1-1.el8sat
+  - purl: pkg:rpm/redhat/satellite-common?arch=noarch
+    affected_versions: vers:rpm/<6.16.1-1.el8sat
+    fixed_versions: vers:rpm/6.16.1-1.el8sat
+  - purl: pkg:rpm/redhat/satellite?arch=noarch
+    affected_versions: vers:rpm/<6.16.1-1.el8sat
+    fixed_versions: vers:rpm/6.16.1-1.el8sat
+  - purl: pkg:rpm/redhat/satellite-lifecycle?arch=noarch
+    affected_versions: vers:rpm/<6.16.0-2.el8sat
+    fixed_versions: vers:rpm/6.16.0-2.el8sat
+  - purl: pkg:rpm/redhat/rubygem-foreman_maintain?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<1.7.10-1.el8sat
+    fixed_versions: vers:rpm/1.7.10-1.el8sat
+  - purl: pkg:rpm/redhat/python3.11-pulpcore?arch=noarch
+    affected_versions: vers:rpm/<3.49.28-1.el8pc
+    fixed_versions: vers:rpm/3.49.28-1.el8pc
+  - purl: pkg:rpm/redhat/candlepin?arch=noarch
+    affected_versions: vers:rpm/<4.4.20-1.el9sat
+    fixed_versions: vers:rpm/4.4.20-1.el9sat
+  - purl: pkg:rpm/redhat/candlepin-selinux?arch=noarch
+    affected_versions: vers:rpm/<4.4.20-1.el9sat
+    fixed_versions: vers:rpm/4.4.20-1.el9sat
+  - purl: pkg:rpm/redhat/foreman-installer?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.12.0.3-1.el9sat
+    fixed_versions: vers:rpm/3.12.0.3-1.el9sat
+  - purl: pkg:rpm/redhat/foreman-installer-katello?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.12.0.3-1.el9sat
+    fixed_versions: vers:rpm/3.12.0.3-1.el9sat
+  - purl: pkg:rpm/redhat/python3.11-aiohappyeyeballs?arch=noarch
+    affected_versions: vers:rpm/<2.4.3-1.el9pc
+    fixed_versions: vers:rpm/2.4.3-1.el9pc
+  - purl: pkg:rpm/redhat/python3.11-psycopg?arch=noarch
+    affected_versions: vers:rpm/<3.2.3-1.el9pc
+    fixed_versions: vers:rpm/3.2.3-1.el9pc
+  - purl: pkg:rpm/redhat/rubygem-foreman_leapp?arch=noarch
+    affected_versions: vers:rpm/<1.2.2-1.el9sat
+    fixed_versions: vers:rpm/1.2.2-1.el9sat
+  - purl: pkg:rpm/redhat/rubygem-foreman_rh_cloud?arch=noarch
+    affected_versions: vers:rpm/<10.0.3-1.el9sat
+    fixed_versions: vers:rpm/10.0.3-1.el9sat
+  - purl: pkg:rpm/redhat/rubygem-katello?arch=noarch
+    affected_versions: vers:rpm/<4.14.0.5-1.el9sat
+    fixed_versions: vers:rpm/4.14.0.5-1.el9sat
+  - purl: pkg:rpm/redhat/satellite-capsule?arch=noarch
+    affected_versions: vers:rpm/<6.16.1-1.el9sat
+    fixed_versions: vers:rpm/6.16.1-1.el9sat
+  - purl: pkg:rpm/redhat/satellite-common?arch=noarch
+    affected_versions: vers:rpm/<6.16.1-1.el9sat
+    fixed_versions: vers:rpm/6.16.1-1.el9sat
+  - purl: pkg:rpm/redhat/satellite?arch=noarch
+    affected_versions: vers:rpm/<6.16.1-1.el9sat
+    fixed_versions: vers:rpm/6.16.1-1.el9sat
+  - purl: pkg:rpm/redhat/satellite-cli?arch=noarch
+    affected_versions: vers:rpm/<6.16.1-1.el9sat
+    fixed_versions: vers:rpm/6.16.1-1.el9sat
+  - purl: pkg:rpm/redhat/satellite-lifecycle?arch=noarch
+    affected_versions: vers:rpm/<6.16.0-2.el9sat
+    fixed_versions: vers:rpm/6.16.0-2.el9sat
+  - purl: pkg:rpm/redhat/rubygem-foreman_maintain?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<1.7.10-1.el9sat
+    fixed_versions: vers:rpm/1.7.10-1.el9sat
+  - purl: pkg:rpm/redhat/python3.11-pulpcore?arch=noarch
+    affected_versions: vers:rpm/<3.49.28-1.el9pc
+    fixed_versions: vers:rpm/3.49.28-1.el9pc
+  - purl: pkg:rpm/redhat/python3.11-psycopg_c?arch=x86_64
+    affected_versions: vers:rpm/<3.2.3-1.el8pc
+    fixed_versions: vers:rpm/3.2.3-1.el8pc
+  - purl: pkg:rpm/redhat/python-psycopg_c-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<3.2.3-1.el8pc
+    fixed_versions: vers:rpm/3.2.3-1.el8pc
+  - purl: pkg:rpm/redhat/python3.11-psycopg_c-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.2.3-1.el8pc
+    fixed_versions: vers:rpm/3.2.3-1.el8pc
+  - purl: pkg:rpm/redhat/python3.11-yarl?arch=x86_64
+    affected_versions: vers:rpm/<1.13.1-1.el8pc
+    fixed_versions: vers:rpm/1.13.1-1.el8pc
+  - purl: pkg:rpm/redhat/python-yarl-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<1.13.1-1.el8pc
+    fixed_versions: vers:rpm/1.13.1-1.el8pc
+  - purl: pkg:rpm/redhat/python3.11-yarl-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.13.1-1.el8pc
+    fixed_versions: vers:rpm/1.13.1-1.el8pc
+  - purl: pkg:rpm/redhat/python3.11-aiohttp?arch=x86_64
+    affected_versions: vers:rpm/<3.10.11-1.el8pc
+    fixed_versions: vers:rpm/3.10.11-1.el8pc
+  - purl: pkg:rpm/redhat/python-aiohttp-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<3.10.11-1.el8pc
+    fixed_versions: vers:rpm/3.10.11-1.el8pc
+  - purl: pkg:rpm/redhat/python3.11-aiohttp-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.11-1.el8pc
+    fixed_versions: vers:rpm/3.10.11-1.el8pc
+  - purl: pkg:rpm/redhat/python3.11-psycopg_c?arch=x86_64
+    affected_versions: vers:rpm/<3.2.3-1.el9pc
+    fixed_versions: vers:rpm/3.2.3-1.el9pc
+  - purl: pkg:rpm/redhat/python-psycopg_c-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<3.2.3-1.el9pc
+    fixed_versions: vers:rpm/3.2.3-1.el9pc
+  - purl: pkg:rpm/redhat/python3.11-psycopg_c-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.2.3-1.el9pc
+    fixed_versions: vers:rpm/3.2.3-1.el9pc
+  - purl: pkg:rpm/redhat/python3.11-yarl?arch=x86_64
+    affected_versions: vers:rpm/<1.13.1-1.el9pc
+    fixed_versions: vers:rpm/1.13.1-1.el9pc
+  - purl: pkg:rpm/redhat/python-yarl-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<1.13.1-1.el9pc
+    fixed_versions: vers:rpm/1.13.1-1.el9pc
+  - purl: pkg:rpm/redhat/python3.11-yarl-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.13.1-1.el9pc
+    fixed_versions: vers:rpm/1.13.1-1.el9pc
+  - purl: pkg:rpm/redhat/python3.11-aiohttp?arch=x86_64
+    affected_versions: vers:rpm/<3.10.11-1.el9pc
+    fixed_versions: vers:rpm/3.10.11-1.el9pc
+  - purl: pkg:rpm/redhat/python-aiohttp-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<3.10.11-1.el9pc
+    fixed_versions: vers:rpm/3.10.11-1.el9pc
+  - purl: pkg:rpm/redhat/python3.11-aiohttp-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.10.11-1.el9pc
+    fixed_versions: vers:rpm/3.10.11-1.el9pc
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_11574.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/documentation/en-us/red_hat_satellite/6.16/html/updating_red_hat_satellite/index
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-28560
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-28990
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29255
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29340
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29427
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29432
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29697
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29698
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29699
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29700
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29701
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29702
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29946
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29947
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-29974
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/SAT-30085
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_11574.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2327130
+    reference_type: bug
+    reference_id: 2327130
+  - url: https://access.redhat.com/errata/RHSA-2024:11574
+    reference_type:
+    reference_id: RHSA-2024:11574

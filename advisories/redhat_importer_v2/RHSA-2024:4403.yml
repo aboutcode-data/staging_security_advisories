@@ -1,0 +1,140 @@
+advisory_id: RHSA-2024:4403
+datasource_id: redhat_importer_v2/RHSA-2024:4403
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_4403.json
+aliases:
+  - CVE-2023-4727
+summary: |
+  An update for pki-core is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The Public Key Infrastructure (PKI) Core contains fundamental packages required by Red Hat Certificate System.
+
+  Security Fix(es):
+
+  * dogtag ca: token authentication bypass vulnerability (CVE-2023-4727)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/jss?arch=src&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/ldapjdk?arch=src&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.23.0-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.23.0-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-core?arch=src&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/tomcatjss?arch=src&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<7.7.1-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/7.7.1-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/jss?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/jss-debuginfo?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/jss-debugsource?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/jss-javadoc?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-core-debuginfo?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-core-debugsource?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-symkey?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-symkey-debuginfo?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-tools?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-tools-debuginfo?arch=x86_64&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/ldapjdk?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.23.0-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.23.0-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/ldapjdk-javadoc?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.23.0-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.23.0-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-acme?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-base?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-base-java?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-ca?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-kra?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-server?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/python3-pki?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/tomcatjss?arch=noarch&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<7.7.1-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/7.7.1-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/jss?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/jss-debuginfo?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/jss-debugsource?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/jss-javadoc?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<4.9.3-1.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/4.9.3-1.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-core-debuginfo?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-core-debugsource?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-symkey?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-symkey-debuginfo?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-tools?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+  - purl: pkg:rpm/redhat/pki-tools-debuginfo?arch=ppc64le&rpmmod=pki-core:10.6:8060020240329182634:60523a7b
+    affected_versions: vers:rpm/<10.12.7-2.module+el8.6.0+21627+1e66fa4f
+    fixed_versions: vers:rpm/10.12.7-2.module+el8.6.0+21627+1e66fa4f
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_4403.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_4403.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2232218
+    reference_type: bug
+    reference_id: 2232218
+  - url: https://access.redhat.com/errata/RHSA-2024:4403
+    reference_type:
+    reference_id: RHSA-2024:4403

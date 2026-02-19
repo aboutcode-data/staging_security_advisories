@@ -1,0 +1,305 @@
+advisory_id: RHSA-2024:0758
+datasource_id: redhat_importer_v2/RHSA-2024:0758
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_0758.json
+aliases:
+  - CVE-2024-21626
+summary: |
+  An update for the container-tools:2.0 module is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support, Red Hat Enterprise Linux 8.2 Telecommunications Update Service, and Red Hat Enterprise Linux 8.2 Update Services for SAP Solutions.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The container-tools module contains tools for working with containers, notably podman, buildah, skopeo, and runc.
+
+  Security Fix(es):
+
+  * runc: file descriptor leak (CVE-2024-21626)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/buildah?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/cockpit-podman?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<11-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/11-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/conmon?arch=src&epoch=2&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<2.0.6-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/2.0.6-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/container-selinux?arch=src&epoch=2&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<2.124.0-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/2.124.0-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containernetworking-plugins?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.8.3-4.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.8.3-4.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/criu?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/fuse-overlayfs?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.7.2-5.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.7.2-5.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/python-podman-api?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.2.0-0.2.gitd0a45fe.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.2.0-0.2.gitd0a45fe.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/runc?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.0.0-66.rc10.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.0.0-66.rc10.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo?arch=src&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/slirp4netns?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/toolbox?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.0.7-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.0.7-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/udica?arch=src&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.2.1-2.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.2.1-2.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah-debugsource?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah-tests?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah-tests-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/conmon?arch=x86_64&epoch=2&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<2.0.6-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/2.0.6-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containernetworking-plugins?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.8.3-4.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.8.3-4.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containernetworking-plugins-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.8.3-4.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.8.3-4.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containernetworking-plugins-debugsource?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.8.3-4.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.8.3-4.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containers-common?arch=x86_64&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/crit?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/criu?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/criu-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/criu-debugsource?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/fuse-overlayfs?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.7.2-5.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.7.2-5.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/fuse-overlayfs-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.7.2-5.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.7.2-5.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/fuse-overlayfs-debugsource?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.7.2-5.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.7.2-5.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-debugsource?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-remote?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-remote-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-tests?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/python3-criu?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/runc?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.0.0-66.rc10.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.0.0-66.rc10.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/runc-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.0.0-66.rc10.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.0.0-66.rc10.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/runc-debugsource?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.0.0-66.rc10.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.0.0-66.rc10.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo?arch=x86_64&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo-debuginfo?arch=x86_64&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo-debugsource?arch=x86_64&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo-tests?arch=x86_64&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/slirp4netns?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/slirp4netns-debuginfo?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/slirp4netns-debugsource?arch=x86_64&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/cockpit-podman?arch=noarch&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<11-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/11-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/container-selinux?arch=noarch&epoch=2&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<2.124.0-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/2.124.0-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-docker?arch=noarch&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/python-podman-api?arch=noarch&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.2.0-0.2.gitd0a45fe.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.2.0-0.2.gitd0a45fe.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/toolbox?arch=noarch&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.0.7-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.0.7-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/udica?arch=noarch&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.2.1-2.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.2.1-2.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah-debugsource?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah-tests?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/buildah-tests-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.11.6-8.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.11.6-8.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/conmon?arch=ppc64le&epoch=2&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<2.0.6-1.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/2.0.6-1.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containernetworking-plugins?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.8.3-4.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.8.3-4.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containernetworking-plugins-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.8.3-4.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.8.3-4.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containernetworking-plugins-debugsource?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.8.3-4.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.8.3-4.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/containers-common?arch=ppc64le&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/crit?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/criu?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/criu-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/criu-debugsource?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/fuse-overlayfs?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.7.2-5.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.7.2-5.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/fuse-overlayfs-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.7.2-5.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.7.2-5.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/fuse-overlayfs-debugsource?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.7.2-5.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.7.2-5.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-debugsource?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-remote?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-remote-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/podman-tests?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.6.4-24.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.6.4-24.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/python3-criu?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<3.12-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/3.12-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/runc?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.0.0-66.rc10.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.0.0-66.rc10.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/runc-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.0.0-66.rc10.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.0.0-66.rc10.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/runc-debugsource?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<1.0.0-66.rc10.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/1.0.0-66.rc10.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo?arch=ppc64le&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo-debuginfo?arch=ppc64le&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo-debugsource?arch=ppc64le&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/skopeo-tests?arch=ppc64le&epoch=1&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.1.40-9.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.1.40-9.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/slirp4netns?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/slirp4netns-debuginfo?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+  - purl: pkg:rpm/redhat/slirp4netns-debugsource?arch=ppc64le&rpmmod=container-tools:2.0:8020020240206120705:28c38760
+    affected_versions: vers:rpm/<0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+    fixed_versions: vers:rpm/0.4.2-3.git21fdece.module+el8.2.0+21264+96602818
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_0758.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/vulnerabilities/RHSB-2024-001
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_0758.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2258725
+    reference_type: bug
+    reference_id: 2258725
+  - url: https://access.redhat.com/errata/RHSA-2024:0758
+    reference_type:
+    reference_id: RHSA-2024:0758

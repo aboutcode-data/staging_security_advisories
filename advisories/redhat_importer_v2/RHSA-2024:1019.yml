@@ -1,0 +1,146 @@
+advisory_id: RHSA-2024:1019
+datasource_id: redhat_importer_v2/RHSA-2024:1019
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_1019.json
+aliases:
+  - CVE-2022-38096
+  - CVE-2023-4244
+  - CVE-2023-51042
+  - CVE-2023-51043
+  - CVE-2023-6546
+  - CVE-2023-6817
+  - CVE-2023-6931
+  - CVE-2024-0193
+  - CVE-2024-1085
+  - CVE-2024-1086
+summary: |
+  An update for kernel-rt is now available for Red Hat Enterprise Linux 9.2 Extended Update Support.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.
+
+  Security Fix(es):
+
+  * kernel: GSM multiplexing race condition leads to privilege escalation (CVE-2023-6546)
+
+  * kernel: inactive elements in nft_pipapo_walk (CVE-2023-6817)
+
+  * kernel: netfilter: use-after-free in nft_trans_gc_catchall_sync leads to privilege escalation (CVE-2024-0193)
+
+  * kernel: vmwgfx: NULL pointer dereference in vmw_cmd_dx_define_query (CVE-2022-38096)
+
+  * kernel: Use-after-free in nft_verdict_dump due to a race between set GC and transaction (CVE-2023-4244)
+
+  * kernel: Out of boundary write in perf_read_group() as result of overflow a perf_event's read_size (CVE-2023-6931)
+
+  * kernel: use-after-free in amdgpu_cs_wait_all_fences in drivers/gpu/drm/amd/amdgpu/amdgpu_cs.c (CVE-2023-51042)
+
+  * kernel: use-after-free during a race condition between a nonblocking atomic commit and a driver unload in drivers/gpu/drm/drm_atomic.c (CVE-2023-51043)
+
+  * kernel: nf_tables: use-after-free vulnerability in the nft_setelem_catchall_deactivate() function (CVE-2024-1085)
+
+  * kernel: nf_tables: use-after-free vulnerability in the nft_verdict_init() function (CVE-2024-1086)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-rt?arch=src
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-core?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debug?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debug-core?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debug-modules?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debug-modules-core?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debug-modules-extra?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-devel?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-kvm?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-modules?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-modules-core?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-modules-extra?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<5.14.0-284.55.1.rt14.340.el9_2
+    fixed_versions: vers:rpm/5.14.0-284.55.1.rt14.340.el9_2
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_1019.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2024/rhsa-2024_1019.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2133452
+    reference_type: bug
+    reference_id: 2133452
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2235306
+    reference_type: bug
+    reference_id: 2235306
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2252731
+    reference_type: bug
+    reference_id: 2252731
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2255139
+    reference_type: bug
+    reference_id: 2255139
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2255498
+    reference_type: bug
+    reference_id: 2255498
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2255653
+    reference_type: bug
+    reference_id: 2255653
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2259866
+    reference_type: bug
+    reference_id: 2259866
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2260005
+    reference_type: bug
+    reference_id: 2260005
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2262126
+    reference_type: bug
+    reference_id: 2262126
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=2262127
+    reference_type: bug
+    reference_id: 2262127
+  - url: https://access.redhat.com/errata/RHSA-2024:1019
+    reference_type:
+    reference_id: RHSA-2024:1019
