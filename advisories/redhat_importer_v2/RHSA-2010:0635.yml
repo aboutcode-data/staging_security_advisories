@@ -1,0 +1,724 @@
+advisory_id: RHSA-2010:0635
+datasource_id: redhat_importer_v2/RHSA-2010:0635
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0635.json
+aliases:
+  - CVE-2009-4032
+  - CVE-2010-1431
+  - CVE-2010-1644
+  - CVE-2010-1645
+  - CVE-2010-2092
+  - CVE-2010-2544
+  - CVE-2010-2545
+summary: |
+  The Red Hat High Performance Computing (HPC) Solution version 5.5 for Red
+  Hat Enterprise Linux 5.5, or RHHPC 5.5, is now available, fixing multiple
+  security issues, multiple bugs, and adding several enhancements.
+
+  The Red Hat Security Response Team has rated this update as having
+  important security impact. Common Vulnerability Scoring System (CVSS) base
+  scores, which give detailed severity ratings, are available for each
+  vulnerability from the CVE links in the References section.
+
+  The Red Hat HPC Solution is a low-cost, end-to-end software stack for high
+  performance computing. It provides all the tools needed to deploy, run, and
+  manage an HPC cluster in one easy-to-install package. It is designed to
+  power departmental clusters running industry-standard x86 64-bit hardware.
+
+  This update introduces the Red Hat HPC Solution version 5.5 for Red Hat
+  Enterprise Linux 5.5, RHHPC 5.5. (BZ#599419)
+
+  RHHPC 5.5 changes include:
+
+  * add-on kits updated according to the new upstream released version.
+
+  * many bug fixes for PCM, and enhancements for image/diskless provisioning.
+
+  The Cacti RRD graphing tool was updated to version 0.8.7g, fixing multiple
+  security flaws:
+
+  Multiple SQL injection flaws were discovered in Cacti. An unauthenticated,
+  or authenticated user with certain administrative privileges, could use
+  these flaws to execute arbitrary SQL queries. (CVE-2010-2092,
+  CVE-2010-1431)
+
+  Multiple command injection flaws were discovered in Cacti. An authenticated
+  user with certain administrative privileges could use these flaws to
+  execute arbitrary commands on the Cacti server with the privileges of the
+  web server user. (CVE-2010-1645)
+
+  Multiple cross-site scripting (XSS) flaws were discovered in Cacti. An
+  unauthenticated, or authenticated user with certain administrative
+  privileges, could perform an XSS attack against victims viewing Cacti web
+  pages. (CVE-2009-4032, CVE-2010-1644, CVE-2010-2544, CVE-2010-2545)
+
+  Users wanting to run the Red Hat HPC Solution on Red Hat Enterprise Linux
+  5.5 should install these packages.
+impacted_packages:
+  - purl: pkg:rpm/redhat/component-mvapich1-libraries?arch=src
+    affected_versions: vers:rpm/<0.1-4
+    fixed_versions: vers:rpm/0.1-4
+  - purl: pkg:rpm/redhat/component-base-node?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/blacs-mvapich1-gnu?arch=src
+    affected_versions: vers:rpm/<20000224-7
+    fixed_versions: vers:rpm/20000224-7
+  - purl: pkg:rpm/redhat/blacs-openmpi-gnu?arch=src
+    affected_versions: vers:rpm/<20000224-9
+    fixed_versions: vers:rpm/20000224-9
+  - purl: pkg:rpm/redhat/component-base-installer?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/component-ganglia-server-v3_0?arch=src
+    affected_versions: vers:rpm/<3.0-3
+    fixed_versions: vers:rpm/3.0-3
+  - purl: pkg:rpm/redhat/component-gnome-desktop?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/component-icr-facilitator?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/component-lava-compute-v1_0?arch=src
+    affected_versions: vers:rpm/<1.0-6
+    fixed_versions: vers:rpm/1.0-6
+  - purl: pkg:rpm/redhat/component-nagios-installer-v2_12?arch=src
+    affected_versions: vers:rpm/<2.12-4
+    fixed_versions: vers:rpm/2.12-4
+  - purl: pkg:rpm/redhat/component-ntop-v3_3?arch=src
+    affected_versions: vers:rpm/<3.3-12
+    fixed_versions: vers:rpm/3.3-12
+  - purl: pkg:rpm/redhat/component-RHEL-OFED-devel?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/initrd-templates?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kit-base?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kit-cacti?arch=src
+    affected_versions: vers:rpm/<0.8.7-47
+    fixed_versions: vers:rpm/0.8.7-47
+  - purl: pkg:rpm/redhat/kit-ganglia?arch=src
+    affected_versions: vers:rpm/<3.0-8
+    fixed_versions: vers:rpm/3.0-8
+  - purl: pkg:rpm/redhat/kit-hpc?arch=src
+    affected_versions: vers:rpm/<0.1-5
+    fixed_versions: vers:rpm/0.1-5
+  - purl: pkg:rpm/redhat/kit-lava?arch=src
+    affected_versions: vers:rpm/<1.0-11
+    fixed_versions: vers:rpm/1.0-11
+  - purl: pkg:rpm/redhat/kit-nagios?arch=src
+    affected_versions: vers:rpm/<2.12-6
+    fixed_versions: vers:rpm/2.12-6
+  - purl: pkg:rpm/redhat/kit-ntop?arch=src
+    affected_versions: vers:rpm/<3.3-13
+    fixed_versions: vers:rpm/3.3-13
+  - purl: pkg:rpm/redhat/kit-rhel_java?arch=src
+    affected_versions: vers:rpm/<1.6.0-3.el5
+    fixed_versions: vers:rpm/1.6.0-3.el5
+  - purl: pkg:rpm/redhat/kit-rhel-ofed?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-autoinstall?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-base-node?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-boot?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-buildkit?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-core?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-driverpatch?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-hardware?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-installer?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-kitops?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-md5crypt?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-net-tool?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-networktool?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/environment-modules?arch=src
+    affected_versions: vers:rpm/<3.2.7b-7.el5
+    fixed_versions: vers:rpm/3.2.7b-7.el5
+  - purl: pkg:rpm/redhat/python-psycopg2?arch=src
+    affected_versions: vers:rpm/<2.0.14-1.el5
+    fixed_versions: vers:rpm/2.0.14-1.el5
+  - purl: pkg:rpm/redhat/python-IPy?arch=src
+    affected_versions: vers:rpm/<0.70-1.el5
+    fixed_versions: vers:rpm/0.70-1.el5
+  - purl: pkg:rpm/redhat/component-ganglia-agent-v3_0?arch=src
+    affected_versions: vers:rpm/<3.0-3.el5
+    fixed_versions: vers:rpm/3.0-3.el5
+  - purl: pkg:rpm/redhat/iozone?arch=src
+    affected_versions: vers:rpm/<3-5.el5
+    fixed_versions: vers:rpm/3-5.el5
+  - purl: pkg:rpm/redhat/pcm-kit-ntop?arch=src
+    affected_versions: vers:rpm/<1.1-2
+    fixed_versions: vers:rpm/1.1-2
+  - purl: pkg:rpm/redhat/kusu-nodeinstaller?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-repoman?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-path?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-nodeinstaller-patchfiles?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-release?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/linpack-mvapich1-gnu?arch=src
+    affected_versions: vers:rpm/<1.0a-7
+    fixed_versions: vers:rpm/1.0a-7
+  - purl: pkg:rpm/redhat/kusu-util?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-ui?arch=src
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/linpack-openmpi-gnu?arch=src
+    affected_versions: vers:rpm/<1.0a-6
+    fixed_versions: vers:rpm/1.0a-6
+  - purl: pkg:rpm/redhat/pcm-kit-hpc?arch=src
+    affected_versions: vers:rpm/<1.0-22
+    fixed_versions: vers:rpm/1.0-22
+  - purl: pkg:rpm/redhat/scalapack-mvapich1-gnu?arch=src
+    affected_versions: vers:rpm/<1.8.0-9
+    fixed_versions: vers:rpm/1.8.0-9
+  - purl: pkg:rpm/redhat/scalapack-openmpi-gnu?arch=src
+    affected_versions: vers:rpm/<1.8.0-9
+    fixed_versions: vers:rpm/1.8.0-9
+  - purl: pkg:rpm/redhat/primitive?arch=src
+    affected_versions: vers:rpm/<0.1.1-2
+    fixed_versions: vers:rpm/0.1.1-2
+  - purl: pkg:rpm/redhat/nagios-plugins?arch=src
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nrpe?arch=src
+    affected_versions: vers:rpm/<2.12-12.1.el5
+    fixed_versions: vers:rpm/2.12-12.1.el5
+  - purl: pkg:rpm/redhat/netcdf?arch=src
+    affected_versions: vers:rpm/<3.6.2-7.el5
+    fixed_versions: vers:rpm/3.6.2-7.el5
+  - purl: pkg:rpm/redhat/ntop?arch=src
+    affected_versions: vers:rpm/<3.3.9-7.1.el5
+    fixed_versions: vers:rpm/3.3.9-7.1.el5
+  - purl: pkg:rpm/redhat/platform_mvapich?arch=src
+    affected_versions: vers:rpm/<1.2.0-0.3635.1.el5
+    fixed_versions: vers:rpm/1.2.0-0.3635.1.el5
+  - purl: pkg:rpm/redhat/GeoIP?arch=src
+    affected_versions: vers:rpm/<1.4.7-0.1.20090931cvs.el5
+    fixed_versions: vers:rpm/1.4.7-0.1.20090931cvs.el5
+  - purl: pkg:rpm/redhat/kusu-appglobals-tool?arch=src
+    affected_versions: vers:rpm/<5.5-1.el5
+    fixed_versions: vers:rpm/5.5-1.el5
+  - purl: pkg:rpm/redhat/kusu-base-installer?arch=src
+    affected_versions: vers:rpm/<5.5-2
+    fixed_versions: vers:rpm/5.5-2
+  - purl: pkg:rpm/redhat/lava?arch=src
+    affected_versions: vers:rpm/<1.0-10
+    fixed_versions: vers:rpm/1.0-10
+  - purl: pkg:rpm/redhat/pcm?arch=src
+    affected_versions: vers:rpm/<1.2-6
+    fixed_versions: vers:rpm/1.2-6
+  - purl: pkg:rpm/redhat/pcm-kit-base?arch=src
+    affected_versions: vers:rpm/<1.2-4
+    fixed_versions: vers:rpm/1.2-4
+  - purl: pkg:rpm/redhat/component-RHEL-OFED?arch=src
+    affected_versions: vers:rpm/<5.5-2
+    fixed_versions: vers:rpm/5.5-2
+  - purl: pkg:rpm/redhat/cacti?arch=src
+    affected_versions: vers:rpm/<0.8.7g-1.1.el5
+    fixed_versions: vers:rpm/0.8.7g-1.1.el5
+  - purl: pkg:rpm/redhat/component-cacti?arch=src
+    affected_versions: vers:rpm/<0.1-49
+    fixed_versions: vers:rpm/0.1-49
+  - purl: pkg:rpm/redhat/component-base-node?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/component-base-installer?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/component-ganglia-server-v3_0?arch=noarch
+    affected_versions: vers:rpm/<3.0-3
+    fixed_versions: vers:rpm/3.0-3
+  - purl: pkg:rpm/redhat/component-gnome-desktop?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/component-icr-facilitator?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/component-lava-compute-v1_0?arch=noarch
+    affected_versions: vers:rpm/<1.0-6
+    fixed_versions: vers:rpm/1.0-6
+  - purl: pkg:rpm/redhat/component-mvapich1-libraries?arch=noarch
+    affected_versions: vers:rpm/<0.1-4
+    fixed_versions: vers:rpm/0.1-4
+  - purl: pkg:rpm/redhat/component-nagios-installer-v2_12?arch=noarch
+    affected_versions: vers:rpm/<2.12-4
+    fixed_versions: vers:rpm/2.12-4
+  - purl: pkg:rpm/redhat/component-ntop-v3_3?arch=noarch
+    affected_versions: vers:rpm/<3.3-12
+    fixed_versions: vers:rpm/3.3-12
+  - purl: pkg:rpm/redhat/component-RHEL-OFED-devel?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/initrd-templates?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kit-base?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kit-cacti?arch=noarch
+    affected_versions: vers:rpm/<0.8.7-47
+    fixed_versions: vers:rpm/0.8.7-47
+  - purl: pkg:rpm/redhat/kit-ganglia?arch=noarch
+    affected_versions: vers:rpm/<3.0-8
+    fixed_versions: vers:rpm/3.0-8
+  - purl: pkg:rpm/redhat/kit-lava?arch=noarch
+    affected_versions: vers:rpm/<1.0-11
+    fixed_versions: vers:rpm/1.0-11
+  - purl: pkg:rpm/redhat/kit-nagios?arch=noarch
+    affected_versions: vers:rpm/<2.12-6
+    fixed_versions: vers:rpm/2.12-6
+  - purl: pkg:rpm/redhat/kit-ntop?arch=noarch
+    affected_versions: vers:rpm/<3.3-13
+    fixed_versions: vers:rpm/3.3-13
+  - purl: pkg:rpm/redhat/kit-rhel_java?arch=noarch
+    affected_versions: vers:rpm/<1.6.0-3.el5
+    fixed_versions: vers:rpm/1.6.0-3.el5
+  - purl: pkg:rpm/redhat/kit-rhel-ofed?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-autoinstall?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-boot?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-buildkit?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-core?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-driverpatch?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-hardware?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-installer?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-kitops?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-md5crypt?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-net-tool?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-networktool?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/python-IPy?arch=noarch
+    affected_versions: vers:rpm/<0.70-1.el5
+    fixed_versions: vers:rpm/0.70-1.el5
+  - purl: pkg:rpm/redhat/component-ganglia-agent-v3_0?arch=noarch
+    affected_versions: vers:rpm/<3.0-3.el5
+    fixed_versions: vers:rpm/3.0-3.el5
+  - purl: pkg:rpm/redhat/pcm-kit-ntop?arch=noarch
+    affected_versions: vers:rpm/<1.1-2
+    fixed_versions: vers:rpm/1.1-2
+  - purl: pkg:rpm/redhat/kusu-nodeinstaller?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-repoman?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-path?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-nodeinstaller-patchfiles?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-release?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-util?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-ui?arch=noarch
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/pcm-kit-hpc?arch=noarch
+    affected_versions: vers:rpm/<1.0-22
+    fixed_versions: vers:rpm/1.0-22
+  - purl: pkg:rpm/redhat/primitive?arch=noarch
+    affected_versions: vers:rpm/<0.1.1-2
+    fixed_versions: vers:rpm/0.1.1-2
+  - purl: pkg:rpm/redhat/kusu-appglobals-tool?arch=noarch
+    affected_versions: vers:rpm/<5.5-1.el5
+    fixed_versions: vers:rpm/5.5-1.el5
+  - purl: pkg:rpm/redhat/kusu-base-installer?arch=noarch
+    affected_versions: vers:rpm/<5.5-2
+    fixed_versions: vers:rpm/5.5-2
+  - purl: pkg:rpm/redhat/pcm?arch=noarch
+    affected_versions: vers:rpm/<1.2-6
+    fixed_versions: vers:rpm/1.2-6
+  - purl: pkg:rpm/redhat/pcm-kit-base?arch=noarch
+    affected_versions: vers:rpm/<1.2-4
+    fixed_versions: vers:rpm/1.2-4
+  - purl: pkg:rpm/redhat/component-RHEL-OFED?arch=noarch
+    affected_versions: vers:rpm/<5.5-2
+    fixed_versions: vers:rpm/5.5-2
+  - purl: pkg:rpm/redhat/cacti?arch=noarch
+    affected_versions: vers:rpm/<0.8.7g-1.1.el5
+    fixed_versions: vers:rpm/0.8.7g-1.1.el5
+  - purl: pkg:rpm/redhat/component-cacti?arch=noarch
+    affected_versions: vers:rpm/<0.1-49
+    fixed_versions: vers:rpm/0.1-49
+  - purl: pkg:rpm/redhat/blacs-mvapich1-gnu?arch=x86_64
+    affected_versions: vers:rpm/<20000224-7
+    fixed_versions: vers:rpm/20000224-7
+  - purl: pkg:rpm/redhat/blacs-mvapich1-gnu-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<20000224-7
+    fixed_versions: vers:rpm/20000224-7
+  - purl: pkg:rpm/redhat/blacs-openmpi-gnu?arch=x86_64
+    affected_versions: vers:rpm/<20000224-9
+    fixed_versions: vers:rpm/20000224-9
+  - purl: pkg:rpm/redhat/blacs-openmpi-gnu-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<20000224-9
+    fixed_versions: vers:rpm/20000224-9
+  - purl: pkg:rpm/redhat/kit-hpc?arch=x86_64
+    affected_versions: vers:rpm/<0.1-5
+    fixed_versions: vers:rpm/0.1-5
+  - purl: pkg:rpm/redhat/kusu-base-node?arch=x86_64
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/kusu-base-node-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.5-1
+    fixed_versions: vers:rpm/5.5-1
+  - purl: pkg:rpm/redhat/environment-modules-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.2.7b-7.el5
+    fixed_versions: vers:rpm/3.2.7b-7.el5
+  - purl: pkg:rpm/redhat/environment-modules?arch=x86_64
+    affected_versions: vers:rpm/<3.2.7b-7.el5
+    fixed_versions: vers:rpm/3.2.7b-7.el5
+  - purl: pkg:rpm/redhat/python-psycopg2-doc?arch=x86_64
+    affected_versions: vers:rpm/<2.0.14-1.el5
+    fixed_versions: vers:rpm/2.0.14-1.el5
+  - purl: pkg:rpm/redhat/python-psycopg2-zope?arch=x86_64
+    affected_versions: vers:rpm/<2.0.14-1.el5
+    fixed_versions: vers:rpm/2.0.14-1.el5
+  - purl: pkg:rpm/redhat/python-psycopg2-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.0.14-1.el5
+    fixed_versions: vers:rpm/2.0.14-1.el5
+  - purl: pkg:rpm/redhat/python-psycopg2?arch=x86_64
+    affected_versions: vers:rpm/<2.0.14-1.el5
+    fixed_versions: vers:rpm/2.0.14-1.el5
+  - purl: pkg:rpm/redhat/iozone?arch=x86_64
+    affected_versions: vers:rpm/<3-5.el5
+    fixed_versions: vers:rpm/3-5.el5
+  - purl: pkg:rpm/redhat/iozone-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3-5.el5
+    fixed_versions: vers:rpm/3-5.el5
+  - purl: pkg:rpm/redhat/linpack-mvapich1-gnu?arch=x86_64
+    affected_versions: vers:rpm/<1.0a-7
+    fixed_versions: vers:rpm/1.0a-7
+  - purl: pkg:rpm/redhat/linpack-openmpi-gnu?arch=x86_64
+    affected_versions: vers:rpm/<1.0a-6
+    fixed_versions: vers:rpm/1.0a-6
+  - purl: pkg:rpm/redhat/scalapack-mvapich1-gnu-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.8.0-9
+    fixed_versions: vers:rpm/1.8.0-9
+  - purl: pkg:rpm/redhat/scalapack-mvapich1-gnu?arch=x86_64
+    affected_versions: vers:rpm/<1.8.0-9
+    fixed_versions: vers:rpm/1.8.0-9
+  - purl: pkg:rpm/redhat/scalapack-openmpi-gnu-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.8.0-9
+    fixed_versions: vers:rpm/1.8.0-9
+  - purl: pkg:rpm/redhat/scalapack-openmpi-gnu?arch=x86_64
+    affected_versions: vers:rpm/<1.8.0-9
+    fixed_versions: vers:rpm/1.8.0-9
+  - purl: pkg:rpm/redhat/nagios-plugins-dummy?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-mrtgtraf?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-procs?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-load?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ifstatus?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ups?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-by_ssh?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-udp?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-rpc?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-sensors?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-hpjd?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-oracle?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-time?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-log?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ntp?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-nwstat?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-fping?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-radius?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-http?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ifoperstatus?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-smtp?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ping?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-pgsql?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-linux_raid?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-dig?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-dns?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-mysql?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ssh?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-tcp?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ircd?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-nt?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-breeze?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-users?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-all?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-disk_smb?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-perl?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-flexlm?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-real?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-snmp?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-swap?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-disk?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ide_smart?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-icmp?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-nagios?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-wave?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-mrtg?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-mailq?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-file_age?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-dhcp?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-apt?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-cluster?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-overcr?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-ldap?arch=x86_64
+    affected_versions: vers:rpm/<1.4.14-1.1.el5
+    fixed_versions: vers:rpm/1.4.14-1.1.el5
+  - purl: pkg:rpm/redhat/nrpe?arch=x86_64
+    affected_versions: vers:rpm/<2.12-12.1.el5
+    fixed_versions: vers:rpm/2.12-12.1.el5
+  - purl: pkg:rpm/redhat/nrpe-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.12-12.1.el5
+    fixed_versions: vers:rpm/2.12-12.1.el5
+  - purl: pkg:rpm/redhat/nagios-plugins-nrpe?arch=x86_64
+    affected_versions: vers:rpm/<2.12-12.1.el5
+    fixed_versions: vers:rpm/2.12-12.1.el5
+  - purl: pkg:rpm/redhat/netcdf-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.6.2-7.el5
+    fixed_versions: vers:rpm/3.6.2-7.el5
+  - purl: pkg:rpm/redhat/netcdf?arch=x86_64
+    affected_versions: vers:rpm/<3.6.2-7.el5
+    fixed_versions: vers:rpm/3.6.2-7.el5
+  - purl: pkg:rpm/redhat/netcdf-devel?arch=x86_64
+    affected_versions: vers:rpm/<3.6.2-7.el5
+    fixed_versions: vers:rpm/3.6.2-7.el5
+  - purl: pkg:rpm/redhat/ntop-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.3.9-7.1.el5
+    fixed_versions: vers:rpm/3.3.9-7.1.el5
+  - purl: pkg:rpm/redhat/ntop?arch=x86_64
+    affected_versions: vers:rpm/<3.3.9-7.1.el5
+    fixed_versions: vers:rpm/3.3.9-7.1.el5
+  - purl: pkg:rpm/redhat/platform_mvapich?arch=x86_64
+    affected_versions: vers:rpm/<1.2.0-0.3635.1.el5
+    fixed_versions: vers:rpm/1.2.0-0.3635.1.el5
+  - purl: pkg:rpm/redhat/GeoIP-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.4.7-0.1.20090931cvs.el5
+    fixed_versions: vers:rpm/1.4.7-0.1.20090931cvs.el5
+  - purl: pkg:rpm/redhat/GeoIP-devel?arch=x86_64
+    affected_versions: vers:rpm/<1.4.7-0.1.20090931cvs.el5
+    fixed_versions: vers:rpm/1.4.7-0.1.20090931cvs.el5
+  - purl: pkg:rpm/redhat/GeoIP?arch=x86_64
+    affected_versions: vers:rpm/<1.4.7-0.1.20090931cvs.el5
+    fixed_versions: vers:rpm/1.4.7-0.1.20090931cvs.el5
+  - purl: pkg:rpm/redhat/lava-static?arch=x86_64
+    affected_versions: vers:rpm/<1.0-10
+    fixed_versions: vers:rpm/1.0-10
+  - purl: pkg:rpm/redhat/lava-devel?arch=x86_64
+    affected_versions: vers:rpm/<1.0-10
+    fixed_versions: vers:rpm/1.0-10
+  - purl: pkg:rpm/redhat/lava?arch=x86_64
+    affected_versions: vers:rpm/<1.0-10
+    fixed_versions: vers:rpm/1.0-10
+  - purl: pkg:rpm/redhat/lava-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.0-10
+    fixed_versions: vers:rpm/1.0-10
+  - purl: pkg:rpm/redhat/lava-master-config?arch=x86_64
+    affected_versions: vers:rpm/<1.0-10
+    fixed_versions: vers:rpm/1.0-10
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0635.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=459105
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=459229
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=541279
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=609093
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=609115
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0635.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=585401
+    reference_type: bug
+    reference_id: 585401
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=599419
+    reference_type: bug
+    reference_id: 599419
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=609076
+    reference_type: bug
+    reference_id: 609076
+  - url: https://access.redhat.com/errata/RHSA-2010:0635
+    reference_type:
+    reference_id: RHSA-2010:0635

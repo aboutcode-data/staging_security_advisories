@@ -1,0 +1,292 @@
+advisory_id: RHSA-2008:0287
+datasource_id: redhat_importer_v2/RHSA-2008:0287
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0287.json
+aliases:
+  - CVE-2008-1767
+summary: |
+  Updated libxslt packages that fix a security issue are now available.
+
+  This update has been rated as having important security impact by the Red
+  Hat Security Response Team.
+
+  libxslt is a C library, based on libxml, for parsing of XML files into
+  other textual formats (eg HTML, plain text and other XML representations of
+  the underlying data). It uses the standard XSLT stylesheet transformation
+  mechanism and, being written in plain ANSI C, is designed to be simple to
+  incorporate into other applications
+
+  Anthony de Almeida Lopes reported the libxslt library did not properly
+  process long "transformation match" conditions in the XSL stylesheet files.
+  An attacker could create a malicious XSL file that would cause a crash, or,
+  possibly, execute and arbitrary code with the privileges of the application
+  using libxslt library to perform XSL transformations. (CVE-2008-1767)
+
+  All users are advised to upgrade to these updated packages, which contain a
+  backported patch to resolve this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=x86_64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=x86_64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=x86_64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=x86_64
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=x86_64
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=x86_64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=x86_64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt?arch=x86_64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=i386
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=i386
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=i386
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=i386
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=i386
+    affected_versions: vers:rpm/<1.0.15-3
+    fixed_versions: vers:rpm/1.0.15-3
+  - purl: pkg:rpm/redhat/libxslt-python?arch=i386
+    affected_versions: vers:rpm/<1.0.15-3
+    fixed_versions: vers:rpm/1.0.15-3
+  - purl: pkg:rpm/redhat/libxslt?arch=i386
+    affected_versions: vers:rpm/<1.0.15-3
+    fixed_versions: vers:rpm/1.0.15-3
+  - purl: pkg:rpm/redhat/libxslt?arch=i386
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=i386
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=i386
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt?arch=i386
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=i386
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=i386
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=i386
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt?arch=src
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=src
+    affected_versions: vers:rpm/<1.0.15-3
+    fixed_versions: vers:rpm/1.0.15-3
+  - purl: pkg:rpm/redhat/libxslt?arch=src
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt?arch=src
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=ia64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=ia64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=ia64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=ia64
+    affected_versions: vers:rpm/<1.0.15-3
+    fixed_versions: vers:rpm/1.0.15-3
+  - purl: pkg:rpm/redhat/libxslt-python?arch=ia64
+    affected_versions: vers:rpm/<1.0.15-3
+    fixed_versions: vers:rpm/1.0.15-3
+  - purl: pkg:rpm/redhat/libxslt?arch=ia64
+    affected_versions: vers:rpm/<1.0.15-3
+    fixed_versions: vers:rpm/1.0.15-3
+  - purl: pkg:rpm/redhat/libxslt?arch=ia64
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=ia64
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=ia64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=ia64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt?arch=ia64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=ppc64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=ppc64
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=ppc64
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt?arch=ppc64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=ppc
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=ppc
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=ppc
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=ppc
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=ppc
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=ppc
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=ppc
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt?arch=ppc
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=s390x
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=s390x
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=s390x
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=s390x
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=s390x
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=s390x
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=s390x
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt?arch=s390x
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=s390
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=s390
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=s390
+    affected_versions: vers:rpm/<1.1.17-2.el5_1.1
+    fixed_versions: vers:rpm/1.1.17-2.el5_1.1
+  - purl: pkg:rpm/redhat/libxslt?arch=s390
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=s390
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=s390
+    affected_versions: vers:rpm/<1.0.33-6
+    fixed_versions: vers:rpm/1.0.33-6
+  - purl: pkg:rpm/redhat/libxslt?arch=s390
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-debuginfo?arch=s390
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-devel?arch=s390
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+  - purl: pkg:rpm/redhat/libxslt-python?arch=s390
+    affected_versions: vers:rpm/<1.1.11-1.el4_6.1
+    fixed_versions: vers:rpm/1.1.11-1.el4_6.1
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0287.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0287.json
+    reference_type:
+    reference_id:
+  - url: http://www.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=446809
+    reference_type: bug
+    reference_id: 446809
+  - url: https://access.redhat.com/errata/RHSA-2008:0287
+    reference_type:
+    reference_id: RHSA-2008:0287

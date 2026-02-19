@@ -1,0 +1,187 @@
+advisory_id: RHSA-2010:0793
+datasource_id: redhat_importer_v2/RHSA-2010:0793
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0793.json
+aliases:
+  - CVE-2010-3856
+summary: |
+  Updated glibc packages that fix one security issue are now available for
+  Red Hat Enterprise Linux 5.
+
+  The Red Hat Security Response Team has rated this update as having
+  important security impact. A Common Vulnerability Scoring System (CVSS)
+  base score, which gives a detailed severity rating, is available from the
+  CVE link in the References section.
+
+  The glibc packages contain the standard C libraries used by multiple
+  programs on the system. These packages contain the standard C and the
+  standard math libraries. Without these two libraries, a Linux system cannot
+  function properly.
+
+  It was discovered that the glibc dynamic linker/loader did not perform
+  sufficient safety checks when loading dynamic shared objects (DSOs) to
+  provide callbacks for its auditing API during the execution of
+  privileged programs. A local attacker could use this flaw to escalate
+  their privileges via a carefully-chosen system DSO library containing
+  unsafe constructors. (CVE-2010-3856)
+
+  Red Hat would like to thank Ben Hawkes and Tavis Ormandy for reporting this
+  issue.
+
+  All users should upgrade to these updated packages, which contain a
+  backported patch to correct this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/glibc?arch=i686
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc?arch=x86_64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-common?arch=x86_64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-headers?arch=x86_64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/nscd?arch=x86_64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-utils?arch=x86_64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=i386
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo-common?arch=i386
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-devel?arch=i386
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc?arch=i386
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-common?arch=i386
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-headers?arch=i386
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/nscd?arch=i386
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-utils?arch=i386
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc?arch=src
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc?arch=ia64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-common?arch=ia64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-headers?arch=ia64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/nscd?arch=ia64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-utils?arch=ia64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-devel?arch=ia64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc?arch=ppc64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc?arch=ppc
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-common?arch=ppc
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-headers?arch=ppc
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/nscd?arch=ppc
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-utils?arch=ppc
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-devel?arch=ppc
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc?arch=s390x
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-common?arch=s390x
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-headers?arch=s390x
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/nscd?arch=s390x
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-utils?arch=s390x
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-devel?arch=s390x
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc?arch=s390
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+  - purl: pkg:rpm/redhat/glibc-devel?arch=s390
+    affected_versions: vers:rpm/<2.5-49.el5_5.7
+    fixed_versions: vers:rpm/2.5-49.el5_5.7
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0793.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=645672
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0793.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2010:0793
+    reference_type:
+    reference_id: RHSA-2010:0793

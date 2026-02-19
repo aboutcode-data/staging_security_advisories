@@ -1,0 +1,165 @@
+advisory_id: RHSA-2011:1329
+datasource_id: redhat_importer_v2/RHSA-2011:1329
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2011/rhsa-2011_1329.json
+aliases:
+  - CVE-2011-3192
+summary: |
+  Updated httpd and httpd22 packages that fix one security issue are now
+  available for JBoss Enterprise Web Server 1.0.2 for Red Hat Enterprise
+  Linux 4, 5, and 6.
+
+  The Red Hat Security Response Team has rated this update as having
+  important security impact. A Common Vulnerability Scoring System (CVSS)
+  base score, which gives a detailed severity rating, is available from the
+  CVE link in the References section.
+
+  The Apache HTTP Server is a popular web server.
+
+  A flaw was found in the way the Apache HTTP Server handled Range HTTP
+  headers. A remote attacker could use this flaw to cause the Apache HTTP
+  Server to use an excessive amount of memory and CPU time via HTTP requests
+  with a specially-crafted Range header. (CVE-2011-3192)
+
+  All users of JBoss Enterprise Web Server 1.0.2 should upgrade to these
+  updated packages, which contain a backported patch to correct this issue.
+  After installing the updated packages, Red Hat Enterprise Linux 4 users
+  must restart the httpd22 service, and Red Hat Enterprise Linux 5 and 6
+  users must restart the httpd service, for the update to take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/httpd22-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-apr?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-manual?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-apr-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-apr-util-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-apr-util?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/mod_ssl22?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/mod_ssl?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/httpd-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/httpd-manual?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/httpd?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/mod_ssl?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/httpd-tools?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/httpd-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/httpd-manual?arch=x86_64
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/httpd22-debuginfo?arch=i386
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-apr?arch=i386
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-manual?arch=i386
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-apr-devel?arch=i386
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-devel?arch=i386
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-apr-util-devel?arch=i386
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22?arch=i386
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd22-apr-util?arch=i386
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/mod_ssl22?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd?arch=i386
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/mod_ssl?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/httpd-devel?arch=i386
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/httpd-manual?arch=i386
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/httpd?arch=i386
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/mod_ssl?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/httpd-tools?arch=i386
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/httpd-devel?arch=i386
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/httpd-manual?arch=i386
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+  - purl: pkg:rpm/redhat/httpd22?arch=src
+    affected_versions: vers:rpm/<2.2.17-16.ep5.el4
+    fixed_versions: vers:rpm/2.2.17-16.ep5.el4
+  - purl: pkg:rpm/redhat/httpd?arch=src
+    affected_versions: vers:rpm/<2.2.17-14.1.ep5.el5
+    fixed_versions: vers:rpm/2.2.17-14.1.ep5.el5
+  - purl: pkg:rpm/redhat/httpd?arch=src
+    affected_versions: vers:rpm/<2.2.17-13.2.ep5.el6
+    fixed_versions: vers:rpm/2.2.17-13.2.ep5.el6
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2011/rhsa-2011_1329.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=732928
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2011/rhsa-2011_1329.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2011:1329
+    reference_type:
+    reference_id: RHSA-2011:1329

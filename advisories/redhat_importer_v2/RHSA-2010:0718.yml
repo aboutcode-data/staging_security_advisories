@@ -1,0 +1,175 @@
+advisory_id: RHSA-2010:0718
+datasource_id: redhat_importer_v2/RHSA-2010:0718
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0718.json
+aliases:
+  - CVE-2010-3081
+summary: |
+  Updated kernel packages that fix one security issue are now available for
+  Red Hat Enterprise Linux 4.
+
+  The Red Hat Security Response Team has rated this update as having
+  important security impact. A Common Vulnerability Scoring System (CVSS)
+  base score, which gives a detailed severity rating, is available from the
+  CVE link in the References section.
+
+  The kernel packages contain the Linux kernel, the core of any Linux
+  operating system.
+
+  This update fixes the following security issue:
+
+  * The compat_alloc_user_space() function in the Linux kernel 32/64-bit
+  compatibility layer implementation was missing sanity checks. This function
+  could be abused in other areas of the Linux kernel if its length argument
+  can be controlled from user-space. On 64-bit systems, a local, unprivileged
+  user could use this flaw to escalate their privileges. (CVE-2010-3081,
+  Important)
+
+  Red Hat would like to thank Ben Hawkes for reporting this issue.
+
+  Refer to Knowledgebase article DOC-40265 for further details:
+  https://access.redhat.com/kb/docs/DOC-40265
+
+  Users should upgrade to these updated packages, which contain a backported
+  patch to correct this issue. The system must be rebooted for this update to
+  take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-smp-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-hugemem-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-hugemem?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-xenU-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-xenU?arch=i686
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp-devel?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-smp-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-xenU-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-xenU?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel?arch=s390
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.6.9-89.29.1.EL
+    fixed_versions: vers:rpm/2.6.9-89.29.1.EL
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0718.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/kb/docs/DOC-40265
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=634457
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0718.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2010:0718
+    reference_type:
+    reference_id: RHSA-2010:0718

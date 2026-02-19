@@ -1,0 +1,158 @@
+advisory_id: RHSA-2008:0828
+datasource_id: redhat_importer_v2/RHSA-2008:0828
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0828.json
+aliases:
+  - CVE-2008-1285
+  - CVE-2008-3273
+summary: |
+  Updated JBoss Enterprise Application Platform (JBoss EAP) packages that fix
+  various security issues are now available for Red Hat Enterprise Linux 5.
+
+  This update has been rated as having moderate security impact by the Red
+  Hat Security Response Team.
+
+  JBoss EAP is a middleware platform for Java 2 Platform, Enterprise Edition
+  (J2EE) applications.
+
+  This release of JBoss EAP for Red Hat Enterprise Linux 5 contains the JBoss
+  Application Server and JBoss Seam. This release serves as a replacement to
+  JBoss EAP 4.3.0.GA, and fixes the following security issues:
+
+  The JavaServer Faces (JSF) component was vulnerable to multiple cross-site
+  scripting (XSS) vulnerabilities. An attacker could use these flaws to
+  inject arbitrary web script or HTML. (CVE-2008-1285)
+
+  Unauthenticated users were able to access the status servlet, which could
+  allow remote attackers to acquire details about deployed web contexts.
+  (CVE-2008-3273)
+
+  These updated packages include bug fixes and enhancements which are not
+  listed here. For a full list, refer to the JBoss EAP 4.3.0.CP01 release
+  notes, linked to in the "References" section of this advisory.
+
+  Warning: before applying this update, please back up the JBoss EAP
+  "server/[configuration]/deploy/" directory, and any customized
+  configuration files.
+
+  All users of JBoss EAP on Red Hat Enterprise Linux 5 are advised to upgrade
+  to these updated packages, which resolve these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/glassfish-jsf?arch=noarch
+    affected_versions: vers:rpm/<1.2_08-0jpp.ep1.2.el5
+    fixed_versions: vers:rpm/1.2_08-0jpp.ep1.2.el5
+  - purl: pkg:rpm/redhat/asm?arch=noarch
+    affected_versions: vers:rpm/<1.5.3-1jpp.ep1.2.el5
+    fixed_versions: vers:rpm/1.5.3-1jpp.ep1.2.el5
+  - purl: pkg:rpm/redhat/glassfish-jaf?arch=noarch
+    affected_versions: vers:rpm/<1.1.0-0jpp.ep1.11.el5.1
+    fixed_versions: vers:rpm/1.1.0-0jpp.ep1.11.el5.1
+  - purl: pkg:rpm/redhat/jcommon?arch=noarch
+    affected_versions: vers:rpm/<1.0.12-1jpp.ep1.3.el5
+    fixed_versions: vers:rpm/1.0.12-1jpp.ep1.3.el5
+  - purl: pkg:rpm/redhat/cglib?arch=noarch
+    affected_versions: vers:rpm/<2.1.3-2jpp.ep1.6.el5
+    fixed_versions: vers:rpm/2.1.3-2jpp.ep1.6.el5
+  - purl: pkg:rpm/redhat/glassfish-javamail?arch=noarch
+    affected_versions: vers:rpm/<1.4.0-0jpp.ep1.9.el5
+    fixed_versions: vers:rpm/1.4.0-0jpp.ep1.9.el5
+  - purl: pkg:rpm/redhat/jfreechart?arch=noarch
+    affected_versions: vers:rpm/<1.0.9-1jpp.ep1.3.el5.1
+    fixed_versions: vers:rpm/1.0.9-1jpp.ep1.3.el5.1
+  - purl: pkg:rpm/redhat/jboss-aop?arch=noarch
+    affected_versions: vers:rpm/<1.5.5-1.CP01.0jpp.ep1.1.el5
+    fixed_versions: vers:rpm/1.5.5-1.CP01.0jpp.ep1.1.el5
+  - purl: pkg:rpm/redhat/jgroups?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<2.4.2-1.GA_CP01.0jpp.ep1.1.el5
+    fixed_versions: vers:rpm/2.4.2-1.GA_CP01.0jpp.ep1.1.el5
+  - purl: pkg:rpm/redhat/jbossxb?arch=noarch
+    affected_versions: vers:rpm/<1.0.0-2.SP1.0jpp.ep1.2.el5.1
+    fixed_versions: vers:rpm/1.0.0-2.SP1.0jpp.ep1.2.el5.1
+  - purl: pkg:rpm/redhat/jbossts?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<4.2.3-1.SP5_CP01.1jpp.ep1.1.el5
+    fixed_versions: vers:rpm/4.2.3-1.SP5_CP01.1jpp.ep1.1.el5
+  - purl: pkg:rpm/redhat/jboss-cache?arch=noarch
+    affected_versions: vers:rpm/<1.4.1-4.SP9.1jpp.ep1.1.el5
+    fixed_versions: vers:rpm/1.4.1-4.SP9.1jpp.ep1.1.el5
+  - purl: pkg:rpm/redhat/jboss-remoting?arch=noarch
+    affected_versions: vers:rpm/<2.2.2-3.SP7.0jpp.ep1.3.el5
+    fixed_versions: vers:rpm/2.2.2-3.SP7.0jpp.ep1.3.el5
+  - purl: pkg:rpm/redhat/hibernate3-javadoc?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.4-1.SP1_CP03.0jpp.ep1.1.el5
+    fixed_versions: vers:rpm/3.2.4-1.SP1_CP03.0jpp.ep1.1.el5
+  - purl: pkg:rpm/redhat/hibernate3?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.4-1.SP1_CP03.0jpp.ep1.1.el5
+    fixed_versions: vers:rpm/3.2.4-1.SP1_CP03.0jpp.ep1.1.el5
+  - purl: pkg:rpm/redhat/hibernate3-entitymanager-javadoc?arch=noarch
+    affected_versions: vers:rpm/<3.2.1-1jpp.ep1.7.el5
+    fixed_versions: vers:rpm/3.2.1-1jpp.ep1.7.el5
+  - purl: pkg:rpm/redhat/hibernate3-entitymanager?arch=noarch
+    affected_versions: vers:rpm/<3.2.1-1jpp.ep1.7.el5
+    fixed_versions: vers:rpm/3.2.1-1jpp.ep1.7.el5
+  - purl: pkg:rpm/redhat/hibernate3-annotations?arch=noarch
+    affected_versions: vers:rpm/<3.2.1-1.patch02.1jpp.ep1.3.el5.1
+    fixed_versions: vers:rpm/3.2.1-1.patch02.1jpp.ep1.3.el5.1
+  - purl: pkg:rpm/redhat/hibernate3-annotations-javadoc?arch=noarch
+    affected_versions: vers:rpm/<3.2.1-1.patch02.1jpp.ep1.3.el5.1
+    fixed_versions: vers:rpm/3.2.1-1.patch02.1jpp.ep1.3.el5.1
+  - purl: pkg:rpm/redhat/concurrent?arch=noarch
+    affected_versions: vers:rpm/<1.3.4-8jpp.ep1.6.el5.1
+    fixed_versions: vers:rpm/1.3.4-8jpp.ep1.6.el5.1
+  - purl: pkg:rpm/redhat/jbossws?arch=noarch
+    affected_versions: vers:rpm/<2.0.1-2.SP2_CP01.0jpp.ep1.2.el5
+    fixed_versions: vers:rpm/2.0.1-2.SP2_CP01.0jpp.ep1.2.el5
+  - purl: pkg:rpm/redhat/jboss-seam-docs?arch=noarch
+    affected_versions: vers:rpm/<1.2.1-3.JBPAPP_4_3_0_GA.ep1.5.el5.1
+    fixed_versions: vers:rpm/1.2.1-3.JBPAPP_4_3_0_GA.ep1.5.el5.1
+  - purl: pkg:rpm/redhat/jboss-seam?arch=noarch
+    affected_versions: vers:rpm/<1.2.1-3.JBPAPP_4_3_0_GA.ep1.5.el5.1
+    fixed_versions: vers:rpm/1.2.1-3.JBPAPP_4_3_0_GA.ep1.5.el5.1
+  - purl: pkg:rpm/redhat/rh-eap-docs?arch=noarch
+    affected_versions: vers:rpm/<4.3.0-2.GA_CP01.ep1.4.el5
+    fixed_versions: vers:rpm/4.3.0-2.GA_CP01.ep1.4.el5
+  - purl: pkg:rpm/redhat/jbossas?arch=noarch
+    affected_versions: vers:rpm/<4.3.0-2.GA_CP01.ep1.6.el5.1
+    fixed_versions: vers:rpm/4.3.0-2.GA_CP01.ep1.6.el5.1
+  - purl: pkg:rpm/redhat/jboss-messaging?arch=noarch
+    affected_versions: vers:rpm/<1.4.0-1.SP3_CP02.0jpp.ep1.6.el5
+    fixed_versions: vers:rpm/1.4.0-1.SP3_CP02.0jpp.ep1.6.el5
+  - purl: pkg:rpm/redhat/glassfish-jaf?arch=src
+    affected_versions: vers:rpm/<1.1.0-0jpp.ep1.11.el5.1
+    fixed_versions: vers:rpm/1.1.0-0jpp.ep1.11.el5.1
+  - purl: pkg:rpm/redhat/glassfish-javamail?arch=src
+    affected_versions: vers:rpm/<1.4.0-0jpp.ep1.9.el5
+    fixed_versions: vers:rpm/1.4.0-0jpp.ep1.9.el5
+  - purl: pkg:rpm/redhat/jboss-seam?arch=src
+    affected_versions: vers:rpm/<1.2.1-3.JBPAPP_4_3_0_GA.ep1.5.el5.1
+    fixed_versions: vers:rpm/1.2.1-3.JBPAPP_4_3_0_GA.ep1.5.el5.1
+  - purl: pkg:rpm/redhat/jbossas?arch=src
+    affected_versions: vers:rpm/<4.3.0-2.GA_CP01.ep1.6.el5.1
+    fixed_versions: vers:rpm/4.3.0-2.GA_CP01.ep1.6.el5.1
+  - purl: pkg:rpm/redhat/jboss-messaging?arch=src
+    affected_versions: vers:rpm/<1.4.0-1.SP3_CP02.0jpp.ep1.6.el5
+    fixed_versions: vers:rpm/1.4.0-1.SP3_CP02.0jpp.ep1.6.el5
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0828.json
+weaknesses: []
+references:
+  - url: http://redhat.com/docs/en-US/JBoss_Enterprise_Application_Platform/4.3.0.cp01/html-single/readme/
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0828.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=437082
+    reference_type: bug
+    reference_id: 437082
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=457757
+    reference_type: bug
+    reference_id: 457757
+  - url: https://access.redhat.com/errata/RHSA-2008:0828
+    reference_type:
+    reference_id: RHSA-2008:0828

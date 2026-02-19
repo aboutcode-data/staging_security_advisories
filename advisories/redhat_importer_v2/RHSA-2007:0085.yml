@@ -1,0 +1,157 @@
+advisory_id: RHSA-2007:0085
+datasource_id: redhat_importer_v2/RHSA-2007:0085
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0085.json
+aliases:
+  - CVE-2007-0001
+  - CVE-2007-0006
+summary: "Updated kernel packages that fix two security issues and a bug in the Red Hat\nEnterprise\
+  \ Linux 4 kernel are now available.\n\nThis update has been rated as having important security\
+  \ impact by the Red\nHat Security Response Team.\n\nThe Linux kernel handles the basic functions\
+  \ of the operating system.\n\nThese new kernel packages contain fixes for two security issues:\n\
+  \n* a flaw in the key serial number collision avoidance algorithm of the\nkeyctl subsystem\
+  \ that allowed a local user to cause a denial of service\n(CVE-2007-0006, Important)\n\n*\
+  \ a flaw in the file watch implementation of the audit subsystems that\nallowed a local user\
+  \ to cause a denial of service (panic). To exploit this\nflaw a privileged user must have\
+  \ previously created a watch for a file \n(CVE-2007-0001, Moderate)\n\nIn addition to the\
+  \ security issues described above, a fix for the SCTP\nsubsystem to address a system crash\
+  \ which may be experienced in Telco\nenvironments has been included.\n\nRed Hat Enterprise\
+  \ Linux 4 users are advised to upgrade their kernels to\nthe packages associated with their\
+  \ machine architecture and configurations\nas listed in this erratum."
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=i686
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-hugemem?arch=i686
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-smp-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-hugemem-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp-devel?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-smp-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-largesmp-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel?arch=s390
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390
+    affected_versions: vers:rpm/<2.6.9-42.0.10.EL
+    fixed_versions: vers:rpm/2.6.9-42.0.10.EL
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0085.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0085.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=223129
+    reference_type: bug
+    reference_id: 223129
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=223818
+    reference_type: bug
+    reference_id: 223818
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=227495
+    reference_type: bug
+    reference_id: 227495
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/dos/29683.txt
+    reference_type: exploit
+    reference_id: CVE-2007-0001;OSVDB-33031
+  - url: https://www.securityfocus.com/bid/22737/info
+    reference_type: exploit
+    reference_id: CVE-2007-0001;OSVDB-33031
+  - url: https://access.redhat.com/errata/RHSA-2007:0085
+    reference_type:
+    reference_id: RHSA-2007:0085

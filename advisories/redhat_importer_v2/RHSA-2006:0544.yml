@@ -1,0 +1,186 @@
+advisory_id: RHSA-2006:0544
+datasource_id: redhat_importer_v2/RHSA-2006:0544
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0544.json
+aliases:
+  - CVE-2006-0903
+  - CVE-2006-1516
+  - CVE-2006-1517
+  - CVE-2006-2753
+  - CVE-2006-3081
+  - CVE-2006-4380
+summary: |
+  Updated mysql packages that fix multiple security flaws are now available.
+
+  This update has been rated as having important security impact by the Red Hat
+  Security Response Team.
+
+  MySQL is a multi-user, multi-threaded SQL database server. MySQL is a
+  client/server implementation consisting of a server daemon (mysqld) and
+  many different client programs and libraries.
+
+  A flaw was found in the way the MySQL mysql_real_escape() function escaped
+  strings when operating in a multibyte character encoding.  An attacker
+  could provide an application a carefully crafted string containing
+  invalidly-encoded characters which may be improperly escaped, leading to
+  the injection of malicious SQL commands. (CVE-2006-2753)
+
+  An information disclosure flaw was found in the way the MySQL server
+  processed malformed usernames. An attacker could view a small portion
+  of server memory by supplying an anonymous login username which was not
+  null terminated. (CVE-2006-1516)
+
+  An information disclosure flaw was found in the way the MySQL server
+  executed the COM_TABLE_DUMP command. An authenticated malicious user could
+  send a specially crafted packet to the MySQL server which returned
+  random unallocated memory. (CVE-2006-1517)
+
+  A log file obfuscation flaw was found in the way the mysql_real_query()
+  function creates log file entries. An attacker with the the ability to call
+  the mysql_real_query() function against a mysql server can obfuscate the
+  entry the server will write to the log file.  However, an attacker needed
+  to have complete control over a server in order to attempt this attack.
+  (CVE-2006-0903)
+
+  This update also fixes numerous non-security-related flaws, such as
+  intermittent authentication failures.
+
+  All users of mysql are advised to upgrade to these updated packages
+  containing MySQL version 4.1.20, which is not vulnerable to these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/mysql-bench?arch=ia64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-devel?arch=ia64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql?arch=ia64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-server?arch=ia64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql?arch=i386
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-bench?arch=i386
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-devel?arch=i386
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-server?arch=i386
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-bench?arch=x86_64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql?arch=x86_64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-server?arch=x86_64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql?arch=src
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-bench?arch=ppc
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-devel?arch=ppc
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql?arch=ppc
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-server?arch=ppc
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql?arch=ppc64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-bench?arch=s390x
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-devel?arch=s390x
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql?arch=s390x
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-server?arch=s390x
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql?arch=s390
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-debuginfo?arch=s390
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-bench?arch=s390
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-devel?arch=s390
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+  - purl: pkg:rpm/redhat/mysql-server?arch=s390
+    affected_versions: vers:rpm/<4.1.20-1.RHEL4.1
+    fixed_versions: vers:rpm/4.1.20-1.RHEL4.1
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0544.json
+weaknesses: []
+references:
+  - url: http://lists.mysql.com/announce/364
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0544.json
+    reference_type:
+    reference_id:
+  - url: http://www.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=183260
+    reference_type: bug
+    reference_id: 183260
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=183277
+    reference_type: bug
+    reference_id: 183277
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=190743
+    reference_type: bug
+    reference_id: '190743'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=190863
+    reference_type: bug
+    reference_id: '190863'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=193827
+    reference_type: bug
+    reference_id: '193827'
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/1742.c
+    reference_type: exploit
+    reference_id: OSVDB-25226;CVE-2006-1516
+  - url: https://access.redhat.com/errata/RHSA-2006:0544
+    reference_type:
+    reference_id: RHSA-2006:0544

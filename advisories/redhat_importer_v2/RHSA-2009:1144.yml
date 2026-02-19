@@ -1,0 +1,208 @@
+advisory_id: RHSA-2009:1144
+datasource_id: redhat_importer_v2/RHSA-2009:1144
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1144.json
+aliases:
+  - CVE-2008-5515
+  - CVE-2009-0580
+  - CVE-2009-0783
+summary: |
+  Updated JBoss Enterprise Application Platform (JBEAP) 4.2 packages that fix
+  various issues are now available for Red Hat Enterprise Linux 4 as JBEAP
+  4.2.0.CP07.
+
+  This update has been rated as having important security impact by the Red
+  Hat Security Response Team.
+
+  JBoss Enterprise Application Platform is the market leading platform for
+  innovative and scalable Java applications; integrating the JBoss
+  Application Server, with JBoss Hibernate and JBoss Seam into a complete,
+  simple enterprise solution.
+
+  This release of JBEAP for Red Hat Enterprise Linux 4 serves as a
+  replacement to JBEAP 4.2.0.CP06.
+
+  These updated packages include bug fixes and enhancements which are
+  detailed in the release notes. The link to the release notes is available
+  below in the References section of this errata.
+
+  The following security issues are also fixed with this release:
+
+  It was discovered that request dispatchers did not properly normalize user
+  requests that have trailing query strings, allowing remote attackers to
+  send specially-crafted requests that would cause an information leak.
+  (CVE-2008-5515)
+
+  It was discovered that the error checking methods of certain authentication
+  classes did not have sufficient error checking, allowing remote attackers
+  to enumerate (via brute force methods) usernames registered with
+  applications deployed on JBossWeb when FORM-based authentication was used.
+  (CVE-2009-0580)
+
+  It was discovered that web applications containing their own XML parsers
+  could replace the XML parser JBossWeb uses to parse configuration files. A
+  malicious web application running on a JBossWeb instance could read or,
+  potentially, modify the configuration and XML-based data of other web
+  applications deployed on the same JBossWeb instance. (CVE-2009-0783)
+
+  Warning: before applying this update, please back up the JBEAP
+  "server/[configuration]/deploy/" directory, and any other customized
+  configuration files.
+
+  All users of JBEAP 4.2 on Red Hat Enterprise Linux 4 are advised to upgrade
+  to these updated packages.
+impacted_packages:
+  - purl: pkg:rpm/redhat/hsqldb?arch=src&epoch=1
+    affected_versions: vers:rpm/<1.8.0.8-2.patch02.1jpp.ep1.2.el4
+    fixed_versions: vers:rpm/1.8.0.8-2.patch02.1jpp.ep1.2.el4
+  - purl: pkg:rpm/redhat/jgroups?arch=src&epoch=1
+    affected_versions: vers:rpm/<2.4.6-1.ep1.el4
+    fixed_versions: vers:rpm/2.4.6-1.ep1.el4
+  - purl: pkg:rpm/redhat/jboss-cache?arch=src
+    affected_versions: vers:rpm/<1.4.1-6.SP13.1.ep1.el4
+    fixed_versions: vers:rpm/1.4.1-6.SP13.1.ep1.el4
+  - purl: pkg:rpm/redhat/jbossts?arch=src&epoch=1
+    affected_versions: vers:rpm/<4.2.3-1.SP5_CP05.1jpp.ep1.1.el4
+    fixed_versions: vers:rpm/4.2.3-1.SP5_CP05.1jpp.ep1.1.el4
+  - purl: pkg:rpm/redhat/jakarta-slide-webdavclient?arch=src
+    affected_versions: vers:rpm/<2.1-9.2.el4
+    fixed_versions: vers:rpm/2.1-9.2.el4
+  - purl: pkg:rpm/redhat/hibernate3?arch=src&epoch=1
+    affected_versions: vers:rpm/<3.2.4-1.SP1_CP08.0jpp.ep1.2.el4
+    fixed_versions: vers:rpm/3.2.4-1.SP1_CP08.0jpp.ep1.2.el4
+  - purl: pkg:rpm/redhat/xerces-j2?arch=src
+    affected_versions: vers:rpm/<2.7.1-9jpp.ep1.2.el4
+    fixed_versions: vers:rpm/2.7.1-9jpp.ep1.2.el4
+  - purl: pkg:rpm/redhat/jboss-remoting?arch=src
+    affected_versions: vers:rpm/<2.2.3-2.ep1.el4
+    fixed_versions: vers:rpm/2.2.3-2.ep1.el4
+  - purl: pkg:rpm/redhat/hibernate3-commons-annotations?arch=src
+    affected_versions: vers:rpm/<3.0.0-1jpp.ep1.5.el4
+    fixed_versions: vers:rpm/3.0.0-1jpp.ep1.5.el4
+  - purl: pkg:rpm/redhat/hibernate3-annotations?arch=src
+    affected_versions: vers:rpm/<3.3.1-1.10.GA_CP01.ep1.el4
+    fixed_versions: vers:rpm/3.3.1-1.10.GA_CP01.ep1.el4
+  - purl: pkg:rpm/redhat/hibernate3-entitymanager?arch=src
+    affected_versions: vers:rpm/<3.3.2-2.4.ep1.el4
+    fixed_versions: vers:rpm/3.3.2-2.4.ep1.el4
+  - purl: pkg:rpm/redhat/hibernate3-validator?arch=src
+    affected_versions: vers:rpm/<3.0.0-1jpp.ep1.8.el4
+    fixed_versions: vers:rpm/3.0.0-1jpp.ep1.8.el4
+  - purl: pkg:rpm/redhat/jbossweb?arch=src
+    affected_versions: vers:rpm/<2.0.0-6.CP11.0jpp.ep1.1.el4
+    fixed_versions: vers:rpm/2.0.0-6.CP11.0jpp.ep1.1.el4
+  - purl: pkg:rpm/redhat/jboss-seam?arch=src
+    affected_versions: vers:rpm/<1.2.1-1.ep1.19.el4
+    fixed_versions: vers:rpm/1.2.1-1.ep1.19.el4
+  - purl: pkg:rpm/redhat/rh-eap-docs?arch=src
+    affected_versions: vers:rpm/<4.2.0-5.GA_CP07.ep1.1.el4
+    fixed_versions: vers:rpm/4.2.0-5.GA_CP07.ep1.1.el4
+  - purl: pkg:rpm/redhat/jbossas?arch=src
+    affected_versions: vers:rpm/<4.2.0-4.GA_CP07.5.ep1.el4
+    fixed_versions: vers:rpm/4.2.0-4.GA_CP07.5.ep1.el4
+  - purl: pkg:rpm/redhat/hsqldb?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<1.8.0.8-2.patch02.1jpp.ep1.2.el4
+    fixed_versions: vers:rpm/1.8.0.8-2.patch02.1jpp.ep1.2.el4
+  - purl: pkg:rpm/redhat/jgroups?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<2.4.6-1.ep1.el4
+    fixed_versions: vers:rpm/2.4.6-1.ep1.el4
+  - purl: pkg:rpm/redhat/jboss-cache?arch=noarch
+    affected_versions: vers:rpm/<1.4.1-6.SP13.1.ep1.el4
+    fixed_versions: vers:rpm/1.4.1-6.SP13.1.ep1.el4
+  - purl: pkg:rpm/redhat/jbossts?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<4.2.3-1.SP5_CP05.1jpp.ep1.1.el4
+    fixed_versions: vers:rpm/4.2.3-1.SP5_CP05.1jpp.ep1.1.el4
+  - purl: pkg:rpm/redhat/jakarta-slide-webdavclient?arch=noarch
+    affected_versions: vers:rpm/<2.1-9.2.el4
+    fixed_versions: vers:rpm/2.1-9.2.el4
+  - purl: pkg:rpm/redhat/hibernate3-javadoc?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.4-1.SP1_CP08.0jpp.ep1.2.el4
+    fixed_versions: vers:rpm/3.2.4-1.SP1_CP08.0jpp.ep1.2.el4
+  - purl: pkg:rpm/redhat/hibernate3?arch=noarch&epoch=1
+    affected_versions: vers:rpm/<3.2.4-1.SP1_CP08.0jpp.ep1.2.el4
+    fixed_versions: vers:rpm/3.2.4-1.SP1_CP08.0jpp.ep1.2.el4
+  - purl: pkg:rpm/redhat/xerces-j2?arch=noarch
+    affected_versions: vers:rpm/<2.7.1-9jpp.ep1.2.el4
+    fixed_versions: vers:rpm/2.7.1-9jpp.ep1.2.el4
+  - purl: pkg:rpm/redhat/jboss-remoting?arch=noarch
+    affected_versions: vers:rpm/<2.2.3-2.ep1.el4
+    fixed_versions: vers:rpm/2.2.3-2.ep1.el4
+  - purl: pkg:rpm/redhat/hibernate3-commons-annotations?arch=noarch
+    affected_versions: vers:rpm/<3.0.0-1jpp.ep1.5.el4
+    fixed_versions: vers:rpm/3.0.0-1jpp.ep1.5.el4
+  - purl: pkg:rpm/redhat/hibernate3-commons-annotations-javadoc?arch=noarch
+    affected_versions: vers:rpm/<3.0.0-1jpp.ep1.5.el4
+    fixed_versions: vers:rpm/3.0.0-1jpp.ep1.5.el4
+  - purl: pkg:rpm/redhat/hibernate3-annotations?arch=noarch
+    affected_versions: vers:rpm/<3.3.1-1.10.GA_CP01.ep1.el4
+    fixed_versions: vers:rpm/3.3.1-1.10.GA_CP01.ep1.el4
+  - purl: pkg:rpm/redhat/hibernate3-annotations-javadoc?arch=noarch
+    affected_versions: vers:rpm/<3.3.1-1.10.GA_CP01.ep1.el4
+    fixed_versions: vers:rpm/3.3.1-1.10.GA_CP01.ep1.el4
+  - purl: pkg:rpm/redhat/hibernate3-entitymanager?arch=noarch
+    affected_versions: vers:rpm/<3.3.2-2.4.ep1.el4
+    fixed_versions: vers:rpm/3.3.2-2.4.ep1.el4
+  - purl: pkg:rpm/redhat/hibernate3-entitymanager-javadoc?arch=noarch
+    affected_versions: vers:rpm/<3.3.2-2.4.ep1.el4
+    fixed_versions: vers:rpm/3.3.2-2.4.ep1.el4
+  - purl: pkg:rpm/redhat/hibernate3-validator?arch=noarch
+    affected_versions: vers:rpm/<3.0.0-1jpp.ep1.8.el4
+    fixed_versions: vers:rpm/3.0.0-1jpp.ep1.8.el4
+  - purl: pkg:rpm/redhat/hibernate3-validator-javadoc?arch=noarch
+    affected_versions: vers:rpm/<3.0.0-1jpp.ep1.8.el4
+    fixed_versions: vers:rpm/3.0.0-1jpp.ep1.8.el4
+  - purl: pkg:rpm/redhat/jbossweb?arch=noarch
+    affected_versions: vers:rpm/<2.0.0-6.CP11.0jpp.ep1.1.el4
+    fixed_versions: vers:rpm/2.0.0-6.CP11.0jpp.ep1.1.el4
+  - purl: pkg:rpm/redhat/jboss-seam-docs?arch=noarch
+    affected_versions: vers:rpm/<1.2.1-1.ep1.19.el4
+    fixed_versions: vers:rpm/1.2.1-1.ep1.19.el4
+  - purl: pkg:rpm/redhat/jboss-seam?arch=noarch
+    affected_versions: vers:rpm/<1.2.1-1.ep1.19.el4
+    fixed_versions: vers:rpm/1.2.1-1.ep1.19.el4
+  - purl: pkg:rpm/redhat/rh-eap-docs-examples?arch=noarch
+    affected_versions: vers:rpm/<4.2.0-5.GA_CP07.ep1.1.el4
+    fixed_versions: vers:rpm/4.2.0-5.GA_CP07.ep1.1.el4
+  - purl: pkg:rpm/redhat/rh-eap-docs?arch=noarch
+    affected_versions: vers:rpm/<4.2.0-5.GA_CP07.ep1.1.el4
+    fixed_versions: vers:rpm/4.2.0-5.GA_CP07.ep1.1.el4
+  - purl: pkg:rpm/redhat/jbossas-client?arch=noarch
+    affected_versions: vers:rpm/<4.2.0-4.GA_CP07.5.ep1.el4
+    fixed_versions: vers:rpm/4.2.0-4.GA_CP07.5.ep1.el4
+  - purl: pkg:rpm/redhat/jbossas-4.2.0.GA_CP07-bin?arch=noarch
+    affected_versions: vers:rpm/<4.2.0-4.GA_CP07.5.ep1.el4
+    fixed_versions: vers:rpm/4.2.0-4.GA_CP07.5.ep1.el4
+  - purl: pkg:rpm/redhat/jbossas?arch=noarch
+    affected_versions: vers:rpm/<4.2.0-4.GA_CP07.5.ep1.el4
+    fixed_versions: vers:rpm/4.2.0-4.GA_CP07.5.ep1.el4
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1144.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1144.json
+    reference_type:
+    reference_id:
+  - url: http://www.redhat.com/docs/en-US/JBoss_Enterprise_Application_Platform/4.2.0.cp07/html-single/Release_Notes/index.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=499605
+    reference_type: bug
+    reference_id: 499605
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=503978
+    reference_type: bug
+    reference_id: 503978
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=504153
+    reference_type: bug
+    reference_id: 504153
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=504753
+    reference_type: bug
+    reference_id: 504753
+  - url: https://access.redhat.com/errata/RHSA-2009:1144
+    reference_type:
+    reference_id: RHSA-2009:1144

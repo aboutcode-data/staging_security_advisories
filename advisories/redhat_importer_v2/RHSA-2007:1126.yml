@@ -1,0 +1,92 @@
+advisory_id: RHSA-2007:1126
+datasource_id: redhat_importer_v2/RHSA-2007:1126
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_1126.json
+aliases:
+  - CVE-2007-4324
+  - CVE-2007-4768
+  - CVE-2007-5275
+  - CVE-2007-6242
+  - CVE-2007-6243
+  - CVE-2007-6244
+  - CVE-2007-6245
+  - CVE-2007-6246
+summary: "An updated Adobe Flash Player package that fixes a security issue is now\navailable\
+  \ for Red Hat Enterprise Linux 3 Extras, 4 Extras, and 5\nSupplementary.\n\nThis update has\
+  \ been rated as having critical security impact by the Red\nHat Security Response Team.\n\n\
+  The flash-plugin package contains a Firefox-compatible Adobe Flash Player\nWeb browser plug-in.\n\
+  \nSeveral input validation flaws were found in the way Flash Player displays\ncertain content.\
+  \ It may be possible to execute arbitrary code on a victim's\nmachine, if the victim opens\
+  \ a malicious Adobe Flash file. \n(CVE-2007-4768, CVE-2007-6242, CVE-2007-6246)\n\nA flaw\
+  \ was found in the way Flash Player handled the asfunction: protocol.\nMalformed SWF files\
+  \ could perform a cross-site scripting attack.\n(CVE-2007-6244)\n\nA flaw was found in the\
+  \ way Flash Player modified HTTP request headers.\nMalicious content could allow Flash Player\
+  \ to conduct a HTTP response\nsplitting attack. (CVE-2007-6245)\n\nA flaw was found in the\
+  \ way Flash Player processes certain SWF content. A\nmalicious SWF file could allow a remote\
+  \ attacker to conduct a port scanning\nattack from the client's machine. (CVE-2007-4324)\n\
+  \nA flaw was found in the way Flash Player establishes TCP sessions. A remote\nattacker could\
+  \ use Flash Player to conduct a DNS rebinding attack.\n(CVE-2007-5275) \n\nUsers of Adobe\
+  \ Flash Player are advised to upgrade to this updated package,\nwhich contains version 9.0.115.0\
+  \ and resolves these issues."
+impacted_packages:
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<9.0.115.0-1.el3.with.oss
+    fixed_versions: vers:rpm/9.0.115.0-1.el3.with.oss
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<9.0.115.0-1.el5
+    fixed_versions: vers:rpm/9.0.115.0-1.el5
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<9.0.115.0-1.el4
+    fixed_versions: vers:rpm/9.0.115.0-1.el4
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_1126.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_1126.json
+    reference_type:
+    reference_id:
+  - url: http://www.adobe.com/support/security/bulletins/apsb07-20.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=252292
+    reference_type: bug
+    reference_id: 252292
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=367501
+    reference_type: bug
+    reference_id: 367501
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=392911
+    reference_type: bug
+    reference_id: 392911
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=412161
+    reference_type: bug
+    reference_id: 412161
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=414501
+    reference_type: bug
+    reference_id: 414501
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=414511
+    reference_type: bug
+    reference_id: 414511
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=414521
+    reference_type: bug
+    reference_id: 414521
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/remote/30905.txt
+    reference_type: exploit
+    reference_id: CVE-2007-6244;OSVDB-41485
+  - url: https://www.securityfocus.com/bid/26949/info
+    reference_type: exploit
+    reference_id: CVE-2007-6244;OSVDB-41485
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/30907.txt
+    reference_type: exploit
+    reference_id: CVE-2007-6244;OSVDB-41486
+  - url: https://www.securityfocus.com/bid/26960/info
+    reference_type: exploit
+    reference_id: CVE-2007-6244;OSVDB-41486
+  - url: https://access.redhat.com/errata/RHSA-2007:1126
+    reference_type:
+    reference_id: RHSA-2007:1126

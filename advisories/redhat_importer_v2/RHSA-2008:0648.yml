@@ -1,0 +1,257 @@
+advisory_id: RHSA-2008:0648
+datasource_id: redhat_importer_v2/RHSA-2008:0648
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0648.json
+aliases:
+  - CVE-2008-1232
+  - CVE-2008-1947
+  - CVE-2008-2370
+  - CVE-2008-2938
+summary: |
+  Updated tomcat packages that fix several security issues are now available
+  for Red Hat Enterprise Linux 5.
+
+  This update has been rated as having important security impact by the Red
+  Hat Security Response Team.
+
+  Apache Tomcat is a servlet container for the Java Servlet and JavaServer
+  Pages (JSP) technologies.
+
+  A cross-site scripting vulnerability was discovered in the
+  HttpServletResponse.sendError() method. A remote attacker could inject
+  arbitrary web script or HTML via forged HTTP headers. (CVE-2008-1232)
+
+  An additional cross-site scripting vulnerability was discovered in the host
+  manager application. A remote attacker could inject arbitrary web script or
+  HTML via the hostname parameter. (CVE-2008-1947)
+
+  A traversal vulnerability was discovered when using a RequestDispatcher
+  in combination with a servlet or JSP. A remote attacker could utilize a
+  specially-crafted request parameter to access protected web resources.
+  (CVE-2008-2370)
+
+  An additional traversal vulnerability was discovered when the
+  "allowLinking" and "URIencoding" settings were activated. A remote attacker
+  could use a UTF-8-encoded request to extend their privileges and obtain
+  local files accessible to the Tomcat process. (CVE-2008-2938)
+
+  Users of tomcat should upgrade to these updated packages, which contain
+  backported patches to resolve these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/tomcat5-server-lib?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api-javadoc?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper-javadoc?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-admin-webapps?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api-javadoc?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-common-lib?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-webapps?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api?arch=x86_64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-server-lib?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-debuginfo?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api-javadoc?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper-javadoc?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-admin-webapps?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api-javadoc?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-common-lib?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-webapps?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api?arch=i386
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5?arch=src
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-server-lib?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api-javadoc?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper-javadoc?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-admin-webapps?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api-javadoc?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-common-lib?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-webapps?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api?arch=ia64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-server-lib?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api-javadoc?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper-javadoc?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-admin-webapps?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api-javadoc?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-common-lib?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-webapps?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api?arch=ppc
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5?arch=ppc64
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-server-lib?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api-javadoc?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper-javadoc?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-admin-webapps?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jasper?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api-javadoc?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-common-lib?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-webapps?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api?arch=s390x
+    affected_versions: vers:rpm/<5.5.23-0jpp.7.el5_2.1
+    fixed_versions: vers:rpm/5.5.23-0jpp.7.el5_2.1
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0648.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2008:0648
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=446393
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=457597
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0648.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=456120
+    reference_type: bug
+    reference_id: 456120
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=457934
+    reference_type: bug
+    reference_id: 457934

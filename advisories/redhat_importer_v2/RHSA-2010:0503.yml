@@ -1,0 +1,123 @@
+advisory_id: RHSA-2010:0503
+datasource_id: redhat_importer_v2/RHSA-2010:0503
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0503.json
+aliases:
+  - CVE-2010-1240
+  - CVE-2010-1285
+  - CVE-2010-1295
+  - CVE-2010-1297
+  - CVE-2010-2168
+  - CVE-2010-2201
+  - CVE-2010-2202
+  - CVE-2010-2203
+  - CVE-2010-2204
+  - CVE-2010-2205
+  - CVE-2010-2206
+  - CVE-2010-2207
+  - CVE-2010-2208
+  - CVE-2010-2209
+  - CVE-2010-2210
+  - CVE-2010-2211
+  - CVE-2010-2212
+summary: |
+  Updated acroread packages that fix multiple security issues are now
+  available for Red Hat Enterprise Linux 4 Extras and Red Hat Enterprise
+  Linux 5 Supplementary.
+
+  The Red Hat Security Response Team has rated this update as having critical
+  security impact. Common Vulnerability Scoring System (CVSS) base scores,
+  which give detailed severity ratings, are available for each vulnerability
+  from the CVE links in the References section.
+
+  Adobe Reader allows users to view and print documents in Portable Document
+  Format (PDF).
+
+  This update fixes multiple vulnerabilities in Adobe Reader. These
+  vulnerabilities are detailed on the Adobe security pages APSA10-01 and
+  APSB10-15, listed in the References section. A specially-crafted PDF file
+  could cause Adobe Reader to crash or, potentially, execute arbitrary code
+  as the user running Adobe Reader when opened. (CVE-2010-1240,
+  CVE-2010-1285, CVE-2010-1295, CVE-2010-1297, CVE-2010-2168, CVE-2010-2201,
+  CVE-2010-2202, CVE-2010-2203, CVE-2010-2204, CVE-2010-2205, CVE-2010-2206,
+  CVE-2010-2207, CVE-2010-2208, CVE-2010-2209, CVE-2010-2210, CVE-2010-2211,
+  CVE-2010-2212)
+
+  All Adobe Reader users should install these updated packages. They contain
+  Adobe Reader version 9.3.3, which is not vulnerable to these issues. All
+  running instances of Adobe Reader must be restarted for the update to take
+  effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/acroread?arch=i386
+    affected_versions: vers:rpm/<9.3.3-2.el4
+    fixed_versions: vers:rpm/9.3.3-2.el4
+  - purl: pkg:rpm/redhat/acroread-plugin?arch=i386
+    affected_versions: vers:rpm/<9.3.3-2.el4
+    fixed_versions: vers:rpm/9.3.3-2.el4
+  - purl: pkg:rpm/redhat/acroread?arch=i386
+    affected_versions: vers:rpm/<9.3.3-1.el5
+    fixed_versions: vers:rpm/9.3.3-1.el5
+  - purl: pkg:rpm/redhat/acroread-plugin?arch=i386
+    affected_versions: vers:rpm/<9.3.3-1.el5
+    fixed_versions: vers:rpm/9.3.3-1.el5
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0503.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0503.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=600692
+    reference_type: bug
+    reference_id: 600692
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=609203
+    reference_type: bug
+    reference_id: 609203
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/local/11987.txt
+    reference_type: exploit
+    reference_id: CVE-2010-1240;CVE-2010-1239;OSVDB-63667;OSVDB-63548
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/local/16671.rb
+    reference_type: exploit
+    reference_id: CVE-2010-1240;OSVDB-63667
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/local/16682.rb
+    reference_type: exploit
+    reference_id: CVE-2010-1240;OSVDB-63667
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/remote/14853.py
+    reference_type: exploit
+    reference_id: CVE-2010-1297
+  - url: http://qoop.org/security/poc/cve-2010-1297/
+    reference_type: exploit
+    reference_id: CVE-2010-1297;OSVDB-65141
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/remote/13787.txt
+    reference_type: exploit
+    reference_id: CVE-2010-1297;OSVDB-65141
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/local/16614.rb
+    reference_type: exploit
+    reference_id: CVE-2010-1297;OSVDB-65141
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/local/16687.rb
+    reference_type: exploit
+    reference_id: CVE-2010-1297;OSVDB-65141
+  - url: http://www.adobe.com/support/security/advisories/apsa10-01.html
+    reference_type: exploit
+    reference_id: CVE-2010-1297;OSVDB-65141
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/15086.py
+    reference_type: exploit
+    reference_id: CVE-2010-2168;OSVDB-65911
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/14121.c
+    reference_type: exploit
+    reference_id: CVE-2010-2204;OSVDB-65915
+  - url: http://www.adobe.com/support/security/bulletins/apsb10-15.html
+    reference_type: exploit
+    reference_id: CVE-2010-2204;OSVDB-65915
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/local/14982.py
+    reference_type: exploit
+    reference_id: OSVDB-65912;CVE-2010-2201
+  - url: https://access.redhat.com/errata/RHSA-2010:0503
+    reference_type:
+    reference_id: RHSA-2010:0503

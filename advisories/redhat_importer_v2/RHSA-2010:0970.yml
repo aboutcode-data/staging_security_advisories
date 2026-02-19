@@ -1,0 +1,433 @@
+advisory_id: RHSA-2010:0970
+datasource_id: redhat_importer_v2/RHSA-2010:0970
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0970.json
+aliases:
+  - CVE-2010-4344
+summary: |
+  Updated exim packages that fix one security issue are now available for
+  Red Hat Enterprise Linux 4 and 5, and Red Hat Enterprise Linux 4.7, 5.3,
+  and 5.4 Extended Update Support.
+
+  The Red Hat Security Response Team has rated this update as having critical
+  security impact. A Common Vulnerability Scoring System (CVSS) base score,
+  which gives a detailed severity rating, is available from the CVE link in
+  the References section.
+
+  Exim is a mail transport agent (MTA) developed at the University of
+  Cambridge for use on Unix systems connected to the Internet.
+
+  A buffer overflow flaw was discovered in Exim's internal
+  string_vformat() function. A remote attacker could use this flaw to
+  execute arbitrary code on the mail server running Exim. (CVE-2010-4344)
+
+  Note: successful exploitation would allow a remote attacker to execute
+  arbitrary code as root on a Red Hat Enterprise Linux 4 or 5 system that
+  is running the Exim mail server. An exploit for this issue is known to
+  exist.
+
+  For additional information regarding this flaw, along with mitigation
+  advice, please see the Knowledge Base article linked to in the
+  References section of this advisory.
+
+  Users of Exim are advised to update to these erratum packages which
+  contain a backported patch to correct this issue. After installing this
+  update, the Exim daemon will be restarted automatically.
+impacted_packages:
+  - purl: pkg:rpm/redhat/exim-doc?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ia64
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim?arch=ia64
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-mon?arch=ia64
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim?arch=ia64
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=ia64
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ia64
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim?arch=ia64
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=ia64
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ia64
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ia64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=x86_64
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim?arch=x86_64
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-mon?arch=x86_64
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim?arch=x86_64
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=x86_64
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=x86_64
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim?arch=x86_64
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=x86_64
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=x86_64
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=x86_64
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=i386
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim?arch=i386
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-mon?arch=i386
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim?arch=i386
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=i386
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=i386
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim?arch=i386
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=i386
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=i386
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=i386
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim?arch=src
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim?arch=src
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim?arch=src
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim?arch=src
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim?arch=src
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ppc
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim?arch=ppc
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-mon?arch=ppc
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim?arch=ppc
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=ppc
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ppc
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim?arch=ppc
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=ppc
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ppc
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=ppc
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=s390x
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim?arch=s390x
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-mon?arch=s390x
+    affected_versions: vers:rpm/<4.63-5.el5_5.2
+    fixed_versions: vers:rpm/4.63-5.el5_5.2
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim?arch=s390x
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=s390x
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=s390x
+    affected_versions: vers:rpm/<4.63-3.el5_3.1
+    fixed_versions: vers:rpm/4.63-3.el5_3.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim?arch=s390x
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=s390x
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=s390x
+    affected_versions: vers:rpm/<4.63-3.el5_4.1
+    fixed_versions: vers:rpm/4.63-3.el5_4.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=s390x
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_8.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_8.1
+  - purl: pkg:rpm/redhat/exim-doc?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-mon?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-debuginfo?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+  - purl: pkg:rpm/redhat/exim-sa?arch=s390
+    affected_versions: vers:rpm/<4.43-1.RHEL4.5.el4_7.1
+    fixed_versions: vers:rpm/4.43-1.RHEL4.5.el4_7.1
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0970.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/kb/docs/DOC-43789
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0970.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2010:0970
+    reference_type:
+    reference_id: RHSA-2010:0970
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=661756
+    reference_type: other
+    reference_id: show_bug.cgi?id=661756

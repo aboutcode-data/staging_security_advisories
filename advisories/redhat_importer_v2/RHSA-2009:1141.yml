@@ -1,0 +1,75 @@
+advisory_id: RHSA-2009:1141
+datasource_id: redhat_importer_v2/RHSA-2009:1141
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1141.json
+aliases:
+  - CVE-2009-2288
+summary: |
+  Updated nagios packages that fix one security issue are now available for
+  the Red Hat HPC Solution.
+
+  This update has been rated as having important security impact by the Red
+  Hat Security Response Team.
+
+  Nagios is a program that can monitor hosts and services on your network. It
+  can send email or page alerts when problems arise and when problems are
+  resolved.
+
+  A shell command injection flaw was discovered in the statuswml.cgi CGI
+  script used by Nagios. A remote attacker able to access Nagios web pages
+  could use this flaw to run arbitrary commands with the privileges of the
+  web server user (apache). (CVE-2009-2288)
+
+  Note: Successful authentication is required to access Nagios web pages. In
+  the Red Hat HPC Solution, configuration for Nagios is provided by the
+  kusu-nagios-config package, which creates a user with a fixed, default
+  password during installation. It is recommended to change this default
+  password, or restrict access to Nagios web pages based on a client's IP
+  address as is appropriate for your environment.
+
+  Users of nagios should upgrade to these updated packages, which contain a
+  backported patch to correct this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/nagios?arch=src
+    affected_versions: vers:rpm/<2.12-3.el5
+    fixed_versions: vers:rpm/2.12-3.el5
+  - purl: pkg:rpm/redhat/nagios?arch=x86_64
+    affected_versions: vers:rpm/<2.12-3.el5
+    fixed_versions: vers:rpm/2.12-3.el5
+  - purl: pkg:rpm/redhat/nagios-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.12-3.el5
+    fixed_versions: vers:rpm/2.12-3.el5
+  - purl: pkg:rpm/redhat/nagios-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.12-3.el5
+    fixed_versions: vers:rpm/2.12-3.el5
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1141.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1141.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=508646
+    reference_type: bug
+    reference_id: 508646
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/cgi/remote/33051.txt
+    reference_type: exploit
+    reference_id: CVE-2009-2288;OSVDB-55281
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/cgi/webapps/16908.rb
+    reference_type: exploit
+    reference_id: CVE-2009-2288;OSVDB-55281
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/unix/webapps/9861.rb
+    reference_type: exploit
+    reference_id: CVE-2009-2288;OSVDB-55281
+  - url: https://www.securityfocus.com/bid/35464/info
+    reference_type: exploit
+    reference_id: CVE-2009-2288;OSVDB-55281
+  - url: https://access.redhat.com/errata/RHSA-2009:1141
+    reference_type:
+    reference_id: RHSA-2009:1141

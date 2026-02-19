@@ -1,0 +1,57 @@
+advisory_id: RHSA-2007:0932
+datasource_id: redhat_importer_v2/RHSA-2007:0932
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0932.json
+aliases:
+  - CVE-2007-4897
+summary: "Updated pwlib packages that fix a security issue are now available for Red\nHat Enterprise\
+  \ Linux 5.\n\nThis update has been rated as having moderate security impact by the Red\nHat\
+  \ Security Response Team.\n\nPWLib is a library used to support cross-platform applications.\
+  \  \n\nIn Red Hat Enterprise Linux 5, the Ekiga teleconferencing application uses\nPWLib.\n\
+  \nA memory management flaw was discovered in PWLib.  An attacker could use this\nflaw to crash\
+  \ an application, such as Ekiga, which is linked with pwlib\n(CVE-2007-4897).  \n\nUsers should\
+  \ upgrade to these updated packages which contain a backported\npatch to correct this issue."
+impacted_packages:
+  - purl: pkg:rpm/redhat/pwlib-devel?arch=x86_64
+    affected_versions: vers:rpm/<1.10.1-7.0.1.el5
+    fixed_versions: vers:rpm/1.10.1-7.0.1.el5
+  - purl: pkg:rpm/redhat/pwlib-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.10.1-7.0.1.el5
+    fixed_versions: vers:rpm/1.10.1-7.0.1.el5
+  - purl: pkg:rpm/redhat/pwlib?arch=x86_64
+    affected_versions: vers:rpm/<1.10.1-7.0.1.el5
+    fixed_versions: vers:rpm/1.10.1-7.0.1.el5
+  - purl: pkg:rpm/redhat/pwlib-devel?arch=i386
+    affected_versions: vers:rpm/<1.10.1-7.0.1.el5
+    fixed_versions: vers:rpm/1.10.1-7.0.1.el5
+  - purl: pkg:rpm/redhat/pwlib-debuginfo?arch=i386
+    affected_versions: vers:rpm/<1.10.1-7.0.1.el5
+    fixed_versions: vers:rpm/1.10.1-7.0.1.el5
+  - purl: pkg:rpm/redhat/pwlib?arch=i386
+    affected_versions: vers:rpm/<1.10.1-7.0.1.el5
+    fixed_versions: vers:rpm/1.10.1-7.0.1.el5
+  - purl: pkg:rpm/redhat/pwlib?arch=src
+    affected_versions: vers:rpm/<1.10.1-7.0.1.el5
+    fixed_versions: vers:rpm/1.10.1-7.0.1.el5
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0932.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=292831
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0932.json
+    reference_type:
+    reference_id:
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/windows/dos/9241.py
+    reference_type: exploit
+    reference_id: CVE-2007-4897
+  - url: https://access.redhat.com/errata/RHSA-2007:0932
+    reference_type:
+    reference_id: RHSA-2007:0932

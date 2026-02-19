@@ -1,0 +1,828 @@
+advisory_id: RHSA-2010:0040
+datasource_id: redhat_importer_v2/RHSA-2010:0040
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0040.json
+aliases:
+  - CVE-2009-2687
+  - CVE-2009-3291
+  - CVE-2009-3292
+  - CVE-2009-3546
+  - CVE-2009-4017
+  - CVE-2009-4142
+summary: |
+  Updated php packages that fix several security issues are now available for
+  Red Hat Enterprise Linux 3, 4, and 5.
+
+  This update has been rated as having moderate security impact by the Red
+  Hat Security Response Team.
+
+  PHP is an HTML-embedded scripting language commonly used with the Apache
+  HTTP Web server.
+
+  Multiple missing input sanitization flaws were discovered in PHP's exif
+  extension. A specially-crafted image file could cause the PHP interpreter
+  to crash or, possibly, disclose portions of its memory when a PHP script
+  tried to extract Exchangeable image file format (Exif) metadata from the
+  image file. (CVE-2009-2687, CVE-2009-3292)
+
+  A missing input sanitization flaw, leading to a buffer overflow, was
+  discovered in PHP's gd library. A specially-crafted GD image file could
+  cause the PHP interpreter to crash or, possibly, execute arbitrary code
+  when opened. (CVE-2009-3546)
+
+  It was discovered that PHP did not limit the maximum number of files that
+  can be uploaded in one request. A remote attacker could use this flaw to
+  instigate a denial of service by causing the PHP interpreter to use lots of
+  system resources dealing with requests containing large amounts of files to
+  be uploaded. This vulnerability depends on file uploads being enabled
+  (which it is, in the default PHP configuration). (CVE-2009-4017)
+
+  Note: This update introduces a new configuration option, max_file_uploads,
+  used for limiting the number of files that can be uploaded in one request.
+  By default, the limit is 20 files per request.
+
+  It was discovered that PHP was affected by the previously published "null
+  prefix attack", caused by incorrect handling of NUL characters in X.509
+  certificates. If an attacker is able to get a carefully-crafted certificate
+  signed by a trusted Certificate Authority, the attacker could use the
+  certificate during a man-in-the-middle attack and potentially confuse PHP
+  into accepting it by mistake. (CVE-2009-3291)
+
+  It was discovered that PHP's htmlspecialchars() function did not properly
+  recognize partial multi-byte sequences for some multi-byte encodings,
+  sending them to output without them being escaped. An attacker could use
+  this flaw to perform a cross-site scripting attack. (CVE-2009-4142)
+
+  All php users should upgrade to these updated packages, which contain
+  backported patches to resolve these issues. After installing the updated
+  packages, the httpd daemon must be restarted for the update to take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/php-ldap?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-gd?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-mbstring?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pear?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-domxml?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ncurses?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-snmp?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-gd?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-mbstring?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pear?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-domxml?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ncurses?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-snmp?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=ppc
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=s390
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=s390
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php?arch=s390
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=s390
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=s390
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pgsql?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ncurses?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-common?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-odbc?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xml?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-imap?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ldap?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-soap?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-cli?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-gd?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pdo?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mbstring?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-bcmath?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-snmp?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-dba?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-devel?arch=x86_64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mysql?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-odbc?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pgsql?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-imap?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=x86_64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pgsql?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ncurses?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-common?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-odbc?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xml?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-imap?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ldap?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-soap?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-cli?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-gd?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pdo?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mbstring?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-bcmath?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-snmp?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-dba?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-devel?arch=i386
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mysql?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-odbc?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pgsql?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-imap?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-devel?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-gd?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-mbstring?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pear?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-domxml?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ncurses?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-snmp?arch=i386
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=i386
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=i386
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=i386
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=i386
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=i386
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php?arch=i386
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=i386
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=i386
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php?arch=src
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php?arch=src
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php?arch=src
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pgsql?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ncurses?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-common?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-odbc?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xml?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-imap?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ldap?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-soap?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-cli?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-gd?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pdo?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mbstring?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-bcmath?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-snmp?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-dba?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-devel?arch=ia64
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mysql?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-odbc?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pgsql?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-imap?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-devel?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-gd?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-mbstring?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pear?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-domxml?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ncurses?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-snmp?arch=ia64
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=ia64
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pgsql?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ncurses?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-common?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-odbc?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xml?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-imap?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ldap?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-soap?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-cli?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-gd?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pdo?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mbstring?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-bcmath?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-snmp?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-dba?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-devel?arch=ppc
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mysql?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-odbc?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pgsql?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-imap?arch=ppc
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-mysql?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pgsql?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ncurses?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-common?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-odbc?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xml?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-imap?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-ldap?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-soap?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-cli?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-gd?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-pdo?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mbstring?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-bcmath?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-snmp?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-dba?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-devel?arch=s390x
+    affected_versions: vers:rpm/<5.1.6-24.el5_4.5
+    fixed_versions: vers:rpm/5.1.6-24.el5_4.5
+  - purl: pkg:rpm/redhat/php-mysql?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-odbc?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pgsql?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-imap?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-devel?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-gd?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-mbstring?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pear?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-domxml?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ncurses?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-snmp?arch=s390x
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-odbc?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-pgsql?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-devel?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-imap?arch=s390x
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-odbc?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-xmlrpc?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pgsql?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-imap?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-devel?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-gd?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-mbstring?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-pear?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-domxml?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ncurses?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-snmp?arch=s390
+    affected_versions: vers:rpm/<4.3.9-3.29
+    fixed_versions: vers:rpm/4.3.9-3.29
+  - purl: pkg:rpm/redhat/php-ldap?arch=s390
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-mysql?arch=s390
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+  - purl: pkg:rpm/redhat/php-debuginfo?arch=s390
+    affected_versions: vers:rpm/<4.3.2-54.ent
+    fixed_versions: vers:rpm/4.3.2-54.ent
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0040.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0040.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=506896
+    reference_type: bug
+    reference_id: 506896
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=524222
+    reference_type: bug
+    reference_id: 524222
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=524228
+    reference_type: bug
+    reference_id: 524228
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=529213
+    reference_type: bug
+    reference_id: 529213
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=540459
+    reference_type: bug
+    reference_id: 540459
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=548516
+    reference_type: bug
+    reference_id: 548516
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/dos/10242.py
+    reference_type: exploit
+    reference_id: CVE-2009-4017;OSVDB-60451
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/remote/33414.php
+    reference_type: exploit
+    reference_id: CVE-2009-4142;OSVDB-61209
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/remote/33415.php
+    reference_type: exploit
+    reference_id: CVE-2009-4142;OSVDB-61209
+  - url: https://www.securityfocus.com/bid/37389/info
+    reference_type: exploit
+    reference_id: CVE-2009-4142;OSVDB-61209
+  - url: https://access.redhat.com/errata/RHSA-2010:0040
+    reference_type:
+    reference_id: RHSA-2010:0040

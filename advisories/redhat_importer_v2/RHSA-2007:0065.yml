@@ -1,0 +1,89 @@
+advisory_id: RHSA-2007:0065
+datasource_id: redhat_importer_v2/RHSA-2007:0065
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0065.json
+aliases:
+  - CVE-2006-6899
+summary: |
+  Updated bluez-utils packages that fix a security flaw are now available for
+  Red Hat Enterprise Linux 4.
+
+  This update has been rated as having moderate security impact by the Red
+  Hat Security Response Team.
+
+  The bluez-utils package contains Bluetooth daemons and utilities.
+
+  A flaw was found in the Bluetooth HID daemon (hidd). A remote attacker
+  would have been able to inject keyboard and mouse events via a Bluetooth
+  connection without any authorization. (CVE-2006-6899)
+
+  Note that Red Hat Enterprise Linux does not come with the Bluetooth HID
+  daemon enabled by default.
+
+  Users of bluez-utils are advised to upgrade to these updated packages, which
+  contains a backported patch to correct this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/bluez-utils-cups?arch=ia64
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils?arch=ia64
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils-cups?arch=x86_64
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils?arch=x86_64
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils-cups?arch=i386
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils?arch=i386
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils-debuginfo?arch=i386
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils?arch=src
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils-cups?arch=ppc
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils?arch=ppc
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+  - purl: pkg:rpm/redhat/bluez-utils-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<2.10-2.2
+    fixed_versions: vers:rpm/2.10-2.2
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0065.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0065.json
+    reference_type:
+    reference_id:
+  - url: http://www.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=227014
+    reference_type: bug
+    reference_id: 227014
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/29471.txt
+    reference_type: exploit
+    reference_id: CVE-2006-6899;OSVDB-32830
+  - url: https://www.securityfocus.com/bid/22076/info
+    reference_type: exploit
+    reference_id: CVE-2006-6899;OSVDB-32830
+  - url: https://access.redhat.com/errata/RHSA-2007:0065
+    reference_type:
+    reference_id: RHSA-2007:0065

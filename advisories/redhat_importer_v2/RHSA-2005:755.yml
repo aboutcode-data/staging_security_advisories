@@ -1,0 +1,38 @@
+advisory_id: RHSA-2005:755
+datasource_id: redhat_importer_v2/RHSA-2005:755
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhsa-2005_755.json
+aliases:
+  - CVE-2005-2665
+summary: "An updated elm package is now available that fixes a buffer overflow issue\nfor Red\
+  \ Hat Enterprise Linux 2.1 AS and AW.\n\nThis update has been rated as having critical security\
+  \ impact by the Red\nHat Security Response Team.\n\nElm is a terminal mode email client.\n\
+  \nA buffer overflow flaw in Elm was discovered that was triggered by viewing\na mailbox containing\
+  \ a message with a carefully crafted 'Expires' header. \nAn attacker could create a malicious\
+  \ message that would execute arbitrary\ncode with the privileges of the user who received\
+  \ it.  The Common\nVulnerabilities and Exposures project (cve.mitre.org) has assigned the\
+  \ name\nCAN-2005-2665 to this issue.\n\nUsers of Elm should update to this updated package,\
+  \ which contains a\nbackported patch that corrects this issue."
+impacted_packages: []
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhsa-2005_755.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2005/rhsa-2005_755.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=166580
+    reference_type: bug
+    reference_id: 166580
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/remote/1171.c
+    reference_type: exploit
+    reference_id: OSVDB-18914;CVE-2005-2665
+  - url: https://access.redhat.com/errata/RHSA-2005:755
+    reference_type:
+    reference_id: RHSA-2005:755

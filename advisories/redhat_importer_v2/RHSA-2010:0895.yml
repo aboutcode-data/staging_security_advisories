@@ -1,0 +1,105 @@
+advisory_id: RHSA-2010:0895
+datasource_id: redhat_importer_v2/RHSA-2010:0895
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0895.json
+aliases:
+  - CVE-2010-4170
+summary: |
+  Updated systemtap packages that fix one security issue are now available
+  for Red Hat Enterprise Linux 4.
+
+  The Red Hat Security Response Team has rated this update as having moderate
+  security impact. A Common Vulnerability Scoring System (CVSS) base score,
+  which gives a detailed severity rating, is available from the CVE link in
+  the References section.
+
+  SystemTap is an instrumentation system for systems running the Linux
+  kernel, version 2.6. Developers can write scripts to collect data on the
+  operation of the system. staprun, the SystemTap runtime tool, is used for
+  managing SystemTap kernel modules (for example, loading them).
+
+  It was discovered that staprun did not properly sanitize the environment
+  before executing the modprobe command to load an additional kernel module.
+  A local, unprivileged user could use this flaw to escalate their
+  privileges. (CVE-2010-4170)
+
+  Note: On Red Hat Enterprise Linux 4, an attacker must be a member of the
+  stapusr group to exploit this issue. Also note that, after installing this
+  update, users already in the stapdev group must be added to the stapusr
+  group in order to be able to run the staprun tool.
+
+  Red Hat would like to thank Tavis Ormandy for reporting this issue.
+
+  SystemTap users should upgrade to these updated packages, which contain
+  a backported patch to correct this issue.
+impacted_packages:
+  - purl: pkg:rpm/redhat/systemtap-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-testsuite?arch=ia64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap?arch=ia64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-runtime?arch=ia64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-testsuite?arch=x86_64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap?arch=x86_64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-runtime?arch=x86_64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-debuginfo?arch=i386
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-testsuite?arch=i386
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap?arch=i386
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-runtime?arch=i386
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap?arch=src
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-testsuite?arch=ppc64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap?arch=ppc64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+  - purl: pkg:rpm/redhat/systemtap-runtime?arch=ppc64
+    affected_versions: vers:rpm/<0.6.2-2.el4_8.3
+    fixed_versions: vers:rpm/0.6.2-2.el4_8.3
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0895.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0895.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=653604
+    reference_type: bug
+    reference_id: 653604
+  - url: https://access.redhat.com/errata/RHSA-2010:0895
+    reference_type:
+    reference_id: RHSA-2010:0895

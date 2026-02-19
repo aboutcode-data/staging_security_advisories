@@ -1,0 +1,39 @@
+advisory_id: RHSA-2006:0618
+datasource_id: redhat_importer_v2/RHSA-2006:0618
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0618.json
+aliases:
+  - CVE-2006-3918
+summary: "Updated Apache httpd packages that correct a security issue are now\navailable for\
+  \ Red Hat Enterprise Linux 2.1.\n\nThis update has been rated as having important security\
+  \ impact by the Red\nHat Security Response Team.\n\nThe Apache HTTP Server is a popular Web\
+  \ server available for free. \n\nA bug was found in Apache where an invalid Expect header\
+  \ sent to the server\nwas returned to the user in an unescaped error message. This could\n\
+  allow an attacker to perform a cross-site scripting attack if a victim was\ntricked into connecting\
+  \ to a site and sending a carefully crafted Expect\nheader. (CVE-2006-3918)\n\nWhile a web\
+  \ browser cannot be forced to send an arbitrary Expect header by\na third-party attacker,\
+  \ it was recently discovered that certain versions of\nthe Flash plugin can manipulate request\
+  \ headers. If users running such\nversions can be persuaded to load a web page with a malicious\
+  \ Flash applet,\na cross-site scripting attack against the server may be possible.\n\nUsers\
+  \ of Apache should upgrade to these updated packages, which contain a\nbackported patch to\
+  \ correct this issue."
+impacted_packages: []
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0618.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0618.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=200738
+    reference_type: bug
+    reference_id: 200738
+  - url: https://access.redhat.com/errata/RHSA-2006:0618
+    reference_type:
+    reference_id: RHSA-2006:0618

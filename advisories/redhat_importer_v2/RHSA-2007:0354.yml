@@ -1,0 +1,369 @@
+advisory_id: RHSA-2007:0354
+datasource_id: redhat_importer_v2/RHSA-2007:0354
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0354.json
+aliases:
+  - CVE-2007-2446
+  - CVE-2007-2447
+summary: "Updated samba packages that fix several security flaws are now available.\n\nThis\
+  \ update has been rated as having critical security impact by the Red\nHat Security Response\
+  \ Team.\n\nSamba provides file and printer sharing services to SMB/CIFS clients.\n\nVarious\
+  \ bugs were found in NDR parsing, used to decode MS-RPC requests in\nSamba.  A remote attacker\
+  \ could have sent carefully crafted requests\ncausing a heap overflow, which may have led\
+  \ to the ability to execute\narbitrary code on the server.  (CVE-2007-2446)\n\nUnescaped user\
+  \ input parameters were being passed as arguments to /bin/sh.\nA remote, authenticated, user\
+  \ could have triggered this flaw and executed\narbitrary code on the server.  Additionally,\
+  \ on Red Hat Enterprise Linux 5\nonly, this flaw could be triggered by a remote unauthenticated\
+  \ user if\nSamba was configured to use the non-default \"username map script\" option. \n\
+  (CVE-2007-2447)\n\nUsers of Samba should upgrade to these packages, which contain backported\n\
+  patches to correct these issues.  After upgrading, Samba should be\nrestarted using \"service\
+  \ smb restart\"\n\nOn Red Hat Enterprise Linux 5 the impact of these issues is reduced as\n\
+  Samba is constrained by the default SELinux \"targeted\" policy.\n\nRed Hat would like to\
+  \ thank the Samba developers, TippingPoint, and\niDefense for reporting these issues."
+impacted_packages:
+  - purl: pkg:rpm/redhat/samba?arch=src
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba?arch=ppc64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=ia64
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba?arch=ia64
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba-common?arch=ia64
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba-client?arch=ia64
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba-client?arch=ia64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ia64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=ia64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba?arch=ia64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba?arch=ia64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=ia64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-client?arch=ia64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ia64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=ia64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=ia64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ia64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba?arch=ia64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba?arch=src
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba?arch=src
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba?arch=src
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=i386
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba?arch=i386
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba-common?arch=i386
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba-client?arch=i386
+    affected_versions: vers:rpm/<2.2.12-1.21as.6
+    fixed_versions: vers:rpm/2.2.12-1.21as.6
+  - purl: pkg:rpm/redhat/samba-common?arch=i386
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=i386
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-client?arch=i386
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=i386
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba?arch=i386
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=i386
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-common?arch=i386
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba?arch=i386
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=i386
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-client?arch=i386
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=i386
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=i386
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba?arch=i386
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=i386
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=i386
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=x86_64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-common?arch=x86_64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=x86_64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba?arch=x86_64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba?arch=x86_64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=x86_64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-client?arch=x86_64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-common?arch=x86_64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=x86_64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=x86_64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=x86_64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba?arch=x86_64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=ppc
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ppc
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=ppc
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba?arch=ppc
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba?arch=ppc
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=ppc
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-client?arch=ppc
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ppc
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=ppc
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=ppc
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ppc
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba?arch=ppc
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ppc64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ppc64
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=ppc64
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=s390x
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-common?arch=s390x
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=s390x
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba?arch=s390x
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba?arch=s390x
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=s390x
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-client?arch=s390x
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-common?arch=s390x
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=s390x
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=s390x
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=s390x
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba?arch=s390x
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=s390
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=s390
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-client?arch=s390
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=s390
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba?arch=s390
+    affected_versions: vers:rpm/<3.0.10-1.4E.12.2
+    fixed_versions: vers:rpm/3.0.10-1.4E.12.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=s390
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-common?arch=s390
+    affected_versions: vers:rpm/<3.0.23c-2.el5.2.0.2
+    fixed_versions: vers:rpm/3.0.23c-2.el5.2.0.2
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=s390
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-common?arch=s390
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba?arch=s390
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-swat?arch=s390
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+  - purl: pkg:rpm/redhat/samba-client?arch=s390
+    affected_versions: vers:rpm/<3.0.9-1.3E.13.2
+    fixed_versions: vers:rpm/3.0.9-1.3E.13.2
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0354.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0354.json
+    reference_type:
+    reference_id:
+  - url: http://www.samba.org/samba/security/CVE-2007-2446.html
+    reference_type:
+    reference_id:
+  - url: http://www.samba.org/samba/security/CVE-2007-2447.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=239429
+    reference_type: bug
+    reference_id: 239429
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=239774
+    reference_type: bug
+    reference_id: 239774
+  - url: https://access.redhat.com/errata/RHSA-2007:0354
+    reference_type:
+    reference_id: RHSA-2007:0354

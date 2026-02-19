@@ -1,0 +1,104 @@
+advisory_id: RHSA-2006:0648
+datasource_id: redhat_importer_v2/RHSA-2006:0648
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0648.json
+aliases:
+  - CVE-2006-2024
+  - CVE-2006-2025
+  - CVE-2006-2026
+  - CVE-2006-3459
+  - CVE-2006-3460
+  - CVE-2006-3461
+  - CVE-2006-3462
+  - CVE-2006-3463
+  - CVE-2006-3464
+  - CVE-2006-3465
+summary: "Updated kdegraphics packages that fix several security flaws in kfax are\nnow available\
+  \ for Red Hat Enterprise Linux 2.1, and 3.\n\nThis update has been rated as having moderate\
+  \ security impact by the Red\nHat Security Response Team.\n\nThe kdegraphics package contains\
+  \ graphics applications for the K Desktop\nEnvironment.\n\nTavis Ormandy of Google discovered\
+  \ a number of flaws in libtiff during a\nsecurity audit.  The kfax application contains a\
+  \ copy of the libtiff code\nused for parsing TIFF files and is therefore affected by these\
+  \ flaws.  \nAn attacker who has the ability to trick a user into opening a malicious\nTIFF\
+  \ file could cause kfax to crash or possibly execute arbitrary code.\n(CVE-2006-3459, CVE-2006-3460,\
+  \ CVE-2006-3461, CVE-2006-3462, CVE-2006-3463,\nCVE-2006-3464, CVE-2006-3465)\n\nRed Hat Enterprise\
+  \ Linux 4 is not vulnerable to these issues as kfax uses\nthe shared libtiff library which\
+  \ has been fixed in a previous update.\n\nUsers of kfax should upgrade to these updated packages,\
+  \ which contain\nbackported patches and are not vulnerable to this issue."
+impacted_packages:
+  - purl: pkg:rpm/redhat/kdegraphics-devel?arch=ia64&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics?arch=ia64&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-debuginfo?arch=ia64&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-devel?arch=x86_64&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics?arch=x86_64&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-debuginfo?arch=x86_64&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-devel?arch=i386&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics?arch=i386&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-debuginfo?arch=i386&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics?arch=src&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-devel?arch=ppc&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics?arch=ppc&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-debuginfo?arch=ppc&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-devel?arch=s390x&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics?arch=s390x&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-debuginfo?arch=s390x&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-devel?arch=s390&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics?arch=s390&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+  - purl: pkg:rpm/redhat/kdegraphics-debuginfo?arch=s390&epoch=7
+    affected_versions: vers:rpm/<3.1.3-3.10
+    fixed_versions: vers:rpm/3.1.3-3.10
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0648.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0648.json
+    reference_type:
+    reference_id:
+  - url: http://www.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=201313
+    reference_type: bug
+    reference_id: 201313
+  - url: https://access.redhat.com/errata/RHSA-2006:0648
+    reference_type:
+    reference_id: RHSA-2006:0648

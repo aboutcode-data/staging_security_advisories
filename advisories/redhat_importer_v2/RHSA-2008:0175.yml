@@ -1,0 +1,873 @@
+advisory_id: RHSA-2008:0175
+datasource_id: redhat_importer_v2/RHSA-2008:0175
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0175.json
+aliases:
+  - CVE-2007-5745
+  - CVE-2007-5746
+  - CVE-2007-5747
+  - CVE-2008-0320
+summary: |
+  Updated openoffice.org 2.x packages to correct multiple security issues are
+  now available for Red Hat Enterprise Linux 4 and Red Hat Enterprise Linux 5.
+
+  This update has been rated as having important security impact by the Red
+  Hat Security Response Team.
+
+  OpenOffice.org is an office productivity suite that includes desktop
+  applications such as a word processor, spreadsheet, presentation manager,
+  formula editor, and drawing program.
+
+  Multiple heap overflows and an integer underflow were found in the Quattro
+  Pro(R) import filter. An attacker could create a carefully crafted Quattro
+  Pro file that could cause OpenOffice.org to crash or possibly execute
+  arbitrary code if the file was opened by a victim. (CVE-2007-5745,
+  CVE-2007-5747)
+
+  A heap overflow flaw was found in the EMF parser. An attacker could create
+  a carefully crafted EMF file that could cause OpenOffice.org to crash or
+  possibly execute arbitrary code if the malicious EMF image was added to a
+  document or if a document containing the malicious EMF file was opened by a
+  victim. (CVE-2007-5746)
+
+  A heap overflow flaw was found in the OLE Structured Storage file parser.
+  (OLE Structured Storage is a format used by Microsoft Office documents.) An
+  attacker could create a carefully crafted OLE file that could cause
+  OpenOffice.org to crash or possibly execute arbitrary code if the file was
+  opened by a victim. (CVE-2008-0320)
+
+  All users of OpenOffice.org are advised to upgrade to these updated
+  packages, which contain backported fixes to correct these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/openoffice.org?arch=src&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org2?arch=src&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-sv?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-kn_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-xh_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-mr_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-bg_BG?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-pyuno?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-as_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nb_NO?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-or_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ms_MY?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-es?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-cs_CZ?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nn_NO?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-calc?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ar?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ss_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ru?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-st_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-de?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-tr_TR?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-zu_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ko_KR?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nr_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-da_DK?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ja_JP?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-pt_BR?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-core?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ve_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-hu_HU?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-af_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-xsltfilter?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-tn_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-hi_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-graphicfilter?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-th_TH?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-it?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-et_EE?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-sk_SK?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nl?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-eu_ES?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-gl_ES?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-gu_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-te_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-el_GR?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ga_IE?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-emailmerge?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-he_IL?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ml_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nso_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-pt_PT?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-zh_CN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-lt_LT?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ts_ZA?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ca_ES?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-draw?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-javafilter?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-impress?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-math?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-bn?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-testtools?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-zh_TW?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-writer?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-pa_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-hr_HR?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-sl_SI?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-base?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-fr?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ur?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-sr_CS?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-pl_PL?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ta_IN?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-fi_FI?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-cy_GB?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-sv?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-kn_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-xh_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-mr_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-bg_BG?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-pyuno?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-as_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nb_NO?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-or_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ms_MY?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-es?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-cs_CZ?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nn_NO?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-calc?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ar?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ss_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ru?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-st_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-de?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-tr_TR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-zu_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ko_KR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nr_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-da_DK?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ja_JP?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-pt_BR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-core?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ve_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-hu_HU?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-af_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-xsltfilter?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-tn_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-debuginfo?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-hi_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-graphicfilter?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-th_TH?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-it?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-et_EE?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-sk_SK?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nl?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-eu_ES?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-gl_ES?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-gu_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-te_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-el_GR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ga_IE?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-emailmerge?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-he_IL?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ml_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-nso_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-pt_PT?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-zh_CN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-lt_LT?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ts_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ca_ES?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-draw?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-javafilter?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-impress?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-math?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-bn?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-testtools?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-zh_TW?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-writer?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-pa_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-hr_HR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-sl_SI?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-base?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-fr?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ur?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-sr_CS?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-pl_PL?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-ta_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-fi_FI?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org-langpack-cy_GB?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.4.26
+    fixed_versions: vers:rpm/2.0.4-5.4.26
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-eu_ES?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-pyuno?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-core?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ca_ES?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-bg_BG?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-tr_TR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-hu_HU?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-fi_FI?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-pt_PT?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-th_TH?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-et_EE?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-de?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-javafilter?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-fr?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-draw?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-nn_NO?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-testtools?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-pt_BR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-sv?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-zu_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-af_ZA?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ga_IE?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-pa_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-es?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-nb_NO?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-emailmerge?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ta_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-gl_ES?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-impress?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-base?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ko_KR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-sk_SK?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-hr_HR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-it?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-lt_LT?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-da_DK?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-zh_TW?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-pl_PL?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-writer?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ja_JP?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-bn?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-debuginfo?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-cy_GB?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-math?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-he_IL?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-gu_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ms_MY?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-xsltfilter?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ar?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ru?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-calc?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-cs_CZ?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-sr_CS?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-hi_IN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-nl?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-el_GR?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-sl_SI?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-graphicfilter?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-zh_CN?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-eu_ES?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-pyuno?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-core?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ca_ES?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-bg_BG?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-tr_TR?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-hu_HU?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-fi_FI?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-pt_PT?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-th_TH?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-et_EE?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-de?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-javafilter?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-fr?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-draw?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-nn_NO?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-testtools?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-pt_BR?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-sv?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-zu_ZA?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-af_ZA?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ga_IE?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-pa_IN?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-es?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-nb_NO?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-emailmerge?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ta_IN?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-gl_ES?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-impress?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-base?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ko_KR?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-sk_SK?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-hr_HR?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-it?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-lt_LT?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-da_DK?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-zh_TW?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-pl_PL?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-writer?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ja_JP?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-bn?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-debuginfo?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-cy_GB?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-math?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-he_IL?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-gu_IN?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ms_MY?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-xsltfilter?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ar?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-ru?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-calc?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-cs_CZ?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-sr_CS?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-hi_IN?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-nl?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-el_GR?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-sl_SI?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-graphicfilter?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+  - purl: pkg:rpm/redhat/openoffice.org2-langpack-zh_CN?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<2.0.4-5.7.0.4.0
+    fixed_versions: vers:rpm/2.0.4-5.7.0.4.0
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0175.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=435678
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=435681
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0175.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=435675
+    reference_type: bug
+    reference_id: 435675
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=435676
+    reference_type: bug
+    reference_id: 435676
+  - url: https://access.redhat.com/errata/RHSA-2008:0175
+    reference_type:
+    reference_id: RHSA-2008:0175

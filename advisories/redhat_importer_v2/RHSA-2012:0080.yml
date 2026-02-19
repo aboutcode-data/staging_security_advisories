@@ -1,0 +1,118 @@
+advisory_id: RHSA-2012:0080
+datasource_id: redhat_importer_v2/RHSA-2012:0080
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2012/rhsa-2012_0080.json
+aliases:
+  - CVE-2011-3659
+  - CVE-2011-3670
+  - CVE-2012-0442
+  - CVE-2012-0449
+summary: |
+  An updated thunderbird package that fixes multiple security issues is now
+  available for Red Hat Enterprise Linux 6.
+
+  The Red Hat Security Response Team has rated this update as having critical
+  security impact. Common Vulnerability Scoring System (CVSS) base scores,
+  which give detailed severity ratings, are available for each vulnerability
+  from the CVE links in the References section.
+
+  Mozilla Thunderbird is a standalone mail and newsgroup client.
+
+  A use-after-free flaw was found in the way Thunderbird removed
+  nsDOMAttribute child nodes. In certain circumstances, due to the premature
+  notification of AttributeChildRemoved, a malicious script could possibly
+  use this flaw to cause Thunderbird to crash or, potentially, execute
+  arbitrary code with the privileges of the user running Thunderbird.
+  (CVE-2011-3659)
+
+  Several flaws were found in the processing of malformed content. An HTML
+  mail message containing malicious content could cause Thunderbird to crash
+  or, potentially, execute arbitrary code with the privileges of the user
+  running Thunderbird. (CVE-2012-0442)
+
+  A flaw was found in the way Thunderbird parsed certain Scalable Vector
+  Graphics (SVG) image files that contained eXtensible Style Sheet Language
+  Transformations (XSLT). An HTML mail message containing a malicious SVG
+  image file could cause Thunderbird to crash or, potentially, execute
+  arbitrary code with the privileges of the user running Thunderbird.
+  (CVE-2012-0449)
+
+  The same-origin policy in Thunderbird treated http://example.com and
+  http://[example.com] as interchangeable. A malicious script could possibly
+  use this flaw to gain access to sensitive information (such as a client's
+  IP and user e-mail address, or httpOnly cookies) that may be included in
+  HTTP proxy error replies, generated in response to invalid URLs using
+  square brackets. (CVE-2011-3670)
+
+  Note: The CVE-2011-3659 and CVE-2011-3670 issues cannot be exploited by a
+  specially-crafted HTML mail message as JavaScript is disabled by default
+  for mail messages. It could be exploited another way in Thunderbird, for
+  example, when viewing the full remote content of an RSS feed.
+
+  For technical details regarding these flaws, refer to the Mozilla security
+  advisories for Thunderbird 3.1.18. You can find a link to the Mozilla
+  advisories in the References section of this erratum.
+
+  All Thunderbird users should upgrade to these updated packages, which
+  contain Thunderbird version 3.1.18, which corrects these issues. After
+  installing the update, Thunderbird must be restarted for the changes to
+  take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/thunderbird?arch=i686
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=i686
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+  - purl: pkg:rpm/redhat/thunderbird?arch=ppc64
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+  - purl: pkg:rpm/redhat/thunderbird?arch=src
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+  - purl: pkg:rpm/redhat/thunderbird?arch=s390x
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+  - purl: pkg:rpm/redhat/thunderbird?arch=x86_64
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+  - purl: pkg:rpm/redhat/thunderbird-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<3.1.18-1.el6_2
+    fixed_versions: vers:rpm/3.1.18-1.el6_2
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2012/rhsa-2012_0080.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2012/rhsa-2012_0080.json
+    reference_type:
+    reference_id:
+  - url: http://www.mozilla.org/security/known-vulnerabilities/thunderbird31.html#thunderbird3.1.18
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=785085
+    reference_type: bug
+    reference_id: 785085
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=785464
+    reference_type: bug
+    reference_id: 785464
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=785966
+    reference_type: bug
+    reference_id: 785966
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=786258
+    reference_type: bug
+    reference_id: 786258
+  - url: https://access.redhat.com/errata/RHSA-2012:0080
+    reference_type:
+    reference_id: RHSA-2012:0080

@@ -1,0 +1,133 @@
+advisory_id: RHSA-2009:1082
+datasource_id: redhat_importer_v2/RHSA-2009:1082
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1082.json
+aliases:
+  - CVE-2009-0949
+summary: "Updated cups packages that fix one security issue are now available for Red\nHat Enterprise\
+  \ Linux 5.\n\nThis update has been rated as having important security impact by the Red\n\
+  Hat Security Response Team.\n\nThe Common UNIX® Printing System (CUPS) provides a portable\
+  \ printing layer\nfor UNIX operating systems. The Internet Printing Protocol (IPP) allows\n\
+  users to print and manage printing-related tasks over a network. \n\nA NULL pointer dereference\
+  \ flaw was found in the CUPS IPP routine, used for\nprocessing incoming IPP requests for the\
+  \ CUPS scheduler. An attacker could\nuse this flaw to send specially-crafted IPP requests\
+  \ that would crash the\ncupsd daemon. (CVE-2009-0949)\n\nRed Hat would like to thank Anibal\
+  \ Sacco from Core Security Technologies\nfor reporting this issue.\n\nUsers of cups are advised\
+  \ to upgrade to these updated packages, which\ncontain a backported patch to correct this\
+  \ issue. After installing this\nupdate, the cupsd daemon will be restarted automatically."
+impacted_packages:
+  - purl: pkg:rpm/redhat/cups-debuginfo?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-devel?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-lpd?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-libs?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups?arch=x86_64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-debuginfo?arch=i386&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-devel?arch=i386&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-libs?arch=i386&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-lpd?arch=i386&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups?arch=i386&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups?arch=src&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-lpd?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-libs?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-debuginfo?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-devel?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-lpd?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-libs?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-debuginfo?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-devel?arch=ppc&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-libs?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-debuginfo?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-devel?arch=ppc64&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-lpd?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-libs?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-debuginfo?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-devel?arch=s390x&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-libs?arch=s390&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-debuginfo?arch=s390&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+  - purl: pkg:rpm/redhat/cups-devel?arch=s390&epoch=1
+    affected_versions: vers:rpm/<1.3.7-8.el5_3.6
+    fixed_versions: vers:rpm/1.3.7-8.el5_3.6
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1082.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=500972
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2009/rhsa-2009_1082.json
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2009:1082
+    reference_type:
+    reference_id: RHSA-2009:1082

@@ -1,0 +1,121 @@
+advisory_id: RHSA-2010:0809
+datasource_id: redhat_importer_v2/RHSA-2010:0809
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0809.json
+aliases:
+  - CVE-2010-3765
+summary: |
+  Updated xulrunner packages that fix one security issue are now available
+  for Red Hat Enterprise Linux 5.
+
+  The Red Hat Security Response Team has rated this update as having critical
+  security impact. A Common Vulnerability Scoring System (CVSS) base score,
+  which gives a detailed severity rating, is available from the CVE link in
+  the References section.
+
+  XULRunner provides the XUL Runtime environment for applications using the
+  Gecko layout engine.
+
+  A race condition flaw was found in the way XULRunner handled Document
+  Object Model (DOM) element properties. Malicious HTML content could cause
+  an application linked against XULRunner (such as Firefox) to crash or,
+  potentially, execute arbitrary code with the privileges of the user running
+  the application. (CVE-2010-3765)
+
+  For technical details regarding this flaw, refer to the Mozilla security
+  advisories for Firefox 3.6.12. You can find a link to the Mozilla
+  advisories in the References section of this erratum.
+
+  All XULRunner users should upgrade to these updated packages, which contain
+  a backported patch to correct this issue. After installing the update,
+  applications using XULRunner must be restarted for the changes to take
+  effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=x86_64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner?arch=x86_64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=i386
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=i386
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner?arch=i386
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner?arch=src
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=ia64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner?arch=ia64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=ppc64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner?arch=ppc64
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=ppc
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=ppc
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner?arch=ppc
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=s390x
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner?arch=s390x
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-devel?arch=s390
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner-debuginfo?arch=s390
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+  - purl: pkg:rpm/redhat/xulrunner?arch=s390
+    affected_versions: vers:rpm/<1.9.2.11-4.el5_5
+    fixed_versions: vers:rpm/1.9.2.11-4.el5_5
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0809.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0809.json
+    reference_type:
+    reference_id:
+  - url: http://www.mozilla.org/security/known-vulnerabilities/firefox36.html#firefox3.6.12
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/errata/RHSA-2010:0809
+    reference_type:
+    reference_id: RHSA-2010:0809
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=646997
+    reference_type: other
+    reference_id: show_bug.cgi?id=646997

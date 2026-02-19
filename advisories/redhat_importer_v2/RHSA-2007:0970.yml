@@ -1,0 +1,48 @@
+advisory_id: RHSA-2007:0970
+datasource_id: redhat_importer_v2/RHSA-2007:0970
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0970.json
+aliases:
+  - CVE-2007-0063
+  - CVE-2007-5365
+summary: "An updated dhcp package that corrects a security flaw is now available for\nRed Hat\
+  \ Enterprise Linux 2.1.\n\nThis update has been rated as having important security impact\
+  \ by the Red\nHat Security Response Team.\n\nThe dhcp package provides the ISC Dynamic Host\
+  \ Configuration Protocol\n(DHCP) server and relay agent, dhcpd. DHCP is a protocol that allows\n\
+  devices to get their own network configuration information from a server.\n\nA bug was found\
+  \ in the way dhcpd validates certain DHCP protocol options. \nA malicious DHCP client could\
+  \ send a carefully crafted DHCP request and cause\ndhcpd to crash or possibly execute arbitrary\
+  \ code. (CVE-2007-5365)\n\nAll users of dhcp should upgrade to this updated package, which\
+  \ contains a\nbackported patch that resolves this issue."
+impacted_packages:
+  - purl: pkg:rpm/redhat/dhcp?arch=ia64&epoch=1
+    affected_versions: vers:rpm/<2.0pl5-11
+    fixed_versions: vers:rpm/2.0pl5-11
+  - purl: pkg:rpm/redhat/dhcp?arch=src&epoch=1
+    affected_versions: vers:rpm/<2.0pl5-11
+    fixed_versions: vers:rpm/2.0pl5-11
+  - purl: pkg:rpm/redhat/dhcp?arch=i386&epoch=1
+    affected_versions: vers:rpm/<2.0pl5-11
+    fixed_versions: vers:rpm/2.0pl5-11
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0970.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2007/rhsa-2007_0970.json
+    reference_type:
+    reference_id:
+  - url: http://www.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=327781
+    reference_type: bug
+    reference_id: 327781
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/multiple/dos/4601.txt
+    reference_type: exploit
+    reference_id: OSVDB-49725;CVE-2008-5010;CVE-2007-5365;OSVDB-41687
+  - url: https://access.redhat.com/errata/RHSA-2007:0970
+    reference_type:
+    reference_id: RHSA-2007:0970

@@ -1,0 +1,75 @@
+advisory_id: RHSA-2010:0584
+datasource_id: redhat_importer_v2/RHSA-2010:0584
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0584.json
+aliases:
+  - CVE-2010-1157
+  - CVE-2010-2227
+summary: |
+  An updated jbossweb package that fixes two security issues is now available
+  for JBoss Enterprise Application Platform 4.2 and 4.3 for Red Hat
+  Enterprise Linux 4 and 5.
+
+  The Red Hat Security Response Team has rated this update as having
+  important security impact. Common Vulnerability Scoring System (CVSS) base
+  scores, which give detailed severity ratings, are available for each
+  vulnerability from the CVE links in the References section.
+
+  JBoss Web is the web container, based on Apache Tomcat, in JBoss Enterprise
+  Application Platform. It provides a single deployment platform for the
+  JavaServer Pages (JSP) and Java Servlet technologies, Microsoft .NET, PHP,
+  and CGI.
+
+  A flaw was found in the way JBoss Web handled the Transfer-Encoding header
+  in HTTP requests. A specially-crafted HTTP request could prevent JBoss Web
+  from sending replies, or cause JBoss Web to return truncated replies, or
+  replies containing data related to the requests of other users, for all
+  subsequent HTTP requests. (CVE-2010-2227)
+
+  A possible minor information leak was found in the way JBoss Web generated
+  HTTP BASIC and DIGEST authentication requests. For configurations where a
+  realm name was not specified and JBoss Web was accessed via a proxy, the
+  default generated realm contained the hostname and port used by the proxy
+  to send requests to the JBoss Web server. (CVE-2010-1157)
+
+  Users of JBoss Web should upgrade to this updated package, which upgrades
+  JBoss Web to version 2.0.0.CP14, and resolves these issues. The JBoss
+  server process must be restarted for this update to take effect.
+impacted_packages:
+  - purl: pkg:rpm/redhat/jbossweb?arch=src
+    affected_versions: vers:rpm/<2.0.0-6.CP14.0jpp.ep1.1.el4
+    fixed_versions: vers:rpm/2.0.0-6.CP14.0jpp.ep1.1.el4
+  - purl: pkg:rpm/redhat/jbossweb?arch=src
+    affected_versions: vers:rpm/<2.0.0-6.CP14.0jpp.ep1.1.el5
+    fixed_versions: vers:rpm/2.0.0-6.CP14.0jpp.ep1.1.el5
+  - purl: pkg:rpm/redhat/jbossweb?arch=noarch
+    affected_versions: vers:rpm/<2.0.0-6.CP14.0jpp.ep1.1.el4
+    fixed_versions: vers:rpm/2.0.0-6.CP14.0jpp.ep1.1.el4
+  - purl: pkg:rpm/redhat/jbossweb?arch=noarch
+    affected_versions: vers:rpm/<2.0.0-6.CP14.0jpp.ep1.1.el5
+    fixed_versions: vers:rpm/2.0.0-6.CP14.0jpp.ep1.1.el5
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0584.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0584.json
+    reference_type:
+    reference_id:
+  - url: http://tomcat.apache.org/security-6.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=585331
+    reference_type: bug
+    reference_id: 585331
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=612799
+    reference_type: bug
+    reference_id: 612799
+  - url: https://access.redhat.com/errata/RHSA-2010:0584
+    reference_type:
+    reference_id: RHSA-2010:0584

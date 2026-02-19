@@ -1,0 +1,60 @@
+advisory_id: RHSA-2006:0547
+datasource_id: redhat_importer_v2/RHSA-2006:0547
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0547.json
+aliases:
+  - CVE-2006-2842
+summary: "An updated squirrelmail package that fixes a local file disclosure flaw is\nnow available.\n\
+  \nThis update has been rated as having moderate security impact by the Red\nHat Security Response\
+  \ Team.\n\nSquirrelMail is a standards-based webmail package written in PHP4.\n\nA local file\
+  \ disclosure flaw was found in the way SquirrelMail loads\nplugins. In SquirrelMail 1.4.6\
+  \ or earlier, if register_globals is on and\nmagic_quotes_gpc is off, it became possible for\
+  \ an unauthenticated remote\nuser to view the contents of arbitrary local files the web server\
+  \ has\nread-access to. This configuration is neither default nor safe, and\nconfiguring PHP\
+  \ with the register_globals set on is dangerous and not\nrecommended.  (CVE-2006-2842) \n\n\
+  Users of SquirrelMail should upgrade to this erratum package, which\ncontains a backported\
+  \ patch to correct this issue."
+impacted_packages:
+  - purl: pkg:rpm/redhat/squirrelmail?arch=src
+    affected_versions: vers:rpm/<1.4.6-7.el3
+    fixed_versions: vers:rpm/1.4.6-7.el3
+  - purl: pkg:rpm/redhat/squirrelmail?arch=src
+    affected_versions: vers:rpm/<1.4.6-7.el4
+    fixed_versions: vers:rpm/1.4.6-7.el4
+  - purl: pkg:rpm/redhat/squirrelmail?arch=noarch
+    affected_versions: vers:rpm/<1.4.6-7.el3
+    fixed_versions: vers:rpm/1.4.6-7.el3
+  - purl: pkg:rpm/redhat/squirrelmail?arch=noarch
+    affected_versions: vers:rpm/<1.4.6-7.el4
+    fixed_versions: vers:rpm/1.4.6-7.el4
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0547.json
+weaknesses: []
+references:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0547.json
+    reference_type:
+    reference_id:
+  - url: http://www.php.net/register_globals
+    reference_type:
+    reference_id:
+  - url: http://www.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: http://www.squirrelmail.org/security/issue/2006-06-01
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=194283
+    reference_type: bug
+    reference_id: '194283'
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/php/webapps/27948.txt
+    reference_type: exploit
+    reference_id: CVE-2006-2842;OSVDB-25973
+  - url: https://www.securityfocus.com/bid/18231/info
+    reference_type: exploit
+    reference_id: CVE-2006-2842;OSVDB-25973
+  - url: https://access.redhat.com/errata/RHSA-2006:0547
+    reference_type:
+    reference_id: RHSA-2006:0547

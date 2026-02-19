@@ -1,0 +1,238 @@
+advisory_id: RHSA-2006:0101
+datasource_id: redhat_importer_v2/RHSA-2006:0101
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0101.json
+aliases:
+  - CVE-2002-2185
+  - CVE-2004-1190
+  - CVE-2005-2458
+  - CVE-2005-2709
+  - CVE-2005-2800
+  - CVE-2005-3044
+  - CVE-2005-3106
+  - CVE-2005-3109
+  - CVE-2005-3276
+  - CVE-2005-3356
+  - CVE-2005-3358
+  - CVE-2005-3784
+  - CVE-2005-3806
+  - CVE-2005-3848
+  - CVE-2005-3857
+  - CVE-2005-3858
+  - CVE-2005-4605
+summary: "Updated kernel packages that fix several security issues in the Red Hat\nEnterprise\
+  \ Linux 4 kernel are now available. \n\nThis security advisory has been rated as having important\
+  \ security impact\nby the Red Hat Security Response Team.\n\nThe Linux kernel handles the\
+  \ basic functions of the operating system.\n\nThese new kernel packages contain fixes for\
+  \ the security issues\ndescribed below:\n\n- a flaw in network IGMP processing that a allowed\
+  \ a remote user on the\nlocal network to cause a denial of service (disabling of multicast\
+  \ reports)\nif the system is running multicast applications (CVE-2002-2185, moderate)\n\n\
+  - a flaw which allowed a local user to write to firmware on read-only\nopened /dev/cdrom devices\
+  \ (CVE-2004-1190, moderate) \n\n- a flaw in gzip/zlib handling internal to the kernel that\
+  \ may allow a\nlocal user to cause a denial of service (crash) (CVE-2005-2458, low) \n\n-\
+  \ a flaw in procfs handling during unloading of modules that allowed a\nlocal user to cause\
+  \ a denial of service or potentially gain privileges\n(CVE-2005-2709, moderate)\n\n- a flaw\
+  \ in the SCSI procfs interface that allowed a local user to cause a\ndenial of service (crash)\
+  \ (CVE-2005-2800, moderate)\n\n- a flaw in 32-bit-compat handling of the TIOCGDEV ioctl that\
+  \ allowed\na local user to cause a denial of service (crash) (CVE-2005-3044, important)\n\n\
+  - a race condition when threads share memory mapping that allowed local\nusers to cause a\
+  \ denial of service (deadlock) (CVE-2005-3106, important)\n\n- a flaw when trying to mount\
+  \ a non-hfsplus filesystem using hfsplus that\nallowed local users to cause a denial of service\
+  \ (crash) (CVE-2005-3109,\nmoderate)\n\n- a minor info leak with the get_thread_area() syscall\
+  \ that allowed\na local user to view uninitialized kernel stack data (CVE-2005-3276, low)\
+  \ \n\n- a flaw in mq_open system call that allowed a local user to cause a denial\nof service\
+  \ (crash) (CVE-2005-3356, important)\n\n- a flaw in set_mempolicy that allowed a local user\
+  \ on some 64-bit\narchitectures to cause a denial of service (crash) (CVE-2005-3358, important)\n\
+  \n- a flaw in the auto-reap of child processes that allowed a local user to\ncause a denial\
+  \ of service (crash) (CVE-2005-3784, important)\n\n- a flaw in the IPv6 flowlabel code that\
+  \ allowed a local user to cause a\ndenial of service (crash) (CVE-2005-3806, important)\n\n\
+  - a flaw in network ICMP processing that allowed a local user to cause\na denial of service\
+  \ (memory exhaustion) (CVE-2005-3848, important)\n\n- a flaw in file lease time-out handling\
+  \ that allowed a local user to cause\na denial of service (log file overflow) (CVE-2005-3857,\
+  \ moderate) \n\n- a flaw in network IPv6 xfrm handling that allowed a local user to\ncause\
+  \ a denial of service (memory exhaustion) (CVE-2005-3858, important) \n\n- a flaw in procfs\
+  \ handling that allowed a local user to read kernel memory\n(CVE-2005-4605, important)\n\n\
+  All Red Hat Enterprise Linux 4 users are advised to upgrade their kernels\nto the packages\
+  \ associated with their machine architectures and\nconfigurations as listed in this erratum."
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=i686
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=i686
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-hugemem?arch=i686
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-hugemem-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=i686
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ia64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-smp-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=x86_64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-doc?arch=noarch
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=src
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=ppc64iseries
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390x
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-debuginfo?arch=s390
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel?arch=s390
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+  - purl: pkg:rpm/redhat/kernel-devel?arch=s390
+    affected_versions: vers:rpm/<2.6.9-22.0.2.EL
+    fixed_versions: vers:rpm/2.6.9-22.0.2.EL
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0101.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2006/rhsa-2006_0101.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=158861
+    reference_type: bug
+    reference_id: 158861
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=165679
+    reference_type: bug
+    reference_id: 165679
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=167696
+    reference_type: bug
+    reference_id: 167696
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=168659
+    reference_type: bug
+    reference_id: 168659
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=168777
+    reference_type: bug
+    reference_id: 168777
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=168924
+    reference_type: bug
+    reference_id: 168924
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=169130
+    reference_type: bug
+    reference_id: 169130
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=170262
+    reference_type: bug
+    reference_id: 170262
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=171002
+    reference_type: bug
+    reference_id: 171002
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=174078
+    reference_type: bug
+    reference_id: 174078
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=174081
+    reference_type: bug
+    reference_id: 174081
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=174337
+    reference_type: bug
+    reference_id: 174337
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=174343
+    reference_type: bug
+    reference_id: 174343
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=174345
+    reference_type: bug
+    reference_id: 174345
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=174807
+    reference_type: bug
+    reference_id: 174807
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=175683
+    reference_type: bug
+    reference_id: 175683
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=176812
+    reference_type: bug
+    reference_id: 176812
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/dos/26489.c
+    reference_type: exploit
+    reference_id: CVE-2005-2709;OSVDB-20676
+  - url: https://www.securityfocus.com/bid/15365/info
+    reference_type: exploit
+    reference_id: CVE-2005-2709;OSVDB-20676
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/dos/26248.sh
+    reference_type: exploit
+    reference_id: CVE-2005-2800;OSVDB-19316
+  - url: https://www.securityfocus.com/bid/14790/info
+    reference_type: exploit
+    reference_id: CVE-2005-2800;OSVDB-19316
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/dos/27031.c
+    reference_type: exploit
+    reference_id: CVE-2005-3358;OSVDB-22213
+  - url: https://www.securityfocus.com/bid/16135/info
+    reference_type: exploit
+    reference_id: CVE-2005-3358;OSVDB-22213
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/dos/26648.c
+    reference_type: exploit
+    reference_id: CVE-2005-3857;OSVDB-21285
+  - url: https://www.securityfocus.com/bid/15627/info
+    reference_type: exploit
+    reference_id: CVE-2005-3857;OSVDB-21285
+  - url: https://gitlab.com/exploit-database/exploitdb/-/blob/main/exploits/linux/local/9363.c
+    reference_type: exploit
+    reference_id: CVE-2005-4605;OSVDB-22212
+  - url: https://access.redhat.com/errata/RHSA-2006:0101
+    reference_type:
+    reference_id: RHSA-2006:0101

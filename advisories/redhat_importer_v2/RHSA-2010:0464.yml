@@ -1,0 +1,110 @@
+advisory_id: RHSA-2010:0464
+datasource_id: redhat_importer_v2/RHSA-2010:0464
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0464.json
+aliases:
+  - CVE-2008-4546
+  - CVE-2009-3793
+  - CVE-2010-1297
+  - CVE-2010-2160
+  - CVE-2010-2161
+  - CVE-2010-2162
+  - CVE-2010-2163
+  - CVE-2010-2164
+  - CVE-2010-2165
+  - CVE-2010-2166
+  - CVE-2010-2167
+  - CVE-2010-2169
+  - CVE-2010-2170
+  - CVE-2010-2171
+  - CVE-2010-2173
+  - CVE-2010-2174
+  - CVE-2010-2175
+  - CVE-2010-2176
+  - CVE-2010-2177
+  - CVE-2010-2178
+  - CVE-2010-2179
+  - CVE-2010-2180
+  - CVE-2010-2181
+  - CVE-2010-2182
+  - CVE-2010-2183
+  - CVE-2010-2184
+  - CVE-2010-2185
+  - CVE-2010-2186
+  - CVE-2010-2187
+  - CVE-2010-2188
+summary: |
+  An updated Adobe Flash Player package that fixes multiple security issues
+  is now available for Red Hat Enterprise Linux 5 Supplementary.
+
+  The Red Hat Security Response Team has rated this update as having critical
+  security impact. Common Vulnerability Scoring System (CVSS) base scores,
+  which give detailed severity ratings, are available for each vulnerability
+  from the CVE links in the References section.
+
+  The flash-plugin package contains a Mozilla Firefox compatible Adobe Flash
+  Player web browser plug-in.
+
+  This update fixes multiple vulnerabilities in Adobe Flash Player. These
+  vulnerabilities are detailed on the Adobe security pages APSA10-01 and
+  APSB10-14, listed in the References section.
+
+  Multiple security flaws were found in the way flash-plugin displayed
+  certain SWF content. An attacker could use these flaws to create a
+  specially-crafted SWF file that would cause flash-plugin to crash or,
+  potentially, execute arbitrary code when the victim loaded a page
+  containing the specially-crafted SWF content. (CVE-2009-3793,
+  CVE-2010-1297, CVE-2010-2160, CVE-2010-2161, CVE-2010-2162, CVE-2010-2163,
+  CVE-2010-2164, CVE-2010-2165, CVE-2010-2166, CVE-2010-2167, CVE-2010-2169,
+  CVE-2010-2170, CVE-2010-2171, CVE-2010-2173, CVE-2010-2174, CVE-2010-2175,
+  CVE-2010-2176, CVE-2010-2177, CVE-2010-2178, CVE-2010-2180, CVE-2010-2181,
+  CVE-2010-2182, CVE-2010-2183, CVE-2010-2184, CVE-2010-2185, CVE-2010-2186,
+  CVE-2010-2187, CVE-2010-2188)
+
+  An input sanitization flaw was found in the way flash-plugin processed
+  certain URLs. An attacker could use this flaw to conduct cross-site
+  scripting (XSS) attacks if a victim were tricked into visiting a
+  specially-crafted web page. (CVE-2010-2179)
+
+  A denial of service flaw was found in the way flash-plugin processed
+  certain SWF content. An attacker could use this flaw to create a
+  specially-crafted SWF file that would cause flash-plugin to crash.
+  (CVE-2008-4546)
+
+  All users of Adobe Flash Player should install this updated package, which
+  upgrades Flash Player to version 10.1.53.64.
+impacted_packages:
+  - purl: pkg:rpm/redhat/flash-plugin?arch=i386
+    affected_versions: vers:rpm/<10.1-2.el5
+    fixed_versions: vers:rpm/10.1-2.el5
+severities:
+  - score: Critical
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0464.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#critical
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2010/rhsa-2010_0464.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=467082
+    reference_type: bug
+    reference_id: 467082
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=600692
+    reference_type: bug
+    reference_id: 600692
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=602847
+    reference_type: bug
+    reference_id: 602847
+  - url: http://www.adobe.com/support/security/bulletins/apsb10-14.html
+    reference_type: other
+    reference_id: apsb10-14.html
+  - url: http://www.adobe.com/support/security/advisories/apsa10-01.html
+    reference_type: exploit
+    reference_id: CVE-2010-1297;OSVDB-65141
+  - url: https://access.redhat.com/errata/RHSA-2010:0464
+    reference_type:
+    reference_id: RHSA-2010:0464

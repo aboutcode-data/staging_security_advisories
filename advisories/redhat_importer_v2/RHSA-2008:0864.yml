@@ -1,0 +1,92 @@
+advisory_id: RHSA-2008:0864
+datasource_id: redhat_importer_v2/RHSA-2008:0864
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0864.json
+aliases:
+  - CVE-2008-1232
+  - CVE-2008-1947
+  - CVE-2008-2370
+  - CVE-2008-2938
+summary: |
+  Updated tomcat packages that fix multiple security issues are now available
+  for Red Hat Developer Suite 3.
+
+  This update has been rated as having important security impact by the Red
+  Hat Security Response Team.
+
+  Apache Tomcat is a servlet container for the Java Servlet and JavaServer
+  Pages (JSP) technologies.
+
+  A cross-site scripting vulnerability was discovered in the
+  HttpServletResponse.sendError() method. A remote attacker could inject
+  arbitrary web script or HTML via forged HTTP headers. (CVE-2008-1232)
+
+  An additional cross-site scripting vulnerability was discovered in the host
+  manager application. A remote attacker could inject arbitrary web script or
+  HTML via the hostname parameter. (CVE-2008-1947)
+
+  A traversal vulnerability was discovered when using a RequestDispatcher
+  in combination with a servlet or JSP. A remote attacker could utilize a
+  specially-crafted request parameter to access protected web resources.
+  (CVE-2008-2370)
+
+  An additional traversal vulnerability was discovered when the
+  "allowLinking" and "URIencoding" settings were activated. A remote attacker
+  could use a UTF-8-encoded request to extend their privileges and obtain
+  local files accessible to the Tomcat process. (CVE-2008-2938)
+
+  Users of tomcat should upgrade to these updated packages, which contain
+  backported patches to resolve these issues.
+impacted_packages:
+  - purl: pkg:rpm/redhat/tomcat5?arch=src
+    affected_versions: vers:rpm/<5.5.23-0jpp_12rh
+    fixed_versions: vers:rpm/5.5.23-0jpp_12rh
+  - purl: pkg:rpm/redhat/tomcat5?arch=noarch
+    affected_versions: vers:rpm/<5.5.23-0jpp_12rh
+    fixed_versions: vers:rpm/5.5.23-0jpp_12rh
+  - purl: pkg:rpm/redhat/tomcat5-server-lib?arch=noarch
+    affected_versions: vers:rpm/<5.5.23-0jpp_12rh
+    fixed_versions: vers:rpm/5.5.23-0jpp_12rh
+  - purl: pkg:rpm/redhat/tomcat5-servlet-2.4-api?arch=noarch
+    affected_versions: vers:rpm/<5.5.23-0jpp_12rh
+    fixed_versions: vers:rpm/5.5.23-0jpp_12rh
+  - purl: pkg:rpm/redhat/tomcat5-common-lib?arch=noarch
+    affected_versions: vers:rpm/<5.5.23-0jpp_12rh
+    fixed_versions: vers:rpm/5.5.23-0jpp_12rh
+  - purl: pkg:rpm/redhat/tomcat5-jsp-2.0-api?arch=noarch
+    affected_versions: vers:rpm/<5.5.23-0jpp_12rh
+    fixed_versions: vers:rpm/5.5.23-0jpp_12rh
+  - purl: pkg:rpm/redhat/tomcat5-jasper?arch=noarch
+    affected_versions: vers:rpm/<5.5.23-0jpp_12rh
+    fixed_versions: vers:rpm/5.5.23-0jpp_12rh
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0864.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/errata/RHSA-2008:0864
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=446393
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=457597
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2008/rhsa-2008_0864.json
+    reference_type:
+    reference_id:
+  - url: http://tomcat.apache.org/security-5.html
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=456120
+    reference_type: bug
+    reference_id: 456120
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=457934
+    reference_type: bug
+    reference_id: 457934
