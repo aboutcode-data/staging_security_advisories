@@ -1,0 +1,81 @@
+advisory_id: RHSA-2021:3477
+datasource_id: redhat_importer_v2/RHSA-2021:3477
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3477.json
+aliases:
+  - CVE-2021-22555
+  - CVE-2021-31535
+  - CVE-2021-32399
+  - CVE-2021-3621
+  - CVE-2021-3715
+summary: |
+  An update for redhat-release-virtualization-host and redhat-virtualization-host is now available for Red Hat Virtualization 4 for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The redhat-virtualization-host packages provide the Red Hat Virtualization Host.
+  These packages include redhat-release-virtualization-host. Red Hat
+  Virtualization Hosts (RHVH) are installed using a special build of Red Hat
+  Enterprise Linux with only the packages required to host virtual machines. RHVH features a Cockpit user interface for monitoring the host's resources and
+  performing administrative tasks.
+
+  Security Fix(es):
+
+  * sssd: shell command injection in sssctl (CVE-2021-3621)
+
+  * kernel: use-after-free in route4_change() in net/sched/cls_route.c (CVE-2021-3715)
+
+  * kernel: out-of-bounds write in xt_compat_target_from_user() in net/netfilter/x_tables.c (CVE-2021-22555)
+
+  * libX11: missing request length checks (CVE-2021-31535)
+
+  * kernel: race condition for removal of the HCI controller (CVE-2021-32399)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/redhat-release-virtualization-host?arch=src
+    affected_versions: vers:rpm/<4.3.18-1.el7ev
+    fixed_versions: vers:rpm/4.3.18-1.el7ev
+  - purl: pkg:rpm/redhat/redhat-virtualization-host?arch=src
+    affected_versions: vers:rpm/<4.3.18-20210903.0.el7_9
+    fixed_versions: vers:rpm/4.3.18-20210903.0.el7_9
+  - purl: pkg:rpm/redhat/redhat-release-virtualization-host?arch=x86_64
+    affected_versions: vers:rpm/<4.3.18-1.el7ev
+    fixed_versions: vers:rpm/4.3.18-1.el7ev
+  - purl: pkg:rpm/redhat/redhat-virtualization-host-image-update-placeholder?arch=noarch
+    affected_versions: vers:rpm/<4.3.18-1.el7ev
+    fixed_versions: vers:rpm/4.3.18-1.el7ev
+  - purl: pkg:rpm/redhat/redhat-virtualization-host-image-update?arch=noarch
+    affected_versions: vers:rpm/<4.3.18-20210903.0.el7_9
+    fixed_versions: vers:rpm/4.3.18-20210903.0.el7_9
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3477.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1975142
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3477.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1961822
+    reference_type: bug
+    reference_id: '1961822'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1970807
+    reference_type: bug
+    reference_id: '1970807'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1980101
+    reference_type: bug
+    reference_id: '1980101'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1993988
+    reference_type: bug
+    reference_id: '1993988'
+  - url: https://access.redhat.com/errata/RHSA-2021:3477
+    reference_type:
+    reference_id: RHSA-2021:3477

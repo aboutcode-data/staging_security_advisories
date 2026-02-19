@@ -1,0 +1,215 @@
+advisory_id: RHSA-2021:3016
+datasource_id: redhat_importer_v2/RHSA-2021:3016
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3016.json
+aliases:
+  - CVE-2020-28469
+  - CVE-2020-28500
+  - CVE-2020-28851
+  - CVE-2020-28852
+  - CVE-2021-21272
+  - CVE-2021-21309
+  - CVE-2021-21321
+  - CVE-2021-21322
+  - CVE-2021-23337
+  - CVE-2021-23343
+  - CVE-2021-23346
+  - CVE-2021-23362
+  - CVE-2021-23364
+  - CVE-2021-23368
+  - CVE-2021-23369
+  - CVE-2021-23382
+  - CVE-2021-23383
+  - CVE-2021-23839
+  - CVE-2021-23840
+  - CVE-2021-23841
+  - CVE-2021-27292
+  - CVE-2021-27358
+  - CVE-2021-28092
+  - CVE-2021-28918
+  - CVE-2021-29418
+  - CVE-2021-29477
+  - CVE-2021-29478
+  - CVE-2021-29482
+  - CVE-2021-33502
+  - CVE-2021-33623
+  - CVE-2021-3377
+summary: "Red Hat Advanced Cluster Management for Kubernetes 2.3.0 General\nAvailability release\
+  \ images, which fix several bugs and security issues. \n\nRed Hat Product Security has rated\
+  \ this update as having a security impact\nof Important. A Common Vulnerability Scoring System\
+  \ (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\n\
+  from the CVE links in the References section.\n\nRed Hat Advanced Cluster Management for Kubernetes\
+  \ 2.3.0 images\n\nRed Hat Advanced Cluster Management for Kubernetes provides the\ncapabilities\
+  \ to address common challenges that administrators and site\nreliability engineers face as\
+  \ they work across a range of public and\nprivate cloud environments. Clusters and applications\
+  \ are all visible and\nmanaged from a single console—with security policy built in.\n\nThis\
+  \ advisory contains the container images for Red Hat Advanced Cluster\nManagement for Kubernetes,\
+  \ which fix several bugs and security issues. See\nthe following Release Notes documentation,\
+  \ which will be updated shortly\nfor this release, for additional details about this release:\n\
+  \nhttps://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_mana\ngement_for_kubernetes/2.3/html/release_notes/\n\
+  \nSecurity:\n\n* fastify-reply-from: crafted URL allows prefix scape of the proxied backend\
+  \ service (CVE-2021-21321)\n\n* fastify-http-proxy: crafted URL allows prefix scape of the\
+  \ proxied\nbackend service (CVE-2021-21322)\n\n* nodejs-netmask: improper input validation\
+  \ of octal input data (CVE-2021-28918)\n\n* redis: Integer overflow via STRALGO LCS command\
+  \ (CVE-2021-29477)\n\n* redis: Integer overflow via COPY command for large intsets (CVE-2021-29478)\n\
+  \n* nodejs-glob-parent: Regular expression denial of service (CVE-2020-28469)\n\n* nodejs-lodash:\
+  \ ReDoS via the toNumber, trim and trimEnd functions\n(CVE-2020-28500)\n\n* golang.org/x/text:\
+  \ Panic in language.ParseAcceptLanguage while parsing -u- extension (CVE-2020-28851)\n\n*\
+  \ golang.org/x/text: Panic in language.ParseAcceptLanguage while processing\nbcp47 tag (CVE-2020-28852)\n\
+  \n* nodejs-ansi_up: XSS due to insufficient URL sanitization (CVE-2021-3377)\n\n* oras: zip-slip\
+  \ vulnerability via oras-pull (CVE-2021-21272)\n\n* redis: integer overflow when configurable\
+  \ limit for maximum supported bulk input size is too big on 32-bit platforms (CVE-2021-21309)\n\
+  \n* nodejs-lodash: command injection via template (CVE-2021-23337)\n\n* nodejs-hosted-git-info:\
+  \ Regular Expression denial of service via shortcutMatch in fromUrl() (CVE-2021-23362)\n\n\
+  * browserslist: parsing of invalid queries could result in Regular Expression Denial of Service\
+  \ (ReDoS) (CVE-2021-23364)\n\n* nodejs-postcss: Regular expression denial of service during\
+  \ source map parsing (CVE-2021-23368)\n\n* nodejs-handlebars: Remote code execution when compiling\
+  \ untrusted compile templates with strict:true option (CVE-2021-23369)\n\n* nodejs-postcss:\
+  \ ReDoS via getAnnotationURL() and loadAnnotation() in lib/previous-map.js (CVE-2021-23382)\n\
+  \n* nodejs-handlebars: Remote code execution when compiling untrusted compile templates with\
+  \ compat:true option (CVE-2021-23383)\n\n* openssl: integer overflow in CipherUpdate (CVE-2021-23840)\n\
+  \n* openssl: NULL pointer dereference in X509_issuer_and_serial_hash()\n(CVE-2021-23841)\n\
+  \n* nodejs-ua-parser-js: ReDoS via malicious User-Agent header (CVE-2021-27292)\n\n* grafana:\
+  \ snapshot feature allow an unauthenticated remote attacker to trigger a DoS via a remote\
+  \ API call (CVE-2021-27358)\n\n* nodejs-is-svg: ReDoS via malicious string (CVE-2021-28092)\n\
+  \n* nodejs-netmask: incorrectly parses an IP address that has octal integer with invalid character\
+  \ (CVE-2021-29418)\n\n* ulikunitz/xz: Infinite loop in readUvarint allows for denial of service\
+  \ (CVE-2021-29482)\n\n* normalize-url: ReDoS for data URLs (CVE-2021-33502)\n\n* nodejs-trim-newlines:\
+  \ ReDoS in .end() method (CVE-2021-33623)\n\n* nodejs-path-parse: ReDoS via splitDeviceRe,\
+  \ splitTailRe and splitPathRe (CVE-2021-23343)\n\n* html-parse-stringify: Regular Expression\
+  \ DoS (CVE-2021-23346)\n\n* openssl: incorrect SSLv2 rollback protection (CVE-2021-23839)\n\
+  \nFor more details about the security issues, including the impact, a CVSS\nscore, acknowledgments,\
+  \ and other related information, refer to the CVE\npages listed in the References section.\n\
+  \nBugs:\n\n* RFE Make the source code for the endpoint-metrics-operator public (BZ# 1913444)\n\
+  \n* cluster became offline after apiserver health check (BZ# 1942589)"
+impacted_packages: []
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3016.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3016.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1913333
+    reference_type: bug
+    reference_id: '1913333'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1913338
+    reference_type: bug
+    reference_id: '1913338'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1913444
+    reference_type: bug
+    reference_id: '1913444'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1921286
+    reference_type: bug
+    reference_id: '1921286'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1927520
+    reference_type: bug
+    reference_id: '1927520'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1928937
+    reference_type: bug
+    reference_id: '1928937'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1928954
+    reference_type: bug
+    reference_id: '1928954'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1930294
+    reference_type: bug
+    reference_id: '1930294'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1930310
+    reference_type: bug
+    reference_id: '1930310'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1930324
+    reference_type: bug
+    reference_id: '1930324'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1932634
+    reference_type: bug
+    reference_id: '1932634'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1936427
+    reference_type: bug
+    reference_id: '1936427'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1939103
+    reference_type: bug
+    reference_id: '1939103'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1940196
+    reference_type: bug
+    reference_id: '1940196'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1940613
+    reference_type: bug
+    reference_id: '1940613'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1941024
+    reference_type: bug
+    reference_id: '1941024'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1941675
+    reference_type: bug
+    reference_id: '1941675'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1942178
+    reference_type: bug
+    reference_id: '1942178'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1942182
+    reference_type: bug
+    reference_id: '1942182'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1942589
+    reference_type: bug
+    reference_id: '1942589'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1943208
+    reference_type: bug
+    reference_id: '1943208'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1944822
+    reference_type: bug
+    reference_id: '1944822'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1944827
+    reference_type: bug
+    reference_id: '1944827'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1945459
+    reference_type: bug
+    reference_id: '1945459'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1948761
+    reference_type: bug
+    reference_id: '1948761'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1948763
+    reference_type: bug
+    reference_id: '1948763'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1954150
+    reference_type: bug
+    reference_id: '1954150'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1954368
+    reference_type: bug
+    reference_id: '1954368'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1955619
+    reference_type: bug
+    reference_id: '1955619'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1956688
+    reference_type: bug
+    reference_id: '1956688'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1956818
+    reference_type: bug
+    reference_id: '1956818'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1957410
+    reference_type: bug
+    reference_id: '1957410'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1957414
+    reference_type: bug
+    reference_id: '1957414'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1964461
+    reference_type: bug
+    reference_id: '1964461'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1966615
+    reference_type: bug
+    reference_id: '1966615'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1968122
+    reference_type: bug
+    reference_id: '1968122'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1972703
+    reference_type: bug
+    reference_id: '1972703'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1983131
+    reference_type: bug
+    reference_id: '1983131'
+  - url: https://access.redhat.com/errata/RHSA-2021:3016
+    reference_type:
+    reference_id: RHSA-2021:3016

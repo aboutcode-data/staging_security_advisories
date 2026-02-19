@@ -1,0 +1,104 @@
+advisory_id: RHSA-2021:3088
+datasource_id: redhat_importer_v2/RHSA-2021:3088
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3088.json
+aliases:
+  - CVE-2021-22543
+  - CVE-2021-22555
+  - CVE-2021-3609
+summary: |
+  An update for kernel-rt is now available for Red Hat Enterprise Linux 8.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.
+
+  Security Fix(es):
+
+  * kernel: race condition in net/can/bcm.c leads to local privilege escalation (CVE-2021-3609)
+
+  * kernel: Improper handling of VM_IO|VM_PFNMAP vmas in KVM can bypass RO checks (CVE-2021-22543)
+
+  * kernel: out-of-bounds write in xt_compat_target_from_user() in net/netfilter/x_tables.c (CVE-2021-22555)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+  Bug Fix(es):
+
+  * kernel-rt: update RT source tree to the RHEL-8.4.z source tree (BZ#1985050)
+
+  * kernel-rt: Merge mm/memcg: Fix kmem_cache_alloc() performance regression (BZ#1987102)
+impacted_packages:
+  - purl: pkg:rpm/redhat/kernel-rt?arch=src
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-core?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debug?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debug-core?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debug-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debug-kvm?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debug-modules?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debug-modules-extra?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-kvm?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-modules?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-modules-extra?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debug-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+  - purl: pkg:rpm/redhat/kernel-rt-debuginfo-common-x86_64?arch=x86_64
+    affected_versions: vers:rpm/<4.18.0-305.12.1.rt7.84.el8_4
+    fixed_versions: vers:rpm/4.18.0-305.12.1.rt7.84.el8_4
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3088.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3088.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1965461
+    reference_type: bug
+    reference_id: '1965461'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1971651
+    reference_type: bug
+    reference_id: '1971651'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1980101
+    reference_type: bug
+    reference_id: '1980101'
+  - url: https://access.redhat.com/errata/RHSA-2021:3088
+    reference_type:
+    reference_id: RHSA-2021:3088

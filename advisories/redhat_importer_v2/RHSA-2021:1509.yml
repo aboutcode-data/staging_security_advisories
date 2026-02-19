@@ -1,0 +1,103 @@
+advisory_id: RHSA-2021:1509
+datasource_id: redhat_importer_v2/RHSA-2021:1509
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_1509.json
+aliases:
+  - CVE-2021-28163
+  - CVE-2021-28164
+  - CVE-2021-28165
+summary: |
+  An update for rh-eclipse-jetty is now available for Red Hat Developer Tools.
+
+  Red Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Jetty is a 100% Java HTTP Server and Servlet Container.
+
+  The following packages have been upgraded to a later upstream version: rh-eclipse-jetty (9.4.40).
+
+  Security Fix(es):
+
+  * jetty: Symlink directory exposes webapp directory contents (CVE-2021-28163)
+
+  * jetty: Ambiguous paths can access WEB-INF (CVE-2021-28164)
+
+  * jetty: Resource exhaustion when receiving an invalid large TLS frame (CVE-2021-28165)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty?arch=src
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-client?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-continuation?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-http?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-io?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-jaas?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-javadoc?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-jmx?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-security?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-server?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-servlet?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-util?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-util-ajax?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-webapp?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+  - purl: pkg:rpm/redhat/rh-eclipse-jetty-xml?arch=noarch
+    affected_versions: vers:rpm/<9.4.40-1.1.el7_9
+    fixed_versions: vers:rpm/9.4.40-1.1.el7_9
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_1509.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/documentation/en-us/red_hat_developer_tools/1/html/using_eclipse_4.19/
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_1509.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1945710
+    reference_type: bug
+    reference_id: '1945710'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1945712
+    reference_type: bug
+    reference_id: '1945712'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1945714
+    reference_type: bug
+    reference_id: '1945714'
+  - url: https://access.redhat.com/errata/RHSA-2021:1509
+    reference_type:
+    reference_id: RHSA-2021:1509

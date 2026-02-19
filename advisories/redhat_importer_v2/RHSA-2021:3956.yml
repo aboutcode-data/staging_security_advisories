@@ -1,0 +1,125 @@
+advisory_id: RHSA-2021:3956
+datasource_id: redhat_importer_v2/RHSA-2021:3956
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3956.json
+aliases:
+  - CVE-2021-39139
+  - CVE-2021-39140
+  - CVE-2021-39141
+  - CVE-2021-39144
+  - CVE-2021-39145
+  - CVE-2021-39146
+  - CVE-2021-39147
+  - CVE-2021-39148
+  - CVE-2021-39149
+  - CVE-2021-39150
+  - CVE-2021-39151
+  - CVE-2021-39152
+  - CVE-2021-39153
+  - CVE-2021-39154
+summary: |
+  An update for xstream is now available for Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  XStream is a Java XML serialization library to serialize objects to and deserialize object from XML.
+
+  Security Fix(es):
+
+  * xstream: Arbitrary code execution via unsafe deserialization of Xalan xsltc.trax.TemplatesImpl (CVE-2021-39139)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of com.sun.xml.internal.ws.client.sei.* (CVE-2021-39141)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of sun.tracing.* (CVE-2021-39144)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of com.sun.jndi.ldap.LdapBindingEnumeration (CVE-2021-39145)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of javax.swing.UIDefaults$ProxyLazyValue (CVE-2021-39146)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of com.sun.jndi.ldap.LdapSearchEnumeration (CVE-2021-39147)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of com.sun.jndi.toolkit.dir.ContextEnumerator (CVE-2021-39148)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of com.sun.corba.* (CVE-2021-39149)
+
+  * xstream: Server-side request forgery (SSRF) via unsafe deserialization of com.sun.xml.internal.ws.client.sei.* (CVE-2021-39150)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of com.sun.jndi.ldap.LdapBindingEnumeration (CVE-2021-39151)
+
+  * xstream: Server-side request forgery (SSRF) via unsafe deserialization of jdk.nashorn.internal.runtime.Source$URLData (CVE-2021-39152)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of Xalan xsltc.trax.TemplatesImpl (CVE-2021-39153)
+
+  * xstream: Arbitrary code execution via unsafe deserialization of javax.swing.UIDefaults$ProxyLazyValue (CVE-2021-39154)
+
+  * xstream: Infinite loop DoS via unsafe deserialization of sun.reflect.annotation.AnnotationInvocationHandler (CVE-2021-39140)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/xstream?arch=src
+    affected_versions: vers:rpm/<1.3.1-16.el7_9
+    fixed_versions: vers:rpm/1.3.1-16.el7_9
+  - purl: pkg:rpm/redhat/xstream?arch=noarch
+    affected_versions: vers:rpm/<1.3.1-16.el7_9
+    fixed_versions: vers:rpm/1.3.1-16.el7_9
+  - purl: pkg:rpm/redhat/xstream-javadoc?arch=noarch
+    affected_versions: vers:rpm/<1.3.1-16.el7_9
+    fixed_versions: vers:rpm/1.3.1-16.el7_9
+severities:
+  - score: Important
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3956.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#important
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3956.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997763
+    reference_type: bug
+    reference_id: '1997763'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997765
+    reference_type: bug
+    reference_id: '1997765'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997769
+    reference_type: bug
+    reference_id: '1997769'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997772
+    reference_type: bug
+    reference_id: '1997772'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997775
+    reference_type: bug
+    reference_id: '1997775'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997777
+    reference_type: bug
+    reference_id: '1997777'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997779
+    reference_type: bug
+    reference_id: '1997779'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997781
+    reference_type: bug
+    reference_id: '1997781'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997784
+    reference_type: bug
+    reference_id: '1997784'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997786
+    reference_type: bug
+    reference_id: '1997786'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997791
+    reference_type: bug
+    reference_id: '1997791'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997793
+    reference_type: bug
+    reference_id: '1997793'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997795
+    reference_type: bug
+    reference_id: '1997795'
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1997801
+    reference_type: bug
+    reference_id: '1997801'
+  - url: https://access.redhat.com/errata/RHSA-2021:3956
+    reference_type:
+    reference_id: RHSA-2021:3956

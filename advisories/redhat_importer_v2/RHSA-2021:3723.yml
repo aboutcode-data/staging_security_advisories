@@ -1,0 +1,129 @@
+advisory_id: RHSA-2021:3723
+datasource_id: redhat_importer_v2/RHSA-2021:3723
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3723.json
+aliases:
+  - CVE-2020-14318
+  - CVE-2020-14323
+  - CVE-2020-1472
+  - CVE-2021-20254
+summary: |
+  Updated samba packages that fix several bugs with added enhancement are now available for Red Hat Gluster Storage 3.5 on Red Hat Enterprise Linux 7.
+
+  Red Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Red Hat Gluster Storage is a software only scale-out storage solution that
+  provides flexible and affordable unstructured data storage. It unifies data
+  storage and infrastructure, increases performance, and improves availability and manageability to meet enterprise-level storage challenges.
+
+  Security Fix(es):
+
+  * samba: Netlogon elevation of privilege vulnerability (Zerologon) (CVE-2020-1472)
+
+  * samba: Missing handle permissions check in SMB1/2/3 ChangeNotify (CVE-2020-14318)
+
+  * samba: Unprivileged user can crash winbind (CVE-2020-14323)
+
+  * samba: Negative idmap cache entries can cause incorrect group entries in the Samba file server process token (CVE-2021-20254)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+  Users of samba with Red Hat Gluster Storage are advised to upgrade to these updated packages.
+impacted_packages:
+  - purl: pkg:rpm/redhat/ctdb?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/libsmbclient?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/libsmbclient-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/libwbclient?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/libwbclient-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/python3-samba?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-client?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-client-libs?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-common-libs?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-common-tools?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-devel?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-krb5-printing?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-libs?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-vfs-glusterfs?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-winbind?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-winbind-clients?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-winbind-krb5-locator?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-winbind-modules?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba?arch=src
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-common?arch=noarch
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+  - purl: pkg:rpm/redhat/samba-pidl?arch=noarch
+    affected_versions: vers:rpm/<4.11.6-112.el7rhgs
+    fixed_versions: vers:rpm/4.11.6-112.el7rhgs
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3723.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1949442
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2021/rhsa-2021_3723.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1879822
+    reference_type: bug
+    reference_id: 1879822
+  - url: https://access.redhat.com/errata/RHSA-2021:3723
+    reference_type:
+    reference_id: RHSA-2021:3723
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1891685
+    reference_type: other
+    reference_id: show_bug.cgi?id=1891685
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1892631
+    reference_type: other
+    reference_id: show_bug.cgi?id=1892631

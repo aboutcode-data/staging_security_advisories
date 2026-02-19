@@ -1,0 +1,139 @@
+advisory_id: RHSA-2020:4211
+datasource_id: redhat_importer_v2/RHSA-2020:4211
+datasource_url: https://security.access.redhat.com/data/csaf/v2/advisories/2020/rhsa-2020_4211.json
+aliases:
+  - CVE-2020-11022
+  - CVE-2020-11023
+  - CVE-2020-7656
+summary: |
+  Red Hat AMQ Interconnect 1.9.0 release packages are available for A-MQ Interconnect on RHEL 6, 7, and 8.
+
+  Red Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+  Red Hat AMQ Interconnect is a component of the AMQ 7 product family. AMQ Interconnect provides flexible routing of messages between AMQP-enabled endpoints, whether they are clients, servers, brokers, or any other entity that can send or receive standard AMQP messages.
+
+  This release of Red Hat AMQ Interconnect 1.9.0 serves as a replacement for Red Hat AMQ Interconnect 1.8.0 and includes security and bug fixes, and enhancements.  For further information, refer to the release notes linked to in the References section.
+
+  Security Fix(es):
+
+  * jQuery: allows XSS via the load method (CVE-2020-7656)
+
+  * jquery: Cross-site scripting due to improper injQuery.htmlPrefilter method (CVE-2020-11022)
+
+  * jQuery: passing HTML containing <option> elements to manipulation methods could result in untrusted code execution (CVE-2020-11023)
+
+  For more details about the security issue(s), including the impact, a CVSS score, acknowledgements, and other related information, refer to the CVE page(s) listed in the References section.
+impacted_packages:
+  - purl: pkg:rpm/redhat/qpid-dispatch?arch=src
+    affected_versions: vers:rpm/<1.13.0-3.el7
+    fixed_versions: vers:rpm/1.13.0-3.el7
+  - purl: pkg:rpm/redhat/qpid-dispatch?arch=src
+    affected_versions: vers:rpm/<1.13.0-3.el6_10
+    fixed_versions: vers:rpm/1.13.0-3.el6_10
+  - purl: pkg:rpm/redhat/qpid-dispatch?arch=src
+    affected_versions: vers:rpm/<1.13.0-3.el8
+    fixed_versions: vers:rpm/1.13.0-3.el8
+  - purl: pkg:rpm/redhat/qpid-dispatch-console?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el7
+    fixed_versions: vers:rpm/1.13.0-3.el7
+  - purl: pkg:rpm/redhat/qpid-dispatch-docs?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el7
+    fixed_versions: vers:rpm/1.13.0-3.el7
+  - purl: pkg:rpm/redhat/qpid-dispatch-tools?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el7
+    fixed_versions: vers:rpm/1.13.0-3.el7
+  - purl: pkg:rpm/redhat/qpid-dispatch-console?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el6_10
+    fixed_versions: vers:rpm/1.13.0-3.el6_10
+  - purl: pkg:rpm/redhat/qpid-dispatch-docs?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el6_10
+    fixed_versions: vers:rpm/1.13.0-3.el6_10
+  - purl: pkg:rpm/redhat/qpid-dispatch-tools?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el6_10
+    fixed_versions: vers:rpm/1.13.0-3.el6_10
+  - purl: pkg:rpm/redhat/qpid-dispatch-console?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el8
+    fixed_versions: vers:rpm/1.13.0-3.el8
+  - purl: pkg:rpm/redhat/qpid-dispatch-docs?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el8
+    fixed_versions: vers:rpm/1.13.0-3.el8
+  - purl: pkg:rpm/redhat/qpid-dispatch-tools?arch=noarch
+    affected_versions: vers:rpm/<1.13.0-3.el8
+    fixed_versions: vers:rpm/1.13.0-3.el8
+  - purl: pkg:rpm/redhat/qpid-dispatch-router?arch=x86_64
+    affected_versions: vers:rpm/<1.13.0-3.el7
+    fixed_versions: vers:rpm/1.13.0-3.el7
+  - purl: pkg:rpm/redhat/qpid-dispatch-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.13.0-3.el7
+    fixed_versions: vers:rpm/1.13.0-3.el7
+  - purl: pkg:rpm/redhat/qpid-dispatch-router?arch=x86_64
+    affected_versions: vers:rpm/<1.13.0-3.el6_10
+    fixed_versions: vers:rpm/1.13.0-3.el6_10
+  - purl: pkg:rpm/redhat/qpid-dispatch-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.13.0-3.el6_10
+    fixed_versions: vers:rpm/1.13.0-3.el6_10
+  - purl: pkg:rpm/redhat/qpid-dispatch-router?arch=x86_64
+    affected_versions: vers:rpm/<1.13.0-3.el8
+    fixed_versions: vers:rpm/1.13.0-3.el8
+  - purl: pkg:rpm/redhat/qpid-dispatch-debugsource?arch=x86_64
+    affected_versions: vers:rpm/<1.13.0-3.el8
+    fixed_versions: vers:rpm/1.13.0-3.el8
+  - purl: pkg:rpm/redhat/qpid-dispatch-router-debuginfo?arch=x86_64
+    affected_versions: vers:rpm/<1.13.0-3.el8
+    fixed_versions: vers:rpm/1.13.0-3.el8
+  - purl: pkg:rpm/redhat/qpid-dispatch-router?arch=i686
+    affected_versions: vers:rpm/<1.13.0-3.el6_10
+    fixed_versions: vers:rpm/1.13.0-3.el6_10
+  - purl: pkg:rpm/redhat/qpid-dispatch-debuginfo?arch=i686
+    affected_versions: vers:rpm/<1.13.0-3.el6_10
+    fixed_versions: vers:rpm/1.13.0-3.el6_10
+severities:
+  - score: Moderate
+    scoring_system: rhas
+    scoring_elements:
+    published_at: None
+    url: https://security.access.redhat.com/data/csaf/v2/advisories/2020/rhsa-2020_4211.json
+weaknesses: []
+references:
+  - url: https://access.redhat.com/documentation/en-us/red_hat_amq/
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=jboss.amq.interconnect&downloadType=distributions&version=1.9.0
+    reference_type:
+    reference_id:
+  - url: https://access.redhat.com/security/updates/classification/#moderate
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQIC-2448
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQIC-2455
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQIC-2460
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQIC-2481
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQIC-2485
+    reference_type:
+    reference_id:
+  - url: https://issues.redhat.com/browse/ENTMQIC-2492
+    reference_type:
+    reference_id:
+  - url: https://security.access.redhat.com/data/csaf/v2/advisories/2020/rhsa-2020_4211.json
+    reference_type:
+    reference_id:
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1828406
+    reference_type: bug
+    reference_id: 1828406
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1850004
+    reference_type: bug
+    reference_id: 1850004
+  - url: https://bugzilla.redhat.com/show_bug.cgi?id=1850119
+    reference_type: bug
+    reference_id: 1850119
+  - url: https://access.redhat.com/errata/RHSA-2020:4211
+    reference_type:
+    reference_id: RHSA-2020:4211
